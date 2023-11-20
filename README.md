@@ -1,4 +1,4 @@
-# dotenv-org.github.io
+# dotenvx.github.io
 
 Source code for www.dotenv.org
 

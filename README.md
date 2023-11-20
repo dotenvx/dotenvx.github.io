@@ -24,10 +24,6 @@ Make sure you run `NODE_ENV='production' npm run build` on the `/docs` project a
 
 ## Other Notes
 
-Use [iconify](http://icon-sets.iconify.design/simple-icons/) for icons or use [simpleicons.org](https://simpleicons.org/).
-
-Use [screely.com](https://www.screely.com/) to make aesthetic screenshots.
-
 To change the kramdown rouge theme:
 
 ```

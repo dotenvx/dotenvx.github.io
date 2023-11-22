@@ -1,40 +1,27 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}" class="dark">
-  <head>
-    {% include layouts/dark-mode.html %}
-    {% include layouts/meta.html %}
-    {% include layouts/analytics.html %}
-  </head>
-  <body class="font-sans antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 selection:bg-yellow-300 selection:text-zinc-950">
-    {% include v2/nav.html %}
-    <main class="mx-5 lg:mx-auto pt-10 max-w-5xl">
-      <a class="link-primary text-sky-500" href="/blog">&larr; back to blog</a>
-      <img class="mx-auto h-14 w-14 rounded-full" src="/assets/img/mot.png" alt="Mot" />
-      <p class="text-center text-lg my-1 text-zinc-500 font-medium">Mot</p>
+---
+layout: default
+---
 
-      <p class="text-zinc-400 dark:text-zinc-600 text-center font-medium mt-10 mb-2">
-        <time datetime="{{ page.date | date: "%Y-%m-%d"  }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      </p>
-      <article>
-        <h1 class="text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 font-bold text-center mb-16">
-          {{ page.title }}
-        </h1>
+<main class="mx-5 lg:mx-auto pt-10 max-w-5xl">
+  <a class="link-primary text-sky-500" href="/blog">&larr; back to blog</a>
+  <img class="mx-auto h-14 w-14 rounded-full" src="/assets/img/mot.png" alt="Mot" />
+  <p class="text-center text-lg my-1 text-zinc-500 font-medium">Mot</p>
 
-        <!--<p class="mt-0 text-lg lg:text-xl font-normal text-zinc-500 text-center">{{ page.excerpt }}</p>-->
-        <!--<img src="{{ page.image }}" alt="{{ page.title }}" class="w-full my-6 lg:my-10 rounded-lg">-->
+  <p class="text-zinc-400 dark:text-zinc-600 text-center font-medium mt-10 mb-2">
+    <time datetime="{{ page.date | date: "%Y-%m-%d"  }}">{{ page.date | date: "%B %d, %Y" }}</time>
+  </p>
+  <article>
+    <h1 class="text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 font-bold text-center mb-16">
+      {{ page.title }}
+    </h1>
 
-        <div class="prose prose-lg mx-auto max-w-prose">
-          {{ content }}
-        </div>
+    <div class="prose prose-lg mx-auto max-w-prose">
+      {{ content }}
+    </div>
 
-      </article>
+  </article>
 
-      <div class="prose prose-lg mx-auto max-w-prose my-10">
-        <p class="text-center"><a href="/feed.xml" class="link-primary underline">Subscribe via RSS</a> or follow us <a href="https://x.com/dotenvorg">@dotenvorg 𝕏</a></p>
-      </div>
-    </main>
-
-    {% include v2/footer.html %}
-    {% include layouts/js.html %}
-  </body>
-</html>
+  <div class="prose prose-lg mx-auto max-w-prose my-10">
+    <p class="text-center"><a href="/feed.xml" class="link-primary underline">Subscribe via RSS</a> or follow us <a href="https://x.com/dotenvorg">@dotenvorg 𝕏</a></p>
+  </div>
+</main>

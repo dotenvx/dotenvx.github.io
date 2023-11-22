@@ -6,6 +6,10 @@ layout: null
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+body {
+  @apply font-sans antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 selection:bg-yellow-300 selection:text-zinc-950;
+}
+
 .btn-primary {
   @apply text-center rounded-md cursor-pointer bg-zinc-950 dark:bg-zinc-100 px-3.5 py-3 font-semibold text-white dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 disabled:opacity-50 disabled:cursor-default;
 }

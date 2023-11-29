@@ -1,13 +1,13 @@
-url: "https://www.dotenv.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://dotenvx.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/" # the subpath of your site, e.g. /blog
-title: "Dotenv" # the name of your site, e.g. ACME Corp.
+title: "dotenvx" # the name of your site, e.g. ACME Corp.
 logo: "https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg"
 description: "Secrets for developers"
 
 # Footer "Edit this page on GitHub" link text
 github_edit_link: true # show or hide edit this page link
 github_edit_link_text: "View on GitHub"
-github_edit_repository: "https://github.com/dotenv-org/dotenv-org.github.io" # the github URL for your repo
+github_edit_repository: "https://github.com/dotenvx/dotenvx.github.io" # the github URL for your repo
 github_edit_branch: "master" # the branch that your docs is served from
 github_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
@@ -22,8 +22,8 @@ social:
   name: dotenv
   links:
     - https://twitter.com/dotenvx
-    - https://github.com/dotenv-org
-    - https://linkedin.com/company/dotenvorg
+    - https://github.com/dotenvx
+    - https://linkedin.com/company/dotenvx
     - https://www.youtube.com/@dotenvx
 
 defaults:

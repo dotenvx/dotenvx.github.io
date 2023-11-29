@@ -53,9 +53,10 @@ jobs:
       - name: unzip
         run: unzip main.zip -d _hidden
 
-      # copy out/docs folder
-      - name: copy docs
-        run: cp -r _hidden/docs-main/out/docs docs
+      # turn off temporarily
+      # # copy out/docs folder
+      # - name: copy docs
+      #   run: cp -r _hidden/docs-main/out/docs docs
 
       # move files around
       - name: copy docs/index.html

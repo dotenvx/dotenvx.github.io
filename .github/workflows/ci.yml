@@ -53,6 +53,10 @@ jobs:
       - name: unzip
         run: unzip main.zip -d _hidden
 
+      # built the /out folder rather than having to place it on github
+      - name: build /out
+        run: cd _hidden/docs-main && npm install && NODE_ENV=production npm run build && cd ../..
+
       # copy out/docs folder
       - name: copy docs
         run: cp -r _hidden/docs-main/out/docs docs

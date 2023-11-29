@@ -20,7 +20,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -46,21 +45,21 @@ jobs:
       - name: Increase node memory
         run: export NODE_OPTIONS="--max-old-space-size=8192"
 
-      # # Grabs docs2 so can be written under _site
-      # - name: curl docs
-      #   run: curl -L https://github.com/dotenv-org/docs/archive/refs/heads/master.zip > master.zip
+      # Grabs docs2 so can be written under _site
+      - name: curl docs
+        run: curl -L https://github.com/dotenvx/docs/archive/refs/heads/main.zip > main.zip
 
-      # # put in _hidden folder so jekyll doesn't copy it over on build
-      # - name: unzip
-      #   run: unzip master.zip -d _hidden
+      # put in _hidden folder so jekyll doesn't copy it over on build
+      - name: unzip
+        run: unzip main.zip -d _hidden
 
-      # # copy out/docs folder
-      # - name: copy docs
-      #   run: cp -r _hidden/docs-master/out/docs docs
+      # copy out/docs folder
+      - name: copy docs
+        run: cp -r _hidden/docs-main/out/docs docs
 
-      # # move files around
-      # - name: copy docs/index.html
-      #   run: cp _hidden/docs-master/out/docs.html docs/index.html
+      # move files around
+      - name: copy docs/index.html
+        run: cp _hidden/docs-main/out/docs.html docs/index.html
       
       # Outputs to the './_site' directory by default
       - name: Build with Jekyll
@@ -68,13 +67,13 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      # # copy _next to _site
-      # - name: copy _next
-      #   run: cp -r _hidden/docs-master/out/_next _site/_next
+      # copy _next to _site
+      - name: copy _next
+        run: cp -r _hidden/docs-main/out/_next _site/_next
 
-      # # copy assets to _site
-      # - name: copy assets
-      #   run: cp -r _hidden/docs-master/out/assets _site
+      # copy assets to _site
+      - name: copy assets
+        run: cp -r _hidden/docs-main/out/assets _site
 
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default

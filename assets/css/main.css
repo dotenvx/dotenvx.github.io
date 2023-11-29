@@ -7,11 +7,11 @@ layout: null
 @import "tailwindcss/utilities";
 
 body {
-  @apply font-sans antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 selection:bg-red-300 selection:text-zinc-950;
+  @apply font-sans antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 selection:bg-[#ECD53F] selection:text-zinc-950;
 }
 
 .btn-primary {
-  @apply text-center rounded-full bg-zinc-950 dark:bg-zinc-50 px-4 py-3.5 text-sm font-semibold text-white dark:text-zinc-950 hover:bg-zinc-700 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-200 active:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
+  @apply text-center rounded-full bg-zinc-950 dark:bg-zinc-50 px-4 py-3.5 text-sm font-semibold text-white dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
 }
 
 .btn-secondary {
@@ -19,7 +19,7 @@ body {
 }
 
 .btn-text {
-  text-center rounded-full px-4 py-2.5 text-sm font-semibold text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150;
+  @apply text-center rounded-full px-4 py-2.5 text-sm font-semibold text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150;
 }
 
 .btn-outline {

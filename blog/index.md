@@ -22,7 +22,7 @@ title: "Blog"
                   <div class="flex gap-1">
                     <p class="text-zinc-900 dark:text-zinc-100">Mot</p>
                     <p class="text-zinc-500">
-                      <time datetime="2023-09-14">· {{ post.date || date: "%B %d, %Y" }}</time>
+                      <time datetime="2023-09-14">· {{ post.date | date: "%B %d, %Y" }}</time>
                     </p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ title: "Blog"
                   <div class="flex gap-1">
                     <p class="text-zinc-900 dark:text-zinc-100">Mot</p>
                     <p class="text-zinc-500">
-                      <time datetime="2023-09-14">· {{ post.date || date: "%B %d, %Y" }}</time>
+                      <time datetime="2023-09-14">· {{ post.date | date: "%B %d, %Y" }}</time>
                     </p>
                   </div>
                 </div>

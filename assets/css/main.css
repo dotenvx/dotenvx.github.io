@@ -26,11 +26,11 @@ body {
   @apply text-center rounded-md cursor-pointer border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 px-3.5 py-3 font-medium text-zinc-950 dark:text-zinc-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
 }
 
-code.btick::before {
+.btick::before {
   content: '`';
 }
 
-code.btick::after {
+.btick::after {
   content: '`';
 }
 

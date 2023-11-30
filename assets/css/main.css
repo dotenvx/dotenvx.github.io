@@ -31,11 +31,11 @@ body {
 }
 
 .btick::before {
-  content: '`';
+  content: "`";
 }
 
 .btick::after {
-  content: '`';
+  content: "`";
 }
 
 code {

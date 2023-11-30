@@ -35,7 +35,7 @@ code.btick::after {
 }
 
 code {
-  @apply font-mono font-medium tracking-tight;
+  @apply !font-sans;
 }
 
 .prose {

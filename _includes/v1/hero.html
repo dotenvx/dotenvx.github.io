@@ -65,8 +65,8 @@
 
         <div class="flex justify-between">
           <div class="flex gap-2">
-            <button x-on:click="brew = true" class="p-2 px-4 font-medium border-b-2 border-b-yellow-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 tracking-wider" x-bind:class="brew ? 'border-b-yellow-300' : 'border-b-transparent'">brew</button>
-            <button x-on:click="brew = false" class="p-2 px-4 font-medium border-b-2 border-b-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 tracking-wider" x-bind:class="!brew ? 'border-b-yellow-300' : 'border-b-transparent'">curl</button>
+            <button x-on:click="brew = true" class="p-2 px-4 font-medium border-b-2 border-b-yellow-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 tracking-wider" x-bind:class="brew ? 'border-b-yellow-300' : '!border-b-transparent'">brew</button>
+            <button x-on:click="brew = false" class="p-2 px-4 font-medium border-b-2 border-b-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 tracking-wider" x-bind:class="!brew ? '!border-b-yellow-300' : 'border-b-transparent'">curl</button>
           </div>
           <a href="/docs" class="text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg p-2 font-medium">Documentation</a>
         </div>

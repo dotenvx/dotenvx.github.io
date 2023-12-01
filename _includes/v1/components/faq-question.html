@@ -1,0 +1,20 @@
+<div x-data="{ open: false }">
+  <dt>
+    <button x-on:click="open = ! open" type="button" class="py-3 flex w-full items-start justify-between text-left text-zinc-700" aria-controls="faq-0" aria-expanded="false">
+      <span class="text-base font-semibold leading-7 dark:text-zinc-300">{{include.question}}</span>
+      <span class="ml-6 flex h-7 items-center">
+        <svg x-show="!open" class="h-6 w-6 text-zinc-500" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+        </svg>
+        <svg x-cloak x-show="open" class="h-6 w-6 text-zinc-500" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+        </svg>
+      </span>
+    </button>
+  </dt>
+  <dd x-cloak x-show="open" class="mb-4 pr-12" id="faq-0">
+    <p class="text-base leading-7">
+      {{include.answer}}
+    </p>
+  </dd>
+</div>

@@ -1,0 +1,62 @@
+<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-40">
+
+  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
+
+    <div class="flex-1 min-w-0">
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypt Secrets</h2>
+
+      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Encrypt your secrets to a <code class="btick">.env.vault</code> file. Only you hold the decryption keys – protecting you from data breaches like the <a href="https://techcrunch.com/2023/01/05/circleci-breach/" class="underline" target="_blank">CircleCI breach</a>.</p>
+
+      <div class="mt-8 flex flex-col gap-3 text-center md:text-start">
+        <div class="italic">
+          "Our company was exposed to the CircleCI breach. This would have protected us. We're using it now."
+        </div>
+        <div class="flex justify-center md:justify-start items-center gap-2">
+          <div>
+            <img src="/assets/img/remy-logic.png" class="rounded-full h-10 w-10"/>
+          </div>
+
+          <div>
+            Remy Logic <span class="text-zinc-400 dark:text-zinc-600">– CTO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 min-w-0 w-full">
+
+      <div class="mx-auto px-0 sm:px-20 md:px-0">
+        <div class="border dark:border-zinc-700 text-sm subpixel-antialiased rounded-lg leading-normal overflow-hidden">
+
+          <div class="p-3 bg-zinc-100 dark:bg-zinc-900 border-b dark:border-b-zinc-700">
+            <div class="flex items-center">
+              <span class="h-3 w-3 bg-red-500/50 dark:bg-red-500/30 rounded-full"></span>
+              <span class="ml-2 h-3 w-3 bg-orange-300/50 dark:bg-orange-300/30 rounded-full"></span>
+              <span class="ml-2 h-3 w-3 bg-green-500/50 dark:bg-green-500/30 rounded-full"></span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto p-5 py-16 font-mono font-semibold whitespace-nowrap bg-zinc-50 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50">
+            <span class="text-green-500 dark:text-red-500">$</span> <span class="text-zinc-500 dark:text-zinc-400">dotenvx encrypt</span>
+            <br/>
+            <span class="text-zinc-900 dark:text-zinc-100">[dotenvx][INFO] encrypted to .env.vault (.env,.env.production)</span>
+            <br/>
+            <span class="text-zinc-900 dark:text-zinc-100">[dotenvx][INFO] key added to .env.keys (DOTENV_KEY_PRODUCTION)</span>
+            <br/>
+            <br/>
+            <span class="text-green-500 dark:text-red-500">$</span> <span class="text-zinc-500 dark:text-zinc-400">DOTENV_KEY='&lt;dotenv_key_production&gt;' dotenvx run -- node index.js</span>
+            <br/>
+            <span class="text-zinc-900 dark:text-zinc-100">[dotenvx][INFO] loading env (1) from encrypted .env.vault</span>
+            <br/>
+            <span class="text-zinc-900 dark:text-zinc-100">Hello production</span>
+            <br/>
+            <span class="text-orange-400 dark:text-orange-300">^ :-]</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

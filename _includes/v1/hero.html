@@ -6,74 +6,9 @@
 
       <p class="my-10 text-center leading-relaxed text-lg md:text-2xl"><span class="italic">a better dotenv</span>–from the creator of {% include v1/components/dotenv.html %}</p>
 
-      <div x-data="{ brew: true }" class="flex flex-col gap-4 mx-0 md:mx-4 lg:mx-10">
-
-        <div 
-          class="border font-mono font-semibold dark:border-zinc-800 dark:text-zinc-50 p-3 rounded-md hover:border-yellow-300 dark:hover:border-yellow-300 cursor-pointer"
-          x-show="brew"
-          x-data="{
-              copyText: 'brew install dotenvx/brew/dotenvx',
-              copyNotification: false,
-              copyToClipboard() {
-                navigator.clipboard.writeText(this.copyText);
-                this.copyNotification = true;
-                let that = this;
-                setTimeout(function(){
-                  that.copyNotification = false;
-                }, 3000);
-              }
-            }"
-          x-on:click="copyToClipboard();"
-        >
-          <div class="flex items-center">
-            <div class="flex-1">
-              brew install dotenvx/brew/dotenvx
-            </div>
-            <div class="flex-0">
-              {% include v1/components/copy.html %}
-            </div>
-          </div>
-        </div>
-
-        <div 
-          class="border font-mono font-semibold dark:border-zinc-800 dark:text-zinc-50 p-3 rounded-md hover:border-yellow-300 dark:hover:border-yellow-300 cursor-pointer"
-          x-show="!brew"
-          x-data="{
-              copyText: 'curl -fsS https://dotenvx.sh/ | sh',
-              copyNotification: false,
-              copyToClipboard() {
-                navigator.clipboard.writeText(this.copyText);
-                this.copyNotification = true;
-                let that = this;
-                setTimeout(function(){
-                  that.copyNotification = false;
-                }, 3000);
-              }
-            }"
-          x-on:click="copyToClipboard();"
-          x-cloak
-        >
-          <div class="flex items-center">
-            <div class="flex-1">
-              curl -fsS https://dotenvx.sh/ | sh
-            </div>
-            <div class="flex-0">
-              {% include v1/components/copy.html %}
-            </div>
-          </div>
-        </div>
-
-        <div class="flex justify-between">
-          <div class="flex gap-2">
-            <button x-on:click="brew = true" class="p-2 px-4 font-medium border-b-2 border-b-yellow-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 tracking-wider" x-bind:class="brew ? 'border-b-yellow-300' : '!border-b-transparent'">brew</button>
-            <button x-on:click="brew = false" class="p-2 px-4 font-medium border-b-2 border-b-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 tracking-wider" x-bind:class="!brew ? '!border-b-yellow-300' : 'border-b-transparent'">curl</button>
-          </div>
-          <a href="/docs" class="text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg p-2 font-medium">Documentation</a>
-        </div>
-
+      <div class="mx-0 md:mx-4 lg:mx-10">
+        {% include/v1/components/install-box.html %}
       </div>
-
-
     </div>
   </div>
 </section>

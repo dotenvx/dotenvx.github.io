@@ -3,7 +3,7 @@
     <div class="flex-1">
       <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Run Anywhere</h2>
 
-      <p class="text-center md:text-start leading-relaxed text-md md:text-lg"><code class="btick">dotenvx</code> works the same across every language, framework, and platform. Simply prepend your app start command with <code class="btick">dotenvx run --</code></p>
+      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">dotenvx works the same across every language, framework, and platform – inject your env at runtime with <code class="btick">dotenvx run -- your-cmd</code>.</p>
 
       <div class="mt-8 flex flex-col gap-3 text-center md:text-start">
         <div class="italic">
@@ -20,7 +20,34 @@
         </div>
       </div>
     </div>
+    <div class="flex-1 min-w-0 w-full">
+      {% include v1/components/terminal-dotenvx-run.html %}
+
+      <!--
+      <div class="flex items-center gap-4 mt-4 w-fit mx-auto">
+        <a href="/docs#run-anywhere" class="">
+          {% include v1/icons/nodejs.html class="h-7 w-7 text-[#339933]"  %}
+        </a>
+        <a href="/docs#run-anywhere" class="">
+          {% include v1/icons/python.html  class="h-7 w-7 text-[#3776AB]" %}
+        </a>
+        <a href="/docs#run-anywhere" class="">
+          {% include v1/icons/php.html  class="h-8 w-8 text-[#777BB4]" %}
+        </a>
+        <a href="/docs#run-anywhere" class="">
+          {% include v1/icons/ruby.html  class="h-6 w-6 text-[#CC342D]" %}
+        </a>
+        <a href="/docs#run-anywhere" class="">
+          {% include v1/icons/go.html class="h-9 w-9 text-[#00ADD8]" %}
+        </a>
+        <a href="/docs#run-anywhere" class="">
+          {% include v1/icons/rust.html class="h-7 w-7 text-[#000000] dark:invert" %}
+        </a>
+      </div>
+      -->
+    </div>
     
+    <!--
     <div class="flex-1 w-full grid px-10 md:px-6 grid-cols-4 sm:grid-cols-6 md:grid-cols-6 gap-10 auto-cols-auto items-center justify-center justify-items-center">
       <a href="/docs/languages/nodejs" class="">
         {% include v1/icons/nodejs.html %}
@@ -140,5 +167,7 @@
         +more
       </a>
     </div>
+    -->
+
   </div>
 </section>

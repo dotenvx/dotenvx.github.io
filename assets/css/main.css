@@ -6,6 +6,10 @@ layout: null
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+[x-cloak] {
+  display: none;
+}
+
 body {
   @apply font-sans antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 selection:bg-[#ECD53F] selection:text-zinc-950;
 }

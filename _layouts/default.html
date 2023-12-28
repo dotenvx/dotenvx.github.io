@@ -5,9 +5,15 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
-  <body>
-    {% include v1/nav.html %}
-    {{ content }}
-    {% include v1/footer.html %}
+  <body class="font-sans antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300 selection:bg-[#ECD53F] selection:text-zinc-950 flex flex-col min-h-screen">
+    <header>
+      {% include v1/nav.html %}
+    </header>
+    <main class="flex-grow">
+      {{ content }}
+    </main>
+    <footer class="mt-20">
+      {% include v1/footer.html %}
+    </footer>
   </body>
 </html>

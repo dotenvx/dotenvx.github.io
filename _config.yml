@@ -30,7 +30,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: "/assets/img/default-cover-image.png"
+      image: "/og-image.png"
       layout: "default"
 
 # For Favicon Plugin

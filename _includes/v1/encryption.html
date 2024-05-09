@@ -1,32 +1,23 @@
-<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-40">
+<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
+  <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encryption</h2>
+  <p class="mx-auto mt-3 text-center md:text-start leading-relaxed text-md md:text-lg">Add encryption to your .env files with a single command. Pass the <span class="btick">--encrypt</span> flag.</p>
 
-  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
-
-    <div class="flex-1 min-w-0">
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypt Secrets</h2>
-
-      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Encrypt your secrets to a <code class="btick">.env.vault</code> file. Only you hold the decryption keys – protecting you from data breaches like the <a href="https://techcrunch.com/2023/01/05/circleci-breach/" class="underline" target="_blank">CircleCI breach</a>.</p>
-
-      <div class="mt-8 flex flex-col gap-3 text-center md:text-start">
-        <div class="italic">
-          "Our company was exposed to the CircleCI breach. This would have protected us. We're using it now."
-        </div>
-        <div class="flex justify-center md:justify-start items-center gap-2">
-          <div>
-            <img src="/assets/img/remy-logic.png" class="rounded-full h-10 w-10"/>
-          </div>
-
-          <div>
-            Remy Logic <span class="text-zinc-400 dark:text-zinc-600">– CTO</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="flex-1 min-w-0 w-full">
-      {% include v1/components/terminal-dotenvx-encrypt.html %}
-    </div>
-
+  <div class="mt-6">
+    {% include v1/components/encrypted-env-file.html %}
   </div>
 
+  <div class="mt-8 flex flex-col gap-3 text-center">
+    <div class="italic">
+      "Our company was exposed to the CircleCI breach. This would have protected us. We're using it now."
+    </div>
+    <div class="flex justify-center items-center gap-2">
+      <div>
+        <img src="/assets/img/remy-logic.png" class="rounded-full h-10 w-10"/>
+      </div>
+
+      <div>
+        Remy Logic <span class="text-zinc-400 dark:text-zinc-600">– CTO</span>
+      </div>
+    </div>
+  </div>
 </section>

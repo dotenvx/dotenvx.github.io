@@ -30,7 +30,7 @@
     class="border font-mono font-semibold dark:border-zinc-800 dark:text-zinc-50 rounded-md hover:border-yellow-300 dark:hover:border-yellow-300 cursor-pointer"
     x-show="!brew"
     x-data="{
-        copyText: 'curl -fsS https://dotenvx.sh/ | sh',
+        copyText: 'curl -fsS https://dotenvx.sh/install.sh | sh',
         copyNotification: false,
         copyToClipboard() {
           navigator.clipboard.writeText(this.copyText);
@@ -46,7 +46,7 @@
   >
     <div class="flex items-center">
       <div class="flex-1 overflow-hidden whitespace-nowrap p-3 py-5">
-        curl -fsS https://dotenvx.sh/ | sh
+        curl -fsS https://dotenvx.sh/install.sh | sh
       </div>
       <div class="flex-0 pr-3">
         {% include v1/components/copy.html %}

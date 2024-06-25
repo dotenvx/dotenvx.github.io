@@ -36,7 +36,7 @@ In order of importance, there are three big problems with `dotenv`:
 
 All three pose risks to security, and the first does SIGNIFICANTLY.
 
-**But I think we have a solution to all three today - with [dotenvx](https://gitub.com/dotenvx/dotenvx)**. In reverse problem order:
+**But I think we have a solution to all three today - with [dotenvx](https://github.com/dotenvx/dotenvx)**. In reverse problem order:
 
 * [Run Anywhere](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere) -> *inconsistency across platforms*
 * [Multiple Environments](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#multiple-environments) -> *juggling multiple environments*

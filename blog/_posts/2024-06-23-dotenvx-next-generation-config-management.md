@@ -64,6 +64,8 @@ The [.env parsing engine](https://github.com/dotenvx/dotenvx/blob/6f5a9137043771
 
 This solves the problem of *inconsistency across platforms*. ✅ You'll get the exact same behavior for your [python apps](https://dotenvx.com/docs/guides#python) as your [node apps](https://dotenvx.com/docs/guides#node-js) as your [rust apps](https://dotenvx.com/docs/guides#go).
 
+<a href="https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere"><img src="https://github.com/dotenvx/dotenvx/assets/3848/6a43eb52-4b1d-48c2-8c7a-b62cb35b526b"/></a>
+
 ## Multiple Environments
 
 Create a `.env.production` file and use `-f` to load it. It's straightforward, yet flexible.
@@ -92,7 +94,9 @@ $ dotenvx run -f .env.local -f .env -- node index.js
 Hello local
 ```
 
-Handy! But it's the next feature that is the real game changer (and I think merits dotenvx as the *next generation of configuration management*). That's encryption.
+<a href="https://github.com/dotenvx/dotenvx?tab=readme-ov-file#multiple-environments"><img src="https://github.com/dotenvx/dotenvx/assets/3848/8983a359-32f9-459a-861c-66bfdf4e87a1" /></a>
+
+Handy! But it's the next feature, **encryption**, that is the real game changer (and I think merits dotenvx as the *next generation of configuration management*).
 
 ## Encryption
 
@@ -129,6 +133,8 @@ A `DOTENV_PUBLIC_KEY` (encryption key) and a `DOTENV_PRIVATE_KEY` (decryption ke
 
 Now, even if you leak your .env file, it's ok. An attacker needs the `DOTENV_PRIVATE_KEY` to make sense of things. This effectively solves the problem of *leaking your .env file* ✅.
 
+<a href="https://github.com/dotenvx/dotenvx?tab=readme-ov-file#encryption"><img src="https://github.com/dotenvx/dotenvx/assets/3848/42aef834-50d9-4187-93e4-b5230ae1253a" /></a>
+
 **Bonus:** This approach additionally makes it possible for contributors to add config while simultaneously being unable to decrypt config. I anticipate this will be useful for open source projects where you want to allow for contribution of secrets without decryption of prior secrets.
 
 ## 1.0.0 Release
@@ -136,3 +142,5 @@ Now, even if you leak your .env file, it's ok. An attacker needs the `DOTENV_PRI
 With that, we're pleased to announce the release of [dotenvx version 1.0.0](https://www.npmjs.com/package/@dotenvx/dotenvx) 🎉.
 
 It is the *next generation of configuration management*, and I'm looking forward to what you do with it. The next decade (like the last) is bright for dotenv! 🌟
+
+See the [quickstart guide](https://dotenvx.com/docs/quickstart).

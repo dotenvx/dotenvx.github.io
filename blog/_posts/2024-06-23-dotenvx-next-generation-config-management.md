@@ -143,4 +143,6 @@ With that, we're pleased to announce the release of [dotenvx version 1.0.0](http
 
 It is the *next generation of configuration management*, and I'm looking forward to what you do with it. The next decade (like the last) is bright for dotenv! 🌟
 
-See the [quickstart guide](https://dotenvx.com/docs/quickstart).
+---
+
+If you enjoyed this post, please [share dotenvx with friends](https://github.com/dotenvx/dotenvx) or [star it on GitHub](https://github.com/dotenvx/dotenvx) to help spread the word.

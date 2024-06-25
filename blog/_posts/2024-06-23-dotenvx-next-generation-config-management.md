@@ -62,7 +62,7 @@ Hello World # with dotenvx
 
 The [.env parsing engine](https://github.com/dotenvx/dotenvx/blob/6f5a91370437716c93ead3e4400d1ee46e2b77ef/src/lib/helpers/parseDecryptEvalExpand.js#L6), [variable expansion](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), [command substitution](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), and more work exactly the same. Install dotenvx via [npm](https://dotenvx.com/docs/install#npm), [brew](https://dotenvx.com/docs/install#brew), [curl](https://dotenvx.com/docs/install#shell), [docker](https://dotenvx.com/docs/install#docker), [windows](https://docs/install#windows), and [more](https://dotenvx.com/docs/install).
 
-This solves the problem of *inconsistency across platforms*. You'll get the exact same behavior for your [python apps](https://dotenvx.com/docs/guides#python) as your [node apps](https://dotenvx.com/docs/guides#node-js) as your [rust apps](https://dotenvx.com/docs/guides#go).
+This solves the problem of *inconsistency across platforms*. ✅ You'll get the exact same behavior for your [python apps](https://dotenvx.com/docs/guides#python) as your [node apps](https://dotenvx.com/docs/guides#node-js) as your [rust apps](https://dotenvx.com/docs/guides#go).
 
 ## Multiple Environments
 
@@ -78,7 +78,7 @@ Hello production
 > ^^
 ```
 
-While everything in [dotenvx](https://github.com/dotenvx/dotenvx) is inspired by community suggestions, this multi-environment feature particularly is. There were suggestions many times for something similar before I came to understand its usefulness. I'm convinvced now it cleanly solves the problem of *juggling multiple environments* when built into the command line.
+While everything in [dotenvx](https://github.com/dotenvx/dotenvx) is inspired by community suggestions, this multi-environment feature particularly is. There were suggestions many times for something similar before I came to understand its usefulness. I'm convinvced now it cleanly solves the problem of *juggling multiple environments* when built into the command line. ✅
 
 You can even compose multiple environments together with multiple `-f` flags.
 
@@ -127,7 +127,7 @@ LOG_LEVEL="encrypted:BKmgv5E7/l1FnSaGWYWBPxxagdgN+KSEaB+va3PePjwEp7CqW6PlysrweZq
 
 A `DOTENV_PUBLIC_KEY` (encryption key) and a `DOTENV_PRIVATE_KEY` (decryption key) are generated using the same public-key cryptography as [Bitcoin](https://en.bitcoin.it/wiki/Secp256k1).
 
-Now, even if you leak your .env file, it's ok. An attacker needs the `DOTENV_PRIVATE_KEY` to make sense of things. This effectively solves the problem of *leaking your .env file*.
+Now, even if you leak your .env file, it's ok. An attacker needs the `DOTENV_PRIVATE_KEY` to make sense of things. This effectively solves the problem of *leaking your .env file* ✅.
 
 **Bonus:** This approach additionally makes it possible for contributors to add config while simultaneously being unable to decrypt config. I anticipate this will be useful for open source projects where you want to allow for contribution of secrets without decryption of prior secrets.
 

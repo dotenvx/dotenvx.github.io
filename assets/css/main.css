@@ -58,10 +58,6 @@ body {
   content: "`";
 }
 
-code {
-  @apply !font-sans;
-}
-
 .prose {
   @apply dark:text-zinc-300;
 }

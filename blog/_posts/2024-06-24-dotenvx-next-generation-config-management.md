@@ -62,7 +62,7 @@ Hello World # with dotenvx
 
 The [.env parsing engine](https://github.com/dotenvx/dotenvx/blob/6f5a91370437716c93ead3e4400d1ee46e2b77ef/src/lib/helpers/parseDecryptEvalExpand.js#L6), [variable expansion](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), [command substitution](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), and more work exactly the same. Install dotenvx via [npm](https://dotenvx.com/docs/install#npm), [brew](https://dotenvx.com/docs/install#brew), [curl](https://dotenvx.com/docs/install#shell), [docker](https://dotenvx.com/docs/install#docker), [windows](https://dotenvx.com/docs/install#windows), and [more](https://dotenvx.com/docs/install).
 
-This solves the problem of *inconsistency across platforms*. ✅ You'll get the exact same behavior for your [python apps](https://dotenvx.com/docs/guides#python) as your [node apps](https://dotenvx.com/docs/guides#node-js) as your [rust apps](https://dotenvx.com/docs/guides#go).
+This solves the problem of *inconsistency across platforms*. ✅ You'll get the exact same behavior for your [python apps](https://dotenvx.com/docs/guides#python) as your [node apps](https://dotenvx.com/docs/guides#node-js) as your [rust apps](https://dotenvx.com/docs/guides#rust).
 
 <a href="https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere"><img src="https://github.com/dotenvx/dotenvx/assets/3848/6a43eb52-4b1d-48c2-8c7a-b62cb35b526b"/></a>
 

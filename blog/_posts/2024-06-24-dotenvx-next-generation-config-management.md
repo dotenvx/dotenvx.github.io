@@ -20,7 +20,7 @@ It's one of the few security tools that improve your security posture with minim
 
 * a single line of code - `require('dotenv').config()`
 * a single file - `.env`
-* a single gitignore append - `echo '.env' > .gitignore`
+* a single gitignore append - `echo '.env' >> .gitignore`
 
 It's aesthetic, it's effective, it's elegant.
 

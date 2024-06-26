@@ -60,7 +60,7 @@ Hello World # with dotenvx
 > :-D
 ```
 
-The [.env parsing engine](https://github.com/dotenvx/dotenvx/blob/6f5a91370437716c93ead3e4400d1ee46e2b77ef/src/lib/helpers/parseDecryptEvalExpand.js#L6), [variable expansion](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), [command substitution](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), and more work exactly the same. Install dotenvx via [npm](https://dotenvx.com/docs/install#npm), [brew](https://dotenvx.com/docs/install#brew), [curl](https://dotenvx.com/docs/install#shell), [docker](https://dotenvx.com/docs/install#docker), [windows](https://docs/install#windows), and [more](https://dotenvx.com/docs/install).
+The [.env parsing engine](https://github.com/dotenvx/dotenvx/blob/6f5a91370437716c93ead3e4400d1ee46e2b77ef/src/lib/helpers/parseDecryptEvalExpand.js#L6), [variable expansion](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), [command substitution](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), and more work exactly the same. Install dotenvx via [npm](https://dotenvx.com/docs/install#npm), [brew](https://dotenvx.com/docs/install#brew), [curl](https://dotenvx.com/docs/install#shell), [docker](https://dotenvx.com/docs/install#docker), [windows](https://dotenvx.com/docs/install#windows), and [more](https://dotenvx.com/docs/install).
 
 This solves the problem of *inconsistency across platforms*. ✅ You'll get the exact same behavior for your [python apps](https://dotenvx.com/docs/guides#python) as your [node apps](https://dotenvx.com/docs/guides#node-js) as your [rust apps](https://dotenvx.com/docs/guides#go).
 

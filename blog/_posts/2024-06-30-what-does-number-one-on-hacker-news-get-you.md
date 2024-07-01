@@ -8,9 +8,10 @@ excerpt: "When your project hits #1 on Hacker News someday, here's what you can 
 
 Last week, [dotenvx](/blog/2024/06/24/dotenvx-next-generation-config-management.html) reached **the number one spot on Hacker News**.
 
-<img src="https://github.com/dotenvx/dotenvx/assets/3848/06253afa-b0af-42b0-956d-71773bdb044e" />
+<a href="https://news.ycombinator.com/item?id=40789353"><img src="https://github.com/dotenvx/dotenvx/assets/3848/06253afa-b0af-42b0-956d-71773bdb044e" class="mb-0" /></a>
+<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://news.ycombinator.com/item?id=40789353" class="no-prose text-zinc-400 dark:text-zinc-600">hn news</a></small>
 
-It would go on to accumulate [350 upvotes](https://news.ycombinator.com/item?id=40789353), [200 comments](https://news.ycombinator.com/item?id=40789353), and drive a lot of traffic. When this happens to your project someday, here's what you might expect.
+It would go on to accumulate *350 upvotes*, *200 comments*, and drive a lot of traffic. When this happens to your project someday, here's what you might expect.
 
 ## Web Traffic 🌐📈
 
@@ -19,12 +20,12 @@ It would go on to accumulate [350 upvotes](https://news.ycombinator.com/item?id=
 In 48 hours, 35,000 people visited the site.
 
 <img src="https://github.com/dotenvx/dotenvx/assets/3848/8eb14477-7c33-48e5-aab9-5f063085705d" class="mb-0" />
-<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
+<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="no-prose text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
 
 Before this, about 250 people visited per day (mostly devs referencing [docs](/docs)).
 
 <img src="https://github.com/dotenvx/dotenvx/assets/3848/bd963b54-20c8-4850-87bd-7c5822920aee" class="mb-0" />
-<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
+<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="no-prose text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
 
 The Hacker News post earned 350 points.
 
@@ -76,7 +77,7 @@ More difficult to measure are the after effects:
 Maybe more beneficial; after effects could create new baselines for your project:
 
 <img src="https://github.com/dotenvx/dotenvx/assets/3848/2f942dfe-fd68-461b-a0ac-f2a65e1e37b4" class="mb-0" />
-<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
+<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="no-prose text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
 
 Thank you for reading and **may your project make it to the top of HN!** 🥂
 

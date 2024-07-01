@@ -66,17 +66,19 @@ To summarize, landing at the top of HN could get you:
 More difficult to measure are the after effects:
 
 * *[tweets](https://x.com/search?q=dotenvx&src=typed_query&f=live)*
+* *[new contributors](https://github.com/dotenvx/dotenvx/graphs/contributors)*
 * *[podcast mentions](https://coder.show/576?t=3074)*
 * *[newsletter mentions](https://tldr.tech/tech/2024-06-26)*
-* *[github's trending page](https://github.com/trending/javascript?since=daily)*
+* *[github's trending page](https://github.com/trending/javascript?since=daily) – leads to even greater star count.*
 
 <img src="https://github.com/dotenvx/dotenvx/assets/3848/6a5d280f-b03c-470c-9127-066b9d456c05" />
 
-Maybe more beneficial; they could create new baselines for your project:
+Maybe more beneficial; after effects could create new baselines for your project:
 
-<img src="https://github.com/dotenvx/dotenvx/assets/3848/2f942dfe-fd68-461b-a0ac-f2a65e1e37b4" />
+<img src="https://github.com/dotenvx/dotenvx/assets/3848/2f942dfe-fd68-461b-a0ac-f2a65e1e37b4" class="mb-0" />
+<small class="text-right text-zinc-400 dark:text-zinc-600 text-xs">source: <a href="https://umami.us" class="text-zinc-400 dark:text-zinc-600">self-hosted umami</a></small>
 
-Thank you for reading and may your project make it to the top of HN someday!
+Thank you for reading and **may your project make it to the top of HN!** 🥂
 
 ---
 

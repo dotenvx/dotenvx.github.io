@@ -2,8 +2,8 @@
 layout: blog
 author: mot
 title: "Choosing an Architecture for Pro"
-image: "/assets/img/blog/blog-2.png"
-excerpt: "When your project hits #1 on Hacker News someday, here's what you can expect in terms of visits, stars, and more."
+image: "/assets/img/blog/blog-1.png"
+excerpt: "Which architecture do we go with for pro - zero-knowledge or managed-encryption."
 ---
 
 As coder radio mentioned toward [the end of their podcast](https://coder.show/576?t=3080) we're still a bit in the research stage.

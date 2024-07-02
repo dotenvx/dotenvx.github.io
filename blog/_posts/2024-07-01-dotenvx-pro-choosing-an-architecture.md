@@ -17,7 +17,7 @@ The first question is which architecture do we go with?
 
 Zero-knowledge is the architecture that orgs like 1Password practice.
 
-If an attacker gains access to their servers, **your passwords are still safe**. They never hold your private keys - only your public keys. Feels warm and fuzzy, right. 🧸
+If an attacker gains access to their servers, **your passwords are still safe**. They never hold your private keys - only your public keys. Feels warm and fuzzy. 🧸
 
 Managed-encryption is the architecture that software like AWS KMS practices.
 

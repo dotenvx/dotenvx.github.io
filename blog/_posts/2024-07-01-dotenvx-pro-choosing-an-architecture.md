@@ -15,11 +15,11 @@ The first question is which architecture do we go with?
 
 ## Comparing
 
-Zero-knowledge is the architecture that orgs like 1Password practice.
+Zero-knowledge is the architecture that organizations like 1Password practice.
 
 If an attacker gains access to their servers, **your passwords are still safe**. They never hold your private keys - only your public keys. Feels warm and fuzzy. 🧸
 
-Managed-encryption is the architecture that software like AWS KMS practices.
+Managed-encryption is the architecture that software like [AWS KMS](https://aws.amazon.com/kms/) use.
 
 If an attacker gains access to AWS KMS, **you're pwned, bro** - along with a lot of other people! This is because Amazon ultimately holds plaintext<sup>[1](#footnote1)</sup> copies of your keys. Somehow this doesn't feel awful though because we trust Amazon.
 
@@ -40,25 +40,25 @@ They don't trust you with private decryption keys living on your machine. You mi
 
 I can hear my [friend Yamil (devops)](https://github.com/elbuo8) saying it to me now:
 
-> "Yeah, I don't trust you, bro."
+> Yeah, I don't trust you, bro.
 
 So by centralizing the keys on Amazon, they eliminate the risk - you.
 
-I want to add, this placement of trust, in my experience, adds friction for developers. Have you ever worked with a big corporate and requested a new production `HELLO` key set for your next feature deploy? It can be a long wait, only to be fat-fingered as `HRLLO` – causing your deploy to fail. Compliance departments loves this for some reason.
+I want to add, this placement of trust in my experience adds friction for developers. Have you ever worked with a big corporate and requested a new production `HELLO` key for your next feature deploy? It can be a long wait, only to be fat-fingered as `HRLLO` – causing your deploy to fail. Compliance departments loves this for some reason.
 
 ## Why Zero-Knowledge
 
-Zero-knowledge architecture makes the opposite assumption - third-party risk is greater. I tend to agree with this on not just an empirical level, but also philisophical one.
+Zero-knowledge architecture makes the opposite assumption - third-party risk is greater. I tend to agree with this on not just an empirical level, but also a philosophical one.
 
 I'm a developer-first kind of guy. I want to empower developers, and I think when you do you actually end up with safer and more elegant solutions.
 
-For example, I want this scenario at those corporates:
+For example, I want this scenario:
 
 1. I set `HELLO=development` in `.env` of my PR
 2. Yamil sees it and runs `dotenvx set HELLO "production" -f .env.production`
 3. Yamil pushes his `.env.production` changes to my PR
 
-Boom, now the feature is ready in development AND production. I safely don't know the production secret (because its encrypted and only Yamil has access to its decryption key), but we're both coordinating on the same platform - git<sup>[2](#footnote2)</sup>. He can't gatekeep. And bonus, now when Yamil fat fingers the key name to `HLLO`, I can catch it.
+Boom, now the feature is ready in development AND production. I safely don't know the production secret (because its encrypted and only Yamil has access to its decryption key), but we're both coordinating on the same platform - git<sup>[2](#footnote2)</sup>. He can't gatekeep. And bonus, now when Yamil fat-fingers the key name to `HRLLO`, I know.
 
 For weird reasons, compliance departments don't like this. They're wrong of course. You get a complete audit log in git - who, what, when. They'll come around eventually.
 

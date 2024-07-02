@@ -40,7 +40,7 @@ They don't trust you with private decryption keys living on your machine. You mi
 
 I can hear my [friend Yamil (devops)](https://github.com/elbuo8) saying it to me now:
 
-> Yeah, I don't trust you, bro.
+> Yeah, I don't trust you, brah.
 
 So by centralizing the keys on Amazon, they eliminate the risk - you.
 

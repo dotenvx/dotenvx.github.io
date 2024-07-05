@@ -1,8 +1,12 @@
-<div class="max-w-full flex flex-col sm:flex-row">
+<div class="max-w-full flex flex-col sm:flex-row gap-1">
   <div class="flex-1 flex items-center">
-    <a href="https://news.ycombinator.com/item?id=40789353" target="_blank"><img alt="Featured on Hacker News" src="/assets/img/hn-badge.svg" class="w-60 p-1"/></a>
+    <a href="https://news.ycombinator.com/item?id=40789353" target="_blank">
+      {% include logos/hn-badge.html class="bg-[#FF6600] w-60 rounded-md" %}
+    </a>
   </div>
   <div class="flex-1 flex items-center">
-    <a href="https://trendshift.io/repositories/10988" target="_blank"><img alt="Featured on GitHub Trending" src="/assets/img/gh-badge.svg" class="w-60 p-1"/></a>
+    <a href="https://trendshift.io/repositories/10988" target="_blank">
+      {% include logos/gh-badge.html class="bg-black dark:bg-zinc-800 w-60 rounded-md" %}
+    </a>
   </div>
 </div>

@@ -78,4 +78,6 @@ _______________________________________________________________
 
 Thank you for using [dotenvx](https://github.com/dotenvx/dotenvx)!
 
+---
+
 P.S. You can [follow progress on dotenvx pro here](https://github.com/dotenvx/dotenvx/issues/259).

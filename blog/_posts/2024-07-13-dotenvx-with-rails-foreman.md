@@ -11,7 +11,7 @@ To get dotenvx working with [Rails foreman](https://github.com/ddollar/foreman) 
 * Procfile.dev
 * bin/dev
 
-## Procfile.dev
+## Edit Procfile.dev
 
 Place `dotenvx run` ahead of `bin/rails server` to inject your encrypted .env files.
 
@@ -21,7 +21,7 @@ web: dotenvx run -- bin/rails server
 css: bin/rails tailwindcss:watch
 ```
 
-## bin/dev
+## Edit bin/dev
 
 Then modify foreman to turn off default `.env` loading – by loading from `/dev/null`. 
 
@@ -32,3 +32,16 @@ exec foreman start -f Procfile.dev -e /dev/null "$@"
 ```
 
 Otherwise, foreman will load your `.env` file first – without decrypting it properly.
+
+## Run bin/dev
+
+Lastly, run `bin/dev` – [dotenvx](https://github.com/dotenvx/dotenvx) will inject your environment variables, and Rails will boot up.
+
+```
+$ bin/dev
+11:10:20 web.1  | [dotenvx@1.6.2] injecting env (6) from .env
+11:10:21 web.1  | => Booting Puma
+11:10:21 web.1  | => Rails 7.1.3.4 application starting in development
+```
+
+Great! Enjoy development with encrypted .env files and Rails. 🎉

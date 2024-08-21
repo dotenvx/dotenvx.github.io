@@ -2,7 +2,7 @@
 title: ""
 ---
 
-<div x-data="{ brew: true }">
+<div x-data="{ brew: false }">
 {% include v1/hero.html %}
 {% include v1/run-anywhere.html %}
 {% include v1/multiple-environments.html %}

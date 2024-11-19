@@ -8,6 +8,7 @@ dotenvx provides a consistent interface for managing environment variables, ensu
 - **Multiple Environment Support:** Easily switch between different environment configurations.
 - **Encryption:** Secure your `.env` files with built-in encryption capabilities.
 - **Variable Expansion:** Reference other variables within your `.env` files.
+- **Command Substitution:** Execute commands within your `.env` files.
 - **Multi-Line Values:** Support for multi-line secrets, such as public keys.
 - **Debugging Tools:** Built-in debugging features for both server and local environments.
 - **Contextual Help:** Guidance and next steps when issues arise.
@@ -24,9 +25,9 @@ dotenvx provides a consistent interface for managing environment variables, ensu
 
 ## Community
 
-- [GitHub Discussions](https://github.com/dotenvx/dotenvx/discussions): Engage with the community and maintainers.
+- [GitHub Issues](https://github.com/dotenvx/dotenvx/issues): Engage with the community and maintainers.
 - [Twitter](https://twitter.com/dotenvx): Follow for announcements and updates.
 
 ## Optional
 
-- [Related Projects](https://github.com/dotenvx/related-projects): Explore tools and libraries that complement dotenvx.
+- [Related Projects](https://github.com/dotenvx): Explore tools, extensions, and libraries that complement dotenvx.

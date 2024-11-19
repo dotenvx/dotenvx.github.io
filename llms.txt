@@ -1,0 +1,32 @@
+# dotenvx
+
+> dotenvx is an enhanced version of dotenv, offering cross-platform support, multiple environment handling, encryption, and more, to streamline environment variable management across various languages and frameworks.
+
+dotenvx provides a consistent interface for managing environment variables, ensuring seamless integration across different development environments. Key features include:
+
+- **Cross-Platform Compatibility:** Uniform behavior across all languages, frameworks, and platforms.
+- **Multiple Environment Support:** Easily switch between different environment configurations.
+- **Encryption:** Secure your `.env` files with built-in encryption capabilities.
+- **Variable Expansion:** Reference other variables within your `.env` files.
+- **Multi-Line Values:** Support for multi-line secrets, such as public keys.
+- **Debugging Tools:** Built-in debugging features for both server and local environments.
+- **Contextual Help:** Guidance and next steps when issues arise.
+- **Additional Utilities:** Features like appending to `.gitignore`, generating `.env.example`, and more.
+
+## Documentation
+
+- [Official Documentation](https://dotenvx.com/docs): Comprehensive guides and API references.
+- [GitHub Repository](https://github.com/dotenvx/dotenvx): Source code and contribution guidelines.
+
+## Blog
+
+- [Latest Updates](https://dotenvx.com/blog): News, tutorials, and best practices.
+
+## Community
+
+- [GitHub Discussions](https://github.com/dotenvx/dotenvx/discussions): Engage with the community and maintainers.
+- [Twitter](https://twitter.com/dotenvx): Follow for announcements and updates.
+
+## Optional
+
+- [Related Projects](https://github.com/dotenvx/related-projects): Explore tools and libraries that complement dotenvx.

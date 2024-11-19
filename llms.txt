@@ -14,10 +14,249 @@ dotenvx provides a consistent interface for managing environment variables, ensu
 - **Contextual Help:** Guidance and next steps when issues arise.
 - **Additional Utilities:** Features like appending to `.gitignore`, generating `.env.example`, and more.
 
+## Getting Started
+
+- [Basics | Dotenv](https://dotenvx.com/docs/quickstart)
+  Manage secrets with dotenvx
+
+## Guides
+
+- [Guides | Dotenv](https://dotenvx.com/docs/guides)
+  Language, platform, and framework guides
+
 ## Documentation
 
-- [Official Documentation](https://dotenvx.com/docs): Comprehensive guides and API references.
-- [GitHub Repository](https://github.com/dotenvx/dotenvx): Source code and contribution guidelines.
+- [.env | Dotenv](https://dotenvx.com/docs/env-file)
+  The .env file separates your secrets from code.
+
+- [.env.keys (old format deprecated) | Dotenv](https://dotenvx.com/docs/env-keys-file-deprecated)
+  (DEPRECATED) The .env.keys file contains holds environment DOTENV_KEYs
+
+- [.env.keys | Dotenv](https://dotenvx.com/docs/env-keys-file)
+  `.env.keys` holds your private decryption keys.
+
+- [.env.vault (DEPRECATED) | Dotenv](https://dotenvx.com/docs/env-vault-file)
+  (DEPRECATED) The .env.vault file is an encrypted version of your .env file.
+
+- [Advanced | Dotenv](https://dotenvx.com/docs/advanced)
+  Advanced usage and commands for `dotenvx`
+
+- [Astro | Dotenv](https://dotenvx.com/docs/frameworks/astro)
+  Use `dotenvx` with Astro.
+
+- [Blog | dotenvx](https://dotenvx.com/blog)
+  a better dotenv–from the creator of dotenv
+
+- [Deprecated | Dotenv](https://dotenvx.com/docs/deprecated)
+  Deprecated `.env` file formats and technologies.
+
+- [Documentation | Dotenv](https://dotenvx.com/docs)
+  Documentation for `dotenvx`
+
+- [DOTENV_KEY (deprecated) | Dotenv](https://dotenvx.com/docs/dotenv-key)
+  TheDOTENV_KEYhas been DEPRECATED since May 2024. Please seeupdated encryption instructions.
+
+- [DOTENV_PRIVATE_KEY=key DOTENV_PRIVATE_KEY_PRODUCTION=key dotenvx run | Dotenv](https://dotenvx.com/docs/advanced/run-dotenv-private-key-multiple)
+  Decrypt your encrypted `.env` and `.env.production` files by setting `DOTENV_PRIVATE_KEY` and `DOTENV_PRIVATE_KEY_PRODUCTION` before dotenvx run.
+
+- [DOTENV_PRIVATE_KEY=key dotenvx run | Dotenv](https://dotenvx.com/docs/advanced/run-dotenv-private-key)
+  Decrypt your encrypted `.env` by setting `DOTENV_PRIVATE_KEY` before dotenvx run.
+
+- [DOTENV_PRIVATE_KEY_CI=key dotenvx run | Dotenv](https://dotenvx.com/docs/advanced/run-dotenv-private-key-ci)
+  Decrypt your encrypted `.env.ci` by setting `DOTENV_PRIVATE_KEY_CI` before dotenvx run.
+
+- [DOTENV_PRIVATE_KEY_PRODUCTION=key dotenvx run | Dotenv](https://dotenvx.com/docs/advanced/run-dotenv-private-key-production)
+  Decrypt your encrypted `.env.production` by setting `DOTENV_PRIVATE_KEY_PRODUCTION` before dotenvx run.
+
+- [dotenvx ext genexample -f | Dotenv](https://dotenvx.com/docs/advanced/genexample-f)
+  Pass multiple .env files to generate your .env.example file from the combination of their contents.
+
+- [dotenvx ext genexample directory | Dotenv](https://dotenvx.com/docs/advanced/genexample-directory)
+  Generate a .env.example file inside the specified directory. Useful for monorepos.
+
+- [dotenvx ext genexample | Dotenv](https://dotenvx.com/docs/advanced/genexample)
+  Generate a .env.example file from your current .env file contents.
+
+- [dotenvx get --all --pretty-print | Dotenv](https://dotenvx.com/docs/advanced/get-all-pretty-print)
+  Make the output more readable - pretty print it.
+
+- [dotenvx get --all | Dotenv](https://dotenvx.com/docs/advanced/get-all)
+  Return preset machine envs as well.
+
+- [dotenvx get --format eval | Dotenv](https://dotenvx.com/docs/advanced/get-eval)
+  Return an eval-ready shell formatted response of all key/value pairs in a .env file.
+
+- [dotenvx get --format shell | Dotenv](https://dotenvx.com/docs/advanced/get-shell)
+  Return a shell formatted response of all key/value pairs in a .env file.
+
+- [dotenvx get KEY --env | Dotenv](https://dotenvx.com/docs/advanced/get-key-env)
+  Return a single environment variable's value from a --env string.
+
+- [dotenvx get KEY --overload | Dotenv](https://dotenvx.com/docs/advanced/get-key-overload)
+  Return a single environment variable's value where each found value is overloaded.
+
+- [dotenvx get KEY -f | Dotenv](https://dotenvx.com/docs/advanced/get-key-f)
+  Return a single environment variable's value from a specific .env file.
+
+- [dotenvx get KEY | Dotenv](https://dotenvx.com/docs/advanced/get-key)
+  Return a single environment variable's value.
+
+- [dotenvx get | Dotenv](https://dotenvx.com/docs/advanced/get-json)
+  Return a json response of all key/value pairs in a .env file.
+
+- [dotenvx keypair --format shell | Dotenv](https://dotenvx.com/docs/advanced/keypair-shell)
+  Print a shell formatted reponse of public/private keys.
+
+- [dotenvx keypair -f | Dotenv](https://dotenvx.com/docs/advanced/keypair-f)
+  Print public/private keys for chosen .env* files.
+
+- [dotenvx keypair KEY | Dotenv](https://dotenvx.com/docs/advanced/keypair-key)
+  Print specific keypair for .env file.
+
+- [dotenvx keypair | Dotenv](https://dotenvx.com/docs/advanced/keypair)
+  Print public/private keys for .env file.
+
+- [dotenvx ls -ef | Dotenv](https://dotenvx.com/docs/advanced/ls-ef)
+  Glob .env filenames excluding a wildcard.
+
+- [dotenvx ls -f | Dotenv](https://dotenvx.com/docs/advanced/ls-f)
+  Glob .env filenames matching a wildcard.
+
+- [dotenvx ls directory | Dotenv](https://dotenvx.com/docs/advanced/ls-directory)
+  Print all .env files inside a specified path to a directory.
+
+- [dotenvx ls | Dotenv](https://dotenvx.com/docs/advanced/ls)
+  Print all .env files in a tree structure.
+
+- [dotenvx run - Command Substitution | Dotenv](https://dotenvx.com/docs/advanced/run-command-substitution)
+  Add the output of a command to one of your variables in your .env file.
+
+- [dotenvx run - Shell Expansion | Dotenv](https://dotenvx.com/docs/advanced/run-shell-expansion)
+  Prevent your shell from expanding inline `$VARIABLES` before dotenvx has a chance to inject them. Use a subshell.
+
+- [dotenvx run - Variable Expansion | Dotenv](https://dotenvx.com/docs/advanced/run-variable-expansion)
+  Reference and expand variables already on your machine for use in your .env file.
+
+- [dotenvx run --debug | Dotenv](https://dotenvx.com/docs/advanced/run-debug)
+  Set log level to `debug`.
+
+- [dotenvx run --env HELLO=String | Dotenv](https://dotenvx.com/docs/advanced/run-env)
+  Set environment variables as a simple KEY=value string pair.
+
+- [dotenvx run --log-level | Dotenv](https://dotenvx.com/docs/advanced/run-log-level)
+  Set `--log-level` to whatever you wish.
+
+- [dotenvx run --quiet | Dotenv](https://dotenvx.com/docs/advanced/run-quiet)
+  Use `--quiet` to suppress all output (except errors).
+
+- [dotenvx run --verbose | Dotenv](https://dotenvx.com/docs/advanced/run-verbose)
+  Set log level to `verbose`.
+
+- [dotenvx run -f | Dotenv](https://dotenvx.com/docs/advanced/run-f)
+  Compose multiple .env files for environment variables loading, as you need.
+
+- [dotenvx set KEY "value with spaces" | Dotenv](https://dotenvx.com/docs/advanced/set-key-value-with-spaces)
+  Set a value containing spaces.
+
+- [dotenvx set KEY -- "- + * ÷" | Dotenv](https://dotenvx.com/docs/advanced/set-key-value-with-leading-dash)
+  Set a value containing a leading dash.
+
+- [dotenvx set KEY value --encrypt | Dotenv](https://dotenvx.com/docs/advanced/set-key-value-encrypt)
+  Set an encrypted key/value.
+
+- [dotenvx set KEY value --plain | Dotenv](https://dotenvx.com/docs/advanced/set-key-value-plain)
+  Set a plain key/value.
+
+- [dotenvx set KEY value -f | Dotenv](https://dotenvx.com/docs/advanced/set-key-value-f)
+  Set an (encrypted) key/value for another .env file.
+
+- [dotenvx set KEY value | Dotenv](https://dotenvx.com/docs/advanced/set-key-value)
+  Set a single key/value.
+
+- [dotenvx | a better dotenv–from the creator of dotenv](https://dotenvx.com)
+  a better dotenv–from the creator of dotenv
+
+- [Express | Dotenv](https://dotenvx.com/docs/frameworks/express)
+  Use `dotenvx` with Express.
+
+- [Flask | Dotenv](https://dotenvx.com/docs/frameworks/flask)
+  Use `dotenvx` with Flask.
+
+- [Go | Dotenv](https://dotenvx.com/docs/languages/go)
+  Use `dotenvx` with Go 🐹.
+
+- [Help & Support | dotenvx](https://dotenvx.com/support)
+  a better dotenv–from the creator of dotenv
+
+- [Install | Dotenv](https://dotenvx.com/docs/install)
+  Other ways to install `dotenvx`
+
+- [Node.js | Dotenv](https://dotenvx.com/docs/languages/nodejs)
+  Use `dotenvx` with Node.js 🚀.
+
+- [npm | Dotenv](https://dotenvx.com/docs/package-managers/npm)
+
+- [PHP | Dotenv](https://dotenvx.com/docs/languages/php)
+  Use `dotenvx` with PHP 🐘.
+
+- [pnpm | Dotenv](https://dotenvx.com/docs/package-managers/pnpm)
+  Use dotenvx with pnpm
+
+- [Privacy Policy | dotenvx](https://dotenvx.com/privacy)
+  a better dotenv–from the creator of dotenv
+
+- [Python | Dotenv](https://dotenvx.com/docs/languages/python)
+  Use `dotenvx` with Python 🐍.
+
+- [Remix | Dotenv](https://dotenvx.com/docs/frameworks/remix)
+  Use `dotenvx` with Remix.
+
+- [Ruby | Dotenv](https://dotenvx.com/docs/languages/ruby)
+  Use `dotenvx` with Ruby 💎.
+
+- [Rust | Dotenv](https://dotenvx.com/docs/languages/rust)
+  Use `dotenvx` with Rust 🦀.
+
+- [Sinatra | Dotenv](https://dotenvx.com/docs/frameworks/sinatra)
+  Use `dotenvx` with Sinatra.
+
+- [Stats | Dotenv](https://dotenvx.com/docs/stats)
+
+- [Terms of Service | dotenvx](https://dotenvx.com/terms)
+  a better dotenv–from the creator of dotenv
+
+- [Use dotenvx with Digital Ocean | Dotenv](https://dotenvx.com/docs/platforms/digital-ocean)
+  Use dotenvx with Digital Ocean
+
+- [Use dotenvx with Docker | Dotenv](https://dotenvx.com/docs/platforms/docker)
+  Use dotenvx with Docker
+
+- [Use dotenvx with Fly | Dotenv](https://dotenvx.com/docs/platforms/fly)
+
+- [Use dotenvx with GitHub Actions | Dotenv](https://dotenvx.com/docs/cis/github-actions)
+  Use dotenvx with GitHub Actions
+
+- [Use dotenvx with Heroku | Dotenv](https://dotenvx.com/docs/platforms/heroku)
+  Use dotenvx with Heroku
+
+- [Use dotenvx with Netlify | Dotenv](https://dotenvx.com/docs/platforms/netlify)
+  Use dotenvx with Netlify
+
+- [Use dotenvx with Nx | Dotenv](https://dotenvx.com/docs/monorepos/nx)
+
+- [Use dotenvx with PM2 | Dotenv](https://dotenvx.com/docs/process-managers/pm2)
+
+- [Use dotenvx with Railway | Dotenv](https://dotenvx.com/docs/platforms/railway)
+  Use dotenvx with Railway
+
+- [Use dotenvx with Render | Dotenv](https://dotenvx.com/docs/platforms/render)
+  Use dotenvx with Render
+
+- [Use dotenvx with Turborepo | Dotenv](https://dotenvx.com/docs/monorepos/turborepo)
+  Use dotenvx with Turborepo
+
+- [Use dotenvx with Vercel | Dotenv](https://dotenvx.com/docs/platforms/vercel)
+  Use dotenvx with Vercel
 
 ## Blog
 

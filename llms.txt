@@ -1,20 +1,9 @@
 # dotenvx
 
-> dotenvx is an enhanced version of dotenv, offering cross-platform support, multiple environment handling, encryption, and more, to streamline environment variable management across various languages and frameworks.
+> a better dotenv–from the creator of dotenv
 
-dotenvx provides a consistent interface for managing environment variables, ensuring seamless integration across different development environments. Key features include:
+## Docs
 
-- **Cross-Platform Compatibility:** Uniform behavior across all languages, frameworks, and platforms.
-- **Multiple Environment Support:** Easily switch between different environment configurations.
-- **Encryption:** Secure your `.env` files with built-in encryption capabilities.
-- **Variable Expansion:** Reference other variables within your `.env` files.
-- **Command Substitution:** Execute commands within your `.env` files.
-- **Multi-Line Values:** Support for multi-line secrets, such as public keys.
-- **Debugging Tools:** Built-in debugging features for both server and local environments.
-- **Contextual Help:** Guidance and next steps when issues arise.
-- **Additional Utilities:** Features like appending to `.gitignore`, generating `.env.example`, and more.
-
-- [dotenvx | a better dotenv–from the creator of dotenv](https://dotenvx.com/): a better dotenv–from the creator of dotenv
 - [Advanced](https://dotenvx.com/docs/advanced.html): Advanced usage and commands for `dotenvx`
 - [dotenvx ext genexample directory](https://dotenvx.com/docs/advanced/genexample-directory.html): Generate a .env.example file inside the specified directory. Useful for monorepos.
 - [dotenvx ext genexample -f](https://dotenvx.com/docs/advanced/genexample-f.html): Pass multiple .env files to generate your .env.example file from the combination of their contents.
@@ -114,3 +103,5 @@ dotenvx provides a consistent interface for managing environment variables, ensu
 - [Quickstart ⚡️](https://dotenvx.com/docs/quickstart/index2.html): Manage secrets with dotenvx
 - [Run Anywhere](https://dotenvx.com/docs/quickstart/run.html): `dotenvx` works the same across every language, framework, and platform. Simply preface your application process with `dotenvx run --`
 - [Stats](https://dotenvx.com/docs/stats.html): Stats
+
+

@@ -61,6 +61,6 @@ Incredible.
 
 And as I reflect back on the last year, I am thankful for that hard work and enormously thankful for the many people who chose to take a chance on dotenvx, and now, use it daily. Thank you so much. 🙏
 
-Most of all I'm thankful for family, friends, and the memories we've had together. It is cherished like gold.
+But most of all, I'm thankful for family, friends, and the memories we've had together. It is cherished like gold.
 
 Happy Thanksgiving all! 🦃

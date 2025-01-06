@@ -22,7 +22,7 @@
       "wellKnown": "https://dotenvx.com/.well-known/funding-manifest-urls"
     },
     "licenses": ["spdx:GPL-3.0"],
-    "tags": ["env", "dotenv", "config", "development", "developer-tools", "web-development"]
+    "tags": ["security", "devops", "developer-tools", "cryptography", "web-development", "env", "dotenv", "dotenvx", "config"]
   }],
   "funding": {
     "channels": [

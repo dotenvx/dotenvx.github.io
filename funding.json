@@ -18,8 +18,7 @@
       "url": "https://dotenvx.com"
     },
     "repositoryUrl": {
-      "url": "https://github.com/dotenvx/dotenvx",
-      "wellKnown": "https://dotenvx.com/.well-known/funding-manifest-urls"
+      "url": "https://dotenvx.com/repo"
     },
     "licenses": ["spdx:GPL-3.0"],
     "tags": ["security", "devops", "developer-tools", "cryptography", "web-development", "env", "dotenv", "dotenvx", "config"]

@@ -1,0 +1,59 @@
+{
+  "version": "v1.0.0",
+  "entity": {
+    "type": "organisation",
+    "role": "maintainer",
+    "name": "DOTENVX LLC",
+    "email": "mot@dotenvx.com",
+    "description": "a better dotenv–from the creator of dotenv",
+    "webpageUrl": {
+      "url": "https://dotenvx.com"
+    }
+  },
+  "projects": [{
+    "guid": "dotenvx",
+    "name": "dotenvx",
+    "description": "a better dotenv–from the creator of dotenv",
+    "webpageUrl": {
+      "url": "https://dotenvx.com"
+    },
+    "repositoryUrl": {
+      "url": "https://github.com/dotenvx/dotenvx",
+      "wellKnown": "https://dotenvx.com/.well-known/funding-manifest-urls"
+    },
+    "licenses": ["spdx:GPL-3.0"],
+    "tags": ["env", "dotenv", "config", "development", "developer-tools", "web-development"]
+  }],
+  "funding": {
+    "channels": [
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/motdotla",
+        "description": "GitHub Sponsors"
+      }
+    ],
+    "plans": [
+      {
+        "guid": "individual",
+        "status": "active",
+        "name": "individual",
+        "description": "Thank you for sponsoring dotenv as an individual.",
+        "amount": 5,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["github-sponsors"]
+      },
+      {
+        "guid": "company",
+        "status": "active",
+        "name": "company",
+        "description": "Thank you for sponsoring dotenv as an company.",
+        "amount": 600,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["github-sponsors"]
+      }
+    ]
+  }
+}

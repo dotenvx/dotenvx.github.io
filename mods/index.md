@@ -10,14 +10,14 @@ title: "Mods"
     <a class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300" href="/chrome-extension">
       <div class="flex gap-x-2 items-center">
         <h5 class="font-bold text-lg">Chrome Extension</h5>
-        <span class="text-emerald-500 font-normal italic">coming soon</span>
+        <span class="text-blue-500 font-bold">new</span>
       </div>
       <p class="text-zinc-500">Decrypt your encrypted .env files directly on GitHub.</p>
     </a>
     <a class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300" href="https://github.com/dotenvx/dotenvx-ext-vault">
       <div class="flex gap-x-2 items-center">
         <h5 class="font-bold text-lg">ext vault</h5>
-        <span class="text-red-500 font-normal italic">deprecated</span>
+        <span class="text-red-500 font-normal">deprecated</span>
       </div>
       <p class="text-zinc-500">Manage .env.vault files (deprecated format)</p>
     </a>

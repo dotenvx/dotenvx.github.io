@@ -12,9 +12,9 @@ title: "Chrome Extension"
     </a>
   </div>
 
-  <video class="mt-10 mb-8 w-full rounded-md" controls>
+  <video class="mt-10 mb-8 w-full rounded-md border border-zinc-200 dark:border-zinc-800" controls>
     <source src="https://github.com/user-attachments/assets/8b4d9ac4-f195-4dc8-94cc-465fa896fd73" type="video/mp4">
     your browser does not support the video tag
   </video>
-  <p class="mb-24 text-lg">The extension provides the ability to decrypt your encrypted .env files while browsing them on GitHub. You can enter your private key in the configuration modal and then toggle encrypted/decrypted values while viewing your .env file.</p>
+  <p class="mb-24 text-md md:text-lg text-zinc-600">The extension provides the ability to decrypt your encrypted .env files while browsing them on GitHub. You can enter your private key in the configuration modal and then toggle encrypted/decrypted values while viewing your .env file.</p>
 </section>

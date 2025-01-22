@@ -4,7 +4,7 @@ title: "VS Code Extension"
 
 <section class="max-w-3xl mx-auto mt-20 flex flex-col px-5">
   <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">VS Code Extension</h1>
-  <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Decrypt your encrypted .env files directly inside VS Code.</p>
+  <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Decrypt your encrypted .env files in VS Code.</p>
 
   <div class="mx-auto mt-3 text-center">
     <a href="https://chromewebstore.google.com/detail/dotenvx/bgfjfohnmfhchfhcifedcncjdpmibfbp" target="_blank">

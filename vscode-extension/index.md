@@ -7,7 +7,7 @@ title: "VS Code Extension"
   <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Decrypt your encrypted .env files in VS Code.</p>
 
   <div class="mx-auto mt-3 text-center">
-    <a href="https://chromewebstore.google.com/detail/dotenvx/bgfjfohnmfhchfhcifedcncjdpmibfbp" target="_blank">
+    <a href="https://marketplace.visualstudio.com/items?itemName=dotenv.dotenvx-vscode" target="_blank">
       {% include logos/vscode-badge.html class="bg-[#007ACC] dark:bg-[#007ACC] w-60 rounded-md" %}
     </a>
   </div>
@@ -35,7 +35,7 @@ title: "VS Code Extension"
 
   <img src="https://github.com/user-attachments/assets/979da618-7a80-4129-a573-9ae122c49f34" class="rounded-md my-3 border border-zinc-200 dark:border-zinc-800"/>
 
-  <p class="mt-10 text-center"><a class="link-primary" href="https://chromewebstore.google.com/detail/dotenvx/bgfjfohnmfhchfhcifedcncjdpmibfbp" target="_blank">view extension &rarr;</a></p>
+  <p class="mt-10 text-center"><a class="link-primary" href="https://marketplace.visualstudio.com/items?itemName=dotenv.dotenvx-vscode" target="_blank">view extension &rarr;</a></p>
 
   <div class="mb-24"></div>
 </section>

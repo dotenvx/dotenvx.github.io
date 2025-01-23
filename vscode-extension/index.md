@@ -13,7 +13,7 @@ title: "VS Code Extension"
   </div>
 
   <video class="my-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800" controls>
-    <source src="https://github.com/user-attachments/assets/c5401116-9192-4340-be59-e691f2fe3b4e" type="video/mp4">
+    <source src="https://github.com/user-attachments/assets/b2d1f448-4706-4a56-8e00-1a41328db3e0" type="video/mp4">
     your browser does not support the video tag
   </video>
 

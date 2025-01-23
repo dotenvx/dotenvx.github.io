@@ -8,7 +8,7 @@ title: "VS Code Extension"
 
   <div class="mx-auto mt-3 text-center">
     <a href="https://marketplace.visualstudio.com/items?itemName=dotenv.dotenvx-vscode" target="_blank">
-      {% include logos/vscode-badge.html class="bg-[#007ACC] dark:bg-[#007ACC] w-60 rounded-md" %}
+      {% include logos/vscode-badge.html class="bg-[#387A26] dark:bg-[#387A26] w-60 rounded-md" %}
     </a>
   </div>
 

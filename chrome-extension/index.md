@@ -31,7 +31,7 @@ title: "Chrome Extension"
 
   <img src="https://github.com/user-attachments/assets/58026295-8b53-4e9f-8c82-8674496774c2" class="rounded-md my-3 border border-zinc-200 dark:border-zinc-800"/>
 
-  <p class="my-3 text-md md:text-lg text-zinc-600">Finally, click the lock icon to toggle your encrypted secrets. Cool!</p>
+  <p class="my-3 text-md md:text-lg text-zinc-600">Finally, click the lock icon to toggle your encrypted secrets. That's it!</p>
 
   <img src="https://github.com/user-attachments/assets/979da618-7a80-4129-a573-9ae122c49f34" class="rounded-md my-3 border border-zinc-200 dark:border-zinc-800"/>
 

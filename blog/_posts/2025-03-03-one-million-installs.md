@@ -8,7 +8,7 @@ excerpt: "Eight months ago, dotenvx was just an experiment. Today, it's an essen
 
 Eight months ago, dotenvx introduced a new way to think about [config management](/blog/2024/06/24/dotenvx-next-generation-config-management.html). Today, it's an essential secrets tool with over [1 million monthly installs](https://www.npmjs.com/package/@dotenvx/dotenvx) (and growing quickly).
 
-<a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank"><img src="https://github.com/user-attachments/assets/43a9b29a-c9f0-4b6b-890a-2c3db711ffeb" /></a>
+<a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank"><img src="https://github.com/user-attachments/assets/776ed814-b2d0-49be-a61f-98ed494c7aa3" /></a>
 
 That growth didn't happen by accident—dotenvx development has been heavy with [88 releases in 8 months](https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1383). That's a new release every 2.75 days!
 

@@ -30,9 +30,9 @@ It's aesthetic, it's effective, it's elegant.
 
 In order of importance, there are three big problems with `dotenv`:
 
-1. *leaking your .env file*
-2. *juggling multiple environments*
-3. *inconsistency across platforms*
+1. *Leaking your .env file*
+2. *Juggling multiple environments*
+3. *Inconsistency across platforms*
 
 All three pose risks to security, and the first does SIGNIFICANTLY.
 

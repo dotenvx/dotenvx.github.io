@@ -17,7 +17,7 @@ title: "Blog"
 
                 <div class="mt-2.5 flex items-center gap-1.5 md:gap-2 lg:mt-3">
 
-                  <img alt="Mot" loading="lazy" width="48" height="48" decoding="async" class="h-6 w-6 rounded-full object-cover" style="color:transparent" src="/assets/img/mot.png">
+                  <img alt="Mot" loading="lazy" width="48" height="48" decoding="async" class="h-6 w-6 rounded-full object-cover" style="color:transparent" src="/assets/img/mot.jpg">
 
                   <div class="flex gap-1">
                     <p class="text-zinc-900 dark:text-zinc-100">Mot</p>
@@ -42,7 +42,7 @@ title: "Blog"
 
                 <div class="mt-2.5 flex items-center gap-1.5 md:gap-2 lg:mt-3">
 
-                  <img alt="Mot" loading="lazy" width="48" height="48" decoding="async" class="h-6 w-6 rounded-full object-cover" style="color:transparent" src="/assets/img/mot.png">
+                  <img alt="Mot" loading="lazy" width="48" height="48" decoding="async" class="h-6 w-6 rounded-full object-cover" style="color:transparent" src="/assets/img/mot.jpg">
 
                   <div class="flex gap-1">
                     <p class="text-zinc-900 dark:text-zinc-100">Mot</p>

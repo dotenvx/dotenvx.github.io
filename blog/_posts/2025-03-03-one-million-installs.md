@@ -26,7 +26,7 @@ Dotenvx has grown fast, and a big part of that is developer involvement. In just
 * **Third-Party Documentation.** Users [wrote](https://medium.com/@t.dekiere/boost-dx-with-dotenvx-71e276dce6f6) [about](https://parottasalna.com/2024/06/30/migrating-from-env-to-dotenvx/) [dotenvx](https://dev.to/this-is-learning/exploring-dotenvx-46ng), made [videos](https://youtu.be/xcBHX2m2pNw?t=102) [about](https://www.youtube.com/watch?v=1p2MS8rKHzU&t=3s) [dotenvx](https://www.youtube.com/watch?v=APhfQ2xya9A), [recommended](https://www.reddit.com/r/webdev/comments/1gteux5/comment/lxmhzue/) [dotenvx](https://www.reddit.com/r/Python/comments/1gud1h9/comment/lxtv16s/), and [much](https://railway.com/template/zXEiVF) [more](https://forums.docker.com/t/docker-compose-argument-to-replace-env-file-directive-or-argument-to-enable-host-environment-passthrough/141671).
 * **Adoption and Dependents.** Most significantly, major projects adopted dotenvx and became [dotenvx dependents](https://github.com/dotenvx/dotenvx/network/dependents).
     * [NASA](https://github.com/nasa/earthdata-search)
-    * [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/fullstack-branching/secrets-and-vars/)
+    * [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2)
     * [Supabase](https://github.com/supabase/supabase/blob/master/examples/slack-clone/nextjs-slack-clone-dotenvx/README.md)
     * [Cloudflare](https://github.com/cloudflare/templates)
 

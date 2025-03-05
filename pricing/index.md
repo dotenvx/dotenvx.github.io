@@ -33,8 +33,7 @@ title: "Pricing"
         <h4 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl">$299/month billed annually, all-inclusive</h4>
         <p class="mt-3 mb-0.5 font-bold">No per-user charges. Your whole organization for one fixed price.</p>
         <p class="mb-4">If you prefer to pay month-to-month, it's $349/month.</p>
-        <!--<a href="/pro" class="btn-primary bg-green-700 dark:bg-green-600 dark:text-zinc-50 w-auto flex-none inline-block">Try it free for 75 days</a>-->
-        <a href="https://github.com/dotenvx/dotenvx/issues/259" class="btn-success w-auto flex-none inline-block">Coming soon. Subscribe for updates</a>
+        <a href="https://pro.dotenvx.com/signup" class="btn-success w-auto flex-none inline-block">Try it free for 75 days</a>
       </div>
     </div>
     <!-- free -->

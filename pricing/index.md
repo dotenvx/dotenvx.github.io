@@ -38,7 +38,7 @@ title: "Pricing"
       </div>
     </div>
     <!-- free -->
-    <div class="flex-2 flex flex-col rounded-lg w-full lg:w-80 border border-zinc-200 dark:border-zinc-800 border-r-0 rounded-r-none dark:bg-zinc-900">
+    <div class="flex-2 flex flex-col rounded-lg w-full lg:w-80 border border-zinc-200 dark:border-zinc-800 lg:border-r-0 lg:rounded-r-none dark:bg-zinc-900">
       <div class="p-6 flex flex-col gap-3">
         <div class="flex gap-1.5">
           <h2 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl py-1">dotenvx <span class="hidden">free</span></h2>

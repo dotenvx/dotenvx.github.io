@@ -49,7 +49,7 @@ title: "Pricing"
           <li>Open source</li>
           <li>Completely free</li>
           <li>Standalone, no cloud needed</li>
-          <li>Upgrade later, if you need syncing or team permissions</li>
+          <li>Upgrade later, if you need fully managed private keys</li>
         </ul>
       </div>
       <hr class="m-0 border-0 border-t border-zinc-200 m-0 p-0" />

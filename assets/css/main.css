@@ -15,19 +15,19 @@ body {
 }
 
 .btn-primary {
-  @apply text-center rounded-full bg-zinc-950 dark:bg-zinc-50 px-4 py-3.5 text-sm font-semibold text-white dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
+  @apply text-center rounded-md bg-zinc-950 dark:bg-zinc-50 px-4 py-2.5 font-semibold text-zinc-50 dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
 }
 
 .btn-secondary {
-  @apply text-center rounded-full bg-zinc-50 dark:bg-zinc-900 lg:dark:bg-zinc-950 px-4 py-3.5 text-sm font-semibold text-zinc-950 dark:text-zinc-300 dark:hover:text-zinc-50 shadow-sm hover:bg-zinc-200 dark:hover:bg-zinc-800 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150;
+  @apply text-center rounded-md bg-zinc-200 dark:bg-zinc-800 px-4 py-2.5 font-semibold text-zinc-700 dark:text-zinc-300 dark:hover:text-zinc-50 shadow-sm hover:bg-zinc-300 dark:hover:bg-zinc-700 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150;
 }
 
 .btn-text {
-  @apply text-center rounded-full px-4 py-2.5 text-sm font-semibold text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150;
+  @apply text-center rounded-md px-4 py-2.5 font-semibold text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150;
 }
 
 .btn-outline {
-  @apply text-center rounded-md cursor-pointer border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 px-3.5 py-3 font-medium text-zinc-950 dark:text-zinc-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
+  @apply text-center rounded-md cursor-pointer border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 px-3.5 py-2.5 font-medium text-zinc-950 dark:text-zinc-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200;
 }
 
 .link-primary {

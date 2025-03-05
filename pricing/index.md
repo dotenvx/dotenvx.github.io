@@ -34,7 +34,7 @@ title: "Pricing"
         <p class="mt-3 mb-0.5 font-bold">No per-user charges. Your whole organization for one fixed price.</p>
         <p class="mb-4">If you prefer to pay month-to-month, it's $349/month.</p>
         <!--<a href="/pro" class="btn-primary bg-green-700 dark:bg-green-600 dark:text-zinc-50 w-auto flex-none inline-block">Try it free for 75 days</a>-->
-        <a href="https://github.com/dotenvx/dotenvx/issues/259" class="btn-primary bg-green-700 dark:bg-green-600 dark:text-zinc-50 w-auto flex-none inline-block">Coming soon. Subscribe for updates</a>
+        <a href="https://github.com/dotenvx/dotenvx/issues/259" class="btn-success w-auto flex-none inline-block">Coming soon. Subscribe for updates</a>
       </div>
     </div>
     <!-- free -->
@@ -42,7 +42,7 @@ title: "Pricing"
       <div class="p-6 flex flex-col gap-3">
         <div class="flex gap-1.5">
           <h2 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl py-1">dotenvx <span class="hidden">free</span></h2>
-          <div class="inline-block bg-zinc-100 text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">FREE</div>
+          <div class="inline-block bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold px-2.5 py-1 text-lg italic rounded-sm">FREE</div>
         </div>
         <p class="text-xl font-light">Ideal for solo developers, open source projects, and small teams.</p>
         <ul class="ml-6 list-disc list-outside text-zinc-700 dark:text-zinc-300">
@@ -56,7 +56,7 @@ title: "Pricing"
       <div class="p-6">
         <h4 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl">Free forever</h4>
         <p class="mt-3 mb-4">You manage the private keys.</p>
-        <a href="/docs/install" class="btn-outline w-auto flex-none inline-block">Install CLI</a>
+        <a class="btn-success w-auto flex-none" href="/docs/install" >Install for free</a>
       </div>
     </div>
   </div>

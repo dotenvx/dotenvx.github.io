@@ -56,7 +56,7 @@ title: "Pricing"
       <div class="p-6">
         <h4 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl">Free forever</h4>
         <p class="mt-3 mb-4">You manage the private keys.</p>
-        <a href="/docs/install" class="btn-outline w-auto flex-none inline-block">Install for free</a>
+        <a href="/docs/install" class="btn-outline w-auto flex-none inline-block">Install CLI</a>
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ title: "Pricing"
           <h2 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl py-1">dotenvx <span class="hidden">pro</span></h2>
           <div class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
         </div>
-        <p class="text-xl font-light">For teams and organizations that need secure, scalable secrets management. All-inclusive fixed pricing.</p>
+        <p class="text-xl font-light">For teams and organizations that need secure, scalable secrets management. All-inclusive fixed pricing. 🏆</p>
         <ul class="ml-6 list-disc list-outside text-zinc-700 dark:text-zinc-300">
           <li class="font-bold">Extended 75-day free trial</li>
           <li class=""><span class="font-bold">Fixed price</span> no per-user charges</li>

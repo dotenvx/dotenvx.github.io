@@ -50,6 +50,10 @@ body {
   @apply text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-500;
 }
 
+.link-footer {
+  @apply text-zinc-400 dark:text-zinc-600 hover:text-zinc-500 dark:hover:text-zinc-500;
+}
+
 .btick {
   font-weight: inherit;
 }

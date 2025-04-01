@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: mot
+author: "Scott Motte – Mot"
 title: "It adds up"
 image: "/assets/img/blog/blog-7.jpg"
 excerpt: "It's tough carving out an hour here, 30 minutes there, to pursue a dream. But it adds up."

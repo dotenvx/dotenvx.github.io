@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: mot
+author: "Scott Motte – Mot"
 title: "What Does #1 on Hacker News Get You"
 image: "/assets/img/blog/blog-2.png"
 excerpt: "When your project hits #1 on Hacker News someday, here's what you can expect in terms of visits, stars, and more."

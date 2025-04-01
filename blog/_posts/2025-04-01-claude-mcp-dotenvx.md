@@ -6,7 +6,7 @@ image: "/assets/img/blog/blog-9.png"
 excerpt: "Add Dotenvx as a Claude MCP Server."
 ---
 
-<p class="text-center small">Add Dotenvx to Claude–as an MCP Server.</p>
+<p class="text-center small">Add Dotenvx to Claude as an MCP Server.</p>
 
 <video class="my-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800" controls>
 <source src="https://github.com/user-attachments/assets/5f974de0-1831-4ae7-a3c8-a724418863db" type="video/mp4">
@@ -82,7 +82,7 @@ Now you can ask Claude to *encrypt my .env file* and it will do it!
 
 Additionally, be sure to share [llms.txt](https://dotenvx.com/llms.txt) and [llms-full.txt](https://dotenvx.com/llms-full.txt) with Claude to make it smarter about all this.
 
-Thanks for using dotenvx.
+Thanks for using Dotenvx.
 
 ---
 

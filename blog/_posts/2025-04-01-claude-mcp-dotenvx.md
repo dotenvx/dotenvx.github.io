@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: mot
+author: "Scott Motte – Mot"
 title: "Claude MCP + Dotenvx"
 image: "/assets/img/blog/blog-9.png"
 excerpt: "Add Dotenvx as a Claude MCP Server."

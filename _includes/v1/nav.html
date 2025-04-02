@@ -1,20 +1,20 @@
 <div class="top-0 dark:rounded-t-lg border-t dark:border-t border-t-yellow-300 z-20">
   <div class="mx-auto w-full">
-    <div class="mx-auto flex pt-2 w-full items-center justify-between transition pl-5 pr-8">
+    <div class="mx-auto flex pt-2 w-full items-center justify-between transition pl-2 lg:pl-5 lg:pr-8 pr-0.5 h-12">
       <div class="flex items-center justify-between">
         <a href="/" class="inline-block w-10 h-10 mr-3">
           {% include v1/components/logo.html class="w-10 h-10" %}
         </a>
-        <a href="/pricing" role="button" class="btn-nav text-sm">Pricing</a>
-        <a href="/docs" role="button" class="btn-nav text-sm">Docs</a>
+        <a href="/docs" role="button" class="link-nav">Documentation</a>
       </div>
       <div class="flex items-center gap-x-3.5">
+        <a href="/pro" role="button" class="hidden md:block link-nav mr-2">Pro</a>
+        <a href="/login" role="button" class="hidden md:block link-nav mr-1">Sign in</a>
+        <a href="/pricing" role="button" class="hidden md:block btn-success text-sm rounded-full py-2 text-sm">Pricing + Sign up</a>
+        <div class="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15"></div>
         {% include v1/components/toggle-mode.html %}
-
-        <a href="https://github.com/dotenvx/dotenvx" class="opacity-75 hover:opacity-100">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="h-8 w-8 text-zinc-900 dark:invert">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-          </svg>
+        <a href="/login" class="hidden md:block opacity-75 hover:opacity-100">
+          {% include logos/cloak-circle.html class="w-8 h-8 text-zinc-900 dark:invert" %}
         </a>
       </div>
     </div>

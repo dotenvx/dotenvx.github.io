@@ -8,7 +8,7 @@ title: Pro
       <h1 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl py-1">dotenvx <span class="hidden">pro</span></h1>
       <div class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
     </div>
-    <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Management, Reimagined 🧙</h1>
+    <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Management–Done Right.</h1>
     <div class="text-center">
       <a href="/docs/pro" class="flex flex-col gap-2">
         <span class="link-primary font-semibold underline">Read the docs</span>

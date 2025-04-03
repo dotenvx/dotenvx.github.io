@@ -33,7 +33,7 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
   <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="flex-1">
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloak .env.keys</h2>
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloak the keys</h2>
       <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Cloak private keys with a single command. They vanish from <span class="btick">.env.keys</span> — but stay accessible when you need them.</p>
     </div>
     <div class="flex-1 min-w-0 w-full">

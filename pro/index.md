@@ -20,7 +20,7 @@ title: Pro
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
   <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="flex-1">
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypt .env</h2>
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypted</h2>
       <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Encrypt your <span class="btick">.env</span> file so it can be safely committed to your repo.
 Secrets become part of your code — versioned, synced, and shareable.</p>
     </div>
@@ -33,7 +33,7 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
   <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="flex-1">
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloak your keys</h2>
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloaked</h2>
       <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Cloak private keys with a single command. They vanish from <span class="btick">.env.keys</span> — but stay accessible when you need them.</p>
     </div>
     <div class="flex-1 min-w-0 w-full">
@@ -43,7 +43,7 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
-  <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Treat secrets like code</h2>
+  <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Secrets as Code</h2>
   <p class="mx-auto mt-3 text-center md:text-start leading-relaxed text-md md:text-lg">With encryption and cloaking in place, secrets move through git. Unlock familiar workflows like PR review, approvals, branching, and deploys — now for secrets too.</p>
 
   <div class="mt-6 text-center">

@@ -1,4 +1,4 @@
-<a href="/features/run-anywhere" class="flex flex-col gap-1">
+<a href="{{ include.href }}" class="flex flex-col gap-1">
   {% if include.mp4 %}
     <div class="overflow-hidden rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400 aspect-[16/10]">
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
@@ -7,7 +7,7 @@
       </video>
     </div>
   {% else %}
-    <img src="https://lipsum.app/1152x720/" class="rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400"/>
+    <img src="{{ include.png }}" class="rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400"/>
   {% endif %}
   <h5 class="font-bold text-lg link-primary text-center">{{ include.feature }}</h5>
   <p class="text-center text-zinc-500 text-sm">{{ include.description }}</p>

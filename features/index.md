@@ -11,6 +11,6 @@ title: Features
     {% include v1/components/feature-box2.html feature="Multiple Environments" description="Switch environments easily with .env, .env.production, and more." mp4="https://github.com/user-attachments/assets/6fadc884-371e-4aec-a14c-d5e7bce2a48a" href="/features/multiple-environments" %}
     {% include v1/components/feature-box2.html feature="Encryption" description="Encrypt your .env files using asymmetric keys." png="https://github.com/user-attachments/assets/634ce9a4-48f4-48db-829e-b792bfa8c930" href="/features/encryption" %}
   </div>
-
-  <p class="text-center my-20 text-zinc-500 italic">~</p>
 </section>
+{% include v1/pro.html %}
+{% include v1/mods.html %}

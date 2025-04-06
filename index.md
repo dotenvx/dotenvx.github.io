@@ -9,8 +9,6 @@ title: ""
 {% include v1/encryption.html %}
 {% include v1/whitepaper.html %}
 {% include v1/features.html %}
-{% include v1/pro.html %}
-{% include v1/mods.html %}
 {% include v1/creator.html %}
 {% include v1/faq.html %}
 </div>

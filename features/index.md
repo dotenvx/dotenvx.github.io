@@ -10,6 +10,7 @@ title: Features
     {% include v1/components/feature-box2.html feature="Run Anywhere" description="Cross-platform. It works everywhere." mp4="https://github.com/user-attachments/assets/a1604f27-c08d-478a-b7dd-86ece1e157ef" href="/features/run-anywhere" %}
     {% include v1/components/feature-box2.html feature="Multiple Environments" description="Switch environments easily with .env, .env.production, and more." mp4="https://github.com/user-attachments/assets/6fadc884-371e-4aec-a14c-d5e7bce2a48a" href="/features/multiple-environments" %}
     {% include v1/components/feature-box2.html feature="Encryption" description="Encrypt your .env files using asymmetric keys." png="https://github.com/user-attachments/assets/634ce9a4-48f4-48db-829e-b792bfa8c930" href="/features/encryption" %}
+    {% include v1/components/feature-box2.html feature="Multiple Files" description="Compose multiple .env files flexibly." png="https://github.com/user-attachments/assets/cd68a192-9877-4f37-90e5-bdddaf59cc88" href="/features/multiple-files" %}
   </div>
 </section>
 {% include v1/pro.html %}

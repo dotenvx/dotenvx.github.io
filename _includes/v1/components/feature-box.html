@@ -1,3 +1,12 @@
+{% if include.href %}
+<a href="{{ include.href }}" class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300">
+  <div class="flex gap-x-2 items-center">
+    <h5 class="font-bold text-lg">{{ include.feature  }}</h5>
+    <span class="text-zinc-500 font-normal italic">{{ include.soon }}</span>
+  </div>
+  <p class="text-zinc-500">{{ include.description }}</p>
+</a>
+{% else %}
 <div class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300">
   <div class="flex gap-x-2 items-center">
     <h5 class="font-bold text-lg">{{ include.feature  }}</h5>
@@ -5,3 +14,4 @@
   </div>
   <p class="text-zinc-500">{{ include.description }}</p>
 </div>
+{% endif %}

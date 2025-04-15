@@ -1,17 +1,23 @@
-{% if include.href %}
-<a href="{{ include.href }}" class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300">
-  <div class="flex gap-x-2 items-center">
-    <h5 class="font-bold text-lg">{{ include.feature  }}</h5>
-    <span class="text-zinc-500 font-normal italic">{{ include.soon }}</span>
+<div class="relative">
+  {% if include.href %}
+  <a href="{{ include.href }}" class="block card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300">
+    <div class="flex gap-x-2 items-center">
+      <h5 class="font-bold text-lg">{{ include.feature  }}</h5>
+      <span class="text-zinc-500 font-normal italic">{{ include.soon }}</span>
+    </div>
+    <p class="text-zinc-500">{{ include.description }}</p>
+  </a>
+  {% else %}
+  <div class="block card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300">
+    <div class="flex gap-x-2 items-center">
+      <h5 class="font-bold text-lg">{{ include.feature  }}</h5>
+      <span class="text-zinc-500 font-normal italic">{{ include.soon }}</span>
+    </div>
+    <p class="text-zinc-500">{{ include.description }}</p>
   </div>
-  <p class="text-zinc-500">{{ include.description }}</p>
-</a>
-{% else %}
-<div class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300">
-  <div class="flex gap-x-2 items-center">
-    <h5 class="font-bold text-lg">{{ include.feature  }}</h5>
-    <span class="text-zinc-500 font-normal italic">{{ include.soon }}</span>
-  </div>
-  <p class="text-zinc-500">{{ include.description }}</p>
+  {% endif %}
+
+  {% if include.pro %}
+  <div class="z-50 absolute -right-4 top-1 rotate-[20deg] origin-top-right inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
+  {% endif %}
 </div>
-{% endif %}

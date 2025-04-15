@@ -1,14 +1,24 @@
-<a href="{{ include.href }}" class="flex flex-col gap-1">
-  {% if include.mp4 %}
-    <div class="overflow-hidden rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400 aspect-[16/10]">
-      <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="{{ include.mp4 }}" type="video/mp4">
-        your browser does not support the video tag
-      </video>
-    </div>
-  {% else %}
-    <img src="{{ include.png }}" class="rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400"/>
+<div class="relative">
+  <a href="{{ include.href }}" class="flex flex-col gap-1">
+    {% if include.mp4 %}
+      <div class="overflow-hidden rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400 aspect-[16/10]">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <source src="{{ include.mp4 }}" type="video/mp4">
+          your browser does not support the video tag
+        </video>
+      </div>
+    {% elsif include.png %}
+      <img src="{{ include.png }}" class="overflow-hidden rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400 aspec-[16/10]"/>
+    {% elsif include.txt %}
+      <div class="text-center flex items-center justify-center overflow-hidden rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400 aspect-[16/10] bg-zinc-100 dark:bg-zinc-900"><span class="font-bold font-mono italic">{{ include.txt }}</span></div>
+    {% else %}
+      <div class="overflow-hidden rounded-lg border-4 border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-400 aspect-[16/10] bg-zinc-100 dark:bg-zinc-900"></div>
+    {% endif %}
+    <h5 class="font-bold text-lg link-primary text-center">{{ include.feature }}</h5>
+    <p class="text-center text-zinc-500 text-sm">{{ include.description }}</p>
+  </a>
+
+  {% if include.pro %}
+    <div class="z-50 absolute -right-4 top-1 rotate-[30deg] origin-top-right inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
   {% endif %}
-  <h5 class="font-bold text-lg link-primary text-center">{{ include.feature }}</h5>
-  <p class="text-center text-zinc-500 text-sm">{{ include.description }}</p>
-</a>
+</div>

@@ -11,6 +11,10 @@ title: Features
     {% include v1/components/feature-box2.html feature="Multiple Environments" description="Switch environments easily with .env, .env.production, and more." mp4="https://github.com/user-attachments/assets/6fadc884-371e-4aec-a14c-d5e7bce2a48a" href="/features/multiple-environments" %}
     {% include v1/components/feature-box2.html feature="Encryption" description="Encrypt your .env files using asymmetric keys." png="https://github.com/user-attachments/assets/634ce9a4-48f4-48db-829e-b792bfa8c930" href="/features/encryption" %}
     {% include v1/components/feature-box2.html feature="Multiple Files" description="Compose multiple .env files flexibly." png="https://github.com/user-attachments/assets/cd68a192-9877-4f37-90e5-bdddaf59cc88" href="/features/multiple-files" %}
+    {% include v1/components/feature-box2.html feature="Variable Expansion" description="Reference and expand variables already on your machine for use in your .env file." href="/features/variable-expansion" txt="${EXPAND}" %}
+    {% include v1/components/feature-box2.html feature="Command Substitution" description="Add the output of a command to one of your variables in your .env file." href="/features/command-substitution" txt="$(COMMAND)" %}
+    {% include v1/components/feature-box2.html feature="Cloaked Keys" description="Hide private keys with zero-knowledge encryption. Share access, not the key." href="/features/cloaked-keys" txt="dotenvx pro cloak" pro="true" %}
+    {% include v1/components/feature-box2.html feature="Pull Requests" description="Review and approve .env changes through GitHub pull requests." href="/features/pull-requests" txt="Pull Requests" pro="true" %}
   </div>
 </section>
 {% include v1/pro.html %}

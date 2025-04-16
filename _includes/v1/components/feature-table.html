@@ -1,73 +1,109 @@
 <table class="min-w-full text-left border-0">
-  <thead class="bg-zinc-100 dark:bg-zinc-900">
+  <thead class="bg-zinc-100 dark:bg-zinc-900 sticky top-0 z-10">
     <tr>
-      <th class="px-4 py-3 border-b border-b-zinc-200 dark:border-b-zinc-700"></th>
-      <th class="px-4 py-3 border-b border-b-zinc-200 dark:border-b-zinc-700 leading-tight"><a href="https://github.com/dotenvx/dotenvx" target="_blank">{% include logos/github.html class="h-4 w-4 mb-0.5 inline-block" %} <span class="">OSS</span></a></th>
-      <th class="px-4 py-3 border-b border-b-zinc-200 dark:border-b-zinc-700">Pro</th>
+      <th class="px-1 md:px-2 lg:px-4 py-3 border-b border-b-zinc-200 dark:border-b-zinc-700"></th>
+      <th class="px-1 md:px-2 lg:px-4 py-3 border-b border-b-zinc-200 dark:border-b-zinc-700 leading-tight text-lg">
+        <a href="https://github.com/dotenvx/dotenvx" target="_blank">{% include logos/github.html class="h-4 w-4 mb-0.5 mr-1 inline-block" %} <span class="">OSS</span></a>
+      </th>
+      <th class="px-1 md:px-2 lg:px-4 py-3 border-b border-b-zinc-200 dark:border-b-zinc-700 text-xl">
+        <a href="/pro">
+          <span class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</span>
+        </a>
+      </th>
+
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right">Audience</td>
-      <td class="px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Hobbyists</td>
-      <td class="px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Small-Medium Business</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right"></td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">a better dotenv</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Secrets Management–Done Right 🏆</td>
     </tr>
-		{% include v1/components/feature-table-row.html feature="Run anywhere" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Multi-environment" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Encrypted envs" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Monorepo" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Multiple .env files" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Multi-line values" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Variable expansion" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Command substitution" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Get/Set" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Scan" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Contextual help" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Debug" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Append .gitignore" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Generate .env.example" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Prebuild" oss="✅" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Precommit" oss="✅" pro="✅" %}
+
+    <tr>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right">Audience</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Hobbyists</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Small-Medium Business</td>
+    </tr>
+    {% capture oss %}
+      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+    {% endcapture %}
+    {% capture pro %}
+      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+    {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="Run anywhere" oss=oss pro=pro href="/features/run-anywhere" %}
+    {% include v1/components/feature-table-row.html feature="Multi-environment" oss=oss pro=pro href="/features/multiple-environments" %}
+    {% include v1/components/feature-table-row.html feature="Encrypted envs" oss=oss pro=pro href="/features/encryption" %}
+    {% include v1/components/feature-table-row.html feature="Monorepo" oss=oss pro=pro href="/docs/#monorepos" %}
+    {% include v1/components/feature-table-row.html feature="Multiple .env files" oss=oss pro=pro href="/features/multiple-files" %}
+    {% include v1/components/feature-table-row.html feature="Multi-line values" oss=oss pro=pro %}
+    {% include v1/components/feature-table-row.html feature="Variable expansion" oss=oss pro=pro href="/docs/advanced/run-variable-expansion" %}
+    {% include v1/components/feature-table-row.html feature="Command substitution" oss=oss pro=pro href="/docs/advanced/run-command-substitution" %}
+    {% include v1/components/feature-table-row.html feature="Get/Set" oss=oss pro=pro href="/docs/advanced/get-key" %}
+    {% include v1/components/feature-table-row.html feature="Scan" oss=oss pro=pro %}
+    {% include v1/components/feature-table-row.html feature="Contextual help" oss=oss pro=pro %}
+    {% include v1/components/feature-table-row.html feature="Debug" oss=oss pro=pro href="/docs/advanced/run-debug" %}
+    {% include v1/components/feature-table-row.html feature="Append .gitignore" oss=oss pro=pro href="/docs/advanced/gitignore" %}
+    {% include v1/components/feature-table-row.html feature="Generate .env.example" oss=oss pro=pro href="docs/advanced/genexample" %}
+    {% include v1/components/feature-table-row.html feature="Prebuild" oss=oss pro=pro href="/docs/advanced/prebuild" %}
+    {% include v1/components/feature-table-row.html feature="Precommit" oss=oss pro=pro href="/docs/advanced/precommit" %}
+
+    {% capture oss %}
+      {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
+    {% endcapture %}
+
+    {% include v1/components/feature-table-row.html feature="Cloaked private keys" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Pull requests" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Team Sync" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="GitHub SSO" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Dedicated support" oss="None" pro="Email" trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="License" oss="BSD-3" pro="Commercial" %}
+    {% include v1/components/feature-table-row.html feature="Pricing" oss="Free" pro="$299/month" %}
     <!--
     <tr>
-      <td class="px-4 py-2 border-b text-right">Variable expansion</td>
-      <td class="px-4 py-2 border-b">✅</td>
-      <td class="px-4 py-2 border-b">✅</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b text-right">Variable expansion</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
     </tr>
     <tr>
-      <td class="px-4 py-2 border-b text-right">Command substitution</td>
-      <td class="px-4 py-2 border-b">✅</td>
-      <td class="px-4 py-2 border-b">✅</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b text-right">Command substitution</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
     </tr>
     -->
-		{% include v1/components/feature-table-row.html feature="Pro CLI" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Web UI" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Sync .env files" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Secrets via pull request" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Managed private keys" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="GitHub SSO" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Sync to VSCode" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Sync to Chrome" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Trusted devices" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Activity logs" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="24/7/365 support" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Personal onboarding" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Cloud backups" oss="⛔️" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Unlimited projects" oss="n/a" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Unlimited secrets" oss="n/a" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Unlimited teammates" oss="n/a" pro="✅" %}
-		{% include v1/components/feature-table-row.html feature="Zero-knowledge encryption" oss="n/a" pro="✅" %}
+    <!--
+    {% include v1/components/feature-table-row.html feature="Pro CLI" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Web UI" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Sync .env files" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Secrets via pull request" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Managed private keys" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="GitHub SSO" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Sync to VSCode" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Sync to Chrome" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Trusted devices" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Activity logs" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="24/7/365 support" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Personal onboarding" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Cloud backups" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Unlimited projects" oss="n/a" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Unlimited secrets" oss="n/a" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Unlimited teammates" oss="n/a" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Zero-knowledge encryption" oss="n/a" pro="✅" %}
+    -->
     <!--{% include v1/components/feature-table-row.html feature="Extended 75-day free trial" oss="n/a" pro="✅" %}-->
-		{% include v1/components/feature-table-row.html feature="Dedicated support" oss="None" pro="Email" %}
-		{% include v1/components/feature-table-row.html feature="License" oss="BSD-3" pro="Commercial" %}
-		{% include v1/components/feature-table-row.html feature="Pricing" oss="Free" pro="$299/month" %}
     <tr>
-      <td class="px-4 py-4"></td>
-      <td class="px-4 py-4">
-        <a class="btn-secondary w-auto flex-none" href="https://github.com/dotenvx/dotenvx" target="_blank">Get started ↗</a>
+      <td class="px-1 md:px-2 lg:px-4 py-4"></td>
+      <td class="px-1 md:px-2 lg:px-4 py-4">
+        <a href="https://github.com/dotenvx/dotenvx" class="btn-secondary w-auto flex-none inline-block" target="_blank">
+          <span class="hidden md:block">Get started ↗</span>
+          <span class="block md:hidden">Start ↗</span>
+        </a>
       </td>
-      <td class="px-4 py-4">
-        <a href="https://pro.dotenvx.com/signup" class="btn-success w-auto flex-none inline-block">Try it free for 75 days</a>
+      <td class="px-1 md:px-2 lg:px-4 py-4">
+        <a href="https://pro.dotenvx.com/signup" class="btn-success w-auto flex-none inline-block">
+          <span class="hidden md:block">Try it free for 75 days</span>
+          <span class="block md:hidden">Try Free 75 days</span>
+        </a>
       </td>
     </tr>
   </tbody>

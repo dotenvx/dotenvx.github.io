@@ -3,16 +3,16 @@
     <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
 
       <div class="flex-1 min-w-0">
-        <h2 class="my-5 text-center md:text-start text-5xl md:text-4xl lg:text-3xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Read the Whitepaper</h2>
+        <h2 class="my-5 text-center md:text-start text-3xl md:text-xl lg:text-xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Read the Whitepaper</h2>
 
-        <h4 class="text-center md:text-start leading-relaxed text-md md:text-lg my-5 italic font-semibold">Dotenvx: Reducing Secrets Risk with Cryptographic Separation</h4>
+        <h4 class="text-center md:text-start leading-relaxed text-md md:text-lg my-5 font-serif">Dotenvx: Reducing Secrets Risk with Cryptographic Separation</h4>
 
-        <p class="text-start leading-relaxed text-md"><span class="font-bold">Abstract.</span> An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. While secrets managers offer centralized storage and distribution, their design creates a large blast radius, risking exposure of thousands or even millions of secrets. We propose a solution that reduces the blast radius by splitting secrets management into two distinct components: an encrypted secrets file and a separate decryption key.</p>
+        <p class="text-start leading-relaxed text-sm"><span class="font-bold">Abstract.</span> An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. While secrets managers offer centralized storage and distribution, their design creates a large blast radius, risking exposure of thousands or even millions of secrets. We propose a solution that reduces the blast radius by splitting secrets management into two distinct components: an encrypted secrets file and a separate decryption key.</p>
 
-        <p class="my-5 text-center md:text-start"><a href="/dotenvx.pdf" class="link-primary font-bold">Read the Whitepaper ∙ dotenvx.pdf</a></p>
+        <p class="my-5 text-center md:text-start"><a href="/dotenvx.pdf" class="link-primary font-bold">Read the Whitepaper</a></p>
       </div>
       
-      <div class="flex-1 min-w-0 w-full hidden md:block pt-4">
+      <div class="flex-1 min-w-0 w-full hidden md:block border-2 border-zinc-500 drop-shadow-lg">
         <iframe src="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="w-[700px] aspect-[8.5/11] max-w-full max-h-screen border-0 mx-auto"></iframe>
       </div>
 

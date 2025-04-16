@@ -60,6 +60,6 @@ title: "Pricing"
     </div>
   </div>
 	<div class="mt-20 max-w-3xl mx-auto w-full overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-lg">
-		{% include v1/components/feature-table.html %}
+	  {% include v1/components/feature-table.html %}
 	</div>
 </section>

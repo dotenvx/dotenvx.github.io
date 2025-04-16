@@ -197,3 +197,17 @@ border-color: #222529 !important;
 .screenshot img {
 width: 100%;
 }
+
+/* scroll left carousel */
+@keyframes animate-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-left {
+  animation: animate-left 30s linear infinite;
+}

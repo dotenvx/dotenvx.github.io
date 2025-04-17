@@ -198,8 +198,7 @@ border-color: #222529 !important;
 width: 100%;
 }
 
-/* scroll left carousel */
-@keyframes animate-left {
+@keyframes marquee-scroll {
   0% {
     transform: translateX(0%);
   }
@@ -208,6 +207,12 @@ width: 100%;
   }
 }
 
-.animate-left {
-  animation: animate-left 30s linear infinite;
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
 }

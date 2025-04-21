@@ -9,14 +9,14 @@ title: Pro
       <div class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
     </div>
     <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Management–Done Right.</h1>
-    <div class="text-center">
-      <a href="/docs/pro" class="flex flex-col gap-2">
-        <span class="link-primary font-semibold underline">Read the docs</span>
-      </a>
-    </div>
+		<p class="mx-auto my-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2">Bring secrets manager-level workflows to your .env files. <span class="text-purple-500 font-bold">In beta!</span></p>
+		<div class="text-center">
+			<a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Read the docs</span></a>
+		</div>
   </div>
 </section>
 
+<!--
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
   <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="flex-1">
@@ -50,7 +50,6 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
     [depict secrets as code]
   </div>
 
-  <!--
   <div class="mt-8 flex flex-col gap-3 text-center">
     <div class="italic">
       "Our company was exposed to the CircleCI breach. Encryption would have protected us. We're using it now."
@@ -65,10 +64,13 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
       </div>
     </div>
   </div>
-  -->
 </section>
 
+-->
+
+<!--
 <section class="w-full max-w-5xl mx-auto px-6 mt-20 md:mt-40">
   <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Team Sync</h2>
   <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Stay in sync with a single command.</p>
 </section>
+-->

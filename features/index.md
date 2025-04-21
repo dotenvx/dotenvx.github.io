@@ -17,6 +17,7 @@ title: Features
     {% include v1/components/feature-box2.html feature="Set" description="Set a single key/value." href="/features/set-key-value" txt="set KEY value" %}
     {% include v1/components/feature-box2.html feature="Gitignore" description="Gitignore your .env files." href="/features/gitignore" txt="gitignore" %}
     {% include v1/components/feature-box2.html feature="Precommit" description="Prevent .env files from being committed to code." href="/features/precommit" txt="precommit" %}
+    {% include v1/components/feature-box2.html feature="Prebuild" description="Prevent .env files from being built to code." href="/features/prebuild" txt="prebuild" %}
 
     <!--
     {% include v1/components/feature-box2.html feature="Cloaked Keys" description="Hide private keys with zero-knowledge encryption. Share access, not the key." href="/features/cloaked-keys" txt="dotenvx pro cloak" pro="true" %}

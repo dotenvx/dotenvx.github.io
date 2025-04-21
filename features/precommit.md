@@ -14,5 +14,5 @@ title: Precommit
     your browser does not support the video tag
   </video>
 
-  <p class="text-center"><a class="link-primary" href="/docs/advanced/precommit">See documentation</a></p>
+  <p class="text-center"><a class="link-primary" href="/docs/advanced/precommit-install">See documentation</a></p>
 </section>

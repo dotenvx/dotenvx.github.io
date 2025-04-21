@@ -13,6 +13,9 @@ title: Features
     {% include v1/components/feature-box2.html feature="Multiple Files" description="Compose multiple .env files flexibly." txt="-f .env.local -f .env" href="/features/multiple-files" %}
     {% include v1/components/feature-box2.html feature="Variable Expansion" description="Reference and expand variables already on your machine for use in your .env file." href="/features/variable-expansion" txt="${EXPAND}" %}
     {% include v1/components/feature-box2.html feature="Command Substitution" description="Add the output of a command to one of your variables in your .env file." href="/features/command-substitution" txt="$(COMMAND)" %}
+    {% include v1/components/feature-box2.html feature="Get" description="Return a single environment variable's value." href="/features/get-key" txt="get KEY" %}
+    {% include v1/components/feature-box2.html feature="Set" description="Set a single key/value." href="/features/set-key-value" txt="set KEY value" %}
+
     <!--
     {% include v1/components/feature-box2.html feature="Cloaked Keys" description="Hide private keys with zero-knowledge encryption. Share access, not the key." href="/features/cloaked-keys" txt="dotenvx pro cloak" pro="true" %}
     {% include v1/components/feature-box2.html feature="Pull Requests" description="Review and approve .env changes through GitHub pull requests." href="/features/pull-requests" txt="Pull Requests" pro="true" %}

@@ -2,18 +2,18 @@
 title: Pro
 ---
 
-<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-40">
+<section class="w-full max-w-5xl mx-auto px-6 mt-10">
   <div class="flex gap-3 h-full flex-col items-center justify-center">
-    <div class="flex gap-1.5 mt-5 text-center leading-relaxed text-lg md:text-2xl">
+    <div class="flex gap-1.5 text-center leading-relaxed">
       <h1 class="font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50 text-2xl py-1">dotenvx <span class="hidden">pro</span></h1>
       <div class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
     </div>
-    <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Management–Done Right.</h1>
-		<p class="mx-auto my-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2">Bring secrets manager-level workflows to your .env files. <span class="text-purple-500 font-bold">In beta!</span></p>
-		<div class="text-center">
-			<a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Read the docs</span></a>
-		</div>
   </div>
+  <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Management–Done Right.</h2>
+  <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Add secrets manager-level workflows to your .env files. <span class="text-purple-500 font-bold">In beta!</span></p>
+  <p class="text-center">
+    <a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Read the docs</span></a>
+  </p>
 </section>
 
 <!--

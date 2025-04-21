@@ -17,5 +17,4 @@ title: Features
     {% include v1/components/feature-box2.html feature="Pull Requests" description="Review and approve .env changes through GitHub pull requests." href="/features/pull-requests" txt="Pull Requests" pro="true" %}
   </div>
 </section>
-{% include v1/pro.html %}
 {% include v1/mods.html %}

@@ -13,4 +13,6 @@ title: Encryption
     <source src="https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d" type="video/mp4">
     your browser does not support the video tag
   </video>
+
+  <p class="text-center"><a class="link-primary" href="/docs/quickstart#add-encryption">See documentation</a></p>
 </section>

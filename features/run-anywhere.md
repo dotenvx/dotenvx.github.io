@@ -13,4 +13,6 @@ title: Run Anywhere
     <source src="https://github.com/user-attachments/assets/7fd8f338-38d2-4875-9091-d08fc3134521" type="video/mp4">
     your browser does not support the video tag
   </video>
+
+  <p class="text-center"><a class="link-primary" href="/docs/quickstart#run-anywhere">See documentation</a></p>
 </section>

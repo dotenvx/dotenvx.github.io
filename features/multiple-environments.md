@@ -13,4 +13,6 @@ title: Multiple Environments
     <source src="https://github.com/user-attachments/assets/aea4176e-52ba-4e78-8448-9563207d55f5" type="video/mp4">
     your browser does not support the video tag
   </video>
+
+  <p class="text-center"><a class="link-primary" href="/docs/quickstart#multiple-environments">See documentation</a></p>
 </section>

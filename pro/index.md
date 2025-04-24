@@ -12,7 +12,7 @@ title: Pro
   <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Management–Done Right.</h2>
   <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Add secrets manager-level workflows to your .env files.</p>
   <p class="text-center">
-    <a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Coming soon</span></a>
+    <a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Coming soon!</span></a>
   </p>
 </section>
 

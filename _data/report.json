@@ -1,0 +1,1430 @@
+[
+  {
+    "scenario": "AFTER_LINE",
+    "expected": "{\n  \"AFTER_LINE\": \"after_line\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      },
+      "docker": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "BACKTICKS",
+    "expected": "{\n  \"BACKTICKS\": \"backticks\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS\": \"backticks\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS\": \"backticks\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "BACKTICKS_INSIDE_DOUBLE",
+    "expected": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"\\\"`backticks` work inside double quotes\\\"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "BACKTICKS_INSIDE_SINGLE",
+    "expected": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"'`backticks` work inside single quotes'\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "BACKTICKS_SPACED",
+    "expected": "{\n  \"BACKTICKS_SPACED\": \"    backticks    \"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_SPACED\": \"    backticks    \"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"BACKTICKS_SPACED\": \"    backticks    \"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "BASIC",
+    "expected": "{\n  \"BASIC\": \"basic\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      },
+      "docker": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"BASIC\": \"basic\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DONT_EXPAND_SQUOTED",
+    "expected": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"'dontexpand\\\\nnewlines'\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DONT_EXPAND_UNQUOTED",
+    "expected": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "docker": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpandnnewlines\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS",
+    "expected": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" and single 'quotes' work inside backticks\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" and single 'quotes' work inside backticks\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" and single 'quotes' work inside backticks\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DOUBLE_QUOTES",
+    "expected": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"\\\"double_quotes\\\"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DOUBLE_QUOTES_INSIDE_BACKTICKS",
+    "expected": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" work inside backticks\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" work inside backticks\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" work inside backticks\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DOUBLE_QUOTES_INSIDE_SINGLE",
+    "expected": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"'double \\\"quotes\\\" work inside single quotes'\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DOUBLE_QUOTES_SPACED",
+    "expected": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"\\\"    double quotes    \\\"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET",
+    "expected": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: }\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: }\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"\\\"{ port: $MONGOLAB_PORT}\\\"\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: \"\n}"
+      },
+      "nodejs": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: $MONGOLAB_PORT}\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: $MONGOLAB_PORT}\"\n}"
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: $MONGOLAB_PORT}\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: \"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "EMPTY",
+    "expected": "{\n  \"EMPTY\": \"\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      },
+      "docker": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"EMPTY\": \"\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "EMPTY_BACKTICKS",
+    "expected": "{\n  \"EMPTY_BACKTICKS\": \"\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"``\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"``\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"``\"\n}"
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"``\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_BACKTICKS\": \"``\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "EMPTY_DOUBLE_QUOTES",
+    "expected": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\\\"\\\"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "EMPTY_SINGLE_QUOTES",
+    "expected": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"''\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "EQUAL_SIGNS",
+    "expected": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "EXPAND_NEWLINES",
+    "expected": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"\\\"expand\\\\nnew\\\\nlines\\\"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\\\nnew\\\\nlines\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "HY-PHEN",
+    "expected": "{\n  \"HY-PHEN\": \"hyphen\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"HY-PHEN\": \"\\\"hyphen\\\"\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": null
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{}"
+      }
+    }
+  },
+  {
+    "scenario": "INLINE_COMMENTS",
+    "expected": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS\": \"inline comments # work #very #well\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS\": \"inline comments # work #very\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "INLINE_COMMENTS_BACKTICKS",
+    "expected": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"inline comments outside of #backticks\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"inline comments outside of #backticks\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of #backticks` # work\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of #backticks`\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"inline comments outside of #backticks\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "INLINE_COMMENTS_DOUBLE_QUOTES",
+    "expected": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"\\\"inline comments outside of #doublequotes\\\" # work\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "INLINE_COMMENTS_SINGLE_QUOTES",
+    "expected": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"'inline comments outside of #singlequotes' # work\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "INLINE_COMMENTS_SPACE",
+    "expected": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "MULTILINE_DOUBLE",
+    "expected": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"\\\"one\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "MULTILINE_SINGLE",
+    "expected": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"MULTILINE_SINGLE\": \"'one\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "PARENTHESES",
+    "expected": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"PARENTHESES\": \"'passwo(rd'\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "PARENTHESES_EXPAND",
+    "expected": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"passwo(rd\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"passwo(rd\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"PARENTHESES_EXPAND\": \"\\\"$(echo \\\"$PARENTHESES\\\")\\\"\",\n  \"PARENTHESES\": \"'passwo(rd'\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": null
+      },
+      "nodejs": {
+        "pass": false,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"$(echo \\\"$PARENTHESES\\\")\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"$(echo \\\"passwo(rd\\\")\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "RETAIN_INNER_QUOTES",
+    "expected": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "docker": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "RETAIN_INNER_QUOTES_AS_BACKTICKS",
+    "expected": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"{\\\"foo\\\": \\\"bar's\\\"}\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"{\\\"foo\\\": \\\"bar's\\\"}\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"{\\\"foo\\\": \\\"bar's\\\"}\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "RETAIN_INNER_QUOTES_AS_STRING",
+    "expected": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "RETAIN_INNER_QUOTES_AS_STRING_EXPAND",
+    "expected": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"\\\"$(echo \\\"$RETAIN_INNER_QUOTES_AS_STRING\\\")\\\"\",\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": null
+      },
+      "nodejs": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"$(echo \\\"$RETAIN_INNER_QUOTES_AS_STRING\\\")\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"{foo: bar}\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "RETAIN_INNER_QUOTES_EXPAND",
+    "expected": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"\\\"$(echo \\\"$RETAIN_INNER_QUOTES\\\")\\\"\",\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": null
+      },
+      "nodejs": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"$(echo \\\"$RETAIN_INNER_QUOTES\\\")\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"{foo: bar}\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "SINGLE_QUOTES",
+    "expected": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES\": \"'single_quotes'\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "SINGLE_QUOTES_INSIDE_BACKTICKS",
+    "expected": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"single 'quotes' work inside backticks\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"single 'quotes' work inside backticks\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
+      },
+      "golang": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"single 'quotes' work inside backticks\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
+      },
+      "ruby": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "SINGLE_QUOTES_INSIDE_DOUBLE",
+    "expected": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"\\\"single 'quotes' work inside double quotes\\\"\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "SINGLE_QUOTES_SPACED",
+    "expected": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"'    single quotes    '\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "SPACED_KEY",
+    "expected": "{\n  \"SPACED_KEY\": \"parsed\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "TRIM_SPACE_FROM_UNQUOTED",
+    "expected": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
+      },
+      "docker": {
+        "pass": false,
+        "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"    some spaced out string\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
+      },
+      "php": {
+        "pass": false,
+        "output": null
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
+      }
+    }
+  },
+  {
+    "scenario": "USERNAME",
+    "expected": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}",
+    "results": {
+      "dotenvx": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      },
+      "docker": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      },
+      "golang": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      },
+      "nodejs": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      },
+      "php": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      },
+      "python": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      },
+      "ruby": {
+        "pass": true,
+        "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+      }
+    }
+  }
+]

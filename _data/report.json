@@ -742,6 +742,45 @@
       }
     },
     {
+      "scenario": "EVAL",
+      "env": "HELLO=\"$(echo world)\"\n",
+      "expected": "{\n  \"HELLO\": \"world\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"HELLO\": \"world\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"\\\"$(echo world)\\\"\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "nextenv": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "nodejs": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"HELLO\": \"world\"\n}"
+        }
+      }
+    },
+    {
       "scenario": "EXPAND_NEWLINES",
       "env": "EXPAND_NEWLINES=\"expand\\nnew\\nlines\"\n",
       "expected": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}",
@@ -777,6 +816,45 @@
         "ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\\\nnew\\\\nlines\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "EXPORT",
+      "env": "#!/usr/bin/env bash\nexport KEY=value\n",
+      "expected": "{\n  \"KEY\": \"value\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
         }
       }
     },
@@ -1643,10 +1721,10 @@
     "dotenvx": 100,
     "docker": 14,
     "golang": 64,
-    "nextenv": 90,
-    "nodejs": 90,
+    "nextenv": 89,
+    "nodejs": 89,
     "php": 57,
-    "python": 69,
-    "ruby": 64
+    "python": 68,
+    "ruby": 66
   }
 }

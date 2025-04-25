@@ -17,6 +17,10 @@
           "pass": true,
           "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
@@ -52,6 +56,10 @@
           "pass": false,
           "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"BACKTICKS\": \"backticks\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"BACKTICKS\": \"backticks\"\n}"
@@ -84,6 +92,10 @@
           "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"\\\"`backticks` work inside double quotes\\\"\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
         },
@@ -122,6 +134,10 @@
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
@@ -157,6 +173,10 @@
           "pass": false,
           "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"BACKTICKS_SPACED\": \"    backticks    \"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"BACKTICKS_SPACED\": \"    backticks    \"\n}"
@@ -189,6 +209,10 @@
           "output": "{\n  \"BASIC\": \"basic\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"BASIC\": \"basic\"\n}"
         },
@@ -227,6 +251,10 @@
           "pass": true,
           "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
@@ -259,6 +287,10 @@
           "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
         },
@@ -297,6 +329,10 @@
           "pass": false,
           "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" and single 'quotes' work inside backticks\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" and single 'quotes' work inside backticks\"\n}"
@@ -329,6 +365,10 @@
           "output": "{\n  \"DOUBLE_QUOTES\": \"\\\"double_quotes\\\"\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
         },
@@ -367,6 +407,10 @@
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" work inside backticks\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"double \\\"quotes\\\" work inside backticks\"\n}"
@@ -399,6 +443,10 @@
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"'double \\\"quotes\\\" work inside single quotes'\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
         },
@@ -437,6 +485,10 @@
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
@@ -469,6 +521,10 @@
           "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"\\\"{ port: $MONGOLAB_PORT}\\\"\"\n}"
         },
         "golang": {
+          "pass": false,
+          "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: \"\n}"
+        },
+        "nextenv": {
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: \"\n}"
         },
@@ -507,6 +563,10 @@
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
@@ -542,6 +602,10 @@
           "pass": false,
           "output": "{\n  \"EMPTY_BACKTICKS\": \"``\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EMPTY_BACKTICKS\": \"\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"EMPTY_BACKTICKS\": \"\"\n}"
@@ -574,6 +638,10 @@
           "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\\\"\\\"\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"EMPTY_DOUBLE_QUOTES\": \"\"\n}"
         },
@@ -612,6 +680,10 @@
           "pass": true,
           "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
@@ -644,6 +716,10 @@
           "output": "{\n  \"EQUAL_SIGNS\": \"equals\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
         },
@@ -682,6 +758,10 @@
           "pass": true,
           "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
@@ -716,6 +796,10 @@
         "golang": {
           "pass": false,
           "output": null
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
         },
         "nodejs": {
           "pass": true,
@@ -752,6 +836,10 @@
           "pass": false,
           "output": "{\n  \"INLINE_COMMENTS\": \"inline comments # work #very\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
@@ -787,6 +875,10 @@
           "pass": false,
           "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of #backticks`\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"inline comments outside of #backticks\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"inline comments outside of #backticks\"\n}"
@@ -819,6 +911,10 @@
           "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"\\\"inline comments outside of #doublequotes\\\" # work\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
         },
@@ -857,6 +953,10 @@
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
@@ -892,6 +992,10 @@
           "pass": false,
           "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
@@ -924,6 +1028,10 @@
           "output": "{\n  \"MULTILINE_DOUBLE\": \"\\\"one\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
         },
@@ -962,6 +1070,10 @@
           "pass": true,
           "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
@@ -994,6 +1106,10 @@
           "output": "{\n  \"PARENTHESES\": \"'passwo(rd'\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
         },
@@ -1032,6 +1148,10 @@
           "pass": false,
           "output": null
         },
+        "nextenv": {
+          "pass": false,
+          "output": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"$(echo \\\"passwo(rd\\\")\"\n}"
+        },
         "nodejs": {
           "pass": false,
           "output": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"$(echo \\\"$PARENTHESES\\\")\"\n}"
@@ -1064,6 +1184,10 @@
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
@@ -1102,6 +1226,10 @@
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"{\\\"foo\\\": \\\"bar's\\\"}\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"{\\\"foo\\\": \\\"bar's\\\"}\"\n}"
@@ -1134,6 +1262,10 @@
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
@@ -1172,6 +1304,10 @@
           "pass": false,
           "output": null
         },
+        "nextenv": {
+          "pass": false,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"$(echo \\\"{\\\"foo\\\": \\\"bar\\\"}\\\")\"\n}"
+        },
         "nodejs": {
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"$(echo \\\"$RETAIN_INNER_QUOTES_AS_STRING\\\")\"\n}"
@@ -1207,6 +1343,10 @@
           "pass": false,
           "output": null
         },
+        "nextenv": {
+          "pass": false,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"$(echo \\\"{\\\"foo\\\": \\\"bar\\\"}\\\")\"\n}"
+        },
         "nodejs": {
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"$(echo \\\"$RETAIN_INNER_QUOTES\\\")\"\n}"
@@ -1239,6 +1379,10 @@
           "output": "{\n  \"SINGLE_QUOTES\": \"'single_quotes'\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
         },
@@ -1277,6 +1421,10 @@
           "pass": false,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"single 'quotes' work inside backticks\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"single 'quotes' work inside backticks\"\n}"
@@ -1309,6 +1457,10 @@
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"\\\"single 'quotes' work inside double quotes\\\"\"\n}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
         },
@@ -1347,6 +1499,10 @@
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
@@ -1379,6 +1535,10 @@
           "output": "{}"
         },
         "golang": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "nextenv": {
           "pass": true,
           "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
         },
@@ -1417,6 +1577,10 @@
           "pass": true,
           "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
@@ -1452,6 +1616,10 @@
           "pass": true,
           "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
         },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
         "nodejs": {
           "pass": true,
           "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
@@ -1475,6 +1643,7 @@
     "dotenvx": 100,
     "docker": 14,
     "golang": 64,
+    "nextenv": 90,
     "nodejs": 90,
     "php": 57,
     "python": 69,

@@ -235,6 +235,45 @@
       }
     },
     {
+      "scenario": "BASIC_EXPAND",
+      "env": "BASIC=basic\nBASIC_EXPAND=$BASIC\n",
+      "expected": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"$BASIC\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}"
+        },
+        "nodejs": {
+          "pass": false,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"$BASIC\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"$BASIC\"\n}"
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"$BASIC\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}"
+        }
+      }
+    },
+    {
       "scenario": "DONT_EXPAND_SQUOTED",
       "env": "DONT_EXPAND_SQUOTED='dontexpand\\nnewlines'\n",
       "expected": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}",
@@ -772,7 +811,7 @@
         },
         "python": {
           "pass": false,
-          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+          "output": "{\n  \"HELLO\": \"latin1\"\n}"
         },
         "ruby": {
           "pass": true,
@@ -830,7 +869,7 @@
         },
         "docker": {
           "pass": false,
-          "output": "{}"
+          "output": null
         },
         "golang": {
           "pass": true,
@@ -1093,6 +1132,123 @@
       }
     },
     {
+      "scenario": "LATIN1",
+      "env": "HELLO=\"latin1\"",
+      "expected": "{\n  \"HELLO\": \"latin1\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"HELLO\": \"latin1\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"\\\"latin1\\\"\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"HELLO\": \"latin1\"\n}"
+        },
+        "nodejs": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"HELLO\": \"latin1\"\n}"
+        },
+        "ruby": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"world\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "MACHINE",
+      "env": "MACHINE=file\n",
+      "expected": "{\n  \"MACHINE\": \"machine\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"file\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "MACHINE_EXPAND",
+      "env": "MACHINE=file\nMACHINE_EXPAND=$MACHINE\n",
+      "expected": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"machine\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"machine\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"file\",\n  \"MACHINE_EXPAND\": \"$MACHINE\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"file\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"machine\"\n}"
+        },
+        "nodejs": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"$MACHINE\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"$MACHINE\"\n}"
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"$MACHINE\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"machine\"\n}"
+        }
+      }
+    },
+    {
       "scenario": "MULTILINE_DOUBLE",
       "env": "MULTILINE_DOUBLE=\"one\ntwo\nthree\"\n",
       "expected": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}",
@@ -1128,6 +1284,45 @@
         "ruby": {
           "pass": true,
           "output": "{\n  \"MULTILINE_DOUBLE\": \"one\\ntwo\\nthree\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "MULTILINE_PEM_DOUBLE",
+      "env": "MULTILINE_PEM_DOUBLE=\"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\nu4QuUoobAgMBAAE=\n-----END PUBLIC KEY-----\"\n",
+      "expected": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": null
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
         }
       }
     },
@@ -1220,7 +1415,7 @@
         },
         "docker": {
           "pass": false,
-          "output": "{\n  \"PARENTHESES_EXPAND\": \"\\\"$(echo \\\"$PARENTHESES\\\")\\\"\",\n  \"PARENTHESES\": \"'passwo(rd'\"\n}"
+          "output": "{\n  \"PARENTHESES\": \"'passwo(rd'\",\n  \"PARENTHESES_EXPAND\": \"\\\"$(echo \\\"$PARENTHESES\\\")\\\"\"\n}"
         },
         "golang": {
           "pass": false,
@@ -1376,7 +1571,7 @@
         },
         "docker": {
           "pass": false,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"\\\"$(echo \\\"$RETAIN_INNER_QUOTES_AS_STRING\\\")\\\"\",\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\"\n}"
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"\\\"$(echo \\\"$RETAIN_INNER_QUOTES_AS_STRING\\\")\\\"\"\n}"
         },
         "golang": {
           "pass": false,
@@ -1415,7 +1610,7 @@
         },
         "docker": {
           "pass": false,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"\\\"$(echo \\\"$RETAIN_INNER_QUOTES\\\")\\\"\",\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"\\\"$(echo \\\"$RETAIN_INNER_QUOTES\\\")\\\"\"\n}"
         },
         "golang": {
           "pass": false,
@@ -1610,7 +1805,7 @@
         },
         "docker": {
           "pass": false,
-          "output": "{}"
+          "output": null
         },
         "golang": {
           "pass": true,
@@ -1715,16 +1910,55 @@
           "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
         }
       }
+    },
+    {
+      "scenario": "UTF16LE",
+      "env": "��H\u0000E\u0000L\u0000L\u0000O\u0000=\u0000\"\u0000u\u0000t\u0000f\u00001\u00006\u0000l\u0000e\u0000\"\u0000",
+      "expected": "{\n  \"HELLO\": \"utf16le\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"HELLO\": \"utf16le\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": null
+        },
+        "golang": {
+          "pass": false,
+          "output": null
+        },
+        "nextenv": {
+          "pass": false,
+          "output": "{}"
+        },
+        "nodejs": {
+          "pass": false,
+          "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": false,
+          "output": null
+        },
+        "ruby": {
+          "pass": false,
+          "output": null
+        }
+      }
     }
   ],
   "percent_pass": {
     "dotenvx": 100,
-    "docker": 14,
-    "golang": 64,
-    "nextenv": 89,
-    "nodejs": 89,
-    "php": 57,
-    "python": 68,
+    "docker": 12,
+    "golang": 62,
+    "nextenv": 88,
+    "nodejs": 82,
+    "php": 54,
+    "python": 66,
     "ruby": 66
   }
 }

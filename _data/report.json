@@ -1,7 +1,202 @@
 {
   "scenarios": [
     {
-      "scenario": "AFTER_LINE",
+      "scenario": "101_BASIC",
+      "env": "BASIC=basic\n",
+      "expected": "{\n  \"BASIC\": \"basic\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"BASIC\": \"basic\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "102_EMPTY",
+      "env": "EMPTY=\n",
+      "expected": "{\n  \"EMPTY\": \"\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "103_MACHINE",
+      "env": "MACHINE=file\n",
+      "expected": "{\n  \"MACHINE\": \"machine\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"MACHINE\": \"file\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"MACHINE\": \"machine\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "104_INLINE_COMMENT",
+      "env": "INLINE_COMMENT=inline comment # works #very #well\n",
+      "expected": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment # works #very #well\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment # works #very\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "105_INLINE_COMMENT_NO_SPACE",
+      "env": "INLINE_COMMENT_NO_SPACE=inline comments start with a#number sign. no space required.\n",
+      "expected": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "106_AFTER_LINE",
       "env": "\n# previous line intentionally left blank\nAFTER_LINE=after_line\n",
       "expected": "{\n  \"AFTER_LINE\": \"after_line\"\n}",
       "results": {
@@ -36,6 +231,630 @@
         "ruby": {
           "pass": true,
           "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "107_EXPORT",
+      "env": "#!/usr/bin/env bash\nexport KEY=value\n",
+      "expected": "{\n  \"KEY\": \"value\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": null
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"KEY\": \"value\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "108_USERNAME",
+      "env": "USERNAME=therealnerdybeast@example.tld\n",
+      "expected": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "109_SPACED_KEY",
+      "env": "    SPACED_KEY = parsed\n",
+      "expected": "{\n  \"SPACED_KEY\": \"parsed\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": null
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "110_TRIM_SPACE",
+      "env": "TRIM_SPACE=    some spaced out string\n",
+      "expected": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"TRIM_SPACE\": \"    some spaced out string\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "111_EQUAL_SIGNS",
+      "env": "EQUAL_SIGNS=equals==\n",
+      "expected": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "112_DONT_EXPAND_NEWLINES",
+      "env": "DONT_EXPAND=dontexpand\\nnewlines\n",
+      "expected": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "ruby": {
+          "pass": false,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpandnnewlines\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "113_HY-PHEN",
+      "env": "# https://github.com/joho/godotenv/pull/245\nHY-PHEN=hyphen\n",
+      "expected": "{\n  \"HY-PHEN\": \"hyphen\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": null
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
+        },
+        "ruby": {
+          "pass": false,
+          "output": "{}"
+        }
+      }
+    },
+    {
+      "scenario": "114_RETAIN_INNER_QUOTES",
+      "env": "RETAIN_INNER_QUOTES={\"foo\": \"bar\"}\n",
+      "expected": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "201_SINGLE_QUOTES",
+      "env": "SINGLE_QUOTES='single_quotes'\n",
+      "expected": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"SINGLE_QUOTES\": \"'single_quotes'\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "202_SINGLE_QUOTES_EMPTY",
+      "env": "EMPTY=''\n",
+      "expected": "{\n  \"EMPTY\": \"\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"EMPTY\": \"''\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"EMPTY\": \"\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "203_SINGLE_QUOTES_SPACED",
+      "env": "SINGLE_QUOTES_SPACED='    single quotes    '\n",
+      "expected": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"'    single quotes    '\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "204_SINGLE_QUOTES_WITH_DOUBLE_QUOTES_INSIDE",
+      "env": "DOUBLE_QUOTES_INSIDE_SINGLE='double \"quotes\" work inside single quotes'\n",
+      "expected": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"'double \\\"quotes\\\" work inside single quotes'\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "205_SINGLE_QUOTES_DONT_EXPAND_NEWLINES",
+      "env": "DONT_EXPAND='dontexpand\\nnewlines'\n",
+      "expected": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"DONT_EXPAND\": \"'dontexpand\\\\nnewlines'\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
+        },
+        "ruby": {
+          "pass": false,
+          "output": "{\n  \"DONT_EXPAND\": \"dontexpandnnewlines\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "206_SINGLE_QUOTES_INLINE_COMMENT",
+      "env": "INLINE_COMMENT='inline comments outside of #singlequotes' # work\n",
+      "expected": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"'inline comments outside of #singlequotes' # work\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment # works #very\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
+        },
+        "nodejs": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
+        },
+        "ruby": {
+          "pass": false,
+          "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "207_SINGLE_QUOTES_MULTILINE",
+      "env": "MULTILINE='one\ntwo\nthree'\n",
+      "expected": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"MULTILINE\": \"'one\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": null
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "208_SINGLE_QUOTES_RETAIN_INNER_QUOTES",
+      "env": "RETAIN_INNER_QUOTES_AS_STRING='{\"foo\": \"bar\"}'\n",
+      "expected": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         }
       }
     },
@@ -196,45 +1015,6 @@
       }
     },
     {
-      "scenario": "BASIC",
-      "env": "BASIC=basic\n",
-      "expected": "{\n  \"BASIC\": \"basic\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "docker": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"BASIC\": \"basic\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "BASIC_EXPAND",
       "env": "BASIC=basic\nBASIC_EXPAND=$BASIC\n",
       "expected": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}",
@@ -270,84 +1050,6 @@
         "ruby": {
           "pass": true,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "DONT_EXPAND_SQUOTED",
-      "env": "DONT_EXPAND_SQUOTED='dontexpand\\nnewlines'\n",
-      "expected": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"'dontexpand\\\\nnewlines'\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_SQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "DONT_EXPAND_UNQUOTED",
-      "env": "DONT_EXPAND_UNQUOTED=dontexpand\\nnewlines\n",
-      "expected": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "docker": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpand\\\\nnewlines\"\n}"
-        },
-        "ruby": {
-          "pass": false,
-          "output": "{\n  \"DONT_EXPAND_UNQUOTED\": \"dontexpandnnewlines\"\n}"
         }
       }
     },
@@ -469,45 +1171,6 @@
       }
     },
     {
-      "scenario": "DOUBLE_QUOTES_INSIDE_SINGLE",
-      "env": "DOUBLE_QUOTES_INSIDE_SINGLE='double \"quotes\" work inside single quotes'\n",
-      "expected": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"'double \\\"quotes\\\" work inside single quotes'\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "DOUBLE_QUOTES_SPACED",
       "env": "DOUBLE_QUOTES_SPACED=\"    double quotes    \"\n",
       "expected": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}",
@@ -582,45 +1245,6 @@
         "ruby": {
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: \"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "EMPTY",
-      "env": "EMPTY=\n",
-      "expected": "{\n  \"EMPTY\": \"\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "docker": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"EMPTY\": \"\"\n}"
         }
       }
     },
@@ -703,84 +1327,6 @@
       }
     },
     {
-      "scenario": "EMPTY_SINGLE_QUOTES",
-      "env": "EMPTY_SINGLE_QUOTES=''\n",
-      "expected": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"''\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"EMPTY_SINGLE_QUOTES\": \"\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "EQUAL_SIGNS",
-      "env": "EQUAL_SIGNS=equals==\n",
-      "expected": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "EVAL",
       "env": "HELLO=\"$(echo world)\"\n",
       "expected": "{\n  \"HELLO\": \"world\"\n}",
@@ -855,123 +1401,6 @@
         "ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\\\nnew\\\\nlines\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "EXPORT",
-      "env": "#!/usr/bin/env bash\nexport KEY=value\n",
-      "expected": "{\n  \"KEY\": \"value\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": null
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"KEY\": \"value\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "HY-PHEN",
-      "env": "# https://github.com/joho/godotenv/pull/245\nHY-PHEN=\"hyphen\"\n",
-      "expected": "{\n  \"HY-PHEN\": \"hyphen\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"HY-PHEN\": \"\\\"hyphen\\\"\"\n}"
-        },
-        "golang": {
-          "pass": false,
-          "output": null
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
-        },
-        "php": {
-          "pass": false,
-          "output": null
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
-        },
-        "ruby": {
-          "pass": false,
-          "output": "{}"
-        }
-      }
-    },
-    {
-      "scenario": "INLINE_COMMENTS",
-      "env": "INLINE_COMMENTS=inline comments # work #very #well\n",
-      "expected": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments # work #very #well\"\n}"
-        },
-        "golang": {
-          "pass": false,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments # work #very\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
-        },
-        "php": {
-          "pass": false,
-          "output": null
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS\": \"inline comments\"\n}"
         }
       }
     },
@@ -1054,84 +1483,6 @@
       }
     },
     {
-      "scenario": "INLINE_COMMENTS_SINGLE_QUOTES",
-      "env": "INLINE_COMMENTS_SINGLE_QUOTES='inline comments outside of #singlequotes' # work\n",
-      "expected": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"'inline comments outside of #singlequotes' # work\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SINGLE_QUOTES\": \"inline comments outside of #singlequotes\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "INLINE_COMMENTS_SPACE",
-      "env": "INLINE_COMMENTS_SPACE=inline comments start with a#number sign. no space required.\n",
-      "expected": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
-        },
-        "golang": {
-          "pass": false,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
-        },
-        "php": {
-          "pass": false,
-          "output": null
-        },
-        "python": {
-          "pass": false,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"INLINE_COMMENTS_SPACE\": \"inline comments start with a\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "LATIN1",
       "env": "HELLO=\"latin1\"",
       "expected": "{\n  \"HELLO\": \"latin1\"\n}",
@@ -1167,45 +1518,6 @@
         "ruby": {
           "pass": false,
           "output": "{\n  \"HELLO\": \"world\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "MACHINE",
-      "env": "MACHINE=file\n",
-      "expected": "{\n  \"MACHINE\": \"machine\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"MACHINE\": \"file\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"MACHINE\": \"machine\"\n}"
         }
       }
     },
@@ -1327,45 +1639,6 @@
       }
     },
     {
-      "scenario": "MULTILINE_SINGLE",
-      "env": "MULTILINE_SINGLE='one\ntwo\nthree'\n",
-      "expected": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"'one\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
-        },
-        "php": {
-          "pass": false,
-          "output": null
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"MULTILINE_SINGLE\": \"one\\ntwo\\nthree\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "PARENTHESES",
       "env": "# https://github.com/bkeepers/dotenv/pull/526\nPARENTHESES='passwo(rd'\n",
       "expected": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}",
@@ -1444,45 +1717,6 @@
       }
     },
     {
-      "scenario": "RETAIN_INNER_QUOTES",
-      "env": "RETAIN_INNER_QUOTES={\"foo\": \"bar\"}\n",
-      "expected": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "docker": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "php": {
-          "pass": false,
-          "output": null
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "RETAIN_INNER_QUOTES_AS_BACKTICKS",
       "env": "RETAIN_INNER_QUOTES_AS_BACKTICKS=`{\"foo\": \"bar's\"}`\n",
       "expected": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"{\\\"foo\\\": \\\"bar's\\\"}\"\n}",
@@ -1518,45 +1752,6 @@
         "ruby": {
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "RETAIN_INNER_QUOTES_AS_STRING",
-      "env": "RETAIN_INNER_QUOTES_AS_STRING='{\"foo\": \"bar\"}'\n",
-      "expected": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"'{\\\"foo\\\": \\\"bar\\\"}'\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         }
       }
     },
@@ -1639,45 +1834,6 @@
       }
     },
     {
-      "scenario": "SINGLE_QUOTES",
-      "env": "SINGLE_QUOTES='single_quotes'\n",
-      "expected": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"SINGLE_QUOTES\": \"'single_quotes'\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "SINGLE_QUOTES_INSIDE_BACKTICKS",
       "env": "SINGLE_QUOTES_INSIDE_BACKTICKS=`single 'quotes' work inside backticks`\n",
       "expected": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"single 'quotes' work inside backticks\"\n}",
@@ -1756,162 +1912,6 @@
       }
     },
     {
-      "scenario": "SINGLE_QUOTES_SPACED",
-      "env": "SINGLE_QUOTES_SPACED='    single quotes    '\n",
-      "expected": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"'    single quotes    '\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "SPACED_KEY",
-      "env": "    SPACED_KEY = parsed\n",
-      "expected": "{\n  \"SPACED_KEY\": \"parsed\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": null
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "TRIM_SPACE_FROM_UNQUOTED",
-      "env": "TRIM_SPACE_FROM_UNQUOTED=    some spaced out string\n",
-      "expected": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
-        },
-        "docker": {
-          "pass": false,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"    some spaced out string\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
-        },
-        "php": {
-          "pass": false,
-          "output": null
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"TRIM_SPACE_FROM_UNQUOTED\": \"some spaced out string\"\n}"
-        }
-      }
-    },
-    {
-      "scenario": "USERNAME",
-      "env": "USERNAME=therealnerdybeast@example.tld\n",
-      "expected": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}",
-      "results": {
-        "dotenvx": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "docker": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "golang": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "nextenv": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "nodejs": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "php": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "python": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        },
-        "ruby": {
-          "pass": true,
-          "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
-        }
-      }
-    },
-    {
       "scenario": "UTF16LE",
       "env": "��H\u0000E\u0000L\u0000L\u0000O\u0000=\u0000\"\u0000u\u0000t\u0000f\u00001\u00006\u0000l\u0000e\u0000\"\u0000",
       "expected": "{\n  \"HELLO\": \"utf16le\"\n}",
@@ -1953,12 +1953,12 @@
   ],
   "percent_pass": {
     "dotenvx": 100,
-    "docker": 12,
-    "golang": 62,
+    "docker": 14,
+    "golang": 60,
     "nextenv": 88,
-    "nodejs": 82,
+    "nodejs": 80,
     "php": 54,
-    "python": 66,
-    "ruby": 66
+    "python": 64,
+    "ruby": 62
   }
 }

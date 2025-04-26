@@ -547,6 +547,45 @@
       }
     },
     {
+      "scenario": "115_DOLLAR",
+      "env": "DOLLAR=$\n",
+      "expected": "{\n  \"DOLLAR\": \"$\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "docker": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"DOLLAR\": \"$\"\n}"
+        }
+      }
+    },
+    {
       "scenario": "201_SINGLE_QUOTES",
       "env": "SINGLE_QUOTES='single_quotes'\n",
       "expected": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}",
@@ -1327,6 +1366,45 @@
       }
     },
     {
+      "scenario": "311_DOUBLE_QUOTES_TWO_DOLLAR_SIGNS",
+      "env": "TWO_DOLLAR_SIGNS=\"abcd$$1234\"\n",
+      "expected": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$$1234\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$$1234\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"\\\"abcd$$1234\\\"\"\n}"
+        },
+        "golang": {
+          "pass": false,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$\"\n}"
+        },
+        "nextenv": {
+          "pass": false,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$$1234\"\n}"
+        },
+        "php": {
+          "pass": true,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$$1234\"\n}"
+        },
+        "python": {
+          "pass": true,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$$1234\"\n}"
+        },
+        "ruby": {
+          "pass": false,
+          "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$\"\n}"
+        }
+      }
+    },
+    {
       "scenario": "401_BACKTICKS",
       "env": "BACKTICKS=`backticks`\n",
       "expected": "{\n  \"BACKTICKS\": \"backticks\"\n}",
@@ -1873,6 +1951,84 @@
       }
     },
     {
+      "scenario": "507_EXPAND_ESCAPED",
+      "env": "ESCAPED_EXPAND=\\$ESCAPED\n",
+      "expected": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"\\\\$ESCAPED\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}"
+        },
+        "nextenv": {
+          "pass": true,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"\\\\$ESCAPED\"\n}"
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"\\\\$ESCAPED\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}"
+        }
+      }
+    },
+    {
+      "scenario": "508_EXPAND_NO_QUOTES_COMBOS",
+      "env": "ONE=one\nTWO=two\nONETWO=${ONE}${TWO}\nONETWO_SIMPLE=${ONE}$TWO\nONETWO_SIMPLE2=$ONE${TWO}\nONETWO_SUPER_SIMPLE=$ONE$TWO\n",
+      "expected": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"onetwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"onetwo\"\n}",
+      "results": {
+        "dotenvx": {
+          "pass": true,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"onetwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"onetwo\"\n}"
+        },
+        "docker": {
+          "pass": false,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"${ONE}${TWO}\",\n  \"ONETWO_SIMPLE\": \"${ONE}$TWO\",\n  \"ONETWO_SIMPLE2\": \"$ONE${TWO}\",\n  \"ONETWO_SUPER_SIMPLE\": \"$ONE$TWO\"\n}"
+        },
+        "golang": {
+          "pass": true,
+          "output": "{\n  \"ONE\": \"one\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"onetwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"onetwo\",\n  \"TWO\": \"two\"\n}"
+        },
+        "nextenv": {
+          "pass": false,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"\",\n  \"ONETWO_SUPER_SIMPLE\": \"\"\n}"
+        },
+        "nodejs": {
+          "pass": true,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"onetwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"onetwo\"\n}"
+        },
+        "php": {
+          "pass": false,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"one$TWO\",\n  \"ONETWO_SIMPLE2\": \"$ONEtwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"$ONE$TWO\"\n}"
+        },
+        "python": {
+          "pass": false,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"one$TWO\",\n  \"ONETWO_SIMPLE2\": \"$ONEtwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"$ONE$TWO\"\n}"
+        },
+        "ruby": {
+          "pass": true,
+          "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"onetwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"onetwo\"\n}"
+        }
+      }
+    },
+    {
       "scenario": "601_EVAL",
       "env": "HELLO=\"$(echo world)\"\n",
       "expected": "{\n  \"HELLO\": \"world\"\n}",
@@ -1994,10 +2150,10 @@
     "dotenvx": 100,
     "docker": 18,
     "golang": 65,
-    "nextenv": 88,
-    "nodejs": 90,
+    "nextenv": 85,
+    "nodejs": 91,
     "php": 53,
-    "python": 65,
+    "python": 64,
     "ruby": 69
   }
 }

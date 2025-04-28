@@ -37,7 +37,7 @@
           "pass": true,
           "output": "{\n  \"BASIC\": \"basic\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"BASIC\": \"basic\"\n}"
         }
@@ -80,7 +80,7 @@
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         }
@@ -123,7 +123,7 @@
           "pass": true,
           "output": "{\n  \"MACHINE\": \"machine\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MACHINE\": \"machine\"\n}"
         }
@@ -166,7 +166,7 @@
           "pass": true,
           "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENT\": \"inline comment\"\n}"
         }
@@ -209,7 +209,7 @@
           "pass": false,
           "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a#number sign. no space required.\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENT_NO_SPACE\": \"inline comments start with a\"\n}"
         }
@@ -252,7 +252,7 @@
           "pass": true,
           "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"AFTER_LINE\": \"after_line\"\n}"
         }
@@ -295,7 +295,7 @@
           "pass": true,
           "output": "{\n  \"KEY\": \"value\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"KEY\": \"value\"\n}"
         }
@@ -338,7 +338,7 @@
           "pass": true,
           "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"USERNAME\": \"therealnerdybeast@example.tld\"\n}"
         }
@@ -381,7 +381,7 @@
           "pass": true,
           "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"SPACED_KEY\": \"parsed\"\n}"
         }
@@ -424,7 +424,7 @@
           "pass": true,
           "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"TRIM_SPACE\": \"some spaced out string\"\n}"
         }
@@ -467,7 +467,7 @@
           "pass": true,
           "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"EQUAL_SIGNS\": \"equals==\"\n}"
         }
@@ -510,7 +510,7 @@
           "pass": true,
           "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"DONT_EXPAND\": \"dontexpandnnewlines\"\n}"
         }
@@ -553,7 +553,7 @@
           "pass": true,
           "output": "{\n  \"HY-PHEN\": \"hyphen\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{}"
         }
@@ -596,7 +596,7 @@
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         }
@@ -639,7 +639,7 @@
           "pass": true,
           "output": "{\n  \"DOLLAR\": \"$\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"DOLLAR\": \"$\"\n}"
         }
@@ -682,7 +682,7 @@
           "pass": true,
           "output": "{\n  \"POSTGRESQL.BASE.USER\": \"postgres\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"POSTGRESQL.BASE.USER\": \"postgres\"\n}"
         }
@@ -725,7 +725,7 @@
           "pass": true,
           "output": "{\n  \"DONT_CHOKE1\": \".kZh`>4[,[DDU-*Jt+[;8-,@K=,9%;F9KsoXqOE)gpG^X!{)Q+/9Fc(QF}i[NEi!\",\n  \"DONT_CHOKE2\": \"=;+=CNy3)-D=zI6gRP2w\\\\$B@0K;Y]e^EFnCmx\\\\$Dx?;.9wf-rgk1BcTR0]JtY<S:b_\",\n  \"DONT_CHOKE3\": \"MUcKSGSY@HCON<1S_siWTP`DgS*Ug],mu]SkqI|7V2eOk9:>&fw;>HEwms`D8E2H\",\n  \"DONT_CHOKE4\": \"m]zjzfRItw2gs[2:{p{ugENyFw9m)tH6_VCQzer`*noVaI<vqa3?FZ9+6U;K#Bfd\",\n  \"DONT_CHOKE5\": \"#la__nK?IxNlQ%`5q&DpcZ>Munx=[1-AMgAcwmPkToxTaB?kgdF5y`A8m=Oa-B!)\",\n  \"DONT_CHOKE6\": \"xlC&*<j4J<d._<JKH0RBJV!4(ZQEN-+&!0p137<g*hdY2H4xk?/;KO1\\\\$(W{:Wc}Q\",\n  \"DONT_CHOKE7\": \"?\\\\$6)m*xhTVewc#NVVgxX%eBhJjoHYzpXFg=gzn[rWXPLj5UWj@z\\\\$/UDm8o79n/p%\",\n  \"DONT_CHOKE8\": \"@}:[4#g%[R-CFR});bY(Z[KcDQDsVn2_y4cSdU<Mjy!c^F`G<!Ks7]kbS]N1:bP:\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"DONT_CHOKE1\": \".kZh`>4[,[DDU-*Jt+[;8-,@K=,9%;F9KsoXqOE)gpG^X!{)Q+/9Fc(QF}i[NEi!\",\n  \"DONT_CHOKE2\": \"=;+=CNy3)-D=zI6gRP2w\\\\$B@0K;Y]e^EFnCmx\\\\$Dx?;.9wf-rgk1BcTR0]JtY<S:b_\",\n  \"DONT_CHOKE3\": \"MUcKSGSY@HCON<1S_siWTP`DgS*Ug],mu]SkqI|7V2eOk9:>&fw;>HEwms`D8E2H\",\n  \"DONT_CHOKE4\": \"m]zjzfRItw2gs[2:{p{ugENyFw9m)tH6_VCQzer`*noVaI<vqa3?FZ9+6U;K#Bfd\",\n  \"DONT_CHOKE5\": \"#la__nK?IxNlQ%`5q&DpcZ>Munx=[1-AMgAcwmPkToxTaB?kgdF5y`A8m=Oa-B!)\",\n  \"DONT_CHOKE6\": \"xlC&*<j4J<d._<JKH0RBJV!4(ZQEN-+&!0p137<g*hdY2H4xk?/;KO1\\\\$(W{:Wc}Q\",\n  \"DONT_CHOKE7\": \"?\\\\$6)m*xhTVewc#NVVgxX%eBhJjoHYzpXFg=gzn[rWXPLj5UWj@z\\\\$/UDm8o79n/p%\",\n  \"DONT_CHOKE8\": \"@}:[4#g%[R-CFR});bY(Z[KcDQDsVn2_y4cSdU<Mjy!c^F`G<!Ks7]kbS]N1:bP:\"\n}"
         }
@@ -768,7 +768,7 @@
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES\": \"single_quotes\"\n}"
         }
@@ -811,7 +811,7 @@
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         }
@@ -854,7 +854,7 @@
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_SPACED\": \"    single quotes    \"\n}"
         }
@@ -897,7 +897,7 @@
           "pass": true,
           "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"DONT_EXPAND\": \"dontexpand\\\\nnewlines\"\n}"
         }
@@ -940,7 +940,7 @@
           "pass": true,
           "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENT\": \"inline comments outside of #singlequotes\"\n}"
         }
@@ -983,7 +983,7 @@
           "pass": true,
           "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
         }
@@ -1026,7 +1026,7 @@
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         }
@@ -1069,7 +1069,7 @@
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_SINGLE\": \"double \\\"quotes\\\" work inside single quotes\"\n}"
         }
@@ -1112,7 +1112,7 @@
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_SINGLE\": \"`backticks` work inside single quotes\"\n}"
         }
@@ -1155,7 +1155,7 @@
           "pass": true,
           "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
         }
@@ -1198,7 +1198,7 @@
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES\": \"double_quotes\"\n}"
         }
@@ -1241,7 +1241,7 @@
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"EMPTY\": \"\"\n}"
         }
@@ -1284,7 +1284,7 @@
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"DOUBLE_QUOTES_SPACED\": \"    double quotes    \"\n}"
         }
@@ -1327,7 +1327,7 @@
           "pass": true,
           "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\nnew\\nlines\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_NEWLINES\": \"expand\\\\nnew\\\\nlines\"\n}"
         }
@@ -1370,7 +1370,7 @@
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"INLINE_COMMENTS_DOUBLE_QUOTES\": \"inline comments outside of #doublequotes\"\n}"
         }
@@ -1413,7 +1413,7 @@
           "pass": true,
           "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MULTILINE\": \"one\\ntwo\\nthree\"\n}"
         }
@@ -1456,7 +1456,7 @@
           "pass": true,
           "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MULTILINE_PEM_DOUBLE\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u\\nLgGJQwu9WqyzHKZ6WIA5T+7zPjO1L8l3S8k8YzBrfH4mqWOD1GBI8Yjq2L1ac3Y/\\nbTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/\\nkKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V\\nu4QuUoobAgMBAAE=\\n-----END PUBLIC KEY-----\"\n}"
         }
@@ -1499,7 +1499,7 @@
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_DOUBLE\": \"single 'quotes' work inside double quotes\"\n}"
         }
@@ -1542,7 +1542,7 @@
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"BACKTICKS_INSIDE_DOUBLE\": \"`backticks` work inside double quotes\"\n}"
         }
@@ -1585,7 +1585,7 @@
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: $MONGOLAB_PORT}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_WITH_NO_SPACE_BRACKET\": \"{ port: \"\n}"
         }
@@ -1628,7 +1628,7 @@
           "pass": true,
           "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$$1234\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"TWO_DOLLAR_SIGNS\": \"abcd$\"\n}"
         }
@@ -1671,7 +1671,7 @@
           "pass": false,
           "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"BACKTICKS\": \"`backticks`\"\n}"
         }
@@ -1714,7 +1714,7 @@
           "pass": false,
           "output": "{\n  \"EMPTY\": \"``\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EMPTY\": \"``\"\n}"
         }
@@ -1757,7 +1757,7 @@
           "pass": false,
           "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"BACKTICKS_SPACED\": \"`    backticks    `\"\n}"
         }
@@ -1800,7 +1800,7 @@
           "pass": false,
           "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"INLINE_COMMENTS_BACKTICKS\": \"`inline comments outside of\"\n}"
         }
@@ -1843,7 +1843,7 @@
           "pass": false,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`single 'quotes' work inside backticks`\"\n}"
         }
@@ -1886,7 +1886,7 @@
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"DOUBLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" work inside backticks`\"\n}"
         }
@@ -1929,7 +1929,7 @@
           "pass": false,
           "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"DOUBLE_AND_SINGLE_QUOTES_INSIDE_BACKTICKS\": \"`double \\\"quotes\\\" and single 'quotes' work inside backticks`\"\n}"
         }
@@ -1972,7 +1972,7 @@
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_BACKTICKS\": \"`{\\\"foo\\\": \\\"bar's\\\"}`\"\n}"
         }
@@ -2015,7 +2015,7 @@
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"$BASIC\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"BASIC_EXPAND\": \"basic\"\n}"
         }
@@ -2058,7 +2058,7 @@
           "pass": false,
           "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"$MACHINE\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MACHINE\": \"machine\",\n  \"MACHINE_EXPAND\": \"machine\"\n}"
         }
@@ -2101,7 +2101,7 @@
           "pass": false,
           "output": "{\n  \"FILE\": \"file\",\n  \"FILE_EXPAND\": \"$FILE\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"FILE\": \"file\",\n  \"FILE_EXPAND\": \"file\"\n}"
         }
@@ -2144,7 +2144,7 @@
           "pass": false,
           "output": "{\n  \"PARENTHESES\": \"passwo(rd\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"PARENTHESES\": \"passwo(rd\",\n  \"PARENTHESES_EXPAND\": \"$(echo \\\"passwo(rd\\\")\"\n}"
         }
@@ -2187,7 +2187,7 @@
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_EXPAND\": \"{foo: bar}\"\n}"
         }
@@ -2230,7 +2230,7 @@
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"RETAIN_INNER_QUOTES_AS_STRING\": \"{\\\"foo\\\": \\\"bar\\\"}\",\n  \"RETAIN_INNER_QUOTES_AS_STRING_EXPAND\": \"{foo: bar}\"\n}"
         }
@@ -2273,7 +2273,7 @@
           "pass": false,
           "output": "{\n  \"ESCAPED_EXPAND\": \"\\\\$ESCAPED\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"ESCAPED_EXPAND\": \"$ESCAPED\"\n}"
         }
@@ -2316,7 +2316,7 @@
           "pass": false,
           "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"one$TWO\",\n  \"ONETWO_SIMPLE2\": \"$ONEtwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"$ONE$TWO\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"ONE\": \"one\",\n  \"TWO\": \"two\",\n  \"ONETWO\": \"onetwo\",\n  \"ONETWO_SIMPLE\": \"onetwo\",\n  \"ONETWO_SIMPLE2\": \"onetwo\",\n  \"ONETWO_SUPER_SIMPLE\": \"onetwo\"\n}"
         }
@@ -2359,7 +2359,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_SELF\": \"$EXPAND_SELF\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"EXPAND_SELF\": \"\"\n}"
         }
@@ -2402,7 +2402,7 @@
           "pass": true,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_URI\": \"mongodb://username:password@abcd1234.mongolab.com:12345/heroku_db\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_URI\": \"mongodb://username:password@abcd1234.mongolab.com:12345/heroku_db\"\n}"
         }
@@ -2445,7 +2445,7 @@
           "pass": true,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_USER_RECURSIVE\": \"username:password\",\n  \"MONGOLAB_URI_RECURSIVE\": \"mongodb://username:password@abcd1234.mongolab.com:12345/heroku_db\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_USER_RECURSIVE\": \"username:password\",\n  \"MONGOLAB_URI_RECURSIVE\": \"mongodb://username:password@abcd1234.mongolab.com:12345/heroku_db\"\n}"
         }
@@ -2488,7 +2488,7 @@
           "pass": false,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_URI\": \"mongodb://$MONGOLAB_USER:$MONGOLAB_PASSWORD@$MONGOLAB_DOMAIN:$MONGOLAB_PORT/$MONGOLAB_DATABASE\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_URI\": \"mongodb://username:password@abcd1234.mongolab.com:12345/heroku_db\"\n}"
         }
@@ -2531,7 +2531,7 @@
           "pass": false,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_USER_RECURSIVE\": \"$MONGOLAB_USER:$MONGOLAB_PASSWORD\",\n  \"MONGOLAB_URI_RECURSIVE\": \"mongodb://$MONGOLAB_USER_RECURSIVE@$MONGOLAB_DOMAIN:$MONGOLAB_PORT/$MONGOLAB_DATABASE\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"MONGOLAB_DATABASE\": \"heroku_db\",\n  \"MONGOLAB_USER\": \"username\",\n  \"MONGOLAB_PASSWORD\": \"password\",\n  \"MONGOLAB_DOMAIN\": \"abcd1234.mongolab.com\",\n  \"MONGOLAB_PORT\": \"12345\",\n  \"MONGOLAB_USER_RECURSIVE\": \"username:password\",\n  \"MONGOLAB_URI_RECURSIVE\": \"mongodb://username:password@abcd1234.mongolab.com:12345/heroku_db\"\n}"
         }
@@ -2574,7 +2574,7 @@
           "pass": true,
           "output": "{\n  \"POSTGRESQL.BASE.USER\": \"postgres\",\n  \"POSTGRESQL.MAIN.USER\": \"postgres\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"POSTGRESQL.BASE.USER\": \"postgres\",\n  \"POSTGRESQL.MAIN.USER\": \".BASE.USER}\"\n}"
         }
@@ -2617,7 +2617,7 @@
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTE\": \"$BASIC\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"SINGLE_QUOTE\": \"$BASIC\"\n}"
         }
@@ -2660,7 +2660,7 @@
           "pass": true,
           "output": "{\n  \"PROGRESSIVE\": \"first-second\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"PROGRESSIVE\": \"first-second\"\n}"
         }
@@ -2703,7 +2703,7 @@
           "pass": true,
           "output": "{\n  \"EXPAND_DEFAULT\": \"machine\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT\": \"machine:-default}\"\n}"
         }
@@ -2746,7 +2746,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT2\": \"\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT2\": \"machine-default}\"\n}"
         }
@@ -2789,7 +2789,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED\": \"machine}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED\": \"machine:-:-default}}\"\n}"
         }
@@ -2832,7 +2832,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED2\": \"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED2\": \"machine--default}}\"\n}"
         }
@@ -2875,7 +2875,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED_TWICE\": \"${MACHINEdefault}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED_TWICE\": \":-machine:-default}}\"\n}"
         }
@@ -2918,7 +2918,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED_TWICE2\": \"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_NESTED_TWICE2\": \"-machine-default}}\"\n}"
         }
@@ -2961,7 +2961,7 @@
           "pass": true,
           "output": "{\n  \"EXPAND_DEFAULT_SPECIAL_CHARACTERS\": \"machine\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_SPECIAL_CHARACTERS\": \"machine:-/default/path:with/colon}\"\n}"
         }
@@ -3004,7 +3004,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_SPECIAL_CHARACTERS2\": \"${MACHINE-/default/path:with/colon}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_DEFAULT_SPECIAL_CHARACTERS2\": \"machine-/default/path:with/colon}\"\n}"
         }
@@ -3047,7 +3047,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED\": \"$UNDEFINED\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"EXPAND_UNDEFINED\": \"\"\n}"
         }
@@ -3090,7 +3090,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_NESTED\": \"${MACHINE:-default}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_NESTED\": \":-machine:-default}}\"\n}"
         }
@@ -3133,7 +3133,7 @@
           "pass": true,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT\": \"default\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT\": \":-default}\"\n}"
         }
@@ -3176,7 +3176,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2\": \"\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2\": \"-default}\"\n}"
         }
@@ -3219,7 +3219,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_NESTED\": \"${UNDEFINED:-default}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_NESTED\": \":-:-default}}\"\n}"
         }
@@ -3262,7 +3262,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_NESTED\": \"}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_NESTED\": \"--default}}\"\n}"
         }
@@ -3305,7 +3305,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_NESTED_TWICE\": \"${UNDEFINED:-${UNDEFINED:-default}}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_NESTED_TWICE\": \":-:-:-default}}}\"\n}"
         }
@@ -3348,7 +3348,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_NESTED_TWICE\": \"}}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_NESTED_TWICE\": \"---default}}}\"\n}"
         }
@@ -3391,7 +3391,7 @@
           "pass": true,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_SPECIAL_CHARACTERS\": \"/default/path:with/colon\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_SPECIAL_CHARACTERS\": \":-/default/path:with/colon}\"\n}"
         }
@@ -3434,7 +3434,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_SPECIAL_CHARACTERS\": \"${UNDEFINED-/default/path:with/colon}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_SPECIAL_CHARACTERS\": \"-/default/path:with/colon}\"\n}"
         }
@@ -3477,7 +3477,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_SPECIAL_CHARACTERS_NESTED\": \"${UNDEFINED_2:-/default/path:with/colon}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT_SPECIAL_CHARACTERS_NESTED\": \":-:-/default/path:with/colon}}\"\n}"
         }
@@ -3520,7 +3520,7 @@
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_SPECIAL_CHARACTERS_NESTED\": \"${UNDEFINED-${UNDEFINED_2-/default/path:with/colon}}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"EXPAND_UNDEFINED_DEFAULT2_SPECIAL_CHARACTERS_NESTED\": \"--/default/path:with/colon}}\"\n}"
         }
@@ -3563,7 +3563,7 @@
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"EXPAND_DEEP8\": \"prefix5-${QUX:-prefix4-${BAZ:-prefix3-${BAR:-prefix2-${FOO:-prefix1-${BASIC:-test-suffix1}-suffix2}-suffix3}-suffix4}-suffix5}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"EXPAND_DEEP8\": \":-prefix5-:-prefix4-:-prefix3-:-prefix2-:-prefix1-basic:-test}-suffix1}-suffix2}-suffix3}-suffix4}-suffix5}\"\n}"
         }
@@ -3606,7 +3606,7 @@
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"EXPAND_DEEP_SELF\": \"${BASIC:-test-bar}\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"EXPAND_DEEP_SELF\": \":-basic:-test}-bar}\"\n}"
         }
@@ -3649,7 +3649,7 @@
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"EXPAND_DEEP_SELF_PRIOR\": \"prefix2-foo-suffix2}-suffix2\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": "{\n  \"BASIC\": \"basic\",\n  \"EXPAND_DEEP_SELF_PRIOR\": \"prefix2-foo:-prefix1-basic:-test}-suffix2}-suffix2\"\n}"
         }
@@ -3692,7 +3692,7 @@
           "pass": false,
           "output": "{\n  \"HELLO\": \"$(echo world)\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"HELLO\": \"world\"\n}"
         }
@@ -3735,7 +3735,7 @@
           "pass": true,
           "output": "{\n  \"HELLO\": \"latin1\"\n}"
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": true,
           "output": "{\n  \"HELLO\": \"latin1\"\n}"
         }
@@ -3778,7 +3778,7 @@
           "pass": false,
           "output": null
         },
-        "ruby": {
+        "dotenv-ruby": {
           "pass": false,
           "output": null
         }
@@ -3794,6 +3794,6 @@
     "nodejs": 90,
     "php": 43,
     "python": 52,
-    "ruby": 55
+    "dotenv-ruby": 55
   }
 }

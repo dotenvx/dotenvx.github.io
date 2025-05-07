@@ -14,17 +14,11 @@ In practice, Docker Compose secrets are just plaintext files in disguise, which 
 
 Docker Compose added a feature called *secrets* to keep passwords and API keys out of your Dockerfiles and environment variables. The idea sounds good. But here's the catch: those secrets are **just plaintext files**.
 
-Compose simply bind-mounts the plaintext file into your container under `/run/secrets` <sup><a href="#footnote1">1</a></sup>. No encryption.
+Compose bind-mounts a plaintext file into your container under `/run/secrets` <sup><a href="#footnote1">1</a></sup>. No encryption.
 
 <a href="https://docs.docker.com/compose/how-tos/use-secrets/" target="_blank"><img src="https://github.com/user-attachments/assets/eedb7ab3-9c9a-49b2-9583-ec11ad411783" /></a>
 
-Many assume that using Docker secrets magically keeps secrets safe, but it can be a false sense of security. As one developer put it
-
-In a running container, an attacker (or even a malicious process) can simply read the unencrypted file from `/run/secrets` and obtain your secret.
-
-In fact, by default Docker Compose's secret files are mounted world-readable (mode 0444) <sup><a href="#footnote1">1</a></sup>, meaning any process in the container could potentially access them.
-
-The secret is always available at rest on the host filesystem and inside the container while it's running. You haven't eliminated the risk – you've just moved it.
+As a result, in a running container, an attacker (or malicious process) can simply read the unencrypted file from `/run/secrets` and obtain your secret – these secret files are mounted world-readable (mode 0444) <sup><a href="#footnote1">1</a></sup>.
 
 ## Plaintext Secrets at Rest
 

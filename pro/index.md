@@ -9,7 +9,7 @@ title: Pro
       <div class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</div>
     </div>
   </div>
-  <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Manager for Env Files.</h2>
+  <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets manager for .env files</h2>
   <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">We've reimagined the Secrets Manager and KMS – developer-first and from the ground up.</p>
   <p class="text-center">
     <a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Documentation</span></a>

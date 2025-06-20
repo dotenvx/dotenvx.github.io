@@ -10,19 +10,17 @@ title: Pro
     </div>
   </div>
   <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Secrets Manager for Env Files.</h2>
-  <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Add secrets manager-level workflows to your .env files.</p>
+  <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">We've reimagined the Secrets Manager and KMS – developer-first and from the ground up.</p>
   <p class="text-center">
-    <a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Coming soon!</span></a>
+    <a href="/docs/pro" class="flex flex-col gap-2"><span class="link-primary font-semibold underline">Documentation</span></a>
   </p>
 </section>
 
-<!--
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
   <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="flex-1">
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypted</h2>
-      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Encrypt your <span class="btick">.env</span> file so it can be safely committed to your repo.
-Secrets become part of your code — versioned, synced, and shareable.</p>
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypt your env files</h2>
+      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Encrypt <span class="btick">.env</span> files to be safely committed to your repo. Secrets become part of your code — versioned, synced, and shareable.</p>
     </div>
     <div class="flex-1 min-w-0 w-full">
       {% include v1/components/terminal-dotenvx-encrypt.html %}
@@ -33,7 +31,7 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
   <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="flex-1">
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloaked</h2>
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloak their private keys</h2>
       <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Cloak private keys with a single command. They vanish from <span class="btick">.env.keys</span> — but stay accessible when you need them.</p>
     </div>
     <div class="flex-1 min-w-0 w-full">
@@ -43,30 +41,16 @@ Secrets become part of your code — versioned, synced, and shareable.</p>
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
-  <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Secrets as Code</h2>
-  <p class="mx-auto mt-3 text-center md:text-start leading-relaxed text-md md:text-lg">With encryption and cloaking in place, secrets move through git. Unlock familiar workflows like PR review, approvals, branching, and deploys — now for secrets too.</p>
-
-  <div class="mt-6 text-center">
-    [depict secrets as code]
-  </div>
-
-  <div class="mt-8 flex flex-col gap-3 text-center">
-    <div class="italic">
-      "Our company was exposed to the CircleCI breach. Encryption would have protected us. We're using it now."
+  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
+    <div class="flex-1">
+      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Sync them like code</h2>
+      <p class="mx-auto mt-3 text-center md:text-start leading-relaxed text-md md:text-lg">With encryption and cloaking in place, secrets move through git. Unlock familiar workflows like PR review, approvals, branching, and deploys — now for secrets too.</p>
     </div>
-    <div class="flex justify-center items-center gap-2">
-      <div>
-        <img src="/assets/img/remy-logic.png" class="rounded-full h-10 w-10"/>
-      </div>
-
-      <div>
-        Remy Logic <span class="text-zinc-400 dark:text-zinc-600">– CTO</span>
-      </div>
+    <div class="flex-1 min-w-0 w-full">
+      {% include v1/components/terminal-dotenvx-pro-sync.html %}
     </div>
   </div>
 </section>
-
--->
 
 <!--
 <section class="w-full max-w-5xl mx-auto px-6 mt-20 md:mt-40">

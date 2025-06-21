@@ -1,0 +1,92 @@
+<section class="w-full max-w-5xl mx-auto px-6 mt-20 md:mt-32">
+  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
+    <div class="flex-1">
+      <h2 class="my-5 text-start text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">This is Dotenvx.</h2>
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 md:my-20">
+  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
+    <div class="md:flex-[1]">
+      <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Encrypt .env files</h3>
+      <p class="my-3">Run <span class="btick">dotenvx encrypt</span> to encrypt your .env files.</p>
+      <p class="my-3">Just like that, your .env files are protected at-rest and in-transit. That's a massive win for security.</p>
+      <p class="my-3">And you've unlocked secrets-as-code – a workflow win.</p>
+
+      <hr/>
+      <div class="mt-8 flex flex-col gap-3 text-center md:text-start">
+        <div class="italic">
+          "Our company was exposed to the CircleCI breach. Encryption would have protected us. We're using it now."
+        </div>
+        <div class="flex justify-center md:justify-start items-center gap-2">
+          <div>
+            <img src="/assets/img/remy-logic.png" class="rounded-full h-10 w-10"/>
+          </div>
+
+          <div>
+            Remy Logic <span class="text-zinc-400 dark:text-zinc-600">– CTO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:flex-[3] min-w-0 w-full">
+      {% include v1/components/encrypted-env-file-small.html %}
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 my-20">
+  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
+    <div class="md:flex-1">
+      <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Run them from anywhere</h3>
+      <p class="my-3">Dotenvx works the same across every language, framework, and platform – inject your env at runtime with <span class="btick">dotenvx run -- your-cmd</span>. Load both plaintext and encrypted .env files this way.</p>
+      <hr/>
+      <div class="mt-8 flex flex-col gap-3 text-center md:text-start">
+        <div class="italic">
+          "I like how usage is consistent across multiple languages and frameworks. No more wrestling with different tools."
+        </div>
+        <div class="flex justify-center md:justify-start items-center gap-2">
+          <div>
+            <img src="/assets/img/max-syntax.png" class="rounded-full h-10 w-10"/>
+          </div>
+
+          <div>
+            Max Syntax <span class="text-zinc-400 dark:text-zinc-600">– Polyglot Programmer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:flex-1 min-w-0 w-full">
+      {% include v1/components/terminal-dotenvx-run.html %}
+      <p class="mt-3 text-center"><a href="/spec" class="link-primary italic">Compare dotenvx to others &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 my-20">
+  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
+    <div class="md:flex-1">
+      <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Switch environments with a flag</h3>
+      <p class="my-3">Create a .env.production file and use <span class="btick">dotenvx run -f .env.production</span> to load it. It's straightforward, yet flexible.</p>
+      <hr/>
+      <div class="mt-8 flex flex-col gap-3 text-center md:text-start">
+        <div class="italic">
+          "I've always liked the .env.environment pattern. Now it finally has first-class support."
+        </div>
+        <div class="flex justify-center md:justify-start items-center gap-2">
+          <div>
+            <img src="/assets/img/zara-function.png" class="rounded-full h-10 w-10"/>
+          </div>
+
+          <div>
+            Zara Function <span class="text-zinc-400 dark:text-zinc-600">– Full-Stack/DevOps Engineer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:flex-1 min-w-0 w-full">
+      {% include v1/components/terminal-dotenvx-env-file.html %}
+    </div>
+  </div>
+</section>

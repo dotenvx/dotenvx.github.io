@@ -1,19 +1,28 @@
 <section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-40">
   <div class="flex gap-3 h-full flex-col items-center justify-center">
-    <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">dotenv. better.</h1>
-
-    <p class="my-10 text-center leading-relaxed text-lg md:text-2xl"><span class="italic">a better dotenv</span>–from the creator of {% include v1/components/dotenv.html %}</p>
-
-    <div class="flex-0 max-w-full mx-0 md:mx-4 lg:mx-10">
-      {% include/v1/components/install-box.html %}
-    </div>
-
-    <div class="flex-0 max-w-full mx-0 md:mx-4 lg:mx-10 mt-20 lg:mt-36">
-      {% include/v1/components/social-proof.html %}
-    </div>
-
-    <div class="">
-      <a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="link-primary font-semibold underline">Read the Whitepaper</a>
+    <h1 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-zinc-950 dark:text-[#ECD53F]">Scattered .env files? There's a better way.</h1>
+    <div class="flex text-xl flex-col md:flex-row gap-4 md:gap-20 my-10">
+      <div class="flex-1 flex flex-col gap-4 md:gap-8">
+        <p>There are plenty of ways to handle secrets. Some are complex, others insecure or painfully manual. You've probably tried them. Yet, here you are.</p>
+        <p>Unfortunately, most secrets-management solutions are overwhelming, overcomplicated, overpriced, or just plain frustrating when it comes to .env files.</p>
+        <p>Not Dotenvx. Dotenvx is refreshingly simple, secure, and designed specifically around .env files—built by the creator of the original {% include v1/components/dotenv.html %}</p>
+      </div>
+      <div class="flex-1 flex flex-col gap-4 md:gap-8">
+        <p>Dotenvx is open-source, telemetry-free, and self-contained. It's tailored specifically for lean teams who depend on .env workflows—not proprietary enterprise tools that make you work around them.</p>
+        <p>So I invite you to read the whitepaper, explore the docs, and <a href="/docs/quickstart" class="link-primary font-semibold">try Dotenvx for yourself</a>. I've put a lot of thought into its design. It's <span class="font-bold">dotenv. better.</span></p>
+        <div>
+          <p class="text-base">
+            <span class="font-bold tracking-tight">Scott Motte</span>, <a href="mailto:scott@dotenvx.com" class="link-primary font-semibold">scott@dotenvx.com</a>
+          </p>
+          <p class="text-base tracking-tight">
+            <span class="italic">Creator Dotenv, Founder @Dotenvx</span>
+          </p>
+        </div>
+        <hr/>
+        <div class="text-sm">
+          {% include/v1/components/install-box.html %}
+        </div>
+      </div>
     </div>
   </div>
 </section>

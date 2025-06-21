@@ -11,5 +11,6 @@ title: ""
 <hr class="my-10 md:my-20"/>
 {% include v1/install.html %}
 <hr class="my-10 md:my-20"/>
+{% include v1/trust.html %}
 {% include v1/trust-old.html %}
 </div>

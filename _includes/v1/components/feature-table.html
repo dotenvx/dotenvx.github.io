@@ -3,11 +3,18 @@
     <tr>
       <th class="px-1 md:px-2 lg:px-4 py-3 border-b-2 border-b-zinc-200 dark:border-b-zinc-700"></th>
       <th class="px-1 md:px-2 lg:px-4 py-3 border-b-2 border-b-zinc-200 dark:border-b-zinc-700 leading-tight text-lg">
-        <a href="https://github.com/dotenvx/dotenvx" target="_blank"> <span class="inline-block bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold px-2.5 py-1 text-lg italic rounded-sm">{% include logos/github.html class="h-5 w-5 mb-0.5 inline-block" %} OSS</span></a>
+        <a href="https://github.com/dotenvx/dotenvx">
+          <span class="inline-block bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold px-2.5 py-1 text-lg italic rounded-sm">{% include logos/github.html class="h-5 w-5 mb-0.5 inline-block" %} OSS</span>
+        </a>
       </th>
       <th class="px-1 md:px-2 lg:px-4 py-3 border-b-2 border-b-zinc-200 dark:border-b-zinc-700 text-xl">
         <a href="/pro">
           <span class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</span>
+        </a>
+      </th>
+      <th class="px-1 md:px-2 lg:px-4 py-3 border-b-2 border-b-zinc-200 dark:border-b-zinc-700 text-xl">
+        <a href="/enterprise">
+          <span class="inline-block bg-[#C8102E] text-zinc-50 font-bold px-2.5 py-1 text-lg rounded-sm">ENT</span>
         </a>
       </th>
     </tr>
@@ -22,8 +29,9 @@
     -->
     <tr>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right">Audience</td>
-      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Individuals</td>
-      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Small-Medium Business</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Hobbyists</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Small Business</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Med-Large Business</td>
     </tr>
     {% capture oss %}
       {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
@@ -31,17 +39,17 @@
     {% capture pro %}
       {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
-    {% include v1/components/feature-table-row.html feature="Encryption" oss=oss pro=pro href="/features/encryption" %}
-    {% include v1/components/feature-table-row.html feature="Run Anywhere" oss=oss pro=pro href="/features/run-anywhere" %}
-    {% include v1/components/feature-table-row.html feature="Multiple Environments" oss=oss pro=pro href="/features/multiple-environments" %}
+    {% capture ent %}
+      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+    {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="Encryption"               oss=oss pro=pro ent=ent href="/features/encryption" %}
+    {% include v1/components/feature-table-row.html feature="Run Anywhere"             oss=oss pro=pro ent=ent href="/features/run-anywhere" %}
+    {% include v1/components/feature-table-row.html feature="Multiple Environments"    oss=oss pro=pro ent=ent href="/features/multiple-environments" %}
+    {% include v1/components/feature-table-row.html feature="Variable expansion"       oss=oss pro=pro ent=ent href="/docs/advanced/run-variable-expansion" %}
+    {% include v1/components/feature-table-row.html feature="Command substitution"     oss=oss pro=pro ent=ent href="/docs/advanced/run-command-substitution" %}
+
     <!--
-    {% include v1/components/feature-table-row.html feature="Variable expansion" oss=oss pro=pro href="/docs/advanced/run-variable-expansion" %}
-    {% include v1/components/feature-table-row.html feature="Command substitution" oss=oss pro=pro href="/docs/advanced/run-command-substitution" %}
-    -->
     {% include v1/components/feature-table-row.html feature="Advanced Commands" oss=oss pro=pro href="/docs/advanced" %}
-
-
-    <!--
     {% include v1/components/feature-table-row.html feature="Monorepo" oss=oss pro=pro href="/docs/#monorepos" %}
     {% include v1/components/feature-table-row.html feature="Multiple .env files" oss=oss pro=pro href="/features/multiple-files" %}
     {% include v1/components/feature-table-row.html feature="Multi-line values" oss=oss pro=pro href="/docs/advanced/run-multiline" %}
@@ -58,14 +66,23 @@
     {% capture oss %}
       {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="Cloaked Keys"             oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Synced Devices"           oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Pull Requests"            oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Acess Controls"           oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="GitHub SSO"               oss=oss pro=pro ent=ent %}
+    {% capture pro %}
+      {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
+    {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="GitLab SSO"               oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="SAML"                     oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Self Hosted"              oss=oss pro=pro ent=ent %}
 
-    {% include v1/components/feature-table-row.html feature="Cloaked Keys" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Synced Devices" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Pull Requests" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Acess Controls" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="GitHub SSO" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Dedicated Support" oss="None" pro="Email" trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="License" oss="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" pro="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>" %}
+    {% include v1/components/feature-table-row.html feature="Dedicated Support"        oss="None" pro="Email" ent="Email" %}
+    {% include v1/components/feature-table-row.html feature="License" oss="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" pro="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>" ent="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>"%}
+
+
+
     <!--
     <tr>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b text-right">Variable expansion</td>
@@ -106,24 +123,45 @@
         Free
       </td>
       <td class="px-1 md:px-2 lg:px-4 py-4 border-b border-b-zinc-200 dark:border-b-zinc-700 font-semibold">
-        $299/month billed annually, all-inclusive
+        $299/month<br/><span class="text-sm font-light">billed annually</span>
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 py-4 border-b border-b-zinc-200 dark:border-b-zinc-700 font-semibold">
+        $1299/month<br/><span class="text-sm font-light">billed annually</span>
       </td>
     </tr>
   </tbody>
   <tfoot class="bg-zinc-100 dark:bg-zinc-900">
     <tr>
-      <td class="px-1 md:px-2 lg:px-4 py-6"></td>
-      <td class="px-1 md:px-2 lg:px-4 py-6">
-        <a href="https://github.com/dotenvx/dotenvx" class="btn-secondary w-auto flex-none inline-block" target="_blank">
+      <td class="px-1 md:px-2 lg:px-4 py-2"></td>
+      <td class="px-1 md:px-2 lg:px-4">
+        <a href="https://github.com/dotenvx/dotenvx" class="btn-secondary w-full flex-none inline-block" target="_blank">
           <span class="hidden md:block">Get started ↗</span>
           <span class="block md:hidden">Start ↗</span>
         </a>
       </td>
-      <td class="px-1 md:px-2 lg:px-4 py-6">
-        <a href="https://pro.dotenvx.com/signup" class="btn-success w-auto flex-none inline-block">
-          <span class="hidden md:block">Try it free for 75 days</span>
-          <span class="block md:hidden">Try Free 75 days</span>
-        </a>
+      <td class="px-1 md:px-2 lg:px-4 py-2">
+        <div class="flex flex-col gap-2">
+          <a href="/pro" class="btn-outline w-full flex-none inline-block">
+            <span class="hidden md:block">Learn more</span>
+            <span class="block md:hidden">Learn</span>
+          </a>
+          <a href="https://pro.dotenvx.com/signup" class="btn-dark w-full flex-none inline-block">
+            <span class="hidden md:block">Create account</span>
+            <span class="block md:hidden">Sign up</span>
+          </a>
+        </div>
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 py-2">
+        <div class="flex flex-col gap-2">
+          <a href="/enterprise" class="btn-outline w-full flex-none inline-block">
+            <span class="hidden md:block">Learn more</span>
+            <span class="block md:hidden">Learn</span>
+          </a>
+          <a href="mailto:sales@dotenvx.com" class="btn-dark w-full flex-none inline-block">
+            <span class="hidden md:block">Contact sales</span>
+            <span class="block md:hidden">Contact</span>
+          </a>
+        </div>
       </td>
     </tr>
   </tfoot>

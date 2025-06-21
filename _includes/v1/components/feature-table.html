@@ -20,25 +20,25 @@
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Secrets manager for .env files 🏆</td>
     </tr>
     -->
-    <!--
     <tr>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right">Audience</td>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Individuals</td>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700">Small-Medium Business</td>
     </tr>
-    -->
     {% capture oss %}
       {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
     {% capture pro %}
       {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
-    {% include v1/components/feature-table-row.html feature="Encrypt .env files" oss=oss pro=pro href="/features/encryption" %}
-    {% include v1/components/feature-table-row.html feature="Run anywhere" oss=oss pro=pro href="/features/run-anywhere" %}
-    {% include v1/components/feature-table-row.html feature="Multi-environment" oss=oss pro=pro href="/features/multiple-environments" %}
+    {% include v1/components/feature-table-row.html feature="Encryption" oss=oss pro=pro href="/features/encryption" %}
+    {% include v1/components/feature-table-row.html feature="Run Anywhere" oss=oss pro=pro href="/features/run-anywhere" %}
+    {% include v1/components/feature-table-row.html feature="Multiple Environments" oss=oss pro=pro href="/features/multiple-environments" %}
+    <!--
     {% include v1/components/feature-table-row.html feature="Variable expansion" oss=oss pro=pro href="/docs/advanced/run-variable-expansion" %}
     {% include v1/components/feature-table-row.html feature="Command substitution" oss=oss pro=pro href="/docs/advanced/run-command-substitution" %}
-    {% include v1/components/feature-table-row.html feature="Advanced commands" oss=oss pro=pro href="/docs/advanced" %}
+    -->
+    {% include v1/components/feature-table-row.html feature="Advanced Commands" oss=oss pro=pro href="/docs/advanced" %}
 
 
     <!--
@@ -59,11 +59,12 @@
       {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
 
-    {% include v1/components/feature-table-row.html feature="Cloak private keys" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Pull requests" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Team Sync" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Cloaked Keys" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Synced Devices" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Pull Requests" oss=oss pro=pro trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Acess Controls" oss=oss pro=pro trophy="true" %}
     {% include v1/components/feature-table-row.html feature="GitHub SSO" oss=oss pro=pro trophy="true" %}
-    {% include v1/components/feature-table-row.html feature="Dedicated support" oss="None" pro="Email" trophy="true" %}
+    {% include v1/components/feature-table-row.html feature="Dedicated Support" oss="None" pro="Email" trophy="true" %}
     {% include v1/components/feature-table-row.html feature="License" oss="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" pro="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>" %}
     <!--
     <tr>

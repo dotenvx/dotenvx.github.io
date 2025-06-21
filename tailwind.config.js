@@ -9,11 +9,7 @@ module.exports = {
     './*.html',
   ],
   theme: {
-    extend: {
-      screens: {
-        'xs': '414px', // example custom small breakpoint
-      }
-    },
+    extend: {},
   },
   variants: {},
   plugins: [

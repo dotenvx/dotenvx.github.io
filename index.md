@@ -10,4 +10,5 @@ title: ""
 {% include v1/adoption.html %}
 <hr class="my-10 md:my-20"/>
 {% include v1/install.html %}
+{% include v1/social-proof.html %}
 </div>

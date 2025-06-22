@@ -6,13 +6,13 @@
   </div>
 </section>
 
-<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 md:my-20">
+<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 my-10 md:my-20">
   <div class="flex gap-5 md:gap-10 h-full flex-col md:flex-row items-center justify-center md:items-start">
     <div class="md:w-2/5">
       <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Encrypt .env Files</h3>
-      <p class="my-5 text-lg">Run <span class="btick">dotenvx encrypt</span> to encrypt your .env files.</p>
-      <p class="my-5 text-lg">Just like that, your .env files are protected at-rest and in-transit. That's a massive win for security.</p>
-      <p class="my-5 text-lg">And you've unlocked secrets-as-code – a git-ops workflow win.</p>
+      <p class="my-2 md:my-5 md:text-lg">Run <span class="btick">dotenvx encrypt</span> to encrypt your .env files.</p>
+      <p class="my-2 md:my-5 md:text-lg">Just like that, your .env files are protected at-rest and in-transit. That's a massive win for security.</p>
+      <p class="my-2 md:my-5 md:text-lg">And you've unlocked secrets-as-code – a git-ops workflow win.</p>
     </div>
     <div class="md:w-3/5 min-w-0 w-full">
       {% include v1/components/encrypted-env-file-small.html %}
@@ -33,12 +33,12 @@
   </div>
 </section>
 
-<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 my-20">
+<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 my-10 md:my-20">
   <div class="flex gap-5 md:gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="md:flex-1">
       <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Run Anywhere</h3>
-      <p class="my-5 text-lg">Dotenvx works the same across every language, framework, and platform – inject your env at runtime with <span class="btick">dotenvx run -- your-cmd</span>. Load both plaintext and encrypted .env files this way.</p>
-      <p class="mt-5 text-lg text-center md:text-start"><a href="/spec" class="link-primary italic">Compare dotenvx to others &rarr;</a></p>
+      <p class="my-2 md:my-5 md:text-lg">Dotenvx works the same across every language, framework, and platform – inject your env at runtime with <span class="btick">dotenvx run -- your-cmd</span>. Load both plaintext and encrypted .env files this way.</p>
+      <p class="my-2 md:my-5 md:text-lg text-center md:text-start"><a href="/spec" class="link-primary italic">Compare dotenvx to others &rarr;</a></p>
     </div>
     <div class="md:flex-1 min-w-0 w-full">
       {% include v1/components/terminal-dotenvx-run.html %}
@@ -60,11 +60,11 @@
   </div>
 </section>
 
-<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 my-20">
+<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 my-10 md:my-20">
   <div class="flex gap-5 md:gap-10 h-full flex-col md:flex-row items-center justify-center">
     <div class="md:flex-1">
       <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Multiple Environments</h3>
-      <p class="my-5 text-lg">Create a .env.production file and use <span class="btick">dotenvx run -f .env.production</span> to load it. It's straightforward, yet flexible.</p>
+      <p class="my-2 md:my-5 md:text-lg">Create a .env.production file and use <span class="btick">dotenvx run -f .env.production</span> to load it. It's straightforward, yet flexible.</p>
     </div>
     <div class="md:flex-1 min-w-0 w-full">
       {% include v1/components/terminal-dotenvx-env-file.html %}

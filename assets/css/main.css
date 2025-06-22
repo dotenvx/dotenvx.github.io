@@ -23,7 +23,7 @@ body {
 }
 
 .btn-dark {
-  @apply text-center rounded-md bg-zinc-900 dark:bg-black px-4 py-2.5 font-semibold text-zinc-50 dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-zinc-600 dark:active:bg-zinc-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 dark:text-zinc-50;
+  @apply text-center dark:border dark:border-zinc-600 rounded-md bg-zinc-900 dark:bg-black px-4 py-2.5 font-semibold text-zinc-50 dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-zinc-600 dark:active:bg-zinc-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 dark:text-zinc-50;
 }
 
 .nav-success {

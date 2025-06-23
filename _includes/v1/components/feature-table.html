@@ -45,6 +45,7 @@
     {% include v1/components/feature-table-row.html feature="Encryption"               oss=oss pro=pro ent=ent href="/features/encryption" %}
     {% include v1/components/feature-table-row.html feature="Run Anywhere"             oss=oss pro=pro ent=ent href="/features/run-anywhere" %}
     {% include v1/components/feature-table-row.html feature="Multiple Environments"    oss=oss pro=pro ent=ent href="/features/multiple-environments" %}
+    {% include v1/components/feature-table-row.html feature="Secrets-as-Code"          oss=oss pro=pro ent=ent %}
     {% include v1/components/feature-table-row.html feature="Variable expansion"       oss=oss pro=pro ent=ent href="/docs/advanced/run-variable-expansion" %}
     {% include v1/components/feature-table-row.html feature="Command substitution"     oss=oss pro=pro ent=ent href="/docs/advanced/run-command-substitution" %}
 
@@ -66,22 +67,21 @@
     {% capture oss %}
       {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
-    {% include v1/components/feature-table-row.html feature="Cloaked Keys"             oss=oss pro=pro ent=ent %}
-    {% include v1/components/feature-table-row.html feature="Synced Devices"           oss=oss pro=pro ent=ent %}
-    {% include v1/components/feature-table-row.html feature="Pull Requests"            oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Cloak-Zero"               oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Web UI"                   oss=oss pro=pro ent=ent %}
     {% include v1/components/feature-table-row.html feature="Acess Controls"           oss=oss pro=pro ent=ent %}
-    {% include v1/components/feature-table-row.html feature="GitHub SSO"               oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="PR Reviews"               oss=oss pro=pro ent=ent %}
     {% capture pro %}
       {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
-    {% include v1/components/feature-table-row.html feature="GitLab SSO"               oss=oss pro=pro ent=ent %}
-    {% include v1/components/feature-table-row.html feature="SAML"                     oss=oss pro=pro ent=ent %}
-    {% include v1/components/feature-table-row.html feature="Self Hosted"              oss=oss pro=pro ent=ent %}
-
-    {% include v1/components/feature-table-row.html feature="Dedicated Support"        oss="None" pro="Email" ent="Email" %}
+    {% include v1/components/feature-table-row.html feature="Env-Radar"                oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Compliance Alerts"        oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Rotation"                 oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Push/Pull"                oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Version History"          oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Audit Logs"               oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Support"                  oss="None" pro="Email" ent="Email" %}
     {% include v1/components/feature-table-row.html feature="License" oss="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" pro="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>" ent="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>"%}
-
-
 
     <!--
     <tr>

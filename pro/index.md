@@ -2,50 +2,46 @@
 title: "Pro – Secrets manager for env files"
 ---
 
-{% include v1/pro-hero.html %}
-
-<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
-  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
-    <div class="flex-1">
-      <!--<h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypt your env files</h2>-->
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Encrypt them</h2>
-      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Encrypt <span class="btick">.env</span> files to be safely committed to your repo. Secrets become part of your code — versioned, synced, and shareable.</p>
-    </div>
-    <div class="flex-1 min-w-0 w-full">
-      {% include v1/components/terminal-dotenvx-encrypt.html %}
-    </div>
+<section class="w-full max-w-4xl lg:max-w-5xl mx-auto px-6 mt-20 md:mt-32">
+  <div class="flex gap-3 h-full flex-col items-center justify-center">
+    <h1 class="my-5 text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-[#ECD53F]">Join 10+ companies who put the added functionality of Dotenvx Pro to work for them.</h1>
+    <p>Focused security, team-friendly collaboration, and smooth developer workflows.</p>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
-  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
-    <div class="flex-1">
-      <!--<h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloak their private keys</h2>-->
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Cloak them</h2>
-      <p class="text-center md:text-start leading-relaxed text-md md:text-lg">Cloak private keys with a single command. They vanish from <span class="btick">.env.keys</span> — but stay accessible when you need them.</p>
-    </div>
-    <div class="flex-1 min-w-0 w-full">
-      {% include v1/components/terminal-dotenvx-pro-cloak.html %}
-    </div>
+<section class="w-full max-w-3xl mx-auto px-6 my-20 md:my-32">
+  <div class="flex gap-4 h-full flex-col">
+    <h2 class="text-3xl font-bold">Security</h2>
+    <p class="text-lg">
+      <strong>Cloaked Keys</strong>.
+      Cloak private keys with a single command – removing them from your .env.keys file. No more private keys sitting unencrypted at-rest.
+    </p>
+    <p class="text-lg">
+      <strong>Access Controls</strong>.
+      Set precise permissions to control exactly who views, edits, or syncs secrets across your organization.
+    </p>
+    <p class="text-lg">
+      <strong>Backups</strong>.
+      Automatic backups of your .env files – secure, versioned, and restorable anytime.
+    </p>
+    <h2 class="text-3xl font-bold">Workflow</h2>
+    <p class="text-lg">
+      <strong>Synced Devices</strong>.
+      Securely sync .env files instantly across development laptops, CI/CD pipelines, and production.
+    </p>
+    <h2 class="text-3xl font-bold">Workflow</h2>
+    <p class="text-lg">
+      <strong>GitHub Pull Requests</strong>.
+      Manage secrets with Git-native workflows. Review, approve, and audit .env changes right from pull requests.
+    </p>
+    <p class="text-lg">
+      <strong>Version History</strong>.
+      See exactly who changed what, when, and why. Easily audit or revert any secret updates.
+    </p>
+    <p class="text-lg">
+      <strong>Support</strong>.
+      Dedicated priority support—fast, helpful, and tailored for developer teams.
+    </p>
+
   </div>
 </section>
-
-<section class="w-full max-w-5xl mx-auto px-6 my-20 md:my-32">
-  <div class="flex gap-10 h-full flex-col md:flex-row items-center justify-center">
-    <div class="flex-1">
-      <!--<h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Sync them like code</h2>-->
-      <h2 class="my-5 text-center md:text-start text-5xl lg:text-6xl font-bold tracking-tight leading-none text-zinc-950 dark:text-zinc-50">Sync them</h2>
-      <p class="mx-auto mt-3 text-center md:text-start leading-relaxed text-md md:text-lg">With encryption and cloaking in place, secrets move through git. Unlock familiar workflows like PR review, approvals, branching, and deploys — now for secrets too.</p>
-    </div>
-    <div class="flex-1 min-w-0 w-full">
-      {% include v1/components/terminal-dotenvx-pro-sync.html %}
-    </div>
-  </div>
-</section>
-
-<!--
-<section class="w-full max-w-5xl mx-auto px-6 mt-20 md:mt-40">
-  <h2 class="my-5 text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-zinc-950 dark:text-[#ECD53F]">Team Sync</h2>
-  <p class="mx-auto mt-3 max-w-3xl text-center text-md md:text-lg text-zinc-600 leading-2 mb-6">Stay in sync with a single command.</p>
-</section>
--->

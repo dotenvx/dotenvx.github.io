@@ -36,8 +36,8 @@ title: "Pro"
             </a>
           </div>
           <div class="flex gap-1 text-center leading-relaxed my-1 items-center justify-center">
-            <h1 class="text-center text-xl font-bold tracking-tight leading-none text-black dark:text-[#ECD53F] py-4">dotenvx <span class="hidden">pro</span></h1>
-            <div class="inline-block bg-[#ECD53F] text-black font-bold px-2 py-1 text-xl italic rounded-sm">PRO</div>
+            <h1 class="text-center text-xl font-bold tracking-tight leading-none text-black dark:text-[#ECD53F] py-4">Dotenvx <span class="hidden">Pro</span></h1>
+            <div class="inline-block bg-[#ECD53F] text-black font-bold px-2 py-1 text-xl italic rounded-sm uppercase">Pro</div>
           </div>
         </div>
       </div>

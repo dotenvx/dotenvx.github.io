@@ -1,18 +1,18 @@
 <div class="top-0 dark:rounded-t-lg border-t dark:border-t border-t-yellow-300 z-20">
   <div class="mx-auto w-full">
     <div class="mx-auto flex pt-2 w-full items-center transition pl-2 lg:pl-5 lg:pr-8 pr-0.5 h-12">
-      <div class="flex-1 flex items-center h-10">
+      <div class="flex-shrink-0 md:flex-1 flex items-center h-10">
         <a href="/" class="inline-block w-10 h-10">
           {% include v1/components/logo.html class="w-10 h-10" %}
         </a>
       </div>
-      <div class="flex-shrink-0 h-10 flex items-center justify-center max-w-lg flex-1">
-        <a href="/docs" role="button" class="btn-nav">Docs</a>
-        <a href="/pro" role="button" class="hidden md:block btn-nav">Pro</a>
-        <a href="/enterprise" role="button" class="hidden md:block btn-nav">Enterprise</a>
-        <a href="/login" role="button" class="btn-nav mr-2">Account</a>
+      <div class="flex-1 md:flex-shrink-0 h-10 flex items-center justify-start md:justify-center">
+        <a href="/docs" role="button" class="btn-nav block md:hidden">Docs</a>
+        <a href="/docs" role="button" class="btn-nav hidden md:block">Documentation</a>
+        <a href="/pro" role="button" class="btn-nav">Pro</a>
+        <a href="/enterprise" role="button" class="btn-nav">Ent<span class="hidden md:inline">erprise</span></a>
       </div>
-      <div class="flex-1 h-10 flex items-center justify-end">
+      <div class="flex-shrink-0 md:flex-1 h-10 flex items-center justify-end">
         <!--
         <a href="/support" role="button" class="block link-nav">Support</a>
         <a href="/core" role="button" class="hidden md:block link-nav mr-2">Core</a>
@@ -21,6 +21,10 @@
           {% include logos/cloak-circle.html class="w-8 h-8 text-zinc-900 dark:invert" %}
         </a>
         -->
+        <a href="/login" role="button" class="btn-nav md:mr-2 flex items-center gap-1">
+          <span class="hidden md:block">Account</span>
+          {% include v1/icons/person-circle.html class="block md:hidden w-3.5 text-zinc-500" %}
+        </a>
         <div class="mr-3.5 hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-zinc-100/15"></div>
         <div class="mr-3.5 md:mr-0">{% include v1/components/toggle-mode.html %}</div>
         <a href="https://github.com/dotenvx/dotenvx" class="ml-3.5 hidden xs:block md:block opacity-75 hover:opacity-100">

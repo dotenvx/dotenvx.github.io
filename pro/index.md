@@ -44,7 +44,7 @@ title: "Pro"
         </p>
         <hr/>
         <a href="https://pro.dotenvx.com/signup" class="btn-dark w-full flex-none inline-block">
-          <span class="hidden md:block">Sign Up Your Company ›</span>
+          Sign Up Your Company ›
         </a>
       </div>
     </div>

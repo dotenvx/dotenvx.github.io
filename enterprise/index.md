@@ -43,7 +43,7 @@ title: "Enterprise"
         </p>
         <hr/>
         <a href="mailto:sales@dotenvx.com" class="btn-enterprise w-full flex-none inline-block">
-          <span class="hidden md:block">Contact Sales</span>
+          Contact Sales
         </a>
       </div>
     </div>

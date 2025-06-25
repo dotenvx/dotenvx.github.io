@@ -8,6 +8,7 @@ title: "Pro"
       <h1 class="text-center text-xl font-bold tracking-tight leading-none text-black dark:text-[#ECD53F]">Dotenvx <span class="hidden">Pro</span></h1>
       <div class="inline-block bg-[#ECD53F] text-black font-bold px-2 py-1 text-xl italic rounded-sm uppercase">Pro</div>
     </div>
+    <p class="text-center text-zinc-500 uppercase text-xs tracking-tight font-bold">Just released!</p>
     <h1 class="mb-5 text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-[#ECD53F]">Join 
       <span x-data="{
         organizations: 40,
@@ -16,7 +17,7 @@ title: "Pro"
             .then(response => response.json())
             .then(data => { this.organizations = data.organizations; })
         }
-      }" x-init="getOrganizationsCount()" x-text="organizations">40</span> companies trialing the added functionality of Dotenvx Pro.
+      }" x-init="getOrganizationsCount()" x-text="organizations">40</span> companies already trialing the added functionality of Dotenvx Pro.
     </h1>
     <div class="flex text-xl flex-col md:flex-row gap-4 md:gap-10 lg:gap-16">
       <div class="flex-1 flex flex-col gap-4 md:gap-8">

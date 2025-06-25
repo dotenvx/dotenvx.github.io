@@ -8,6 +8,7 @@ title: "Enterprise"
       <h1 class="text-center text-xl font-bold tracking-tight leading-none text-black dark:text-[#ECD53F]">Dotenvx <span class="hidden">Enterprise</span></h1>
       <div class="inline-block bg-[#c8102E] text-zinc-50 font-bold px-2 py-1 text-xl italic rounded-sm uppercase">Ent</div>
     </div>
+    <p class="text-center text-orange-600 dark:text-orange-500 text-sm tracking-tight font-semibold">In active development. Taking LOIs.</p>
     <h1 class="mb-5 text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-[#ECD53F] font-light">Available Selectively. Contact Sales.</h1>
     <div class="flex text-xl flex-col md:flex-row gap-4 md:gap-10 lg:gap-16">
       <div class="flex-1 flex flex-col gap-4 md:gap-8">

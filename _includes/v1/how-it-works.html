@@ -11,15 +11,22 @@
     <div class="md:w-2/5">
       <h3 class="mb-5 text-center md:text-start text-3xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Encrypt .env Files</h3>
       <p class="my-2 md:my-5 md:text-lg">Run <span class="btick">dotenvx encrypt</span> to encrypt your .env files.</p>
-      <p class="my-2 md:my-5 md:text-lg">Just like that, your .env files are protected at-rest and in-transit. That's a massive win for security.</p>
-      <p class="my-2 md:my-5 md:text-lg">And you've unlocked secrets-as-code – a git-ops workflow win.</p>
-      <p class="my-2 md:my-5 md:text-lg">And when you’re working with agents, encrypted .env files become a no-brainer — they keep secrets from leaking into prompts or model context, and make it dead simple to deploy the exact secrets each agent needs alongside it.</p>
+      <p class="my-2 md:my-5 md:text-lg">Your .env files are protected at-rest and in-transit. That's a massive win for security.</p>
+      <p class="my-2 md:my-5 md:text-lg">When you're working with AI editors and agents, encrypted .env files are a must — they keep secrets from leaking into prompts or model context.</p>
+      <div class="flex gap-4 items-center justify-between lg:justify-start max-w-lg mx-auto">
+        {% include logos/openai.html class="text-zinc-500 h-8" %}
+        {% include logos/cursor.html class="text-zinc-500 h-8" %}
+        {% include logos/claude.html class="text-zinc-500 h-8" %}
+        {% include logos/gemini.html class="text-zinc-500 h-8" %}
+        {% include logos/ollama.html class="text-zinc-500 h-8" %}
+        {% include logos/huggingface.html class="text-zinc-500 h-8" %}
+      </div>
     </div>
     <div class="md:w-3/5 min-w-0 w-full">
       {% include v1/components/encrypted-env-file-small.html %}
       <div class="mt-4 flex flex-col gap-1 text-center">
         <div class="italic">
-          "Our company was exposed to the CircleCI breach. Encryption would have protected us. We're using it now."
+          "Our company was exposed to the CircleCI breach. Encryption would have protected us. We're using it now everywhere so that we're protected from the next breach – likely an AI service.
         </div>
         <div class="flex justify-center items-center gap-2">
           <div>

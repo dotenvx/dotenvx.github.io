@@ -12,34 +12,34 @@ title: "Radar"
     <div class="flex text-xl flex-col md:flex-row gap-4 md:gap-10 lg:gap-16">
       <div class="flex-1 flex flex-col gap-4 md:gap-8">
         <p>
-          <strong>Auto-Backed Up.</strong>
+          <strong>Backups.</strong>
           Every environment your app runs with is automatically captured, encrypted, and stored. Radar makes sure nothing gets lost.
         </p>
         <p>
-          <strong>Auto-Versioned.</strong>
+          <strong>Versioning.</strong>
           Radar tracks every change to your envs across time. View diffs, roll back instantly, and understand who changed what, where, and when.
         </p>
         <p>
-          <strong>Observe Runtime Env.</strong>
+          <strong>Observability.</strong>
           Radar watches every app launch, process, or container, capturing the exact environment variables injected at runtime. Total visibility across dev, staging, and production.
         </p>
       </div>
       <div class="flex-1 flex flex-col gap-4 md:gap-8">
         <p>
-          <strong>Prevent Injection Attacks.</strong>
-          Detect when unexpected env vars are injected into your runtimes—whether by a compromised CI job, rogue script, or sneaky shell override.
+          <strong>Anomaly Detection.</strong>
+          Radar doesn’t just record—it notices. Get alerts when a secret appears in the wrong place, a value changes silently, or a critical env is missing.
         </p>
         <p>
-          <strong>Surface Anomolies.</strong>
-          Radar doesn’t just record—it notices. Get alerts when a secret appears in the wrong place, a value changes silently, or a critical env is missing.
+          <strong>Attack Mitigation.</strong>
+          Detect when unexpected env vars are injected into your runtimes—whether by a compromised CI job, rogue script, or sneaky shell override.
         </p>
         <hr/>
         <div class="flex flex-col gap-4">
           <a href="https://buy.stripe.com/bJe6oHccB2yM9WAbti7IY00" target="_blank" rel="noopener" class="btn-radar w-full flex-none inline-block">
-            Unlock Lifetime Access – $19
+            Buy Lifetime Access – $19
           </a>
           <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes lifetime access to the core Radar product. No subscriptions, no recurring fees—just a one-time unlock to get in early and stay in forever.
+            <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes lifetime access to the core Radar product. No subscriptions, no recurring fees—just a one-time unlock to get in early and stay in forever. This lifetime access is a limited edition - available to early supporters. This one-time price won't be available later.
           </p>
         </div>
       </div>

@@ -1,0 +1,11 @@
+<tr>
+  <td class="px-1 md:px-2 lg:px-3 py-1 border-b border-b-zinc-100 dark:border-b-zinc-800 text-right text-xs uppercase">
+    <span class="inline-block">{% if include.href %}<a href="{{ include.href }}" class="hover:underline">{{ include.feature }}</a>{% else %}{{ include.feature }}{% endif %}</span>
+  </td>
+  <td class="px-1 md:px-2 lg:px-3 py-1 border-b border-b-zinc-100 dark:border-b-zinc-800">
+    {{ include.oss }}
+  </td>
+  <td class="px-1 md:px-2 lg:px-3 py-1 border-b border-b-zinc-100 dark:border-b-zinc-800">
+    {{ include.radar }}
+  </td>
+</tr>

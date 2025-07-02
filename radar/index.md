@@ -39,7 +39,7 @@ title: "Radar"
             Buy Lifetime Access – $19
           </a>
           <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes lifetime access to the core Radar product. No subscriptions, no recurring fees—just a one-time unlock to get in early and stay in forever. This lifetime access is a limited edition - available to early supporters. This one-time price won't be available later.
+            <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes lifetime access to the core Radar product. No subscriptions, no recurring fees—just a one-time unlock to get in early and stay in forever. This lifetime access is a limited edition - available to early supporters.
           </p>
         </div>
       </div>

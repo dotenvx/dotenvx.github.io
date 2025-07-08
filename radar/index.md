@@ -35,7 +35,7 @@ title: "Radar"
         </p>
         <hr/>
         <div class="flex flex-col gap-4">
-          <a href="https://buy.stripe.com/bJe6oHccB2yM9WAbti7IY00" target="_blank" rel="noopener" class="btn-radar w-full flex-none inline-block" data-umami-event="Buy button">
+          <a href="https://buy.stripe.com/6oU00jekJ4GUc4IeFu7IY01" target="_blank" rel="noopener" class="btn-radar w-full flex-none inline-block" data-umami-event="Buy button">
             Buy Lifetime Access – $29
           </a>
           <p class="text-sm text-zinc-600 dark:text-zinc-300">

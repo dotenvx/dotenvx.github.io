@@ -1,15 +1,15 @@
 ---
-title: precommit 
-redirect_to: /docs/advanced/precommit-install
+title: prebuild
+redirect_to: /docs/advanced/prebuild
 ---
 
 <div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
   <div class="flex flex-col gap-2">
     <span class="">You are being redirected to</span>
-    <a href="/docs/advanced/precommit-install"><u>/docs/advanced/precommit-install</u></a>
+    <a href="/docs/advanced/prebuild"><u>/docs/advanced/prebuild</u></a>
   </div>
 
-  <a class="btn-outline w-fit" href="/docs/advanced/precommit-install">Continue</a>
+  <a class="btn-outline w-fit" href="/docs/advanced/prebuild">Continue</a>
 
   <span class="text-xs">in <span id="counter">4</span> second(s)</span>
 </div>
@@ -21,7 +21,7 @@ redirect_to: /docs/advanced/precommit-install
     var count = div.textContent * 1 - 1
     div.textContent = count
     if (count <= 0) {
-      window.location.replace("/docs/advanced/precommit-install")
+      window.location.replace("/docs/advanced/prebuild")
       clearInterval(interval)
     }
   }, 1000)

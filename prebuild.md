@@ -1,15 +1,15 @@
 ---
 title: prebuild
-redirect_to: /docs/advanced/prebuild
+redirect_to: /features/prebuild
 ---
 
 <div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
   <div class="flex flex-col gap-2">
     <span class="">You are being redirected to</span>
-    <a href="/docs/advanced/prebuild"><u>/docs/advanced/prebuild</u></a>
+    <a href="/features/prebuild"><u>/features/prebuild</u></a>
   </div>
 
-  <a class="btn-outline w-fit" href="/docs/advanced/prebuild">Continue</a>
+  <a class="btn-outline w-fit" href="/features/prebuild">Continue</a>
 
   <span class="text-xs">in <span id="counter">4</span> second(s)</span>
 </div>
@@ -21,7 +21,7 @@ redirect_to: /docs/advanced/prebuild
     var count = div.textContent * 1 - 1
     div.textContent = count
     if (count <= 0) {
-      window.location.replace("/docs/advanced/prebuild")
+      window.location.replace("/features/prebuild")
       clearInterval(interval)
     }
   }, 1000)

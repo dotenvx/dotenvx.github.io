@@ -36,7 +36,7 @@ title: "Radar"
         <hr/>
         <div class="flex flex-col gap-4">
           <a href="https://buy.stripe.com/7sY4gzdgFddq3ycape7IY02" target="_blank" rel="noopener" class="btn-radar w-full flex-none inline-block" data-umami-event="Buy button">
-            Buy Yearly Access – $19/year
+            Get Yearly Access – $19/year
           </a>
           <p class="text-sm text-zinc-600 dark:text-zinc-300">
             <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes yearly access to the core Radar product. Get in early at an amazing price. This price is a limited edition - available to early supporters.

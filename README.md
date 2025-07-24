@@ -1,4 +1,4 @@
-![dotenvx](https://dotenvx.github.io/better-banner.png)
+![dotenvx](https://dotenvx.github.io/banner.png)
 
 > source code for [dotenvx.com](https://dotenvx.com)
 > 

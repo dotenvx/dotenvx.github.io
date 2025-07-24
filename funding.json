@@ -5,7 +5,7 @@
     "role": "maintainer",
     "name": "DOTENVX LLC",
     "email": "mot@dotenvx.com",
-    "description": "a better dotenv–from the creator of dotenv",
+    "description": "a secure dotenv–from the creator of dotenv",
     "webpageUrl": {
       "url": "https://dotenvx.com"
     }
@@ -13,7 +13,7 @@
   "projects": [{
     "guid": "dotenvx",
     "name": "dotenvx",
-    "description": "a better dotenv–from the creator of dotenv",
+    "description": "a secure dotenv–from the creator of dotenv",
     "webpageUrl": {
       "url": "https://dotenvx.com"
     },

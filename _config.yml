@@ -2,7 +2,7 @@ url: "https://dotenvx.com" # the base hostname & protocol for your site, e.g. ht
 baseurl: "/" # the subpath of your site, e.g. /blog
 title: "dotenvx" # the name of your site, e.g. ACME Corp.
 logo: "https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg"
-description: "a better dotenv–from the creator of `dotenv`"
+description: "a secure dotenv–from the creator of `dotenv`"
 
 # Footer "Edit this page on GitHub" link text
 github_edit_link: true # show or hide edit this page link

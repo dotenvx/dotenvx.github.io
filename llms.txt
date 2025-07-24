@@ -1,6 +1,6 @@
 # dotenvx
 
-> a better dotenv–from the creator of dotenv
+> a secure dotenv–from the creator of dotenv
 
 ## Blog
 
@@ -12,31 +12,31 @@
 - [1,000+ Open Source Projects rely on dotenvx | dotenvx](https://dotenvx.com/blog/2024/09/12/from-zero-to-1000.html): Over 1,000 open source projects rely on dotenvx, and growing.
 - [I know kung fu - llms.txt | dotenvx](https://dotenvx.com/blog/2024/11/19/llms-txt.html): Teach Cursor, ChatGPT, and other LLM editors kung fu via an llms.txt file.
 - [It adds up | dotenvx](https://dotenvx.com/blog/2024/11/28/thanksgiving.html): It’s tough carving out an hour here, 30 minutes there, to pursue a dream. But it adds up.
-- [Blog | dotenvx](https://dotenvx.com/blog/): a better dotenv–from the creator of dotenv
+- [Blog | dotenvx](https://dotenvx.com/blog/): a secure dotenv–from the creator of dotenv
 
 ## Terms
 
-- [Terms of Service | dotenvx](https://dotenvx.com/terms/): a better dotenv–from the creator of dotenv
+- [Terms of Service | dotenvx](https://dotenvx.com/terms/): a secure dotenv–from the creator of dotenv
 
 ## Chrome-extension
 
-- [Chrome Extension | dotenvx](https://dotenvx.com/chrome-extension/): a better dotenv–from the creator of dotenv
+- [Chrome Extension | dotenvx](https://dotenvx.com/chrome-extension/): a secure dotenv–from the creator of dotenv
 
 ## Vscode-extension
 
-- [VS Code Extension | dotenvx](https://dotenvx.com/vscode-extension/): a better dotenv–from the creator of dotenv
+- [VS Code Extension | dotenvx](https://dotenvx.com/vscode-extension/): a secure dotenv–from the creator of dotenv
 
 ## Privacy
 
-- [Privacy Policy | dotenvx](https://dotenvx.com/privacy/): a better dotenv–from the creator of dotenv
+- [Privacy Policy | dotenvx](https://dotenvx.com/privacy/): a secure dotenv–from the creator of dotenv
 
 ## Mods
 
-- [Mods | dotenvx](https://dotenvx.com/mods/): a better dotenv–from the creator of dotenv
+- [Mods | dotenvx](https://dotenvx.com/mods/): a secure dotenv–from the creator of dotenv
 
 ## Support
 
-- [Help & Support | dotenvx](https://dotenvx.com/support/): a better dotenv–from the creator of dotenv
+- [Help & Support | dotenvx](https://dotenvx.com/support/): a secure dotenv–from the creator of dotenv
 
 ## Docs
 
@@ -123,7 +123,7 @@
 - [Trigger.dev | dotenvx](https://dotenvx.com/docs/background-jobs/triggerdotdev.html): Use dotenvx with Trigger.dev
 - [Use dotenvx with GitHub Actions | dotenvx](https://dotenvx.com/docs/cis/github-actions.html): Use dotenvx with GitHub Actions
 - [Deprecated | dotenvx](https://dotenvx.com/docs/deprecated.html): Deprecated `.env` file formats and technologies.
-- [DOTENV_KEY (deprecated) | dotenvx](https://dotenvx.com/docs/dotenv-key.html): 
+- [DOTENV_KEY (deprecated) | dotenvx](https://dotenvx.com/docs/dotenv-key.html):
 - [.env | dotenvx](https://dotenvx.com/docs/env-file.html): The .env file separates your secrets from code.
 - [.env.keys (old format deprecated) | dotenvx](https://dotenvx.com/docs/env-keys-file-deprecated.html): (DEPRECATED) The .env.keys file contains holds environment DOTENV_KEYs
 - [.env.keys | dotenvx](https://dotenvx.com/docs/env-keys-file.html): `.env.keys` holds your private decryption keys.

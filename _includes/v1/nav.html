@@ -22,20 +22,17 @@
           {% include logos/cloak-circle.html class="w-8 h-8 text-zinc-900 dark:invert" %}
         </a>
         -->
-        <!--
-        <a href="/login" role="button" class="btn-nav md:mr-2 flex items-center gap-1">
-          <span class="hidden md:block">Account</span>
-          {% include v1/icons/person-circle.html class="block md:hidden w-3.5 text-zinc-500" %}
-        </a>
-        -->
         <a href="/docs" role="button" class="btn-nav">Docs</a>
-        <a href="/radar" class="relative btn-nav whitespace-nowrap">
+        <a href="/radar" role="button" class="relative btn-nav whitespace-nowrap">
           <span>Radar</span>
           <span class="absolute top-2 right-2 animate-ping h-2 w-2 rounded-full bg-[#00FF00] opacity-75"></span>
           <span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#00FF00]"></span>
         </a>
-
-        <div class="ml-3.5 mr-3.5 hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-zinc-100/15"></div>
+        <a href="/login" role="button" class="btn-nav md:mr-2 flex items-center gap-1">
+          <span class="hidden md:block">Account</span>
+          {% include v1/icons/person-circle.html class="block md:hidden w-3.5 text-zinc-500" %}
+        </a>
+        <div class="mr-3.5 hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-zinc-100/15"></div>
         <div class="mr-3.5 md:mr-0">{% include v1/components/toggle-mode.html %}</div>
         <a href="https://github.com/dotenvx/dotenvx" class="ml-3.5 hidden xs:block md:block opacity-75 hover:opacity-100">
           {% include logos/github.html class="w-8 h-8 text-zinc-900 dark:invert" %}

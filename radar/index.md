@@ -39,7 +39,7 @@ title: "Radar"
             Buy Yearly Access – $19/year
           </a>
           <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes a full year's access to the core Radar product. Get in early at an amazing price. This price is a limited edition - available to early supporters.
+            <strong>Early access to Dotenvx Radar</strong> – a new tool for observing, versioning, and backing up your environment variables at runtime. Includes yearly access to the core Radar product. Get in early at an amazing price. This price is a limited edition - available to early supporters.
           </p>
         </div>
       </div>

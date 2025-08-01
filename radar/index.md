@@ -20,6 +20,7 @@ logo: radar
         name="email"
         required
         placeholder="Enter your email"
+        onfocus="umami.track('Focus email')"
         class="w-full sm:flex-1 px-4 py-3 text-sm rounded-md border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-900 text-zinc-950 dark:text-zinc-50 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
       />
       <button

@@ -3,10 +3,10 @@ title: ""
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h1 class="font-bold text-zinc-950 dark:text-zinc-50">Dotenv/x. Secured.</h1>
-  <p>Env files have been a major attack vector. But they are too useful to do without. Heck, even AWS uses them internally.<sup><a href="#footnote-1">1</a></sup></p>
-  <p><span class="italic">What if you could encrypt them?</span> Now you can with dotenvx. Dotenvx encrypts your .env files–limiting their attack vector while retaining their benefits.</p>
-  <p>It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv – 19.9k stars</a>.</p>
+  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">Dotenv/x. Secured.</h1>
+  <p class="text-justify">Plaintext .env files have been a major attack vector, but they've also been undeniably useful – even AWS uses them.<sup><a href="#footnote-1">1</a></sup></p>
+  <p class="text-justify"><span class="font-bold">What if you could encrypt them?</span> Now you can with <a href="https://github.com/dotenvx/dotenvx">dotenvx</a>. Dotenvx encrypts your .env files – limiting their attack vector while retaining their benefits.</p>
+  <p class="text-justify">It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv – 19.9k stars</a>.</p>
 
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
@@ -19,8 +19,8 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Featureful.</h2>
-  <div class="grid grid-cols-1 gap-4">
+  <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">It's like a swiss army knife for .env files.</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {% include v1/components/feature-box3.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
     {% include v1/components/feature-box3.html feature="Multi-environment" description="Switch environments easily" href="/features/multiple-environments" %}
     {% include v1/components/feature-box3.html feature="Encrypted envs" description="Encrypt your envs at-rest" href="/features/encryption" %}
@@ -39,7 +39,7 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">With strong cryptography.</h2>
+  <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">With strong cryptography.</h2>
   <p class="font-serif">Dotenvx: Reducing Secrets Risk with Cryptographic Separation.</p>
   <div class="flex gap-8">
     <div class="basis-2/3 flex flex-col gap-4">
@@ -55,7 +55,7 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Growing rapidly.</h2>
+  <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">Growing rapidly.</h2>
   <p>
     Dotenvx is installed more than <a href="http://npmjs.com/@dotenvx/dotenvx">half a million times weekly</a>.
   </p>
@@ -79,11 +79,11 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
+  <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
   <p>
-    Just replace:
+    Just replace dotenv with @dotenvx/dotenvx:
   </p>
-  <div class="rounded border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 p-6 font-mono text-sm text-zinc-800 dark:text-zinc-100 shadow-sm overflow-x-auto">
+  <div class="rounded border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 p-6 font-mono text-zinc-800 dark:text-zinc-100 shadow-sm overflow-x-auto">
     <code class="block text-zinc-500">// before</code>
     <div class="my-1 text-slate-400 font-semibold">require('dotenv').config()</div>
     <code class="block text-zinc-500 mt-6">// after</code>
@@ -95,7 +95,7 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">And free to use.</h2>
+  <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">And free to use.</h2>
   <p>
     Dotenvx is open source – with optional commercial extension Radar.
   </p>
@@ -117,7 +117,7 @@ title: ""
 <hr class="my-12 md:my-20" />
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Frequently asked questions.</h2>
+  <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">Frequently asked questions.</h2>
   <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
     {% include v1/components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a class="link-primary" href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
     {% include v1/components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a class="link-primary" href="/dotenvx.pdf">the whitepaper</a> for more details.' %}

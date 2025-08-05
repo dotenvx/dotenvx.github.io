@@ -4,7 +4,7 @@ logo: radar
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h1 class="font-bold text-zinc-950 dark:text-zinc-50">Dotenv/x. Observed.</h1>
+  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">Dotenv/x. Observed.</h1>
   <p class="italic">> Radar is an optional commercial extension for Dotenv/x.</p>
   <p>Observe, version, and backup your environment variables at runtime.</p>
   <p>

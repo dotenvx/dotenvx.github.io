@@ -4,7 +4,7 @@ title: ""
 
 <section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h1 class="font-bold text-zinc-950 dark:text-zinc-50">Dotenv/x. Secured.</h1>
-  <p>Plaintext .env files have been a major attack vector. But they are too useful to do without. Heck, even AWS uses them internally.<sup><a href="#footnote-1">1</a></sup></p>
+  <p>Env files have been a major attack vector. But they are too useful to do without. Heck, even AWS uses them internally.<sup><a href="#footnote-1">1</a></sup></p>
   <p><span class="italic">What if you could encrypt them?</span> Now you can with dotenvx. Dotenvx encrypts your .env files–limiting their attack vector while retaining their benefits.</p>
   <p>It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv – 19.9k stars</a>.</p>
 

@@ -2,7 +2,7 @@
 title: ""
 ---
 
-<section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h1 class="font-bold text-zinc-950 dark:text-zinc-50">Dotenv/x. Secured.</h1>
   <p>Env files have been a major attack vector. But they are too useful to do without. Heck, even AWS uses them internally.<sup><a href="#footnote-1">1</a></sup></p>
   <p><span class="italic">What if you could encrypt them?</span> Now you can with dotenvx. Dotenvx encrypts your .env files–limiting their attack vector while retaining their benefits.</p>
@@ -18,8 +18,8 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Tons of features.</h2>
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Featureful.</h2>
   <div class="grid grid-cols-1 gap-4">
     {% include v1/components/feature-box3.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
     {% include v1/components/feature-box3.html feature="Multi-environment" description="Switch environments easily" href="/features/multiple-environments" %}
@@ -38,7 +38,7 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-zinc-950 dark:text-zinc-50">With strong cryptography.</h2>
   <p class="font-serif">Dotenvx: Reducing Secrets Risk with Cryptographic Separation.</p>
   <div class="flex gap-8">
@@ -54,7 +54,7 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Growing rapidly.</h2>
   <p>
     Dotenvx is installed more than <a href="http://npmjs.com/@dotenvx/dotenvx">half a million times weekly</a>.
@@ -78,8 +78,8 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">And easy to switch.</h2>
   <p>
     Just replace:
   </p>
@@ -94,7 +94,16 @@ title: ""
   </p>
 </section>
 
-<section class="w-full max-w-xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+  <div class="flex flex-row gap-4 justify-center my-6">
+    <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
+    <a class="btn" href="mailto:scott@dotenvx.com">Contact Me</a>
+  </div>
+</section>
+
+<hr class="my-12 md:my-20" />
+
+<section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Frequently asked questions.</h2>
   <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
     {% include v1/components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a class="link-primary" href="/dotenvx.pdf">the whitepaper</a> for more details.' %}

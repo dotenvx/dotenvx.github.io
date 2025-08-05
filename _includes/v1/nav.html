@@ -2,7 +2,7 @@
   <div class="mx-auto w-full">
     <div class="mx-auto flex pt-2 w-full items-center transition pl-2 lg:pl-5 lg:pr-8 pr-0.5 h-12">
       <div class="flex-shrink-0 md:flex-1 flex items-center h-10">
-        <a href="/" class="flex gap-1">
+        <a href="/" class="flex gap-1 no-underline hover:no-underline">
           {% if page.logo == 'radar' %}
             <span>{% include v1/components/logo-radar.html class="w-10 h-10" %}</span>
           {% else %}
@@ -14,14 +14,6 @@
       <div class="flex-1 md:flex-shrink-0 h-10 flex items-center justify-start md:justify-center">
       </div>
       <div class="flex-shrink-0 md:flex-1 h-10 flex items-center justify-end">
-        <!--
-        <a href="/support" role="button" class="block link-nav">Support</a>
-        <a href="/core" role="button" class="hidden md:block link-nav mr-2">Core</a>
-        <a href="/pricing" role="button" class="hidden md:block nav-success">Pricing + Sign up</a>
-        <a href="/login" class="hidden md:block opacity-75 hover:opacity-100">
-          {% include logos/cloak-circle.html class="w-8 h-8 text-zinc-900 dark:invert" %}
-        </a>
-        -->
         <a href="/docs" role="button" class="btn-nav">Docs</a>
         <a href="/radar" role="button" class="relative btn-nav whitespace-nowrap">
           <span>Radar</span>

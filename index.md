@@ -87,7 +87,7 @@ title: ""
     <code class="block text-zinc-500">// before</code>
     <div class="my-1 text-slate-400 font-semibold">require('dotenv').config()</div>
     <code class="block text-zinc-500 mt-6">// after</code>
-    <div class="text-green-500 dark:text-green-400 font-semibold">require('@dotenvx/dotenvx').config()</div>
+    <div class="text-black dark:text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
   </div>
   <p>
     And opt-in to all the benefits of dotenvx — without changing your current workflow.

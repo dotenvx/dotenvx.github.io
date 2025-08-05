@@ -1,15 +1,15 @@
-<table class="min-w-full text-left text-sm">
+<table class="min-w-full text-left">
   <thead class="sticky top-0 z-10">
     <tr>
       <th class="px-1 md:px-2 lg:px-4"></th>
       <th class="px-1 md:px-2 lg:px-4">
         <a href="https://github.com/dotenvx/dotenvx">
-          <span class="inline-block whitespace-nowrap bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold px-2.5 py-1 text-lg rounded-sm">{% include logos/github.html class="h-5 w-5 mb-0.5 inline-block" %}<span class="font-mono">OSS</span></span>
+          <span class="inline-block whitespace-nowrap bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold px-2.5 py-1 rounded-sm">{% include logos/github.html class="h-5 w-5 mb-0.5 inline-block" %}<span class="font-mono">OSS</span></span>
         </a>
       </th>
       <th class="px-1 md:px-2 lg:px-4">
         <a href="/radar">
-          <span class="inline-block bg-[#00FF00] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">Radar</span>
+          <span class="inline-block bg-[#00FF00] text-black font-bold px-2.5 py-1 italic rounded-sm">Radar</span>
         </a>
       </th>
     </tr>
@@ -44,10 +44,10 @@
     {% include v1/components/product-table-row.html feature="Backups"                 oss=oss radar=radar %}
     {% include v1/components/product-table-row.html feature="Versioning"              oss=oss radar=radar %}
     {% include v1/components/product-table-row.html feature="Observability"           oss=oss radar=radar %}
-    {% include v1/components/product-table-row.html feature="Anomaly Detection"       oss=oss radar=radar %}
-    {% include v1/components/product-table-row.html feature="Attack Mitigation"       oss=oss radar=radar %}
+    <!--{% include v1/components/product-table-row.html feature="Anomaly Detection"       oss=oss radar=radar %}-->
+    <!--{% include v1/components/product-table-row.html feature="Attack Mitigation"       oss=oss radar=radar %}-->
     {% include v1/components/product-table-row.html feature="Support"                 oss="None" radar="Email" %}
-    {% include v1/components/product-table-row.html feature="License" oss="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" radar="Commercial"%}
+    {% include v1/components/product-table-row.html feature="License" oss="<a target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" radar="Commercial"%}
 
     <tr class="text-base">
       <td class="px-1 md:px-2 lg:px-4 py-3 text-right font-bold">
@@ -59,7 +59,7 @@
       <td class="px-1 md:px-2 lg:px-4 py-3 font-semibold">
         <div class="flex flex-col">
           <span>$19/year</span>
-          <span class="text-sm font-light">Yearly subscription · Cancel anytime</span>
+          <span class="text-xs font-light">Cancel anytime</span>
         </div>
       </td>
     </tr>
@@ -68,18 +68,18 @@
     <tr>
       <td class="px-1 md:px-2 lg:px-4"></td>
       <td class="px-1 md:px-2 lg:px-4 align-top text-end">
-        <a href="https://github.com/dotenvx/dotenvx" class="btn-secondary w-full flex-none inline-block" target="_blank">
-          <span class="hidden md:block">Get started ↗</span>
-          <span class="block md:hidden">Start<span class="ml-1">↗</span></span>
+        <a href="/docs/quickstart" class="btn-submit w-full flex-none inline-block" target="_blank">
+          <span class="hidden md:block">Quickstart<span class="ml-1">&rarr;</span></span>
+          <span class="block md:hidden">Start<span class="ml-1">&rarr;</span></span>
         </a>
       </td>
       <td class="px-1 md:px-2 lg:px-4 align-top text-end">
         <div class="flex flex-col gap-2">
-          <a href="https://buy.stripe.com/7sY4gzdgFddq3ycape7IY02" target="_blank" rel="noopener" class="btn-radar w-full flex-none inline-block" data-umami-event="Buy button">
+          <a href="https://buy.stripe.com/7sY4gzdgFddq3ycape7IY02" target="_blank" rel="noopener" class="btn-success w-full flex-none inline-block" data-umami-event="Buy button">
             <span class="hidden md:block">Buy Early Access ›</span>
             <span class="block md:hidden">Buy<span class="ml-1">›</span></span>
           </a>
-          <a href="/radar" class="btn-outline w-full flex-none inline-block">
+          <a href="/radar" class="btn w-full flex-none inline-block">
             <span class="hidden md:block">Learn more</span>
             <span class="block md:hidden">Learn</span>
           </a>

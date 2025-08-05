@@ -79,7 +79,7 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">And easy to switch.</h2>
+  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
   <p>
     Just replace:
   </p>
@@ -95,11 +95,24 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
+  <h2 class="font-bold text-zinc-950 dark:text-zinc-50">And free to use.</h2>
+  <p>
+    Dotenvx is open source – with optional commercial extension Radar.
+  </p>
+
+  <div class="overflow-scroll w-full p-4 border border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950 rounded-lg overflow-hidden">
+    {% include v1/components/product-table.html %}
+  </div>
+</section>
+
+<!--
+<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
     <a class="btn" href="mailto:scott@dotenvx.com">Contact Me</a>
   </div>
 </section>
+-->
 
 <hr class="my-12 md:my-20" />
 

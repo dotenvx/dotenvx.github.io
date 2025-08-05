@@ -1,0 +1,13 @@
+<div class="relative">
+  {% if include.href %}
+  <a href="{{ include.href }}" class="">
+    <span class="">{{ include.feature  }} –</span>
+    <span class="lowercase font-light">{{ include.description }}</span>
+  </a>
+  {% else %}
+  <div>
+    <span class="">{{ include.feature }}</span>
+    <span class="lowercase font-light">{{ include.description }}</span>
+  </div>
+  {% endif %}
+</div>

@@ -52,7 +52,7 @@ title: ""
       <p><a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}">Read the whitepaper &rarr;</a></p>
     </div>
     <div class="basis-1/3">
-      <a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="aspect-[8.5/11] min-w-0 w-full block border-2 border-zinc-500 hover:border-blue-500 drop-shadow-lg">
+      <a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="cursor-pointer min-w-0 w-full block border-2 border-zinc-200 dark:hover:border-[#ecd53f] hover:border-blue-500">
         <img src="/assets/img/whitepaper-thumb.png" class="w-[700px] aspect-[8.5/11] max-w-full max-h-screen border-0 mx-auto"/>
       </a>
     </div>

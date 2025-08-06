@@ -93,7 +93,5 @@ To learn more, [read the whitepaper](https://dotenvx.com/dotenvx.pdf).
 ---
 
 <small><sup id="footnote1">1</sup> <a href="https://docs.docker.com/reference/compose-file/configs/">docker.com</a></small>
-
 <small><sup id="footnote2">2</sup> <a href="https://news.ycombinator.com/item?id=40798534">news.ycombinator.com</a></small>
-
 <small><sup id="footnote3">3</sup> <a href="https://github.com/dotenvx/dotenvx">github.com/dotenvx/dotenvx</a></small>

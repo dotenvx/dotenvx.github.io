@@ -45,10 +45,10 @@ title: ""
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">With strong cryptography.</h2>
-  <p class="font-serif">Dotenvx: Reducing Secrets Risk with Cryptographic Separation.</p>
   <div class="flex gap-8">
     <div class="basis-2/3 flex flex-col gap-4">
-      <p class="font-serif"><span class="italic">Abstract.</span> An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. While secrets managers offer centralized storage and distribution, their design creates a large blast radius, risking exposure of thousands or even millions of secrets. We propose a solution that reduces the blast radius by splitting secrets management into two distinct components: an encrypted secrets file and a separate decryption key.</p>
+      <p class="font-serif">Dotenvx: Reducing Secrets Risk with Cryptographic Separation.</p>
+      <p class="font-serif"><span class="italic">Abstract.</span> An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. We propose a solution that reduces the blast radius by splitting secrets management into two distinct components: an encrypted secrets file and a separate decryption key.</p>
       <p><a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}">Read the whitepaper &rarr;</a></p>
     </div>
     <div class="basis-1/3">

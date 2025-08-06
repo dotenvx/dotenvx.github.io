@@ -1,6 +1,6 @@
 <div x-data="{ open: false }" id="{{include.div_id}}">
-  <dt class="text-sm">
-    <button x-on:click="open = ! open" type="button" class="py-1 flex w-full items-start justify-between text-left text-zinc-700" aria-controls="faq-0" aria-expanded="false">
+  <dt class="">
+    <button x-on:click="open = ! open" type="button" class="py-3 flex w-full items-start justify-between text-left" aria-controls="faq-0" aria-expanded="false">
       <span class="font-semibold leading-7 dark:text-zinc-300">{{include.question}}</span>
       <span class="ml-6 flex h-7 items-center">
         <svg x-show="!open" class="h-6 w-6 text-zinc-400 dark:text-zinc-600" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -13,7 +13,7 @@
     </button>
   </dt>
   <dd x-cloak x-show="open" class="mb-4 pr-12" id="faq-0">
-    <p class="leading-6 text-sm">
+    <p class="leading-6">
       {{include.answer}}
     </p>
   </dd>

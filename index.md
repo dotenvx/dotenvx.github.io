@@ -3,10 +3,14 @@ title: ""
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">Dotenv/x. Secured.</h1>
+  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">A secure dotenv – from the creator of dotenv</h1>
   <p class="text-justify">Plaintext .env files have been a major attack vector, but they've also been undeniably useful – even AWS uses them.<sup><a href="#footnote-1">1</a></sup></p>
   <p class="text-justify"><span class="font-bold">What if you could encrypt them?</span> Now you can with <a href="https://github.com/dotenvx/dotenvx">dotenvx</a>. Dotenvx encrypts your .env files – limiting their attack vector while retaining their benefits.</p>
-  <p class="text-justify">It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv – 19.9k stars</a>.</p>
+  <p class="text-justify">It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv – 19.9k stars</a>. Read the whitepaper and try it for yourself. I've put a lot of thought into its design. It's dotenv – secured.</p>
+  <p class="text-center sm:text-right flex flex-col gap-0">
+    <a class="font-bold" href="mailto:scott@dotenvx.com">Scott (Mot) Motte</a>
+    <span class="italic">Creator Dotenv/x</span>
+  </p>
 
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
@@ -24,7 +28,7 @@ title: ""
     {% include v1/components/feature-box3.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
     {% include v1/components/feature-box3.html feature="Multi-environment" description="Switch environments easily" href="/features/multiple-environments" %}
     {% include v1/components/feature-box3.html feature="Encrypted envs" description="Encrypt your envs at-rest" href="/features/encryption" %}
-    {% include v1/components/feature-box3.html feature="Monorepo" description="First-class monorepo support" href="/docs#monorepos" %}
+    {% include v1/components/feature-box3.html feature="Monorepos" description="First-class monorepo support" href="/docs#monorepos" %}
     {% include v1/components/feature-box3.html feature="Multiple .env files" description="Compose multiple .env files flexibly" href="/features/multiple-files" %}
     {% include v1/components/feature-box3.html feature="Multi-line values" description="Add multi-line secrets like public keys" href="/docs/advanced/run-multiline" %}
     {% include v1/components/feature-box3.html feature="Variable expansion" description="Reference and expand variables" href="/features/variable-expansion" %}
@@ -36,6 +40,7 @@ title: ""
     {% include v1/components/feature-box3.html feature="Prebuild" description="Prevent building .env files into docker images" href="/features/prebuild" %}
     {% include v1/components/feature-box3.html feature="Precommit" description="Prevent committing .env files to code" href="/features/precommit" %}
   </div>
+  <p><a href="/docs/advanced">See all advanced features &rarr;</a></p>
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
@@ -44,7 +49,7 @@ title: ""
   <div class="flex gap-8">
     <div class="basis-2/3 flex flex-col gap-4">
       <p class="font-serif"><span class="italic">Abstract.</span> An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. While secrets managers offer centralized storage and distribution, their design creates a large blast radius, risking exposure of thousands or even millions of secrets. We propose a solution that reduces the blast radius by splitting secrets management into two distinct components: an encrypted secrets file and a separate decryption key.</p>
-      <p><a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}">Read the Whitepaper</a></p>
+      <p><a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}">Read the whitepaper &rarr;</a></p>
     </div>
     <div class="basis-1/3">
       <a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="aspect-[8.5/11] min-w-0 w-full block border-2 border-zinc-500 hover:border-blue-500 drop-shadow-lg">
@@ -92,6 +97,7 @@ title: ""
   <p>
     And opt-in to all the benefits of dotenvx — without changing your current workflow.
   </p>
+  <p><a href="/docs/install">See installation options &rarr;</a></p>
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">

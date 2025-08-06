@@ -25,22 +25,15 @@ title: ""
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl text-zinc-950 dark:text-zinc-50">It's like a swiss army knife for .env files.</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {% include v1/components/feature-box3.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
-    {% include v1/components/feature-box3.html feature="Multi-environment" description="Switch environments easily" href="/features/multiple-environments" %}
-    {% include v1/components/feature-box3.html feature="Encrypted envs" description="Encrypt your envs at-rest" href="/features/encryption" %}
-    {% include v1/components/feature-box3.html feature="Monorepos" description="First-class monorepo support" href="/docs#monorepos" %}
-    {% include v1/components/feature-box3.html feature="Multiple .env files" description="Compose multiple .env files flexibly" href="/features/multiple-files" %}
-    {% include v1/components/feature-box3.html feature="Multi-line values" description="Add multi-line secrets like public keys" href="/docs/advanced/run-multiline" %}
-    {% include v1/components/feature-box3.html feature="Variable expansion" description="Reference and expand variables" href="/features/variable-expansion" %}
+    {% include v1/components/feature-box3.html feature="Encryption" description="Encrypt your envs at-rest" href="/features/encryption" %}
     {% include v1/components/feature-box3.html feature="Command substitution" description="Add the output of a command" href="/features/command-substitution" %}
-    {% include v1/components/feature-box3.html feature="Get/Set" description="Conveniently get/set single variables" href="/features/get-key" %}
-    {% include v1/components/feature-box3.html feature="Contextual help" description="Built-in next steps" href="/features/contextual-help" %}
-    {% include v1/components/feature-box3.html feature="Append .gitignore" description="Append to .gitignore in one command" href="/features/gitignore" %}
-    {% include v1/components/feature-box3.html feature="Generate .env.example" description="Generate .env.example in one command" href="/docs/advanced/genexample" %}
-    {% include v1/components/feature-box3.html feature="Prebuild" description="Prevent building .env files into docker images" href="/features/prebuild" %}
+    {% include v1/components/feature-box3.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
     {% include v1/components/feature-box3.html feature="Precommit" description="Prevent committing .env files to code" href="/features/precommit" %}
+    {% include v1/components/feature-box3.html feature="Multiple environments" description="Switch environments easily" href="/features/multiple-environments" %}
+    {% include v1/components/feature-box3.html feature="Prebuild" description="Prevent building .env files into docker images" href="/features/prebuild" %}
+    {% include v1/components/feature-box3.html feature="Variable expansion" description="Reference and expand variables" href="/features/variable-expansion" %}
+    {% include v1/components/feature-box3.html feature="75+ advanced features &rarr;" description="Prevent committing .env files to code" href="/features/precommit" href="/docs/advanced" %}
   </div>
-  <p><a href="/docs/advanced">See all advanced features &rarr;</a></p>
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">

@@ -4,12 +4,12 @@ title: ""
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">A secure dotenv – from the creator of dotenv</h1>
-  <p class="text-justify">Plaintext .env files have been a major attack vector, but they've also been undeniably useful – even AWS uses them.<sup><a href="#footnote-1">1</a></sup></p>
-  <p class="text-justify"><span class="font-bold">What if you could encrypt them?</span> Now you can with <a href="https://github.com/dotenvx/dotenvx">dotenvx</a>. Dotenvx encrypts your .env files – limiting their attack vector while retaining their benefits.</p>
-  <p class="text-justify">It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv – 19.9k stars</a>. Read the whitepaper and try it for yourself. I've put a lot of thought into its design. It's dotenv – secured.</p>
+  <p class="text-left">Plaintext .env files have been a major attack vector, but they've also been undeniably useful – even AWS uses them.<sup><a href="#footnote-1">1</a></sup></p>
+  <p class="text-left"><span class="font-bold">What if you could encrypt them?</span> Now you can with <a href="https://github.com/dotenvx/dotenvx">dotenvx</a>. Dotenvx encrypts your .env files – limiting their attack vector while retaining their benefits.</p>
+  <p class="text-left">It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv</a>. Read the whitepaper and try it for yourself. I've put a lot of thought into its design. It's dotenv – secured.</p>
   <p class="text-center sm:text-right flex flex-col -space-y-1">
-    <a class="font-bold" href="mailto:scott@dotenvx.com">Scott (Mot) Motte</a>
-    <span class="italic">Creator Dotenv/x</span>
+    <a class="font-bold text-zinc-500 dark:text-zinc-500 hover:no-underline" href="https://mot.la">Scott Motte</a>
+    <span class="font-light italic text-zinc-500">Creator Dotenv/x</span>
   </p>
 
   <div class="flex flex-row gap-4 justify-center my-6">

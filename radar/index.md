@@ -4,21 +4,21 @@ logo: radar
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
-  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">Observe, version, and backup your environment variables at runtime.</h1>
+  <h1 class="font-extrabold text-3xl sm:text-4xl text-zinc-950 dark:text-zinc-50 text-center">Observe, version, and back up your environment variables at runtime.</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <p class="text-justify">
+    <p class="text-left">
       <strong>Observability.</strong>
       Radar watches every app launch, process, or container, capturing the exact environment variables injected at runtime. Total visibility across dev, staging, and production.
     </p>
-    <p class="text-justify">
+    <p class="text-left">
       <strong>Versioning.</strong>
       Radar tracks every change to your envs across time. View diffs, roll back instantly, and understand who changed what, where, and when.
     </p>
-    <p class="text-justify">
+    <p class="text-left">
       <strong>Backups.</strong>
       Every environment your app runs with is automatically captured, encrypted, and stored. Radar makes sure nothing gets lost.
     </p>
-    <p class="text-justify">
+    <p class="text-left">
       <strong>Sync.</strong>
       Keep your environment variables in sync across teammates, servers, and CI machines with secure, automated updates and zero manual hassle.
     </p>

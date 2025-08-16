@@ -31,7 +31,7 @@ The Hacker News post earned 350 points.
 
 <img src="https://github.com/dotenvx/dotenvx/assets/3848/aa4c587d-4fd5-485e-a3cd-0a6511d7b17c" />
 
-Thst works out to **100 visitors per point**. That's exceptional, especially considering these are some of the brightest minds in the world visiting your project.
+That works out to **100 visitors per point**. That's exceptional, especially considering these are some of the brightest minds in the world visiting your project.
 
 Next, let's discuss the click-through rate to GitHub and star rate 🌟.
 

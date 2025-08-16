@@ -45,10 +45,10 @@
 - [dotenvx.config(ignore: true) | dotenvx](https://dotenvx.com/docs/advanced/config-ignore.html): Use ignore to suppress specific errors like MISSING_ENV_FILE.
 - [dotenvx.config(overload: true) | dotenvx](https://dotenvx.com/docs/advanced/config-overload.html): Use overload to overwrite the prior set value.
 - [dotenvx.config(path: ['.env.local', '.env']) | dotenvx](https://dotenvx.com/docs/advanced/config-path.html): Specify path(s) to multiple .env files.
-- [dotenvx.set(KEY, value) | dotenvx](https://dotenvx.com/docs/advanced/config-set-key-value.html): Programatically set an environment variable.
+- [dotenvx.set(KEY, value) | dotenvx](https://dotenvx.com/docs/advanced/config-set-key-value.html): Programmatically set an environment variable.
 - [dotenvx.config(strict: true) | dotenvx](https://dotenvx.com/docs/advanced/config-strict.html): Use strict to throw if an error is encountered - like a missing .env file.
 - [dotenvx.config() | dotenvx](https://dotenvx.com/docs/advanced/config.html): Use directly in node.js code.
-- [dotenvx decrypt -ek | dotenvx](https://dotenvx.com/docs/advanced/decrypt-ek.html): Decrypt the contents inside an encrypted .env file except for an exluded key.
+- [dotenvx decrypt -ek | dotenvx](https://dotenvx.com/docs/advanced/decrypt-ek.html): Decrypt the contents inside an encrypted .env file except for an excluded key.
 - [dotenvx decrypt -f | dotenvx](https://dotenvx.com/docs/advanced/decrypt-f.html): Decrypt the contents of a specified encrypted .env file to an unencrypted .env file.
 - [dotenvx decrypt -fk | dotenvx](https://dotenvx.com/docs/advanced/decrypt-fk.html): Specify path to .env.keys. This is useful with monorepos.
 - [dotenvx decrypt -k | dotenvx](https://dotenvx.com/docs/advanced/decrypt-k.html): Decrypt the contents of a specified key inside an encrypted .env file.
@@ -79,7 +79,7 @@
 - [dotenvx keypair -f | dotenvx](https://dotenvx.com/docs/advanced/keypair-f.html): Print public/private keys for chosen .env* files.
 - [dotenvx keypair -fk | dotenvx](https://dotenvx.com/docs/advanced/keypair-fk.html): Specify path to .env.keys. This is useful for printing public/private keys for monorepos.
 - [dotenvx keypair KEY | dotenvx](https://dotenvx.com/docs/advanced/keypair-key.html): Print specific keypair for .env file.
-- [dotenvx keypair --format shell | dotenvx](https://dotenvx.com/docs/advanced/keypair-shell.html): Print a shell formatted reponse of public/private keys.
+- [dotenvx keypair --format shell | dotenvx](https://dotenvx.com/docs/advanced/keypair-shell.html): Print a shell formatted response of public/private keys.
 - [dotenvx keypair | dotenvx](https://dotenvx.com/docs/advanced/keypair.html): Print public/private keys for .env file.
 - [dotenvx ls directory | dotenvx](https://dotenvx.com/docs/advanced/ls-directory.html): Print all .env files inside a specified path to a directory.
 - [dotenvx ls -ef | dotenvx](https://dotenvx.com/docs/advanced/ls-ef.html): Glob .env filenames excluding a wildcard.
@@ -91,7 +91,7 @@
 - [dotenvx ext prebuild | dotenvx](https://dotenvx.com/docs/advanced/prebuild.html): Prevent .env files from being built into your docker containers.
 - [dotenvx ext precommit --install | dotenvx](https://dotenvx.com/docs/advanced/precommit-install.html): Install a shell script to .git/hooks/pre-commit to prevent accidentally committing any .env files to source control.
 - [dotenvx ext precommit | dotenvx](https://dotenvx.com/docs/advanced/precommit.html): Prevent .env files from being committed to code.
-- [dotenvx rotate -ek | dotenvx](https://dotenvx.com/docs/advanced/rotate-ek.html): Rotate the encrypted contents inside an encrypted .env file except for an exluded key.
+- [dotenvx rotate -ek | dotenvx](https://dotenvx.com/docs/advanced/rotate-ek.html): Rotate the encrypted contents inside an encrypted .env file except for an excluded key.
 - [dotenvx rotate -f | dotenvx](https://dotenvx.com/docs/advanced/rotate-f.html): Rotate public/private keys for a specified encrypted .env file and re-encrypt all encrypted values.
 - [dotenvx rotate -fk | dotenvx](https://dotenvx.com/docs/advanced/rotate-fk.html): Specify path to .env.keys for rotation. This is useful with monorepos.
 - [dotenvx rotate -k | dotenvx](https://dotenvx.com/docs/advanced/rotate-k.html): Rotate the contents of a specified key inside an encrypted .env file.

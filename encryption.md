@@ -1,5 +1,5 @@
 ---
-title: enryption
+title: encryption
 redirect_to: "/docs/quickstart#add-encryption"
 ---
 

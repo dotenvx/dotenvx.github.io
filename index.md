@@ -107,24 +107,34 @@ title: ""
     {% include v1/components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
     {% include v1/components/faq-question.html question="How does it protect me from third-party breaches like CircleCI?" answer="In the CircleCI breach the attacker accessed environment variables only. They could not access codebases. To steal your encrypted .env secrets, an attacker needs both – the private decryption key AND the encrypted .env files." %}
     {% include v1/components/faq-question.html question="<sup>1</sup>Is it true AWS uses .env files internally?" answer="A former AWS engineer mentioned to me (and others) that AWS used them on their production infrastructure. He has since left to start his own business so maybe this is no longer the case." div_id="footnote-1" %}
-  </dl>
-</section>
-
-<hr class="my-12 md:my-20" />
-
-<section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Changelog.</h2>
-
-  <div class="border border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950 rounded-lg p-4 pb-2">
-    <div class="relative">
-      <!-- Faded scrollable content -->
-      <div class="overflow-auto max-h-72 changelog flex flex-col gap-4">
-        {{ site.data.changelog_html }}
-      </div>
-      <!-- fade overlay -->
-      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white dark:to-zinc-950 rounded-b-lg"></div>
+    <div x-data="{ open: false }">
+      <dt class="">
+        <button x-on:click="open = ! open" type="button" class="py-3 flex w-full items-start justify-between text-left" aria-controls="faq-0" aria-expanded="false">
+          <span class="font-semibold leading-7 dark:text-zinc-300">Where is the changelog?</span>
+          <span class="ml-6 flex h-7 items-center">
+            <svg x-show="!open" class="h-6 w-6 text-zinc-400 dark:text-zinc-600" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+            </svg>
+            <svg x-cloak x-show="open" class="h-6 w-6 text-zinc-400 dark:text-zinc-600" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+            </svg>
+          </span>
+        </button>
+      </dt>
+      <dd x-cloak x-show="open" class="" id="faq-0">
+        <div class="border border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950 rounded-lg p-4 pb-2">
+          <div class="relative">
+            <!-- Faded scrollable content -->
+            <div class="overflow-auto max-h-72 changelog flex flex-col gap-4">
+              {{ site.data.changelog_html }}
+            </div>
+            <!-- fade overlay -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white dark:to-zinc-950 rounded-b-lg"></div>
+          </div>
+          <!-- Always visible link -->
+          <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md" class="text-sm text-center mx-auto block w-full bg-white dark:bg-zinc-950 py-2">Full changelog →</a>
+        </div>
+      </dd>
     </div>
-    <!-- Always visible link -->
-    <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md" class="text-sm mx-auto block w-full bg-white dark:bg-black text-center py-2">Full changelog →</a>
-  </div>
+  </dl>
 </section>

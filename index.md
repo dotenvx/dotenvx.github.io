@@ -98,15 +98,6 @@ title: ""
   </div>
 </section>
 
-<!--
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <div class="flex flex-row gap-4 justify-center my-6">
-    <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
-    <a class="btn" href="mailto:scott@dotenvx.com">Contact Me</a>
-  </div>
-</section>
--->
-
 <hr class="my-12 md:my-20" />
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
@@ -117,4 +108,23 @@ title: ""
     {% include v1/components/faq-question.html question="How does it protect me from third-party breaches like CircleCI?" answer="In the CircleCI breach the attacker accessed environment variables only. They could not access codebases. To steal your encrypted .env secrets, an attacker needs both – the private decryption key AND the encrypted .env files." %}
     {% include v1/components/faq-question.html question="<sup>1</sup>Is it true AWS uses .env files internally?" answer="A former AWS engineer mentioned to me (and others) that AWS used them on their production infrastructure. He has since left to start his own business so maybe this is no longer the case." div_id="footnote-1" %}
   </dl>
+</section>
+
+<hr class="my-12 md:my-20" />
+
+<section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
+  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Changelog.</h2>
+
+  <div class="border border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950 rounded-lg p-4 pb-2">
+    <div class="relative">
+      <!-- Faded scrollable content -->
+      <div class="overflow-auto max-h-72 changelog flex flex-col gap-4">
+        {{ site.data.changelog_html }}
+      </div>
+      <!-- fade overlay -->
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white dark:to-zinc-950 rounded-b-lg"></div>
+    </div>
+    <!-- Always visible link -->
+    <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md" class="text-sm mx-auto block w-full bg-white dark:bg-black text-center py-2">Full changelog →</a>
+  </div>
 </section>

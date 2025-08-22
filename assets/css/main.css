@@ -29,6 +29,13 @@ a.btn-success { @apply text-zinc-50 text-center rounded cursor-pointer border bo
 .prose a { @apply text-blue-600 font-bold no-underline hover:underline dark:text-[#ecd53f]; }
 hr { @apply border border-zinc-100 dark:border-zinc-800; }
 
+.changelog h3, .changelog h4, .changelog p {
+  @apply font-bold text-sm;
+}
+.changelog ul {
+  @apply text-sm list-disc list-inside space-y-2 text-sm ml-3;
+}
+
 .btn-dark {
   @apply text-center dark:border dark:border-zinc-600 rounded-md bg-zinc-900 dark:bg-black px-4 py-2.5 font-semibold text-zinc-50 dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-zinc-600 dark:active:bg-zinc-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 dark:text-zinc-50;
 }
@@ -79,14 +86,6 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 
 .btick::after {
   content: "`";
-}
-
-.changelog h2 {
-  @apply my-2;
-}
-
-.changelog time {
-  @apply text-zinc-500;
 }
 
 /* video */

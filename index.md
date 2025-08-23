@@ -33,13 +33,13 @@ title: ""
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">With strong cryptography.</h2>
-  <div class="flex gap-8">
-    <div class="basis-2/3 flex flex-col gap-4">
+  <div class="flex flex-col sm:flex-row gap-8">
+    <div class="sm:basis-2/3 flex flex-col gap-4">
       <p class="font-serif">Dotenvx: Reducing Secrets Risk with Cryptographic Separation.</p>
       <p class="font-serif"><span class="italic">Abstract.</span> An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. We propose a solution that reduces the blast radius by splitting secrets management into two distinct components: an encrypted secrets file and a separate decryption key.</p>
       <p><a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}">Read the whitepaper &rarr;</a></p>
     </div>
-    <div class="basis-1/3">
+    <div class="px-10 sm:px-0 sm:basis-1/3">
       <a target="_blank" href="/dotenvx.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="cursor-pointer min-w-0 w-full block border-2 border-zinc-200 dark:hover:border-[#ecd53f] hover:border-blue-500">
         <img src="/assets/img/whitepaper-thumb.png" class="w-[700px] aspect-[8.5/11] max-w-full max-h-screen border-0 mx-auto"/>
       </a>

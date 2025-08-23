@@ -37,6 +37,11 @@ logo: radar
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Changelog</h2>
 
   <div class="flex gap-2 flex-col">
+    <h3 class="font-bold">2025-08-23</h3>
+    <p>Added organizations – to make way for teams.</p>
+  </div>
+
+  <div class="flex gap-2 flex-col">
     <h3 class="font-bold">2025-08-18</h3>
     <p>Added `dotenvx-radar sync` command.</p>
   </div>

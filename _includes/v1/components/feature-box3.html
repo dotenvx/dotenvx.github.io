@@ -1,11 +1,9 @@
-<div class="relative">
-  {% if include.href %}
-  <a href="{{ include.href }}" class="">
-    <span class="">{{ include.feature  }}</span>
-  </a>
-  {% else %}
-  <div>
-    <span class="">{{ include.feature }}</span>
-  </div>
-  {% endif %}
+{% if include.href %}
+<a href="{{ include.href }}" class="bg-zinc-100 dark:bg-zinc-900 py-3 w-full text-center">
+  <span class="">{{ include.feature  }}</span>
+</a>
+{% else %}
+<div>
+  <span class="">{{ include.feature }}</span>
 </div>
+{% endif %}

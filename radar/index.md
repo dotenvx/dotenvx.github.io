@@ -42,6 +42,7 @@ logo: radar
     <p>Moved projects to organizational ownership schema.</p>
     <p>Added ability to delete account.</p>
     <p>Added list of personal oauth tokens to settings page.</p>
+    <p>Mark device during cli login handshake.</p>
     <p>Connected devices to users in schema.</p>
     <p>Connected devices to oauth requests in schema.</p>
   </div>

@@ -86,7 +86,7 @@ title: ""
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">And free to use.</h2>
   <p>
-    Dotenvx is open source – with optional commercial extension Radar.
+    Dotenvx is open source – with optional commercial Dotenvx Ops tooling.
   </p>
 
   <div class="overflow-scroll w-full p-4 border border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950 rounded-lg overflow-hidden">

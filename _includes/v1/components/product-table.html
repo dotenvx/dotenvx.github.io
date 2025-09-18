@@ -8,18 +8,20 @@
         </a>
       </th>
       <th class="px-1 md:px-2 lg:px-4">
-        <a href="/radar">
-          <span class="inline-block bg-[#00FF00] text-black font-bold px-2.5 py-1 italic rounded-sm">Radar</span>
+        <a href="/ops">
+          <span class="inline-block bg-[#1552D8] text-white font-light px-2.5 py-1 rounded-sm">OPS</span>
         </a>
       </th>
     </tr>
   </thead>
   <tbody>
+    <!--
     <tr>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right"></td>
-      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Security.</td>
-      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Observability.</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Free.</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Commercial.</td>
     </tr>
+    -->
     <tr>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800 text-zinc-500 text-right"></td>
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800">Open Source</td>
@@ -28,28 +30,29 @@
     {% capture oss %}
       {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
-    {% capture radar %}
+    {% capture ops %}
       {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
-    {% include v1/components/product-table-row.html feature="Encryption"               oss=oss radar=radar href="/features/encryption" %}
-    {% include v1/components/product-table-row.html feature="Run Anywhere"             oss=oss radar=radar href="/features/run-anywhere" %}
-    {% include v1/components/product-table-row.html feature="Multiple Environments"    oss=oss radar=radar href="/features/multiple-environments" %}
-    {% include v1/components/product-table-row.html feature="Precommit"                oss=oss radar=radar href="/features/precommit" %}
-    {% include v1/components/product-table-row.html feature="Prebuild"                 oss=oss radar=radar href="/features/prebuild" %}
-    {% include v1/components/product-table-row.html feature="Variable expansion"       oss=oss radar=radar href="/features/variable-expansion" %}
-    {% include v1/components/product-table-row.html feature="Command substitution"     oss=oss radar=radar href="/features/command-substitution" %}
+    {% include v1/components/product-table-row.html feature="Encryption"               oss=oss ops=ops href="/features/encryption" %}
+    {% include v1/components/product-table-row.html feature="Run Anywhere"             oss=oss ops=ops href="/features/run-anywhere" %}
+    {% include v1/components/product-table-row.html feature="Multiple Environments"    oss=oss ops=ops href="/features/multiple-environments" %}
+    {% include v1/components/product-table-row.html feature="Precommit"                oss=oss ops=ops href="/features/precommit" %}
+    {% include v1/components/product-table-row.html feature="Prebuild"                 oss=oss ops=ops href="/features/prebuild" %}
+    {% include v1/components/product-table-row.html feature="Variable expansion"       oss=oss ops=ops href="/features/variable-expansion" %}
+    {% include v1/components/product-table-row.html feature="Command substitution"     oss=oss ops=ops href="/features/command-substitution" %}
 
     {% capture oss %}
       {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
 
-    {% include v1/components/product-table-row.html feature="Backups"                 oss=oss radar=radar %}
-    {% include v1/components/product-table-row.html feature="Versioning"              oss=oss radar=radar %}
-    {% include v1/components/product-table-row.html feature="Observability"           oss=oss radar=radar %}
-    <!--{% include v1/components/product-table-row.html feature="Anomaly Detection"       oss=oss radar=radar %}-->
-    <!--{% include v1/components/product-table-row.html feature="Attack Mitigation"       oss=oss radar=radar %}-->
-    {% include v1/components/product-table-row.html feature="Support"                 oss="None" radar="Email" %}
-    {% include v1/components/product-table-row.html feature="License" oss="<a target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" radar="Commercial"%}
+    {% include v1/components/product-table-row.html feature="Observability"           oss=oss ops=ops %}
+    {% include v1/components/product-table-row.html feature="Sync"                    oss=oss ops=ops %}
+    {% include v1/components/product-table-row.html feature="Backups"                 oss=oss ops=ops %}
+    {% include v1/components/product-table-row.html feature="Versioning"              oss=oss ops=ops %}
+    <!--{% include v1/components/product-table-row.html feature="Anomaly Detection"       oss=oss ops=ops %}-->
+    <!--{% include v1/components/product-table-row.html feature="Attack Mitigation"       oss=oss ops=ops %}-->
+    {% include v1/components/product-table-row.html feature="Support"                 oss="None" ops="Email" %}
+    {% include v1/components/product-table-row.html feature="License" oss="<a target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" ops="Commercial"%}
 
     <tr class="text-base">
       <td class="px-1 md:px-2 lg:px-4 py-3 text-right font-bold">
@@ -74,11 +77,11 @@
       </td>
       <td class="px-1 md:px-2 lg:px-4 align-top text-end">
         <div class="flex flex-col gap-2">
-          <a href="https://buy.stripe.com/7sY4gzdgFddq3ycape7IY02" target="_blank" rel="noopener" class="btn-success w-full flex-none inline-block" data-umami-event="Buy button">
+          <a href="https://buy.stripe.com/7sY4gzdgFddq3ycape7IY02" target="_blank" rel="noopener" class="btn-primary w-full flex-none inline-block" data-umami-event="Buy button">
             <span class="hidden md:block">Early Access<span class="ml-1">›</span></span>
             <span class="block md:hidden">Buy<span class="ml-1">›</span></span>
           </a>
-          <a href="/radar" class="btn w-full flex-none inline-block">
+          <a href="/ops" class="btn w-full flex-none inline-block">
             <span class="hidden md:block">Learn more</span>
             <span class="block md:hidden">Learn</span>
           </a>

@@ -23,7 +23,7 @@ image: "/assets/img/og-image-ops.png"
   <div class="flex flex-col gap-4">
     <p class="text-center italic">Dotenvx Ops is commercial tooling for dotenvx.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a class="btn-primary" href="https://buy.stripe.com/7sY4gzdgFddq3ycape7IY02">Get Early Access – $49/year</a>
+      <a class="btn-primary" href="https://buy.stripe.com/cNi4gz90p6P22u868Y7IY03">Get Early Access – $49/year</a>
       <a class="btn link-ops" href="/docs/ops">Documentation</a>
     </div>
   </div>

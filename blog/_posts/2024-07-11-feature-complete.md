@@ -49,7 +49,7 @@ I think this will be particularly useful to custom docker workflows.
 
 ## What's Next
 
-Next, we're working on **dotenvx pro** – to manage your secrets across teams, environments, and infrastructure.
+Next, we're working on **dotenvx-pro** – to manage your secrets across teams, environments, and infrastructure.
 
 ```
 _______________________________________________________________
@@ -80,4 +80,4 @@ Thank you for using [dotenvx](https://github.com/dotenvx/dotenvx)!
 
 ---
 
-P.S. You can [follow progress on dotenvx pro here](https://github.com/dotenvx/dotenvx/issues/259).
+P.S. You can [follow progress on dotenvx-pro here](https://github.com/dotenvx/dotenvx/issues/259).

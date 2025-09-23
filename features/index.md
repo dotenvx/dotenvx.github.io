@@ -21,7 +21,7 @@ title: Features
     {% include v1/components/feature-box2.html feature="Contextual Help" description="Dotenvx attempts to unblock you with contextual help." href="/features/contextual-help" txt="Contextual Help" %}
 
     <!--
-    {% include v1/components/feature-box2.html feature="Cloaked Keys" description="Hide private keys with zero-knowledge encryption. Share access, not the key." href="/features/cloaked-keys" txt="dotenvx pro cloak" pro="true" %}
+    {% include v1/components/feature-box2.html feature="Cloaked Keys" description="Hide private keys with zero-knowledge encryption. Share access, not the key." href="/features/cloaked-keys" txt="dotenvx-pro cloak" pro="true" %}
     {% include v1/components/feature-box2.html feature="Pull Requests" description="Review and approve .env changes through GitHub pull requests." href="/features/pull-requests" txt="Pull Requests" pro="true" %}
     -->
   </div>

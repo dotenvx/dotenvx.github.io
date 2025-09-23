@@ -66,7 +66,7 @@ But I'm getting off topic again.
 
 Everything I described above you can do already, for free, with [dotenvx](https://github.com/dotenvx/dotenvx).
 
-But as your team grows and Yamil needs to share production decryption keys with his new devops hires, [dotenvx pro](https://github.com/dotenvx/dotenvx/issues/259) should make that easy and safe. Zero-knowledge architecture is a good choice here - it would allow passing of these private decryption keys without dotenvx reading them. If a breach on our servers happened, your secrets would still be safe. All the attacker would gain are public keys and encrypted data.
+But as your team grows and Yamil needs to share production decryption keys with his new devops hires, [dotenvx-pro](https://github.com/dotenvx/dotenvx/issues/259) should make that easy and safe. Zero-knowledge architecture is a good choice here - it would allow passing of these private decryption keys without dotenvx reading them. If a breach on our servers happened, your secrets would still be safe. All the attacker would gain are public keys and encrypted data.
 
 One final note, I think zero-knowledge is in the spirit of [dotenv](https://github.com/motdotla/dotenv). It's never been a tool that could read your secrets.
 

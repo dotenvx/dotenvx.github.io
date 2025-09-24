@@ -178,3 +178,14 @@ image: "/assets/img/og-image-ops.png"
     <p>First lines of Ops code 🏰.</p>
   </div>
 </section>
+
+<!--
+  future marketing-related text/content:
+
+  handle key exchange and storage https://www.reddit.com/r/javascript/comments/1ng10iq/i_built_envie_a_secrets_manager_and_dropin/
+  prevent Claude from reading secrets and credentials https://www.reddit.com/r/ClaudeAI/comments/1nfvh46/i_got_tired_of_claude_code_reading_secrets_and/
+  KMS
+  Sync
+  Backup
+  Rotation
+-->

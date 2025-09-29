@@ -34,6 +34,11 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Changelog</h2>
 
   <div class="flex gap-2 flex-col">
+    <h3 class="font-bold">2025-09-29</h3>
+    <p>Users can request an invitation to an existing organization.</p>
+  </div>
+
+  <div class="flex gap-2 flex-col">
     <h3 class="font-bold">2025-09-26</h3>
     <p>List any invitations under user settings.</p>
   </div>

@@ -36,6 +36,7 @@ image: "/assets/img/og-image-ops.png"
   <div class="flex gap-2 flex-col">
     <h3 class="font-bold">2025-09-29</h3>
     <p>Users can request an invitation to an existing organization.</p>
+    <p>Change a user's role.</p>
   </div>
 
   <div class="flex gap-2 flex-col">

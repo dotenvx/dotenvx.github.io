@@ -34,6 +34,12 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Changelog</h2>
 
   <div class="flex gap-2 flex-col">
+    <h3 class="font-bold">2025-10-07</h3>
+    <p>Teams can sync project .env* files.</p>
+    <p>Team can force sync with `dotenvx-ops sync --force` when conflicts occur.</p>
+  </div>
+
+  <div class="flex gap-2 flex-col">
     <h3 class="font-bold">2025-09-29</h3>
     <p>Users can request an invitation to an existing organization.</p>
     <p>Change a user's role.</p>

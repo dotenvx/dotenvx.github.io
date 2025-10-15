@@ -5,7 +5,8 @@ image: "/assets/img/og-image-ops.png"
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
-  <h1 class="font-extrabold text-3xl sm:text-4xl text-zinc-950 dark:text-zinc-50 text-center">Use dotenvx across your team, infrastructure, agents, and more.</h1>
+  <h1 class="font-extrabold text-3xl sm:text-5xl text-zinc-950 dark:text-zinc-50 text-center">Commercial tooling for .env files – Dotenvx Ops</h1>
+  <p class="text-xl text-center">Built to fix the real problems developers hit every day.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <p class="text-left">
       <strong>Radar.</strong>

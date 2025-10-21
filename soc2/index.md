@@ -23,7 +23,7 @@ image: "/assets/img/og-image-soc2.png"
   </div>
   <p>These risks map directly to SOC 2 deficiencies under the <strong>Security (CC6, CC7), Confidentiality (C1), Change Management (CC8)</strong>, and <strong>System Operations (CC7)</strong> criteria. And SOC 2 isn't just a checkbox—it's proof your organization takes security seriously.</p>
   <hr/>
-  <p class="text-xl text-center"><strong>The Solution.</strong> Dotenvx closes these control gaps by enforcing encryption, access boundaries, and auditability for all your organization's .env files.</p>
+  <p class="text-xl text-center"><strong>The Solution.</strong> Dotenvx closes these control gaps by enforcing encryption, access boundaries, and auditability for all your organization's .env files:</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <p class="text-left">
       <strong>Encrypted at Rest.</strong> Dotenvx encrypts every .env file using asymmetric keys, ensuring only authorized devices can decrypt and read secrets.

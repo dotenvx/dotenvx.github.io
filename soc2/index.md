@@ -38,9 +38,9 @@ image: "/assets/img/og-image-soc2.png"
       <strong>Monitored Usage.</strong> Dotenvx's Radar feature tracks runtime env-file activity, detecting anomalies or credential abuse before they become incidents.
     </p>
   </div>
-  <p><strong>Ready to strengthen your SOC 2 controls?</strong> Inquire about our SOC 2 Implementation Pack — a full set of control mappings, policy templates, and auditor-ready evidence built for teams using dotenvx.</p>
+  <p><strong>Ready to strengthen your SOC 2 controls?</strong> Inquire about our SOC 2 Compliance Pack — a full set of control mappings, policy templates, and auditor-ready evidence built for teams using dotenvx.</p>
   <div class="flex flex-row gap-4 justify-center my-6">
-    <a class="btn-primary" href="mailto:soc2@dotenvx.com">Request the SOC 2 Implementation Pack →</a>
+    <a class="btn-primary" href="mailto:soc2@dotenvx.com">Request the SOC 2 Compliance Pack →</a>
     <a class="btn" href="https://dotenvx.com/dotenvx.pdf">Whitepaper</a>
   </div>
 </section>

@@ -6,89 +6,18 @@ image: "/assets/img/og-image-ops.png"
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
   <h1 class="font-extrabold text-3xl sm:text-5xl text-zinc-950 dark:text-zinc-50 text-center">Commercial tooling for .env files – Dotenvx Ops</h1>
-  <p class="text-xl text-center">Everything around .env, we're solving it.</p>
+  <p class="text-xl text-center">Everything around .env files, we're solving it.</p>
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-primary" href="/docs/ops/quickstart">Quickstart &rarr;</a>
     <a class="btn" href="/docs/ops">Documentation</a>
   </div>
-
-  <div class="flex flex-col gap-2">
-    <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Ops Sync</h2>
-    <p>Keep your .env files and secrets consistent everywhere — across teammates, servers, and CI/CD. No merges, no copy-paste, no plaintext. Just secure, automatic sync for your entire stack.</p>
-  </div>
-
-  <div class="flex flex-col gap-2">
-    <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Ops DB</h2>
-    <p>All your .env files and secrets, centralized. Ops DB captures every .env across your repos, machines, and services into a single source of truth. Full history, complete visibility, every version of every secret, forever.</p>
-  </div>
-
-  <div class="flex flex-col gap-2">
-    <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Ops Radar</h2>
-    <p>See how your environment variables used across your stack and infrastructure. Detect drift, misconfigurations, and unused variables before they cause issues. It's runtime observability for secrets.</p>
-  </div>
-
-  <div class="flex flex-col gap-2">
-    <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Ops Automation</h2>
-    <p>Let your .env files take care of themselves. Automate secret rotation, renewal, expiry, and integration to third party platforms like Vercel, Heroku, AWS, and more.</p>
-  </div>
-
-  <div class="flex flex-col gap-2">
-    <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Ops Compliance</h2>
-    <p>Prove your .env secrets are under control. Every change, sync, and rotation is logged for audit and compliance. SOC 2, ISO, or just peace of mind — built right in.</p>
-  </div>
-
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Your teammate's .env always out of date?</p>
-    <p>Ops keeps your environment variables in sync across teammates, servers, and CI machines with secure, automated updates and zero manual hassle.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Secrets still sitting in plaintext?</p>
-    <p>Ops encrypts every .env file at rest and in transit. You keep your workflow — just without the exposure.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">No record of who changed what?</p>
-    <p>Ops versions and diffs every update. You get full history, authorship, and timestamps across all environments.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Rotating secrets still risky?</p>
-    <p>Ops handles re-encryption and key rotation seamlessly — no downtime, no broken builds.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Don't know which keys are actually in use?</p>
-    <p>Ops Radar feature observes real runtime variable usage across projects, helping you prune dead keys and detect leaks early.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Need a record of every secret change?</p>
-    <p>Ops DB tracks every secret modification. See who changed what, where, and when.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Multiple repos, multiple .envs, total chaos?</p>
-    <p>Ops replaces that with a secure sync channel for your team — no copy-paste, no plaintext ever.</p>
-  </div>
-  <div class="flex flex-col gap-2">
-    <p class="font-bold">Need to prove access control and audit history?</p>
-    <p>Ops enforces permissions and logs every key event automatically, so compliance isn't a separate system — it's built in.</p>
-  </div>
-
-
-
-
-
-
-
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <p class="text-left">
-      <strong>Radar.</strong>
-      Ops' Radar feature watches every app launch, process, or container, capturing the exact environment variables injected at runtime. Total visibility across dev, staging, and production.
-    </p>
-    <p class="text-left">
-      <strong>DB.</strong>
-      Ops DB tracks every change to your envs across time. View diffs, roll back instantly, and understand who changed what, where, and when.
-    </p>
-    <p class="text-left">
-      <strong>Sync.</strong>
-      Keep your environment variables in sync across teammates, servers, and CI machines with secure, automated updates and zero manual hassle.
-    </p>
+    <p class="text-left"><strong>Sync.</strong> Keep .env files in sync across teammates, servers, and CI/CD — secure, automatic, and merge-free.</p>
+    <p class="text-left"><strong>DB.</strong> Centralize every secret with full version history and visibility across repos and environments.</p>
+    <p class="text-left"><strong>Team.</strong> Manage roles and access in one shared .env workflow — no plaintext, no leaks.</p>
+    <p class="text-left"><strong>Radar.</strong> Runtime observability for secrets. Detect drift, misconfigurations, and unused variables early.</p>
+    <p class="text-left"><strong>Automation.</strong> Program your secrets. Automate rotation and syncs with Vercel, Heroku, AWS, and more.</p>
+    <p class="text-left"><strong>Compliance.</strong> Log every change and generate audit-ready reports for SOC 2, ISO, and internal reviews.</p>
   </div>
   <img src="/ops/ui.png" class="rounded-md border border-zinc-200 dark:border-zinc-800"/>
 </section>

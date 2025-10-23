@@ -36,8 +36,7 @@
     {% include v1/components/product-table-row.html feature="Encryption"               oss=oss ops=ops href="/features/encryption" %}
     {% include v1/components/product-table-row.html feature="Run Anywhere"             oss=oss ops=ops href="/features/run-anywhere" %}
     {% include v1/components/product-table-row.html feature="Multiple Environments"    oss=oss ops=ops href="/features/multiple-environments" %}
-    {% include v1/components/product-table-row.html feature="Precommit"                oss=oss ops=ops href="/features/precommit" %}
-    {% include v1/components/product-table-row.html feature="Prebuild"                 oss=oss ops=ops href="/features/prebuild" %}
+    {% include v1/components/product-table-row.html feature="Precommit / Prebuild"     oss=oss ops=ops href="/features/precommit" %}
     {% include v1/components/product-table-row.html feature="Variable expansion"       oss=oss ops=ops href="/features/variable-expansion" %}
     {% include v1/components/product-table-row.html feature="Command substitution"     oss=oss ops=ops href="/features/command-substitution" %}
 
@@ -45,10 +44,13 @@
       {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
 
-    {% include v1/components/product-table-row.html feature="Observability"           oss=oss ops=ops %}
-    {% include v1/components/product-table-row.html feature="Sync"                    oss=oss ops=ops %}
-    {% include v1/components/product-table-row.html feature="Backups"                 oss=oss ops=ops %}
-    {% include v1/components/product-table-row.html feature="Versioning"              oss=oss ops=ops %}
+    {% include v1/components/product-table-row.html feature="Syncing"                 oss=oss ops=ops href="/ops" %}
+    {% include v1/components/product-table-row.html feature="Access Controls"         oss=oss ops=ops href="/ops" %}
+    {% include v1/components/product-table-row.html feature="Observability"           oss=oss ops=ops href="/ops" %}
+    {% include v1/components/product-table-row.html feature="Versioning"              oss=oss ops=ops href="/ops" %}
+    {% include v1/components/product-table-row.html feature="Automation"              oss=oss ops=ops href="/ops" %}
+    {% include v1/components/product-table-row.html feature="Compliance"              oss=oss ops=ops href="/ops" %}
+    <!--{% include v1/components/product-table-row.html feature="Backups"                 oss=oss ops=ops %}-->
     <!--{% include v1/components/product-table-row.html feature="Anomaly Detection"       oss=oss ops=ops %}-->
     <!--{% include v1/components/product-table-row.html feature="Attack Mitigation"       oss=oss ops=ops %}-->
     {% include v1/components/product-table-row.html feature="Support"                 oss="None" ops="Email" %}

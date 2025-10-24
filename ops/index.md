@@ -14,7 +14,7 @@ image: "/assets/img/og-image-ops.png"
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <p class="text-left"><strong>Sync.</strong> Keep .env files in sync across teammates, servers, and CI/CD — secure, automatic, and merge-free.</p>
     <p class="text-left"><strong>DB.</strong> Centralize every secret with full version history and visibility across repos and environments.</p>
-    <p class="text-left"><strong>Team.</strong> Manage roles and access in one shared .env workflow — no plaintext, no leaks.</p>
+    <p class="text-left"><strong>Team.</strong> Manage roles and access in one place — preventing production access and/or access to private keys.</p>
     <p class="text-left"><strong>Radar.</strong> Runtime observability for secrets. Detect drift, misconfigurations, and unused variables early.</p>
     <p class="text-left"><strong>Automation.</strong> Program your secrets. Automate rotation and syncs with Vercel, Heroku, AWS, and more.</p>
     <p class="text-left"><strong>Compliance.</strong> Log every change and generate audit-ready reports for SOC 2, ISO, and internal reviews.</p>

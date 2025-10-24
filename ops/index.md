@@ -26,6 +26,11 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Changelog</h2>
 
   <div class="flex gap-2 flex-col">
+    <h3 class="font-bold">2025-10-24</h3>
+    <p>Surface associated private key(s) in .env* view.</p>
+  </div>
+
+  <div class="flex gap-2 flex-col">
     <h3 class="font-bold">2025-10-23</h3>
     <p>Add ability to delete any key from Ops DB.</p>
   </div>

@@ -32,7 +32,9 @@ image: "/assets/img/og-image-ass.png"
       '/assets/img/ass3.jpg',
       '/assets/img/ass4.jpg',
       '/assets/img/ass5.jpg',
-      '/assets/img/ass6.jpg'
+      '/assets/img/ass6.jpg',
+      '/assets/img/ass7.jpg',
+      '/assets/img/ass8.jpg'
     ]
 
     let index = 0

@@ -6,7 +6,7 @@ image: "/assets/img/og-image-ass.png"
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
   <img
     id="ass-hero"
-    src="/assets/img/ass-blurred.jpg"
+    src="/assets/img/ass.png"
     data-src-blurred="/assets/img/ass-blurred.jpg"
     data-src-revealed="/assets/img/ass-revealed.jpg"
     class="rounded-md border border-zinc-200 dark:border-zinc-800 mx-auto max-w-sm"
@@ -18,19 +18,19 @@ image: "/assets/img/og-image-ass.png"
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const img = document.getElementById('ass-hero')
-    if (!img) return
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   const img = document.getElementById('ass-hero')
+  //   if (!img) return
 
-    const blurred = img.dataset.srcBlurred
-    const revealed = img.dataset.srcRevealed
+  //   const blurred = img.dataset.srcBlurred
+  //   const revealed = img.dataset.srcRevealed
 
-    img.addEventListener('mouseenter', function () {
-      img.src = revealed
-    })
+  //   img.addEventListener('mouseenter', function () {
+  //     img.src = revealed
+  //   })
 
-    img.addEventListener('mouseleave', function () {
-      img.src = blurred
-    })
-  })
+  //   img.addEventListener('mouseleave', function () {
+  //     img.src = blurred
+  //   })
+  // })
 </script>

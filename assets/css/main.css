@@ -8,6 +8,7 @@ layout: null
 
 [x-cloak] { display: none; }
 body { @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300 leading-relaxed; }
+blockquote { @apply text-zinc-800 dark:text-zinc-300; }
 p { @apply leading-relaxed; }
 a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }
 a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }

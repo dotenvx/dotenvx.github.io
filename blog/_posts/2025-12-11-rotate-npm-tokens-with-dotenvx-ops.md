@@ -8,7 +8,7 @@ excerpt: "NPM's new short-lived tokens improve security, but they make rotation 
 
 **NPM's new short-lived tokens improve security, but they make rotation painful.** Every 90 days (or sooner) you have to manually create a fresh token, set it in your CI, and make sure nothing breaks. <sup><a href="#footnote1">1</a></sup>
 
-It was a real problem for us. We publish <a href="https://www.npmjs.com/org/dotenvx">64 npm packages</a>, and rotating tokens across by hand was not going to be sustainable. Every expiration meant touching dozens of pipelines and praying the next publish didn't fail. So we built a solution.
+It was a real problem for us. We publish <a href="https://www.npmjs.com/org/dotenvx">64 npm packages</a>, and rotating tokens across all of them by hand was not going to be sustainable. Every expiration meant touching dozens of pipelines and praying the next publish didn't fail. So we built a solution.
 
 Introducing <a href="https://dotenvx.com/docs/ops/rotate">Dotenvx Rotate</a> — part of Dotenvx Ops.
 

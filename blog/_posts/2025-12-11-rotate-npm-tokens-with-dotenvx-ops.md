@@ -3,7 +3,7 @@ layout: blog
 author: "Scott Motte – Mot"
 title: "Rotate NPM Tokens with Dotenvx Ops. Automatically."
 image: "/assets/img/blog/blog-11.png"
-excerpt: "NPM's new short-lived tokens improve security, but they make rotation painful."
+excerpt: "NPM's new short-lived tokens strengthen security, but they make rotation painful."
 ---
 
 **NPM's new short-lived tokens** strengthen security, but they **make rotation painful.** Every 90 days (or sooner) you have to manually create a fresh token, set it in your CI, and make sure nothing breaks. <sup><a href="#footnote1">1</a></sup>

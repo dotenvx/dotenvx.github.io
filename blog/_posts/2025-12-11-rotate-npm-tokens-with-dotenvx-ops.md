@@ -171,25 +171,31 @@ npm:
 
 #### Step 3
 
-Last, we set `DOTENVX_OPS_TOKEN` in <a href="https://github.com/username/project/settings/secrets/actions">GitHub Actions Secrets</a>.
+Last, we set `DOTENVX_OPS_TOKEN` in <a href="https://github.com/username/project/settings/secrets/actions">GitHub Actions Secrets</a> (or GitLab CI, CircleCI, or wherever you run your automated npm publishing).
 
 <img src="https://github.com/user-attachments/assets/db12882b-8b35-40db-a62f-238df32ff3f6" />
 
-Tip: you can find your `DOTENVX_OPS_TOKEN` at <a href="https://ops.dotenvx.com/settings">/settings</a> page.
+Tip: Find your `DOTENVX_OPS_TOKEN` on your <a href="https://ops.dotenvx.com/settings">Dotenvx Settings Page</a>.
 
 <img src="https://github.com/user-attachments/assets/df4f6146-5cf9-44a7-9a22-b967d675f3d8" />
 
-That's it!
+On your next CI run, it will inject the latest rotated NPM token and successfully publish your npm module(s).
 
-Now publishing is automated with rotating NPM tokens.
+<img src="https://github.com/user-attachments/assets/7a201f23-c255-4d75-a46e-326ddf22f0d9" />
 
-- NPM token leaked? Just rotate it - all your operations still work.
-- NPM token should be rotated every N days for compliance? Put it on a schedule - all your operations still work. 
-- Changed an employee who had access to the old token? Rotate it — all your operations still work.
+Incredible!
 
-This has been a great setup for us. We publish a lot of npm packages, and ROTs finally made token rotation feel simple again.
+## Conclusion
 
-If you're dealing with npm token rotation today, you can start using this immediately by signing up for <a href="https://dotenvx.com/ops">Dotenvx Ops</a>. And if you're running this at enterprise scale — with compliance requirements, scheduled rotation, or broader CI/CD concerns — <a href="mailto:scott@dotenvx.com">get in touch</a>. We'd like to help.
+Publishing now works indefinitely with rotating NPM tokens, powered by a new rotation primitive (ROTs) and passcard connectors.
+
+- *NPM token leaked?* Just rotate it - all your operations still work.
+- *NPM token should be rotated every N days for compliance?* Put it on a schedule - all your operations still work. 
+- *Employee left the company who had access to the old token?* Rotate it - all your operations still work.
+
+This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/ops">Dotenvx Ops</a>.
+
+> P.S. If you're running this at enterprise scale with compliance requirements, scheduled rotation, or broader CI/CD concerns, please <a href="mailto:scott@dotenvx.com">get in touch</a>. We'd like to help.
 
 ---
 

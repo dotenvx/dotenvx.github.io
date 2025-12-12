@@ -40,6 +40,8 @@ This opens a local browser session, connecting your npm account.
 
 <img src="https://github.com/user-attachments/assets/49ee113b-95dd-4586-87ca-06da3b0f8d20" />
 
+> IMPORTANT: Note that this is **local only** - this way we can bypass the need for storing your credentials.
+
 Complete any 2FA steps manually.
 
 <img src="https://github.com/user-attachments/assets/a7487c65-0ee6-4415-9a94-d1e64a377e66" />

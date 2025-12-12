@@ -64,7 +64,7 @@ $ dotenvx-ops rotate dotenvx://pas_1234..
 ⠏ rotating..
 ```
 
-Takes 10-30 seconds. On success, it returns a Dotenvx Rotation Token (ROT).
+It takes 10-30 seconds. On success, it returns a Dotenvx Rotation Token (ROT).
 
 ```sh
 $ dotenvx-ops rotate dotenvx://pas_1234..
@@ -72,7 +72,7 @@ $ dotenvx-ops rotate dotenvx://pas_1234..
 ⮕ next run [dotenvx-ops get dotenvx://rot_a2c4..]
 ```
 
-*Dotenvx ROTs* are special tokens that can change value. You can think of them as proxy tokens.
+*Dotenvx Rotation Tokens (ROTs)* are special tokens that can change value. You can think of them as proxy tokens.
 
 Next, let's get the value for it.
 
@@ -87,7 +87,9 @@ npm_d2cJ..
 
 It returns your npm token. Cool!
 
-Try `rotate`ing the passcard again.
+## Rotate Again
+
+Run `rotate` on the passcard again.
 
 ```sh
 $ dotenvx-ops rotate dotenvx://pas_1234..
@@ -102,11 +104,13 @@ $ dotenvx-ops get dotenvx://rot_a2c4..
 npm_cbGY..
 ```
 
-WOW the value changed! That's the primitive at work. ROTs introduce a new key rotation primitive: the npm token rotates, the reference does not - which is exactly what CI/CD automation needs.
+The value changed. Way cool!
+
+That's the ROT at work. ROTs introduce a new key rotation primitive: the npm token rotates, the reference does not. This is useful for operations, especially CI/CD.
 
 ## CI/CD
 
-Our CI/CD had an `npm publish` that looked like this:
+Previously, our CI/CD had `npm publish` with a hardcoded `secrets.NPM_TOKEN`:
 
 {% raw %}
 ```yaml
@@ -125,11 +129,9 @@ npm:
 ```
 {% endraw %}
 
-We changed the following:
+#### Step 1
 
-- Added a step above `npm publish` writing `get dotenvx:/rot_a2c4..` to `NODE_AUTH_TOKEN`
-- Replaced `secrets.NPM_TOKEN` with `env.NODE_AUTH_TOKEN`
-- Set `DOTENVX_OPS_TOKEN` in <a href="https://github.com/username/project/settings/secrets/actions">GitHub Actions Secrets</a>
+We first replaced `secrets.NPM_TOKEN` with `env.NODE_AUTH_TOKEN`.
 
 {% raw %}
 ```yaml
@@ -137,11 +139,27 @@ npm:
   ...
   runs-on: ubuntu-latest
   steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '18.x'
-        registry-url: 'https://registry.npmjs.org'
+    ...
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ env.NODE_AUTH_TOKEN }}
+```
+{% endraw %}
+
+#### Step 2
+
+Then we added a step to:
+
+- <a href="https://dotenvx.com/docs/ops/install">Install dotenvx-ops</a>
+- Run `dotenvx-ops get` to echo its value to `NODE_AUTH_TOKEN`
+
+{% raw %}
+```yaml
+npm:
+  ...
+  runs-on: ubuntu-latest
+  steps:
+    ...
     - run: |
         curl -sfS https://dotenvx.sh/ops | sh
         echo "NODE_AUTH_TOKEN=$(dotenvx-ops get dotenvx://rot_a2c4 --token '${{ secrets.DOTENVX_OPS_TOKEN }}')" >> $GITHUB_ENV
@@ -151,13 +169,19 @@ npm:
 ```
 {% endraw %}
 
-<img src="https://github.com/user-attachments/assets/b2c8f5b5-d7ac-4e62-9e7c-3ae2a5a84873" />
+#### Step 3
 
-Find your organization's `DOTENVX_OPS_TOKEN` at <a href="https://ops.dotenvx.com/settings">/settings</a> page.
+Last, we set `DOTENVX_OPS_TOKEN` in <a href="https://github.com/username/project/settings/secrets/actions">GitHub Actions Secrets</a>.
+
+<img src="https://github.com/user-attachments/assets/db12882b-8b35-40db-a62f-238df32ff3f6" />
+
+Tip: you can find your `DOTENVX_OPS_TOKEN` at <a href="https://ops.dotenvx.com/settings">/settings</a> page.
 
 <img src="https://github.com/user-attachments/assets/df4f6146-5cf9-44a7-9a22-b967d675f3d8" />
 
-Now publishing works indefinitely - with rotating NPM tokens.
+That's it!
+
+Now publishing is automated with rotating NPM tokens.
 
 - NPM token leaked? Just rotate it - all your operations still work.
 - NPM token should be rotated every N days for compliance? Put it on a schedule - all your operations still work. 

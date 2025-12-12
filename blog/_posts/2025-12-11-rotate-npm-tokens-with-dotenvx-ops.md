@@ -192,8 +192,8 @@ Incredible!
 Publishing now works indefinitely with rotating NPM tokens, powered by a new rotation primitive (ROTs) and passcard connectors.
 
 - *NPM token leaked?* Just rotate it - all your operations still work.
+- *Employee left who knew the old token?* Rotate it - all your operations still work.
 - *NPM token should be rotated every N days for compliance?* Put it on a schedule - all your operations still work. 
-- *Employee left the company who had access to the old token?* Rotate it - all your operations still work.
 
 This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/ops">Dotenvx Ops</a>.
 

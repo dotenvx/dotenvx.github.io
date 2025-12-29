@@ -5,8 +5,8 @@ image: "/assets/img/og-image-ops.png"
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
-  <h1 class="font-extrabold text-3xl sm:text-4xl text-zinc-950 dark:text-zinc-50 text-center">dotenvx-ops</h1>
-  <p class="text-xl text-center">Production grade dotenvx–with operational primitives.</p>
+  <h1 class="font-extrabold text-3xl sm:text-5xl text-zinc-950 dark:text-zinc-50 text-center">Production-grade dotenvx</h1>
+  <p class="text-xl text-center">Dotenvx Ops is a production grade dotenvx–with operational primitives.</p>
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-primary" href="/docs/ops/quickstart">Quickstart &rarr;</a>
     <a class="btn" href="/docs/ops">Documentation</a>

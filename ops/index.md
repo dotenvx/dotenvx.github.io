@@ -6,7 +6,7 @@ image: "/assets/img/og-image-ops.png"
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
   <h1 class="font-extrabold text-3xl sm:text-5xl text-zinc-950 dark:text-zinc-50 text-center">Production Grade Dotenvx – Dotenvx Ops</h1>
-  <p class="text-left">As dotenvx spreads across companies, we're learning—through enterprise engagements—that encrypted .env files are only the beginning. At scale, teams need operational primitives to manage them reliably in production. <span class="font-bold">Introducing Dotenvx Ops. It's production-grade dotenvx</span>, adding the operational primitives teams need to back up private keys, manage access, automate workflows, and operate dotenvx confidently across people, machines, and environments.</p>
+  <p class="text-left">As dotenvx spreads inside companies, we're learning—through enterprise engagements—that dotenvx is missing an operations layer. Dotenvx Ops is our answer. It's <span class="font-bold">production grade dotenvx–with operational primitives</span> for teams, infrastructure, and agents. Private key management, access controls, and more.</p>
 
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-primary" href="/docs/ops/quickstart">Quickstart &rarr;</a>

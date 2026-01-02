@@ -5,12 +5,15 @@ image: "/assets/img/og-image-ops.png"
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">
-  <h1 class="font-extrabold text-3xl sm:text-5xl text-zinc-950 dark:text-zinc-50 text-center">Production-grade dotenvx</h1>
-  <p class="text-xl text-center">Dotenvx Ops is a production grade dotenvx–with operational primitives.</p>
+  <h1 class="font-extrabold text-3xl sm:text-5xl text-zinc-950 dark:text-zinc-50 text-center">Production grade dotenvx–with operational primitives</h1>
+  <p class="text-left">As dotenvx spreads inside companies, we are learning (through enterprise engagements) that dotenvx is missing an operations layer. Dotenvx Ops is our answer to that. It's <span class="font-bold">production-grade dotenvx, with operational primitives built in</span>. Backup private keys, manage them, protect access, and more.</p>
+
   <div class="flex flex-row gap-4 justify-center my-6">
     <a class="btn-primary" href="/docs/ops/quickstart">Quickstart &rarr;</a>
     <a class="btn" href="/docs/ops">Documentation</a>
   </div>
+
+  <!--
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <p class="text-left"><strong>Sync.</strong> Keep .env files in sync across teammates, servers, and CI/CD — secure, automatic, and merge-free.</p>
     <p class="text-left"><strong>DB.</strong> Centralize every secret with full version history and visibility across repos and environments.</p>
@@ -19,6 +22,7 @@ image: "/assets/img/og-image-ops.png"
     <p class="text-left"><strong>Automation.</strong> Program your secrets. Automate rotation and syncs with Vercel, Heroku, AWS, and more.</p>
     <p class="text-left"><strong>Compliance.</strong> Log every change and generate audit-ready reports for SOC 2, ISO, and internal reviews.</p>
   </div>
+  -->
   <img src="/ops/ui.png" class="rounded-md border border-zinc-200 dark:border-zinc-800"/>
 </section>
 

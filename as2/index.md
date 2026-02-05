@@ -18,14 +18,14 @@ image: "/assets/img/og-image-as2.png"
     if (!img) return
 
     const frames = [
-      '/assets/img/as2/1.jpg',
+      // '/assets/img/as2/1.jpg',
       '/assets/img/as2/2.jpg',
-      '/assets/img/as2/3.jpg',
+      // '/assets/img/as2/3.jpg',
       '/assets/img/as2/4.jpg',
-      '/assets/img/as2/5.jpg',
+      // '/assets/img/as2/5.jpg',
       '/assets/img/as2/6.jpg',
       '/assets/img/as2/7.jpg',
-      '/assets/img/as2/8.jpg'
+      // '/assets/img/as2/8.jpg'
     ]
 
     let index = 0

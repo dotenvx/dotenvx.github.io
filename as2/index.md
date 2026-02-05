@@ -33,6 +33,6 @@ image: "/assets/img/og-image-as2.png"
     setInterval(() => {
       index = (index + 1) % frames.length
       img.src = frames[index]
-    }, 300) // 1000 ms = 1 second
+    }, 100) // 1000 ms = 1 second
   })
 </script>

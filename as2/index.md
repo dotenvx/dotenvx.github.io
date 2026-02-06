@@ -26,7 +26,7 @@ image: "/assets/img/og-image-as2.png"
       // '/assets/img/as2/5.jpg',
       '/assets/img/as2/6.jpg',
       '/assets/img/as2/10.jpg',
-      '/assets/img/as2/7.jpg',
+      // '/assets/img/as2/7.jpg',
       // '/assets/img/as2/8.jpg'
     ]
 
@@ -35,6 +35,6 @@ image: "/assets/img/og-image-as2.png"
     setInterval(() => {
       index = (index + 1) % frames.length
       img.src = frames[index]
-    }, 100) // 1000 ms = 1 second
+    }, 250) // 1000 ms = 1 second
   })
 </script>

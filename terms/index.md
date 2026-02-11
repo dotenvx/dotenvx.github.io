@@ -17,7 +17,8 @@ title: "Terms of Service"
   <ol class="list-decimal ml-5">
     <li>You are responsible for maintaining the security of your account and GitHub account. The Company cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.</li>
     <li>You may not use the Service for any illegal purpose or to violate any laws in your jurisdiction.</li>
-    <li>You must provide a valid GitHub account and any other information requested in order to complete the signup process.</li>
+    <li>You must provide a valid GitHub account (individual or organization) and any other information requested in order to complete the signup process.</li>
+    <li>You may access and use the Service through automated agents or tools that you control, provided you remain responsible for their actions and comply with these Terms of Service.</li>
   </ol>
 
   <h2 class="font-extrabold text-lg">Payment, Refunds, Upgrading and Downgrading Terms</h2>

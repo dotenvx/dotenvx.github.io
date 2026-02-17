@@ -69,7 +69,7 @@ But if you have server-side variables like `DATABASE_URL`, keep going. This is w
 
 ## Step 4: Add the Instrumentation File
 
-Here is the problem: Vercel serverless functions do not use `next start`. They invoke your route handlers directly, so the `dotenvx run` CLI wrapper is not present at runtime. Server-side `process.env` reads get nothing, and you see `ECONNREFUSED 127.0.0.1:5432` errors. The same issue applies to any serverless deployment target — Cloudflare Workers, AWS Lambda, etc. — anywhere the CLI wrapper is not invoked at runtime.
+Here is the problem: Vercel serverless functions do not use `next start`. They invoke your route handlers directly, so the `dotenvx run` CLI wrapper is not present at runtime. Server-side `process.env` reads get nothing, and you get errors at runtime due to secrets not being available. The same issue applies to any serverless deployment target — Cloudflare Workers, AWS Lambda, etc. — anywhere the CLI wrapper is not invoked at runtime.
 
 The fix is a Next.js instrumentation file. Since the encrypted `.env` files are committed to git, they are part of the deployment. You just need to decrypt them when the serverless function starts:
 

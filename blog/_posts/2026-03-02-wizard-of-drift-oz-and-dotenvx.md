@@ -99,6 +99,6 @@ This is the kind of workflow I want more of:
 
 And Oz was a great choice here because I wanted to easily trigger a coding agent from a GitHub action. Plus it supports any model and can be monitored from [its dashboard](https://oz.warp.dev).
 
-The combination makkes my `.env` workflows safer and easier to operate at scale. Dotenvx gives you the secure env model and the agent gives you a practical enforcement loop at review time.
+The combination makes my `.env` workflows safer and easier to operate at scale. Dotenvx gives you the secure env model and the agent gives you a practical enforcement loop at review time.
 
 Together, they remove a class of annoying config breakages before they merge.

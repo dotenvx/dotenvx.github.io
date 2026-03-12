@@ -7,4 +7,5 @@ image: "/assets/img/og-image-ops.png"
   <p class="text-lg sm:text-xl text-zinc-900 dark:text-zinc-100 tracking-tight">
     coming soon <strong class="font-black">dotenvx-ops</strong>
   </p>
+  <P class="">keep keys off compute–powered by `dotenvx`</p>
 </main>

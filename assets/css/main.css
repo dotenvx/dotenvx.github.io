@@ -7,20 +7,42 @@ layout: null
 @import "tailwindcss/utilities";
 
 [x-cloak] { display: none; }
-body { @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300 leading-relaxed; }
-blockquote { @apply text-zinc-800 dark:text-zinc-300; }
+:root {
+  --vault-bg: #0b0a09;
+  --vault-panel: #12100f;
+  --vault-text: #f3eee7;
+  --vault-muted: #b8afa3;
+  --vault-gold: #ecd53f;
+  --vault-line: #6f5a36;
+  --vault-glow: #5c5f79;
+  --vault-red: #7f3a3a;
+}
+
+body {
+  @apply antialiased leading-relaxed;
+  background-color: var(--vault-bg) !important;
+  color: var(--vault-text) !important;
+}
+blockquote { color: var(--vault-muted); }
 p { @apply leading-relaxed; }
-a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }
-a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }
-a.btn { @apply text-center rounded cursor-pointer border border-zinc-300 dark:border-zinc-700 p-3 font-extrabold tracking-tight hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center justify-center gap-4 no-underline hover:no-underline; }
+a, h1 a, p a, div a, section a { @apply font-bold hover:underline; color: var(--vault-gold); }
+a.btn {
+  @apply text-center rounded cursor-pointer border p-3 font-extrabold tracking-tight flex items-center justify-center gap-4 no-underline hover:no-underline;
+  border-color: var(--vault-line);
+}
+a.btn:hover {
+  background-color: var(--vault-panel);
+}
 .link-radar { @apply dark:text-[#00ff00]; }
-.link-ops { @apply dark:text-[#1552D8]; }
+.link-ops { color: var(--vault-glow); }
 a.btn-submit, button.btn-submit { @apply text-center rounded cursor-pointer bg-zinc-950 dark:bg-zinc-100 p-3 font-extrabold text-zinc-50 dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:cursor-default flex items-center justify-center gap-4 no-underline hover:no-underline; }
 a.btn-success { @apply text-zinc-50 text-center rounded cursor-pointer border border-green-500 p-3 font-extrabold tracking-tight bg-green-600 hover:bg-green-500 dark:hover:bg-green-700 flex items-center justify-center gap-4 no-underline hover:no-underline text-zinc-50 dark:text-zinc-50; }
 a.btn-primary { @apply text-zinc-50 text-center rounded cursor-pointer border border-blue-500 p-3 font-extrabold tracking-tight bg-blue-600 hover:bg-blue-500 dark:hover:bg-blue-700 flex items-center justify-center gap-4 no-underline hover:no-underline text-zinc-50 dark:text-zinc-50; }
-.btn-nav { @apply text-center rounded-full text-sm px-4 py-2.5 text-zinc-500 dark:text-zinc-200 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-200 dark:active:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150 no-underline hover:no-underline; }
-.link-footer { @apply text-zinc-500 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 text-sm no-underline hover:no-underline; }
-.prose, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong { @apply text-zinc-800 dark:text-zinc-300; }
+.btn-nav { @apply text-center rounded-full text-sm px-4 py-2.5 active:bg-zinc-200 dark:active:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150 no-underline hover:no-underline; color: var(--vault-muted); }
+.btn-nav:hover { color: var(--vault-text); }
+.link-footer { @apply text-sm no-underline hover:no-underline; color: var(--vault-muted); }
+.link-footer:hover { color: var(--vault-text); }
+.prose, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong { color: var(--vault-text); }
 .prose h2 { @apply text-xl font-bold; }
 .prose h3 { @apply text-lg font-bold; }
 .prose h4 { @apply text-lg font-bold; }
@@ -28,9 +50,9 @@ a.btn-primary { @apply text-zinc-50 text-center rounded cursor-pointer border bo
 .prose h6 { @apply font-bold; }
 .prose p { @apply leading-7; }
 .prose code { @apply dark:text-zinc-100; }
-.prose img { @apply rounded-lg border border-zinc-200 dark:border-zinc-800 shadow-sm; }
-.prose a { @apply text-blue-600 font-bold no-underline hover:underline dark:text-[#ecd53f]; }
-hr { @apply border border-zinc-100 dark:border-zinc-800; }
+.prose img { @apply rounded-lg border shadow-sm; border-color: var(--vault-line); }
+.prose a { @apply font-bold no-underline hover:underline; color: var(--vault-gold); }
+hr { border-color: var(--vault-line); }
 
 .changelog h3, .changelog h4, .changelog p {
   @apply font-bold text-sm;
@@ -119,7 +141,7 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 
 /* bg-yellow */
 .bg-yellow {
-  background: #ecd53f !important;
+  background: var(--vault-gold) !important;
 }
 
 .bg-vault-image {
@@ -132,7 +154,7 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 
 /* look at these */
 .text-yellow {
-color: #ecd53f !important;
+color: var(--vault-gold) !important;
 }
 .text-underline-hover {
 text-decoration: none;
@@ -144,10 +166,10 @@ text-decoration: underline;
 font-weight: 750 !important;
 }
 .border-yellow {
-border-color: #ecd53f !important;
+border-color: var(--vault-gold) !important;
 }
 .border-yellow-hover:hover {
-border-color: #ecd53f !important;
+border-color: var(--vault-gold) !important;
 }
 .inset-shadow {
 box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);

@@ -10,12 +10,14 @@ title: ""
 
       <div class="flex flex-row gap-4 my-2">
         <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
-        <a class="btn btn-no-border" href="/docs">Documentation</a>
+        <a class="inline-flex items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/docs">Documentation</a>
       </div>
     </div>
 
     <div class="md:pl-2">
-      {% include v1/components/encrypted-env-file-small.html %}
+      <div class="max-w-xl mx-auto md:max-w-lg lg:max-w-xl">
+        {% include v1/components/encrypted-env-file-small.html %}
+      </div>
     </div>
   </div>
 </section>

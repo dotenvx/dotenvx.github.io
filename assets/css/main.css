@@ -14,6 +14,13 @@ body {
   background-position: top center;
   background-size: 100% auto;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-size: 180% auto;
+    background-position: 52% top;
+  }
+}
 blockquote { @apply text-zinc-800 dark:text-zinc-300; }
 p { @apply leading-relaxed; }
 a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }

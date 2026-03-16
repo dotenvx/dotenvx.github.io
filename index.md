@@ -12,7 +12,7 @@ title: ""
   </div>
 
   <div class="">
-    {% include v1/components/encrypted-env-file-small.html %}
+    {% include v1/components/key-canvas.html %}
   </div>
 </section>
 

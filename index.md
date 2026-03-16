@@ -5,7 +5,7 @@ title: ""
 <section class="w-full max-w-6xl mx-auto px-6 mt-12 md:mt-20">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
     <div class="flex flex-col gap-4 md:gap-6">
-      <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight text-zinc-950 dark:text-zinc-50">Secrets for developers</h1>
+      <h1 class="font-serif font-normal text-5xl sm:text-6xl lg:text-7xl leading-tight text-zinc-950 dark:text-zinc-50">Secrets for developers</h1>
       <p class="text-left text-lg">Ship encrypted `.env` files without changing your workflow.<br/>Keep secrets out of source code and AI prompts while loading them anywhere you run.</p>
 
       <div class="flex flex-row gap-4 my-2">

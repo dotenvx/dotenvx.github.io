@@ -1,6 +1,6 @@
 [![dotenvx](https://dotenvx.com/banner.png)](https://dotenvx.com)
 
-*a secure dotenv*–from the creator of [`dotenv`](https://github.com/motdotla/dotenv).
+Secrets for developers.
 
 * run anywhere (cross-platform)
 * multi-environment
@@ -2045,7 +2045,7 @@ Output help for `dotenvx`.
 $ dotenvx help
 Usage: dotenvx run -- yourcommand
 
-a secure dotenv–from the creator of `dotenv`
+Secrets for developers
 
 Options:
   -l, --log-level <level>      set log level (default: "info")

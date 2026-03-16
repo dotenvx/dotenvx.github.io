@@ -9,28 +9,14 @@
       </div>
       <div class="flex-1 md:flex-shrink-0 h-10 flex items-center justify-start md:justify-center">
       </div>
-      <div class="flex-shrink-0 md:flex-1 h-10 flex items-center justify-end">
-        <a href="/docs" role="button" class="btn-nav">Docs</a>
-        <a href="/ops" role="button" class="relative btn-nav whitespace-nowrap">
-          <span>Ops</span>
-          <!--
-            <span class="absolute top-2 right-2 animate-ping h-2 w-2 rounded-full bg-[#1552D8] opacity-75"></span>
-            <span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#1552D8]"></span>
-          -->
+      <div class="flex-shrink-0 md:flex-1 h-10 flex items-center justify-end gap-3 md:gap-8">
+        <a href="https://github.com/dotenvx/dotenvx" class="text-sm md:text-lg font-mono font-medium text-zinc-300 no-underline hover:no-underline hover:text-zinc-100 whitespace-nowrap">
+          GitHub <span class="text-zinc-500">[5.2k]</span>
         </a>
-        <!--
-        <a href="/as2" role="button" class="relative btn-nav whitespace-nowrap">
-          <span>AS2</span>
-          <span class="absolute top-2 right-2 animate-ping h-2 w-2 rounded-full bg-[#000000] opacity-75"></span>
-          <span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#000000]"></span>
-        </a>
-        -->
-        <a href="/login" role="button" class="btn-nav md:mr-2 flex items-center gap-1" data-umami-event="Account link">
-          <span class="hidden md:block">Account</span>
-          {% include v1/icons/person-circle.html class="block md:hidden w-3.5 text-zinc-500" %}
-        </a>
-        <a href="https://github.com/dotenvx/dotenvx" class="ml-3.5 hidden xs:block md:block opacity-75 hover:opacity-100">
-          {% include logos/github.html class="w-8 h-8 text-zinc-900 dark:invert" %}
+        <a href="/docs" class="text-sm md:text-lg font-mono font-medium text-zinc-300 no-underline hover:no-underline hover:text-zinc-100 whitespace-nowrap">Docs</a>
+        <a href="/ops" class="text-sm md:text-lg font-mono font-medium text-zinc-300 no-underline hover:no-underline hover:text-zinc-100 whitespace-nowrap">Ops</a>
+        <a href="/login" class="text-sm md:text-lg font-mono font-medium text-zinc-300 no-underline hover:no-underline hover:text-zinc-100 whitespace-nowrap" data-umami-event="Account link">
+          Account
         </a>
       </div>
     </div>

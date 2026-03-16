@@ -5,10 +5,10 @@ title: ""
 <section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-36 lg:mt-40 mb-32 md:mb-40 lg:mb-44">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
     <div class="flex flex-col gap-4 md:gap-6">
-      <h1 class="hero-title-shaded font-serif font-normal text-6xl sm:text-7xl lg:text-7xl leading-tight">Secrets for developers</h1>
-      <p class="text-left text-lg">Ship encrypted `.env` files without changing your workflow.<br/>Keep secrets out of source code and AI prompts while loading them anywhere you run.</p>
+      <h1 class="hero-title-shaded font-serif font-normal text-6xl sm:text-7xl lg:text-7xl text-center md:text-left leading-[0.92] md:leading-tight">Secrets for developers</h1>
+      <p class="text-center md:text-left text-base md:text-lg">Encrypt .env files, keep your workflow.<br/>Keep secrets out of code and AI prompts.</p>
 
-      <div class="flex flex-row gap-4 my-2">
+      <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
         <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
         <a class="inline-flex items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/docs">Documentation</a>
       </div>

@@ -6,7 +6,10 @@ title: ""
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
     <div class="flex flex-col gap-4 md:gap-6">
       <h1 class="hero-title-shaded font-serif font-normal text-6xl sm:text-7xl lg:text-8xl text-center md:text-left leading-[0.92] md:leading-tighter">Secrets for developers</h1>
-      <p class="text-center md:text-left text-base md:text-lg">Encrypt your .env files without changing your workflow.<br/>Keep secrets out of source code and AI prompts.</p>
+      <p class="text-center md:text-left text-base md:text-lg">
+        <span class="block whitespace-nowrap">Encrypt your .env files without changing your workflow.</span>
+        <span class="block whitespace-nowrap">Keep secrets out of source code and AI prompts.</span>
+      </p>
 
       <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
         <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>

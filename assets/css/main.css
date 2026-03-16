@@ -17,7 +17,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-size: 180% auto;
+    background-size: 145% auto;
     background-position: 52% top;
   }
 }

@@ -15,17 +15,20 @@ body {
   background-size: 100% auto;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-size: 145% auto;
-    background-position: 52% top;
-  }
+.hero-title-shaded {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaf5 62%, #f1e6c5 86%, #d5bc79 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(45, 34, 12, 0.14), 0 8px 20px rgba(16, 12, 4, 0.2);
 }
+
 blockquote { @apply text-zinc-800 dark:text-zinc-300; }
 p { @apply leading-relaxed; }
 a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }
 a, h1 a, p a, div a, section a { @apply text-blue-600 font-bold hover:underline dark:text-[#ecd53f]; }
 a.btn { @apply text-center rounded cursor-pointer border border-zinc-300 dark:border-zinc-700 p-3 font-extrabold tracking-tight hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center justify-center gap-4 no-underline hover:no-underline; }
+.btn-no-border { border: 0 !important; }
 .link-radar { @apply dark:text-[#00ff00]; }
 .link-ops { @apply dark:text-[#1552D8]; }
 a.btn-submit, button.btn-submit { @apply text-center rounded cursor-pointer bg-zinc-950 dark:bg-zinc-100 p-3 font-extrabold text-zinc-50 dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:cursor-default flex items-center justify-center gap-4 no-underline hover:no-underline; }

@@ -28,7 +28,6 @@ html:not(.dark) #ascii-bg-canvas {
 
 .terminal-hero-card {
   position: relative;
-  isolation: isolate;
   --terminal-rx: 0deg;
   --terminal-ry: 0deg;
   --spot-x: 50%;
@@ -43,27 +42,6 @@ html:not(.dark) #ascii-bg-canvas {
     0 1px 0 rgba(255, 239, 188, 0.05) inset;
 }
 
-.terminal-hero-face {
-  position: relative;
-  z-index: 2;
-}
-
-/* Faux thickness slab under the terminal face. */
-.terminal-hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(58, 50, 34, 0.62) 0%, rgba(30, 26, 18, 0.74) 65%, rgba(18, 16, 12, 0.86) 100%);
-  transform: translateY(10px) scale(0.988);
-  transform-origin: center top;
-  box-shadow:
-    0 12px 20px rgba(0, 0, 0, 0.45),
-    0 22px 40px rgba(0, 0, 0, 0.34);
-}
-
 .terminal-hero-card.terminal-tilt-active {
   transform: perspective(1400px) rotateX(calc(0.8deg + var(--terminal-rx))) rotateY(var(--terminal-ry));
 }
@@ -72,7 +50,6 @@ html:not(.dark) #ascii-bg-canvas {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 3;
   pointer-events: none;
   border-radius: inherit;
   opacity: 0;
@@ -102,13 +79,6 @@ html:not(.dark) #ascii-bg-canvas {
 
   .terminal-hero-card.terminal-tilt-active {
     transform: perspective(1200px) rotateX(0deg) rotateY(0deg);
-  }
-
-  .terminal-hero-card::before {
-    transform: translateY(6px) scale(0.99);
-    box-shadow:
-      0 8px 14px rgba(0, 0, 0, 0.4),
-      0 14px 24px rgba(0, 0, 0, 0.3);
   }
 }
 

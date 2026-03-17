@@ -6,7 +6,7 @@ title: ""
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
     <div class="flex flex-col gap-4 md:gap-6 hero-copy-enter">
       <h1 class="hero-title-shaded font-serif font-normal text-6xl md:text-7xl lg:text-8xl text-center md:text-left leading-[0.97] md:leading-tighter">Secrets for developers</h1>
-      <p class="mx-auto max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-base md:text-lg">Encrypt your .env files without changing your workflow. Keep secrets out of source code and AI prompts.</p>
+      <p class="mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-base md:text-lg">Encrypt your .env files without changing your workflow. <br class="hidden lg:block" />Keep secrets out of source code and AI prompts.</p>
 
       <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
         <a class="btn-primary" href="/docs/quickstart">Get Started</a>

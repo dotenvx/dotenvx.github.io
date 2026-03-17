@@ -16,7 +16,7 @@
 
   const intro = {
     duration: 8000,
-    delay: 1850,
+    delay: 1200,
     start: 0,
     done: reduceMotion,
   };
@@ -66,7 +66,7 @@
     });
 
     // Center-out reveal order with deterministic jitter so it assembles organically.
-    const cx = width * 0.5;
+    const cx = width * 0.64;
     const cy = height * 0.45;
     const maxDist = Math.hypot(width * 0.5, height * 0.55);
 

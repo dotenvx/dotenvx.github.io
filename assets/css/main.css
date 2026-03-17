@@ -9,10 +9,21 @@ layout: null
 [x-cloak] { display: none; }
 body {
   @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300 leading-relaxed;
-  background-image: url("/assets/img/bg/enclave-ascii.svg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% auto;
+  background-image: none;
+}
+
+#ascii-bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: min(1300px, calc(100vh + 360px));
+  pointer-events: none;
+  z-index: 0;
+}
+
+html:not(.dark) #ascii-bg-canvas {
+  display: none;
 }
 
 .hero-title-shaded {

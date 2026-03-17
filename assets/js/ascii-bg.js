@@ -29,7 +29,9 @@
     topY: 56,
     charWidth: 11,
     maxFps: 24,
+    scrollIdleMs: 220,
   };
+  let lastScrollAt = 0;
 
   function buildOffscreen() {
     if (!lines.length) return;
@@ -76,7 +78,8 @@
           seed,
           phase: seed * 0.011,
           speed: 0.005 + ((seed % 9) * 0.0008),
-          amp: 0.42 + ((seed % 5) * 0.06), // stronger rotation
+          driftX: 1.6 + ((seed % 7) * 0.5),
+          driftY: 2.2 + ((seed % 9) * 0.45),
           reveal: 1,
         });
       }
@@ -177,18 +180,23 @@
 
     ctx.restore();
 
-    if (!reduceMotion && intro.done) {
+    const isScrolling = t - lastScrollAt < state.scrollIdleMs;
+    if (!reduceMotion && intro.done && !isScrolling) {
       ctx.save();
       ctx.font = `${state.baseFontSize * scale}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace`;
       ctx.textBaseline = "top";
-      ctx.fillStyle = "rgba(144, 118, 70, 0.6)";
+      ctx.fillStyle = "rgba(214, 182, 108, 0.96)";
 
       for (let i = 0; i < spinningGlyphs.length; i += 1) {
         const g = spinningGlyphs[i];
         const sx = x + g.x * scale;
         const sy = y + g.y * scale;
-        const angle = t * g.speed + g.phase;
-        const sparkle = 0.52 + 0.16 * Math.sin(t * g.speed * 1.35 + g.phase * 2.1);
+        const driftX = Math.sin(t * g.speed * 0.22 + g.phase) * g.driftX * scale;
+        const driftY =
+          (Math.cos(t * g.speed * 0.17 + g.phase * 1.3) * g.driftY -
+            Math.sin(t * g.speed * 0.09 + g.phase * 0.6) * 1.4) *
+          scale;
+        const sparkle = 0.76 + 0.24 * Math.sin(t * g.speed * 0.42 + g.phase * 2.1);
 
         ctx.save();
         // Clear the original static glyph so the animated one is clearly visible.
@@ -202,13 +210,12 @@
           state.baseFontSize * scale + 2
         );
 
-        ctx.fillStyle = "rgba(144, 118, 70, 0.6)";
+        ctx.fillStyle = "rgba(214, 182, 108, 0.96)";
         ctx.globalAlpha = sparkle;
         ctx.translate(
-          sx + (state.charWidth * scale) * 0.5,
-          sy + (state.baseFontSize * scale) * 0.5
+          sx + driftX + (state.charWidth * scale) * 0.5,
+          sy + driftY + (state.baseFontSize * scale) * 0.5
         );
-        ctx.rotate(angle);
         ctx.translate(-(state.charWidth * scale) * 0.5, -(state.baseFontSize * scale) * 0.5);
         ctx.fillText(g.ch, 0, 0);
         ctx.restore();
@@ -248,5 +255,12 @@
   }
 
   window.addEventListener("resize", rerender, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      lastScrollAt = performance.now();
+    },
+    { passive: true }
+  );
   init();
 })();

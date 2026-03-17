@@ -151,7 +151,7 @@
     ctx.save();
     ctx.font = `${state.baseFontSize * scale}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace`;
     ctx.textBaseline = "top";
-    ctx.fillStyle = "rgb(118, 96, 52)";
+    ctx.fillStyle = "rgb(130, 106, 58)";
 
     for (let i = 0; i < allGlyphs.length; i += 1) {
       const g = allGlyphs[i];
@@ -169,9 +169,9 @@
       // Brief glint right as each glyph appears during the intro only.
       if (!intro.done && frontier > 0 && frontier < 0.028) {
         ctx.globalAlpha = (1 - frontier / 0.028) * 0.35;
-        ctx.fillStyle = "rgb(152, 124, 74)";
+        ctx.fillStyle = "rgb(164, 134, 82)";
         ctx.fillText(g.ch, sx, sy);
-        ctx.fillStyle = "rgb(118, 96, 52)";
+        ctx.fillStyle = "rgb(130, 106, 58)";
       }
     }
 
@@ -181,7 +181,7 @@
       ctx.save();
       ctx.font = `${state.baseFontSize * scale}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace`;
       ctx.textBaseline = "top";
-      ctx.fillStyle = "rgba(132, 108, 63, 0.56)";
+      ctx.fillStyle = "rgba(144, 118, 70, 0.6)";
 
       for (let i = 0; i < spinningGlyphs.length; i += 1) {
         const g = spinningGlyphs[i];
@@ -202,7 +202,7 @@
           state.baseFontSize * scale + 2
         );
 
-        ctx.fillStyle = "rgba(132, 108, 63, 0.56)";
+        ctx.fillStyle = "rgba(144, 118, 70, 0.6)";
         ctx.globalAlpha = sparkle;
         ctx.translate(
           sx + (state.charWidth * scale) * 0.5,

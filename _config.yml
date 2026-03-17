@@ -1,6 +1,6 @@
 url: "https://dotenvx.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/" # the subpath of your site, e.g. /blog
-title: "dotenvx" # the name of your site, e.g. ACME Corp.
+title: "Dotenvx" # the name of your site, e.g. ACME Corp.
 logo: "https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg"
 description: "Secrets for developers"
 

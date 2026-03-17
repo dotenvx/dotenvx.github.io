@@ -4,18 +4,10 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const asciiUrl = canvas.dataset.asciiSrc || "/assets/img/bg/enclave-ascii3.txt";
-  const nowDate = new Date();
-  const isStPatricksDay = nowDate.getMonth() === 2 && nowDate.getDate() === 17;
-
-  const palette = isStPatricksDay
-    ? {
-        base: "rgb(76, 133, 90)",
-        glint: "rgb(114, 176, 130)",
-      }
-    : {
-        base: "rgb(130, 106, 58)",
-        glint: "rgb(164, 134, 82)",
-      };
+  const palette = {
+    base: "rgb(130, 106, 58)",
+    glint: "rgb(164, 134, 82)",
+  };
 
   const ctx = canvas.getContext("2d", { alpha: false });
   if (!ctx) return;

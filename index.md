@@ -28,21 +28,6 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">It's like a swiss army knife for your .env files.</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-    {% include v1/components/feature-box3.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
-    {% include v1/components/feature-box3.html feature="Multi-environment" description="Switch environments easily" href="/features/multiple-environments" %}
-    {% include v1/components/feature-box3.html feature="Encryption" description="Encrypt your envs at-rest" href="/features/encryption" %}
-    {% include v1/components/feature-box3.html feature="Multiple Files" description="Compose multiple .env files flexibly" href="/features/multiple-files" %}
-    {% include v1/components/feature-box3.html feature="Variable Expansion" description="Reference and expand variables" href="/features/variable-expansion" %}
-    {% include v1/components/feature-box3.html feature="Command Substitution" description="Add the output of a command" href="/features/command-substitution" %}
-    {% include v1/components/feature-box3.html feature="Precommit" description="Prevent committing .env files to code" href="/features/precommit" %}
-    {% include v1/components/feature-box3.html feature="Prebuild" description="Prevent building .env files into docker images" href="/features/prebuild" %}
-    {% include v1/components/feature-box3.html feature="advanced usage &rarr;" description="advanced options" href="/docs/advanced" %}
-  </div>
-</section>
-
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">With strong cryptography.</h2>
   <div class="flex flex-col sm:flex-row gap-8">
     <div class="sm:basis-2/3 flex flex-col gap-4">

@@ -4,6 +4,18 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const asciiUrl = canvas.dataset.asciiSrc || "/assets/img/bg/enclave-ascii3.txt";
+  const nowDate = new Date();
+  const isStPatricksDay = nowDate.getMonth() === 2 && nowDate.getDate() === 17;
+
+  const palette = isStPatricksDay
+    ? {
+        base: "rgb(76, 133, 90)",
+        glint: "rgb(114, 176, 130)",
+      }
+    : {
+        base: "rgb(130, 106, 58)",
+        glint: "rgb(164, 134, 82)",
+      };
 
   const ctx = canvas.getContext("2d", { alpha: false });
   if (!ctx) return;
@@ -140,14 +152,14 @@
       const sy = y + g.y * scale - (1 - born) * 2.2 * scale;
 
       // Single-layer main engraving.
-      ctx.fillStyle = "rgb(130, 106, 58)";
+      ctx.fillStyle = palette.base;
       ctx.globalAlpha = 0.08 + born * 0.54;
       ctx.fillText(g.ch, sx, sy);
 
       // Brief glint as each glyph appears during intro only.
       if (!intro.done && frontier > 0 && frontier < 0.028) {
         ctx.globalAlpha = (1 - frontier / 0.028) * 0.35;
-        ctx.fillStyle = "rgb(164, 134, 82)";
+        ctx.fillStyle = palette.glint;
         ctx.fillText(g.ch, sx, sy);
       }
     }

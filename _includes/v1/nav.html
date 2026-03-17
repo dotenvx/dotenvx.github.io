@@ -1,4 +1,5 @@
-<div class="top-0 z-20">
+<div>
+  <div id="nav-shell" class="w-full transition-colors duration-200">
   <div class="mx-auto w-full max-w-7xl px-6">
     <div class="mx-auto relative flex w-full items-center transition">
       <div class="flex-shrink-0 flex items-center">
@@ -16,7 +17,8 @@
       <button
         type="button"
         id="mobile-nav-toggle"
-        class="md:hidden fixed top-1.5 right-6 z-50 h-12 w-12 inline-flex items-center justify-center rounded-xl text-zinc-300 hover:text-zinc-100 hover:bg-zinc-900 transition-colors duration-200"
+        class="md:hidden fixed top-1.5 right-6 h-12 w-12 inline-flex items-center justify-center rounded-xl text-zinc-300 hover:text-zinc-100 hover:bg-zinc-900 transition-colors duration-200"
+        style="z-index: 110;"
         aria-expanded="false"
         aria-label="Toggle navigation menu"
       >
@@ -37,9 +39,20 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <div id="mobile-nav-overlay" class="hidden md:hidden fixed inset-0 z-40 bg-zinc-950 border-t border-yellow-300 overflow-y-auto">
+  <div id="mobile-nav-overlay" class="hidden md:hidden fixed inset-0 z-[100] bg-zinc-950 overflow-y-auto">
     <div class="mx-auto w-full max-w-7xl px-6 pt-20 pb-10 min-h-screen">
+      <button
+        type="button"
+        id="mobile-nav-close"
+        class="fixed top-1.5 right-6 z-[120] h-12 w-12 inline-flex items-center justify-center rounded-xl text-zinc-300 hover:text-zinc-100 hover:bg-zinc-900 transition-colors duration-200"
+        aria-label="Close navigation menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6l-12 12" />
+        </svg>
+      </button>
       <div class="space-y-3">
         <a href="/docs/quickstart" class="mobile-nav-link btn-primary w-full text-lg">Get Started</a>
         <a href="/login" class="mobile-nav-link flex w-full items-center justify-center py-3 text-lg font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200" data-umami-event="Documentation link">Log In</a>
@@ -61,10 +74,18 @@
 <script>
   (() => {
     const toggleButton = document.getElementById('mobile-nav-toggle');
+    const closeButton = document.getElementById('mobile-nav-close');
     const overlay = document.getElementById('mobile-nav-overlay');
     const openIcon = document.getElementById('mobile-nav-icon-open');
     const closeIcon = document.getElementById('mobile-nav-icon-close');
+    const navSticky = document.getElementById('nav-sticky');
+    const navShell = document.getElementById('nav-shell');
     if (!toggleButton || !overlay || toggleButton.dataset.navInit === 'true') return;
+
+    // Keep overlay at body root to avoid sticky/stacking-context issues on mobile.
+    if (overlay.parentElement !== document.body) {
+      document.body.appendChild(overlay);
+    }
 
     const setOpen = (isOpen) => {
       overlay.classList.toggle('hidden', !isOpen);
@@ -83,6 +104,8 @@
       if (event.target === overlay) setOpen(false);
     });
 
+    closeButton?.addEventListener('click', () => setOpen(false));
+
     overlay.querySelectorAll('.mobile-nav-link').forEach((link) => {
       link.addEventListener('click', () => setOpen(false));
     });
@@ -90,6 +113,24 @@
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') setOpen(false);
     });
+
+    const setNavScrolled = () => {
+      if (!navSticky || !navShell) return;
+      if (window.scrollY > 30) {
+        navShell.classList.add('bg-zinc-950/80');
+        navShell.classList.add('backdrop-blur-md');
+        navSticky.classList.add('border-zinc-800');
+        navSticky.classList.remove('border-transparent');
+      } else {
+        navShell.classList.remove('bg-zinc-950/80');
+        navShell.classList.remove('backdrop-blur-md');
+        navSticky.classList.remove('border-zinc-800');
+        navSticky.classList.add('border-transparent');
+      }
+    };
+
+    window.addEventListener('scroll', setNavScrolled, { passive: true });
+    setNavScrolled();
 
     toggleButton.dataset.navInit = 'true';
   })();

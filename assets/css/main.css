@@ -9,7 +9,7 @@ layout: null
 [x-cloak] { display: none; }
 body {
   @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300 leading-relaxed;
-  background-image: url("/assets/img/bg/enclave.png");
+  background-image: url("/assets/img/bg/enclave-ascii.svg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;

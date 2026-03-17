@@ -4,7 +4,7 @@ title: ""
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-36 lg:mt-40 mb-32 md:mb-40 lg:mb-44">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-    <div class="flex flex-col gap-4 md:gap-6">
+    <div class="flex flex-col gap-4 md:gap-6 hero-copy-enter">
       <h1 class="hero-title-shaded font-serif font-normal text-6xl md:text-7xl lg:text-8xl text-center md:text-left leading-[0.97] md:leading-tighter">Secrets for developers</h1>
       <p class="mx-auto max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-base md:text-lg">Encrypt your .env files without changing your workflow. Keep secrets out of source code and AI prompts.</p>
 
@@ -14,7 +14,7 @@ title: ""
       </div>
     </div>
 
-    <div class="md:pl-2">
+    <div class="md:pl-2 hero-terminal-enter">
       <div class="max-w-xl mx-auto md:max-w-lg lg:max-w-xl">
         {% include v1/components/encrypted-env-file-small.html %}
       </div>

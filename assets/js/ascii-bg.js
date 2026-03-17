@@ -10,13 +10,13 @@
 
   let lines = [];
   let maxChars = 0;
-  let offscreen = null;
   let allGlyphs = [];
-  let spinningGlyphs = [];
   let rafId = null;
   let lastPaint = 0;
+
   const intro = {
     duration: 8000,
+    delay: 1850,
     start: 0,
     done: reduceMotion,
   };
@@ -29,11 +29,9 @@
     topY: 56,
     charWidth: 11,
     maxFps: 24,
-    scrollIdleMs: 220,
   };
-  let lastScrollAt = 0;
 
-  function buildOffscreen() {
+  function buildGlyphs() {
     if (!lines.length) return;
 
     const probe = document.createElement("canvas");
@@ -46,25 +44,11 @@
     const width = Math.ceil(maxChars * state.charWidth + state.padX * 2);
     const height = Math.ceil(lines.length * state.lineHeight + state.topY + state.padX);
 
-    offscreen = document.createElement("canvas");
-    offscreen.width = width;
-    offscreen.height = height;
-
-    const octx = offscreen.getContext("2d");
-    if (!octx) return;
-
-    octx.fillStyle = "#060708";
-    octx.fillRect(0, 0, width, height);
-
-    octx.fillStyle = "rgb(214, 186, 108)";
-    octx.font = `${state.baseFontSize}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace`;
-    octx.textBaseline = "top";
-
     let y = state.topY - state.baseFontSize;
     allGlyphs = [];
+
     lines.forEach((line, index) => {
       if (index > 0) y += state.lineHeight;
-      octx.fillText(line, state.padX, y);
 
       for (let col = 0; col < line.length; col += 1) {
         const ch = line[col];
@@ -76,19 +60,16 @@
           x: state.padX + col * state.charWidth,
           y,
           seed,
-          phase: seed * 0.011,
-          speed: 0.005 + ((seed % 9) * 0.0008),
-          driftX: 1.6 + ((seed % 7) * 0.5),
-          driftY: 2.2 + ((seed % 9) * 0.45),
           reveal: 1,
         });
       }
     });
 
-    // Center-out reveal order with deterministic jitter so it "assembles".
+    // Center-out reveal order with deterministic jitter so it assembles organically.
     const cx = width * 0.5;
     const cy = height * 0.45;
     const maxDist = Math.hypot(width * 0.5, height * 0.55);
+
     allGlyphs.forEach((g) => {
       const gx = g.x + state.charWidth * 0.5;
       const gy = g.y + state.baseFontSize * 0.5;
@@ -96,15 +77,6 @@
       const jitter = ((g.seed % 97) / 97) * 0.24;
       g.reveal = Math.min(1, dist * 1.06 + jitter);
     });
-
-    // Pick a small, spread-out subset so only "a few pieces" rotate.
-    const desiredCount = 90;
-    const step = Math.max(1, Math.floor(allGlyphs.length / desiredCount));
-    spinningGlyphs = [];
-    for (let i = 0; i < allGlyphs.length; i += step) {
-      spinningGlyphs.push(allGlyphs[i]);
-      if (spinningGlyphs.length >= desiredCount) break;
-    }
   }
 
   function resize() {
@@ -117,7 +89,7 @@
   }
 
   function draw(now) {
-    if (!offscreen) return;
+    if (!allGlyphs.length) return;
 
     const t = now || performance.now();
 
@@ -136,25 +108,27 @@
     ctx.fillStyle = "#060708";
     ctx.fillRect(0, 0, w, h);
 
-    const targetWidth = w * 1.05;
-    const scale = targetWidth / offscreen.width;
-    const drawWidth = offscreen.width * scale;
-    const drawHeight = offscreen.height * scale;
+    const sourceWidth = Math.ceil(maxChars * state.charWidth + state.padX * 2);
+    const sourceHeight = Math.ceil(lines.length * state.lineHeight + state.topY + state.padX);
 
-    const xBase = (w - drawWidth) * state.horizontalBias;
-    const x = xBase;
+    const targetWidth = w * 1.05;
+    const scale = targetWidth / sourceWidth;
+    const drawWidth = sourceWidth * scale;
+
+    const x = (w - drawWidth) * state.horizontalBias;
     const y = -6;
 
-    const rawProgress = intro.done ? 1 : (t - intro.start) / intro.duration;
+    const rawProgress = intro.done ? 1 : (t - intro.start - intro.delay) / intro.duration;
+    if (!intro.done && rawProgress <= 0) {
+      if (!reduceMotion) rafId = requestAnimationFrame(draw);
+      return;
+    }
     const progress = Math.max(0, Math.min(1, rawProgress));
     if (rawProgress >= 1) intro.done = true;
 
-    // Single render path always: glyph-by-glyph draw.
-    // During intro we progressively reveal; after intro all glyphs are fully visible.
     ctx.save();
     ctx.font = `${state.baseFontSize * scale}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace`;
     ctx.textBaseline = "top";
-    ctx.fillStyle = "rgb(130, 106, 58)";
 
     for (let i = 0; i < allGlyphs.length; i += 1) {
       const g = allGlyphs[i];
@@ -162,67 +136,23 @@
       if (frontier < 0) continue;
 
       const born = intro.done ? 1 : Math.min(1, frontier * 18);
-      const alpha = 0.08 + born * 0.54;
       const sx = x + g.x * scale;
       const sy = y + g.y * scale - (1 - born) * 2.2 * scale;
 
-      ctx.globalAlpha = alpha;
+      // Single-layer main engraving.
+      ctx.fillStyle = "rgb(130, 106, 58)";
+      ctx.globalAlpha = 0.08 + born * 0.54;
       ctx.fillText(g.ch, sx, sy);
 
-      // Brief glint right as each glyph appears during the intro only.
+      // Brief glint as each glyph appears during intro only.
       if (!intro.done && frontier > 0 && frontier < 0.028) {
         ctx.globalAlpha = (1 - frontier / 0.028) * 0.35;
         ctx.fillStyle = "rgb(164, 134, 82)";
         ctx.fillText(g.ch, sx, sy);
-        ctx.fillStyle = "rgb(130, 106, 58)";
       }
     }
 
     ctx.restore();
-
-    const isScrolling = t - lastScrollAt < state.scrollIdleMs;
-    if (!reduceMotion && intro.done && !isScrolling) {
-      ctx.save();
-      ctx.font = `${state.baseFontSize * scale}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace`;
-      ctx.textBaseline = "top";
-      ctx.fillStyle = "rgba(214, 182, 108, 0.96)";
-
-      for (let i = 0; i < spinningGlyphs.length; i += 1) {
-        const g = spinningGlyphs[i];
-        const sx = x + g.x * scale;
-        const sy = y + g.y * scale;
-        const driftX = Math.sin(t * g.speed * 0.22 + g.phase) * g.driftX * scale;
-        const driftY =
-          (Math.cos(t * g.speed * 0.17 + g.phase * 1.3) * g.driftY -
-            Math.sin(t * g.speed * 0.09 + g.phase * 0.6) * 1.4) *
-          scale;
-        const sparkle = 0.76 + 0.24 * Math.sin(t * g.speed * 0.42 + g.phase * 2.1);
-
-        ctx.save();
-        // Clear the original static glyph so the animated one is clearly visible.
-        ctx.globalCompositeOperation = "source-over";
-        ctx.fillStyle = "#060708";
-        ctx.globalAlpha = 0.95;
-        ctx.fillRect(
-          sx - 1,
-          sy - 1,
-          state.charWidth * scale + 2,
-          state.baseFontSize * scale + 2
-        );
-
-        ctx.fillStyle = "rgba(214, 182, 108, 0.96)";
-        ctx.globalAlpha = sparkle;
-        ctx.translate(
-          sx + driftX + (state.charWidth * scale) * 0.5,
-          sy + driftY + (state.baseFontSize * scale) * 0.5
-        );
-        ctx.translate(-(state.charWidth * scale) * 0.5, -(state.baseFontSize * scale) * 0.5);
-        ctx.fillText(g.ch, 0, 0);
-        ctx.restore();
-      }
-
-      ctx.restore();
-    }
 
     if (!reduceMotion) {
       rafId = requestAnimationFrame(draw);
@@ -242,9 +172,11 @@
       lines = text.replace(/\r/g, "").split("\n");
       while (lines.length && lines[lines.length - 1] === "") lines.pop();
       maxChars = lines.reduce((max, line) => Math.max(max, line.length), 0);
-      buildOffscreen();
+
+      buildGlyphs();
       intro.start = performance.now();
       rerender();
+
       if (!reduceMotion) {
         if (rafId) cancelAnimationFrame(rafId);
         rafId = requestAnimationFrame(draw);
@@ -255,12 +187,5 @@
   }
 
   window.addEventListener("resize", rerender, { passive: true });
-  window.addEventListener(
-    "scroll",
-    () => {
-      lastScrollAt = performance.now();
-    },
-    { passive: true }
-  );
   init();
 })();

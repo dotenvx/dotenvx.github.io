@@ -9,7 +9,7 @@ title: ""
       <p class="text-center md:text-left text-base md:text-lg">Encrypt your .env files without changing your workflow. Keep secrets out of source code and AI prompts.</p>
 
       <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
-        <a class="btn-submit" href="/docs/quickstart">Quickstart &rarr;</a>
+        <a class="btn-primary" href="/docs/quickstart">Get Started</a>
         <a class="inline-flex items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/docs">Documentation</a>
       </div>
     </div>

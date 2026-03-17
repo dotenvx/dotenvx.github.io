@@ -1,6 +1,5 @@
 ---
 title: "Dotenvx Ops"
-image: "/assets/img/og-image-ops.png"
 ---
 
 <main class="min-h-[50vh] w-full flex flex-col gap-3 items-center justify-center px-6">

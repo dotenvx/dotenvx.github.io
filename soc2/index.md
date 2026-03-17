@@ -1,7 +1,6 @@
 ---
 title: "Dotenvx and SOC 2 Compliance"
 logo: ops
-image: "/assets/img/og-image-soc2.png"
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-8">

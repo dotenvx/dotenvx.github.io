@@ -1,6 +1,5 @@
 ---
 title: "Agentic Secret Storage"
-image: "/assets/img/og-image-as2.png"
 ---
 
 <section class="w-full max-w-md mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-6">

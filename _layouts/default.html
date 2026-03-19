@@ -5,8 +5,11 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
+  {% assign is_homepage = page.url == '/' or page.url == '/index.html' %}
   <body class="relative flex flex-col min-h-screen border-t border-t-yellow-300 rounded-t-lg">
+    {% if is_homepage %}
     <canvas id="sequin-bg-canvas" aria-hidden="true" data-ascii-src="{{ '/assets/img/bg/enclave-ascii3.txt' | relative_url }}"></canvas>
+    {% endif %}
     <header id="nav-sticky" class="sticky top-0 z-30 border-b border-transparent transition-colors duration-200">
       {% include v1/nav.html %}
     </header>
@@ -16,7 +19,9 @@
     <footer class="relative z-10 mt-20">
       {% include v1/footer.html %}
     </footer>
-    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=sequin-church-build-20260318f"></script>
+    {% if is_homepage %}
+    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=sequin-church-build-20260318g"></script>
+    {% endif %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>
   </body>
 </html>

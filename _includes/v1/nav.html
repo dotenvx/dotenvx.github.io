@@ -1,5 +1,5 @@
 <div>
-  <div id="nav-shell" class="w-full transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
+  <div id="nav-shell" class="w-full bg-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
   <div class="mx-auto w-full max-w-7xl px-6">
     <div class="mx-auto relative flex w-full items-center transition">
       <div class="flex-shrink-0 flex items-center">
@@ -116,12 +116,14 @@
 
     const setNavScrolled = () => {
       if (!navSticky || !navShell) return;
-      if (window.scrollY > 30) {
+      if (window.scrollY > 72) {
+        navShell.classList.remove('bg-transparent');
         navShell.classList.add('bg-zinc-950/80');
         navShell.classList.add('backdrop-blur-md');
         navSticky.classList.add('border-zinc-800');
         navSticky.classList.remove('border-transparent');
       } else {
+        navShell.classList.add('bg-transparent');
         navShell.classList.remove('bg-zinc-950/80');
         navShell.classList.remove('backdrop-blur-md');
         navSticky.classList.remove('border-zinc-800');

@@ -12,7 +12,7 @@ body {
   background-image: none;
 }
 
-#ascii-bg-canvas {
+#sequin-bg-canvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +22,11 @@ body {
   z-index: 0;
 }
 
-html:not(.dark) #ascii-bg-canvas {
+html.dark body {
+  background-color: #000000 !important;
+}
+
+html:not(.dark) #sequin-bg-canvas {
   display: none;
 }
 

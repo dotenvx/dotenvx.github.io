@@ -158,13 +158,12 @@
     "",
     "  float insideMaskUv = step(0.0, maskUv.x) * step(maskUv.x, 1.0) * step(0.0, maskUv.y) * step(maskUv.y, 1.0);",
     "  float rawMask = texture2D(u_maskTex, vec2(maskUv.x, 1.0 - maskUv.y)).r * insideMaskUv;",
-    "  if (u_maskReady < 0.5) rawMask = 1.0;",
+    "  if (u_maskReady < 0.5) rawMask = 0.0;",
     "",
     "  float buildNoise = hash21(floor(maskUv * vec2(260.0, 180.0)));",
     "  float buildDist = distance(maskUv, vec2(0.64, 0.45));",
     "  float revealAt = buildDist * 1.05 + buildNoise * 0.22;",
     "  float build = smoothstep(revealAt - 0.04, revealAt + 0.03, u_intro);",
-    "  if (u_maskReady < 0.5) build = 1.0;",
     "",
     "  float churchMask = smoothstep(0.1, 0.42, rawMask) * build;",
     "  float churchEdge = smoothstep(0.1, 0.45, rawMask) - smoothstep(0.45, 0.85, rawMask);",
@@ -350,6 +349,9 @@
       gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 0);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, maskCanvas);
       gl.uniform2f(uMaskSize, maskCanvas.width, maskCanvas.height);
+      intro.start = performance.now();
+      intro.done = prefersReduced;
+      gl.uniform1f(uIntro, prefersReduced ? 1 : 0);
       gl.uniform1f(uMaskReady, 1);
 
       if (prefersReduced) render(performance.now());

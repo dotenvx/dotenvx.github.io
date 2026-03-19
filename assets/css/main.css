@@ -175,7 +175,7 @@ html:not(.dark) #sequin-bg-canvas {
   opacity: 0;
   transform: scale(0.97);
   transform-origin: center;
-  animation: hero-terminal-pop 520ms cubic-bezier(0.22, 1, 0.36, 1) 925ms forwards;
+  animation: hero-terminal-pop 720ms cubic-bezier(0.22, 1, 0.36, 1) 1225ms forwards;
 }
 
 @keyframes nav-enter-drop {

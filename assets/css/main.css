@@ -52,6 +52,20 @@ html:not(.dark) #sequin-bg-canvas {
   transform: perspective(1400px) rotateX(calc(0.8deg + var(--terminal-rx))) rotateY(var(--terminal-ry));
 }
 
+.terminal-hero-card-premium {
+  border: 1px solid transparent;
+  background:
+    radial-gradient(125% 85% at 100% 100%, rgba(208, 145, 47, 0.12) 0%, rgba(208, 145, 47, 0) 58%) padding-box,
+    linear-gradient(160deg, rgba(26, 21, 14, 0.95) 0%, rgba(15, 12, 9, 0.98) 48%, rgba(10, 9, 7, 1) 100%) padding-box,
+    linear-gradient(90deg, rgba(170, 129, 61, 0.52), rgba(244, 197, 103, 0.95), rgba(170, 129, 61, 0.52)) border-box;
+  box-shadow:
+    0 44px 100px rgba(0, 0, 0, 0.58),
+    0 18px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(214, 171, 93, 0.18),
+    0 1px 0 rgba(255, 230, 168, 0.09) inset,
+    0 -1px 0 rgba(255, 221, 154, 0.16) inset;
+}
+
 .terminal-hero-card::after {
   content: "";
   position: absolute;
@@ -175,11 +189,11 @@ html:not(.dark) #sequin-bg-canvas {
 }
 
 .hero-title-shaded {
-  background: linear-gradient(180deg, #eceef2 0%, #f5f2e8 62%, #eee2be 86%, #d0b673 100%);
+  background: linear-gradient(180deg, #f1f2f5 0%, #f8f3e7 58%, #f2e0b1 84%, #d7af5a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 1px 0 rgba(45, 34, 12, 0.2), 0 10px 28px rgba(8, 6, 2, 0.4);
+  text-shadow: 0 1px 0 rgba(45, 34, 12, 0.22), 0 14px 30px rgba(11, 7, 2, 0.42);
 }
 
 

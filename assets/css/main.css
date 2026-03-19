@@ -18,6 +18,8 @@ body {
   left: 0;
   width: 100%;
   height: min(1300px, calc(100vh + 360px));
+  display: block;
+  background-color: #000;
   pointer-events: none;
   z-index: 0;
 }

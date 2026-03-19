@@ -2,6 +2,19 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     {% include layouts/dark-mode.html %}
+    {% if page.url == '/' or page.url == '/index.html' %}
+    <style>
+      html,
+      body {
+        background: #000;
+      }
+
+      #sequin-bg-canvas {
+        background: #000;
+        display: block;
+      }
+    </style>
+    {% endif %}
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>

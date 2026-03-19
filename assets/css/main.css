@@ -177,7 +177,7 @@ html:not(.dark) #sequin-bg-canvas {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 1px 0 rgba(45, 34, 12, 0.14), 0 8px 20px rgba(16, 12, 4, 0.2);
+  text-shadow: 0 1px 0 rgba(45, 34, 12, 0.2), 0 10px 28px rgba(8, 6, 2, 0.4);
 }
 
 

@@ -6,7 +6,62 @@ layout: null
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: "Canela Deck";
+  src:
+    url("/assets/fonts/canela/CanelaDeck-Light.woff2") format("woff2"),
+    url("/assets/fonts/canela/CanelaDeck-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela Deck";
+  src:
+    url("/assets/fonts/canela/CanelaDeck-Regular.woff2") format("woff2"),
+    url("/assets/fonts/canela/CanelaDeck-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela Deck";
+  src:
+    url("/assets/fonts/canela/CanelaDeck-Medium.woff2") format("woff2"),
+    url("/assets/fonts/canela/CanelaDeck-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela";
+  src:
+    url("/assets/fonts/canela/Canela-Regular.woff2") format("woff2"),
+    url("/assets/fonts/canela/Canela-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela";
+  src:
+    url("/assets/fonts/canela/Canela-Medium.woff2") format("woff2"),
+    url("/assets/fonts/canela/Canela-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 [x-cloak] { display: none; }
+
+.font-canela {
+  font-family: "Canela", "Canela Deck", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
 body {
   @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300 leading-relaxed;
   background-image: none;
@@ -191,11 +246,11 @@ html:not(.dark) #sequin-bg-canvas {
 }
 
 .hero-title-shaded {
-  background: linear-gradient(180deg, #f1f2f5 0%, #f8f3e7 58%, #f2e0b1 84%, #d7af5a 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #f5f6f8 64%, #ecdcb3 85%, #d7af5a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 1px 0 rgba(45, 34, 12, 0.22), 0 14px 30px rgba(11, 7, 2, 0.42);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 24px rgba(11, 7, 2, 0.34);
 }
 
 

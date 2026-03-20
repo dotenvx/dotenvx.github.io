@@ -1,26 +1,309 @@
-<div class="terminal-hero-card terminal-hero-card-premium mx-auto bg-[#11100d] text-[#d7d1c1] font-mono text-sm rounded-xl border shadow-2xl overflow-hidden" style="border-color: rgba(165, 128, 64, 0.58);">
-  <!-- Terminal header -->
-  <div class="flex items-center gap-1 px-3 py-2 bg-[#1b1710] border-b" style="border-color: rgba(165, 128, 64, 0.40);">
-    <span class="h-2 w-2 rounded-full bg-[#d9b56a]"></span>
-    <span class="h-2 w-2 rounded-full bg-[#bb944f]"></span>
-    <span class="h-2 w-2 rounded-full bg-[#9a753c]"></span>
+<div class="terminal-hero-card terminal-hero-card-premium mx-auto bg-[#11100d] text-[#d7d1c1] font-mono text-sm rounded-xl border shadow-2xl overflow-hidden" style="border-color: rgba(165, 128, 64, 0.58);" data-dotenvx-terminal-demo>
+  <div class="flex items-center justify-between px-3 py-2 bg-[#1b1710] border-b" style="border-color: rgba(165, 128, 64, 0.40);">
+    <div class="flex items-center gap-1">
+      <span class="h-2 w-2 rounded-full bg-[#d9b56a]"></span>
+      <span class="h-2 w-2 rounded-full bg-[#bb944f]"></span>
+      <span class="h-2 w-2 rounded-full bg-[#9a753c]"></span>
+    </div>
+    <span class="text-[11px] tracking-wide text-[#b7a98a]">npm i @dotenvx/dotenvx</span>
   </div>
 
-  <!-- Code content -->
-  <pre class="px-6 py-6 leading-relaxed whitespace-pre-wrap overflow-x-auto">
-<span class="text-[#cdaa62]"># 🔐 Encrypted with Dotenvx</span>
-<span class="text-[#cdaa62]"># 🤖 LLMs</span>
-<span class="text-[#d3d0c6]">OPENAI_API_KEY</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BLWdRPvfKxR3c/p5m5BrauqZH0PjKsW4uP9Fnm0S1c3PL2x58xr17V1mRnKtLUkKjPFuRW9sHFyucD81Z7vCxOqZdYhCUfYY9YnwfMRcVqk7K3zWaxuBQROSniGacxTRY28ePoyB+bYHnKVEkiVaMIrc7g/wyi7FlvMw66tlEWAs/E8Ns/LT3srMNw0V</span><span class="text-[#d3bc66]">"</span>
-<span class="text-[#d3d0c6]">ANTHROPIC_API_KEY</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BL2I22zU8A1sn+RpxFfd/ue2IlWnhYcEPTnaurOoNcI/Jr4ALnMiBoBo6qrtEuA0HjITVc3aB6VTzjkN3qyyC+PhmUpQnveHGyamiJxwLde+pZEXSxAS/NokNztnOF683mhfmPl059IrML5oq/Dz+/LsM5tXUkx7g5ukWlJtkpTFilOHQLPk0vBUCGkMnXG4T3E=</span><span class="text-[#d3bc66]">"</span>
-
-<span class="text-[#cdaa62]"># 🔑 API Keys</span>
-<span class="text-[#d3d0c6]">DAYTONA_API_KEY</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BKwuPX/ksuZmE7o4pOVzVcrgydu7p8JyyYtxNrNU22k2zDFQmyqld0+GkyVBY5gtIAGJjolx3KFOxJuwlumN6AW+qqUgWQAbwtWFeHWDpIzplVOjQI0V8hRv+ndTY3t7EuOxD7HwfW3Smy6cQXVK3g3532p69iKMLYii9TzC5tGCdA==</span><span class="text-[#d3bc66]">"</span>
-<span class="text-[#d3d0c6]">GITHUB_TOKEN</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BPcrqe+WPP64nN2C4+6JUI5gJa8GSEeJkj8qod8LrNLPPHNco4Ms+cD6y4/Y9p631pzWQl24woVEOLDB1RAbWnamf4/9oSsC7xWteLAw9fMcG/1Xh8Elnja7gx7vQxzgXVYosPKYn6RpBwJ/PePy3PD99IV65Q/hn58aTTFtHGEHbFDlSBhdEr/K6aSZV3CXaa8w1wl8KyXEsoEnHA==</span><span class="text-[#d3bc66]">"</span>
-<span class="text-[#d3d0c6]">RESEND_API_KEY</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BNE6CPqMfmUty1ZH0dT4pRK+2OjnRRDUUh1YOY6q426qnoYiLY82vVWkNQl7yi2B/weN2qxVmTVn9pDaP5rWl8dOHq/oIpznUzgxk9LvL5s/eUXNBBW+UEe3pdRK1IKTPR859LJJByqylgc8T1wcmuWH7t1POgzEQMTuTOf0HYX0eskF</span><span class="text-[#d3bc66]">"</span>
-<span class="text-[#d3d0c6]">STRIPE_SECRET_KEY</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BJ9jmGrNmqInKhkIBtSSppShfs66r0LeHBKCHYiOTNxm7YnIbQqPoxiDh7N3RrUYxlfV0We2nHCBvXwI5MVNDutsB5l0OJ6Iq4AtWtikh7bgxzq7KfPXUIKgUoNnCJV67Ufmw2bm8Elo67aH7+Dyx+OUsCSBcJgCdzDh9BnLLP5Hi2IWynYej96vGQUi1eUJdVlaIBPwBpZbXQ==</span><span class="text-[#d3bc66]">"</span>
-
-<span class="text-[#cdaa62]"># 💽 Data</span>
-<span class="text-[#d3d0c6]">SUPABASE_DB_URL</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BGQSN/tOeSwnEwyPG0FWJEfMp0xC9HL6UyXZK8+Eru38WZ5Y/bRNHjRLwfl+wMALbhTbV/axsqmsrlnfUaY2G+AgRc9TZyf2bsW4EORwzxecsyH8Ob4ldN4MvjQHQfx+LT7rH07W8tzl1USaIq8QQL4BzoHLUofHTeIQ4iEgD8eQ4rfLmbuGuAYrTTXdqKpbAElXb4c6p84xOuJQdcAM58F2eyWSTtFhyFmgg1JWLCpfoTrQ1IzYJ4BUyHiRv6E6YIz9L2BcCnTx</span><span class="text-[#d3bc66]">"</span>
-<span class="text-[#d3d0c6]">VERCEL_TOKEN</span><span class="text-[#d3bc66]">="</span><span class="text-[#d3bc66]">encrypted:BFyXXqCeysTF5yqr8vE+eENGwilWj/stqkUy41jofGW9BGfMMOkNqmPRRGaP8/uqdCF82ZZeZJxFp4AX4ZbScye7W8t0MOK1JdIZYl6orI1UHECa6tPTmqvku2cN3wmjWhplDENYYrF4C1vYLhNzteFMpIHsUpACV6psvXTaTBa9xlODH1CvEg==</span><span class="text-[#d3bc66]">"</span>
-  </pre>
+  <pre class="dotenvx-live-terminal px-5 py-5 leading-relaxed whitespace-pre overflow-auto" aria-live="polite"></pre>
 </div>
+
+<style>
+  .dotenvx-live-terminal {
+    height: 23rem;
+    margin: 0;
+    scrollbar-width: thin;
+  }
+
+  .dotenvx-live-terminal .dim { color: #9b8f74; }
+  .dotenvx-live-terminal .cmd { color: #f0db9c; }
+  .dotenvx-live-terminal .ok { color: #7ce38f; }
+  .dotenvx-live-terminal .title { color: #cdaa62; }
+  .dotenvx-live-terminal .key { color: #d3d0c6; }
+  .dotenvx-live-terminal .val { color: #d3bc66; }
+  .dotenvx-live-terminal .cursor {
+    display: inline-block;
+    width: 0.54em;
+    margin-left: 0.1em;
+    background: #f0db9c;
+    animation: dotenvx-caret 920ms step-end infinite;
+    vertical-align: -0.08em;
+  }
+  .dotenvx-live-terminal .vim-frame {
+    display: block;
+    position: relative;
+    margin-top: 22px;
+    box-sizing: border-box;
+    max-width: 100%;
+    border: 1px solid rgba(205, 170, 98, 0.45);
+    border-radius: 6px;
+    padding: 16px 12px 10px;
+    background: rgba(10, 9, 7, 0.68);
+    white-space: pre-wrap;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 223, 158, 0.08),
+      0 8px 20px rgba(0, 0, 0, 0.32);
+  }
+  .dotenvx-live-terminal .vim-tab {
+    position: absolute;
+    top: -22px;
+    left: 12px;
+    z-index: 3;
+    display: inline-block;
+    padding: 3px 10px 4px;
+    border: 1px solid rgba(205, 170, 98, 0.58);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    background: rgba(24, 19, 13, 0.96);
+    color: #d3d0c6;
+    font-size: 11px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+  .dotenvx-live-terminal .vim-frame .val {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .dotenvx-live-terminal .vim-comment { color: #7f8f7b; }
+  .dotenvx-live-terminal .vim-js-fn { color: #7fb8d8; }
+  .dotenvx-live-terminal .vim-js-str { color: #d7c56f; }
+  .dotenvx-live-terminal .vim-js-var { color: #c89ae0; }
+
+  @keyframes dotenvx-caret {
+    0%, 45% { opacity: 1; }
+    46%, 100% { opacity: 0; }
+  }
+
+  @media (max-width: 767px) {
+    .dotenvx-live-terminal {
+      height: 19rem;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dotenvx-live-terminal .cursor {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const demos = document.querySelectorAll("[data-dotenvx-terminal-demo]");
+    if (!demos.length) return;
+
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    const plainEnvLines = [
+      "# .env",
+      'HELLO="World"'
+    ];
+    const indexJsLines = [
+      "// index.js",
+      "console.log(`Hello ${process.env.HELLO}`)"
+    ];
+    const encryptedFileLines = [
+      '# 🔐 Encrypted with Dotenvx',
+      'DOTENV_PUBLIC_KEY="03cb4b75866cfdf8ca3705883480f5a1026d21995af8c1b14e53ac730df2287d0a"',
+      '',
+      '# .env',
+      'HELLO="encrypted:BIWFIR+r/iRY0lLEjUjCHLgzLs6mKg3vcaz39xnCDyArfqWZpFU8NN5xVnf68hYRhPZrzNJIaUr33TCQdD0RgLeIgjXpltN+hmiuH/5thsMLbfFdxCbIsiqhOv6PcmY2yCgxkIY6"'
+    ];
+
+    const escapeHtml = (value) =>
+      value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+
+    const renderVimLine = (line, fileName) => {
+      if (!line) return "";
+      if (fileName.endsWith(".js")) {
+        if (line.startsWith("//")) {
+          return `<span class=\"vim-comment\">${escapeHtml(line)}</span>`;
+        }
+        if (line === "console.log(`Hello ${process.env.HELLO}`)") {
+          return [
+            '<span class="vim-js-fn">console.log</span>(',
+            '<span class="vim-js-str">`Hello </span>',
+            '<span class="vim-js-var">${process.env.HELLO}</span>',
+            '<span class="vim-js-str">`</span>',
+            ")"
+          ].join("");
+        }
+      }
+      if (line.startsWith("#/") || line.startsWith("# .env")) {
+        return `<span class=\"dim\">${escapeHtml(line)}</span>`;
+      }
+      const equalsIndex = line.indexOf("=");
+      if (equalsIndex === -1) return escapeHtml(line);
+      const key = line.slice(0, equalsIndex);
+      const val = line.slice(equalsIndex + 1);
+      return `<span class=\"key\">${escapeHtml(key)}</span>=<span class=\"val\">${escapeHtml(val)}</span>`;
+    };
+
+    const renderVim = (fileName, lines, status) => {
+      const body = lines.map((line) => renderVimLine(line, fileName)).join("\n");
+
+      return [
+        body,
+        "",
+        `<span class=\"dim\">${escapeHtml(status)}</span>`
+      ].join("\n");
+    };
+
+    demos.forEach((demo) => {
+      if (demo.dataset.demoReady === "1") return;
+      demo.dataset.demoReady = "1";
+
+      const screen = demo.querySelector(".dotenvx-live-terminal");
+      if (!screen) return;
+
+      const state = {
+        shellLines: [],
+        mode: "shell",
+        vimMarkup: "",
+        activeCommand: "",
+        vimLines: [],
+        vimFileName: ".env"
+      };
+
+      const render = () => {
+        if (state.mode === "vim") {
+          screen.innerHTML = `<span class=\"vim-frame\"><span class=\"vim-tab\">${escapeHtml(state.vimFileName)}</span>${state.vimMarkup}\n<span class=\"cursor\"></span></span>`;
+          return;
+        }
+
+        const lines = [...state.shellLines];
+        if (state.activeCommand) {
+          lines.push(`<span class=\"cmd\">$ ${escapeHtml(state.activeCommand)}</span><span class=\"cursor\"></span>`);
+        } else {
+          lines.push('<span class="cmd">$</span><span class="cursor"></span>');
+        }
+
+        screen.innerHTML = lines.join("\n");
+        screen.scrollTop = screen.scrollHeight;
+      };
+
+      const pushLine = (line) => {
+        state.shellLines.push(line);
+        if (state.shellLines.length > 32) state.shellLines = state.shellLines.slice(-32);
+        render();
+      };
+
+      const typeCommand = async (command) => {
+        state.mode = "shell";
+        state.activeCommand = "";
+        render();
+        for (const ch of command) {
+          state.activeCommand += ch;
+          render();
+          await wait(52 + Math.floor(Math.random() * 36));
+        }
+        await wait(210);
+        pushLine(`<span class=\"cmd\">$ ${escapeHtml(command)}</span>`);
+        state.activeCommand = "";
+        render();
+      };
+
+      const runCommand = async (command, outputLines, pause = 900) => {
+        await typeCommand(command);
+        for (const line of outputLines) {
+          pushLine(line);
+          await wait(220);
+        }
+        await wait(pause);
+      };
+
+      const showVim = async (fileName, lines, status, duration = 2200) => {
+        state.mode = "vim";
+        state.vimFileName = fileName;
+        state.vimLines = lines;
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
+        render();
+        await wait(duration);
+      };
+
+      const typeInVim = async (fileName, values) => {
+        state.mode = "vim";
+        state.vimFileName = fileName;
+        state.vimLines = [""];
+
+        const linesToType = Array.isArray(values) ? values : [values];
+        for (let i = 0; i < linesToType.length; i += 1) {
+          if (i > 0) state.vimLines.push("");
+          for (const ch of linesToType[i]) {
+            state.vimLines[i] += ch;
+            state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${i + 1},1  -- INSERT --`);
+            render();
+            await wait(62 + Math.floor(Math.random() * 44));
+          }
+          await wait(150);
+        }
+      };
+
+      const exitVim = async (status) => {
+        state.mode = "vim";
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
+        render();
+        await wait(460);
+      };
+
+      const closeVim = async () => {
+        state.mode = "shell";
+        render();
+        await wait(420);
+      };
+
+      const loop = async () => {
+        while (document.body.contains(demo)) {
+          await wait(700);
+          await runCommand("npm install @dotenvx/dotenvx", [
+            "<span class=\"ok\">dotenvx installed.</span>"
+          ], 950);
+          await runCommand("vim .env", [], 380);
+          await showVim(".env", [], "\".env\" [New]  0,0  -- INSERT --", 500);
+          await typeInVim(".env", plainEnvLines);
+          await wait(750);
+          await exitVim("\".env\" [New]  2,13  :wq");
+          await closeVim();
+          await runCommand("dotenvx encrypt", [
+            "<span class=\"ok\">◈ encrypted (.env) + key (.env.keys)</span>"
+          ], 1050);
+          await runCommand("vim .env", [], 300);
+          await showVim(".env", encryptedFileLines, "\".env\"  5L, 438B", 3600);
+          await exitVim("\".env\"  5L, 438B  :q");
+          await closeVim();
+          await runCommand("vim index.js", [], 320);
+          await showVim("index.js", [], "\"index.js\" [New]  0,0  -- INSERT --", 450);
+          await typeInVim("index.js", indexJsLines);
+          await wait(700);
+          await exitVim("\"index.js\" [New]  2,41  :wq");
+          await closeVim();
+          await runCommand("dotenvx run -- node index.js", [
+            "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env</span>",
+            "Hello World"
+          ], 1200);
+          pushLine("<span class=\"dim\"># restarting demo loop...</span>");
+          await wait(1100);
+          state.shellLines = [];
+          state.activeCommand = "";
+          render();
+        }
+      };
+
+      render();
+      loop();
+    });
+  })();
+</script>

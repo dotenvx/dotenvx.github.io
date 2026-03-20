@@ -13,7 +13,7 @@
 
 <style>
   .dotenvx-live-terminal {
-    height: 25rem;
+    height: 22rem;
     margin: 0;
     scrollbar-width: thin;
   }
@@ -42,7 +42,7 @@
     max-width: 100%;
     border: 1px solid rgba(205, 170, 98, 0.45);
     border-radius: 6px;
-    padding: 16px 12px 10px;
+    padding: 16px 16px 10px 12px;
     background: var(--vim-editor-bg);
     white-space: pre-wrap;
     overflow: visible;
@@ -73,6 +73,24 @@
     overflow-wrap: anywhere;
     word-break: break-word;
   }
+  .dotenvx-live-terminal .vim-row {
+    display: grid;
+    grid-template-columns: 2ch minmax(0, 1fr);
+    column-gap: 1ch;
+    align-items: start;
+  }
+  .dotenvx-live-terminal .vim-ln {
+    color: #7f7560;
+    text-align: right;
+    user-select: none;
+    transform: translateX(-4px);
+  }
+  .dotenvx-live-terminal .vim-line {
+    min-width: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
   .dotenvx-live-terminal .vim-comment { color: #7f8f7b; }
   .dotenvx-live-terminal .vim-js-fn { color: #7fb8d8; }
   .dotenvx-live-terminal .vim-js-str { color: #d7c56f; }
@@ -85,7 +103,7 @@
 
   @media (max-width: 767px) {
     .dotenvx-live-terminal {
-      height: 22rem;
+      height: 19rem;
       font-size: 12px;
       line-height: 1.5;
     }
@@ -106,19 +124,12 @@
 
     const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    const plainEnvLines = [
-      "# .env",
-      'HELLO="World"'
-    ];
     const indexJsLines = [
       "// index.js",
       "console.log(`Hello ${process.env.HELLO}`)"
     ];
     const encryptedFileLines = [
-      '# 🔐 Encrypted with Dotenvx',
-      'DOTENV_PUBLIC_KEY="03cb4b75866cfdf8ca3705883480f5a1026d21995af8c1b14e53ac730df2287d0a"',
-      '',
-      '# .env',
+      '# .env – encrypted with dotenvx',
       'HELLO="encrypted:BIWFIR+r/iRY0lLEjUjCHLgzLs6mKg3vcaz39xnCDyArfqWZpFU8NN5xVnf68hYRhPZrzNJIaUr33TCQdD0RgLeIgjXpltN+hmiuH/5thsMLbfFdxCbIsiqhOv6PcmY2yCgxkIY6"'
     ];
 
@@ -156,7 +167,13 @@
     };
 
     const renderVim = (fileName, lines, status) => {
-      const body = lines.map((line) => renderVimLine(line, fileName)).join("\n");
+      const body = lines
+        .map((line, index) => {
+          const ln = index + 1;
+          const content = renderVimLine(line, fileName) || "&nbsp;";
+          return `<span class=\"vim-row\"><span class=\"vim-ln\">${ln}</span><span class=\"vim-line\">${content}</span></span>`;
+        })
+        .join("");
 
       return [
         body,
@@ -240,17 +257,22 @@
         await wait(duration);
       };
 
-      const typeInVim = async (fileName, values) => {
+      const typeInVim = async (fileName, values, preserveExisting = false) => {
         state.mode = "vim";
         state.vimFileName = fileName;
-        state.vimLines = [""];
+        if (!preserveExisting) {
+          state.vimLines = [""];
+        } else if (!state.vimLines.length) {
+          state.vimLines = [""];
+        }
 
         const linesToType = Array.isArray(values) ? values : [values];
         for (let i = 0; i < linesToType.length; i += 1) {
-          if (i > 0) state.vimLines.push("");
+          if (preserveExisting || i > 0) state.vimLines.push("");
+          const lineIndex = preserveExisting ? state.vimLines.length - 1 : i;
           for (const ch of linesToType[i]) {
-            state.vimLines[i] += ch;
-            state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${i + 1},1  -- INSERT --`);
+            state.vimLines[lineIndex] += ch;
+            state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${lineIndex + 1},1  -- INSERT --`);
             render();
             await wait(62 + Math.floor(Math.random() * 44));
           }
@@ -299,8 +321,8 @@
             "<span class=\"ok\">dotenvx installed.</span>"
           ], 950);
           await runCommand("vim .env", [], 380);
-          await showVim(".env", [], "\".env\" [New]  0,0  -- INSERT --", 500);
-          await typeInVim(".env", plainEnvLines);
+          await showVim(".env", ["# .env"], "\".env\" [New]  1,1  -- INSERT --", 500);
+          await typeInVim(".env", 'HELLO="World"', true);
           await wait(750);
           await exitVim("\".env\" [New]  2,13  :wq");
           await closeVim();
@@ -308,8 +330,8 @@
             "<span class=\"ok\">◈ encrypted (.env) + key (.env.keys)</span>"
           ], 1050);
           await runCommand("vim .env", [], 300);
-          await showVim(".env", encryptedFileLines, "\".env\"  5L, 438B", 3600);
-          await exitVim("\".env\"  5L, 438B  :q");
+          await showVim(".env", encryptedFileLines, "\".env\"  2L, 301B", 3600);
+          await exitVim("\".env\"  2L, 301B  :q");
           await closeVim();
           await runCommand("vim index.js", [], 320);
           await showVim("index.js", [], "\"index.js\" [New]  0,0  -- INSERT --", 450);
@@ -321,6 +343,39 @@
             "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env</span>",
             "Hello World"
           ], 1200);
+
+          await runCommand("clear", [], 240);
+          resetTerminal();
+          await idleAtPrompt(700);
+          await runCommand("vim .env.production", [], 320);
+          await showVim(".env.production", ["# .env.production"], "\".env.production\" [New]  1,1  -- INSERT --", 420);
+          await typeInVim(".env.production", 'HELLO="Production"', true);
+          await wait(650);
+          await exitVim("\".env.production\" [New]  2,18  :wq");
+          await closeVim();
+          await runCommand("dotenvx encrypt -f .env.production", [
+            "<span class=\"ok\">◈ encrypted (.env.production) + key (.env.keys)</span>"
+          ], 980);
+          await runCommand("dotenvx run -f .env.production -- node index.js", [
+            "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env.production</span>",
+            "Hello Production"
+          ], 1350);
+          await runCommand("clear", [], 240);
+          resetTerminal();
+          await idleAtPrompt(700);
+          await runCommand("vim .env.ci", [], 320);
+          await showVim(".env.ci", ["# .env.ci"], "\".env.ci\" [New]  1,1  -- INSERT --", 420);
+          await typeInVim(".env.ci", 'HELLO="CI"', true);
+          await wait(650);
+          await exitVim("\".env.ci\" [New]  2,11  :wq");
+          await closeVim();
+          await runCommand("dotenvx encrypt -f .env.ci", [
+            "<span class=\"ok\">◈ encrypted (.env.ci) + key (.env.keys)</span>"
+          ], 980);
+          await runCommand("dotenvx run -f .env.ci -- node index.js", [
+            "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env.ci</span>",
+            "Hello CI"
+          ], 1350);
           await wait(1500);
         }
       };

@@ -26,13 +26,15 @@
   .dotenvx-live-terminal .val { color: #d3bc66; }
   .dotenvx-live-terminal .cursor {
     display: inline-block;
-    width: 0.54em;
-    margin-left: 0.1em;
-    background: #f0db9c;
+    width: 0;
+    height: 1.02em;
+    margin-left: 0;
+    border-left: 2px solid #f0db9c;
     animation: dotenvx-caret 920ms step-end infinite;
-    vertical-align: -0.08em;
+    vertical-align: -0.14em;
   }
   .dotenvx-live-terminal .vim-frame {
+    --vim-editor-bg: rgba(10, 9, 7, 0.68);
     display: block;
     position: relative;
     margin-top: 22px;
@@ -41,7 +43,7 @@
     border: 1px solid rgba(205, 170, 98, 0.45);
     border-radius: 6px;
     padding: 16px 12px 10px;
-    background: rgba(10, 9, 7, 0.68);
+    background: var(--vim-editor-bg);
     white-space: pre-wrap;
     overflow: visible;
     overflow-wrap: anywhere;
@@ -52,19 +54,20 @@
   }
   .dotenvx-live-terminal .vim-tab {
     position: absolute;
-    top: -22px;
-    left: 12px;
-    z-index: 3;
+    top: -23px;
+    left: 14px;
     display: inline-block;
-    padding: 3px 10px 4px;
+    padding: 5px 12px 6px;
     border: 1px solid rgba(205, 170, 98, 0.58);
-    border-bottom: none;
+    border-bottom: 1px solid rgba(205, 170, 98, 0.45);
     border-radius: 6px 6px 0 0;
-    background: rgba(24, 19, 13, 0.96);
-    color: #d3d0c6;
-    font-size: 11px;
-    line-height: 1.1;
-    letter-spacing: 0.01em;
+    background: var(--vim-editor-bg);
+    color: #a79c84;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    box-shadow: none;
   }
   .dotenvx-live-terminal .vim-frame .val {
     overflow-wrap: anywhere;
@@ -181,7 +184,7 @@
 
       const render = () => {
         if (state.mode === "vim") {
-          screen.innerHTML = `<span class=\"vim-frame\"><span class=\"vim-tab\">${escapeHtml(state.vimFileName)}</span>${state.vimMarkup}\n<span class=\"cursor\"></span></span>`;
+          screen.innerHTML = `<span class=\"vim-frame\"><span class=\"vim-tab\">${escapeHtml(state.vimFileName)}</span>${state.vimMarkup}</span>`;
           return;
         }
 
@@ -189,7 +192,7 @@
         if (state.activeCommand) {
           lines.push(`<span class=\"cmd\">$ ${escapeHtml(state.activeCommand)}</span><span class=\"cursor\"></span>`);
         } else if (state.showPrompt) {
-          lines.push('<span class="cmd">$</span><span class="cursor"></span>');
+          lines.push('<span class="cmd">$ </span><span class="cursor"></span>');
         }
 
         screen.innerHTML = lines.join("\n");

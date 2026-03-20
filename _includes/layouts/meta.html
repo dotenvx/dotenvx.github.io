@@ -9,6 +9,14 @@
 <meta property="twitter:title" content="Dotenvx · Secrets for developers">
 {% endif %}
 {% seo %}
+{% if jekyll.environment == "production" %}
+{% assign page_path = page.url | default: "/" %}
+{% assign share_url = site.url | append: page_path %}
+{% assign encoded_share_url = share_url | uri_escape %}
+{% assign share_image_url = "https://api.urlbox.io/v1/Ep4Ip4nNnFMNUg9J/png?url=" | append: encoded_share_url | append: "&width=1200&height=630&fail_on_4xx=true&fail_on_5xx=true" %}
+<meta property="og:image" content="{{ share_image_url }}">
+<meta name="twitter:image" content="{{ share_image_url }}">
+{% endif %}
 {% favicon %}
 
 <script src="https://unpkg.com/alpinejs" defer></script>

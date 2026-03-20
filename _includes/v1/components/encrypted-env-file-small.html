@@ -265,9 +265,19 @@
         await wait(420);
       };
 
+      const resetTerminal = () => {
+        state.shellLines = [];
+        state.mode = "shell";
+        state.vimMarkup = "";
+        state.activeCommand = "";
+        state.vimLines = [];
+        render();
+      };
+
       const loop = async () => {
         while (document.body.contains(demo)) {
-          await wait(700);
+          resetTerminal();
+          await wait(2700);
           await runCommand("npm install @dotenvx/dotenvx", [
             "<span class=\"ok\">dotenvx installed.</span>"
           ], 950);
@@ -294,11 +304,7 @@
             "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env</span>",
             "Hello World"
           ], 1200);
-          pushLine("<span class=\"dim\"># restarting demo loop...</span>");
-          await wait(1100);
-          state.shellLines = [];
-          state.activeCommand = "";
-          render();
+          await wait(1500);
         }
       };
 

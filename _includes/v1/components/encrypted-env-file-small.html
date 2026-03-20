@@ -73,24 +73,6 @@
     overflow-wrap: anywhere;
     word-break: break-word;
   }
-  .dotenvx-live-terminal .vim-row {
-    display: grid;
-    grid-template-columns: 2ch minmax(0, 1fr);
-    column-gap: 1ch;
-    align-items: start;
-  }
-  .dotenvx-live-terminal .vim-ln {
-    color: #7f7560;
-    text-align: right;
-    user-select: none;
-    transform: translateX(-4px);
-  }
-  .dotenvx-live-terminal .vim-line {
-    min-width: 0;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
   .dotenvx-live-terminal .vim-comment { color: #7f8f7b; }
   .dotenvx-live-terminal .vim-js-fn { color: #7fb8d8; }
   .dotenvx-live-terminal .vim-js-str { color: #d7c56f; }
@@ -168,12 +150,10 @@
 
     const renderVim = (fileName, lines, status) => {
       const body = lines
-        .map((line, index) => {
-          const ln = index + 1;
-          const content = renderVimLine(line, fileName) || "&nbsp;";
-          return `<span class=\"vim-row\"><span class=\"vim-ln\">${ln}</span><span class=\"vim-line\">${content}</span></span>`;
+        .map((line) => {
+          return renderVimLine(line, fileName) || "&nbsp;";
         })
-        .join("");
+        .join("\n");
 
       return [
         body,
@@ -239,13 +219,24 @@
         render();
       };
 
-      const runCommand = async (command, outputLines, pause = 900) => {
+      const runCommand = async (command, outputLines, pause = 900, options = {}) => {
+        const { clearAfter = false } = options;
         await typeCommand(command);
+        if (clearAfter) {
+          await wait(120);
+          resetTerminal();
+          await wait(pause);
+          return;
+        }
         for (const line of outputLines) {
           pushLine(line);
           await wait(220);
         }
+        state.showPrompt = true;
+        render();
         await wait(pause);
+        state.showPrompt = false;
+        render();
       };
 
       const showVim = async (fileName, lines, status, duration = 2200) => {
@@ -344,8 +335,7 @@
             "Hello World"
           ], 1200);
 
-          await runCommand("clear", [], 240);
-          resetTerminal();
+          await runCommand("clear", [], 240, { clearAfter: true });
           await idleAtPrompt(700);
           await runCommand("vim .env.production", [], 320);
           await showVim(".env.production", ["# .env.production"], "\".env.production\" [New]  1,1  -- INSERT --", 420);
@@ -360,8 +350,7 @@
             "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env.production</span>",
             "Hello Production"
           ], 1350);
-          await runCommand("clear", [], 240);
-          resetTerminal();
+          await runCommand("clear", [], 240, { clearAfter: true });
           await idleAtPrompt(700);
           await runCommand("vim .env.ci", [], 320);
           await showVim(".env.ci", ["# .env.ci"], "\".env.ci\" [New]  1,1  -- INSERT --", 420);

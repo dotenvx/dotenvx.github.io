@@ -13,7 +13,7 @@
 
 <style>
   .dotenvx-live-terminal {
-    height: 23rem;
+    height: 25rem;
     margin: 0;
     scrollbar-width: thin;
   }
@@ -82,7 +82,7 @@
 
   @media (max-width: 767px) {
     .dotenvx-live-terminal {
-      height: 19rem;
+      height: 22rem;
       font-size: 12px;
       line-height: 1.5;
     }
@@ -175,7 +175,8 @@
         vimMarkup: "",
         activeCommand: "",
         vimLines: [],
-        vimFileName: ".env"
+        vimFileName: ".env",
+        showPrompt: false
       };
 
       const render = () => {
@@ -187,7 +188,7 @@
         const lines = [...state.shellLines];
         if (state.activeCommand) {
           lines.push(`<span class=\"cmd\">$ ${escapeHtml(state.activeCommand)}</span><span class=\"cursor\"></span>`);
-        } else {
+        } else if (state.showPrompt) {
           lines.push('<span class="cmd">$</span><span class="cursor"></span>');
         }
 
@@ -203,6 +204,7 @@
 
       const typeCommand = async (command) => {
         state.mode = "shell";
+        state.showPrompt = true;
         state.activeCommand = "";
         render();
         for (const ch of command) {
@@ -212,6 +214,7 @@
         }
         await wait(210);
         pushLine(`<span class=\"cmd\">$ ${escapeHtml(command)}</span>`);
+        state.showPrompt = false;
         state.activeCommand = "";
         render();
       };
@@ -271,13 +274,24 @@
         state.vimMarkup = "";
         state.activeCommand = "";
         state.vimLines = [];
+        state.showPrompt = false;
+        render();
+      };
+
+      const idleAtPrompt = async (ms) => {
+        state.mode = "shell";
+        state.showPrompt = true;
+        state.activeCommand = "";
+        render();
+        await wait(ms);
+        state.showPrompt = false;
         render();
       };
 
       const loop = async () => {
         while (document.body.contains(demo)) {
           resetTerminal();
-          await wait(2700);
+          await idleAtPrompt(2700);
           await runCommand("npm install @dotenvx/dotenvx", [
             "<span class=\"ok\">dotenvx installed.</span>"
           ], 950);

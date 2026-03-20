@@ -331,7 +331,7 @@
           await exitVim("\"index.js\" [New]  2,41  :wq");
           await closeVim();
           await runCommand("dotenvx run -- node index.js", [
-            "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env</span>",
+            "<span class=\"val\">[dotenvx@1.57.0] injecting env (1) from .env</span>",
             "Hello World"
           ], 1200);
 
@@ -347,7 +347,7 @@
             "<span class=\"ok\">◈ encrypted (.env.production) + key (.env.keys)</span>"
           ], 980);
           await runCommand("dotenvx run -f .env.production -- node index.js", [
-            "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env.production</span>",
+            "<span class=\"val\">[dotenvx@1.57.0] injecting env (1) from .env.production</span>",
             "Hello Production"
           ], 1350);
           await runCommand("clear", [], 240, { clearAfter: true });
@@ -362,9 +362,12 @@
             "<span class=\"ok\">◈ encrypted (.env.ci) + key (.env.keys)</span>"
           ], 980);
           await runCommand("dotenvx run -f .env.ci -- node index.js", [
-            "<span class=\"val\">[dotenvx@1.57.0] injecting env (2) from .env.ci</span>",
+            "<span class=\"val\">[dotenvx@1.57.0] injecting env (1) from .env.ci</span>",
             "Hello CI"
           ], 1350);
+          pushLine("<span class=\"dim\"># restarting demo...</span>");
+          state.showPrompt = true;
+          render();
           await wait(1500);
         }
       };

@@ -5,7 +5,10 @@
       <span class="h-2 w-2 rounded-full bg-[#bb944f]"></span>
       <span class="h-2 w-2 rounded-full bg-[#9a753c]"></span>
     </div>
-    <span class="text-[11px] tracking-wide text-[#b7a98a]">npm i @dotenvx/dotenvx</span>
+    <div class="flex items-center gap-2">
+      <span class="text-[11px] tracking-wide text-[#b7a98a]">npm i @dotenvx/dotenvx</span>
+      <button type="button" class="terminal-sound-toggle" data-sound-toggle aria-pressed="false">sound off</button>
+    </div>
   </div>
 
   <pre class="dotenvx-live-terminal px-5 py-5 leading-relaxed whitespace-pre overflow-auto" aria-live="polite"></pre>
@@ -16,6 +19,25 @@
     height: 22rem;
     margin: 0;
     scrollbar-width: thin;
+  }
+  .terminal-sound-toggle {
+    border: 1px solid rgba(205, 170, 98, 0.38);
+    border-radius: 999px;
+    background: rgba(14, 12, 9, 0.84);
+    color: #9b8f74;
+    font-size: 10px;
+    line-height: 1;
+    padding: 4px 7px 5px;
+    letter-spacing: 0;
+    cursor: pointer;
+  }
+  .terminal-sound-toggle:hover {
+    border-color: rgba(205, 170, 98, 0.58);
+    color: #c3b491;
+  }
+  .terminal-sound-toggle[aria-pressed="true"] {
+    color: #e2d3ac;
+    border-color: rgba(205, 170, 98, 0.72);
   }
 
   .dotenvx-live-terminal .dim { color: #9b8f74; }
@@ -167,7 +189,10 @@
       demo.dataset.demoReady = "1";
 
       const screen = demo.querySelector(".dotenvx-live-terminal");
+      const soundToggle = demo.querySelector("[data-sound-toggle]");
       if (!screen) return;
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
 
       const state = {
         shellLines: [],
@@ -176,8 +201,127 @@
         activeCommand: "",
         vimLines: [],
         vimFileName: ".env",
-        showPrompt: false
+        showPrompt: false,
+        soundEnabled: false
       };
+      let audioContext = null;
+      let noiseBuffer = null;
+      let lastTickAt = 0;
+      let typedChars = 0;
+
+      const updateSoundToggle = () => {
+        if (!soundToggle) return;
+        soundToggle.textContent = state.soundEnabled ? "sound on" : "sound off";
+        soundToggle.setAttribute("aria-pressed", state.soundEnabled ? "true" : "false");
+      };
+
+      const ensureAudioContext = async () => {
+        if (audioContext) return audioContext;
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return null;
+        audioContext = new Ctx();
+        const length = Math.floor(audioContext.sampleRate * 0.03);
+        noiseBuffer = audioContext.createBuffer(1, length, audioContext.sampleRate);
+        const data = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < length; i += 1) data[i] = Math.random() * 2 - 1;
+        try {
+          if (audioContext.state === "suspended") await audioContext.resume();
+        } catch (_) {}
+        return audioContext;
+      };
+
+      const playTypeTick = (ch = "") => {
+        if (!state.soundEnabled || prefersReduced) return;
+        const now = performance.now();
+        const minInterval = coarsePointer ? 115 : 85;
+        if (now - lastTickAt < minInterval) return;
+        typedChars += 1;
+        if (coarsePointer && typedChars % 2 !== 0) return;
+        lastTickAt = now;
+        if (!audioContext || audioContext.state !== "running") return;
+        try {
+          const at = audioContext.currentTime;
+          const isSpace = /\s/.test(ch);
+          const isPunct = /[.,;:!?'"`]/.test(ch);
+          const isSymbol = /[@#$%^&*()_+\-=[\]{}|\\/<>\~]/.test(ch);
+          const baseFreq = isSpace ? 1220 : isPunct ? 2240 : isSymbol ? 1940 : 1680;
+          const decay = isSpace ? 0.042 : isPunct ? 0.024 : 0.028;
+          const vol = isSpace ? 0.017 : isPunct ? 0.014 : 0.012;
+
+          const noise = audioContext.createBufferSource();
+          noise.buffer = noiseBuffer;
+          const bp = audioContext.createBiquadFilter();
+          bp.type = "bandpass";
+          bp.frequency.setValueAtTime(baseFreq + (Math.random() * 180 - 90), at);
+          bp.Q.setValueAtTime(isPunct ? 1.4 : 1.0, at);
+          const noiseGain = audioContext.createGain();
+          noiseGain.gain.setValueAtTime(0.0001, at);
+          noiseGain.gain.linearRampToValueAtTime(vol, at + 0.002);
+          noiseGain.gain.exponentialRampToValueAtTime(0.0001, at + decay);
+
+          const tone = audioContext.createOscillator();
+          tone.type = "triangle";
+          tone.frequency.setValueAtTime(baseFreq * 0.72 + (Math.random() * 60 - 30), at);
+          const toneGain = audioContext.createGain();
+          toneGain.gain.setValueAtTime(0.0001, at);
+          toneGain.gain.linearRampToValueAtTime(vol * 0.32, at + 0.002);
+          toneGain.gain.exponentialRampToValueAtTime(0.0001, at + decay * 0.9);
+
+          noise.connect(bp);
+          bp.connect(noiseGain);
+          noiseGain.connect(audioContext.destination);
+          tone.connect(toneGain);
+          toneGain.connect(audioContext.destination);
+
+          let thock = null;
+          let thockGain = null;
+          if (isSpace) {
+            thock = audioContext.createOscillator();
+            thock.type = "sine";
+            thock.frequency.setValueAtTime(150 + (Math.random() * 24 - 12), at);
+            thockGain = audioContext.createGain();
+            thockGain.gain.setValueAtTime(0.0001, at);
+            thockGain.gain.linearRampToValueAtTime(0.008, at + 0.002);
+            thockGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.045);
+            thock.connect(thockGain);
+            thockGain.connect(audioContext.destination);
+            thock.start(at);
+            thock.stop(at + 0.048);
+          }
+
+          noise.start(at);
+          noise.stop(at + decay + 0.006);
+          tone.start(at);
+          tone.stop(at + decay);
+        } catch (_) {}
+      };
+
+      const nextDelay = (ch = "", nextCh = "", mode = "shell") => {
+        const soundMode = state.soundEnabled;
+        const base = mode === "vim"
+          ? (soundMode ? 74 : 62)
+          : (soundMode ? 66 : 52);
+        const jitter = mode === "vim"
+          ? (soundMode ? 44 : 44)
+          : (soundMode ? 38 : 36);
+
+        let delay = base + Math.floor(Math.random() * jitter);
+        if (ch === " ") delay += 70 + Math.floor(Math.random() * 55);
+        if (/[.,;:!?]/.test(ch)) delay += 90 + Math.floor(Math.random() * 90);
+        if (/[:=\/\\()\[\]{}]/.test(ch)) delay += 14 + Math.floor(Math.random() * 20);
+        if (nextCh && /[A-Z]/.test(nextCh) && ch === " ") delay += 24;
+        if (soundMode && Math.random() < 0.03) delay += 120 + Math.floor(Math.random() * 120);
+        return delay;
+      };
+
+      if (soundToggle) {
+        updateSoundToggle();
+        soundToggle.addEventListener("click", async () => {
+          state.soundEnabled = !state.soundEnabled;
+          if (state.soundEnabled) await ensureAudioContext();
+          updateSoundToggle();
+        });
+      }
 
       const render = () => {
         if (state.mode === "vim") {
@@ -207,10 +351,13 @@
         state.showPrompt = true;
         state.activeCommand = "";
         render();
-        for (const ch of command) {
+        for (let i = 0; i < command.length; i += 1) {
+          const ch = command[i];
+          const nextCh = command[i + 1] || "";
           state.activeCommand += ch;
           render();
-          await wait(52 + Math.floor(Math.random() * 36));
+          playTypeTick(ch);
+          await wait(nextDelay(ch, nextCh, "shell"));
         }
         await wait(210);
         pushLine(`<span class=\"cmd\">$ ${escapeHtml(command)}</span>`);
@@ -261,11 +408,14 @@
         for (let i = 0; i < linesToType.length; i += 1) {
           if (preserveExisting || i > 0) state.vimLines.push("");
           const lineIndex = preserveExisting ? state.vimLines.length - 1 : i;
-          for (const ch of linesToType[i]) {
+          for (let j = 0; j < linesToType[i].length; j += 1) {
+            const ch = linesToType[i][j];
+            const nextCh = linesToType[i][j + 1] || "";
             state.vimLines[lineIndex] += ch;
             state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${lineIndex + 1},1  -- INSERT --`);
             render();
-            await wait(62 + Math.floor(Math.random() * 44));
+            playTypeTick(ch);
+            await wait(nextDelay(ch, nextCh, "vim"));
           }
           await wait(150);
         }

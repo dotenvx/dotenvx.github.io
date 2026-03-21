@@ -2,18 +2,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="dotenv, .env, dotenvx, dotenv-vault, environments, encrypt, vault, developer secrets, secret manager, share, secretops">
 
-{% if page.url == "/" %}
-<title>Dotenvx · Secrets for developers</title>
-{% endif %}
 {% assign social_base_title = page.title | default: site.title %}
-{% if social_base_title == site.title %}
+{% if page.url == "/" %}
+{% assign social_share_title = site.title | append: " · " | append: site.description %}
+{% elsif social_base_title == site.title %}
 {% assign social_share_title = site.title %}
 {% else %}
 {% assign social_share_title = social_base_title | append: " · " | append: site.title %}
 {% endif %}
+<title>{{ social_share_title }}</title>
+{% seo %}
 <meta property="og:title" content="{{ social_share_title }}">
 <meta name="twitter:title" content="{{ social_share_title }}">
-{% seo %}
 {% favicon %}
 
 <script src="https://unpkg.com/alpinejs" defer></script>

@@ -301,12 +301,13 @@
           const isSpace = /\s/.test(ch);
           const isPunct = /[.,;:!?'"`]/.test(ch);
           const isSymbol = /[@#$%^&*()_+\-=[\]{}|\\/<>\~]/.test(ch);
-          const bodyDecay = isSpace ? 0.042 : isPunct ? 0.018 : 0.024;
-          const clickDecay = isSpace ? 0.012 : isPunct ? 0.009 : 0.010;
-          const bodyVol = isSpace ? 0.014 : isPunct ? 0.0065 : 0.009;
-          const clickVol = isSpace ? 0.010 : isPunct ? 0.014 : 0.013;
-          const bodyFreq = isSpace ? 1120 : isSymbol ? 1580 : 1460;
-          const clickFreq = isSpace ? 3350 : isPunct ? 4700 : 4300;
+          // Tuned toward a warm laptop key sound (short tap, less bright hiss).
+          const bodyDecay = isSpace ? 0.038 : isPunct ? 0.018 : 0.024;
+          const clickDecay = isSpace ? 0.011 : isPunct ? 0.0085 : 0.0094;
+          const bodyVol = isSpace ? 0.0108 : isPunct ? 0.0056 : 0.0074;
+          const clickVol = isSpace ? 0.0068 : isPunct ? 0.0078 : 0.0072;
+          const bodyFreq = isSpace ? 1420 : isSymbol ? 1760 : 1640;
+          const clickFreq = isSpace ? 2300 : isPunct ? 3000 : 2750;
 
           const mobileBoost = coarsePointer ? 1.85 : 1;
 
@@ -316,70 +317,94 @@
           const bodyBp = audioContext.createBiquadFilter();
           bodyBp.type = "bandpass";
           bodyBp.frequency.setValueAtTime(bodyFreq + (Math.random() * 120 - 60), at);
-          bodyBp.Q.setValueAtTime(isSpace ? 0.88 : 1.2, at);
+          bodyBp.Q.setValueAtTime(isSpace ? 1.08 : 1.35, at);
           const bodyGain = audioContext.createGain();
           bodyGain.gain.setValueAtTime(0.0001, at);
-          bodyGain.gain.linearRampToValueAtTime(bodyVol * mobileBoost, at + 0.002);
+          bodyGain.gain.linearRampToValueAtTime(bodyVol * mobileBoost, at + 0.0032);
           bodyGain.gain.exponentialRampToValueAtTime(0.0001, at + bodyDecay);
 
-          // Crisp top click (switch contact).
+          // Contact click, filtered to avoid overly sharp/hi-pitched tone.
           const clickNoise = audioContext.createBufferSource();
           clickNoise.buffer = noiseBuffer;
           const clickHp = audioContext.createBiquadFilter();
           clickHp.type = "highpass";
-          clickHp.frequency.setValueAtTime(clickFreq + (Math.random() * 260 - 130), at);
-          clickHp.Q.setValueAtTime(1.25, at);
+          const clickHpStart = clickFreq + (Math.random() * 120 - 60);
+          const clickHpEnd = isSpace ? 1450 : isPunct ? 1950 : 1750;
+          clickHp.frequency.setValueAtTime(clickHpStart, at);
+          clickHp.frequency.exponentialRampToValueAtTime(clickHpEnd, at + clickDecay);
+          clickHp.Q.setValueAtTime(1.05, at);
+          const clickLp = audioContext.createBiquadFilter();
+          clickLp.type = "lowpass";
+          const clickLpStart = isPunct ? 4700 : 4300;
+          const clickLpEnd = isPunct ? 3200 : 2850;
+          clickLp.frequency.setValueAtTime(clickLpStart, at);
+          clickLp.frequency.exponentialRampToValueAtTime(clickLpEnd, at + clickDecay);
+          clickLp.Q.setValueAtTime(0.7, at);
           const clickGain = audioContext.createGain();
           clickGain.gain.setValueAtTime(0.0001, at);
-          clickGain.gain.linearRampToValueAtTime(clickVol * mobileBoost, at + 0.0016);
+          clickGain.gain.linearRampToValueAtTime(clickVol * mobileBoost, at + 0.0024);
           clickGain.gain.exponentialRampToValueAtTime(0.0001, at + clickDecay);
 
           bodyNoise.connect(bodyBp);
           bodyBp.connect(bodyGain);
           bodyGain.connect(audioContext.destination);
           clickNoise.connect(clickHp);
-          clickHp.connect(clickGain);
+          clickHp.connect(clickLp);
+          clickLp.connect(clickGain);
           clickGain.connect(audioContext.destination);
 
-          // Subtle keycap mass resonance, stronger on spacebar.
+          // Keep spacebar fuller, but lighter than mechanical keyboards.
           let resonance = null;
           let resonanceGain = null;
           if (isSpace) {
             resonance = audioContext.createOscillator();
             resonance.type = "sine";
-            resonance.frequency.setValueAtTime(168 + (Math.random() * 16 - 8), at);
+            resonance.frequency.setValueAtTime(208 + (Math.random() * 18 - 9), at);
             resonanceGain = audioContext.createGain();
             resonanceGain.gain.setValueAtTime(0.0001, at);
-            resonanceGain.gain.linearRampToValueAtTime(0.0046 * mobileBoost, at + 0.0018);
-            resonanceGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.035);
+            resonanceGain.gain.linearRampToValueAtTime(0.0026 * mobileBoost, at + 0.0013);
+            resonanceGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.02);
             resonance.connect(resonanceGain);
             resonanceGain.connect(audioContext.destination);
             resonance.start(at);
-            resonance.stop(at + 0.039);
+            resonance.stop(at + 0.024);
           }
 
           bodyNoise.start(at);
-          bodyNoise.stop(at + bodyDecay + 0.006);
+          bodyNoise.stop(at + bodyDecay + 0.01);
           clickNoise.start(at);
-          clickNoise.stop(at + clickDecay + 0.005);
+          clickNoise.stop(at + clickDecay + 0.008);
 
-          // Occasional very small release tick for realism.
-          if (!isSpace && Math.random() < 0.42) {
-            const relAt = at + 0.017 + Math.random() * 0.011;
+          // Very subtle shared tail so strokes don't feel overly chopped.
+          const tail = audioContext.createGain();
+          tail.gain.setValueAtTime(0.0001, at);
+          tail.gain.linearRampToValueAtTime(0.0016 * mobileBoost, at + 0.0048);
+          tail.gain.exponentialRampToValueAtTime(0.0001, at + 0.034);
+          bodyBp.connect(tail);
+          clickLp.connect(tail);
+          tail.connect(audioContext.destination);
+
+          // Rare, quiet release tick for realism.
+          if (!isSpace && Math.random() < 0.12) {
+            const relAt = at + 0.012 + Math.random() * 0.008;
             const release = audioContext.createBufferSource();
             release.buffer = noiseBuffer;
             const relHp = audioContext.createBiquadFilter();
             relHp.type = "highpass";
-            relHp.frequency.setValueAtTime(4200 + Math.random() * 520, relAt);
+            relHp.frequency.setValueAtTime(3000 + Math.random() * 420, relAt);
+            const relLp = audioContext.createBiquadFilter();
+            relLp.type = "lowpass";
+            relLp.frequency.setValueAtTime(4300, relAt);
             const relGain = audioContext.createGain();
             relGain.gain.setValueAtTime(0.0001, relAt);
-            relGain.gain.linearRampToValueAtTime(0.0038 * mobileBoost, relAt + 0.0008);
-            relGain.gain.exponentialRampToValueAtTime(0.0001, relAt + 0.008);
+            relGain.gain.linearRampToValueAtTime(0.0011 * mobileBoost, relAt + 0.0007);
+            relGain.gain.exponentialRampToValueAtTime(0.0001, relAt + 0.0042);
             release.connect(relHp);
-            relHp.connect(relGain);
+            relHp.connect(relLp);
+            relLp.connect(relGain);
             relGain.connect(audioContext.destination);
             release.start(relAt);
-            release.stop(relAt + 0.011);
+            release.stop(relAt + 0.0065);
           }
         } catch (_) {}
       };

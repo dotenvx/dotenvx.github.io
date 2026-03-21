@@ -99,6 +99,30 @@
   .dotenvx-live-terminal .vim-js-fn { color: #7fb8d8; }
   .dotenvx-live-terminal .vim-js-str { color: #d7c56f; }
   .dotenvx-live-terminal .vim-js-var { color: #c89ae0; }
+  .dotenvx-live-terminal .vim-cursor-normal {
+    display: block;
+    position: absolute;
+    background: #d7d1c1;
+    color: #0f0e0b;
+    min-width: 0.62ch;
+    height: 1.12em;
+    line-height: 1.08em;
+    left: calc(12px + ((var(--vim-col, 1) - 1) * 0.62ch) + 0.04ch);
+    top: calc(16px + ((var(--vim-row, 1) - 1) * 1.52em) + 0.52em);
+    pointer-events: none;
+  }
+  .dotenvx-live-terminal .vim-cursor-insert {
+    display: block;
+    position: absolute;
+    background: #bfb7a1;
+    color: #0f0e0b;
+    min-width: 0.62ch;
+    height: 1.12em;
+    line-height: 1.08em;
+    left: calc(12px + ((var(--vim-col, 1) - 1) * 0.62ch) + 0.04ch);
+    top: calc(16px + ((var(--vim-row, 1) - 1) * 1.52em) + 0.52em);
+    pointer-events: none;
+  }
 
   @keyframes dotenvx-caret {
     0%, 45% { opacity: 1; }
@@ -201,6 +225,7 @@
         activeCommand: "",
         vimLines: [],
         vimFileName: ".env",
+        vimCursor: null,
         showPrompt: false,
         soundEnabled: false
       };
@@ -233,66 +258,99 @@
       const playTypeTick = (ch = "") => {
         if (!state.soundEnabled || prefersReduced) return;
         const now = performance.now();
-        const minInterval = coarsePointer ? 115 : 85;
+        const minInterval = coarsePointer ? 108 : 72;
         if (now - lastTickAt < minInterval) return;
         typedChars += 1;
         if (coarsePointer && typedChars % 2 !== 0) return;
         lastTickAt = now;
-        if (!audioContext || audioContext.state !== "running") return;
+        if (!audioContext) return;
+        if (audioContext.state !== "running") {
+          audioContext.resume().catch(() => {});
+          return;
+        }
         try {
           const at = audioContext.currentTime;
           const isSpace = /\s/.test(ch);
           const isPunct = /[.,;:!?'"`]/.test(ch);
           const isSymbol = /[@#$%^&*()_+\-=[\]{}|\\/<>\~]/.test(ch);
-          const baseFreq = isSpace ? 1220 : isPunct ? 2240 : isSymbol ? 1940 : 1680;
-          const decay = isSpace ? 0.042 : isPunct ? 0.024 : 0.028;
-          const vol = isSpace ? 0.017 : isPunct ? 0.014 : 0.012;
+          const bodyDecay = isSpace ? 0.042 : isPunct ? 0.018 : 0.024;
+          const clickDecay = isSpace ? 0.012 : isPunct ? 0.009 : 0.010;
+          const bodyVol = isSpace ? 0.014 : isPunct ? 0.0065 : 0.009;
+          const clickVol = isSpace ? 0.010 : isPunct ? 0.014 : 0.013;
+          const bodyFreq = isSpace ? 1120 : isSymbol ? 1580 : 1460;
+          const clickFreq = isSpace ? 3350 : isPunct ? 4700 : 4300;
 
-          const noise = audioContext.createBufferSource();
-          noise.buffer = noiseBuffer;
-          const bp = audioContext.createBiquadFilter();
-          bp.type = "bandpass";
-          bp.frequency.setValueAtTime(baseFreq + (Math.random() * 180 - 90), at);
-          bp.Q.setValueAtTime(isPunct ? 1.4 : 1.0, at);
-          const noiseGain = audioContext.createGain();
-          noiseGain.gain.setValueAtTime(0.0001, at);
-          noiseGain.gain.linearRampToValueAtTime(vol, at + 0.002);
-          noiseGain.gain.exponentialRampToValueAtTime(0.0001, at + decay);
+          // Main downstroke body (keycap + switch thock).
+          const bodyNoise = audioContext.createBufferSource();
+          bodyNoise.buffer = noiseBuffer;
+          const bodyBp = audioContext.createBiquadFilter();
+          bodyBp.type = "bandpass";
+          bodyBp.frequency.setValueAtTime(bodyFreq + (Math.random() * 120 - 60), at);
+          bodyBp.Q.setValueAtTime(isSpace ? 0.88 : 1.2, at);
+          const bodyGain = audioContext.createGain();
+          bodyGain.gain.setValueAtTime(0.0001, at);
+          bodyGain.gain.linearRampToValueAtTime(bodyVol, at + 0.002);
+          bodyGain.gain.exponentialRampToValueAtTime(0.0001, at + bodyDecay);
 
-          const tone = audioContext.createOscillator();
-          tone.type = "triangle";
-          tone.frequency.setValueAtTime(baseFreq * 0.72 + (Math.random() * 60 - 30), at);
-          const toneGain = audioContext.createGain();
-          toneGain.gain.setValueAtTime(0.0001, at);
-          toneGain.gain.linearRampToValueAtTime(vol * 0.32, at + 0.002);
-          toneGain.gain.exponentialRampToValueAtTime(0.0001, at + decay * 0.9);
+          // Crisp top click (switch contact).
+          const clickNoise = audioContext.createBufferSource();
+          clickNoise.buffer = noiseBuffer;
+          const clickHp = audioContext.createBiquadFilter();
+          clickHp.type = "highpass";
+          clickHp.frequency.setValueAtTime(clickFreq + (Math.random() * 260 - 130), at);
+          clickHp.Q.setValueAtTime(1.25, at);
+          const clickGain = audioContext.createGain();
+          clickGain.gain.setValueAtTime(0.0001, at);
+          clickGain.gain.linearRampToValueAtTime(clickVol, at + 0.0016);
+          clickGain.gain.exponentialRampToValueAtTime(0.0001, at + clickDecay);
 
-          noise.connect(bp);
-          bp.connect(noiseGain);
-          noiseGain.connect(audioContext.destination);
-          tone.connect(toneGain);
-          toneGain.connect(audioContext.destination);
+          bodyNoise.connect(bodyBp);
+          bodyBp.connect(bodyGain);
+          bodyGain.connect(audioContext.destination);
+          clickNoise.connect(clickHp);
+          clickHp.connect(clickGain);
+          clickGain.connect(audioContext.destination);
 
-          let thock = null;
-          let thockGain = null;
+          // Subtle keycap mass resonance, stronger on spacebar.
+          let resonance = null;
+          let resonanceGain = null;
           if (isSpace) {
-            thock = audioContext.createOscillator();
-            thock.type = "sine";
-            thock.frequency.setValueAtTime(150 + (Math.random() * 24 - 12), at);
-            thockGain = audioContext.createGain();
-            thockGain.gain.setValueAtTime(0.0001, at);
-            thockGain.gain.linearRampToValueAtTime(0.008, at + 0.002);
-            thockGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.045);
-            thock.connect(thockGain);
-            thockGain.connect(audioContext.destination);
-            thock.start(at);
-            thock.stop(at + 0.048);
+            resonance = audioContext.createOscillator();
+            resonance.type = "sine";
+            resonance.frequency.setValueAtTime(168 + (Math.random() * 16 - 8), at);
+            resonanceGain = audioContext.createGain();
+            resonanceGain.gain.setValueAtTime(0.0001, at);
+            resonanceGain.gain.linearRampToValueAtTime(0.0046, at + 0.0018);
+            resonanceGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.035);
+            resonance.connect(resonanceGain);
+            resonanceGain.connect(audioContext.destination);
+            resonance.start(at);
+            resonance.stop(at + 0.039);
           }
 
-          noise.start(at);
-          noise.stop(at + decay + 0.006);
-          tone.start(at);
-          tone.stop(at + decay);
+          bodyNoise.start(at);
+          bodyNoise.stop(at + bodyDecay + 0.006);
+          clickNoise.start(at);
+          clickNoise.stop(at + clickDecay + 0.005);
+
+          // Occasional very small release tick for realism.
+          if (!isSpace && Math.random() < 0.42) {
+            const relAt = at + 0.017 + Math.random() * 0.011;
+            const release = audioContext.createBufferSource();
+            release.buffer = noiseBuffer;
+            const relHp = audioContext.createBiquadFilter();
+            relHp.type = "highpass";
+            relHp.frequency.setValueAtTime(4200 + Math.random() * 520, relAt);
+            const relGain = audioContext.createGain();
+            relGain.gain.setValueAtTime(0.0001, relAt);
+            relGain.gain.linearRampToValueAtTime(0.0038, relAt + 0.0008);
+            relGain.gain.exponentialRampToValueAtTime(0.0001, relAt + 0.008);
+            release.connect(relHp);
+            relHp.connect(relGain);
+            relGain.connect(audioContext.destination);
+            release.start(relAt);
+            release.stop(relAt + 0.011);
+          }
         } catch (_) {}
       };
 
@@ -322,10 +380,22 @@
           updateSoundToggle();
         });
       }
+      document.addEventListener("visibilitychange", () => {
+        if (!state.soundEnabled || !audioContext) return;
+        if (document.visibilityState === "visible" && audioContext.state !== "running") {
+          audioContext.resume().catch(() => {});
+        }
+      });
 
       const render = () => {
         if (state.mode === "vim") {
-          screen.innerHTML = `<span class=\"vim-frame\"><span class=\"vim-tab\">${escapeHtml(state.vimFileName)}</span>${state.vimMarkup}</span>`;
+          let cursorMarkup = "";
+          if (state.vimCursor) {
+            const cursorClass = state.vimCursor.mode === "insert" ? "vim-cursor-insert" : "vim-cursor-normal";
+            const cursorChar = state.vimCursor.char || "&nbsp;";
+            cursorMarkup = `<span class="${cursorClass}" style="--vim-row:${state.vimCursor.row};--vim-col:${state.vimCursor.col};">${cursorChar}</span>`;
+          }
+          screen.innerHTML = `<span class=\"vim-frame\"><span class=\"vim-tab\">${escapeHtml(state.vimFileName)}</span>${state.vimMarkup}${cursorMarkup}</span>`;
           return;
         }
 
@@ -390,9 +460,63 @@
         state.mode = "vim";
         state.vimFileName = fileName;
         state.vimLines = lines;
+        state.vimCursor = null;
         state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
         render();
         await wait(duration);
+      };
+
+      const inspectEncryptedVim = async (fileName, lines) => {
+        state.mode = "vim";
+        state.vimFileName = fileName;
+        state.vimLines = lines;
+
+        const normalFrames = [
+          { status: `"${fileName}"  1,1  -- NORMAL --`, row: 1, col: 1 },
+          { status: `"${fileName}"  2,1  -- NORMAL --`, row: 2, col: 1 },
+          { status: `"${fileName}"  2,2  -- NORMAL --`, row: 2, col: 2 },
+          { status: `"${fileName}"  2,1  -- NORMAL --`, row: 2, col: 1 }
+        ];
+
+        for (let i = 0; i < normalFrames.length; i += 1) {
+          const frame = normalFrames[i];
+          const line = state.vimLines[frame.row - 1] || "";
+          const idx = Math.max(0, Math.min(line.length - 1, frame.col - 1));
+          const char = line.length ? escapeHtml(line[idx]) : "&nbsp;";
+          state.vimCursor = { row: frame.row, col: frame.col, mode: "normal", char };
+          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, frame.status);
+          render();
+          if (i > 0) {
+            playTypeTick("l");
+            await wait(58);
+            playTypeTick("l");
+          }
+          await wait(330);
+        }
+
+        playTypeTick("i");
+        state.vimCursor = { row: 2, col: 1, mode: "insert", char: "" };
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}"  2,1  -- INSERT --`);
+        render();
+        await wait(240);
+
+        state.vimCursor = { row: 2, col: 2, mode: "insert", char: "" };
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}"  2,2  -- INSERT --`);
+        render();
+        playTypeTick(" ");
+        await wait(190);
+
+        playTypeTick(" ");
+        {
+          const line = state.vimLines[1] || "";
+          const idx = Math.max(0, Math.min(line.length - 1, 0));
+          const char = line.length ? escapeHtml(line[idx]) : "&nbsp;";
+          state.vimCursor = { row: 2, col: 1, mode: "normal", char };
+        }
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}"  2,1  -- NORMAL --`);
+        render();
+        await wait(360);
+        state.vimCursor = null;
       };
 
       const typeInVim = async (fileName, values, preserveExisting = false) => {
@@ -403,15 +527,20 @@
         } else if (!state.vimLines.length) {
           state.vimLines = [""];
         }
+        state.vimCursor = null;
 
         const linesToType = Array.isArray(values) ? values : [values];
         for (let i = 0; i < linesToType.length; i += 1) {
           if (preserveExisting || i > 0) state.vimLines.push("");
           const lineIndex = preserveExisting ? state.vimLines.length - 1 : i;
+          state.vimCursor = null;
+          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${lineIndex + 1},1  -- INSERT --`);
+          render();
           for (let j = 0; j < linesToType[i].length; j += 1) {
             const ch = linesToType[i][j];
             const nextCh = linesToType[i][j + 1] || "";
             state.vimLines[lineIndex] += ch;
+            state.vimCursor = null;
             state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${lineIndex + 1},1  -- INSERT --`);
             render();
             playTypeTick(ch);
@@ -423,13 +552,46 @@
 
       const exitVim = async (status) => {
         state.mode = "vim";
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
+        state.vimCursor = null;
+        const commandMatch = status.match(/^(.*?)(\s+:[a-z]+)$/i);
+        if (!commandMatch) {
+          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
+          render();
+          await wait(460);
+          return;
+        }
+
+        const baseStatus = commandMatch[1];
+        const fullCommand = commandMatch[2].trim();
+
+        // Visual insert -> normal mode transition for Esc key.
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `${baseStatus}  -- INSERT --`);
         render();
-        await wait(460);
+        await wait(90);
+        playTypeTick(" ");
+        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `${baseStatus}  -- NORMAL --`);
+        render();
+        await wait(140);
+
+        // Visual command entry (:wq / :q) with matching key sounds.
+        let typed = "";
+        for (let i = 0; i < fullCommand.length; i += 1) {
+          const ch = fullCommand[i];
+          const nextCh = fullCommand[i + 1] || "";
+          typed += ch;
+          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `${baseStatus}  ${typed}`);
+          render();
+          playTypeTick(ch);
+          await wait(nextDelay(ch, nextCh, "vim"));
+        }
+        playTypeTick("\n");
+        await wait(70);
+        await wait(260);
       };
 
       const closeVim = async () => {
         state.mode = "shell";
+        state.vimCursor = null;
         render();
         await wait(420);
       };
@@ -440,6 +602,7 @@
         state.vimMarkup = "";
         state.activeCommand = "";
         state.vimLines = [];
+        state.vimCursor = null;
         state.showPrompt = false;
         render();
       };
@@ -471,7 +634,7 @@
             "<span class=\"ok\">◈ encrypted (.env) + key (.env.keys)</span>"
           ], 1050);
           await runCommand("vim .env", [], 300);
-          await showVim(".env", encryptedFileLines, "\".env\"  2L, 301B", 3600);
+          await inspectEncryptedVim(".env", encryptedFileLines);
           await exitVim("\".env\"  2L, 301B  :q");
           await closeVim();
           await runCommand("vim index.js", [], 320);

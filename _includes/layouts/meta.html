@@ -4,19 +4,16 @@
 
 {% if page.url == "/" %}
 <title>Dotenvx · Secrets for developers</title>
-<meta property="og:title" content="Dotenvx · Secrets for developers">
-<meta property="og:site_name" content="Dotenvx · Secrets for developers">
-<meta property="twitter:title" content="Dotenvx · Secrets for developers">
 {% endif %}
+{% assign social_base_title = page.title | default: site.title %}
+{% if social_base_title == site.title %}
+{% assign social_share_title = site.title %}
+{% else %}
+{% assign social_share_title = social_base_title | append: " · " | append: site.title %}
+{% endif %}
+<meta property="og:title" content="{{ social_share_title }}">
+<meta name="twitter:title" content="{{ social_share_title }}">
 {% seo %}
-{% if jekyll.environment == "production" %}
-{% assign page_path = page.url | default: "/" %}
-{% assign share_url = site.url | append: page_path %}
-{% assign encoded_share_url = share_url | uri_escape %}
-{% assign share_image_url = "https://api.urlbox.io/v1/Ep4Ip4nNnFMNUg9J/png?url=" | append: encoded_share_url | append: "&width=1200&height=630&fail_on_4xx=true&fail_on_5xx=true" %}
-<meta property="og:image" content="{{ share_image_url }}">
-<meta name="twitter:image" content="{{ share_image_url }}">
-{% endif %}
 {% favicon %}
 
 <script src="https://unpkg.com/alpinejs" defer></script>

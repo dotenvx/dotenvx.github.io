@@ -233,6 +233,7 @@
       let noiseBuffer = null;
       let lastTickAt = 0;
       let typedChars = 0;
+      let audioUnlocked = false;
 
       const updateSoundToggle = () => {
         if (!soundToggle) return;
@@ -260,6 +261,25 @@
         return audioContext;
       };
 
+      const unlockAudioOnGesture = async () => {
+        if (audioUnlocked) return;
+        const ctx = await ensureAudioContext();
+        if (!ctx) return;
+        try {
+          if (ctx.state === "suspended") await ctx.resume();
+          // iOS/Safari sometimes needs an actual started source to unlock output.
+          const src = ctx.createBufferSource();
+          const buf = ctx.createBuffer(1, 1, ctx.sampleRate);
+          src.buffer = buf;
+          const gain = ctx.createGain();
+          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+          src.connect(gain);
+          gain.connect(ctx.destination);
+          src.start();
+          audioUnlocked = true;
+        } catch (_) {}
+      };
+
       const playTypeTick = (ch = "") => {
         if (!state.soundEnabled || prefersReduced) return;
         const now = performance.now();
@@ -285,6 +305,8 @@
           const bodyFreq = isSpace ? 1120 : isSymbol ? 1580 : 1460;
           const clickFreq = isSpace ? 3350 : isPunct ? 4700 : 4300;
 
+          const mobileBoost = coarsePointer ? 1.85 : 1;
+
           // Main downstroke body (keycap + switch thock).
           const bodyNoise = audioContext.createBufferSource();
           bodyNoise.buffer = noiseBuffer;
@@ -294,7 +316,7 @@
           bodyBp.Q.setValueAtTime(isSpace ? 0.88 : 1.2, at);
           const bodyGain = audioContext.createGain();
           bodyGain.gain.setValueAtTime(0.0001, at);
-          bodyGain.gain.linearRampToValueAtTime(bodyVol, at + 0.002);
+          bodyGain.gain.linearRampToValueAtTime(bodyVol * mobileBoost, at + 0.002);
           bodyGain.gain.exponentialRampToValueAtTime(0.0001, at + bodyDecay);
 
           // Crisp top click (switch contact).
@@ -306,7 +328,7 @@
           clickHp.Q.setValueAtTime(1.25, at);
           const clickGain = audioContext.createGain();
           clickGain.gain.setValueAtTime(0.0001, at);
-          clickGain.gain.linearRampToValueAtTime(clickVol, at + 0.0016);
+          clickGain.gain.linearRampToValueAtTime(clickVol * mobileBoost, at + 0.0016);
           clickGain.gain.exponentialRampToValueAtTime(0.0001, at + clickDecay);
 
           bodyNoise.connect(bodyBp);
@@ -325,7 +347,7 @@
             resonance.frequency.setValueAtTime(168 + (Math.random() * 16 - 8), at);
             resonanceGain = audioContext.createGain();
             resonanceGain.gain.setValueAtTime(0.0001, at);
-            resonanceGain.gain.linearRampToValueAtTime(0.0046, at + 0.0018);
+            resonanceGain.gain.linearRampToValueAtTime(0.0046 * mobileBoost, at + 0.0018);
             resonanceGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.035);
             resonance.connect(resonanceGain);
             resonanceGain.connect(audioContext.destination);
@@ -348,7 +370,7 @@
             relHp.frequency.setValueAtTime(4200 + Math.random() * 520, relAt);
             const relGain = audioContext.createGain();
             relGain.gain.setValueAtTime(0.0001, relAt);
-            relGain.gain.linearRampToValueAtTime(0.0038, relAt + 0.0008);
+            relGain.gain.linearRampToValueAtTime(0.0038 * mobileBoost, relAt + 0.0008);
             relGain.gain.exponentialRampToValueAtTime(0.0001, relAt + 0.008);
             release.connect(relHp);
             relHp.connect(relGain);
@@ -381,9 +403,13 @@
         updateSoundToggle();
         soundToggle.addEventListener("click", async () => {
           state.soundEnabled = !state.soundEnabled;
-          if (state.soundEnabled) await ensureAudioContext();
+          if (state.soundEnabled) await unlockAudioOnGesture();
           updateSoundToggle();
         });
+        soundToggle.addEventListener("touchstart", () => {
+          if (state.soundEnabled) return;
+          unlockAudioOnGesture();
+        }, { passive: true });
       }
       document.addEventListener("visibilitychange", () => {
         if (!state.soundEnabled || !audioContext) return;

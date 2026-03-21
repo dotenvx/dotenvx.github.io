@@ -231,8 +231,6 @@
       };
       let audioContext = null;
       let noiseBuffer = null;
-      let ambienceAudio = null;
-      let ambienceFadeRaf = null;
       let lastTickAt = 0;
       let typedChars = 0;
 
@@ -262,51 +260,6 @@
         return audioContext;
       };
 
-      const ensureAmbienceAudio = () => {
-        if (ambienceAudio) return ambienceAudio;
-        ambienceAudio = new Audio("/assets/audio/ambience/sacred-cryptography.ogg");
-        ambienceAudio.loop = true;
-        ambienceAudio.preload = "auto";
-        ambienceAudio.volume = 0;
-        return ambienceAudio;
-      };
-
-      const fadeAmbienceTo = (target, durationMs) => {
-        const audio = ensureAmbienceAudio();
-        if (ambienceFadeRaf) cancelAnimationFrame(ambienceFadeRaf);
-        const start = performance.now();
-        const startVol = audio.volume;
-        const delta = target - startVol;
-        const step = (now) => {
-          const t = Math.min(1, (now - start) / durationMs);
-          audio.volume = Math.max(0, Math.min(1, startVol + (delta * t)));
-          if (t < 1) {
-            ambienceFadeRaf = requestAnimationFrame(step);
-          } else {
-            ambienceFadeRaf = null;
-          }
-        };
-        ambienceFadeRaf = requestAnimationFrame(step);
-      };
-
-      const startAmbience = () => {
-        const audio = ensureAmbienceAudio();
-        const playPromise = audio.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(() => {});
-        }
-        fadeAmbienceTo(0.26, 700);
-      };
-
-      const stopAmbience = () => {
-        if (!ambienceAudio) return;
-        fadeAmbienceTo(0, 400);
-        const current = ambienceAudio;
-        window.setTimeout(() => {
-          if (!state.soundEnabled && current === ambienceAudio) current.pause();
-        }, 440);
-      };
-
       const playTypeTick = (ch = "") => {
         if (!state.soundEnabled || prefersReduced) return;
         const now = performance.now();
@@ -317,9 +270,7 @@
         lastTickAt = now;
         if (!audioContext) return;
         if (audioContext.state !== "running") {
-          audioContext.resume().then(() => {
-            if (state.soundEnabled && (!ambienceAudio || ambienceAudio.paused)) startAmbience();
-          }).catch(() => {});
+          audioContext.resume().catch(() => {});
           return;
         }
         try {
@@ -430,25 +381,14 @@
         updateSoundToggle();
         soundToggle.addEventListener("click", async () => {
           state.soundEnabled = !state.soundEnabled;
-          if (state.soundEnabled) {
-            await ensureAudioContext();
-            stopAmbience();
-            startAmbience();
-          } else {
-            stopAmbience();
-          }
+          if (state.soundEnabled) await ensureAudioContext();
           updateSoundToggle();
         });
       }
       document.addEventListener("visibilitychange", () => {
         if (!state.soundEnabled || !audioContext) return;
         if (document.visibilityState === "visible" && audioContext.state !== "running") {
-          audioContext.resume().then(() => {
-            if (state.soundEnabled) {
-              stopAmbience();
-              startAmbience();
-            }
-          }).catch(() => {});
+          audioContext.resume().catch(() => {});
         }
       });
 

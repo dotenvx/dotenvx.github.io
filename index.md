@@ -59,16 +59,6 @@ title: ""
     It's being used inside AI tooling like <a href="https://github.com/paypal/agent-toolkit">Paypal's Agent-Toolkit</a> and <a href="https://www.daytona.io/docs/typescript-sdk/">Daytona's SDK</a>. It's trusted by security software like <a href="https://github.com/SocketDev/socket-cli">Socket's CLI and Registry</a>. AWS recommends it with <a
       href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2">AWS Amplify</a>, NASA uses it to help power <a href="https://github.com/nasa/earthdata-search">Earthdata Search</a>, and Supabase requires it to unlock their <a href="https://supabase.com/docs/guides/deployment/branching#using-dotenvx-for-git-based-workflow">Branching feature</a>. It's incredible, and it will be even more exciting to watch year two unfold.
   </p>
-  <div class="md:py-0 rounded-lg overflow-hidden">
-    <div class="flex gap-5 lg:gap-10 items-center justify-center">
-      {% include logos/socket.html class="h-10" %}
-      {% include logos/aws.html class="h-12" %}
-      {% include logos/paypal.html class="h-10" %}
-      {% include logos/nasa.html class="h-12" %}
-      {% include logos/facebook.html class="h-10" %}
-      {% include logos/supabase.html class="h-10" %}
-    </div>
-  </div>
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">

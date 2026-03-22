@@ -5,6 +5,10 @@ title: ""
 <section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-36 lg:mt-40 mb-32 md:mb-40 lg:mb-44">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
     <div class="flex flex-col gap-4 md:gap-6 hero-copy-enter">
+      <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">
+        <span>From the creator of</span>
+        {% include v1/components/dotenv.html %}
+      </div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.88rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secrets for developers</h1>
       <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem] text-zinc-600 dark:text-zinc-400">Encrypt your .env files without changing your workflow. <br class="hidden lg:block" />Keep secrets out of source code and AI prompts.</p>
 

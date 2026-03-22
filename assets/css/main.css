@@ -67,6 +67,18 @@ body {
   background-image: none;
 }
 
+@media (max-width: 1120px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 820px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
 #sequin-bg-canvas {
   position: absolute;
   top: 0;

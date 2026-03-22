@@ -10,7 +10,7 @@ title: ""
         {% include v1/components/dotenv.html %}
       </div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.88rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secrets for developers</h1>
-      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem] text-zinc-600 dark:text-zinc-400">Encrypt your .env files without changing your workflow. <br class="hidden lg:block" />Keep secrets out of source code and AI prompts.</p>
+      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem]">Encrypt your .env files without changing your workflow. <br class="hidden lg:block" />Keep secrets out of source code and AI prompts.</p>
 
       <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
         <a class="btn-primary" href="/docs/quickstart">Get Started</a>
@@ -23,6 +23,33 @@ title: ""
         {% include v1/components/encrypted-env-file-small.html %}
       </div>
     </div>
+  </div>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-6 -mt-12 md:-mt-10 mb-20 md:mb-24">
+  <p class="mx-auto max-w-[42ch] text-center text-base leading-relaxed">
+    Companies of all sizes trust dotenvx to keep secrets out of source code and AI prompts.
+  </p>
+
+  <div class="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 md:gap-x-12 gap-y-8 md:gap-y-10 items-center">
+    <a href="https://github.com/SocketDev/socket-cli" target="_blank" class="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-200" aria-label="Socket CLI using dotenvx">
+      <img src="/assets/img/logo-socket.png" alt="Socket" class="h-8 md:h-9 w-auto object-contain dark:invert dark:brightness-0 dark:contrast-100" loading="lazy" />
+    </a>
+    <a href="https://supabase.com/docs/guides/deployment/branching#using-dotenvx-for-git-based-workflow" target="_blank" class="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-200" aria-label="Supabase documentation using dotenvx for branching">
+      <img src="/assets/img/logo-supabase.png" alt="Supabase" class="h-8 md:h-9 w-auto object-contain dark:invert dark:brightness-0 dark:contrast-100" loading="lazy" />
+    </a>
+    <a href="https://www.npmjs.com/package/@procore/core-react?activeTab=code" target="_blank" class="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-200" aria-label="Procore package usage with dotenvx">
+      <img src="/assets/img/logo-procore.png" alt="Procore" class="h-8 md:h-9 w-auto object-contain dark:invert dark:brightness-0 dark:contrast-100" loading="lazy" />
+    </a>
+    <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-200 text-zinc-600 dark:text-white" aria-label="PayPal agent toolkit using dotenvx">
+      {% include logos/paypal.html class="h-8 md:h-9" %}
+    </a>
+    <a href="https://github.com/nasa/earthdata-search" target="_blank" class="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-200" aria-label="NASA Earthdata Search using dotenvx">
+      <img src="/assets/img/logo-nasa.png" alt="NASA" class="h-9 md:h-10 w-auto object-contain dark:invert dark:brightness-0 dark:contrast-100" loading="lazy" />
+    </a>
+    <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-200" aria-label="AWS documentation referencing dotenvx">
+      <img src="/assets/img/logo-aws.png" alt="AWS" class="h-9 md:h-10 w-auto object-contain dark:invert dark:brightness-0 dark:contrast-100" loading="lazy" />
+    </a>
   </div>
 </section>
 
@@ -59,6 +86,16 @@ title: ""
     It's being used inside AI tooling like <a href="https://github.com/paypal/agent-toolkit">Paypal's Agent-Toolkit</a> and <a href="https://www.daytona.io/docs/typescript-sdk/">Daytona's SDK</a>. It's trusted by security software like <a href="https://github.com/SocketDev/socket-cli">Socket's CLI and Registry</a>. AWS recommends it with <a
       href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2">AWS Amplify</a>, NASA uses it to help power <a href="https://github.com/nasa/earthdata-search">Earthdata Search</a>, and Supabase requires it to unlock their <a href="https://supabase.com/docs/guides/deployment/branching#using-dotenvx-for-git-based-workflow">Branching feature</a>. It's incredible, and it will be even more exciting to watch year two unfold.
   </p>
+  <div class="md:py-0 rounded-lg overflow-hidden">
+    <div class="flex gap-5 lg:gap-10 items-center justify-center">
+      {% include logos/socket.html class="h-10" %}
+      {% include logos/aws.html class="h-12" %}
+      {% include logos/paypal.html class="h-10" %}
+      {% include logos/nasa.html class="h-12" %}
+      {% include logos/facebook.html class="h-10" %}
+      {% include logos/supabase.html class="h-10" %}
+    </div>
+  </div>
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">

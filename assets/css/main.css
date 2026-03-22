@@ -63,7 +63,7 @@ layout: null
 }
 
 body {
-  @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300 leading-relaxed;
+  @apply antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-400 leading-relaxed;
   background-image: none;
 }
 

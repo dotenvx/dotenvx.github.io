@@ -3,7 +3,7 @@
   if (!canvas) return;
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const asciiUrl = canvas.dataset.asciiSrc || "/assets/img/bg/enclave-ascii3.txt";
+  const asciiUrl = canvas.dataset.asciiSrc || "/assets/img/bg/enclave-ascii.txt";
   let waveSpeed = 0.8;
   let sparkleIntensity = 1.0;
 

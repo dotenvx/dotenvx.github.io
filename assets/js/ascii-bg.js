@@ -4,7 +4,7 @@
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const asciiUrl = canvas.dataset.asciiSrc || "/assets/img/bg/enclave-ascii.txt";
-  let waveSpeed = 0.8;
+  let waveSpeed = 0.52;
   let sparkleIntensity = 1.0;
 
   const gl = canvas.getContext("webgl", {
@@ -106,7 +106,7 @@
     "  float bevel = smoothstep(discRadius, discRadius - 0.04, dist) - smoothstep(discRadius - 0.04, discRadius - 0.08, dist);",
     "  vec2 worldPos = cellId / sequinScale;",
     "  float wave = waveField(worldPos, t);",
-    "  float shimmer = sin(t * 3.0 + phaseOff) * 0.04;",
+    "  float shimmer = sin(t * 2.0 + phaseOff) * 0.04;",
     "  float tiltAngle = wave * 0.85 + baseTilt + shimmer;",
     "  float waveH = waveField(worldPos + vec2(0.01, 0.0), t);",
     "  float waveV = waveField(worldPos + vec2(0.0, 0.01), t);",
@@ -163,13 +163,20 @@
     "  float buildNoise = hash21(floor(maskUv * vec2(260.0, 180.0)));",
     "  float buildDist = distance(maskUv, vec2(0.64, 0.45));",
     "  float revealAt = buildDist * 1.05 + buildNoise * 0.22;",
-    "  float build = smoothstep(revealAt - 0.04, revealAt + 0.03, u_intro);",
+    "  float buildEnd = 0.366;",
+    "  float holdStart = 0.545;",
+    "  float buildProgress = clamp(u_intro / buildEnd, 0.0, 1.0);",
+    "  float build = smoothstep(revealAt - 0.04, revealAt + 0.03, buildProgress);",
+    "  float postHoldDim = smoothstep(holdStart, holdStart + 0.212, u_intro);",
+    "  float prominence = 1.0 - 0.35 * postHoldDim;",
+    "  float shaderFade = 1.0 - 0.22 * postHoldDim;",
     "",
-    "  float churchMask = smoothstep(0.1, 0.42, rawMask) * build;",
+    "  float churchMask = smoothstep(0.1, 0.42, rawMask) * build * prominence;",
     "  float churchEdge = smoothstep(0.1, 0.45, rawMask) - smoothstep(0.45, 0.85, rawMask);",
-    "  float introFlash = (smoothstep(0.0, 0.4, churchMask) - smoothstep(0.4, 1.0, churchMask)) * (1.0 - u_intro);",
+    "  float introFlash = (smoothstep(0.0, 0.4, churchMask) - smoothstep(0.4, 1.0, churchMask)) * (1.0 - buildProgress);",
     "",
     "  vec3 col = renderSequins(uv, t, churchMask, churchEdge, introFlash);",
+    "  col *= shaderFade;",
     "",
     "  vec2 uvSafe = uv + vec2(0.0001);",
     "  float globalLight = 0.85 + 0.15 * dot(normalize(uvSafe), vec2(0.4, 0.6));",
@@ -261,7 +268,7 @@
   let paused = false;
   let rafId = null;
   const intro = {
-    duration: 8200,
+    duration: 22400,
     delay: 1100,
     start: performance.now(),
     done: prefersReduced,

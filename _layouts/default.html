@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}" class="{% if page.url == '/' or page.url == '/index.html' %}home-page{% endif %}">
   <head>
     {% include layouts/dark-mode.html %}
     {% if page.url == '/' or page.url == '/index.html' %}
@@ -32,7 +32,7 @@
       {% include v1/footer.html %}
     </footer>
     {% if page.url == '/' or page.url == '/index.html' %}
-    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=sequin-church-build-20260318r"></script>
+    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=sequin-church-build-20260322-holddim5"></script>
     {% endif %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>
   </body>

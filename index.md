@@ -26,47 +26,47 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-20 md:mb-24">
+<section class="w-full max-w-5xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-44 md:mb-64 lg:mb-[18rem]">
   <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
     Companies of all sizes trust dotenvx to keep secrets out of source code and AI prompts.
   </p>
 
-  <div class="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 md:gap-x-12 gap-y-8 md:gap-y-10 items-center">
-        <a href="https://github.com/SocketDev/socket-cli" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Socket CLI using dotenvx">
-          {% include logos/socket2.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+  <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
+        <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
+          {% include logos/google2.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
-        <a href="https://supabase.com/docs/guides/deployment/branching#using-dotenvx-for-git-based-workflow" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Supabase documentation using dotenvx for branching">
-          {% include logos/supabase2.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Supabase documentation using dotenvx for branching">
+          {% include logos/supabase2.html class="w-[8.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
-        <a href="https://github.com/daytonaio/daytona" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Daytona repository">
-          {% include logos/daytona.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://github.com/daytonaio/daytona" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Daytona repository">
+          {% include logos/daytona.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
-        <a href="https://github.com/shadcn-ui/ui" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
-          {% include logos/shadcn.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://github.com/RooCodeInc/Roo-Code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="RooCode repository">
+          {% include logos/roocode.html class="w-[10.2rem] lg:w-[12.8rem] h-auto mx-auto" %}
         </a>
-        <a href="https://github.com/browser-use/browser-use" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
-          {% include logos/browser-use.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://github.com/nasa/earthdata-search" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="NASA Earthdata Search using dotenvx">
+          {% include logos/nasa.html class="h-14 lg:h-14 w-auto mx-auto" %}
         </a>
-        <a href="https://github.com/RooCodeInc/Roo-Code" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="RooCode repository">
-          {% include logos/roocode.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=readme" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
+          {% include logos/webflow.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
-        <a href="https://github.com/TencentCloudBase" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Tencent CloudBase organization">
-          {% include logos/tencent.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://github.com/TencentCloudBase" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Tencent CloudBase organization">
+          {% include logos/tencent.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
-        <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
-          {% include logos/google2.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
-        </a>
-    <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
-      {% include logos/paypal.html class="h-full w-auto max-w-[2.88rem] mx-auto" %}
+    <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
+      {% include logos/paypal.html class="h-10 lg:h-10 w-auto mx-auto" %}
     </a>
-        <a href="https://github.com/nasa/earthdata-search" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="NASA Earthdata Search using dotenvx">
-          {% include logos/nasa.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://github.com/SocketDev/socket-cli" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Socket CLI using dotenvx">
+          {% include logos/socket2.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
-        <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
-          {% include logos/aws.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
+          {% include logos/aws.html class="h-14 lg:h-14 w-auto mx-auto" %}
         </a>
-        <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=readme" target="_blank" class="h-12 md:h-14 flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
-          {% include logos/webflow.html class="h-full w-auto max-w-[11.5rem] mx-auto" %}
+        <a href="https://github.com/shadcn-ui/ui" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
+          {% include logos/shadcn.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+        </a>
+        <a href="https://github.com/browser-use/browser-use" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
+          {% include logos/browser-use.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
   </div>
 </section>

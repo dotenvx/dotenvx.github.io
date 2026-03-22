@@ -41,8 +41,8 @@
   }
 
   .dotenvx-live-terminal .dim { color: #9b8f74; }
-  .dotenvx-live-terminal .cmd { color: #f0db9c; }
-  .dotenvx-live-terminal .ok { color: #7ce38f; }
+  .dotenvx-live-terminal .cmd { color: #cbb98a; }
+  .dotenvx-live-terminal .ok { color: #ecd53f; }
   .dotenvx-live-terminal .title { color: #cdaa62; }
   .dotenvx-live-terminal .key { color: #d3d0c6; }
   .dotenvx-live-terminal .val { color: #d3bc66; }
@@ -681,7 +681,7 @@
           resetTerminal();
           await idleAtPrompt(2700);
           await runCommand("npm install @dotenvx/dotenvx", [
-            "<span class=\"ok\">dotenvx installed.</span>"
+            "<span class=\"ok\">◈ dotenvx installed.</span>"
           ], 950);
           await runCommand("vim .env", [], 380);
           await showVim(".env", ["# .env"], "\".env\" [New]  1,1  -- INSERT --", 500);

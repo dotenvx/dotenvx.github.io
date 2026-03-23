@@ -220,19 +220,19 @@ title: ""
         <span class="absolute top-[6.1rem] right-[10.1rem] font-mono text-[10px] text-[#ecd53f]/26">›</span>
       </div>
 
-      <div class="pointer-events-none absolute right-5 bottom-6 hidden md:block select-none">
-        <div class="relative h-[8.1rem] w-[13.2rem]">
-          <div class="absolute top-0 right-0 h-10 w-[12rem] rounded-md border border-zinc-700/60 bg-zinc-900/48">
-            <div class="absolute -top-3 left-3 h-4 w-[5.2rem] rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/60"></div>
-            <div class="px-3 pt-2 font-mono text-[11px] text-zinc-400/85">.env.local</div>
+      <div class="pointer-events-none absolute inset-x-5 bottom-6 hidden md:block select-none">
+        <div class="relative h-[7.4rem] w-full">
+          <div class="absolute inset-x-0 top-6 bottom-0 rounded-lg border border-zinc-700/60 bg-zinc-900/54"></div>
+
+          <div class="absolute z-10 top-0 inset-x-4 flex gap-3">
+            <div class="h-6 min-w-[6.8rem] px-3 rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.local</div>
+            <div class="h-6 min-w-[9.4rem] px-3 rounded-t-md border border-yellow-300/45 border-b-0 bg-zinc-900/78 font-mono text-[10px] leading-6 text-[#ecd53f] text-center shadow-[0_0_14px_rgba(236,213,63,0.10)]">.env.production</div>
+            <div class="h-6 min-w-[5.7rem] px-3 rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.ci</div>
           </div>
-          <div class="absolute top-[2.35rem] right-[0.6rem] h-10 w-[12rem] rounded-md border border-yellow-300/45 bg-zinc-900/72 shadow-[0_0_20px_rgba(236,213,63,0.10)]">
-            <div class="absolute -top-3 left-3 h-4 w-[7.6rem] rounded-t-md border border-yellow-300/45 border-b-0 bg-zinc-900/80"></div>
-            <div class="px-3 pt-2 font-mono text-[11px] text-[#ecd53f]">.env.production</div>
-          </div>
-          <div class="absolute top-[4.7rem] right-[1.2rem] h-10 w-[12rem] rounded-md border border-zinc-700/60 bg-zinc-900/48">
-            <div class="absolute -top-3 left-3 h-4 w-[4.2rem] rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/60"></div>
-            <div class="px-3 pt-2 font-mono text-[11px] text-zinc-400/85">.env.ci</div>
+
+          <div class="absolute inset-x-4 bottom-3 font-mono text-[10px] leading-[1.45] text-zinc-400/42">
+            <div>DOTENV_ENV=production</div>
+            <div>DOTENV_PRIVATE_KEY_PRODUCTION=***</div>
           </div>
         </div>
       </div>

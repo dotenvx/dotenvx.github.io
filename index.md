@@ -251,11 +251,6 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">A secure dotenv – from the creator of dotenv</h2>
-  <p class="text-left text-lg">Plaintext .env files have been a major attack vector, but they've also been undeniably useful – even AWS uses them.<sup><a href="#footnote-1">1</a></sup> <span class="font-bold">What if you could encrypt them?</span> You can with <a href="https://github.com/dotenvx/dotenvx">dotenvx</a>. Dotenvx encrypts your .env files – limiting their attack vector while retaining their benefits. It's free, open-source, and built and maintained by the creator of the original <a class="whitespace-nowrap" href="https://github.com/motdotla/dotenv">dotenv</a>. <span class="mx-3 font-normal italic text-zinc-400 dark:text-zinc-600">– Scott (Mot) Motte</span></p>
-</section>
-
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
   <div class="bg-zinc-100 dark:bg-zinc-900 p-6 font-mono text-zinc-800 dark:text-zinc-100 shadow-sm overflow-x-auto">
     <code class="block text-zinc-500">// before</code>

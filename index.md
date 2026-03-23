@@ -110,12 +110,12 @@ title: ""
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-5 gap-4 md:gap-5">
-    <div class="sm:col-span-2 relative overflow-hidden rounded-xl border border-[#ecd53f]/35 bg-zinc-950/90 p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
-      <div class="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#ecd53f]/12 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-20 right-[-4.5rem] h-52 w-52 rounded-full bg-amber-300/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(236,213,63,0.16),transparent_42%),linear-gradient(165deg,rgba(0,0,0,0.25),rgba(0,0,0,0.74))]"></div>
+    <div class="sm:col-span-2 relative overflow-hidden rounded-xl border border-yellow-300/45 bg-[#0d0a07] p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
+      <div class="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#ecd53f]/16 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-20 right-[-4.5rem] h-52 w-52 rounded-full bg-[#7a5321]/22 blur-3xl"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(236,213,63,0.20),transparent_42%),linear-gradient(165deg,rgba(56,36,14,0.18),rgba(0,0,0,0.76))]"></div>
 
-      <div class="pointer-events-none absolute inset-x-4 md:inset-x-5 bottom-4 md:bottom-5 font-mono text-[10px] md:text-[11px] leading-[1.45] tracking-[0.02em] text-[#ecd53f]/28 select-none">
+      <div class="pointer-events-none absolute inset-x-4 md:inset-x-5 bottom-4 md:bottom-5 font-mono text-[10px] md:text-[11px] leading-[1.45] tracking-[0.02em] text-[#cbb98a]/62 select-none">
         <div>DOTENV_PUBLIC_KEY="03d7...f2a1"</div>
         <div>API_KEY="encrypted:BE9Y7LKA..."</div>
         <div>DB_URL="encrypted:B2k4V3..."</div>
@@ -125,11 +125,11 @@ title: ""
 
       <div class="relative z-10">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[#ecd53f]/45 bg-black/45 text-[#ecd53f] text-sm">◈</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/45 text-[#ecd53f] text-sm">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx encrypt</code></span>
         </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Encryption</h3>
-        <p class="mt-2 text-zinc-400/95 text-xs md:text-sm">Commit ciphertext. Keep keys separate.</p>
+        <p class="mt-2 text-[#cbb98a] text-xs md:text-sm">Commit ciphertext. Keep keys separate.</p>
       </div>
     </div>
     <div class="sm:col-span-3 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/80 p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
@@ -177,11 +177,35 @@ title: ""
 
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-6 w-6 items-center justify-center rounded-md border border-[#ecd53f]/45 bg-black/40 text-[#ecd53f] text-sm">◈</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/45 text-[#ecd53f] text-sm">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run</code></span>
         </div>
-        <h3 class="mt-2 text-zinc-100 font-semibold text-3xl md:text-[2.15rem] leading-[1.05] tracking-tight">Cross Platform</h3>
-        <p class="mt-3 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Run anywhere. Works across languages.</p>
+        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Cross Platform</h3>
+        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Run anywhere. Works across languages.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
+    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/85 p-5 md:p-6">
+      <div class="pointer-events-none absolute -top-20 left-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-20 right-[-4rem] h-56 w-56 rounded-full bg-emerald-300/8 blur-3xl"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
+
+      <div class="pointer-events-none absolute right-6 top-6 hidden md:block font-mono text-[11px] leading-[1.5] text-zinc-300/35 select-none">
+        <div>diff --git a/.env b/.env</div>
+        <div>+ DOTENV_PUBLIC_KEY="03d7...f2a1"</div>
+        <div>+ API_KEY="encrypted:BE9Y7LKA..."</div>
+        <div>+ DB_URL="encrypted:B2k4V3..."</div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl">
+        <div class="inline-flex items-center gap-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/40 text-[#ecd53f] text-sm">◈</span>
+          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>git add .env</code></span>
+        </div>
+        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Commit</h3>
+        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Commit encrypted <code>.env</code> files to source control safely.</p>
       </div>
     </div>
   </div>
@@ -207,6 +231,7 @@ title: ""
       </a>
     </div>
   </div>
+
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">

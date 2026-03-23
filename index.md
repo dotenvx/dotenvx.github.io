@@ -33,40 +33,40 @@ title: ""
 
   <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
     <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
-      {% include logos/google2.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/google2.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
     </a>
     <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Supabase documentation using dotenvx for branching">
-      {% include logos/supabase2.html class="w-[9.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/supabase2.html class="w-[9.2rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
     <a href="https://github.com/daytonaio/daytona" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Daytona repository">
-      {% include logos/daytona.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/daytona.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
     </a>
     <a href="https://github.com/RooCodeInc/Roo-Code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="RooCode repository">
-      {% include logos/roocode.html class="w-[10.2rem] lg:w-[12.8rem] h-auto mx-auto" %}
+          {% include logos/roocode.html class="w-[10.2rem] lg:w-[13.6rem] h-auto mx-auto" %}
     </a>
     <a href="https://github.com/nasa/earthdata-search" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="NASA Earthdata Search using dotenvx">
-      {% include logos/nasa.html class="h-14 lg:h-14 w-auto mx-auto" %}
+          {% include logos/nasa.html class="h-14 lg:h-15 w-auto mx-auto" %}
     </a>
     <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=readme" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
-      {% include logos/webflow.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/webflow.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
     </a>
     <a href="https://github.com/TencentCloudBase" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Tencent CloudBase organization">
-      {% include logos/tencent.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/tencent.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
     </a>
     <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
-      {% include logos/paypal.html class="h-10 lg:h-10 w-auto mx-auto" %}
+      {% include logos/paypal.html class="h-10 lg:h-11 w-auto mx-auto" %}
     </a>
     <a href="https://github.com/SocketDev/socket-cli" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Socket CLI using dotenvx">
-      {% include logos/socket2.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/socket2.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
     <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
-      {% include logos/aws.html class="h-16 lg:h-14 w-auto mx-auto" %}
+          {% include logos/aws.html class="h-16 lg:h-15 w-auto mx-auto" %}
     </a>
     <a href="https://github.com/shadcn-ui/ui" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
-      {% include logos/shadcn.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/shadcn.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
     <a href="https://github.com/browser-use/browser-use" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
-      {% include logos/browser-use.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/browser-use.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
   </div>
 </section>
@@ -248,6 +248,51 @@ title: ""
     </div>
   </div>
 
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Testimonials</h2>
+    <p class="mt-4 text-zinc-400 text-lg">What teams are saying about dotenvx so far.</p>
+  </div>
+
+  <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+    <article class="rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">AR</span>
+        <div>
+          <p class="text-zinc-100 font-semibold text-sm">Ava Reyes</p>
+          <p class="text-zinc-500 text-xs">Platform Engineer</p>
+        </div>
+      </div>
+      <p class="mt-4 text-zinc-300 text-sm leading-relaxed">“We migrated in a single afternoon and immediately started committing encrypted env files to Git.”</p>
+      <div class="mt-4 text-[#ecd53f] text-sm tracking-[0.15em]">★★★★★</div>
+    </article>
+
+    <article class="rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">MK</span>
+        <div>
+          <p class="text-zinc-100 font-semibold text-sm">Milo Kim</p>
+          <p class="text-zinc-500 text-xs">Staff Developer</p>
+        </div>
+      </div>
+      <p class="mt-4 text-zinc-300 text-sm leading-relaxed">“The cross-platform run command has been solid across local dev, CI pipelines, and container builds.”</p>
+      <div class="mt-4 text-[#ecd53f] text-sm tracking-[0.15em]">★★★★★</div>
+    </article>
+
+    <article class="rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">NL</span>
+        <div>
+          <p class="text-zinc-100 font-semibold text-sm">Noah Lee</p>
+          <p class="text-zinc-500 text-xs">Security Lead</p>
+        </div>
+      </div>
+      <p class="mt-4 text-zinc-300 text-sm leading-relaxed">“We finally got a secure GitOps flow for secrets without forcing teams to change how they already ship.”</p>
+      <div class="mt-4 text-[#ecd53f] text-sm tracking-[0.15em]">★★★★★</div>
+    </article>
+  </div>
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">

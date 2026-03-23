@@ -124,7 +124,10 @@ title: ""
       </div>
 
       <div class="relative z-10">
-        <div class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[#ecd53f]/45 bg-black/45 text-[#ecd53f] text-sm">◈</div>
+        <div class="inline-flex items-center gap-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[#ecd53f]/45 bg-black/45 text-[#ecd53f] text-sm">◈</span>
+          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx encrypt</code></span>
+        </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Encryption</h3>
         <p class="mt-2 text-zinc-400/95 text-xs md:text-sm">Commit ciphertext. Keep keys separate.</p>
       </div>
@@ -135,7 +138,8 @@ title: ""
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(7,10,20,0.96)_12%,rgba(7,10,20,0.72)_45%,rgba(7,10,20,0.92)_88%)]"></div>
 
       <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div class="-rotate-[12deg] grid grid-cols-4 gap-2 md:gap-3 opacity-80 md:opacity-90 translate-y-3 md:translate-y-5 scale-[1.06]">
+        <div class="-rotate-[12deg] grid grid-cols-5 gap-2 md:gap-3 opacity-80 md:opacity-90 translate-y-3 md:translate-y-5 scale-[1.03]">
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">TypeScript</span>
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Node.js</span>
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Python</span>
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Ruby</span>
@@ -147,7 +151,25 @@ title: ""
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Deno</span>
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bun</span>
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bash</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fish</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Clojure</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Kotlin</span>
           <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Docker</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Compose</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">GitHub</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Heroku</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Vercel</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Cloudflare</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Netlify</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Railway</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Render</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fly</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Digital Ocean</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">NPM</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Nx</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Turborepo</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Trigger</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Frameworks</span>
         </div>
       </div>
 
@@ -155,11 +177,11 @@ title: ""
 
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-6 w-6 items-center justify-center rounded-md border border-[#ecd53f]/45 bg-black/40 text-[#ecd53f] text-sm">◇</span>
-          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em] uppercase">Feature 2</span>
+          <span class="inline-flex h-6 w-6 items-center justify-center rounded-md border border-[#ecd53f]/45 bg-black/40 text-[#ecd53f] text-sm">◈</span>
+          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run</code></span>
         </div>
-        <h3 class="mt-2 text-zinc-100 font-semibold text-3xl md:text-[2.15rem] leading-[1.05] tracking-tight">Cross-platform</h3>
-        <p class="mt-3 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Run anywhere with <code>dotenvx run -- yourcommand</code>.</p>
+        <h3 class="mt-2 text-zinc-100 font-semibold text-3xl md:text-[2.15rem] leading-[1.05] tracking-tight">Cross Platform</h3>
+        <p class="mt-3 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Run anywhere. Works across languages.</p>
       </div>
     </div>
   </div>

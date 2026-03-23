@@ -10,7 +10,7 @@ title: ""
         {% include v1/components/dotenv.html %}
       </div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.88rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secrets for developers</h1>
-      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem]">Encrypt your .env files without changing your workflow. <br class="hidden lg:block" />Keep secrets out of source code and AI prompts.</p>
+      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem]">Encrypt your .env files without changing your workflow. <br class="hidden lg:block" />Protect secrets in source code and AI prompts.</p>
 
       <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
         <a class="btn-primary" href="/docs/quickstart">Get Started</a>
@@ -68,6 +68,38 @@ title: ""
         <a href="https://github.com/browser-use/browser-use" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
           {% include logos/browser-use.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Same dotenv workflow, but encrypted.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Switch from plaintext <code>.env</code> files to encrypted <code>.env</code> files without changing how your app runs.</p>
+  </div>
+
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
+    <div class="text-zinc-500 text-[0.9em]">// before</div>
+    <div class="mt-2 text-[#a7b4cc] font-semibold">require('dotenv').config()</div>
+    <div class="mt-8 text-zinc-500 text-[0.9em]">// after</div>
+    <div class="mt-2 text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
+  </div>
+
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
+    <div class="rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-4">
+      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Install</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Add <code>@dotenvx/dotenvx</code> to your project.</p>
+    </div>
+    <div class="rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-4">
+      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Swap one line</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Replace <code>dotenv</code> with <code>dotenvx</code> in your app.</p>
+    </div>
+    <div class="rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-4">
+      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Encrypt your env</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Run <code>dotenvx encrypt</code> and protect your secrets.</p>
+    </div>
   </div>
 </section>
 

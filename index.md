@@ -178,7 +178,7 @@ title: ""
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2">
           <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/45 text-[#ecd53f] text-sm">◈</span>
-          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run</code></span>
+          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run -- your-cmd</code></span>
         </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Cross Platform</h3>
         <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Run anywhere. Works across languages.</p>
@@ -186,13 +186,13 @@ title: ""
     </div>
   </div>
 
-  <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
-    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/85 p-5 md:p-6">
+  <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
       <div class="pointer-events-none absolute -top-20 left-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-20 right-[-4rem] h-56 w-56 rounded-full bg-emerald-300/8 blur-3xl"></div>
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
 
-      <div class="pointer-events-none absolute right-6 top-6 hidden md:block font-mono text-[11px] leading-[1.5] text-zinc-300/35 select-none">
+      <div class="pointer-events-none absolute left-6 bottom-6 hidden md:block font-mono text-[11px] leading-[1.5] text-zinc-300/35 select-none">
         <div>diff --git a/.env b/.env</div>
         <div>+ DOTENV_PUBLIC_KEY="03d7...f2a1"</div>
         <div>+ API_KEY="encrypted:BE9Y7LKA..."</div>
@@ -204,8 +204,44 @@ title: ""
           <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/40 text-[#ecd53f] text-sm">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>git add .env</code></span>
         </div>
-        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Commit</h3>
-        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Commit encrypted <code>.env</code> files to source control safely.</p>
+        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Secure GitOps</h3>
+        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Secrets, encrypted in Git. Decrypted only at runtime.</p>
+      </div>
+    </div>
+
+    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
+      <div class="pointer-events-none absolute -top-20 right-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-16 left-[-4rem] h-52 w-52 rounded-full bg-blue-300/8 blur-3xl"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
+
+      <div class="pointer-events-none absolute inset-0 hidden md:block select-none">
+        <span class="absolute top-[4.35rem] right-[9.75rem] font-mono text-xs text-[#ecd53f]/50">›</span>
+        <span class="absolute top-[5.15rem] right-[8.65rem] font-mono text-xs text-[#ecd53f]/45">›</span>
+        <span class="absolute top-[5.95rem] right-[7.55rem] font-mono text-xs text-[#ecd53f]/40">›</span>
+        <span class="absolute top-[6.75rem] right-[6.45rem] font-mono text-xs text-[#ecd53f]/35">›</span>
+      </div>
+
+      <div class="pointer-events-none absolute right-5 bottom-5 hidden md:block select-none">
+        <div class="relative h-28 w-44">
+          <div class="absolute inset-0 rounded-lg border border-zinc-700/45 bg-zinc-900/35 backdrop-blur-[1px] translate-x-4 translate-y-4"></div>
+          <div class="absolute inset-0 rounded-lg border border-zinc-700/55 bg-zinc-900/45 backdrop-blur-[1px] translate-x-2 translate-y-2"></div>
+          <div class="absolute inset-0 rounded-lg border border-yellow-300/35 bg-zinc-900/70">
+            <div class="px-3 py-2 font-mono text-[11px] leading-[1.4]">
+              <div class="text-zinc-400/85">.env.local</div>
+              <div class="inline-block rounded bg-[#ecd53f]/10 px-1 text-[#ecd53f]">.env.production</div>
+              <div class="text-zinc-400/85">.env.ci</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl">
+        <div class="inline-flex items-center gap-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/40 text-[#ecd53f] text-sm">◈</span>
+          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run -f .env.production</code></span>
+        </div>
+        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Multiple Environments</h3>
+        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Many contexts. Load only what you need.</p>
       </div>
     </div>
   </div>

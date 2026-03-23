@@ -26,20 +26,20 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-44 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-5xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 md:mb-64 lg:mb-[18rem]">
   <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
     Companies of all sizes trust dotenvx to protect secrets in source code and AI prompts.
   </p>
 
   <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
         <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
-          {% include logos/google2.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/google2.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
         <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Supabase documentation using dotenvx for branching">
-          {% include logos/supabase2.html class="w-[8.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/supabase2.html class="w-[9.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
         <a href="https://github.com/daytonaio/daytona" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Daytona repository">
-          {% include logos/daytona.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/daytona.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
         <a href="https://github.com/RooCodeInc/Roo-Code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="RooCode repository">
           {% include logos/roocode.html class="w-[10.2rem] lg:w-[12.8rem] h-auto mx-auto" %}
@@ -48,10 +48,10 @@ title: ""
           {% include logos/nasa.html class="h-14 lg:h-14 w-auto mx-auto" %}
         </a>
         <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=readme" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
-          {% include logos/webflow.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/webflow.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
         <a href="https://github.com/TencentCloudBase" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Tencent CloudBase organization">
-          {% include logos/tencent.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
+          {% include logos/tencent.html class="w-[10.2rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
     <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
       {% include logos/paypal.html class="h-10 lg:h-10 w-auto mx-auto" %}
@@ -60,7 +60,7 @@ title: ""
           {% include logos/socket2.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
         </a>
         <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
-          {% include logos/aws.html class="h-14 lg:h-14 w-auto mx-auto" %}
+          {% include logos/aws.html class="h-16 lg:h-14 w-auto mx-auto" %}
         </a>
         <a href="https://github.com/shadcn-ui/ui" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
           {% include logos/shadcn.html class="w-[8.9rem] lg:w-[11.5rem] h-auto mx-auto" %}
@@ -71,7 +71,7 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Same dotenv workflow, but encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Switch from plaintext <code>.env</code> files to encrypted <code>.env</code> files without changing how your app runs.</p>

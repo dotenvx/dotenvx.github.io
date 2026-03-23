@@ -105,7 +105,7 @@ title: ""
 
 <section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Dotenv. 10x Better.</h2>
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">More Features. 10x Better.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Protect secrets in source code and AI prompts with an upgrade that takes seconds.</p>
   </div>
 
@@ -252,7 +252,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Developers are replacing dotenv with dotenvx.</h2>
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Developers are talking about dotenvx.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Installed almost 3 million times a week on <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">npm</a>.</p>
   </div>
 
@@ -433,7 +433,7 @@ title: ""
 -->
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Have questions?</h2>
+  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">FAQ</h2>
   <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
     {% include v1/components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
     {% include v1/components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
@@ -470,4 +470,24 @@ title: ""
       </dd>
     </div>
   </dl>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-6 mt-14 md:mt-20 mb-12 md:mb-20 text-center">
+  <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[2.5rem] md:text-[3.4rem] lg:text-[4.2rem] leading-[1.03]">
+    Secure Dotenv.<br />Available today.
+  </h3>
+  <div class="mt-8 flex items-center justify-center gap-6">
+    <a class="btn-primary inline-flex items-center gap-1.5" href="/docs/quickstart">
+      <span>Get Started</span>
+      <svg fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+      </svg>
+    </a>
+    <a class="inline-flex items-center justify-center gap-1.5 p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="mailto:support@dotenvx.com">
+      <span>Contact Us</span>
+      <svg fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+      </svg>
+    </a>
+  </div>
 </section>

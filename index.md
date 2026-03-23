@@ -73,7 +73,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Same dotenv workflow, but encrypted.</h2>
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Same Workflow. But Encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Switch from plaintext <code>.env</code> files to encrypted <code>.env</code> files without changing how your app runs.</p>
   </div>
 
@@ -86,26 +86,26 @@ title: ""
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
+      <div class="text-zinc-600 font-semibold text-sm tracking-wide">1</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Install</h3>
       <p class="mt-1 text-zinc-400 text-sm">Add <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">@dotenvx/dotenvx</code> to your project.</p>
     </div>
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
+      <div class="text-zinc-600 font-semibold text-sm tracking-wide">2</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Swap one line</h3>
       <p class="mt-1 text-zinc-400 text-sm">Replace <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenv</code> with <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">@dotenvx/dotenvx</code>.</p>
     </div>
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
+      <div class="text-zinc-600 font-semibold text-sm tracking-wide">3</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Encrypt</h3>
       <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx encrypt</code> and protect your secrets.</p>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
+<section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">A powerful upgrade to dotenv.</h2>
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Dotenv. 10x Better.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Protect secrets in source code and AI prompts with an upgrade that takes seconds.</p>
   </div>
 
@@ -252,33 +252,41 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Testimonials</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Real posts from people using dotenvx.</p>
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">Developers are replacing dotenv with dotenvx.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Installed almost 3 million times a week on <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">npm</a>.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-    <article class="rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6">
+  <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+    <a href="https://x.com/bholmesdev/status/2029285485693039077?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-3 min-w-0">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">BH</span>
-          <div class="min-w-0">
-            <p class="text-zinc-100 font-semibold text-sm truncate">Ben Holmes</p>
-            <p class="text-zinc-500 text-xs truncate">@bholmesdev</p>
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="/assets/img/testimonials/ben-holmes.jpg" alt="Ben Holmes" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
+          <div class="min-w-0 self-center">
+            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate inline-flex items-center gap-2">
+              <span>Ben Holmes</span>
+              <span class="inline-flex h-4 w-4 items-center justify-center rounded-[3px] border border-zinc-700/80 bg-zinc-950" aria-label="Warp">
+                <img src="/assets/img/testimonials/warp.jpg" alt="Warp" class="h-3 w-3 rounded-[1px] object-cover" />
+              </span>
+            </p>
+            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@BHolmesDev</p>
           </div>
         </div>
-        <span class="text-zinc-500 text-xs font-semibold">X</span>
       </div>
-      <p class="mt-4 text-zinc-300 text-sm leading-relaxed">“dotenvx is a really smart concept. Instead of plaintext <code>.env</code>s, secrets become encrypted files shippable to cloud runners with a single key. It also helps catch <code>.env</code> drift between dev and production in code.”</p>
-      <div class="mt-4 text-xs text-zinc-500">11:58 AM · Mar 4, 2026 · <span class="text-zinc-300 font-semibold">65.9K</span> views</div>
-      <div class="mt-4 flex items-center justify-between text-zinc-500 text-sm">
-        <div class="inline-flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <p class="mt-3.5 text-zinc-300 text-sm leading-relaxed font-normal">
+        <span class="block">dotenvx is really smart concept.</span>
+        <span class="mt-2.5 block">Instead of plaintext <code>.env</code>&rsquo;s, secrets are encrypted files. Agents can't read them, and they're shippable to cloud runners with a single key.</span>
+      </p>
+      <div class="mt-auto">
+      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">11:58 AM · Mar 4, 2026 · <span class="text-zinc-400 font-medium">65.9K</span> views</div>
+      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
           </svg>
           <span class="text-zinc-300 font-semibold">21</span>
         </div>
-        <div class="inline-flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="m17 1 4 4-4 4"></path>
             <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
             <path d="m7 23-4-4 4-4"></path>
@@ -286,73 +294,129 @@ title: ""
           </svg>
           <span class="text-zinc-300 font-semibold">26</span>
         </div>
-        <div class="inline-flex items-center gap-2 text-pink-400">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
           </svg>
-          <span class="font-semibold">426</span>
+          <span class="text-zinc-300 font-semibold">426</span>
         </div>
-        <div class="inline-flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
           </svg>
           <span class="text-zinc-300 font-semibold">505</span>
         </div>
       </div>
-      <div class="mt-4 flex items-center justify-between text-xs text-zinc-500">
-        <span>Real post</span>
-        <a href="https://x.com/bholmesdev/status/2029285485693039077?s=46" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">View on X ↗</a>
       </div>
-    </article>
+    </a>
 
-    <article class="rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6">
+    <a href="https://x.com/commte/status/1996144456891060730?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-3 min-w-0">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">TX</span>
-          <div class="min-w-0">
-            <p class="text-zinc-100 font-semibold text-sm truncate">Placeholder Author</p>
-            <p class="text-zinc-500 text-xs truncate">@placeholder</p>
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="/assets/img/testimonials/commte.jpg" alt="コムテ" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
+          <div class="min-w-0 self-center">
+            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">コムテ</p>
+            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@commte</p>
           </div>
         </div>
-        <span class="text-zinc-500 text-xs font-semibold">X</span>
       </div>
-      <p class="mt-4 text-zinc-300 text-sm leading-relaxed">“Second tweet placeholder. Replace with a real post once selected.”</p>
-      <div class="mt-5 flex items-center justify-between text-xs text-zinc-500">
-        <span>Placeholder</span>
-        <span class="text-zinc-500">Tweet link pending</span>
+      <p class="mt-3.5 text-zinc-500 text-xs leading-tight font-normal"><span class="text-sky-400">Show translation</span></p>
+      <p class="mt-2.5 text-zinc-300 text-sm leading-relaxed font-normal">
+        <span class="block">.env 共有は dotenvxが最強</span>
+        <span class="block">.env を暗号化したまま Git にコミットできるツール</span>
+        <span class="block">便利さそのまま＋漏洩リスクほぼゼロ</span>
+        <span class="mt-3 block">・平文 .env を配らなくていい</span>
+        <span class="block">・GitHub に上げても解読されない</span>
+        <span class="block">・チーム開発で共有がラク</span>
+      </p>
+      <div class="mt-auto">
+      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">1:08 AM · Dec 3, 2025 · <span class="text-zinc-400 font-medium">505.3K</span> views</div>
+      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">3</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m17 1 4 4-4 4"></path>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <path d="m7 23-4-4 4-4"></path>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">346</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">2K</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">1.9K</span>
+        </div>
       </div>
-    </article>
+      </div>
+    </a>
 
-    <article class="rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6">
+    <a href="https://x.com/kristianfreeman/status/1808552701673808135?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-3 min-w-0">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">TX</span>
-          <div class="min-w-0">
-            <p class="text-zinc-100 font-semibold text-sm truncate">Placeholder Author</p>
-            <p class="text-zinc-500 text-xs truncate">@placeholder</p>
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="inline-flex h-9 w-9 self-center items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">KF</span>
+          <div class="min-w-0 self-center">
+            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate inline-flex items-center gap-1.5">
+              <span>Kristian Freeman</span>
+              <span class="inline-flex h-4 w-4 items-center justify-center rounded-[3px] border border-zinc-700/80 bg-zinc-950">
+                <img src="/assets/img/testimonials/cloudflare.jpg" alt="Cloudflare" class="h-3 w-3 rounded-[1px] object-cover" />
+              </span>
+            </p>
+            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@kristianfreeman</p>
           </div>
         </div>
-        <span class="text-zinc-500 text-xs font-semibold">X</span>
       </div>
-      <p class="mt-4 text-zinc-300 text-sm leading-relaxed">“Third tweet placeholder. Replace with a real post once selected.”</p>
-      <div class="mt-5 flex items-center justify-between text-xs text-zinc-500">
-        <span>Placeholder</span>
-        <span class="text-zinc-500">Tweet link pending</span>
+      <p class="mt-3.5 text-zinc-300 text-sm leading-relaxed font-normal">
+        <span class="block">Dotenvx looks like an interesting upgrade to .env</span>
+        <span class="mt-2.5 block">Automatic encrypting of each value, almost identical usage in CLI and API</span>
+        <span class="mt-2.5 block">Rails does something similar - though the whole file is encrypted!</span>
+      </p>
+      <div class="mt-auto">
+      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">10:25 AM · Jul 3, 2024 · <span class="text-zinc-400 font-medium">652</span> views</div>
+      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">1</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m17 1 4 4-4 4"></path>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <path d="m7 23-4-4 4-4"></path>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">3</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">10</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">3</span>
+        </div>
       </div>
-    </article>
+      </div>
+    </a>
   </div>
-</section>
-
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
-  <div class="bg-zinc-100 dark:bg-zinc-900 p-6 font-mono text-zinc-800 dark:text-zinc-100 shadow-sm overflow-x-auto">
-    <code class="block text-zinc-500">// before</code>
-    <div class="my-1 text-slate-400 font-semibold">require('dotenv').config()</div>
-    <code class="block text-zinc-500 mt-6">// after</code>
-    <div class="text-black dark:text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
-  </div>
-  <p>Just replace dotenv with @dotenvx/dotenvx and opt-in to all its benefits — without changing your current workflow.</p>
-  <p><a href="/docs/install">See all install options &rarr;</a></p>
 </section>
 
 <!--
@@ -367,8 +431,6 @@ title: ""
   </div>
 </section>
 -->
-
-<hr class="my-12 md:my-20" />
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Have questions?</h2>

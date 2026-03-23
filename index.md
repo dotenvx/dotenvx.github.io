@@ -26,9 +26,9 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-5xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
   <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
-    Companies of all sizes trust dotenvx to protect secrets in source code and AI prompts.
+    Companies of all sizes trust Dotenvx to<br />protect secrets in source code and AI prompts.
   </p>
 
   <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">

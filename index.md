@@ -85,17 +85,17 @@ title: ""
   </div>
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
-    <div class="rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-4">
+    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
       <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Install</h3>
       <p class="mt-1 text-zinc-400 text-sm">Add <code>@dotenvx/dotenvx</code> to your project.</p>
     </div>
-    <div class="rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-4">
+    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
       <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Swap one line</h3>
       <p class="mt-1 text-zinc-400 text-sm">Replace <code>dotenv</code> with <code>dotenvx</code> in your app.</p>
     </div>
-    <div class="rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-4">
+    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
       <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Encrypt your env</h3>
       <p class="mt-1 text-zinc-400 text-sm">Run <code>dotenvx encrypt</code> and protect your secrets.</p>
@@ -110,7 +110,7 @@ title: ""
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-5 gap-4 md:gap-5">
-    <div class="sm:col-span-2 relative overflow-hidden rounded-xl border border-yellow-300/45 bg-[#0d0a07] p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
+    <div class="sm:col-span-2 relative overflow-hidden rounded-xl border bg-[#0d0a07] p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]" style="border-color: rgba(236, 213, 63, 0.62);">
       <div class="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#ecd53f]/16 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-20 right-[-4.5rem] h-52 w-52 rounded-full bg-[#7a5321]/22 blur-3xl"></div>
       <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(236,213,63,0.20),transparent_42%),linear-gradient(165deg,rgba(56,36,14,0.18),rgba(0,0,0,0.76))]"></div>
@@ -125,51 +125,51 @@ title: ""
 
       <div class="relative z-10">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/45 text-[#ecd53f] text-sm">◈</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/45 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx encrypt</code></span>
         </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Encryption</h3>
         <p class="mt-2 text-[#cbb98a] text-xs md:text-sm">Commit ciphertext. Keep keys separate.</p>
       </div>
     </div>
-    <div class="sm:col-span-3 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/80 p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
+    <div class="sm:col-span-3 relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
       <div class="pointer-events-none absolute -top-20 right-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-24 left-[-5rem] h-64 w-64 rounded-full bg-blue-300/8 blur-3xl"></div>
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(7,10,20,0.96)_12%,rgba(7,10,20,0.72)_45%,rgba(7,10,20,0.92)_88%)]"></div>
 
       <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div class="-rotate-[12deg] grid grid-cols-5 gap-2 md:gap-3 opacity-80 md:opacity-90 translate-y-3 md:translate-y-5 scale-[1.03]">
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">TypeScript</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Node.js</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Python</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Ruby</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Go</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Rust</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Java</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">PHP</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">.NET</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Deno</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bun</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bash</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fish</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Clojure</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Kotlin</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Docker</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Compose</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">GitHub</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Heroku</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Vercel</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Cloudflare</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Netlify</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Railway</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Render</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fly</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Digital Ocean</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">NPM</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Nx</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Turborepo</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Trigger</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700/80 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Frameworks</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">TypeScript</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Node.js</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Python</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Ruby</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Go</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Rust</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Java</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">PHP</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">.NET</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Deno</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bun</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bash</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fish</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Clojure</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Kotlin</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Docker</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Compose</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">GitHub</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Heroku</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Vercel</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Cloudflare</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Netlify</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Railway</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Render</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fly</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Digital Ocean</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">NPM</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Nx</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Turborepo</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Trigger</span>
+          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Frameworks</span>
         </div>
       </div>
 
@@ -177,7 +177,7 @@ title: ""
 
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/45 text-[#ecd53f] text-sm">◈</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/45 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run -- your-cmd</code></span>
         </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Cross Platform</h3>
@@ -187,7 +187,7 @@ title: ""
   </div>
 
   <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
+    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
       <div class="pointer-events-none absolute -top-20 left-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-20 right-[-4rem] h-56 w-56 rounded-full bg-emerald-300/8 blur-3xl"></div>
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
@@ -201,7 +201,7 @@ title: ""
 
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/40 text-[#ecd53f] text-sm">◈</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/40 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>git add .env</code></span>
         </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Secure GitOps</h3>
@@ -209,7 +209,7 @@ title: ""
       </div>
     </div>
 
-    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700/90 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
+    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
       <div class="pointer-events-none absolute -top-20 right-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-16 left-[-4rem] h-52 w-52 rounded-full bg-blue-300/8 blur-3xl"></div>
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
@@ -222,12 +222,12 @@ title: ""
 
       <div class="pointer-events-none absolute inset-x-5 bottom-6 hidden md:block select-none">
         <div class="relative h-[7.4rem] w-full">
-          <div class="absolute inset-x-0 top-6 bottom-0 rounded-lg border border-zinc-700/60 bg-zinc-900/54"></div>
+          <div class="absolute inset-x-0 top-6 bottom-0 rounded-lg border border-zinc-700 bg-zinc-900/54"></div>
 
           <div class="absolute z-10 top-0 inset-x-4 flex gap-3">
-            <div class="h-6 min-w-[6.8rem] px-3 rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.local</div>
-            <div class="h-6 min-w-[9.4rem] px-3 rounded-t-md border border-yellow-300/45 border-b-0 bg-zinc-900/78 font-mono text-[10px] leading-6 text-[#ecd53f] text-center shadow-[0_0_14px_rgba(236,213,63,0.10)]">.env.production</div>
-            <div class="h-6 min-w-[5.7rem] px-3 rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.ci</div>
+            <div class="h-6 min-w-[6.8rem] px-3 rounded-t-md border border-zinc-700 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.local</div>
+            <div class="h-6 min-w-[9.4rem] px-3 rounded-t-md border border-yellow-300 border-b-0 bg-zinc-900/78 font-mono text-[10px] leading-6 text-[#ecd53f] text-center shadow-[0_0_14px_rgba(236,213,63,0.10)]">.env.production</div>
+            <div class="h-6 min-w-[5.7rem] px-3 rounded-t-md border border-zinc-700 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.ci</div>
           </div>
 
           <div class="absolute inset-x-4 bottom-3 font-mono text-[10px] leading-[1.45] text-zinc-400/42">
@@ -239,7 +239,7 @@ title: ""
 
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-yellow-300/55 bg-black/40 text-[#ecd53f] text-sm">◈</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/40 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
           <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run -f .env.production</code></span>
         </div>
         <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Multiple Environments</h3>

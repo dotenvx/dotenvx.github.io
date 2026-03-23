@@ -215,22 +215,24 @@ title: ""
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
 
       <div class="pointer-events-none absolute inset-0 hidden md:block select-none">
-        <span class="absolute top-[4.35rem] right-[9.75rem] font-mono text-xs text-[#ecd53f]/50">›</span>
-        <span class="absolute top-[5.15rem] right-[8.65rem] font-mono text-xs text-[#ecd53f]/45">›</span>
-        <span class="absolute top-[5.95rem] right-[7.55rem] font-mono text-xs text-[#ecd53f]/40">›</span>
-        <span class="absolute top-[6.75rem] right-[6.45rem] font-mono text-xs text-[#ecd53f]/35">›</span>
+        <span class="absolute top-[5.0rem] right-[12.2rem] font-mono text-[10px] text-[#ecd53f]/42">›</span>
+        <span class="absolute top-[5.55rem] right-[11.15rem] font-mono text-[10px] text-[#ecd53f]/34">›</span>
+        <span class="absolute top-[6.1rem] right-[10.1rem] font-mono text-[10px] text-[#ecd53f]/26">›</span>
       </div>
 
-      <div class="pointer-events-none absolute right-5 bottom-5 hidden md:block select-none">
-        <div class="relative h-28 w-44">
-          <div class="absolute inset-0 rounded-lg border border-zinc-700/45 bg-zinc-900/35 backdrop-blur-[1px] translate-x-4 translate-y-4"></div>
-          <div class="absolute inset-0 rounded-lg border border-zinc-700/55 bg-zinc-900/45 backdrop-blur-[1px] translate-x-2 translate-y-2"></div>
-          <div class="absolute inset-0 rounded-lg border border-yellow-300/35 bg-zinc-900/70">
-            <div class="px-3 py-2 font-mono text-[11px] leading-[1.4]">
-              <div class="text-zinc-400/85">.env.local</div>
-              <div class="inline-block rounded bg-[#ecd53f]/10 px-1 text-[#ecd53f]">.env.production</div>
-              <div class="text-zinc-400/85">.env.ci</div>
-            </div>
+      <div class="pointer-events-none absolute right-5 bottom-6 hidden md:block select-none">
+        <div class="relative h-[8.1rem] w-[13.2rem]">
+          <div class="absolute top-0 right-0 h-10 w-[12rem] rounded-md border border-zinc-700/60 bg-zinc-900/48">
+            <div class="absolute -top-3 left-3 h-4 w-[5.2rem] rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/60"></div>
+            <div class="px-3 pt-2 font-mono text-[11px] text-zinc-400/85">.env.local</div>
+          </div>
+          <div class="absolute top-[2.35rem] right-[0.6rem] h-10 w-[12rem] rounded-md border border-yellow-300/45 bg-zinc-900/72 shadow-[0_0_20px_rgba(236,213,63,0.10)]">
+            <div class="absolute -top-3 left-3 h-4 w-[7.6rem] rounded-t-md border border-yellow-300/45 border-b-0 bg-zinc-900/80"></div>
+            <div class="px-3 pt-2 font-mono text-[11px] text-[#ecd53f]">.env.production</div>
+          </div>
+          <div class="absolute top-[4.7rem] right-[1.2rem] h-10 w-[12rem] rounded-md border border-zinc-700/60 bg-zinc-900/48">
+            <div class="absolute -top-3 left-3 h-4 w-[4.2rem] rounded-t-md border border-zinc-700/60 border-b-0 bg-zinc-900/60"></div>
+            <div class="px-3 pt-2 font-mono text-[11px] text-zinc-400/85">.env.ci</div>
           </div>
         </div>
       </div>

@@ -256,30 +256,6 @@ title: ""
 </section>
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Growing rapidly.</h2>
-  <p>
-    Dotenvx is installed almost <a href="http://npmjs.com/@dotenvx/dotenvx">three million times weekly</a>.
-  </p>
-  <p>
-    It's only <a href="https://dotenvx.com/blog/2024/06/24/dotenvx-next-generation-config-management.html">one year old</a>, and yet <a href="https://paypal.com">Paypal</a>, <a href="https://www.nasa.gov/">NASA</a>, <a href="https://procore.com">Procore</a>, <a href="https://supabase.com">Supabase</a>, <a href="https://opennext.js.org/">OpenNext</a>, <a href="https://aws.amazon.com">AWS</a>, <a href="https://socket.dev">Socket</a>, <a href="https://daytona.io">Daytona</a>, <a href="https://stacks.co">Stacks</a>, and <a href="https://facebook.com">Facebook</a> have all adopted it. Even stereotypically slow moving government departments in <a href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service">Britain</a>, <a href="https://www.numerique.gouv.fr/">France</a>, <a href="https://github.com/bcgov">Canada</a>, and <a href="https://www.hel.fi/fi">Finland</a>, having evaluated it for its extra security benefits, adopted it.
-  </p>
-  <p>
-    It's being used inside AI tooling like <a href="https://github.com/paypal/agent-toolkit">Paypal's Agent-Toolkit</a> and <a href="https://www.daytona.io/docs/typescript-sdk/">Daytona's SDK</a>. It's trusted by security software like <a href="https://github.com/SocketDev/socket-cli">Socket's CLI and Registry</a>. AWS recommends it with <a
-      href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2">AWS Amplify</a>, NASA uses it to help power <a href="https://github.com/nasa/earthdata-search">Earthdata Search</a>, and Supabase requires it to unlock their <a href="https://supabase.com/docs/guides/deployment/branching#using-dotenvx-for-git-based-workflow">Branching feature</a>. It's incredible, and it will be even more exciting to watch year two unfold.
-  </p>
-  <div class="md:py-0 rounded-lg overflow-hidden">
-    <div class="flex gap-5 lg:gap-10 items-center justify-center">
-      {% include logos/socket.html class="h-10" %}
-      {% include logos/aws.html class="h-12" %}
-      {% include logos/paypal.html class="h-10" %}
-      {% include logos/nasa.html class="h-12" %}
-      {% include logos/facebook.html class="h-10" %}
-      {% include logos/supabase.html class="h-10" %}
-    </div>
-  </div>
-</section>
-
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
   <h2 class="font-bold text-xl sm:text-2xl text-zinc-950 dark:text-zinc-50">Easy to switch.</h2>
   <div class="bg-zinc-100 dark:bg-zinc-900 p-6 font-mono text-zinc-800 dark:text-zinc-100 shadow-sm overflow-x-auto">
     <code class="block text-zinc-500">// before</code>

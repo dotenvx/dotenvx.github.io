@@ -105,7 +105,7 @@ title: ""
 
 <section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">More Features. 10x Better.</h2>
+    <h2 class="font-bold text-3xl sm:text-4xl text-zinc-100 leading-tight">10X Better</h2>
     <p class="mt-4 text-zinc-400 text-lg">Protect secrets in source code and AI prompts with an upgrade that takes seconds.</p>
   </div>
 
@@ -474,7 +474,7 @@ title: ""
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-14 md:mt-20 mb-12 md:mb-20 text-center">
   <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[2.5rem] md:text-[3.4rem] lg:text-[4.2rem] leading-[1.03]">
-    Secure Dotenv.<br />Available today.
+    Dotenv. Secured.<br />Available today.
   </h3>
   <div class="mt-8 flex items-center justify-center gap-6">
     <a class="btn-primary inline-flex items-center gap-1.5" href="/docs/quickstart">

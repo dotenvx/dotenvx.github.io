@@ -190,6 +190,58 @@ html:not(.dark) #sequin-bg-canvas {
   animation: hero-terminal-pop 720ms cubic-bezier(0.22, 1, 0.36, 1) 1225ms forwards;
 }
 
+.contact-aside-fade {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: contact-aside-fade-in 3000ms cubic-bezier(0.16, 1, 0.3, 1) 260ms forwards;
+}
+
+.contact-aside-fade > div {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: contact-aside-fade-in 2400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contact-aside-fade > div:nth-child(1) {
+  animation-delay: 420ms;
+}
+
+.contact-aside-fade > div:nth-child(2) {
+  animation-delay: 760ms;
+}
+
+.contact-aside-fade > div:nth-child(3) {
+  animation-delay: 1100ms;
+}
+
+@keyframes contact-aside-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html.dark .contact-muted-label,
+.contact-muted-label {
+  color: rgba(161, 161, 170, 0.9) !important;
+}
+
+html.dark .contact-muted-link,
+.contact-muted-link {
+  color: rgba(228, 228, 231, 0.92) !important;
+  text-decoration: none !important;
+}
+
+html.dark .contact-muted-link:hover,
+.contact-muted-link:hover {
+  color: rgba(244, 244, 245, 0.98) !important;
+  text-decoration: none !important;
+}
+
 @keyframes nav-enter-drop {
   0% {
     opacity: 0;
@@ -238,6 +290,13 @@ html:not(.dark) #sequin-bg-canvas {
 
   .hero-terminal-enter {
     opacity: 1;
+    animation: none;
+  }
+
+  .contact-aside-fade,
+  .contact-aside-fade > div {
+    opacity: 1;
+    transform: none;
     animation: none;
   }
 }

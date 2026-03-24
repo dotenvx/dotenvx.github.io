@@ -26,12 +26,14 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
-  <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
-    Companies of all sizes trust Dotenvx to<br />protect secrets in source code and AI prompts.
-  </p>
+<section class="w-full max-w-7xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] border-t border-[#2c2617]/85 bg-black pt-14 md:pt-20 pb-14 md:pb-20">
+    <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
+    <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
+      Companies of all sizes trust Dotenvx to<br />protect secrets in source code and AI prompts.
+    </p>
 
-  <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
+    <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
     <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
           {% include logos/google2.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
     </a>
@@ -68,6 +70,7 @@ title: ""
     <a href="https://github.com/browser-use/browser-use" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
           {% include logos/browser-use.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
+    </div>
   </div>
 </section>
 
@@ -366,7 +369,7 @@ title: ""
     <a href="https://x.com/kristianfreeman/status/1808552701673808135?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
-          <span class="inline-flex h-9 w-9 self-center items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300">KF</span>
+          <img src="/assets/img/testimonials/kristian-freeman.jpg" alt="Kristian Freeman" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
           <div class="min-w-0 self-center">
             <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate inline-flex items-center gap-1.5">
               <span>Kristian Freeman</span>
@@ -416,6 +419,145 @@ title: ""
       </div>
       </div>
     </a>
+
+    <a href="https://x.com/mizchi/status/2028845137833631901?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="/assets/img/testimonials/mizchi.jpg" alt="mizchi" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
+          <div class="min-w-0 self-center">
+            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">mizchi</p>
+            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@mizchi</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-3.5 text-zinc-500 text-xs leading-tight font-normal"><span class="text-sky-400">Show translation</span></p>
+      <p class="mt-2.5 text-zinc-300 text-sm leading-relaxed font-normal">
+        <span class="block">.env とAIの問題、dotenvx がもっと普及したらいいと思う</span>
+      </p>
+      <div class="mt-auto">
+      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">6:49 AM · Mar 3, 2026 · <span class="text-zinc-400 font-medium">43.8K</span> views</div>
+      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m17 1 4 4-4 4"></path>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <path d="m7 23-4-4 4-4"></path>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">82</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">640</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">726</span>
+        </div>
+      </div>
+      </div>
+    </a>
+    <a href="https://x.com/zaidmukaddam/status/1941193539486089311?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="/assets/img/testimonials/zaid.jpg" alt="Zaid" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
+          <div class="min-w-0 self-center">
+            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">Zaid</p>
+            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@zaidmukaddam</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-3.5 text-zinc-300 text-sm leading-relaxed font-normal">
+        <span class="block">you can deploy env files to prod now?</span>
+        <span class="mt-2.5 block">creators of dotenv have been working on dotenvx which encrypts your env variables so llms can’t read them, basically it keeps secrets from leaking into prompts or model context</span>
+      </p>
+      <div class="mt-auto">
+      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">10:53 AM · Jul 4, 2025 · <span class="text-zinc-400 font-medium">6,760</span> views</div>
+      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">9</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m17 1 4 4-4 4"></path>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <path d="m7 23-4-4 4-4"></path>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">10</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">154</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">71</span>
+        </div>
+      </div>
+      </div>
+    </a>
+
+    <a href="https://x.com/kenn/status/1906194315358937095" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="/assets/img/testimonials/kenn.jpg" alt="Kenn Ejima" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
+          <div class="min-w-0 self-center">
+            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">Kenn Ejima</p>
+            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@kenn</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-3.5 text-zinc-500 text-xs leading-tight font-normal"><span class="text-sky-400">Show translation</span></p>
+      <p class="mt-2.5 text-zinc-300 text-sm leading-relaxed font-normal">
+        <span class="block">今まで1passwordで.envを共有してたけど、dotenvxを使えば.env自体を暗号化してgit管理できるようになることを知ってこれに乗り換えることにした。</span>
+        <span class="mt-2.5 block">管理対象が秘密鍵1個だけになるのでメンバーの入れ替わりなどでAPI Keyを個別にローテーションする手間もなくなる。</span>
+        <span class="mt-2.5 block">時代は進化している！</span>
+      </p>
+      <div class="mt-auto">
+      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">8:58 PM · Mar 29, 2025 · <span class="text-zinc-400 font-medium">250.5K</span> views</div>
+      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">1</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m17 1 4 4-4 4"></path>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <path d="m7 23-4-4 4-4"></path>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">154</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">1.3K</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
+          </svg>
+          <span class="text-zinc-300 font-semibold">1.1K</span>
+        </div>
+      </div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -438,43 +580,12 @@ title: ""
     {% include v1/components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
     {% include v1/components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
     {% include v1/components/faq-question.html question="How does it protect me from third-party breaches like CircleCI?" answer="In the CircleCI breach the attacker accessed environment variables only. They could not access codebases. To steal your encrypted .env secrets, an attacker needs both – the private decryption key AND the encrypted .env files." %}
-    {% include v1/components/faq-question.html question="<sup>1</sup>Is it true AWS uses .env files internally?" answer="A former AWS engineer mentioned to me (and others) that AWS used them on their production infrastructure. He has since left to start his own business so maybe this is no longer the case." div_id="footnote-1" %}
-    {% include v1/components/faq-question.html question="Can I email you?" answer="Yes, at mot [at] dotenvx [dot] com. I particularly like to hear from large organizations using dotenvx. We have an SLA with enterprise assurances your compliance team will appreciate." %}
-    <div x-data="{ open: false }">
-      <dt class="">
-        <button x-on:click="open = ! open" type="button" class="py-3 flex w-full items-start justify-between text-left" aria-controls="faq-0" aria-expanded="false">
-          <span class="font-semibold leading-7 dark:text-zinc-300">Where is the changelog?</span>
-          <span class="ml-6 flex h-7 items-center">
-            <svg x-show="!open" class="h-6 w-6 text-zinc-400 dark:text-zinc-600" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-            </svg>
-            <svg x-cloak x-show="open" class="h-6 w-6 text-zinc-400 dark:text-zinc-600" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-            </svg>
-          </span>
-        </button>
-      </dt>
-      <dd x-cloak x-show="open" class="" id="faq-0">
-        <div class="border border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950 rounded-lg p-4 pb-2">
-          <div class="relative">
-            <!-- Faded scrollable content -->
-            <div class="overflow-auto max-h-72 changelog flex flex-col gap-4">
-              {{ site.data.changelog_html }}
-            </div>
-            <!-- fade overlay -->
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white dark:to-zinc-950 rounded-b-lg"></div>
-          </div>
-          <!-- Always visible link -->
-          <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md" class="text-sm text-center mx-auto block w-full bg-white dark:bg-zinc-950 py-2">Full changelog →</a>
-        </div>
-      </dd>
-    </div>
   </dl>
 </section>
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-32 md:mt-44 mb-12 md:mb-20 text-center">
   <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4rem] lg:text-[4.8rem] leading-[1.03]">
-    Dotenv secured.<br />Available today.
+    The future of secrets.<br />Available today.
   </h3>
   <div class="mt-8 flex items-center justify-center gap-6">
     <a class="btn-primary inline-flex items-center gap-0.5" href="/docs/quickstart">
@@ -490,4 +601,8 @@ title: ""
       </svg>
     </a>
   </div>
+</section>
+
+<section class="w-full flex items-center justify-center mt-64 mb-60">
+  <img src="/logo-original.png" alt="Dotenv logo" class="h-20 w-20 rounded-md object-contain shadow-[0_0_28px_rgba(236,213,63,0.45)]" />
 </section>

@@ -27,7 +27,7 @@ title: ""
 </section>
 
 <section class="w-full max-w-7xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] border-t border-[#2c2617]/85 bg-black pt-14 md:pt-20 pb-14 md:pb-20">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(44, 38, 23, 0.85);">
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
     <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
       Companies of all sizes trust Dotenvx to<br />protect secrets in source code and AI prompts.
@@ -76,7 +76,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-4xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Same dotenv workflow, but encrypted.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Same dotenv workflow, but encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Switch from plaintext <code>.env</code> files to encrypted <code>.env</code> files without changing how your app runs.</p>
   </div>
 
@@ -108,7 +108,7 @@ title: ""
 
 <section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-4xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">More capability. Zero plaintext secrets.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">More capability. Zero plaintext secrets.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Protect secrets in source code and AI prompts with an upgrade that takes seconds.</p>
   </div>
 
@@ -255,7 +255,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-4xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are talking about Dotenvx.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are talking about Dotenvx.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Installed almost 3 million times a week on <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">npm</a>.</p>
   </div>
 
@@ -575,7 +575,7 @@ title: ""
 -->
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
-  <h2 class="font-normal text-3xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
+  <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
   <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
     {% include v1/components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
     {% include v1/components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
@@ -584,11 +584,11 @@ title: ""
 </section>
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-32 md:mt-44 mb-12 md:mb-20 text-center">
-  <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4rem] lg:text-[4.8rem] leading-[1.03]">
+  <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.7rem] md:text-[4rem] lg:text-[4.8rem] leading-[1.03]">
     The future of secrets.<br />Available today.
   </h3>
-  <div class="mt-8 flex items-center justify-center gap-6">
-    <a class="btn-primary inline-flex items-center gap-0.5" href="/docs/quickstart">
+  <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
+    <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/docs/quickstart">
       <span>Get Started</span>
       <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>

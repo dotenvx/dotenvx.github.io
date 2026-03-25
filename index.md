@@ -604,5 +604,47 @@ title: ""
 </section>
 
 <section class="w-full flex items-center justify-center mt-64 mb-60">
-  <img src="/logo-original.png" alt="Dotenv logo" class="h-20 w-20 rounded-md object-contain shadow-[0_0_28px_rgba(236,213,63,0.45)]" />
+  <a href="/login" class="logo-flip no-underline hover:no-underline" aria-label="Go to login" data-logo-login>
+    <div class="logo-flip-inner">
+      <div class="logo-flip-face logo-flip-face-front">
+        <img src="/logo-original.png" alt="Dotenv logo" class="h-20 w-20 rounded-md object-contain" />
+      </div>
+      <div class="logo-flip-face logo-flip-face-back" aria-hidden="true"></div>
+    </div>
+  </a>
 </section>
+
+<script>
+  (function () {
+    var logo = document.querySelector('[data-logo-login]')
+    if (!logo) return
+
+    var navigating = false
+
+    logo.addEventListener('click', function (event) {
+      if (event.defaultPrevented) return
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+      if (navigating) {
+        event.preventDefault()
+        return
+      }
+
+      event.preventDefault()
+      navigating = true
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      var pressDelay = reduceMotion ? 0 : 95
+      var vanishDelay = reduceMotion ? 0 : 180
+
+      logo.classList.add('is-arming')
+      window.setTimeout(function () {
+        logo.classList.remove('is-arming')
+        logo.classList.add('is-disappearing')
+
+        window.setTimeout(function () {
+          window.location.assign('/login')
+        }, vanishDelay)
+      }, pressDelay)
+    })
+  })()
+</script>

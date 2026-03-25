@@ -22,7 +22,7 @@
     {% if page.url == '/' or page.url == '/index.html' %}
     <canvas id="sequin-bg-canvas" aria-hidden="true" data-ascii-src="{{ '/assets/img/bg/enclave-ascii.txt' | relative_url }}"></canvas>
     {% endif %}
-    <header id="nav-sticky" class="sticky top-0 z-30 rounded-t-lg overflow-hidden border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200">
+    <header id="nav-sticky" class="sticky top-0 z-30 rounded-t-lg overflow-hidden border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
       {% include v1/nav.html %}
     </header>
     <main class="relative z-10 flex-grow">

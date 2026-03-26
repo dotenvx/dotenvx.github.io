@@ -339,6 +339,7 @@ a.btn-primary:hover, button.btn-primary:hover {
   background-color: #f4f4f5;
   box-shadow: 0 0 24px rgba(236, 213, 63, 0.18);
 }
+.nav-cta { @apply rounded-xl; }
 .btn-nav { @apply text-center rounded-full text-sm px-4 py-2.5 text-zinc-500 dark:text-zinc-200 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-200 dark:active:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150 no-underline hover:no-underline; }
 .link-footer { @apply text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 text-sm no-underline hover:no-underline; }
 .link-footer { font-weight: 500 !important; }

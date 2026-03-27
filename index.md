@@ -67,7 +67,7 @@ title: ""
     <a href="https://github.com/shadcn-ui/ui" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
           {% include logos/shadcn.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
-    <a href="https://github.com/browser-use/browser-use" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
+    <a href="https://github.com/search?q=org%3Abrowser-use%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
           {% include logos/browser-use.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
     </a>
     </div>

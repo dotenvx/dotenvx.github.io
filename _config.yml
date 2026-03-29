@@ -3,7 +3,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 title: "Dotenvx" # the name of your site, e.g. ACME Corp.
 title_separator: "· "
 logo: "https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg"
-description: "Secrets for developers"
+description: "Secrets for agents"
 
 # Footer "Edit this page on GitHub" link text
 github_edit_link: true # show or hide edit this page link

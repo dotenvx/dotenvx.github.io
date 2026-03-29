@@ -5,7 +5,7 @@
     "role": "maintainer",
     "name": "DOTENVX LLC",
     "email": "mot@dotenvx.com",
-    "description": "Secrets for developers",
+    "description": "Secrets for agents",
     "webpageUrl": {
       "url": "https://dotenvx.com"
     }
@@ -13,7 +13,7 @@
   "projects": [{
     "guid": "dotenvx",
     "name": "dotenvx",
-    "description": "Secrets for developers",
+    "description": "Secrets for agents",
     "webpageUrl": {
       "url": "https://dotenvx.com"
     },

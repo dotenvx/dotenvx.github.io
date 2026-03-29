@@ -1,6 +1,6 @@
 [![dotenvx](https://dotenvx.com/banner.png)](https://dotenvx.com)
 
-Secrets for developers.
+Secrets for agents.
 
 * run anywhere (cross-platform)
 * multi-environment
@@ -2045,7 +2045,7 @@ Output help for `dotenvx`.
 $ dotenvx help
 Usage: dotenvx run -- yourcommand
 
-Secrets for developers
+Secrets for agents
 
 Options:
   -l, --log-level <level>      set log level (default: "info")

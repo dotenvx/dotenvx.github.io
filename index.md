@@ -30,7 +30,7 @@ title: ""
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(44, 38, 23, 0.85);">
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
     <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
-      Companies of all sizes trust Dotenvx to<br />protect secrets in source code and AI prompts.
+      Companies of all sizes trust Dotenvx to secure secrets wherever agents and developers work.
     </p>
 
     <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
@@ -77,7 +77,7 @@ title: ""
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Same dotenv workflow, but encrypted.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Switch from plaintext <code>.env</code> files to encrypted <code>.env</code> files without changing how your app runs.</p>
+    <p class="mt-4 text-zinc-400 text-lg">Move from plaintext <code>.env</code> to encrypted <code>.env</code> without changing how your agents or apps run.</p>
   </div>
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">

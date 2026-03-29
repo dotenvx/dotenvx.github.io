@@ -5,9 +5,8 @@
       <span class="h-2 w-2 rounded-full bg-[#bb944f]"></span>
       <span class="h-2 w-2 rounded-full bg-[#9a753c]"></span>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center">
       <span class="text-[11px] tracking-wide text-[#b7a98a]">npm i @dotenvx/dotenvx</span>
-      <button type="button" class="terminal-sound-toggle" data-sound-toggle aria-pressed="false">sound off</button>
     </div>
   </div>
 
@@ -20,26 +19,6 @@
     margin: 0;
     scrollbar-width: thin;
   }
-  .terminal-sound-toggle {
-    border: 1px solid rgba(205, 170, 98, 0.38);
-    border-radius: 999px;
-    background: rgba(14, 12, 9, 0.84);
-    color: #9b8f74;
-    font-size: 10px;
-    line-height: 1;
-    padding: 4px 7px 5px;
-    letter-spacing: 0;
-    cursor: pointer;
-  }
-  .terminal-sound-toggle:hover {
-    border-color: rgba(205, 170, 98, 0.58);
-    color: #c3b491;
-  }
-  .terminal-sound-toggle[aria-pressed="true"] {
-    color: #e2d3ac;
-    border-color: rgba(205, 170, 98, 0.72);
-  }
-
   .dotenvx-live-terminal .dim { color: #9b8f74; }
   .dotenvx-live-terminal .cmd { color: #cbb98a; }
   .dotenvx-live-terminal .ok { color: #ecd53f; }
@@ -135,9 +114,6 @@
       font-size: 12px;
       line-height: 1.5;
     }
-    .terminal-sound-toggle {
-      display: none;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -155,15 +131,6 @@
 
     const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    const indexJsLines = [
-      "// index.js",
-      "console.log(`Hello ${process.env.HELLO}`)"
-    ];
-    const encryptedFileLines = [
-      '# .env – encrypted with dotenvx',
-      'HELLO="encrypted:BIWFIR+r/iRY0lLEjUjCHLgzLs6mKg3vcaz39xnCDyArfqWZpFU8NN5xVnf68hYRhPZrzNJIaUr33TCQdD0RgLeIgjXpltN+hmiuH/5thsMLbfFdxCbIsiqhOv6PcmY2yCgxkIY6"'
-    ];
-
     const escapeHtml = (value) =>
       value
         .replaceAll("&", "&amp;")
@@ -171,293 +138,36 @@
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;");
 
-    const renderVimLine = (line, fileName) => {
-      if (!line) return "";
-      if (fileName.endsWith(".js")) {
-        if (line.startsWith("//")) {
-          return `<span class=\"vim-comment\">${escapeHtml(line)}</span>`;
-        }
-        if (line === "console.log(`Hello ${process.env.HELLO}`)") {
-          return [
-            '<span class="vim-js-fn">console.log</span>(',
-            '<span class="vim-js-str">`Hello </span>',
-            '<span class="vim-js-var">${process.env.HELLO}</span>',
-            '<span class="vim-js-str">`</span>',
-            ")"
-          ].join("");
-        }
-      }
-      if (line.startsWith("#/") || line.startsWith("# .env")) {
-        return `<span class=\"dim\">${escapeHtml(line)}</span>`;
-      }
-      const equalsIndex = line.indexOf("=");
-      if (equalsIndex === -1) return escapeHtml(line);
-      const key = line.slice(0, equalsIndex);
-      const val = line.slice(equalsIndex + 1);
-      return `<span class=\"key\">${escapeHtml(key)}</span>=<span class=\"val\">${escapeHtml(val)}</span>`;
-    };
-
-    const renderVim = (fileName, lines, status) => {
-      const body = lines
-        .map((line) => {
-          return renderVimLine(line, fileName) || "&nbsp;";
-        })
-        .join("\n");
-
-      return [
-        body,
-        "",
-        `<span class=\"dim\">${escapeHtml(status)}</span>`
-      ].join("\n");
-    };
-
     demos.forEach((demo) => {
       if (demo.dataset.demoReady === "1") return;
       demo.dataset.demoReady = "1";
 
       const screen = demo.querySelector(".dotenvx-live-terminal");
-      const soundToggle = demo.querySelector("[data-sound-toggle]");
       if (!screen) return;
-      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
 
       const state = {
         shellLines: [],
-        mode: "shell",
-        vimMarkup: "",
         activeCommand: "",
-        vimLines: [],
-        vimFileName: ".env",
-        vimCursor: null,
-        showPrompt: false,
-        soundEnabled: false
-      };
-      let audioContext = null;
-      let noiseBuffer = null;
-      let lastTickAt = 0;
-      let typedChars = 0;
-      let audioUnlocked = false;
-
-      const updateSoundToggle = () => {
-        if (!soundToggle) return;
-        soundToggle.textContent = state.soundEnabled ? "sound on" : "sound off";
-        soundToggle.setAttribute("aria-pressed", state.soundEnabled ? "true" : "false");
-      };
-
-      const ensureAudioContext = async () => {
-        if (audioContext) {
-          try {
-            if (audioContext.state === "suspended") await audioContext.resume();
-          } catch (_) {}
-          return audioContext;
-        }
-        const Ctx = window.AudioContext || window.webkitAudioContext;
-        if (!Ctx) return null;
-        audioContext = new Ctx();
-        const length = Math.floor(audioContext.sampleRate * 0.03);
-        noiseBuffer = audioContext.createBuffer(1, length, audioContext.sampleRate);
-        const data = noiseBuffer.getChannelData(0);
-        for (let i = 0; i < length; i += 1) data[i] = Math.random() * 2 - 1;
-        try {
-          if (audioContext.state === "suspended") await audioContext.resume();
-        } catch (_) {}
-        return audioContext;
-      };
-
-      const unlockAudioOnGesture = async () => {
-        if (audioUnlocked) return;
-        const ctx = await ensureAudioContext();
-        if (!ctx) return;
-        try {
-          if (ctx.state === "suspended") await ctx.resume();
-          // iOS/Safari sometimes needs an actual started source to unlock output.
-          const src = ctx.createBufferSource();
-          const buf = ctx.createBuffer(1, 1, ctx.sampleRate);
-          src.buffer = buf;
-          const gain = ctx.createGain();
-          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
-          src.connect(gain);
-          gain.connect(ctx.destination);
-          src.start();
-          audioUnlocked = true;
-        } catch (_) {}
-      };
-
-      const playTypeTick = (ch = "") => {
-        if (!state.soundEnabled || prefersReduced) return;
-        const now = performance.now();
-        const minInterval = coarsePointer ? 108 : 72;
-        if (now - lastTickAt < minInterval) return;
-        typedChars += 1;
-        if (coarsePointer && typedChars % 2 !== 0) return;
-        lastTickAt = now;
-        if (!audioContext) return;
-        if (audioContext.state !== "running") {
-          audioContext.resume().catch(() => {});
-          return;
-        }
-        try {
-          const at = audioContext.currentTime;
-          const isSpace = /\s/.test(ch);
-          const isPunct = /[.,;:!?'"`]/.test(ch);
-          const isSymbol = /[@#$%^&*()_+\-=[\]{}|\\/<>\~]/.test(ch);
-          // Tuned toward a warm laptop key sound (short tap, less bright hiss).
-          const bodyDecay = isSpace ? 0.038 : isPunct ? 0.018 : 0.024;
-          const clickDecay = isSpace ? 0.011 : isPunct ? 0.0085 : 0.0094;
-          const bodyVol = isSpace ? 0.0108 : isPunct ? 0.0056 : 0.0074;
-          const clickVol = isSpace ? 0.0068 : isPunct ? 0.0078 : 0.0072;
-          const bodyFreq = isSpace ? 1420 : isSymbol ? 1760 : 1640;
-          const clickFreq = isSpace ? 2300 : isPunct ? 3000 : 2750;
-
-          const mobileBoost = coarsePointer ? 1.85 : 1;
-
-          // Main downstroke body (keycap + switch thock).
-          const bodyNoise = audioContext.createBufferSource();
-          bodyNoise.buffer = noiseBuffer;
-          const bodyBp = audioContext.createBiquadFilter();
-          bodyBp.type = "bandpass";
-          bodyBp.frequency.setValueAtTime(bodyFreq + (Math.random() * 120 - 60), at);
-          bodyBp.Q.setValueAtTime(isSpace ? 1.08 : 1.35, at);
-          const bodyGain = audioContext.createGain();
-          bodyGain.gain.setValueAtTime(0.0001, at);
-          bodyGain.gain.linearRampToValueAtTime(bodyVol * mobileBoost, at + 0.0032);
-          bodyGain.gain.exponentialRampToValueAtTime(0.0001, at + bodyDecay);
-
-          // Contact click, filtered to avoid overly sharp/hi-pitched tone.
-          const clickNoise = audioContext.createBufferSource();
-          clickNoise.buffer = noiseBuffer;
-          const clickHp = audioContext.createBiquadFilter();
-          clickHp.type = "highpass";
-          const clickHpStart = clickFreq + (Math.random() * 120 - 60);
-          const clickHpEnd = isSpace ? 1450 : isPunct ? 1950 : 1750;
-          clickHp.frequency.setValueAtTime(clickHpStart, at);
-          clickHp.frequency.exponentialRampToValueAtTime(clickHpEnd, at + clickDecay);
-          clickHp.Q.setValueAtTime(1.05, at);
-          const clickLp = audioContext.createBiquadFilter();
-          clickLp.type = "lowpass";
-          const clickLpStart = isPunct ? 4700 : 4300;
-          const clickLpEnd = isPunct ? 3200 : 2850;
-          clickLp.frequency.setValueAtTime(clickLpStart, at);
-          clickLp.frequency.exponentialRampToValueAtTime(clickLpEnd, at + clickDecay);
-          clickLp.Q.setValueAtTime(0.7, at);
-          const clickGain = audioContext.createGain();
-          clickGain.gain.setValueAtTime(0.0001, at);
-          clickGain.gain.linearRampToValueAtTime(clickVol * mobileBoost, at + 0.0024);
-          clickGain.gain.exponentialRampToValueAtTime(0.0001, at + clickDecay);
-
-          bodyNoise.connect(bodyBp);
-          bodyBp.connect(bodyGain);
-          bodyGain.connect(audioContext.destination);
-          clickNoise.connect(clickHp);
-          clickHp.connect(clickLp);
-          clickLp.connect(clickGain);
-          clickGain.connect(audioContext.destination);
-
-          // Keep spacebar fuller, but lighter than mechanical keyboards.
-          let resonance = null;
-          let resonanceGain = null;
-          if (isSpace) {
-            resonance = audioContext.createOscillator();
-            resonance.type = "sine";
-            resonance.frequency.setValueAtTime(208 + (Math.random() * 18 - 9), at);
-            resonanceGain = audioContext.createGain();
-            resonanceGain.gain.setValueAtTime(0.0001, at);
-            resonanceGain.gain.linearRampToValueAtTime(0.0026 * mobileBoost, at + 0.0013);
-            resonanceGain.gain.exponentialRampToValueAtTime(0.0001, at + 0.02);
-            resonance.connect(resonanceGain);
-            resonanceGain.connect(audioContext.destination);
-            resonance.start(at);
-            resonance.stop(at + 0.024);
-          }
-
-          bodyNoise.start(at);
-          bodyNoise.stop(at + bodyDecay + 0.01);
-          clickNoise.start(at);
-          clickNoise.stop(at + clickDecay + 0.008);
-
-          // Very subtle shared tail so strokes don't feel overly chopped.
-          const tail = audioContext.createGain();
-          tail.gain.setValueAtTime(0.0001, at);
-          tail.gain.linearRampToValueAtTime(0.0016 * mobileBoost, at + 0.0048);
-          tail.gain.exponentialRampToValueAtTime(0.0001, at + 0.034);
-          bodyBp.connect(tail);
-          clickLp.connect(tail);
-          tail.connect(audioContext.destination);
-
-          // Rare, quiet release tick for realism.
-          if (!isSpace && Math.random() < 0.12) {
-            const relAt = at + 0.012 + Math.random() * 0.008;
-            const release = audioContext.createBufferSource();
-            release.buffer = noiseBuffer;
-            const relHp = audioContext.createBiquadFilter();
-            relHp.type = "highpass";
-            relHp.frequency.setValueAtTime(3000 + Math.random() * 420, relAt);
-            const relLp = audioContext.createBiquadFilter();
-            relLp.type = "lowpass";
-            relLp.frequency.setValueAtTime(4300, relAt);
-            const relGain = audioContext.createGain();
-            relGain.gain.setValueAtTime(0.0001, relAt);
-            relGain.gain.linearRampToValueAtTime(0.0011 * mobileBoost, relAt + 0.0007);
-            relGain.gain.exponentialRampToValueAtTime(0.0001, relAt + 0.0042);
-            release.connect(relHp);
-            relHp.connect(relLp);
-            relLp.connect(relGain);
-            relGain.connect(audioContext.destination);
-            release.start(relAt);
-            release.stop(relAt + 0.0065);
-          }
-        } catch (_) {}
+        showPrompt: false
       };
 
       const nextDelay = (ch = "", nextCh = "", mode = "shell") => {
-        const soundMode = state.soundEnabled;
         const base = mode === "vim"
-          ? (soundMode ? 74 : 62)
-          : (soundMode ? 66 : 52);
+          ? 62
+          : 52;
         const jitter = mode === "vim"
-          ? (soundMode ? 44 : 44)
-          : (soundMode ? 38 : 36);
+          ? 44
+          : 36;
 
         let delay = base + Math.floor(Math.random() * jitter);
         if (ch === " ") delay += 70 + Math.floor(Math.random() * 55);
         if (/[.,;:!?]/.test(ch)) delay += 90 + Math.floor(Math.random() * 90);
         if (/[:=\/\\()\[\]{}]/.test(ch)) delay += 14 + Math.floor(Math.random() * 20);
         if (nextCh && /[A-Z]/.test(nextCh) && ch === " ") delay += 24;
-        if (soundMode && Math.random() < 0.03) delay += 120 + Math.floor(Math.random() * 120);
         return delay;
       };
 
-      if (soundToggle) {
-        updateSoundToggle();
-        soundToggle.addEventListener("click", async () => {
-          state.soundEnabled = !state.soundEnabled;
-          if (state.soundEnabled) await unlockAudioOnGesture();
-          updateSoundToggle();
-        });
-        soundToggle.addEventListener("touchstart", () => {
-          if (state.soundEnabled) return;
-          unlockAudioOnGesture();
-        }, { passive: true });
-      }
-      document.addEventListener("visibilitychange", () => {
-        if (!state.soundEnabled || !audioContext) return;
-        if (document.visibilityState === "visible" && audioContext.state !== "running") {
-          audioContext.resume().catch(() => {});
-        }
-      });
-
       const render = () => {
-        if (state.mode === "vim") {
-          let cursorMarkup = "";
-          if (state.vimCursor) {
-            const cursorClass = state.vimCursor.mode === "insert" ? "vim-cursor-insert" : "vim-cursor-normal";
-            const cursorChar = state.vimCursor.char || "&nbsp;";
-            cursorMarkup = `<span class="${cursorClass}" style="--vim-row:${state.vimCursor.row};--vim-col:${state.vimCursor.col};">${cursorChar}</span>`;
-          }
-          screen.innerHTML = `<span class=\"vim-frame\"><span class=\"vim-tab\">${escapeHtml(state.vimFileName)}</span>${state.vimMarkup}${cursorMarkup}</span>`;
-          return;
-        }
-
         const lines = [...state.shellLines];
         if (state.activeCommand) {
           lines.push(`<span class=\"cmd\">$ ${escapeHtml(state.activeCommand)}</span><span class=\"cursor\"></span>`);
@@ -476,7 +186,6 @@
       };
 
       const typeCommand = async (command) => {
-        state.mode = "shell";
         state.showPrompt = true;
         state.activeCommand = "";
         render();
@@ -485,7 +194,6 @@
           const nextCh = command[i + 1] || "";
           state.activeCommand += ch;
           render();
-          playTypeTick(ch);
           await wait(nextDelay(ch, nextCh, "shell"));
         }
         await wait(210);
@@ -515,159 +223,14 @@
         render();
       };
 
-      const showVim = async (fileName, lines, status, duration = 2200) => {
-        state.mode = "vim";
-        state.vimFileName = fileName;
-        state.vimLines = lines;
-        state.vimCursor = null;
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
-        render();
-        await wait(duration);
-      };
-
-      const inspectEncryptedVim = async (fileName, lines) => {
-        state.mode = "vim";
-        state.vimFileName = fileName;
-        state.vimLines = lines;
-
-        const normalFrames = [
-          { status: `"${fileName}"  1,1  -- NORMAL --`, row: 1, col: 1 },
-          { status: `"${fileName}"  2,1  -- NORMAL --`, row: 2, col: 1 },
-          { status: `"${fileName}"  2,2  -- NORMAL --`, row: 2, col: 2 },
-          { status: `"${fileName}"  2,1  -- NORMAL --`, row: 2, col: 1 }
-        ];
-
-        for (let i = 0; i < normalFrames.length; i += 1) {
-          const frame = normalFrames[i];
-          const line = state.vimLines[frame.row - 1] || "";
-          const idx = Math.max(0, Math.min(line.length - 1, frame.col - 1));
-          const char = line.length ? escapeHtml(line[idx]) : "&nbsp;";
-          state.vimCursor = { row: frame.row, col: frame.col, mode: "normal", char };
-          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, frame.status);
-          render();
-          if (i > 0) {
-            playTypeTick("l");
-            await wait(58);
-            playTypeTick("l");
-          }
-          await wait(330);
-        }
-
-        playTypeTick("i");
-        state.vimCursor = { row: 2, col: 1, mode: "insert", char: "" };
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}"  2,1  -- INSERT --`);
-        render();
-        await wait(240);
-
-        state.vimCursor = { row: 2, col: 2, mode: "insert", char: "" };
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}"  2,2  -- INSERT --`);
-        render();
-        playTypeTick(" ");
-        await wait(190);
-
-        playTypeTick(" ");
-        {
-          const line = state.vimLines[1] || "";
-          const idx = Math.max(0, Math.min(line.length - 1, 0));
-          const char = line.length ? escapeHtml(line[idx]) : "&nbsp;";
-          state.vimCursor = { row: 2, col: 1, mode: "normal", char };
-        }
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}"  2,1  -- NORMAL --`);
-        render();
-        await wait(360);
-        state.vimCursor = null;
-      };
-
-      const typeInVim = async (fileName, values, preserveExisting = false) => {
-        state.mode = "vim";
-        state.vimFileName = fileName;
-        if (!preserveExisting) {
-          state.vimLines = [""];
-        } else if (!state.vimLines.length) {
-          state.vimLines = [""];
-        }
-        state.vimCursor = null;
-
-        const linesToType = Array.isArray(values) ? values : [values];
-        for (let i = 0; i < linesToType.length; i += 1) {
-          if (preserveExisting || i > 0) state.vimLines.push("");
-          const lineIndex = preserveExisting ? state.vimLines.length - 1 : i;
-          state.vimCursor = null;
-          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${lineIndex + 1},1  -- INSERT --`);
-          render();
-          for (let j = 0; j < linesToType[i].length; j += 1) {
-            const ch = linesToType[i][j];
-            const nextCh = linesToType[i][j + 1] || "";
-            state.vimLines[lineIndex] += ch;
-            state.vimCursor = null;
-            state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `"${fileName}" [New]  ${lineIndex + 1},1  -- INSERT --`);
-            render();
-            playTypeTick(ch);
-            await wait(nextDelay(ch, nextCh, "vim"));
-          }
-          await wait(150);
-        }
-      };
-
-      const exitVim = async (status) => {
-        state.mode = "vim";
-        state.vimCursor = null;
-        const commandMatch = status.match(/^(.*?)(\s+:[a-z]+)$/i);
-        if (!commandMatch) {
-          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, status);
-          render();
-          await wait(460);
-          return;
-        }
-
-        const baseStatus = commandMatch[1];
-        const fullCommand = commandMatch[2].trim();
-
-        // Visual insert -> normal mode transition for Esc key.
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `${baseStatus}  -- INSERT --`);
-        render();
-        await wait(90);
-        playTypeTick(" ");
-        state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `${baseStatus}  -- NORMAL --`);
-        render();
-        await wait(140);
-
-        // Visual command entry (:wq / :q) with matching key sounds.
-        let typed = "";
-        for (let i = 0; i < fullCommand.length; i += 1) {
-          const ch = fullCommand[i];
-          const nextCh = fullCommand[i + 1] || "";
-          typed += ch;
-          state.vimMarkup = renderVim(state.vimFileName, state.vimLines, `${baseStatus}  ${typed}`);
-          render();
-          playTypeTick(ch);
-          await wait(nextDelay(ch, nextCh, "vim"));
-        }
-        playTypeTick("\n");
-        await wait(70);
-        await wait(260);
-      };
-
-      const closeVim = async () => {
-        state.mode = "shell";
-        state.vimCursor = null;
-        render();
-        await wait(420);
-      };
-
       const resetTerminal = () => {
         state.shellLines = [];
-        state.mode = "shell";
-        state.vimMarkup = "";
         state.activeCommand = "";
-        state.vimLines = [];
-        state.vimCursor = null;
         state.showPrompt = false;
         render();
       };
 
       const idleAtPrompt = async (ms) => {
-        state.mode = "shell";
         state.showPrompt = true;
         state.activeCommand = "";
         render();
@@ -683,60 +246,13 @@
           await runCommand("npm install @dotenvx/dotenvx", [
             "<span class=\"ok\">◈ dotenvx installed.</span>"
           ], 950);
-          await runCommand("vim .env", [], 380);
-          await showVim(".env", ["# .env"], "\".env\" [New]  1,1  -- INSERT --", 500);
-          await typeInVim(".env", 'HELLO="World"', true);
-          await wait(750);
-          await exitVim("\".env\" [New]  2,13  :wq");
-          await closeVim();
           await runCommand("dotenvx encrypt", [
             "<span class=\"ok\">◈ encrypted (.env) + key (.env.keys)</span>"
           ], 1050);
-          await runCommand("vim .env", [], 300);
-          await inspectEncryptedVim(".env", encryptedFileLines);
-          await exitVim("\".env\"  2L, 301B  :q");
-          await closeVim();
-          await runCommand("vim index.js", [], 320);
-          await showVim("index.js", [], "\"index.js\" [New]  0,0  -- INSERT --", 450);
-          await typeInVim("index.js", indexJsLines);
-          await wait(700);
-          await exitVim("\"index.js\" [New]  2,41  :wq");
-          await closeVim();
           await runCommand("dotenvx run -- node index.js", [
-            "<span class=\"val\">[dotenvx@1.57.0] injecting env (1) from .env</span>",
+            "<span class=\"val\">⟐ injecting env (1) from .env · dotenvx@1.59.1</span>",
             "Hello World"
           ], 1200);
-
-          await runCommand("clear", [], 240, { clearAfter: true });
-          await idleAtPrompt(700);
-          await runCommand("vim .env.production", [], 320);
-          await showVim(".env.production", ["# .env.production"], "\".env.production\" [New]  1,1  -- INSERT --", 420);
-          await typeInVim(".env.production", 'HELLO="Production"', true);
-          await wait(650);
-          await exitVim("\".env.production\" [New]  2,18  :wq");
-          await closeVim();
-          await runCommand("dotenvx encrypt -f .env.production", [
-            "<span class=\"ok\">◈ encrypted (.env.production) + key (.env.keys)</span>"
-          ], 980);
-          await runCommand("dotenvx run -f .env.production -- node index.js", [
-            "<span class=\"val\">[dotenvx@1.57.0] injecting env (1) from .env.production</span>",
-            "Hello Production"
-          ], 1350);
-          await runCommand("clear", [], 240, { clearAfter: true });
-          await idleAtPrompt(700);
-          await runCommand("vim .env.ci", [], 320);
-          await showVim(".env.ci", ["# .env.ci"], "\".env.ci\" [New]  1,1  -- INSERT --", 420);
-          await typeInVim(".env.ci", 'HELLO="CI"', true);
-          await wait(650);
-          await exitVim("\".env.ci\" [New]  2,11  :wq");
-          await closeVim();
-          await runCommand("dotenvx encrypt -f .env.ci", [
-            "<span class=\"ok\">◈ encrypted (.env.ci) + key (.env.keys)</span>"
-          ], 980);
-          await runCommand("dotenvx run -f .env.ci -- node index.js", [
-            "<span class=\"val\">[dotenvx@1.57.0] injecting env (1) from .env.ci</span>",
-            "Hello CI"
-          ], 1350);
           pushLine("<span class=\"dim\"># restarting demo...</span>");
           state.showPrompt = true;
           render();

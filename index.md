@@ -87,7 +87,7 @@ title: ""
     <div class="mt-2 text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
   </div>
 
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-5">
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
       <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Install</h3>

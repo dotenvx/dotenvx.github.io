@@ -34,23 +34,28 @@
     const dh = ih * scale;
     const dx = (state.w - dw) * 0.5;
     const dy = (state.h - dh) * 0.5;
+    const mobile = Math.max(0, Math.min(1, state.w / 900));
 
-    // Near-black but visible. No animation.
-    ctx.filter = "grayscale(1) contrast(1.05) brightness(0.20)";
-    ctx.globalAlpha = 0.9;
+    // Near-black but visible, with stronger darkening on mobile.
+    const brightness = 0.14 + mobile * 0.06; // ~0.166 on iPhone widths, ~0.20 desktop
+    const baseAlpha = 0.62 + mobile * 0.28;  // reduce image weight on smaller screens
+    ctx.filter = `grayscale(1) contrast(1.05) brightness(${brightness.toFixed(3)})`;
+    ctx.globalAlpha = baseAlpha;
     ctx.drawImage(img, dx, dy, dw, dh);
 
     // Slight dark veil so foreground content stays readable.
     ctx.filter = "none";
     ctx.globalAlpha = 1;
-    ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
+    const veil = 0.62 - mobile * 0.20; // stronger veil on mobile
+    ctx.fillStyle = `rgba(0, 0, 0, ${veil.toFixed(3)})`;
     ctx.fillRect(0, 0, state.w, state.h);
 
     // Fade out toward the lower section so the art tapers off naturally.
-    const fadeBottom = ctx.createLinearGradient(0, state.h * 0.52, 0, state.h);
+    const fadeStart = state.h * (0.44 + mobile * 0.08);
+    const fadeBottom = ctx.createLinearGradient(0, fadeStart, 0, state.h);
     fadeBottom.addColorStop(0, "rgba(0, 0, 0, 0)");
-    fadeBottom.addColorStop(0.45, "rgba(0, 0, 0, 0.32)");
-    fadeBottom.addColorStop(1, "rgba(0, 0, 0, 0.72)");
+    fadeBottom.addColorStop(0.45, "rgba(0, 0, 0, 0.40)");
+    fadeBottom.addColorStop(1, "rgba(0, 0, 0, 0.84)");
     ctx.fillStyle = fadeBottom;
     ctx.fillRect(0, 0, state.w, state.h);
 

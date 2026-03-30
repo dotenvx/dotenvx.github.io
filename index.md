@@ -83,7 +83,7 @@ title: ""
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
     <div class="text-zinc-500 text-[0.9em]">// before</div>
-    <div class="mt-2 text-[#a7b4cc] font-semibold">require('dotenv').config()</div>
+    <div class="mt-2 text-[#8B9BB4] font-semibold">require('dotenv').config()</div>
     <div class="mt-8 text-zinc-500 text-[0.9em]">// after</div>
     <div class="mt-2 text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
   </div>
@@ -101,8 +101,8 @@ title: ""
     </div>
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
       <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Deploy + AI</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Ship apps and AI prompts without plaintext secrets.</p>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Run Agents Safely</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Ship agents, apps, and prompts without plaintext secrets.</p>
     </div>
   </div>
 </section>
@@ -136,7 +136,7 @@ title: ""
         <p class="mt-2 text-[#cbb98a] text-xs md:text-sm">Commit ciphertext. Keep keys separate.</p>
       </div>
     </div>
-    <div class="sm:col-span-3 relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
+    <div class="sm:col-span-3 relative overflow-hidden rounded-xl border border-zinc-700 bg-[#06080d] p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
       <div class="pointer-events-none absolute -top-20 right-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-24 left-[-5rem] h-64 w-64 rounded-full bg-blue-300/8 blur-3xl"></div>
       <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(7,10,20,0.96)_12%,rgba(7,10,20,0.72)_45%,rgba(7,10,20,0.92)_88%)]"></div>
@@ -261,7 +261,7 @@ title: ""
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
-    <a href="https://x.com/bholmesdev/status/2029285485693039077?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+    <a href="https://x.com/bholmesdev/status/2029285485693039077?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
           <img src="/assets/img/testimonials/ben-holmes.jpg" alt="Ben Holmes" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
@@ -314,7 +314,7 @@ title: ""
       </div>
     </a>
 
-    <a href="https://x.com/commte/status/1996144456891060730?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+    <a href="https://x.com/commte/status/1996144456891060730?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
           <img src="/assets/img/testimonials/commte.jpg" alt="コムテ" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
@@ -367,7 +367,7 @@ title: ""
       </div>
     </a>
 
-    <a href="https://x.com/kristianfreeman/status/1808552701673808135?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+    <a href="https://x.com/kristianfreeman/status/1808552701673808135?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
           <img src="/assets/img/testimonials/kristian-freeman.jpg" alt="Kristian Freeman" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
@@ -421,7 +421,7 @@ title: ""
       </div>
     </a>
 
-    <a href="https://x.com/mizchi/status/2028845137833631901?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+    <a href="https://x.com/mizchi/status/2028845137833631901?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
           <img src="/assets/img/testimonials/mizchi.jpg" alt="mizchi" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
@@ -462,7 +462,7 @@ title: ""
       </div>
       </div>
     </a>
-    <a href="https://x.com/zaidmukaddam/status/1941193539486089311?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+    <a href="https://x.com/zaidmukaddam/status/1941193539486089311?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
           <img src="/assets/img/testimonials/zaid.jpg" alt="Zaid" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
@@ -510,7 +510,7 @@ title: ""
       </div>
     </a>
 
-    <a href="https://x.com/kenn/status/1906194315358937095" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-xl border border-zinc-700 bg-zinc-950/80 p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-500 transition-colors duration-200 md:flex md:flex-col">
+    <a href="https://x.com/kenn/status/1906194315358937095" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
           <img src="/assets/img/testimonials/kenn.jpg" alt="Kenn Ejima" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />

@@ -162,13 +162,6 @@ html.dark body {
   animation: hero-copy-enter-rise 2300ms cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
 }
 
-.hero-terminal-enter {
-  opacity: 0;
-  transform: scale(0.97);
-  transform-origin: center;
-  animation: hero-terminal-pop 720ms cubic-bezier(0.22, 1, 0.36, 1) 1225ms forwards;
-}
-
 .contact-aside-fade {
   opacity: 0;
   transform: translateY(14px);
@@ -243,17 +236,6 @@ html.dark .contact-muted-link:hover,
   }
 }
 
-@keyframes hero-terminal-pop {
-  0% {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .nav-enter {
     opacity: 1;
@@ -264,11 +246,6 @@ html.dark .contact-muted-link:hover,
   .hero-copy-enter {
     opacity: 1;
     transform: none;
-    animation: none;
-  }
-
-  .hero-terminal-enter {
-    opacity: 1;
     animation: none;
   }
 

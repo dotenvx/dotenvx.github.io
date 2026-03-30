@@ -78,9 +78,16 @@
   });
   const labelTextureCache = new Map();
   const materialCache = new Map();
+  const secretsBoxFaceMaterials = [];
   const baseEnvMapIntensity = 1.35;
   const baseRoughness = 0.055;
   const baseThickness = 1.1;
+  const baseEdgeOpacity = edgeHighlightMaterial.opacity;
+  const baseGlowOpacity = glowShellMaterial.opacity;
+  const ghostDelayMs = 3000;
+  const introRevealDelayMs = 2000;
+  let ghostMix = 1;
+  let ghostTarget = 1;
 
   const buildLabelTexture = (label) => {
     const c = document.createElement('canvas');
@@ -150,6 +157,9 @@
       mat.thickness = 0.42;
       mat.clearcoatRoughness = 0.04;
     }
+    mat.userData.baseOpacity = mat.opacity;
+    mat.userData.baseEnvMapIntensity = mat.envMapIntensity;
+    secretsBoxFaceMaterials.push(mat);
     return mat;
   };
 
@@ -208,12 +218,23 @@
   const startZ = centerZ - ((rowCount - 1) * pitch) / 2;
 
   const secretsBoxGroup = new THREE.Group();
+  const secretsBoxes = [];
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  const tmpTarget = new THREE.Vector3();
+  let exploded = false;
+  let explosionPointerId = null;
+  let hoverTimerId = null;
+  let pointerOverKey = false;
+
   for (let r = 0; r < rowCount; r += 1) {
     for (let c = 0; c < colCount; c += 1) {
       if (grid[r][c] !== '■') continue;
       const x = startX + c * pitch;
       const z = startZ + r * pitch;
-      secretsBoxGroup.add(createSecretsBox({ position: [x, 0.74, z] }));
+      const box = createSecretsBox({ position: [x, 0.74, z] });
+      secretsBoxes.push(box);
+      secretsBoxGroup.add(box);
     }
   }
   secretsBoxGroup.rotation.y = Math.PI;
@@ -225,9 +246,40 @@
   keyBounds.getCenter(keyCenter);
   keyBounds.getSize(keySize);
   const keyCenterY = 0.74;
-  const fitFrustumSize = Math.max(keySize.x, keySize.z) * 1.18;
+  const fitFrustumSize = Math.max(keySize.x, keySize.z) * 1.26;
 
-  camera.position.set(keyCenter.x - 2.3, keyCenterY + 3.6, keyCenter.z - 2.1);
+  const localExplosionCenter = new THREE.Vector3(centerX, keyCenterY, centerZ);
+  const unitNoise = (seed) => {
+    const x = Math.sin(seed * 127.1) * 43758.5453123;
+    return x - Math.floor(x);
+  };
+
+  const buildExplosionOffset = (basePosition, index) => {
+    const radial = basePosition.clone().sub(localExplosionCenter);
+    const rx = unitNoise(index + 0.11) * 2 - 1;
+    const ry = unitNoise(index + 0.37) * 2 - 1;
+    const rz = unitNoise(index + 0.73) * 2 - 1;
+    const jitter = new THREE.Vector3(rx, ry, rz).normalize();
+
+    // Deterministic pseudo-random spherical burst component.
+    radial.y += (unitNoise(index + 1.31) - 0.5) * 0.45;
+    if (radial.lengthSq() < 1e-6) {
+      radial.copy(jitter);
+    } else {
+      radial.normalize().lerp(jitter, 0.42).normalize();
+    }
+
+    const spread = 0.24 + unitNoise(index + 2.41) * 0.46;
+    return radial.multiplyScalar(spread);
+  };
+
+  for (let i = 0; i < secretsBoxes.length; i += 1) {
+    const box = secretsBoxes[i];
+    box.userData.basePosition = box.position.clone();
+    box.userData.explosionOffset = buildExplosionOffset(box.position, i);
+  }
+
+  camera.position.set(keyCenter.x - 2.8, keyCenterY + 1.85, keyCenter.z - 2.7);
   camera.lookAt(keyCenter.x, keyCenterY, keyCenter.z);
 
 const resize = () => {
@@ -270,6 +322,91 @@ const resize = () => {
     }, 1400);
   });
 
+  const setPointerFromEvent = (event) => {
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  };
+
+  const setGhostState = (enabled) => {
+    ghostTarget = enabled ? 1 : 0;
+  };
+
+  const clearHoverTimer = () => {
+    if (hoverTimerId !== null) {
+      clearTimeout(hoverTimerId);
+      hoverTimerId = null;
+    }
+  };
+
+  const isPointerIntersectingKey = (event) => {
+    setPointerFromEvent(event);
+    raycaster.setFromCamera(pointer, camera);
+    return raycaster.intersectObjects(secretsBoxes, false).length > 0;
+  };
+
+  const handlePointerMove = (event) => {
+    pointerOverKey = isPointerIntersectingKey(event);
+    if (pointerOverKey && !exploded) {
+      if (hoverTimerId === null && ghostTarget < 1) {
+        hoverTimerId = setTimeout(() => {
+          hoverTimerId = null;
+          if (pointerOverKey && !exploded) {
+            setGhostState(true);
+          }
+        }, ghostDelayMs);
+      }
+    } else {
+      clearHoverTimer();
+      setGhostState(false);
+    }
+  };
+
+  const handlePointerDown = (event) => {
+    if (!isPointerIntersectingKey(event)) return;
+    setGhostState(false);
+    clearHoverTimer();
+    exploded = true;
+    explosionPointerId = event.pointerId;
+    if (canvas.setPointerCapture) {
+      canvas.setPointerCapture(event.pointerId);
+    }
+  };
+
+  const releaseExplosion = (event) => {
+    if (explosionPointerId !== null && event.pointerId !== explosionPointerId) return;
+    exploded = false;
+    if (explosionPointerId !== null && canvas.releasePointerCapture) {
+      canvas.releasePointerCapture(explosionPointerId);
+    }
+    explosionPointerId = null;
+    if (pointerOverKey) {
+      clearHoverTimer();
+      hoverTimerId = setTimeout(() => {
+        hoverTimerId = null;
+        if (pointerOverKey && !exploded) {
+          setGhostState(true);
+        }
+      }, ghostDelayMs);
+    }
+  };
+
+  canvas.addEventListener('pointermove', handlePointerMove);
+  canvas.addEventListener('pointerdown', handlePointerDown);
+  canvas.addEventListener('pointerup', releaseExplosion);
+  canvas.addEventListener('pointercancel', releaseExplosion);
+  canvas.addEventListener('pointerleave', (event) => {
+    pointerOverKey = false;
+    clearHoverTimer();
+    setGhostState(false);
+    releaseExplosion(event);
+  });
+
+  // Intro reveal uses the same ghost system, but reversed.
+  setTimeout(() => {
+    setGhostState(false);
+  }, introRevealDelayMs);
+
   resize();
 
   if ('ResizeObserver' in window) {
@@ -280,6 +417,26 @@ const resize = () => {
   }
 
   const animate = () => {
+    ghostMix = THREE.MathUtils.lerp(ghostMix, ghostTarget, 0.08);
+    const ghostVisibility = 1 - ghostMix * 0.93;
+
+    for (let i = 0; i < secretsBoxes.length; i += 1) {
+      const box = secretsBoxes[i];
+      tmpTarget.copy(box.userData.basePosition);
+      if (exploded) {
+        tmpTarget.add(box.userData.explosionOffset);
+      }
+      box.position.lerp(tmpTarget, exploded ? 0.14 : 0.16);
+    }
+
+    for (let i = 0; i < secretsBoxFaceMaterials.length; i += 1) {
+      const mat = secretsBoxFaceMaterials[i];
+      mat.opacity = mat.userData.baseOpacity * ghostVisibility;
+      mat.envMapIntensity = mat.userData.baseEnvMapIntensity * (1 - ghostMix * 0.72);
+    }
+    edgeHighlightMaterial.opacity = baseEdgeOpacity * (1 - ghostMix * 0.9);
+    glowShellMaterial.opacity = baseGlowOpacity * (1 - ghostMix * 0.88);
+
     controls.update();
     renderer.render(scene, camera);
     requestAnimationFrame(animate);

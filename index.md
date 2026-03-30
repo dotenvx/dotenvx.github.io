@@ -3,7 +3,7 @@ title: ""
 ---
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-36 lg:mt-40 mb-32 md:mb-40 lg:mb-44">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] gap-10 md:gap-12 lg:gap-14 items-center">
     <div class="flex flex-col gap-4 md:gap-6 hero-copy-enter">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">
         <span>From the creator of</span>
@@ -18,11 +18,10 @@ title: ""
       </div>
     </div>
 
-    <div class="md:pl-2 hero-terminal-enter">
-      <div class="max-w-xl mx-auto md:max-w-lg lg:max-w-xl">
-        {% include v1/components/encrypted-env-file-small.html %}
-      </div>
+    <div class="w-full max-w-[34rem] mx-auto lg:mx-0 lg:justify-self-end">
+      {% include v1/components/three-standing-rect.html height="420px" class="border border-red-500" %}
     </div>
+
   </div>
 </section>
 
@@ -604,15 +603,11 @@ title: ""
 </section>
 
 <section class="relative w-full flex items-center justify-center mt-64 mb-0 pb-0 min-h-[20rem] md:min-h-[26rem] overflow-hidden">
-  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    {% include v1/components/pixel-key.html class="absolute left-1/2 top-[49%] -translate-x-1/2 -translate-y-1/2 opacity-50 md:opacity-60" src="/assets/img/bg/key-reference.png" pixel=5 sample=4 %}
-  </div>
   <a href="/login" class="relative z-10 logo-flip no-underline hover:no-underline" aria-label="Go to login" data-logo-login>
     <div class="logo-flip-inner">
       <div class="logo-flip-face logo-flip-face-front">
         <img src="/logo-original.png" alt="Dotenv logo" class="h-20 w-20 rounded-md object-contain" />
       </div>
-      <div class="logo-flip-face logo-flip-face-back" aria-hidden="true"></div>
     </div>
   </a>
 </section>

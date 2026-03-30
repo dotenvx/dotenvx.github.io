@@ -1,0 +1,102 @@
+<div
+  class="{{ include.class }}"
+  data-three-standing-rect
+  style="height: {{ include.height | default: '320px' }};"
+>
+  <canvas class="block h-full w-full"></canvas>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.167.1/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.167.1/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+  const root = document.querySelector('[data-three-standing-rect]:not([data-three-mounted])');
+  if (!root) {
+    throw new Error('three-standing-rect mount target not found');
+  }
+
+  root.setAttribute('data-three-mounted', 'true');
+  const canvas = root.querySelector('canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+
+  camera.position.set(0, 4, 5.5);
+  camera.lookAt(0, 0, 0);
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1.8);
+  scene.add(ambientLight);
+
+  const keyLight = new THREE.DirectionalLight(0xbfe3ff, 2.2);
+  keyLight.position.set(3, 5, 4);
+  scene.add(keyLight);
+
+  const rimLight = new THREE.DirectionalLight(0xffd89b, 1.4);
+  rimLight.position.set(-4, 2, -3);
+  scene.add(rimLight);
+
+  const geometry = new THREE.BoxGeometry(1.3, 1.8, 1.3);
+
+  const makeLabelTexture = (label) => {
+    const c = document.createElement('canvas');
+    c.width = 128; c.height = 128;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#ecd53f';
+    ctx.fillRect(0, 0, 128, 128);
+    ctx.fillStyle = '#000';
+    ctx.font = 'bold 28px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(label, 64, 64);
+    return new THREE.CanvasTexture(c);
+  };
+
+  const mat = (label) => new THREE.MeshStandardMaterial({ map: makeLabelTexture(label), metalness: 0.18, roughness: 0.28 });
+
+  // BoxGeometry face order: +x, -x, +y (top), -y (bottom), +z, -z
+  const standingRect = new THREE.Mesh(geometry, [mat('s1'), mat('s3'), mat('t'), mat('b'), mat('s2'), mat('s4')]);
+  standingRect.rotation.set(0, 0.785, 0);
+  scene.add(standingRect);
+
+const resize = () => {
+    const width = root.clientWidth || 1;
+    const height = root.clientHeight || 1;
+
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+  };
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.enableZoom = false;
+  controls.enablePan = false;
+
+  resize();
+
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(resize);
+    observer.observe(root);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+
+  const animate = () => {
+    controls.update();
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  };
+  animate();
+</script>

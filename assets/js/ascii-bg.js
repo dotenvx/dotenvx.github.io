@@ -14,8 +14,12 @@
     w: 0,
     h: 0,
     loaded: false,
+    reduceMotion: false,
     revealProgress: 0,
     rafId: 0,
+    nextPostGlitchDrawAt: 0,
+    nextGlitchSpawnAt: 0,
+    glitches: [],
     layout: null,
   };
 
@@ -24,6 +28,21 @@
   const hash2 = (x, y) => {
     const v = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
     return v - Math.floor(v);
+  };
+
+  const spawnGlitch = (now) => {
+    if (!state.layout) return;
+    if (state.glitches.length >= 3) return;
+
+    const block = Math.max(4, Math.floor(Math.min(state.layout.sampleW, state.layout.sampleH) / 42));
+    const w = block * (1 + Math.floor(Math.random() * 3));
+    const h = block * (3 + Math.floor(Math.random() * 8));
+    const x = Math.floor(Math.random() * Math.max(1, state.layout.sampleW - w));
+    const y = -h + Math.floor(Math.random() * block);
+    const speed = 0.028 + Math.random() * 0.05;
+    const life = 900 + Math.random() * 900;
+
+    state.glitches.push({ x, y, w, h, speed, life, born: now });
   };
 
   const buildLayout = () => {
@@ -70,7 +89,7 @@
     };
   };
 
-  const draw = (progress = state.revealProgress) => {
+  const draw = (progress = state.revealProgress, now = performance.now()) => {
     if (!state.w || !state.h) return;
 
     // Base black background.
@@ -86,6 +105,7 @@
     const p = clamp01(progress);
     const revealY = p * state.layout.sampleH;
     const trail = Math.max(8, Math.floor(state.layout.sampleH * 0.11));
+    const seedChunk = Math.max(4, Math.floor(trail * 0.55));
 
     for (let y = 0; y < state.layout.sampleH; y += 1) {
       for (let x = 0; x < state.layout.sampleW; x += 1) {
@@ -101,19 +121,34 @@
         if (baseAlpha <= 0.02) continue;
 
         // Top-down "matrix" reveal with per-column drift and broken chunks.
-        const colOffset = (hash2(x * 1.13, 0.37) - 0.5) * trail * 2.6;
-        const headY = revealY + colOffset;
+        const colOffset = (hash2(x * 1.13, 0.37) - 0.5) * trail * 3.8;
+        const colLag = hash2(x * 0.31, 1.71) * state.layout.sampleH * 0.32 * (1 - p);
+        const headY = revealY - colLag + colOffset;
         const depth = headY - y;
-        if (depth < -trail) continue;
 
-        // Chunky stepped growth instead of smooth feather.
-        const stepped = Math.floor((depth + trail) / 2) / Math.floor(trail / 2 || 1);
-        let revealAlpha = clamp01(stepped);
+        // Keep sparse, pre-seeded sections faintly visible before the rain reaches them.
+        let seedAlpha = 0;
+        if (depth < -trail && p < 0.985) {
+          const sx = Math.floor(x / seedChunk);
+          const sy = Math.floor(y / seedChunk);
+          const seed = hash2(sx * 0.73, sy * 1.29);
+          if (seed > 0.968) {
+            const seedLife = clamp01(1 - p / 0.55);
+            seedAlpha = 0.28 * seedLife;
+          } else {
+            continue;
+          }
+        }
+
+        // Chunkier stepped growth instead of smooth feather.
+        const stepped = Math.floor((depth + trail) / 4) / Math.floor(trail / 4 || 1);
+        let revealAlpha = Math.max(seedAlpha, clamp01(stepped));
+        if (p >= 0.985) revealAlpha = 1;
 
         // Near the moving head, randomly drop pixels for a broken terminal look.
-        if (depth > -trail * 0.35 && depth < trail * 0.9) {
+        if (p < 0.985 && depth > -trail * 0.35 && depth < trail * 0.9) {
           const gate = hash2(x * 0.73 + Math.floor(p * 120), y * 1.91);
-          if (gate < 0.42) continue;
+          if (gate < 0.62) continue;
         }
 
         if (revealAlpha <= 0) continue;
@@ -124,6 +159,47 @@
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(3)})`;
         ctx.fillRect(px, py, state.layout.cell, state.layout.cell);
       }
+    }
+
+    // After the build completes, add sparse black "dying" chunks.
+    if (p >= 1 && !state.reduceMotion) {
+      if (now >= state.nextGlitchSpawnAt && Math.random() < 0.45) {
+        spawnGlitch(now);
+      }
+      if (now >= state.nextGlitchSpawnAt) {
+        state.nextGlitchSpawnAt = now + 380 + Math.random() * 1200;
+      }
+
+      const alive = [];
+      for (let gi = 0; gi < state.glitches.length; gi += 1) {
+        const g = state.glitches[gi];
+        const age = now - g.born;
+        if (age > g.life) continue;
+
+        const lifeT = age / g.life;
+        const yDrop = Math.floor(age * g.speed);
+        const alpha = (1 - lifeT) * 0.38;
+
+        for (let y2 = 0; y2 < g.h; y2 += 1) {
+          const yy = g.y + yDrop + y2;
+          if (yy < 0 || yy >= state.layout.sampleH) continue;
+          for (let x2 = 0; x2 < g.w; x2 += 1) {
+            const xx = g.x + x2;
+            if (xx < 0 || xx >= state.layout.sampleW) continue;
+
+            const gate = hash2(xx * 1.37 + Math.floor(now / 70), yy * 1.91 + gi * 3.1);
+            if (gate < 0.58) continue;
+
+            const px2 = state.layout.dx + xx * state.layout.cell;
+            const py2 = state.layout.dy + yy * state.layout.cell;
+            ctx.fillStyle = `rgba(0, 0, 0, ${alpha.toFixed(3)})`;
+            ctx.fillRect(px2, py2, state.layout.cell, state.layout.cell);
+          }
+        }
+
+        alive.push(g);
+      }
+      state.glitches = alive;
     }
 
     // Global darken pass to keep foreground content legible.
@@ -146,15 +222,15 @@
   const animateIn = () => {
     if (state.rafId) cancelAnimationFrame(state.rafId);
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
+    state.reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (state.reduceMotion) {
       state.revealProgress = 1;
       draw(1);
       return;
     }
 
     const delayMs = 2000;
-    const durationMs = 10000;
+    const durationMs = 6000;
     const start = performance.now();
 
     const tick = (now) => {
@@ -170,15 +246,19 @@
       // Ease-out so growth slows as it reaches the edges.
       const eased = 1 - Math.pow(1 - t, 2.2);
       state.revealProgress = eased;
-      draw(eased);
       if (t < 1) {
-        state.rafId = requestAnimationFrame(tick);
-      } else {
-        state.rafId = 0;
+        draw(eased, now);
+      } else if (now >= state.nextPostGlitchDrawAt) {
+        draw(1, now);
+        state.nextPostGlitchDrawAt = now + 120;
       }
+      state.rafId = requestAnimationFrame(tick);
     };
 
     state.revealProgress = 0;
+    state.nextPostGlitchDrawAt = 0;
+    state.nextGlitchSpawnAt = 0;
+    state.glitches = [];
     state.rafId = requestAnimationFrame(tick);
   };
 

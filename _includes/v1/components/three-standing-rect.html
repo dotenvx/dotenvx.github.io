@@ -1,9 +1,20 @@
 <div
-  class="{{ include.class }}"
+  class="{{ include.class }} relative overflow-hidden"
   data-secrets-box
   style="height: {{ include.height | default: '320px' }};"
 >
-  <canvas class="block h-full w-full"></canvas>
+  <canvas
+    class="block h-full w-full"
+    style="-webkit-mask-image: radial-gradient(120% 110% at 50% 50%, rgba(0,0,0,1) 72%, rgba(0,0,0,0.9) 82%, rgba(0,0,0,0.2) 92%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(120% 110% at 50% 50%, rgba(0,0,0,1) 72%, rgba(0,0,0,0.9) 82%, rgba(0,0,0,0.2) 92%, rgba(0,0,0,0) 100%);"
+  ></canvas>
+  <div
+    class="pointer-events-none absolute inset-0"
+    aria-hidden="true"
+    style="background:
+      linear-gradient(to right, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0) 11%, rgba(0,0,0,0) 89%, rgba(0,0,0,0.38) 100%),
+      linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.4) 100%);
+    "
+  ></div>
 </div>
 
 <script type="importmap">
@@ -29,7 +40,8 @@
   const canvas = root.querySelector('canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
   const scene = new THREE.Scene();
-  const minFrustumSize = 3.0;
+  const desktopMinFrustumSize = 3.0;
+  const mobileMinFrustumSize = 1.2;
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
   scene.background = new THREE.Color(0x000000);
 
@@ -286,7 +298,10 @@ const resize = () => {
     const width = root.clientWidth || 1;
     const height = root.clientHeight || 1;
     const aspect = width / height;
-    const frustumSize = Math.max(minFrustumSize, fitFrustumSize);
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const minFrustumSize = isMobile ? mobileMinFrustumSize : desktopMinFrustumSize;
+    const fitSize = fitFrustumSize * (isMobile ? 0.5 : 1);
+    const frustumSize = Math.max(minFrustumSize, fitSize);
 
     camera.left = -0.5 * frustumSize * aspect;
     camera.right = 0.5 * frustumSize * aspect;
@@ -294,6 +309,9 @@ const resize = () => {
     camera.bottom = -0.5 * frustumSize;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height, false);
+    if (typeof controls !== 'undefined') {
+      controls.enableRotate = !isMobile;
+    }
   };
 
   const controls = new OrbitControls(camera, canvas);
@@ -301,7 +319,7 @@ const resize = () => {
   controls.dampingFactor = 0.08;
   controls.enableZoom = false;
   controls.enablePan = false;
-  controls.enableRotate = true;
+  controls.enableRotate = !window.matchMedia('(max-width: 767px)').matches;
   controls.autoRotate = true;
   controls.autoRotateSpeed = 0.35;
   controls.target.set(keyCenter.x, keyCenterY, keyCenter.z);
@@ -328,6 +346,8 @@ const resize = () => {
     pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
   };
 
+  const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
+
   const setGhostState = (enabled) => {
     ghostTarget = enabled ? 1 : 0;
   };
@@ -346,6 +366,12 @@ const resize = () => {
   };
 
   const handlePointerMove = (event) => {
+    if (isMobileViewport()) {
+      pointerOverKey = false;
+      clearHoverTimer();
+      setGhostState(false);
+      return;
+    }
     pointerOverKey = isPointerIntersectingKey(event);
     if (pointerOverKey && !exploded) {
       if (hoverTimerId === null && ghostTarget < 1) {
@@ -363,6 +389,7 @@ const resize = () => {
   };
 
   const handlePointerDown = (event) => {
+    if (isMobileViewport()) return;
     if (!isPointerIntersectingKey(event)) return;
     setGhostState(false);
     clearHoverTimer();
@@ -374,6 +401,7 @@ const resize = () => {
   };
 
   const releaseExplosion = (event) => {
+    if (isMobileViewport()) return;
     if (explosionPointerId !== null && event.pointerId !== explosionPointerId) return;
     exploded = false;
     if (explosionPointerId !== null && canvas.releasePointerCapture) {

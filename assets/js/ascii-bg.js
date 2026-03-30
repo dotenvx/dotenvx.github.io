@@ -14,17 +14,23 @@
     w: 0,
     h: 0,
     loaded: false,
+    revealProgress: 0,
+    rafId: 0,
+    layout: null,
   };
 
-  const draw = () => {
-    if (!state.w || !state.h) return;
+  const clamp01 = (n) => Math.max(0, Math.min(1, n));
 
-    // Base black background.
-    ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, state.w, state.h);
+  const hash2 = (x, y) => {
+    const v = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+    return v - Math.floor(v);
+  };
 
-    if (!state.loaded) return;
+  const buildLayout = () => {
+    if (!state.loaded || !state.w || !state.h) {
+      state.layout = null;
+      return;
+    }
 
     // Cover fit so the rendered pixels fill the viewport.
     const iw = img.naturalWidth || img.width || 1;
@@ -35,7 +41,7 @@
     const dx = (state.w - dw) * 0.5;
     const dy = (state.h - dh) * 0.5;
 
-    // Render as generated pixel cells (each cell has its own color + opacity).
+    // Build generated pixel cells (each cell has its own color + opacity).
     const baseCell = Math.max(2, Math.round(Math.min(state.w, state.h) / 190));
     const cell = Math.min(baseCell, 6);
     const sampleW = Math.max(1, Math.round(dw / cell));
@@ -45,37 +51,83 @@
     sampleCanvas.width = sampleW;
     sampleCanvas.height = sampleH;
     const sctx = sampleCanvas.getContext("2d", { willReadFrequently: true });
-    if (!sctx) return;
+    if (!sctx) {
+      state.layout = null;
+      return;
+    }
+
     sctx.clearRect(0, 0, sampleW, sampleH);
     sctx.drawImage(img, 0, 0, sampleW, sampleH);
-
     const data = sctx.getImageData(0, 0, sampleW, sampleH).data;
+
+    state.layout = {
+      cell,
+      sampleW,
+      sampleH,
+      data,
+      dx,
+      dy,
+    };
+  };
+
+  const draw = (progress = state.revealProgress) => {
+    if (!state.w || !state.h) return;
+
+    // Base black background.
+    ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, state.w, state.h);
+
+    if (!state.loaded || !state.layout) return;
 
     ctx.filter = "none";
     ctx.globalAlpha = 1;
 
-    for (let y = 0; y < sampleH; y += 1) {
-      for (let x = 0; x < sampleW; x += 1) {
-        const i = (y * sampleW + x) * 4;
-        const r = data[i];
-        const g = data[i + 1];
-        const b = data[i + 2];
-        const a = data[i + 3] / 255;
+    const p = clamp01(progress);
+    const revealY = p * state.layout.sampleH;
+    const trail = Math.max(8, Math.floor(state.layout.sampleH * 0.11));
+
+    for (let y = 0; y < state.layout.sampleH; y += 1) {
+      for (let x = 0; x < state.layout.sampleW; x += 1) {
+        const i = (y * state.layout.sampleW + x) * 4;
+        const r = state.layout.data[i];
+        const g = state.layout.data[i + 1];
+        const b = state.layout.data[i + 2];
+        const a = state.layout.data[i + 3] / 255;
         if (a <= 0.01) continue;
 
         const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
-        const alpha = a * (0.18 + lum * 0.92) * 0.42;
-        if (alpha <= 0.02) continue;
+        const baseAlpha = a * (0.18 + lum * 0.92) * 0.28;
+        if (baseAlpha <= 0.02) continue;
 
-        const px = dx + x * cell;
-        const py = dy + y * cell;
+        // Top-down "matrix" reveal with per-column drift and broken chunks.
+        const colOffset = (hash2(x * 1.13, 0.37) - 0.5) * trail * 2.6;
+        const headY = revealY + colOffset;
+        const depth = headY - y;
+        if (depth < -trail) continue;
+
+        // Chunky stepped growth instead of smooth feather.
+        const stepped = Math.floor((depth + trail) / 2) / Math.floor(trail / 2 || 1);
+        let revealAlpha = clamp01(stepped);
+
+        // Near the moving head, randomly drop pixels for a broken terminal look.
+        if (depth > -trail * 0.35 && depth < trail * 0.9) {
+          const gate = hash2(x * 0.73 + Math.floor(p * 120), y * 1.91);
+          if (gate < 0.42) continue;
+        }
+
+        if (revealAlpha <= 0) continue;
+
+        const px = state.layout.dx + x * state.layout.cell;
+        const py = state.layout.dy + y * state.layout.cell;
+        const alpha = baseAlpha * revealAlpha;
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(3)})`;
-        ctx.fillRect(px, py, cell, cell);
+        ctx.fillRect(px, py, state.layout.cell, state.layout.cell);
       }
     }
 
     // Global darken pass to keep foreground content legible.
-    ctx.fillStyle = "rgba(0, 0, 0, 0.56)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.66)";
     ctx.fillRect(0, 0, state.w, state.h);
   };
 
@@ -87,12 +139,53 @@
     canvas.style.height = `${state.h}px`;
     canvas.width = Math.floor(state.w * state.dpr);
     canvas.height = Math.floor(state.h * state.dpr);
+    buildLayout();
     draw();
+  };
+
+  const animateIn = () => {
+    if (state.rafId) cancelAnimationFrame(state.rafId);
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      state.revealProgress = 1;
+      draw(1);
+      return;
+    }
+
+    const delayMs = 2000;
+    const durationMs = 10000;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const elapsed = now - start;
+      if (elapsed < delayMs) {
+        state.revealProgress = 0;
+        draw(0);
+        state.rafId = requestAnimationFrame(tick);
+        return;
+      }
+
+      const t = clamp01((elapsed - delayMs) / durationMs);
+      // Ease-out so growth slows as it reaches the edges.
+      const eased = 1 - Math.pow(1 - t, 2.2);
+      state.revealProgress = eased;
+      draw(eased);
+      if (t < 1) {
+        state.rafId = requestAnimationFrame(tick);
+      } else {
+        state.rafId = 0;
+      }
+    };
+
+    state.revealProgress = 0;
+    state.rafId = requestAnimationFrame(tick);
   };
 
   img.onload = () => {
     state.loaded = true;
-    draw();
+    buildLayout();
+    animateIn();
   };
 
   img.onerror = () => {

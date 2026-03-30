@@ -14,42 +14,6 @@
     w: 0,
     h: 0,
     loaded: false,
-    maskCanvas: null,
-  };
-
-  const buildInkMask = () => {
-    const w = img.naturalWidth || img.width || 0;
-    const h = img.naturalHeight || img.height || 0;
-    if (!w || !h) return null;
-
-    const off = document.createElement("canvas");
-    off.width = w;
-    off.height = h;
-    const octx = off.getContext("2d");
-    if (!octx) return null;
-    octx.drawImage(img, 0, 0, w, h);
-
-    const imageData = octx.getImageData(0, 0, w, h);
-    const data = imageData.data;
-    for (let i = 0; i < data.length; i += 4) {
-      const r = data[i];
-      const g = data[i + 1];
-      const b = data[i + 2];
-      const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-      // Invert-bias the extraction and only keep stronger dark strokes.
-      const ink = 255 - lum;
-      if (ink < 64) {
-        data[i + 3] = 0;
-        continue;
-      }
-      const alpha = Math.min(255, (ink - 64) * 1.05);
-      data[i] = 130;
-      data[i + 1] = 130;
-      data[i + 2] = 136;
-      data[i + 3] = alpha;
-    }
-    octx.putImageData(imageData, 0, 0);
-    return off;
   };
 
   const draw = () => {
@@ -62,46 +26,56 @@
 
     if (!state.loaded) return;
 
-    // Cover fit to fill viewport.
-    const source = state.maskCanvas || img;
-    const iw = source.width || img.naturalWidth || 1;
-    const ih = source.height || img.naturalHeight || 1;
+    // Cover fit so the rendered pixels fill the viewport.
+    const iw = img.naturalWidth || img.width || 1;
+    const ih = img.naturalHeight || img.height || 1;
     const scale = Math.max(state.w / iw, state.h / ih);
     const dw = iw * scale;
     const dh = ih * scale;
     const dx = (state.w - dw) * 0.5;
     const dy = (state.h - dh) * 0.5;
-    const mobile = Math.max(0, Math.min(1, state.w / 900));
 
-    // Draw extracted ASCII ink only (white background removed), darker on mobile.
-    const baseAlpha = 0.16 + mobile * 0.14;
-    ctx.filter = "none";
-    ctx.globalAlpha = baseAlpha;
-    ctx.drawImage(source, dx, dy, dw, dh);
+    // Render as generated pixel cells (each cell has its own color + opacity).
+    const baseCell = Math.max(2, Math.round(Math.min(state.w, state.h) / 190));
+    const cell = Math.min(baseCell, 6);
+    const sampleW = Math.max(1, Math.round(dw / cell));
+    const sampleH = Math.max(1, Math.round(dh / cell));
 
-    // Slight dark veil so foreground content stays readable.
+    const sampleCanvas = document.createElement("canvas");
+    sampleCanvas.width = sampleW;
+    sampleCanvas.height = sampleH;
+    const sctx = sampleCanvas.getContext("2d", { willReadFrequently: true });
+    if (!sctx) return;
+    sctx.clearRect(0, 0, sampleW, sampleH);
+    sctx.drawImage(img, 0, 0, sampleW, sampleH);
+
+    const data = sctx.getImageData(0, 0, sampleW, sampleH).data;
+
     ctx.filter = "none";
     ctx.globalAlpha = 1;
-    const veil = 0.72 - mobile * 0.12;
-    ctx.fillStyle = `rgba(0, 0, 0, ${veil.toFixed(3)})`;
-    ctx.fillRect(0, 0, state.w, state.h);
 
-    // Fade out toward the lower section so the art tapers off naturally.
-    const fadeStart = state.h * (0.44 + mobile * 0.08);
-    const fadeBottom = ctx.createLinearGradient(0, fadeStart, 0, state.h);
-    fadeBottom.addColorStop(0, "rgba(0, 0, 0, 0)");
-    fadeBottom.addColorStop(0.40, "rgba(0, 0, 0, 0.56)");
-    fadeBottom.addColorStop(1, "rgba(0, 0, 0, 0.94)");
-    ctx.fillStyle = fadeBottom;
-    ctx.fillRect(0, 0, state.w, state.h);
+    for (let y = 0; y < sampleH; y += 1) {
+      for (let x = 0; x < sampleW; x += 1) {
+        const i = (y * sampleW + x) * 4;
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const a = data[i + 3] / 255;
+        if (a <= 0.01) continue;
 
-    // Subtle side fade to avoid visible hard image bounds.
-    const fadeSides = ctx.createLinearGradient(0, 0, state.w, 0);
-    fadeSides.addColorStop(0, "rgba(0, 0, 0, 0.48)");
-    fadeSides.addColorStop(0.12, "rgba(0, 0, 0, 0)");
-    fadeSides.addColorStop(0.88, "rgba(0, 0, 0, 0)");
-    fadeSides.addColorStop(1, "rgba(0, 0, 0, 0.48)");
-    ctx.fillStyle = fadeSides;
+        const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+        const alpha = a * (0.18 + lum * 0.92) * 0.42;
+        if (alpha <= 0.02) continue;
+
+        const px = dx + x * cell;
+        const py = dy + y * cell;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(3)})`;
+        ctx.fillRect(px, py, cell, cell);
+      }
+    }
+
+    // Global darken pass to keep foreground content legible.
+    ctx.fillStyle = "rgba(0, 0, 0, 0.56)";
     ctx.fillRect(0, 0, state.w, state.h);
   };
 
@@ -117,7 +91,6 @@
   };
 
   img.onload = () => {
-    state.maskCanvas = buildInkMask();
     state.loaded = true;
     draw();
   };

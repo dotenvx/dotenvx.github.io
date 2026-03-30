@@ -36,15 +36,16 @@
       const g = data[i + 1];
       const b = data[i + 2];
       const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      // Invert-bias the extraction and only keep stronger dark strokes.
       const ink = 255 - lum;
-      if (ink < 22) {
+      if (ink < 64) {
         data[i + 3] = 0;
         continue;
       }
-      const alpha = Math.min(255, (ink - 22) * 1.6);
-      data[i] = 210;
-      data[i + 1] = 210;
-      data[i + 2] = 214;
+      const alpha = Math.min(255, (ink - 64) * 1.05);
+      data[i] = 130;
+      data[i + 1] = 130;
+      data[i + 2] = 136;
       data[i + 3] = alpha;
     }
     octx.putImageData(imageData, 0, 0);
@@ -73,7 +74,7 @@
     const mobile = Math.max(0, Math.min(1, state.w / 900));
 
     // Draw extracted ASCII ink only (white background removed), darker on mobile.
-    const baseAlpha = 0.24 + mobile * 0.26;
+    const baseAlpha = 0.08 + mobile * 0.12;
     ctx.filter = "none";
     ctx.globalAlpha = baseAlpha;
     ctx.drawImage(source, dx, dy, dw, dh);
@@ -81,7 +82,7 @@
     // Slight dark veil so foreground content stays readable.
     ctx.filter = "none";
     ctx.globalAlpha = 1;
-    const veil = 0.70 - mobile * 0.22; // stronger veil on mobile
+    const veil = 0.86 - mobile * 0.20; // stronger veil overall
     ctx.fillStyle = `rgba(0, 0, 0, ${veil.toFixed(3)})`;
     ctx.fillRect(0, 0, state.w, state.h);
 
@@ -89,17 +90,17 @@
     const fadeStart = state.h * (0.44 + mobile * 0.08);
     const fadeBottom = ctx.createLinearGradient(0, fadeStart, 0, state.h);
     fadeBottom.addColorStop(0, "rgba(0, 0, 0, 0)");
-    fadeBottom.addColorStop(0.45, "rgba(0, 0, 0, 0.40)");
-    fadeBottom.addColorStop(1, "rgba(0, 0, 0, 0.84)");
+    fadeBottom.addColorStop(0.40, "rgba(0, 0, 0, 0.56)");
+    fadeBottom.addColorStop(1, "rgba(0, 0, 0, 0.94)");
     ctx.fillStyle = fadeBottom;
     ctx.fillRect(0, 0, state.w, state.h);
 
     // Subtle side fade to avoid visible hard image bounds.
     const fadeSides = ctx.createLinearGradient(0, 0, state.w, 0);
-    fadeSides.addColorStop(0, "rgba(0, 0, 0, 0.35)");
+    fadeSides.addColorStop(0, "rgba(0, 0, 0, 0.48)");
     fadeSides.addColorStop(0.12, "rgba(0, 0, 0, 0)");
     fadeSides.addColorStop(0.88, "rgba(0, 0, 0, 0)");
-    fadeSides.addColorStop(1, "rgba(0, 0, 0, 0.35)");
+    fadeSides.addColorStop(1, "rgba(0, 0, 0, 0.48)");
     ctx.fillStyle = fadeSides;
     ctx.fillRect(0, 0, state.w, state.h);
   };

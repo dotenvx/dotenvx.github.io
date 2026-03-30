@@ -603,8 +603,17 @@ title: ""
   </div>
 </section>
 
-<section class="w-full flex items-center justify-center mt-64 mb-60">
-  <a href="/login" class="logo-flip no-underline hover:no-underline" aria-label="Go to login" data-logo-login>
+<section class="relative w-full flex items-center justify-center mt-64 mb-28 md:mb-40 lg:mb-52 min-h-[20rem] md:min-h-[26rem] overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <img
+      src="/assets/img/bg/footer-key-hand.png"
+      alt=""
+      class="w-[150%] h-[150%] max-w-none object-contain object-center opacity-[0.34] md:opacity-[0.38] contrast-125 brightness-[0.9] saturate-0 select-none"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <a href="/login" class="relative z-10 logo-flip no-underline hover:no-underline" aria-label="Go to login" data-logo-login>
     <div class="logo-flip-inner">
       <div class="logo-flip-face logo-flip-face-front">
         <img src="/logo-original.png" alt="Dotenv logo" class="h-20 w-20 rounded-md object-contain" />

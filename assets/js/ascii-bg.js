@@ -74,7 +74,7 @@
     const mobile = Math.max(0, Math.min(1, state.w / 900));
 
     // Draw extracted ASCII ink only (white background removed), darker on mobile.
-    const baseAlpha = 0.08 + mobile * 0.12;
+    const baseAlpha = 0.16 + mobile * 0.14;
     ctx.filter = "none";
     ctx.globalAlpha = baseAlpha;
     ctx.drawImage(source, dx, dy, dw, dh);
@@ -82,7 +82,7 @@
     // Slight dark veil so foreground content stays readable.
     ctx.filter = "none";
     ctx.globalAlpha = 1;
-    const veil = 0.86 - mobile * 0.20; // stronger veil overall
+    const veil = 0.72 - mobile * 0.12;
     ctx.fillStyle = `rgba(0, 0, 0, ${veil.toFixed(3)})`;
     ctx.fillRect(0, 0, state.w, state.h);
 

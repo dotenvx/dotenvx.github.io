@@ -26,7 +26,9 @@ title: ""
 </section>
 
 <section class="w-full max-w-7xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(44, 38, 23, 0.85);">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
     <p class="mx-auto max-w-[42ch] text-center text-lg leading-relaxed">
       Companies of all sizes trust Dotenvx to secure secrets wherever agents and developers work.
@@ -602,47 +604,8 @@ title: ""
   </div>
 </section>
 
-<section class="relative w-full flex items-center justify-center mt-64 mb-0 pb-0 min-h-[20rem] md:min-h-[26rem] overflow-hidden">
-  <a href="/login" class="relative z-10 logo-flip no-underline hover:no-underline" aria-label="Go to login" data-logo-login>
-    <div class="logo-flip-inner">
-      <div class="logo-flip-face logo-flip-face-front">
-        <img src="/logo-original.png" alt="Dotenv logo" class="h-20 w-20 rounded-md object-contain" />
-      </div>
-    </div>
-  </a>
+<section class="w-full max-w-6xl mx-auto px-6 mt-8 mb-16 flex items-center justify-center">
+  <div class="w-full max-w-[220px]">
+    {% include v1/components/three-secrets-box-single.html height="220px" %}
+  </div>
 </section>
-
-<script>
-  (function () {
-    var logo = document.querySelector('[data-logo-login]')
-    if (!logo) return
-
-    var navigating = false
-
-    logo.addEventListener('click', function (event) {
-      if (event.defaultPrevented) return
-      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
-      if (navigating) {
-        event.preventDefault()
-        return
-      }
-
-      event.preventDefault()
-      navigating = true
-
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      var pressDelay = reduceMotion ? 0 : 95
-      var vanishDelay = reduceMotion ? 0 : 180
-
-      logo.classList.add('is-arming')
-      window.setTimeout(function () {
-        logo.classList.remove('is-arming')
-        logo.classList.add('is-disappearing')
-
-        window.setTimeout(function () {
-          window.location.assign('/login')
-        }, vanishDelay)
-      }, pressDelay)
-    })
-  })()
-</script>

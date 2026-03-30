@@ -9,14 +9,34 @@
         background: #000;
       }
 
-      #sequin-bg-canvas {
-        position: fixed;
-        inset: 0;
-        background: #000;
-        display: block;
+      #hero-bg-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         pointer-events: none;
         user-select: none;
         z-index: 0;
+      }
+
+      #hero-bg-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 0.34;
+        filter: brightness(0.46) saturate(0.64);
+      }
+
+      #hero-bg-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 90%,
+          rgba(0, 0, 0, 1) 100%
+        );
       }
     </style>
     {% endif %}
@@ -25,7 +45,9 @@
   </head>
   <body class="relative flex flex-col min-h-screen rounded-t-lg">
     {% if page.url == '/' or page.url == '/index.html' %}
-    <canvas id="sequin-bg-canvas" aria-hidden="true" data-image-src="{{ '/assets/img/bg/hero-cathedral-new.png' | relative_url }}"></canvas>
+    <div id="hero-bg-wrap" aria-hidden="true">
+      <img id="hero-bg-image" src="{{ '/assets/img/bg/hero-cathedral-new.png' | relative_url }}" alt="" decoding="async" loading="eager" />
+    </div>
     {% endif %}
     <header id="nav-sticky" class="sticky top-0 z-30 rounded-t-lg overflow-hidden border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
       {% include v1/nav.html %}
@@ -36,9 +58,6 @@
     <footer class="relative z-10 mt-20">
       {% include v1/footer.html %}
     </footer>
-    {% if page.url == '/' or page.url == '/index.html' %}
-    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=hero-cathedral-new-20260329-1"></script>
-    {% endif %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>
   </body>
 </html>

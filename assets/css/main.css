@@ -79,26 +79,8 @@ body {
   }
 }
 
-#sequin-bg-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: min(1300px, calc(100vh + 360px));
-  display: block;
-  background-color: #000;
-  pointer-events: none;
-  z-index: 0;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-
 html.dark body {
   background-color: #000000 !important;
-}
-
-html:not(.dark) #sequin-bg-canvas {
-  display: none;
 }
 
 .terminal-hero-card {

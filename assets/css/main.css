@@ -122,17 +122,14 @@ html:not(.dark) #sequin-bg-canvas {
 }
 
 .terminal-hero-card-premium {
-  border: 1px solid transparent;
   background:
-    radial-gradient(125% 85% at 100% 100%, rgba(208, 145, 47, 0.12) 0%, rgba(208, 145, 47, 0) 58%) padding-box,
-    linear-gradient(160deg, rgba(26, 21, 14, 0.95) 0%, rgba(15, 12, 9, 0.98) 48%, rgba(10, 9, 7, 1) 100%) padding-box,
-    linear-gradient(90deg, rgba(170, 129, 61, 0.52), rgba(244, 197, 103, 0.95), rgba(170, 129, 61, 0.52)) border-box;
+    radial-gradient(125% 85% at 100% 100%, rgba(120, 120, 120, 0.08) 0%, rgba(120, 120, 120, 0) 58%) padding-box,
+    linear-gradient(160deg, rgba(15, 15, 15, 0.95) 0%, rgba(10, 10, 10, 0.98) 48%, rgba(6, 6, 6, 1) 100%) padding-box;
   box-shadow:
     0 44px 100px rgba(0, 0, 0, 0.58),
     0 18px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(214, 171, 93, 0.18),
-    0 1px 0 rgba(255, 230, 168, 0.09) inset,
-    0 -1px 0 rgba(255, 221, 154, 0.16) inset;
+    0 1px 0 rgba(220, 220, 220, 0.04) inset,
+    0 -1px 0 rgba(200, 200, 200, 0.09) inset;
 }
 
 .terminal-hero-card::after {
@@ -145,10 +142,10 @@ html:not(.dark) #sequin-bg-canvas {
   transition: opacity 240ms ease;
   background: radial-gradient(
     240px circle at var(--spot-x) var(--spot-y),
-    rgba(250, 231, 171, 0.2) 0%,
-    rgba(250, 231, 171, 0.08) 22%,
-    rgba(250, 231, 171, 0.02) 42%,
-    rgba(250, 231, 171, 0) 70%
+    rgba(230, 230, 230, 0.14) 0%,
+    rgba(230, 230, 230, 0.06) 22%,
+    rgba(230, 230, 230, 0.02) 42%,
+    rgba(230, 230, 230, 0) 70%
   );
 }
 

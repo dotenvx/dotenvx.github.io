@@ -10,8 +10,13 @@
       }
 
       #sequin-bg-canvas {
+        position: fixed;
+        inset: 0;
         background: #000;
         display: block;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
       }
     </style>
     {% endif %}
@@ -20,7 +25,7 @@
   </head>
   <body class="relative flex flex-col min-h-screen rounded-t-lg">
     {% if page.url == '/' or page.url == '/index.html' %}
-    <canvas id="sequin-bg-canvas" aria-hidden="true" data-ascii-src="{{ '/assets/img/bg/enclave-ascii.txt' | relative_url }}"></canvas>
+    <canvas id="sequin-bg-canvas" aria-hidden="true" data-image-src="{{ '/assets/img/bg/ascii-art.png' | relative_url }}"></canvas>
     {% endif %}
     <header id="nav-sticky" class="sticky top-0 z-30 rounded-t-lg overflow-hidden border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
       {% include v1/nav.html %}
@@ -32,7 +37,7 @@
       {% include v1/footer.html %}
     </footer>
     {% if page.url == '/' or page.url == '/index.html' %}
-    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=sequin-church-build-20260322-holddim5"></script>
+    <script src="{{ '/assets/js/ascii-bg.js' | relative_url }}?v=ascii-png-bg-20260329-2"></script>
     {% endif %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>
   </body>

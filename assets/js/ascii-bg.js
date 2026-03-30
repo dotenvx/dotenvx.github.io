@@ -18,8 +18,6 @@
     revealProgress: 0,
     rafId: 0,
     nextPostGlitchDrawAt: 0,
-    nextGlitchSpawnAt: 0,
-    glitches: [],
     layout: null,
   };
 
@@ -28,23 +26,6 @@
   const hash2 = (x, y) => {
     const v = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
     return v - Math.floor(v);
-  };
-
-  const spawnGlitch = (now) => {
-    if (!state.layout) return;
-    if (state.glitches.length >= 2) return;
-
-    const block = Math.max(4, Math.floor(Math.min(state.layout.sampleW, state.layout.sampleH) / 42));
-    const w = block * (2 + Math.floor(Math.random() * 4));
-    const h = block * (4 + Math.floor(Math.random() * 9));
-    const x = Math.floor(Math.random() * Math.max(1, state.layout.sampleW - w));
-    const y = -h + Math.floor(Math.random() * block);
-    const speed = 0.016 + Math.random() * 0.03;
-    const holdMs = 1600 + Math.random() * 1200;
-    const breakMs = 900 + Math.random() * 1000;
-    const life = holdMs + breakMs;
-
-    state.glitches.push({ x, y, w, h, speed, holdMs, breakMs, life, born: now });
   };
 
   const buildLayout = () => {
@@ -163,58 +144,6 @@
       }
     }
 
-    // After the build completes, add sparse black "dying" chunks.
-    if (p >= 1 && !state.reduceMotion) {
-      if (now >= state.nextGlitchSpawnAt && Math.random() < 0.45) {
-        spawnGlitch(now);
-      }
-      if (now >= state.nextGlitchSpawnAt) {
-        state.nextGlitchSpawnAt = now + 1200 + Math.random() * 2200;
-      }
-
-      const alive = [];
-      for (let gi = 0; gi < state.glitches.length; gi += 1) {
-        const g = state.glitches[gi];
-        const age = now - g.born;
-        if (age > g.life) continue;
-
-        const isBreaking = age > g.holdMs;
-        const breakT = isBreaking ? clamp01((age - g.holdMs) / g.breakMs) : 0;
-        const yDrop = Math.floor(age * g.speed);
-        const alpha = isBreaking ? (1 - breakT) * 0.32 : 0.34;
-
-        for (let y2 = 0; y2 < g.h; y2 += 1) {
-          const yy = g.y + yDrop + y2;
-          if (yy < 0 || yy >= state.layout.sampleH) continue;
-          for (let x2 = 0; x2 < g.w; x2 += 1) {
-            const xx = g.x + x2;
-            if (xx < 0 || xx >= state.layout.sampleW) continue;
-
-            // Phase 1: hold grouped chunk. Phase 2: break it apart.
-            const clusterGate = hash2(
-              Math.floor(xx / 2.5) * 1.17 + gi * 2.3,
-              Math.floor(yy / 2.5) * 1.31 + gi * 4.7
-            );
-            if (clusterGate < 0.38) continue;
-
-            if (isBreaking) {
-              const breakupGate = hash2(xx * 1.37 + Math.floor(now / 55), yy * 1.91 + gi * 3.1);
-              const threshold = 0.18 + breakT * 0.72;
-              if (breakupGate < threshold) continue;
-            }
-
-            const px2 = state.layout.dx + xx * state.layout.cell;
-            const py2 = state.layout.dy + yy * state.layout.cell;
-            ctx.fillStyle = `rgba(0, 0, 0, ${alpha.toFixed(3)})`;
-            ctx.fillRect(px2, py2, state.layout.cell, state.layout.cell);
-          }
-        }
-
-        alive.push(g);
-      }
-      state.glitches = alive;
-    }
-
     // Global darken pass to keep foreground content legible.
     ctx.fillStyle = "rgba(0, 0, 0, 0.66)";
     ctx.fillRect(0, 0, state.w, state.h);
@@ -261,17 +190,15 @@
       state.revealProgress = eased;
       if (t < 1) {
         draw(eased, now);
-      } else if (now >= state.nextPostGlitchDrawAt) {
+        state.rafId = requestAnimationFrame(tick);
+      } else {
         draw(1, now);
-        state.nextPostGlitchDrawAt = now + 120;
+        state.rafId = 0;
       }
-      state.rafId = requestAnimationFrame(tick);
     };
 
     state.revealProgress = 0;
     state.nextPostGlitchDrawAt = 0;
-    state.nextGlitchSpawnAt = 0;
-    state.glitches = [];
     state.rafId = requestAnimationFrame(tick);
   };
 

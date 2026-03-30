@@ -18,6 +18,7 @@
     revealProgress: 0,
     rafId: 0,
     nextPostGlitchDrawAt: 0,
+    nextBreathDrawAt: 0,
     layout: null,
   };
 
@@ -72,7 +73,7 @@
     };
   };
 
-  const draw = (progress = state.revealProgress, now = performance.now()) => {
+  const draw = (progress = state.revealProgress, now = performance.now(), fadeAmount = 0) => {
     if (!state.w || !state.h) return;
 
     // Base black background.
@@ -89,6 +90,7 @@
     const revealY = p * state.layout.sampleH;
     const trail = Math.max(8, Math.floor(state.layout.sampleH * 0.11));
     const seedChunk = Math.max(4, Math.floor(trail * 0.55));
+    const breathBase = state.reduceMotion ? 1 : 0.94 + Math.sin(now * 0.00135) * 0.06;
 
     for (let y = 0; y < state.layout.sampleH; y += 1) {
       for (let x = 0; x < state.layout.sampleW; x += 1) {
@@ -138,15 +140,24 @@
 
         const px = state.layout.dx + x * state.layout.cell;
         const py = state.layout.dy + y * state.layout.cell;
-        const alpha = baseAlpha * revealAlpha;
+        const breathPixel = state.reduceMotion ? 1 : 0.98 + Math.sin(now * 0.0019 + y * 0.09 + x * 0.03) * 0.045;
+        const alpha = baseAlpha * revealAlpha * breathBase * breathPixel;
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(3)})`;
         ctx.fillRect(px, py, state.layout.cell, state.layout.cell);
       }
     }
 
     // Global darken pass to keep foreground content legible.
-    ctx.fillStyle = "rgba(0, 0, 0, 0.66)";
+    const breatheDark = state.reduceMotion ? 0.66 : 0.66 + Math.sin(now * 0.00135 + 1.1) * 0.02;
+    ctx.fillStyle = `rgba(0, 0, 0, ${breatheDark.toFixed(3)})`;
     ctx.fillRect(0, 0, state.w, state.h);
+
+    // Timed post-fade so the background recedes after it has been shown.
+    if (fadeAmount > 0) {
+      const extra = 0.28 * clamp01(fadeAmount);
+      ctx.fillStyle = `rgba(0, 0, 0, ${extra.toFixed(3)})`;
+      ctx.fillRect(0, 0, state.w, state.h);
+    }
   };
 
   const resize = () => {
@@ -173,32 +184,35 @@
 
     const delayMs = 2000;
     const durationMs = 6000;
+    const fadeStartMs = 14000;
+    const fadeDurationMs = 2200;
     const start = performance.now();
 
     const tick = (now) => {
       const elapsed = now - start;
       if (elapsed < delayMs) {
         state.revealProgress = 0;
-        draw(0);
+        draw(0, now, 0);
         state.rafId = requestAnimationFrame(tick);
         return;
       }
 
       const t = clamp01((elapsed - delayMs) / durationMs);
+      const fadeT = clamp01((elapsed - fadeStartMs) / fadeDurationMs);
       // Ease-out so growth slows as it reaches the edges.
       const eased = 1 - Math.pow(1 - t, 2.2);
       state.revealProgress = eased;
-      if (t < 1) {
-        draw(eased, now);
-        state.rafId = requestAnimationFrame(tick);
-      } else {
-        draw(1, now);
-        state.rafId = 0;
+      const stable = t >= 1 && fadeT >= 1;
+      if (!stable || now >= state.nextBreathDrawAt) {
+        draw(eased, now, fadeT);
+        if (stable) state.nextBreathDrawAt = now + 95;
       }
+      state.rafId = requestAnimationFrame(tick);
     };
 
     state.revealProgress = 0;
     state.nextPostGlitchDrawAt = 0;
+    state.nextBreathDrawAt = 0;
     state.rafId = requestAnimationFrame(tick);
   };
 

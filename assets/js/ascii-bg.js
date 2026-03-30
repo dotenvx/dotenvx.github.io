@@ -8,6 +8,8 @@
 
   const img = new Image();
   img.decoding = "async";
+  canvas.style.opacity = "0";
+  canvas.style.transition = "opacity 280ms ease";
 
   const state = {
     dpr: Math.min(window.devicePixelRatio || 1, 2),
@@ -18,8 +20,8 @@
     revealProgress: 0,
     rafId: 0,
     nextPostGlitchDrawAt: 0,
-    nextBreathDrawAt: 0,
     layout: null,
+    shown: false,
   };
 
   const clamp01 = (n) => Math.max(0, Math.min(1, n));
@@ -89,8 +91,6 @@
     const p = clamp01(progress);
     const revealY = p * state.layout.sampleH;
     const trail = Math.max(8, Math.floor(state.layout.sampleH * 0.11));
-    const seedChunk = Math.max(4, Math.floor(trail * 0.55));
-    const breathBase = state.reduceMotion ? 1 : 0.94 + Math.sin(now * 0.00135) * 0.06;
 
     for (let y = 0; y < state.layout.sampleH; y += 1) {
       for (let x = 0; x < state.layout.sampleW; x += 1) {
@@ -110,24 +110,11 @@
         const colLag = hash2(x * 0.31, 1.71) * state.layout.sampleH * 0.32 * (1 - p);
         const headY = revealY - colLag + colOffset;
         const depth = headY - y;
-
-        // Keep sparse, pre-seeded sections faintly visible before the rain reaches them.
-        let seedAlpha = 0;
-        if (depth < -trail && p < 0.985) {
-          const sx = Math.floor(x / seedChunk);
-          const sy = Math.floor(y / seedChunk);
-          const seed = hash2(sx * 0.73, sy * 1.29);
-          if (seed > 0.968) {
-            const seedLife = clamp01(1 - p / 0.55);
-            seedAlpha = 0.28 * seedLife;
-          } else {
-            continue;
-          }
-        }
+        if (depth < -trail) continue;
 
         // Chunkier stepped growth instead of smooth feather.
         const stepped = Math.floor((depth + trail) / 4) / Math.floor(trail / 4 || 1);
-        let revealAlpha = Math.max(seedAlpha, clamp01(stepped));
+        let revealAlpha = clamp01(stepped);
         if (p >= 0.985) revealAlpha = 1;
 
         // Near the moving head, randomly drop pixels for a broken terminal look.
@@ -140,23 +127,31 @@
 
         const px = state.layout.dx + x * state.layout.cell;
         const py = state.layout.dy + y * state.layout.cell;
-        const breathPixel = state.reduceMotion ? 1 : 0.98 + Math.sin(now * 0.0019 + y * 0.09 + x * 0.03) * 0.045;
-        const alpha = baseAlpha * revealAlpha * breathBase * breathPixel;
+        const alpha = baseAlpha * revealAlpha;
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(3)})`;
         ctx.fillRect(px, py, state.layout.cell, state.layout.cell);
       }
     }
 
+    // Subtle warm tint to echo the gold accent color in the hero heading.
+    const tintAlpha = 0.085 * (1 - fadeAmount * 0.55);
+    ctx.fillStyle = `rgba(186, 150, 72, ${tintAlpha.toFixed(3)})`;
+    ctx.fillRect(0, 0, state.w, state.h);
+
     // Global darken pass to keep foreground content legible.
-    const breatheDark = state.reduceMotion ? 0.66 : 0.66 + Math.sin(now * 0.00135 + 1.1) * 0.02;
-    ctx.fillStyle = `rgba(0, 0, 0, ${breatheDark.toFixed(3)})`;
+    ctx.fillStyle = "rgba(0, 0, 0, 0.74)";
     ctx.fillRect(0, 0, state.w, state.h);
 
     // Timed post-fade so the background recedes after it has been shown.
     if (fadeAmount > 0) {
-      const extra = 0.28 * clamp01(fadeAmount);
+      const extra = 0.42 * clamp01(fadeAmount);
       ctx.fillStyle = `rgba(0, 0, 0, ${extra.toFixed(3)})`;
       ctx.fillRect(0, 0, state.w, state.h);
+    }
+
+    if (!state.shown) {
+      state.shown = true;
+      canvas.style.opacity = "1";
     }
   };
 
@@ -202,17 +197,17 @@
       // Ease-out so growth slows as it reaches the edges.
       const eased = 1 - Math.pow(1 - t, 2.2);
       state.revealProgress = eased;
-      const stable = t >= 1 && fadeT >= 1;
-      if (!stable || now >= state.nextBreathDrawAt) {
+      if (t < 1 || fadeT < 1) {
         draw(eased, now, fadeT);
-        if (stable) state.nextBreathDrawAt = now + 95;
+        state.rafId = requestAnimationFrame(tick);
+      } else {
+        draw(1, now, 1);
+        state.rafId = 0;
       }
-      state.rafId = requestAnimationFrame(tick);
     };
 
     state.revealProgress = 0;
     state.nextPostGlitchDrawAt = 0;
-    state.nextBreathDrawAt = 0;
     state.rafId = requestAnimationFrame(tick);
   };
 

@@ -603,12 +603,12 @@ title: ""
   </div>
 </section>
 
-<section class="relative w-full flex items-center justify-center mt-64 mb-28 md:mb-40 lg:mb-52 min-h-[20rem] md:min-h-[26rem] overflow-hidden">
+<section class="relative w-full flex items-center justify-center mt-64 mb-0 pb-28 md:pb-40 lg:pb-52 min-h-[20rem] md:min-h-[26rem] overflow-hidden">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <img
       src="/assets/img/bg/footer-key-hand.png"
       alt=""
-      class="w-[155%] h-[155%] max-w-none object-contain object-[42%_86%] opacity-[0.34] md:opacity-[0.38] contrast-125 brightness-[0.9] saturate-0 select-none"
+      class="w-[165%] h-[165%] max-w-none object-contain object-[24%_84%] opacity-[0.34] md:opacity-[0.38] contrast-125 brightness-[0.9] saturate-0 select-none"
       loading="lazy"
       decoding="async"
     />

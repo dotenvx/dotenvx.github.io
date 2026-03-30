@@ -605,13 +605,7 @@ title: ""
 
 <section class="relative w-full flex items-center justify-center mt-64 mb-0 pb-0 min-h-[20rem] md:min-h-[26rem] overflow-hidden">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    <img
-      src="/assets/img/bg/footer-key-hand.png"
-      alt=""
-      class="w-[190%] h-[190%] max-w-none object-contain object-[24%_102%] opacity-[0.34] md:opacity-[0.38] contrast-125 brightness-[0.9] saturate-0 select-none"
-      loading="lazy"
-      decoding="async"
-    />
+    {% include v1/components/pixel-key.html class="absolute left-1/2 top-[49%] -translate-x-1/2 -translate-y-1/2 opacity-50 md:opacity-60" src="/assets/img/bg/key-reference.png" pixel=5 sample=4 %}
   </div>
   <a href="/login" class="relative z-10 logo-flip no-underline hover:no-underline" aria-label="Go to login" data-logo-login>
     <div class="logo-flip-inner">

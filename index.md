@@ -10,7 +10,7 @@ title: ""
         {% include v1/components/dotenv.html %}
       </div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.88rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secrets for Agents</h1>
-      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem]">Encrypted by default for agents–and their developers.<br />Stop leaking secrets into prompts, code, and runtime.</p>
+      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem]">Encrypted by default for agents–and developers.<br />Stop leaking secrets into prompts, code, and runtime.</p>
 
       <div class="flex flex-row gap-4 my-2 justify-center md:justify-start">
         <a class="btn-primary" href="/docs/quickstart">Get Started</a>

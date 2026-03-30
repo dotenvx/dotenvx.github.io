@@ -32,17 +32,19 @@
 
   const spawnGlitch = (now) => {
     if (!state.layout) return;
-    if (state.glitches.length >= 3) return;
+    if (state.glitches.length >= 2) return;
 
     const block = Math.max(4, Math.floor(Math.min(state.layout.sampleW, state.layout.sampleH) / 42));
-    const w = block * (1 + Math.floor(Math.random() * 3));
-    const h = block * (3 + Math.floor(Math.random() * 8));
+    const w = block * (2 + Math.floor(Math.random() * 4));
+    const h = block * (4 + Math.floor(Math.random() * 9));
     const x = Math.floor(Math.random() * Math.max(1, state.layout.sampleW - w));
     const y = -h + Math.floor(Math.random() * block);
-    const speed = 0.028 + Math.random() * 0.05;
-    const life = 900 + Math.random() * 900;
+    const speed = 0.016 + Math.random() * 0.03;
+    const holdMs = 1600 + Math.random() * 1200;
+    const breakMs = 900 + Math.random() * 1000;
+    const life = holdMs + breakMs;
 
-    state.glitches.push({ x, y, w, h, speed, life, born: now });
+    state.glitches.push({ x, y, w, h, speed, holdMs, breakMs, life, born: now });
   };
 
   const buildLayout = () => {
@@ -167,7 +169,7 @@
         spawnGlitch(now);
       }
       if (now >= state.nextGlitchSpawnAt) {
-        state.nextGlitchSpawnAt = now + 380 + Math.random() * 1200;
+        state.nextGlitchSpawnAt = now + 1200 + Math.random() * 2200;
       }
 
       const alive = [];
@@ -176,9 +178,10 @@
         const age = now - g.born;
         if (age > g.life) continue;
 
-        const lifeT = age / g.life;
+        const isBreaking = age > g.holdMs;
+        const breakT = isBreaking ? clamp01((age - g.holdMs) / g.breakMs) : 0;
         const yDrop = Math.floor(age * g.speed);
-        const alpha = (1 - lifeT) * 0.38;
+        const alpha = isBreaking ? (1 - breakT) * 0.32 : 0.34;
 
         for (let y2 = 0; y2 < g.h; y2 += 1) {
           const yy = g.y + yDrop + y2;
@@ -187,8 +190,18 @@
             const xx = g.x + x2;
             if (xx < 0 || xx >= state.layout.sampleW) continue;
 
-            const gate = hash2(xx * 1.37 + Math.floor(now / 70), yy * 1.91 + gi * 3.1);
-            if (gate < 0.58) continue;
+            // Phase 1: hold grouped chunk. Phase 2: break it apart.
+            const clusterGate = hash2(
+              Math.floor(xx / 2.5) * 1.17 + gi * 2.3,
+              Math.floor(yy / 2.5) * 1.31 + gi * 4.7
+            );
+            if (clusterGate < 0.38) continue;
+
+            if (isBreaking) {
+              const breakupGate = hash2(xx * 1.37 + Math.floor(now / 55), yy * 1.91 + gi * 3.1);
+              const threshold = 0.18 + breakT * 0.72;
+              if (breakupGate < threshold) continue;
+            }
 
             const px2 = state.layout.dx + xx * state.layout.cell;
             const py2 = state.layout.dy + yy * state.layout.cell;

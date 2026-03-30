@@ -14,6 +14,41 @@
     w: 0,
     h: 0,
     loaded: false,
+    maskCanvas: null,
+  };
+
+  const buildInkMask = () => {
+    const w = img.naturalWidth || img.width || 0;
+    const h = img.naturalHeight || img.height || 0;
+    if (!w || !h) return null;
+
+    const off = document.createElement("canvas");
+    off.width = w;
+    off.height = h;
+    const octx = off.getContext("2d");
+    if (!octx) return null;
+    octx.drawImage(img, 0, 0, w, h);
+
+    const imageData = octx.getImageData(0, 0, w, h);
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      const ink = 255 - lum;
+      if (ink < 22) {
+        data[i + 3] = 0;
+        continue;
+      }
+      const alpha = Math.min(255, (ink - 22) * 1.6);
+      data[i] = 210;
+      data[i + 1] = 210;
+      data[i + 2] = 214;
+      data[i + 3] = alpha;
+    }
+    octx.putImageData(imageData, 0, 0);
+    return off;
   };
 
   const draw = () => {
@@ -27,8 +62,9 @@
     if (!state.loaded) return;
 
     // Cover fit to fill viewport.
-    const iw = img.naturalWidth || 1;
-    const ih = img.naturalHeight || 1;
+    const source = state.maskCanvas || img;
+    const iw = source.width || img.naturalWidth || 1;
+    const ih = source.height || img.naturalHeight || 1;
     const scale = Math.max(state.w / iw, state.h / ih);
     const dw = iw * scale;
     const dh = ih * scale;
@@ -36,17 +72,16 @@
     const dy = (state.h - dh) * 0.5;
     const mobile = Math.max(0, Math.min(1, state.w / 900));
 
-    // Near-black but visible, with stronger darkening on mobile.
-    const brightness = 0.14 + mobile * 0.06; // ~0.166 on iPhone widths, ~0.20 desktop
-    const baseAlpha = 0.62 + mobile * 0.28;  // reduce image weight on smaller screens
-    ctx.filter = `grayscale(1) contrast(1.05) brightness(${brightness.toFixed(3)})`;
+    // Draw extracted ASCII ink only (white background removed), darker on mobile.
+    const baseAlpha = 0.24 + mobile * 0.26;
+    ctx.filter = "none";
     ctx.globalAlpha = baseAlpha;
-    ctx.drawImage(img, dx, dy, dw, dh);
+    ctx.drawImage(source, dx, dy, dw, dh);
 
     // Slight dark veil so foreground content stays readable.
     ctx.filter = "none";
     ctx.globalAlpha = 1;
-    const veil = 0.62 - mobile * 0.20; // stronger veil on mobile
+    const veil = 0.70 - mobile * 0.22; // stronger veil on mobile
     ctx.fillStyle = `rgba(0, 0, 0, ${veil.toFixed(3)})`;
     ctx.fillRect(0, 0, state.w, state.h);
 
@@ -81,6 +116,7 @@
   };
 
   img.onload = () => {
+    state.maskCanvas = buildInkMask();
     state.loaded = true;
     draw();
   };

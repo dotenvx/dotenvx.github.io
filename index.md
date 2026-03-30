@@ -3,7 +3,7 @@ title: ""
 ---
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-36 lg:mt-40 mb-32 md:mb-40 lg:mb-44">
-  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] gap-10 md:gap-12 lg:gap-14 items-center">
+  <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] gap-10 md:gap-12 lg:gap-14 items-center">
     <div class="flex flex-col gap-4 md:gap-6 hero-copy-enter">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">
         <span>From the creator of</span>
@@ -18,7 +18,7 @@ title: ""
       </div>
     </div>
 
-    <div class="w-full max-w-[34rem] mx-auto lg:mx-0 lg:justify-self-end md:-mt-20 lg:-mt-28">
+    <div class="w-full max-w-[34rem] mx-auto md:mx-0 md:justify-self-end lg:-mt-28 hero-terminal-enter">
       {% include v1/components/three-standing-rect.html height="560px" %}
     </div>
 

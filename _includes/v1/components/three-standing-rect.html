@@ -1,6 +1,6 @@
 <div
   class="{{ include.class }}"
-  data-three-standing-rect
+  data-secrets-box
   style="height: {{ include.height | default: '320px' }};"
 >
   <canvas class="block h-full w-full"></canvas>
@@ -20,9 +20,9 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-  const root = document.querySelector('[data-three-standing-rect]:not([data-three-mounted])');
+  const root = document.querySelector('[data-secrets-box]:not([data-three-mounted])');
   if (!root) {
-    throw new Error('three-standing-rect mount target not found');
+    throw new Error('secrets-box mount target not found');
   }
 
   root.setAttribute('data-three-mounted', 'true');
@@ -59,18 +59,37 @@
   rimLight.position.set(-4, 2.5, -3);
   scene.add(rimLight);
 
-  const rectGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
+  const secretsBoxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
+  const secretsBoxEdgeGeometry = new THREE.EdgesGeometry(secretsBoxGeometry);
+  const edgeHighlightMaterial = new THREE.LineBasicMaterial({
+    color: 0xc8d0de,
+    transparent: true,
+    opacity: 0.16,
+    toneMapped: false
+  });
+  const glowShellMaterial = new THREE.MeshBasicMaterial({
+    color: 0xe7c96f,
+    transparent: true,
+    opacity: 0.12,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide,
+    depthWrite: false,
+    toneMapped: false
+  });
   const labelTextureCache = new Map();
   const materialCache = new Map();
+  const baseEnvMapIntensity = 1.35;
+  const baseRoughness = 0.055;
+  const baseThickness = 1.1;
 
   const buildLabelTexture = (label) => {
     const c = document.createElement('canvas');
     c.width = 128; c.height = 128;
     const ctx = c.getContext('2d');
     ctx.clearRect(0, 0, 128, 128);
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = 'rgba(99, 104, 113, 0.24)';
     ctx.fillRect(0, 0, 128, 128);
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = 'rgba(217, 191, 117, 0.82)';
     ctx.font = '500 16px sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -91,37 +110,77 @@
   const getFaceMaterial = (label) => {
     if (!materialCache.has(label)) {
       materialCache.set(label, new THREE.MeshPhysicalMaterial({
-        color: 0xffffff,
+        color: 0xfff7e3,
+        transparent: true,
+        opacity: 0.55,
         map: getLabelTexture(label),
         metalness: 0.0,
-        roughness: 0.02,
-        transmission: 1.0,
-        thickness: 1.6,
+        roughness: baseRoughness,
+        transmission: 0.94,
+        thickness: baseThickness,
         ior: 1.5,
         clearcoat: 1.0,
-        clearcoatRoughness: 0.0,
-        envMapIntensity: 2.2
+        clearcoatRoughness: 0.05,
+        attenuationColor: 0x7a8394,
+        attenuationDistance: 1.6,
+        envMapIntensity: baseEnvMapIntensity
       }));
     }
     return materialCache.get(label);
   };
 
-  const createStandingRect = ({
+  const createFaceMaterialVariant = (label, roughnessOffset, thicknessOffset, faceRole) => {
+    const mat = getFaceMaterial(label).clone();
+    mat.roughness = THREE.MathUtils.clamp(baseRoughness + roughnessOffset, 0.006, 0.06);
+    mat.thickness = THREE.MathUtils.clamp(baseThickness + thicknessOffset, 1.35, 1.9);
+    if (faceRole === 'top') {
+      mat.opacity = 0.14;
+      mat.transmission = 0.99;
+      mat.roughness = Math.min(0.07, mat.roughness + 0.01);
+      mat.thickness = 0.18;
+      mat.clearcoatRoughness = 0.05;
+    } else if (faceRole === 'bottom') {
+      mat.opacity = 0.28;
+      mat.transmission = 0.88;
+      mat.thickness = 0.5;
+      mat.clearcoatRoughness = 0.06;
+    } else {
+      mat.opacity = 0.25;
+      mat.transmission = 0.98;
+      mat.thickness = 0.42;
+      mat.clearcoatRoughness = 0.04;
+    }
+    return mat;
+  };
+
+  const createSecretsBox = ({
     position = [0, 0.74, 0],
     rotation = [0, 0, 0],
     labels = { px: 's1', nx: 's2', py: 't', ny: 'b', pz: 's3', nz: 's4' }
   } = {}) => {
+    const roughnessOffset = (Math.random() - 0.5) * 0.02;
+    const thicknessOffset = (Math.random() - 0.5) * 0.18;
     // BoxGeometry face order: +x, -x, +y (top), -y (bottom), +z, -z
-    const mesh = new THREE.Mesh(rectGeometry, [
-      getFaceMaterial(labels.px),
-      getFaceMaterial(labels.nx),
-      getFaceMaterial(labels.py),
-      getFaceMaterial(labels.ny),
-      getFaceMaterial(labels.pz),
-      getFaceMaterial(labels.nz)
+    const mesh = new THREE.Mesh(secretsBoxGeometry, [
+      createFaceMaterialVariant(labels.px, roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant(labels.nx, roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant(labels.py, roughnessOffset, thicknessOffset, 'top'),
+      createFaceMaterialVariant(labels.ny, roughnessOffset, thicknessOffset, 'bottom'),
+      createFaceMaterialVariant(labels.pz, roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant(labels.nz, roughnessOffset, thicknessOffset, 'side')
     ]);
     mesh.position.set(position[0], position[1], position[2]);
     mesh.rotation.set(rotation[0], rotation[1], rotation[2]);
+
+    const edgeLines = new THREE.LineSegments(secretsBoxEdgeGeometry, edgeHighlightMaterial);
+    edgeLines.renderOrder = 2;
+    mesh.add(edgeLines);
+
+    const glowShell = new THREE.Mesh(secretsBoxGeometry, glowShellMaterial);
+    glowShell.scale.set(1.12, 1.12, 1.12);
+    glowShell.renderOrder = 0;
+    mesh.add(glowShell);
+
     return mesh;
   };
 
@@ -148,19 +207,19 @@
   const startX = centerX - ((colCount - 1) * pitch) / 2;
   const startZ = centerZ - ((rowCount - 1) * pitch) / 2;
 
-  const rectGroup = new THREE.Group();
+  const secretsBoxGroup = new THREE.Group();
   for (let r = 0; r < rowCount; r += 1) {
     for (let c = 0; c < colCount; c += 1) {
       if (grid[r][c] !== '■') continue;
       const x = startX + c * pitch;
       const z = startZ + r * pitch;
-      rectGroup.add(createStandingRect({ position: [x, 0.74, z] }));
+      secretsBoxGroup.add(createSecretsBox({ position: [x, 0.74, z] }));
     }
   }
-  rectGroup.rotation.y = Math.PI;
-  scene.add(rectGroup);
+  secretsBoxGroup.rotation.y = Math.PI;
+  scene.add(secretsBoxGroup);
 
-  const keyBounds = new THREE.Box3().setFromObject(rectGroup);
+  const keyBounds = new THREE.Box3().setFromObject(secretsBoxGroup);
   const keyCenter = new THREE.Vector3();
   const keySize = new THREE.Vector3();
   keyBounds.getCenter(keyCenter);
@@ -191,8 +250,25 @@ const resize = () => {
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.enableRotate = true;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.35;
   controls.target.set(keyCenter.x, keyCenterY, keyCenter.z);
   controls.update();
+
+  let autoRotateResumeTimer = null;
+  controls.addEventListener('start', () => {
+    controls.autoRotate = false;
+    if (autoRotateResumeTimer) {
+      clearTimeout(autoRotateResumeTimer);
+      autoRotateResumeTimer = null;
+    }
+  });
+  controls.addEventListener('end', () => {
+    autoRotateResumeTimer = setTimeout(() => {
+      controls.autoRotate = true;
+      autoRotateResumeTimer = null;
+    }, 1400);
+  });
 
   resize();
 

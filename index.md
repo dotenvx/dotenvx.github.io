@@ -18,8 +18,8 @@ title: ""
       </div>
     </div>
 
-    <div class="w-full max-w-[34rem] mx-auto lg:mx-0 lg:justify-self-end">
-      {% include v1/components/three-standing-rect.html height="420px" class="border border-red-500" %}
+    <div class="w-full max-w-[34rem] mx-auto lg:mx-0 lg:justify-self-end md:-mt-20 lg:-mt-28">
+      {% include v1/components/three-standing-rect.html height="560px" %}
     </div>
 
   </div>

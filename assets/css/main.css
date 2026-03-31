@@ -290,7 +290,7 @@ a.btn { @apply text-center rounded cursor-pointer border border-zinc-300 dark:bo
 .link-ops { @apply dark:text-[#1552D8]; }
 a.btn-submit, button.btn-submit { @apply text-center rounded cursor-pointer bg-zinc-950 dark:bg-zinc-100 p-3 font-extrabold text-zinc-50 dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:cursor-default flex items-center justify-center gap-4 no-underline hover:no-underline; }
 a.btn-success { @apply text-zinc-50 text-center rounded cursor-pointer border border-green-500 p-3 font-extrabold tracking-tight bg-green-600 hover:bg-green-500 dark:hover:bg-green-700 flex items-center justify-center gap-4 no-underline hover:no-underline text-zinc-50 dark:text-zinc-50; }
-a.btn-primary, button.btn-primary { @apply inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950 px-4 py-2.5 font-extrabold tracking-tight text-white dark:text-white no-underline hover:no-underline hover:text-zinc-950 dark:hover:text-zinc-950 transition-all duration-200; }
+a.btn-primary, button.btn-primary { @apply inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950 px-4 py-2.5 font-extrabold tracking-tight text-white dark:text-white no-underline hover:no-underline hover:text-zinc-950 dark:hover:text-zinc-950 transition-all duration-200 active:translate-y-px; }
 a.btn-primary:hover, button.btn-primary:hover {
   background-color: #f4f4f5;
   box-shadow: 0 0 24px rgba(236, 213, 63, 0.18);

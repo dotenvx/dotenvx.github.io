@@ -2,7 +2,7 @@
 title: ""
 ---
 
-<section class="w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44 lg:mt-20">
+<section class="w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44 md:mt-20 lg:mt-20">
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include v1/components/dotenv.html %}</div>
@@ -19,7 +19,7 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>

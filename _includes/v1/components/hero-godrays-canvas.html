@@ -17,7 +17,7 @@
   const TARGET_OPACITY = 0.62;
   const MOBILE_BREAKPOINT = 768;
   const MOBILE_SOURCE_SHIFT_MAX = 0;
-  const MOBILE_BEAM_LIMIT = 12;
+  const MOBILE_BEAM_LIMIT = 17;
   const MOBILE_DUST_LIMIT = 56;
   const MOBILE_BEAM_DUST_LIMIT = 72;
   const ENABLE_DUST = true;
@@ -30,7 +30,7 @@
   const BASE_SOURCE_X = 0.21;
   const BASE_SOURCE_Y = -0.20;
 
-  const defaultBeamConfigs = Array.from({ length: 20 }, () => ({
+  const defaultBeamConfigs = Array.from({ length: 25 }, () => ({
     nearWidth: 8,
     farWidth: 300,
     thickness: 1,
@@ -73,8 +73,8 @@
   };
 
   const beamCount = beamConfigs.length;
-  const leftCount = Math.round(beamCount * 0.3);
-  const middleCount = Math.round(beamCount * 0.4);
+  const leftCount = Math.round(beamCount * 0.18);
+  const middleCount = Math.round(beamCount * 0.62);
   const rightCount = Math.max(0, beamCount - leftCount - middleCount);
   const middleStart = leftCount;
   const middleEnd = leftCount + middleCount - 1;
@@ -103,15 +103,15 @@
     const widthScale = isSafari ? 1.14 : 1;
     return {
       offset: 0,
-      widthNear: 64 * widthScale,
-      widthFar: 64 * widthScale,
+      widthNear: 72 * widthScale,
+      widthFar: 72 * widthScale,
       alpha,
       lengthScale: 0.98,
       fadeLength: 0.64,
       sourceX,
       sourceY,
       angle,
-      blur: isSafari ? 16 : 10
+      blur: isSafari ? 17 : 11
     };
   });
 

@@ -463,3 +463,12 @@ width: 100%;
 .marquee-content {
   display: flex;
 }
+
+@media (max-width: 767px) {
+  .hero-no-select,
+  .hero-no-select * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+}

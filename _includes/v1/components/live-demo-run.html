@@ -1,0 +1,31 @@
+<div class="terminal-hero-card terminal-hero-card-premium live-demo-run-card w-full max-w-none bg-[#0a0a0a] text-[#d4d4d4] font-mono text-sm rounded-md shadow-2xl overflow-hidden">
+  <pre class="live-demo-run-terminal px-5 py-5 leading-relaxed whitespace-pre" aria-live="polite"><span class="cmd">$ dotenvx run -- npm start</span>
+<span class="ok">⟐ injecting env (14) from .env</span></pre>
+</div>
+
+<style>
+  .live-demo-run-card {
+    border: 1px solid rgba(113, 113, 122, 0.28);
+  }
+
+  .live-demo-run-terminal {
+    height: 4.9rem;
+    margin: 0;
+    line-height: 1.45;
+    overflow: hidden;
+  }
+
+  .live-demo-run-terminal .cmd { color: #ededed; }
+  .live-demo-run-terminal .ok {
+    color: #ecd53f;
+    font-weight: 600;
+  }
+
+  @media (max-width: 767px) {
+    .live-demo-run-terminal {
+      height: 4.8rem;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+  }
+</style>

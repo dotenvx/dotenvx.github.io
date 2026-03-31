@@ -121,12 +121,7 @@ title: ""
         <div class="feature-cli-cmd"><code>dotenvx encrypt</code></div>
       </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>
-      <div class="feature-cli-visual feature-cli-visual-encrypt" data-feature-encrypt-demo>
-        <div class="feature-cli-line feature-cli-line-demo">
-          <span class="cmd">$ </span><span class="cmd" data-feature-encrypt-cmd></span><span class="feature-cli-caret" data-feature-encrypt-caret></span>
-        </div>
-        <div class="feature-cli-line feature-cli-line-demo feature-cli-live-status" data-feature-encrypt-status><span class="ok">◈ encrypted (.env)</span></div>
-      </div>
+      {% include v1/components/live-demo-encrypt.html %}
     </article>
 
     <article class="feature-cli-card hidden lg:flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-1 lg:col-span-3 min-h-[14rem] md:min-h-[15.5rem]">
@@ -136,10 +131,7 @@ title: ""
         <div class="feature-cli-cmd"><code>dotenvx run -- your-agent</code></div>
       </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
-      <div class="feature-cli-visual feature-cli-visual-inject">
-        <div class="feature-cli-line"><span class="feature-cli-cmdtext">$ dotenvx run -- your-agent</span></div>
-        <div class="feature-cli-status">⟐ injecting env (14) from .env</div>
-      </div>
+      {% include v1/components/live-demo-run.html %}
     </article>
   </div>
 
@@ -151,10 +143,7 @@ title: ""
         <div class="feature-cli-cmd"><code>dotenvx run -- your-agent</code></div>
       </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
-      <div class="feature-cli-visual feature-cli-visual-inject">
-        <div class="feature-cli-line"><span class="feature-cli-cmdtext">$ dotenvx run -- your-agent</span></div>
-        <div class="feature-cli-status">⟐ injecting env (14) from .env</div>
-      </div>
+      {% include v1/components/live-demo-run.html %}
     </article>
 
     <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
@@ -560,53 +549,3 @@ title: ""
     {% include v1/components/three-secrets-box-single.html height="220px" %}
   </div>
 </section>
-
-<script>
-  (() => {
-    const demos = document.querySelectorAll("[data-feature-encrypt-demo]");
-    if (!demos.length) return;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const text = "dotenvx encrypt";
-
-    demos.forEach((demo) => {
-      const cmd = demo.querySelector("[data-feature-encrypt-cmd]");
-      const status = demo.querySelector("[data-feature-encrypt-status]");
-      const caret = demo.querySelector("[data-feature-encrypt-caret]");
-      if (!cmd || !status || !caret) return;
-
-      if (reducedMotion) {
-        cmd.textContent = text;
-        status.classList.add("is-visible");
-        caret.style.display = "none";
-        return;
-      }
-
-      const run = () => {
-        cmd.textContent = "";
-        status.classList.remove("is-visible");
-        caret.style.display = "inline-block";
-
-        let i = 0;
-        const typeNext = () => {
-          if (i <= text.length) {
-            cmd.textContent = text.slice(0, i);
-            i += 1;
-            window.setTimeout(typeNext, i < 3 ? 120 : 58);
-            return;
-          }
-
-          window.setTimeout(() => {
-            status.classList.add("is-visible");
-          }, 160);
-
-          window.setTimeout(run, 1900);
-        };
-
-        window.setTimeout(typeNext, 220);
-      };
-
-      run();
-    });
-  })();
-</script>

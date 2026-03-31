@@ -1,0 +1,250 @@
+<div class="terminal-hero-card terminal-hero-card-premium live-demo-encrypt-card w-full max-w-none bg-[#0a0a0a] text-[#d4d4d4] font-mono text-sm rounded-md shadow-2xl overflow-hidden" data-dotenvx-terminal-demo>
+  <pre class="dotenvx-live-terminal px-5 py-5 leading-relaxed whitespace-pre overflow-auto" aria-live="polite"></pre>
+</div>
+
+<style>
+  .live-demo-encrypt-card {
+    border: 1px solid rgba(113, 113, 122, 0.28);
+  }
+
+  .dotenvx-live-terminal {
+    height: 6.8rem;
+    margin: 0;
+    scrollbar-width: thin;
+    line-height: 1.45;
+    overflow: hidden;
+  }
+  .dotenvx-live-terminal .dim { color: #8a8a8a; }
+  .dotenvx-live-terminal .cmd { color: #ededed; }
+  .dotenvx-live-terminal .ok { color: #ecd53f; }
+  .dotenvx-live-terminal .title { color: #bdbdbd; }
+  .dotenvx-live-terminal .key { color: #dadada; }
+  .dotenvx-live-terminal .val { color: #ecd53f; }
+  .dotenvx-live-terminal .cursor {
+    display: inline-block;
+    width: 0;
+    height: 1.02em;
+    margin-left: 0;
+    border-left: 2px solid #d7d7d7;
+    animation: dotenvx-caret 920ms step-end infinite;
+    vertical-align: -0.14em;
+  }
+  .dotenvx-live-terminal .vim-frame {
+    --vim-editor-bg: rgba(10, 9, 7, 0.68);
+    display: block;
+    position: relative;
+    margin-top: 22px;
+    box-sizing: border-box;
+    max-width: 100%;
+    border: 1px solid rgba(205, 170, 98, 0.45);
+    border-radius: 6px;
+    padding: 16px 16px 10px 12px;
+    background: var(--vim-editor-bg);
+    white-space: pre-wrap;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 223, 158, 0.08),
+      0 8px 20px rgba(0, 0, 0, 0.32);
+  }
+  .dotenvx-live-terminal .vim-tab {
+    position: absolute;
+    top: -25px;
+    left: 14px;
+    display: inline-block;
+    padding: 6px 12px 7px;
+    border: 1px solid rgba(205, 170, 98, 0.58);
+    border-bottom: 1px solid rgba(205, 170, 98, 0.45);
+    border-radius: 6px 6px 0 0;
+    background: var(--vim-editor-bg);
+    color: #b7a98a;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    box-shadow: none;
+  }
+  .dotenvx-live-terminal .vim-frame .val {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .dotenvx-live-terminal .vim-comment { color: #7f8f7b; }
+  .dotenvx-live-terminal .vim-js-fn { color: #7fb8d8; }
+  .dotenvx-live-terminal .vim-js-str { color: #d7c56f; }
+  .dotenvx-live-terminal .vim-js-var { color: #c89ae0; }
+  .dotenvx-live-terminal .vim-cursor-normal {
+    display: block;
+    position: absolute;
+    background: #d7d1c1;
+    color: #0f0e0b;
+    min-width: 0.62ch;
+    height: 1.12em;
+    line-height: 1.08em;
+    left: calc(12px + ((var(--vim-col, 1) - 1) * 0.62ch) + 0.04ch);
+    top: calc(16px + ((var(--vim-row, 1) - 1) * 1.52em) + 0.52em);
+    pointer-events: none;
+  }
+  .dotenvx-live-terminal .vim-cursor-insert {
+    display: block;
+    position: absolute;
+    background: #bfb7a1;
+    color: #0f0e0b;
+    min-width: 0.62ch;
+    height: 1.12em;
+    line-height: 1.08em;
+    left: calc(12px + ((var(--vim-col, 1) - 1) * 0.62ch) + 0.04ch);
+    top: calc(16px + ((var(--vim-row, 1) - 1) * 1.52em) + 0.52em);
+    pointer-events: none;
+  }
+
+  @keyframes dotenvx-caret {
+    0%, 45% { opacity: 1; }
+    46%, 100% { opacity: 0; }
+  }
+
+  @media (max-width: 767px) {
+    .dotenvx-live-terminal {
+      height: 6.6rem;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dotenvx-live-terminal .cursor {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const demos = document.querySelectorAll("[data-dotenvx-terminal-demo]");
+    if (!demos.length) return;
+
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    const escapeHtml = (value) =>
+      value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+
+    demos.forEach((demo) => {
+      if (demo.dataset.demoReady === "1") return;
+      demo.dataset.demoReady = "1";
+
+      const screen = demo.querySelector(".dotenvx-live-terminal");
+      if (!screen) return;
+
+      const state = {
+        shellLines: [],
+        activeCommand: "",
+        showPrompt: false
+      };
+
+      const nextDelay = (ch = "", nextCh = "", mode = "shell") => {
+        const base = mode === "vim"
+          ? 62
+          : 52;
+        const jitter = mode === "vim"
+          ? 44
+          : 36;
+
+        let delay = base + Math.floor(Math.random() * jitter);
+        if (ch === " ") delay += 70 + Math.floor(Math.random() * 55);
+        if (/[.,;:!?]/.test(ch)) delay += 90 + Math.floor(Math.random() * 90);
+        if (/[:=\/\\()\[\]{}]/.test(ch)) delay += 14 + Math.floor(Math.random() * 20);
+        if (nextCh && /[A-Z]/.test(nextCh) && ch === " ") delay += 24;
+        return delay;
+      };
+
+      const render = () => {
+        const lines = [...state.shellLines];
+        if (state.activeCommand) {
+          lines.push(`<span class=\"cmd\">$ ${escapeHtml(state.activeCommand)}</span><span class=\"cursor\"></span>`);
+        } else if (state.showPrompt) {
+          lines.push('<span class="cmd">$ </span><span class="cursor"></span>');
+        }
+
+        screen.innerHTML = lines.join("\n");
+        screen.scrollTop = screen.scrollHeight;
+      };
+
+      const pushLine = (line) => {
+        state.shellLines.push(line);
+        if (state.shellLines.length > 32) state.shellLines = state.shellLines.slice(-32);
+        render();
+      };
+
+      const typeCommand = async (command) => {
+        state.showPrompt = true;
+        state.activeCommand = "";
+        render();
+        for (let i = 0; i < command.length; i += 1) {
+          const ch = command[i];
+          const nextCh = command[i + 1] || "";
+          state.activeCommand += ch;
+          render();
+          await wait(nextDelay(ch, nextCh, "shell"));
+        }
+        await wait(210);
+        pushLine(`<span class=\"cmd\">$ ${escapeHtml(command)}</span>`);
+        state.showPrompt = false;
+        state.activeCommand = "";
+        render();
+      };
+
+      const runCommand = async (command, outputLines, pause = 900, options = {}) => {
+        const { clearAfter = false } = options;
+        await typeCommand(command);
+        if (clearAfter) {
+          await wait(120);
+          resetTerminal();
+          await wait(pause);
+          return;
+        }
+        for (const line of outputLines) {
+          pushLine(line);
+          await wait(220);
+        }
+        state.showPrompt = true;
+        render();
+        await wait(pause);
+      };
+
+      const resetTerminal = () => {
+        state.shellLines = [];
+        state.activeCommand = "";
+        state.showPrompt = false;
+        render();
+      };
+
+      const idleAtPrompt = async (ms) => {
+        state.showPrompt = true;
+        state.activeCommand = "";
+        render();
+        await wait(ms);
+        state.showPrompt = false;
+        render();
+      };
+
+      const loop = async () => {
+        while (document.body.contains(demo)) {
+          resetTerminal();
+          await idleAtPrompt(2700);
+          await runCommand("dotenvx encrypt", [
+            "<span class=\"ok\">◈ encrypted (.env)</span>"
+          ], 1050);
+          await wait(1500);
+        }
+      };
+
+      render();
+      loop();
+    });
+  })();
+</script>

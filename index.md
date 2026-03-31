@@ -2,26 +2,20 @@
 title: ""
 ---
 
-<section class="w-full max-w-7xl mx-auto px-6 mt-6 sm:mt-10 md:mt-36 lg:mt-40 mb-32 md:mb-40 lg:mb-44">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 md:gap-8 lg:gap-10 items-center">
-    <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter">
-      <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">
-        <span>From the creator of</span>
-        {% include v1/components/dotenv.html %}
-      </div>
+<section class="w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
+    <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
+      <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include v1/components/dotenv.html %}</div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.88rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secrets for Agents</h1>
-      <p class="mt-[-0.72rem] md:mt-[-0.92rem] mx-auto lg:mx-0 max-w-[28rem] sm:max-w-[34rem] md:max-w-none text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Encrypted by default for agents–and developers.<br />Stop leaking secrets into prompts, code, and runtime.</p>
-
-      <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto md:mx-0">
-        <a class="btn-primary w-full md:w-auto text-center" href="/signup">Get Started</a>
-        <a class="inline-flex w-full md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
+      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Encrypted by default for agents–and developers.<span class="inline md:hidden lg:inline"><br /></span><span class="hidden md:inline lg:hidden"> </span>Stop leaking secrets into prompts, code, and runtime.</p>
+      <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
+        <a class="btn-primary w-full max-w-md md:w-auto text-center" href="/signup">Get Started</a>
+        <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
       </div>
     </div>
-
-    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch mb-0 md:mb-0 lg:-mt-28">
+    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
       {% include v1/components/three-standing-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
     </div>
-
   </div>
 </section>
 

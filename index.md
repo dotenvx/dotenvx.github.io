@@ -71,8 +71,14 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Same dotenv workflow, but encrypted.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Move from plaintext <code>.env</code> to encrypted <code>.env</code> without changing how your agents or apps run.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypted .env for agent stacks</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Keep the .env interface agents already expect, but make it encrypted.</p>
+  </div>
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl">
+    <!-- {% include v1/components/encrypted-env-file.html %} -->
+  </div>
+  <div class="mt-2 md:mt-3 mx-auto max-w-3xl">
+    <!-- {% include v1/components/dotenvx-cli-demo.html %} -->
   </div>
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
@@ -95,8 +101,8 @@ title: ""
     </div>
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
       <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Run Agents Safely</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Ship agents, apps, and prompts without plaintext secrets.</p>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Protect</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Protect secrets across prompts, code, and runtime.</p>
     </div>
   </div>
 </section>

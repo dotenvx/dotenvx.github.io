@@ -1,73 +1,242 @@
-<div class="mx-auto px-0 sm:px-20 md:px-0">
-  <div class="border border-zinc-700 text-lg subpixel-antialiased rounded rounded-lg leading-normal overflow-hidden drop-shadow-2xl">
-
-    <div class="p-2 bg-zinc-700 border-b border-b-zinc-700">
-      <div class="flex items-center">
-        <span class="h-2 w-2 bg-red-500/30 rounded-full"></span>
-        <span class="ml-1 h-2 w-2 bg-orange-300/30 rounded-full"></span>
-        <span class="ml-1 h-2 w-2 bg-green-500/30 rounded-full"></span>
-      </div>
-    </div>
-
-    <div class="py-6 px-6 md:py-20 md:px-24 lg:py-24 lg:px-36 font-mono whitespace-nowrap bg-zinc-800 text-zinc-50">
-      <div class="overflow-x-auto">
-        <span class="text-zinc-500">
-          #/-----------------[DOTENV_PUBLIC_KEY]------------------/
-        </span>
-        <br/>
-        <span class="text-zinc-500">
-          #/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public-key encryption for .env files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/
-        </span>
-        <br/>
-        <span class="text-zinc-500">
-          #/&nbsp;&nbsp;&nbsp;&nbsp;[how it works](https://dotenvx.com/encryption)&nbsp;&nbsp;&nbsp;&nbsp;/
-        </span>
-        <br/>
-        <span class="text-zinc-500">
-          #/------------------------------------------------------/
-        </span>
-        <br/>
-        <span class="text-yellow-300">DOTENV_PUBLIC_KEY</span><span class="text-zinc-100">="</span><span class="text-violet-500">026d4945b6513baec60f68b207f203ba534fb54d2b0c9952557d240815e42a7d83</span><span class="text-zinc-100">"</span>
-        <br/>
-        <br/>
-        <span class="text-zinc-500"># Database configuration</span>
-        <br/>
-        <span class="text-yellow-300">DB_HOST</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BMO83g2fEtr66gcFvUs2+/ZuccCQuBbZwSW3JfCLvoUiACmusxCbTfG2dvc2LxenPhUtgWapO8f9BCcBVAcTnMcrd3kndvk+acWytRjIWRUvsSezdD340/OT5EQgbqJtwXfuRz0i2t8PVA==</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">DB_PORT</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BGcRf5bK/mChGEqT1MZ8hUbMm3hhtuW9NVGkHtl7KRwqbSKnVcGIDs9T61u77DlyNlYcF1BlLCw9HPmbRQ0nFvLOCZc6r42iRE4OyJw9mu61OjlWQfEl5Z1NrjZw5g0d1tp8New=</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">DB_USER</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BBrXv55qxgA19sEqqNnZzS/C0WguVk6ROQmfxnGhBhafLoc0XwpKprk/J3hJCVq7s45WyBSXGUz9U9rHxCBeVkl27WFzzgZkDewX0gBLt+Cc37K0EVU2hZ1GPbax5mzpI5Jwwi65be6+</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">DB_PASSWORD</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BC8aRBQ/Q2YMPjJayggqVN8skqTtxtXFgYA0e8/Ud/Jcez2Daukr6edBmEWQdz/Lu91casaW6CkkCvLSQkPvNpmgYqFB4BKHTUDowX/KEDvVI6CU5Vt478VF5dqHbvPIoKKtBe+4FNXlk5O96A==</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">DB_NAME</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BL0icNnZh6InVmymJBCX6MuL6cwgVc4v1ua1g1XONlV7nkzzHHHpnZN3khx7+ld15bd88EtV4DfqUV2eJ/HJwu0/5F1MH+PAisYSRxBQo8I9AHly2sRsonBm3Bji+DslcC4D7b7wLTBlfCw=</span><span class="text-zinc-100">"</span>
-
-        <br/>
-        <br/>
-        <span class="text-zinc-500"># API Keys</span>
-        <br/>
-        <span class="text-yellow-300">API_KEY</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BCrnJ2sAZH2qwRlPvUqqWyEsd+cVeMQiOV5H/xZ7vjFfcMXHMunmAv/7+jUI356fkVtHfrXu+vBJLjXJiirgB2gky5vvy7h5jevgMS6BgPL5KwjC0tYPlYbe4Bfrf1funYqqrFYaPjsEO+77vCtVaBPz</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">STRIPE_API_KEY</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BOD5Fg+qI9dqhkh+gjCLrTFyhxEAhNDtLgwjkMZOr9l9CsvvhprwCrgsZbIRIFa1Vf6ATnWZ3/bacYnlBXlZ1Hc6YMZHog+ZuVW4AjwxCkB8I0AkcOeOsYzQx2fdtI4kFii01UIhN53jfmUjzLSPYw==</span><span class="text-zinc-100">"</span>
-
-        <br/>
-        <br/>
-        <span class="text-zinc-500"># Email Configuration</span>
-        <br/>
-        <span class="text-yellow-300">EMAIL_HOST</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BMVEIPBGe9xkELFb48KQJPxxnTkUGhsonAU4ug5ca9E5eD/MZimkoQrf/3cb9nhazwfTbScLgeGGr/Jhj4DV7Xpz45XEEFWrPXy1Yi93zWLaJ4XYBHwCke3b4XCbh7jV4uL3WWFjI757yTIS6ilD</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">EMAIL_USER</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BB15pCJmnrb1Jvy5nnyB5F7tYNYiGsqvY6ZORRz4iSw69WJBHk5S9F2ILpI+vqrlFjr3+ZzWI9sc1vIB8t1RvYUHzEdlNCbn5Bhzf9f9+SlTQt6yVUshTZVTA56f7HN3x4+AvVrzpxNoci80r2lwRkltfYM=</span><span class="text-zinc-100">"</span>
-        <br/>
-        <span class="text-yellow-300">EMAIL_PASSWORD</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BIgpV7btyiGYyySYnG3+NJVGUzNzB4zWjIZbM/VgtnPuiuSsK/KBkirtqkDBI8U/04BRKtupOTNSJTVu6GO39XPSpPvlxA4fNRyeK85W+rFGARp4mrgqfEz/O/eZvqJSqS5kNraAhbkKpXq81rEOBg==</span><span class="text-zinc-100">"</span>
-
-        <br/>
-        <br/>
-        <span class="text-zinc-500"># Logging</span>
-        <br/>
-        <span class="text-yellow-300">LOG_LEVEL</span><span class="text-zinc-100">="</span><span class="text-violet-500">encrypted:BKzfW56VHobMDtfq+iU+MsjVlPDdiKYoJmKLMlUKzsds5dHWjY+GcKbUx7V54jX21kVa6kuBcINNmP/DwXZA2VSb6q8zhMU/Go59aQWqmoqip6jB8DTxc8GjxUF4lWO3PLWJqk8=</span><span class="text-zinc-100">"</span>
-        <br/>
-        <br/>
+<div class="terminal-hero-card terminal-hero-card-premium mx-auto bg-[#0a0a0a] text-[#d4d4d4] font-mono text-sm rounded-md shadow-2xl overflow-hidden">
+  <div class="subpixel-antialiased leading-relaxed overflow-hidden">
+    <div class="encrypted-env-file-body bg-transparent text-[#d4d4d4]" data-ee-switcher>
+      <div class="ee-shell">
+        <aside class="ee-files">
+          <button type="button" class="ee-file ee-file-active" data-ee-target="env" aria-pressed="true">.env</button>
+          <button type="button" class="ee-file" data-ee-target="env-production" aria-pressed="false">.env.production</button>
+        </aside>
+        <div class="ee-editor-pane overflow-x-auto">
+          <div class="ee-pane" data-ee-pane="env">
+            <ol class="ee-code">
+              <li class="ee-line"><span class="ee-comment"># .env ◈ encrypted with dotenvx</span></li>
+              <li class="ee-line ee-line-blank"><span>&nbsp;</span></li>
+              <li class="ee-line"><span class="ee-comment"># ── Hosting ──────────────────────────────</span></li>
+              <li class="ee-line"><span class="ee-key">AWS_ACCESS_KEY_ID</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BD3Z3cTcT19q…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">AWS_SECRET_ACCESS_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BGB3QpSQ…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line ee-line-active"><span class="ee-key">DATABASE_URL</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BHyLV2zLhmFa+oEUT…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line ee-line-blank"><span>&nbsp;</span></li>
+              <li class="ee-line"><span class="ee-comment"># ── AI ───────────────────────────────────</span></li>
+              <li class="ee-line"><span class="ee-key">OPENAI_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BFdXru0RVFG/8FZ…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">ANTHROPIC_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BAMVb8lFZUOr…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line ee-line-blank"><span>&nbsp;</span></li>
+              <li class="ee-line"><span class="ee-comment"># ── Infrastructure ───────────────────────</span></li>
+              <li class="ee-line"><span class="ee-key">AUTH0_CLIENT_ID</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BAY+o7pHeQW1EZ…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">AUTH0_CLIENT_SECRET</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BKldLhYQ0d…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">RESEND_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BLr2WEgUnWKjBCL…</span><span class="ee-eq">"</span></li>
+            </ol>
+          </div>
+          <div class="ee-pane ee-hidden" data-ee-pane="env-production">
+            <ol class="ee-code">
+              <li class="ee-line"><span class="ee-comment"># .env.production ◈ encrypted with dotenvx</span></li>
+              <li class="ee-line ee-line-blank"><span>&nbsp;</span></li>
+              <li class="ee-line"><span class="ee-comment"># ── Hosting ──────────────────────────────</span></li>
+              <li class="ee-line"><span class="ee-key">AWS_ACCESS_KEY_ID</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BD3Z3cTcT19q…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">AWS_SECRET_ACCESS_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BGB3QpSQ…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line ee-line-active"><span class="ee-key">DATABASE_URL</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BHyLV2zLhmFa+oEUT…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">VERCEL_TOKEN</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BLJ/dDf4ZVDAQO5gw…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line ee-line-blank"><span>&nbsp;</span></li>
+              <li class="ee-line"><span class="ee-comment"># ── AI ───────────────────────────────────</span></li>
+              <li class="ee-line"><span class="ee-key">OPENAI_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BFdXru0RVFG/8FZ…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">ANTHROPIC_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BAMVb8lFZUOr…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line ee-line-blank"><span>&nbsp;</span></li>
+              <li class="ee-line"><span class="ee-comment"># ── Infrastructure ───────────────────────</span></li>
+              <li class="ee-line"><span class="ee-key">AUTH0_CLIENT_ID</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BAY+o7pHeQW1EZ…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">AUTH0_CLIENT_SECRET</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BKldLhYQ0d…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">RESEND_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BLr2WEgUnWKjBCL…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">STRIPE_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BDhqoczaGxtEJ97…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">FLAGSMITH_ENV_ID</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BHOzl93DYQJ8P…</span><span class="ee-eq">"</span></li>
+              <li class="ee-line"><span class="ee-key">SENTRY_DSN</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BI59ZeVgm3ikKjcgJNa…</span><span class="ee-eq">"</span></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .encrypted-env-file-body {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .encrypted-env-file-body .ee-shell {
+    display: flex;
+    min-height: 100%;
+  }
+
+  .encrypted-env-file-body .ee-files {
+    flex: 0 0 9.4rem;
+    padding: 0.62rem 0.52rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  }
+
+  .encrypted-env-file-body .ee-file {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 1.66rem;
+    padding: 0 0.46rem;
+    border-radius: 0.28rem;
+    color: #8a8a8a;
+    font-size: 0.79em;
+    letter-spacing: 0.015em;
+    margin-bottom: 0.08rem;
+  }
+
+  .encrypted-env-file-body .ee-file-active {
+    color: #f2f2f2;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .encrypted-env-file-body .ee-editor-pane {
+    flex: 1 1 auto;
+  }
+
+  .encrypted-env-file-body .ee-pane {
+    min-height: 23.8rem;
+  }
+
+  .encrypted-env-file-body .ee-hidden {
+    display: none;
+  }
+
+  .encrypted-env-file-body .ee-code {
+    list-style: none;
+    margin: 0;
+    padding: 0.58rem 0.72rem 0.72rem;
+    counter-reset: ee-line;
+    min-width: max-content;
+  }
+
+  .encrypted-env-file-body .ee-line {
+    position: relative;
+    padding-left: 2.54rem;
+    white-space: nowrap;
+    line-height: 1.42;
+  }
+
+  .encrypted-env-file-body .ee-line::before {
+    counter-increment: ee-line;
+    content: counter(ee-line);
+    position: absolute;
+    left: 0;
+    width: 1.95rem;
+    color: #595c62;
+    text-align: right;
+    user-select: none;
+  }
+
+  .encrypted-env-file-body .ee-line-blank {
+    line-height: 0.78;
+  }
+
+  .encrypted-env-file-body .ee-line-active {
+    border-radius: 0.3rem;
+    background: linear-gradient(90deg, rgba(236, 213, 63, 0.11) 0%, rgba(236, 213, 63, 0.04) 44%, rgba(236, 213, 63, 0) 88%);
+  }
+
+  .encrypted-env-file-body .ee-line-active::after {
+    content: "";
+    position: absolute;
+    left: 2.18rem;
+    top: 0.08rem;
+    bottom: 0.08rem;
+    width: 2px;
+    border-radius: 99px;
+    background: linear-gradient(180deg, rgba(236, 213, 63, 0.95), rgba(236, 213, 63, 0.55));
+  }
+
+  .encrypted-env-file-body .ee-comment { color: #8a8a8a; }
+  .encrypted-env-file-body .ee-key { color: #c89ae0; }
+  .encrypted-env-file-body .ee-eq { color: #dadada; }
+  .encrypted-env-file-body .ee-val { color: #ecd53f; }
+
+  @media (max-width: 560px) {
+    .encrypted-env-file-body {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .encrypted-env-file-body .ee-code {
+      padding: 0.5rem 0.64rem 0.64rem;
+    }
+
+    .encrypted-env-file-body .ee-pane {
+      min-height: 21.8rem;
+    }
+
+    .encrypted-env-file-body .ee-files {
+      display: none;
+    }
+
+    .encrypted-env-file-body .ee-line {
+      padding-left: 2.36rem;
+    }
+
+    .encrypted-env-file-body .ee-line::before {
+      width: 1.8rem;
+    }
+
+    .encrypted-env-file-body .ee-line-active::after {
+      left: 2.02rem;
+    }
+
+    .encrypted-env-file-body .ee-line {
+      padding-left: 0;
+    }
+
+    .encrypted-env-file-body .ee-line::before {
+      content: none;
+    }
+
+    .encrypted-env-file-body [data-ee-pane] {
+      display: none !important;
+    }
+
+    .encrypted-env-file-body [data-ee-pane="env"] {
+      display: block !important;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const roots = document.querySelectorAll('[data-ee-switcher]');
+    if (!roots.length) return;
+
+    roots.forEach((root) => {
+      const buttons = Array.from(root.querySelectorAll('[data-ee-target]'));
+      const panes = Array.from(root.querySelectorAll('[data-ee-pane]'));
+      if (!buttons.length || !panes.length) return;
+
+      const selectPane = (target) => {
+        buttons.forEach((button) => {
+          const isActive = button.getAttribute('data-ee-target') === target;
+          button.classList.toggle('ee-file-active', isActive);
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        panes.forEach((pane) => {
+          const isActive = pane.getAttribute('data-ee-pane') === target;
+          pane.classList.toggle('ee-hidden', !isActive);
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const target = button.getAttribute('data-ee-target');
+          if (target) selectPane(target);
+        });
+      });
+    });
+  })();
+</script>

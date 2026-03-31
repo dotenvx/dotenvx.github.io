@@ -16,11 +16,11 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const TARGET_OPACITY = 0.62;
   const MOBILE_BREAKPOINT = 768;
-  const MOBILE_SOURCE_SHIFT_MAX = 1.95;
+  const MOBILE_SOURCE_SHIFT_MAX = 0.55;
   const MOBILE_BEAM_LIMIT = 12;
   const MOBILE_DUST_LIMIT = 56;
   const MOBILE_BEAM_DUST_LIMIT = 72;
-  const ENABLE_DUST = true;
+  const ENABLE_DUST = false;
   canvas.style.opacity = '0';
   canvas.style.transition = prefersReducedMotion ? 'none' : 'opacity 2800ms cubic-bezier(0.22, 1, 0.36, 1)';
   const DPR_CAP = isSafari ? 1.4 : 1.75;

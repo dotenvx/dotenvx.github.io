@@ -113,42 +113,79 @@ title: ""
     <p class="mt-4 text-zinc-400 text-lg">Encrypt, inject, scope, and audit secrets without changing how agents run.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
+  <div class="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
+    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
-      <h3 class="mt-3 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Encrypt</h3>
+      <div class="feature-card-head mt-3">
+        <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Encrypt</h3>
+        <div class="feature-cli-cmd"><code>dotenvx encrypt</code></div>
+      </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>
-      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx encrypt</code></div>
+      <div class="feature-cli-visual feature-cli-visual-encrypt">
+        <div class="feature-cli-line"><span class="feature-cli-cmdtext">$ dotenvx encrypt</span><span class="feature-cli-caret"></span></div>
+        <div class="feature-cli-status">◈ encrypted (.env)</div>
+      </div>
     </article>
 
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-3 min-h-[14rem] md:min-h-[15.5rem]">
+    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
-      <h3 class="mt-3 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
+      <div class="feature-card-head mt-3">
+        <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
+        <div class="feature-cli-cmd"><code>dotenvx run -- your-agent</code></div>
+      </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
-      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx run -- your-agent</code></div>
+      <div class="feature-cli-visual feature-cli-visual-inject">
+        <div class="feature-cli-line"><span class="feature-cli-cmdtext">$ dotenvx run -- your-agent</span></div>
+        <div class="feature-cli-status">⟐ injecting env (14) from .env</div>
+      </div>
     </article>
   </div>
 
   <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">03</div>
-      <h3 class="mt-3 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Scope</h3>
+      <div class="feature-card-head mt-3">
+        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Scope</h3>
+        <div class="feature-cli-cmd"><code>dotenvx run -f .env.production</code></div>
+      </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Load the right secret set per environment so agents only get what they should.</p>
-      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx run -f .env.production</code></div>
+      <div class="feature-cli-visual feature-cli-visual-scope">
+        <div class="feature-chip-row">
+          <span class="feature-chip">.env</span>
+          <span class="feature-chip feature-chip-active">.env.production</span>
+          <span class="feature-chip">.env.ci</span>
+        </div>
+      </div>
     </article>
 
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">04</div>
-      <h3 class="mt-3 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit</h3>
+      <div class="feature-card-head mt-3">
+        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit</h3>
+        <div class="feature-cli-cmd"><code>git diff .env*</code></div>
+      </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Track encrypted secret changes through Git history and PR review workflows.</p>
-      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>git diff .env*</code></div>
+      <div class="feature-cli-visual feature-cli-visual-audit">
+        <div class="feature-diff-line">+ DATABASE_URL="encrypted:..."</div>
+        <div class="feature-diff-line">+ OPENAI_API_KEY="encrypted:..."</div>
+      </div>
     </article>
 
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">05</div>
-      <h3 class="mt-3 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate</h3>
+      <div class="feature-card-head mt-3">
+        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate</h3>
+        <div class="feature-cli-cmd"><code>dotenvx rotate</code></div>
+      </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotate aging or compromised secrets without rewriting agent code.</p>
-      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx rotate</code></div>
+      <div class="feature-cli-visual feature-cli-visual-rotate">
+        <div class="feature-rotate-row">
+          <span class="feature-rotate-key">DOTENV_PRIVATE_KEY</span>
+          <span class="feature-rotate-v">v3</span>
+          <span class="feature-rotate-arrow">→</span>
+          <span class="feature-rotate-v feature-rotate-v-new">v4</span>
+        </div>
+      </div>
     </article>
   </div>
 </section>
@@ -156,7 +193,7 @@ title: ""
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are talking about Dotenvx.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Installed 4 million times a week on <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">npm</a>.</p>
+    <p class="mt-4 text-zinc-400 text-lg">Installed 4 million times a week on npm.</p>
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">

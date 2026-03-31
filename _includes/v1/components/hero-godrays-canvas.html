@@ -10,7 +10,13 @@
 
   const canvas = root.querySelector('canvas');
   const ctx = canvas.getContext('2d', { alpha: true });
-  const DPR_CAP = 1.75;
+  const ua = navigator.userAgent;
+  const isSafari = /Safari/i.test(ua) && !/(Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS)/i.test(ua);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const TARGET_OPACITY = 0.62;
+  canvas.style.opacity = '0';
+  canvas.style.transition = prefersReducedMotion ? 'none' : 'opacity 2800ms cubic-bezier(0.22, 1, 0.36, 1)';
+  const DPR_CAP = isSafari ? 1.4 : 1.75;
   const dustCount = 90;
   const beamDustCount = 120;
   const BASE_ANGLE = -Math.PI * 0.24;
@@ -86,17 +92,19 @@
     const middleStrength = inMiddleCluster
       ? (1 - Math.abs(middleDelta)) * 0.35 + 1.20
       : 0.70;
+    const alpha = baseAlpha * middleStrength * (isSafari ? 0.82 : 1);
+    const widthScale = isSafari ? 1.14 : 1;
     return {
       offset: 0,
-      widthNear: 64,
-      widthFar: 64,
-      alpha: baseAlpha * middleStrength,
+      widthNear: 64 * widthScale,
+      widthFar: 64 * widthScale,
+      alpha,
       lengthScale: 0.98,
       fadeLength: 0.64,
       sourceX,
       sourceY,
       angle,
-      blur: 10
+      blur: isSafari ? 16 : 10
     };
   });
 
@@ -134,10 +142,14 @@
     const mid2 = Math.max(mid1 + 0.08, fadeLength * 0.54);
     const mid3 = Math.max(mid2 + 0.08, fadeLength * 0.82);
 
-    grad.addColorStop(0.00, `rgba(255, 246, 216, ${beam.alpha * 0.42})`);
-    grad.addColorStop(mid1, `rgba(245, 231, 188, ${beam.alpha * 0.72})`);
-    grad.addColorStop(mid2, `rgba(229, 206, 146, ${beam.alpha * 0.34})`);
-    grad.addColorStop(mid3, `rgba(229, 206, 146, ${beam.alpha * 0.08})`);
+    const topA = isSafari ? 0.34 : 0.42;
+    const coreA = isSafari ? 0.58 : 0.72;
+    const tailA = isSafari ? 0.28 : 0.34;
+    const fadeA = isSafari ? 0.12 : 0.08;
+    grad.addColorStop(0.00, `rgba(255, 246, 216, ${beam.alpha * topA})`);
+    grad.addColorStop(mid1, `rgba(245, 231, 188, ${beam.alpha * coreA})`);
+    grad.addColorStop(mid2, `rgba(229, 206, 146, ${beam.alpha * tailA})`);
+    grad.addColorStop(mid3, `rgba(229, 206, 146, ${beam.alpha * fadeA})`);
     grad.addColorStop(fadeLength, 'rgba(0, 0, 0, 0)');
     grad.addColorStop(1.00, 'rgba(0, 0, 0, 0)');
 
@@ -158,9 +170,19 @@
   const draw = () => {
     ctx.clearRect(0, 0, width, height);
 
-    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalCompositeOperation = isSafari ? 'screen' : 'lighter';
 
     for (const beam of beams) drawBeam(beam, width, height);
+
+    if (isSafari) {
+      // Safari-specific soft fill to reduce visible striping between beams.
+      const safariHaze = ctx.createLinearGradient(width * 0.03, 0, width * 0.68, height * 0.96);
+      safariHaze.addColorStop(0.00, 'rgba(255, 241, 196, 0.08)');
+      safariHaze.addColorStop(0.42, 'rgba(247, 228, 173, 0.05)');
+      safariHaze.addColorStop(1.00, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = safariHaze;
+      ctx.fillRect(0, 0, width, height);
+    }
 
     ctx.globalCompositeOperation = 'source-over';
     for (let i = 0; i < dust.length; i += 1) {
@@ -204,6 +226,15 @@
 
   resize();
   draw();
+  if (prefersReducedMotion) {
+    canvas.style.opacity = String(TARGET_OPACITY);
+  } else {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        canvas.style.opacity = String(TARGET_OPACITY);
+      }, 1800);
+    });
+  }
 
   window.addEventListener('resize', onResize, { passive: true });
   window.addEventListener('pagehide', () => {

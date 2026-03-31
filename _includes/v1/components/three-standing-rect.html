@@ -5,7 +5,7 @@
 >
   <canvas
     class="block h-full w-full"
-    style="-webkit-mask-image: radial-gradient(122% 114% at 50% 50%, rgba(0,0,0,1) 64%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.52) 84%, rgba(0,0,0,0.14) 92%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(122% 114% at 50% 50%, rgba(0,0,0,1) 64%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.52) 84%, rgba(0,0,0,0.14) 92%, rgba(0,0,0,0) 100%);"
+    style="opacity: 0; -webkit-mask-image: radial-gradient(122% 114% at 50% 50%, rgba(0,0,0,1) 64%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.52) 84%, rgba(0,0,0,0.14) 92%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(122% 114% at 50% 50%, rgba(0,0,0,1) 64%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.52) 84%, rgba(0,0,0,0.14) 92%, rgba(0,0,0,0) 100%);"
   ></canvas>
 </div>
 
@@ -30,6 +30,7 @@
 
   root.setAttribute('data-three-mounted', 'true');
   const canvas = root.querySelector('canvas');
+  canvas.style.transition = 'opacity 300ms ease-out';
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const scene = new THREE.Scene();
   const desktopMinFrustumSize = 3.0;
@@ -90,7 +91,7 @@
   const baseEdgeOpacity = edgeHighlightMaterial.opacity;
   const baseGlowOpacity = glowShellMaterial.opacity;
   const ghostDelayMs = 1500;
-  const introRevealDelayMs = 2000;
+  const introRevealDelayMs = 800;
   const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
   const isMobileOnLoad = isMobileViewport();
   let ghostMix = isMobileOnLoad ? 0 : 1;
@@ -438,7 +439,7 @@ const resize = () => {
   }
 
   const animate = () => {
-    ghostMix = THREE.MathUtils.lerp(ghostMix, ghostTarget, 0.08);
+    ghostMix = THREE.MathUtils.lerp(ghostMix, ghostTarget, 0.12);
     const ghostVisibility = 1 - ghostMix * 0.93;
 
     for (let i = 0; i < secretsBoxes.length; i += 1) {
@@ -460,6 +461,9 @@ const resize = () => {
 
     controls.update();
     renderer.render(scene, camera);
+    if (canvas.style.opacity !== '1') {
+      canvas.style.opacity = '1';
+    }
     requestAnimationFrame(animate);
   };
   animate();

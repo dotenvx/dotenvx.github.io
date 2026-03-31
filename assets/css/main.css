@@ -476,7 +476,9 @@ width: 100%;
 .feature-cli-card {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0.5rem !important;
+  border-color: rgba(24, 24, 27, 0.92) !important;
+  border-bottom-color: rgba(24, 24, 27, 0.92) !important;
   gap: 0.72rem;
 }
 
@@ -534,7 +536,7 @@ width: 100%;
   min-height: 4rem;
   padding: 0.85rem 0.95rem 0.95rem;
   border: 1px solid rgba(113, 113, 122, 0.28);
-  border-radius: 0.45rem;
+  border-radius: 0.45rem !important;
   background: rgba(24, 24, 27, 0.9);
 }
 
@@ -543,7 +545,7 @@ width: 100%;
 .feature-cli-visual-rotate {
   display: flex;
   justify-content: flex-start;
-  border-radius: 0.375rem;
+  border-radius: 0.45rem !important;
   background:
     radial-gradient(125% 85% at 100% 100%, rgba(120, 120, 120, 0.08) 0%, rgba(120, 120, 120, 0) 58%) padding-box,
     linear-gradient(160deg, rgba(15, 15, 15, 0.95) 0%, rgba(10, 10, 10, 0.98) 48%, rgba(6, 6, 6, 1) 100%) padding-box;

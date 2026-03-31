@@ -17,34 +17,19 @@
   const BASE_SOURCE_X = 0.21;
   const BASE_SOURCE_Y = -0.20;
 
-  // Reusable beam API:
-  // thickness: near-width multiplier
-  // length: length multiplier
-  // fadeLength: where the beam fully fades (0..1)
-  // positionX / positionY: beam source location (relative to viewport)
-  // angleAdjust: radians to tweak base angle
-  const defaultBeamConfigs = [
-    { offset: -260, offsetStep: 0, nearWidth: 9,  thickness: 0.78, thicknessFar: 0.92, length: 1.08, fadeLength: 0.80, positionX: 0.14, positionY: -0.27, angleAdjust: -0.056, opacity: 0.78, blur: 11 },
-    { offset: -234, offsetStep: 0, nearWidth: 6,  thickness: 0.52, thicknessFar: 0.78, length: 1.14, fadeLength: 0.84, positionX: 0.14, positionY: -0.27, angleAdjust: -0.060, opacity: 0.54, blur: 9 },
-    { offset: -198, offsetStep: 0, nearWidth: 8,  thickness: 0.68, thicknessFar: 0.90, length: 1.06, fadeLength: 0.77, positionX: 0.15, positionY: -0.26, angleAdjust: -0.047, opacity: 0.70, blur: 11 },
-    { offset: -166, offsetStep: 0, nearWidth: 5,  thickness: 0.46, thicknessFar: 0.72, length: 1.10, fadeLength: 0.82, positionX: 0.16, positionY: -0.25, angleAdjust: -0.041, opacity: 0.50, blur: 8 },
-    { offset: -128, offsetStep: 0, nearWidth: 7,  thickness: 0.60, thicknessFar: 0.84, length: 1.04, fadeLength: 0.74, positionX: 0.17, positionY: -0.24, angleAdjust: -0.032, opacity: 0.64, blur: 10 },
-    { offset: -96,  offsetStep: 0, nearWidth: 10, thickness: 0.80, thicknessFar: 0.96, length: 0.98, fadeLength: 0.68, positionX: 0.18, positionY: -0.23, angleAdjust: -0.026, opacity: 0.74, blur: 12 },
-    { offset: -74,  offsetStep: 0, nearWidth: 4,  thickness: 0.40, thicknessFar: 0.68, length: 1.02, fadeLength: 0.72, positionX: 0.18, positionY: -0.23, angleAdjust: -0.020, opacity: 0.44, blur: 8 },
-    { offset: -42,  offsetStep: 0, nearWidth: 8,  thickness: 0.62, thicknessFar: 0.86, length: 0.96, fadeLength: 0.66, positionX: 0.19, positionY: -0.22, angleAdjust: -0.012, opacity: 0.62, blur: 10 },
-    { offset: -18,  offsetStep: 0, nearWidth: 5,  thickness: 0.44, thicknessFar: 0.70, length: 1.00, fadeLength: 0.69, positionX: 0.20, positionY: -0.21, angleAdjust: -0.004, opacity: 0.46, blur: 8 },
-    { offset: 10,   offsetStep: 0, nearWidth: 7,  thickness: 0.56, thicknessFar: 0.80, length: 0.94, fadeLength: 0.64, positionX: 0.21, positionY: -0.20, angleAdjust: 0.004, opacity: 0.58, blur: 9 },
-    { offset: 48,   offsetStep: 0, nearWidth: 10, thickness: 0.82, thicknessFar: 0.98, length: 0.92, fadeLength: 0.60, positionX: 0.22, positionY: -0.19, angleAdjust: 0.012, opacity: 0.66, blur: 12 },
-    { offset: 74,   offsetStep: 0, nearWidth: 5,  thickness: 0.42, thicknessFar: 0.66, length: 0.98, fadeLength: 0.66, positionX: 0.22, positionY: -0.19, angleAdjust: 0.020, opacity: 0.42, blur: 8 },
-    { offset: 108,  offsetStep: 0, nearWidth: 8,  thickness: 0.60, thicknessFar: 0.82, length: 0.90, fadeLength: 0.58, positionX: 0.23, positionY: -0.18, angleAdjust: 0.028, opacity: 0.56, blur: 10 },
-    { offset: 134,  offsetStep: 0, nearWidth: 4,  thickness: 0.38, thicknessFar: 0.62, length: 0.96, fadeLength: 0.63, positionX: 0.24, positionY: -0.17, angleAdjust: 0.036, opacity: 0.38, blur: 8 },
-    { offset: 172,  offsetStep: 0, nearWidth: 7,  thickness: 0.54, thicknessFar: 0.76, length: 0.88, fadeLength: 0.56, positionX: 0.24, positionY: -0.17, angleAdjust: 0.044, opacity: 0.48, blur: 9 },
-    { offset: 210,  offsetStep: 0, nearWidth: 6,  thickness: 0.50, thicknessFar: 0.72, length: 0.86, fadeLength: 0.54, positionX: 0.25, positionY: -0.16, angleAdjust: 0.052, opacity: 0.44, blur: 9 },
-    { offset: 238,  offsetStep: 0, nearWidth: 3,  thickness: 0.34, thicknessFar: 0.58, length: 0.92, fadeLength: 0.60, positionX: 0.25, positionY: -0.16, angleAdjust: 0.060, opacity: 0.34, blur: 7 },
-    { offset: 272,  offsetStep: 0, nearWidth: 6,  thickness: 0.46, thicknessFar: 0.68, length: 0.84, fadeLength: 0.52, positionX: 0.26, positionY: -0.15, angleAdjust: 0.068, opacity: 0.40, blur: 8 },
-    { offset: 318,  offsetStep: 0, nearWidth: 5,  thickness: 0.40, thicknessFar: 0.62, length: 0.82, fadeLength: 0.50, positionX: 0.27, positionY: -0.14, angleAdjust: 0.078, opacity: 0.34, blur: 8 },
-    { offset: 362,  offsetStep: 0, nearWidth: 4,  thickness: 0.34, thicknessFar: 0.56, length: 0.80, fadeLength: 0.48, positionX: 0.28, positionY: -0.13, angleAdjust: 0.088, opacity: 0.28, blur: 7 }
-  ];
+  const defaultBeamConfigs = Array.from({ length: 20 }, () => ({
+    nearWidth: 8,
+    farWidth: 300,
+    thickness: 1,
+    thicknessFar: 1,
+    length: 0.98,
+    fadeLength: 0.64,
+    opacity: 0.62,
+    blur: 10,
+    offset: 0,
+    offsetStep: 0,
+    angleAdjust: 0
+  }));
 
   const externalBeamConfigs = Array.isArray(window.DOTENVX_GODRAY_BEAMS) ? window.DOTENVX_GODRAY_BEAMS : null;
   const beamConfigs = externalBeamConfigs && externalBeamConfigs.length > 0 ? externalBeamConfigs : defaultBeamConfigs;
@@ -70,19 +55,17 @@
 
   const beams = beamConfigs.map((cfg, index) => {
     const spreadIndex = beamConfigs.length > 1 ? index / (beamConfigs.length - 1) : 0.5;
-    const spreadSourceX = 0.06 + spreadIndex * 0.88;
-    const spreadSourceY = -0.33 + spreadIndex * 0.20;
-    const cfgSourceX = cfg.positionX == null ? BASE_SOURCE_X : cfg.positionX;
-    const cfgSourceY = cfg.positionY == null ? BASE_SOURCE_Y : cfg.positionY;
+    const sourceX = 0.04 + spreadIndex * 0.52;
+    const sourceY = -0.34;
     return {
-      offset: (cfg.offset ?? 0) + (index - Math.floor(beamConfigs.length / 2)) * (cfg.offsetStep ?? 20),
-      widthNear: (cfg.nearWidth ?? (14 + Math.random() * 12)) * (cfg.thickness ?? 1),
-      widthFar: (cfg.farWidth ?? (250 + Math.random() * 160)) * (cfg.thicknessFar ?? 1),
-      alpha: (0.055 + Math.random() * 0.05) * (cfg.opacity ?? 1),
+      offset: (cfg.offset ?? 0) + (index - Math.floor(beamConfigs.length / 2)) * (cfg.offsetStep ?? 0),
+      widthNear: (cfg.nearWidth ?? 8) * (cfg.thickness ?? 1),
+      widthFar: (cfg.farWidth ?? 300) * (cfg.thicknessFar ?? 1),
+      alpha: 0.085 * (cfg.opacity ?? 1),
       lengthScale: cfg.length ?? 1,
       fadeLength: cfg.fadeLength ?? 0.66,
-      sourceX: cfgSourceX * 0.30 + spreadSourceX * 0.70,
-      sourceY: cfgSourceY * 0.35 + spreadSourceY * 0.65,
+      sourceX,
+      sourceY,
       angle: BASE_ANGLE + (cfg.angleAdjust ?? 0),
       blur: cfg.blur ?? 16
     };

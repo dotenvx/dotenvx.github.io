@@ -113,15 +113,15 @@ title: ""
     <p class="mt-4 text-zinc-400 text-lg">Encrypt, inject, scope, and audit secrets without changing how agents run.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-1 min-h-[14rem] md:min-h-[15.5rem]">
+  <div class="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
       <h3 class="mt-3 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Encrypt</h3>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>
       <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx encrypt</code></div>
     </article>
 
-    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-3 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
       <h3 class="mt-3 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>

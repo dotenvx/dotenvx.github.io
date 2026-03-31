@@ -370,7 +370,7 @@ const resize = () => {
   };
 
   const handlePointerMove = (event) => {
-    if (isMobileViewport()) {
+    if (event.pointerType === 'touch') {
       pointerOverKey = false;
       clearHoverTimer();
       setGhostState(false);
@@ -393,7 +393,6 @@ const resize = () => {
   };
 
   const handlePointerDown = (event) => {
-    if (isMobileViewport()) return;
     if (!isPointerIntersectingKey(event)) return;
     setGhostState(false);
     clearHoverTimer();
@@ -405,7 +404,6 @@ const resize = () => {
   };
 
   const releaseExplosion = (event) => {
-    if (isMobileViewport()) return;
     if (explosionPointerId !== null && event.pointerId !== explosionPointerId) return;
     exploded = false;
     if (explosionPointerId !== null && canvas.releasePointerCapture) {

@@ -113,21 +113,23 @@ title: ""
     <p class="mt-4 text-zinc-400 text-lg">Encrypt, inject, scope, and audit secrets without changing how agents run.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
-    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[14rem] md:min-h-[15.5rem]">
+  <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+    <article class="feature-cli-card feature-cli-card-primary flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-2 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
       <div class="feature-card-head mt-3">
         <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Encrypt</h3>
         <div class="feature-cli-cmd"><code>dotenvx encrypt</code></div>
       </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>
-      <div class="feature-cli-visual feature-cli-visual-encrypt">
-        <div class="feature-cli-line"><span class="feature-cli-cmdtext">$ dotenvx encrypt</span><span class="feature-cli-caret"></span></div>
-        <div class="feature-cli-status">◈ encrypted (.env)</div>
+      <div class="feature-cli-visual feature-cli-visual-encrypt" data-feature-encrypt-demo>
+        <div class="feature-cli-line feature-cli-line-demo">
+          <span class="cmd">$ </span><span class="cmd" data-feature-encrypt-cmd></span><span class="feature-cli-caret" data-feature-encrypt-caret></span>
+        </div>
+        <div class="feature-cli-line feature-cli-line-demo feature-cli-live-status" data-feature-encrypt-status><span class="ok">◈ encrypted (.env)</span></div>
       </div>
     </article>
 
-    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[14rem] md:min-h-[15.5rem]">
+    <article class="feature-cli-card hidden lg:flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-1 lg:col-span-3 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
       <div class="feature-card-head mt-3">
         <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
@@ -142,6 +144,19 @@ title: ""
   </div>
 
   <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+    <article class="feature-cli-card flex lg:hidden flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
+      <div class="feature-card-head mt-3">
+        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Inject</h3>
+        <div class="feature-cli-cmd"><code>dotenvx run -- your-agent</code></div>
+      </div>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
+      <div class="feature-cli-visual feature-cli-visual-inject">
+        <div class="feature-cli-line"><span class="feature-cli-cmdtext">$ dotenvx run -- your-agent</span></div>
+        <div class="feature-cli-status">⟐ injecting env (14) from .env</div>
+      </div>
+    </article>
+
     <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">03</div>
       <div class="feature-card-head mt-3">
@@ -193,7 +208,7 @@ title: ""
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are talking about Dotenvx.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Installed 4 million times a week on npm.</p>
+    <p class="mt-4 text-zinc-400 text-lg">Installed 4 million times a week on <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">npm</a>.</p>
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
@@ -545,3 +560,53 @@ title: ""
     {% include v1/components/three-secrets-box-single.html height="220px" %}
   </div>
 </section>
+
+<script>
+  (() => {
+    const demos = document.querySelectorAll("[data-feature-encrypt-demo]");
+    if (!demos.length) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const text = "dotenvx encrypt";
+
+    demos.forEach((demo) => {
+      const cmd = demo.querySelector("[data-feature-encrypt-cmd]");
+      const status = demo.querySelector("[data-feature-encrypt-status]");
+      const caret = demo.querySelector("[data-feature-encrypt-caret]");
+      if (!cmd || !status || !caret) return;
+
+      if (reducedMotion) {
+        cmd.textContent = text;
+        status.classList.add("is-visible");
+        caret.style.display = "none";
+        return;
+      }
+
+      const run = () => {
+        cmd.textContent = "";
+        status.classList.remove("is-visible");
+        caret.style.display = "inline-block";
+
+        let i = 0;
+        const typeNext = () => {
+          if (i <= text.length) {
+            cmd.textContent = text.slice(0, i);
+            i += 1;
+            window.setTimeout(typeNext, i < 3 ? 120 : 58);
+            return;
+          }
+
+          window.setTimeout(() => {
+            status.classList.add("is-visible");
+          }, 160);
+
+          window.setTimeout(run, 1900);
+        };
+
+        window.setTimeout(typeNext, 220);
+      };
+
+      run();
+    });
+  })();
+</script>

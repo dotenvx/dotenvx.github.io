@@ -42,12 +42,13 @@
 
   root.setAttribute('data-three-mounted', 'true');
   const canvas = root.querySelector('canvas');
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const scene = new THREE.Scene();
   const desktopMinFrustumSize = 3.0;
   const mobileMinFrustumSize = 1.2;
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
-  scene.background = new THREE.Color(0x000000);
+  scene.background = null;
+  renderer.setClearColor(0x000000, 0);
 
   camera.up.set(0, 1, 0);
   camera.position.set(0, 6, 0.001);

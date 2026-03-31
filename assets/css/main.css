@@ -480,6 +480,11 @@ width: 100%;
   border-color: rgba(24, 24, 27, 0.92) !important;
   border-bottom-color: rgba(24, 24, 27, 0.92) !important;
   gap: 0.72rem;
+  transition: background-color 160ms ease;
+}
+
+.feature-cli-card:hover {
+  background-color: #000 !important;
 }
 
 .feature-cli-card-primary {

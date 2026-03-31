@@ -117,7 +117,7 @@ title: ""
     <article class="feature-cli-card feature-cli-card-primary flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-2 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
       <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Encrypt</h3>
+        <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] font-semibold leading-[1.08]">Encrypt</h3>
         <div class="feature-cli-cmd"><code>dotenvx encrypt</code></div>
       </div>
       <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>

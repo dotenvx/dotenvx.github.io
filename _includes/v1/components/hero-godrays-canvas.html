@@ -1,5 +1,6 @@
 <div class="pointer-events-none absolute left-0 top-0 z-[1] h-[120vh] w-full overflow-hidden" data-hero-godrays aria-hidden="true">
   <canvas class="block h-full w-full opacity-[0.62]"></canvas>
+  <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_58%,rgba(0,0,0,0.22)_72%,rgba(0,0,0,0.68)_86%,rgba(0,0,0,0.92)_96%,rgba(0,0,0,1)_100%)]"></div>
 </div>
 
 <script>
@@ -14,6 +15,8 @@
   const isSafari = /Safari/i.test(ua) && !/(Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS)/i.test(ua);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const TARGET_OPACITY = 0.62;
+  const MOBILE_BREAKPOINT = 768;
+  const MOBILE_SOURCE_SHIFT_MAX = 1.95;
   canvas.style.opacity = '0';
   canvas.style.transition = prefersReducedMotion ? 'none' : 'opacity 2800ms cubic-bezier(0.22, 1, 0.36, 1)';
   const DPR_CAP = isSafari ? 1.4 : 1.75;
@@ -123,7 +126,11 @@
 
   const drawBeam = (beam, width, height) => {
     const angle = beam.angle;
-    const sourceX = width * beam.sourceX;
+    const mobileShift = width < MOBILE_BREAKPOINT
+      ? -((MOBILE_BREAKPOINT - width) / MOBILE_BREAKPOINT) * MOBILE_SOURCE_SHIFT_MAX
+      : 0;
+    const shiftedSourceX = Math.max(-2.5, Math.min(1.2, beam.sourceX + mobileShift));
+    const sourceX = width * shiftedSourceX;
     const sourceY = height * beam.sourceY;
     const len = Math.hypot(width, height) * 1.45 * beam.lengthScale;
     const normalX = -Math.sin(angle);

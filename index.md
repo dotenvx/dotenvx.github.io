@@ -107,151 +107,50 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
+<section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">More capability. Zero plaintext secrets.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Protect secrets in source code and AI prompts with an upgrade that takes seconds.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built-in for agent architecture.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Encrypt, inject, scope, and audit secrets without changing how agents run.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-5 gap-4 md:gap-5">
-    <div class="sm:col-span-2 relative overflow-hidden rounded-xl border bg-[#0d0a07] p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]" style="border-color: rgba(236, 213, 63, 0.62);">
-      <div class="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#ecd53f]/16 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-20 right-[-4.5rem] h-52 w-52 rounded-full bg-[#7a5321]/22 blur-3xl"></div>
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(236,213,63,0.20),transparent_42%),linear-gradient(165deg,rgba(56,36,14,0.18),rgba(0,0,0,0.76))]"></div>
+  <div class="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-1 min-h-[14rem] md:min-h-[15.5rem]">
+      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
+      <h3 class="mt-3 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Encrypt</h3>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>
+      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx encrypt</code></div>
+    </article>
 
-      <div class="pointer-events-none absolute inset-x-4 md:inset-x-5 bottom-4 md:bottom-5 font-mono text-[10px] md:text-[11px] leading-[1.45] tracking-[0.02em] text-[#cbb98a]/62 select-none">
-        <div>DOTENV_PUBLIC_KEY="03d7...f2a1"</div>
-        <div>API_KEY="encrypted:BE9Y7LKA..."</div>
-        <div>DB_URL="encrypted:B2k4V3..."</div>
-        <div>JWT_SECRET="encrypted:A8mP0..."</div>
-        <div>OPENAI_KEY="encrypted:C9x2Q..."</div>
-      </div>
-
-      <div class="relative z-10">
-        <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/45 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
-          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx encrypt</code></span>
-        </div>
-        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Encryption</h3>
-        <p class="mt-2 text-[#cbb98a] text-xs md:text-sm">Commit ciphertext. Keep keys separate.</p>
-      </div>
-    </div>
-    <div class="sm:col-span-3 relative overflow-hidden rounded-xl border border-zinc-700 bg-[#06080d] p-5 md:p-6 min-h-[19rem] md:min-h-[22rem]">
-      <div class="pointer-events-none absolute -top-20 right-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-24 left-[-5rem] h-64 w-64 rounded-full bg-blue-300/8 blur-3xl"></div>
-      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(7,10,20,0.96)_12%,rgba(7,10,20,0.72)_45%,rgba(7,10,20,0.92)_88%)]"></div>
-
-      <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div class="-rotate-[12deg] grid grid-cols-5 gap-2 md:gap-3 opacity-80 md:opacity-90 translate-y-3 md:translate-y-5 scale-[1.03]">
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">TypeScript</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Node.js</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Python</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Ruby</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Go</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Rust</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Java</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">PHP</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">.NET</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Deno</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bun</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Bash</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fish</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Clojure</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Kotlin</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Docker</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Compose</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">GitHub</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Heroku</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Vercel</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Cloudflare</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Netlify</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Railway</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Render</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Fly</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Digital Ocean</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">NPM</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Nx</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Turborepo</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Trigger</span>
-          <span class="h-8 md:h-9 px-3 rounded-md border border-zinc-700 bg-zinc-900/80 text-zinc-200/95 text-[11px] md:text-xs font-semibold inline-flex items-center justify-center">Frameworks</span>
-        </div>
-      </div>
-
-      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(8,10,18,0.94)_0%,rgba(8,10,18,0.56)_40%,rgba(8,10,18,0.78)_100%)]"></div>
-
-      <div class="relative z-10 max-w-2xl">
-        <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/45 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
-          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run -- your-cmd</code></span>
-        </div>
-        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Cross Platform</h3>
-        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Run anywhere. Works across languages.</p>
-      </div>
-    </div>
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
+      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
+      <h3 class="mt-3 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
+      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx run -- your-agent</code></div>
+    </article>
   </div>
 
-  <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
-      <div class="pointer-events-none absolute -top-20 left-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-20 right-[-4rem] h-56 w-56 rounded-full bg-emerald-300/8 blur-3xl"></div>
-      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
+  <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">03</div>
+      <h3 class="mt-3 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Scope</h3>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Load the right secret set per environment so agents only get what they should.</p>
+      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx run -f .env.production</code></div>
+    </article>
 
-      <div class="pointer-events-none absolute left-6 bottom-6 hidden md:block font-mono text-[11px] leading-[1.5] text-zinc-300/35 select-none">
-        <div>diff --git a/.env b/.env</div>
-        <div>+ DOTENV_PUBLIC_KEY="03d7...f2a1"</div>
-        <div>+ API_KEY="encrypted:BE9Y7LKA..."</div>
-        <div>+ DB_URL="encrypted:B2k4V3..."</div>
-      </div>
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">04</div>
+      <h3 class="mt-3 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit</h3>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Track encrypted secret changes through Git history and PR review workflows.</p>
+      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>git diff .env*</code></div>
+    </article>
 
-      <div class="relative z-10 max-w-2xl">
-        <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/40 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
-          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>git add .env</code></span>
-        </div>
-        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">GitOps</h3>
-        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Secrets, encrypted in Git. Decrypted only at runtime.</p>
-      </div>
-    </div>
-
-    <div class="sm:col-span-1 relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950/85 p-5 md:p-6 min-h-[18rem] md:min-h-[20rem]">
-      <div class="pointer-events-none absolute -top-20 right-[-4rem] h-56 w-56 rounded-full bg-[#ecd53f]/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-16 left-[-4rem] h-52 w-52 rounded-full bg-blue-300/8 blur-3xl"></div>
-      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(155deg,rgba(9,12,21,0.94)_0%,rgba(9,12,21,0.78)_50%,rgba(9,12,21,0.94)_100%)]"></div>
-
-      <div class="pointer-events-none absolute inset-0 hidden md:block select-none">
-        <span class="absolute top-[5.0rem] right-[12.2rem] font-mono text-[10px] text-[#ecd53f]/42">›</span>
-        <span class="absolute top-[5.55rem] right-[11.15rem] font-mono text-[10px] text-[#ecd53f]/34">›</span>
-        <span class="absolute top-[6.1rem] right-[10.1rem] font-mono text-[10px] text-[#ecd53f]/26">›</span>
-      </div>
-
-      <div class="pointer-events-none absolute inset-x-5 bottom-6 hidden md:block select-none">
-        <div class="relative h-[7.4rem] w-full">
-          <div class="absolute inset-x-0 top-6 bottom-0 rounded-lg border border-zinc-700 bg-zinc-900/54"></div>
-
-          <div class="absolute z-10 top-0 inset-x-4 flex gap-3">
-            <div class="h-6 min-w-[6.8rem] px-3 rounded-t-md border border-zinc-700 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.local</div>
-            <div class="h-6 min-w-[9.4rem] px-3 rounded-t-md border border-yellow-300 border-b-0 bg-zinc-900/78 font-mono text-[10px] leading-6 text-[#ecd53f] text-center shadow-[0_0_14px_rgba(236,213,63,0.10)]">.env.production</div>
-            <div class="h-6 min-w-[5.7rem] px-3 rounded-t-md border border-zinc-700 border-b-0 bg-zinc-900/62 font-mono text-[10px] leading-6 text-zinc-400/85 text-center">.env.ci</div>
-          </div>
-
-          <div class="absolute inset-x-4 bottom-3 font-mono text-[10px] leading-[1.45] text-zinc-400/42">
-            <div>DOTENV_ENV=production</div>
-            <div>DOTENV_PRIVATE_KEY_PRODUCTION=***</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative z-10 max-w-2xl">
-        <div class="inline-flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded-md border bg-black/40 text-[#ecd53f] text-sm" style="border-color: rgba(236, 213, 63, 0.62);">◈</span>
-          <span class="text-[#ecd53f] text-xs font-semibold tracking-[0.08em]"><code>dotenvx run -f .env.production</code></span>
-        </div>
-        <h3 class="mt-4 text-zinc-100 font-semibold text-3xl md:text-[2.2rem] leading-[1.05] tracking-tight">Multiple Environments</h3>
-        <p class="mt-2 text-zinc-300/95 text-xs md:text-sm leading-relaxed">Many contexts. Load only what you need.</p>
-      </div>
-    </div>
+    <article class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
+      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">05</div>
+      <h3 class="mt-3 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate</h3>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotate aging or compromised secrets without rewriting agent code.</p>
+      <div class="mt-4 font-mono text-[11px] md:text-xs text-zinc-500"><code>dotenvx rotate</code></div>
+    </article>
   </div>
-
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">

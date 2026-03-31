@@ -17,6 +17,10 @@
   const TARGET_OPACITY = 0.62;
   const MOBILE_BREAKPOINT = 768;
   const MOBILE_SOURCE_SHIFT_MAX = 1.95;
+  const MOBILE_BEAM_LIMIT = 12;
+  const MOBILE_DUST_LIMIT = 56;
+  const MOBILE_BEAM_DUST_LIMIT = 72;
+  const ENABLE_DUST = true;
   canvas.style.opacity = '0';
   canvas.style.transition = prefersReducedMotion ? 'none' : 'opacity 2800ms cubic-bezier(0.22, 1, 0.36, 1)';
   const DPR_CAP = isSafari ? 1.4 : 1.75;
@@ -176,10 +180,14 @@
 
   const draw = () => {
     ctx.clearRect(0, 0, width, height);
+    const isMobile = width < MOBILE_BREAKPOINT;
+    const activeBeams = isMobile ? beams.slice(0, MOBILE_BEAM_LIMIT) : beams;
+    const activeDustCount = isMobile ? Math.min(MOBILE_DUST_LIMIT, dust.length) : dust.length;
+    const activeBeamDustCount = isMobile ? Math.min(MOBILE_BEAM_DUST_LIMIT, beamDust.length) : beamDust.length;
 
     ctx.globalCompositeOperation = isSafari ? 'screen' : 'lighter';
 
-    for (const beam of beams) drawBeam(beam, width, height);
+    for (const beam of activeBeams) drawBeam(beam, width, height);
 
     if (isSafari) {
       // Safari-specific soft fill to reduce visible striping between beams.
@@ -192,36 +200,38 @@
     }
 
     ctx.globalCompositeOperation = 'source-over';
-    for (let i = 0; i < dust.length; i += 1) {
-      const p = dust[i];
-      ctx.fillStyle = `rgba(255, 242, 201, ${p.alpha * 0.22})`;
-      ctx.beginPath();
-      ctx.arc(p.x * width, p.y * height, p.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
+    if (ENABLE_DUST) {
+      for (let i = 0; i < activeDustCount; i += 1) {
+        const p = dust[i];
+        ctx.fillStyle = `rgba(255, 242, 201, ${p.alpha * 0.22})`;
+        ctx.beginPath();
+        ctx.arc(p.x * width, p.y * height, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
 
-    // Denser "dust in light" layer, concentrated lower-right.
-    const dustFog = ctx.createRadialGradient(
-      width * 0.74,
-      height * 0.78,
-      0,
-      width * 0.74,
-      height * 0.78,
-      Math.max(width, height) * 0.45
-    );
-    dustFog.addColorStop(0.0, 'rgba(255, 239, 196, 0.11)');
-    dustFog.addColorStop(0.55, 'rgba(255, 233, 170, 0.045)');
-    dustFog.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
-    ctx.fillStyle = dustFog;
-    ctx.fillRect(0, 0, width, height);
+      // Denser "dust in light" layer, concentrated lower-right.
+      const dustFog = ctx.createRadialGradient(
+        width * 0.74,
+        height * 0.78,
+        0,
+        width * 0.74,
+        height * 0.78,
+        Math.max(width, height) * 0.45
+      );
+      dustFog.addColorStop(0.0, 'rgba(255, 239, 196, 0.11)');
+      dustFog.addColorStop(0.55, 'rgba(255, 233, 170, 0.045)');
+      dustFog.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = dustFog;
+      ctx.fillRect(0, 0, width, height);
 
-    ctx.globalCompositeOperation = 'lighter';
-    for (let i = 0; i < beamDust.length; i += 1) {
-      const p = beamDust[i];
-      ctx.fillStyle = `rgba(255, 236, 186, ${p.alpha * 0.14})`;
-      ctx.beginPath();
-      ctx.arc(p.x * width, p.y * height, p.size, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 0; i < activeBeamDustCount; i += 1) {
+        const p = beamDust[i];
+        ctx.fillStyle = `rgba(255, 236, 186, ${p.alpha * 0.14})`;
+        ctx.beginPath();
+        ctx.arc(p.x * width, p.y * height, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
     ctx.globalCompositeOperation = 'source-over';
   };

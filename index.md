@@ -71,7 +71,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypted .env for agent stacks</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypted .env for agent stacks in one line.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Keep the .env interface agents already expect, but make it encrypted.</p>
   </div>
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl">

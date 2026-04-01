@@ -35,6 +35,8 @@
   const scene = new THREE.Scene();
   const desktopMinFrustumSize = 3.0;
   const mobileMinFrustumSize = 1.2;
+  const includeZoom = Number({{ include.zoom | default: 1 }});
+  const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
   scene.background = null;
   renderer.setClearColor(0x000000, 0);
@@ -297,7 +299,8 @@ const resize = () => {
     const isMobile = window.matchMedia('(max-width: 767px)').matches;
     const minFrustumSize = isMobile ? mobileMinFrustumSize : desktopMinFrustumSize;
     const fitSize = fitFrustumSize * (isMobile ? 0.5 : 1);
-    const frustumSize = Math.max(minFrustumSize, fitSize);
+    const baseFrustumSize = Math.max(minFrustumSize, fitSize);
+    const frustumSize = baseFrustumSize / zoomFactor;
 
     camera.left = -0.5 * frustumSize * aspect;
     camera.right = 0.5 * frustumSize * aspect;

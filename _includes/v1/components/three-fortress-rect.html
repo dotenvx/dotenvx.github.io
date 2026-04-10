@@ -1,0 +1,387 @@
+<div
+  class="{{ include.class }} relative overflow-hidden"
+  data-ops-fortress
+  style="height: {{ include.height | default: '320px' }};"
+>
+  <canvas
+    class="block h-full w-full"
+    style="opacity: 0; -webkit-mask-image: radial-gradient(120% 112% at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.48) 85%, rgba(0,0,0,0.1) 93%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(120% 112% at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.48) 85%, rgba(0,0,0,0.1) 93%, rgba(0,0,0,0) 100%);"
+  ></canvas>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.167.1/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.167.1/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+  const root = document.querySelector('[data-ops-fortress]:not([data-three-mounted])');
+  if (!root) {
+    throw new Error('ops-fortress mount target not found');
+  }
+
+  root.setAttribute('data-three-mounted', 'true');
+  const canvas = root.querySelector('canvas');
+  canvas.style.transition = 'opacity 300ms ease-out';
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  const scene = new THREE.Scene();
+  const desktopMinFrustumSize = 4.4;
+  const mobileMinFrustumSize = 1.95;
+  const includeZoom = Number({{ include.zoom | default: 1 }});
+  const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
+
+  scene.background = null;
+  renderer.setClearColor(0x000000, 0);
+  camera.up.set(0, 1, 0);
+  camera.position.set(0, 6, 0.001);
+  camera.lookAt(0, 0.74, 0);
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.26;
+  renderer.physicallyCorrectLights = true;
+
+  const pmremGenerator = new THREE.PMREMGenerator(renderer);
+  const envRT = pmremGenerator.fromScene(new RoomEnvironment(), 0.04);
+  scene.environment = envRT.texture;
+  pmremGenerator.dispose();
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+  const keyLight = new THREE.DirectionalLight(0xbfe3ff, 2.8);
+  keyLight.position.set(3, 5, 4);
+  scene.add(keyLight);
+  const rimLight = new THREE.DirectionalLight(0xffffff, 2.2);
+  rimLight.position.set(-4, 2.5, -3);
+  scene.add(rimLight);
+
+  const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
+  const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
+  const edgeHighlightMaterial = new THREE.LineBasicMaterial({
+    color: 0xc8d0de,
+    transparent: true,
+    opacity: 0.16,
+    toneMapped: false
+  });
+  const glowShellMaterial = new THREE.MeshBasicMaterial({
+    color: 0xe7c96f,
+    transparent: true,
+    opacity: 0.12,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide,
+    depthWrite: false,
+    toneMapped: false
+  });
+
+  const labelTextureCache = new Map();
+  const materialCache = new Map();
+  const faceMaterials = [];
+  const baseEnvMapIntensity = 1.35;
+  const baseRoughness = 0.055;
+  const baseThickness = 1.1;
+  const baseEdgeOpacity = edgeHighlightMaterial.opacity;
+  const baseGlowOpacity = glowShellMaterial.opacity;
+
+  const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
+  const fortifyDelayMs = 700;
+  let fortifyMix = 0;
+  let fortifyTarget = 0;
+  let hoverTimerId = null;
+  let pointerOverFortress = false;
+
+  const buildLabelTexture = (label) => {
+    const c = document.createElement('canvas');
+    c.width = 128;
+    c.height = 128;
+    const ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, 128, 128);
+    ctx.fillStyle = 'rgba(99, 104, 113, 0.24)';
+    ctx.fillRect(0, 0, 128, 128);
+    ctx.fillStyle = 'rgba(217, 191, 117, 0.82)';
+    ctx.font = '500 16px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(label, 64, 64);
+    const texture = new THREE.CanvasTexture(c);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    texture.needsUpdate = true;
+    return texture;
+  };
+
+  const getLabelTexture = (label) => {
+    if (!labelTextureCache.has(label)) {
+      labelTextureCache.set(label, buildLabelTexture(label));
+    }
+    return labelTextureCache.get(label);
+  };
+
+  const getFaceMaterial = (label) => {
+    if (!materialCache.has(label)) {
+      materialCache.set(label, new THREE.MeshPhysicalMaterial({
+        color: 0xfff7e3,
+        transparent: true,
+        opacity: 0.55,
+        map: getLabelTexture(label),
+        metalness: 0.0,
+        roughness: baseRoughness,
+        transmission: 0.94,
+        thickness: baseThickness,
+        ior: 1.5,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.05,
+        attenuationColor: 0x7a8394,
+        attenuationDistance: 1.6,
+        envMapIntensity: baseEnvMapIntensity
+      }));
+    }
+    return materialCache.get(label);
+  };
+
+  const createFaceMaterialVariant = (label, roughnessOffset, thicknessOffset, faceRole) => {
+    const mat = getFaceMaterial(label).clone();
+    mat.roughness = THREE.MathUtils.clamp(baseRoughness + roughnessOffset, 0.006, 0.06);
+    mat.thickness = THREE.MathUtils.clamp(baseThickness + thicknessOffset, 1.35, 1.9);
+    if (faceRole === 'top') {
+      mat.opacity = 0.14;
+      mat.transmission = 0.99;
+      mat.roughness = Math.min(0.07, mat.roughness + 0.01);
+      mat.thickness = 0.18;
+      mat.clearcoatRoughness = 0.05;
+    } else if (faceRole === 'bottom') {
+      mat.opacity = 0.28;
+      mat.transmission = 0.88;
+      mat.thickness = 0.5;
+      mat.clearcoatRoughness = 0.06;
+    } else {
+      mat.opacity = 0.25;
+      mat.transmission = 0.98;
+      mat.thickness = 0.42;
+      mat.clearcoatRoughness = 0.04;
+    }
+    mat.userData.baseOpacity = mat.opacity;
+    mat.userData.baseEnvMapIntensity = mat.envMapIntensity;
+    mat.userData.baseTransmission = mat.transmission;
+    mat.userData.baseThickness = mat.thickness;
+    faceMaterials.push(mat);
+    return mat;
+  };
+
+  const createBox = ({ position = [0, 0.74, 0] } = {}) => {
+    const roughnessOffset = (Math.random() - 0.5) * 0.02;
+    const thicknessOffset = (Math.random() - 0.5) * 0.18;
+    const mesh = new THREE.Mesh(boxGeometry, [
+      createFaceMaterialVariant('s1', roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant('s2', roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant('t', roughnessOffset, thicknessOffset, 'top'),
+      createFaceMaterialVariant('b', roughnessOffset, thicknessOffset, 'bottom'),
+      createFaceMaterialVariant('s3', roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant('s4', roughnessOffset, thicknessOffset, 'side')
+    ]);
+    mesh.position.set(position[0], position[1], position[2]);
+
+    const edgeLines = new THREE.LineSegments(edgeGeometry, edgeHighlightMaterial);
+    edgeLines.renderOrder = 2;
+    mesh.add(edgeLines);
+
+    const glowShell = new THREE.Mesh(boxGeometry, glowShellMaterial);
+    glowShell.scale.set(1.12, 1.12, 1.12);
+    glowShell.renderOrder = 0;
+    mesh.add(glowShell);
+    return mesh;
+  };
+
+  const fortressGroup = new THREE.Group();
+  const blocks = [];
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+
+  const pitch = 0.125;
+  const yLift = 0.152;
+  const baseY = 0.36;
+
+  const addStack = (x, z, height) => {
+    for (let level = 0; level < height; level += 1) {
+      const box = createBox({ position: [x * pitch, baseY + level * yLift, z * pitch] });
+      blocks.push(box);
+      fortressGroup.add(box);
+    }
+  };
+
+  for (let x = -9; x <= 9; x += 1) {
+    for (let z = -9; z <= 9; z += 1) {
+      const edge = Math.max(Math.abs(x), Math.abs(z)) === 9;
+      if (!edge) continue;
+
+      const isGate = z === 9 && x >= -1 && x <= 1;
+      if (isGate) continue;
+
+      let wallHeight = 5;
+      const isCorner = Math.abs(x) === 9 && Math.abs(z) === 9;
+      if (isCorner) wallHeight = 7;
+      addStack(x, z, wallHeight);
+
+      const crenel = ((x + z) & 1) === 0;
+      if (crenel && !isCorner) {
+        addStack(x, z, wallHeight + 1);
+      }
+    }
+  }
+
+  for (let x = -7; x <= 7; x += 1) {
+    addStack(x, -7, 2);
+  }
+  for (let z = -6; z <= -2; z += 1) {
+    addStack(-7, z, 2);
+    addStack(7, z, 2);
+  }
+
+  for (let x = -2; x <= 2; x += 1) {
+    for (let z = -2; z <= 2; z += 1) {
+      const keepHeight = (Math.abs(x) <= 1 && Math.abs(z) <= 1) ? 7 : 6;
+      addStack(x, z, keepHeight);
+    }
+  }
+
+  for (let x = -1; x <= 1; x += 1) {
+    addStack(x, 8, 3);
+  }
+  addStack(-2, 9, 4);
+  addStack(2, 9, 4);
+
+  fortressGroup.rotation.x = 0.215;
+  fortressGroup.rotation.y = -0.17;
+  fortressGroup.rotation.z = -0.03;
+  const fortressBaseY = fortressGroup.position.y;
+  scene.add(fortressGroup);
+
+  const bounds = new THREE.Box3().setFromObject(fortressGroup);
+  const fortressCenter = new THREE.Vector3();
+  const fortressSize = new THREE.Vector3();
+  bounds.getCenter(fortressCenter);
+  bounds.getSize(fortressSize);
+  const fitFrustumSize = Math.max(fortressSize.x, fortressSize.y, fortressSize.z) * 1.14;
+
+  camera.position.set(fortressCenter.x + 1.48, fortressCenter.y + 1.84, fortressCenter.z + 3.1);
+  camera.lookAt(fortressCenter.x - 0.03, fortressCenter.y + 0.48, fortressCenter.z + 0.3);
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = false;
+  controls.enableZoom = false;
+  controls.enablePan = false;
+  controls.enableRotate = false;
+  controls.autoRotate = false;
+  controls.target.set(fortressCenter.x, fortressCenter.y + 0.4, fortressCenter.z);
+  controls.update();
+
+  const resize = () => {
+    const width = root.clientWidth || 1;
+    const height = root.clientHeight || 1;
+    const aspect = width / height;
+    const minFrustumSize = isMobileViewport() ? mobileMinFrustumSize : desktopMinFrustumSize;
+    const fitSize = fitFrustumSize * (isMobileViewport() ? 0.58 : 1);
+    const baseFrustumSize = Math.max(minFrustumSize, fitSize);
+    const frustumSize = baseFrustumSize / zoomFactor;
+
+    camera.left = -0.5 * frustumSize * aspect;
+    camera.right = 0.5 * frustumSize * aspect;
+    camera.top = 0.5 * frustumSize;
+    camera.bottom = -0.5 * frustumSize;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+    controls.enableRotate = false;
+  };
+
+  const setFortifyState = (enabled) => {
+    fortifyTarget = enabled ? 1 : 0;
+  };
+
+  const clearHoverTimer = () => {
+    if (hoverTimerId !== null) {
+      clearTimeout(hoverTimerId);
+      hoverTimerId = null;
+    }
+  };
+
+  const setPointerFromEvent = (event) => {
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  };
+
+  const isPointerIntersectingFortress = (event) => {
+    setPointerFromEvent(event);
+    raycaster.setFromCamera(pointer, camera);
+    return raycaster.intersectObjects(blocks, false).length > 0;
+  };
+
+  canvas.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'touch') {
+      pointerOverFortress = false;
+      clearHoverTimer();
+      setFortifyState(false);
+      return;
+    }
+    pointerOverFortress = isPointerIntersectingFortress(event);
+    if (pointerOverFortress) {
+      if (hoverTimerId === null && fortifyTarget < 1) {
+        hoverTimerId = setTimeout(() => {
+          hoverTimerId = null;
+          if (pointerOverFortress) {
+            setFortifyState(true);
+          }
+        }, fortifyDelayMs);
+      }
+    } else {
+      clearHoverTimer();
+      setFortifyState(false);
+    }
+  });
+
+  canvas.addEventListener('pointerleave', () => {
+    pointerOverFortress = false;
+    clearHoverTimer();
+    setFortifyState(false);
+  });
+
+  resize();
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(resize);
+    observer.observe(root);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+
+  const animate = () => {
+    fortifyMix = THREE.MathUtils.lerp(fortifyMix, fortifyTarget, 0.12);
+
+    for (let i = 0; i < faceMaterials.length; i += 1) {
+      const mat = faceMaterials[i];
+      mat.opacity = Math.min(0.74, mat.userData.baseOpacity * (1 + fortifyMix * 0.95));
+      mat.envMapIntensity = mat.userData.baseEnvMapIntensity * (1 + fortifyMix * 0.58);
+      mat.transmission = THREE.MathUtils.clamp(mat.userData.baseTransmission * (1 - fortifyMix * 0.38), 0.46, 1.0);
+      mat.thickness = mat.userData.baseThickness * (1 + fortifyMix * 0.42);
+    }
+    edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
+    glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
+    fortressGroup.scale.setScalar(1);
+    fortressGroup.position.y = fortressBaseY;
+
+    controls.update();
+    renderer.render(scene, camera);
+    if (canvas.style.opacity !== '1') {
+      canvas.style.opacity = '1';
+    }
+    requestAnimationFrame(animate);
+  };
+  animate();
+</script>

@@ -68,13 +68,13 @@
   const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
-    color: 0xf1dfab,
+    color: 0xdfe6ef,
     transparent: true,
     opacity: 0.28,
     toneMapped: false
   });
   const glowShellMaterial = new THREE.MeshBasicMaterial({
-    color: 0xffe9a8,
+    color: 0xc7d8ea,
     transparent: true,
     opacity: 0.2,
     blending: THREE.AdditiveBlending,
@@ -103,7 +103,7 @@
     ctx.clearRect(0, 0, 128, 128);
     ctx.fillStyle = 'rgba(99, 104, 113, 0.24)';
     ctx.fillRect(0, 0, 128, 128);
-    ctx.fillStyle = 'rgba(217, 191, 117, 0.82)';
+    ctx.fillStyle = 'rgba(210, 220, 233, 0.84)';
     ctx.font = '500 16px sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -124,7 +124,7 @@
   const getFaceMaterial = (label) => {
     if (!materialCache.has(label)) {
       materialCache.set(label, new THREE.MeshPhysicalMaterial({
-        color: 0xfff6d1,
+        color: 0xf2f6fb,
         transparent: true,
         opacity: 0.72,
         map: getLabelTexture(label),
@@ -135,9 +135,9 @@
         ior: 1.5,
         clearcoat: 1.0,
         clearcoatRoughness: 0.035,
-        attenuationColor: 0xc7bb8c,
+        attenuationColor: 0x90a4ba,
         attenuationDistance: 2.2,
-        envMapIntensity: 1.9
+        envMapIntensity: 2.05
       }));
     }
     return materialCache.get(label);
@@ -258,13 +258,13 @@
   addStack(1, 0, 9);
 
   const checkpointMaterial = new THREE.MeshBasicMaterial({
-    color: 0xf1dc91,
+    color: 0xd8e5f3,
     transparent: true,
     opacity: 0.24,
     toneMapped: false
   });
   const checkpointGeometry = new THREE.BoxGeometry(0.06, 0.06, 0.06);
-  const checkpointPath = [8.2, 5.2, 1.3];
+  const checkpointPath = [1.3];
   for (let i = 0; i < checkpointPath.length; i += 1) {
     const marker = new THREE.Mesh(checkpointGeometry, checkpointMaterial.clone());
     marker.position.set(0, baseY + 0.34, checkpointPath[i] * pitch);

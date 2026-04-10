@@ -280,6 +280,14 @@ html.dark .contact-muted-link:hover,
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 24px rgba(11, 7, 2, 0.34);
 }
 
+.hero-title-steel {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 22%, #e9edf2 48%, #cfd7e0 74%, #b6c0cc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), 0 14px 28px rgba(5, 8, 12, 0.38);
+}
+
 
 blockquote { @apply text-zinc-800 dark:text-zinc-300; }
 p { @apply leading-relaxed; }

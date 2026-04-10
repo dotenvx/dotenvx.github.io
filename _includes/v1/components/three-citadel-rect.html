@@ -1,6 +1,6 @@
 <div
   class="{{ include.class }} relative overflow-hidden"
-  data-ops-fortress
+  data-ops-citadel
   style="height: {{ include.height | default: '320px' }};"
 >
   <canvas
@@ -23,9 +23,9 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-  const root = document.querySelector('[data-ops-fortress]:not([data-three-mounted])');
+  const root = document.querySelector('[data-ops-citadel]:not([data-three-mounted])');
   if (!root) {
-    throw new Error('ops-fortress mount target not found');
+    throw new Error('ops-citadel mount target not found');
   }
 
   root.setAttribute('data-three-mounted', 'true');
@@ -217,48 +217,60 @@
     }
   };
 
-
   for (let x = -9; x <= 9; x += 1) {
     for (let z = -9; z <= 9; z += 1) {
       const edge = Math.max(Math.abs(x), Math.abs(z)) === 9;
       if (!edge) continue;
 
-      const isGate = z === 9 && x >= -1 && x <= 1;
-      if (isGate) continue;
+      const gateGap = z === 9 && x >= -1 && x <= 1;
+      if (gateGap) continue;
 
-      let wallHeight = 5;
-      const isCorner = Math.abs(x) === 9 && Math.abs(z) === 9;
-      if (isCorner) wallHeight = 7;
+      const corner = Math.abs(x) === 9 && Math.abs(z) === 9;
+      const wallHeight = corner ? 7 : 4;
       addStack(x, z, wallHeight);
 
-      const crenel = ((x + z) & 1) === 0;
-      if (crenel && !isCorner) {
+      if (!corner && ((x + z) & 1) === 0) {
         addStack(x, z, wallHeight + 1);
       }
     }
   }
 
-  for (let x = -7; x <= 7; x += 1) {
-    addStack(x, -7, 2);
+  for (let x = -6; x <= 6; x += 1) {
+    for (let z = -6; z <= 6; z += 1) {
+      const edge = Math.max(Math.abs(x), Math.abs(z)) === 6;
+      if (!edge) continue;
+      const gateGap = z === 6 && x >= -1 && x <= 1;
+      if (gateGap) continue;
+      addStack(x, z, 3);
+      if (((x + z) & 1) === 0) addStack(x, z, 4);
+    }
   }
-  for (let z = -6; z <= -2; z += 1) {
-    addStack(-7, z, 2);
-    addStack(7, z, 2);
+
+  const towerSpecs = [
+    [-9, -9, 9], [9, -9, 9], [-9, 9, 8], [9, 9, 8],
+    [-3, 9, 8], [3, 9, 8],
+    [0, -9, 10], [-9, 0, 8], [9, 0, 8]
+  ];
+  for (let i = 0; i < towerSpecs.length; i += 1) {
+    const [tx, tz, h] = towerSpecs[i];
+    addStack(tx, tz, h);
+    addStack(tx - 1, tz, Math.max(5, h - 2));
+    addStack(tx + 1, tz, Math.max(5, h - 2));
+    addStack(tx, tz - 1, Math.max(5, h - 2));
+    addStack(tx, tz + 1, Math.max(5, h - 2));
   }
 
   for (let x = -2; x <= 2; x += 1) {
     for (let z = -2; z <= 2; z += 1) {
-      const keepHeight = (Math.abs(x) <= 1 && Math.abs(z) <= 1) ? 7 : 6;
-      addStack(x, z, keepHeight);
+      const h = (Math.abs(x) <= 1 && Math.abs(z) <= 1) ? 7 : 6;
+      addStack(x, z, h);
     }
   }
-
-  for (let x = -1; x <= 1; x += 1) {
-    addStack(x, 8, 3);
-  }
-  addStack(-2, 9, 4);
-  addStack(2, 9, 4);
-
+  addStack(0, 0, 10);
+  addStack(0, -1, 8);
+  addStack(-1, 0, 8);
+  addStack(1, 0, 8);
+  addStack(0, 1, 8);
 
   fortressGroup.rotation.x = 0.215;
   fortressGroup.rotation.y = -0.17;

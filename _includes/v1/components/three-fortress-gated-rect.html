@@ -1,6 +1,6 @@
 <div
   class="{{ include.class }} relative overflow-hidden"
-  data-ops-fortress
+  data-ops-fortress-gated
   style="height: {{ include.height | default: '320px' }};"
 >
   <canvas
@@ -23,9 +23,9 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-  const root = document.querySelector('[data-ops-fortress]:not([data-three-mounted])');
+  const root = document.querySelector('[data-ops-fortress-gated]:not([data-three-mounted])');
   if (!root) {
-    throw new Error('ops-fortress mount target not found');
+    throw new Error('ops-fortress-gated mount target not found');
   }
 
   root.setAttribute('data-three-mounted', 'true');
@@ -34,8 +34,8 @@
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const scene = new THREE.Scene();
-  const desktopMinFrustumSize = 4.4;
-  const mobileMinFrustumSize = 1.95;
+  const desktopMinFrustumSize = 5.2;
+  const mobileMinFrustumSize = 2.2;
   const includeZoom = Number({{ include.zoom | default: 1 }});
   const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
@@ -68,15 +68,15 @@
   const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
-    color: 0xc8d0de,
+    color: 0xf1dfab,
     transparent: true,
-    opacity: 0.16,
+    opacity: 0.28,
     toneMapped: false
   });
   const glowShellMaterial = new THREE.MeshBasicMaterial({
-    color: 0xe7c96f,
+    color: 0xffe9a8,
     transparent: true,
-    opacity: 0.12,
+    opacity: 0.2,
     blending: THREE.AdditiveBlending,
     side: THREE.BackSide,
     depthWrite: false,
@@ -87,17 +87,13 @@
   const materialCache = new Map();
   const faceMaterials = [];
   const baseEnvMapIntensity = 1.35;
-  const baseRoughness = 0.055;
+  const baseRoughness = 0.045;
   const baseThickness = 1.1;
   const baseEdgeOpacity = edgeHighlightMaterial.opacity;
   const baseGlowOpacity = glowShellMaterial.opacity;
 
   const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
-  const fortifyDelayMs = 700;
-  let fortifyMix = 0;
-  let fortifyTarget = 0;
-  let hoverTimerId = null;
-  let pointerOverFortress = false;
+  const fortifyMix = 1;
 
   const buildLabelTexture = (label) => {
     const c = document.createElement('canvas');
@@ -128,20 +124,20 @@
   const getFaceMaterial = (label) => {
     if (!materialCache.has(label)) {
       materialCache.set(label, new THREE.MeshPhysicalMaterial({
-        color: 0xfff7e3,
+        color: 0xfff6d1,
         transparent: true,
-        opacity: 0.55,
+        opacity: 0.72,
         map: getLabelTexture(label),
         metalness: 0.0,
         roughness: baseRoughness,
-        transmission: 0.94,
+        transmission: 0.88,
         thickness: baseThickness,
         ior: 1.5,
         clearcoat: 1.0,
-        clearcoatRoughness: 0.05,
-        attenuationColor: 0x7a8394,
-        attenuationDistance: 1.6,
-        envMapIntensity: baseEnvMapIntensity
+        clearcoatRoughness: 0.035,
+        attenuationColor: 0xc7bb8c,
+        attenuationDistance: 2.2,
+        envMapIntensity: 1.9
       }));
     }
     return materialCache.get(label);
@@ -152,21 +148,21 @@
     mat.roughness = THREE.MathUtils.clamp(baseRoughness + roughnessOffset, 0.006, 0.06);
     mat.thickness = THREE.MathUtils.clamp(baseThickness + thicknessOffset, 1.35, 1.9);
     if (faceRole === 'top') {
-      mat.opacity = 0.14;
-      mat.transmission = 0.99;
-      mat.roughness = Math.min(0.07, mat.roughness + 0.01);
-      mat.thickness = 0.18;
-      mat.clearcoatRoughness = 0.05;
+      mat.opacity = 0.36;
+      mat.transmission = 0.92;
+      mat.roughness = Math.min(0.06, mat.roughness + 0.004);
+      mat.thickness = 0.24;
+      mat.clearcoatRoughness = 0.03;
     } else if (faceRole === 'bottom') {
-      mat.opacity = 0.28;
-      mat.transmission = 0.88;
-      mat.thickness = 0.5;
-      mat.clearcoatRoughness = 0.06;
+      mat.opacity = 0.44;
+      mat.transmission = 0.8;
+      mat.thickness = 0.58;
+      mat.clearcoatRoughness = 0.05;
     } else {
-      mat.opacity = 0.25;
-      mat.transmission = 0.98;
-      mat.thickness = 0.42;
-      mat.clearcoatRoughness = 0.04;
+      mat.opacity = 0.46;
+      mat.transmission = 0.9;
+      mat.thickness = 0.5;
+      mat.clearcoatRoughness = 0.032;
     }
     mat.userData.baseOpacity = mat.opacity;
     mat.userData.baseEnvMapIntensity = mat.envMapIntensity;
@@ -202,8 +198,7 @@
 
   const fortressGroup = new THREE.Group();
   const blocks = [];
-  const raycaster = new THREE.Raycaster();
-  const pointer = new THREE.Vector2();
+  const checkpoints = [];
 
   const pitch = 0.125;
   const yLift = 0.152;
@@ -217,51 +212,69 @@
     }
   };
 
+  const addRing = ({ radius, height, gateHalfWidth, cornerExtra = 2 }) => {
+    for (let x = -radius; x <= radius; x += 1) {
+      for (let z = -radius; z <= radius; z += 1) {
+        const edge = Math.max(Math.abs(x), Math.abs(z)) === radius;
+        if (!edge) continue;
+        const isFrontGate = z === radius && x >= -gateHalfWidth && x <= gateHalfWidth;
+        if (isFrontGate) continue;
 
-  for (let x = -9; x <= 9; x += 1) {
-    for (let z = -9; z <= 9; z += 1) {
-      const edge = Math.max(Math.abs(x), Math.abs(z)) === 9;
-      if (!edge) continue;
+        const corner = Math.abs(x) === radius && Math.abs(z) === radius;
+        const wallHeight = corner ? height + cornerExtra : height;
+        addStack(x, z, wallHeight);
 
-      const isGate = z === 9 && x >= -1 && x <= 1;
-      if (isGate) continue;
-
-      let wallHeight = 5;
-      const isCorner = Math.abs(x) === 9 && Math.abs(z) === 9;
-      if (isCorner) wallHeight = 7;
-      addStack(x, z, wallHeight);
-
-      const crenel = ((x + z) & 1) === 0;
-      if (crenel && !isCorner) {
-        addStack(x, z, wallHeight + 1);
+        if (!corner && ((x + z) & 1) === 0) {
+          addStack(x, z, wallHeight + 1);
+        }
       }
     }
+  };
+
+  addRing({ radius: 12, height: 3, gateHalfWidth: 2, cornerExtra: 2 });
+  addRing({ radius: 7, height: 5, gateHalfWidth: 1, cornerExtra: 1 });
+
+  // Inner gate side caps: +2 blocks on each side of the opening.
+  for (let level = 5; level <= 6; level += 1) {
+    const innerGateCapY = baseY + level * yLift;
+    const innerGateCapL = createBox({ position: [-2 * pitch, innerGateCapY, 7 * pitch] });
+    const innerGateCapR = createBox({ position: [2 * pitch, innerGateCapY, 7 * pitch] });
+    blocks.push(innerGateCapL, innerGateCapR);
+    fortressGroup.add(innerGateCapL, innerGateCapR);
   }
 
-  for (let x = -7; x <= 7; x += 1) {
-    addStack(x, -7, 2);
-  }
-  for (let z = -6; z <= -2; z += 1) {
-    addStack(-7, z, 2);
-    addStack(7, z, 2);
-  }
-
+  addStack(-3, 12, 5);
+  addStack(3, 12, 5);
   for (let x = -2; x <= 2; x += 1) {
     for (let z = -2; z <= 2; z += 1) {
-      const keepHeight = (Math.abs(x) <= 1 && Math.abs(z) <= 1) ? 7 : 6;
+      const keepHeight = (Math.abs(x) <= 1 && Math.abs(z) <= 1) ? 8 : 7;
       addStack(x, z, keepHeight);
     }
   }
+  addStack(0, 0, 11);
+  addStack(0, -1, 9);
+  addStack(0, 1, 9);
+  addStack(-1, 0, 9);
+  addStack(1, 0, 9);
 
-  for (let x = -1; x <= 1; x += 1) {
-    addStack(x, 8, 3);
+  const checkpointMaterial = new THREE.MeshBasicMaterial({
+    color: 0xf1dc91,
+    transparent: true,
+    opacity: 0.24,
+    toneMapped: false
+  });
+  const checkpointGeometry = new THREE.BoxGeometry(0.06, 0.06, 0.06);
+  const checkpointPath = [8.2, 5.2, 1.3];
+  for (let i = 0; i < checkpointPath.length; i += 1) {
+    const marker = new THREE.Mesh(checkpointGeometry, checkpointMaterial.clone());
+    marker.position.set(0, baseY + 0.34, checkpointPath[i] * pitch);
+    marker.userData.baseY = marker.position.y;
+    checkpoints.push(marker);
+    fortressGroup.add(marker);
   }
-  addStack(-2, 9, 4);
-  addStack(2, 9, 4);
 
-
-  fortressGroup.rotation.x = 0.215;
-  fortressGroup.rotation.y = -0.17;
+  fortressGroup.rotation.x = 0.115;
+  fortressGroup.rotation.y = -0.169;
   fortressGroup.rotation.z = -0.03;
   const fortressBaseY = fortressGroup.position.y;
   scene.add(fortressGroup);
@@ -271,10 +284,10 @@
   const fortressSize = new THREE.Vector3();
   bounds.getCenter(fortressCenter);
   bounds.getSize(fortressSize);
-  const fitFrustumSize = Math.max(fortressSize.x, fortressSize.y, fortressSize.z) * 1.14;
+  const fitFrustumSize = Math.max(fortressSize.x, fortressSize.y, fortressSize.z) * 1.12;
 
-  camera.position.set(fortressCenter.x + 1.48, fortressCenter.y + 1.84, fortressCenter.z + 3.1);
-  camera.lookAt(fortressCenter.x - 0.03, fortressCenter.y + 0.48, fortressCenter.z + 0.3);
+  camera.position.set(fortressCenter.x + 1.72, fortressCenter.y + 1.28, fortressCenter.z + 3.3);
+  camera.lookAt(fortressCenter.x - 0.04, fortressCenter.y + 0.2, fortressCenter.z + 0.4);
 
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = false;
@@ -303,58 +316,6 @@
     controls.enableRotate = false;
   };
 
-  const setFortifyState = (enabled) => {
-    fortifyTarget = enabled ? 1 : 0;
-  };
-
-  const clearHoverTimer = () => {
-    if (hoverTimerId !== null) {
-      clearTimeout(hoverTimerId);
-      hoverTimerId = null;
-    }
-  };
-
-  const setPointerFromEvent = (event) => {
-    const rect = canvas.getBoundingClientRect();
-    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-  };
-
-  const isPointerIntersectingFortress = (event) => {
-    setPointerFromEvent(event);
-    raycaster.setFromCamera(pointer, camera);
-    return raycaster.intersectObjects(blocks, false).length > 0;
-  };
-
-  canvas.addEventListener('pointermove', (event) => {
-    if (event.pointerType === 'touch') {
-      pointerOverFortress = false;
-      clearHoverTimer();
-      setFortifyState(false);
-      return;
-    }
-    pointerOverFortress = isPointerIntersectingFortress(event);
-    if (pointerOverFortress) {
-      if (hoverTimerId === null && fortifyTarget < 1) {
-        hoverTimerId = setTimeout(() => {
-          hoverTimerId = null;
-          if (pointerOverFortress) {
-            setFortifyState(true);
-          }
-        }, fortifyDelayMs);
-      }
-    } else {
-      clearHoverTimer();
-      setFortifyState(false);
-    }
-  });
-
-  canvas.addEventListener('pointerleave', () => {
-    pointerOverFortress = false;
-    clearHoverTimer();
-    setFortifyState(false);
-  });
-
   resize();
   if ('ResizeObserver' in window) {
     const observer = new ResizeObserver(resize);
@@ -364,8 +325,6 @@
   }
 
   const animate = () => {
-    fortifyMix = THREE.MathUtils.lerp(fortifyMix, fortifyTarget, 0.12);
-
     for (let i = 0; i < faceMaterials.length; i += 1) {
       const mat = faceMaterials[i];
       mat.opacity = Math.min(0.74, mat.userData.baseOpacity * (1 + fortifyMix * 0.95));
@@ -377,6 +336,13 @@
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
     fortressGroup.scale.setScalar(1);
     fortressGroup.position.y = fortressBaseY;
+
+    for (let i = 0; i < checkpoints.length; i += 1) {
+      const marker = checkpoints[i];
+      const depthFalloff = 1 - (i / Math.max(1, checkpoints.length - 1)) * 0.35;
+      marker.material.opacity = 0.58 * depthFalloff;
+      marker.scale.set(1.2, 1.2, 1.2);
+    }
 
     controls.update();
     renderer.render(scene, camera);

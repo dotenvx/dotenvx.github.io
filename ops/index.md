@@ -18,7 +18,9 @@ title: "Dotenvx Ops"
     </section>
 
     <section class="flex justify-center lg:justify-end">
-      {% include v1/components/three-fortress-rect.html height="170px" class="w-full max-w-[24rem] md:max-w-[27rem] md:!h-[460px]" %}
+      {% include v1/components/three-fortress-gated-rect.html height="170px" class="w-full max-w-[24rem] md:max-w-[27rem] md:!h-[460px]" %}
+      {% comment %}{% include v1/components/three-fortress-rect.html height="170px" class="w-full max-w-[24rem] md:max-w-[27rem] md:!h-[460px]" %}{% endcomment %}
+      {% comment %}{% include v1/components/three-citadel-rect.html height="170px" class="w-full max-w-[24rem] md:max-w-[27rem] md:!h-[460px]" %}{% endcomment %}
     </section>
   </div>
 </main>

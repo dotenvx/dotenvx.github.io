@@ -1,6 +1,6 @@
 <div
   class="{{ include.class }} relative overflow-hidden"
-  data-ops-mace
+  data-ops-buckler
   style="height: {{ include.height | default: '320px' }};"
 >
   <canvas
@@ -23,8 +23,8 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-  const root = document.querySelector('[data-ops-mace]:not([data-three-mounted])');
-  if (!root) throw new Error('ops-mace mount target not found');
+  const root = document.querySelector('[data-ops-buckler]:not([data-three-mounted])');
+  if (!root) throw new Error('ops-buckler mount target not found');
 
   root.setAttribute('data-three-mounted', 'true');
   const canvas = root.querySelector('canvas');
@@ -63,7 +63,7 @@
   rimLight.position.set(-4, 2.5, -3);
   scene.add(rimLight);
 
-  const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
+  const boxGeometry = new THREE.BoxGeometry(0.06, 0.0831, 0.06);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
     color: 0xe6edf7,
@@ -185,94 +185,84 @@
     return mesh;
   };
 
-  const maceGroup = new THREE.Group();
-  const pitch = 0.125;
-  const yLift = 0.152;
+  const bucklerGroup = new THREE.Group();
+  const pitch = 0.0625;
+  const yLift = 0.076;
   const baseY = 0.28;
 
   const addStack = (x, z, height) => {
     for (let level = 0; level < height; level += 1) {
       const box = createBox({ position: [x * pitch, baseY + level * yLift, z * pitch] });
-      maceGroup.add(box);
+      bucklerGroup.add(box);
     }
   };
 
   const addStackFromLevel = (x, z, startLevel, height) => {
     for (let level = 0; level < height; level += 1) {
       const box = createBox({ position: [x * pitch, baseY + (startLevel + level) * yLift, z * pitch] });
-      maceGroup.add(box);
+      bucklerGroup.add(box);
     }
   };
 
-  // Mace block map (top-down footprint).
-  const maceRows = [
-    '00100',
-    '01110',
-    '01110',
-    '11111',
-    '01110',
-    '01110',
-    '01110',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '01110',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '00100',
-    '01110'
+  // Buckler base map shaped like ⛨ (shield silhouette with cross cutout),
+  // then upscaled for higher detail density.
+  const bucklerBaseRows = [
+    '01111111110',
+    '11111111111',
+    '11111111111',
+    '11111111111',
+    '11111011111',
+    '11111011111',
+    '11100000111',
+    '11111011111',
+    '11111011111',
+    '11111011111',
+    '01111111110',
+    '00111111100',
+    '00111111100',
+    '00011111000',
+    '00001110000',
+    '00000100000'
   ];
 
-  for (let z = 0; z < maceRows.length; z += 1) {
-    const row = maceRows[z];
+  const upscaleRows = (rows, scale = 2) => {
+    const out = [];
+    for (let r = 0; r < rows.length; r += 1) {
+      const src = rows[r];
+      let expanded = '';
+      for (let i = 0; i < src.length; i += 1) {
+        expanded += src[i].repeat(scale);
+      }
+      for (let k = 0; k < scale; k += 1) out.push(expanded);
+    }
+    return out;
+  };
+  const bucklerRows = upscaleRows(bucklerBaseRows, 2);
+
+  for (let z = 0; z < bucklerRows.length; z += 1) {
+    const row = bucklerRows[z];
     for (let i = 0; i < row.length; i += 1) {
       const val = row[i];
       if (val === '0') continue;
-      const x = i - 2;
+      const x = i - ((row.length - 1) / 2);
       const height = val === '2' ? 2 : 1;
       addStack(x, z, height);
     }
   }
 
-  // In the 90-degree shaft-roll view, add side pairs at requested shaft positions.
-  addStackFromLevel(0, 1, -1, 1);
-  addStackFromLevel(0, 1, 1, 1);
-  addStackFromLevel(0, 2, -1, 1);
-  addStackFromLevel(0, 2, 1, 1);
-  addStackFromLevel(0, 3, -1, 1);
-  addStackFromLevel(0, 3, 1, 1);
-  addStackFromLevel(0, 4, -1, 1);
-  addStackFromLevel(0, 4, 1, 1);
-  addStackFromLevel(0, 3, -2, 1);
-  addStackFromLevel(0, 3, 2, 1);
-  addStackFromLevel(0, 5, -1, 1);
-  addStackFromLevel(0, 5, 1, 1);
-  addStackFromLevel(0, 6, -1, 1);
-  addStackFromLevel(0, 6, 1, 1);
-  addStackFromLevel(0, 15, -1, 1);
-  addStackFromLevel(0, 15, 1, 1);
-  addStackFromLevel(0, 21, -1, 1);
-  addStackFromLevel(0, 21, 1, 1);
+  // Locked top-down pose for precise editing.
+  bucklerGroup.rotation.x = 0;
+  bucklerGroup.rotation.y = 0;
+  bucklerGroup.rotation.z = 0;
+  const bucklerBaseY = bucklerGroup.position.y;
+  scene.add(bucklerGroup);
 
-  maceGroup.rotation.x = 0;
-  maceGroup.rotation.y = 0;
-  maceGroup.rotation.z = Math.PI / 2;
-  const maceBaseY = maceGroup.position.y;
-  scene.add(maceGroup);
-
-  const bounds = new THREE.Box3().setFromObject(maceGroup);
+  const bounds = new THREE.Box3().setFromObject(bucklerGroup);
   const center = new THREE.Vector3();
   const size = new THREE.Vector3();
   bounds.getCenter(center);
   bounds.getSize(size);
-  const topDownFrustumSize = Math.max(size.x, size.z) * 1.2;
+  const topDownFrustumSize = Math.max(size.x, size.z) * 1.18;
 
   camera.position.set(center.x, center.y + 6, center.z + 0.0001);
   camera.lookAt(center.x, center.y, center.z);
@@ -282,19 +272,17 @@
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.enableRotate = false;
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.22;
+  controls.autoRotate = false;
+  controls.autoRotateSpeed = 0;
   controls.target.set(center.x, center.y, center.z);
   controls.update();
-  const clock = new THREE.Clock();
-  const shaftSpinSpeed = 0.14; // radians/sec
 
   const resize = () => {
     const width = root.clientWidth || 1;
     const height = root.clientHeight || 1;
     const aspect = width / height;
     const minFrustumSize = isMobileViewport() ? mobileMinFrustumSize : desktopMinFrustumSize;
-    const fitSize = topDownFrustumSize * (isMobileViewport() ? 0.88 : 1);
+    const fitSize = topDownFrustumSize * (isMobileViewport() ? 0.9 : 1);
     const baseFrustumSize = Math.max(minFrustumSize, fitSize);
     const frustumSize = baseFrustumSize / zoomFactor;
 
@@ -316,7 +304,6 @@
 
   const fortifyMix = 1;
   const animate = () => {
-    const delta = clock.getDelta();
     for (let i = 0; i < faceMaterials.length; i += 1) {
       const mat = faceMaterials[i];
       mat.opacity = Math.min(0.74, mat.userData.baseOpacity * (1 + fortifyMix * 0.95));
@@ -326,9 +313,8 @@
     }
     edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
-    maceGroup.scale.setScalar(1);
-    maceGroup.position.y = maceBaseY;
-    maceGroup.rotateZ(shaftSpinSpeed * delta);
+    bucklerGroup.scale.setScalar(1);
+    bucklerGroup.position.y = bucklerBaseY;
     controls.update();
     renderer.render(scene, camera);
     if (canvas.style.opacity !== '1') canvas.style.opacity = '1';

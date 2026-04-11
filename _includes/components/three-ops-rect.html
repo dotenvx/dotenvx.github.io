@@ -725,8 +725,49 @@
 
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
+  const isStablePhase = () => scenePhase === 'ready' || scenePhase === 'mace' || scenePhase === 'crossbow';
+  const clickDragThresholdPx = 8;
+  let pointerDownPoint = null;
+  let lastPointerX = 0;
+
+  const getActiveGroup = () => {
+    if (scenePhase === 'ready') return bucklerGroup;
+    if (scenePhase === 'mace') return maceGroup;
+    if (scenePhase === 'crossbow') return crossbowGroup;
+    return null;
+  };
+
   canvas.addEventListener('pointerdown', (event) => {
-    if (scenePhase !== 'ready' && scenePhase !== 'mace' && scenePhase !== 'crossbow') return;
+    if (!isStablePhase()) return;
+    pointerDownPoint = { x: event.clientX, y: event.clientY };
+    lastPointerX = event.clientX;
+  });
+
+  canvas.addEventListener('pointermove', (event) => {
+    if (!pointerDownPoint || !isStablePhase()) return;
+    const dx = event.clientX - lastPointerX;
+    lastPointerX = event.clientX;
+    if (Math.abs(dx) < 0.1) return;
+    const activeGroup = getActiveGroup();
+    if (!activeGroup) return;
+    activeGroup.rotation.z += dx * 0.01;
+  });
+
+  canvas.addEventListener('pointercancel', () => {
+    pointerDownPoint = null;
+  });
+
+  canvas.addEventListener('pointerup', (event) => {
+    if (!pointerDownPoint || !isStablePhase()) {
+      pointerDownPoint = null;
+      return;
+    }
+
+    const dx = event.clientX - pointerDownPoint.x;
+    const dy = event.clientY - pointerDownPoint.y;
+    pointerDownPoint = null;
+    if ((dx * dx + dy * dy) > (clickDragThresholdPx * clickDragThresholdPx)) return;
+
     const rect = canvas.getBoundingClientRect();
     pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
@@ -738,6 +779,7 @@
         : crossbowCubes.filter((cube) => cube.visible);
     const hits = raycaster.intersectObjects(targets, false);
     if (hits.length === 0) return;
+
     scenePhase = scenePhase === 'ready'
       ? 'unbuild_to_mace'
       : scenePhase === 'mace'
@@ -918,6 +960,7 @@
   const fortifyMix = 1;
   const bucklerSpinSpeedZ = 0.12; // radians / second
   const maceSpinSpeedZ = 0.12; // radians / second
+  const crossbowSpinAxis = new THREE.Vector3(1, 0, -1).normalize();
   let lastFrameTime = performance.now();
   const animate = () => {
     const now = performance.now();
@@ -938,7 +981,7 @@
     crossbowGroup.scale.setScalar(crossbowSceneScale);
     bucklerGroup.rotation.z += bucklerSpinSpeedZ * dt;
     maceGroup.rotation.z += maceSpinSpeedZ * dt;
-    crossbowGroup.rotation.z += maceSpinSpeedZ * dt;
+    crossbowGroup.rotateOnAxis(crossbowSpinAxis, maceSpinSpeedZ * dt);
 
     if (buildEnabled && scenePhase === 'intro') {
       const buildTime = Math.max(0, now - buildStartAt);

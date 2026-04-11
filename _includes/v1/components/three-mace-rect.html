@@ -165,16 +165,19 @@
     return mat;
   };
 
-  const createBox = ({ position = [0, 0.74, 0] } = {}) => {
+  const createBox = ({
+    position = [0, 0.74, 0],
+    labels = { px: 's1', nx: 's2', py: 't', ny: 'b', pz: 's3', nz: 's4' }
+  } = {}) => {
     const roughnessOffset = (Math.random() - 0.5) * 0.02;
     const thicknessOffset = (Math.random() - 0.5) * 0.18;
     const mesh = new THREE.Mesh(boxGeometry, [
-      createFaceMaterialVariant('s1', roughnessOffset, thicknessOffset, 'side'),
-      createFaceMaterialVariant('s2', roughnessOffset, thicknessOffset, 'side'),
-      createFaceMaterialVariant('t', roughnessOffset, thicknessOffset, 'top'),
-      createFaceMaterialVariant('b', roughnessOffset, thicknessOffset, 'bottom'),
-      createFaceMaterialVariant('s3', roughnessOffset, thicknessOffset, 'side'),
-      createFaceMaterialVariant('s4', roughnessOffset, thicknessOffset, 'side')
+      createFaceMaterialVariant(labels.px, roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant(labels.nx, roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant(labels.py, roughnessOffset, thicknessOffset, 'top'),
+      createFaceMaterialVariant(labels.ny, roughnessOffset, thicknessOffset, 'bottom'),
+      createFaceMaterialVariant(labels.pz, roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant(labels.nz, roughnessOffset, thicknessOffset, 'side')
     ]);
     mesh.position.set(position[0], position[1], position[2]);
     const edgeLines = new THREE.LineSegments(edgeGeometry, edgeHighlightMaterial);
@@ -191,17 +194,38 @@
   const pitch = 0.125;
   const yLift = 0.152;
   const baseY = 0.28;
+  let blockCounter = 0;
+
+  const toBlockId = (index) => {
+    let n = index;
+    let out = '';
+    do {
+      out = String.fromCharCode(65 + (n % 26)) + out;
+      n = Math.floor(n / 26) - 1;
+    } while (n >= 0);
+    return out;
+  };
 
   const addStack = (x, z, height) => {
     for (let level = 0; level < height; level += 1) {
-      const box = createBox({ position: [x * pitch, baseY + level * yLift, z * pitch] });
+      const id = toBlockId(blockCounter);
+      blockCounter += 1;
+      const box = createBox({
+        position: [x * pitch, baseY + level * yLift, z * pitch],
+        labels: { px: id, nx: id, py: id, ny: id, pz: id, nz: id }
+      });
       maceGroup.add(box);
     }
   };
 
   const addStackFromLevel = (x, z, startLevel, height) => {
     for (let level = 0; level < height; level += 1) {
-      const box = createBox({ position: [x * pitch, baseY + (startLevel + level) * yLift, z * pitch] });
+      const id = toBlockId(blockCounter);
+      blockCounter += 1;
+      const box = createBox({
+        position: [x * pitch, baseY + (startLevel + level) * yLift, z * pitch],
+        labels: { px: id, nx: id, py: id, ny: id, pz: id, nz: id }
+      });
       maceGroup.add(box);
     }
   };
@@ -216,7 +240,7 @@
 
   // Top-down mace based on the sketched block map (23 rows tall).
   const maceRows = [
-    '00100',
+    '01110',
     '01110',
     '01110',
     '11111',
@@ -251,9 +275,16 @@
     }
   }
 
+  // In the 90-degree shaft-roll view, these add the requested side pairs
+  // at two shaft positions (4 total blocks).
+  addStackFromLevel(0, 15, -1, 1);
+  addStackFromLevel(0, 15, 1, 1);
+  addStackFromLevel(0, 21, -1, 1);
+  addStackFromLevel(0, 21, 1, 1);
+
   maceGroup.rotation.x = 0;
   maceGroup.rotation.y = 0;
-  maceGroup.rotation.z = 0;
+  maceGroup.rotation.z = Math.PI / 2;
   const maceBaseY = maceGroup.position.y;
   scene.add(maceGroup);
 

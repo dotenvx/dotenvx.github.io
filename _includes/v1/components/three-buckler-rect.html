@@ -36,7 +36,7 @@
   const mobileMinFrustumSize = 0.95;
   const includeZoom = Number({{ include.zoom | default: 1 }});
   const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
-  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
 
   scene.background = null;
   renderer.setClearColor(0x000000, 0);
@@ -63,7 +63,7 @@
   rimLight.position.set(-4, 2.5, -3);
   scene.add(rimLight);
 
-  const boxGeometry = new THREE.BoxGeometry(0.06, 0.0831, 0.06);
+  const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
     color: 0xe6edf7,
@@ -186,8 +186,8 @@
   };
 
   const bucklerGroup = new THREE.Group();
-  const pitch = 0.0625;
-  const yLift = 0.076;
+  const pitch = 0.125;
+  const yLift = 0.152;
   const baseY = 0.28;
 
   const addStack = (x, z, height) => {
@@ -204,8 +204,14 @@
     }
   };
 
-  // Buckler base map shaped like ⛨ (shield silhouette with cross cutout),
-  // then upscaled for higher detail density.
+  const addStackToGroup = (group, x, z, height, startLevel = 0) => {
+    for (let level = 0; level < height; level += 1) {
+      const box = createBox({ position: [x * pitch, baseY + (startLevel + level) * yLift, z * pitch] });
+      group.add(box);
+    }
+  };
+
+  // Buckler base map.
   const bucklerBaseRows = [
     '01111111110',
     '11111111111',
@@ -223,22 +229,7 @@
     '00000100000'
   ];
 
-  const upscaleRows = (rows, scale = 2) => {
-    const out = [];
-    for (let r = 0; r < rows.length; r += 1) {
-      const src = rows[r];
-      let expanded = '';
-      for (let i = 0; i < src.length; i += 1) {
-        expanded += src[i].repeat(scale);
-      }
-      for (let k = 0; k < scale; k += 1) out.push(expanded);
-    }
-    return out;
-  };
-  const bucklerRows = upscaleRows(bucklerBaseRows, 2);
-  // Trim four center rows to compress overall height.
-  const cutStart = Math.floor(bucklerRows.length / 2) - 2;
-  bucklerRows.splice(cutStart, 2);
+  const bucklerRows = [...bucklerBaseRows];
 
   for (let z = 0; z < bucklerRows.length; z += 1) {
     const row = bucklerRows[z];
@@ -251,28 +242,103 @@
     }
   }
 
-  // Locked top-down pose for precise editing.
-  bucklerGroup.rotation.x = 0;
-  bucklerGroup.rotation.y = 0;
-  bucklerGroup.rotation.z = 0;
+  // Raised center cross (solid cubes on top of shield surface, no negative space).
+  // Vertical bar
+  for (let z = 2; z <= 9; z += 1) {
+    addStackFromLevel(0, z, 1, 1);
+  }
+  // Horizontal bar
+  for (let x = -3; x <= 3; x += 1) {
+    addStackFromLevel(x, 5, 1, 1);
+  }
+
+  // Back-side bolt anchors (first two).
+  addStackFromLevel(-3, 3, -2, 2);
+  addStackFromLevel(3, 3, -2, 2);
+  addStackFromLevel(-3, 7, -2, 2);
+  addStackFromLevel(3, 7, -2, 2);
+  // Left-side handle bridge between top and bottom protrusions.
+  addStackFromLevel(-3, 4, -2, 1);
+  addStackFromLevel(-3, 5, -2, 1);
+  addStackFromLevel(-3, 6, -2, 1);
+  // Right-side handle bridge between top and bottom protrusions.
+  addStackFromLevel(3, 4, -2, 1);
+  addStackFromLevel(3, 5, -2, 1);
+  addStackFromLevel(3, 6, -2, 1);
+
+  // Mace overlay.
+  const maceGroup = new THREE.Group();
+  const maceRows = [
+    '00100',
+    '01110',
+    '01110',
+    '11111',
+    '01110',
+    '01110',
+    '01110',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '01110',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '01110'
+  ];
+
+  for (let z = 0; z < maceRows.length; z += 1) {
+    const row = maceRows[z];
+    for (let i = 0; i < row.length; i += 1) {
+      if (row[i] === '0') continue;
+      addStackToGroup(maceGroup, i - 2, z, 1);
+    }
+  }
+
+  // Side pairs that define the mace silhouette in this top view.
+  [1, 2, 3, 4, 5, 6, 15, 21].forEach((z) => {
+    addStackToGroup(maceGroup, 0, z, 1, -1);
+    addStackToGroup(maceGroup, 0, z, 1, 1);
+  });
+  // Wider pair at z3.
+  addStackToGroup(maceGroup, 0, 3, 1, -2);
+  addStackToGroup(maceGroup, 0, 3, 1, 2);
+
+  // Composition pass: slight offset + stronger diagonal for a staged overlap.
+  maceGroup.position.set(0.14, yLift * 1.28, 0.08);
+  maceGroup.rotation.set(0, 0, 0.3);
+
+  // Flip to show the back side of the shield, with stronger tilt for depth.
+  bucklerGroup.rotation.x = Math.PI - THREE.MathUtils.degToRad(52);
+  bucklerGroup.rotation.y = Math.PI;
+  bucklerGroup.rotation.z = -0.04;
+  const bucklerScale = 1;
+  bucklerGroup.scale.setScalar(bucklerScale);
   const bucklerBaseY = bucklerGroup.position.y;
   scene.add(bucklerGroup);
+  maceGroup.visible = false;
+  scene.add(maceGroup);
 
   const bounds = new THREE.Box3().setFromObject(bucklerGroup);
   const center = new THREE.Vector3();
   const size = new THREE.Vector3();
   bounds.getCenter(center);
   bounds.getSize(size);
-  const topDownFrustumSize = Math.max(size.x, size.z) * 1.18;
-
-  camera.position.set(center.x, center.y + 6, center.z + 0.0001);
-  camera.lookAt(center.x, center.y, center.z);
+  camera.position.set(center.x + 0.05, center.y + 1.65, center.z + 3.1);
+  camera.lookAt(center.x, center.y + 0.1, center.z + 0.05);
 
   const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = false;
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
   controls.enableZoom = false;
   controls.enablePan = false;
-  controls.enableRotate = false;
+  controls.enableRotate = true;
   controls.autoRotate = false;
   controls.autoRotateSpeed = 0;
   controls.target.set(center.x, center.y, center.z);
@@ -282,15 +348,9 @@
     const width = root.clientWidth || 1;
     const height = root.clientHeight || 1;
     const aspect = width / height;
-    const minFrustumSize = isMobileViewport() ? mobileMinFrustumSize : desktopMinFrustumSize;
-    const fitSize = topDownFrustumSize * (isMobileViewport() ? 0.9 : 1);
-    const baseFrustumSize = Math.max(minFrustumSize, fitSize);
-    const frustumSize = baseFrustumSize / zoomFactor;
-
-    camera.left = -0.5 * frustumSize * aspect;
-    camera.right = 0.5 * frustumSize * aspect;
-    camera.top = 0.5 * frustumSize;
-    camera.bottom = -0.5 * frustumSize;
+    const baseFov = isMobileViewport() ? 41 : 36;
+    camera.fov = baseFov / zoomFactor;
+    camera.aspect = aspect;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height, false);
   };
@@ -314,7 +374,7 @@
     }
     edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
-    bucklerGroup.scale.setScalar(1);
+    bucklerGroup.scale.setScalar(bucklerScale);
     bucklerGroup.position.y = bucklerBaseY;
     controls.update();
     renderer.render(scene, camera);

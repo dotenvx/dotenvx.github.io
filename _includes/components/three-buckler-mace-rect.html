@@ -407,15 +407,17 @@
   addStackToGroup(maceGroup, 0, 3, 1, -2);
   addStackToGroup(maceGroup, 0, 3, 1, 2);
 
-  // Re-center mace local pivot to the handle so rotations feel anchored in the shaft.
-  const macePivot = new THREE.Vector3(0, baseY, 14 * pitch);
+  // Re-center mace local pivot to its geometric center so default placement is balanced.
+  const maceLocalBounds = new THREE.Box3().setFromObject(maceGroup);
+  const macePivot = new THREE.Vector3();
+  maceLocalBounds.getCenter(macePivot);
   for (let i = 0; i < maceGroup.children.length; i += 1) {
     maceGroup.children[i].position.sub(macePivot);
   }
 
   // Composition defaults.
   const bucklerStartPosition = new THREE.Vector3(0, 0, -0.08);
-  const maceStartOffset = new THREE.Vector3(-0.04, -0.28, -0.04);
+  const maceStartOffset = new THREE.Vector3(0, 0, -0.04);
   maceGroup.position.copy(maceStartOffset);
   maceGroup.rotation.set(
     THREE.MathUtils.degToRad(28),
@@ -495,9 +497,10 @@
   if (controlsPanel) controlsPanel.style.pointerEvents = 'auto';
   applyBucklerRotation();
   applyMaceRotation();
-  let sceneScale = 0.65;
-  bucklerGroup.scale.setScalar(sceneScale);
-  maceGroup.scale.setScalar(sceneScale);
+  let bucklerSceneScale = 0.65;
+  let maceSceneScale = 0.65;
+  bucklerGroup.scale.setScalar(bucklerSceneScale);
+  maceGroup.scale.setScalar(maceSceneScale);
   scene.add(bucklerGroup);
   maceGroup.visible = false;
   scene.add(maceGroup);
@@ -672,6 +675,9 @@
     y: maceGroup.position.y,
     z: maceGroup.position.z
   };
+  const desktopMacePositionOffset = new THREE.Vector3(0, 0, 0);
+  const mobileMacePositionOffset = new THREE.Vector3(0, 0, 0);
+  const macePositionOffset = desktopMacePositionOffset.clone();
   const syncBucklerPositionUi = () => {
     if (bucklerPosSliderX) bucklerPosSliderX.value = String(bucklerPos.x);
     if (bucklerPosSliderY) bucklerPosSliderY.value = String(bucklerPos.y);
@@ -693,7 +699,11 @@
     syncBucklerPositionUi();
   };
   const applyMacePosition = () => {
-    maceGroup.position.set(macePos.x, macePos.y, macePos.z);
+    maceGroup.position.set(
+      macePos.x + macePositionOffset.x,
+      macePos.y + macePositionOffset.y,
+      macePos.z + macePositionOffset.z
+    );
     syncMacePositionUi();
   };
   const onBucklerPosSliderInput = (axis, slider) => {
@@ -718,9 +728,11 @@
   onMacePosSliderInput('z', macePosSliderZ);
   applyBucklerPosition();
   applyMacePosition();
-  const targetOffset = new THREE.Vector3(-0.02, 0.16, 0.06);
+  const desktopTargetOffset = new THREE.Vector3(-0.02, 0.16, 0.06);
+  const mobileTargetOffset = new THREE.Vector3(-0.02, -0.08, 0.06);
+  const targetOffset = desktopTargetOffset.clone();
   const desktopCameraOffset = new THREE.Vector3(-0.26, 2.95, 1.85);
-  const mobileCameraOffset = new THREE.Vector3(-0.18, 2.38, 1.34);
+  const mobileCameraOffset = new THREE.Vector3(-0.2, 2.62, 1.62);
   camera.position.set(
     center.x + desktopCameraOffset.x,
     center.y + desktopCameraOffset.y,
@@ -741,7 +753,12 @@
   const applyFraming = () => {
     const mobile = isMobileViewport();
     const cameraOffset = mobile ? mobileCameraOffset : desktopCameraOffset;
-    sceneScale = mobile ? 0.9 : 0.65;
+    const target = mobile ? mobileTargetOffset : desktopTargetOffset;
+    const maceOffset = mobile ? mobileMacePositionOffset : desktopMacePositionOffset;
+    macePositionOffset.copy(maceOffset);
+    targetOffset.copy(target);
+    bucklerSceneScale = mobile ? 0.82 : 0.65;
+    maceSceneScale = mobile ? 0.68 : 0.65;
 
     camera.position.set(
       center.x + cameraOffset.x,
@@ -751,15 +768,16 @@
     controls.target.set(center.x + targetOffset.x, center.y + targetOffset.y, center.z + targetOffset.z);
     camera.lookAt(center.x + targetOffset.x, center.y + targetOffset.y, center.z + targetOffset.z);
 
-    bucklerGroup.scale.setScalar(sceneScale);
-    maceGroup.scale.setScalar(sceneScale);
+    bucklerGroup.scale.setScalar(bucklerSceneScale);
+    maceGroup.scale.setScalar(maceSceneScale);
+    applyMacePosition();
   };
 
   const resize = () => {
     const width = root.clientWidth || 1;
     const height = root.clientHeight || 1;
     const aspect = width / height;
-    const baseFov = isMobileViewport() ? 38 : 36;
+    const baseFov = isMobileViewport() ? 42 : 36;
     camera.fov = baseFov / zoomFactor;
     camera.aspect = aspect;
     camera.updateProjectionMatrix();
@@ -794,8 +812,8 @@
     }
     edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
-    bucklerGroup.scale.setScalar(sceneScale);
-    maceGroup.scale.setScalar(sceneScale);
+    bucklerGroup.scale.setScalar(bucklerSceneScale);
+    maceGroup.scale.setScalar(maceSceneScale);
     bucklerGroup.rotation.z += bucklerSpinSpeedZ * dt;
     maceGroup.rotation.z += maceSpinSpeedZ * dt;
 

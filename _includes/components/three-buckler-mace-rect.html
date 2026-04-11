@@ -495,9 +495,9 @@
   if (controlsPanel) controlsPanel.style.pointerEvents = 'auto';
   applyBucklerRotation();
   applyMaceRotation();
-  const bucklerScale = 0.65;
-  bucklerGroup.scale.setScalar(bucklerScale);
-  maceGroup.scale.setScalar(0.65);
+  let sceneScale = 0.65;
+  bucklerGroup.scale.setScalar(sceneScale);
+  maceGroup.scale.setScalar(sceneScale);
   scene.add(bucklerGroup);
   maceGroup.visible = false;
   scene.add(maceGroup);
@@ -718,8 +718,15 @@
   onMacePosSliderInput('z', macePosSliderZ);
   applyBucklerPosition();
   applyMacePosition();
-  camera.position.set(center.x - 0.26, center.y + 2.95, center.z + 1.85);
-  camera.lookAt(center.x - 0.02, center.y + 0.16, center.z + 0.06);
+  const targetOffset = new THREE.Vector3(-0.02, 0.16, 0.06);
+  const desktopCameraOffset = new THREE.Vector3(-0.26, 2.95, 1.85);
+  const mobileCameraOffset = new THREE.Vector3(-0.18, 2.38, 1.34);
+  camera.position.set(
+    center.x + desktopCameraOffset.x,
+    center.y + desktopCameraOffset.y,
+    center.z + desktopCameraOffset.z
+  );
+  camera.lookAt(center.x + targetOffset.x, center.y + targetOffset.y, center.z + targetOffset.z);
 
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = false;
@@ -728,17 +735,36 @@
   controls.enableRotate = false;
   controls.autoRotate = false;
   controls.autoRotateSpeed = 0;
-  controls.target.set(center.x - 0.02, center.y + 0.16, center.z + 0.06);
+  controls.target.set(center.x + targetOffset.x, center.y + targetOffset.y, center.z + targetOffset.z);
   controls.update();
+
+  const applyFraming = () => {
+    const mobile = isMobileViewport();
+    const cameraOffset = mobile ? mobileCameraOffset : desktopCameraOffset;
+    sceneScale = mobile ? 0.9 : 0.65;
+
+    camera.position.set(
+      center.x + cameraOffset.x,
+      center.y + cameraOffset.y,
+      center.z + cameraOffset.z
+    );
+    controls.target.set(center.x + targetOffset.x, center.y + targetOffset.y, center.z + targetOffset.z);
+    camera.lookAt(center.x + targetOffset.x, center.y + targetOffset.y, center.z + targetOffset.z);
+
+    bucklerGroup.scale.setScalar(sceneScale);
+    maceGroup.scale.setScalar(sceneScale);
+  };
 
   const resize = () => {
     const width = root.clientWidth || 1;
     const height = root.clientHeight || 1;
     const aspect = width / height;
-    const baseFov = isMobileViewport() ? 41 : 36;
+    const baseFov = isMobileViewport() ? 38 : 36;
     camera.fov = baseFov / zoomFactor;
     camera.aspect = aspect;
     camera.updateProjectionMatrix();
+    applyFraming();
+    controls.update();
     renderer.setSize(width, height, false);
   };
 
@@ -768,7 +794,8 @@
     }
     edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
-    bucklerGroup.scale.setScalar(bucklerScale);
+    bucklerGroup.scale.setScalar(sceneScale);
+    maceGroup.scale.setScalar(sceneScale);
     bucklerGroup.rotation.z += bucklerSpinSpeedZ * dt;
     maceGroup.rotation.z += maceSpinSpeedZ * dt;
 

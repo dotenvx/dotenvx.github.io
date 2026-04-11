@@ -438,6 +438,10 @@
   ];
   const crossbowCenterX = 8;
   const crossbowCenterZ = 9;
+  const crossbowAllCubes = [];
+  let coreSumX = 0;
+  let coreSumZ = 0;
+  let coreCount = 0;
   const crossbowStringCoords = [
     [4, 13],
     [5, 12],
@@ -457,7 +461,12 @@
       if (cells[col] !== '1') continue;
       const x = (col - crossbowCenterX) * pitch;
       const z = (row - crossbowCenterZ) * pitch;
-      crossbowGroup.add(createBox({ position: [x, baseY, z] }));
+      const cube = createBox({ position: [x, baseY, z] });
+      crossbowAllCubes.push(cube);
+      crossbowGroup.add(cube);
+      coreSumX += x;
+      coreSumZ += z;
+      coreCount += 1;
     }
   }
 
@@ -465,13 +474,24 @@
     const [x1, y1] = crossbowStringCoords[i];
     const x = ((x1 - 1) - crossbowCenterX) * pitch;
     const z = ((y1 - 1) - crossbowCenterZ) * pitch;
-    crossbowGroup.add(createBox({ position: [x, baseY + yLift, z] }));
+    const cube = createBox({ position: [x, baseY + yLift, z] });
+    crossbowAllCubes.push(cube);
+    crossbowGroup.add(cube);
+  }
+
+  // Recenter around the core-layer centroid so rotation axis passes through core mass center.
+  const coreCenterX = coreCount > 0 ? (coreSumX / coreCount) : 0;
+  const coreCenterZ = coreCount > 0 ? (coreSumZ / coreCount) : 0;
+  for (let i = 0; i < crossbowAllCubes.length; i += 1) {
+    crossbowAllCubes[i].position.x -= coreCenterX;
+    crossbowAllCubes[i].position.y -= baseY;
+    crossbowAllCubes[i].position.z -= coreCenterZ;
   }
 
   // Composition defaults.
   const bucklerStartPosition = new THREE.Vector3(0, 0, -0.08);
   const maceStartOffset = new THREE.Vector3(0, 0, -0.04);
-  const crossbowStartOffset = new THREE.Vector3(0, 0, -0.04);
+  const crossbowStartOffset = new THREE.Vector3(0, baseY, -0.04);
   maceGroup.position.copy(maceStartOffset);
   maceGroup.rotation.set(
     THREE.MathUtils.degToRad(28),
@@ -484,6 +504,42 @@
     THREE.MathUtils.degToRad(-30),
     THREE.MathUtils.degToRad(36)
   );
+
+  // Crossbow shaft axis (local) based on the drawn diagonal direction.
+  const crossbowSpinAxisLocal = new THREE.Vector3(1, 0, 1).normalize();
+  const crossbowSpinAxisWorld = crossbowSpinAxisLocal.clone().applyQuaternion(crossbowGroup.quaternion).normalize();
+
+  // Debug axle line drawn along the actual crossbow spin axis.
+  const crossbowLocalBounds = new THREE.Box3().setFromObject(crossbowGroup);
+  const crossbowLocalSize = new THREE.Vector3();
+  crossbowLocalBounds.getSize(crossbowLocalSize);
+  const axleHalfLength = Math.max(crossbowLocalSize.x, crossbowLocalSize.z) * 0.85;
+  const axleGeometry = new THREE.BufferGeometry();
+  const axlePositions = new Float32Array(6);
+  axleGeometry.setAttribute('position', new THREE.BufferAttribute(axlePositions, 3));
+  const axleMaterial = new THREE.LineBasicMaterial({
+    color: 0xecd53f,
+    transparent: true,
+    opacity: 0.95,
+    toneMapped: false,
+    depthTest: false
+  });
+  const crossbowAxleLine = new THREE.Line(axleGeometry, axleMaterial);
+  crossbowAxleLine.renderOrder = 999;
+  scene.add(crossbowAxleLine);
+
+  const updateCrossbowAxleLine = () => {
+    const c = crossbowGroup.position;
+    const start = c.clone().addScaledVector(crossbowSpinAxisWorld, -axleHalfLength);
+    const end = c.clone().addScaledVector(crossbowSpinAxisWorld, axleHalfLength);
+    axlePositions[0] = start.x;
+    axlePositions[1] = start.y;
+    axlePositions[2] = start.z;
+    axlePositions[3] = end.x;
+    axlePositions[4] = end.y;
+    axlePositions[5] = end.z;
+    axleGeometry.attributes.position.needsUpdate = true;
+  };
 
   // Re-center local pivot so rotation occurs around true shield center.
   const bucklerLocalBounds = new THREE.Box3().setFromObject(bucklerGroup);
@@ -750,7 +806,13 @@
     if (Math.abs(dx) < 0.1) return;
     const activeGroup = getActiveGroup();
     if (!activeGroup) return;
-    activeGroup.rotation.z += dx * 0.01;
+    const dragDelta = dx * 0.01;
+    if (scenePhase === 'crossbow') {
+      activeGroup.rotateOnWorldAxis(crossbowSpinAxisWorld, dragDelta);
+      updateCrossbowAxleLine();
+    } else {
+      activeGroup.rotation.z += dragDelta;
+    }
   });
 
   canvas.addEventListener('pointercancel', () => {
@@ -862,6 +924,7 @@
       crossbowPos.y + crossbowPositionOffset.y,
       crossbowPos.z + crossbowPositionOffset.z
     );
+    updateCrossbowAxleLine();
   };
   const onBucklerPosSliderInput = (axis, slider) => {
     if (!slider) return;
@@ -960,7 +1023,6 @@
   const fortifyMix = 1;
   const bucklerSpinSpeedZ = 0.12; // radians / second
   const maceSpinSpeedZ = 0.12; // radians / second
-  const crossbowSpinAxis = new THREE.Vector3(1, 0, -1).normalize();
   let lastFrameTime = performance.now();
   const animate = () => {
     const now = performance.now();
@@ -981,7 +1043,8 @@
     crossbowGroup.scale.setScalar(crossbowSceneScale);
     bucklerGroup.rotation.z += bucklerSpinSpeedZ * dt;
     maceGroup.rotation.z += maceSpinSpeedZ * dt;
-    crossbowGroup.rotateOnAxis(crossbowSpinAxis, maceSpinSpeedZ * dt);
+    crossbowGroup.rotateOnWorldAxis(crossbowSpinAxisWorld, maceSpinSpeedZ * dt);
+    updateCrossbowAxleLine();
 
     if (buildEnabled && scenePhase === 'intro') {
       const buildTime = Math.max(0, now - buildStartAt);

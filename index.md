@@ -14,7 +14,7 @@ title: ""
       </div>
     </div>
     <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
-      {% include v1/components/three-standing-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
+      {% include v1/components/three-key-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
     </div>
   </div>
 </section>

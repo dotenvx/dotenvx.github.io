@@ -15,7 +15,7 @@ hide_nav: true
     </div>
     <div class="w-full flex flex-row gap-1 items-center justify-end">
       <a class="btn-primary w-full max-w-md md:w-auto text-center" href="/signup">Get Started</a>
-      {% include v1/components/three-standing-rect.html height="140px" class="!h-[140px]" zoom="2.2" %}
+      {% include v1/components/three-key-rect.html height="140px" class="!h-[140px]" zoom="2.2" %}
     </div>
   </div>
 </section>

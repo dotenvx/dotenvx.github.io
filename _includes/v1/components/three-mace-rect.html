@@ -66,15 +66,15 @@
   const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
-    color: 0xdfe6ef,
+    color: 0xe6edf7,
     transparent: true,
-    opacity: 0.28,
+    opacity: 0.42,
     toneMapped: false
   });
   const glowShellMaterial = new THREE.MeshBasicMaterial({
-    color: 0xc7d8ea,
+    color: 0xd6e2f0,
     transparent: true,
-    opacity: 0.2,
+    opacity: 0.12,
     blending: THREE.AdditiveBlending,
     side: THREE.BackSide,
     depthWrite: false,
@@ -96,13 +96,9 @@
     c.height = 128;
     const ctx = c.getContext('2d');
     ctx.clearRect(0, 0, 128, 128);
-    ctx.fillStyle = 'rgba(99, 104, 113, 0.24)';
+    ctx.fillStyle = 'rgba(112, 122, 136, 0.16)';
     ctx.fillRect(0, 0, 128, 128);
-    ctx.fillStyle = 'rgba(210, 220, 233, 0.84)';
-    ctx.font = '500 16px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(label, 64, 64);
+    // Intentionally no face text labels on mace blocks.
     const texture = new THREE.CanvasTexture(c);
     texture.colorSpace = THREE.SRGBColorSpace;
     texture.needsUpdate = true;
@@ -117,20 +113,20 @@
   const getFaceMaterial = (label) => {
     if (!materialCache.has(label)) {
       materialCache.set(label, new THREE.MeshPhysicalMaterial({
-        color: 0xf2f6fb,
+        color: 0xb7c2cf,
         transparent: true,
-        opacity: 0.72,
+        opacity: 0.94,
         map: getLabelTexture(label),
-        metalness: 0.0,
-        roughness: baseRoughness,
-        transmission: 0.88,
-        thickness: baseThickness,
+        metalness: 0.86,
+        roughness: 0.2,
+        transmission: 0.08,
+        thickness: 0.22,
         ior: 1.5,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.035,
-        attenuationColor: 0x90a4ba,
+        clearcoat: 0.65,
+        clearcoatRoughness: 0.08,
+        attenuationColor: 0x8f9aab,
         attenuationDistance: 2.2,
-        envMapIntensity: 2.05
+        envMapIntensity: 2.35
       }));
     }
     return materialCache.get(label);
@@ -141,21 +137,23 @@
     mat.roughness = THREE.MathUtils.clamp(baseRoughness + roughnessOffset, 0.006, 0.06);
     mat.thickness = THREE.MathUtils.clamp(baseThickness + thicknessOffset, 1.35, 1.9);
     if (faceRole === 'top') {
-      mat.opacity = 0.36;
-      mat.transmission = 0.92;
-      mat.roughness = Math.min(0.06, mat.roughness + 0.004);
-      mat.thickness = 0.24;
-      mat.clearcoatRoughness = 0.03;
+      mat.opacity = 0.96;
+      mat.transmission = 0.06;
+      mat.roughness = 0.16;
+      mat.thickness = 0.2;
+      mat.clearcoatRoughness = 0.06;
     } else if (faceRole === 'bottom') {
-      mat.opacity = 0.44;
-      mat.transmission = 0.8;
-      mat.thickness = 0.58;
-      mat.clearcoatRoughness = 0.05;
+      mat.opacity = 0.92;
+      mat.transmission = 0.05;
+      mat.roughness = 0.24;
+      mat.thickness = 0.2;
+      mat.clearcoatRoughness = 0.1;
     } else {
-      mat.opacity = 0.46;
-      mat.transmission = 0.9;
-      mat.thickness = 0.5;
-      mat.clearcoatRoughness = 0.032;
+      mat.opacity = 0.94;
+      mat.transmission = 0.07;
+      mat.roughness = 0.2;
+      mat.thickness = 0.22;
+      mat.clearcoatRoughness = 0.08;
     }
     mat.userData.baseOpacity = mat.opacity;
     mat.userData.baseEnvMapIntensity = mat.envMapIntensity;
@@ -240,7 +238,7 @@
 
   // Top-down mace based on the sketched block map (23 rows tall).
   const maceRows = [
-    '01110',
+    '00100',
     '01110',
     '01110',
     '11111',
@@ -284,8 +282,8 @@
   addStackFromLevel(0, 3, 1, 1);
   addStackFromLevel(0, 4, -1, 1);
   addStackFromLevel(0, 4, 1, 1);
-  addStackFromLevel(0, 4, -2, 1);
-  addStackFromLevel(0, 4, 2, 1);
+  addStackFromLevel(0, 3, -2, 1);
+  addStackFromLevel(0, 3, 2, 1);
   addStackFromLevel(0, 5, -1, 1);
   addStackFromLevel(0, 5, 1, 1);
   addStackFromLevel(0, 6, -1, 1);
@@ -316,10 +314,12 @@
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.enableRotate = false;
-  controls.autoRotate = false;
-  controls.autoRotateSpeed = 0;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.22;
   controls.target.set(center.x, center.y, center.z);
   controls.update();
+  const clock = new THREE.Clock();
+  const shaftSpinSpeed = 0.14; // radians/sec
 
   const resize = () => {
     const width = root.clientWidth || 1;
@@ -348,6 +348,7 @@
 
   const fortifyMix = 1;
   const animate = () => {
+    const delta = clock.getDelta();
     for (let i = 0; i < faceMaterials.length; i += 1) {
       const mat = faceMaterials[i];
       mat.opacity = Math.min(0.74, mat.userData.baseOpacity * (1 + fortifyMix * 0.95));
@@ -359,6 +360,7 @@
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
     maceGroup.scale.setScalar(1);
     maceGroup.position.y = maceBaseY;
+    maceGroup.rotateZ(shaftSpinSpeed * delta);
     controls.update();
     renderer.render(scene, camera);
     if (canvas.style.opacity !== '1') canvas.style.opacity = '1';

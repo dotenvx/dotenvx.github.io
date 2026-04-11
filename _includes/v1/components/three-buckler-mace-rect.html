@@ -7,6 +7,60 @@
     class="block h-full w-full"
     style="opacity: 0; -webkit-mask-image: radial-gradient(120% 112% at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.48) 85%, rgba(0,0,0,0.1) 93%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(120% 112% at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.48) 85%, rgba(0,0,0,0.1) 93%, rgba(0,0,0,0) 100%);"
   ></canvas>
+  <div
+    data-ops-bm-controls
+    class="absolute left-3 top-3 z-20 hidden rounded-md border border-zinc-700/80 bg-black/70 px-3 py-2 text-[11px] text-zinc-200"
+    style="backdrop-filter: blur(2px);"
+  >
+    <div class="mb-1 font-semibold tracking-[0.04em] uppercase text-zinc-300">Buckler Rotation</div>
+    <div class="grid grid-cols-[14px_60px_120px] items-center gap-x-2 gap-y-1">
+      <label for="ops-bm-rot-x">X</label>
+      <span data-ops-bm-x>0.00°</span>
+      <input id="ops-bm-rot-x" data-ops-bm-slider-x type="range" min="-180" max="180" step="0.1" />
+      <label for="ops-bm-rot-y">Y</label>
+      <span data-ops-bm-y>0.00°</span>
+      <input id="ops-bm-rot-y" data-ops-bm-slider-y type="range" min="-180" max="180" step="0.1" />
+      <label for="ops-bm-rot-z">Z</label>
+      <span data-ops-bm-z>0.00°</span>
+      <input id="ops-bm-rot-z" data-ops-bm-slider-z type="range" min="-180" max="180" step="0.1" />
+    </div>
+    <div class="mt-3 mb-1 font-semibold tracking-[0.04em] uppercase text-zinc-300">Buckler Position</div>
+    <div class="grid grid-cols-[14px_60px_120px] items-center gap-x-2 gap-y-1">
+      <label for="ops-bm-pos-x">X</label>
+      <span data-ops-bm-pos-x-label>0.00</span>
+      <input id="ops-bm-pos-x" data-ops-bm-pos-x type="range" min="-3" max="3" step="0.01" />
+      <label for="ops-bm-pos-y">Y</label>
+      <span data-ops-bm-pos-y-label>0.00</span>
+      <input id="ops-bm-pos-y" data-ops-bm-pos-y type="range" min="-3" max="3" step="0.01" />
+      <label for="ops-bm-pos-z">Z</label>
+      <span data-ops-bm-pos-z-label>0.00</span>
+      <input id="ops-bm-pos-z" data-ops-bm-pos-z type="range" min="-3" max="3" step="0.01" />
+    </div>
+    <div class="mt-3 mb-1 font-semibold tracking-[0.04em] uppercase text-zinc-300">Mace Rotation</div>
+    <div class="grid grid-cols-[14px_60px_120px] items-center gap-x-2 gap-y-1">
+      <label for="ops-bm-mace-rot-x">X</label>
+      <span data-ops-bm-mace-x>0.00°</span>
+      <input id="ops-bm-mace-rot-x" data-ops-bm-mace-slider-x type="range" min="-180" max="180" step="0.1" />
+      <label for="ops-bm-mace-rot-y">Y</label>
+      <span data-ops-bm-mace-y>0.00°</span>
+      <input id="ops-bm-mace-rot-y" data-ops-bm-mace-slider-y type="range" min="-180" max="180" step="0.1" />
+      <label for="ops-bm-mace-rot-z">Z</label>
+      <span data-ops-bm-mace-z>0.00°</span>
+      <input id="ops-bm-mace-rot-z" data-ops-bm-mace-slider-z type="range" min="-180" max="180" step="0.1" />
+    </div>
+    <div class="mt-3 mb-1 font-semibold tracking-[0.04em] uppercase text-zinc-300">Mace Position</div>
+    <div class="grid grid-cols-[14px_60px_120px] items-center gap-x-2 gap-y-1">
+      <label for="ops-bm-mace-pos-x">X</label>
+      <span data-ops-bm-mace-pos-x-label>0.00</span>
+      <input id="ops-bm-mace-pos-x" data-ops-bm-mace-pos-x type="range" min="-3" max="3" step="0.01" />
+      <label for="ops-bm-mace-pos-y">Y</label>
+      <span data-ops-bm-mace-pos-y-label>0.00</span>
+      <input id="ops-bm-mace-pos-y" data-ops-bm-mace-pos-y type="range" min="-3" max="3" step="0.01" />
+      <label for="ops-bm-mace-pos-z">Z</label>
+      <span data-ops-bm-mace-pos-z-label>0.00</span>
+      <input id="ops-bm-mace-pos-z" data-ops-bm-mace-pos-z type="range" min="-3" max="3" step="0.01" />
+    </div>
+  </div>
 </div>
 
 <script type="importmap">
@@ -28,6 +82,31 @@
 
   root.setAttribute('data-three-mounted', 'true');
   const canvas = root.querySelector('canvas');
+  const controlsPanel = root.querySelector('[data-ops-bm-controls]');
+  const sliderX = root.querySelector('[data-ops-bm-slider-x]');
+  const sliderY = root.querySelector('[data-ops-bm-slider-y]');
+  const sliderZ = root.querySelector('[data-ops-bm-slider-z]');
+  const labelX = root.querySelector('[data-ops-bm-x]');
+  const labelY = root.querySelector('[data-ops-bm-y]');
+  const labelZ = root.querySelector('[data-ops-bm-z]');
+  const bucklerPosSliderX = root.querySelector('[data-ops-bm-pos-x]');
+  const bucklerPosSliderY = root.querySelector('[data-ops-bm-pos-y]');
+  const bucklerPosSliderZ = root.querySelector('[data-ops-bm-pos-z]');
+  const bucklerPosLabelX = root.querySelector('[data-ops-bm-pos-x-label]');
+  const bucklerPosLabelY = root.querySelector('[data-ops-bm-pos-y-label]');
+  const bucklerPosLabelZ = root.querySelector('[data-ops-bm-pos-z-label]');
+  const maceSliderX = root.querySelector('[data-ops-bm-mace-slider-x]');
+  const maceSliderY = root.querySelector('[data-ops-bm-mace-slider-y]');
+  const maceSliderZ = root.querySelector('[data-ops-bm-mace-slider-z]');
+  const maceLabelX = root.querySelector('[data-ops-bm-mace-x]');
+  const maceLabelY = root.querySelector('[data-ops-bm-mace-y]');
+  const maceLabelZ = root.querySelector('[data-ops-bm-mace-z]');
+  const macePosSliderX = root.querySelector('[data-ops-bm-mace-pos-x]');
+  const macePosSliderY = root.querySelector('[data-ops-bm-mace-pos-y]');
+  const macePosSliderZ = root.querySelector('[data-ops-bm-mace-pos-z]');
+  const macePosLabelX = root.querySelector('[data-ops-bm-mace-pos-x-label]');
+  const macePosLabelY = root.querySelector('[data-ops-bm-mace-pos-y-label]');
+  const macePosLabelZ = root.querySelector('[data-ops-bm-mace-pos-z-label]');
   canvas.style.transition = 'opacity 300ms ease-out';
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -159,6 +238,9 @@
     mat.userData.baseEnvMapIntensity = mat.envMapIntensity;
     mat.userData.baseTransmission = mat.transmission;
     mat.userData.baseThickness = mat.thickness;
+    mat.emissive = new THREE.Color(0x000000);
+    mat.emissiveIntensity = 0;
+    mat.userData.baseEmissiveIntensity = 0;
     faceMaterials.push(mat);
     return mat;
   };
@@ -183,6 +265,21 @@
     glowShell.renderOrder = 0;
     mesh.add(glowShell);
     return mesh;
+  };
+
+  const setCubeAlpha = (mesh, alpha) => {
+    const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+    for (let i = 0; i < mats.length; i += 1) {
+      const m = mats[i];
+      if (typeof m.userData.baseOpacity !== 'number') continue;
+      m.opacity = Math.min(0.74, m.userData.baseOpacity * 1.95) * alpha;
+      m.transparent = true;
+    }
+  };
+
+  const smoothstep = (edge0, edge1, x) => {
+    const t = THREE.MathUtils.clamp((x - edge0) / (edge1 - edge0), 0, 1);
+    return t * t * (3 - 2 * t);
   };
 
   const bucklerGroup = new THREE.Group();
@@ -310,38 +407,327 @@
   addStackToGroup(maceGroup, 0, 3, 1, -2);
   addStackToGroup(maceGroup, 0, 3, 1, 2);
 
-  // Composition pass: slight offset + stronger diagonal for a staged overlap.
-  maceGroup.position.set(0.14, yLift * 1.28, 0.08);
-  maceGroup.rotation.set(0, 0, 0.3);
+  // Re-center mace local pivot to the handle so rotations feel anchored in the shaft.
+  const macePivot = new THREE.Vector3(0, baseY, 14 * pitch);
+  for (let i = 0; i < maceGroup.children.length; i += 1) {
+    maceGroup.children[i].position.sub(macePivot);
+  }
 
-  // Flip to show the back side of the shield, with stronger tilt for depth.
-  bucklerGroup.rotation.x = Math.PI - THREE.MathUtils.degToRad(52);
-  bucklerGroup.rotation.y = Math.PI;
-  bucklerGroup.rotation.z = -0.04;
-  const bucklerScale = 1;
+  // Composition defaults.
+  const bucklerStartPosition = new THREE.Vector3(0, 0.02, -0.08);
+  const maceStartOffset = new THREE.Vector3(0.09, -0.18, -0.04);
+  maceGroup.position.copy(maceStartOffset);
+  maceGroup.rotation.set(
+    THREE.MathUtils.degToRad(28),
+    THREE.MathUtils.degToRad(-30),
+    THREE.MathUtils.degToRad(36)
+  );
+
+  // Re-center local pivot so rotation occurs around true shield center.
+  const bucklerLocalBounds = new THREE.Box3().setFromObject(bucklerGroup);
+  const bucklerPivot = new THREE.Vector3();
+  bucklerLocalBounds.getCenter(bucklerPivot);
+  for (let i = 0; i < bucklerGroup.children.length; i += 1) {
+    bucklerGroup.children[i].position.sub(bucklerPivot);
+  }
+
+  // Rotation defaults from provided values.
+  const radToDeg = (r) => (r * 180) / Math.PI;
+  const degToRad = (d) => (d * Math.PI) / 180;
+  const rotDeg = {
+    x: 33.2,
+    y: -32.2,
+    z: 40.1
+  };
+  const maceRotDeg = {
+    x: 38.8,
+    y: 31.8,
+    z: 23.8
+  };
+  const syncRotationUi = () => {
+    if (sliderX) sliderX.value = String(rotDeg.x);
+    if (sliderY) sliderY.value = String(rotDeg.y);
+    if (sliderZ) sliderZ.value = String(rotDeg.z);
+    if (labelX) labelX.textContent = `${rotDeg.x.toFixed(2)}°`;
+    if (labelY) labelY.textContent = `${rotDeg.y.toFixed(2)}°`;
+    if (labelZ) labelZ.textContent = `${rotDeg.z.toFixed(2)}°`;
+  };
+  const syncMaceRotationUi = () => {
+    if (maceSliderX) maceSliderX.value = String(maceRotDeg.x);
+    if (maceSliderY) maceSliderY.value = String(maceRotDeg.y);
+    if (maceSliderZ) maceSliderZ.value = String(maceRotDeg.z);
+    if (maceLabelX) maceLabelX.textContent = `${maceRotDeg.x.toFixed(2)}°`;
+    if (maceLabelY) maceLabelY.textContent = `${maceRotDeg.y.toFixed(2)}°`;
+    if (maceLabelZ) maceLabelZ.textContent = `${maceRotDeg.z.toFixed(2)}°`;
+  };
+  const applyBucklerRotation = () => {
+    bucklerGroup.rotation.x = degToRad(rotDeg.x);
+    bucklerGroup.rotation.y = degToRad(rotDeg.y);
+    bucklerGroup.rotation.z = degToRad(rotDeg.z);
+    syncRotationUi();
+  };
+  const applyMaceRotation = () => {
+    maceGroup.rotation.x = degToRad(maceRotDeg.x);
+    maceGroup.rotation.y = degToRad(maceRotDeg.y);
+    maceGroup.rotation.z = degToRad(maceRotDeg.z);
+    syncMaceRotationUi();
+  };
+  const onSliderInput = (axis, slider) => {
+    if (!slider) return;
+    slider.addEventListener('input', () => {
+      rotDeg[axis] = Number(slider.value);
+      applyBucklerRotation();
+    });
+  };
+  const onMaceSliderInput = (axis, slider) => {
+    if (!slider) return;
+    slider.addEventListener('input', () => {
+      maceRotDeg[axis] = Number(slider.value);
+      applyMaceRotation();
+    });
+  };
+  onSliderInput('x', sliderX);
+  onSliderInput('y', sliderY);
+  onSliderInput('z', sliderZ);
+  onMaceSliderInput('x', maceSliderX);
+  onMaceSliderInput('y', maceSliderY);
+  onMaceSliderInput('z', maceSliderZ);
+  if (controlsPanel) controlsPanel.style.pointerEvents = 'auto';
+  applyBucklerRotation();
+  applyMaceRotation();
+  const bucklerScale = 0.65;
   bucklerGroup.scale.setScalar(bucklerScale);
-  const bucklerBaseY = bucklerGroup.position.y;
+  maceGroup.scale.setScalar(0.65);
   scene.add(bucklerGroup);
   maceGroup.visible = false;
   scene.add(maceGroup);
+
+  const bucklerCubes = bucklerGroup.children.filter((c) => c.isMesh);
+  const maceCubes = maceGroup.children.filter((c) => c.isMesh);
+
+  for (let i = 0; i < bucklerCubes.length; i += 1) {
+    const cube = bucklerCubes[i];
+    cube.userData.home = cube.position.clone();
+    cube.userData.scatter = new THREE.Vector3(
+      (Math.random() - 0.5) * 1.8,
+      (Math.random() - 0.2) * 1.1,
+      (Math.random() - 0.5) * 1.8
+    );
+    const ringX = (i % 5) - 2;
+    const ringZ = (Math.floor(i / 5) % 5) - 2;
+    const ringY = (i % 7) - 3;
+    cube.userData.forge = new THREE.Vector3(ringX * 0.04, ringY * 0.02, ringZ * 0.04);
+    setCubeAlpha(cube, 0);
+    cube.scale.setScalar(0.01);
+    cube.visible = false;
+  }
+  for (let i = 0; i < maceCubes.length; i += 1) {
+    const cube = maceCubes[i];
+    cube.userData.home = cube.position.clone();
+    cube.userData.scatter = new THREE.Vector3(
+      (Math.random() - 0.5) * 1.8,
+      (Math.random() - 0.2) * 1.1,
+      (Math.random() - 0.5) * 1.8
+    );
+    const ringX = (i % 5) - 2;
+    const ringZ = (Math.floor(i / 5) % 5) - 2;
+    const ringY = (i % 7) - 3;
+    cube.userData.forge = new THREE.Vector3(ringX * 0.04, ringY * 0.02, ringZ * 0.04);
+    setCubeAlpha(cube, 0);
+    cube.scale.setScalar(0.01);
+    cube.visible = false;
+    cube.position.copy(cube.userData.home);
+  }
+
+  // Build-in animation order (network-like growth from a seed).
+  const quantize = (value, step) => Math.round(value / step);
+  const buildOrderFromSeed = (cubes, seedMode) => {
+    const nodes = cubes.map((cube, idx) => {
+      const p = cube.userData.home;
+      return {
+        idx,
+        cube,
+        qx: quantize(p.x, pitch),
+        qy: quantize(p.y, yLift),
+        qz: quantize(p.z, pitch)
+      };
+    });
+    const seed = nodes.reduce((best, node) => {
+      if (!best) return node;
+      if (seedMode === 'maxZCenter') {
+        if (node.qz > best.qz) return node;
+        if (node.qz < best.qz) return best;
+        const nodeCenter = Math.abs(node.qx) + Math.abs(node.qy);
+        const bestCenter = Math.abs(best.qx) + Math.abs(best.qy);
+        return nodeCenter < bestCenter ? node : best;
+      }
+      return best;
+    }, null);
+    nodes.sort((a, b) => {
+      const da = Math.abs(a.qx - seed.qx) + Math.abs(a.qy - seed.qy) + Math.abs(a.qz - seed.qz);
+      const db = Math.abs(b.qx - seed.qx) + Math.abs(b.qy - seed.qy) + Math.abs(b.qz - seed.qz);
+      if (da !== db) return da - db;
+      if (a.qz !== b.qz) return b.qz - a.qz;
+      return Math.abs(a.qx) - Math.abs(b.qx);
+    });
+    return nodes.map((n) => n.cube);
+  };
+
+  const maceBuildOrder = buildOrderFromSeed(maceCubes, 'maxZCenter');
+  const bucklerBuildOrder = buildOrderFromSeed(bucklerCubes, 'maxZCenter');
+  const buildEnabled = true;
+  const maceBuildDelayMs = 26;
+  const bucklerBuildDelayMs = 14;
+  const buildPopMs = 110;
+  const maceBuildStartMs = 0;
+  const bucklerBuildStartMs = 140;
+  const buildStartAt = performance.now() + 120;
+
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  const applyBuildPass = (order, elapsedMs, startOffset, perCubeDelayMs) => {
+    for (let i = 0; i < order.length; i += 1) {
+      const cube = order[i];
+      const t = THREE.MathUtils.clamp((elapsedMs - startOffset - i * perCubeDelayMs) / buildPopMs, 0, 1);
+      if (t <= 0) {
+        cube.visible = false;
+        continue;
+      }
+      cube.visible = true;
+      const e = easeOutCubic(t);
+      setCubeAlpha(cube, e);
+      cube.scale.setScalar(0.01 + e * 0.99);
+    }
+  };
+  const applyUnbuildPass = (order, elapsedMs, perCubeDelayMs) => {
+    for (let i = 0; i < order.length; i += 1) {
+      const cube = order[i];
+      const t = THREE.MathUtils.clamp((elapsedMs - i * perCubeDelayMs) / buildPopMs, 0, 1);
+      if (t <= 0) {
+        cube.visible = true;
+        setCubeAlpha(cube, 1);
+        cube.scale.setScalar(1);
+        continue;
+      }
+      const e = easeOutCubic(t);
+      const alpha = 1 - e;
+      if (alpha <= 0.001) {
+        cube.visible = false;
+        continue;
+      }
+      cube.visible = true;
+      setCubeAlpha(cube, alpha);
+      cube.scale.setScalar(1 - e * 0.99);
+    }
+  };
+
+  let scenePhase = 'intro'; // intro -> ready -> unbuild_to_mace -> mace -> unbuild_to_buckler -> ready
+  let phaseStartAt = buildStartAt;
+  const bucklerUnbuildOrder = [...bucklerBuildOrder].reverse();
+  const maceUnbuildOrder = [...maceBuildOrder].reverse();
+  const bucklerUnbuildDelayMs = 12;
+  const maceUnbuildDelayMs = 14;
+  const bucklerUnbuildDurationMs = Math.max(0, (bucklerUnbuildOrder.length - 1) * bucklerUnbuildDelayMs + buildPopMs);
+  const maceUnbuildDurationMs = Math.max(0, (maceUnbuildOrder.length - 1) * maceUnbuildDelayMs + buildPopMs);
+  const bucklerBuildDurationMs = Math.max(0, (bucklerBuildOrder.length - 1) * bucklerBuildDelayMs + buildPopMs);
+  const maceBuildDurationMs = Math.max(0, (maceBuildOrder.length - 1) * maceBuildDelayMs + buildPopMs);
+
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  canvas.addEventListener('pointerdown', (event) => {
+    if (scenePhase !== 'ready' && scenePhase !== 'mace') return;
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(pointer, camera);
+    const targets = scenePhase === 'ready'
+      ? bucklerCubes.filter((cube) => cube.visible)
+      : maceCubes.filter((cube) => cube.visible);
+    const hits = raycaster.intersectObjects(targets, false);
+    if (hits.length === 0) return;
+    scenePhase = scenePhase === 'ready' ? 'unbuild_to_mace' : 'unbuild_to_buckler';
+    phaseStartAt = performance.now();
+    bucklerGroup.visible = true;
+    maceGroup.visible = true;
+  });
 
   const bounds = new THREE.Box3().setFromObject(bucklerGroup);
   const center = new THREE.Vector3();
   const size = new THREE.Vector3();
   bounds.getCenter(center);
   bounds.getSize(size);
-  camera.position.set(center.x + 0.05, center.y + 1.65, center.z + 3.1);
-  camera.lookAt(center.x, center.y + 0.1, center.z + 0.05);
+  bucklerGroup.position.copy(bucklerStartPosition);
+  maceGroup.position.set(
+    center.x + maceStartOffset.x,
+    center.y + maceStartOffset.y,
+    center.z + maceStartOffset.z
+  );
+  const bucklerPos = {
+    x: bucklerGroup.position.x,
+    y: bucklerGroup.position.y,
+    z: bucklerGroup.position.z
+  };
+  const macePos = {
+    x: maceGroup.position.x,
+    y: maceGroup.position.y,
+    z: maceGroup.position.z
+  };
+  const syncBucklerPositionUi = () => {
+    if (bucklerPosSliderX) bucklerPosSliderX.value = String(bucklerPos.x);
+    if (bucklerPosSliderY) bucklerPosSliderY.value = String(bucklerPos.y);
+    if (bucklerPosSliderZ) bucklerPosSliderZ.value = String(bucklerPos.z);
+    if (bucklerPosLabelX) bucklerPosLabelX.textContent = bucklerPos.x.toFixed(2);
+    if (bucklerPosLabelY) bucklerPosLabelY.textContent = bucklerPos.y.toFixed(2);
+    if (bucklerPosLabelZ) bucklerPosLabelZ.textContent = bucklerPos.z.toFixed(2);
+  };
+  const syncMacePositionUi = () => {
+    if (macePosSliderX) macePosSliderX.value = String(macePos.x);
+    if (macePosSliderY) macePosSliderY.value = String(macePos.y);
+    if (macePosSliderZ) macePosSliderZ.value = String(macePos.z);
+    if (macePosLabelX) macePosLabelX.textContent = macePos.x.toFixed(2);
+    if (macePosLabelY) macePosLabelY.textContent = macePos.y.toFixed(2);
+    if (macePosLabelZ) macePosLabelZ.textContent = macePos.z.toFixed(2);
+  };
+  const applyBucklerPosition = () => {
+    bucklerGroup.position.set(bucklerPos.x, bucklerPos.y, bucklerPos.z);
+    syncBucklerPositionUi();
+  };
+  const applyMacePosition = () => {
+    maceGroup.position.set(macePos.x, macePos.y, macePos.z);
+    syncMacePositionUi();
+  };
+  const onBucklerPosSliderInput = (axis, slider) => {
+    if (!slider) return;
+    slider.addEventListener('input', () => {
+      bucklerPos[axis] = Number(slider.value);
+      applyBucklerPosition();
+    });
+  };
+  const onMacePosSliderInput = (axis, slider) => {
+    if (!slider) return;
+    slider.addEventListener('input', () => {
+      macePos[axis] = Number(slider.value);
+      applyMacePosition();
+    });
+  };
+  onBucklerPosSliderInput('x', bucklerPosSliderX);
+  onBucklerPosSliderInput('y', bucklerPosSliderY);
+  onBucklerPosSliderInput('z', bucklerPosSliderZ);
+  onMacePosSliderInput('x', macePosSliderX);
+  onMacePosSliderInput('y', macePosSliderY);
+  onMacePosSliderInput('z', macePosSliderZ);
+  applyBucklerPosition();
+  applyMacePosition();
+  camera.position.set(center.x - 0.26, center.y + 2.95, center.z + 1.85);
+  camera.lookAt(center.x - 0.02, center.y + 0.16, center.z + 0.06);
 
   const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.08;
+  controls.enableDamping = false;
   controls.enableZoom = false;
   controls.enablePan = false;
-  controls.enableRotate = true;
+  controls.enableRotate = false;
   controls.autoRotate = false;
   controls.autoRotateSpeed = 0;
-  controls.target.set(center.x, center.y, center.z);
+  controls.target.set(center.x - 0.02, center.y + 0.16, center.z + 0.06);
   controls.update();
 
   const resize = () => {
@@ -364,7 +750,14 @@
   }
 
   const fortifyMix = 1;
+  const bucklerSpinSpeedZ = 0.12; // radians / second
+  const maceSpinSpeedZ = 0.12; // radians / second
+  let lastFrameTime = performance.now();
   const animate = () => {
+    const now = performance.now();
+    const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
+    lastFrameTime = now;
+
     for (let i = 0; i < faceMaterials.length; i += 1) {
       const mat = faceMaterials[i];
       mat.opacity = Math.min(0.74, mat.userData.baseOpacity * (1 + fortifyMix * 0.95));
@@ -375,7 +768,61 @@
     edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
     bucklerGroup.scale.setScalar(bucklerScale);
-    bucklerGroup.position.y = bucklerBaseY;
+    bucklerGroup.rotation.z += bucklerSpinSpeedZ * dt;
+    maceGroup.rotation.z += maceSpinSpeedZ * dt;
+
+    if (buildEnabled && scenePhase === 'intro') {
+      const buildTime = Math.max(0, now - buildStartAt);
+      // Initial state: only shield builds in from the bottom.
+      applyBuildPass(bucklerBuildOrder, buildTime, bucklerBuildStartMs, bucklerBuildDelayMs);
+      for (let i = 0; i < maceCubes.length; i += 1) {
+        maceCubes[i].visible = false;
+      }
+      if (buildTime >= bucklerBuildDurationMs + bucklerBuildStartMs) {
+        scenePhase = 'ready';
+      }
+    } else if (scenePhase === 'unbuild_to_mace') {
+      const elapsed = Math.max(0, now - phaseStartAt);
+      if (elapsed <= bucklerUnbuildDurationMs) {
+        // First unbuild shield.
+        applyUnbuildPass(bucklerUnbuildOrder, elapsed, bucklerUnbuildDelayMs);
+        for (let i = 0; i < maceCubes.length; i += 1) {
+          maceCubes[i].visible = false;
+        }
+      } else {
+        // Then build mace from handle seed.
+        bucklerGroup.visible = false;
+        const maceElapsed = elapsed - bucklerUnbuildDurationMs;
+        applyBuildPass(maceBuildOrder, maceElapsed, 0, maceBuildDelayMs);
+        if (maceElapsed >= maceBuildDurationMs) {
+          scenePhase = 'mace';
+        }
+      }
+    } else if (scenePhase === 'unbuild_to_buckler') {
+      const elapsed = Math.max(0, now - phaseStartAt);
+      if (elapsed <= maceUnbuildDurationMs) {
+        applyUnbuildPass(maceUnbuildOrder, elapsed, maceUnbuildDelayMs);
+        for (let i = 0; i < bucklerCubes.length; i += 1) {
+          bucklerCubes[i].visible = false;
+        }
+      } else {
+        maceGroup.visible = false;
+        const bucklerElapsed = elapsed - maceUnbuildDurationMs;
+        applyBuildPass(bucklerBuildOrder, bucklerElapsed, 0, bucklerBuildDelayMs);
+        if (bucklerElapsed >= bucklerBuildDurationMs) {
+          scenePhase = 'ready';
+        }
+      }
+    } else if (scenePhase === 'mace') {
+      bucklerGroup.visible = false;
+      maceGroup.visible = true;
+      for (let i = 0; i < maceCubes.length; i += 1) {
+        const cube = maceCubes[i];
+        cube.visible = true;
+        cube.scale.setScalar(1);
+        setCubeAlpha(cube, 1);
+      }
+    }
     controls.update();
     renderer.render(scene, camera);
     if (canvas.style.opacity !== '1') canvas.style.opacity = '1';

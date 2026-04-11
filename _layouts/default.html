@@ -15,11 +15,11 @@
   </head>
   <body class="relative flex flex-col min-h-screen rounded-t-lg">
     {% if page.url == '/' or page.url == '/index.html' %}
-      {% include v1/components/hero-godrays-canvas.html %}
+      {% include components/hero-godrays-canvas.html %}
     {% endif %}
     {% unless page.hide_nav %}
     <header id="nav-sticky" class="sticky top-0 z-30 rounded-t-lg overflow-hidden border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
-      {% include v1/nav.html %}
+      {% include components/nav.html %}
     </header>
     {% endunless %}
     <main class="relative z-10 flex-grow">
@@ -27,7 +27,7 @@
     </main>
     {% unless page.hide_footer %}
     <footer class="relative z-10 mt-20">
-      {% include v1/footer.html %}
+      {% include components/footer.html %}
     </footer>
     {% endunless %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>

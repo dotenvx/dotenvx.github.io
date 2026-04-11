@@ -28,33 +28,33 @@
       <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800">Commercial</td>
     </tr>
     {% capture oss %}
-      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+      {% include icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
     {% capture ops %}
-      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+      {% include icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
-    {% include v1/components/product-table-row.html feature="Encryption"               oss=oss ops=ops href="/features/encryption" %}
-    {% include v1/components/product-table-row.html feature="Run Anywhere"             oss=oss ops=ops href="/features/run-anywhere" %}
-    {% include v1/components/product-table-row.html feature="Multiple Environments"    oss=oss ops=ops href="/features/multiple-environments" %}
-    {% include v1/components/product-table-row.html feature="Precommit / Prebuild"     oss=oss ops=ops href="/features/precommit" %}
-    {% include v1/components/product-table-row.html feature="Variable expansion"       oss=oss ops=ops href="/features/variable-expansion" %}
-    {% include v1/components/product-table-row.html feature="Command substitution"     oss=oss ops=ops href="/features/command-substitution" %}
+    {% include components/product-table-row.html feature="Encryption"               oss=oss ops=ops href="/features/encryption" %}
+    {% include components/product-table-row.html feature="Run Anywhere"             oss=oss ops=ops href="/features/run-anywhere" %}
+    {% include components/product-table-row.html feature="Multiple Environments"    oss=oss ops=ops href="/features/multiple-environments" %}
+    {% include components/product-table-row.html feature="Precommit / Prebuild"     oss=oss ops=ops href="/features/precommit" %}
+    {% include components/product-table-row.html feature="Variable expansion"       oss=oss ops=ops href="/features/variable-expansion" %}
+    {% include components/product-table-row.html feature="Command substitution"     oss=oss ops=ops href="/features/command-substitution" %}
 
     {% capture oss %}
-      {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
+      {% include icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
     {% endcapture %}
 
-    {% include v1/components/product-table-row.html feature="Syncing"                 oss=oss ops=ops href="/ops" %}
-    {% include v1/components/product-table-row.html feature="Access Controls"         oss=oss ops=ops href="/ops" %}
-    {% include v1/components/product-table-row.html feature="Observability"           oss=oss ops=ops href="/ops" %}
-    {% include v1/components/product-table-row.html feature="Versioning"              oss=oss ops=ops href="/ops" %}
-    {% include v1/components/product-table-row.html feature="Automation"              oss=oss ops=ops href="/ops" %}
-    {% include v1/components/product-table-row.html feature="Compliance"              oss=oss ops=ops href="/ops" %}
-    <!--{% include v1/components/product-table-row.html feature="Backups"                 oss=oss ops=ops %}-->
-    <!--{% include v1/components/product-table-row.html feature="Anomaly Detection"       oss=oss ops=ops %}-->
-    <!--{% include v1/components/product-table-row.html feature="Attack Mitigation"       oss=oss ops=ops %}-->
-    {% include v1/components/product-table-row.html feature="Support"                 oss="None" ops="Email" %}
-    {% include v1/components/product-table-row.html feature="License" oss="<a target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" ops="Commercial"%}
+    {% include components/product-table-row.html feature="Syncing"                 oss=oss ops=ops href="/ops" %}
+    {% include components/product-table-row.html feature="Access Controls"         oss=oss ops=ops href="/ops" %}
+    {% include components/product-table-row.html feature="Observability"           oss=oss ops=ops href="/ops" %}
+    {% include components/product-table-row.html feature="Versioning"              oss=oss ops=ops href="/ops" %}
+    {% include components/product-table-row.html feature="Automation"              oss=oss ops=ops href="/ops" %}
+    {% include components/product-table-row.html feature="Compliance"              oss=oss ops=ops href="/ops" %}
+    <!--{% include components/product-table-row.html feature="Backups"                 oss=oss ops=ops %}-->
+    <!--{% include components/product-table-row.html feature="Anomaly Detection"       oss=oss ops=ops %}-->
+    <!--{% include components/product-table-row.html feature="Attack Mitigation"       oss=oss ops=ops %}-->
+    {% include components/product-table-row.html feature="Support"                 oss="None" ops="Email" %}
+    {% include components/product-table-row.html feature="License" oss="<a target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" ops="Commercial"%}
 
     <tr class="text-base">
       <td class="px-1 md:px-2 lg:px-4 py-3 text-right font-bold">

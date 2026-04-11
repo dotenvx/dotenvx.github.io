@@ -1,0 +1,338 @@
+<div
+  class="{{ include.class }} relative overflow-hidden"
+  data-ops-mace
+  style="height: {{ include.height | default: '320px' }};"
+>
+  <canvas
+    class="block h-full w-full"
+    style="opacity: 0; -webkit-mask-image: radial-gradient(120% 112% at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.48) 85%, rgba(0,0,0,0.1) 93%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(120% 112% at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.92) 74%, rgba(0,0,0,0.48) 85%, rgba(0,0,0,0.1) 93%, rgba(0,0,0,0) 100%);"
+  ></canvas>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.167.1/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.167.1/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+  const root = document.querySelector('[data-ops-mace]:not([data-three-mounted])');
+  if (!root) throw new Error('ops-mace mount target not found');
+
+  root.setAttribute('data-three-mounted', 'true');
+  const canvas = root.querySelector('canvas');
+  canvas.style.transition = 'opacity 300ms ease-out';
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  const scene = new THREE.Scene();
+  const desktopMinFrustumSize = 1.05;
+  const mobileMinFrustumSize = 0.95;
+  const includeZoom = Number({{ include.zoom | default: 1 }});
+  const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
+
+  scene.background = null;
+  renderer.setClearColor(0x000000, 0);
+  camera.up.set(0, 1, 0);
+  camera.position.set(0, 6, 0.001);
+  camera.lookAt(0, 0.74, 0);
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.28;
+  renderer.physicallyCorrectLights = true;
+
+  const pmremGenerator = new THREE.PMREMGenerator(renderer);
+  const envRT = pmremGenerator.fromScene(new RoomEnvironment(), 0.04);
+  scene.environment = envRT.texture;
+  pmremGenerator.dispose();
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+  const keyLight = new THREE.DirectionalLight(0xbfe3ff, 2.8);
+  keyLight.position.set(3, 5, 4);
+  scene.add(keyLight);
+  const rimLight = new THREE.DirectionalLight(0xffffff, 2.2);
+  rimLight.position.set(-4, 2.5, -3);
+  scene.add(rimLight);
+
+  const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
+  const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
+  const edgeHighlightMaterial = new THREE.LineBasicMaterial({
+    color: 0xe6edf7,
+    transparent: true,
+    opacity: 0.42,
+    toneMapped: false
+  });
+  const glowShellMaterial = new THREE.MeshBasicMaterial({
+    color: 0xd6e2f0,
+    transparent: true,
+    opacity: 0.12,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide,
+    depthWrite: false,
+    toneMapped: false
+  });
+
+  const labelTextureCache = new Map();
+  const materialCache = new Map();
+  const faceMaterials = [];
+  const baseRoughness = 0.045;
+  const baseThickness = 1.1;
+  const baseEdgeOpacity = edgeHighlightMaterial.opacity;
+  const baseGlowOpacity = glowShellMaterial.opacity;
+  const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
+
+  const buildLabelTexture = (label) => {
+    const c = document.createElement('canvas');
+    c.width = 128;
+    c.height = 128;
+    const ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, 128, 128);
+    ctx.fillStyle = 'rgba(112, 122, 136, 0.16)';
+    ctx.fillRect(0, 0, 128, 128);
+    // Intentionally no face text labels on mace blocks.
+    const texture = new THREE.CanvasTexture(c);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    texture.needsUpdate = true;
+    return texture;
+  };
+
+  const getLabelTexture = (label) => {
+    if (!labelTextureCache.has(label)) labelTextureCache.set(label, buildLabelTexture(label));
+    return labelTextureCache.get(label);
+  };
+
+  const getFaceMaterial = (label) => {
+    if (!materialCache.has(label)) {
+      materialCache.set(label, new THREE.MeshPhysicalMaterial({
+        color: 0xb7c2cf,
+        transparent: true,
+        opacity: 0.94,
+        map: getLabelTexture(label),
+        metalness: 0.86,
+        roughness: 0.2,
+        transmission: 0.08,
+        thickness: 0.22,
+        ior: 1.5,
+        clearcoat: 0.65,
+        clearcoatRoughness: 0.08,
+        attenuationColor: 0x8f9aab,
+        attenuationDistance: 2.2,
+        envMapIntensity: 2.35
+      }));
+    }
+    return materialCache.get(label);
+  };
+
+  const createFaceMaterialVariant = (label, roughnessOffset, thicknessOffset, faceRole) => {
+    const mat = getFaceMaterial(label).clone();
+    mat.roughness = THREE.MathUtils.clamp(baseRoughness + roughnessOffset, 0.006, 0.06);
+    mat.thickness = THREE.MathUtils.clamp(baseThickness + thicknessOffset, 1.35, 1.9);
+    if (faceRole === 'top') {
+      mat.opacity = 0.96;
+      mat.transmission = 0.06;
+      mat.roughness = 0.16;
+      mat.thickness = 0.2;
+      mat.clearcoatRoughness = 0.06;
+    } else if (faceRole === 'bottom') {
+      mat.opacity = 0.92;
+      mat.transmission = 0.05;
+      mat.roughness = 0.24;
+      mat.thickness = 0.2;
+      mat.clearcoatRoughness = 0.1;
+    } else {
+      mat.opacity = 0.94;
+      mat.transmission = 0.07;
+      mat.roughness = 0.2;
+      mat.thickness = 0.22;
+      mat.clearcoatRoughness = 0.08;
+    }
+    mat.userData.baseOpacity = mat.opacity;
+    mat.userData.baseEnvMapIntensity = mat.envMapIntensity;
+    mat.userData.baseTransmission = mat.transmission;
+    mat.userData.baseThickness = mat.thickness;
+    faceMaterials.push(mat);
+    return mat;
+  };
+
+  const createBox = ({ position = [0, 0.74, 0] } = {}) => {
+    const roughnessOffset = (Math.random() - 0.5) * 0.02;
+    const thicknessOffset = (Math.random() - 0.5) * 0.18;
+    const mesh = new THREE.Mesh(boxGeometry, [
+      createFaceMaterialVariant('s1', roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant('s2', roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant('t', roughnessOffset, thicknessOffset, 'top'),
+      createFaceMaterialVariant('b', roughnessOffset, thicknessOffset, 'bottom'),
+      createFaceMaterialVariant('s3', roughnessOffset, thicknessOffset, 'side'),
+      createFaceMaterialVariant('s4', roughnessOffset, thicknessOffset, 'side')
+    ]);
+    mesh.position.set(position[0], position[1], position[2]);
+    const edgeLines = new THREE.LineSegments(edgeGeometry, edgeHighlightMaterial);
+    edgeLines.renderOrder = 2;
+    mesh.add(edgeLines);
+    const glowShell = new THREE.Mesh(boxGeometry, glowShellMaterial);
+    glowShell.scale.set(1.12, 1.12, 1.12);
+    glowShell.renderOrder = 0;
+    mesh.add(glowShell);
+    return mesh;
+  };
+
+  const maceGroup = new THREE.Group();
+  const pitch = 0.125;
+  const yLift = 0.152;
+  const baseY = 0.28;
+
+  const addStack = (x, z, height) => {
+    for (let level = 0; level < height; level += 1) {
+      const box = createBox({ position: [x * pitch, baseY + level * yLift, z * pitch] });
+      maceGroup.add(box);
+    }
+  };
+
+  const addStackFromLevel = (x, z, startLevel, height) => {
+    for (let level = 0; level < height; level += 1) {
+      const box = createBox({ position: [x * pitch, baseY + (startLevel + level) * yLift, z * pitch] });
+      maceGroup.add(box);
+    }
+  };
+
+  // Mace block map (top-down footprint).
+  const maceRows = [
+    '00100',
+    '01110',
+    '01110',
+    '11111',
+    '01110',
+    '01110',
+    '01110',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '01110',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '01110'
+  ];
+
+  for (let z = 0; z < maceRows.length; z += 1) {
+    const row = maceRows[z];
+    for (let i = 0; i < row.length; i += 1) {
+      const val = row[i];
+      if (val === '0') continue;
+      const x = i - 2;
+      const height = val === '2' ? 2 : 1;
+      addStack(x, z, height);
+    }
+  }
+
+  // In the 90-degree shaft-roll view, add side pairs at requested shaft positions.
+  addStackFromLevel(0, 1, -1, 1);
+  addStackFromLevel(0, 1, 1, 1);
+  addStackFromLevel(0, 2, -1, 1);
+  addStackFromLevel(0, 2, 1, 1);
+  addStackFromLevel(0, 3, -1, 1);
+  addStackFromLevel(0, 3, 1, 1);
+  addStackFromLevel(0, 4, -1, 1);
+  addStackFromLevel(0, 4, 1, 1);
+  addStackFromLevel(0, 3, -2, 1);
+  addStackFromLevel(0, 3, 2, 1);
+  addStackFromLevel(0, 5, -1, 1);
+  addStackFromLevel(0, 5, 1, 1);
+  addStackFromLevel(0, 6, -1, 1);
+  addStackFromLevel(0, 6, 1, 1);
+  addStackFromLevel(0, 15, -1, 1);
+  addStackFromLevel(0, 15, 1, 1);
+  addStackFromLevel(0, 21, -1, 1);
+  addStackFromLevel(0, 21, 1, 1);
+
+  maceGroup.rotation.x = 0;
+  maceGroup.rotation.y = 0;
+  maceGroup.rotation.z = Math.PI / 2;
+  const maceBaseY = maceGroup.position.y;
+  scene.add(maceGroup);
+
+  const bounds = new THREE.Box3().setFromObject(maceGroup);
+  const center = new THREE.Vector3();
+  const size = new THREE.Vector3();
+  bounds.getCenter(center);
+  bounds.getSize(size);
+  const topDownFrustumSize = Math.max(size.x, size.z) * 1.2;
+
+  camera.position.set(center.x, center.y + 6, center.z + 0.0001);
+  camera.lookAt(center.x, center.y, center.z);
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = false;
+  controls.enableZoom = false;
+  controls.enablePan = false;
+  controls.enableRotate = false;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.22;
+  controls.target.set(center.x, center.y, center.z);
+  controls.update();
+  const clock = new THREE.Clock();
+  const shaftSpinSpeed = 0.14; // radians/sec
+
+  const resize = () => {
+    const width = root.clientWidth || 1;
+    const height = root.clientHeight || 1;
+    const aspect = width / height;
+    const minFrustumSize = isMobileViewport() ? mobileMinFrustumSize : desktopMinFrustumSize;
+    const fitSize = topDownFrustumSize * (isMobileViewport() ? 0.88 : 1);
+    const baseFrustumSize = Math.max(minFrustumSize, fitSize);
+    const frustumSize = baseFrustumSize / zoomFactor;
+
+    camera.left = -0.5 * frustumSize * aspect;
+    camera.right = 0.5 * frustumSize * aspect;
+    camera.top = 0.5 * frustumSize;
+    camera.bottom = -0.5 * frustumSize;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+  };
+
+  resize();
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(resize);
+    observer.observe(root);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+
+  const fortifyMix = 1;
+  const animate = () => {
+    const delta = clock.getDelta();
+    for (let i = 0; i < faceMaterials.length; i += 1) {
+      const mat = faceMaterials[i];
+      mat.opacity = Math.min(0.74, mat.userData.baseOpacity * (1 + fortifyMix * 0.95));
+      mat.envMapIntensity = mat.userData.baseEnvMapIntensity * (1 + fortifyMix * 0.58);
+      mat.transmission = THREE.MathUtils.clamp(mat.userData.baseTransmission * (1 - fortifyMix * 0.38), 0.46, 1.0);
+      mat.thickness = mat.userData.baseThickness * (1 + fortifyMix * 0.42);
+    }
+    edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
+    glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
+    maceGroup.scale.setScalar(1);
+    maceGroup.position.y = maceBaseY;
+    maceGroup.rotateZ(shaftSpinSpeed * delta);
+    controls.update();
+    renderer.render(scene, camera);
+    if (canvas.style.opacity !== '1') canvas.style.opacity = '1';
+    requestAnimationFrame(animate);
+  };
+  animate();
+</script>

@@ -106,11 +106,7 @@
     ctx.clearRect(0, 0, 128, 128);
     ctx.fillStyle = 'rgba(99, 104, 113, 0.24)';
     ctx.fillRect(0, 0, 128, 128);
-    ctx.fillStyle = 'rgba(217, 191, 117, 0.82)';
-    ctx.font = '500 16px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(label, 64, 64);
+    // Intentionally no face text labels on homepage key blocks.
     const texture = new THREE.CanvasTexture(c);
     texture.colorSpace = THREE.SRGBColorSpace;
     texture.needsUpdate = true;

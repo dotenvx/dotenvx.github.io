@@ -415,7 +415,7 @@
 
   // Composition defaults.
   const bucklerStartPosition = new THREE.Vector3(0, 0.02, -0.08);
-  const maceStartOffset = new THREE.Vector3(0.09, -0.18, -0.04);
+  const maceStartOffset = new THREE.Vector3(-0.04, -0.28, -0.04);
   maceGroup.position.copy(maceStartOffset);
   maceGroup.rotation.set(
     THREE.MathUtils.degToRad(28),
@@ -440,9 +440,9 @@
     z: 40.1
   };
   const maceRotDeg = {
-    x: 38.8,
-    y: 31.8,
-    z: 23.8
+    x: 33.2,
+    y: -32.2,
+    z: 40.1
   };
   const syncRotationUi = () => {
     if (sliderX) sliderX.value = String(rotDeg.x);

@@ -576,12 +576,13 @@
   const maceBuildOrder = buildOrderFromSeed(maceCubes, 'maxZCenter');
   const bucklerBuildOrder = buildOrderFromSeed(bucklerCubes, 'maxZCenter');
   const buildEnabled = true;
-  const maceBuildDelayMs = 26;
-  const bucklerBuildDelayMs = 14;
-  const buildPopMs = 110;
+  const animationSpeedMultiplier = 0.35; // 65% faster
+  const maceBuildDelayMs = 26 * animationSpeedMultiplier;
+  const bucklerBuildDelayMs = 14 * animationSpeedMultiplier;
+  const buildPopMs = 110 * animationSpeedMultiplier;
   const maceBuildStartMs = 0;
-  const bucklerBuildStartMs = 140;
-  const buildStartAt = performance.now() + 120;
+  const bucklerBuildStartMs = 140 * animationSpeedMultiplier;
+  const buildStartAt = performance.now() + 120 * animationSpeedMultiplier;
 
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
   const applyBuildPass = (order, elapsedMs, startOffset, perCubeDelayMs) => {
@@ -624,8 +625,8 @@
   let phaseStartAt = buildStartAt;
   const bucklerUnbuildOrder = [...bucklerBuildOrder].reverse();
   const maceUnbuildOrder = [...maceBuildOrder].reverse();
-  const bucklerUnbuildDelayMs = 12;
-  const maceUnbuildDelayMs = 14;
+  const bucklerUnbuildDelayMs = 12 * animationSpeedMultiplier;
+  const maceUnbuildDelayMs = 14 * animationSpeedMultiplier;
   const bucklerUnbuildDurationMs = Math.max(0, (bucklerUnbuildOrder.length - 1) * bucklerUnbuildDelayMs + buildPopMs);
   const maceUnbuildDurationMs = Math.max(0, (maceUnbuildOrder.length - 1) * maceUnbuildDelayMs + buildPopMs);
   const bucklerBuildDurationMs = Math.max(0, (bucklerBuildOrder.length - 1) * bucklerBuildDelayMs + buildPopMs);

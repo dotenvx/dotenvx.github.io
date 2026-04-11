@@ -13,7 +13,7 @@ title: "Dotenvx Ops"
       </div>
     </div>
     <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
-      {% include components/three-buckler-mace-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
+      {% include components/three-crossbow-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
       {% comment %}{% include components/three-gauntlet-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
       {% comment %}{% include components/three-fortress-gated-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
       {% comment %}{% include components/three-fortress-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}

@@ -1,6 +1,6 @@
 <div
   class="{{ include.class }} relative overflow-hidden"
-  data-ops-buckler
+  data-ops-buckler-mace
   style="height: {{ include.height | default: '320px' }};"
 >
   <canvas
@@ -23,8 +23,8 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-  const root = document.querySelector('[data-ops-buckler]:not([data-three-mounted])');
-  if (!root) throw new Error('ops-buckler mount target not found');
+  const root = document.querySelector('[data-ops-buckler-mace]:not([data-three-mounted])');
+  if (!root) throw new Error('ops-buckler-mace mount target not found');
 
   root.setAttribute('data-three-mounted', 'true');
   const canvas = root.querySelector('canvas');
@@ -63,7 +63,7 @@
   rimLight.position.set(-4, 2.5, -3);
   scene.add(rimLight);
 
-  const boxGeometry = new THREE.BoxGeometry(0.06, 0.0831, 0.06);
+  const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
     color: 0xe6edf7,
@@ -186,8 +186,8 @@
   };
 
   const bucklerGroup = new THREE.Group();
-  const pitch = 0.0625;
-  const yLift = 0.076;
+  const pitch = 0.125;
+  const yLift = 0.152;
   const baseY = 0.28;
 
   const addStack = (x, z, height) => {
@@ -204,8 +204,14 @@
     }
   };
 
-  // Buckler base map shaped like ⛨ (shield silhouette with cross cutout),
-  // then upscaled for higher detail density.
+  const addStackToGroup = (group, x, z, height, startLevel = 0) => {
+    for (let level = 0; level < height; level += 1) {
+      const box = createBox({ position: [x * pitch, baseY + (startLevel + level) * yLift, z * pitch] });
+      group.add(box);
+    }
+  };
+
+  // Buckler base map.
   const bucklerBaseRows = [
     '01111111110',
     '11111111111',
@@ -223,22 +229,7 @@
     '00000100000'
   ];
 
-  const upscaleRows = (rows, scale = 2) => {
-    const out = [];
-    for (let r = 0; r < rows.length; r += 1) {
-      const src = rows[r];
-      let expanded = '';
-      for (let i = 0; i < src.length; i += 1) {
-        expanded += src[i].repeat(scale);
-      }
-      for (let k = 0; k < scale; k += 1) out.push(expanded);
-    }
-    return out;
-  };
-  const bucklerRows = upscaleRows(bucklerBaseRows, 2);
-  // Trim four center rows to compress overall height.
-  const cutStart = Math.floor(bucklerRows.length / 2) - 2;
-  bucklerRows.splice(cutStart, 2);
+  const bucklerRows = [...bucklerBaseRows];
 
   for (let z = 0; z < bucklerRows.length; z += 1) {
     const row = bucklerRows[z];
@@ -251,14 +242,66 @@
     }
   }
 
+  // Mace overlay.
+  const maceGroup = new THREE.Group();
+  const maceRows = [
+    '00100',
+    '01110',
+    '01110',
+    '11111',
+    '01110',
+    '01110',
+    '01110',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '01110',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '00100',
+    '01110'
+  ];
+
+  for (let z = 0; z < maceRows.length; z += 1) {
+    const row = maceRows[z];
+    for (let i = 0; i < row.length; i += 1) {
+      if (row[i] === '0') continue;
+      addStackToGroup(maceGroup, i - 2, z, 1);
+    }
+  }
+
+  // Side pairs that define the mace silhouette in this top view.
+  [1, 2, 3, 4, 5, 6, 15, 21].forEach((z) => {
+    addStackToGroup(maceGroup, 0, z, 1, -1);
+    addStackToGroup(maceGroup, 0, z, 1, 1);
+  });
+  // Wider pair at z3.
+  addStackToGroup(maceGroup, 0, 3, 1, -2);
+  addStackToGroup(maceGroup, 0, 3, 1, 2);
+
+  // Raise and angle mace so it's clearly in front of the buckler.
+  maceGroup.position.set(0, yLift * 1.35, -0.02);
+  maceGroup.rotation.set(0, 0, 0.16);
+
   // Locked top-down pose for precise editing.
   bucklerGroup.rotation.x = 0;
   bucklerGroup.rotation.y = 0;
   bucklerGroup.rotation.z = 0;
+  const bucklerScale = 1;
+  bucklerGroup.scale.setScalar(bucklerScale);
   const bucklerBaseY = bucklerGroup.position.y;
   scene.add(bucklerGroup);
+  scene.add(maceGroup);
 
   const bounds = new THREE.Box3().setFromObject(bucklerGroup);
+  bounds.expandByObject(maceGroup);
   const center = new THREE.Vector3();
   const size = new THREE.Vector3();
   bounds.getCenter(center);
@@ -314,7 +357,7 @@
     }
     edgeHighlightMaterial.opacity = Math.min(0.62, baseEdgeOpacity * (1 + fortifyMix * 2.1));
     glowShellMaterial.opacity = Math.min(0.42, baseGlowOpacity * (1 + fortifyMix * 1.4));
-    bucklerGroup.scale.setScalar(1);
+    bucklerGroup.scale.setScalar(bucklerScale);
     bucklerGroup.position.y = bucklerBaseY;
     controls.update();
     renderer.render(scene, camera);

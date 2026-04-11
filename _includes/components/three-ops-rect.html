@@ -507,39 +507,12 @@
 
   // Crossbow shaft axis (local) based on the drawn diagonal direction.
   const crossbowSpinAxisLocal = new THREE.Vector3(1, 0, 1).normalize();
+  // Rotate crossbow heading to align with mace-like diagonal direction.
+  // This is an in-plane orientation correction (not an axle twist).
+  const crossbowHeadingOffset = THREE.MathUtils.degToRad(-65);
+  crossbowGroup.rotateY(crossbowHeadingOffset);
   const crossbowSpinAxisWorld = crossbowSpinAxisLocal.clone().applyQuaternion(crossbowGroup.quaternion).normalize();
-
-  // Debug axle line drawn along the actual crossbow spin axis.
-  const crossbowLocalBounds = new THREE.Box3().setFromObject(crossbowGroup);
-  const crossbowLocalSize = new THREE.Vector3();
-  crossbowLocalBounds.getSize(crossbowLocalSize);
-  const axleHalfLength = Math.max(crossbowLocalSize.x, crossbowLocalSize.z) * 0.85;
-  const axleGeometry = new THREE.BufferGeometry();
-  const axlePositions = new Float32Array(6);
-  axleGeometry.setAttribute('position', new THREE.BufferAttribute(axlePositions, 3));
-  const axleMaterial = new THREE.LineBasicMaterial({
-    color: 0xecd53f,
-    transparent: true,
-    opacity: 0.95,
-    toneMapped: false,
-    depthTest: false
-  });
-  const crossbowAxleLine = new THREE.Line(axleGeometry, axleMaterial);
-  crossbowAxleLine.renderOrder = 999;
-  scene.add(crossbowAxleLine);
-
-  const updateCrossbowAxleLine = () => {
-    const c = crossbowGroup.position;
-    const start = c.clone().addScaledVector(crossbowSpinAxisWorld, -axleHalfLength);
-    const end = c.clone().addScaledVector(crossbowSpinAxisWorld, axleHalfLength);
-    axlePositions[0] = start.x;
-    axlePositions[1] = start.y;
-    axlePositions[2] = start.z;
-    axlePositions[3] = end.x;
-    axlePositions[4] = end.y;
-    axlePositions[5] = end.z;
-    axleGeometry.attributes.position.needsUpdate = true;
-  };
+  const updateCrossbowAxleLine = () => {};
 
   // Re-center local pivot so rotation occurs around true shield center.
   const bucklerLocalBounds = new THREE.Box3().setFromObject(bucklerGroup);

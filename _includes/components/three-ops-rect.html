@@ -509,7 +509,7 @@
   const crossbowSpinAxisLocal = new THREE.Vector3(1, 0, 1).normalize();
   // Rotate crossbow heading to align with mace-like diagonal direction.
   // This is an in-plane orientation correction (not an axle twist).
-  const crossbowHeadingOffset = THREE.MathUtils.degToRad(-65);
+  const crossbowHeadingOffset = THREE.MathUtils.degToRad(-53);
   crossbowGroup.rotateY(crossbowHeadingOffset);
   const crossbowSpinAxisWorld = crossbowSpinAxisLocal.clone().applyQuaternion(crossbowGroup.quaternion).normalize();
   const updateCrossbowAxleLine = () => {};

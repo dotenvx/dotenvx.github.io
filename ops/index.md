@@ -6,7 +6,7 @@ title: "Dotenvx Ops"
   <canvas class="ops-hero-lightning-canvas" data-ops-lightning-canvas></canvas>
 </div>
 
-<section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44 mt-20">
+<section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Ops ⛨</div>

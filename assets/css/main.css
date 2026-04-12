@@ -390,6 +390,35 @@ html.dark .contact-muted-link:hover,
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+.ops-hero-atmo {
+  isolation: isolate;
+}
+
+.ops-hero-atmo::before,
+.ops-hero-atmo::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Storm haze: faint blue-gray atmospheric depth. */
+.ops-hero-atmo::before {
+  inset: -6% -3% -12% -3%;
+  background:
+    radial-gradient(74% 58% at 72% 26%, rgba(66, 106, 150, 0.17) 0%, rgba(66, 106, 150, 0.06) 36%, rgba(66, 106, 150, 0) 72%),
+    radial-gradient(58% 42% at 34% 40%, rgba(78, 112, 148, 0.11) 0%, rgba(78, 112, 148, 0.03) 43%, rgba(78, 112, 148, 0) 78%);
+  filter: blur(8px);
+}
+
+/* Cinematic vignette: subtle edge and corner burn-in. */
+.ops-hero-atmo::after {
+  inset: -8% -5% -14% -5%;
+  background:
+    radial-gradient(120% 84% at 50% 54%, rgba(0, 0, 0, 0) 44%, rgba(0, 0, 0, 0.22) 74%, rgba(0, 0, 0, 0.52) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 72%, rgba(0, 0, 0, 0.2) 100%);
+}
+
 .ops-hero-lightning-canvas {
   position: absolute;
   inset: 0;
@@ -403,6 +432,15 @@ html.dark .contact-muted-link:hover,
   .ops-page-lightning-body {
     top: -64px;
     height: min(84vh, 760px);
+  }
+
+  .ops-hero-atmo::before {
+    inset: -7% -4% -10% -4%;
+    filter: blur(6px);
+  }
+
+  .ops-hero-atmo::after {
+    inset: -8% -6% -10% -6%;
   }
 
   .ops-hero-lightning-canvas {

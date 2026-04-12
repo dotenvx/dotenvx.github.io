@@ -698,7 +698,8 @@
   const buildPopMs = 110 * animationSpeedMultiplier;
   const maceBuildStartMs = 0;
   const bucklerBuildStartMs = 140 * animationSpeedMultiplier;
-  const buildStartAt = performance.now() + 120 * animationSpeedMultiplier;
+  const introRevealDelayMs = 820;
+  const buildStartAt = performance.now() + introRevealDelayMs;
 
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
   const applyBuildPass = (order, elapsedMs, startOffset, perCubeDelayMs) => {

@@ -281,11 +281,79 @@ html.dark .contact-muted-link:hover,
 }
 
 .hero-title-steel {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 22%, #e9edf2 48%, #cfd7e0 74%, #b6c0cc 100%);
+  background:
+    linear-gradient(
+      103deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 12%,
+      rgba(255, 255, 255, 0.14) 22%,
+      rgba(255, 255, 255, 0.6) 34%,
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.7) 58%,
+      rgba(255, 255, 255, 0.08) 70%,
+      rgba(255, 255, 255, 0.86) 84%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #fdfefe 36%, #f4f7fb 66%, #dbe2eb 85%, #c4cedb 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), 0 14px 28px rgba(5, 8, 12, 0.38);
+  -webkit-text-stroke: 0.48px rgba(246, 251, 255, 0.38);
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.52),
+    0 0 10px rgba(188, 212, 241, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.34),
+    0 10px 24px rgba(7, 12, 20, 0.34);
+}
+
+.hero-title-steel-brushed {
+  background:
+    repeating-linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.12) 0px,
+      rgba(255, 255, 255, 0.12) 2px,
+      rgba(130, 156, 186, 0.08) 2px,
+      rgba(130, 156, 186, 0.08) 6px
+    ),
+    linear-gradient(180deg, #f8fcff 0%, #e8f2ff 18%, #cfe0f6 42%, #a8c0de 68%, #8ea9cb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(236, 247, 255, 0.24), 0 14px 28px rgba(6, 12, 20, 0.42);
+}
+
+.hero-title-steel-chrome {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #eef5ff 14%,
+    #9db8d9 34%,
+    #ebf4ff 52%,
+    #8aa5c6 72%,
+    #6e87a6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(248, 252, 255, 0.28), 0 14px 28px rgba(5, 10, 16, 0.48);
+}
+
+.hero-title-steel-blued {
+  background: linear-gradient(180deg, #edf7ff 0%, #d2e5fb 18%, #9ab6d6 44%, #6f8caf 72%, #566f8f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(214, 235, 255, 0.2), 0 14px 28px rgba(6, 10, 18, 0.5);
+}
+
+.hero-title-steel-arctic {
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(236, 250, 255, 0.95) 0%, rgba(236, 250, 255, 0) 55%),
+    linear-gradient(180deg, #f7fdff 0%, #dff4ff 24%, #b7dff3 46%, #89b9d3 70%, #5f8ca9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(237, 252, 255, 0.26), 0 16px 30px rgba(4, 14, 24, 0.5);
 }
 
 

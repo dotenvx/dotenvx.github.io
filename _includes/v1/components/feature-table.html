@@ -1,0 +1,174 @@
+<table class="min-w-full text-left text-sm">
+  <thead class="sticky top-0 z-10">
+    <tr>
+      <th class="px-1 md:px-2 lg:px-4"></th>
+      <th class="px-1 md:px-2 lg:px-4">
+        <a href="https://github.com/dotenvx/dotenvx">
+          <span class="inline-block whitespace-nowrap bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold px-2.5 py-1 text-lg rounded-sm">{% include logos/github.html class="h-5 w-5 mb-0.5 inline-block" %}<span class="font-mono">OSS</span></span>
+        </a>
+      </th>
+      <th class="px-1 md:px-2 lg:px-4">
+        <a href="/pro">
+          <span class="inline-block bg-[#ECD53F] text-black font-bold px-2.5 py-1 text-lg italic rounded-sm">PRO</span>
+        </a>
+      </th>
+      <th class="px-1 md:px-2 lg:px-4">
+        <a href="/enterprise">
+          <span class="inline-block bg-[#C8102E] text-zinc-50 font-bold px-2.5 py-1 text-lg rounded-sm">ENT</span>
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--
+    <tr>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 text-zinc-500 text-right"></td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Secrets for agents</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-200 dark:border-b-zinc-700 italic font-bold">Secrets manager for .env files 🏆</td>
+    </tr>
+    -->
+    <tr>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800 text-zinc-500 text-right"></td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800">Open Source</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800">Small Business</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b border-b-zinc-100 dark:border-b-zinc-800">Med-Large Business</td>
+    </tr>
+    {% capture oss %}
+      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+    {% endcapture %}
+    {% capture pro %}
+      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+    {% endcapture %}
+    {% capture ent %}
+      {% include v1/icons/check.html classes="text-green-600 h-5 w-5" %}
+    {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="Encryption"               oss=oss pro=pro ent=ent href="/features/encryption" %}
+    {% include v1/components/feature-table-row.html feature="Run Anywhere"             oss=oss pro=pro ent=ent href="/features/run-anywhere" %}
+    {% include v1/components/feature-table-row.html feature="Multiple Environments"    oss=oss pro=pro ent=ent href="/features/multiple-environments" %}
+    {% include v1/components/feature-table-row.html feature="Secrets-as-Code"          oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Variable expansion"       oss=oss pro=pro ent=ent href="/docs/advanced/run-variable-expansion" %}
+    {% include v1/components/feature-table-row.html feature="Command substitution"     oss=oss pro=pro ent=ent href="/docs/advanced/run-command-substitution" %}
+
+    <!--
+    {% include v1/components/feature-table-row.html feature="Advanced Commands" oss=oss pro=pro href="/docs/advanced" %}
+    {% include v1/components/feature-table-row.html feature="Monorepo" oss=oss pro=pro href="/docs/#monorepos" %}
+    {% include v1/components/feature-table-row.html feature="Multiple .env files" oss=oss pro=pro href="/features/multiple-files" %}
+    {% include v1/components/feature-table-row.html feature="Multi-line values" oss=oss pro=pro href="/docs/advanced/run-multiline" %}
+    {% include v1/components/feature-table-row.html feature="Get/Set" oss=oss pro=pro href="/docs/advanced/get-key" %}
+    {% include v1/components/feature-table-row.html feature="Scan" oss=oss pro=pro href="/docs/advanced/scan" %}
+    {% include v1/components/feature-table-row.html feature="Contextual help" oss=oss pro=pro href="/docs/advanced/run-contextual-help" %}
+    {% include v1/components/feature-table-row.html feature="Debug" oss=oss pro=pro href="/docs/advanced/run-debug" %}
+    {% include v1/components/feature-table-row.html feature="Append .gitignore" oss=oss pro=pro href="/docs/advanced/gitignore" %}
+    {% include v1/components/feature-table-row.html feature="Generate .env.example" oss=oss pro=pro href="docs/advanced/genexample" %}
+    {% include v1/components/feature-table-row.html feature="Prebuild" oss=oss pro=pro href="/docs/advanced/prebuild" %}
+    {% include v1/components/feature-table-row.html feature="Precommit" oss=oss pro=pro href="/docs/advanced/precommit" %}
+    -->
+
+    {% capture oss %}
+      {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
+    {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="Cloak-Zero"               oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Web UI"                   oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Access Controls"          oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="PR Reviews"               oss=oss pro=pro ent=ent %}
+    {% capture pro %}
+      {% include v1/icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}
+    {% endcapture %}
+    {% include v1/components/feature-table-row.html feature="Env-Radar"                oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Compliance Alerts"        oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Rotation"                 oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Push/Pull"                oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Version History"          oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Audit Logs"               oss=oss pro=pro ent=ent %}
+    {% include v1/components/feature-table-row.html feature="Support"                  oss="None" pro="Email" ent="Email" %}
+    {% include v1/components/feature-table-row.html feature="License" oss="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx/blob/main/LICENSE\">BSD-3</a>" pro="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>" ent="<a class=\"underline\" target=\"_blank\" href=\"https://github.com/dotenvx/dotenvx-pro/blob/main/LICENSE\">Commercial</a>"%}
+
+    <!--
+    <tr>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b text-right">Variable expansion</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
+    </tr>
+    <tr>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b text-right">Command substitution</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
+      <td class="px-1 md:px-2 lg:px-4 py-2 border-b">✅</td>
+    </tr>
+    -->
+    <!--
+    {% include v1/components/feature-table-row.html feature="Pro CLI" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Web UI" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Sync .env files" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Secrets via pull request" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Managed private keys" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="GitHub SSO" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Sync to VSCode" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Sync to Chrome" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Trusted devices" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Activity logs" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="24/7/365 support" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Personal onboarding" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Cloud backups" oss="⛔️" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Unlimited projects" oss="n/a" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Unlimited secrets" oss="n/a" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Unlimited teammates" oss="n/a" pro="✅" %}
+    {% include v1/components/feature-table-row.html feature="Zero-knowledge encryption" oss="n/a" pro="✅" %}
+    -->
+    <!--{% include v1/components/feature-table-row.html feature="Extended 75-day free trial" oss="n/a" pro="✅" %}-->
+    <tr class="text-base">
+      <td class="px-1 md:px-2 lg:px-4 py-3 text-right font-bold">
+        Pricing
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 py-3 font-semibold">
+        Free
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 py-3 font-semibold">
+        <div class="flex flex-col">
+          <span>$299/month</span>
+          <span class="text-sm font-light">billed annually</span>
+        </div>
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 py-3 font-semibold">
+        <div class="flex flex-col">
+          <span>$1299/month</span>
+          <span class="text-sm font-light">billed annually</span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot class="">
+    <tr>
+      <td class="px-1 md:px-2 lg:px-4"></td>
+      <td class="px-1 md:px-2 lg:px-4 align-top text-end">
+        <a href="https://github.com/dotenvx/dotenvx" class="btn-secondary w-full flex-none inline-block" target="_blank">
+          <span class="hidden md:block">Get started ↗</span>
+          <span class="block md:hidden">Start<span class="ml-1">↗</span></span>
+        </a>
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 align-top text-end">
+        <div class="flex flex-col gap-2">
+          <a href="https://pro.dotenvx.com/signup" class="btn-dark w-full flex-none inline-block">
+            <span class="hidden md:block">Create account ›</span>
+            <span class="block md:hidden">Sign up<span class="ml-1">›</span></span>
+          </a>
+          <a href="/pro" class="btn-outline w-full flex-none inline-block">
+            <span class="hidden md:block">Learn more</span>
+            <span class="block md:hidden">Learn</span>
+          </a>
+        </div>
+      </td>
+      <td class="px-1 md:px-2 lg:px-4 align-top text-end">
+        <div class="flex flex-col gap-2">
+          <a href="mailto:sales@dotenvx.com" class="btn-dark w-full flex-none inline-block">
+            <span class="hidden md:block">Contact sales</span>
+            <span class="block md:hidden">Sales</span>
+          </a>
+          <a href="/enterprise" class="btn-outline w-full flex-none inline-block">
+            <span class="hidden md:block">Learn more</span>
+            <span class="block md:hidden">Learn</span>
+          </a>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

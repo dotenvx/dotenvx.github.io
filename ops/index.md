@@ -17,8 +17,7 @@ title: "Dotenvx Ops"
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Ops ⛨</div>
-      <!-- Optional steel variants: hero-title-steel-brushed | hero-title-steel-chrome | hero-title-steel-blued | hero-title-steel-arctic -->
-      <h1 class="hero-title-steel ops-eyebrow-lightning font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Armor for Agents</h1>
+      <h1 class="font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Armor for Agents</h1>
       <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Armored keys for secret ops and agent ops.<span class="hidden sm:inline md:hidden lg:inline"><br /></span><span class="inline sm:hidden md:inline lg:hidden"> </span>Harden private keys and control access.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
         <p class="inline-flex items-center rounded-full border border-zinc-300 dark:border-zinc-700 px-4 py-5 md:py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">Coming soon</p>
@@ -50,7 +49,7 @@ title: "Dotenvx Ops"
     <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
   <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
-    <h3 class="hero-title-steel ops-eyebrow-lightning font-canela font-normal tracking-[-0.018em] text-[2.8rem] md:text-[3.1rem] lg:text-[3.7rem] leading-[1.03]">
+    <h3 class="font-canela font-normal tracking-[-0.018em] text-[2.8rem] md:text-[3.1rem] lg:text-[3.7rem] leading-[1.03] text-zinc-100">
       The KMS reforged.<br />For the agentic age.
     </h3>
     <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">

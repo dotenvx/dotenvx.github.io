@@ -434,16 +434,6 @@ html.dark .contact-muted-link:hover,
     height: min(84vh, 760px);
   }
 
-  .ops-hero-atmo::before {
-    inset: -8% -8% -14% -8%;
-    background:
-      radial-gradient(80% 62% at 72% 24%, rgba(66, 106, 150, 0.24) 0%, rgba(66, 106, 150, 0.1) 40%, rgba(66, 106, 150, 0) 78%),
-      radial-gradient(64% 46% at 34% 38%, rgba(78, 112, 148, 0.18) 0%, rgba(78, 112, 148, 0.08) 48%, rgba(78, 112, 148, 0) 84%);
-    -webkit-mask-image: none;
-    mask-image: none;
-    filter: blur(9px);
-  }
-
   .ops-hero-atmo::after {
     inset: -8% -6% -10% -6%;
   }

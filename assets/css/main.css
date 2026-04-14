@@ -378,12 +378,12 @@ html.dark .contact-muted-link:hover,
 }
 
 .ops-page-lightning-body {
-  position: absolute;
-  top: -78px;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   height: min(92vh, 980px);
-  z-index: 1;
+  z-index: 5;
   pointer-events: none;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
@@ -430,7 +430,7 @@ html.dark .contact-muted-link:hover,
 
 @media (max-width: 767px) {
   .ops-page-lightning-body {
-    top: -64px;
+    top: 0;
     height: min(84vh, 760px);
   }
 

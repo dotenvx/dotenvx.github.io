@@ -2,20 +2,19 @@
 title: "Dotenvx Ops"
 ---
 
-<div class="relative overflow-x-hidden">
-  <div aria-hidden="true" class="ops-page-lightning-body">
-    <canvas class="ops-hero-lightning-canvas" data-ops-lightning-canvas></canvas>
-  </div>
+<div aria-hidden="true" class="ops-page-lightning-body">
+  <canvas class="ops-hero-lightning-canvas" data-ops-lightning-canvas></canvas>
+</div>
 
   <section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Ops ⛨</div>
       <!-- Optional steel variants: hero-title-steel-brushed | hero-title-steel-chrome | hero-title-steel-blued | hero-title-steel-arctic -->
-      <h1 class="hero-title-steel font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Armor for Dotenvx</h1>
-      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Armored keys for Dotenvx.<span class="hidden sm:inline md:hidden"><br /></span><span class="inline sm:hidden md:inline"> </span>Harden private keys across dev, CI, prod, and agentic runtimes.</p>
+      <h1 class="hero-title-steel ops-eyebrow-lightning font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Armor for Agents</h1>
+      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Armored keys for secret ops and agent ops.<span class="hidden sm:inline md:hidden lg:inline"><br /></span><span class="inline sm:hidden md:inline lg:hidden"> </span>Harden private keys and control access.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <p class="inline-flex items-center rounded-full border border-zinc-300 dark:border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">Coming soon</p>
+        <p class="inline-flex items-center rounded-full border border-zinc-300 dark:border-zinc-700 px-4 py-5 md:py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">Coming soon</p>
       </div>
     </div>
     <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
@@ -27,7 +26,31 @@ title: "Dotenvx Ops"
     </div>
   </div>
   </section>
-</div>
+
+<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-32 md:mt-44 mb-0 pt-2 pb-36 md:pb-48 lg:pb-56 text-center">
+  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
+  </div>
+  <div class="relative z-10">
+    <h3 class="hero-title-steel font-canela font-normal tracking-[-0.018em] text-[3.3rem] md:text-[3.6rem] lg:text-[4.2rem] leading-[1.03]">
+      The KMS, reforged.<br />For the agentic age.
+    </h3>
+    <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
+      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">
+        <span>Get Started</span>
+        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <a class="inline-flex items-center justify-center gap-0.5 p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="mailto:support@dotenvx.com">
+        <span>Contact Us</span>
+        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 
 <script>
 (() => {

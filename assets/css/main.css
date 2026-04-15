@@ -402,13 +402,21 @@ html.dark .contact-muted-link:hover,
   z-index: 2;
 }
 
-/* Ground fog strip: low atmospheric band to anchor the hero. */
+/* Scanline mist: faint horizontal lines with soft atmospheric drift. */
 .ops-hero-atmo::before {
-  inset: 52% -6% -12% -6%;
+  inset: 50% -8% -12% -8%;
   background:
-    radial-gradient(72% 64% at 50% 88%, rgba(125, 162, 202, 0.14) 0%, rgba(125, 162, 202, 0.05) 40%, rgba(125, 162, 202, 0) 74%),
-    linear-gradient(180deg, rgba(116, 150, 190, 0) 0%, rgba(116, 150, 190, 0.09) 56%, rgba(116, 150, 190, 0) 100%);
-  filter: blur(9px);
+    repeating-linear-gradient(
+      180deg,
+      rgba(132, 176, 224, 0.1) 0px,
+      rgba(132, 176, 224, 0.1) 1px,
+      rgba(132, 176, 224, 0) 1px,
+      rgba(132, 176, 224, 0) 6px
+    ),
+    radial-gradient(84% 60% at 50% 88%, rgba(104, 150, 202, 0.2) 0%, rgba(104, 150, 202, 0.07) 42%, rgba(104, 150, 202, 0) 78%),
+    linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.14) 58%, rgba(92, 134, 182, 0) 100%);
+  filter: blur(7px);
+  animation: ops-scanline-mist 9s linear infinite;
 }
 
 /* Cinematic vignette: subtle edge and corner burn-in. */
@@ -428,6 +436,17 @@ html.dark .contact-muted-link:hover,
   filter: blur(0.2px);
 }
 
+@keyframes ops-scanline-mist {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.88;
+  }
+  100% {
+    transform: translate3d(0, 8px, 0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 767px) {
   .ops-page-lightning-body {
     top: 0;
@@ -438,12 +457,31 @@ html.dark .contact-muted-link:hover,
     inset: -8% -6% -10% -6%;
   }
 
+  .ops-hero-atmo::before {
+    inset: 8% -14% 34% -14%;
+    background:
+      repeating-linear-gradient(
+        180deg,
+        rgba(132, 176, 224, 0.09) 0px,
+        rgba(132, 176, 224, 0.09) 1px,
+        rgba(132, 176, 224, 0) 1px,
+        rgba(132, 176, 224, 0) 6px
+      ),
+      radial-gradient(86% 66% at 50% 26%, rgba(104, 150, 202, 0.24) 0%, rgba(104, 150, 202, 0.08) 44%, rgba(104, 150, 202, 0) 80%),
+      linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.1) 52%, rgba(92, 134, 182, 0) 100%);
+    filter: blur(5px);
+  }
+
   .ops-hero-lightning-canvas {
     opacity: 0.48;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ops-hero-atmo::before {
+    animation: none;
+  }
+
   .ops-page-lightning-body,
   .ops-hero-lightning-canvas {
     display: none;

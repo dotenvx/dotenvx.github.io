@@ -34,42 +34,50 @@ title: "Dotenvx Ops"
   </section>
 
 <section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]" data-ops-signups-trigger>
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(126,168,217,0.36)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(168,201,236,0.2)_0%,rgba(168,201,236,0.1)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(104,146,194,0.12)_0%,rgba(104,146,194,0.06)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="mx-auto max-w-[36ch] text-center text-3xl md:text-4xl leading-tight font-medium tracking-[-0.01em] text-zinc-200">
-      <span class="inline-block text-right tabular-nums" data-ops-signups-count>426</span> developers signed up last month.
-    </p>
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20">
+    <div class="pointer-events-none absolute left-1/2 top-1/2 h-44 md:h-56 w-[72%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_38%,rgba(0,0,0,0)_74%)] blur-[2px]" aria-hidden="true"></div>
+    <div class="relative z-10 text-center">
+      <div class="mb-4 md:mb-5 text-[0.68rem] md:text-xs font-semibold tracking-[0.1em] uppercase text-zinc-500 dark:text-zinc-400">TRUSTED BY DEVELOPERS</div>
+      <p class="mx-auto max-w-[36ch] text-center text-3xl md:text-4xl leading-tight font-medium tracking-[-0.01em] text-zinc-200">
+        <span class="inline-block text-right tabular-nums" data-ops-signups-count>426</span> developers signed up last month.
+      </p>
+    </div>
   </div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-14 mb-20 md:mb-28 lg:mb-32">
-  <div class="text-center mb-8 md:mb-10">
-    <div class="text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Benefits</div>
-    <h2 class="font-canela font-normal tracking-[-0.018em] text-[2.25rem] md:text-[2.9rem] lg:text-[3.25rem] leading-[1.04] text-zinc-100 mt-2">
-      Built for real-world secret ops
-    </h2>
-  </div>
+<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-10 md:mt-14 mb-20 md:mb-28 lg:mb-32">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-12 md:pt-14 pb-2" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(126,168,217,0.36)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(168,201,236,0.2)_0%,rgba(168,201,236,0.1)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-    <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
-      <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">01</div>
-      <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Ship Faster</h3>
-      <p class="mt-3 text-zinc-400 leading-relaxed">Stop patching secret workflows by hand. Standardize key distribution for humans and agents in minutes.</p>
-    </article>
+    <div class="px-5 md:px-6">
+      <div class="text-center mb-8 md:mb-10">
+        <div class="text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Benefits</div>
+        <h2 class="font-canela font-normal tracking-[-0.018em] text-[2.25rem] md:text-[2.9rem] lg:text-[3.25rem] leading-[1.04] text-zinc-100 mt-2">
+          Built for real-world secret ops
+        </h2>
+      </div>
 
-    <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
-      <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">02</div>
-      <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Reduce Risk</h3>
-      <p class="mt-3 text-zinc-400 leading-relaxed">Harden private keys and enforce access boundaries, so leaked files and over-permissioned tokens stop being normal.</p>
-    </article>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
+          <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">01</div>
+          <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Ship Faster</h3>
+          <p class="mt-3 text-zinc-400 leading-relaxed">Stop patching secret workflows by hand. Standardize key distribution for humans and agents in minutes.</p>
+        </article>
 
-    <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
-      <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">03</div>
-      <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Stay In Control</h3>
-      <p class="mt-3 text-zinc-400 leading-relaxed">Observe secret activity and roll changes confidently, with a clear operational path from development to production.</p>
-    </article>
+        <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
+          <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">02</div>
+          <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Reduce Risk</h3>
+          <p class="mt-3 text-zinc-400 leading-relaxed">Harden private keys and enforce access boundaries, so leaked files and over-permissioned tokens stop being normal.</p>
+        </article>
+
+        <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
+          <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">03</div>
+          <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Stay In Control</h3>
+          <p class="mt-3 text-zinc-400 leading-relaxed">Observe secret activity and roll changes confidently, with a clear operational path from development to production.</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

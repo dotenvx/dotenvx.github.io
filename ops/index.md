@@ -33,13 +33,13 @@ title: "Dotenvx Ops"
   </div>
   </section>
 
-<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]" data-ops-signups-trigger>
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(126,168,217,0.36)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(168,201,236,0.2)_0%,rgba(168,201,236,0.1)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(104,146,194,0.12)_0%,rgba(104,146,194,0.06)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="mx-auto max-w-[36ch] text-center text-lg leading-relaxed">
-      Details Coming Soon.
+    <p class="mx-auto max-w-[36ch] text-center text-3xl md:text-4xl leading-tight font-medium tracking-[-0.01em] text-zinc-200">
+      <span class="inline-block text-right tabular-nums" data-ops-signups-count>426</span> developers signed up last month.
     </p>
   </div>
 </section>
@@ -280,5 +280,110 @@ title: "Dotenvx Ops"
     if (state.raf) cancelAnimationFrame(state.raf);
     if (strikeTimerId) window.clearTimeout(strikeTimerId);
   }, { once: true });
+})();
+</script>
+
+<script>
+(() => {
+  const countEls = document.querySelectorAll('[data-ops-signups-count]');
+  if (!countEls.length) return;
+
+  const parseCount = (value) => {
+    if (value === null || value === undefined) return NaN;
+    const normalized = String(value).replace(/,/g, '').trim();
+    return Number.parseInt(normalized, 10);
+  };
+
+  const formatCount = (value) => value.toLocaleString('en-US');
+
+  const animateSignups = (targetValue) => {
+    const target = parseCount(targetValue);
+    if (!Number.isFinite(target)) return;
+
+    const initialValue = parseCount(countEls[0].textContent);
+    const start = Number.isFinite(initialValue) ? initialValue : target;
+    if (target <= start) {
+      const finalText = formatCount(target);
+      countEls.forEach((el) => {
+        el.textContent = finalText;
+      });
+      return;
+    }
+
+    const durationMs = 2500;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+    const startAt = performance.now();
+
+    const tick = (now) => {
+      const elapsed = now - startAt;
+      const progress = Math.min(1, elapsed / durationMs);
+      const eased = easeOutCubic(progress);
+      const nextValue = Math.round(start + (target - start) * eased);
+      const nextText = formatCount(nextValue);
+
+      countEls.forEach((el) => {
+        el.textContent = nextText;
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const updateSignups = (value) => {
+    if (!value) return;
+    animateSignups(value);
+  };
+
+  const fallbackText = countEls[0].textContent;
+  if (fallbackText) {
+    const fallbackValue = parseCount(fallbackText);
+    const normalizedFallback = Number.isFinite(fallbackValue) ? fallbackValue : 426;
+    countEls.forEach((el) => {
+      el.textContent = formatCount(normalizedFallback);
+    });
+  }
+
+  const start = () => {
+    fetch('https://ops.dotenvx.com/public/stats', { method: 'GET' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`stats request failed: ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        updateSignups(data && data.signups);
+      })
+      .catch(() => {
+        // Keep fallback count from markup.
+      });
+  };
+
+  const triggerEl = document.querySelector('[data-ops-signups-trigger]');
+  if (!triggerEl) {
+    start();
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    start();
+    return;
+  }
+
+  let started = false;
+  const observer = new IntersectionObserver((entries) => {
+    if (started) return;
+    entries.forEach((entry) => {
+      if (!started && entry.isIntersecting) {
+        started = true;
+        observer.disconnect();
+        start();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(triggerEl);
 })();
 </script>

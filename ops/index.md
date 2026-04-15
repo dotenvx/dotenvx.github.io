@@ -44,6 +44,35 @@ title: "Dotenvx Ops"
   </div>
 </section>
 
+<section class="w-full max-w-7xl mx-auto px-6 mt-10 md:mt-14 mb-20 md:mb-28 lg:mb-32">
+  <div class="text-center mb-8 md:mb-10">
+    <div class="text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Benefits</div>
+    <h2 class="font-canela font-normal tracking-[-0.018em] text-[2.25rem] md:text-[2.9rem] lg:text-[3.25rem] leading-[1.04] text-zinc-100 mt-2">
+      Built for real-world secret ops
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+    <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
+      <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">01</div>
+      <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Ship Faster</h3>
+      <p class="mt-3 text-zinc-400 leading-relaxed">Stop patching secret workflows by hand. Standardize key distribution for humans and agents in minutes.</p>
+    </article>
+
+    <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
+      <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">02</div>
+      <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Reduce Risk</h3>
+      <p class="mt-3 text-zinc-400 leading-relaxed">Harden private keys and enforce access boundaries, so leaked files and over-permissioned tokens stop being normal.</p>
+    </article>
+
+    <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
+      <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">03</div>
+      <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Stay In Control</h3>
+      <p class="mt-3 text-zinc-400 leading-relaxed">Observe secret activity and roll changes confidently, with a clear operational path from development to production.</p>
+    </article>
+  </div>
+</section>
+
 <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>

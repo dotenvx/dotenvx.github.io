@@ -57,24 +57,31 @@ title: "Dotenvx Ops"
     <!-- {% include components/dotenvx-cli-demo.html %} -->
   </div>
 
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
-    <div class="text-zinc-500 font-semibold"># coming soon</div>
-    <div class="mt-2 text-[#ecd53f] font-semibold">$ dotenvx armor up</div>
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl relative overflow-hidden px-6 py-12 md:px-8 md:py-14">
+    <div class="pointer-events-none absolute left-1/2 top-1/2 h-44 md:h-56 w-[72%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_38%,rgba(0,0,0,0)_74%)] blur-[2px]" aria-hidden="true"></div>
+    <div class="relative z-10 text-center">
+      <div class="mx-auto max-w-xl">
+        <div class="mx-auto relative flex w-full items-center justify-center rounded-full border border-zinc-800 bg-[linear-gradient(90deg,rgba(18,24,34,0.72)_0%,rgba(17,21,30,0.82)_52%,rgba(14,18,26,0.72)_100%)] px-5 py-3 md:px-6">
+          <span class="font-mono font-semibold text-zinc-100 text-lg md:text-xl leading-none text-center">dotenvx armor up</span>
+        </div>
+      </div>
+      <div class="mt-3 text-zinc-500 font-semibold text-sm md:text-base">Coming soon</div>
+    </div>
   </div>
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-5">
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
+      <div class="text-zinc-500 dark:text-zinc-400 font-semibold text-sm tracking-wide">1</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Login</h3>
       <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx login</code> to connect your account.</p>
     </div>
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
+      <div class="text-zinc-500 dark:text-zinc-400 font-semibold text-sm tracking-wide">2</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Harden</h3>
       <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx armor up</code> and harden your private keys.</p>
     </div>
     <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
+      <div class="text-zinc-500 dark:text-zinc-400 font-semibold text-sm tracking-wide">3</div>
       <h3 class="mt-2 text-zinc-100 font-semibold">Control</h3>
       <p class="mt-1 text-zinc-400 text-sm">Harden private keys and control access.</p>
     </div>

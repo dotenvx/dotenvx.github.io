@@ -58,6 +58,7 @@ title: "Dotenvx Ops"
   </div>
 
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
+    <div class="text-zinc-500 font-semibold"># coming soon</div>
     <div class="mt-2 text-[#ecd53f] font-semibold">$ dotenvx armor up</div>
   </div>
 

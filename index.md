@@ -74,13 +74,6 @@ title: ""
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypted .env files for agent stacks in one line.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Keep the .env interface agents already expect, but make it encrypted.</p>
   </div>
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl">
-    <!-- {% include components/encrypted-env-file.html %} -->
-  </div>
-  <div class="mt-2 md:mt-3 mx-auto max-w-3xl">
-    <!-- {% include components/dotenvx-cli-demo.html %} -->
-  </div>
-
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
     <div class="text-zinc-500 text-[0.9em]">// before</div>
     <div class="mt-2 text-[#8B9BB4] font-semibold">require('dotenv').config()</div>

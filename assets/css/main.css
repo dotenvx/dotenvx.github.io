@@ -383,7 +383,7 @@ html.dark .contact-muted-link:hover,
   left: 0;
   width: 100%;
   height: min(92vh, 980px);
-  z-index: 5;
+  z-index: 1;
   pointer-events: none;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
@@ -402,20 +402,13 @@ html.dark .contact-muted-link:hover,
   z-index: 2;
 }
 
-/* Scanline mist: faint horizontal lines with soft atmospheric drift. */
+/* Static atmospheric mist for ops hero. */
 .ops-hero-atmo::before {
   inset: 50% -8% -12% -8%;
   background:
-    repeating-linear-gradient(
-      180deg,
-      rgba(132, 176, 224, 0.1) 0px,
-      rgba(132, 176, 224, 0.1) 1px,
-      rgba(132, 176, 224, 0) 1px,
-      rgba(132, 176, 224, 0) 6px
-    ),
-    radial-gradient(84% 60% at 50% 88%, rgba(104, 150, 202, 0.2) 0%, rgba(104, 150, 202, 0.07) 42%, rgba(104, 150, 202, 0) 78%),
-    linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.14) 58%, rgba(92, 134, 182, 0) 100%);
-  filter: blur(7px);
+    radial-gradient(92% 62% at 50% 86%, rgba(104, 150, 202, 0.2) 0%, rgba(104, 150, 202, 0.08) 40%, rgba(104, 150, 202, 0) 76%),
+    linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.15) 58%, rgba(92, 134, 182, 0) 100%);
+  filter: blur(8px);
 }
 
 /* Cinematic vignette: subtle edge and corner burn-in. */
@@ -435,17 +428,6 @@ html.dark .contact-muted-link:hover,
   filter: blur(0.2px);
 }
 
-@keyframes ops-scanline-mist {
-  0% {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.88;
-  }
-  100% {
-    transform: translate3d(0, 8px, 0);
-    opacity: 1;
-  }
-}
-
 @media (max-width: 767px) {
   .ops-page-lightning-body {
     top: 0;
@@ -459,14 +441,7 @@ html.dark .contact-muted-link:hover,
   .ops-hero-atmo::before {
     inset: 8% -14% 34% -14%;
     background:
-      repeating-linear-gradient(
-        180deg,
-        rgba(132, 176, 224, 0.09) 0px,
-        rgba(132, 176, 224, 0.09) 1px,
-        rgba(132, 176, 224, 0) 1px,
-        rgba(132, 176, 224, 0) 6px
-      ),
-      radial-gradient(86% 66% at 50% 26%, rgba(104, 150, 202, 0.24) 0%, rgba(104, 150, 202, 0.08) 44%, rgba(104, 150, 202, 0) 80%),
+      radial-gradient(86% 66% at 50% 26%, rgba(104, 150, 202, 0.24) 0%, rgba(104, 150, 202, 0.09) 44%, rgba(104, 150, 202, 0) 80%),
       linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.1) 52%, rgba(92, 134, 182, 0) 100%);
     filter: blur(5px);
   }
@@ -477,10 +452,6 @@ html.dark .contact-muted-link:hover,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ops-hero-atmo::before {
-    animation: none;
-  }
-
   .ops-page-lightning-body,
   .ops-hero-lightning-canvas {
     display: none;

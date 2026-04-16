@@ -18,7 +18,7 @@
       {% include components/hero-godrays-canvas.html %}
     {% endif %}
     {% unless page.hide_nav %}
-    <header id="nav-sticky" class="sticky top-0 z-30 rounded-t-lg overflow-hidden border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
+    <header id="nav-sticky" class="sticky top-0 z-[80] rounded-t-lg overflow-visible border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
       {% include components/nav.html %}
     </header>
     {% endunless %}

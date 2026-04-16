@@ -9,15 +9,33 @@
         </a>
       </div>
       <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
-        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">
-          Whitepaper
-        </a>
-        <a href="https://github.com/dotenvx/dotenvx" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">
-          <span class="inline-flex items-center gap-0.5"><span>GitHub</span><span>★</span><span>5k</span></span>
-        </a>
-        <a href="/docs" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">Docs</a>
         <a href="/ops" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">Ops</a>
+        <a href="/docs" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">Docs</a>
         <a href="/pricing" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">Pricing</a>
+        <div class="group relative">
+          <button
+            type="button"
+            class="inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-600 dark:text-zinc-400/90 hover:text-zinc-500 dark:hover:text-zinc-200 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
+            aria-haspopup="true"
+          >
+            <span>More</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200 group-hover:translate-y-[2px] group-focus-within:translate-y-[2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="pointer-events-none fixed left-1/2 top-[58px] z-[90] w-[21rem] -translate-x-1/2 pt-2 opacity-0 translate-y-1 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0">
+            <div class="rounded-2xl border border-zinc-800 bg-black px-3 py-3">
+              <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl px-3 py-3 text-xs md:text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                <span>Whitepaper</span>
+                <span aria-hidden="true" class="text-zinc-500 leading-none">&rarr;</span>
+              </a>
+              <a href="https://github.com/dotenvx/dotenvx" class="mt-1 flex items-center justify-between rounded-xl px-3 py-3 text-xs md:text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                <span class="inline-flex items-center gap-0.5"><span>GitHub</span><span>★</span><span>5k</span></span>
+                <span aria-hidden="true" class="text-zinc-500 leading-none">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       <button
         type="button"
@@ -63,24 +81,42 @@
         <a href="/login" class="mobile-nav-link flex w-full items-center justify-center py-3 text-lg font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200" data-umami-event="Documentation link">Log In</a>
       </div>
 
-      <nav class="mt-8 flex flex-col divide-y divide-zinc-800 border-y border-zinc-800">
-        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-          <span>Whitepaper</span>
-          <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
-        </a>
-        <a href="https://github.com/dotenvx/dotenvx" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-          <span class="inline-flex items-center gap-0.5"><span>GitHub</span><span>★</span><span>5k</span></span>
-          <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
-        </a>
-        <a href="/docs" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-          <span>Docs</span>
-          <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
-        </a>
-        <a href="/ops" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-          <span>Ops</span>
-          <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
-        </a>
-      </nav>
+      <div class="mt-8">
+        <nav data-mobile-nav-root class="flex flex-col divide-y divide-zinc-800 border-y border-zinc-800">
+          <a href="/ops" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+            <span>Ops</span>
+            <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
+          </a>
+          <a href="/docs" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+            <span>Docs</span>
+            <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
+          </a>
+          <a href="/pricing" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+            <span>Pricing</span>
+            <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
+          </a>
+          <button type="button" data-mobile-open-submenu="resources" class="flex items-center justify-between py-5 text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
+            <span>More</span>
+            <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
+          </button>
+        </nav>
+
+        <div data-mobile-nav-submenu="resources" class="hidden">
+          <nav class="flex flex-col divide-y divide-zinc-800 border-b border-zinc-800 border-t" style="border-top-color: rgb(24 24 27);">
+            <button type="button" data-mobile-submenu-back class="flex w-full items-center justify-between py-5 text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
+              <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-lg leading-none">&larr;</span><span>Back</span></span>
+            </button>
+            <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Whitepaper</span>
+              <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
+            </a>
+            <a href="https://github.com/dotenvx/dotenvx" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span class="inline-flex items-center gap-0.5"><span>GitHub</span><span>★</span><span>5k</span></span>
+              <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
+            </a>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -93,6 +129,10 @@
     const closeIcon = document.getElementById('mobile-nav-icon-close');
     const navSticky = document.getElementById('nav-sticky');
     const navShell = document.getElementById('nav-shell');
+    const mobileNavRoot = overlay.querySelector('[data-mobile-nav-root]');
+    const mobileNavSubmenus = overlay.querySelectorAll('[data-mobile-nav-submenu]');
+    const mobileSubmenuTriggers = overlay.querySelectorAll('[data-mobile-open-submenu]');
+    const mobileSubmenuBackButtons = overlay.querySelectorAll('[data-mobile-submenu-back]');
     if (!toggleButton || !overlay || toggleButton.dataset.navInit === 'true') return;
 
     // Keep overlay at body root to avoid sticky/stacking-context issues on mobile.
@@ -100,12 +140,23 @@
       document.body.appendChild(overlay);
     }
 
+    const setMobileSubmenu = (name) => {
+      if (!mobileNavRoot) return;
+      const showRoot = !name;
+      mobileNavRoot.classList.toggle('hidden', !showRoot);
+      mobileNavSubmenus.forEach((submenu) => {
+        const isMatch = submenu.getAttribute('data-mobile-nav-submenu') === name;
+        submenu.classList.toggle('hidden', !isMatch);
+      });
+    };
+
     const setOpen = (isOpen) => {
       overlay.classList.toggle('hidden', !isOpen);
       toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       openIcon?.classList.toggle('hidden', isOpen);
       closeIcon?.classList.toggle('hidden', !isOpen);
       document.body.classList.toggle('overflow-hidden', isOpen);
+      if (!isOpen) setMobileSubmenu(null);
     };
 
     toggleButton.addEventListener('click', () => {
@@ -121,6 +172,17 @@
 
     overlay.querySelectorAll('.mobile-nav-link').forEach((link) => {
       link.addEventListener('click', () => setOpen(false));
+    });
+
+    mobileSubmenuTriggers.forEach((button) => {
+      button.addEventListener('click', () => {
+        const submenuName = button.getAttribute('data-mobile-open-submenu');
+        setMobileSubmenu(submenuName);
+      });
+    });
+
+    mobileSubmenuBackButtons.forEach((button) => {
+      button.addEventListener('click', () => setMobileSubmenu(null));
     });
 
     window.addEventListener('keydown', (event) => {
@@ -146,6 +208,7 @@
 
     window.addEventListener('scroll', setNavScrolled, { passive: true });
     setNavScrolled();
+    setMobileSubmenu(null);
 
     toggleButton.dataset.navInit = 'true';
   })();

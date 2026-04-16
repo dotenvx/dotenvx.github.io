@@ -45,38 +45,37 @@ title: "Dotenvx Ops"
   </div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-10 md:mt-14 mb-20 md:mb-28 lg:mb-32">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-12 md:pt-14 pb-2" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(126,168,217,0.36)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(168,201,236,0.2)_0%,rgba(168,201,236,0.1)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Hardened keys under your control in one command.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Keep the agentic dotenvx workflow, but put private keys behind access control.</p>
+  </div>
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl">
+    <!-- {% include components/encrypted-env-file.html %} -->
+  </div>
+  <div class="mt-2 md:mt-3 mx-auto max-w-3xl">
+    <!-- {% include components/dotenvx-cli-demo.html %} -->
+  </div>
 
-    <div class="px-5 md:px-6">
-      <div class="text-center mb-8 md:mb-10">
-        <div class="text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Benefits</div>
-        <h2 class="font-canela font-normal tracking-[-0.018em] text-[2.25rem] md:text-[2.9rem] lg:text-[3.25rem] leading-[1.04] text-zinc-100 mt-2">
-          Built for real-world secret ops
-        </h2>
-      </div>
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
+    <div class="mt-2 text-[#ecd53f] font-semibold">$ dotenvx armor up</div>
+  </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-        <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
-          <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">01</div>
-          <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Ship Faster</h3>
-          <p class="mt-3 text-zinc-400 leading-relaxed">Stop patching secret workflows by hand. Standardize key distribution for humans and agents in minutes.</p>
-        </article>
-
-        <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
-          <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">02</div>
-          <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Reduce Risk</h3>
-          <p class="mt-3 text-zinc-400 leading-relaxed">Harden private keys and enforce access boundaries, so leaked files and over-permissioned tokens stop being normal.</p>
-        </article>
-
-        <article class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[linear-gradient(180deg,rgba(20,28,38,0.72)_0%,rgba(6,8,12,0.94)_100%)] p-6 md:p-7">
-          <div class="text-xs font-semibold tracking-[0.08em] uppercase text-zinc-500">03</div>
-          <h3 class="mt-4 text-xl md:text-2xl font-semibold text-zinc-100">Stay In Control</h3>
-          <p class="mt-3 text-zinc-400 leading-relaxed">Observe secret activity and roll changes confidently, with a clear operational path from development to production.</p>
-        </article>
-      </div>
+  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-5">
+    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
+      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Login</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx login</code> to connect your account.</p>
+    </div>
+    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
+      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Harden</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx armor up</code> and harden your private keys.</p>
+    </div>
+    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
+      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
+      <h3 class="mt-2 text-zinc-100 font-semibold">Control</h3>
+      <p class="mt-1 text-zinc-400 text-sm">Harden private keys and control access.</p>
     </div>
   </div>
 </section>

@@ -295,6 +295,25 @@ title: "Dotenvx Ops"
     }
   };
 
+  const isTextInputTarget = (target) => {
+    if (!(target instanceof Element)) return false;
+    if (target.closest('[contenteditable="true"]')) return true;
+    const tag = target.tagName;
+    return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+  };
+
+  const handleLightningHotkey = (event) => {
+    if (event.defaultPrevented) return;
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (isTextInputTarget(event.target)) return;
+    if (String(event.key).toLowerCase() !== 'l') return;
+
+    const anchorX = window.matchMedia('(max-width: 767px)').matches ? 0.5 : 0.68;
+    fireStrike(1, { anchorX, anchorSpread: 0.12 });
+  };
+
+  window.addEventListener('keydown', handleLightningHotkey);
+
   let strikeTimerId = 0;
   const queueNextStrike = () => {
     strikeTimerId = window.setTimeout(() => {
@@ -316,6 +335,7 @@ title: "Dotenvx Ops"
   window.addEventListener('pagehide', () => {
     if (state.raf) cancelAnimationFrame(state.raf);
     if (strikeTimerId) window.clearTimeout(strikeTimerId);
+    window.removeEventListener('keydown', handleLightningHotkey);
   }, { once: true });
 })();
 </script>

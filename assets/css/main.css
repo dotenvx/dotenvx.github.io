@@ -416,7 +416,6 @@ html.dark .contact-muted-link:hover,
     radial-gradient(84% 60% at 50% 88%, rgba(104, 150, 202, 0.2) 0%, rgba(104, 150, 202, 0.07) 42%, rgba(104, 150, 202, 0) 78%),
     linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.14) 58%, rgba(92, 134, 182, 0) 100%);
   filter: blur(7px);
-  animation: ops-scanline-mist 9s linear infinite;
 }
 
 /* Cinematic vignette: subtle edge and corner burn-in. */

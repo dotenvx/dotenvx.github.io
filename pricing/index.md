@@ -42,7 +42,7 @@ title: "Pricing"
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">100 Keys · 1 Member</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">Extra Keys: $0.99 / 100</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Members: $10 / 3</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">~</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Run Anywhere</span></li>

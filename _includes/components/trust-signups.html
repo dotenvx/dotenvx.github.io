@@ -1,0 +1,11 @@
+<section class="{{ include.section_classes | default: 'w-full max-w-7xl mx-auto px-1 md:px-6 mt-24 md:mt-32 mb-8' }}" data-ops-signups-trigger>
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20">
+    <div class="pointer-events-none absolute left-1/2 top-1/2 h-44 md:h-56 w-[72%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_38%,rgba(0,0,0,0)_74%)] blur-[2px]" aria-hidden="true"></div>
+    <div class="relative z-10 text-center">
+      <div class="mb-4 md:mb-5 text-[0.68rem] md:text-xs font-semibold tracking-[0.1em] uppercase text-zinc-500 dark:text-zinc-400">{{ include.label | default: 'TRUSTED BY DEVELOPERS' }}</div>
+      <p class="mx-auto max-w-[36ch] text-center text-3xl md:text-4xl leading-tight font-medium tracking-[-0.01em] text-zinc-200">
+        <span class="inline-block text-right tabular-nums" data-ops-signups-count>{{ include.fallback_count | default: 426 }}</span> {{ include.copy | default: 'developers signed up last month.' }}
+      </p>
+    </div>
+  </div>
+</section>

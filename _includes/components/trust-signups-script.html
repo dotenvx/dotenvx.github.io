@@ -1,0 +1,104 @@
+<script>
+(() => {
+  const countEls = document.querySelectorAll('[data-ops-signups-count]');
+  if (!countEls.length) return;
+
+  const parseCount = (value) => {
+    if (value === null || value === undefined) return NaN;
+    const normalized = String(value).replace(/,/g, '').trim();
+    return Number.parseInt(normalized, 10);
+  };
+
+  const formatCount = (value) => value.toLocaleString('en-US');
+
+  const animateSignups = (targetValue) => {
+    const target = parseCount(targetValue);
+    if (!Number.isFinite(target)) return;
+
+    const initialValue = parseCount(countEls[0].textContent);
+    const start = Number.isFinite(initialValue) ? initialValue : target;
+    if (target <= start) {
+      const finalText = formatCount(target);
+      countEls.forEach((el) => {
+        el.textContent = finalText;
+      });
+      return;
+    }
+
+    const durationMs = 2500;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+    const startAt = performance.now();
+
+    const tick = (now) => {
+      const elapsed = now - startAt;
+      const progress = Math.min(1, elapsed / durationMs);
+      const eased = easeOutCubic(progress);
+      const nextValue = Math.round(start + (target - start) * eased);
+      const nextText = formatCount(nextValue);
+
+      countEls.forEach((el) => {
+        el.textContent = nextText;
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const updateSignups = (value) => {
+    if (!value) return;
+    animateSignups(value);
+  };
+
+  const fallbackText = countEls[0].textContent;
+  if (fallbackText) {
+    const fallbackValue = parseCount(fallbackText);
+    const normalizedFallback = Number.isFinite(fallbackValue) ? fallbackValue : 426;
+    countEls.forEach((el) => {
+      el.textContent = formatCount(normalizedFallback);
+    });
+  }
+
+  const start = () => {
+    fetch('https://ops.dotenvx.com/public/stats', { method: 'GET' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`stats request failed: ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        updateSignups(data && data.signups);
+      })
+      .catch(() => {
+        // Keep fallback count from markup.
+      });
+  };
+
+  const triggerEl = document.querySelector('[data-ops-signups-trigger]');
+  if (!triggerEl) {
+    start();
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    start();
+    return;
+  }
+
+  let started = false;
+  const observer = new IntersectionObserver((entries) => {
+    if (started) return;
+    entries.forEach((entry) => {
+      if (!started && entry.isIntersecting) {
+        started = true;
+        observer.disconnect();
+        start();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(triggerEl);
+})();
+</script>

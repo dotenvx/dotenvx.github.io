@@ -28,7 +28,7 @@ title: "Pricing"
           </li>
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
-            <span class="">Off Device</span>
+            <span class="">Never On Device</span>
           </li>
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
@@ -37,6 +37,14 @@ title: "Pricing"
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
             <span class="">Access Controls</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Prompts</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Alerts</span>
           </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Team Members</span></li>
         </ul>
@@ -53,7 +61,7 @@ title: "Pricing"
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">100 Private Keys · 1 Member</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 100</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 10</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">~</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -63,7 +71,7 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Armored Private Keys ⛨</span></li>
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
-            <span class="">Off Device</span>
+            <span class="">Never On Device</span>
           </li>
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
@@ -72,6 +80,14 @@ title: "Pricing"
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
             <span class="">Access Controls</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Prompts</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Alerts</span>
           </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Team Members</span></li>
         </ul>
@@ -88,7 +104,7 @@ title: "Pricing"
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">100 Private Keys · 3 Members</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 100</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 10</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">Extra Members: $10 / 3</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -98,7 +114,7 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Armored Private Keys ⛨</span></li>
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
-            <span class="">Off Device</span>
+            <span class="">Never On Device</span>
           </li>
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
@@ -107,6 +123,14 @@ title: "Pricing"
           <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
             <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
             <span class="">Access Controls</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Prompts</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Alerts</span>
           </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Team Members</span></li>
         </ul>

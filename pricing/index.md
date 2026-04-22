@@ -53,7 +53,7 @@ title: "Pricing"
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">100 Private Keys · 1 Member</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 10</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 100</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">~</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -88,7 +88,7 @@ title: "Pricing"
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">100 Private Keys · 3 Members</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 10</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 100</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">Extra Members: $10 / 3</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">

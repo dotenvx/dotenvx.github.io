@@ -22,18 +22,21 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Run Anywhere</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Multi-Environment</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Armored Private Keys ⛨</span></li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Off Device</span>
-            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span>
+            <span>Armored Private Keys ⛨</span>
           </li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Access Logs</span>
-            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Off Device</span>
           </li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Access Controls</span>
-            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Logs</span>
+          </li>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Controls</span>
           </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Team Members</span></li>
         </ul>
@@ -58,17 +61,17 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Multi-Environment</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Armored Private Keys ⛨</span></li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Off Device</span>
-            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Off Device</span>
           </li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Access Logs</span>
-            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Logs</span>
           </li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Access Controls</span>
-            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-zinc-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Controls</span>
           </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Team Members</span></li>
         </ul>
@@ -93,17 +96,17 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Multi-Environment</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Armored Private Keys ⛨</span></li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Off Device</span>
-            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Off Device</span>
           </li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Access Logs</span>
-            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Logs</span>
           </li>
-          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
-            <span class="pl-0.5">Access Controls</span>
-            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          <li class="grid grid-cols-[auto_1fr] items-center gap-x-3">
+            <span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full text-green-500 text-[9px] font-bold leading-none" aria-hidden="true">⛊</span>
+            <span class="">Access Controls</span>
           </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Team Members</span></li>
         </ul>

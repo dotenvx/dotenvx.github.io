@@ -15,7 +15,7 @@ title: "Pricing"
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">.env.keys</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Local Keys</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Local on device</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">~</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -23,10 +23,19 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Multi-Environment</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Management</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Logs</span></li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Off Device</span>
+            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          </li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Access Logs</span>
+            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          </li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Access Controls</span>
+            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Team Members</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Automation Tokens</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
@@ -40,8 +49,8 @@ title: "Pricing"
           <span>$2.99</span><span class="text-zinc-300"> / mo</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">100 Keys · 1 Member</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Keys: $0.99 / 100</p>
+          <p class="text-zinc-100 text-sm">100 Private Keys · 1 Member</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 10</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">~</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -49,10 +58,19 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Multi-Environment</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Management</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Logs</span></li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Off Device</span>
+            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          </li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Access Logs</span>
+            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          </li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Access Controls</span>
+            <span aria-hidden="true" class="text-zinc-500 text-[11px]">×</span>
+          </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Team Members</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Automation Tokens</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
@@ -66,8 +84,8 @@ title: "Pricing"
           <span>$20</span><span class="text-zinc-300"> / mo</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">100 Keys · 3 Members</p>
-          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Keys: $0.99 / 100</p>
+          <p class="text-zinc-100 text-sm">100 Private Keys · 3 Members</p>
+          <p class="mt-2 text-zinc-400 text-xs font-light">Extra Private Keys: $0.90 / 10</p>
           <p class="mt-2 text-zinc-400 text-xs font-light">Extra Members: $10 / 3</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -75,10 +93,19 @@ title: "Pricing"
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Multi-Environment</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Access Management</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Access Logs</span></li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Off Device</span>
+            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          </li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Access Logs</span>
+            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          </li>
+          <li class="grid grid-cols-[1fr_auto] items-center gap-x-3 pl-6">
+            <span class="pl-0.5">Access Controls</span>
+            <span aria-hidden="true" class="text-green-500 text-[11px]">✓</span>
+          </li>
           <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Team Members</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-green-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Automation Tokens</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">

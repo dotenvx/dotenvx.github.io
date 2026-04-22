@@ -112,47 +112,47 @@ title: "Pricing"
   <p class="text-right text-xs text-zinc-400 mt-3"><sup>⧖</sup> coming soon</p>
 
   <p class="mt-10 text-center text-zinc-400 text-sm md:text-base font-normal tracking-tight">
-    <a href="/contact" class="text-zinc-400 visited:text-zinc-400 hover:text-zinc-200 font-normal no-underline hover:no-underline">Need a custom enterprise plan? Contact us <span aria-hidden="true">›</span></a>
+    <a href="/contact" class="font-normal no-underline hover:no-underline" style="color: rgba(161, 161, 170, 0.95) !important; -webkit-text-fill-color: rgba(161, 161, 170, 0.95); text-decoration-color: rgba(161, 161, 170, 0.95);">Need a custom enterprise plan? Contact us <span aria-hidden="true">›</span></a>
   </p>
 
   <div class="mx-auto mt-32 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Access & Identity</h2>
     <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
-      <table class="w-full min-w-[980px] border-collapse">
+      <table class="w-full min-w-[620px] sm:min-w-[820px] border-collapse">
         <thead>
           <tr class="border-b border-zinc-900 bg-zinc-900/30">
-            <th class="w-[32%] px-4 py-2 text-left text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Free</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Solo</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Secure</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Enterprise</th>
+            <th class="w-[34%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Free</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">Login with GitHub</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Login with GitHub</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">Automation Tokens</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Automation Tokens</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr>
-            <td class="px-4 py-2 text-zinc-100 text-sm">Team Members</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-300">1</td>
-            <td class="px-4 py-2 text-center text-zinc-300">3</td>
-            <td class="px-4 py-2 text-center text-zinc-300">10</td>
-            <td class="px-4 py-2 text-center text-zinc-300">Flexible</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Team Members</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">1</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">3</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Flexible</td>
           </tr>
         </tbody>
       </table>
@@ -162,82 +162,72 @@ title: "Pricing"
   <div class="mx-auto mt-28 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Customer Support</h2>
     <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
-      <table class="w-full min-w-[980px] border-collapse">
+      <table class="w-full min-w-[620px] sm:min-w-[820px] border-collapse">
         <thead>
           <tr class="border-b border-zinc-900 bg-zinc-900/30">
-            <th class="w-[32%] px-4 py-2 text-left text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Free</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Solo</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Secure</th>
-            <th class="w-[13.6%] px-4 py-2 text-center text-xs font-medium text-zinc-400">Enterprise</th>
+            <th class="w-[34%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Free</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
+            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">Ticket Support</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Ticket Support</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">Slack Support</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Slack Support</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">.env Expertise</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">.env Expertise</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">Urgent Response SLA</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Urgent Response SLA</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr>
-            <td class="px-4 py-2 text-zinc-100 text-sm">Priority Security Updates</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Priority Security Updates</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
-            <td class="px-4 py-2 text-zinc-100 text-sm">In-App Documentation</td>
-            <td class="px-4 py-2 text-center text-zinc-500 text-lg">—</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-4 py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">In-App Documentation</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-24 md:mt-32 mb-8" data-ops-signups-trigger>
-    <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20">
-      <div class="pointer-events-none absolute left-1/2 top-1/2 h-44 md:h-56 w-[72%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_38%,rgba(0,0,0,0)_74%)] blur-[2px]" aria-hidden="true"></div>
-      <div class="relative z-10 text-center">
-        <div class="mb-4 md:mb-5 text-[0.68rem] md:text-xs font-semibold tracking-[0.1em] uppercase text-zinc-500 dark:text-zinc-400">TRUSTED BY DEVELOPERS</div>
-        <p class="mx-auto max-w-[36ch] text-center text-3xl md:text-4xl leading-tight font-medium tracking-[-0.01em] text-zinc-200">
-          <span class="inline-block text-right tabular-nums" data-ops-signups-count>426</span> developers signed up last month.
-        </p>
-      </div>
-    </div>
-  </section>
+  {% include components/trust-signups.html section_classes="w-full max-w-7xl mx-auto px-1 md:px-6 mt-24 md:mt-32 mb-8" %}
 
   <section class="w-full max-w-2xl mx-auto px-6 mt-32 flex flex-col gap-4">
     <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
@@ -248,7 +238,7 @@ title: "Pricing"
     </dl>
   </section>
 
-  <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
+  <section class="relative overflow-hidden w-full mt-44 md:mt-56 mb-0 pt-2 pb-10 md:pb-14 lg:pb-16 text-center">
     <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
       <div class="mx-auto mb-8 h-20 w-20 overflow-hidden rounded-md">
         <img src="/logo-original.png" alt="dotenvx logo" class="h-full w-full object-cover" />
@@ -268,107 +258,4 @@ title: "Pricing"
   </section>
 </section>
 
-<script>
-(() => {
-  const countEls = document.querySelectorAll('[data-ops-signups-count]');
-  if (!countEls.length) return;
-
-  const parseCount = (value) => {
-    if (value === null || value === undefined) return NaN;
-    const normalized = String(value).replace(/,/g, '').trim();
-    return Number.parseInt(normalized, 10);
-  };
-
-  const formatCount = (value) => value.toLocaleString('en-US');
-
-  const animateSignups = (targetValue) => {
-    const target = parseCount(targetValue);
-    if (!Number.isFinite(target)) return;
-
-    const initialValue = parseCount(countEls[0].textContent);
-    const start = Number.isFinite(initialValue) ? initialValue : target;
-    if (target <= start) {
-      const finalText = formatCount(target);
-      countEls.forEach((el) => {
-        el.textContent = finalText;
-      });
-      return;
-    }
-
-    const durationMs = 2500;
-    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-    const startAt = performance.now();
-
-    const tick = (now) => {
-      const elapsed = now - startAt;
-      const progress = Math.min(1, elapsed / durationMs);
-      const eased = easeOutCubic(progress);
-      const nextValue = Math.round(start + (target - start) * eased);
-      const nextText = formatCount(nextValue);
-
-      countEls.forEach((el) => {
-        el.textContent = nextText;
-      });
-
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
-    };
-
-    requestAnimationFrame(tick);
-  };
-
-  const updateSignups = (value) => {
-    if (!value) return;
-    animateSignups(value);
-  };
-
-  const fallbackText = countEls[0].textContent;
-  if (fallbackText) {
-    const fallbackValue = parseCount(fallbackText);
-    const normalizedFallback = Number.isFinite(fallbackValue) ? fallbackValue : 426;
-    countEls.forEach((el) => {
-      el.textContent = formatCount(normalizedFallback);
-    });
-  }
-
-  const start = () => {
-    fetch('https://ops.dotenvx.com/public/stats', { method: 'GET' })
-      .then((response) => {
-        if (!response.ok) throw new Error(`stats request failed: ${response.status}`);
-        return response.json();
-      })
-      .then((data) => {
-        updateSignups(data && data.signups);
-      })
-      .catch(() => {
-        // Keep fallback count from markup.
-      });
-  };
-
-  const triggerEl = document.querySelector('[data-ops-signups-trigger]');
-  if (!triggerEl) {
-    start();
-    return;
-  }
-
-  if (!('IntersectionObserver' in window)) {
-    start();
-    return;
-  }
-
-  let started = false;
-  const observer = new IntersectionObserver((entries) => {
-    if (started) return;
-    entries.forEach((entry) => {
-      if (!started && entry.isIntersecting) {
-        started = true;
-        observer.disconnect();
-        start();
-      }
-    });
-  }, { threshold: 0.35 });
-
-  observer.observe(triggerEl);
-})();
-</script>
+{% include components/trust-signups-script.html %}

@@ -9,7 +9,7 @@ title: "Pricing"
   <div class="mx-auto w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
     <div class="rounded-xl border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
-        <h2 class="text-center font-light tracking-tight leading-none text-zinc-50 text-sm">Free</h2>
+        <h2 class="text-center font-normal tracking-tight leading-none text-zinc-50 text-sm">Free</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$0</span><span class="text-zinc-300"> / mo</span>
         </div>
@@ -31,7 +31,7 @@ title: "Pricing"
     </div>
     <div class="rounded-xl border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
-        <h2 class="text-center font-light tracking-tight leading-none text-zinc-50 text-sm">Ops Solo</h2>
+        <h2 class="text-center font-normal tracking-tight leading-none text-zinc-50 text-sm">Ops Solo</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$2.99</span><span class="text-zinc-300"> / mo</span>
         </div>
@@ -57,7 +57,7 @@ title: "Pricing"
     </div>
     <div class="rounded-xl border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
-        <h2 class="text-center font-light tracking-tight leading-none text-zinc-50 text-sm">Ops Team</h2>
+        <h2 class="text-center font-normal tracking-tight leading-none text-zinc-50 text-sm">Ops Team</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$20</span><span class="text-zinc-300"> / mo</span>
         </div>
@@ -83,7 +83,7 @@ title: "Pricing"
     </div>
     <div class="rounded-xl border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
-        <h2 class="text-center font-light tracking-tight leading-none text-zinc-50 text-sm">Ops Secure</h2>
+        <h2 class="text-center font-normal tracking-tight leading-none text-zinc-50 text-sm">Ops Secure</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$90</span><span class="text-zinc-300"> / mo</span>
         </div>

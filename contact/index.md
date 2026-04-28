@@ -18,6 +18,11 @@ title: "Contact"
         <p class="m-0 contact-muted-label text-sm md:text-base">Report security concerns</p>
         <a href="mailto:security@dotenvx.com" class="contact-muted-link mt-1.5 inline-block no-underline hover:no-underline transition-colors duration-500 text-base md:text-base leading-relaxed font-normal">security@dotenvx.com</a>
       </div>
+
+      <div>
+        <p class="m-0 contact-muted-label text-sm md:text-base">Enterprise plans and custom needs</p>
+        <a href="mailto:sales@dotenvx.com" class="contact-muted-link mt-1.5 inline-block no-underline hover:no-underline transition-colors duration-500 text-base md:text-base leading-relaxed font-normal">sales@dotenvx.com</a>
+      </div>
     </aside>
   </div>
 </section>

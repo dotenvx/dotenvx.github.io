@@ -18,11 +18,11 @@ title: "Pricing"
           <p class="mt-2 text-zinc-500 text-sm">Local on device</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Self-Managed Keys</span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">✓</span><span>Local on device</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Self-Managed</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Local Private Keys</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
@@ -40,15 +40,14 @@ title: "Pricing"
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Approval <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Rotation <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Controls <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Logs <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3"><span class="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-full bg-zinc-500 text-zinc-950 text-[9px] font-bold leading-none" aria-hidden="true">×</span><span>Access Alerts <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Access</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
@@ -66,15 +65,17 @@ title: "Pricing"
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Approval <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Rotation <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Controls <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Logs <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Alerts <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts <sup>⧖</sup></span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
@@ -92,15 +93,17 @@ title: "Pricing"
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Approval <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Rotation <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Controls <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Logs <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle.html %}<span>Access Alerts <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts <sup>⧖</sup></span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
@@ -133,26 +136,42 @@ title: "Pricing"
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Login with GitHub</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Automation Tokens</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
-          <tr>
+          <tr class="border-b border-zinc-900">
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Rotations Daily Limit</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
+          </tr>
+          <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Team Members</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">1</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">3</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Flexible</td>
+          </tr>
+          <tr class="border-b border-zinc-900">
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-2 sm:px-4 sm:py-2.5 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Log Retention</td>
+            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
+            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
+            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
+            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
+            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">Flexible</td>
           </tr>
         </tbody>
       </table>
@@ -177,26 +196,26 @@ title: "Pricing"
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Ticket Support</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Slack Support</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">.env Expertise</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Urgent Response SLA</td>
@@ -204,23 +223,23 @@ title: "Pricing"
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
-          <tr>
+          <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Priority Security Updates</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">In-App Documentation</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
         </tbody>
       </table>

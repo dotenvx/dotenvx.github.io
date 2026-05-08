@@ -1,7 +1,7 @@
 ---
 title: "Dotenvx Trust Center"
 social_title: "Dotenvx Trust Center"
-description: "From the creator of dotenv, Dotenvx brings encryption, key separation, and fortified secret distribution to the .env workflow used by developers, startups, and enterprises worldwide."
+description: "From the creator of dotenv, Dotenvx extends the .env workflow trusted by developers for over a decade with encryption, key separation, and secure secret distribution."
 layout: blank
 image: "/assets/img/og-image-trust.png"
 ---
@@ -9,11 +9,11 @@ image: "/assets/img/og-image-trust.png"
 <div class="min-h-screen bg-black text-zinc-100">
   <header class="border-t border-yellow-300 border-b border-zinc-900">
     <div class="mx-auto flex w-full max-w-5xl items-center gap-3 px-6 py-5">
-      <a href="/" class="inline-flex items-center no-underline hover:no-underline">
+      <a href="https://dotenvx.com" class="inline-flex items-center no-underline hover:no-underline">
         <img src="/assets/img/logo-dotenvx-dark.svg" alt="Dotenvx" class="h-4">
       </a>
       <span class="text-zinc-700">/</span>
-      <span class="text-sm font-medium text-zinc-400">Trust Center</span>
+      <a href="https://trust.dotenvx.com" class="text-sm font-medium !text-zinc-400 no-underline hover:!text-white hover:no-underline">Trust Center</a>
     </div>
   </header>
 
@@ -27,7 +27,7 @@ image: "/assets/img/og-image-trust.png"
       <div class="relative z-10">
         <h1 class="max-w-3xl text-2xl font-semibold leading-tight text-white md:text-3xl">Dotenvx</h1>
         <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
-          From the creator of dotenv, Dotenvx brings encryption, key separation, and fortified secret distribution to the <code>.env</code> workflow used by developers, startups, and enterprises worldwide.
+          From the creator of dotenv, Dotenvx extends the <code>.env</code> workflow trusted by developers for over a decade with encryption, key separation, and secure secret distribution.
         </p>
         <a class="mt-5 inline-flex items-center gap-2 text-sm font-medium !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline" href="mailto:security@dotenvx.com">
           <svg class="h-4 w-4 text-[#ecd53f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">

@@ -37,6 +37,7 @@
   const mobileMinFrustumSize = 1.2;
   const includeZoom = Number({{ include.zoom | default: 1 }});
   const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
+  const isStatic = {{ include.static | default: false }};
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
   scene.background = null;
   renderer.setClearColor(0x000000, 0);
@@ -305,7 +306,7 @@ const resize = () => {
     camera.updateProjectionMatrix();
     renderer.setSize(width, height, false);
     if (typeof controls !== 'undefined') {
-      controls.enableRotate = !isMobile;
+      controls.enableRotate = !isStatic && !isMobile;
     }
   };
 
@@ -314,8 +315,8 @@ const resize = () => {
   controls.dampingFactor = 0.08;
   controls.enableZoom = false;
   controls.enablePan = false;
-  controls.enableRotate = !window.matchMedia('(max-width: 767px)').matches;
-  controls.autoRotate = true;
+  controls.enableRotate = !isStatic && !window.matchMedia('(max-width: 767px)').matches;
+  controls.autoRotate = !isStatic;
   controls.autoRotateSpeed = 0.35;
   controls.target.set(keyCenter.x, keyCenterY, keyCenter.z);
   controls.update();
@@ -329,6 +330,7 @@ const resize = () => {
     }
   });
   controls.addEventListener('end', () => {
+    if (isStatic) return;
     autoRotateResumeTimer = setTimeout(() => {
       controls.autoRotate = true;
       autoRotateResumeTimer = null;

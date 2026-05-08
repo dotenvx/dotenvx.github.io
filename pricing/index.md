@@ -1,5 +1,6 @@
 ---
 title: "Pricing"
+image: "/assets/img/og-image-pricing.png"
 ---
 
 <section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">

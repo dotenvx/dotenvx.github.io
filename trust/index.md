@@ -1,6 +1,7 @@
 ---
 title: "Trust"
 layout: blank
+image: "/assets/img/og-image-trust.png"
 ---
 
 <div class="min-h-screen bg-black text-zinc-100">

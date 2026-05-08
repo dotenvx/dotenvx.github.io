@@ -39,7 +39,10 @@ image: "/assets/img/og-image-trust.png"
 
     <nav aria-label="Trust center" class="mt-12 flex flex-wrap gap-2 border-y border-zinc-900 py-3">
       <a href="#overview" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Overview</a>
-      <a href="#policies" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Policies</a>
+      <a href="#policies" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+        <span>Policies</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">5</span>
+      </a>
       <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Controls</a>
       <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
@@ -64,9 +67,48 @@ image: "/assets/img/og-image-trust.png"
       </section>
 
       <section id="policies" class="scroll-mt-5">
-        <h2 class="text-xl font-semibold text-white">Policies</h2>
-        <div class="mt-4 flex min-h-28 items-center justify-center border border-zinc-800 bg-zinc-950 px-5 py-8">
-          <p class="text-center text-xs font-semibold uppercase tracking-widest text-zinc-500">Security review in progress</p>
+        <div>
+          <h2 class="text-xl font-semibold text-white">Policies</h2>
+          <p class="mt-2 text-sm text-zinc-500">Internal operating policies that guide how Dotenvx protects systems, code, and customer data.</p>
+        </div>
+        <div class="mt-4 border border-zinc-800 bg-zinc-950">
+          <ul class="divide-y divide-zinc-900">
+            <li class="flex items-start gap-4 px-5 py-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+              <div>
+                <p class="m-0 text-sm font-semibold text-white">Information Security Program</p>
+                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Ownership, review cadence, and expectations for security responsibilities.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 px-5 py-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+              <div>
+                <p class="m-0 text-sm font-semibold text-white">Access Control</p>
+                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Least-privilege access, account review, and removal of access when it is no longer required.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 px-5 py-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+              <div>
+                <p class="m-0 text-sm font-semibold text-white">Secure Development</p>
+                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Code review, dependency awareness, and security consideration before production changes.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 px-5 py-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+              <div>
+                <p class="m-0 text-sm font-semibold text-white">Encryption and Key Separation</p>
+                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Protection of secrets through encrypted files, separated keys, and careful key handling.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 px-5 py-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+              <div>
+                <p class="m-0 text-sm font-semibold text-white">Incident Response</p>
+                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Intake, triage, communication, remediation, and follow-up for security events.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 

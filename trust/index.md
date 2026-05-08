@@ -156,7 +156,7 @@ image: "/assets/img/og-image-trust.png"
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
                 <div>
                   <p class="m-0 text-sm font-semibold text-white">Dependency Awareness</p>
-                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dependencies and upstream changes are reviewed as part of maintenance.</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dependencies are reviewed as part of maintenance.</p>
                 </div>
               </li>
             </ul>
@@ -165,7 +165,7 @@ image: "/assets/img/og-image-trust.png"
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
                 <div>
                   <p class="m-0 text-sm font-semibold text-white">Secret Encryption and Key Separation</p>
-                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dotenvx supports encrypted <code>.env</code> files with keys stored separately.</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Encrypted <code>.env</code> files with keys stored separately.</p>
                 </div>
               </li>
               <li class="flex items-start gap-4 px-5 py-4">
@@ -255,11 +255,8 @@ image: "/assets/img/og-image-trust.png"
                 <td class="px-6 py-5">
                   <div class="flex items-center gap-4">
                     <span class="flex h-10 w-10 shrink-0 items-center justify-center text-zinc-400">
-                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M4.5 19.5h15" />
-                        <path d="M6 19.5V8.75l6-4.25 6 4.25V19.5" />
-                        <path d="M9 19.5v-5h6v5" />
-                        <path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" />
+                      <svg class="h-7 w-7" viewBox="0 0 101.8 119.14" fill="currentColor" aria-hidden="true">
+                        <path d="M91.62,0C86,0,81.43,5.18,81.43,11.51V53.64c0,6.34-4.58,11.51-10.17,11.51S61.08,60,61.08,53.64V34.17c0-6.33-4.58-11.51-10.18-11.51S40.72,27.84,40.72,34.17v3.36C40.72,43.86,36.14,49,30.54,49S20.36,43.86,20.36,37.53V30.89c0-6.33-4.58-11.51-10.18-11.51S0,24.56,0,30.89v47.8C0,85,4.58,90.2,10.18,90.2S20.36,85,20.36,78.69V72.05c0-6.33,4.58-11.5,10.18-11.5s10.18,5.17,10.18,11.5v35.59c0,6.33,4.58,11.5,10.18,11.5s10.18-5.17,10.18-11.5V88.17c0-6.33,4.58-11.51,10.18-11.51s10.17,5.18,10.17,11.51v14.51c0,6.33,4.59,11.51,10.19,11.51S101.8,109,101.8,102.68V11.51C101.8,5.18,97.22,0,91.62,0Z" />
                       </svg>
                     </span>
                     <span class="text-base font-semibold text-white">Hatchbox</span>
@@ -297,9 +294,8 @@ image: "/assets/img/og-image-trust.png"
                 <td class="px-6 py-5">
                   <div class="flex items-center gap-4">
                     <span class="flex h-10 w-10 shrink-0 items-center justify-center text-zinc-400">
-                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M4 6.5h16v11H4z"/>
-                        <path d="m4 8 8 5.25L20 8"/>
+                      <svg class="h-7 w-7" viewBox="0 0 90 90" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M6 0h12.947v4.737h18.948V0h14.208v4.736H71.05V0H84a6 6 0 0 1 6 6v12.947h-4.737v18.948H90v14.21h-4.737v18.948H90V84a6 6 0 0 1-6 6H71.05v-4.738H52.103V90H37.895v-4.737H18.947V90H6a6 6 0 0 1-6-6V71.053h4.737V52.105H0v-14.21h4.736V18.947H0V6a6 6 0 0 1 6-6Zm52.26 46.11c2.558-2.578 3.838-5.941 3.838-10.09 0-3.344-.584-6.023-1.753-8.037-1.168-2.034-3.102-3.545-5.8-4.532-2.68-.987-6.305-1.48-10.877-1.48h-16.95v5.68h5.68v34.17h-5.68v5.68h18.49v-5.68h-5.92V50.038h5.981c6.103-.04 10.434-1.35 12.992-3.928Zm-5.65-16.465c1.673 1.309 2.508 3.384 2.508 6.223 0 2.236-.392 3.988-1.178 5.257-.785 1.25-2.014 2.135-3.686 2.66-1.671.503-3.907.754-6.707.754h-4.26V27.651h4.743c4.049 0 6.91.664 8.58 1.994Z" clip-rule="evenodd"/>
                       </svg>
                     </span>
                     <span class="text-base font-semibold text-white">Postmark</span>

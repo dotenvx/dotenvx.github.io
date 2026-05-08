@@ -43,7 +43,10 @@ image: "/assets/img/og-image-trust.png"
         <span>Policies</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">5</span>
       </a>
-      <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Controls</a>
+      <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+        <span>Controls</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">8</span>
+      </a>
       <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">7</span>
@@ -113,9 +116,73 @@ image: "/assets/img/og-image-trust.png"
       </section>
 
       <section id="controls" class="scroll-mt-5">
-        <h2 class="text-xl font-semibold text-white">Controls</h2>
-        <div class="mt-4 flex min-h-28 items-center justify-center border border-zinc-800 bg-zinc-950 px-5 py-8">
-          <p class="text-center text-xs font-semibold uppercase tracking-widest text-zinc-500">Security review in progress</p>
+        <div>
+          <h2 class="text-xl font-semibold text-white">Controls</h2>
+          <p class="mt-2 text-sm text-zinc-500">Security practices currently tracked across Dotenvx systems and operations.</p>
+        </div>
+        <div class="mt-4 border border-zinc-800 bg-zinc-950">
+          <div class="grid divide-y divide-zinc-900 md:grid-cols-2 md:divide-x md:divide-y-0">
+            <ul class="divide-y divide-zinc-900">
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Multi-factor Authentication</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">MFA is used for business-critical accounts where supported.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Least-privilege Access</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Access is limited to maintainers and systems with an active need.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Code Review</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Material code changes are reviewed before release.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Dependency Awareness</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dependencies and upstream changes are reviewed as part of maintenance.</p>
+                </div>
+              </li>
+            </ul>
+            <ul class="divide-y divide-zinc-900">
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Encrypted Secrets</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dotenvx supports encrypted <code>.env</code> files with keys stored separately.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">TLS / HTTPS</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Public web properties are served over HTTPS.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Operational Monitoring</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Errors and operational events are monitored for investigation.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">Security Contact</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="!text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

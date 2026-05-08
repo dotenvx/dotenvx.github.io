@@ -3,7 +3,9 @@
 <meta name="keywords" content="dotenv, .env, dotenvx, dotenv-vault, environments, encrypt, vault, developer secrets, secret manager, share, secretops">
 
 {% assign social_base_title = page.title | default: site.title %}
-{% if page.url == "/" %}
+{% if page.social_title %}
+{% assign social_share_title = page.social_title %}
+{% elsif page.url == "/" %}
 {% assign social_share_title = site.title | append: " · " | append: site.description %}
 {% elsif social_base_title == site.title %}
 {% assign social_share_title = site.title %}

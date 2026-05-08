@@ -1,5 +1,7 @@
 ---
-title: "Trust"
+title: "Dotenvx Trust Center"
+social_title: "Dotenvx Trust Center"
+description: "From the creator of dotenv, Dotenvx brings encryption, key separation, and fortified secret distribution to the .env workflow used by developers, startups, and enterprises worldwide."
 layout: blank
 image: "/assets/img/og-image-trust.png"
 ---
@@ -49,7 +51,7 @@ image: "/assets/img/og-image-trust.png"
       </a>
       <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">7</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">8</span>
       </a>
       <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Documents</span>
@@ -71,7 +73,10 @@ image: "/assets/img/og-image-trust.png"
 
       <section id="policies" class="scroll-mt-5">
         <div>
-          <h2 class="text-xl font-semibold text-white">Policies</h2>
+          <div class="flex flex-wrap items-center gap-3">
+            <h2 class="text-xl font-semibold text-white">Policies</h2>
+            <span class="border border-zinc-800 bg-zinc-950 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-zinc-500">Being formalized</span>
+          </div>
           <p class="mt-2 text-sm text-zinc-500">Internal operating policies that guide how Dotenvx protects systems, code, and customer data.</p>
         </div>
         <div class="mt-4 border border-zinc-800 bg-zinc-950">
@@ -117,7 +122,10 @@ image: "/assets/img/og-image-trust.png"
 
       <section id="controls" class="scroll-mt-5">
         <div>
-          <h2 class="text-xl font-semibold text-white">Controls</h2>
+          <div class="flex flex-wrap items-center gap-3">
+            <h2 class="text-xl font-semibold text-white">Controls</h2>
+            <span class="border border-zinc-800 bg-zinc-950 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-zinc-500">Being formalized</span>
+          </div>
           <p class="mt-2 text-sm text-zinc-500">Security practices currently tracked across Dotenvx systems and operations.</p>
         </div>
         <div class="mt-4 border border-zinc-800 bg-zinc-950">
@@ -242,6 +250,22 @@ image: "/assets/img/og-image-trust.png"
                   </div>
                 </td>
                 <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Business email, internal documentation, and security communications.</td>
+              </tr>
+              <tr class="hover:bg-zinc-900/60">
+                <td class="px-6 py-5">
+                  <div class="flex items-center gap-4">
+                    <span class="flex h-10 w-10 shrink-0 items-center justify-center text-zinc-400">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4.5 19.5h15" />
+                        <path d="M6 19.5V8.75l6-4.25 6 4.25V19.5" />
+                        <path d="M9 19.5v-5h6v5" />
+                        <path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" />
+                      </svg>
+                    </span>
+                    <span class="text-base font-semibold text-white">Hatchbox</span>
+                  </div>
+                </td>
+                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Production deployment orchestration and infrastructure management.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">

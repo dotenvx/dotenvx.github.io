@@ -156,7 +156,7 @@ image: "/assets/img/og-image-trust.png"
               <li class="flex items-start gap-4 px-5 py-4">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
                 <div>
-                  <p class="m-0 text-sm font-semibold text-white">Encrypted Secrets</p>
+                  <p class="m-0 text-sm font-semibold text-white">Secret Encryption and Key Separation</p>
                   <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dotenvx supports encrypted <code>.env</code> files with keys stored separately.</p>
                 </div>
               </li>

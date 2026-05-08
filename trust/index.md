@@ -47,7 +47,7 @@ image: "/assets/img/og-image-trust.png"
       </a>
       <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Controls</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">8</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">9</span>
       </a>
       <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
@@ -55,7 +55,7 @@ image: "/assets/img/og-image-trust.png"
       </a>
       <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Documents</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">3</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">4</span>
       </a>
       <a href="#resources" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Resources</span>
@@ -157,6 +157,13 @@ image: "/assets/img/og-image-trust.png"
                 <div>
                   <p class="m-0 text-sm font-semibold text-white">Dependency Awareness</p>
                   <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dependencies are reviewed as part of maintenance.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 px-5 py-4">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
+                <div>
+                  <p class="m-0 text-sm font-semibold text-white">External Security Testing</p>
+                  <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">An independent third-party security assessment is in progress.</p>
                 </div>
               </li>
             </ul>
@@ -380,6 +387,28 @@ image: "/assets/img/og-image-trust.png"
                   <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
                 </td>
                 <td class="px-5 py-5 align-middle text-sm text-zinc-500">Current</td>
+              </tr>
+              <tr class="hover:bg-zinc-900/60">
+                <td class="px-5 py-5">
+                  <div class="flex min-w-0 items-center gap-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 13h5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 16h3" />
+                      </svg>
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block truncate text-sm font-semibold !text-white">Pentest Report</span>
+                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Independent third-party security assessment report.</span>
+                    </span>
+                  </div>
+                </td>
+                <td class="px-5 py-5 align-middle">
+                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Pending</span>
+                </td>
+                <td class="px-5 py-5 align-middle text-sm text-zinc-500">In Progress</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-5 py-5">

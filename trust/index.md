@@ -38,12 +38,21 @@ image: "/assets/img/og-image-trust.png"
     </section>
 
     <nav aria-label="Trust center" class="mt-12 flex flex-wrap gap-2 border-y border-zinc-900 py-3">
-      <a href="#overview" class="rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Overview</a>
-      <a href="#policies" class="rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Policies</a>
-      <a href="#controls" class="rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Controls</a>
-      <a href="#subprocessors" class="rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Subprocessors</a>
-      <a href="#documents" class="rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Documents</a>
-      <a href="#resources" class="rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Resources</a>
+      <a href="#overview" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Overview</a>
+      <a href="#policies" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Policies</a>
+      <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Controls</a>
+      <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+        <span>Subprocessors</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">7</span>
+      </a>
+      <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+        <span>Documents</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">3</span>
+      </a>
+      <a href="#resources" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+        <span>Resources</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">1</span>
+      </a>
     </nav>
 
     <div class="mt-12 space-y-10">

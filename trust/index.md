@@ -24,7 +24,7 @@ layout: blank
       <div class="relative z-10">
         <h1 class="max-w-3xl text-2xl font-semibold leading-tight text-white md:text-3xl">Dotenvx</h1>
         <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
-          From the creator of dotenv, Dotenvx brings encryption, key separation, and hardened secret distribution to the <code>.env</code> workflow used by developers, startups, and enterprises worldwide.
+          From the creator of dotenv, Dotenvx brings encryption, key separation, and fortified secret distribution to the <code>.env</code> workflow used by developers, startups, and enterprises worldwide.
         </p>
         <a class="mt-5 inline-flex items-center gap-2 text-sm font-medium !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline" href="mailto:security@dotenvx.com">
           <svg class="h-4 w-4 text-[#ecd53f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -46,28 +46,28 @@ layout: blank
     </nav>
 
     <div class="mt-12 space-y-10">
-      <section id="overview">
+      <section id="overview" class="scroll-mt-5">
         <h2 class="text-xl font-semibold text-white">Overview</h2>
         <div class="mt-4 flex min-h-28 items-center justify-center border border-zinc-800 bg-zinc-950 px-5 py-8">
           <p class="text-center text-xs font-semibold uppercase tracking-widest text-zinc-500">Security review in progress</p>
         </div>
       </section>
 
-      <section id="policies">
+      <section id="policies" class="scroll-mt-5">
         <h2 class="text-xl font-semibold text-white">Policies</h2>
         <div class="mt-4 flex min-h-28 items-center justify-center border border-zinc-800 bg-zinc-950 px-5 py-8">
           <p class="text-center text-xs font-semibold uppercase tracking-widest text-zinc-500">Security review in progress</p>
         </div>
       </section>
 
-      <section id="controls">
+      <section id="controls" class="scroll-mt-5">
         <h2 class="text-xl font-semibold text-white">Controls</h2>
         <div class="mt-4 flex min-h-28 items-center justify-center border border-zinc-800 bg-zinc-950 px-5 py-8">
           <p class="text-center text-xs font-semibold uppercase tracking-widest text-zinc-500">Security review in progress</p>
         </div>
       </section>
 
-      <section id="subprocessors">
+      <section id="subprocessors" class="scroll-mt-5">
         <div>
           <h2 class="text-xl font-semibold text-white">Subprocessors</h2>
           <p class="mt-2 text-sm text-zinc-500">Third-party providers used to deliver, secure, and operate Dotenvx services.</p>
@@ -182,7 +182,7 @@ layout: blank
         </div>
       </section>
 
-      <section id="documents">
+      <section id="documents" class="scroll-mt-5">
         <div class="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 class="text-xl font-semibold text-white">Documents</h2>
@@ -268,7 +268,7 @@ layout: blank
         </div>
       </section>
 
-      <section id="resources">
+      <section id="resources" class="scroll-mt-5">
         <div>
           <h2 class="text-xl font-semibold text-white">Resources</h2>
           <p class="mt-2 text-sm text-zinc-500">Additional product and security information.</p>

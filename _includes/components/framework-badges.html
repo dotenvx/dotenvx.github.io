@@ -1,0 +1,15 @@
+{% assign frameworks = include.frameworks | default: 'soc2' | split: ',' %}
+{% assign badge_uid = include.uid | default: include.frameworks | default: 'frameworks' | replace: ',', '-' | replace: ' ', '-' %}
+<span class="inline-flex items-center justify-end -space-x-2 align-middle" aria-label="{{ include.label | default: 'Mapped compliance frameworks' }}">
+  {% for framework in frameworks %}
+    {% assign framework_id = framework | strip %}
+    {% assign logo_uid = badge_uid | append: '-' | append: framework_id | append: '-' | append: forloop.index %}
+    {% if framework_id == 'soc2' %}
+      {% include components/framework-logo-soc2.html uid=logo_uid %}
+    {% elsif framework_id == 'iso27001' or framework_id == 'iso' %}
+      {% include components/framework-logo-iso27001.html %}
+    {% elsif framework_id == 'gdpr' %}
+      {% include components/framework-logo-gdpr.html %}
+    {% endif %}
+  {% endfor %}
+</span>

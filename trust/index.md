@@ -82,8 +82,8 @@ image: "/assets/img/og-image-trust.png"
     border-color: #d4d4d8 !important;
   }
 
-  html.trust-light .trust-page a[href^="mailto:"]:not(.trust-document-action-mail),
-  .trust-page.trust-light a[href^="mailto:"]:not(.trust-document-action-mail) {
+  html.trust-light .trust-page .trust-email-address,
+  .trust-page.trust-light .trust-email-address {
     color: #3f3f46 !important;
     text-decoration: underline !important;
     text-decoration-color: #d4d4d8 !important;
@@ -91,8 +91,8 @@ image: "/assets/img/og-image-trust.png"
     -webkit-text-fill-color: #3f3f46 !important;
   }
 
-	  html.trust-light .trust-page a[href^="mailto:"]:not(.trust-document-action-mail):hover,
-	  .trust-page.trust-light a[href^="mailto:"]:not(.trust-document-action-mail):hover {
+	  html.trust-light .trust-page .trust-email-address:hover,
+	  .trust-page.trust-light .trust-email-address:hover {
 	    color: #18181b !important;
 	    text-decoration-color: #a1a1aa !important;
 	    -webkit-text-fill-color: #18181b !important;
@@ -163,6 +163,11 @@ image: "/assets/img/og-image-trust.png"
 	    background: #f4f4f5 !important;
 	    text-decoration: none !important;
 	    -webkit-text-fill-color: #18181b !important;
+	  }
+
+	  html.trust-light .trust-page .trust-email-icon,
+	  .trust-page.trust-light .trust-email-icon {
+	    color: #3f3f46 !important;
 	  }
 
 	  .trust-logo-light {
@@ -262,8 +267,8 @@ image: "/assets/img/og-image-trust.png"
         <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
           From the creator of dotenv, Dotenvx extends the <code>.env</code> workflow trusted by developers for over a decade with encryption, key separation, and secure secret distribution.
         </p>
-        <a class="mt-5 inline-flex items-center gap-2 text-sm font-medium !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline" href="mailto:security@dotenvx.com">
-          <svg class="h-4 w-4 text-[#ecd53f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <a class="trust-email-address mt-5 inline-flex items-center gap-2 text-sm font-medium !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline" href="mailto:security@dotenvx.com">
+          <svg class="trust-email-icon h-4 w-4 text-[#ecd53f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6.75A2.75 2.75 0 0 1 6.75 4h10.5A2.75 2.75 0 0 1 20 6.75v10.5A2.75 2.75 0 0 1 17.25 20H6.75A2.75 2.75 0 0 1 4 17.25V6.75Z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="m5 7 7 5 7-5" />
           </svg>
@@ -371,7 +376,7 @@ image: "/assets/img/og-image-trust.png"
                 </td>
                 <td class="p-0 align-middle">
                   <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
-                    <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
+                    <span class="trust-document-action inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Document</span>
                       <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
@@ -399,7 +404,7 @@ image: "/assets/img/og-image-trust.png"
                   </div>
                 </td>
                 <td class="px-5 py-5 text-right align-middle">
-                  <a href="mailto:security@dotenvx.com?subject=Pentest%20Report%20Access%20Request" class="trust-document-action-mail inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold !text-zinc-300 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+                  <a href="mailto:security@dotenvx.com?subject=Pentest%20Report%20Access%20Request" class="trust-document-action-mail inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold !text-zinc-300 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
                     <span>Request Access</span>
                     <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M4.75 6.75h14.5v10.5H4.75V6.75Z" />
@@ -426,8 +431,8 @@ image: "/assets/img/og-image-trust.png"
                 </td>
                 <td class="p-0 align-middle">
                   <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
-                    <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
-                      <span>Open Document</span>
+                    <span class="trust-document-action inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
+                      <span>Open Webpage</span>
                       <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
@@ -454,8 +459,8 @@ image: "/assets/img/og-image-trust.png"
                 </td>
                 <td class="p-0 align-middle">
                   <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
-                    <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
-                      <span>Open Document</span>
+                    <span class="trust-document-action inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
+                      <span>Open Webpage</span>
                       <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
@@ -485,7 +490,7 @@ image: "/assets/img/og-image-trust.png"
               <thead>
                 <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
                   <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold">Frameworks</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-zinc-900">
@@ -510,7 +515,7 @@ image: "/assets/img/og-image-trust.png"
               <thead>
                 <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
                   <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold">Frameworks</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-zinc-900">
@@ -531,7 +536,7 @@ image: "/assets/img/og-image-trust.png"
                   <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="security-findings" %}</td>
                 </tr>
                 <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="!text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</td>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="trust-email-address !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</td>
                   <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="security-reports" %}</td>
                 </tr>
               </tbody>
@@ -543,7 +548,7 @@ image: "/assets/img/og-image-trust.png"
               <thead>
                 <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
                   <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold">Frameworks</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-zinc-900">
@@ -572,7 +577,7 @@ image: "/assets/img/og-image-trust.png"
               <thead>
                 <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
                   <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold">Frameworks</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-zinc-900">
@@ -731,7 +736,7 @@ image: "/assets/img/og-image-trust.png"
       <p class="text-center text-xs font-medium text-zinc-600">
         Maintained by
         <a href="mailto:security@dotenvx.com" class="!text-zinc-400 no-underline hover:!text-white hover:no-underline">Dotenvx Security</a>
-        <span class="mx-1.5 text-zinc-800">·</span>
+        <span class="mx-1.5 text-zinc-600">·</span>
         Trust automation by
         <a href="https://github.com/trycompai/comp" class="!text-zinc-400 no-underline hover:!text-white hover:no-underline">CompAI</a>
       </p>

@@ -373,7 +373,7 @@ image: "/assets/img/og-image-trust.png"
                   <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
                     <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Document</span>
-                      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
                       </svg>
@@ -401,7 +401,7 @@ image: "/assets/img/og-image-trust.png"
                 <td class="px-5 py-5 text-right align-middle">
                   <a href="mailto:security@dotenvx.com?subject=Pentest%20Report%20Access%20Request" class="trust-document-action-mail inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold !text-zinc-300 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
                     <span>Request Access</span>
-                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M4.75 6.75h14.5v10.5H4.75V6.75Z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 7.25 6.75 5 6.75-5" />
                     </svg>
@@ -428,7 +428,7 @@ image: "/assets/img/og-image-trust.png"
                   <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
                     <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Document</span>
-                      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
                       </svg>
@@ -456,7 +456,7 @@ image: "/assets/img/og-image-trust.png"
                   <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
                     <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Document</span>
-                      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
                       </svg>

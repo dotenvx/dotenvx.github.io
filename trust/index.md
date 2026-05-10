@@ -82,8 +82,8 @@ image: "/assets/img/og-image-trust.png"
     border-color: #d4d4d8 !important;
   }
 
-  html.trust-light .trust-page a[href^="mailto:"],
-  .trust-page.trust-light a[href^="mailto:"] {
+  html.trust-light .trust-page a[href^="mailto:"]:not(.trust-document-action-mail),
+  .trust-page.trust-light a[href^="mailto:"]:not(.trust-document-action-mail) {
     color: #3f3f46 !important;
     text-decoration: underline !important;
     text-decoration-color: #d4d4d8 !important;
@@ -91,16 +91,83 @@ image: "/assets/img/og-image-trust.png"
     -webkit-text-fill-color: #3f3f46 !important;
   }
 
-  html.trust-light .trust-page a[href^="mailto:"]:hover,
-  .trust-page.trust-light a[href^="mailto:"]:hover {
-    color: #18181b !important;
-    text-decoration-color: #a1a1aa !important;
-    -webkit-text-fill-color: #18181b !important;
-  }
+	  html.trust-light .trust-page a[href^="mailto:"]:not(.trust-document-action-mail):hover,
+	  .trust-page.trust-light a[href^="mailto:"]:not(.trust-document-action-mail):hover {
+	    color: #18181b !important;
+	    text-decoration-color: #a1a1aa !important;
+	    -webkit-text-fill-color: #18181b !important;
+	  }
 
-  .trust-logo-light {
-    display: none;
-  }
+	  .trust-framework-row {
+	    transition: background-color 160ms ease;
+	  }
+
+	  .trust-framework-row:hover {
+	    background: rgba(39, 39, 42, 0.52);
+	  }
+
+	  .trust-framework-row:hover .trust-framework-title {
+	    color: #fff !important;
+	  }
+
+	  .trust-framework-row:hover .trust-framework-status {
+	    border-color: rgba(34, 197, 94, 0.38);
+	    background: rgba(34, 197, 94, 0.08);
+	    color: #d4d4d8 !important;
+	  }
+
+	  html.trust-light .trust-page .trust-framework-row:hover,
+	  .trust-page.trust-light .trust-framework-row:hover {
+	    background: #f4f4f5;
+	  }
+
+	  html.trust-light .trust-page .trust-framework-row:hover .trust-framework-title,
+	  .trust-page.trust-light .trust-framework-row:hover .trust-framework-title {
+	    color: #18181b !important;
+	  }
+
+	  html.trust-light .trust-page .trust-framework-row:hover .trust-framework-status,
+	  .trust-page.trust-light .trust-framework-row:hover .trust-framework-status {
+	    border-color: rgba(34, 197, 94, 0.32) !important;
+	    background: rgba(34, 197, 94, 0.08) !important;
+	    color: #52525b !important;
+	  }
+
+	  html.trust-light .trust-page .trust-document-action,
+	  .trust-page.trust-light .trust-document-action {
+	    color: #3f3f46 !important;
+	    border-color: #d4d4d8 !important;
+	    background: #fff !important;
+	  }
+
+	  html.trust-light .trust-page .trust-document-action:hover,
+	  .trust-page.trust-light .trust-document-action:hover {
+	    color: #18181b !important;
+	    border-color: #a1a1aa !important;
+	    background: #f4f4f5 !important;
+	  }
+
+	  html.trust-light .trust-page .trust-document-action-mail,
+	  .trust-page.trust-light .trust-document-action-mail {
+	    color: #3f3f46 !important;
+	    border-color: #d4d4d8 !important;
+	    background: #fff !important;
+	    text-decoration: none !important;
+	    -webkit-text-fill-color: #3f3f46 !important;
+	  }
+
+	  html.trust-light .trust-page .trust-document-action-mail:hover,
+	  .trust-page.trust-light .trust-document-action-mail:hover {
+	    color: #18181b !important;
+	    border-color: #a1a1aa !important;
+	    background: #f4f4f5 !important;
+	    text-decoration: none !important;
+	    -webkit-text-fill-color: #18181b !important;
+	  }
+
+	  .trust-logo-light {
+	    display: none;
+	  }
 
   html.trust-light .trust-page .trust-logo-dark,
   .trust-page.trust-light .trust-logo-dark {
@@ -229,36 +296,36 @@ image: "/assets/img/og-image-trust.png"
           <div class="mt-4 border border-zinc-800 bg-zinc-950">
             <div class="border-b border-zinc-900 bg-zinc-900/40 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-zinc-500">Framework</div>
             <div class="divide-y divide-zinc-900">
-              <div class="px-5 py-5">
-                <div class="flex items-center gap-4">
-                  {% include logos/framework-soc2.html uid="overview-soc2" class="h-12 w-12" %}
-                  <div class="min-w-0">
-                    <p class="m-0 text-sm font-semibold text-white">SOC 2</p>
-                    <span class="mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
+	              <div class="trust-framework-row px-5 py-5">
+	                <div class="flex items-center gap-4">
+	                  {% include logos/framework-soc2.html uid="overview-soc2" class="h-12 w-12" %}
+	                  <div class="min-w-0">
+	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">SOC 2 Type 1</p>
+	                    <span class="trust-framework-status mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
                       <span class="text-green-500" aria-hidden="true">◐</span>
                       <span>Readiness in Progress</span>
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="px-5 py-5">
-                <div class="flex items-center gap-4">
-                  {% include logos/framework-iso27001.html class="h-12 w-12" %}
-                  <div class="min-w-0">
-                    <p class="m-0 text-sm font-semibold text-white">ISO 27001</p>
-                    <span class="mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
+	              <div class="trust-framework-row px-5 py-5">
+	                <div class="flex items-center gap-4">
+	                  {% include logos/framework-iso27001.html class="h-12 w-12" %}
+	                  <div class="min-w-0">
+	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">ISO 27001</p>
+	                    <span class="trust-framework-status mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
                       <span class="text-green-500" aria-hidden="true">◐</span>
                       <span>Readiness in Progress</span>
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="px-5 py-5">
-                <div class="flex items-center gap-4">
-                  {% include logos/framework-gdpr.html class="h-12 w-12" %}
-                  <div class="min-w-0">
-                    <p class="m-0 text-sm font-semibold text-white">GDPR</p>
-                    <span class="mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
+	              <div class="trust-framework-row px-5 py-5">
+	                <div class="flex items-center gap-4">
+	                  {% include logos/framework-gdpr.html class="h-12 w-12" %}
+	                  <div class="min-w-0">
+	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">GDPR</p>
+	                    <span class="trust-framework-status mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
                       <span class="text-green-500" aria-hidden="true">◐</span>
                       <span>DPA in Preparation</span>
                     </span>
@@ -277,12 +344,11 @@ image: "/assets/img/og-image-trust.png"
           </div>
         </div>
         <div class="mt-4 overflow-x-auto border border-zinc-800 bg-zinc-950">
-          <table class="w-full min-w-[46rem] border-collapse">
+          <table class="w-full min-w-[38rem] border-collapse">
             <thead>
               <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
                 <th class="px-5 py-3 font-semibold">Document</th>
-                <th class="w-36 px-5 py-3 font-semibold">Access</th>
-                <th class="w-32 px-5 py-3 font-semibold">Updated</th>
+                <th class="w-44 px-5 py-3 text-right font-semibold"><span class="sr-only">Action</span></th>
               </tr>
             </thead>
             <tbody class="divide-y divide-zinc-900">
@@ -304,12 +370,15 @@ image: "/assets/img/og-image-trust.png"
                   </a>
                 </td>
                 <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-left no-underline hover:no-underline">
-                    <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
+                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
+                    <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
+                      <span>Open Document</span>
+                      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
+                      </svg>
+                    </span>
                   </a>
-                </td>
-                <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-sm text-zinc-500 no-underline hover:no-underline">2025</a>
                 </td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
@@ -329,10 +398,15 @@ image: "/assets/img/og-image-trust.png"
                     </span>
                   </div>
                 </td>
-                <td class="px-5 py-5 align-middle">
-                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Pending</span>
+                <td class="px-5 py-5 text-right align-middle">
+                  <a href="mailto:security@dotenvx.com?subject=Pentest%20Report%20Access%20Request" class="trust-document-action-mail inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold !text-zinc-300 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+                    <span>Request Access</span>
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.75 6.75h14.5v10.5H4.75V6.75Z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 7.25 6.75 5 6.75-5" />
+                    </svg>
+                  </a>
                 </td>
-                <td class="px-5 py-5 align-middle text-sm text-zinc-500">In Progress</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="p-0">
@@ -351,12 +425,15 @@ image: "/assets/img/og-image-trust.png"
                   </a>
                 </td>
                 <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-left no-underline hover:no-underline">
-                    <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
+                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
+                    <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
+                      <span>Open Document</span>
+                      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
+                      </svg>
+                    </span>
                   </a>
-                </td>
-                <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-sm text-zinc-500 no-underline hover:no-underline">Current</a>
                 </td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
@@ -376,12 +453,15 @@ image: "/assets/img/og-image-trust.png"
                   </a>
                 </td>
                 <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-left no-underline hover:no-underline">
-                    <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
+                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
+                    <span class="trust-document-action inline-flex items-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
+                      <span>Open Document</span>
+                      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h8v8" />
+                      </svg>
+                    </span>
                   </a>
-                </td>
-                <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-sm text-zinc-500 no-underline hover:no-underline">Current</a>
                 </td>
               </tr>
             </tbody>

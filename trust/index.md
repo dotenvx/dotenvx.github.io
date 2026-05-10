@@ -206,13 +206,13 @@ image: "/assets/img/og-image-trust.png"
     </section>
 
     <nav aria-label="Trust center" class="mt-12 flex flex-wrap gap-2 border-y border-zinc-900 py-3">
-      <a href="#compliance" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Compliance Overview</a>
+      <a href="#compliance" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Compliance</a>
       <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Documents</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">4</span>
       </a>
       <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
-        <span>Compliance Program</span>
+        <span>Security Controls</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">16</span>
       </a>
       <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
@@ -231,7 +231,7 @@ image: "/assets/img/og-image-trust.png"
             <div class="divide-y divide-zinc-900">
               <div class="px-5 py-5">
                 <div class="flex items-center gap-4">
-                  {% include components/framework-logo-soc2.html uid="overview-soc2" class="h-12 w-12" %}
+                  {% include logos/framework-soc2.html uid="overview-soc2" class="h-12 w-12" %}
                   <div class="min-w-0">
                     <p class="m-0 text-sm font-semibold text-white">SOC 2</p>
                     <span class="mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
@@ -243,7 +243,7 @@ image: "/assets/img/og-image-trust.png"
               </div>
               <div class="px-5 py-5">
                 <div class="flex items-center gap-4">
-                  {% include components/framework-logo-iso27001.html class="h-12 w-12" %}
+                  {% include logos/framework-iso27001.html class="h-12 w-12" %}
                   <div class="min-w-0">
                     <p class="m-0 text-sm font-semibold text-white">ISO 27001</p>
                     <span class="mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
@@ -255,7 +255,7 @@ image: "/assets/img/og-image-trust.png"
               </div>
               <div class="px-5 py-5">
                 <div class="flex items-center gap-4">
-                  {% include components/framework-logo-gdpr.html class="h-12 w-12" %}
+                  {% include logos/framework-gdpr.html class="h-12 w-12" %}
                   <div class="min-w-0">
                     <p class="m-0 text-sm font-semibold text-white">GDPR</p>
                     <span class="mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
@@ -396,7 +396,7 @@ image: "/assets/img/og-image-trust.png"
             <h2 class="text-xl font-semibold text-white">Compliance Program</h2>
             <span class="border border-zinc-800 bg-zinc-950 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-zinc-500">Being formalized</span>
           </div>
-          <p class="mt-2 text-sm text-zinc-500">Security practices currently tracked across Dotenvx systems and operations.</p>
+          <p class="mt-2 text-sm text-zinc-500">An overview of security controls in place.</p>
         </div>
         <div class="mt-5 space-y-6">
           <div>

@@ -41,18 +41,17 @@ image: "/assets/img/og-image-trust.png"
 
     <nav aria-label="Trust center" class="mt-12 flex flex-wrap gap-2 border-y border-zinc-900 py-3">
       <a href="#compliance" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Compliance</a>
-      <a href="#security-model" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Security Model</a>
+      <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+        <span>Documents</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">4</span>
+      </a>
       <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
-        <span>Controls</span>
+        <span>Security Controls</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">16</span>
       </a>
       <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">8</span>
-      </a>
-      <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
-        <span>Documents</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">4</span>
       </a>
       <a href="#resources" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Resources</span>
@@ -61,160 +60,266 @@ image: "/assets/img/og-image-trust.png"
     </nav>
 
     <div class="mt-12 space-y-10">
-      <section id="compliance" class="scroll-mt-5">
-        <h2 class="text-xl font-semibold text-white">Compliance</h2>
-        <p class="mt-2 text-sm text-zinc-500">Current trust artifacts and assurance work.</p>
-        <div class="mt-4 border border-zinc-800 bg-zinc-950">
-          <div class="grid divide-y divide-zinc-900 md:grid-cols-3 md:divide-x md:divide-y-0">
-            <div class="px-5 py-5">
-              <p class="m-0 text-sm font-semibold text-white">Pentest Report</p>
-              <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Independent third-party assessment in progress.</p>
-            </div>
-            <div class="px-5 py-5">
-              <p class="m-0 text-sm font-semibold text-white">Whitepaper</p>
-              <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Public technical overview of Dotenvx security architecture.</p>
-            </div>
-            <div class="px-5 py-5">
-              <p class="m-0 text-sm font-semibold text-white">Security Contact</p>
-              <p class="m-0 mt-1 text-sm leading-6 text-zinc-500"><a href="mailto:security@dotenvx.com" class="!text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a></p>
-            </div>
+      <div>
+        <section id="compliance" class="scroll-mt-5">
+          <h2 class="text-xl font-semibold text-white">Compliance</h2>
+          <p class="mt-2 text-sm text-zinc-500">Formal assurance work currently underway.</p>
+          <div class="mt-4 overflow-x-auto border border-zinc-800 bg-zinc-950">
+            <table class="w-full min-w-[34rem] border-collapse">
+              <thead>
+                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  <th class="px-5 py-3 font-semibold">Framework</th>
+                  <th class="w-44 px-5 py-3 text-right font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-900">
+                <tr>
+                  <td class="px-5 py-4 text-sm font-semibold text-white">SOC 2</td>
+                  <td class="px-5 py-4 text-right"><span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Readiness in Progress</span></td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm font-semibold text-white">ISO 27001</td>
+                  <td class="px-5 py-4 text-right"><span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Readiness in Progress</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <section id="documents" class="scroll-mt-5">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-semibold text-white">Documents</h2>
+            <p class="mt-2 text-sm text-zinc-500">Security artifacts and review materials.</p>
           </div>
         </div>
-      </section>
-
-      <section id="security-model" class="scroll-mt-5">
-        <h2 class="text-xl font-semibold text-white">Security Model</h2>
-        <p class="mt-2 text-sm text-zinc-500">Dotenvx is designed around encrypted files, separated keys, and no secret-value storage by the service.</p>
-        <div class="mt-4 border border-zinc-800 bg-zinc-950">
-          <ul class="divide-y divide-zinc-900">
-            <li class="flex items-start gap-4 px-5 py-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-              <div>
-                <p class="m-0 text-sm font-semibold text-white">No Secret-value Storage</p>
-                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Dotenvx does not store customer secret values in a central secrets database.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4 px-5 py-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-              <div>
-                <p class="m-0 text-sm font-semibold text-white">Encrypted <code>.env</code> Files</p>
-                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Secrets are stored in encrypted <code>.env</code> files that can live with the application code.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4 px-5 py-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-              <div>
-                <p class="m-0 text-sm font-semibold text-white">Key Separation</p>
-                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">Decryption keys are kept separate from encrypted secret files.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4 px-5 py-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-              <div>
-                <p class="m-0 text-sm font-semibold text-white">Readable Key Identity</p>
-                <p class="m-0 mt-1 text-sm leading-6 text-zinc-500">KEYSEE⎔ helps make keys recognizable through deterministic visual fingerprints without exposing the key material.</p>
-              </div>
-            </li>
-          </ul>
+        <div class="mt-4 overflow-x-auto border border-zinc-800 bg-zinc-950">
+          <table class="w-full min-w-[46rem] border-collapse">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Document</th>
+                <th class="w-36 px-5 py-3 font-semibold">Access</th>
+                <th class="w-32 px-5 py-3 font-semibold">Updated</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr class="hover:bg-zinc-900/60">
+                <td class="px-5 py-5">
+                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 no-underline hover:no-underline">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 13h5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 16h5" />
+                      </svg>
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block truncate text-sm font-semibold !text-white">Dotenvx Whitepaper</span>
+                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Reducing secrets risk with cryptographic separation.</span>
+                    </span>
+                  </a>
+                </td>
+                <td class="px-5 py-5 align-middle">
+                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
+                </td>
+                <td class="px-5 py-5 align-middle text-sm text-zinc-500">2025</td>
+              </tr>
+              <tr class="hover:bg-zinc-900/60">
+                <td class="px-5 py-5">
+                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 no-underline hover:no-underline">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c2.1 2.26 3.15 5.01 3.15 8.25S14.1 18 12 20.25C9.9 18 8.85 15.25 8.85 12S9.9 6.01 12 3.75Z" />
+                      </svg>
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block truncate text-sm font-semibold !text-white">Privacy Policy</span>
+                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Data handling and privacy commitments.</span>
+                    </span>
+                  </a>
+                </td>
+                <td class="px-5 py-5 align-middle">
+                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
+                </td>
+                <td class="px-5 py-5 align-middle text-sm text-zinc-500">Current</td>
+              </tr>
+              <tr class="hover:bg-zinc-900/60">
+                <td class="px-5 py-5">
+                  <div class="flex min-w-0 items-center gap-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 13h5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 16h3" />
+                      </svg>
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block truncate text-sm font-semibold !text-white">Pentest Report</span>
+                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Security assessment report.</span>
+                    </span>
+                  </div>
+                </td>
+                <td class="px-5 py-5 align-middle">
+                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Pending</span>
+                </td>
+                <td class="px-5 py-5 align-middle text-sm text-zinc-500">In Progress</td>
+              </tr>
+              <tr class="hover:bg-zinc-900/60">
+                <td class="px-5 py-5">
+                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 no-underline hover:no-underline">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c2.1 2.26 3.15 5.01 3.15 8.25S14.1 18 12 20.25C9.9 18 8.85 15.25 8.85 12S9.9 6.01 12 3.75Z" />
+                      </svg>
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block truncate text-sm font-semibold !text-white">Terms of Service</span>
+                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Legal terms for using Dotenvx services.</span>
+                    </span>
+                  </a>
+                </td>
+                <td class="px-5 py-5 align-middle">
+                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
+                </td>
+                <td class="px-5 py-5 align-middle text-sm text-zinc-500">Current</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
       <section id="controls" class="scroll-mt-5">
         <div>
           <div class="flex flex-wrap items-center gap-3">
-            <h2 class="text-xl font-semibold text-white">Controls</h2>
+            <h2 class="text-xl font-semibold text-white">Security Controls</h2>
             <span class="border border-zinc-800 bg-zinc-950 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-zinc-500">Being formalized</span>
           </div>
           <p class="mt-2 text-sm text-zinc-500">Security practices currently tracked across Dotenvx systems and operations.</p>
         </div>
-        <div class="mt-4 grid gap-4 md:grid-cols-2">
-          <article class="border border-zinc-800 bg-zinc-950 p-5">
+        <div class="mt-5 space-y-6">
+          <div>
             <h3 class="m-0 text-base font-semibold text-white">Infrastructure Security</h3>
-            <ul class="mt-5 space-y-4">
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Production infrastructure access is restricted.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Public web properties are served over HTTPS.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Production systems are monitored for operational events.</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="border border-zinc-800 bg-zinc-950 p-5">
+            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+              <thead>
+                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  <th class="px-5 py-3 font-semibold">Control</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-900">
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Production infrastructure access is restricted.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Public web properties are served over HTTPS.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Production systems are monitored for operational events.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
             <h3 class="m-0 text-base font-semibold text-white">Internal Security</h3>
-            <ul class="mt-5 space-y-4">
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">MFA is used for business-critical accounts where supported.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Unique account authentication is used where supported.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Privileged access is limited to named accounts.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Security findings are classified and tracked.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="!text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="border border-zinc-800 bg-zinc-950 p-5">
+            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+              <thead>
+                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  <th class="px-5 py-3 font-semibold">Control</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-900">
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">MFA is used for business-critical accounts where supported.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Unique account authentication is used where supported.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Privileged access is limited to named accounts.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security findings are classified and tracked.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="!text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
             <h3 class="m-0 text-base font-semibold text-white">Product Security</h3>
-            <ul class="mt-5 space-y-4">
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Material code changes are reviewed before release.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Dependency and source scans are performed.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Independent third-party penetration testing is conducted at least annually.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Encrypted <code>.env</code> files are used with keys stored separately.</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="border border-zinc-800 bg-zinc-950 p-5">
+            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+              <thead>
+                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  <th class="px-5 py-3 font-semibold">Control</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-900">
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Material code changes are reviewed before release.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Dependency and source scans are performed.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Independent third-party penetration testing is conducted at least annually.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Encrypted <code>.env</code> files are used with keys stored separately.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
             <h3 class="m-0 text-base font-semibold text-white">Data & Privacy</h3>
-            <ul class="mt-5 space-y-4">
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">The service does not store customer secret values.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Customer data handling is limited to service operation and support.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Data retention and deletion procedures are maintained.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-[0.55rem] h-2 w-2 shrink-0 bg-[#ecd53f]" aria-hidden="true"></span>
-                <span class="text-sm leading-6 text-zinc-500">Subprocessors and supporting vendors are reviewed.</span>
-              </li>
-            </ul>
-          </article>
+            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+              <thead>
+                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  <th class="px-5 py-3 font-semibold">Control</th>
+                  <th class="w-36 px-5 py-3 text-right font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-900">
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">The service does not store customer secret values.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Customer data handling is limited to service operation and support.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Data retention and deletion procedures are maintained.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Subprocessors and supporting vendors are reviewed.</td>
+                  <td class="px-5 py-4 text-right">{% include components/checkmark-circle-green.html %}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -339,114 +444,6 @@ image: "/assets/img/og-image-trust.png"
                   </div>
                 </td>
                 <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Billing, checkout, payment processing, and customer billing records.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="documents" class="scroll-mt-5">
-        <div class="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h2 class="text-xl font-semibold text-white">Documents</h2>
-            <p class="mt-2 text-sm text-zinc-500">Security artifacts and review materials.</p>
-          </div>
-        </div>
-        <div class="mt-4 overflow-x-auto border border-zinc-800 bg-zinc-950">
-          <table class="w-full min-w-[46rem] border-collapse">
-            <thead>
-              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                <th class="px-5 py-3 font-semibold">Document</th>
-                <th class="w-36 px-5 py-3 font-semibold">Access</th>
-                <th class="w-32 px-5 py-3 font-semibold">Updated</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-zinc-900">
-              <tr class="hover:bg-zinc-900/60">
-                <td class="px-5 py-5">
-                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 no-underline hover:no-underline">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 13h5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 16h5" />
-                      </svg>
-                    </span>
-                    <span class="min-w-0">
-                      <span class="block truncate text-sm font-semibold !text-white">Dotenvx Whitepaper</span>
-                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Reducing secrets risk with cryptographic separation.</span>
-                    </span>
-                  </a>
-                </td>
-                <td class="px-5 py-5 align-middle">
-                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
-                </td>
-                <td class="px-5 py-5 align-middle text-sm text-zinc-500">2025</td>
-              </tr>
-              <tr class="hover:bg-zinc-900/60">
-                <td class="px-5 py-5">
-                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 no-underline hover:no-underline">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c2.1 2.26 3.15 5.01 3.15 8.25S14.1 18 12 20.25C9.9 18 8.85 15.25 8.85 12S9.9 6.01 12 3.75Z" />
-                      </svg>
-                    </span>
-                    <span class="min-w-0">
-                      <span class="block truncate text-sm font-semibold !text-white">Privacy Policy</span>
-                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Data handling and privacy commitments.</span>
-                    </span>
-                  </a>
-                </td>
-                <td class="px-5 py-5 align-middle">
-                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
-                </td>
-                <td class="px-5 py-5 align-middle text-sm text-zinc-500">Current</td>
-              </tr>
-              <tr class="hover:bg-zinc-900/60">
-                <td class="px-5 py-5">
-                  <div class="flex min-w-0 items-center gap-4">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 13h5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 16h3" />
-                      </svg>
-                    </span>
-                    <span class="min-w-0">
-                      <span class="block truncate text-sm font-semibold !text-white">Pentest Report</span>
-                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Independent third-party security assessment report.</span>
-                    </span>
-                  </div>
-                </td>
-                <td class="px-5 py-5 align-middle">
-                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Pending</span>
-                </td>
-                <td class="px-5 py-5 align-middle text-sm text-zinc-500">In Progress</td>
-              </tr>
-              <tr class="hover:bg-zinc-900/60">
-                <td class="px-5 py-5">
-                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 no-underline hover:no-underline">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c2.1 2.26 3.15 5.01 3.15 8.25S14.1 18 12 20.25C9.9 18 8.85 15.25 8.85 12S9.9 6.01 12 3.75Z" />
-                      </svg>
-                    </span>
-                    <span class="min-w-0">
-                      <span class="block truncate text-sm font-semibold !text-white">Terms of Service</span>
-                      <span class="mt-1 block text-sm leading-6 text-zinc-500">Legal terms for using Dotenvx services.</span>
-                    </span>
-                  </a>
-                </td>
-                <td class="px-5 py-5 align-middle">
-                  <span class="inline-flex whitespace-nowrap border border-zinc-800 bg-black px-2 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-500">Public</span>
-                </td>
-                <td class="px-5 py-5 align-middle text-sm text-zinc-500">Current</td>
               </tr>
             </tbody>
           </table>

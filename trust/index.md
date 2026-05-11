@@ -278,22 +278,22 @@ image: "/assets/img/og-image-trust.png"
     </section>
 
     <nav aria-label="Trust center" class="mt-12 grid grid-cols-2 gap-2 border-y border-zinc-900 py-3 sm:flex sm:flex-wrap">
-      <a href="#compliance" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
+      <a href="#compliance" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Compliance</span>
         <span class="inline-flex items-center rounded-full border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 leading-none">
           <span class="flex h-4 w-4 items-center justify-center">{% include logos/framework-soc2.html uid="nav-soc2" class="h-4 w-4" %}</span>
           <span class="-ml-1 flex h-4 w-4 items-center justify-center">{% include logos/framework-gdpr.html class="h-4 w-4" %}</span>
         </span>
       </a>
-      <a href="#documents" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
+      <a href="#documents" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Documents</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">4</span>
       </a>
-      <a href="#controls" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
+      <a href="#controls" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Security Controls</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">16</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">54</span>
       </a>
-      <a href="#subprocessors" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
+      <a href="#subprocessors" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">8</span>
       </a>
@@ -477,123 +477,513 @@ image: "/assets/img/og-image-trust.png"
           </div>
           <p class="mt-2 text-sm text-zinc-500">An overview of security controls in place.</p>
         </div>
-        <div class="mt-5 space-y-6">
-          <div>
-            <h3 class="m-0 text-base font-semibold text-white">Infrastructure Security</h3>
-            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
-              <thead>
-                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-zinc-900">
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Production infrastructure access is restricted.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="prod-access" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Public web properties are served over HTTPS.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="https" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Production systems are monitored for operational events.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="prod-monitoring" %}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <h3 class="m-0 text-base font-semibold text-white">Internal Security</h3>
-            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
-              <thead>
-                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-zinc-900">
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">MFA is used for business-critical accounts where supported.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="mfa" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Unique account authentication is used where supported.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="unique-auth" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Privileged access is limited to named accounts.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="privileged-access" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security findings are classified and tracked.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="security-findings" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="trust-email-address !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="security-reports" %}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <h3 class="m-0 text-base font-semibold text-white">Product Security</h3>
-            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
-              <thead>
-                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-zinc-900">
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Material code changes are reviewed before release.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="code-review" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Dependency and source scans are performed.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="dependency-scans" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Independent third-party penetration testing is conducted at least annually.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="pentest" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Encrypted <code>.env</code> files are used with keys stored separately.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="encrypted-env" %}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <h3 class="m-0 text-base font-semibold text-white">Data & Privacy</h3>
-            <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
-              <thead>
-                <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  <th class="px-5 py-3 font-semibold">Control</th>
-                  <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-zinc-900">
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">The service does not store customer secret values.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="no-secret-storage" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Customer data handling is limited to service operation and support.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="data-handling" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Data retention and deletion procedures are maintained.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="data-retention" %}</td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Subprocessors and supporting vendors are reviewed.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="subprocessors" %}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="mt-5">
+          <h3 class="m-0 text-base font-semibold text-white">Access Control and Authorization</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Access granting process used</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">New access privileges are assigned based on least privilege and require review before access is granted.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="access-granting" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Employee access regularly reviewed</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Employee access is reviewed at least annually to confirm access privileges remain appropriate.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="access-reviewed" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Password management policy enforced</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Password management requirements are enforced for covered accounts, with adherence monitored and exceptions addressed.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="password-policy" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Data Management and Protection</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Data encrypted at rest</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">All sensitive data is encrypted when stored on systems or devices.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="data-encrypted-at-rest" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Data encrypted in-transit</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">All data is encrypted when transmitted over networks, including internal and external connections.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="data-encrypted-in-transit" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Data inventory maintained</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A current inventory of data assets is maintained, including data stored in databases, files, and cloud services.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="data-inventory" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Data management and retention policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Data management and retention requirements are defined for how long data is retained and how it is managed through its lifecycle.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="data-retention-policy" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Disaster Recovery</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Automated backups enabled</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Automated backups are enabled for high-risk data and critical systems.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="automated-backups" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Business continuity and disaster recovery policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Business continuity and disaster recovery requirements are defined for responding to disruptive incidents and supporting business continuity.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="bcdr-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Data recovery process established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Data recovery procedures define how data is recovered in case of data loss, corruption, or system failure.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="data-recovery-process" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Disaster recovery plans tested</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Disaster recovery plans are tested to confirm they remain effective and identify areas for improvement.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="dr-tested" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Recovery data isolated</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Recovery data is isolated from production systems to reduce accidental overwriting, corruption, or loss of backup copies.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="recovery-data-isolated" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Email Security</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">DMARC policy and verification used</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">DMARC policy and verification mechanisms are implemented to reduce email spoofing and phishing risk.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="dmarc-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Email account access restricted</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Access to email accounts is restricted to authorized administrators and business-required users.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="email-access" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Email settings block malicious content</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Email settings are configured to block malicious content, including suspicious attachments, links, and scripts.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="email-malicious-content" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Endpoint Security</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Anti-malware deployed on end-user devices</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Anti-malware or antivirus protections are deployed on end-user devices, including laptops and workstations.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="anti-malware" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Firewall maintained on end-user devices</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Firewalls are installed and maintained on end-user devices, including laptops and workstations.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="endpoint-firewall" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Infrastructure Security</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Anti-malware deployed on infrastructure</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Anti-malware or antivirus protections are deployed on infrastructure components, including servers and network devices.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-anti-malware" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Configuration management system established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Configuration management is used to manage and control systems, applications, and infrastructure.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="configuration-management" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Infrastructure changes logged</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Infrastructure changes are logged to support audit trails, incident investigation, and accountability.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-changes-logged" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Infrastructure changes require review</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Infrastructure changes are reviewed before implementation to reduce security and reliability risk.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-change-review" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Infrastructure deployed using an infrastructure-as-code tool</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Infrastructure is deployed and managed using version-controlled infrastructure-as-code where applicable.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-as-code" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Unauthorized assets addressed and removed</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Unauthorized assets are identified, reviewed, and removed through periodic asset review.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="unauthorized-assets" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Unique production database authentication enforced</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Unique authentication mechanisms are enforced for production database access.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="prod-db-auth" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Monitoring and Incident Response</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Audit log management process maintained</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Audit log management processes define how logs are captured, stored, monitored, and protected.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="audit-log-management" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Incident response policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Incident response requirements define procedures for detecting, responding to, and recovering from security incidents.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="incident-response-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Infrastructure performance monitored</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Infrastructure performance is monitored to detect issues or anomalies that may affect security or reliability.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-performance-monitoring" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Organizational Security</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Asset management policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Asset management requirements define how company assets are managed throughout their lifecycle.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="asset-management-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Code of conduct acknowledged by contractors</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Contractors and third-party vendors are required to acknowledge and comply with the code of conduct.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="contractor-code-conduct" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Code of conduct acknowledged by employees</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Employees are required to acknowledge and follow the code of conduct.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="employee-code-conduct" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Code of conduct established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A code of conduct is established to define expected behavior and ethical standards.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="code-conduct-established" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Company security commitments externally communicated</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Company security commitments and policies are externally communicated through public trust, legal, or service documents.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="security-commitments" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Confidentiality Agreement acknowledged by contractors</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Contractors and third-party vendors are required to acknowledge confidentiality obligations before handling sensitive information.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="contractor-confidentiality" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Confidentiality Agreement acknowledged by employees</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Employees are required to acknowledge confidentiality obligations for sensitive information and trade secrets.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="employee-confidentiality" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">External support resources available</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">External support resources, including documentation and user guidance, are available to support self-service use of the service.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="external-support-resources" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Offboarding process established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">An offboarding process is established to remove departing personnel from relevant systems and accounts.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="offboarding-process" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Onboarding process established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">An onboarding process is established to grant new personnel appropriate access needed for their responsibilities.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="onboarding-process" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Performance evaluations conducted</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Performance evaluations are conducted to assess job performance, identify improvement areas, and support accountability.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="performance-evaluations" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Physical access restricted</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Physical access to facilities, equipment, and systems is restricted to authorized personnel.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="physical-access" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Reference calls performed for employees</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Reference checks are performed during hiring to help verify qualifications, experience, and role suitability.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="reference-checks" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Roles and responsibilities specified</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Roles and responsibilities are defined so personnel understand their duties, expectations, and accountability.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="roles-responsibilities" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Security awareness training conducted</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Security awareness training is conducted for personnel, covering security threats, authentication practices, and handling of sensitive data.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="security-awareness-training" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Service description communicated</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Service descriptions are communicated to customers and users, including scope, features, and limitations of the service.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="service-description" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Software development lifecycle established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A documented development lifecycle is established for software and application changes.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="sdlc-established" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">System changes externally communicated</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Relevant system changes, updates, and maintenance activities are communicated externally when customers or users may be impacted.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="external-change-communication" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">System changes internally communicated</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Relevant system changes, updates, and maintenance activities are communicated internally to affected teams and stakeholders.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="internal-change-communication" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Risk Management</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Risk assessments performed</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Risk assessments are performed at least annually to identify and evaluate potential threats and vulnerabilities.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="risk-assessments" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Risk management policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A risk management policy defines the approach for identifying, assessing, and mitigating information security risks.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="risk-management-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Vendor inventory maintained</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">An inventory of vendors is maintained, including services provided, relevant terms, and scope of access.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="vendor-inventory" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Vendor management program established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A vendor management program assesses, monitors, and manages risks associated with third-party vendors.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="vendor-management" %}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="m-0 text-base font-semibold text-white">Vulnerability Management</h3>
+          <table class="mt-3 w-full border-collapse border border-zinc-800 bg-zinc-950">
+            <thead>
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                <th class="px-5 py-3 font-semibold">Control</th>
+                <th class="w-36 px-5 py-3 text-right font-semibold"><span class="sr-only">Frameworks</span></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-900">
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Automated software patch management performed</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Software patches and updates are deployed to systems and applications to address known vulnerabilities.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="patch-management" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Penetration testing findings remediated</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Vulnerabilities identified during penetration testing are tracked and remediated.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="pentest-remediation" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Vulnerability management policy acknowledged by employees</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Employees acknowledge vulnerability management requirements for identifying, assessing, and remediating vulnerabilities.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="vulnerability-policy-acknowledged" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Vulnerability management policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A vulnerability management policy defines how vulnerabilities are identified, assessed, and remediated.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="vulnerability-policy" %}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 

@@ -255,7 +255,7 @@ image: "/assets/img/og-image-trust.png"
     </div>
   </header>
 
-  <main class="mx-auto w-full max-w-5xl px-6 py-12 md:py-16">
+  <main class="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 md:py-16">
     <section class="relative overflow-hidden border border-zinc-900 bg-black px-6 py-12 md:px-8 md:py-16">
       <div class="pointer-events-none absolute inset-0" aria-hidden="true">
         <div class="trust-hero-gradient-1 absolute inset-0 bg-[linear-gradient(270deg,rgba(236,213,63,0.11)_0%,rgba(236,213,63,0.045)_34%,rgba(0,0,0,0.18)_72%,rgba(0,0,0,0)_100%)]"></div>
@@ -277,17 +277,23 @@ image: "/assets/img/og-image-trust.png"
       </div>
     </section>
 
-    <nav aria-label="Trust center" class="mt-12 flex flex-wrap gap-2 border-y border-zinc-900 py-3">
-      <a href="#compliance" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">Compliance</a>
-      <a href="#documents" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+    <nav aria-label="Trust center" class="mt-12 grid grid-cols-2 gap-2 border-y border-zinc-900 py-3 sm:flex sm:flex-wrap">
+      <a href="#compliance" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
+        <span>Compliance</span>
+        <span class="inline-flex items-center rounded-full border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 leading-none">
+          <span class="flex h-4 w-4 items-center justify-center">{% include logos/framework-soc2.html uid="nav-soc2" class="h-4 w-4" %}</span>
+          <span class="-ml-1 flex h-4 w-4 items-center justify-center">{% include logos/framework-gdpr.html class="h-4 w-4" %}</span>
+        </span>
+      </a>
+      <a href="#documents" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
         <span>Documents</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">4</span>
       </a>
-      <a href="#controls" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+      <a href="#controls" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
         <span>Security Controls</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">16</span>
       </a>
-      <a href="#subprocessors" class="inline-flex items-center gap-2 rounded border border-zinc-800 px-3 py-2 text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+      <a href="#subprocessors" class="inline-flex items-center justify-center gap-2 rounded border border-zinc-800 px-3 py-2 text-center text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline sm:justify-start sm:text-left">
         <span>Subprocessors</span>
         <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">8</span>
       </a>
@@ -306,31 +312,19 @@ image: "/assets/img/og-image-trust.png"
 	                  {% include logos/framework-soc2.html uid="overview-soc2" class="h-12 w-12" %}
 	                  <div class="min-w-0">
 	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">SOC 2 Type 1</p>
-	                    <span class="trust-framework-status mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
+		                    <span class="trust-framework-status mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
                       <span class="text-green-500" aria-hidden="true">◐</span>
                       <span>Readiness in Progress</span>
                     </span>
                   </div>
                 </div>
               </div>
-	              <div class="trust-framework-row px-5 py-5">
-	                <div class="flex items-center gap-4">
-	                  {% include logos/framework-iso27001.html class="h-12 w-12" %}
-	                  <div class="min-w-0">
-	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">ISO 27001</p>
-	                    <span class="trust-framework-status mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
-                      <span class="text-green-500" aria-hidden="true">◐</span>
-                      <span>Readiness in Progress</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-	              <div class="trust-framework-row px-5 py-5">
+		              <div class="trust-framework-row px-5 py-5">
 	                <div class="flex items-center gap-4">
 	                  {% include logos/framework-gdpr.html class="h-12 w-12" %}
 	                  <div class="min-w-0">
 	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">GDPR</p>
-	                    <span class="trust-framework-status mt-2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
+		                    <span class="trust-framework-status mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
                       <span class="text-green-500" aria-hidden="true">◐</span>
                       <span>DPA in Preparation</span>
                     </span>
@@ -349,18 +343,18 @@ image: "/assets/img/og-image-trust.png"
           </div>
         </div>
         <div class="mt-4 overflow-x-auto border border-zinc-800 bg-zinc-950">
-          <table class="w-full min-w-[38rem] border-collapse">
-            <thead>
-              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                <th class="px-5 py-3 font-semibold">Document</th>
-                <th class="w-44 px-5 py-3 text-right font-semibold"><span class="sr-only">Action</span></th>
+          <table class="trust-documents-table w-full min-w-0 border-collapse md:min-w-[38rem]">
+            <thead class="hidden sm:table-header-group">
+              <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500 sm:table-row">
+                <th class="px-5 py-3 font-semibold sm:table-cell">Document</th>
+                <th class="w-36 px-4 py-3 text-right font-semibold sm:table-cell sm:w-44 sm:px-5"><span class="sr-only">Action</span></th>
               </tr>
             </thead>
             <tbody class="divide-y divide-zinc-900">
               <tr class="hover:bg-zinc-900/60">
                 <td class="p-0">
-                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 px-5 py-5 no-underline hover:no-underline">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+		                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-0 px-4 py-5 no-underline hover:no-underline sm:gap-4 sm:px-5">
+                    <span class="hidden h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400 sm:flex">
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
@@ -370,12 +364,12 @@ image: "/assets/img/og-image-trust.png"
                     </span>
                     <span class="min-w-0">
                       <span class="block truncate text-sm font-semibold !text-white">Dotenvx Whitepaper</span>
-                      <span class="mt-1 block text-sm font-normal leading-6 !text-zinc-500">Reducing secrets risk with cryptographic separation.</span>
+                      <span class="mt-1 hidden text-sm font-normal leading-6 !text-zinc-500 sm:block">Reducing secrets risk with cryptographic separation.</span>
                     </span>
                   </a>
                 </td>
-                <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
+		                <td class="p-0 align-middle">
+		                  <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="block px-4 py-5 text-right no-underline hover:no-underline sm:px-5">
                     <span class="trust-document-action inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Document</span>
                       <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -387,9 +381,9 @@ image: "/assets/img/og-image-trust.png"
                 </td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
-                <td class="px-5 py-5">
-                  <div class="flex min-w-0 items-center gap-4">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+			                <td class="px-4 py-5 sm:px-5">
+		                  <div class="flex min-w-0 items-center gap-0 sm:gap-4">
+                    <span class="hidden h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400 sm:flex">
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.25L18 8.5v11.75H7V3.75Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 4v5h5" />
@@ -399,12 +393,12 @@ image: "/assets/img/og-image-trust.png"
                     </span>
                     <span class="min-w-0">
                       <span class="block truncate text-sm font-semibold !text-white">Pentest Report</span>
-                      <span class="mt-1 block text-sm font-normal leading-6 !text-zinc-500">Security assessment report.</span>
+	                      <span class="mt-1 hidden text-sm font-normal leading-6 !text-zinc-500 sm:block">Security assessment report.</span>
                     </span>
                   </div>
                 </td>
-                <td class="px-5 py-5 text-right align-middle">
-                  <a href="mailto:security@dotenvx.com?subject=Pentest%20Report%20Access%20Request" class="trust-document-action-mail inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold !text-zinc-300 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
+	                <td class="px-4 py-5 text-right align-middle sm:px-5">
+	                  <a href="mailto:security@dotenvx.com?subject=Pentest%20Report%20Access%20Request" class="trust-document-action-mail inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold !text-zinc-300 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
                     <span>Request Access</span>
                     <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M4.75 6.75h14.5v10.5H4.75V6.75Z" />
@@ -415,8 +409,8 @@ image: "/assets/img/og-image-trust.png"
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="p-0">
-                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 px-5 py-5 no-underline hover:no-underline">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+		                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-0 px-4 py-5 no-underline hover:no-underline sm:gap-4 sm:px-5">
+                    <span class="hidden h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400 sm:flex">
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
@@ -425,12 +419,12 @@ image: "/assets/img/og-image-trust.png"
                     </span>
                     <span class="min-w-0">
                       <span class="block truncate text-sm font-semibold !text-white">Privacy Policy</span>
-                      <span class="mt-1 block text-sm font-normal leading-6 !text-zinc-500">Data handling and privacy commitments.</span>
+	                      <span class="mt-1 hidden text-sm font-normal leading-6 !text-zinc-500 sm:block">Data handling and privacy commitments.</span>
                     </span>
                   </a>
                 </td>
-                <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
+		                <td class="p-0 align-middle">
+		                  <a href="https://dotenvx.com/privacy" target="_blank" rel="noopener noreferrer" class="block px-4 py-5 text-right no-underline hover:no-underline sm:px-5">
                     <span class="trust-document-action inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Webpage</span>
                       <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -443,8 +437,8 @@ image: "/assets/img/og-image-trust.png"
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="p-0">
-                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-4 px-5 py-5 no-underline hover:no-underline">
-                    <span class="flex h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400">
+		                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="flex min-w-0 items-center gap-0 px-4 py-5 no-underline hover:no-underline sm:gap-4 sm:px-5">
+                    <span class="hidden h-11 w-11 shrink-0 items-center justify-center border border-zinc-800 bg-black text-zinc-400 sm:flex">
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
@@ -453,12 +447,12 @@ image: "/assets/img/og-image-trust.png"
                     </span>
                     <span class="min-w-0">
                       <span class="block truncate text-sm font-semibold !text-white">Terms of Service</span>
-                      <span class="mt-1 block text-sm font-normal leading-6 !text-zinc-500">Legal terms for using Dotenvx services.</span>
+	                      <span class="mt-1 hidden text-sm font-normal leading-6 !text-zinc-500 sm:block">Legal terms for using Dotenvx services.</span>
                     </span>
                   </a>
                 </td>
-                <td class="p-0 align-middle">
-                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-5 py-5 text-right no-underline hover:no-underline">
+		                <td class="p-0 align-middle">
+		                  <a href="https://dotenvx.com/terms" target="_blank" rel="noopener noreferrer" class="block px-4 py-5 text-right no-underline hover:no-underline sm:px-5">
                     <span class="trust-document-action inline-flex w-36 items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-black px-3 py-2 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white">
                       <span>Open Webpage</span>
                       <svg class="relative top-px h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -500,11 +494,11 @@ image: "/assets/img/og-image-trust.png"
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Public web properties are served over HTTPS.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="https" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="https" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Production systems are monitored for operational events.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="prod-monitoring" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="prod-monitoring" %}</td>
                 </tr>
               </tbody>
             </table>
@@ -529,15 +523,15 @@ image: "/assets/img/og-image-trust.png"
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Privileged access is limited to named accounts.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="privileged-access" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="privileged-access" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security findings are classified and tracked.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="security-findings" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="security-findings" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Security reports can be sent to <a href="mailto:security@dotenvx.com" class="trust-email-address !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline">security@dotenvx.com</a>.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="security-reports" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="security-reports" %}</td>
                 </tr>
               </tbody>
             </table>
@@ -558,15 +552,15 @@ image: "/assets/img/og-image-trust.png"
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Dependency and source scans are performed.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="dependency-scans" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="dependency-scans" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Independent third-party penetration testing is conducted at least annually.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="pentest" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="pentest" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Encrypted <code>.env</code> files are used with keys stored separately.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="encrypted-env" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="encrypted-env" %}</td>
                 </tr>
               </tbody>
             </table>
@@ -587,15 +581,15 @@ image: "/assets/img/og-image-trust.png"
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Customer data handling is limited to service operation and support.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="data-handling" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="data-handling" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Data retention and deletion procedures are maintained.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="data-retention" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="data-retention" %}</td>
                 </tr>
                 <tr>
                   <td class="px-5 py-4 text-sm leading-6 text-zinc-500">Subprocessors and supporting vendors are reviewed.</td>
-                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2,iso27001" uid="subprocessors" %}</td>
+                  <td class="px-5 py-4 text-right">{% include components/framework-badges.html frameworks="soc2" uid="subprocessors" %}</td>
                 </tr>
               </tbody>
             </table>
@@ -609,15 +603,15 @@ image: "/assets/img/og-image-trust.png"
           <p class="mt-2 text-sm text-zinc-500">Third-party providers used to deliver, secure, and operate Dotenvx services.</p>
         </div>
         <div class="mt-4 overflow-x-auto border border-zinc-800 bg-zinc-950">
-          <table class="w-full min-w-[44rem] border-collapse">
+	          <table class="w-full min-w-0 border-collapse sm:min-w-[44rem]">
             <colgroup>
-              <col class="w-[42%]">
-              <col>
+	              <col class="w-full sm:w-[42%]">
+	              <col class="hidden sm:table-column">
             </colgroup>
             <thead>
               <tr class="border-b border-zinc-900 bg-zinc-900/40 text-left text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                <th class="px-6 py-4 font-semibold">Provider</th>
-                <th class="px-6 py-4 font-semibold">Purpose</th>
+	                <th class="px-6 py-4 font-semibold">Provider</th>
+	                <th class="hidden px-6 py-4 font-semibold sm:table-cell">Purpose</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-zinc-900">
@@ -632,7 +626,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Cloudflare</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">DNS, traffic proxying, CDN, and network security.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">DNS, traffic proxying, CDN, and network security.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -645,7 +639,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">GitHub</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Authentication, account identity, and repository metadata.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Authentication, account identity, and repository metadata.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -658,7 +652,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Google Workspace</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Business email, internal documentation, and security communications.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Business email, internal documentation, and security communications.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -671,7 +665,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Hatchbox</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Production deployment orchestration and infrastructure management.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Production deployment orchestration and infrastructure management.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -684,7 +678,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Hetzner</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Application hosting and infrastructure.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Application hosting and infrastructure.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -697,7 +691,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Honeybadger</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Error monitoring and operational diagnostics.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Error monitoring and operational diagnostics.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -710,7 +704,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Postmark</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Transactional email delivery and related message metadata.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Transactional email delivery and related message metadata.</td>
               </tr>
               <tr class="hover:bg-zinc-900/60">
                 <td class="px-6 py-5">
@@ -723,7 +717,7 @@ image: "/assets/img/og-image-trust.png"
                     <span class="text-base font-semibold text-white">Stripe</span>
                   </div>
                 </td>
-                <td class="px-6 py-5 text-sm leading-6 text-zinc-500">Billing, checkout, payment processing, and customer billing records.</td>
+	                <td class="hidden px-6 py-5 text-sm leading-6 text-zinc-500 sm:table-cell">Billing, checkout, payment processing, and customer billing records.</td>
               </tr>
             </tbody>
           </table>

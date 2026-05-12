@@ -291,7 +291,7 @@ image: "/assets/img/og-image-trust.png"
       </a>
       <a href="#controls" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Security Controls</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">54</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">53</span>
       </a>
       <a href="#subprocessors" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>
@@ -698,13 +698,6 @@ image: "/assets/img/og-image-trust.png"
                   <p class="mt-2 text-sm leading-6 text-zinc-500">Infrastructure changes are reviewed before implementation to reduce security and reliability risk.</p>
                 </td>
                 <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-change-review" %}</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-5">
-                  <p class="m-0 text-sm font-semibold text-white">Infrastructure deployed using an infrastructure-as-code tool</p>
-                  <p class="mt-2 text-sm leading-6 text-zinc-500">Infrastructure is deployed and managed using version-controlled infrastructure-as-code where applicable.</p>
-                </td>
-                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="infra-as-code" %}</td>
               </tr>
               <tr>
                 <td class="px-5 py-5">

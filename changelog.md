@@ -18,6 +18,7 @@ permalink: /changelog/
     border-radius: 10px;
     margin: -0.875rem -1rem;
     padding: 0.875rem 1rem;
+    scroll-margin-top: 6rem;
     transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
   }
 
@@ -125,9 +126,22 @@ permalink: /changelog/
 
   .changelog-keysee-logo {
     height: auto;
-    max-width: min(72%, 22rem);
+    max-width: min(76%, 17rem);
     position: relative;
     width: 100%;
+  }
+
+  .changelog-keysee-logo-panel {
+    align-items: center;
+    background: #050505;
+    border: 1px solid rgba(63, 63, 70, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.46), 0 0 32px rgba(236, 213, 63, 0.06);
+    display: flex;
+    justify-content: center;
+    padding: clamp(1rem, 4vw, 1.55rem) clamp(1.4rem, 5vw, 2.4rem);
+    position: relative;
+    width: min(70%, 24rem);
   }
 
   .changelog-trust-logos {
@@ -147,6 +161,16 @@ permalink: /changelog/
     object-fit: contain;
     position: relative;
     width: auto;
+  }
+
+  .changelog-install-chart {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  .changelog-install-chart text {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   .ops-lockup {
@@ -189,7 +213,7 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="trust page trust center trust dotenvx compliance security may 2026">
+      <article id="2026-05-12" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-12" data-search-text="trust page trust center trust dotenvx compliance security may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 12, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -210,7 +234,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="google login sign in authentication dotenvx ops may 2026">
+      <article id="2026-05-11" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-11" data-search-text="google login sign in authentication dotenvx ops may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 11, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -230,7 +254,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="team aware armored keys team selector armor up armor push armor down armor pull may 2026">
+      <article id="2026-05-07" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-07" data-search-text="team aware armored keys team selector armor up armor push armor down armor pull may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 7, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -249,7 +273,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="keysee whitepaper deterministic visual identity compressed public keys may 2026">
+      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-07" data-search-text="keysee whitepaper deterministic visual identity compressed public keys may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 7, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -257,7 +281,9 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>KEYSEE⎔ Whitepaper</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <img class="changelog-whitepaper-thumb" src="/assets/img/keysee-whitepaper-thumb.png" alt="" loading="lazy">
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔ Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the KEYSEE whitepaper for deterministic visual identity from compressed public keys.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
@@ -265,7 +291,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="armor commands armor up armor down armor push armor pull armor move armored keys dotenvx ops may 2026">
+      <article id="2026-05-06" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-06" data-search-text="armor commands armor up armor down armor push armor pull armor move armored keys dotenvx ops may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 6, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -280,7 +306,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="keysee released deterministic visual identity public keys may 2026">
+      <article id="2026-05-04" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-04" data-search-text="keysee released deterministic visual identity public keys may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 4, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -289,10 +315,12 @@ permalink: /changelog/
         <div>
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true">
-                <svg class="changelog-keysee-logo" viewBox="0 0 448 126" role="img" aria-label="KEYSEE">
-                  <text x="36" y="86" fill="#ffffff" stroke="#ffffff" stroke-width="4.2" stroke-linejoin="round" paint-order="stroke fill" font-family="Inter, Arial, Helvetica, sans-serif" font-size="72" font-weight="900" letter-spacing="3">KEYSEE</text>
-                  <polygon points="374,45 398,45 412,66 398,87 374,87 360,66" fill="none" stroke="#ecd26b" stroke-width="7" stroke-linejoin="round"></polygon>
-                </svg>
+                <div class="changelog-keysee-logo-panel">
+                  <svg class="changelog-keysee-logo" viewBox="0 0 448 126" role="img" aria-label="KEYSEE">
+                    <text x="36" y="86" fill="#ffffff" stroke="#ffffff" stroke-width="4.2" stroke-linejoin="round" paint-order="stroke fill" font-family="Inter, Arial, Helvetica, sans-serif" font-size="72" font-weight="900" letter-spacing="3">KEYSEE</text>
+                    <polygon points="374,45 398,45 412,66 398,87 374,87 360,66" fill="none" stroke="#ecd26b" stroke-width="7" stroke-linejoin="round"></polygon>
+                  </svg>
+                </div>
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">KEYSEE released as a deterministic visual identity system for public keys.</p>
@@ -301,7 +329,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="dotenv npm installs monthly 500000000 half billion april 2026">
+      <article id="2026-04-26" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-04-26" data-search-text="dotenv npm installs monthly 500000000 half billion april 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Apr 26, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -309,14 +337,52 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>500,000,000 Installs</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="install-area-gradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#ecd53f" stop-opacity="0.24"></stop>
+                      <stop offset="1" stop-color="#ecd53f" stop-opacity="0.04"></stop>
+                    </linearGradient>
+                    <filter id="install-card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.42"></feDropShadow>
+                    </filter>
+                  </defs>
+
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">500M</text>
+                    <text x="28" y="123">400M</text>
+                    <text x="28" y="199">300M</text>
+                    <text x="28" y="275">200M</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Apr 2019</text>
+                    <text x="492" y="374">Jun 2023</text>
+                  </g>
+                  <path d="M64 344 C96 344 118 343 146 343 C176 342 196 342 224 339 C252 336 270 330 292 322 C314 314 328 302 350 289 C372 276 388 250 408 232 C430 212 448 186 470 170 C492 154 506 136 530 123 C552 111 572 96 594 86 C616 76 630 66 646 49 C662 32 674 18 690 24 L690 344 L64 344 Z" fill="url(#install-area-gradient)"></path>
+                  <path d="M64 344 C96 344 118 343 146 343 C176 342 196 342 224 339 C252 336 270 330 292 322 C314 314 328 302 350 289 C372 276 388 250 408 232 C430 212 448 186 470 170 C492 154 506 136 530 123 C552 111 572 96 594 86 C616 76 630 66 646 49 C662 32 674 18 690 24" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="24" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="24" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g filter="url(#install-card-shadow)">
+                    <rect x="284" y="78" width="260" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="284.5" y="78.5" width="259" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="414" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">Apr 2026</text>
+                    <circle cx="324" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="342" y="160" fill="#18181b" font-size="26" font-weight="700">500,000,000</text>
+                  </g>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">500,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenv</code> reached half a billion monthly npm installs.</p>
           </div>
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="cloudflare workers wrangler encrypted env values envs colon dotenvx april 2026">
+      <article id="2026-04-24" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-04-24" data-search-text="cloudflare workers wrangler encrypted env values envs colon dotenvx april 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Apr 24, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -331,7 +397,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="dotenvx ops released armored keys access control private keys april 2026">
+      <article id="2026-04-17" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-04-17" data-search-text="dotenvx ops released armored keys access control private keys april 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Apr 17, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -346,7 +412,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="npm installs monthly 15000000 dotenvx march 2026">
+      <article id="2026-03-01" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-03-01" data-search-text="npm installs monthly 15000000 dotenvx march 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Mar 1, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -361,7 +427,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="npm installs monthly 6000000 dotenvx january 2026">
+      <article id="2026-01-01" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-01-01" data-search-text="npm installs monthly 6000000 dotenvx january 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jan 1, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -376,7 +442,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="gateway openai dotenvx ops gateway start january 2026">
+      <article id="2026-01-17" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-01-17" data-search-text="gateway openai dotenvx ops gateway start january 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jan 17, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -391,7 +457,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="backup env keys automatic login settings path open project dotenvx ops december 2025">
+      <article id="2025-12-22" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-12-22" data-search-text="backup env keys automatic login settings path open project dotenvx ops december 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Dec 22, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -406,7 +472,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="rotation workflows rotate get rotation tokens npm github openai connect dotenvx ops december 2025">
+      <article id="2025-12-14" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-12-14" data-search-text="rotation workflows rotate get rotation tokens npm github openai connect dotenvx ops december 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Dec 14, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -420,7 +486,7 @@ permalink: /changelog/
           </div>
         </div>
       </article>
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="dotenvx ops command production grade operational primitives teams infrastructure agents september 2025">
+      <article id="2025-09-18" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-09-18" data-search-text="dotenvx ops command production grade operational primitives teams infrastructure agents september 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Sep 18, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -435,7 +501,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="npm installs monthly 2000000 dotenvx june 2025">
+      <article id="2025-06-01" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-06-01" data-search-text="npm installs monthly 2000000 dotenvx june 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 1, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -450,7 +516,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="dotenvx rotate command rotation whitepaper february 2025">
+      <article id="2025-02-20" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-02-20" data-search-text="dotenvx rotate command rotation whitepaper february 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Feb 20, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -465,7 +531,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="whitepaper draft dotenvx pdf decryption at access february 2025">
+      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-02-20" data-search-text="whitepaper draft dotenvx pdf decryption at access february 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Feb 20, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -483,7 +549,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="decryption at access main get main set programmatic encrypted values february 2025">
+      <article id="2025-02-07" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-02-07" data-search-text="decryption at access main get main set programmatic encrypted values february 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Feb 7, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -498,7 +564,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="npm installs monthly 1000000 dotenvx january 2025">
+      <article id="2025-01-01" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2025-01-01" data-search-text="npm installs monthly 1000000 dotenvx january 2025">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jan 1, 2025</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -513,7 +579,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="monorepo key files env keys file shared env keys docker december 2024">
+      <article id="2024-12-13" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2024-12-13" data-search-text="monorepo key files env keys file shared env keys docker december 2024">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Dec 13, 2024</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -528,7 +594,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="strict mode ignore missing env file decryption failed ci november 2024">
+      <article id="2024-11-25" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2024-11-25" data-search-text="strict mode ignore missing env file decryption failed ci november 2024">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Nov 25, 2024</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -543,7 +609,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="npm installs monthly 500000 dotenvx september 2024">
+      <article id="2024-09-01" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2024-09-01" data-search-text="npm installs monthly 500000 dotenvx september 2024">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Sep 1, 2024</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -558,7 +624,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="dotenvx 1.0 released next generation config management dotenv june 2024">
+      <article id="2024-06-24" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2024-06-24" data-search-text="dotenvx 1.0 released next generation config management dotenv june 2024">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 24, 2024</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -575,7 +641,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="encrypted env files public key encryption safe commit env keys may 2024 dotenvx">
+      <article id="2024-05-09" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2024-05-09" data-search-text="encrypted env files public key encryption safe commit env keys may 2024 dotenvx">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 9, 2024</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -591,7 +657,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="work started on dotenvx first release commit history november 2023">
+      <article id="2023-11-26" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2023-11-26" data-search-text="work started on dotenvx first release commit history november 2023">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Nov 26, 2023</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-full w-px -translate-x-1/2 bg-zinc-800"></div>

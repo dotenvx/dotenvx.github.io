@@ -1,6 +1,6 @@
 ---
 title: Changelog
-social_title: Dotenvx Ops Changelog
+social_title: Changelog
 permalink: /changelog/
 ---
 
@@ -16,6 +16,7 @@ permalink: /changelog/
   [data-changelog-entry] {
     border: 1px solid transparent;
     border-radius: 10px;
+    cursor: pointer;
     margin: -0.875rem -1rem;
     padding: 0.875rem 1rem;
     scroll-margin-top: 6rem;
@@ -170,12 +171,12 @@ permalink: /changelog/
     border: 1px solid rgba(228, 228, 231, 0.18);
     border-radius: 4px;
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.46);
-    height: 118%;
+    height: auto;
     max-height: none;
     object-fit: contain;
     position: relative;
-    transform: translateY(18%);
-    width: auto;
+    transform: translateY(30%);
+    width: 70%;
   }
 
   .changelog-install-chart {
@@ -208,6 +209,17 @@ permalink: /changelog/
     color: #ecd53f;
     text-shadow: 0 0 18px rgba(236, 213, 63, 0.28);
   }
+
+  [data-changelog-entry][data-copied-link="true"] > div:first-child::after {
+    color: #ecd53f;
+    content: " copied";
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: 0.25rem;
+    text-shadow: 0 0 14px rgba(236, 213, 63, 0.22);
+  }
 </style>
 
 <div class="relative overflow-hidden bg-black text-zinc-100">
@@ -238,7 +250,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Trust Page</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We launched <code class="text-zinc-300">trust.dotenvx.com</code> as the home for Dotenvx security, compliance, and trust resources.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Page</a>
           </div>
         </div>
       </article>
@@ -414,7 +426,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> [beta]</span></div>
+              <div class="changelog-card" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span></span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
           </div>
@@ -570,7 +582,33 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>2,000,000 Installs</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">2M</text>
+                    <text x="28" y="199">1M</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Sep 2024</text>
+                    <text x="492" y="374">Jun 2025</text>
+                  </g>
+                  <path d="M64 344 C122 344 174 340 222 334 C270 328 318 314 356 288 C394 262 424 224 456 185 C488 146 524 110 566 81 C608 52 652 35 690 46 L690 344 L64 344 Z" fill="#ecd53f" fill-opacity="0.14"></path>
+                  <path d="M64 344 C122 344 174 340 222 334 C270 328 318 314 356 288 C394 262 424 224 456 185 C488 146 524 110 566 81 C608 52 652 35 690 46" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="46" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="46" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g style="filter: drop-shadow(0 12px 16px rgba(0,0,0,0.42));">
+                    <rect x="244" y="78" width="330" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="244.5" y="78.5" width="329" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="409" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:@dotenvx/dotenvx</text>
+                    <circle cx="300" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="318" y="160" fill="#18181b" font-size="26" font-weight="700">2,000,000</text>
+                  </g>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">2,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 2,000,000 monthly npm installs.</p>
           </div>
@@ -633,7 +671,33 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>1,000,000 Installs</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">1M</text>
+                    <text x="28" y="199">500k</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Sep 2024</text>
+                    <text x="492" y="374">Jan 2025</text>
+                  </g>
+                  <path d="M64 344 C122 344 174 340 224 333 C274 326 316 310 354 283 C392 256 426 217 462 178 C498 139 536 100 578 72 C620 44 654 34 690 50 L690 344 L64 344 Z" fill="#ecd53f" fill-opacity="0.14"></path>
+                  <path d="M64 344 C122 344 174 340 224 333 C274 326 316 310 354 283 C392 256 426 217 462 178 C498 139 536 100 578 72 C620 44 654 34 690 50" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="50" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="50" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g style="filter: drop-shadow(0 12px 16px rgba(0,0,0,0.42));">
+                    <rect x="244" y="78" width="330" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="244.5" y="78.5" width="329" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="409" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:@dotenvx/dotenvx</text>
+                    <circle cx="300" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="318" y="160" fill="#18181b" font-size="26" font-weight="700">1,000,000</text>
+                  </g>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">1,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 1,000,000 monthly npm installs.</p>
           </div>
@@ -678,7 +742,33 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>500,000 Installs</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">500k</text>
+                    <text x="28" y="199">250k</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Jun 2024</text>
+                    <text x="492" y="374">Sep 2024</text>
+                  </g>
+                  <path d="M64 344 C118 344 168 340 218 332 C268 324 310 306 350 277 C390 248 424 210 462 169 C500 128 538 91 580 64 C622 37 654 31 690 54 L690 344 L64 344 Z" fill="#ecd53f" fill-opacity="0.14"></path>
+                  <path d="M64 344 C118 344 168 340 218 332 C268 324 310 306 350 277 C390 248 424 210 462 169 C500 128 538 91 580 64 C622 37 654 31 690 54" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="54" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="54" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g style="filter: drop-shadow(0 12px 16px rgba(0,0,0,0.42));">
+                    <rect x="244" y="78" width="330" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="244.5" y="78.5" width="329" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="409" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:@dotenvx/dotenvx</text>
+                    <circle cx="300" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="318" y="160" fill="#18181b" font-size="26" font-weight="700">500,000</text>
+                  </g>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">500,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 500,000 monthly npm installs.</p>
           </div>
@@ -737,3 +827,46 @@ permalink: /changelog/
 
   </section>
 </div>
+
+<script>
+  (() => {
+    const entries = document.querySelectorAll('[data-changelog-entry][id]')
+
+    entries.forEach((entry) => {
+      entry.setAttribute('tabindex', '0')
+      entry.setAttribute('role', 'link')
+      entry.setAttribute('aria-label', `Copy link to changelog entry for ${entry.id}`)
+
+      const copyEntryLink = async () => {
+        const url = `${window.location.origin}${window.location.pathname}#${entry.id}`
+        window.history.replaceState(null, '', `#${entry.id}`)
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(url)
+          }
+        } catch (_) {
+          // Updating the URL is the reliable fallback when clipboard access is unavailable.
+        }
+
+        entry.dataset.copiedLink = 'true'
+        window.clearTimeout(entry._copyTimeout)
+        entry._copyTimeout = window.setTimeout(() => {
+          delete entry.dataset.copiedLink
+        }, 1200)
+      }
+
+      entry.addEventListener('click', (event) => {
+        if (event.target.closest('a, button')) return
+        copyEntryLink()
+      })
+
+      entry.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return
+        if (event.target.closest('a, button')) return
+        event.preventDefault()
+        copyEntryLink()
+      })
+    })
+  })()
+</script>

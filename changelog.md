@@ -1,6 +1,7 @@
 ---
 title: Changelog
 social_title: Changelog
+image: "/assets/img/og-image-changelog.png"
 permalink: /changelog/
 ---
 

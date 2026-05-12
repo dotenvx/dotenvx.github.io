@@ -135,13 +135,12 @@ permalink: /changelog/
     align-items: center;
     background: #050505;
     border: 1px solid rgba(63, 63, 70, 0.7);
-    border-radius: 8px;
+    border-radius: 0;
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.46), 0 0 32px rgba(236, 213, 63, 0.06);
     display: flex;
     justify-content: center;
-    padding: clamp(1rem, 4vw, 1.55rem) clamp(1.4rem, 5vw, 2.4rem);
+    padding: clamp(0.45rem, 1.7vw, 0.75rem) clamp(0.65rem, 2.4vw, 1rem);
     position: relative;
-    width: min(70%, 24rem);
   }
 
   .changelog-trust-logos {
@@ -199,29 +198,9 @@ permalink: /changelog/
   .ops-glyph {
     color: currentColor;
     flex: 0 0 auto;
-    height: 0.72em;
-    transform: translateY(0.06em);
-    width: 0.72em;
-  }
-
-  .changelog-count {
-    align-items: center;
-    background: rgba(24, 24, 27, 0.72);
-    border: 1px solid rgba(82, 82, 91, 0.78);
-    border-radius: 0.28rem;
-    color: #a1a1aa;
-    display: inline-flex;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: clamp(0.9rem, 1.8vw, 1.15rem);
-    font-weight: 600;
-    justify-content: center;
-    letter-spacing: 0.01em;
+    font-size: 0.88em;
     line-height: 1;
-    margin-left: 0.32em;
-    min-width: 2.2em;
-    padding: 0.27em 0.48em 0.25em;
-    transform: translateY(-0.18em);
-    vertical-align: middle;
+    transform: translateY(0.02em);
   }
 
   [data-changelog-entry]:hover > div:first-child,
@@ -232,18 +211,12 @@ permalink: /changelog/
 </style>
 
 <div class="relative overflow-hidden bg-black text-zinc-100">
-  <svg class="absolute h-0 w-0 overflow-hidden" aria-hidden="true" focusable="false">
-    <symbol id="ops-shield-cross" viewBox="0 0 24 24">
-      <path d="M12 2.5 19 5v6.35c0 4.45-2.84 8.35-7 10.15-4.16-1.8-7-5.7-7-10.15V5l7-2.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path>
-      <path d="M12 7.1v8.25M8.35 11.2h7.3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path>
-    </symbol>
-  </svg>
   <div class="pointer-events-none fixed inset-x-0 top-0 z-0 h-[30rem] bg-[radial-gradient(ellipse_at_52%_0%,rgba(85,118,158,0.16)_0%,rgba(35,47,66,0.08)_34%,rgba(0,0,0,0)_70%)]" aria-hidden="true"></div>
   <div class="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0)_24%,rgba(0,0,0,0.74)_100%)]" aria-hidden="true"></div>
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pt-14 md:pt-20 pb-9 md:pb-12">
     <div class="text-center">
-      <h1 class="font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4.2rem] leading-[0.98] text-zinc-100">Changelog <span class="changelog-count" aria-label="32 changelog items">32</span></h1>
+      <h1 class="font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4.2rem] leading-[0.98] text-zinc-100">Changelog</h1>
     </div>
   </section>
 
@@ -406,7 +379,7 @@ permalink: /changelog/
                   <g filter="url(#install-card-shadow)">
                     <rect x="284" y="78" width="260" height="118" rx="12" fill="#f4f4f5"></rect>
                     <rect x="284.5" y="78.5" width="259" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
-                    <text x="414" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">Apr 2026</text>
+                    <text x="414" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:dotenv</text>
                     <circle cx="324" cy="151" r="5" fill="#ecd53f"></circle>
                     <text x="342" y="160" fill="#18181b" font-size="26" font-weight="700">500,000,000</text>
                   </g>
@@ -456,7 +429,33 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>15,000,000 Installs</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">15M</text>
+                    <text x="28" y="199">7.5M</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Sep 2024</text>
+                    <text x="492" y="374">Mar 2026</text>
+                  </g>
+                  <path d="M64 344 C118 344 164 340 210 336 C256 331 292 318 326 296 C360 274 388 244 420 210 C452 176 482 139 516 112 C550 85 594 64 632 42 C656 28 674 20 690 24 L690 344 L64 344 Z" fill="#ecd53f" fill-opacity="0.14"></path>
+                  <path d="M64 344 C118 344 164 340 210 336 C256 331 292 318 326 296 C360 274 388 244 420 210 C452 176 482 139 516 112 C550 85 594 64 632 42 C656 28 674 20 690 24" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="24" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="24" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g style="filter: drop-shadow(0 12px 16px rgba(0,0,0,0.42));">
+                    <rect x="244" y="78" width="330" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="244.5" y="78.5" width="329" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="409" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:@dotenvx/dotenvx</text>
+                    <circle cx="300" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="318" y="160" fill="#18181b" font-size="26" font-weight="700">15,000,000</text>
+                  </g>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">15,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 15,000,000 monthly npm installs.</p>
           </div>
@@ -471,7 +470,33 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>6,000,000 Installs</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">6M</text>
+                    <text x="28" y="199">3M</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Sep 2024</text>
+                    <text x="492" y="374">Jan 2026</text>
+                  </g>
+                  <path d="M64 344 C126 344 176 341 224 336 C272 331 314 318 352 294 C390 270 424 232 458 196 C492 160 528 124 566 94 C604 64 650 36 690 42 L690 344 L64 344 Z" fill="#ecd53f" fill-opacity="0.14"></path>
+                  <path d="M64 344 C126 344 176 341 224 336 C272 331 314 318 352 294 C390 270 424 232 458 196 C492 160 528 124 566 94 C604 64 650 36 690 42" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="42" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="42" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g style="filter: drop-shadow(0 12px 16px rgba(0,0,0,0.42));">
+                    <rect x="244" y="78" width="330" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="244.5" y="78.5" width="329" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="409" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:@dotenvx/dotenvx</text>
+                    <circle cx="300" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="318" y="160" fill="#18181b" font-size="26" font-weight="700">6,000,000</text>
+                  </g>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">6,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 6,000,000 monthly npm installs.</p>
           </div>

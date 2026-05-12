@@ -130,6 +130,25 @@ permalink: /changelog/
     width: 100%;
   }
 
+  .changelog-trust-logos {
+    align-items: center;
+    display: flex;
+    gap: clamp(1.15rem, 4vw, 2rem);
+    justify-content: center;
+    position: relative;
+  }
+
+  .changelog-whitepaper-thumb {
+    border: 1px solid rgba(228, 228, 231, 0.18);
+    border-radius: 4px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
+    height: 82%;
+    max-height: 82%;
+    object-fit: contain;
+    position: relative;
+    width: auto;
+  }
+
   .ops-lockup {
     align-items: baseline;
     display: inline-flex;
@@ -178,7 +197,12 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Trust Page</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-trust-logos">
+                  {% include logos/framework-soc2.html uid="changelog-soc2" class="h-20 w-20 md:h-28 md:w-28" %}
+                  {% include logos/framework-gdpr.html class="h-20 w-20 md:h-28 md:w-28" %}
+                </div>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Trust Page</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We launched <code class="text-zinc-300">trust.dotenvx.com</code> as the home for Dotenvx security, compliance, and trust resources.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
@@ -220,7 +244,7 @@ permalink: /changelog/
   orbit-labs
   northstar</pre></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Team Armor</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Ops now prompts for the right team when armoring, pushing, pulling, or restoring keys across multi-team accounts.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> now prompts for the right team when armoring, pushing, pulling, or restoring keys across multi-team accounts.</p>
           </div>
         </div>
       </article>
@@ -251,7 +275,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor up</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Armor</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under Ops control.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> control.</p>
           </div>
         </div>
       </article>
@@ -315,9 +339,9 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Dotenvx Ops [beta]</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Ops <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Ops opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
+              <div class="changelog-card" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> [beta]</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
           </div>
         </div>
       </article>
@@ -377,7 +401,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true"><span>Backup [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Backup <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Ops added secure <code class="text-zinc-300">.env.keys</code> backup, automatic login, project opening, and path settings for smoother recovery workflows.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> added secure <code class="text-zinc-300">.env.keys</code> backup, automatic login, project opening, and path settings for smoother recovery workflows.</p>
           </div>
         </div>
       </article>
@@ -392,7 +416,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true"><span>Rotation Workflows</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotation Workflows</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotation tokens, <code class="text-zinc-300">rotate</code>, URI rotation, and npm, GitHub, and OpenAI connection flows landed in Ops.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotation tokens, <code class="text-zinc-300">rotate</code>, URI rotation, and npm, GitHub, and OpenAI connection flows landed in <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span>.</p>
           </div>
         </div>
       </article>
@@ -405,8 +429,8 @@ permalink: /changelog/
         <div>
           <div class="max-w-2xl">
               <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx ops</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Ops Command</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">The first Ops command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> Command</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">The first <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
           </div>
         </div>
       </article>
@@ -449,7 +473,9 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Whitepaper</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <img class="changelog-whitepaper-thumb" src="/assets/img/whitepaper-thumb.png" alt="" loading="lazy">
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the dotenvx whitepaper draft.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>

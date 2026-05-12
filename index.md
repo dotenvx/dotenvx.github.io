@@ -53,8 +53,8 @@ title: ""
     <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
       {% include logos/paypal.html class="h-10 lg:h-11 w-auto mx-auto" %}
     </a>
-    <a href="https://github.com/SocketDev/socket-cli" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Socket CLI using dotenvx">
-          {% include logos/socket2.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
+    <a href="https://github.com/search?q=repo%3ACrowdStrike%2Ffoundry-playwright%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="CrowdStrike foundry-playwright using dotenvx">
+          {% include logos/crowdstrike.html class="w-[14rem] lg:w-[18rem] h-auto mx-auto" %}
     </a>
     <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
           {% include logos/aws.html class="h-16 lg:h-15 w-auto mx-auto" %}

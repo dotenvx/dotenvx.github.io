@@ -18,6 +18,7 @@ permalink: /changelog/
     border-radius: 10px;
     cursor: pointer;
     margin: -0.875rem -1rem;
+    outline: none;
     padding: 0.875rem 1rem;
     scroll-margin-top: 6rem;
     transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
@@ -28,6 +29,20 @@ permalink: /changelog/
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
+  }
+
+  [data-changelog-entry]:focus-visible {
+    outline: none;
+  }
+
+  [data-changelog-entry]:focus-visible > div:first-child {
+    color: #ecd53f;
+    text-shadow: 0 0 18px rgba(236, 213, 63, 0.28);
+  }
+
+  [data-changelog-entry]:focus-visible > div:nth-child(2) > div:last-child {
+    background-color: #ecd53f;
+    box-shadow: 0 0 22px rgba(236, 213, 63, 0.34);
   }
 
 
@@ -179,6 +194,13 @@ permalink: /changelog/
     width: 70%;
   }
 
+  .changelog-cloudflare-logo {
+    height: auto;
+    max-width: min(72%, 20rem);
+    position: relative;
+    width: 100%;
+  }
+
   .changelog-install-chart {
     height: 100%;
     position: relative;
@@ -271,6 +293,24 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Google Login</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Users can now sign in with Google, making it faster for teams to get into Dotenvx and start managing their workflows.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-05-08" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-08" data-search-text="automated pentest security assessment zap nmap nuclei testssl gitleaks trivy semgrep hostedscan ops dotenvx may 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 8, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ nmap ops.dotenvx.com</span>
+<span class="terminal-yellow">◇ zap baseline: 0 failures</span>
+<span class="terminal-muted">$ trivy fs radar</span></pre></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Automated Pentest</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">We ran an automated security assessment against <code class="text-zinc-300">ops.dotenvx.com</code> and supporting application code, covering public network exposure, TLS posture, passive web behavior, dependency vulnerabilities, static analysis, and secret exposure.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Evidence was retained from HostedScan, Nuclei, OWASP ZAP, Nmap, testssl.sh, Gitleaks, Trivy, and Semgrep. Remediation work will get its own follow-up entry.</p>
           </div>
         </div>
       </article>
@@ -411,7 +451,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Cloudflare Workers Support</span></div>
+              <div class="changelog-card" aria-hidden="true">{% include logos/cloudflare.html class="changelog-cloudflare-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Cloudflare Workers Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use encrypted dotenvx env files cleanly in Cloudflare Workers and Wrangler workflows.</p>
           </div>
@@ -488,6 +528,24 @@ permalink: /changelog/
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Next.js Setup</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published a practical guide for using encrypted <code class="text-zinc-300">.env</code> files with Next.js and Vercel, including the serverless runtime gotcha around <code class="text-zinc-300">instrumentation.ts</code>.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2026/02/17/dotenvx-nextjs.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-02-10" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-02-10" data-search-text="vestauth agent rotate provider verify signature agent uid february 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Feb 10, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ vestauth agent init</span>
+<span class="terminal-yellow">◇ Signature-Agent</span>
+<span class="terminal-muted">$ vestauth agent rotate</span></pre></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">VestAuth Agent</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">VestAuth agent commands became functional for agent identity work, with provider verification, signed agent requests, agent rotation, and the move to stable <code class="text-zinc-300">--uid</code> identifiers.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://github.com/vestauth/vestauth/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Read Changelog</a>
           </div>
         </div>
       </article>
@@ -789,6 +847,24 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">500,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 500,000 monthly npm installs.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2024-07-11" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2024-07-11" data-search-text="feature complete decrypt run get set encrypt dotenvx july 2024">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 11, 2024</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx encrypt</span>
+<span class="terminal-yellow">◇ dotenvx decrypt</span>
+<span class="terminal-muted">$ dotenvx run -- your-cmd</span></pre></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Feature Complete</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">With <code class="text-zinc-300">decrypt</code> added in dotenvx 1.6.0, dotenvx reached feature-complete status across its five core commands: <code class="text-zinc-300">run</code>, <code class="text-zinc-300">get</code>, <code class="text-zinc-300">set</code>, <code class="text-zinc-300">encrypt</code>, and <code class="text-zinc-300">decrypt</code>.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2024/07/11/feature-complete.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>

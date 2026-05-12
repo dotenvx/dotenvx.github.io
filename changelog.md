@@ -28,6 +28,39 @@ permalink: /changelog/
     box-shadow: none;
   }
 
+
+
+  .changelog-card {
+    align-items: center;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(180deg, rgba(24, 24, 27, 0.94), rgba(9, 9, 11, 0.98));
+    border: 1px solid rgba(63, 63, 70, 0.62);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .changelog-card::before {
+    background: radial-gradient(circle at 50% 0%, rgba(236, 213, 63, 0.1), transparent 44%);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .changelog-card span {
+    color: #f4f4f5;
+    font-size: clamp(1.45rem, 5vw, 2.35rem);
+    line-height: 1.05;
+    max-width: 82%;
+    position: relative;
+    text-align: center;
+  }
+
   [data-changelog-entry]:hover > div:first-child,
   [data-changelog-entry]:focus-within > div:first-child {
     color: #ecd53f;
@@ -55,6 +88,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Team Armor</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Team Armor</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Ops now prompts for the right team when armoring, pushing, pulling, or restoring keys across multi-team accounts.</p>
           </div>
@@ -69,6 +103,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>KEYSEE⎔ Whitepaper</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔ Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the KEYSEE whitepaper for deterministic visual identity from compressed public keys.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Read more</a>
@@ -84,6 +119,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Armor Commands</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor Commands</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under Ops control.</p>
           </div>
@@ -98,6 +134,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>KEYSEE⎔</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">KEYSEE released as a deterministic visual identity system for public keys.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/" target="_blank" rel="noopener noreferrer">Read more</a>
@@ -113,6 +150,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>500,000,000 Installs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">500,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenv</code> reached half a billion monthly npm installs.</p>
           </div>
@@ -127,6 +165,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Cloudflare Workers Support</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Cloudflare Workers Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use encrypted dotenvx env files cleanly in Cloudflare Workers and Wrangler workflows.</p>
           </div>
@@ -141,6 +180,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Dotenvx Ops [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Ops <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Ops opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
           </div>
@@ -155,6 +195,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>15,000,000 Installs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">15,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 15,000,000 monthly npm installs.</p>
           </div>
@@ -169,6 +210,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>6,000,000 Installs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">6,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 6,000,000 monthly npm installs.</p>
           </div>
@@ -183,6 +225,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Gateway [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Gateway <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx-ops gateway start</code> launched with initial OpenAI support.</p>
           </div>
@@ -197,6 +240,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Backup [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Backup <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Ops added secure <code class="text-zinc-300">.env.keys</code> backup, automatic login, project opening, and path settings for smoother recovery workflows.</p>
           </div>
@@ -211,6 +255,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Rotation Workflows</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotation Workflows</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotation tokens, <code class="text-zinc-300">rotate</code>, URI rotation, and npm, GitHub, and OpenAI connection flows landed in Ops.</p>
           </div>
@@ -224,6 +269,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Ops Command</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Ops Command</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">The first Ops command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
           </div>
@@ -238,6 +284,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>2,000,000 Installs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">2,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 2,000,000 monthly npm installs.</p>
           </div>
@@ -252,6 +299,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Rotate [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added the first <code class="text-zinc-300">dotenvx rotate</code> command.</p>
           </div>
@@ -266,6 +314,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Whitepaper</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the dotenvx whitepaper draft.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Read more</a>
@@ -281,6 +330,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Decryption at Access</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Decryption at Access</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added <code class="text-zinc-300">main.get</code> and <code class="text-zinc-300">main.set</code>, enabling programmatic encrypted value access and write workflows.</p>
           </div>
@@ -295,6 +345,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>1,000,000 Installs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">1,000,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 1,000,000 monthly npm installs.</p>
           </div>
@@ -309,6 +360,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Monorepo Support</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Monorepo Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added <code class="text-zinc-300">--env-keys-file</code> so monorepos can share one <code class="text-zinc-300">.env.keys</code> file across many apps.</p>
           </div>
@@ -323,6 +375,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Strict Mode</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Strict Mode</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added strict failure behavior and ignore controls for CI-safe missing-file and decryption-error handling.</p>
           </div>
@@ -337,6 +390,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>500,000 Installs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">500,000 Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 500,000 monthly npm installs.</p>
           </div>
@@ -351,6 +405,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Dotenvx 1.0</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx 1.0</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">A leap forward in configuration management for dotenv, with a breaking shift from the old <code class="text-zinc-300">.env.vault</code> workflow to encrypted <code class="text-zinc-300">.env</code> files.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2024/06/24/dotenvx-next-generation-config-management.html" target="_blank" rel="noopener noreferrer">Read more</a>
@@ -366,6 +421,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Encrypted .env</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Encrypted .env</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx moved from <code class="text-zinc-300">.env.vault</code> toward encrypted <code class="text-zinc-300">.env</code> files with public-key encryption, safe-to-commit secrets, and <code class="text-zinc-300">.env.keys</code>.</p>
           </div>
@@ -380,6 +436,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Dotenvx Begins</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Begins</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">The first dotenvx work began, laying the foundation for encrypted environment files and a cross-platform secrets CLI.</p>
           </div>

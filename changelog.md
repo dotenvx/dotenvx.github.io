@@ -61,6 +61,11 @@ permalink: /changelog/
     text-align: center;
   }
 
+  .changelog-card-command > span {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: clamp(1.15rem, 4.4vw, 1.95rem);
+  }
+
   .changelog-card-terminal {
     align-items: flex-start;
     background: #0a0a0a;
@@ -97,6 +102,49 @@ permalink: /changelog/
     color: #ededed;
   }
 
+  .changelog-google-button {
+    align-items: center;
+    background: rgba(244, 244, 245, 0.9);
+    border: 1px solid rgba(161, 161, 170, 0.7);
+    border-radius: 0.35rem;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.42) inset, 0 1px 2px rgba(0, 0, 0, 0.28);
+    color: #3f3f46;
+    display: inline-flex;
+    font-size: clamp(0.95rem, 3vw, 1.35rem);
+    font-weight: 400;
+    gap: 0.75rem;
+    justify-content: center;
+    line-height: 1;
+    padding: 0.85rem 1.05rem;
+  }
+
+  .changelog-google-button svg {
+    height: 1.2em;
+    width: 1.2em;
+  }
+
+  .changelog-keysee-logo {
+    height: auto;
+    max-width: min(72%, 22rem);
+    position: relative;
+    width: 100%;
+  }
+
+  .ops-lockup {
+    align-items: baseline;
+    display: inline-flex;
+    gap: 0.28em;
+    white-space: nowrap;
+  }
+
+  .ops-glyph {
+    color: currentColor;
+    flex: 0 0 auto;
+    height: 0.72em;
+    transform: translateY(0.06em);
+    width: 0.72em;
+  }
+
   [data-changelog-entry]:hover > div:first-child,
   [data-changelog-entry]:focus-within > div:first-child {
     color: #ecd53f;
@@ -105,6 +153,12 @@ permalink: /changelog/
 </style>
 
 <div class="relative overflow-hidden bg-black text-zinc-100">
+  <svg class="absolute h-0 w-0 overflow-hidden" aria-hidden="true" focusable="false">
+    <symbol id="ops-shield-cross" viewBox="0 0 24 24">
+      <path d="M12 2.5 19 5v6.35c0 4.45-2.84 8.35-7 10.15-4.16-1.8-7-5.7-7-10.15V5l7-2.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path>
+      <path d="M12 7.1v8.25M8.35 11.2h7.3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path>
+    </symbol>
+  </svg>
   <div class="pointer-events-none fixed inset-x-0 top-0 z-0 h-[30rem] bg-[radial-gradient(ellipse_at_52%_0%,rgba(85,118,158,0.16)_0%,rgba(35,47,66,0.08)_34%,rgba(0,0,0,0)_70%)]" aria-hidden="true"></div>
   <div class="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0)_24%,rgba(0,0,0,0.74)_100%)]" aria-hidden="true"></div>
 
@@ -116,6 +170,42 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="trust page trust center trust dotenvx compliance security may 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 12, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Trust Page</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Trust Page</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">We launched <code class="text-zinc-300">trust.dotenvx.com</code> as the home for Dotenvx security, compliance, and trust resources.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="google login sign in authentication dotenvx ops may 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 11, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-google-button">
+                  <svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"></path><path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.35 0-4.34-1.58-5.05-3.71H.94v2.33A9 9 0 0 0 9 18z"></path><path fill="#FBBC05" d="M3.95 10.71a5.41 5.41 0 0 1 0-3.42V4.96H.94a9 9 0 0 0 0 8.08l3.01-2.33z"></path><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.43 1.34l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.96l3.01 2.33C4.66 5.16 6.65 3.58 9 3.58z"></path></svg>
+                  <span>Login with Google</span>
+                </div>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Google Login</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Users can now sign in with Google, making it faster for teams to get into Dotenvx and start managing their workflows.</p>
+          </div>
+        </div>
+      </article>
+
       <article class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-search-text="team aware armored keys team selector armor up armor push armor down armor pull may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 7, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
@@ -124,7 +214,11 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Team Armor</span></div>
+              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx armor up</span>
+<span class="terminal-yellow">⟐ select team</span>
+<span class="terminal-yellow">› acme-team</span>
+  orbit-labs
+  northstar</pre></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Team Armor</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Ops now prompts for the right team when armoring, pushing, pulling, or restoring keys across multi-team accounts.</p>
           </div>
@@ -155,12 +249,8 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx armor up</span>
-<span class="terminal-yellow">⟐ select team</span>
-<span class="terminal-yellow">› acme-team</span>
-  orbit-labs
-  northstar</pre></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor Commands</h3>
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor up</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Armor</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under Ops control.</p>
           </div>
         </div>
@@ -174,7 +264,12 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>KEYSEE⎔</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-keysee-logo" viewBox="0 0 448 126" role="img" aria-label="KEYSEE">
+                  <text x="36" y="86" fill="#ffffff" stroke="#ffffff" stroke-width="4.2" stroke-linejoin="round" paint-order="stroke fill" font-family="Inter, Arial, Helvetica, sans-serif" font-size="72" font-weight="900" letter-spacing="3">KEYSEE</text>
+                  <polygon points="374,45 398,45 412,66 398,87 374,87 360,66" fill="none" stroke="#ecd26b" stroke-width="7" stroke-linejoin="round"></polygon>
+                </svg>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">KEYSEE released as a deterministic visual identity system for public keys.</p>
               <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/" target="_blank" rel="noopener noreferrer">Visit Website</a>
@@ -309,7 +404,7 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>$ dotenvx ops</span></div>
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx ops</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Ops Command</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">The first Ops command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
           </div>

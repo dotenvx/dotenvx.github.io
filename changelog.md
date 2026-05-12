@@ -147,19 +147,35 @@ permalink: /changelog/
   .changelog-trust-logos {
     align-items: center;
     display: flex;
-    gap: clamp(1.15rem, 4vw, 2rem);
     justify-content: center;
     position: relative;
+  }
+
+  .changelog-trust-logos > * + * {
+    margin-left: clamp(-1.4rem, -4vw, -0.85rem);
+  }
+
+  .changelog-trust-logos > * {
+    position: relative;
+  }
+
+  .changelog-trust-logos > *:nth-child(1) {
+    z-index: 2;
+  }
+
+  .changelog-trust-logos > *:nth-child(2) {
+    z-index: 1;
   }
 
   .changelog-whitepaper-thumb {
     border: 1px solid rgba(228, 228, 231, 0.18);
     border-radius: 4px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
-    height: 82%;
-    max-height: 82%;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.46);
+    height: 118%;
+    max-height: none;
     object-fit: contain;
     position: relative;
+    transform: translateY(18%);
     width: auto;
   }
 
@@ -188,6 +204,26 @@ permalink: /changelog/
     width: 0.72em;
   }
 
+  .changelog-count {
+    align-items: center;
+    background: rgba(24, 24, 27, 0.72);
+    border: 1px solid rgba(82, 82, 91, 0.78);
+    border-radius: 0.28rem;
+    color: #a1a1aa;
+    display: inline-flex;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-left: 0.32em;
+    min-width: 2.2em;
+    padding: 0.27em 0.48em 0.25em;
+    transform: translateY(-0.18em);
+    vertical-align: middle;
+  }
+
   [data-changelog-entry]:hover > div:first-child,
   [data-changelog-entry]:focus-within > div:first-child {
     color: #ecd53f;
@@ -207,7 +243,7 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pt-14 md:pt-20 pb-9 md:pb-12">
     <div class="text-center">
-      <h1 class="font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4.2rem] leading-[0.98] text-zinc-100">Changelog</h1>
+      <h1 class="font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4.2rem] leading-[0.98] text-zinc-100">Changelog <span class="changelog-count" aria-label="32 changelog items">32</span></h1>
     </div>
   </section>
 
@@ -268,7 +304,7 @@ permalink: /changelog/
   orbit-labs
   northstar</pre></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Team Armor</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> now prompts for the right team when armoring, pushing, pulling, or restoring keys across multi-team accounts.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> now prompts for the right team when armoring, pushing, pulling, or restoring keys across multi-team accounts.</p>
           </div>
         </div>
       </article>
@@ -301,7 +337,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor up</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Armor</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> control.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> control.</p>
           </div>
         </div>
       </article>
@@ -405,9 +441,9 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> [beta]</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
+              <div class="changelog-card" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> [beta]</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
           </div>
         </div>
       </article>
@@ -467,7 +503,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true"><span>Backup [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Backup <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> added secure <code class="text-zinc-300">.env.keys</code> backup, automatic login, project opening, and path settings for smoother recovery workflows.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> added secure <code class="text-zinc-300">.env.keys</code> backup, automatic login, project opening, and path settings for smoother recovery workflows.</p>
           </div>
         </div>
       </article>
@@ -482,7 +518,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true"><span>Rotation Workflows</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotation Workflows</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotation tokens, <code class="text-zinc-300">rotate</code>, URI rotation, and npm, GitHub, and OpenAI connection flows landed in <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span>.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotation tokens, <code class="text-zinc-300">rotate</code>, URI rotation, and npm, GitHub, and OpenAI connection flows landed in <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span>.</p>
           </div>
         </div>
       </article>
@@ -495,8 +531,8 @@ permalink: /changelog/
         <div>
           <div class="max-w-2xl">
               <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx ops</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> Command</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">The first <span class="ops-lockup">Ops <svg class="ops-glyph" aria-hidden="true"><use href="#ops-shield-cross"></use></svg></span> command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> Command</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">The first <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
           </div>
         </div>
       </article>

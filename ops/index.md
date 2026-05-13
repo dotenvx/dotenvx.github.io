@@ -1,5 +1,6 @@
 ---
 title: "Dotenvx Ops"
+image: "/assets/img/og-image-ops.png"
 ---
 
 <style>

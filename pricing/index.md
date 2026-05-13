@@ -195,6 +195,22 @@ image: "/assets/img/og-image-pricing.png"
         </thead>
         <tbody>
           <tr class="border-b border-zinc-900">
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Billing Method</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Annual</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly / Annual</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly / Annual</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Flexible</td>
+          </tr>
+          <tr class="border-b border-zinc-900">
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Payment Method</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Flexible</td>
+          </tr>
+          <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Ticket Support</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>

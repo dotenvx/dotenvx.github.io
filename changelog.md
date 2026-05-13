@@ -183,6 +183,28 @@ permalink: /changelog/
     z-index: 1;
   }
 
+  .changelog-python-uv-logos {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .changelog-python-uv-logo {
+    height: clamp(4.8rem, 17vw, 7.2rem);
+    position: relative;
+    width: clamp(4.8rem, 17vw, 7.2rem);
+    z-index: 2;
+  }
+
+  .changelog-uv-logo {
+    height: clamp(2.4rem, 8.5vw, 3.6rem);
+    margin-left: clamp(-2rem, -6vw, -1.35rem);
+    position: relative;
+    width: clamp(2.4rem, 8.5vw, 3.6rem);
+    z-index: 1;
+  }
+
   .changelog-whitepaper-thumb {
     border: 1px solid rgba(228, 228, 231, 0.18);
     border-radius: 4px;
@@ -264,6 +286,27 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-05-13" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-13" data-search-text="python uv guide secrets dotenvx docs may 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 13, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-python-uv-logos">
+                  {% include logos/python.html class="changelog-python-uv-logo" %}
+                  {% include logos/uv.html class="changelog-uv-logo" %}
+                </div>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Python UV</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">We added a new guide for encrypting secrets in Python projects using uv.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/docs/secrets-in-uv" target="_blank" rel="noopener noreferrer">Encrypt secrets in uv</a>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-05-12" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-12" data-search-text="trust page trust center trust dotenvx compliance security may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 12, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">

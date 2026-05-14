@@ -42,6 +42,11 @@ favicon:
 exclude:
   - .DS_Store
   - README.md
+  - package.json
+  - package-lock.json
+  - yarn.lock
+  - postcss.config.js
+  - tailwind.config.js
 
 markdown: kramdown
 kramdown:

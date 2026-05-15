@@ -1,5 +1,5 @@
 ---
-title: "Dotenvx Trust Center"
+title: "Dotenvx - Trust Center"
 social_title: "Dotenvx Trust Center"
 description: "From the creator of dotenv, Dotenvx extends the .env workflow trusted by developers for over a decade with encryption, key separation, and secure secret distribution."
 layout: blank

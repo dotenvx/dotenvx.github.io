@@ -27,7 +27,11 @@ image: "/assets/img/og-image-pricing.png"
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
-        <a class="btn-primary w-full inline-flex justify-center text-sm" href="/docs">Get Started</a>
+        <a class="group inline-flex min-h-[42px] items-center gap-2 text-sm font-semibold !text-zinc-100 no-underline hover:!text-white hover:no-underline" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
+          {% include logos/github.html class="h-4 w-4 text-zinc-400 transition-colors duration-200 group-hover:text-white" %}
+          <span>View on GitHub</span>
+          <span class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1" aria-hidden="true">›</span>
+        </a>
       </div>
     </div>
     <div class="rounded-xl border border-zinc-900 flex flex-col">

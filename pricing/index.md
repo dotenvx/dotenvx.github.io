@@ -19,6 +19,7 @@ image: "/assets/img/og-image-pricing.png"
           <p class="mt-2 text-zinc-500 text-sm">Local on device</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
@@ -27,9 +28,8 @@ image: "/assets/img/og-image-pricing.png"
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6">
-        <a class="group inline-flex min-h-[42px] items-center gap-2 text-sm font-semibold !text-zinc-100 no-underline hover:!text-white hover:no-underline" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
-          {% include logos/github.html class="h-4 w-4 text-zinc-400 transition-colors duration-200 group-hover:text-white" %}
-          <span>View on GitHub</span>
+        <a class="group inline-flex min-h-[42px] w-full items-center gap-2 text-sm font-semibold !text-zinc-100 no-underline hover:!text-white hover:no-underline" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
           <span class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1" aria-hidden="true">›</span>
         </a>
       </div>
@@ -45,6 +45,7 @@ image: "/assets/img/og-image-pricing.png"
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
@@ -70,6 +71,7 @@ image: "/assets/img/og-image-pricing.png"
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
@@ -98,6 +100,7 @@ image: "/assets/img/og-image-pricing.png"
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>

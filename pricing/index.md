@@ -7,8 +7,11 @@ image: "/assets/img/og-image-pricing.png"
   <h1 class="my-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Start for free, then harden your keys.</p>
 
-  <div class="mx-auto w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-    <div class="rounded-xl border border-zinc-900 flex flex-col">
+  <div class="mx-auto w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-5">
+    <div class="lg:col-span-2 flex flex-col">
+      <div class="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Self-serve</div>
+      <div class="grid flex-1 grid-cols-1 md:grid-cols-2 rounded-xl shadow-[0_0_90px_rgba(113,113,122,0.085)] ring-1 ring-zinc-700/10">
+    <div class="rounded-t-xl md:rounded-l-xl md:rounded-r-none border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Free</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
@@ -34,7 +37,7 @@ image: "/assets/img/og-image-pricing.png"
         </a>
       </div>
     </div>
-    <div class="rounded-xl border border-zinc-900 flex flex-col">
+    <div class="rounded-b-xl md:rounded-r-xl md:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Solo</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
@@ -60,7 +63,12 @@ image: "/assets/img/og-image-pricing.png"
         <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
       </div>
     </div>
-    <div class="rounded-xl border border-zinc-900 flex flex-col">
+      </div>
+    </div>
+    <div class="lg:col-span-3 flex flex-col">
+      <div class="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Company Plans</div>
+      <div class="grid flex-1 grid-cols-1 md:grid-cols-3 rounded-xl shadow-[0_0_110px_rgba(250,204,21,0.12)] ring-1 ring-yellow-400/10">
+    <div class="rounded-t-xl md:rounded-l-xl md:rounded-r-none border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Team</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
@@ -89,7 +97,7 @@ image: "/assets/img/og-image-pricing.png"
         <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
       </div>
     </div>
-    <div class="rounded-xl border border-zinc-900 flex flex-col">
+    <div class="border-x border-b md:border-l-0 md:border-y md:border-r border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Secure</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
@@ -118,13 +126,40 @@ image: "/assets/img/og-image-pricing.png"
         <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
       </div>
     </div>
+    <div class="rounded-b-xl md:rounded-r-xl md:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r border-zinc-900 flex flex-col">
+      <div class="p-5 md:p-6">
+        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Enterprise</h2>
+        <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
+          <span>Custom</span>
+        </div>
+        <div class="mt-8 border-y border-zinc-900 py-3 text-center">
+          <p class="text-zinc-100 text-sm">Specific needs</p>
+          <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
+        </div>
+        <ul class="mt-5 text-zinc-400 text-sm space-y-2">
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
+        </ul>
+      </div>
+      <div class="mt-auto p-5 md:p-6">
+        <a href="/contact" class="btn-primary w-full inline-flex justify-center text-sm">Contact Us</a>
+      </div>
+    </div>
+      </div>
+    </div>
   </div>
 
   <p class="text-right text-xs text-zinc-400 mt-3"><sup>⧖</sup> coming soon</p>
-
-  <p class="mt-10 text-center text-zinc-400 text-sm md:text-base font-normal tracking-tight">
-    <a href="/contact" class="font-normal no-underline hover:no-underline" style="color: rgba(161, 161, 170, 0.95) !important; -webkit-text-fill-color: rgba(161, 161, 170, 0.95); text-decoration-color: rgba(161, 161, 170, 0.95);">Need a custom enterprise plan? Contact us <span aria-hidden="true">›</span></a>
-  </p>
 
   <div class="mx-auto mt-32 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Access & Identity</h2>

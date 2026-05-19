@@ -1114,8 +1114,8 @@ image: "/assets/img/og-image-trust.png"
         Maintained by
         <a href="mailto:security@dotenvx.com" class="!text-zinc-400 no-underline hover:!text-white hover:no-underline">Dotenvx Security</a>
         <span class="mx-1.5 text-zinc-600">·</span>
-        Trust automation by
-        <a href="https://github.com/trycompai/comp" class="!text-zinc-400 no-underline hover:!text-white hover:no-underline">CompAI</a>
+        Monitored and Powered by 
+        <a href="https://oneleet.com" class="!text-zinc-400 no-underline hover:!text-white hover:no-underline">Oneleet</a>
       </p>
     </footer>
   </main>

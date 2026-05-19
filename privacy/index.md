@@ -11,7 +11,7 @@ title: "Privacy Policy"
 
   <h2 class="font-extrabold text-lg">Identity & Access</h2>
 
-  <p>When you sign up for Dotenvx, we ask for your name and email address via "Login with GitHub". That's just so you can personalize your new account, and we can send you updates, or other essential information. We'll never sell your personal info to third parties, and we won't use your name in marketing statements without your permission, either.</p>
+  <p>When you sign up for Dotenvx, we ask for your name and email address via "Login with GitHub" or "Login with Google". That's just so you can personalize your new account, and we can send you updates, or other essential information. We'll never sell your personal info to third parties, and we won't use your name in marketing statements without your permission, either.</p>
 
   <p>When you write Dotenvx with a question or to ask for help, we'll keep that correspondence, and the email address, for future reference. When you browse our marketing pages, we'll track that for statistical purposes (like conversion rates and to test new designs). We also store any information you volunteer, like surveys, for as long as it makes sense.</p>
 
@@ -34,6 +34,14 @@ title: "Privacy Policy"
   <h2 class="font-extrabold text-lg">Deleted Data</h2>
 
   <p>When you cancel your account, we'll ensure that nothing is stored on our servers past 30 days. Anything you delete on your account while it's active will also be purged within 30 days (in many cases much sooner. 30 days is about the time it takes all metadata of your data to fully clear from our cache and log history).</p>
+
+  <h2 class="font-extrabold text-lg">Your Privacy Rights</h2>
+
+  <p>Depending on your location and applicable law, you may have rights regarding your personal data, including the right to access, correct, delete, export, or restrict certain uses of your information.</p>
+
+  <p>You may also have the right to object to certain processing activities or lodge a complaint with your local data protection authority.</p>
+
+  <p>To exercise these rights, contact <a href="mailto:support@dotenvx.com">support@dotenvx.com</a>.</p>
 
   <h2 class="font-extrabold text-lg">Changes & Questions</h2>
 

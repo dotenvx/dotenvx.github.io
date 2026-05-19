@@ -619,6 +619,7 @@ background-color: #f8f9fa !important;
 input[name="how-radio"]:checked + label {
 border-color: #222529 !important;
 }
+
 .screenshot img {
 width: 100%;
 }
@@ -916,5 +917,267 @@ width: 100%;
 .feature-card-head {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0.65in 0.72in;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #111827 !important;
+    text-shadow: none !important;
+  }
+
+  html {
+    background: #ffffff !important;
+    font-size: 12pt !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    display: block !important;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
+    line-height: 1.48 !important;
+    min-height: 0 !important;
+  }
+
+  header,
+  footer,
+  nav,
+  script,
+  canvas,
+  video,
+  iframe,
+  form,
+  button,
+  [role="button"],
+  #mobile-nav-overlay,
+  #mobile-nav-toggle,
+  #mobile-nav-close,
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-submit,
+  .btn-success,
+  .btn-dark,
+  .btn-enterprise,
+  .btn-outline,
+  .nav-cta,
+  .terminal-hero-card,
+  .ops-page-lightning-body,
+  .hero-godrays-canvas {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+    margin: 0 auto !important;
+    max-width: 7.1in !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  main > section,
+  main > article,
+  .prose {
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  main > section:first-child::before,
+  main > article:first-child::before {
+    border-bottom: 1px solid #d1d5db;
+    color: #6b7280 !important;
+    content: "dotenvx.com";
+    display: block;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.28in;
+    padding-bottom: 0.12in;
+    text-transform: uppercase;
+  }
+
+  h1,
+  .prose h1 {
+    break-after: avoid;
+    font-family: "Canela", "Canela Deck", Georgia, Cambria, "Times New Roman", Times, serif !important;
+    font-size: 24pt !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.08 !important;
+    margin: 0 0 0.18in !important;
+  }
+
+  h2,
+  .prose h2 {
+    break-after: avoid;
+    border-top: 1px solid #e5e7eb;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 13pt !important;
+    font-weight: 800 !important;
+    line-height: 1.22 !important;
+    margin: 0.28in 0 0.08in !important;
+    padding-top: 0.14in !important;
+  }
+
+  h3,
+  h4,
+  .prose h3,
+  .prose h4 {
+    break-after: avoid;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 11.5pt !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    margin: 0.2in 0 0.06in !important;
+  }
+
+  p,
+  li,
+  dd,
+  dt,
+  blockquote,
+  .prose p,
+  .prose li {
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre,
+  table,
+  figure {
+    margin-bottom: 0.12in !important;
+    margin-top: 0 !important;
+  }
+
+  ul,
+  ol {
+    padding-left: 0.24in !important;
+  }
+
+  li {
+    break-inside: avoid;
+    margin-bottom: 0.04in !important;
+    padding-left: 0.02in !important;
+  }
+
+  a,
+  .prose a {
+    color: #111827 !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 0.6pt !important;
+    text-underline-offset: 1.5pt !important;
+  }
+
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 8.5pt;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+  }
+
+  pre {
+    border: 1px solid #d1d5db !important;
+    border-radius: 0 !important;
+    break-inside: avoid;
+    font-size: 8.5pt !important;
+    line-height: 1.45 !important;
+    overflow: visible !important;
+    padding: 0.12in !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+  }
+
+  code {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 2px !important;
+    font-size: 0.9em !important;
+    padding: 0 0.12em !important;
+  }
+
+  pre code {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+
+  blockquote {
+    border-left: 2px solid #9ca3af !important;
+    padding-left: 0.14in !important;
+  }
+
+  img,
+  svg {
+    break-inside: avoid;
+    max-height: 4.5in !important;
+    max-width: 100% !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    break-inside: auto;
+    font-size: 9pt !important;
+    width: 100% !important;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #d1d5db !important;
+    padding: 0.06in 0.08in !important;
+    text-align: left !important;
+    vertical-align: top !important;
+  }
+
+  hr {
+    border: 0 !important;
+    border-top: 1px solid #d1d5db !important;
+    margin: 0.2in 0 !important;
+  }
+
+  [class*="sticky"],
+  [class*="fixed"],
+  [class*="shadow"],
+  [class*="rounded"],
+  [class*="backdrop"],
+  [class*="blur"],
+  [class*="transition"],
+  [class*="animate"] {
+    animation: none !important;
+    border-radius: 0 !important;
+    filter: none !important;
+    position: static !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hidden {
+    display: none !important;
   }
 }

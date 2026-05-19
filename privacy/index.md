@@ -3,8 +3,6 @@ title: "Privacy Policy"
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <p class="">The fine print. We make our policies as clear and readable as possible while still meeting our lawyer's requirements.</p>
-
   <h1 class="font-extrabold text-2xl">Privacy Policy</h1>
 
   <p>The privacy of your data is paramount to us. It's our entire business. We'll only ever access your account to help you with a problem or squash a software bug. We'll never access the content of an encryption key and/or secret unless you ask us to. We log all access to all accounts by IP address, so we can verify that no unauthorized access has happened for as long as the logs are kept.</p>

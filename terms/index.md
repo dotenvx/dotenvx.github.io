@@ -3,8 +3,6 @@ title: "Terms of Service"
 ---
 
 <section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <p>The fine print. We make our policies as clear and readable as possible while still meeting our lawyer's requirements.</p>
-
   <h1 class="font-extrabold text-2xl">Terms of Service</h1>
 
   <p>By using Dotenvx ("Service"), you are agreeing to be bound by the following terms and conditions ("Terms of Service").</p>

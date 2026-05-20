@@ -619,13 +619,6 @@ image: "/assets/img/og-image-trust.png"
               </tr>
               <tr>
                 <td class="px-5 py-5">
-                  <p class="m-0 text-sm font-semibold text-white">Email account access restricted</p>
-                  <p class="mt-2 text-sm leading-6 text-zinc-500">Access to email accounts is restricted to authorized administrators and business-required users.</p>
-                </td>
-                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="email-access" %}</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-5">
                   <p class="m-0 text-sm font-semibold text-white">Email settings block malicious content</p>
                   <p class="mt-2 text-sm leading-6 text-zinc-500">Email settings are configured to block malicious content, including suspicious attachments, links, and scripts.</p>
                 </td>
@@ -650,6 +643,13 @@ image: "/assets/img/og-image-trust.png"
                   <p class="mt-2 text-sm leading-6 text-zinc-500">Anti-malware or antivirus protections are deployed on end-user devices, including laptops and workstations.</p>
                 </td>
                 <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="anti-malware" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Data encrypted on end-user devices</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Data stored on end-user devices (e.g., laptops, mobile devices) is encrypted to protect it in case of device loss or theft.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="endpoint-data-encryption" %}</td>
               </tr>
               <tr>
                 <td class="px-5 py-5">

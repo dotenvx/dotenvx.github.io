@@ -489,24 +489,52 @@ image: "/assets/img/og-image-trust.png"
             <tbody class="divide-y divide-zinc-900">
               <tr>
                 <td class="px-5 py-5">
-                  <p class="m-0 text-sm font-semibold text-white">Access granting process used</p>
-                  <p class="mt-2 text-sm leading-6 text-zinc-500">New access privileges are assigned based on least privilege and require review before access is granted.</p>
+                  <p class="m-0 text-sm font-semibold text-white">Access management policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Systematic controls are established in the access management policy for managing user access rights, ensuring appropriate, authorized access to systems and data.</p>
                 </td>
-                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="access-granting" %}</td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="access-management-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Account inventory maintained</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">An inventory of user accounts on critical and high-risk vendors that have access to in-scope systems and services is maintained, including essential details such as account owners, access privileges, associated roles, and vendor relationships where applicable. The inventory is reviewed and updated at least annually.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2,gdpr" uid="account-inventory" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Dormant accounts disabled</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Monitor for dormant user accounts and disable or remove accounts that have been inactive for an extended period.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="dormant-accounts-disabled" %}</td>
               </tr>
               <tr>
                 <td class="px-5 py-5">
                   <p class="m-0 text-sm font-semibold text-white">Employee access regularly reviewed</p>
                   <p class="mt-2 text-sm leading-6 text-zinc-500">Employee access is reviewed at least annually to confirm access privileges remain appropriate.</p>
                 </td>
-                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="access-reviewed" %}</td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2,gdpr" uid="access-reviewed" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">MFA required for critical services</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Multi-factor authentication (MFA) is required for accessing critical services and infrastructure unless a documented exception is in place where MFA is not supported.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="mfa-critical-services" %}</td>
               </tr>
               <tr>
                 <td class="px-5 py-5">
                   <p class="m-0 text-sm font-semibold text-white">Password management policy enforced</p>
                   <p class="mt-2 text-sm leading-6 text-zinc-500">Password management requirements are enforced for covered accounts, with adherence monitored and exceptions addressed.</p>
                 </td>
-                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="password-policy" %}</td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="gdpr" uid="password-policy-enforced" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Password management policy established</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">Enforce a password management policy that mandates strong and complex passwords, and prohibits the reuse of previously used passwords. This policy helps protect user accounts from unauthorized access due to weak or compromised passwords.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2,gdpr" uid="password-policy-established" %}</td>
               </tr>
             </tbody>
           </table>
@@ -545,9 +573,16 @@ image: "/assets/img/og-image-trust.png"
               <tr>
                 <td class="px-5 py-5">
                   <p class="m-0 text-sm font-semibold text-white">Data management and retention policy established</p>
-                  <p class="mt-2 text-sm leading-6 text-zinc-500">Data management and retention requirements are defined for how long data is retained and how it is managed through its lifecycle.</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A data management and retention policy is established, outlining guidelines for how long data should be retained and how it should be managed throughout its lifecycle.</p>
                 </td>
-                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2" uid="data-retention-policy" %}</td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="soc2,gdpr" uid="data-retention-policy" %}</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-5">
+                  <p class="m-0 text-sm font-semibold text-white">Privacy policy created and maintained</p>
+                  <p class="mt-2 text-sm leading-6 text-zinc-500">A privacy policy is developed, regularly updated, and made accessible to all relevant parties. The goal is to enable transparent communication of data handling practices and to protect individuals' privacy rights.</p>
+                </td>
+                <td class="px-5 py-5 text-right align-top">{% include components/framework-badges.html frameworks="gdpr" uid="privacy-policy-maintained" %}</td>
               </tr>
             </tbody>
           </table>

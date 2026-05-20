@@ -291,7 +291,7 @@ image: "/assets/img/og-image-trust.png"
       </a>
       <a href="#controls" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Security Controls</span>
-        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">53</span>
+        <span class="rounded-sm border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 text-[0.65rem] font-semibold leading-none text-zinc-500">59</span>
       </a>
       <a href="#subprocessors" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Subprocessors</span>

@@ -5,11 +5,17 @@
     {% assign framework_id = framework | strip %}
     {% assign logo_uid = badge_uid | append: '-' | append: framework_id | append: '-' | append: forloop.index %}
     {% if framework_id == 'soc2' %}
-      {% include logos/framework-soc2.html uid=logo_uid class="h-5 w-5" %}
+      <span class="relative z-20 inline-flex h-5 w-5 shrink-0 items-center justify-center">
+        {% include logos/framework-soc2.html uid=logo_uid class="h-5 w-5" %}
+      </span>
     {% elsif framework_id == 'iso27001' or framework_id == 'iso' %}
-      {% include logos/framework-iso27001.html class="h-5 w-5" %}
+      <span class="relative z-10 inline-flex h-5 w-5 shrink-0 items-center justify-center">
+        {% include logos/framework-iso27001.html class="h-5 w-5" %}
+      </span>
     {% elsif framework_id == 'gdpr' %}
-      {% include logos/framework-gdpr.html class="h-5 w-5" %}
+      <span class="relative z-0 inline-flex h-5 w-5 shrink-0 items-center justify-center">
+        {% include logos/framework-gdpr.html class="h-5 w-5" %}
+      </span>
     {% endif %}
   {% endfor %}
 </span>

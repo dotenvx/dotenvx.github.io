@@ -281,8 +281,8 @@ image: "/assets/img/og-image-trust.png"
       <a href="#compliance" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">
         <span>Compliance</span>
         <span class="inline-flex items-center rounded-full border border-zinc-800 bg-zinc-950 px-1.5 py-0.5 leading-none">
-          <span class="flex h-4 w-4 items-center justify-center">{% include logos/framework-soc2.html uid="nav-soc2" class="h-4 w-4" %}</span>
-          <span class="-ml-1 flex h-4 w-4 items-center justify-center">{% include logos/framework-gdpr.html class="h-4 w-4" %}</span>
+          <span class="relative z-20 flex h-4 w-4 items-center justify-center">{% include logos/framework-soc2.html uid="nav-soc2" class="h-4 w-4" %}</span>
+          <span class="relative z-0 -ml-1 flex h-4 w-4 items-center justify-center">{% include logos/framework-gdpr.html class="h-4 w-4" %}</span>
         </span>
       </a>
       <a href="#documents" class="inline-flex items-center justify-start gap-2 rounded border border-zinc-800 px-3 py-2 text-left text-sm font-medium !text-zinc-400 no-underline hover:border-zinc-700 hover:!text-white hover:no-underline">

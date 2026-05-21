@@ -286,6 +286,39 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-05-15" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-15" data-search-text="organization avatar team avatar settings upload png jpeg gif webp radar dotenvx ops may 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 15, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Team Avatars</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Team Avatars</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">You can now change the avatar for your organization under Settings.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-05-14" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-14" data-search-text="encrypt key storage armored local dotenvx ops may 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 14, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx encrypt</span>
+<span class="terminal-yellow">? Select key storage</span>
+  Local (.env.keys)
+<span class="terminal-yellow">› Armored ⛨</span></pre></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Choose Key Storage</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">When using <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span>, get prompted for a local or armored key when creating for the first time.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-05-13" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-13" data-search-text="python uv guide secrets dotenvx docs may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 13, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">

@@ -406,7 +406,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true"><span>Pentest - May 2026</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Pentest - May 2026</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">We ran an automated security assessment against <code class="text-zinc-300">ops.dotenvx.com</code> and supporting application code, covering public network exposure, TLS posture, passive web behavior, dependency vulnerabilities, static analysis, and secret exposure.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">We ran an automated security assessment against <code class="text-zinc-300">vlt.dotenvx.com</code> and supporting application code, covering public network exposure, TLS posture, passive web behavior, dependency vulnerabilities, static analysis, and secret exposure.</p>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Evidence was retained from HostedScan, Nuclei, OWASP ZAP, Nmap, testssl.sh, Gitleaks, Trivy, and Semgrep. Remediation work will get its own follow-up entry.</p>
           </div>
         </div>

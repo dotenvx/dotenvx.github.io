@@ -1,5 +1,5 @@
 ---
-title: "Dotenvx Ops"
+title: "Dotenvx Vlt Ops"
 image: "/assets/img/og-image-ops.png"
 ---
 
@@ -17,7 +17,7 @@ image: "/assets/img/og-image-ops.png"
   <section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-16 md:mb-20 lg:mb-24 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
-      <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Ops ⛨</div>
+      <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Vlt Ops ⛨</div>
       <h1 class="font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Armor for Agents</h1>
       <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Armored keys for secret ops and agent ops.<span class="hidden sm:inline md:hidden lg:inline"><br /></span><span class="inline sm:hidden md:inline lg:hidden"> </span>Harden private keys and control access.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">

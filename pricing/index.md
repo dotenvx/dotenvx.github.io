@@ -127,16 +127,16 @@ image: "/assets/img/og-image-pricing.png"
   </div>
 
   <section class="mx-auto mt-32 w-full max-w-3xl text-center">
-    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Vlt?</h2>
+    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Vlt ⛨?</h2>
     <p class="mt-4 text-base md:text-lg leading-relaxed text-zinc-500">
-      Vlt keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
+      Vlt ⛨ keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
     </p>
   </section>
 
   <section class="mx-auto mt-12 w-full max-w-5xl">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
       <div class="rounded-xl border border-zinc-900 bg-zinc-950/35 p-5 md:p-6">
-        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Code</div>
+        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Dotenvx</div>
         <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Encrypted .env file</h3>
         <p class="mt-3 text-sm leading-relaxed text-zinc-500">Commit ciphertext safely with your application.</p>
       </div>
@@ -145,7 +145,7 @@ image: "/assets/img/og-image-pricing.png"
         <span class="md:hidden">+</span>
       </div>
       <div class="rounded-xl border border-yellow-400/10 bg-yellow-400/[0.025] p-5 shadow-[0_0_80px_rgba(250,204,21,0.07)] md:p-6">
-        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-yellow-200/35">Vlt</div>
+        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-yellow-200/35">Vlt ⛨</div>
         <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
         <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
       </div>

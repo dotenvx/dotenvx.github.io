@@ -110,7 +110,6 @@ title: ""
         <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">ECIES</span>
         <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">AES-256</span>
         <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">secp256k1</span>
-        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">Runtime Decryption</span>
       </div>
       <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read the Dotenvx whitepaper" class="whitepaper-artifact group relative mx-auto mt-10 block w-56 sm:w-64 md:w-72 no-underline hover:no-underline">
         <img src="/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="whitepaper-artifact-img block w-full border border-zinc-800/80 bg-zinc-950/40 shadow-[0_1.8rem_4rem_rgba(0,0,0,0.34)] transition duration-200 group-hover:border-zinc-700/90 group-hover:shadow-[0_2rem_4.5rem_rgba(0,0,0,0.42)]" />

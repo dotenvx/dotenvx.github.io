@@ -676,10 +676,14 @@ width: 100%;
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
-.whitepaper-artifact-img,
-.whitepaper-artifact-overlay {
+.whitepaper-artifact-img {
   position: relative;
   z-index: 1;
+}
+
+.whitepaper-artifact-overlay {
+  position: absolute;
+  z-index: 2;
 }
 
 .whitepaper-artifact:hover {

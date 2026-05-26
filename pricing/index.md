@@ -4,15 +4,9 @@ image: "/assets/img/og-image-pricing.png"
 ---
 
 <section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">
-  <h1 class="my-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing for Vlt ⛨</h1>
+  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">Vlt ⛨</p>
+  <h1 class="mb-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
-
-  <section class="mx-auto mb-16 w-full max-w-3xl text-center">
-    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Vlt?</h2>
-    <p class="mt-4 text-base md:text-lg leading-relaxed text-zinc-500">
-      Vlt keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
-    </p>
-  </section>
 
   <div class="mx-auto w-full max-w-7xl">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_110px_rgba(250,204,21,0.12)] ring-1 ring-yellow-400/10">
@@ -23,7 +17,7 @@ image: "/assets/img/og-image-pricing.png"
           <span>$2.99</span><span class="text-zinc-300"> / mo</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">50 Private Keys</p>
+          <p class="text-zinc-100 text-sm">50 Armored Keys</p>
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -49,7 +43,7 @@ image: "/assets/img/og-image-pricing.png"
           <span>$20</span><span class="text-zinc-300"> / mo</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">100 Private Keys</p>
+          <p class="text-zinc-100 text-sm">100 Armored Keys</p>
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -78,7 +72,7 @@ image: "/assets/img/og-image-pricing.png"
           <span>$90</span><span class="text-zinc-300"> / mo</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">1,000 Private Keys</p>
+          <p class="text-zinc-100 text-sm">1,000 Armored Keys</p>
           <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
         </div>
         <ul class="mt-5 text-zinc-400 text-sm space-y-2">
@@ -132,7 +126,46 @@ image: "/assets/img/og-image-pricing.png"
     </div>
   </div>
 
-  <div class="mx-auto mt-32 w-full max-w-5xl">
+  <section class="mx-auto mt-32 w-full max-w-3xl text-center">
+    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Vlt?</h2>
+    <p class="mt-4 text-base md:text-lg leading-relaxed text-zinc-500">
+      Vlt keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
+    </p>
+  </section>
+
+  <section class="mx-auto mt-12 w-full max-w-5xl">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
+      <div class="rounded-xl border border-zinc-900 bg-zinc-950/35 p-5 md:p-6">
+        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Code</div>
+        <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Encrypted .env file</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-500">Commit ciphertext safely with your application.</p>
+      </div>
+      <div class="flex items-center justify-center text-zinc-700 md:px-1" aria-hidden="true">
+        <span class="hidden md:block">+</span>
+        <span class="md:hidden">+</span>
+      </div>
+      <div class="rounded-xl border border-yellow-400/10 bg-yellow-400/[0.025] p-5 shadow-[0_0_80px_rgba(250,204,21,0.07)] md:p-6">
+        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-yellow-200/35">Vlt</div>
+        <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
+      </div>
+      <div class="flex items-center justify-center text-zinc-700 md:px-1" aria-hidden="true">
+        <span class="hidden md:block">→</span>
+        <span class="md:hidden">↓</span>
+      </div>
+      <div class="rounded-xl border border-zinc-900 bg-zinc-950/35 p-5 md:p-6">
+        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Runtime</div>
+        <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Both required to decrypt</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-500">Secrets resolve only when encrypted values meet the authorized key.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto mt-32 w-full max-w-3xl text-center">
+    <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Compare capabilities across plans.</h2>
+  </div>
+
+  <div class="mx-auto mt-12 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Access & Identity</h2>
     <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
       <table class="w-full min-w-[540px] sm:min-w-[720px] border-collapse">

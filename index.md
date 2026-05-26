@@ -2,7 +2,7 @@
 title: ""
 ---
 
-<section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-32 md:mb-40 lg:mb-44 mt-20">
+<section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-16 md:mb-20 lg:mb-24 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.18fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include components/dotenv.html %}</div>
@@ -19,7 +19,11 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-24 sm:mb-32 md:mb-40 lg:mb-48">
+<section class="relative z-20 w-full max-w-7xl mx-auto px-6 mb-32 md:mb-44 lg:mb-52">
+  {% include components/encrypted-env-file.html %}
+</section>
+
+<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mt-0 mb-24 sm:mb-32 md:mb-40 lg:mb-48">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
@@ -67,20 +71,10 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-32 md:mb-44 lg:mb-52">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Add encryption to your .env files.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Everything familiar about .env files - without the risk.</p>
-  </div>
-  <div class="mt-8 md:mt-10 mx-auto max-w-4xl">
-    {% include components/encrypted-env-file.html %}
-  </div>
-</section>
-
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Easy to switch.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Everything familiar about .env files - without the risk.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypted .env files in one line.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Keep using .env files. Just make them secure.</p>
   </div>
   <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
     <div class="text-zinc-500 text-[0.9em]">// before</div>
@@ -107,6 +101,8 @@ title: ""
     </div>
   </div>
 </section>
+
+
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">

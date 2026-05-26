@@ -5,50 +5,51 @@
       <span></span>
       <span></span>
     </div>
-    <button type="button" class="ee-decrypt-button" data-ee-decrypt-toggle aria-pressed="false">Decrypt</button>
+    <div class="encrypted-env-window-title" aria-hidden="true">.env</div>
+    <button type="button" class="ee-decrypt-button" data-ee-decrypt-toggle aria-pressed="false">decrypt</button>
   </div>
   <div class="subpixel-antialiased overflow-hidden">
     <div class="encrypted-env-file-body">
       <div class="ee-shell">
         <div class="ee-editor-pane overflow-x-auto">
           <div class="ee-pane">
-            <pre class="ee-code" data-ee-state="encrypted"><span class="ee-comment">#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
+            <pre class="ee-code" data-ee-state="encrypted"><span class="ee-banner-comment">#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
 #/            public-key encryption for .env files          /
 #/       [how it works](https://dotenvx.com/encryption)     /
 #/----------------------------------------------------------/</span>
 <span class="ee-key">DOTENV_PUBLIC_KEY</span><span class="ee-eq">="</span><span class="ee-val">03b0c2e0089e18d4e419178fdacf60dc529b37406d45fdd7bfb8098d4236803725</span><span class="ee-eq">"</span>
 
-<span class="ee-comment"># ── Hosting ──────────────────────────────────────</span>
+<span class="ee-banner-comment"># ── Hosting ──────────────────────────────────────</span>
 <span class="ee-key">AWS_ACCESS_KEY_ID</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BC9TQExguPoPgRgBUYsAs8u7g8bAArnM8WHCHxRQiZ84L9V39HLSFm1mHVAjPzI+9FvPKjkOtn4BVDllXdu/L1ljzEePQMl/WLfivDq6BO0cslgHMy3XAcuAydOddr6o1NNxVqA=</span><span class="ee-eq">"</span>
 <span class="ee-key">AWS_SECRET_ACCESS_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BEVNBhZKsOAEnf7txIBLIKv6O9fvfUPyZL8Y6W9mj5ixr2XbOFu6h2i1xw83gMq1JKCuhQKbGTAyVlrJqIwz2/uu94bIMzoBvHOuBjju/J8o2UFs01rdZHlKgXQJF8g3bFtu3z8=</span><span class="ee-eq">"</span>
 <span class="ee-key">DATABASE_URL</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BCSNFMr9zzUjFs4dpyS82HbSOTvnoW0yghNWz96+BFcrYezTQqgE6X/5oYBp9iQDvdySQAAeqrCkXIAjxvDEfwULyOLd6Qdwj5ob3ayulr/ja/20kWAz+sqaqoRN9bQ87dCKWBq4HQ5aMNDtFMOFu95p8NTp3gLMquuAHZsYkU3eoBLyB/vXm//TxX2ohgNOiTUaCHegW0rwbYFk</span><span class="ee-eq">"</span>
 <span class="ee-key">VERCEL_TOKEN</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BKzpst7lK68aHgDZihiN9kzVa9hqhAnf+GP6mbva0cKO774+k2bCJWdTZTLbDC37uVhcz3k8ulplz0yNxoEf5Myqm9R63MxQ3Ro5KZHaufUfyOQPKcRKxDkyXGaENl9Q9bsdKOO0Ed1j</span><span class="ee-eq">"</span>
 
-<span class="ee-comment"># ── AI ───────────────────────────────────────────</span>
+<span class="ee-banner-comment"># ── AI ───────────────────────────────────────────</span>
 <span class="ee-key">OPENAI_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BL0J+oOTvsvAbKhcNThlvNXlqlHIrurJJ2UyE5uzbJ9peWOjChKYz1wB1nDzZp3UN+LiZtB5hETM6qsz6ZTFYP6TQVkzWf3vK4La1vShZvQyFI5xoi8ewwPoBOCMtJcLl3UR9Dku/pI=</span><span class="ee-eq">"</span>
 <span class="ee-key">ANTHROPIC_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BFfKWA87GMc6b7j3FnEVJN0sOcpKtMnTZ4FdLS7FEjzGNejjxmuaYypA1o20mxL9QMsb5Opt/VPFZyHQlQybY8kyOCc1c/MJFAaAb/gE9roF82/wOSnoF91gDB9MZLRF72oz/3unvFxkAMey</span><span class="ee-eq">"</span>
 
-<span class="ee-comment"># ── Infrastructure ───────────────────────────────</span>
+<span class="ee-banner-comment"># ── Infrastructure ───────────────────────────────</span>
 <span class="ee-key">RESEND_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BF3azpGR9cE7geaYrUg85nF8hXd8TmlhvxXCF80J5ARp0ABLMdyYZKblnrzzKLTHUEFbgdgHOvsNOeqUKxwd0A/J2qATiSgfRGVcf0Ymsd9JO8+sIyGLwu6gaA0UKinkh9g6wqfg9n4=</span><span class="ee-eq">"</span>
 <span class="ee-key">STRIPE_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BGra+cdx+4U5XxBUnYCRmXqRq5ft1FD93Vu1EED/mqddBBlHPmbvNULHMMIS8PiEXFt5wWsOf6AxXCt0l1/8O9KAqw8351AF1twMhu5FFhgaDo6H6xfTG19+CNnPqB7roZ3XhD36+YYXInM6cw==</span><span class="ee-eq">"</span>
 <span class="ee-key">SENTRY_DSN</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BAhQLK5HJufRDrqSXC8hUfqr73tuOyOj9ydaJ3WkZzzm7JHxK7kYwNjQzFEKDjmbgvGqXsy0SAdGgXtKodhUriHOi0/6Z/Zwv5bcZtJTT9tERGQ1oGMnjVD3M9k6RMlBbIV1e72PQzozdXSaaCaWW0hiY90twhlpgsofI4lrD8cWfNBCGpy8KQeylXAVOg==</span><span class="ee-eq">"</span></pre>
-            <pre class="ee-code" data-ee-state="decrypted" hidden><span class="ee-comment">#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
+            <pre class="ee-code" data-ee-state="decrypted" hidden><span class="ee-banner-comment">#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
 #/            public-key encryption for .env files          /
 #/       [how it works](https://dotenvx.com/encryption)     /
 #/----------------------------------------------------------/</span>
 <span class="ee-key">DOTENV_PUBLIC_KEY</span><span class="ee-eq">="</span><span class="ee-val">03b0c2e0089e18d4e419178fdacf60dc529b37406d45fdd7bfb8098d4236803725</span><span class="ee-eq">"</span>
 
-<span class="ee-comment"># ── Hosting ──────────────────────────────────────</span>
+<span class="ee-banner-comment"># ── Hosting ──────────────────────────────────────</span>
 <span class="ee-key">AWS_ACCESS_KEY_ID</span><span class="ee-eq">="</span><span class="ee-val">xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">AWS_SECRET_ACCESS_KEY</span><span class="ee-eq">="</span><span class="ee-val">xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">DATABASE_URL</span><span class="ee-eq">="</span><span class="ee-val">postgresql://postgres:pass@db.ref.supabase.co:5432/postgres</span><span class="ee-eq">"</span>
 <span class="ee-key">VERCEL_TOKEN</span><span class="ee-eq">="</span><span class="ee-val">vcp_xxxx</span><span class="ee-eq">"</span>
 
-<span class="ee-comment"># ── AI ───────────────────────────────────────────</span>
+<span class="ee-banner-comment"># ── AI ───────────────────────────────────────────</span>
 <span class="ee-key">OPENAI_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">sk-xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">ANTHROPIC_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">sk-ant-xxxx</span><span class="ee-eq">"</span>
 
-<span class="ee-comment"># ── Infrastructure ───────────────────────────────</span>
+<span class="ee-banner-comment"># ── Infrastructure ───────────────────────────────</span>
 <span class="ee-key">RESEND_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">re_xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">STRIPE_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">sk_test_xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">SENTRY_DSN</span><span class="ee-eq">="</span><span class="ee-val">https://hex@o1234.ingest.us.sentry.io/1234567</span><span class="ee-eq">"</span></pre>
@@ -61,13 +62,40 @@
 
 <style>
   .encrypted-env-window {
+    --ee-key-line: rgba(189, 164, 78, 0.22);
+    --ee-key-line-soft: rgba(189, 164, 78, 0.1);
+    position: relative;
     width: 100%;
-    max-width: 46rem;
-    border: 1px solid rgba(236, 213, 63, 0.5);
+    max-width: 60rem;
+    border: 0;
     border-radius: 1rem;
-    background: #101010;
-    box-shadow: 0 2rem 4.5rem rgba(0, 0, 0, 0.32);
+    background: transparent;
+    box-shadow:
+      inset 0 0 0 1px rgba(189, 164, 78, 0.035),
+      0 2rem 4.5rem rgba(0, 0, 0, 0.32);
     color: #f4f4f5;
+  }
+
+  .encrypted-env-window::before,
+  .encrypted-env-window::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .encrypted-env-window::before {
+    border: 1px solid var(--ee-key-line);
+    border-bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    height: 2.05rem;
+    inset: 0 0 auto;
+  }
+
+  .encrypted-env-window::after {
+    background:
+      linear-gradient(180deg, var(--ee-key-line) 0%, rgba(189, 164, 78, 0.14) 38%, rgba(189, 164, 78, 0) 100%) left top / 1px 100% no-repeat,
+      linear-gradient(180deg, var(--ee-key-line) 0%, rgba(189, 164, 78, 0.14) 38%, rgba(189, 164, 78, 0) 100%) right top / 1px 100% no-repeat;
+    inset: 1.95rem 0 0;
   }
 
   .encrypted-env-window-bar {
@@ -75,8 +103,8 @@
     align-items: center;
     height: 1.95rem;
     padding: 0 1rem;
-    border-bottom: 1px solid rgba(236, 213, 63, 0.2);
-    background: #191919;
+    position: relative;
+    background: transparent;
   }
 
   .encrypted-env-window-dots {
@@ -101,23 +129,41 @@
     background: #5f5729;
   }
 
+  .encrypted-env-window-title {
+    color: rgba(244, 244, 245, 0.22);
+    font-size: 0.62rem;
+    left: 50%;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .ee-decrypt-button {
     appearance: none;
-    border: 1px solid rgba(236, 213, 63, 0.34);
+    border: 0;
     border-radius: 999px;
-    background: rgba(236, 213, 63, 0.08);
-    color: #ecd53f;
+    background: rgba(244, 244, 245, 0.01);
+    box-shadow:
+      inset 0 0 0 1px rgba(244, 244, 245, 0.055),
+      0 0 10px rgba(244, 244, 245, 0.006);
+    color: rgba(244, 244, 245, 0.24);
     cursor: pointer;
     font: inherit;
     font-size: 0.64rem;
     line-height: 1;
     margin-left: auto;
     padding: 0.28rem 0.58rem;
+    transform: translateY(10px);
   }
 
   .ee-decrypt-button:hover,
   .ee-decrypt-button:focus-visible {
-    background: rgba(236, 213, 63, 0.16);
+    background: rgba(244, 244, 245, 0.032);
+    box-shadow:
+      inset 0 0 0 1px rgba(244, 244, 245, 0.12),
+      0 0 12px rgba(244, 244, 245, 0.018);
     outline: none;
   }
 
@@ -125,7 +171,7 @@
     font-size: 0.64rem;
     line-height: 1.48;
     color: #f4f4f5;
-    background: #101010;
+    background: transparent;
   }
 
   .encrypted-env-file-body .ee-shell {
@@ -178,7 +224,11 @@
   .encrypted-env-file-body .ee-comment,
   .encrypted-env-file-body .ee-eq,
   .encrypted-env-file-body .ee-val {
-    color: #ecd53f;
+    color: rgba(236, 213, 63, 0.72);
+  }
+
+  .encrypted-env-file-body .ee-banner-comment {
+    color: rgba(244, 244, 245, 0.34);
   }
 
   .encrypted-env-file-body .ee-key {
@@ -247,7 +297,7 @@
       button.addEventListener('click', () => {
         const isDecrypted = button.getAttribute('aria-pressed') === 'true';
         button.setAttribute('aria-pressed', isDecrypted ? 'false' : 'true');
-        button.textContent = isDecrypted ? 'Decrypt' : 'Encrypt';
+        button.textContent = isDecrypted ? 'decrypt' : 'encrypt';
         encrypted.hidden = !isDecrypted;
         decrypted.hidden = isDecrypted;
       });

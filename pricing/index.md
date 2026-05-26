@@ -4,42 +4,14 @@ image: "/assets/img/og-image-pricing.png"
 ---
 
 <section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">
-  <h1 class="my-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
-  <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Start for free, then harden your keys.</p>
+  <h1 class="my-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing for Vlt ⛨</h1>
+  <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 
-  <div class="mx-auto w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-5">
-    <div class="lg:col-span-2 flex flex-col">
-      <div class="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Self-serve</div>
-      <div class="grid flex-1 grid-cols-1 md:grid-cols-2 rounded-xl shadow-[0_0_90px_rgba(113,113,122,0.085)] ring-1 ring-zinc-700/10">
-    <div class="rounded-t-xl md:rounded-l-xl md:rounded-r-none border border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Free</h2>
-        <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>$0</span><span class="text-zinc-300"> / mo</span>
-        </div>
-        <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">.env.keys</p>
-          <p class="mt-2 text-zinc-500 text-sm">Local on device</p>
-        </div>
-        <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Self-Managed</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Local Private Keys</span></li>
-        </ul>
-      </div>
-      <div class="mt-auto p-5 md:p-6">
-        <a class="group inline-flex min-h-[42px] w-full items-center gap-2 text-sm font-semibold !text-zinc-100 no-underline hover:!text-white hover:no-underline" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
-          <span>GitHub</span>
-          <span class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1" aria-hidden="true">›</span>
-        </a>
-      </div>
-    </div>
-    <div class="rounded-b-xl md:rounded-r-xl md:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Solo</h2>
+  <div class="mx-auto w-full max-w-7xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_110px_rgba(250,204,21,0.12)] ring-1 ring-yellow-400/10">
+    <div class="rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900 flex flex-col">
+      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
+        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Solo</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$2.99</span><span class="text-zinc-300"> / mo</span>
         </div>
@@ -59,18 +31,13 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Access</span></li>
         </ul>
       </div>
-      <div class="mt-auto p-5 md:p-6">
+      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
         <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
       </div>
     </div>
-      </div>
-    </div>
-    <div class="lg:col-span-3 flex flex-col">
-      <div class="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Company Plans</div>
-      <div class="grid flex-1 grid-cols-1 md:grid-cols-3 rounded-xl shadow-[0_0_110px_rgba(250,204,21,0.12)] ring-1 ring-yellow-400/10">
-    <div class="rounded-t-xl md:rounded-l-xl md:rounded-r-none border border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Team</h2>
+    <div class="md:rounded-tr-xl lg:rounded-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900 flex flex-col">
+      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
+        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Team</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$20</span><span class="text-zinc-300"> / mo</span>
         </div>
@@ -93,13 +60,13 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts <sup>⧖</sup></span></li>
         </ul>
       </div>
-      <div class="mt-auto p-5 md:p-6">
+      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
         <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
       </div>
     </div>
-    <div class="border-x border-b md:border-l-0 md:border-y md:border-r border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Secure</h2>
+    <div class="md:rounded-bl-xl lg:rounded-none border-x border-b md:border-l md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900 flex flex-col">
+      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
+        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Business</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>$90</span><span class="text-zinc-300"> / mo</span>
         </div>
@@ -122,13 +89,13 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts <sup>⧖</sup></span></li>
         </ul>
       </div>
-      <div class="mt-auto p-5 md:p-6">
+      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
         <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
       </div>
     </div>
-    <div class="rounded-b-xl md:rounded-r-xl md:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Ops Enterprise</h2>
+    <div class="rounded-b-xl md:rounded-br-xl md:rounded-bl-none lg:rounded-r-xl lg:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900 flex flex-col">
+      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
+        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Enterprise</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
           <span>Custom</span>
         </div>
@@ -151,11 +118,10 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
         </ul>
       </div>
-      <div class="mt-auto p-5 md:p-6">
+      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
         <a href="/contact" class="btn-primary w-full inline-flex justify-center text-sm">Contact Us</a>
       </div>
     </div>
-      </div>
     </div>
   </div>
 
@@ -164,21 +130,19 @@ image: "/assets/img/og-image-pricing.png"
   <div class="mx-auto mt-32 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Access & Identity</h2>
     <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
-      <table class="w-full min-w-[620px] sm:min-w-[820px] border-collapse">
+      <table class="w-full min-w-[540px] sm:min-w-[720px] border-collapse">
         <thead>
           <tr class="border-b border-zinc-900 bg-zinc-900/30">
-            <th class="w-[34%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Free</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
+            <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Login with GitHub</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
@@ -187,14 +151,12 @@ image: "/assets/img/og-image-pricing.png"
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Automation Tokens</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Rotations Daily Limit</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
@@ -202,7 +164,6 @@ image: "/assets/img/og-image-pricing.png"
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Team Members</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">1</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">3</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
@@ -210,7 +171,6 @@ image: "/assets/img/og-image-pricing.png"
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-2 sm:px-4 sm:py-2.5 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Log Retention</td>
-            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
             <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
             <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
             <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
@@ -224,21 +184,19 @@ image: "/assets/img/og-image-pricing.png"
   <div class="mx-auto mt-28 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Customer Support</h2>
     <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
-      <table class="w-full min-w-[620px] sm:min-w-[820px] border-collapse">
+      <table class="w-full min-w-[540px] sm:min-w-[720px] border-collapse">
         <thead>
           <tr class="border-b border-zinc-900 bg-zinc-900/30">
-            <th class="w-[34%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Free</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
-            <th class="w-[13.2%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
+            <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Billing Method</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Annual</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly / Annual</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly / Annual</td>
@@ -246,7 +204,6 @@ image: "/assets/img/og-image-pricing.png"
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Payment Method</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
@@ -254,7 +211,6 @@ image: "/assets/img/og-image-pricing.png"
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Ticket Support</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
@@ -264,13 +220,11 @@ image: "/assets/img/og-image-pricing.png"
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Slack Support</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">.env Expertise</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
@@ -281,7 +235,6 @@ image: "/assets/img/og-image-pricing.png"
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
@@ -289,12 +242,10 @@ image: "/assets/img/og-image-pricing.png"
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">In-App Documentation</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>

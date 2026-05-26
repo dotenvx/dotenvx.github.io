@@ -100,8 +100,8 @@ title: ""
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built for modern development and agent workflows.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Encrypt, inject, scope, and audit secrets without changing how your software runs.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built for modern development.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Encrypt and inject secrets without changing how your software runs.</p>
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
@@ -187,7 +187,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are talking about Dotenvx.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Adoption is growing.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Installed 5 million times a week on <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="text-[#ecd53f] hover:text-[#f7e87a] no-underline hover:no-underline">npm</a>.</p>
   </div>
 
@@ -521,7 +521,7 @@ title: ""
   </div>
   <div class="relative z-10">
     <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.7rem] md:text-[4rem] lg:text-[4.8rem] leading-[1.03]">
-      The future of secrets.<br />Available today.
+      The future of dotenv.<br />Available today.
     </h3>
     <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
       <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/start">

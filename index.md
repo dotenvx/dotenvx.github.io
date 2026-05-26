@@ -7,7 +7,7 @@ title: ""
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include components/dotenv.html %}</div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5rem] xl:whitespace-nowrap text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secure Dotenv</h1>
-      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">The secure way to use .env files.<span class="hidden sm:inline md:hidden lg:inline"><br /></span><span class="inline sm:hidden md:inline lg:hidden"> </span>Protect secrets from development to runtime.</p>
+      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">The secure way to use .env files.<span class="hidden sm:inline md:hidden lg:inline"><br /></span><span class="inline sm:hidden md:inline lg:hidden"> </span>Keep the .env workflow developers already trust.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
         <a class="btn-primary w-full max-w-md md:w-auto text-center" href="/start">Get Started</a>
         <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
@@ -69,7 +69,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Secure dotenv – in one line.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">One-line upgrade</h2>
     <p class="mt-4 text-zinc-400 text-lg">Keep using .env files. Just make them secure.</p>
   </div>
   <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-10 md:pt-12 pb-4" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
@@ -85,9 +85,9 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file – encrypted.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file — encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Commit encrypted secrets to git while keeping decryption keys separate.</p>
   </div>
   <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
@@ -97,7 +97,35 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
+<section class="w-full max-w-4xl mx-auto px-6 mb-44 md:mb-64 lg:mb-[18rem]">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built on public-key cryptography.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Dotenvx encrypts each secret individually using ECIES public-key encryption. Encrypted .env files can be safely committed to Git while decryption keys remain separate.</p>
+  </div>
+  <div class="mt-14 md:mt-16 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] px-6 py-9 md:px-10 md:py-10" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.16)_0%,rgba(242,214,134,0.07)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-2xl">
+      <div class="flex flex-wrap items-center justify-center gap-1.5">
+        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">ECIES</span>
+        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">AES-256</span>
+        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">secp256k1</span>
+        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">Runtime Decryption</span>
+      </div>
+      <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read the Dotenvx whitepaper" class="group relative mx-auto mt-10 block w-56 sm:w-64 md:w-72 no-underline hover:no-underline">
+        <img src="/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="block w-full border border-zinc-800/80 bg-zinc-950/40 shadow-[0_1.8rem_4rem_rgba(0,0,0,0.34)] transition duration-200 group-hover:border-zinc-700/90 group-hover:shadow-[0_2rem_4.5rem_rgba(0,0,0,0.42)]" />
+        <span class="absolute inset-0 flex items-center justify-center bg-black/18 opacity-100 transition duration-200 group-hover:bg-black/28">
+          <span class="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-black/70 px-4 py-2 text-sm md:text-base font-medium text-zinc-100 shadow-[0_1rem_2.5rem_rgba(0,0,0,0.36)] backdrop-blur-sm">
+            Read Whitepaper
+            <span aria-hidden="true">→</span>
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-36 md:mb-56 lg:mb-72">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">The secure .env workflow.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Built around the .env workflow developers already know.</p>
@@ -184,12 +212,13 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Installed 5 million times a week on npm.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Trusted by developers worldwide.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Developers are installing dotenvx 5 million times a week on npm and using it to secure local development, CI, cloud infrastructure, and AI systems.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+  <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
     <a href="https://x.com/bholmesdev/status/2029285485693039077?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-2 min-w-0">
@@ -504,7 +533,7 @@ title: ""
 </section>
 -->
 
-<section class="w-full max-w-2xl mx-auto px-6 mt-20 flex flex-col gap-4">
+<section class="w-full max-w-2xl mx-auto px-6 mt-32 md:mt-44 flex flex-col gap-4">
   <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
   <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
     {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}

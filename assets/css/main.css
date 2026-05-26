@@ -644,16 +644,18 @@ width: 100%;
 }
 
 .trust-logo-grid a {
+  border-radius: 0.5rem;
+  filter: brightness(0.88);
+  margin: -0.65rem -0.45rem;
+  min-height: 4rem;
+  opacity: 0.88;
+  padding: 0.65rem 0.45rem;
   transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
   will-change: opacity, filter, transform;
 }
 
-.trust-logo-grid:hover a {
-  opacity: 0.58;
-}
-
 .trust-logo-grid a:hover {
-  filter: drop-shadow(0 0 12px rgba(236, 213, 63, 0.16));
+  filter: brightness(1) drop-shadow(0 0 12px rgba(236, 213, 63, 0.16));
   opacity: 1;
   transform: translateY(-1px) scale(1.012);
 }

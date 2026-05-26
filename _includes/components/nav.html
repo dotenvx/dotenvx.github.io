@@ -1,4 +1,6 @@
 <div>
+  {% assign changelog_page = site.pages | where: "path", "changelog.md" | first %}
+  {% assign changelog_count = changelog_page.content | split: "<article" | size | minus: 1 %}
   <div id="nav-shell" class="w-full bg-transparent transition-colors duration-200">
   <div class="mx-auto w-full max-w-7xl px-6">
     <div class="mx-auto relative flex w-full items-center transition">
@@ -32,8 +34,9 @@
                 <a href="/docs" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Documentation
                 </a>
-                <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#changelog" target="_blank" rel="noopener noreferrer" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Changelog ⇗
+                <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#changelog" target="_blank" rel="noopener noreferrer" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  <span>Changelog</span>
+                  <span class="inline-flex min-w-5 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">v1.69.1</span>
                 </a>
               </div>
               <div class="grid min-h-40 grid-cols-[0.95fr_0.82fr] gap-3">
@@ -87,16 +90,17 @@
                 <a href="/docs/vlt" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Documentation
                 </a>
-                <a href="/changelog" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Changelog
+                <a href="/changelog" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  <span>Changelog</span>
+                  <span class="inline-flex min-w-5 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">{{ changelog_count }}</span>
                 </a>
               </div>
               <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="group/card relative flex min-h-40 items-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-zinc-100 no-underline hover:no-underline hover:border-zinc-600 transition-colors duration-200">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,163,184,0.12),transparent_58%),linear-gradient(135deg,rgba(255,255,255,0.055),transparent_48%)]"></div>
                 <div class="absolute bottom-3 right-3 flex items-center">
                   <div class="absolute -bottom-1 left-2 right-1 h-5 rounded-full bg-black/45 blur-md"></div>
-                  <span class="relative z-20 flex h-12 w-12 items-center justify-center opacity-80 saturate-75 brightness-90 drop-shadow-[0_10px_20px_rgba(0,0,0,0.42)]">{% include logos/framework-soc2.html uid="nav-vlt-trust-soc2" class="h-12 w-12" %}</span>
-                  <span class="relative z-0 -ml-4 flex h-12 w-12 items-center justify-center opacity-75 saturate-75 brightness-90 drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]">{% include logos/framework-gdpr.html class="h-12 w-12" %}</span>
+                  <span class="relative z-20 flex h-12 w-12 items-center justify-center drop-shadow-[0_10px_20px_rgba(0,0,0,0.42)]">{% include logos/framework-soc2.html uid="nav-vlt-trust-soc2" class="h-12 w-12" %}</span>
+                  <span class="relative z-0 -ml-4 flex h-12 w-12 items-center justify-center opacity-95 drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]">{% include logos/framework-gdpr.html class="h-12 w-12" %}</span>
                 </div>
                 <div class="relative z-10">
                   <span class="text-sm font-semibold text-zinc-200">Trust Center <span aria-hidden="true">⇗</span></span>
@@ -181,11 +185,11 @@
               <span>Changelog ⇗</span>
             </a>
             <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-1">GitHub <span>5.5k</span> <span aria-hidden="true" class="text-[#ecd53f]">★</span></span>
+              <span class="inline-flex items-center gap-1.5">GitHub <span class="text-zinc-600">–</span> <span>5.5k</span> <span aria-hidden="true" class="text-[#ecd53f]">★</span></span>
               <span aria-hidden="true" class="text-zinc-500 text-base leading-none">⇗</span>
             </a>
             <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span>NPM</span>
+              <span class="inline-flex items-center gap-1.5">NPM <span class="text-zinc-600">–</span> <span>6.5M/week</span></span>
               <span aria-hidden="true" class="text-zinc-500 text-base leading-none">⇗</span>
             </a>
             <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
@@ -210,7 +214,7 @@
               <span>Documentation</span>
             </a>
             <a href="/changelog" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span>Changelog</span>
+              <span class="inline-flex items-center gap-2">Changelog <span class="inline-flex min-w-6 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[11px] font-semibold leading-none text-zinc-500">{{ changelog_count }}</span></span>
             </a>
             <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
               <span>Trust Center</span>

@@ -26,7 +26,7 @@ title: ""
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
     <p class="mx-auto max-w-[36ch] text-center text-lg leading-relaxed">Trusted by developers and platforms worldwide.</p>
 
-  <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
+  <div class="trust-logo-grid mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
   <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
         {% include logos/google2.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
   </a>
@@ -87,7 +87,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file — encrypted.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file - encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Commit encrypted secrets to git while keeping decryption keys separate.</p>
   </div>
   <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
@@ -100,7 +100,7 @@ title: ""
 <section class="w-full max-w-4xl mx-auto px-6 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built on public-key cryptography.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Dotenvx encrypts each secret individually using ECIES public-key encryption. Encrypted .env files can be safely committed to Git while decryption keys remain separate.</p>
+    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Dotenvx encrypts each secret individually using ECIES public-key encryption. Encrypted .env files can be safely committed to Git while decryption keys remain separate.</p>
   </div>
   <div class="mt-14 md:mt-16 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] px-6 py-9 md:px-10 md:py-10" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
@@ -112,9 +112,9 @@ title: ""
         <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">secp256k1</span>
         <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">Runtime Decryption</span>
       </div>
-      <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read the Dotenvx whitepaper" class="group relative mx-auto mt-10 block w-56 sm:w-64 md:w-72 no-underline hover:no-underline">
-        <img src="/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="block w-full border border-zinc-800/80 bg-zinc-950/40 shadow-[0_1.8rem_4rem_rgba(0,0,0,0.34)] transition duration-200 group-hover:border-zinc-700/90 group-hover:shadow-[0_2rem_4.5rem_rgba(0,0,0,0.42)]" />
-        <span class="absolute inset-0 flex items-center justify-center bg-black/18 opacity-100 transition duration-200 group-hover:bg-black/28">
+      <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read the Dotenvx whitepaper" class="whitepaper-artifact group relative mx-auto mt-10 block w-56 sm:w-64 md:w-72 no-underline hover:no-underline">
+        <img src="/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="whitepaper-artifact-img block w-full border border-zinc-800/80 bg-zinc-950/40 shadow-[0_1.8rem_4rem_rgba(0,0,0,0.34)] transition duration-200 group-hover:border-zinc-700/90 group-hover:shadow-[0_2rem_4.5rem_rgba(0,0,0,0.42)]" />
+        <span class="whitepaper-artifact-overlay absolute inset-0 flex items-center justify-center bg-black/18 opacity-100 transition duration-200 group-hover:bg-black/28">
           <span class="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-black/70 px-4 py-2 text-sm md:text-base font-medium text-zinc-100 shadow-[0_1rem_2.5rem_rgba(0,0,0,0.36)] backdrop-blur-sm">
             Read Whitepaper
             <span aria-hidden="true">→</span>
@@ -215,7 +215,7 @@ title: ""
 <section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Trusted by developers worldwide.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Developers are installing dotenvx 5 million times a week on npm and using it to secure local development, CI, cloud infrastructure, and AI systems.</p>
+    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 5 million times a week on npm and using it to secure local development, CI, cloud infrastructure, and AI systems.</p>
   </div>
 
   <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
@@ -542,15 +542,15 @@ title: ""
   </dl>
 </section>
 
-<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-32 md:mt-44 mb-0 pt-2 pb-36 md:pb-48 lg:pb-56 text-center">
+<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-44 md:mt-60 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/church-door.jpg'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
   <div class="relative z-10">
-    <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.7rem] md:text-[4rem] lg:text-[4.8rem] leading-[1.03]">
+    <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03]">
       The future of dotenv.<br />Available today.
     </h3>
-    <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
+    <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
       <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/start">
         <span>Get Started</span>
         <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

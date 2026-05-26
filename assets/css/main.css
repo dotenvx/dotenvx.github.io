@@ -643,6 +643,53 @@ width: 100%;
   display: flex;
 }
 
+.trust-logo-grid a {
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+  will-change: opacity, filter, transform;
+}
+
+.trust-logo-grid:hover a {
+  opacity: 0.58;
+}
+
+.trust-logo-grid a:hover {
+  filter: drop-shadow(0 0 12px rgba(236, 213, 63, 0.16));
+  opacity: 1;
+  transform: translateY(-1px) scale(1.012);
+}
+
+.whitepaper-artifact {
+  filter: drop-shadow(0 1.7rem 3.6rem rgba(0, 0, 0, 0.34));
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+.whitepaper-artifact::before {
+  content: "";
+  position: absolute;
+  inset: -0.7rem;
+  border-radius: 0.25rem;
+  background: radial-gradient(ellipse at 50% 45%, rgba(236, 213, 63, 0.16), rgba(236, 213, 63, 0.055) 34%, rgba(0, 0, 0, 0) 68%);
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.whitepaper-artifact-img,
+.whitepaper-artifact-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.whitepaper-artifact:hover {
+  filter: drop-shadow(0 2rem 4.2rem rgba(0, 0, 0, 0.46));
+  transform: translateY(-2px);
+}
+
+.whitepaper-artifact:hover::before {
+  opacity: 0.86;
+  transform: scale(1.02);
+}
+
 @media (max-width: 767px) {
   .hero-no-select,
   .hero-no-select * {

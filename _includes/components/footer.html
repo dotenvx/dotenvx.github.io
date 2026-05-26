@@ -1,6 +1,8 @@
 <div class="w-full bg-black">
+  {% assign changelog_page = site.pages | where: "path", "changelog.md" | first %}
+  {% assign changelog_count = changelog_page.content | split: "<article" | size | minus: 1 %}
   <div class="mx-auto w-full max-w-7xl px-6 py-16 md:py-24">
-    <div class="grid grid-cols-1 md:grid-cols-[1.2fr_repeat(5,minmax(0,1fr))] gap-12 md:gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_repeat(3,minmax(0,1fr))] gap-12 md:gap-10">
       <div class="space-y-8">
         <div class="space-y-1.5 text-zinc-400 text-sm leading-relaxed">
           <p class="m-0 text-xs leading-snug">2450 Colorado Ave #100</p>
@@ -23,58 +25,51 @@
       </div>
 
       <div class="space-y-4">
-        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Features</p>
+        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Dotenvx</p>
         <div class="space-y-3 text-sm font-normal">
-          <a href="/features" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Overview</a>
-          <a href="/features/encryption" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Encryption</a>
-          <a href="/features/run-anywhere" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Run Anywhere</a>
-          <a href="/features/multiple-environments" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Multiple Environments</a>
+          <a href="/" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Overview</a>
+          <a href="/docs/quickstart" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Quickstart</a>
+          <a href="/docs" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Documentation</a>
+          <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#changelog" target="_blank" rel="noopener noreferrer" class="group/link block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
+            <span class="inline-flex items-center gap-2">Changelog <span class="inline-flex items-center justify-center rounded-md border border-zinc-500/60 px-1 py-0.5 text-[9px] font-normal leading-none text-zinc-500">v1.69.1</span></span>
+          </a>
+          <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Whitepaper</a>
+          <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group/link block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
+            <span class="inline-flex items-center gap-2">GitHub <span class="inline-flex items-center justify-center gap-1 rounded-md border border-zinc-500/60 px-1 py-0.5 text-[9px] font-normal leading-none text-zinc-500">5.5k <span aria-hidden="true">★</span></span></span>
+          </a>
+          <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group/link block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
+            <span class="inline-flex items-center gap-2">NPM <span class="inline-flex items-center justify-center rounded-md border border-zinc-500/60 px-1 py-0.5 text-[9px] font-normal leading-none text-zinc-500">6.5M/week</span></span>
+          </a>
         </div>
       </div>
 
       <div class="space-y-4">
-        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Resources</p>
+        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Vlt <span aria-hidden="true">⛨</span></p>
         <div class="space-y-3 text-sm font-normal">
-          <a href="/changelog" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Changelog</a>
-          <a href="/dotenvx.pdf" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Whitepaper</a>
-          <a href="https://trust.dotenvx.com" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Trust Center</a>
-          <a href="/spec" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Spec</a>
-          <a href="/privacy" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Privacy</a>
-          <a href="/terms" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Terms</a>
-        </div>
-      </div>
-
-      <div class="space-y-4">
-        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Company</p>
-        <div class="space-y-3 text-sm font-normal">
-          <a href="/" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Home</a>
-          <a href="/blog" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Blog</a>
-          <a href="/contact" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Contact</a>
-        </div>
-      </div>
-
-      <div class="space-y-4">
-        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Help</p>
-        <div class="space-y-3 text-sm font-normal">
-          <a href="/docs" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Docs</a>
-          <a href="/support" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Support</a>
+          <a href="/vlt" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Overview</a>
+          <a href="/pricing" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Pricing</a>
+          <a href="/docs/vlt" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Documentation</a>
+          <a href="/changelog" class="group/link block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
+            <span class="inline-flex items-center gap-2">Changelog <span class="inline-flex min-w-4 items-center justify-center rounded-md border border-zinc-500/60 px-1 py-0.5 text-[9px] font-normal leading-none text-zinc-500">{{ changelog_count }}</span></span>
+          </a>
+          <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Trust Center</a>
           <a href="https://status.dotenvx.com" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Status</a>
           <a href="/login" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Log In</a>
         </div>
       </div>
 
       <div class="space-y-4">
-        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Open Source</p>
+        <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Company</p>
         <div class="space-y-3 text-sm font-normal">
-          <a href="https://github.com/motdotla/dotenv" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
-            <span class="inline-flex items-center gap-1"><span>Dotenv</span><span class="text-zinc-600">-</span><span>20.4k</span><span>⟡</span></span>
-          </a>
-          <a href="https://github.com/dotenvx/dotenvx" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
-            <span class="inline-flex items-center gap-1"><span>Dotenvx</span><span class="text-zinc-600">-</span><span>5.5k</span><span>⟡</span></span>
-          </a>
-          <a href="https://keysee.io" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">KEYSEE⎔</a>
+          <a href="/blog" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Blog</a>
+          <a href="/support" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Support</a>
+          <a href="/contact" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Contact</a>
+          <a href="/privacy" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Privacy</a>
+          <a href="/terms" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Terms</a>
+          <a href="/open-source" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Open Source</a>
         </div>
       </div>
+
     </div>
 
   </div>

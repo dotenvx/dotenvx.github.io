@@ -19,82 +19,68 @@ title: ""
   </div>
 </section>
 
-<section class="relative z-20 w-full max-w-5xl mx-auto px-6 mb-32 md:mb-44 lg:mb-52">
-  <p class="mx-auto max-w-[44ch] text-center text-base md:text-lg leading-relaxed text-zinc-400">Trusted by teams shipping encrypted .env files.</p>
+<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mb-24 sm:mb-32 md:mb-40 lg:mb-48">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
+    <p class="mx-auto max-w-[36ch] text-center text-lg leading-relaxed">Trusted by developers and platforms worldwide.</p>
 
-  <div class="mt-6 md:mt-7 mb-14 md:mb-16 max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-2 md:gap-x-3 lg:gap-x-3 gap-y-4 md:gap-y-5 items-center">
+  <div class="mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
   <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
-        {% include logos/google2.html class="w-[6.2rem] lg:w-[7.1rem] h-auto mx-auto" %}
+        {% include logos/google2.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
   </a>
   <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Supabase documentation using dotenvx for branching">
-        {% include logos/supabase2.html class="w-[5.8rem] lg:w-[6.9rem] h-auto mx-auto" %}
+        {% include logos/supabase2.html class="w-[9.2rem] lg:w-[12.1rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/daytonaio/daytona" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Daytona repository">
-        {% include logos/daytona.html class="w-[6.2rem] lg:w-[7.1rem] h-auto mx-auto" %}
+        {% include logos/daytona.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/RooCodeInc/Roo-Code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="RooCode repository">
-        {% include logos/roocode.html class="w-[6.3rem] lg:w-[7.8rem] h-auto mx-auto" %}
+        {% include logos/roocode.html class="w-[10.2rem] lg:w-[13.6rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/nasa/earthdata-search" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="NASA Earthdata Search using dotenvx">
-        {% include logos/nasa.html class="h-8 lg:h-9 w-auto mx-auto" %}
+        {% include logos/nasa.html class="h-14 lg:h-15 w-auto mx-auto" %}
   </a>
   <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=readme" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
-        {% include logos/webflow.html class="w-[6.2rem] lg:w-[7.1rem] h-auto mx-auto" %}
+        {% include logos/webflow.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/TencentCloudBase" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Tencent CloudBase organization">
-        {% include logos/tencent.html class="w-[6.2rem] lg:w-[7.1rem] h-auto mx-auto" %}
+        {% include logos/tencent.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/paypal/agent-toolkit" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
-    {% include logos/paypal.html class="h-6 lg:h-7 w-auto mx-auto" %}
+    {% include logos/paypal.html class="h-10 lg:h-11 w-auto mx-auto" %}
   </a>
   <a href="https://github.com/search?q=repo%3ACrowdStrike%2Ffoundry-playwright%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="CrowdStrike foundry-playwright using dotenvx">
-        {% include logos/crowdstrike.html class="w-[8rem] lg:w-[9.8rem] h-auto mx-auto" %}
+        {% include logos/crowdstrike.html class="w-[14rem] lg:w-[18rem] h-auto mx-auto" %}
   </a>
   <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
-        {% include logos/aws.html class="h-9 lg:h-9 w-auto mx-auto" %}
+        {% include logos/aws.html class="h-16 lg:h-15 w-auto mx-auto" %}
   </a>
   <a href="https://github.com/shadcn-ui/ui" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
-        {% include logos/shadcn.html class="w-[5.6rem] lg:w-[6.9rem] h-auto mx-auto" %}
+        {% include logos/shadcn.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/search?q=org%3Abrowser-use%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
-        {% include logos/browser-use.html class="w-[5.6rem] lg:w-[6.9rem] h-auto mx-auto" %}
+        {% include logos/browser-use.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
   </a>
   </div>
-
-  <div class="relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-10 md:pt-12" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.16)_0%,rgba(242,214,134,0.07)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    {% include components/encrypted-env-file.html bare=true %}
   </div>
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Secure dotenv in one line.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Secure dotenv – in one line.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Keep using .env files. Just make them secure.</p>
   </div>
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
-    <div class="text-zinc-500 text-[0.9em]">// before</div>
-    <div class="mt-2 text-[#8B9BB4] font-semibold">require('dotenv').config()</div>
-    <div class="mt-8 text-zinc-500 text-[0.9em]">// after</div>
-    <div class="mt-2 text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
-  </div>
-
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-5">
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Install</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Replace <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenv</code> with <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">@dotenvx/dotenvx</code>.</p>
-    </div>
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Encrypt</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx encrypt</code> and protect your secrets.</p>
-    </div>
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Protect</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Protect secrets across prompts, code, and runtime.</p>
+  <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-10 md:pt-12 pb-4" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="mx-auto max-w-3xl overflow-x-auto px-4 md:px-6 py-6 md:py-8 font-mono text-sm md:text-base leading-[1.55]">
+      <div class="text-zinc-500">// 1. replace</div>
+      <pre class="mt-2 whitespace-nowrap"><span class="text-[#8B9BB4]">require('dotenv').config()</span></pre>
+      <div class="mt-8 text-zinc-500">// 2. with</div>
+      <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.82)]">require('@dotenvx/dotenvx').config()</span></pre>
+      <div class="mt-8 text-zinc-500">// 3. and run dotenvx encrypt</div>
     </div>
   </div>
 </section>
@@ -104,36 +90,17 @@ title: ""
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file – encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Commit encrypted secrets to git while keeping decryption keys separate.</p>
   </div>
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl bg-zinc-100 dark:bg-zinc-900 px-6 py-6 md:px-8 md:py-8 font-mono text-sm md:text-base leading-[1.45]">
-    <div class="text-zinc-500 text-[0.9em]">// before</div>
-    <div class="mt-2 text-[#8B9BB4] font-semibold">require('dotenv').config()</div>
-    <div class="mt-8 text-zinc-500 text-[0.9em]">// after</div>
-    <div class="mt-2 text-[#ecd53f] font-semibold">require('@dotenvx/dotenvx').config()</div>
-  </div>
-
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-5">
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">1</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Install</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Replace <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenv</code> with <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">@dotenvx/dotenvx</code>.</p>
-    </div>
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">2</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Encrypt</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx encrypt</code> and protect your secrets.</p>
-    </div>
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-[#ecd53f] font-semibold text-sm tracking-wide">3</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Protect</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Protect secrets across prompts, code, and runtime.</p>
-    </div>
+  <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.16)_0%,rgba(242,214,134,0.07)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    {% include components/encrypted-env-file.html bare=true %}
   </div>
 </section>
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Secure secrets from commit to runtime.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Encrypt and inject secrets without changing how your software runs.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">The secure .env workflow.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Built around the .env workflow developers already know.</p>
   </div>
 
   <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">

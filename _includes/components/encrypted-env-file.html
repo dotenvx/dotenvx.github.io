@@ -1,12 +1,13 @@
-<div class="encrypted-env-window mx-auto font-mono overflow-hidden">
+<div class="encrypted-env-window{% if include.bare %} encrypted-env-window-bare{% endif %} mx-auto font-mono overflow-hidden">
   <div class="encrypted-env-window-bar">
+    {% unless include.bare %}
     <div class="encrypted-env-window-dots" aria-hidden="true">
       <span></span>
       <span></span>
       <span></span>
     </div>
     <div class="encrypted-env-window-title" aria-hidden="true">.env</div>
-    <button type="button" class="ee-decrypt-button" data-ee-decrypt-toggle aria-pressed="false">decrypt</button>
+    {% endunless %}
   </div>
   <div class="subpixel-antialiased overflow-hidden">
     <div class="encrypted-env-file-body">
@@ -98,6 +99,21 @@
     inset: 1.95rem 0 0;
   }
 
+  .encrypted-env-window-bare {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .encrypted-env-window-bare::before,
+  .encrypted-env-window-bare::after {
+    content: none;
+  }
+
+  .encrypted-env-window-bare .encrypted-env-window-bar {
+    height: 0;
+    padding: 0;
+  }
+
   .encrypted-env-window-bar {
     display: flex;
     align-items: center;
@@ -140,33 +156,6 @@
     transform: translate(-50%, -50%);
   }
 
-  .ee-decrypt-button {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(244, 244, 245, 0.01);
-    box-shadow:
-      inset 0 0 0 1px rgba(244, 244, 245, 0.055),
-      0 0 10px rgba(244, 244, 245, 0.006);
-    color: rgba(244, 244, 245, 0.24);
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.64rem;
-    line-height: 1;
-    margin-left: auto;
-    padding: 0.28rem 0.58rem;
-    transform: translateY(10px);
-  }
-
-  .ee-decrypt-button:hover,
-  .ee-decrypt-button:focus-visible {
-    background: rgba(244, 244, 245, 0.032);
-    box-shadow:
-      inset 0 0 0 1px rgba(244, 244, 245, 0.12),
-      0 0 12px rgba(244, 244, 245, 0.018);
-    outline: none;
-  }
-
   .encrypted-env-file-body {
     font-size: 0.64rem;
     line-height: 1.48;
@@ -192,6 +181,11 @@
     margin: 0;
     padding: 2rem 1.55rem 2.3rem;
     min-width: max-content;
+  }
+
+  .encrypted-env-window-bare .ee-code {
+    padding-top: 1.8rem;
+    padding-bottom: 0;
   }
 
   .encrypted-env-file-body .ee-code[hidden] {
@@ -279,28 +273,5 @@
       height: 0.46rem;
     }
 
-    .ee-decrypt-button {
-      font-size: 0.58rem;
-      padding: 0.24rem 0.5rem;
-    }
   }
 </style>
-
-<script>
-  (() => {
-    document.querySelectorAll('.encrypted-env-window').forEach((windowEl) => {
-      const button = windowEl.querySelector('[data-ee-decrypt-toggle]');
-      const encrypted = windowEl.querySelector('[data-ee-state="encrypted"]');
-      const decrypted = windowEl.querySelector('[data-ee-state="decrypted"]');
-      if (!button || !encrypted || !decrypted) return;
-
-      button.addEventListener('click', () => {
-        const isDecrypted = button.getAttribute('aria-pressed') === 'true';
-        button.setAttribute('aria-pressed', isDecrypted ? 'false' : 'true');
-        button.textContent = isDecrypted ? 'decrypt' : 'encrypt';
-        encrypted.hidden = !isDecrypted;
-        decrypted.hidden = isDecrypted;
-      });
-    });
-  })();
-</script>

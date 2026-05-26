@@ -7,6 +7,13 @@ image: "/assets/img/og-image-pricing.png"
   <h1 class="my-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing for Vlt ⛨</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 
+  <section class="mx-auto mb-16 w-full max-w-3xl text-center">
+    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Vlt?</h2>
+    <p class="mt-4 text-base md:text-lg leading-relaxed text-zinc-500">
+      Vlt keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
+    </p>
+  </section>
+
   <div class="mx-auto w-full max-w-7xl">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_110px_rgba(250,204,21,0.12)] ring-1 ring-yellow-400/10">
     <div class="rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900 flex flex-col">
@@ -26,7 +33,7 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Access</span></li>
         </ul>
@@ -52,12 +59,12 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
@@ -81,12 +88,12 @@ image: "/assets/img/og-image-pricing.png"
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
           <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs <sup>⧖</sup></span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts <sup>⧖</sup></span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
+          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
         </ul>
       </div>
       <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
@@ -125,8 +132,6 @@ image: "/assets/img/og-image-pricing.png"
     </div>
   </div>
 
-  <p class="text-right text-xs text-zinc-400 mt-3"><sup>⧖</sup> coming soon</p>
-
   <div class="mx-auto mt-32 w-full max-w-5xl">
     <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Access & Identity</h2>
     <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
@@ -136,7 +141,7 @@ image: "/assets/img/og-image-pricing.png"
             <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Business</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
           </tr>
         </thead>
@@ -190,7 +195,7 @@ image: "/assets/img/og-image-pricing.png"
             <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Secure</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Business</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
           </tr>
         </thead>
@@ -198,8 +203,8 @@ image: "/assets/img/og-image-pricing.png"
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Billing Method</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Annual</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly / Annual</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly / Annual</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly</td>
             <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Flexible</td>
           </tr>
           <tr class="border-b border-zinc-900">
@@ -262,7 +267,7 @@ image: "/assets/img/og-image-pricing.png"
     <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
     <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
       {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-      {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
+      {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx uses ECIES public-key encryption, combining ephemeral key agreement with AES-256 secret encryption so that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
       {% include components/faq-question.html question="How does it protect me from security incidents like Vercel's?" answer="In the Vercel incident scenario, if an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key. To steal your secrets, an attacker needs both the private key and the encrypted .env files." %}
     </dl>
   </section>

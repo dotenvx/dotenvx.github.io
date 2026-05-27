@@ -528,6 +528,39 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   @apply text-blue-500 hover:text-zinc-950 dark:text-blue-400 dark:hover:text-zinc-50 underline font-bold tracking-tight text-sm;
 }
 
+.dotenvx-menu-card {
+  border-color: rgb(39 39 42) !important;
+}
+
+.dotenvx-menu-card-whitepaper:hover {
+  border-color: rgba(186, 230, 253, 0.3) !important;
+}
+
+.dotenvx-menu-card-github:hover {
+  border-color: rgba(253, 224, 71, 0.35) !important;
+}
+
+.dotenvx-menu-card-npm:hover {
+  border-color: rgba(203, 56, 55, 0.45) !important;
+}
+
+.dotenvx-menu-quote {
+  border-color: rgba(186, 230, 253, 0.25) !important;
+  color: rgba(224, 242, 254, 0.7) !important;
+}
+
+.dotenvx-menu-stat-github {
+  background-color: rgba(253, 224, 71, 0.1) !important;
+  border-color: rgba(253, 224, 71, 0.3) !important;
+  color: rgba(254, 249, 195, 0.8) !important;
+}
+
+.dotenvx-menu-stat-npm {
+  background-color: rgba(203, 56, 55, 0.12) !important;
+  border-color: rgba(203, 56, 55, 0.35) !important;
+  color: rgba(254, 226, 226, 0.8) !important;
+}
+
 .link-darken {
   @apply text-zinc-600 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-400;
 }

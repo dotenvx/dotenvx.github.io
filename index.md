@@ -24,7 +24,7 @@ title: ""
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="mx-auto max-w-[36ch] text-center text-lg leading-relaxed">Trusted by developers and platforms worldwide.</p>
+    <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed">Used across developer tools, cloud platforms, and agentic software.</p>
 
   <div class="trust-logo-grid mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
   <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
@@ -126,11 +126,12 @@ title: ""
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-36 md:mb-56 lg:mb-72">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">The secure .env workflow.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Built around the .env workflow developers already know.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built for secure .env workflows.</h2>
+    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Keep the simplicity of .env files while adding encryption, auditing, and rotation.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+  <div class="mt-8 md:mt-10 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem]">
+  <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
     <article class="feature-cli-card feature-cli-card-primary flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-2 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
       <div class="feature-card-head mt-3">
@@ -145,9 +146,9 @@ title: ""
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
       <div class="feature-card-head mt-3">
         <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
-        <div class="feature-cli-cmd"><code>dotenvx run -- your-agent</code></div>
+        <div class="feature-cli-cmd"><code>dotenvx run -- your-command</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command that needs it.</p>
       {% include components/live-demo-run.html %}
     </article>
   </div>
@@ -157,19 +158,19 @@ title: ""
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
       <div class="feature-card-head mt-3">
         <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Inject</h3>
-        <div class="feature-cli-cmd"><code>dotenvx run -- your-agent</code></div>
+        <div class="feature-cli-cmd"><code>dotenvx run -- your-command</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command or agent process that needs it.</p>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command that needs it.</p>
       {% include components/live-demo-run.html %}
     </article>
 
     <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">03</div>
       <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Scope</h3>
+        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Multiple Environments</h3>
         <div class="feature-cli-cmd"><code>dotenvx run -f .env.production</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Load the right secret set per environment so agents only get what they should.</p>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Load the right secret set per environment.</p>
       <div class="feature-cli-visual feature-cli-visual-scope">
         <div class="feature-chip-row">
           <span class="feature-chip">.env</span>
@@ -185,7 +186,7 @@ title: ""
         <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit</h3>
         <div class="feature-cli-cmd"><code>git diff .env*</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Track encrypted secret changes through Git history and PR review workflows.</p>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Track encrypted secret changes through git and PR review workflows.</p>
       <div class="feature-cli-visual feature-cli-visual-audit">
         <div class="feature-diff-line">+ DATABASE_URL="encrypted:..."</div>
         <div class="feature-diff-line">+ OPENAI_API_KEY="encrypted:..."</div>
@@ -198,7 +199,7 @@ title: ""
         <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate</h3>
         <div class="feature-cli-cmd"><code>dotenvx rotate</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotate aging or compromised secrets without rewriting agent code.</p>
+      <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotate aging or compromised secrets.</p>
       <div class="feature-cli-visual feature-cli-visual-rotate">
         <div class="feature-rotate-row">
           <span class="feature-rotate-key">DOTENV_PRIVATE_KEY</span>
@@ -209,11 +210,36 @@ title: ""
       </div>
     </article>
   </div>
+  </div>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-36 md:mb-56 lg:mb-72">
+  <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start md:gap-12 lg:gap-16">
+    <div class="max-w-xl">
+      <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built because .env files still matter.</h2>
+      <p class="mt-5 max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">A message from the creator of dotenv and dotenvx.</p>
+    </div>
+    <div class="border-l border-zinc-800/80 pl-6 md:pl-8">
+      <div class="space-y-5 text-sm leading-6 text-zinc-400 md:text-[0.92rem] md:leading-7">
+        <p>Developers use environment files because they are simple.</p>
+        <p>They work everywhere: local development, CI, containers, servers, and cloud platforms. They became part of modern software because they reduced friction instead of adding to it.</p>
+        <p>But simplicity came with a cost. Plaintext secrets spread quietly across laptops, repositories, CI systems, chat messages, screenshots, and production machines.</p>
+        <p>We believe the answer is not abandoning environment files. The answer is securing them properly.</p>
+        <p>Dotenvx extends the environment file workflow with encryption, controlled key access, auditing, and secure synchronization while preserving the developer experience that made .env successful in the first place.</p>
+        <p>As software becomes increasingly autonomous, secrets become increasingly valuable. API keys, credentials, tokens, and signing keys are now operational infrastructure. They deserve stronger protection.</p>
+        <p>That is what we are building with Dotenvx.</p>
+      </div>
+      <div class="mt-9 font-mono text-sm leading-6 text-zinc-500">
+        <p class="m-0">- Scott Motte</p>
+        <p class="m-0 mt-1">Creator of dotenv and dotenvx</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Trusted by developers worldwide.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers using dotenvx.</h2>
     <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 5 million times a week on npm and using it to secure local development, CI, cloud infrastructure, and AI systems.</p>
   </div>
 

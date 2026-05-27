@@ -163,6 +163,7 @@
 
   .encrypted-env-file-body .ee-editor-pane {
     width: 100%;
+    overflow-x: hidden !important;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -179,7 +180,11 @@
     list-style: none;
     margin: 0;
     padding: 2rem 1.55rem 2.3rem;
-    min-width: max-content;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 
   .encrypted-env-window-bare .ee-code {

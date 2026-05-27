@@ -57,26 +57,26 @@ permalink: /open-source/
 <section class="mx-auto w-full max-w-7xl px-5 pb-28 md:pb-36">
   <div class="relative mx-auto max-w-3xl text-center">
     <h2 class="text-4xl font-normal tracking-[-0.02em] text-zinc-100 md:text-5xl">Published Work</h2>
-    <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500 md:text-lg">Technical papers from our work on secrets, cryptography, and developer infrastructure.</p>
+    <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500 md:text-lg">Technical papers and presentations from our work on secrets, cryptography, and identity.</p>
   </div>
 
   <div class="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2">
-    <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="group grid gap-6 rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:grid-cols-[8rem_1fr] sm:p-6">
-      <div class="overflow-hidden rounded-lg border border-zinc-800 bg-white/95 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.28)]">
-        <img src="/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="block w-full transition-transform duration-200 group-hover:scale-[1.025]" loading="lazy">
+    <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:p-6">
+      <div class="flex justify-center overflow-hidden rounded-xl border border-zinc-800 bg-white/95 py-8 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.28)]">
+        <img src="https://dotenvx.com/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="block w-44 transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
       </div>
-      <div class="flex min-w-0 flex-col justify-center">
+      <div class="mt-5">
         <h3 class="m-0 text-xl font-medium tracking-tight text-zinc-100">Dotenvx Whitepaper</h3>
         <p class="mt-3 text-sm leading-6 text-zinc-500">Reducing secrets risk with cryptographic separation.</p>
         <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ecd53f]/85">Read paper <span aria-hidden="true">↗</span></span>
       </div>
     </a>
 
-    <a href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group grid gap-6 rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:grid-cols-[8rem_1fr] sm:p-6">
-      <div class="overflow-hidden rounded-lg border border-zinc-800 bg-white/95 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.28)]">
-        <img src="/assets/img/keysee-whitepaper-thumb.png" alt="KEYSEE whitepaper preview" class="block w-full transition-transform duration-200 group-hover:scale-[1.025]" loading="lazy">
+    <a href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:p-6">
+      <div class="flex justify-center overflow-hidden rounded-xl border border-zinc-800 bg-white/95 py-8 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.28)]">
+        <img src="https://keysee.io/whitepaper.png" alt="KEYSEE whitepaper preview" class="block w-44 transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
       </div>
-      <div class="flex min-w-0 flex-col justify-center">
+      <div class="mt-5">
         <h3 class="m-0 text-xl font-medium tracking-tight text-zinc-100">KEYSEE<span aria-hidden="true">⎔</span> Whitepaper</h3>
         <p class="mt-3 text-sm leading-6 text-zinc-500">Deterministic visual identity from compressed public keys.</p>
         <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ecd53f]/85">Read paper <span aria-hidden="true">↗</span></span>

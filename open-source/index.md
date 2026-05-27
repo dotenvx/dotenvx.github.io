@@ -5,7 +5,7 @@ permalink: /open-source/
 
 <section class="mx-auto flex w-full max-w-7xl flex-col px-5 py-24 md:py-32">
   <div class="mx-auto max-w-4xl text-center">
-    <h1 class="pb-2 text-center font-canela text-[3.4rem] font-normal leading-[0.95] tracking-[-0.018em] text-zinc-100 md:text-[5.5rem] lg:text-[7rem]">Open Source</h1>
+    <h1 class="pb-2 text-center font-canela text-[3rem] font-normal leading-[0.98] tracking-[-0.018em] text-zinc-100 md:text-[4.4rem] lg:text-[5.25rem]">Open Source</h1>
     <p class="mx-auto mt-8 max-w-3xl text-center text-xl leading-relaxed text-zinc-400 md:text-2xl">Dotenvx is built on open source technologies, and this is how we contribute back to the community.</p>
     <div class="mt-10 flex justify-center">
       <a href="https://github.com/dotenvx" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center justify-center gap-2 px-6 py-4 text-base md:text-lg">

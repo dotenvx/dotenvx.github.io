@@ -6,6 +6,20 @@ title: "Contact"
   <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-14 md:gap-20 items-start lg:items-center">
     <div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.2rem] md:text-[4.8rem] leading-[1.02]">Get in touch</h1>
+      <div class="mt-10">
+        <p class="m-0 contact-muted-label text-sm md:text-base">Office</p>
+        <p class="contact-muted-link mt-1.5 m-0 text-base md:text-base leading-relaxed font-normal">
+          2450 Colorado Ave #100<br>
+          Santa Monica, CA 90404
+        </p>
+      </div>
+      <div class="mt-8">
+        <p class="m-0 contact-muted-label text-sm md:text-base">Satellite SF office</p>
+        <p class="contact-muted-link mt-1.5 m-0 text-base md:text-base leading-relaxed font-normal">
+          1160 Battery Street East, Suite 100<br>
+          San Francisco, CA 94111
+        </p>
+      </div>
     </div>
 
     <aside class="space-y-11 contact-aside-fade">

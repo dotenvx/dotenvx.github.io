@@ -2,12 +2,12 @@
 title: "Privacy Policy"
 ---
 
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h1 class="font-extrabold text-2xl">Privacy Policy</h1>
+<section class="w-full max-w-2xl mx-auto px-6 mt-16 md:mt-24 flex flex-col gap-5 text-zinc-400">
+  <h1 class="mb-3 font-canela text-[2.35rem] font-normal leading-[1.02] tracking-[-0.018em] text-zinc-100 md:text-[3rem]">Privacy Policy</h1>
 
   <p>The privacy of your data is paramount to us. It's our entire business. We'll only ever access your account to help you with a problem or squash a software bug. We'll never access the content of an encryption key and/or secret unless you ask us to. We log all access to all accounts by IP address, so we can verify that no unauthorized access has happened for as long as the logs are kept.</p>
 
-  <h2 class="font-extrabold text-lg">Identity & Access</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Identity & Access</h2>
 
   <p>When you sign up for Dotenvx, we ask for your name and email address via "Login with GitHub" or "Login with Google". That's just so you can personalize your new account, and we can send you updates, or other essential information. We'll never sell your personal info to third parties, and we won't use your name in marketing statements without your permission, either.</p>
 
@@ -21,19 +21,19 @@ title: "Privacy Policy"
     <li>If Dotenvx is acquired by or merged with another company we'll notify you well before any info about you and your organization is transferred and becomes subject to a different privacy policy.</li>
   </ul>
 
-  <h2 class="font-extrabold text-lg">Law Enforcement</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Law Enforcement</h2>
 
   <p>Dotenvx won't hand your data over to law enforcement unless a court order says we have to. We reject requests from local and federal law enforcement when they seek data without a court order. And unless we're legally prevented from it, we'll always inform you when such requests are made.</p>
 
-  <h2 class="font-extrabold text-lg">Encryption</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Encryption</h2>
 
   <p>All data is encrypted via SSL/TLS when transmitted from our servers to your browser. The database backups are also encrypted. Sensitive data (like your email address and all your encryption keys and secrets) is always encrypted while it's live in our database. It's encrypted not just at the database level. We go beyond that standard and additionally encrypt it at the programmatic level.</p>
 
-  <h2 class="font-extrabold text-lg">Deleted Data</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Deleted Data</h2>
 
   <p>When you cancel your account, we'll ensure that nothing is stored on our servers past 30 days. Anything you delete on your account while it's active will also be purged within 30 days (in many cases much sooner. 30 days is about the time it takes all metadata of your data to fully clear from our cache and log history).</p>
 
-  <h2 class="font-extrabold text-lg">Your Privacy Rights</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Your Privacy Rights</h2>
 
   <p>Depending on your location and applicable law, you may have rights regarding your personal data, including the right to access, correct, delete, export, or restrict certain uses of your information.</p>
 
@@ -41,7 +41,7 @@ title: "Privacy Policy"
 
   <p>To exercise these rights, contact <a href="mailto:support@dotenvx.com">support@dotenvx.com</a>.</p>
 
-  <h2 class="font-extrabold text-lg">Changes & Questions</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Changes & Questions</h2>
 
   <p>Dotenvx may update this policy from time to time - we'll notify you about significant changes by email or by placing a prominent notice on our site. You can access, change or delete your personal information any time by contacting <a href="mailto:support@dotenvx.com">our support team</a>.</p>
 

@@ -2,8 +2,8 @@
 title: "Terms of Service"
 ---
 
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h1 class="font-extrabold text-2xl">Terms of Service</h1>
+<section class="w-full max-w-2xl mx-auto px-6 mt-16 md:mt-24 flex flex-col gap-5 text-zinc-400">
+  <h1 class="mb-3 font-canela text-[2.35rem] font-normal leading-[1.02] tracking-[-0.018em] text-zinc-100 md:text-[3rem]">Terms of Service</h1>
 
   <p>By using Dotenvx ("Service"), you are agreeing to be bound by the following terms and conditions ("Terms of Service").</p>
 
@@ -11,7 +11,7 @@ title: "Terms of Service"
 
   <p>Violation of any of the terms below may result in the termination of your account.</p>
 
-  <h2 class="font-extrabold text-lg">Account Terms</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Account Terms</h2>
   <ol class="list-decimal ml-5">
     <li>You are responsible for maintaining the security of your account and GitHub account. The Company cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.</li>
     <li>You may not use the Service for any illegal purpose or to violate any laws in your jurisdiction.</li>
@@ -19,33 +19,33 @@ title: "Terms of Service"
     <li>You may access and use the Service through automated agents or tools that you control, provided you remain responsible for their actions and comply with these Terms of Service.</li>
   </ol>
 
-  <h2 class="font-extrabold text-lg">Payment, Refunds, Upgrading and Downgrading Terms</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Payment, Refunds, Upgrading and Downgrading Terms</h2>
 
   <ol class="list-decimal ml-5">
     <li>All fees are exclusive of all taxes, levies, or duties imposed by taxing authorities, and you shall be responsible for payment of all such taxes, levies, or duties, excluding only United States (federal or state) taxes. Where required, The Company will collect those taxes on behalf of taxing authority and remit those taxes to taxing authorities.</li>
   </ol>
 
 
-  <h2 class="font-extrabold text-lg">Cancellation and Termination</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Cancellation and Termination</h2>
 
   <ol class="list-decimal ml-5">
     <li>All of your content will be inaccessible from the Service immediately upon cancellation. Within 30 days, all content will be permanently deleted from backups and logs. This information can not be recovered once it has been permanently deleted.</li>
   </ol>
 
-  <h2 class="font-extrabold text-lg">Modifications to the Service and Prices</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Modifications to the Service and Prices</h2>
 
   <ol class="list-decimal ml-5">
     <li>Prices of all Services are subject to change upon 30 days notice from us. Such notice may be provided at any time by posting the changes to the Dotenvx site or the Service itself.</li>
   </ol>
 
-  <h2 class="font-extrabold text-lg">Data Ownership</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Data Ownership</h2>
 
   <ol class="list-decimal ml-5">
     <li>We claim no property rights over the the encryption keys and/or secrets you accumulate using the Service. All encryption keys and/or secrets accumulated will remain yours.</li>
     <li>The look and feel of the Service is copyright© Dotenvx. All rights reserved. You may not duplicate, copy, or reuse any portion of the HTML, CSS, JavaScript, or visual design elements without express written permission from the Company.</li>
   </ol>
 
-  <h2 class="font-extrabold text-lg">General Conditions</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">General Conditions</h2>
 
   <ol class="list-decimal ml-5">
     <li>Your use of the Service is at your sole risk. The service is provided on an "as is" and "as available" basis.</li>
@@ -67,7 +67,7 @@ title: "Terms of Service"
 
   <p>The privacy of your data is paramount to us. We'll only ever access your account to help you with a problem or squash a software bug. We'll never open any uploaded files unless you ask us to. We log all access to all accounts by IP address, so we can always verify that no unauthorized access has happened for as long as the logs are kept.</p>
 
-  <h2 class="font-extrabold text-lg">Identity & Access</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Identity & Access</h2>
 
   <p>When you sign up for Dotenvx, we ask for your name and email address via "Login with GitHub". That's just so you can personalize your new account, and we can send you updates, or other essential information. We'll never sell your personal info to third parties, and we won't use your name in marketing statements without your permission, either.</p>
   <p>When you write Dotenvx with a question or to ask for help, we'll keep that correspondence, and the email address, for future reference. When you browse our marketing pages, we'll track that for statistical purposes (like conversion rates and to test new designs). We also store any information you volunteer, like surveys, for as long as it makes sense.</p>
@@ -79,18 +79,18 @@ title: "Terms of Service"
     <li>If Dotenvx is acquired by or merged with another company we'll notify you well before any info about you is transferred and becomes subject to a different privacy policy.</li>
   </ol>
 
-  <h2 class="font-extrabold text-lg">Law Enforcement</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Law Enforcement</h2>
 
   <p>Dotenvx won't hand your data over to law enforcement unless a court order says we have to. We reject requests from local and federal law enforcement when they seek data without a court order. And unless we're legally prevented from it, we'll always inform you when such requests are made.</p>
 
-  <h2 class="font-extrabold text-lg">Encryption</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Encryption</h2>
 
   <p>All data is encrypted via SSL/TLS when transmitted from our servers to your browser. The database backups are also encrypted. Sensitive data (like your email address and all your encryption keys and/or secrets) is always encrypted while it's live in our database. It's encrypted not just at the database level. We go beyond that standard and additionally encrypt it at the programmatic level.</p>
 
-  <h3 class="text-left text-xl font-bold tracking-tight">Deleted Data</h3>
+  <h3 class="mt-4 text-left text-xl font-medium tracking-tight text-zinc-100">Deleted Data</h3>
   <p>When you cancel your account, we'll ensure that nothing is stored on our servers past 30 days. Anything you delete on your account while it's active will also be purged within 30 days (in many cases much sooner. 30 days is about the time it takes all metadata of your data to fully clear from our cache and log history).</p>
 
-  <h2 class="font-extrabold text-lg">Changes & Questions</h2>
+  <h2 class="mt-4 text-xl font-medium tracking-tight text-zinc-100">Changes & Questions</h2>
 
   <p>Dotenvx may update this policy from time to time - we'll notify you about significant changes by email or by placing a prominent notice on our site. You can access, change or delete your personal information any time by contacting <a href="mailto:support@dotenvx.com">our support team</a>.</p>
 

@@ -2,8 +2,8 @@
 title: "Blog"
 ---
 
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-white text-center">Blog</h1>
+<section class="w-full max-w-2xl mx-auto px-6 mt-16 md:mt-24 flex flex-col gap-8">
+  <h1 class="mb-2 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Blog</h1>
   <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {% for post in site.categories.blog %}
       <li class="">

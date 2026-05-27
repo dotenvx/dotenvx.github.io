@@ -256,7 +256,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are moving beyond plaintext .env.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are keeping .env — and encrypting it.</h2>
     <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 6.5 million times a week on npm to secure local development, CI, cloud infrastructure, and software agents.</p>
   </div>
 

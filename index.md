@@ -24,7 +24,7 @@ title: ""
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed">Used across developer tools, cloud platforms, and agentic software.</p>
+    <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed">Running inside modern developer infrastructure.</p>
 
   <div class="trust-logo-grid mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
   <a href="https://github.com/GoogleCloudPlatform/cloud-run-mcp" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
@@ -75,7 +75,7 @@ title: ""
   <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-10 md:pt-12 pb-4" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="mx-auto max-w-3xl overflow-x-auto px-4 md:px-6 py-6 md:py-8 font-mono text-sm md:text-base leading-[1.55]">
+    <div class="mx-auto max-w-2xl overflow-x-auto px-4 md:px-6 py-6 md:py-8 font-mono text-sm md:text-base leading-[1.55]">
       <div class="text-zinc-500">// 1. replace</div>
       <pre class="mt-2 whitespace-nowrap"><span class="text-[#8B9BB4]">require('dotenv').config()</span></pre>
       <div class="mt-8 text-zinc-500">// 2. with</div>
@@ -138,17 +138,14 @@ title: ""
         <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] font-semibold leading-[1.08]">Encrypt</h3>
         <div class="feature-cli-cmd"><code>dotenvx encrypt</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Commit ciphertext in <code>.env</code> files. Keep private keys separate from code.</p>
       {% include components/live-demo-encrypt.html %}
     </article>
-
     <article class="feature-cli-card hidden lg:flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-1 lg:col-span-3 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
       <div class="feature-card-head mt-3">
         <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
         <div class="feature-cli-cmd"><code>dotenvx run -- your-command</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command that needs it.</p>
       {% include components/live-demo-run.html %}
     </article>
   </div>
@@ -160,17 +157,15 @@ title: ""
         <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Inject</h3>
         <div class="feature-cli-cmd"><code>dotenvx run -- your-command</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Decrypt only at runtime for the command that needs it.</p>
       {% include components/live-demo-run.html %}
     </article>
 
     <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">03</div>
       <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Multiple Environments</h3>
+        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Scope</h3>
         <div class="feature-cli-cmd"><code>dotenvx run -f .env.production</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Load the right secret set per environment.</p>
       <div class="feature-cli-visual feature-cli-visual-scope">
         <div class="feature-chip-row">
           <span class="feature-chip">.env</span>
@@ -186,7 +181,6 @@ title: ""
         <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit</h3>
         <div class="feature-cli-cmd"><code>git diff .env*</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Track encrypted secret changes through git and PR review workflows.</p>
       <div class="feature-cli-visual feature-cli-visual-audit">
         <div class="feature-diff-line">+ DATABASE_URL="encrypted:..."</div>
         <div class="feature-diff-line">+ OPENAI_API_KEY="encrypted:..."</div>
@@ -199,7 +193,6 @@ title: ""
         <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate</h3>
         <div class="feature-cli-cmd"><code>dotenvx rotate</code></div>
       </div>
-      <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotate aging or compromised secrets.</p>
       <div class="feature-cli-visual feature-cli-visual-rotate">
         <div class="feature-rotate-row">
           <span class="feature-rotate-key">DOTENV_PRIVATE_KEY</span>
@@ -225,7 +218,7 @@ title: ""
         <p>They work everywhere: local development, CI, containers, servers, and cloud platforms. They became part of modern software because they reduced friction instead of adding to it.</p>
         <p>But simplicity came with a cost. Plaintext secrets spread quietly across laptops, repositories, CI systems, chat messages, screenshots, and production machines.</p>
         <p>We believe the answer is not abandoning environment files. The answer is securing them properly.</p>
-        <p>Dotenvx extends the environment file workflow with encryption, controlled key access, auditing, and secure synchronization while preserving the developer experience that made .env successful in the first place.</p>
+        <p>Dotenvx extends the environment file workflow with encryption, auditing, rotation, and runtime injection while preserving the simplicity that made .env successful in the first place.</p>
         <p>As software becomes increasingly autonomous, secrets become increasingly valuable. API keys, credentials, tokens, and signing keys are now operational infrastructure. They deserve stronger protection.</p>
         <p>That is what we are building with Dotenvx.</p>
       </div>
@@ -239,8 +232,8 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers using dotenvx.</h2>
-    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 5 million times a week on npm and using it to secure local development, CI, cloud infrastructure, and AI systems.</p>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are moving beyond plaintext .env.</h2>
+    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 6.5 million times a week on npm to secure local development, CI, cloud infrastructure, and software agents.</p>
   </div>
 
   <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
@@ -558,22 +551,13 @@ title: ""
 </section>
 -->
 
-<section class="w-full max-w-2xl mx-auto px-6 mt-32 md:mt-44 flex flex-col gap-4">
-  <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
-  <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
-    {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-    {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx encrypts secrets using AES-256 with ephemeral keys, ensuring that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-    {% include components/faq-question.html question="How does it protect me from security incidents like Vercel?" answer="In the Vercel incident scenario, if an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key. To steal your secrets, an attacker needs both the private key and the encrypted .env files." %}
-  </dl>
-</section>
-
 <section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-44 md:mt-60 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/church-door.jpg'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
   <div class="relative z-10">
     <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03]">
-      The future of dotenv.<br />Available today.
+      The future of dotenv.<br />Secure by default.
     </h3>
     <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
       <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/start">

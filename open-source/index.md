@@ -11,33 +11,38 @@ permalink: /open-source/
 
 <section class="mx-auto w-full max-w-7xl px-5 pb-28 md:pb-36">
   <div class="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-zinc-800 bg-black/30 shadow-[0_20px_70px_rgba(0,0,0,0.35)]">
-      <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[12rem_1fr_auto] md:items-center md:px-7">
+      <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">Dotenv</span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Load environment variables from .env files.</span>
+        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-500 transition-colors duration-200 group-hover:border-[#ecd53f]/35 group-hover:text-zinc-300">20.4k <span aria-hidden="true" class="text-[#ecd53f]/80">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 
-      <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[12rem_1fr_auto] md:items-center md:px-7">
+      <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">Dotenvx</span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Encrypt .env files and run them anywhere.</span>
+        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-500 transition-colors duration-200 group-hover:border-[#ecd53f]/35 group-hover:text-zinc-300">5.5k <span aria-hidden="true" class="text-[#ecd53f]/80">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 
-      <a href="/spec" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[12rem_1fr_auto] md:items-center md:px-7">
+      <a href="/spec" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">Spec</span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Comparison of dotenv parsing behavior across languages and libraries.</span>
+        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-500 transition-colors duration-200 group-hover:border-[#ecd53f]/35 group-hover:text-zinc-300">7 <span aria-hidden="true" class="text-[#ecd53f]/80">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 
-      <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[12rem_1fr_auto] md:items-center md:px-7">
+      <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">KEYSEE<span aria-hidden="true">⎔</span></span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Visual fingerprints for public keys.</span>
+        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-600 transition-colors duration-200 group-hover:border-zinc-700 group-hover:text-zinc-400">— <span aria-hidden="true">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 
-      <a href="https://github.com/vestauth/vestauth" target="_blank" rel="noopener noreferrer" class="group grid gap-3 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[12rem_1fr_auto] md:items-center md:px-7">
+      <a href="https://github.com/vestauth/vestauth" target="_blank" rel="noopener noreferrer" class="group grid gap-3 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">Vestauth</span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Verifiable identity and authentication for autonomous software.</span>
+        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-500 transition-colors duration-200 group-hover:border-[#ecd53f]/35 group-hover:text-zinc-300">139 <span aria-hidden="true" class="text-[#ecd53f]/80">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
   </div>

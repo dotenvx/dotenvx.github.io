@@ -56,6 +56,29 @@ permalink: /open-source/
 
 <section class="mx-auto w-full max-w-7xl px-5 pb-28 md:pb-36">
   <div class="relative mx-auto max-w-3xl text-center">
+    <h2 class="text-4xl font-normal tracking-[-0.02em] text-zinc-100 md:text-5xl">Official SDKs</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500 md:text-lg">Run encrypted environment files with our official open source SDK.</p>
+  </div>
+
+  <div class="relative mx-auto mt-12 max-w-3xl">
+    <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group grid gap-5 rounded-2xl border border-zinc-800 bg-zinc-950/50 p-6 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:grid-cols-[4rem_1fr_auto] sm:items-center sm:p-7">
+      <div class="flex h-14 w-14 items-center justify-center text-zinc-100">
+        {% include icons/nodejs.html class="h-11 w-11" %}
+      </div>
+      <div class="min-w-0">
+        <h3 class="m-0 text-2xl font-normal tracking-[-0.02em] text-zinc-100">Node.js</h3>
+        <p class="mt-1 text-base text-zinc-500">@dotenvx/dotenvx</p>
+      </div>
+      <div class="flex items-center gap-3 sm:flex-col sm:items-end sm:gap-2">
+        <span class="inline-flex w-fit items-center rounded-full border border-emerald-500/20 bg-emerald-500/15 px-3 py-1 text-sm font-medium leading-none text-emerald-300/90">v1.69.1</span>
+        <span class="text-sm text-zinc-600 transition-colors duration-200 group-hover:text-zinc-400">NPM</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="mx-auto w-full max-w-7xl px-5 pb-28 md:pb-36">
+  <div class="relative mx-auto max-w-3xl text-center">
     <h2 class="text-4xl font-normal tracking-[-0.02em] text-zinc-100 md:text-5xl">Published Work</h2>
     <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500 md:text-lg">Technical papers and presentations from our work on secrets, cryptography, and identity.</p>
   </div>

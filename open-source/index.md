@@ -60,10 +60,10 @@ permalink: /open-source/
     <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500 md:text-lg">Technical papers and presentations from our work on secrets, cryptography, and identity.</p>
   </div>
 
-  <div class="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2">
+  <div class="relative mx-auto mt-12 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-4">
     <a href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:p-6">
-      <div class="flex justify-center overflow-hidden rounded-xl border border-zinc-800 bg-white/95 py-8 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.28)]">
-        <img src="https://dotenvx.com/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="block w-44 transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
+      <div class="flex justify-center overflow-hidden py-4">
+        <img src="https://dotenvx.com/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="block w-44 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
       </div>
       <div class="mt-5">
         <h3 class="m-0 text-xl font-medium tracking-tight text-zinc-100">Dotenvx Whitepaper</h3>
@@ -73,13 +73,35 @@ permalink: /open-source/
     </a>
 
     <a href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:p-6">
-      <div class="flex justify-center overflow-hidden rounded-xl border border-zinc-800 bg-white/95 py-8 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.28)]">
-        <img src="https://keysee.io/whitepaper.png" alt="KEYSEE whitepaper preview" class="block w-44 transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
+      <div class="flex justify-center overflow-hidden py-4">
+        <img src="https://keysee.io/whitepaper.png" alt="KEYSEE whitepaper preview" class="block w-44 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
       </div>
       <div class="mt-5">
         <h3 class="m-0 text-xl font-medium tracking-tight text-zinc-100">KEYSEE<span aria-hidden="true">⎔</span> Whitepaper</h3>
         <p class="mt-3 text-sm leading-6 text-zinc-500">Deterministic visual identity from compressed public keys.</p>
         <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ecd53f]/85">Read paper <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+
+    <a href="https://dotenvx.com/laruby.pdf" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:p-6">
+      <div class="flex justify-center overflow-hidden py-4">
+        <img src="/assets/img/laruby-thumb.png" alt="LA Ruby presentation preview" class="block w-44 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
+      </div>
+      <div class="mt-5">
+        <h3 class="m-0 text-xl font-medium tracking-tight text-zinc-100">LA Ruby Presentation</h3>
+        <p class="mt-3 text-sm leading-6 text-zinc-500">A presentation on encrypted environment files and developer workflows.</p>
+        <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ecd53f]/85">View slides <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+
+    <a href="https://dotenvx.com/sfruby.pdf" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5 no-underline shadow-[0_20px_70px_rgba(0,0,0,0.28)] transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/70 hover:no-underline sm:p-6">
+      <div class="flex justify-center overflow-hidden py-4">
+        <img src="/assets/img/sfruby-thumb.png" alt="SF Ruby presentation preview" class="block w-44 shadow-[0_1.2rem_2.4rem_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover:scale-[1.025] sm:w-52" loading="lazy">
+      </div>
+      <div class="mt-5">
+        <h3 class="m-0 text-xl font-medium tracking-tight text-zinc-100">SF Ruby Presentation</h3>
+        <p class="mt-3 text-sm leading-6 text-zinc-500">A presentation on encrypted environment files and developer workflows.</p>
+        <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ecd53f]/85">View slides <span aria-hidden="true">↗</span></span>
       </div>
     </a>
   </div>

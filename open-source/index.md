@@ -25,17 +25,15 @@ permalink: /open-source/
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 
-      <a href="/spec" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
+      <a href="/spec" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">Spec</span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Comparison of dotenv parsing behavior across languages and libraries.</span>
-        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-500 transition-colors duration-200 group-hover:border-[#ecd53f]/35 group-hover:text-zinc-300">7 <span aria-hidden="true" class="text-[#ecd53f]/80">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 
-      <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto_auto] md:items-center md:px-7">
+      <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-800/80 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/70 hover:no-underline md:grid-cols-[10rem_1fr_auto] md:items-center md:px-7">
         <span class="text-lg font-medium tracking-[-0.02em] text-zinc-100">KEYSEE<span aria-hidden="true">⎔</span></span>
         <span class="text-sm leading-6 text-zinc-500 md:text-base">Visual fingerprints for public keys.</span>
-        <span class="inline-flex w-fit items-center gap-1 rounded-full border border-zinc-800 px-2.5 py-1 text-xs font-medium leading-none text-zinc-600 transition-colors duration-200 group-hover:border-zinc-700 group-hover:text-zinc-400">— <span aria-hidden="true">★</span></span>
         <span aria-hidden="true" class="text-xl leading-none text-zinc-600 transition-colors duration-200 group-hover:text-zinc-300">›</span>
       </a>
 

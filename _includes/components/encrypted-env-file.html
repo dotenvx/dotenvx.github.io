@@ -150,7 +150,7 @@
   }
 
   .encrypted-env-file-body {
-    font-size: 0.68rem;
+    font-size: 0.875rem;
     line-height: 1.48;
     color: #f4f4f5;
     background: transparent;
@@ -188,8 +188,7 @@
   }
 
   .encrypted-env-window-bare .ee-code {
-    padding-top: 0.9rem;
-    padding-bottom: 0;
+    padding: 0.9rem 1.25rem 0;
   }
 
   .encrypted-env-file-body .ee-code[hidden] {
@@ -222,7 +221,7 @@
   .encrypted-env-file-body .ee-comment,
   .encrypted-env-file-body .ee-eq,
   .encrypted-env-file-body .ee-val {
-    color: rgba(236, 213, 63, 0.72);
+    color: rgba(236, 213, 63, 0.86);
   }
 
   .encrypted-env-file-body .ee-banner-comment {
@@ -235,21 +234,29 @@
 
   @media (min-width: 640px) {
     .encrypted-env-file-body {
-      font-size: 0.76rem;
+      font-size: 1rem;
     }
 
     .encrypted-env-file-body .ee-code {
       padding: 2.35rem 2.15rem 2.7rem;
     }
+
+    .encrypted-env-window-bare .ee-code {
+      padding: 0.9rem 2.25rem 0;
+    }
   }
 
   @media (min-width: 1024px) {
     .encrypted-env-file-body {
-      font-size: 0.86rem;
+      font-size: 1rem;
     }
 
     .encrypted-env-file-body .ee-code {
       padding: 2.75rem 2.9rem 3.2rem;
+    }
+
+    .encrypted-env-window-bare .ee-code {
+      padding: 0.9rem 3rem 0;
     }
   }
 

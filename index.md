@@ -72,8 +72,20 @@ title: ""
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">One-line upgrade</h2>
     <p class="mt-4 text-zinc-400 text-lg">Install and use it in code just like dotenv.</p>
   </div>
+  <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="mx-auto max-w-2xl overflow-x-auto px-4 md:px-6 font-mono text-sm md:text-base leading-[1.55]">
+      <div class="text-zinc-500">// index.js</div>
+      <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.9)]">require('@dotenvx/dotenvx').config()</span></pre>
+      <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
+      <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
+    </div>
+  </div>
   <div
-    class="relative mx-auto mt-10 md:mt-12 max-w-2xl cursor-pointer overflow-hidden rounded-lg border border-zinc-900 bg-zinc-950/50 font-mono text-sm leading-none transition-colors duration-150 hover:border-zinc-800/80 hover:bg-zinc-950/75 md:text-base"
+    class="group relative mx-auto mt-10 w-fit max-w-full cursor-pointer overflow-hidden rounded-md font-mono text-xs leading-none text-zinc-500 transition-colors duration-150 hover:text-zinc-400"
     x-data="{
       copyText: 'npm install @dotenvx/dotenvx --save',
       copyNotification: false,
@@ -88,23 +100,11 @@ title: ""
     }"
     x-on:click="copyToClipboard();"
   >
-    <div class="flex items-center gap-3">
-      <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-4 py-4 text-zinc-300 md:px-6">npm install @dotenvx/dotenvx --save</code>
-      <div class="flex-0 pr-3">
-        {% include components/copy.html %}
+    <div class="flex max-w-full items-center gap-2">
+      <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2">npm install @dotenvx/dotenvx --save</code>
+      <div class="flex-0 pr-1.5 scale-[0.58] text-zinc-600 transition-colors duration-150 group-hover:text-zinc-400">
+        {% include components/copy.html class="text-zinc-600 group-hover:text-zinc-400" %}
       </div>
-    </div>
-  </div>
-  <div class="mx-auto mt-4 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-bottom: 1px solid rgba(86, 86, 94, 0.32);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="mx-auto max-w-2xl overflow-x-auto px-4 md:px-6 font-mono text-sm md:text-base leading-[1.55]">
-      <div class="text-zinc-500">// index.js</div>
-      <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.82)]">require('@dotenvx/dotenvx').config()</span></pre>
-      <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
-      <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
     </div>
   </div>
 </section>
@@ -114,7 +114,7 @@ title: ""
     <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file - encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Commit encrypted secrets to git while keeping decryption keys separate.</p>
   </div>
-  <div class="mt-10 md:mt-12 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
+  <div class="mx-auto mt-10 md:mt-12 max-w-3xl relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-left: 1px solid rgba(86, 86, 94, 0.24);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.16)_0%,rgba(242,214,134,0.07)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     {% include components/encrypted-env-file.html bare=true %}

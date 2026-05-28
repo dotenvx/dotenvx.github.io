@@ -4,6 +4,7 @@
 {% assign keysee_spin_direction = include.spin_direction | default: "1" %}
 {% assign keysee_spin_delay = include.spin_delay | default: "0" %}
 {% assign keysee_spin_speed = include.spin_speed | default: "1" %}
+{% assign keysee_render_mode = include.render_mode | default: "solid" %}
 
 <style>
   .keysee-tile {
@@ -40,6 +41,7 @@
   data-keysee-spin-direction="{{ keysee_spin_direction }}"
   data-keysee-spin-delay="{{ keysee_spin_delay }}"
   data-keysee-spin-speed="{{ keysee_spin_speed }}"
+  data-keysee-render-mode="{{ keysee_render_mode }}"
 >
   <div class="absolute inset-0" data-keysee-viewer></div>
 </div>
@@ -59,6 +61,7 @@
     const spinDirection = Number.parseFloat(tile.dataset.keyseeSpinDirection || '1') < 0 ? -1 : 1;
     const spinDelay = Math.max(0, Number.parseFloat(tile.dataset.keyseeSpinDelay || '0'));
     const spinSpeed = Math.max(0.1, Number.parseFloat(tile.dataset.keyseeSpinSpeed || '1'));
+    const renderMode = tile.dataset.keyseeRenderMode || 'solid';
     const baseSpin = 0.003 * spinSpeed * spinDirection;
     const mountedAt = performance.now();
     const viewer = tile.querySelector('[data-keysee-viewer]');
@@ -71,9 +74,18 @@
       roughness: 0.38,
       side: THREE.FrontSide
     });
+    const ghostMaterial = new THREE.MeshStandardMaterial({
+      color: materialColor,
+      metalness: 0.18,
+      opacity: 0.11,
+      roughness: 0.7,
+      side: THREE.FrontSide,
+      transparent: true
+    });
 
     let keyGroup;
     let keyMesh;
+    let wireGroup;
     let animationFrame;
     let dragging = false;
     let dragPointerId = null;
@@ -177,6 +189,32 @@
       const group = new THREE.Group();
       group.add(markPlane(marks.front, THREE.FrontSide, markTexture(marks.front.top, marks.front.bottom, marks.front.fontSize)));
       group.add(markPlane(marks.back, THREE.BackSide, markTexture(marks.back.text, '', marks.back.fontSize, marks.back.mirror)));
+      return group;
+    };
+
+    const makeWireLayer = (geometry) => {
+      const group = new THREE.Group();
+      const edgeGeometry = new THREE.EdgesGeometry(geometry, 18);
+      const layers = [
+        { z: -0.045, color: 0x1d2938, opacity: 0.22 },
+        { z: 0, color: materialColor, opacity: 0.88 },
+        { z: 0.045, color: 0xc7d8f1, opacity: 0.32 }
+      ];
+
+      for (const layer of layers) {
+        const edgeMaterial = new THREE.LineBasicMaterial({
+          color: layer.color,
+          depthWrite: false,
+          opacity: layer.opacity,
+          transparent: true
+        });
+        const line = new THREE.LineSegments(edgeGeometry.clone(), edgeMaterial);
+        line.position.z = layer.z;
+        line.renderOrder = 10;
+        group.add(line);
+      }
+
+      edgeGeometry.dispose();
       return group;
     };
 
@@ -316,10 +354,14 @@
       .then((payload) => {
         keyGroup = new THREE.Group();
         keyMesh = new THREE.Mesh(geometryFromPayload(payload.geometry), material);
-        keyMesh.castShadow = true;
-        keyMesh.receiveShadow = true;
+        keyMesh.castShadow = renderMode !== 'wire';
+        keyMesh.receiveShadow = renderMode !== 'wire';
+        if (renderMode === 'wire') keyMesh.material = ghostMaterial;
+        wireGroup = makeWireLayer(keyMesh.geometry);
+        wireGroup.visible = renderMode === 'wire';
         keyGroup.add(keyMesh);
-        keyGroup.add(makeKeyMarks(payload.marks));
+        keyGroup.add(wireGroup);
+        if (renderMode !== 'wire') keyGroup.add(makeKeyMarks(payload.marks));
         scene.add(keyGroup);
         frameKeyMesh();
         tile.dataset.keyseeActive = 'true';

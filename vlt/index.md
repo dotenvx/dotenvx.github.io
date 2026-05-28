@@ -34,7 +34,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
-<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-44 md:mb-64 lg:mb-[18rem]">
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-24 md:mb-32 lg:mb-40">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 100, 118, 0.5);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
@@ -60,7 +60,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72 text-center">
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-24 md:mb-32 lg:mb-40 text-center">
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Keys move off-device.</h2>
   <p class="mt-4 text-zinc-400 text-lg">No longer in .env.keys. Harder to leak. Harder to steal.</p>
   <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
@@ -71,13 +71,13 @@ image: "/assets/img/og-image-ops.png"
     {% include components/steel-dust-canvas.html class="z-[1]" %}
     <div class="relative z-10 grid grid-cols-[repeat(3,minmax(0,7.5rem))] justify-center gap-8 sm:grid-cols-[repeat(3,minmax(0,9.5rem))] md:grid-cols-[repeat(3,minmax(0,13rem))] md:gap-14 lg:grid-cols-[repeat(3,minmax(0,15rem))] lg:gap-20">
       {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0x8f9ead" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0x8f9ead" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0x8f9ead" render_mode="wire" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
       {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0x8f9ead" spin_delay="1300" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mb-40 md:mb-56 lg:mb-72 text-center">
+<section class="w-full max-w-5xl mx-auto px-6 mb-32 md:mb-44 lg:mb-56 text-center">
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
   <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 
@@ -118,7 +118,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
 </section>
 
-<section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
+<section class="relative overflow-hidden w-full mt-0 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>

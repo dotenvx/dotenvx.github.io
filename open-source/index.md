@@ -49,7 +49,7 @@ permalink: /open-source/
       <h1 class="pb-2 font-canela text-[2.9rem] font-normal leading-[0.98] tracking-[-0.018em] text-zinc-100 md:text-[3.65rem] lg:text-[4.25rem]">Open Source</h1>
       <p class="mt-8 max-w-2xl text-xl leading-relaxed text-zinc-400 md:text-2xl">Our open work and contributions to the community.</p>
     </div>
-    {% include components/keysee-viewer.html public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646" class="relative min-h-[17rem] overflow-hidden rounded-lg bg-transparent md:min-h-[23rem]" %}
+    {% include components/keysee-viewer.html public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646" render_mode="wire" class="relative min-h-[17rem] overflow-hidden rounded-lg bg-transparent md:min-h-[23rem]" %}
   </div>
 </section>
 

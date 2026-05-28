@@ -1,6 +1,9 @@
 {% assign keysee_class = include.class | default: "relative min-h-[17rem] overflow-hidden rounded-lg bg-transparent md:min-h-[23rem]" %}
 {% assign keysee_framing_padding = include.framing_padding | default: "0.15" %}
 {% assign keysee_material_color = include.material_color | default: "0xaeaaa0" %}
+{% assign keysee_spin_direction = include.spin_direction | default: "1" %}
+{% assign keysee_spin_delay = include.spin_delay | default: "0" %}
+{% assign keysee_spin_speed = include.spin_speed | default: "1" %}
 
 <style>
   .keysee-tile {
@@ -34,6 +37,9 @@
   data-keysee-public-key="{{ include.public_key }}"
   data-keysee-framing-padding="{{ keysee_framing_padding }}"
   data-keysee-material-color="{{ keysee_material_color }}"
+  data-keysee-spin-direction="{{ keysee_spin_direction }}"
+  data-keysee-spin-delay="{{ keysee_spin_delay }}"
+  data-keysee-spin-speed="{{ keysee_spin_speed }}"
 >
   <div class="absolute inset-0" data-keysee-viewer></div>
 </div>
@@ -50,6 +56,11 @@
     const publicKey = tile.dataset.keyseePublicKey;
     const framingPadding = Number.parseFloat(tile.dataset.keyseeFramingPadding || '0.15');
     const materialColor = Number(tile.dataset.keyseeMaterialColor || '0xaeaaa0');
+    const spinDirection = Number.parseFloat(tile.dataset.keyseeSpinDirection || '1') < 0 ? -1 : 1;
+    const spinDelay = Math.max(0, Number.parseFloat(tile.dataset.keyseeSpinDelay || '0'));
+    const spinSpeed = Math.max(0.1, Number.parseFloat(tile.dataset.keyseeSpinSpeed || '1'));
+    const baseSpin = 0.003 * spinSpeed * spinDirection;
+    const mountedAt = performance.now();
     const viewer = tile.querySelector('[data-keysee-viewer]');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.01, 100);
@@ -68,7 +79,7 @@
     let dragPointerId = null;
     let lastPointerX = 0;
     let lastPointerY = 0;
-    const angularVelocity = new THREE.Vector2(0.003, 0);
+    const angularVelocity = new THREE.Vector2(baseSpin, 0);
     const pointer = new THREE.Vector2();
     const raycaster = new THREE.Raycaster();
 
@@ -222,14 +233,14 @@
       positionCamera(center, farDistance, maxSize);
     };
 
-    const animate = () => {
+    const animate = (time = performance.now()) => {
       if (!keyGroup) return;
 
-      if (!dragging) {
+      if (!dragging && time - mountedAt >= spinDelay) {
         keyGroup.rotation.y += angularVelocity.x;
         keyGroup.rotation.x += angularVelocity.y;
         angularVelocity.multiplyScalar(0.965);
-        if (Math.abs(angularVelocity.x) < 0.003) angularVelocity.x = 0.003;
+        if (Math.abs(angularVelocity.x) < 0.003) angularVelocity.x = baseSpin;
         if (Math.abs(angularVelocity.y) < 0.0006) angularVelocity.y = 0;
       }
 
@@ -285,7 +296,7 @@
 
       if (keyWasTapped(event)) {
         keyGroup.rotation.set(0, 0, 0);
-        angularVelocity.set(0.003, 0);
+        angularVelocity.set(baseSpin, 0);
       }
     };
 

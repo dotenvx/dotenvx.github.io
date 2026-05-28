@@ -43,7 +43,7 @@ image: "/assets/img/og-image-ops.png"
     <div class="relative z-10 mx-auto max-w-5xl px-5">
       <div class="text-center max-w-3xl mx-auto">
         <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Armor up in one command.</h2>
-        <p class="mt-4 text-zinc-400 text-lg">Move private keys off device while keeping the dotenvx workflow.</p>
+        <p class="mt-4 text-zinc-400 text-lg">One command to harden your private keys.</p>
       </div>
 
       <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 100, 118, 0.34); border-right: 1px solid rgba(86, 100, 118, 0.24); border-bottom: 1px solid rgba(86, 100, 118, 0.34); border-left: 1px solid rgba(86, 100, 118, 0.24);">
@@ -53,7 +53,7 @@ image: "/assets/img/og-image-ops.png"
         <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.05)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
         <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
           <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
-          <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">⛨</span> <span class="text-[rgba(170,203,245,0.92)]">armored</span> <span class="text-zinc-500">(03F 56D)</span></pre>
+          <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">⛨</span> <span class="text-[rgba(170,203,245,0.92)]">armored</span> <span class="text-zinc-500">(03C 969)</span></pre>
         </div>
       </div>
     </div>
@@ -61,16 +61,25 @@ image: "/assets/img/og-image-ops.png"
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72 text-center">
-  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your private key — armored.</h2>
-  <p class="mt-4 text-zinc-400 text-lg">Move decryption keys off device and keep them under guard.</p>
+  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Keys move off-device.</h2>
+  <p class="mt-4 text-zinc-400 text-lg">No longer in .env.keys. Harder to leak. Harder to steal.</p>
   <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
-    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[54%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_18%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_82%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.16)_0%,rgba(112,154,210,0.065)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[46%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_18%,rgba(170,203,245,0.24)_50%,rgba(255,255,255,0.04)_82%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[24%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.11)_0%,rgba(112,154,210,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[82%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[58%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.16)_0%,rgba(112,154,210,0.065)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[74%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(170,203,245,0.24)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[50%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.11)_0%,rgba(112,154,210,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     {% include components/steel-dust-canvas.html class="z-[1]" %}
-    {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.08" material_color="0x8f9ead" class="relative z-10 min-h-[38rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[78vh] md:rounded-t-[1.1rem]" %}
+    <div class="relative z-10 grid grid-cols-[repeat(3,minmax(0,7.5rem))] justify-center gap-8 sm:grid-cols-[repeat(3,minmax(0,9.5rem))] md:grid-cols-[repeat(3,minmax(0,13rem))] md:gap-14 lg:grid-cols-[repeat(3,minmax(0,15rem))] lg:gap-20">
+      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0x8f9ead" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0x8f9ead" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0x8f9ead" spin_delay="1300" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+    </div>
   </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mb-40 md:mb-56 lg:mb-72 text-center">
+  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Just-in-time decryption.</h2>
+  <p class="mt-4 text-zinc-400 text-lg">Same dotenvx workflow. Keys retrieved only when needed.</p>
 </section>
 
 <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">

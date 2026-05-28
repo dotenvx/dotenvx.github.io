@@ -34,7 +34,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
-<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-24 md:mb-32 lg:mb-40">
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-20 md:mb-24 lg:mb-24">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 100, 118, 0.5);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
@@ -53,7 +53,7 @@ image: "/assets/img/og-image-ops.png"
         <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.05)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
         <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
           <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
-          <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">⛨</span> <span class="text-[rgba(170,203,245,0.92)]">armored</span> <span class="text-zinc-500">(03C 969)</span></pre>
+          <pre class="mt-2 whitespace-nowrap text-[rgba(170,203,245,0.92)]">⛨ armored (03C 969)</pre>
         </div>
       </div>
     </div>

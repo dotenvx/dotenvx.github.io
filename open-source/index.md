@@ -100,36 +100,42 @@ permalink: /open-source/
       <span class="font-mono text-xs font-normal text-zinc-500">dotenv</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Load environment variables from .env files.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">20.4k ★</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group relative grid gap-3 border-b border-zinc-900 bg-[#ecd53f]/[0.025] px-5 py-5 no-underline transition-colors duration-200 hover:bg-[#ecd53f]/[0.045] hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
-      <span class="absolute inset-y-3 left-0 w-px bg-[#ecd53f]/70 shadow-[0_0_18px_rgba(236,213,63,0.18)]" aria-hidden="true"></span>
-      <span class="font-mono text-xs font-normal text-[#ecd53f]/80">dotenvx</span>
+    <a href="https://github.com/motdotla/dotenv-expand" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">dotenv-expand</span>
+      <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Expand variables already loaded from .env files.</span>
+      <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">1.1k ★</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
+    </a>
+
+    <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group relative grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">dotenvx</span>
       <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Encrypt .env files and run them anywhere.</span>
-      <span class="font-mono text-xs font-normal text-[#ecd53f]/65 md:text-right">5.5k ★</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-[#ecd53f]/70">›</span>
+      <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">5.5k ★</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
     <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">KEYSEE⎔</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Visual fingerprints for public keys.</span>
       <span aria-hidden="true" class="hidden md:block"></span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
     <a href="https://github.com/vestauth/vestauth" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">vestauth</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Verifiable identity and authentication for autonomous software.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">139 ★</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
     <a href="https://github.com/dotenvx/llmstxt" target="_blank" rel="noopener noreferrer" class="group grid gap-3 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">llmstxt</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Convert sitemap.xml to llms.txt.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">145 ★</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
   </div>
 </section>
@@ -435,27 +441,47 @@ permalink: /open-source/
       <span class="flex h-16 w-12 items-center justify-center overflow-hidden rounded border border-zinc-900 bg-black/70">
         <img src="https://dotenvx.com/assets/img/whitepaper-thumb.png" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-75 transition duration-200 group-hover:opacity-95" loading="lazy">
       </span>
-      <span class="text-sm font-normal leading-6 text-[#ecd53f]/80 transition-colors duration-200 group-hover:text-[#ecd53f]">Dotenvx: Reducing Secrets Risk with Cryptographic Separation</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Dotenvx: Reducing Secrets Risk with Cryptographic Separation</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">PDF</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group grid gap-4 border-b border-zinc-900 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="group grid gap-4 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="flex h-16 w-12 items-center justify-center overflow-hidden rounded border border-zinc-900 bg-black/70">
         <img src="https://keysee.io/whitepaper.png" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-75 transition duration-200 group-hover:opacity-95" loading="lazy">
       </span>
       <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">KEYSEE⎔: Deterministic Visual Identity for Public Keys</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">PDF</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
+  </div>
+</section>
 
-    <a href="https://dotenvx.com/laruby.pdf" target="_blank" rel="noopener noreferrer" class="group grid gap-4 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_7rem_2rem] md:items-center md:px-7">
+<section class="mx-auto w-full max-w-7xl px-5 pb-24 md:pb-32">
+  <div class="relative mx-auto max-w-4xl">
+    <h2 class="text-4xl font-normal tracking-[-0.02em] text-zinc-100 md:text-5xl">Talks</h2>
+    <p class="mt-4 max-w-4xl text-base leading-7 text-zinc-500 md:text-lg">Conference talks and presentations from our work on application configuration.</p>
+  </div>
+
+  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg border border-zinc-800/70 bg-black/20">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(236,213,63,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[42%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(236,213,63,0.075)_0%,rgba(236,213,63,0.03)_36%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(236,213,63,0.16)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+
+    <div class="grid grid-cols-[4.25rem_1fr_auto] gap-4 border-b border-zinc-900 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-zinc-600 md:grid-cols-[5.5rem_1fr_7rem_2rem] md:px-7">
+      <span>Video</span>
+      <span>Title</span>
+      <span class="hidden text-right md:block">Venue</span>
+      <span class="sr-only">Open</span>
+    </div>
+
+    <a href="https://www.youtube.com/watch?v=BCKGvKTk3cU&t=3205s" target="_blank" rel="noopener noreferrer" class="group grid gap-4 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="flex h-12 w-16 items-center justify-center overflow-hidden rounded border border-zinc-900 bg-black/70">
         <img src="/assets/img/laruby-thumb.png" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-75 transition duration-200 group-hover:opacity-95" loading="lazy">
       </span>
-      <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Dark ages of app configuration</span>
-      <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">Slides</span>
-      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">The Dark Ages of App Configuration</span>
+      <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">SF Ruby</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
   </div>
 </section>
@@ -485,16 +511,16 @@ permalink: /open-source/
         </span>
         <span class="font-mono text-xs font-normal text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">yao-pkg/pkg</span>
         <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">@robertsLando</span>
-        <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+        <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
       </a>
 
-      <a href="https://github.com/ecies/js" target="_blank" rel="noopener noreferrer" class="group grid gap-4 border-b border-zinc-900 bg-[#ecd53f]/[0.025] px-5 py-4 no-underline transition-colors duration-200 hover:bg-[#ecd53f]/[0.045] hover:no-underline md:grid-cols-[5.5rem_1fr_8rem_2rem] md:items-center md:px-7">
+      <a href="https://github.com/ecies/js" target="_blank" rel="noopener noreferrer" class="group grid gap-4 border-b border-zinc-900 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_8rem_2rem] md:items-center md:px-7">
         <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded border border-zinc-900 bg-black/70">
           <img src="https://opengraph.githubassets.com/f730c56355f8b9ff50160668f1de9cbfe60d26642abe0430ddd86442f25603db/ecies/js" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-75 transition duration-200 group-hover:opacity-95" loading="lazy">
         </span>
-        <span class="font-mono text-xs font-normal text-[#ecd53f]/80 transition-colors duration-200 group-hover:text-[#ecd53f]">ecies/js</span>
-        <span class="font-mono text-xs font-normal text-[#ecd53f]/55 transition-colors duration-200 group-hover:text-[#ecd53f]/75 md:text-right">@kigawas</span>
-        <span aria-hidden="true" class="text-right text-base font-normal leading-none text-[#ecd53f]/70">›</span>
+        <span class="font-mono text-xs font-normal text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">ecies/js</span>
+        <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">@kigawas</span>
+        <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
       </a>
 
       <a href="https://github.com/abetomo" target="_blank" rel="noopener noreferrer" class="group grid gap-4 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_8rem_2rem] md:items-center md:px-7">
@@ -503,7 +529,7 @@ permalink: /open-source/
         </span>
         <span class="font-mono text-xs font-normal text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">abetomo</span>
         <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">@abetomo</span>
-        <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-[#ecd53f]/80">›</span>
+        <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
       </a>
     </div>
   </div>

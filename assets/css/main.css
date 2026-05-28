@@ -528,6 +528,52 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   @apply text-blue-500 hover:text-zinc-950 dark:text-blue-400 dark:hover:text-zinc-50 underline font-bold tracking-tight text-sm;
 }
 
+.desktop-nav-flyout {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.25rem);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.desktop-nav-flyout.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.desktop-nav-frame {
+  height: 184px;
+}
+
+.desktop-nav-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(28px);
+  transition: opacity 180ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.desktop-nav-panel.is-left {
+  transform: translateX(-28px);
+}
+
+.desktop-nav-panel.is-right {
+  transform: translateX(28px);
+}
+
+.desktop-nav-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+[data-desktop-nav-item][data-nav-active="true"] .nav-menu-trigger {
+  color: rgb(244 244 245);
+}
+
+[data-desktop-nav-item][data-nav-active="true"] .nav-menu-trigger svg {
+  transform: translateY(2px);
+}
+
 .dotenvx-menu-card {
   border-color: rgb(39 39 42) !important;
 }

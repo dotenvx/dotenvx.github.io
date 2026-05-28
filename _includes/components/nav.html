@@ -10,20 +10,53 @@
           <img src="/assets/img/logo-dotenvx-dark.svg" class="hidden dark:flex h-4" />
         </a>
       </div>
-      <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
-        <div class="group relative">
+      <div id="desktop-nav-menu" class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
+        <div class="relative" data-desktop-nav-item data-nav-menu="dotenvx" data-nav-index="0">
           <button
             type="button"
-            class="inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
+            class="nav-menu-trigger inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
             aria-haspopup="true"
+            aria-expanded="false"
+            data-desktop-nav-trigger
           >
             <span>Dotenvx</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200 group-hover:translate-y-[2px] group-focus-within:translate-y-[2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
             </svg>
           </button>
-          <div class="pointer-events-none fixed left-1/2 top-14 z-[90] w-[min(420px,calc(100vw-3rem))] -translate-x-1/2 pt-2 opacity-0 translate-y-1 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0">
-            <div class="grid grid-cols-[0.74fr_1.26fr] gap-3 rounded-2xl border border-zinc-800 bg-black/95 p-3 shadow-[0_18px_60px_rgba(0,0,0,0.48)] backdrop-blur-xl">
+        </div>
+        <div class="relative" data-desktop-nav-item data-nav-menu="vlt" data-nav-index="1">
+          <button
+            type="button"
+            class="nav-menu-trigger inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
+            aria-haspopup="true"
+            aria-expanded="false"
+            data-desktop-nav-trigger
+          >
+            <span class="inline-flex items-center gap-1">VLT <span aria-hidden="true">⛨</span></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative" data-desktop-nav-item data-nav-menu="company" data-nav-index="2">
+          <button
+            type="button"
+            class="nav-menu-trigger inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
+            aria-haspopup="true"
+            aria-expanded="false"
+            data-desktop-nav-trigger
+          >
+            <span>Company</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="desktop-nav-flyout" class="desktop-nav-flyout fixed left-1/2 top-14 z-[90] hidden w-[min(420px,calc(100vw-3rem))] pt-2 md:block" aria-hidden="true">
+        <div class="desktop-nav-frame relative overflow-hidden rounded-2xl border border-zinc-800 bg-black/95 p-3 shadow-[0_18px_60px_rgba(0,0,0,0.48)] backdrop-blur-xl">
+          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.74fr_1.26fr] gap-3" data-desktop-nav-panel="dotenvx" data-nav-index="0">
               <div class="flex flex-col justify-center py-1">
                 <a href="/" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Overview
@@ -64,22 +97,8 @@
                   </a>
                 </div>
               </div>
-            </div>
           </div>
-        </div>
-        <div class="group relative">
-          <button
-            type="button"
-            class="inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
-            aria-haspopup="true"
-          >
-            <span class="inline-flex items-center gap-1">VLT <span aria-hidden="true">⛨</span></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200 group-hover:translate-y-[2px] group-focus-within:translate-y-[2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="pointer-events-none fixed left-1/2 top-14 z-[90] w-[min(420px,calc(100vw-3rem))] -translate-x-1/2 pt-2 opacity-0 translate-y-1 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0">
-            <div class="grid grid-cols-[0.78fr_1.22fr] gap-3 rounded-2xl border border-zinc-800 bg-black/95 p-3 shadow-[0_18px_60px_rgba(0,0,0,0.48)] backdrop-blur-xl">
+          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.78fr_1.22fr] gap-3" data-desktop-nav-panel="vlt" data-nav-index="1">
               <div class="flex flex-col justify-center py-1">
                 <a href="/vlt" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Overview
@@ -107,22 +126,8 @@
                   <span class="mt-2 block text-[11px] font-medium leading-snug text-zinc-500">SOC 2. GDPR. Security controls.</span>
                 </div>
               </a>
-            </div>
           </div>
-        </div>
-        <div class="group relative">
-          <button
-            type="button"
-            class="inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
-            aria-haspopup="true"
-          >
-            <span>Company</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200 group-hover:translate-y-[2px] group-focus-within:translate-y-[2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="pointer-events-none fixed left-1/2 top-14 z-[90] w-[min(420px,calc(100vw-3rem))] -translate-x-1/2 pt-2 opacity-0 translate-y-1 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0">
-            <div class="grid grid-cols-[0.78fr_1.22fr] gap-3 rounded-2xl border border-zinc-800 bg-black/95 p-3 shadow-[0_18px_60px_rgba(0,0,0,0.48)] backdrop-blur-xl">
+          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.78fr_1.22fr] gap-3" data-desktop-nav-panel="company" data-nav-index="2">
               <div class="flex flex-col justify-center py-1">
                 <a href="/blog" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   <span>Blog</span>
@@ -152,7 +157,6 @@
                   <span class="mt-0.5 block text-xs font-medium leading-snug text-zinc-300/80">Santa Monica, CA 90404</span>
                 </div>
               </a>
-            </div>
           </div>
         </div>
       </div>
@@ -306,6 +310,10 @@
     const navSticky = document.getElementById('nav-sticky');
     const navShell = document.getElementById('nav-shell');
     const officeImage = document.querySelector('[data-office-image]');
+    const desktopNavMenu = document.getElementById('desktop-nav-menu');
+    const desktopFlyout = document.getElementById('desktop-nav-flyout');
+    const desktopItems = desktopNavMenu?.querySelectorAll('[data-desktop-nav-item]') || [];
+    const desktopPanels = desktopFlyout?.querySelectorAll('[data-desktop-nav-panel]') || [];
     const mobileNavRoot = overlay.querySelector('[data-mobile-nav-root]');
     const mobileNavSubmenus = overlay.querySelectorAll('[data-mobile-nav-submenu]');
     const mobileSubmenuTriggers = overlay.querySelectorAll('[data-mobile-open-submenu]');
@@ -322,6 +330,142 @@
     if (overlay.parentElement !== document.body) {
       document.body.appendChild(overlay);
     }
+
+    let desktopActiveMenu = null;
+    let desktopActiveIndex = null;
+    let desktopCloseTimer = null;
+
+    const clearDesktopClose = () => {
+      if (desktopCloseTimer) {
+        window.clearTimeout(desktopCloseTimer);
+        desktopCloseTimer = null;
+      }
+    };
+
+    const setDesktopNavOpen = (menuName) => {
+      if (!desktopFlyout || !desktopPanels.length) return;
+      clearDesktopClose();
+
+      const activePanel = Array.from(desktopPanels).find((panel) => panel.getAttribute('data-desktop-nav-panel') === menuName);
+      if (!activePanel) return;
+
+      const activeIndex = Number(activePanel.getAttribute('data-nav-index') || 0);
+      const previousIndex = desktopActiveIndex;
+      const previousPanel = desktopActiveMenu
+        ? Array.from(desktopPanels).find((panel) => panel.getAttribute('data-desktop-nav-panel') === desktopActiveMenu)
+        : null;
+      const isSamePanel = desktopActiveMenu === menuName;
+      desktopActiveMenu = menuName;
+      desktopActiveIndex = activeIndex;
+
+      desktopItems.forEach((item) => {
+        const isActive = item.getAttribute('data-nav-menu') === menuName;
+        item.toggleAttribute('data-nav-active', isActive);
+        item.querySelector('[data-desktop-nav-trigger]')?.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      });
+
+      if (isSamePanel) {
+        desktopPanels.forEach((panel) => {
+          const panelIndex = Number(panel.getAttribute('data-nav-index') || 0);
+          panel.classList.toggle('is-active', panel === activePanel);
+          panel.classList.toggle('is-left', panelIndex < activeIndex);
+          panel.classList.toggle('is-right', panelIndex > activeIndex);
+        });
+      } else if (previousIndex === null || !previousPanel) {
+        desktopPanels.forEach((panel) => {
+          const panelIndex = Number(panel.getAttribute('data-nav-index') || 0);
+          panel.classList.toggle('is-active', panel === activePanel);
+          panel.classList.toggle('is-left', panelIndex < activeIndex);
+          panel.classList.toggle('is-right', panelIndex > activeIndex);
+        });
+      } else {
+        const movingRight = activeIndex > previousIndex;
+
+        desktopPanels.forEach((panel) => {
+          const panelIndex = Number(panel.getAttribute('data-nav-index') || 0);
+          panel.classList.remove('is-active');
+          panel.classList.toggle('is-left', panelIndex < activeIndex);
+          panel.classList.toggle('is-right', panelIndex > activeIndex);
+        });
+
+        previousPanel.classList.toggle('is-left', movingRight);
+        previousPanel.classList.toggle('is-right', !movingRight);
+        activePanel.classList.toggle('is-left', !movingRight);
+        activePanel.classList.toggle('is-right', movingRight);
+
+        activePanel.getBoundingClientRect();
+
+        activePanel.classList.add('is-active');
+        activePanel.classList.remove('is-left', 'is-right');
+      }
+
+      desktopFlyout.classList.add('is-open');
+      desktopFlyout.style.opacity = '1';
+      desktopFlyout.style.pointerEvents = 'auto';
+      desktopFlyout.style.transform = 'translateX(-50%) translateY(0)';
+      desktopFlyout.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeDesktopNav = () => {
+      desktopActiveMenu = null;
+      desktopActiveIndex = null;
+      desktopFlyout?.classList.remove('is-open');
+      if (desktopFlyout) {
+        desktopFlyout.style.opacity = '0';
+        desktopFlyout.style.pointerEvents = 'none';
+        desktopFlyout.style.transform = 'translateX(-50%) translateY(0.25rem)';
+      }
+      desktopFlyout?.setAttribute('aria-hidden', 'true');
+      desktopItems.forEach((item) => {
+        item.removeAttribute('data-nav-active');
+        item.querySelector('[data-desktop-nav-trigger]')?.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    const scheduleDesktopClose = () => {
+      clearDesktopClose();
+      desktopCloseTimer = window.setTimeout(closeDesktopNav, 140);
+    };
+
+    desktopItems.forEach((item) => {
+      const menuName = item.getAttribute('data-nav-menu');
+      if (!menuName) return;
+
+      item.addEventListener('pointerenter', () => setDesktopNavOpen(menuName));
+      item.addEventListener('pointermove', () => {
+        if (desktopActiveMenu !== menuName) setDesktopNavOpen(menuName);
+      });
+      item.addEventListener('mouseenter', () => setDesktopNavOpen(menuName));
+      item.addEventListener('mouseover', () => {
+        if (desktopActiveMenu !== menuName) setDesktopNavOpen(menuName);
+      });
+      item.addEventListener('focusin', () => setDesktopNavOpen(menuName));
+      item.addEventListener('mouseleave', scheduleDesktopClose);
+    });
+
+    desktopNavMenu?.addEventListener('mouseleave', scheduleDesktopClose);
+    desktopNavMenu?.addEventListener('focusout', (event) => {
+      if (!desktopNavMenu.contains(event.relatedTarget) && !desktopFlyout?.contains(event.relatedTarget)) {
+        scheduleDesktopClose();
+      }
+    });
+    desktopFlyout?.addEventListener('mouseenter', clearDesktopClose);
+    desktopFlyout?.addEventListener('mouseleave', scheduleDesktopClose);
+    desktopFlyout?.addEventListener('focusin', clearDesktopClose);
+    desktopFlyout?.addEventListener('focusout', (event) => {
+      if (!desktopFlyout.contains(event.relatedTarget) && !desktopNavMenu?.contains(event.relatedTarget)) {
+        scheduleDesktopClose();
+      }
+    });
+    document.addEventListener('pointermove', (event) => {
+      if (!desktopActiveMenu) return;
+      const target = event.target;
+      if (desktopNavMenu?.contains(target) || desktopFlyout?.contains(target)) {
+        clearDesktopClose();
+        return;
+      }
+      scheduleDesktopClose();
+    });
 
     const setMobileSubmenu = (name) => {
       if (!mobileNavRoot) return;
@@ -369,7 +513,10 @@
     });
 
     window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'Escape') {
+        setOpen(false);
+        if (desktopActiveMenu) closeDesktopNav();
+      }
     });
 
     const setNavScrolled = () => {

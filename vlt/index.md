@@ -81,7 +81,7 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
   <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 
-  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg border border-[#405268]/55 bg-[#07101a]/20 text-left">
+  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg bg-[#07101a]/20 text-left" style="border: 1px solid rgba(64, 82, 104, 0.55);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(112,154,210,0.10)_22%,rgba(112,154,210,0.34)_50%,rgba(112,154,210,0.10)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.045)_38%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(112,154,210,0.07)_22%,rgba(112,154,210,0.22)_50%,rgba(112,154,210,0.07)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>

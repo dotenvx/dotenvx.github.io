@@ -1,7 +1,7 @@
 ---
 layout: blog
 author: "Scott Motte – Mot"
-title: "Rotate NPM Tokens with Dotenvx Vlt Ops. Automatically."
+title: "Rotate NPM Tokens with Dotenvx VLT ⛨. Automatically."
 image: "/assets/img/blog/blog-11.png"
 excerpt: "NPM's new short-lived tokens strengthen security, but they make rotation painful."
 ---
@@ -12,7 +12,7 @@ excerpt: "NPM's new short-lived tokens strengthen security, but they make rotati
 
 This was a real problem for us. We publish <a href="https://www.npmjs.com/org/dotenvx">64 npm packages</a>, and rotating tokens across all of them by hand was not going to be sustainable. Every expiration meant touching dozens of pipelines and praying the next publish didn't fail.
 
-So we built a solution. Introducing <a href="https://dotenvx.com/docs/vlt/rotate">Dotenvx Rotate</a> - part of Dotenvx Vlt Ops.
+So we built a solution. Introducing <a href="https://dotenvx.com/docs/vlt/rotate">Dotenvx Rotate</a> - part of Dotenvx VLT ⛨.
 
 ## How It Works
 
@@ -197,7 +197,7 @@ Publishing now works indefinitely with rotating NPM tokens, powered by a new rot
 - *Employee left who knew the old token?* Rotate it - all your operations still work.
 - *NPM token should be rotated every N days for compliance?* Put it on a schedule - all your operations still work. 
 
-This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/vlt">Dotenvx Vlt Ops</a>.
+This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/vlt">Dotenvx VLT ⛨</a>.
 
 > P.S. If you're running this at enterprise scale with compliance requirements, scheduled rotation, or broader CI/CD concerns, please <a href="mailto:scott@dotenvx.com">get in touch</a>. We'd like to help.
 

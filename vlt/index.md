@@ -1,5 +1,5 @@
 ---
-title: "Dotenvx VLT Ops ⛨"
+title: "Dotenvx VLT ⛨"
 image: "/assets/img/og-image-ops.png"
 ---
 

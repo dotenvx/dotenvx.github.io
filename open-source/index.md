@@ -416,7 +416,7 @@ permalink: /open-source/
 <section class="mx-auto w-full max-w-7xl px-5 pb-28 md:pb-36">
   <div class="relative mx-auto max-w-4xl">
     <h2 class="text-4xl font-normal tracking-[-0.02em] text-zinc-100 md:text-5xl">Published Work</h2>
-    <p class="mt-4 max-w-2xl text-base leading-7 text-zinc-500 md:text-lg">Technical papers and presentations from our work on secrets, cryptography, and identity.</p>
+    <p class="mt-4 max-w-4xl text-base leading-7 text-zinc-500 md:text-lg">Technical papers and presentations from our work on secrets, cryptography, and identity.</p>
   </div>
 
   <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg border border-zinc-800/70 bg-black/20">
@@ -450,7 +450,7 @@ permalink: /open-source/
     </a>
 
     <a href="https://dotenvx.com/laruby.pdf" target="_blank" rel="noopener noreferrer" class="group grid gap-4 px-5 py-4 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[5.5rem_1fr_7rem_2rem] md:items-center md:px-7">
-      <span class="flex h-16 w-12 items-center justify-center overflow-hidden rounded border border-zinc-900 bg-black/70">
+      <span class="flex h-12 w-16 items-center justify-center overflow-hidden rounded border border-zinc-900 bg-black/70">
         <img src="/assets/img/laruby-thumb.png" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-75 transition duration-200 group-hover:opacity-95" loading="lazy">
       </span>
       <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Dark ages of app configuration</span>

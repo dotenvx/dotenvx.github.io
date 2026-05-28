@@ -154,7 +154,7 @@ title: ""
     <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Keep the simplicity of .env files while adding encryption, auditing, and rotation.</p>
   </div>
 
-  <div class="mt-8 md:mt-10 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem]">
+  <div class="mt-8 md:mt-10 relative">
   <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
     <article class="feature-cli-card feature-cli-card-primary flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-2 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
       <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>

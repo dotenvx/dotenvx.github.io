@@ -40,7 +40,7 @@ title: ""
         {% include logos/polygon.html class="w-[7rem] lg:w-[7rem] h-auto mx-auto" %}
   </a>
   <a href="https://github.com/search?q=repo%3Anasa%2Fearthdata-search%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="NASA Earthdata Search using dotenvx">
-        {% include logos/nasa.html class="h-14 lg:h-15 w-auto mx-auto" %}
+        {% include logos/nasa.html class="h-16 lg:h-[4.5rem] w-auto mx-auto" %}
   </a>
   <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=dependencies" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
         {% include logos/webflow.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}

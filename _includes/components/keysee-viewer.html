@@ -1,0 +1,321 @@
+{% assign keysee_class = include.class | default: "relative min-h-[17rem] overflow-hidden rounded-lg bg-transparent md:min-h-[23rem]" %}
+{% assign keysee_framing_padding = include.framing_padding | default: "0.15" %}
+
+<style>
+  .keysee-tile {
+    cursor: grab;
+    touch-action: none;
+  }
+
+  .keysee-tile:active {
+    cursor: grabbing;
+  }
+
+  .keysee-canvas {
+    height: 100% !important;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0.98);
+    transition: opacity 180ms ease, transform 220ms ease;
+    width: 100% !important;
+  }
+
+  .keysee-tile[data-keysee-active="true"] .keysee-canvas {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+
+<div
+  class="keysee-tile {{ keysee_class }}"
+  data-keysee-viewer-root
+  data-keysee-public-key="{{ include.public_key }}"
+  data-keysee-framing-padding="{{ keysee_framing_padding }}"
+>
+  <div class="absolute inset-0" data-keysee-viewer></div>
+</div>
+
+<script type="module">
+  import * as THREE from 'https://unpkg.com/three@0.167.1/build/three.module.js';
+
+  const mountKeyseeTile = (tile) => {
+    if (!tile || tile.dataset.keyseeMounted === 'true') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    tile.dataset.keyseeMounted = 'true';
+
+    const publicKey = tile.dataset.keyseePublicKey;
+    const framingPadding = Number.parseFloat(tile.dataset.keyseeFramingPadding || '0.15');
+    const viewer = tile.querySelector('[data-keysee-viewer]');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.01, 100);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, premultipliedAlpha: false });
+    const material = new THREE.MeshStandardMaterial({
+      color: 0xaeaaa0,
+      metalness: 0.78,
+      roughness: 0.38,
+      side: THREE.FrontSide
+    });
+
+    let keyGroup;
+    let keyMesh;
+    let animationFrame;
+    let dragging = false;
+    let dragPointerId = null;
+    let lastPointerX = 0;
+    let lastPointerY = 0;
+    const angularVelocity = new THREE.Vector2(0.003, 0);
+    const pointer = new THREE.Vector2();
+    const raycaster = new THREE.Raycaster();
+
+    renderer.setClearColor(0x000000, 0);
+    renderer.setClearAlpha(0);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.domElement.className = 'keysee-canvas';
+    viewer.appendChild(renderer.domElement);
+
+    scene.add(new THREE.HemisphereLight(0xe8f0ea, 0x242a27, 2.4));
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 3);
+    keyLight.position.set(3, -4, 4);
+    keyLight.castShadow = true;
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0xb7d4ff, 1.2);
+    fillLight.position.set(-4, 2, 2);
+    scene.add(fillLight);
+
+    const resize = () => {
+      const rect = tile.getBoundingClientRect();
+      const width = Math.max(1, Math.floor(rect.width));
+      const height = Math.max(1, Math.floor(rect.height));
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+
+    const geometryFromPayload = (payload) => {
+      const geometry = new THREE.BufferGeometry();
+
+      for (const [name, attribute] of Object.entries(payload.attributes)) {
+        geometry.setAttribute(name, new THREE.BufferAttribute(new Float32Array(attribute.array), attribute.itemSize));
+      }
+
+      if (payload.index) {
+        const indexArray = payload.index.length > 65535 ? new Uint32Array(payload.index) : new Uint16Array(payload.index);
+        geometry.setIndex(new THREE.BufferAttribute(indexArray, 1));
+      }
+
+      geometry.computeBoundingBox();
+      geometry.computeBoundingSphere();
+      return geometry;
+    };
+
+    const markTexture = (textTop, textBottom, fontSize = 70, mirror = false) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 320;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'hsla(41, 8%, 47%, 0.72)';
+      ctx.lineJoin = 'round';
+      ctx.font = `700 ${fontSize}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      if (mirror) {
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+      }
+
+      if (textBottom) {
+        ctx.fillText(textTop, canvas.width / 2, 105);
+        ctx.fillText(textBottom, canvas.width / 2, 215);
+      } else {
+        ctx.fillText(textTop, canvas.width / 2, canvas.height / 2);
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      return texture;
+    };
+
+    const markPlane = (mark, side, texture) => {
+      const markMaterial = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side,
+        depthTest: true,
+        depthWrite: false,
+        polygonOffset: true,
+        polygonOffsetFactor: -4,
+        polygonOffsetUnits: -4
+      });
+      const plane = new THREE.Mesh(new THREE.PlaneGeometry(mark.width, mark.height), markMaterial);
+      plane.position.set(mark.x, mark.y, mark.z);
+      plane.renderOrder = 7;
+      return plane;
+    };
+
+    const makeKeyMarks = (marks) => {
+      const group = new THREE.Group();
+      group.add(markPlane(marks.front, THREE.FrontSide, markTexture(marks.front.top, marks.front.bottom, marks.front.fontSize)));
+      group.add(markPlane(marks.back, THREE.BackSide, markTexture(marks.back.text, '', marks.back.fontSize, marks.back.mirror)));
+      return group;
+    };
+
+    const positionCamera = (center, distance, size) => {
+      camera.position.set(center.x, center.y, center.z + distance);
+      camera.near = Math.max(Math.min(distance, size) / 100, 0.01);
+      camera.far = Math.max(distance + size * 2, distance * 100);
+      camera.lookAt(center);
+      camera.updateProjectionMatrix();
+    };
+
+    const projectedBoxSize = (box, center, distance) => {
+      const size = box.getSize(new THREE.Vector3()).length();
+      positionCamera(center, distance, size);
+
+      const points = [
+        new THREE.Vector3(box.min.x, box.min.y, box.min.z),
+        new THREE.Vector3(box.min.x, box.min.y, box.max.z),
+        new THREE.Vector3(box.min.x, box.max.y, box.min.z),
+        new THREE.Vector3(box.min.x, box.max.y, box.max.z),
+        new THREE.Vector3(box.max.x, box.min.y, box.min.z),
+        new THREE.Vector3(box.max.x, box.min.y, box.max.z),
+        new THREE.Vector3(box.max.x, box.max.y, box.min.z),
+        new THREE.Vector3(box.max.x, box.max.y, box.max.z)
+      ].map((point) => point.project(camera));
+      const xs = points.map((point) => point.x);
+      const ys = points.map((point) => point.y);
+
+      return Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys));
+    };
+
+    const frameKeyMesh = () => {
+      const box = new THREE.Box3().setFromObject(keyMesh);
+      const center = box.getCenter(new THREE.Vector3());
+      const size = box.getSize(new THREE.Vector3());
+      const maxSize = Math.max(size.x, size.y, size.z);
+      const targetProjectedSize = 2 / (1 + framingPadding);
+      let nearDistance = Math.max(maxSize / 100, 0.01);
+      let farDistance = Math.max(maxSize, 1);
+
+      while (projectedBoxSize(box, center, farDistance) > targetProjectedSize) {
+        farDistance *= 2;
+      }
+
+      for (let index = 0; index < 24; index++) {
+        const distance = (nearDistance + farDistance) / 2;
+        if (projectedBoxSize(box, center, distance) > targetProjectedSize) {
+          nearDistance = distance;
+        } else {
+          farDistance = distance;
+        }
+      }
+
+      positionCamera(center, farDistance, maxSize);
+    };
+
+    const animate = () => {
+      if (!keyGroup) return;
+
+      if (!dragging) {
+        keyGroup.rotation.y += angularVelocity.x;
+        keyGroup.rotation.x += angularVelocity.y;
+        angularVelocity.multiplyScalar(0.965);
+        if (Math.abs(angularVelocity.x) < 0.003) angularVelocity.x = 0.003;
+        if (Math.abs(angularVelocity.y) < 0.0006) angularVelocity.y = 0;
+      }
+
+      renderer.render(scene, camera);
+      animationFrame = window.requestAnimationFrame(animate);
+    };
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+    const spinFromPointerDelta = (dx, dy) => {
+      if (!keyGroup) return;
+      const poleSpin = clamp(dx * 0.012, -0.55, 0.55);
+      const tumbleSpin = clamp(dy * 0.007, -0.32, 0.32);
+      keyGroup.rotation.y += poleSpin;
+      keyGroup.rotation.x += tumbleSpin;
+      angularVelocity.set(poleSpin, tumbleSpin);
+    };
+
+    const keyWasTapped = (event) => {
+      if (!keyMesh) return false;
+      const rect = tile.getBoundingClientRect();
+      pointer.x = ((event.clientX - rect.left) / Math.max(rect.width, 1)) * 2 - 1;
+      pointer.y = -((event.clientY - rect.top) / Math.max(rect.height, 1)) * 2 + 1;
+      raycaster.setFromCamera(pointer, camera);
+      return raycaster.intersectObject(keyMesh, false).length > 0;
+    };
+
+    const pointerStart = (event) => {
+      if (!keyGroup || (event.pointerType === 'mouse' && event.button !== 0)) return;
+      dragging = true;
+      dragPointerId = event.pointerId;
+      lastPointerX = event.clientX;
+      lastPointerY = event.clientY;
+      if (tile.setPointerCapture) tile.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    };
+
+    const pointerMove = (event) => {
+      if (!dragging || dragPointerId !== event.pointerId) return;
+      const deltaX = event.clientX - lastPointerX;
+      const deltaY = event.clientY - lastPointerY;
+      lastPointerX = event.clientX;
+      lastPointerY = event.clientY;
+      spinFromPointerDelta(deltaX, deltaY);
+      event.preventDefault();
+    };
+
+    const pointerEnd = (event) => {
+      if (!dragging || dragPointerId !== event.pointerId) return;
+      dragging = false;
+      dragPointerId = null;
+      if (tile.hasPointerCapture?.(event.pointerId)) tile.releasePointerCapture(event.pointerId);
+
+      if (keyWasTapped(event)) {
+        keyGroup.rotation.set(0, 0, 0);
+        angularVelocity.set(0.003, 0);
+      }
+    };
+
+    tile.addEventListener('pointerdown', pointerStart);
+    tile.addEventListener('pointermove', pointerMove);
+    tile.addEventListener('pointerup', pointerEnd);
+    tile.addEventListener('pointercancel', pointerEnd);
+    window.addEventListener('resize', resize);
+
+    resize();
+
+    fetch(`https://keysee.dotenvx.com/api/${encodeURIComponent(publicKey)}.json`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`KEYSEE JSON failed: HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((payload) => {
+        keyGroup = new THREE.Group();
+        keyMesh = new THREE.Mesh(geometryFromPayload(payload.geometry), material);
+        keyMesh.castShadow = true;
+        keyMesh.receiveShadow = true;
+        keyGroup.add(keyMesh);
+        keyGroup.add(makeKeyMarks(payload.marks));
+        scene.add(keyGroup);
+        frameKeyMesh();
+        tile.dataset.keyseeActive = 'true';
+        animate();
+      })
+      .catch((error) => {
+        console.error(error);
+        if (animationFrame) window.cancelAnimationFrame(animationFrame);
+      });
+  };
+
+  document.querySelectorAll('[data-keysee-viewer-root]:not([data-keysee-mounted])').forEach(mountKeyseeTile);
+</script>

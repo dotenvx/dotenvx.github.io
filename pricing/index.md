@@ -9,7 +9,7 @@ image: "/assets/img/og-image-pricing.png"
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 
   <div class="mx-auto w-full max-w-7xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_110px_rgba(250,204,21,0.12)] ring-1 ring-yellow-400/10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_110px_rgba(112,154,210,0.14)] ring-1 ring-[rgba(170,203,245,0.12)]">
     <div class="rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6 lg:p-4 xl:p-5">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Solo</h2>
@@ -144,8 +144,8 @@ image: "/assets/img/og-image-pricing.png"
         <span class="hidden md:block">+</span>
         <span class="md:hidden">+</span>
       </div>
-      <div class="rounded-xl border border-yellow-400/10 bg-yellow-400/[0.025] p-5 shadow-[0_0_80px_rgba(250,204,21,0.07)] md:p-6">
-        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-yellow-200/35">VLT ⛨</div>
+      <div class="rounded-xl border border-[rgba(170,203,245,0.16)] bg-[rgba(112,154,210,0.035)] p-5 shadow-[0_0_80px_rgba(112,154,210,0.10)] md:p-6">
+        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-[rgba(170,203,245,0.55)]">VLT ⛨</div>
         <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
         <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
       </div>

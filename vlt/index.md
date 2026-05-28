@@ -34,7 +34,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
-<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-32 md:mb-48 lg:mb-64">
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 100, 118, 0.5);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
@@ -53,14 +53,22 @@ image: "/assets/img/og-image-ops.png"
         <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.05)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
         <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
           <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
-          <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">⛨</span> <span class="text-[rgba(170,203,245,0.92)]">armored</span> <span class="text-zinc-500">(025 7BC)</span></pre>
+          <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">⛨</span> <span class="text-[rgba(170,203,245,0.92)]">armored</span> <span class="text-zinc-500">(03F 56D)</span></pre>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-{% include components/trust-signups.html section_classes="w-full max-w-7xl mx-auto px-1 md:px-6 mt-32 md:mt-48 lg:mt-64 mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]" %}
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72 text-center">
+  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your private key — armored.</h2>
+  <p class="mt-4 text-zinc-400 text-lg">Move decryption keys off device and keep them under guard.</p>
+  <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[54%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_18%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_82%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.16)_0%,rgba(112,154,210,0.065)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.08" class="relative min-h-[38rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[78vh] md:rounded-t-[1.1rem]" %}
+  </div>
+</section>
 
 <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
@@ -287,7 +295,7 @@ image: "/assets/img/og-image-ops.png"
     if (event.defaultPrevented) return;
     if (event.ctrlKey || event.metaKey || event.altKey) return;
     if (isTextInputTarget(event.target)) return;
-    if (String(event.key).toLowerCase() !== 'l') return;
+    if (String(event.key).toLowerCase() !== 'a') return;
 
     const anchorX = window.matchMedia('(max-width: 767px)').matches ? 0.5 : 0.68;
     fireStrike(1, { anchorX, anchorSpread: 0.12 });
@@ -320,5 +328,3 @@ image: "/assets/img/og-image-ops.png"
   }, { once: true });
 })();
 </script>
-
-{% include components/trust-signups-script.html %}

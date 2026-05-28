@@ -80,6 +80,42 @@ image: "/assets/img/og-image-ops.png"
 <section class="w-full max-w-5xl mx-auto px-6 mb-40 md:mb-56 lg:mb-72 text-center">
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
   <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
+
+  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg border border-[#405268]/55 bg-[#07101a]/20 text-left">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(112,154,210,0.10)_22%,rgba(112,154,210,0.34)_50%,rgba(112,154,210,0.10)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.045)_38%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(112,154,210,0.07)_22%,rgba(112,154,210,0.22)_50%,rgba(112,154,210,0.07)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#233044]/70 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-[#6f7d90] md:grid-cols-[8rem_1fr_9rem] md:px-7">
+      <span>Actor</span>
+      <span>Request</span>
+      <span class="text-right">Custody</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#172334]/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-[#7f8ca0]">developer</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt local workflow</span>
+      <span class="text-right font-mono text-xs font-normal text-[#8f9ead]">memory only</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#172334]/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-[#7f8ca0]">github-ci</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt deploy</span>
+      <span class="text-right font-mono text-xs font-normal text-[#8f9ead]">memory only</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#172334]/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-[#7f8ca0]">agent</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt scoped task</span>
+      <span class="text-right font-mono text-xs font-normal text-[#8f9ead]">memory only</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 px-5 py-4 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-[#4d5a6d]">.env.keys</span>
+      <span class="text-sm font-normal leading-6 text-zinc-600">not written to disk</span>
+      <span class="text-right font-mono text-xs font-normal text-[#4d5a6d]">none</span>
+    </div>
+  </div>
 </section>
 
 <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
@@ -87,12 +123,12 @@ image: "/assets/img/og-image-ops.png"
     <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
   <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
-    <h3 class="font-canela font-normal tracking-[-0.018em] text-[2.8rem] md:text-[3.1rem] lg:text-[3.7rem] leading-[1.03] text-zinc-100">
-      The KMS reforged.<br />For the agentic age.
+    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.15rem] md:text-[3.75rem] lg:text-[4.45rem] leading-[0.98] text-zinc-100">
+      Armored.<br />Under guard.
     </h3>
     <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
       <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3 !pl-6 !pr-6 md:!pl-5 md:!pr-5" href="/signup">
-        <span>Get Started</span>
+        <span>Create Account</span>
         <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
         </svg>

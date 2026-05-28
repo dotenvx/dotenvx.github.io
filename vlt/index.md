@@ -66,7 +66,10 @@ image: "/assets/img/og-image-ops.png"
   <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
     <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[54%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_18%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_82%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.16)_0%,rgba(112,154,210,0.065)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.08" class="relative min-h-[38rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[78vh] md:rounded-t-[1.1rem]" %}
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[46%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_18%,rgba(170,203,245,0.24)_50%,rgba(255,255,255,0.04)_82%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[24%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.11)_0%,rgba(112,154,210,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    {% include components/steel-dust-canvas.html class="z-[1]" %}
+    {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.08" material_color="0x8f9ead" class="relative z-10 min-h-[38rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[78vh] md:rounded-t-[1.1rem]" %}
   </div>
 </section>
 

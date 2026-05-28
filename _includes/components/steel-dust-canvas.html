@@ -1,0 +1,99 @@
+<div class="pointer-events-none absolute inset-0 {{ include.class }}" data-steel-dust aria-hidden="true">
+  <canvas class="block h-full w-full opacity-0 transition-opacity duration-1000"></canvas>
+</div>
+
+<script>
+(() => {
+  const roots = document.querySelectorAll('[data-steel-dust]:not([data-steel-dust-mounted])');
+  if (!roots.length) return;
+
+  roots.forEach((root) => {
+    root.dataset.steelDustMounted = 'true';
+
+    const canvas = root.querySelector('canvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isSafari = /Safari/i.test(navigator.userAgent) && !/(Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS)/i.test(navigator.userAgent);
+    const dprCap = isSafari ? 1.4 : 1.75;
+    const particles = Array.from({ length: 34 }, () => ({
+      x: 0.18 + Math.random() * 0.64,
+      y: Math.random(),
+      r: 0.35 + Math.random() * 0.9,
+      a: 0.08 + Math.random() * 0.24,
+      vx: (Math.random() - 0.5) * 0.00008,
+      vy: -0.00005 - Math.random() * 0.00018,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    let width = 0;
+    let height = 0;
+    let raf = 0;
+    let lastTime = performance.now();
+
+    const resize = () => {
+      const rect = root.getBoundingClientRect();
+      width = Math.max(1, rect.width);
+      height = Math.max(1, rect.height);
+      const dpr = Math.min(window.devicePixelRatio || 1, dprCap);
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const draw = (time) => {
+      const delta = Math.min(48, time - lastTime);
+      lastTime = time;
+      ctx.clearRect(0, 0, width, height);
+
+      const haze = ctx.createRadialGradient(
+        width * 0.5,
+        height * 0.48,
+        0,
+        width * 0.5,
+        height * 0.48,
+        Math.max(width, height) * 0.42
+      );
+      haze.addColorStop(0, 'rgba(112,154,210,0.014)');
+      haze.addColorStop(0.44, 'rgba(112,154,210,0.006)');
+      haze.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = haze;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.globalCompositeOperation = 'lighter';
+      for (const p of particles) {
+        if (!prefersReducedMotion) {
+          p.x += p.vx * delta + Math.sin(time * 0.00028 + p.phase) * 0.000012 * delta;
+          p.y += p.vy * delta;
+          if (p.y < -0.04) p.y = 1.04;
+          if (p.x < 0.08) p.x = 0.72;
+          if (p.x > 0.92) p.x = 0.28;
+        }
+
+        const x = p.x * width;
+        const y = p.y * height;
+        const pulse = 0.72 + Math.sin(time * 0.001 + p.phase) * 0.28;
+        ctx.fillStyle = `rgba(170,203,245,${p.a * pulse * 0.11})`;
+        ctx.beginPath();
+        ctx.arc(x, y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+
+      if (!prefersReducedMotion) raf = window.requestAnimationFrame(draw);
+    };
+
+    const start = () => {
+      resize();
+      canvas.style.opacity = '1';
+      draw(performance.now());
+    };
+
+    start();
+    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('pagehide', () => {
+      if (raf) window.cancelAnimationFrame(raf);
+      window.removeEventListener('resize', resize);
+    }, { once: true });
+  });
+})();
+</script>

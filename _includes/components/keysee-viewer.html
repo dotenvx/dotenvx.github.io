@@ -1,5 +1,6 @@
 {% assign keysee_class = include.class | default: "relative min-h-[17rem] overflow-hidden rounded-lg bg-transparent md:min-h-[23rem]" %}
 {% assign keysee_framing_padding = include.framing_padding | default: "0.15" %}
+{% assign keysee_material_color = include.material_color | default: "0xaeaaa0" %}
 
 <style>
   .keysee-tile {
@@ -32,6 +33,7 @@
   data-keysee-viewer-root
   data-keysee-public-key="{{ include.public_key }}"
   data-keysee-framing-padding="{{ keysee_framing_padding }}"
+  data-keysee-material-color="{{ keysee_material_color }}"
 >
   <div class="absolute inset-0" data-keysee-viewer></div>
 </div>
@@ -47,12 +49,13 @@
 
     const publicKey = tile.dataset.keyseePublicKey;
     const framingPadding = Number.parseFloat(tile.dataset.keyseeFramingPadding || '0.15');
+    const materialColor = Number(tile.dataset.keyseeMaterialColor || '0xaeaaa0');
     const viewer = tile.querySelector('[data-keysee-viewer]');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.01, 100);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, premultipliedAlpha: false });
     const material = new THREE.MeshStandardMaterial({
-      color: 0xaeaaa0,
+      color: materialColor,
       metalness: 0.78,
       roughness: 0.38,
       side: THREE.FrontSide

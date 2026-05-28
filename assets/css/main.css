@@ -581,12 +581,12 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 }
 
 .desktop-nav-trust-card:hover,
-.desktop-nav-trust-card[data-card-hover="true"] {
+.desktop-nav-trust-card[data-card-hover] {
   border-color: rgb(82 82 91) !important;
 }
 
 .desktop-nav-office-card:hover,
-.desktop-nav-office-card[data-card-hover="true"] {
+.desktop-nav-office-card[data-card-hover] {
   border-color: rgb(63 63 70) !important;
 }
 
@@ -595,7 +595,7 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 }
 
 .desktop-nav-office-card:hover .desktop-nav-office-image,
-.desktop-nav-office-card[data-card-hover="true"] .desktop-nav-office-image {
+.desktop-nav-office-card[data-card-hover] .desktop-nav-office-image {
   opacity: 0.85 !important;
   filter: brightness(1.08) saturate(1.04);
 }

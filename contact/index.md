@@ -7,18 +7,28 @@ title: "Contact"
     <div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.2rem] md:text-[4.8rem] leading-[1.02]">Get in touch</h1>
       <div class="mt-10">
-        <p class="m-0 contact-muted-label text-sm md:text-base">Office</p>
-        <p class="contact-muted-link mt-1.5 m-0 text-base md:text-base leading-relaxed font-normal">
-          2450 Colorado Ave #100<br>
-          Santa Monica, CA 90404
-        </p>
+        <div class="flex items-start gap-4">
+          <img src="/dotenvx-la-office.png" alt="" class="mt-1 h-16 w-24 flex-none rounded-xl border border-zinc-800 object-cover opacity-85">
+          <div>
+            <p class="m-0 contact-muted-label text-sm md:text-base">Office</p>
+            <p class="contact-muted-link mt-1.5 m-0 text-base md:text-base leading-relaxed font-normal">
+              2450 Colorado Ave #100<br>
+              Santa Monica, CA 90404
+            </p>
+          </div>
+        </div>
       </div>
       <div class="mt-8">
-        <p class="m-0 contact-muted-label text-sm md:text-base">Satellite SF office</p>
-        <p class="contact-muted-link mt-1.5 m-0 text-base md:text-base leading-relaxed font-normal">
-          1160 Battery Street East #100<br>
-          San Francisco, CA 94111
-        </p>
+        <div class="flex items-start gap-4">
+          <img src="/dotenvx-sf-office.png" alt="" class="mt-1 h-16 w-24 flex-none rounded-xl border border-zinc-800 object-cover opacity-85">
+          <div>
+            <p class="m-0 contact-muted-label text-sm md:text-base">Satellite SF office</p>
+            <p class="contact-muted-link mt-1.5 m-0 text-base md:text-base leading-relaxed font-normal">
+              1160 Battery Street East #100<br>
+              San Francisco, CA 94111
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -114,7 +114,7 @@
                   <span class="inline-flex min-w-5 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">{{ changelog_count }}</span>
                 </a>
               </div>
-              <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="desktop-nav-card group/card relative flex min-h-40 items-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-zinc-100 no-underline hover:no-underline hover:border-zinc-600 transition-colors duration-200">
+              <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="desktop-nav-card desktop-nav-trust-card group/card relative flex min-h-40 items-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-zinc-100 no-underline hover:no-underline transition-colors duration-200">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,163,184,0.12),transparent_58%),linear-gradient(135deg,rgba(255,255,255,0.055),transparent_48%)]"></div>
                 <div class="absolute bottom-3 right-3 flex items-center">
                   <div class="absolute -bottom-1 left-2 right-1 h-5 rounded-full bg-black/45 blur-md"></div>
@@ -148,8 +148,8 @@
                   Open Source
                 </a>
               </div>
-              <a href="/contact" class="desktop-nav-card group/card relative flex min-h-40 items-end overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-zinc-100 no-underline shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-colors duration-200 hover:border-zinc-700 hover:no-underline">
-                <img src="/dotenvx-la-office.png" data-office-image data-day-src="/dotenvx-la-office.png" data-evening-src="/dotenvx-la-office-evening.png" alt="" class="absolute inset-0 h-full w-full object-cover opacity-70 transition-opacity duration-200 group-hover/card:opacity-85" loading="lazy">
+              <a href="/contact" class="desktop-nav-card desktop-nav-office-card group/card relative flex min-h-40 items-end overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-zinc-100 no-underline shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-colors duration-200 hover:no-underline">
+                <img src="/dotenvx-la-office.png" data-office-image data-day-src="/dotenvx-la-office.png" data-evening-src="/dotenvx-la-office-evening.png" alt="" class="desktop-nav-office-image absolute inset-0 h-full w-full object-cover opacity-70 transition-all duration-200 group-hover/card:opacity-85" loading="lazy">
                 <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.72)),radial-gradient(circle_at_50%_0%,rgba(236,213,63,0.12),transparent_58%)]"></div>
                 <div class="relative z-10">
                   <span class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-300/75">Office</span>
@@ -314,6 +314,7 @@
     const desktopFlyout = document.getElementById('desktop-nav-flyout');
     const desktopItems = desktopNavMenu?.querySelectorAll('[data-desktop-nav-item]') || [];
     const desktopPanels = desktopFlyout?.querySelectorAll('[data-desktop-nav-panel]') || [];
+    const desktopCards = desktopFlyout?.querySelectorAll('.desktop-nav-card') || [];
     const mobileNavRoot = overlay.querySelector('[data-mobile-nav-root]');
     const mobileNavSubmenus = overlay.querySelectorAll('[data-mobile-nav-submenu]');
     const mobileSubmenuTriggers = overlay.querySelectorAll('[data-mobile-open-submenu]');
@@ -427,6 +428,12 @@
       desktopCloseTimer = window.setTimeout(closeDesktopNav, 140);
     };
 
+    const setDesktopCardHover = (activeCard) => {
+      desktopCards.forEach((card) => {
+        card.toggleAttribute('data-card-hover', card === activeCard);
+      });
+    };
+
     desktopItems.forEach((item) => {
       const menuName = item.getAttribute('data-nav-menu');
       if (!menuName) return;
@@ -454,6 +461,7 @@
     desktopFlyout?.addEventListener('focusin', clearDesktopClose);
     desktopFlyout?.addEventListener('focusout', (event) => {
       if (!desktopFlyout.contains(event.relatedTarget) && !desktopNavMenu?.contains(event.relatedTarget)) {
+        setDesktopCardHover(null);
         scheduleDesktopClose();
       }
     });
@@ -461,9 +469,11 @@
       if (!desktopActiveMenu) return;
       const target = event.target;
       if (desktopNavMenu?.contains(target) || desktopFlyout?.contains(target)) {
+        setDesktopCardHover(target.closest?.('.desktop-nav-card') || null);
         clearDesktopClose();
         return;
       }
+      setDesktopCardHover(null);
       scheduleDesktopClose();
     });
 

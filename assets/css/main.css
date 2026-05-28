@@ -542,7 +542,7 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 }
 
 .desktop-nav-frame {
-  height: 184px;
+  height: 194px;
 }
 
 .desktop-nav-panel {
@@ -574,8 +574,10 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   transform: translateY(2px);
 }
 
+.desktop-nav-card,
 .dotenvx-menu-card {
   border-color: rgb(39 39 42) !important;
+  border-radius: 0.75rem !important;
 }
 
 .dotenvx-menu-card-whitepaper:hover {

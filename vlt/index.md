@@ -78,8 +78,8 @@ image: "/assets/img/og-image-ops.png"
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 mb-40 md:mb-56 lg:mb-72 text-center">
-  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Just-in-time decryption.</h2>
-  <p class="mt-4 text-zinc-400 text-lg">Same dotenvx workflow. Keys retrieved only when needed.</p>
+  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
+  <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 </section>
 
 <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">

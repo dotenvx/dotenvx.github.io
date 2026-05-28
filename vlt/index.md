@@ -14,7 +14,7 @@ image: "/assets/img/og-image-ops.png"
 </div>
 
 <div class="relative overflow-x-hidden">
-  <section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-16 md:mb-20 lg:mb-24 mt-20">
+  <section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-0 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">⛨ Dotenvx + VLT</div>
@@ -34,50 +34,33 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
-{% include components/trust-signups.html section_classes="w-full max-w-7xl mx-auto px-1 md:px-6 mt-44 md:mt-64 lg:mt-[18rem] mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]" %}
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-32 md:mb-48 lg:mb-64">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 100, 118, 0.5);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 top-px h-56 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(76,111,152,0.1)_0%,rgba(76,111,152,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Hardened keys under your control in one command.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Keep the agentic dotenvx workflow, but put private keys behind access control.</p>
-  </div>
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl">
-    <!-- {% include components/encrypted-env-file.html %} -->
-  </div>
-  <div class="mt-2 md:mt-3 mx-auto max-w-3xl">
-    <!-- {% include components/dotenvx-cli-demo.html %} -->
-  </div>
+    <div class="relative z-10 mx-auto max-w-5xl px-5">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Armor up in one command.</h2>
+        <p class="mt-4 text-zinc-400 text-lg">Move private keys off device while keeping the dotenvx workflow.</p>
+      </div>
 
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl relative overflow-hidden px-6 py-12 md:px-8 md:py-14">
-    <div class="pointer-events-none absolute left-1/2 top-1/2 h-44 md:h-56 w-[72%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_38%,rgba(0,0,0,0)_74%)] blur-[2px]" aria-hidden="true"></div>
-    <div class="relative z-10 text-center">
-      <div class="mx-auto max-w-xl">
-        <div class="mx-auto relative flex w-full items-center justify-center rounded-full border border-zinc-800 bg-[linear-gradient(90deg,rgba(18,24,34,0.72)_0%,rgba(17,21,30,0.82)_52%,rgba(14,18,26,0.72)_100%)] px-5 py-3 md:px-6">
-          <span class="font-mono font-semibold text-zinc-100 text-lg md:text-xl leading-none text-center">dotenvx armor up</span>
+      <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 100, 118, 0.34); border-right: 1px solid rgba(86, 100, 118, 0.24); border-bottom: 1px solid rgba(86, 100, 118, 0.34); border-left: 1px solid rgba(86, 100, 118, 0.24);">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.075)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.24)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.05)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+        <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
+          <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
+          <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">⛨</span> <span class="text-[rgba(170,203,245,0.92)]">armored</span> <span class="text-zinc-500">(025 7BC)</span></pre>
         </div>
       </div>
-      <div class="mt-3 text-zinc-500 font-semibold text-sm md:text-base">Coming soon</div>
-    </div>
-  </div>
-
-  <div class="mt-8 md:mt-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-5">
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-zinc-500 dark:text-zinc-400 font-semibold text-sm tracking-wide">1</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Login</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx login</code> to connect your account.</p>
-    </div>
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-zinc-500 dark:text-zinc-400 font-semibold text-sm tracking-wide">2</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Harden</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Run <code class="font-mono tracking-[-0.02em] text-[0.95em] text-zinc-300">dotenvx armor up</code> and harden your private keys.</p>
-    </div>
-    <div class="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-      <div class="text-zinc-500 dark:text-zinc-400 font-semibold text-sm tracking-wide">3</div>
-      <h3 class="mt-2 text-zinc-100 font-semibold">Control</h3>
-      <p class="mt-1 text-zinc-400 text-sm">Harden private keys and control access.</p>
     </div>
   </div>
 </section>
+
+{% include components/trust-signups.html section_classes="w-full max-w-7xl mx-auto px-1 md:px-6 mt-32 md:mt-48 lg:mt-64 mb-32 sm:mb-48 md:mb-64 lg:mb-[18rem]" %}
 
 <section class="relative overflow-hidden w-full mt-32 md:mt-44 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">

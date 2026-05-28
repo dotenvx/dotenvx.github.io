@@ -2,10 +2,10 @@
 title: "Contact"
 ---
 
-<section class="w-full max-w-7xl mx-auto px-6 mt-16 md:mt-24 mb-24 md:mb-32">
-  <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-14 md:gap-20 items-start lg:items-center">
+<section class="mx-auto w-full max-w-4xl px-5 pt-16 pb-10 md:pt-24 md:pb-14">
+  <div class="grid grid-cols-1 gap-14 md:grid-cols-[minmax(0,1fr)_minmax(15rem,0.72fr)] md:gap-10 lg:gap-12 items-start md:items-center">
     <div>
-      <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.2rem] md:text-[4.8rem] leading-[1.02]">Get in touch</h1>
+      <h1 class="pb-2 font-canela text-[2.9rem] font-normal leading-[0.98] tracking-[-0.018em] text-zinc-100 md:text-[3.65rem] lg:text-[4.25rem]">Get in touch</h1>
       <div class="mt-10">
         <div class="flex items-start gap-4">
           <img src="/dotenvx-la-office.png" alt="" class="mt-1 h-16 w-24 flex-none rounded-xl border border-zinc-800 object-cover opacity-85">

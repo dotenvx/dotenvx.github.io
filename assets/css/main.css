@@ -552,6 +552,10 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   transition: opacity 180ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.desktop-nav-panel.is-instant {
+  transition: none;
+}
+
 .desktop-nav-panel.is-left {
   transform: translateX(-28px);
 }

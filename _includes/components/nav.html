@@ -373,11 +373,16 @@
           panel.classList.toggle('is-right', panelIndex > activeIndex);
         });
       } else if (previousIndex === null || !previousPanel) {
+        desktopPanels.forEach((panel) => panel.classList.add('is-instant'));
         desktopPanels.forEach((panel) => {
           const panelIndex = Number(panel.getAttribute('data-nav-index') || 0);
           panel.classList.toggle('is-active', panel === activePanel);
           panel.classList.toggle('is-left', panelIndex < activeIndex);
           panel.classList.toggle('is-right', panelIndex > activeIndex);
+        });
+        activePanel.getBoundingClientRect();
+        window.requestAnimationFrame(() => {
+          desktopPanels.forEach((panel) => panel.classList.remove('is-instant'));
         });
       } else {
         const movingRight = activeIndex > previousIndex;
@@ -421,6 +426,14 @@
         item.removeAttribute('data-nav-active');
         item.querySelector('[data-desktop-nav-trigger]')?.setAttribute('aria-expanded', 'false');
       });
+      desktopPanels.forEach((panel) => {
+        panel.classList.add('is-instant');
+        panel.classList.remove('is-active', 'is-left', 'is-right');
+      });
+      window.requestAnimationFrame(() => {
+        desktopPanels.forEach((panel) => panel.classList.remove('is-instant'));
+      });
+      setDesktopCardHover(null);
     };
 
     const scheduleDesktopClose = () => {

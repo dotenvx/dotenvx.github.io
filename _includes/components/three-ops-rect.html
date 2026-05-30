@@ -145,13 +145,13 @@
   const boxGeometry = new THREE.BoxGeometry(0.12, 0.1662, 0.12);
   const edgeGeometry = new THREE.EdgesGeometry(boxGeometry);
   const edgeHighlightMaterial = new THREE.LineBasicMaterial({
-    color: 0xe6edf7,
+    color: 0xc8d0de,
     transparent: true,
-    opacity: 0.42,
+    opacity: 0.16,
     toneMapped: false
   });
   const glowShellMaterial = new THREE.MeshBasicMaterial({
-    color: 0xd6e2f0,
+    color: 0xe7c96f,
     transparent: true,
     opacity: 0.12,
     blending: THREE.AdditiveBlending,
@@ -163,7 +163,8 @@
   const labelTextureCache = new Map();
   const materialCache = new Map();
   const faceMaterials = [];
-  const baseRoughness = 0.045;
+  const baseEnvMapIntensity = 1.35;
+  const baseRoughness = 0.055;
   const baseThickness = 1.1;
   const baseEdgeOpacity = edgeHighlightMaterial.opacity;
   const baseGlowOpacity = glowShellMaterial.opacity;
@@ -175,7 +176,7 @@
     c.height = 128;
     const ctx = c.getContext('2d');
     ctx.clearRect(0, 0, 128, 128);
-    ctx.fillStyle = 'rgba(112, 122, 136, 0.16)';
+    ctx.fillStyle = 'rgba(99, 104, 113, 0.24)';
     ctx.fillRect(0, 0, 128, 128);
     // Intentionally no face text labels on mace blocks.
     const texture = new THREE.CanvasTexture(c);
@@ -192,20 +193,20 @@
   const getFaceMaterial = (label) => {
     if (!materialCache.has(label)) {
       materialCache.set(label, new THREE.MeshPhysicalMaterial({
-        color: 0xb7c2cf,
+        color: 0xfff7e3,
         transparent: true,
-        opacity: 0.94,
+        opacity: 0.55,
         map: getLabelTexture(label),
-        metalness: 0.86,
-        roughness: 0.2,
-        transmission: 0.08,
-        thickness: 0.22,
+        metalness: 0.0,
+        roughness: baseRoughness,
+        transmission: 0.94,
+        thickness: baseThickness,
         ior: 1.5,
-        clearcoat: 0.65,
-        clearcoatRoughness: 0.08,
-        attenuationColor: 0x8f9aab,
-        attenuationDistance: 2.2,
-        envMapIntensity: 2.35
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.05,
+        attenuationColor: 0x7a8394,
+        attenuationDistance: 1.6,
+        envMapIntensity: baseEnvMapIntensity
       }));
     }
     return materialCache.get(label);
@@ -216,23 +217,21 @@
     mat.roughness = THREE.MathUtils.clamp(baseRoughness + roughnessOffset, 0.006, 0.06);
     mat.thickness = THREE.MathUtils.clamp(baseThickness + thicknessOffset, 1.35, 1.9);
     if (faceRole === 'top') {
-      mat.opacity = 0.96;
-      mat.transmission = 0.06;
-      mat.roughness = 0.16;
-      mat.thickness = 0.2;
-      mat.clearcoatRoughness = 0.06;
+      mat.opacity = 0.14;
+      mat.transmission = 0.99;
+      mat.roughness = Math.min(0.07, mat.roughness + 0.01);
+      mat.thickness = 0.18;
+      mat.clearcoatRoughness = 0.05;
     } else if (faceRole === 'bottom') {
-      mat.opacity = 0.92;
-      mat.transmission = 0.05;
-      mat.roughness = 0.24;
-      mat.thickness = 0.2;
-      mat.clearcoatRoughness = 0.1;
+      mat.opacity = 0.28;
+      mat.transmission = 0.88;
+      mat.thickness = 0.5;
+      mat.clearcoatRoughness = 0.06;
     } else {
-      mat.opacity = 0.94;
-      mat.transmission = 0.07;
-      mat.roughness = 0.2;
-      mat.thickness = 0.22;
-      mat.clearcoatRoughness = 0.08;
+      mat.opacity = 0.25;
+      mat.transmission = 0.98;
+      mat.thickness = 0.42;
+      mat.clearcoatRoughness = 0.04;
     }
     mat.userData.baseOpacity = mat.opacity;
     mat.userData.baseEnvMapIntensity = mat.envMapIntensity;

@@ -53,8 +53,8 @@
         height * 0.48,
         Math.max(width, height) * 0.42
       );
-      haze.addColorStop(0, 'rgba(112,154,210,0.014)');
-      haze.addColorStop(0.44, 'rgba(112,154,210,0.006)');
+      haze.addColorStop(0, 'rgba(236,213,63,0.012)');
+      haze.addColorStop(0.44, 'rgba(170,133,56,0.006)');
       haze.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = haze;
       ctx.fillRect(0, 0, width, height);
@@ -72,7 +72,7 @@
         const x = p.x * width;
         const y = p.y * height;
         const pulse = 0.72 + Math.sin(time * 0.001 + p.phase) * 0.28;
-        ctx.fillStyle = `rgba(170,203,245,${p.a * pulse * 0.11})`;
+        ctx.fillStyle = `rgba(245,223,152,${p.a * pulse * 0.11})`;
         ctx.beginPath();
         ctx.arc(x, y, p.r, 0, Math.PI * 2);
         ctx.fill();

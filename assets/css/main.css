@@ -367,14 +367,14 @@ html.dark .contact-muted-link:hover,
 }
 
 .ops-eyebrow-lightning {
-  background: linear-gradient(180deg, #e8f2ff 0%, #bad7ff 48%, #87b6eb 100%);
+  background: linear-gradient(180deg, #fff7cc 0%, #ecd53f 48%, #b8972e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow:
-    0 0 1px rgba(232, 244, 255, 0.41),
-    0 0 8px rgba(103, 164, 238, 0.2),
-    0 1px 0 rgba(231, 244, 255, 0.26);
+    0 0 1px rgba(255, 247, 204, 0.38),
+    0 0 8px rgba(236, 213, 63, 0.18),
+    0 1px 0 rgba(255, 245, 180, 0.22);
 }
 
 .ops-page-lightning-body {
@@ -406,8 +406,8 @@ html.dark .contact-muted-link:hover,
 .ops-hero-atmo::before {
   inset: 50% -8% -12% -8%;
   background:
-    radial-gradient(92% 62% at 50% 86%, rgba(104, 150, 202, 0.2) 0%, rgba(104, 150, 202, 0.08) 40%, rgba(104, 150, 202, 0) 76%),
-    linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.15) 58%, rgba(92, 134, 182, 0) 100%);
+    radial-gradient(92% 62% at 50% 86%, rgba(236, 213, 63, 0.16) 0%, rgba(170, 133, 56, 0.07) 40%, rgba(170, 133, 56, 0) 76%),
+    linear-gradient(180deg, rgba(170, 133, 56, 0) 0%, rgba(170, 133, 56, 0.12) 58%, rgba(170, 133, 56, 0) 100%);
   filter: blur(8px);
 }
 
@@ -441,8 +441,8 @@ html.dark .contact-muted-link:hover,
   .ops-hero-atmo::before {
     inset: 8% -14% 34% -14%;
     background:
-      radial-gradient(86% 66% at 50% 26%, rgba(104, 150, 202, 0.24) 0%, rgba(104, 150, 202, 0.09) 44%, rgba(104, 150, 202, 0) 80%),
-      linear-gradient(180deg, rgba(92, 134, 182, 0) 0%, rgba(92, 134, 182, 0.1) 52%, rgba(92, 134, 182, 0) 100%);
+      radial-gradient(86% 66% at 50% 26%, rgba(236, 213, 63, 0.18) 0%, rgba(170, 133, 56, 0.08) 44%, rgba(170, 133, 56, 0) 80%),
+      linear-gradient(180deg, rgba(170, 133, 56, 0) 0%, rgba(170, 133, 56, 0.08) 52%, rgba(170, 133, 56, 0) 100%);
     filter: blur(5px);
   }
 

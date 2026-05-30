@@ -4,12 +4,12 @@ image: "/assets/img/og-image-pricing.png"
 ---
 
 <section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">
-  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">VLT ⛨</p>
+  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">Dotenvx VLT ⛨</p>
   <h1 class="mb-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 
   <div class="mx-auto w-full max-w-7xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_110px_rgba(112,154,210,0.14)] ring-1 ring-[rgba(170,203,245,0.12)]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_120px_rgba(236,213,63,0.20)] ring-1 ring-[rgba(236,213,63,0.16)]">
     <div class="rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6 lg:p-4 xl:p-5">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Solo</h2>
@@ -144,10 +144,15 @@ image: "/assets/img/og-image-pricing.png"
         <span class="hidden md:block">+</span>
         <span class="md:hidden">+</span>
       </div>
-      <div class="rounded-xl border border-[rgba(170,203,245,0.16)] bg-[rgba(112,154,210,0.035)] p-5 shadow-[0_0_80px_rgba(112,154,210,0.10)] md:p-6">
-        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-[rgba(170,203,245,0.55)]">VLT ⛨</div>
-        <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
-        <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
+      <div class="relative overflow-hidden rounded-xl border border-[rgba(236,213,63,0.18)] bg-zinc-950/35 p-5 shadow-[0_0_90px_rgba(236,213,63,0.10)] md:p-6">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(236,213,63,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[48%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(236,213,63,0.12)_0%,rgba(236,213,63,0.05)_36%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.035)_20%,rgba(236,213,63,0.22)_50%,rgba(255,255,255,0.035)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="relative z-10">
+          <div class="text-xs font-semibold uppercase tracking-[0.16em] text-[#ecd53f]/65">VLT ⛨</div>
+          <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
+        </div>
       </div>
       <div class="flex items-center justify-center text-zinc-700 md:px-1" aria-hidden="true">
         <span class="hidden md:block">→</span>

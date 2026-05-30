@@ -35,10 +35,10 @@ image: "/assets/img/og-image-ops.png"
   </section>
 
 <section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-20 md:mb-24 lg:mb-24">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 100, 118, 0.5);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 top-px h-56 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(76,111,152,0.1)_0%,rgba(76,111,152,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 top-px h-56 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
 
     <div class="relative z-10 mx-auto max-w-5xl px-5">
       <div class="text-center max-w-3xl mx-auto">
@@ -46,14 +46,14 @@ image: "/assets/img/og-image-ops.png"
         <p class="mt-4 text-zinc-400 text-lg">One command to harden your private keys.</p>
       </div>
 
-      <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 100, 118, 0.34); border-right: 1px solid rgba(86, 100, 118, 0.24); border-bottom: 1px solid rgba(86, 100, 118, 0.34); border-left: 1px solid rgba(86, 100, 118, 0.24);">
-        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.18)_0%,rgba(112,154,210,0.075)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(170,203,245,0.24)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.05)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+      <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
         <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
           <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
-          <pre class="mt-2 whitespace-nowrap text-[rgba(170,203,245,0.92)]">⛨ armored (03C 969)</pre>
+          <pre class="mt-2 whitespace-nowrap text-[rgba(236,213,63,0.9)]">⛨ armored (03C 969)</pre>
         </div>
       </div>
     </div>
@@ -64,15 +64,15 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Keys move off-device.</h2>
   <p class="mt-4 text-zinc-400 text-lg">No longer in .env.keys. Harder to leak. Harder to steal.</p>
   <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
-    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[82%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(170,203,245,0.34)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[58%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.16)_0%,rgba(112,154,210,0.065)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[74%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(170,203,245,0.24)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[50%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(112,154,210,0.11)_0%,rgba(112,154,210,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[82%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[58%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.14)_0%,rgba(242,214,134,0.06)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[74%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[50%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.09)_0%,rgba(242,214,134,0.04)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     {% include components/steel-dust-canvas.html class="z-[1]" %}
     <div class="relative z-10 grid grid-cols-[repeat(3,minmax(0,7.5rem))] justify-center gap-8 sm:grid-cols-[repeat(3,minmax(0,9.5rem))] md:grid-cols-[repeat(3,minmax(0,13rem))] md:gap-14 lg:grid-cols-[repeat(3,minmax(0,15rem))] lg:gap-20">
-      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0x8f9ead" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0x8f9ead" render_mode="wire" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0x8f9ead" spin_delay="1300" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
     </div>
   </div>
 </section>
@@ -81,39 +81,39 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
   <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 
-  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg bg-[#07101a]/20 text-left" style="border: 1px solid rgba(64, 82, 104, 0.55);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(112,154,210,0.10)_22%,rgba(112,154,210,0.34)_50%,rgba(112,154,210,0.10)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(112,154,210,0.12)_0%,rgba(112,154,210,0.045)_38%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(112,154,210,0.07)_22%,rgba(112,154,210,0.22)_50%,rgba(112,154,210,0.07)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg bg-zinc-950/20 text-left" style="border: 1px solid rgba(86, 86, 94, 0.55);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(242,214,134,0.08)_22%,rgba(245,223,152,0.28)_50%,rgba(242,214,134,0.08)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.04)_38%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(242,214,134,0.06)_22%,rgba(245,223,152,0.18)_50%,rgba(242,214,134,0.06)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
 
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#233044]/70 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-[#6f7d90] md:grid-cols-[8rem_1fr_9rem] md:px-7">
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-800/70 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-zinc-500 md:grid-cols-[8rem_1fr_9rem] md:px-7">
       <span>Actor</span>
       <span>Request</span>
       <span class="text-right">Custody</span>
     </div>
 
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#172334]/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-[#7f8ca0]">developer</span>
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">developer</span>
       <span class="text-sm font-normal leading-6 text-zinc-500">decrypt local workflow</span>
-      <span class="text-right font-mono text-xs font-normal text-[#8f9ead]">memory only</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
     </div>
 
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#172334]/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-[#7f8ca0]">github-ci</span>
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">github-ci</span>
       <span class="text-sm font-normal leading-6 text-zinc-500">decrypt deploy</span>
-      <span class="text-right font-mono text-xs font-normal text-[#8f9ead]">memory only</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
     </div>
 
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-[#172334]/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-[#7f8ca0]">agent</span>
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">agent</span>
       <span class="text-sm font-normal leading-6 text-zinc-500">decrypt scoped task</span>
-      <span class="text-right font-mono text-xs font-normal text-[#8f9ead]">memory only</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
     </div>
 
     <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 px-5 py-4 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-[#4d5a6d]">.env.keys</span>
+      <span class="font-mono text-xs font-normal text-zinc-700">.env.keys</span>
       <span class="text-sm font-normal leading-6 text-zinc-600">not written to disk</span>
-      <span class="text-right font-mono text-xs font-normal text-[#4d5a6d]">none</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-700">none</span>
     </div>
   </div>
 </section>
@@ -283,7 +283,7 @@ image: "/assets/img/og-image-ops.png"
       const p = paths[i];
       ctx.beginPath();
       drawPath(p.segments);
-      ctx.strokeStyle = `rgba(104, 152, 222, ${p.alpha * 0.16})`;
+      ctx.strokeStyle = `rgba(236, 213, 63, ${p.alpha * 0.14})`;
       ctx.lineWidth = 10;
       ctx.stroke();
     }
@@ -292,12 +292,12 @@ image: "/assets/img/og-image-ops.png"
       const p = paths[i];
       ctx.beginPath();
       drawPath(p.segments);
-      ctx.strokeStyle = `rgba(170, 203, 245, ${p.alpha * 0.9})`;
+      ctx.strokeStyle = `rgba(236, 213, 63, ${p.alpha * 0.86})`;
       ctx.lineWidth = p.width;
       ctx.stroke();
       ctx.beginPath();
       drawPath(p.segments);
-      ctx.strokeStyle = `rgba(224, 238, 255, ${p.alpha * 0.76})`;
+      ctx.strokeStyle = `rgba(255, 245, 180, ${p.alpha * 0.68})`;
       ctx.lineWidth = p.width * 0.36;
       ctx.stroke();
     }

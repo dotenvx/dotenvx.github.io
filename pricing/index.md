@@ -4,7 +4,7 @@ image: "/assets/img/og-image-pricing.png"
 ---
 
 <section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">
-  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">Dotenvx VLT ⛨</p>
+  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">Dotenvx Armor ⛨</p>
   <h1 class="mb-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 
@@ -127,9 +127,9 @@ image: "/assets/img/og-image-pricing.png"
   </div>
 
   <section class="mx-auto mt-32 w-full max-w-3xl text-center">
-    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why VLT ⛨?</h2>
+    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Armor?</h2>
     <p class="mt-4 text-base md:text-lg leading-relaxed text-zinc-500">
-      VLT ⛨ keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
+      Armor keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
     </p>
   </section>
 
@@ -149,7 +149,7 @@ image: "/assets/img/og-image-pricing.png"
         <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[48%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(236,213,63,0.12)_0%,rgba(236,213,63,0.05)_36%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
         <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.035)_20%,rgba(236,213,63,0.22)_50%,rgba(255,255,255,0.035)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
         <div class="relative z-10">
-          <div class="text-xs font-semibold uppercase tracking-[0.16em] text-[#ecd53f]/65">VLT ⛨</div>
+          <div class="text-xs font-semibold uppercase tracking-[0.16em] text-[#ecd53f]/65">Armor ⛨</div>
           <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
           <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
         </div>

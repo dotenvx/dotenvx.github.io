@@ -343,7 +343,7 @@ image: "/assets/img/og-image-ops.png"
     if (event.defaultPrevented) return;
     if (event.ctrlKey || event.metaKey || event.altKey) return;
     if (isTextInputTarget(event.target)) return;
-    if (String(event.key).toLowerCase() !== 'a') return;
+    if (String(event.key).toLowerCase() !== 'l') return;
 
     const anchorX = window.matchMedia('(max-width: 767px)').matches ? 0.5 : 0.68;
     fireStrike(1, { anchorX, anchorSpread: 0.12 });

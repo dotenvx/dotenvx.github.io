@@ -299,8 +299,6 @@ image: "/assets/img/og-image-pricing.png"
     </div>
   </div>
 
-  {% include components/trust-signups.html section_classes="w-full max-w-7xl mx-auto px-1 md:px-6 mt-24 md:mt-32 mb-8" %}
-
   <section class="w-full max-w-2xl mx-auto px-6 mt-32 flex flex-col gap-4">
     <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
     <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
@@ -329,5 +327,3 @@ image: "/assets/img/og-image-pricing.png"
     </div>
   </section>
 </section>
-
-{% include components/trust-signups-script.html %}

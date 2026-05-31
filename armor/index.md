@@ -1,28 +1,378 @@
 ---
-title: "Armor"
-redirect_to: "/vlt"
+title: "Dotenvx Armor ⛨"
+image: "/assets/img/og-image-ops.png"
 ---
 
-<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
-  <div class="flex flex-col gap-2">
-    <span class="">You are being redirected to</span>
-    <a href="/vlt"><u>/vlt</u></a>
+<style>
+  body > footer {
+    margin-top: 0 !important;
+  }
+</style>
+
+<div aria-hidden="true" class="ops-page-lightning-body">
+  <canvas class="ops-hero-lightning-canvas" data-ops-lightning-canvas></canvas>
+</div>
+
+<div class="relative overflow-x-hidden">
+  <section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-0 mt-20">
+  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
+    <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
+      <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Armor ⛨</div>
+      <h1 class="font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">ARMORED KEYS ⛨</h1>
+      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Private keys. Off device. Under guard.</p>
+      <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
+        <p class="inline-flex items-center rounded-full border border-zinc-300 dark:border-zinc-700 px-4 py-5 md:py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">Coming soon</p>
+      </div>
+    </div>
+    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
+      {% include components/three-ops-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
+      {% comment %}{% include components/three-gauntlet-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
+      {% comment %}{% include components/three-fortress-gated-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
+      {% comment %}{% include components/three-fortress-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
+      {% comment %}{% include components/three-citadel-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
+    </div>
   </div>
+  </section>
 
-  <a class="btn-outline w-fit" href="/vlt">Continue</a>
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-8 md:mt-10 lg:mt-12 mb-20 md:mb-24 lg:mb-24">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 top-px h-56 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
 
-  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+    <div class="relative z-10 mx-auto max-w-5xl px-5">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Armor up in one command.</h2>
+        <p class="mt-4 text-zinc-400 text-lg">One command to harden your private keys.</p>
+      </div>
+
+      <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+        <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
+          <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
+          <pre class="mt-2 whitespace-nowrap text-[rgba(236,213,63,0.9)]">⛨ armored (03C 969)</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-24 md:mb-32 lg:mb-40 text-center">
+  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Keys move off-device.</h2>
+  <p class="mt-4 text-zinc-400 text-lg">No longer in .env.keys. Harder to leak. Harder to steal.</p>
+  <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[82%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[58%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.14)_0%,rgba(242,214,134,0.06)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[74%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[50%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.09)_0%,rgba(242,214,134,0.04)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    {% include components/steel-dust-canvas.html class="z-[1]" %}
+    <div class="relative z-10 grid grid-cols-[repeat(3,minmax(0,7.5rem))] justify-center gap-8 sm:grid-cols-[repeat(3,minmax(0,9.5rem))] md:grid-cols-[repeat(3,minmax(0,13rem))] md:gap-14 lg:grid-cols-[repeat(3,minmax(0,15rem))] lg:gap-20">
+      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mb-32 md:mb-44 lg:mb-56 text-center">
+  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
+  <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
+
+  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg bg-zinc-950/20 text-left" style="border: 1px solid rgba(86, 86, 94, 0.55);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(242,214,134,0.08)_22%,rgba(245,223,152,0.28)_50%,rgba(242,214,134,0.08)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.04)_38%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(242,214,134,0.06)_22%,rgba(245,223,152,0.18)_50%,rgba(242,214,134,0.06)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-800/70 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-zinc-500 md:grid-cols-[8rem_1fr_9rem] md:px-7">
+      <span>Actor</span>
+      <span>Request</span>
+      <span class="text-right">Custody</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">developer</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt local workflow</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">github-ci</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt deploy</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">agent</span>
+      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt scoped task</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
+    </div>
+
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 px-5 py-4 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-700">.env.keys</span>
+      <span class="text-sm font-normal leading-6 text-zinc-600">not written to disk</span>
+      <span class="text-right font-mono text-xs font-normal text-zinc-700">none</span>
+    </div>
+  </div>
+</section>
+
+<section class="relative overflow-hidden w-full mt-0 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
+  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
+  </div>
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
+    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.15rem] md:text-[3.75rem] lg:text-[4.45rem] leading-[0.98] text-zinc-100">
+      Armored.<br />Under guard.
+    </h3>
+    <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
+      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3 !pl-6 !pr-6 md:!pl-5 md:!pr-5" href="/signup">
+        <span>Create Account</span>
+        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <a class="inline-flex items-center justify-center gap-0.5 p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/contact">
+        <span>Contact Us</span>
+        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 </div>
 
 <script>
-  var interval
-  interval = setInterval(function() {
-    var div = document.querySelector("#counter")
-    var count = div.textContent * 1 - 1
-    div.textContent = count
-    if (count <= 0) {
-      window.location.replace("/vlt")
-      clearInterval(interval)
+(() => {
+  const canvas = document.querySelector('[data-ops-lightning-canvas]');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const lightningRoot = canvas.parentElement;
+
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+
+  const state = {
+    w: 0,
+    h: 0,
+    dpr: 1,
+    bolts: [],
+    lastScrollY: -1,
+    raf: 0
+  };
+  const randBetween = (min, max) => min + Math.random() * (max - min);
+  const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+  const subdivide = (x1, y1, x2, y2, displacement, minDisp) => {
+    if (displacement < minDisp) {
+      return [{ x: x1, y: y1 }, { x: x2, y: y2 }];
     }
-  }, 1000)
+    const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * displacement;
+    const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * displacement;
+    const left = subdivide(x1, y1, midX, midY, displacement / 2, minDisp);
+    const right = subdivide(midX, midY, x2, y2, displacement / 2, minDisp);
+    return [...left.slice(0, -1), ...right];
+  };
+
+  const branchFrom = (startPoint, angle, length, depth) => {
+    const endX = startPoint.x + Math.cos(angle) * length;
+    const endY = startPoint.y + Math.sin(angle) * length;
+    const segments = subdivide(startPoint.x, startPoint.y, endX, endY, length * 0.45, 6);
+    const branches = [];
+    if (depth < 2 && Math.random() < 0.55) {
+      const branchIdx = Math.floor(Math.random() * (segments.length - 2)) + 1;
+      const branchPoint = segments[branchIdx];
+      const branchAngle = angle + (Math.random() - 0.5) * 1.8;
+      const branchLength = length * (0.35 + Math.random() * 0.3);
+      branches.push(branchFrom(branchPoint, branchAngle, branchLength, depth + 1));
+    }
+    return {
+      segments,
+      alpha: 0.88,
+      decay: 0.055 + Math.random() * 0.03,
+      width: Math.max(0.7, 1.6 - depth * 0.4),
+      branches
+    };
+  };
+
+  const createStrike = (w, h, options = {}) => {
+    const anchorX = typeof options.anchorX === 'number' ? options.anchorX : null;
+    const anchorSpread = typeof options.anchorSpread === 'number' ? options.anchorSpread : 0.12;
+    const startX = anchorX === null
+      ? w * (0.35 + Math.random() * 0.47)
+      : w * clamp(anchorX + (Math.random() - 0.5) * anchorSpread, 0.12, 0.88);
+    const startY = -h * (0.16 + Math.random() * 0.16);
+    const endX = anchorX === null
+      ? w * (0.22 + Math.random() * 0.56)
+      : w * clamp(anchorX + (Math.random() - 0.5) * (anchorSpread * 1.7), 0.1, 0.9);
+    const endY = h * (0.74 + Math.random() * 0.34);
+    const roughness = Math.hypot(endX - startX, endY - startY) * 0.42;
+    const segments = subdivide(startX, startY, endX, endY, roughness, 6);
+    const branches = [];
+    const branchCount = 2 + Math.floor(Math.random() * 3);
+    const angle = Math.atan2(endY - startY, endX - startX);
+    for (let i = 0; i < branchCount; i += 1) {
+      const idx = Math.floor(Math.random() * (segments.length - 2)) + 1;
+      const p = segments[idx];
+      const branchAngle = angle + (Math.random() - 0.5) * 2;
+      const branchLen = Math.min(w, h) * (0.12 + Math.random() * 0.18);
+      branches.push(branchFrom(p, branchAngle, branchLen, 0));
+    }
+    return {
+      segments,
+      alpha: 1,
+      decay: 0.055 + Math.random() * 0.025,
+      width: 2.4 + Math.random() * 1.2,
+      branches
+    };
+  };
+
+  const collectPaths = (bolt, parentAlpha, paths) => {
+    const alpha = Math.min(parentAlpha, bolt.alpha);
+    if (alpha <= 0 || bolt.segments.length < 2) return;
+    paths.push({ segments: bolt.segments, alpha, width: bolt.width });
+    for (let i = 0; i < bolt.branches.length; i += 1) {
+      collectPaths(bolt.branches[i], alpha * 0.58, paths);
+    }
+  };
+
+  const drawPath = (segments) => {
+    ctx.moveTo(segments[0].x, segments[0].y);
+    for (let i = 1; i < segments.length; i += 1) {
+      ctx.lineTo(segments[i].x, segments[i].y);
+    }
+  };
+
+  const resize = () => {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+    canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
+    state.w = rect.width;
+    state.h = rect.height;
+    state.dpr = dpr;
+  };
+
+  const tick = () => {
+    const { w, h, dpr } = state;
+    if (!w || !h) {
+      state.raf = requestAnimationFrame(tick);
+      return;
+    }
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    if (scrollY !== state.lastScrollY) {
+      lightningRoot.style.transform = `translate3d(0, ${-scrollY}px, 0)`;
+      state.lastScrollY = scrollY;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+
+    const paths = [];
+    for (let i = 0; i < state.bolts.length; i += 1) {
+      collectPaths(state.bolts[i], 1, paths);
+    }
+
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.globalCompositeOperation = 'lighter';
+    for (let i = 0; i < paths.length; i += 1) {
+      const p = paths[i];
+      ctx.beginPath();
+      drawPath(p.segments);
+      ctx.strokeStyle = `rgba(236, 213, 63, ${p.alpha * 0.14})`;
+      ctx.lineWidth = 10;
+      ctx.stroke();
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    for (let i = 0; i < paths.length; i += 1) {
+      const p = paths[i];
+      ctx.beginPath();
+      drawPath(p.segments);
+      ctx.strokeStyle = `rgba(236, 213, 63, ${p.alpha * 0.86})`;
+      ctx.lineWidth = p.width;
+      ctx.stroke();
+      ctx.beginPath();
+      drawPath(p.segments);
+      ctx.strokeStyle = `rgba(255, 245, 180, ${p.alpha * 0.68})`;
+      ctx.lineWidth = p.width * 0.36;
+      ctx.stroke();
+    }
+
+    for (let i = state.bolts.length - 1; i >= 0; i -= 1) {
+      state.bolts[i].alpha -= state.bolts[i].decay;
+      if (state.bolts[i].alpha <= 0) state.bolts.splice(i, 1);
+    }
+
+    state.raf = requestAnimationFrame(tick);
+  };
+
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+  state.raf = requestAnimationFrame(tick);
+
+  const nextStrikeDelayMs = () => {
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
+    return mobile ? randBetween(9000, 16000) : randBetween(7000, 13000);
+  };
+
+  const fireStrike = (count = 1, options = {}) => {
+    if (document.hidden) return;
+    for (let i = 0; i < count; i += 1) {
+      state.bolts.push(createStrike(state.w, state.h, options));
+    }
+    if (Math.random() < 0.2) {
+      window.setTimeout(() => {
+        if (document.hidden) return;
+        state.bolts.push(createStrike(state.w, state.h, options));
+      }, randBetween(90, 210));
+    }
+  };
+
+  const isTextInputTarget = (target) => {
+    if (!(target instanceof Element)) return false;
+    if (target.closest('[contenteditable="true"]')) return true;
+    const tag = target.tagName;
+    return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+  };
+
+  const handleLightningHotkey = (event) => {
+    if (event.defaultPrevented) return;
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (isTextInputTarget(event.target)) return;
+    if (String(event.key).toLowerCase() !== 'l') return;
+
+    const anchorX = window.matchMedia('(max-width: 767px)').matches ? 0.5 : 0.68;
+    fireStrike(1, { anchorX, anchorSpread: 0.12 });
+  };
+
+  window.addEventListener('keydown', handleLightningHotkey);
+
+  let strikeTimerId = 0;
+  const queueNextStrike = () => {
+    strikeTimerId = window.setTimeout(() => {
+      fireStrike();
+      queueNextStrike();
+    }, nextStrikeDelayMs());
+  };
+
+  // First load: one strike, with occasional follow-up.
+  window.setTimeout(() => {
+    const initialAnchorX = window.matchMedia('(max-width: 767px)').matches ? 0.5 : 0.68;
+    fireStrike(1, { anchorX: initialAnchorX, anchorSpread: 0.1 });
+    if (Math.random() < 0.45) {
+      window.setTimeout(() => fireStrike(1, { anchorX: initialAnchorX, anchorSpread: 0.14 }), randBetween(180, 320));
+    }
+    queueNextStrike();
+  }, 780);
+
+  window.addEventListener('pagehide', () => {
+    if (state.raf) cancelAnimationFrame(state.raf);
+    if (strikeTimerId) window.clearTimeout(strikeTimerId);
+    window.removeEventListener('keydown', handleLightningHotkey);
+  }, { once: true });
+})();
 </script>

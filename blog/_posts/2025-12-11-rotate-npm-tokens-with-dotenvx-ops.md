@@ -1,7 +1,7 @@
 ---
 layout: blog
 author: "Scott Motte – Mot"
-title: "Rotate NPM Tokens with Dotenvx VLT ⛨. Automatically."
+title: "Rotate NPM Tokens with Dotenvx Armor ⛨. Automatically."
 image: "/assets/img/blog/blog-11.png"
 excerpt: "NPM's new short-lived tokens strengthen security, but they make rotation painful."
 ---
@@ -12,26 +12,26 @@ excerpt: "NPM's new short-lived tokens strengthen security, but they make rotati
 
 This was a real problem for us. We publish <a href="https://www.npmjs.com/org/dotenvx">64 npm packages</a>, and rotating tokens across all of them by hand was not going to be sustainable. Every expiration meant touching dozens of pipelines and praying the next publish didn't fail.
 
-So we built a solution. Introducing <a href="https://dotenvx.com/docs/vlt/rotate">Dotenvx Rotate</a> - part of Dotenvx VLT ⛨.
+So we built a solution. Introducing <a href="https://dotenvx.com/docs/armor/rotate">Dotenvx Rotate</a> - part of Dotenvx Armor ⛨.
 
 ## How It Works
 
-Install [dotenvx-vlt](https://dotenvx.com/vlt).
+Install [dotenvx-armor](https://dotenvx.com/armor).
 
 ```sh
-$ curl -sfS https://dotenvx.com/vlt | sh
+$ curl -sfS https://dotenvx.com/armor | sh
 ```
 
 Run `rotate npm connect` to connect <a href="https://npmjs.com">npm</a>.
 
 ```sh
-$ dotenvx-vlt rotate npm connect
+$ dotenvx-armor rotate npm connect
 ```
 
 When prompted enter your npm username and password.
 
 ```sh
-$ dotenvx-vlt rotate npm connect
+$ dotenvx-armor rotate npm connect
 ✔ npm username: USERNAME
 ✔ npm password: PASSWORD
 ```
@@ -49,10 +49,10 @@ Complete any 2FA steps manually.
 On success, return to your CLI, and you will see a passcard created.
 
 ```sh
-$ dotenvx-vlt rotate npm connect
+$ dotenvx-armor rotate npm connect
 ✔ npm username: USERNAME
 ✔ npm password: PASSWORD
-✔ connected [https://vlt.dotenvx.com/go/pas_1234..]
+✔ connected [https://armor.dotenvx.com/go/pas_1234..]
 ```
 
 *Dotenvx Passcards* are special connectors allowing account access.
@@ -64,16 +64,16 @@ Next, use the passcard to rotate your npm token.
 Run `rotate` on the passcard.
 
 ```sh
-$ dotenvx-vlt rotate dotenvx://pas_1234..
+$ dotenvx-armor rotate dotenvx://pas_1234..
 ⠏ rotating..
 ```
 
 It takes 10-30 seconds. On success, it returns a Dotenvx Rotation Token (ROT).
 
 ```sh
-$ dotenvx-vlt rotate dotenvx://pas_1234..
-✔ rotated [https://vlt.dotenvx.com/go/pas_1234..]
-⮕ next run [dotenvx-vlt get dotenvx://rot_a2c4..]
+$ dotenvx-armor rotate dotenvx://pas_1234..
+✔ rotated [https://armor.dotenvx.com/go/pas_1234..]
+⮕ next run [dotenvx-armor get dotenvx://rot_a2c4..]
 ```
 
 *Dotenvx Rotation Tokens (ROTs)* are special tokens that can change value. You can think of them as proxy tokens.
@@ -85,7 +85,7 @@ Next, let's get the value for it.
 Run `get` on the rotation token.
 
 ```sh
-$ dotenvx-vlt get dotenvx://rot_a2c4..
+$ dotenvx-armor get dotenvx://rot_a2c4..
 npm_d2cJ..
 ```
 
@@ -96,15 +96,15 @@ It returns your npm token. Cool!
 Run `rotate` on the passcard again.
 
 ```sh
-$ dotenvx-vlt rotate dotenvx://pas_1234..
-✔ rotated [https://vlt.dotenvx.com/go/pas_1234..]
-⮕ next run [dotenvx-vlt get dotenvx://rot_a2c4..]
+$ dotenvx-armor rotate dotenvx://pas_1234..
+✔ rotated [https://armor.dotenvx.com/go/pas_1234..]
+⮕ next run [dotenvx-armor get dotenvx://rot_a2c4..]
 ```
 
 And `get` the ROT again.
 
 ```sh
-$ dotenvx-vlt get dotenvx://rot_a2c4..
+$ dotenvx-armor get dotenvx://rot_a2c4..
 npm_cbGY..
 ```
 
@@ -154,8 +154,8 @@ npm:
 
 Then we added a step to:
 
-- <a href="https://dotenvx.com/docs/vlt/install">Install dotenvx-vlt</a>
-- Run `dotenvx-vlt get` to echo its value to `NODE_AUTH_TOKEN`
+- <a href="https://dotenvx.com/docs/armor/install">Install dotenvx-armor</a>
+- Run `dotenvx-armor get` to echo its value to `NODE_AUTH_TOKEN`
 
 {% raw %}
 ```yaml
@@ -165,8 +165,8 @@ npm:
   steps:
     ...
     - run: |
-        curl -sfS https://dotenvx.sh/vlt | sh
-        echo "NODE_AUTH_TOKEN=$(dotenvx-vlt get dotenvx://rot_a2c4 --token '${{ secrets.DOTENVX_VLT_TOKEN }}')" >> $GITHUB_ENV
+        curl -sfS https://dotenvx.sh/armor | sh
+        echo "NODE_AUTH_TOKEN=$(dotenvx-armor get dotenvx://rot_a2c4 --token '${{ secrets.DOTENVX_ARMOR_TOKEN }}')" >> $GITHUB_ENV
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ env.NODE_AUTH_TOKEN }}
@@ -175,11 +175,11 @@ npm:
 
 #### Step 3
 
-Last, we set `DOTENVX_VLT_TOKEN` in <a href="https://github.com/username/project/settings/secrets/actions">GitHub Actions Secrets</a> (or GitLab CI, CircleCI, or wherever you run your automated npm publishing).
+Last, we set `DOTENVX_ARMOR_TOKEN` in <a href="https://github.com/username/project/settings/secrets/actions">GitHub Actions Secrets</a> (or GitLab CI, CircleCI, or wherever you run your automated npm publishing).
 
 <img src="https://github.com/user-attachments/assets/db12882b-8b35-40db-a62f-238df32ff3f6" />
 
-Tip: Find your `DOTENVX_VLT_TOKEN` on your <a href="https://vlt.dotenvx.com/settings">Dotenvx Settings Page</a>.
+Tip: Find your `DOTENVX_ARMOR_TOKEN` on your <a href="https://armor.dotenvx.com/settings">Dotenvx Settings Page</a>.
 
 <img src="https://github.com/user-attachments/assets/df4f6146-5cf9-44a7-9a22-b967d675f3d8" />
 
@@ -197,7 +197,7 @@ Publishing now works indefinitely with rotating NPM tokens, powered by a new rot
 - *Employee left who knew the old token?* Rotate it - all your operations still work.
 - *NPM token should be rotated every N days for compliance?* Put it on a schedule - all your operations still work. 
 
-This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/vlt">Dotenvx VLT ⛨</a>.
+This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/armor">Dotenvx Armor ⛨</a>.
 
 > P.S. If you're running this at enterprise scale with compliance requirements, scheduled rotation, or broader CI/CD concerns, please <a href="mailto:scott@dotenvx.com">get in touch</a>. We'd like to help.
 

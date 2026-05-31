@@ -40,10 +40,10 @@ layout: blank
 
           <div class="w-px bg-zinc-800" aria-hidden="true"></div>
 
-          <a href="/signup" aria-label="Start with Vlt" class="start-path group flex min-h-72 min-w-0 flex-col justify-center p-3 no-underline transition-colors duration-200 hover:no-underline sm:p-5">
+          <a href="/signup" aria-label="Start with Armor" class="start-path group flex min-h-72 min-w-0 flex-col justify-center p-3 no-underline transition-colors duration-200 hover:no-underline sm:p-5">
             <span class="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-zinc-500 sm:text-xs">
               <span class="text-[#ecd53f] text-[1.1rem]">⛨</span>
-              <span class="text-[#ecd53f]">Dotenvx + VLT</span>
+              <span class="text-[#ecd53f]">Dotenvx Armor</span>
             </span>
             <span class="mt-5 text-base font-semibold leading-tight tracking-tight !text-white sm:text-lg">Managed Security</span>
             <span class="mt-2 max-w-[12rem] text-xs font-normal leading-5 !text-zinc-400 sm:text-sm sm:leading-6">Hardened protection. Fully managed.</span>

@@ -1,15 +1,15 @@
 ---
 title: login
-redirect_to: https://vlt.dotenvx.com/login
+redirect_to: https://armor.dotenvx.com/login
 ---
 
 <div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
   <div class="flex flex-col gap-2">
     <span class="">You are being redirected to</span>
-    <a href="https://vlt.dotenvx.com/login"><u>vlt.dotenvx.com/login</u></a>
+    <a href="https://armor.dotenvx.com/login"><u>armor.dotenvx.com/login</u></a>
   </div>
 
-  <a class="btn-outline w-fit" href="https://vlt.dotenvx.com/login">Continue</a>
+  <a class="btn-outline w-fit" href="https://armor.dotenvx.com/login">Continue</a>
 
   <span class="text-xs">in <span id="counter">4</span> second(s)</span>
 </div>
@@ -21,7 +21,7 @@ redirect_to: https://vlt.dotenvx.com/login
     var count = div.textContent * 1 - 1
     div.textContent = count
     if (count <= 0) {
-      window.location.replace("https://vlt.dotenvx.com/login")
+      window.location.replace("https://armor.dotenvx.com/login")
       clearInterval(interval)
     }
   }, 1000)

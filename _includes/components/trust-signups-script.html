@@ -63,7 +63,7 @@
   }
 
   const start = () => {
-    fetch('https://vlt.dotenvx.com/public/stats', { method: 'GET' })
+    fetch('https://armor.dotenvx.com/public/stats', { method: 'GET' })
       .then((response) => {
         if (!response.ok) throw new Error(`stats request failed: ${response.status}`);
         return response.json();

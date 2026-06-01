@@ -22,7 +22,7 @@ layout: blank
     <section class="flex flex-1 items-center justify-center py-16 md:py-24">
       <div class="w-full max-w-lg">
         <h1 class="sr-only">Start with Dotenvx</h1>
-        <p class="mb-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-zinc-600">Local encryption for devs. Managed security for teams.</p>
+        <p class="mb-4 text-center text-xs font-semibold uppercase tracking-[0.14em] text-zinc-600">Local encryption for devs. Managed security for teams.</p>
 
         <div class="grid grid-cols-[1fr_auto_1fr] py-12">
           <a href="https://github.com/dotenvx/dotenvx#quickstart---" target="_blank" rel="noopener noreferrer" aria-label="Start with Open Source on GitHub" class="start-path group flex min-h-72 min-w-0 flex-col justify-center p-3 no-underline transition-colors duration-200 hover:no-underline sm:p-5">
@@ -38,7 +38,7 @@ layout: blank
             </span>
           </a>
 
-          <div class="w-px bg-zinc-800" aria-hidden="true"></div>
+          <div class="h-60 w-px self-center bg-zinc-800" aria-hidden="true"></div>
 
           <a href="/signup" aria-label="Start with Armor" class="start-path group flex min-h-72 min-w-0 flex-col justify-center p-3 no-underline transition-colors duration-200 hover:no-underline sm:p-5">
             <span class="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-zinc-500 sm:text-xs">

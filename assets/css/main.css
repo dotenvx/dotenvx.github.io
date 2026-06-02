@@ -605,7 +605,10 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   opacity: 0;
   pointer-events: none;
   transform: scale(0.985);
-  transition: opacity 220ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 240ms ease,
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s linear 240ms;
   visibility: hidden;
 }
 
@@ -622,7 +625,9 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 .armor-preview-pricing {
   background: transparent;
   transform: none;
-  transition: opacity 220ms ease;
+  transition:
+    opacity 240ms ease,
+    visibility 0s linear 240ms;
 }
 
 .armor-plan-bar {
@@ -666,18 +671,22 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 .armor-preview-trust {
   background: transparent;
   transform: none;
-  transition: opacity 220ms ease;
+  transition:
+    opacity 240ms ease,
+    visibility 0s linear 240ms;
 }
 
 .desktop-nav-armor-card[data-armor-preview-kind-current="product"] .armor-preview-product {
   opacity: 1 !important;
   transform: translateY(0.78rem) scale(1);
+  transition-delay: 0s;
   visibility: visible;
 }
 
 .desktop-nav-armor-card[data-armor-preview-kind-current="pricing"] .armor-preview-pricing,
 .desktop-nav-armor-card[data-armor-preview-kind-current="trust"] .armor-preview-trust {
   opacity: 1 !important;
+  transition-delay: 0s;
   visibility: visible;
 }
 

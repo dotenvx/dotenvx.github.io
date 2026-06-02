@@ -606,6 +606,7 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   pointer-events: none;
   transform: scale(0.985);
   transition: opacity 220ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
 }
 
 .armor-preview-product {
@@ -669,13 +670,15 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 }
 
 .desktop-nav-armor-card[data-armor-preview-kind-current="product"] .armor-preview-product {
-  opacity: 1;
+  opacity: 1 !important;
   transform: translateY(0.78rem) scale(1);
+  visibility: visible;
 }
 
 .desktop-nav-armor-card[data-armor-preview-kind-current="pricing"] .armor-preview-pricing,
 .desktop-nav-armor-card[data-armor-preview-kind-current="trust"] .armor-preview-trust {
-  opacity: 1;
+  opacity: 1 !important;
+  visibility: visible;
 }
 
 .desktop-nav-armor-card[data-armor-preview-kind-current="pricing"] .armor-preview-pricing {

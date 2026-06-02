@@ -1,6 +1,6 @@
 <div
   class="{{ include.class }} relative overflow-hidden"
-  data-ops-buckler
+  {% if include.mount %}{{ include.mount }}{% else %}data-ops-buckler{% endif %}
   style="height: {{ include.height | default: '320px' }};"
 >
   <canvas
@@ -23,7 +23,7 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-  const root = document.querySelector('[data-ops-buckler]:not([data-three-mounted])');
+  const root = document.querySelector('[{% if include.mount %}{{ include.mount }}{% else %}data-ops-buckler{% endif %}]:not([data-three-mounted])');
   if (!root) throw new Error('ops-buckler mount target not found');
 
   root.setAttribute('data-three-mounted', 'true');

@@ -22,11 +22,11 @@ layout: blank
     <section class="flex flex-1 items-center justify-center py-16 md:py-24">
       <div class="w-full max-w-lg">
         <h1 class="sr-only">Start with Dotenvx</h1>
-        <p class="mb-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-zinc-600">Local encryption for devs. Managed security for teams.</p>
+        <p class="mb-4 text-center text-xs font-semibold uppercase tracking-[0.14em] text-zinc-600">Local encryption for devs. Managed security for teams.</p>
 
         <div class="grid grid-cols-[1fr_auto_1fr] py-12">
           <a href="https://github.com/dotenvx/dotenvx#quickstart---" target="_blank" rel="noopener noreferrer" aria-label="Start with Open Source on GitHub" class="start-path group flex min-h-72 min-w-0 flex-col justify-center p-3 no-underline transition-colors duration-200 hover:no-underline sm:p-5">
-            <span class="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-zinc-400 sm:text-xs">
+            <span class="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-zinc-300 sm:text-xs">
               <span class="text-[1rem] text-zinc-300">◈</span>
               <span class="">Dotenvx</span>
             </span>
@@ -38,14 +38,14 @@ layout: blank
             </span>
           </a>
 
-          <div class="w-px bg-zinc-800" aria-hidden="true"></div>
+          <div class="h-60 w-px self-center bg-zinc-800" aria-hidden="true"></div>
 
           <a href="/signup" aria-label="Start with Armor" class="start-path group flex min-h-72 min-w-0 flex-col justify-center p-3 no-underline transition-colors duration-200 hover:no-underline sm:p-5">
-            <span class="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-zinc-500 sm:text-xs">
-              <span class="text-[#ecd53f] text-[1.1rem]">⛨</span>
-              <span class="text-[#ecd53f]">Dotenvx Armor</span>
+            <span class="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-zinc-300 sm:text-xs">
+              <span class="text-zinc-300 text-[1.1rem]">⛨</span>
+              <span>Dotenvx Armor</span>
             </span>
-            <span class="mt-5 text-base font-semibold leading-tight tracking-tight !text-white sm:text-lg">Managed Security</span>
+            <span class="mt-5 text-base font-semibold leading-tight tracking-tight text-[#ecd53f] sm:text-lg">Professional Security</span>
             <span class="mt-2 max-w-[12rem] text-xs font-normal leading-5 !text-zinc-400 sm:text-sm sm:leading-6">Hardened protection. Fully managed.</span>
             <span class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm font-extrabold tracking-tight !text-white shadow-[0_0_24px_rgba(236,213,63,0.12)] no-underline transition-all duration-200 hover:bg-zinc-100 hover:!text-zinc-950 hover:shadow-[0_0_28px_rgba(236,213,63,0.20)]">
               <span>Create Account</span>

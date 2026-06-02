@@ -12,9 +12,9 @@ image: "/assets/img/og-image-pricing.png"
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_120px_rgba(236,213,63,0.20)] ring-1 ring-[rgba(236,213,63,0.16)]">
     <div class="rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900 flex flex-col">
       <div class="p-5 md:p-6 lg:p-4 xl:p-5">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Solo</h2>
+        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Pro</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>$2.99</span><span class="text-zinc-300"> / mo</span>
+          <span>$36</span><span class="text-zinc-300"> / yr</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">50 Armored Keys</p>
@@ -177,7 +177,7 @@ image: "/assets/img/og-image-pricing.png"
         <thead>
           <tr class="border-b border-zinc-900 bg-zinc-900/30">
             <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Pro</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Business</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
@@ -231,7 +231,7 @@ image: "/assets/img/og-image-pricing.png"
         <thead>
           <tr class="border-b border-zinc-900 bg-zinc-900/30">
             <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Solo</th>
+            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Pro</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Business</th>
             <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>

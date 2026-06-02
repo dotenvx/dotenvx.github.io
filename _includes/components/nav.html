@@ -57,19 +57,19 @@
       <div id="desktop-nav-flyout" class="desktop-nav-flyout fixed left-1/2 top-14 z-[90] hidden w-[min(420px,calc(100vw-3rem))] pt-2 md:block" aria-hidden="true">
         <div class="desktop-nav-frame relative overflow-hidden rounded-2xl border border-zinc-800 bg-black/95 p-3 shadow-[0_18px_60px_rgba(0,0,0,0.48)] backdrop-blur-xl">
           <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.74fr_1.26fr] gap-3" data-desktop-nav-panel="dotenvx" data-nav-index="0">
-              <div class="flex flex-col justify-center py-1">
+              <div class="flex min-w-0 flex-col justify-center py-1">
+                <div class="rounded-xl px-3 py-2.5">
+                  <span class="block whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.08em] text-zinc-400">Free &amp; open source</span>
+                </div>
                 <a href="/" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Overview
+                  Home
                 </a>
-                <a href="/docs/quickstart" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Quickstart
+                <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  <span>GitHub</span>
+                  <span class="inline-flex min-w-5 items-center justify-center gap-1 rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">5.5k <span aria-hidden="true" class="text-[#ecd53f]">★</span></span>
                 </a>
                 <a href="/docs" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Documentation
-                </a>
-                <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#changelog" target="_blank" rel="noopener noreferrer" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  <span>Changelog</span>
-                  <span class="inline-flex min-w-5 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">v1.70.0</span>
                 </a>
               </div>
               <div class="grid min-h-40 grid-cols-[0.95fr_0.82fr] gap-3">
@@ -98,32 +98,35 @@
                 </div>
               </div>
           </div>
-          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.78fr_1.22fr] gap-3" data-desktop-nav-panel="armor" data-nav-index="1">
-              <div class="flex flex-col justify-center py-1">
-                <a href="/armor" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Overview
+          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.88fr_1.12fr] gap-3" data-desktop-nav-panel="armor" data-nav-index="1">
+              <div class="flex min-w-0 flex-col justify-center py-1">
+                <div class="rounded-xl px-3 py-2.5">
+                  <span class="block whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Professional Security</span>
+                </div>
+                <a href="/armor" data-armor-nav-link data-armor-preview-kind="product" data-armor-preview-title="Solution" data-armor-preview-text="For those entrusted with secrets" data-armor-preview-href="/armor" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Solution
                 </a>
-                <a href="/pricing" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                <a href="/pricing" data-armor-nav-link data-armor-preview-kind="pricing" data-armor-preview-title="Pricing" data-armor-preview-text="Protection worth paying for" data-armor-preview-href="/pricing" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Pricing
                 </a>
-                <a href="/docs/armor" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Documentation
-                </a>
-                <a href="/changelog" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  <span>Changelog</span>
-                  <span class="inline-flex min-w-5 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">{{ changelog_count }}</span>
+                <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" data-armor-nav-link data-armor-preview-kind="trust" data-armor-preview-title="Trust" data-armor-preview-text="Security worthy of the responsibility you carry" data-armor-preview-href="https://trust.dotenvx.com" data-armor-preview-target="_blank" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Trust
                 </a>
               </div>
-              <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="desktop-nav-card desktop-nav-trust-card group/card relative flex min-h-40 items-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-zinc-100 no-underline hover:no-underline transition-colors duration-200">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,163,184,0.12),transparent_58%),linear-gradient(135deg,rgba(255,255,255,0.055),transparent_48%)]"></div>
-                <div class="absolute bottom-3 right-3 flex items-center">
-                  <div class="absolute -bottom-1 left-2 right-1 h-5 rounded-full bg-black/45 blur-md"></div>
-                  <span class="relative z-20 flex h-12 w-12 items-center justify-center drop-shadow-[0_10px_20px_rgba(0,0,0,0.42)]">{% include logos/framework-soc2.html uid="nav-armor-trust-soc2" class="h-12 w-12" %}</span>
-                  <span class="relative z-0 -ml-4 flex h-12 w-12 items-center justify-center opacity-95 drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]">{% include logos/framework-gdpr.html class="h-12 w-12" %}</span>
+              <a href="/armor" class="desktop-nav-card desktop-nav-armor-card group/card relative flex min-h-40 items-end overflow-hidden rounded-2xl p-4 text-zinc-100 no-underline transition-colors duration-200 hover:no-underline" data-armor-preview-card data-armor-preview-kind-current="product">
+                <div class="armor-preview-base absolute inset-0"></div>
+                {% include components/three-ops-rect.html height="160px" zoom="1" mount="data-nav-armor-ops" class="armor-preview-visual armor-preview-product absolute inset-0" %}
+                <div class="armor-preview-visual armor-preview-pricing absolute inset-0">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-sm font-semibold tracking-tight text-zinc-200">From Pro to Enterprise</span>
+                  </div>
                 </div>
-                <div class="relative z-10">
-                  <span class="text-sm font-semibold text-zinc-200">Trust Center <span aria-hidden="true">⇗</span></span>
-                  <span class="mt-2 block text-[11px] font-medium leading-snug text-zinc-500">SOC 2. GDPR. Security controls.</span>
+                <div class="armor-preview-visual armor-preview-trust absolute inset-0">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="absolute -bottom-1 left-2 right-1 h-5 rounded-full bg-black/45 blur-md"></div>
+                    <span class="relative z-20 flex h-12 w-12 items-center justify-center drop-shadow-[0_10px_20px_rgba(0,0,0,0.42)]">{% include logos/framework-soc2.html uid="nav-armor-preview-soc2" class="h-12 w-12" %}</span>
+                    <span class="relative z-0 -ml-4 flex h-12 w-12 items-center justify-center opacity-95 drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]">{% include logos/framework-gdpr.html class="h-12 w-12" %}</span>
+                  </div>
                 </div>
               </a>
           </div>
@@ -257,6 +260,9 @@
             <button type="button" data-mobile-submenu-back class="flex w-full items-center justify-between py-5 text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
               <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-lg leading-none">&larr;</span><span>Armor <span aria-hidden="true">⛨</span></span></span>
             </button>
+            <div class="py-4">
+              <span class="block text-[9px] font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Professional Security</span>
+            </div>
             <a href="/armor" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
               <span>Overview</span>
             </a>
@@ -312,6 +318,8 @@
     const officeImage = document.querySelector('[data-office-image]');
     const desktopNavMenu = document.getElementById('desktop-nav-menu');
     const desktopFlyout = document.getElementById('desktop-nav-flyout');
+    const armorPreviewCard = desktopFlyout?.querySelector('[data-armor-preview-card]');
+    const armorPreviewLinks = desktopFlyout?.querySelectorAll('[data-armor-nav-link]') || [];
     const desktopItems = desktopNavMenu?.querySelectorAll('[data-desktop-nav-item]') || [];
     const desktopPanels = desktopFlyout?.querySelectorAll('[data-desktop-nav-panel]') || [];
     const desktopCards = desktopFlyout?.querySelectorAll('.desktop-nav-card') || [];
@@ -335,6 +343,190 @@
     let desktopActiveMenu = null;
     let desktopActiveIndex = null;
     let desktopCloseTimer = null;
+    
+
+    const createNavArmorLightning = (canvas) => {
+      const ctx = canvas?.getContext?.('2d', { alpha: true });
+      if (!canvas || !ctx || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
+      const state = { w: 0, h: 0, dpr: 1, bolts: [], raf: 0, active: false, lastStrikeAt: 0 };
+      const randBetween = (min, max) => min + Math.random() * (max - min);
+      const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+      const subdivide = (x1, y1, x2, y2, displacement, minDisp) => {
+        if (displacement < minDisp) return [{ x: x1, y: y1 }, { x: x2, y: y2 }];
+        const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * displacement;
+        const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * displacement;
+        const left = subdivide(x1, y1, midX, midY, displacement / 2, minDisp);
+        const right = subdivide(midX, midY, x2, y2, displacement / 2, minDisp);
+        return [...left.slice(0, -1), ...right];
+      };
+
+      const branchFrom = (startPoint, angle, length, depth) => {
+        const endX = startPoint.x + Math.cos(angle) * length;
+        const endY = startPoint.y + Math.sin(angle) * length;
+        const segments = subdivide(startPoint.x, startPoint.y, endX, endY, length * 0.45, 5);
+        const branches = [];
+        if (depth < 1 && Math.random() < 0.5) {
+          const branchIdx = Math.floor(Math.random() * (segments.length - 2)) + 1;
+          branches.push(branchFrom(segments[branchIdx], angle + (Math.random() - 0.5) * 1.6, length * 0.42, depth + 1));
+        }
+        return { segments, alpha: 0.72, decay: 0.07 + Math.random() * 0.03, width: Math.max(0.55, 1.2 - depth * 0.34), branches };
+      };
+
+      const createStrike = () => {
+        const { w, h } = state;
+        const anchorX = clamp(0.5 + (Math.random() - 0.5) * 0.35, 0.18, 0.82);
+        const startX = w * clamp(anchorX + (Math.random() - 0.5) * 0.18, 0.12, 0.88);
+        const startY = -h * randBetween(0.08, 0.22);
+        const endX = w * clamp(anchorX + (Math.random() - 0.5) * 0.42, 0.1, 0.9);
+        const endY = h * randBetween(0.62, 1.04);
+        const roughness = Math.hypot(endX - startX, endY - startY) * 0.36;
+        const segments = subdivide(startX, startY, endX, endY, roughness, 5);
+        const branches = [];
+        const angle = Math.atan2(endY - startY, endX - startX);
+        for (let i = 0; i < 2; i += 1) {
+          const idx = Math.floor(Math.random() * (segments.length - 2)) + 1;
+          branches.push(branchFrom(segments[idx], angle + (Math.random() - 0.5) * 2, Math.min(w, h) * randBetween(0.12, 0.24), 0));
+        }
+        return { segments, alpha: 0.82, decay: 0.07 + Math.random() * 0.025, width: 1.4 + Math.random() * 0.9, branches };
+      };
+
+      const collectPaths = (bolt, parentAlpha, paths) => {
+        const alpha = Math.min(parentAlpha, bolt.alpha);
+        if (alpha <= 0 || bolt.segments.length < 2) return;
+        paths.push({ segments: bolt.segments, alpha, width: bolt.width });
+        bolt.branches.forEach((branch) => collectPaths(branch, alpha * 0.58, paths));
+      };
+
+      const drawPath = (segments) => {
+        ctx.moveTo(segments[0].x, segments[0].y);
+        for (let i = 1; i < segments.length; i += 1) ctx.lineTo(segments[i].x, segments[i].y);
+      };
+
+      const resize = () => {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+        canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+        state.w = rect.width;
+        state.h = rect.height;
+        state.dpr = dpr;
+      };
+
+      const tick = (now) => {
+        const { w, h, dpr } = state;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        if (state.active && w && h && now - state.lastStrikeAt > randBetween(2100, 4200)) {
+          state.bolts.push(createStrike());
+          state.lastStrikeAt = now;
+        }
+        const paths = [];
+        state.bolts.forEach((bolt) => collectPaths(bolt, 1, paths));
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.globalCompositeOperation = 'lighter';
+        paths.forEach((path) => {
+          ctx.beginPath();
+          drawPath(path.segments);
+          ctx.strokeStyle = `rgba(236, 213, 63, ${path.alpha * 0.11})`;
+          ctx.lineWidth = 8;
+          ctx.stroke();
+        });
+        ctx.globalCompositeOperation = 'source-over';
+        paths.forEach((path) => {
+          ctx.beginPath();
+          drawPath(path.segments);
+          ctx.strokeStyle = `rgba(236, 213, 63, ${path.alpha * 0.55})`;
+          ctx.lineWidth = path.width;
+          ctx.stroke();
+          ctx.beginPath();
+          drawPath(path.segments);
+          ctx.strokeStyle = `rgba(255, 245, 180, ${path.alpha * 0.36})`;
+          ctx.lineWidth = path.width * 0.34;
+          ctx.stroke();
+        });
+        for (let i = state.bolts.length - 1; i >= 0; i -= 1) {
+          state.bolts[i].alpha -= state.bolts[i].decay;
+          if (state.bolts[i].alpha <= 0) state.bolts.splice(i, 1);
+        }
+        if (state.active || state.bolts.length) {
+          state.raf = window.requestAnimationFrame(tick);
+        } else {
+          state.raf = 0;
+        }
+      };
+
+      const start = () => {
+        resize();
+        state.active = true;
+        if (!state.bolts.length) state.bolts.push(createStrike());
+        if (!state.raf) state.raf = window.requestAnimationFrame(tick);
+      };
+      const stop = () => {
+        state.active = false;
+      };
+      window.addEventListener('resize', resize, { passive: true });
+      return { start, stop };
+    };
+
+    const getCurrentArmorPreviewLink = () => {
+      const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+      if (pathname === '/armor') {
+        return Array.from(armorPreviewLinks).find((link) => link.getAttribute('data-armor-preview-kind') === 'product') || null;
+      }
+      if (pathname === '/pricing') {
+        return Array.from(armorPreviewLinks).find((link) => link.getAttribute('data-armor-preview-kind') === 'pricing') || null;
+      }
+      return null;
+    };
+
+    const resetArmorPreview = () => {
+      if (!armorPreviewCard) return;
+      const currentLink = getCurrentArmorPreviewLink();
+      const kind = currentLink?.getAttribute('data-armor-preview-kind') || 'product';
+      armorPreviewCard.setAttribute('data-armor-preview-kind-current', kind);
+      armorPreviewCard.setAttribute('href', currentLink?.getAttribute('data-armor-preview-href') || '/armor');
+      const target = currentLink?.getAttribute('data-armor-preview-target');
+      if (target) {
+        armorPreviewCard.setAttribute('target', target);
+        armorPreviewCard.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        armorPreviewCard.removeAttribute('target');
+        armorPreviewCard.removeAttribute('rel');
+      }
+      armorPreviewLinks.forEach((previewLink) => {
+        previewLink.toggleAttribute('data-armor-preview-active', previewLink === currentLink);
+      });
+    };
+
+    const setArmorPreview = (link) => {
+      if (!link || !armorPreviewCard) {
+        resetArmorPreview();
+        return;
+      }
+      armorPreviewCard.setAttribute('data-armor-preview-kind-current', link.getAttribute('data-armor-preview-kind') || 'product');
+      armorPreviewCard.setAttribute('href', link.getAttribute('data-armor-preview-href') || link.getAttribute('href') || '/armor');
+      const target = link.getAttribute('data-armor-preview-target');
+      if (target) {
+        armorPreviewCard.setAttribute('target', target);
+        armorPreviewCard.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        armorPreviewCard.removeAttribute('target');
+        armorPreviewCard.removeAttribute('rel');
+      }
+      armorPreviewLinks.forEach((previewLink) => {
+        previewLink.toggleAttribute('data-armor-preview-active', previewLink === link);
+      });
+    };
+
+    armorPreviewLinks.forEach((link) => {
+      link.addEventListener('pointerenter', () => setArmorPreview(link));
+      link.addEventListener('focusin', () => setArmorPreview(link));
+    });
+    resetArmorPreview();
 
     const clearDesktopClose = () => {
       if (desktopCloseTimer) {
@@ -356,6 +548,12 @@
         ? Array.from(desktopPanels).find((panel) => panel.getAttribute('data-desktop-nav-panel') === desktopActiveMenu)
         : null;
       const isSamePanel = desktopActiveMenu === menuName;
+      if (menuName !== 'armor' && desktopActiveMenu === 'armor') {
+        resetArmorPreview();
+      } else if (menuName === 'armor' && desktopActiveMenu !== 'armor') {
+        resetArmorPreview();
+      }
+
       desktopActiveMenu = menuName;
       desktopActiveIndex = activeIndex;
 
@@ -406,6 +604,7 @@
       }
 
       desktopFlyout.classList.add('is-open');
+      desktopFlyout.classList.toggle('is-armor', menuName === 'armor');
       desktopFlyout.style.opacity = '1';
       desktopFlyout.style.pointerEvents = 'auto';
       desktopFlyout.style.transform = 'translateX(-50%) translateY(0)';
@@ -415,7 +614,9 @@
     const closeDesktopNav = () => {
       desktopActiveMenu = null;
       desktopActiveIndex = null;
+      resetArmorPreview();
       desktopFlyout?.classList.remove('is-open');
+      desktopFlyout?.classList.remove('is-armor');
       if (desktopFlyout) {
         desktopFlyout.style.opacity = '0';
         desktopFlyout.style.pointerEvents = 'none';

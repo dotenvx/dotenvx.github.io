@@ -87,6 +87,9 @@
     let keyMesh;
     let wireGroup;
     let animationFrame;
+    let isInViewport = true;
+    let isPageVisible = !document.hidden;
+    let visibilityObserver = null;
     let dragging = false;
     let dragPointerId = null;
     let lastPointerX = 0;
@@ -271,8 +274,22 @@
       positionCamera(center, farDistance, maxSize);
     };
 
+    const shouldAnimate = () => keyGroup && isInViewport && isPageVisible;
+
+    const stopAnimation = () => {
+      if (!animationFrame) return;
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+    };
+
+    const startAnimation = () => {
+      if (animationFrame || !shouldAnimate()) return;
+      animationFrame = window.requestAnimationFrame(animate);
+    };
+
     const animate = (time = performance.now()) => {
-      if (!keyGroup) return;
+      animationFrame = 0;
+      if (!shouldAnimate()) return;
 
       if (!dragging && time - mountedAt >= spinDelay) {
         keyGroup.rotation.y += angularVelocity.x;
@@ -283,7 +300,7 @@
       }
 
       renderer.render(scene, camera);
-      animationFrame = window.requestAnimationFrame(animate);
+      startAnimation();
     };
 
     const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -344,6 +361,35 @@
     tile.addEventListener('pointercancel', pointerEnd);
     window.addEventListener('resize', resize);
 
+    if ('IntersectionObserver' in window) {
+      visibilityObserver = new IntersectionObserver((entries) => {
+        isInViewport = entries.some((entry) => entry.isIntersecting);
+        if (isInViewport) {
+          startAnimation();
+        } else {
+          stopAnimation();
+        }
+      }, { rootMargin: '180px 0px' });
+      visibilityObserver.observe(tile);
+    }
+
+    const handlePageVisibility = () => {
+      isPageVisible = !document.hidden;
+      if (isPageVisible) {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    };
+    document.addEventListener('visibilitychange', handlePageVisibility);
+
+    window.addEventListener('pagehide', () => {
+      stopAnimation();
+      visibilityObserver?.disconnect();
+      document.removeEventListener('visibilitychange', handlePageVisibility);
+      window.removeEventListener('resize', resize);
+    }, { once: true });
+
     resize();
 
     fetch(`https://keysee.dotenvx.com/api/${encodeURIComponent(publicKey)}.json`)
@@ -365,7 +411,7 @@
         scene.add(keyGroup);
         frameKeyMesh();
         tile.dataset.keyseeActive = 'true';
-        animate();
+        startAnimation();
       })
       .catch((error) => {
         console.error(error);
@@ -373,5 +419,17 @@
       });
   };
 
-  document.querySelectorAll('[data-keysee-viewer-root]:not([data-keysee-mounted])').forEach(mountKeyseeTile);
+  const tiles = document.querySelectorAll('[data-keysee-viewer-root]:not([data-keysee-mounted])');
+  if ('IntersectionObserver' in window) {
+    const mountObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        mountKeyseeTile(entry.target);
+      });
+    }, { rootMargin: '240px 0px' });
+    tiles.forEach((tile) => mountObserver.observe(tile));
+  } else {
+    tiles.forEach(mountKeyseeTile);
+  }
 </script>

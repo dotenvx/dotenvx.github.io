@@ -14,18 +14,19 @@ image: "/assets/img/og-image-ops.png"
 </div>
 
 <div class="relative overflow-x-hidden">
-  <section class="ops-hero-atmo hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-0 mt-20">
+  <section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-28 sm:mb-32 md:mb-20 lg:mb-24 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400">Dotenvx Armor ⛨</div>
       <h1 class="font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">ARMORED KEYS ⛨</h1>
       <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Private keys. Off device. Under guard.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <p class="inline-flex items-center rounded-full border border-zinc-300 dark:border-zinc-700 px-4 py-5 md:py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">Coming soon</p>
+        <a class="btn-primary w-full max-w-md md:w-auto text-center" href="/signup">Create Account</a>
+        <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs/armor">Documentation</a>
       </div>
     </div>
-    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
-      {% include components/three-ops-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
+    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch -translate-y-2 md:-translate-y-4">
+      {% include components/three-ops-rect.html height="170px" mode="shield" class="h-[170px] md:!h-[560px]" %}
       {% comment %}{% include components/three-gauntlet-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
       {% comment %}{% include components/three-fortress-gated-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
       {% comment %}{% include components/three-fortress-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
@@ -34,7 +35,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
-<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mt-28 sm:mt-32 md:mt-10 lg:mt-12 mb-20 md:mb-24 lg:mb-24">
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mb-20 md:mb-24 lg:mb-24">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
@@ -68,11 +69,10 @@ image: "/assets/img/og-image-ops.png"
     <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[58%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.14)_0%,rgba(242,214,134,0.06)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[74%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[50%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.09)_0%,rgba(242,214,134,0.04)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    {% include components/steel-dust-canvas.html class="z-[1]" %}
     <div class="relative z-10 grid grid-cols-[repeat(3,minmax(0,7.5rem))] justify-center gap-8 sm:grid-cols-[repeat(3,minmax(0,9.5rem))] md:grid-cols-[repeat(3,minmax(0,13rem))] md:gap-14 lg:grid-cols-[repeat(3,minmax(0,15rem))] lg:gap-20">
-      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="relative min-h-[32rem] w-full overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[64vh] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="relative min-h-[28rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[56vh] md:scale-[0.78] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[22.4rem] w-full scale-[0.64] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[45vh] md:scale-[0.62] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="relative min-h-[25.6rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[51vh] md:scale-[0.80] md:rounded-t-[1.1rem]" %}
+      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="relative min-h-[22.4rem] w-full scale-[0.64] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[45vh] md:scale-[0.62] md:rounded-t-[1.1rem]" %}
     </div>
   </div>
 </section>
@@ -267,17 +267,24 @@ image: "/assets/img/og-image-ops.png"
     state.dpr = dpr;
   };
 
-  const tick = () => {
-    const { w, h, dpr } = state;
-    if (!w || !h) {
-      state.raf = requestAnimationFrame(tick);
-      return;
-    }
+  const updateScrollTransform = () => {
     const scrollY = window.scrollY || window.pageYOffset || 0;
     if (scrollY !== state.lastScrollY) {
       lightningRoot.style.transform = `translate3d(0, ${-scrollY}px, 0)`;
       state.lastScrollY = scrollY;
     }
+  };
+
+  const startLightningLoop = () => {
+    if (!state.raf) state.raf = requestAnimationFrame(tick);
+  };
+
+  const tick = () => {
+    state.raf = 0;
+    const { w, h, dpr } = state;
+    if (!w || !h || !state.bolts.length) return;
+
+    updateScrollTransform();
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, w, h);
 
@@ -293,7 +300,7 @@ image: "/assets/img/og-image-ops.png"
       const p = paths[i];
       ctx.beginPath();
       drawPath(p.segments);
-      ctx.strokeStyle = `rgba(236, 213, 63, ${p.alpha * 0.14})`;
+      ctx.strokeStyle = `rgba(255, 255, 255, ${p.alpha * 0.13})`;
       ctx.lineWidth = 10;
       ctx.stroke();
     }
@@ -302,12 +309,12 @@ image: "/assets/img/og-image-ops.png"
       const p = paths[i];
       ctx.beginPath();
       drawPath(p.segments);
-      ctx.strokeStyle = `rgba(236, 213, 63, ${p.alpha * 0.86})`;
+      ctx.strokeStyle = `rgba(235, 238, 245, ${p.alpha * 0.78})`;
       ctx.lineWidth = p.width;
       ctx.stroke();
       ctx.beginPath();
       drawPath(p.segments);
-      ctx.strokeStyle = `rgba(255, 245, 180, ${p.alpha * 0.68})`;
+      ctx.strokeStyle = `rgba(255, 255, 255, ${p.alpha * 0.82})`;
       ctx.lineWidth = p.width * 0.36;
       ctx.stroke();
     }
@@ -317,12 +324,13 @@ image: "/assets/img/og-image-ops.png"
       if (state.bolts[i].alpha <= 0) state.bolts.splice(i, 1);
     }
 
-    state.raf = requestAnimationFrame(tick);
+    if (state.bolts.length) startLightningLoop();
   };
 
   resize();
+  updateScrollTransform();
+  window.addEventListener('scroll', updateScrollTransform, { passive: true });
   window.addEventListener('resize', resize, { passive: true });
-  state.raf = requestAnimationFrame(tick);
 
   const nextStrikeDelayMs = () => {
     const mobile = window.matchMedia('(max-width: 767px)').matches;
@@ -334,10 +342,12 @@ image: "/assets/img/og-image-ops.png"
     for (let i = 0; i < count; i += 1) {
       state.bolts.push(createStrike(state.w, state.h, options));
     }
+    startLightningLoop();
     if (Math.random() < 0.2) {
       window.setTimeout(() => {
         if (document.hidden) return;
         state.bolts.push(createStrike(state.w, state.h, options));
+        startLightningLoop();
       }, randBetween(90, 210));
     }
   };
@@ -382,6 +392,8 @@ image: "/assets/img/og-image-ops.png"
   window.addEventListener('pagehide', () => {
     if (state.raf) cancelAnimationFrame(state.raf);
     if (strikeTimerId) window.clearTimeout(strikeTimerId);
+    window.removeEventListener('scroll', updateScrollTransform);
+    window.removeEventListener('resize', resize);
     window.removeEventListener('keydown', handleLightningHotkey);
   }, { once: true });
 })();

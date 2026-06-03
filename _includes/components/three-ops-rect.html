@@ -114,6 +114,7 @@
   const mobileMinFrustumSize = 0.95;
   const includeZoom = Number({{ include.zoom | default: 1 }});
   const zoomFactor = Number.isFinite(includeZoom) && includeZoom > 0 ? includeZoom : 1;
+  const shieldOnly = '{{ include.mode | default: "" }}' === 'shield';
   const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
 
   scene.background = null;
@@ -652,6 +653,19 @@
     cube.position.copy(cube.userData.home);
   }
 
+  if (shieldOnly) {
+    bucklerGroup.visible = true;
+    maceGroup.visible = false;
+    crossbowGroup.visible = false;
+    for (let i = 0; i < bucklerCubes.length; i += 1) {
+      const cube = bucklerCubes[i];
+      cube.visible = true;
+      cube.position.copy(cube.userData.home);
+      cube.scale.setScalar(1);
+      setCubeAlpha(cube, 1);
+    }
+  }
+
   // Build-in animation order (network-like growth from a seed).
   const quantize = (value, step) => Math.round(value / step);
   const buildOrderFromSeed = (cubes, seedMode) => {
@@ -689,7 +703,7 @@
   const maceBuildOrder = buildOrderFromSeed(maceCubes, 'maxZCenter');
   const crossbowBuildOrder = buildOrderFromSeed(crossbowCubes, 'maxZCenter');
   const bucklerBuildOrder = buildOrderFromSeed(bucklerCubes, 'maxZCenter');
-  const buildEnabled = true;
+  const buildEnabled = !shieldOnly;
   const animationSpeedMultiplier = 0.35; // 65% faster
   const maceBuildDelayMs = 26 * animationSpeedMultiplier;
   const crossbowBuildDelayMs = 20 * animationSpeedMultiplier;
@@ -737,7 +751,7 @@
     }
   };
 
-  let scenePhase = 'intro'; // intro -> ready -> unbuild_to_mace -> mace -> unbuild_to_crossbow -> crossbow -> unbuild_to_buckler -> ready
+  let scenePhase = shieldOnly ? 'ready' : 'intro'; // intro -> ready -> unbuild_to_mace -> mace -> unbuild_to_crossbow -> crossbow -> unbuild_to_buckler -> ready
   let phaseStartAt = buildStartAt;
   const bucklerUnbuildOrder = [...bucklerBuildOrder].reverse();
   const maceUnbuildOrder = [...maceBuildOrder].reverse();
@@ -793,6 +807,10 @@
   });
 
   canvas.addEventListener('pointerup', (event) => {
+    if (shieldOnly) {
+      pointerDownPoint = null;
+      return;
+    }
     if (!pointerDownPoint || !isStablePhase()) {
       pointerDownPoint = null;
       return;
@@ -996,8 +1014,29 @@
   const fortifyMix = 1;
   const bucklerSpinSpeedZ = 0.12; // radians / second
   const maceSpinSpeedZ = 0.12; // radians / second
+  let animationFrame = 0;
+  let isInViewport = true;
+  let isPageVisible = !document.hidden;
   let lastFrameTime = performance.now();
+
+  const shouldAnimate = () => isInViewport && isPageVisible;
+
+  const stopAnimation = () => {
+    if (!animationFrame) return;
+    cancelAnimationFrame(animationFrame);
+    animationFrame = 0;
+  };
+
+  const startAnimation = () => {
+    if (animationFrame || !shouldAnimate()) return;
+    lastFrameTime = performance.now();
+    animationFrame = requestAnimationFrame(animate);
+  };
+
   const animate = () => {
+    animationFrame = 0;
+    if (!shouldAnimate()) return;
+
     const now = performance.now();
     const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
     lastFrameTime = now;
@@ -1114,7 +1153,35 @@
     controls.update();
     renderer.render(scene, camera);
     if (canvas.style.opacity !== '1') canvas.style.opacity = '1';
-    requestAnimationFrame(animate);
+    startAnimation();
   };
-  animate();
+
+  if ('IntersectionObserver' in window) {
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      isInViewport = entries.some((entry) => entry.isIntersecting);
+      if (isInViewport) {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    }, { rootMargin: '180px 0px' });
+    visibilityObserver.observe(root);
+    window.addEventListener('pagehide', () => visibilityObserver.disconnect(), { once: true });
+  }
+
+  const handlePageVisibility = () => {
+    isPageVisible = !document.hidden;
+    if (isPageVisible) {
+      startAnimation();
+    } else {
+      stopAnimation();
+    }
+  };
+  document.addEventListener('visibilitychange', handlePageVisibility);
+  window.addEventListener('pagehide', () => {
+    stopAnimation();
+    document.removeEventListener('visibilitychange', handlePageVisibility);
+  }, { once: true });
+
+  startAnimation();
 </script>

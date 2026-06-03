@@ -29,6 +29,22 @@
     let height = 0;
     let raf = 0;
     let lastTime = performance.now();
+    let isInViewport = true;
+    let isPageVisible = !document.hidden;
+
+    const shouldAnimate = () => !prefersReducedMotion && isInViewport && isPageVisible;
+
+    const stop = () => {
+      if (!raf) return;
+      window.cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
+    const startLoop = () => {
+      if (raf || !shouldAnimate()) return;
+      lastTime = performance.now();
+      raf = window.requestAnimationFrame(draw);
+    };
 
     const resize = () => {
       const rect = root.getBoundingClientRect();
@@ -79,7 +95,8 @@
       }
       ctx.globalCompositeOperation = 'source-over';
 
-      if (!prefersReducedMotion) raf = window.requestAnimationFrame(draw);
+      raf = 0;
+      startLoop();
     };
 
     const start = () => {
@@ -88,10 +105,35 @@
       draw(performance.now());
     };
 
+    let visibilityObserver = null;
+    if ('IntersectionObserver' in window) {
+      visibilityObserver = new IntersectionObserver((entries) => {
+        isInViewport = entries.some((entry) => entry.isIntersecting);
+        if (isInViewport) {
+          startLoop();
+        } else {
+          stop();
+        }
+      }, { rootMargin: '180px 0px' });
+      visibilityObserver.observe(root);
+    }
+
+    const handlePageVisibility = () => {
+      isPageVisible = !document.hidden;
+      if (isPageVisible) {
+        startLoop();
+      } else {
+        stop();
+      }
+    };
+
     start();
+    document.addEventListener('visibilitychange', handlePageVisibility);
     window.addEventListener('resize', resize, { passive: true });
     window.addEventListener('pagehide', () => {
-      if (raf) window.cancelAnimationFrame(raf);
+      stop();
+      visibilityObserver?.disconnect();
+      document.removeEventListener('visibilitychange', handlePageVisibility);
       window.removeEventListener('resize', resize);
     }, { once: true });
   });

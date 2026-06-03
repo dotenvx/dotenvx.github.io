@@ -81,39 +81,49 @@ image: "/assets/img/og-image-ops.png"
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
   <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 
-  <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-lg bg-zinc-950/20 text-left" style="border: 1px solid rgba(86, 86, 94, 0.55);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(242,214,134,0.08)_22%,rgba(245,223,152,0.28)_50%,rgba(242,214,134,0.08)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.04)_38%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(242,214,134,0.06)_22%,rgba(245,223,152,0.18)_50%,rgba(242,214,134,0.06)_78%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+  <div class="relative mx-auto mt-12 max-w-[27rem] overflow-hidden rounded-lg bg-zinc-950 text-center" style="border: 1px solid rgba(113, 113, 122, 0.46);">
 
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-800/70 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-zinc-500 md:grid-cols-[8rem_1fr_9rem] md:px-7">
-      <span>Actor</span>
-      <span>Request</span>
-      <span class="text-right">Custody</span>
+    <div class="relative z-10 px-6 py-7 md:px-8 md:py-8">
+      <div class="mb-7 flex justify-center">
+        <div class="rounded-[0.28rem] border border-zinc-800/80 p-1">
+          {% include components/logo.html variant="black" class="h-9 w-9 rounded-[0.2rem]" %}
+        </div>
+      </div>
+      <div class="mx-auto -mt-1 mb-4 h-36 w-full max-w-[16rem] overflow-hidden">
+        {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.26" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" spin_speed="0.42" class="relative h-36 min-h-0 w-full overflow-hidden bg-transparent opacity-80" %}
+      </div>
+      <div class="mx-auto max-w-[17rem]">
+        <h3 class="text-lg font-semibold leading-snug tracking-tight text-zinc-400">Grant this decryption?</h3>
+      </div>
+
+      <div class="mt-8 text-left">
+        <div class="grid grid-cols-[1.75rem_1fr] items-start gap-4">
+          <div class="flex h-7 w-7 items-center justify-center font-mono text-base font-normal leading-none text-zinc-600" aria-hidden="true">❯</div>
+          <div class="min-w-0">
+            <div class="font-mono text-[0.62rem] font-normal uppercase tracking-[0.16em] text-zinc-700">Command</div>
+            <pre class="mt-1 overflow-x-auto whitespace-nowrap font-mono text-sm font-normal text-zinc-300">dotenvx run -- npm start</pre>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-[1.75rem_1fr] items-start gap-4">
+          <div class="flex h-7 w-7 items-center justify-center font-mono text-lg font-normal leading-none text-zinc-600" aria-hidden="true">⌖</div>
+          <div>
+            <div class="font-mono text-[0.62rem] font-normal uppercase tracking-[0.16em] text-zinc-700">Location</div>
+            <div class="mt-1 text-sm font-normal leading-6 text-zinc-500">Near San Francisco, California, United States</div>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-[1.75rem_1fr] items-start gap-4">
+          <div class="flex h-7 w-7 items-center justify-center font-mono text-lg font-normal leading-none text-zinc-600" aria-hidden="true">▭</div>
+          <div>
+            <div class="font-mono text-[0.62rem] font-normal uppercase tracking-[0.16em] text-zinc-700">Device</div>
+            <div class="mt-1 text-sm font-normal leading-6 text-zinc-500">MAC_OS_X</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-zinc-500">developer</span>
-      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt local workflow</span>
-      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
-    </div>
-
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-zinc-500">github-ci</span>
-      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt deploy</span>
-      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
-    </div>
-
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900/80 px-5 py-5 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-zinc-500">agent</span>
-      <span class="text-sm font-normal leading-6 text-zinc-500">decrypt scoped task</span>
-      <span class="text-right font-mono text-xs font-normal text-zinc-400">memory only</span>
-    </div>
-
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 px-5 py-4 md:grid-cols-[8rem_1fr_9rem] md:items-center md:px-7">
-      <span class="font-mono text-xs font-normal text-zinc-700">.env.keys</span>
-      <span class="text-sm font-normal leading-6 text-zinc-600">not written to disk</span>
-      <span class="text-right font-mono text-xs font-normal text-zinc-700">none</span>
+    <div class="relative z-10 grid grid-cols-2 gap-3 px-6 pb-6 md:px-8 md:pb-8">
+      <button type="button" class="flex min-h-16 items-center justify-center rounded-md border border-zinc-700/70 bg-transparent px-4 py-4 text-base font-semibold text-zinc-400 transition-colors duration-150 hover:border-zinc-600 hover:bg-black/10 hover:text-zinc-200">Yes, approve</button>
+      <button type="button" class="flex min-h-16 items-center justify-center rounded-md border border-zinc-700/70 bg-transparent px-4 py-4 text-base font-semibold text-zinc-400 transition-colors duration-150 hover:border-zinc-600 hover:bg-black/10 hover:text-zinc-200">No, deny</button>
     </div>
   </div>
 </section>

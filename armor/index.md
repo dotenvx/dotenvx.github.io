@@ -128,16 +128,16 @@ image: "/assets/img/og-image-ops.png"
   </div>
 </section>
 
-<section class="relative overflow-hidden w-full mt-0 mb-0 pt-2 pb-24 md:pb-32 lg:pb-36 text-center">
+<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/armor.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
+    <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
-  <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
-    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.15rem] md:text-[3.75rem] lg:text-[4.45rem] leading-[0.98] text-zinc-100">
+  <div class="relative z-10">
+    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03] text-zinc-100">
       Armored.<br />Under guard.
     </h3>
-    <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
-      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3 !pl-6 !pr-6 md:!pl-5 md:!pr-5" href="/signup">
+    <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
+      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">
         <span>Create Account</span>
         <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>

@@ -43,13 +43,13 @@ image: "/assets/img/og-image-ops.png"
 
     <div class="relative z-10 mx-auto max-w-5xl px-5">
       <div class="text-center">
-        <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed text-zinc-500">Armored keys, trusted by forward-looking teams.</p>
+        <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed text-zinc-500">In use by early teams building with sensitive infrastructure.</p>
         <div class="trust-logo-grid mt-8 md:mt-10 mx-auto flex flex-wrap items-center justify-center gap-x-7 gap-y-6 md:gap-x-9">
           <a href="https://wattdata.ai" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Watt Data">
             {% include logos/wattdata.html class="w-[5.1rem] lg:w-[6.2rem] h-auto mx-auto" %}
           </a>
-          <a href="https://kortix.ai" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Kortix">
-            {% include logos/kortix.html class="mt-1.5 w-[5.6rem] lg:w-[6.8rem] h-auto mx-auto" %}
+          <a href="https://kortix.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Kortix">
+            {% include logos/kortix.html class="mt-2.5 w-[5.1rem] lg:w-[6.15rem] h-auto mx-auto" %}
           </a>
         </div>
       </div>

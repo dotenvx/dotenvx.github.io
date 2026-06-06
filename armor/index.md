@@ -35,33 +35,47 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
-<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mb-20 md:mb-24 lg:mb-24">
+<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mb-24 sm:mb-32 md:mb-40 lg:mb-48">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-56 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
 
     <div class="relative z-10 mx-auto max-w-5xl px-5">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Armor up in one command.</h2>
-        <p class="mt-4 text-zinc-400 text-lg">One command to harden your private keys.</p>
-      </div>
-
-      <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
-        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-        <div class="mx-auto max-w-2xl overflow-x-auto px-5 md:px-7 font-mono text-sm md:text-base leading-[1.65]">
-          <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
-          <pre class="mt-2 whitespace-nowrap text-[rgba(236,213,63,0.9)]">⛨ armored (03C 969)</pre>
+      <div class="text-center">
+        <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed text-zinc-500">Armored keys, trusted by forward-looking teams.</p>
+        <div class="trust-logo-grid mt-8 md:mt-10 mx-auto flex flex-wrap items-center justify-center gap-x-7 gap-y-6 md:gap-x-9">
+          <a href="https://wattdata.ai" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Watt Data">
+            {% include logos/wattdata.html class="w-[5.1rem] lg:w-[6.2rem] h-auto mx-auto" %}
+          </a>
+          <a href="https://kortix.ai" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Kortix">
+            {% include logos/kortix.html class="mt-1.5 w-[5.6rem] lg:w-[6.8rem] h-auto mx-auto" %}
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-24 md:mb-32 lg:mb-40 text-center">
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem] text-center">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Armor up in one command.</h2>
+    <p class="mt-4 text-zinc-400 text-lg">One command to harden your private keys.</p>
+  </div>
+
+  <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="mx-auto max-w-2xl overflow-x-auto px-5 text-left md:px-7 font-mono text-sm md:text-base leading-[1.65]">
+      <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
+      <pre class="mt-2 whitespace-nowrap text-[rgba(236,213,63,0.9)]">⛨ armored (03C 969)</pre>
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72 text-center">
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Keys move off-device.</h2>
   <p class="mt-4 text-zinc-400 text-lg">No longer in .env.keys. Harder to leak. Harder to steal.</p>
   <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
@@ -77,7 +91,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mb-32 md:mb-44 lg:mb-56 text-center">
+<section class="w-full max-w-5xl mx-auto px-6 mb-44 md:mb-64 lg:mb-[18rem] text-center">
   <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
   <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 

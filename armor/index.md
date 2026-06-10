@@ -35,6 +35,7 @@ image: "/assets/img/og-image-ops.png"
   </div>
   </section>
 
+{% comment %}
 <section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mb-24 sm:mb-32 md:mb-40 lg:mb-48">
   <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
@@ -56,6 +57,7 @@ image: "/assets/img/og-image-ops.png"
     </div>
   </div>
 </section>
+{% endcomment %}
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem] text-center">
   <div class="text-center max-w-3xl mx-auto">

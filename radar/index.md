@@ -1,5 +1,5 @@
 ---
-title: "Radar"
+title: "Armor"
 redirect_to: "/armor"
 ---
 

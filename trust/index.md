@@ -314,7 +314,7 @@ image: "/assets/img/og-image-trust.png"
 	                    <p class="trust-framework-title m-0 text-sm font-semibold text-white">SOC 2 Type 2</p>
 		                    <span class="trust-framework-status mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-zinc-800 bg-black px-2.5 py-1 text-[0.68rem] font-semibold text-zinc-500">
                       <span class="text-green-500" aria-hidden="true">◐</span>
-                      <span>Readiness in Review</span>
+                      <span>Observation in Progress</span>
                     </span>
                   </div>
                 </div>

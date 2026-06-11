@@ -217,6 +217,56 @@ permalink: /changelog/
     width: 70%;
   }
 
+  .changelog-key-guard-visual {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: clamp(1rem, 4vw, 1.5rem);
+    width: 100%;
+  }
+
+  .changelog-key-guard-panel {
+    background: rgba(9, 9, 11, 0.82);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 21rem;
+    overflow: hidden;
+    position: relative;
+    width: min(100%, 21rem);
+  }
+
+  .changelog-key-guard-body {
+    padding: 0;
+    position: relative;
+  }
+
+  .changelog-key-guard-actions {
+    display: grid;
+    gap: clamp(0.75rem, 3vw, 1rem);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .changelog-key-guard-action {
+    align-items: center;
+    border: 1px solid rgba(113, 113, 122, 0.68);
+    border-radius: 6px;
+    display: flex;
+    font-size: clamp(0.82rem, 2.4vw, 0.96rem);
+    font-weight: 650;
+    justify-content: center;
+    min-height: clamp(3.05rem, 10vw, 4rem);
+    padding: 0.9rem 0.9rem;
+    white-space: nowrap;
+  }
+
+  .changelog-key-guard-approve,
+  .changelog-key-guard-deny {
+    background: rgba(9, 9, 11, 0.72);
+    color: #d4d4d8;
+  }
+
   .changelog-cloudflare-logo {
     height: auto;
     max-width: min(36%, 10rem);
@@ -286,6 +336,67 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-06-10-key-guard-development" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-10" data-search-text="key guard development approval context lifecycle approve deny expired command device location private key dotenvx armor june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 10, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-key-guard-visual">
+                  <div class="changelog-key-guard-panel">
+                    <div class="changelog-key-guard-body">
+                      <div class="changelog-key-guard-actions">
+                        <div class="changelog-key-guard-action changelog-key-guard-approve">Approve</div>
+                        <div class="changelog-key-guard-action changelog-key-guard-deny">Deny</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Key Guard Development</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Work has started on Key Guard, a new Armor feature for approving private-key access only when a workflow needs it. Early development includes approval requests, approve and deny decisions, expiration, and helpful request context like command, device, and location.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-06-01-soc2-observation" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-01" data-search-text="soc 2 type 2 observation process compliance trust center audit evidence controls security confidentiality availability june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 1, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-trust-logos">
+                  {% include logos/framework-soc2.html uid="changelog-soc2-observation" class="h-20 w-20 md:h-28 md:w-28" %}
+                </div>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">SOC 2 Observation Started</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">We started our SOC 2 Type 2 observation process. This begins the formal period where controls are operated, evidence is collected, and Dotenvx moves toward independent assurance for security, confidentiality, and availability.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Center</a>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-06-01-automation-tokens" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-01" data-search-text="automation token armor dotenvx run token ci agents keypair private key june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 1, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx run --token</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Automation Tokens for Armor</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx run</code> now accepts an optional <code class="text-zinc-300">--token</code> for Armor users, making it easier to run approved secret workflows from automation, CI, and agentic environments.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-05-31" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-31" data-search-text="ops is now armor dotenvx ops renamed dotenvx armor product copy docs cli references service constants account messaging urls may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 31, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
@@ -301,7 +412,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article id="2026-05-21" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-21" data-search-text="rate limiting rack attack protection attackers traffic reliability radar dotenvx ops may 2026">
+      <article id="2026-05-21" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-21" data-search-text="rate limiting rack attack protection attackers traffic reliability armor dotenvx ops may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 21, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -316,7 +427,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article id="2026-05-15" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-15" data-search-text="organization avatar team avatar settings upload png jpeg gif webp radar dotenvx ops may 2026">
+      <article id="2026-05-15" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-05-15" data-search-text="organization avatar team avatar settings upload png jpeg gif webp armor dotenvx ops may 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">May 15, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>

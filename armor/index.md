@@ -1,6 +1,6 @@
 ---
 title: "Dotenvx Armor ⛨"
-image: "/assets/img/og-image-ops.png"
+image: "/assets/img/og-image-armor.png"
 ---
 
 <style>

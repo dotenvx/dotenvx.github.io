@@ -1,6 +1,6 @@
-# Secure Dotenv
+# A Secure Dotenv
 
-Encrypt `.env` files. Inject secrets at runtime.
+Run anywhere. Multi-environment. Encrypted envs.
 
 From the creator of dotenv.
 
@@ -45,7 +45,7 @@ Install with npm:
 npm install @dotenvx/dotenvx --save
 ```
 
-## Your .env File, Encrypted
+## Your .env File -- Encrypted
 
 Commit encrypted secrets to git while keeping decryption keys separate.
 
@@ -125,7 +125,7 @@ That is what we are building with Dotenvx.
 
 - Scott Motte, creator of dotenv and dotenvx
 
-## Developers Are Keeping .env And Encrypting It
+## Developers Are Keeping .env -- And Encrypting It
 
 Developers are installing dotenvx 6.5 million times a week on npm to secure local development, CI, cloud infrastructure, and software agents.
 
@@ -133,9 +133,9 @@ Developers are installing dotenvx 6.5 million times a week on npm to secure loca
 - Kristian Freeman: "Dotenvx looks like an interesting upgrade to .env. Automatic encrypting of each value, almost identical usage in CLI and API." [Source](https://x.com/kristianfreeman/status/1808552701673808135?s=46)
 - Zaid: "creators of dotenv have been working on dotenvx which encrypts your env variables so llms can't read them." [Source](https://x.com/zaidmukaddam/status/1941193539486089311?s=46)
 
-## Keep .env. Encrypt Its Secrets.
+## Dotenv. Secured.
 
-- [Get Started](https://dotenvx.com/start)
+- [GitHub](https://github.com/dotenvx/dotenvx)
 - [Contact Us](https://dotenvx.com/contact)
 
 ## Links

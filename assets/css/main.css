@@ -273,7 +273,7 @@ html.dark .contact-muted-link:hover,
 }
 
 .hero-title-shaded {
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #f5f6f8 64%, #ecdcb3 85%, #d7af5a 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fffdf4 30%, #f4edcf 58%, #e4c97f 84%, #bd8f2d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

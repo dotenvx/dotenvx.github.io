@@ -5,36 +5,20 @@ title: ""
 <section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-28 sm:mb-32 md:mb-20 lg:mb-24 mt-20">
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.18fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
-      <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include components/dotenv.html %}</div>
+      <a href="/armor" class="hero-announcement group mx-auto md:mx-0 mb-1 md:mb-0 inline-flex w-fit items-center rounded-full px-3 py-1.5 text-xs md:text-sm font-semibold tracking-tight !text-zinc-300 no-underline transition-colors duration-200 hover:!text-zinc-100 hover:no-underline">
+        <span><span class="!text-zinc-400">New:</span> <span class="!text-zinc-200">Armored Keys</span></span>
+      </a>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5rem] xl:whitespace-nowrap text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Dotenv. Secured.</h1>
-      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Run anywhere. Multi-environment. Encrypted envs.</p>
+      <p class="mx-auto md:mx-0 flex flex-wrap items-center justify-center md:justify-start gap-x-1.5 gap-y-1 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">
+        <span>A secure dotenv-from the creator of</span>
+        <span class="inline-flex origin-center translate-y-[0.03em] scale-[0.94]">
+          {% include components/dotenv.html %}
+        </span>
+      </p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <button
-          type="button"
-          class="relative inline-flex w-full max-w-md md:w-auto items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 font-extrabold tracking-tight text-white dark:text-white no-underline transition-all duration-200 hover:bg-zinc-100 hover:text-zinc-950 dark:hover:text-zinc-950 hover:shadow-[0_0_24px_rgba(236,213,63,0.18)] active:translate-y-px whitespace-nowrap"
-          x-data="{
-            copyText: 'curl -sfS https://dotenvx.sh | sh',
-            copyNotification: false,
-            copyToClipboard() {
-              navigator.clipboard.writeText(this.copyText);
-              this.copyNotification = true;
-              let that = this;
-              setTimeout(function(){
-                that.copyNotification = false;
-              }, 3000);
-            }
-          }"
-          x-on:click="copyToClipboard();"
-          x-on:keydown.enter.prevent="copyToClipboard();"
-          x-on:keydown.space.prevent="copyToClipboard();"
-          aria-label="Copy curl install command"
-        >
-          <span class="min-w-0 overflow-x-auto whitespace-nowrap font-mono">curl -sfS https://dotenvx.sh | sh</span>
-          <div
-            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-zinc-100 text-xs font-extrabold tracking-tight text-zinc-950 transition-opacity duration-150"
-            x-bind:class="copyNotification ? 'opacity-100' : 'opacity-0'"
-          >copied</div>
-        </button>
+        <a href="/docs/secrets-with-cli" class="relative inline-flex w-full max-w-md md:w-auto items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 font-extrabold tracking-tight text-white dark:text-white no-underline transition-all duration-200 hover:bg-zinc-100 hover:text-zinc-950 dark:hover:text-zinc-950 hover:no-underline hover:shadow-[0_0_24px_rgba(236,213,63,0.18)] active:translate-y-px whitespace-nowrap">
+          <span class="inline-flex items-center gap-2">Quickstart <span aria-hidden="true" class="text-current opacity-80">›</span></span>
+        </a>
         <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
       </div>
     </div>
@@ -49,86 +33,59 @@ title: ""
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed">Open source, trusted across leading developer stacks.</p>
-
-  <div class="trust-logo-grid mt-10 md:mt-12 max-w-[58rem] md:max-w-[50rem] lg:max-w-[64rem] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-3 md:gap-x-4 lg:gap-x-8 gap-y-7 md:gap-y-8 items-center">
-  <a href="https://github.com/search?q=repo%3AGoogleCloudPlatform%2Fcloud-run-mcp%20dotenvx&type=code" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Google Cloud Run MCP repository">
-        {% include logos/google2.html class="w-[10rem] lg:w-[12rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Supabase documentation using dotenvx for branching">
-        {% include logos/supabase2.html class="w-[9.2rem] lg:w-[12.1rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=repo%3Adaytonaio%2Fdaytona%20dotenvx&type=code" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Daytona repository">
-        {% include logos/daytona.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=org%3A0xPolygon%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Polygon using dotenvx">
-        {% include logos/polygon.html class="w-[7rem] lg:w-[7rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=repo%3Anasa%2Fearthdata-search%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="NASA Earthdata Search using dotenvx">
-        {% include logos/nasa.html class="h-16 lg:h-[4.5rem] w-auto mx-auto" %}
-  </a>
-  <a href="https://www.npmjs.com/package/@webflow/webflow-cli?activeTab=dependencies" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Webflow CLI npm package">
-        {% include logos/webflow.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=org%3ATencentCloudBase%20dotenvx&type=code" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Tencent CloudBase organization">
-        {% include logos/tencent.html class="w-[10.2rem] lg:w-[12.3rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=repo%3Apaypal%2Fagent-toolkit%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="PayPal agent toolkit using dotenvx">
-    {% include logos/paypal.html class="h-10 lg:h-11 w-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=repo%3ACrowdStrike%2Ffoundry-playwright%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="CrowdStrike foundry-playwright using dotenvx">
-        {% include logos/crowdstrike.html class="w-[12rem] lg:w-[15rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="AWS documentation referencing dotenvx">
-        {% include logos/aws.html class="h-16 lg:h-15 w-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=repo%3Ashadcn-ui%2Fui%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="shadcn/ui repository">
-        {% include logos/shadcn.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
-  </a>
-  <a href="https://github.com/search?q=org%3Abrowser-use%20dotenvx&type=code" target="_blank" class="hidden md:flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Browser Use repository">
-        {% include logos/browser-use.html class="w-[8.9rem] lg:w-[12.1rem] h-auto mx-auto" %}
-  </a>
-  </div>
-  </div>
-</section>
-
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">One-line upgrade</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Install and use it in code just like dotenv.</p>
-  </div>
-  <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="mx-auto max-w-2xl overflow-x-auto px-4 md:px-6 font-mono text-sm md:text-base leading-[1.55]">
-      <div class="text-zinc-500">// index.js</div>
-      <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.9)]">require('@dotenvx/dotenvx').config()</span></pre>
-      <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
-      <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
-    </div>
-  </div>
-  <div
-    class="group relative mx-auto mt-10 w-fit max-w-full cursor-pointer overflow-hidden rounded-md font-mono text-xs leading-none text-zinc-500 transition-colors duration-150 hover:text-zinc-400"
-    x-data="{
-      copyText: 'npm install @dotenvx/dotenvx --save',
-      copyNotification: false,
-      copyToClipboard() {
-        navigator.clipboard.writeText(this.copyText);
-        this.copyNotification = true;
-        let that = this;
-        setTimeout(function(){
-          that.copyNotification = false;
-        }, 3000);
-      }
-    }"
-    x-on:click="copyToClipboard();"
-  >
-    <div class="flex max-w-full items-center gap-2">
-      <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2">npm install @dotenvx/dotenvx --save</code>
-      <div class="flex-0 pr-1.5 scale-[0.58] text-zinc-600 transition-colors duration-150 group-hover:text-zinc-400">
-        {% include components/copy.html class="text-zinc-600 group-hover:text-zinc-400" %}
+    <p class="relative mx-auto mb-12 md:mb-16 max-w-[78rem] px-4 text-center text-sm md:text-base leading-relaxed text-zinc-500 lg:whitespace-nowrap">Backed by a whitepaper security model · Trusted by leading developer stacks</p>
+    <div class="relative mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.38fr)] lg:items-center lg:gap-6">
+      <div class="trust-proof-grid grid content-center gap-5 md:grid-cols-3 md:gap-5 lg:min-h-[20rem] lg:grid-cols-1 lg:gap-6 lg:justify-items-end">
+        <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full lg:max-w-[18rem] rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
+          <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">GitHub</span>
+          <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">5,500</span>
+        </a>
+        <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full lg:max-w-[18rem] rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
+          <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">NPM</span>
+          <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">131,000,000</span>
+        </a>
+        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="block w-full lg:max-w-[18rem] rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
+          <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">Whitepaper</span>
+          <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">99.5% less exposure</span>
+        </a>
+      </div>
+      <div class="trust-logo-grid trust-logo-grid-icons grid grid-cols-3 items-center gap-x-3 gap-y-5 md:grid-cols-4 md:gap-x-5 md:gap-y-7">
+        <a href="https://github.com/search?q=repo%3AGoogleCloudPlatform%2Fcloud-run-mcp%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Google Cloud Run MCP repository">
+          {% include logos/google-icon.html class="h-11 w-11 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=repo%3Anasa%2Fearthdata-search%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="NASA Earthdata Search using dotenvx">
+          {% include logos/nasa.html class="w-20 h-auto mx-auto" %}
+        </a>
+        <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="AWS documentation referencing dotenvx">
+          {% include logos/aws.html class="h-14 w-14 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=org%3A0xPolygon+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Polygon repository">
+          {% include logos/polygon-icon.html class="h-12 w-12 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=repo%3Adaytonaio%2Fdaytona%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Daytona repository">
+          {% include logos/daytona-icon.html class="h-14 w-14 mx-auto" %}
+        </a>
+        <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Supabase documentation using dotenvx for branching">
+          {% include logos/supabase-icon.html class="h-12 w-12 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=org%3Awebflow%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Webflow repository">
+          {% include logos/webflow-icon.html class="w-16 h-auto mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=org%3ATencentCloudBase+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Tencent CloudBase organization">
+          {% include logos/tencent-icon.html class="h-14 w-14 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=repo%3Apaypal%2Fagent-toolkit%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="PayPal agent toolkit using dotenvx">
+          {% include logos/paypal.html class="h-12 w-12 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="CrowdStrike repository">
+          {% include logos/crowdstrike-icon.html class="h-20 w-20 mx-auto" %}
+        </a>
+        <a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Browser Use repository">
+          {% include logos/browser-use-icon.html class="h-12 w-12 mx-auto" %}
+        </a>
+        <a href="https://github.com/search?q=repo%3Ashadcn-ui%2Fui+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="shadcn/ui repository">
+          {% include logos/shadcn-icon.html class="h-11 w-11 mx-auto" %}
+        </a>
       </div>
     </div>
   </div>
@@ -252,6 +209,50 @@ title: ""
       </div>
     </article>
   </div>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">One-line upgrade</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Install and use it in code just like dotenv.</p>
+  </div>
+  <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <div class="mx-auto max-w-2xl overflow-x-auto px-4 md:px-6 font-mono text-sm md:text-base leading-[1.55]">
+      <div class="text-zinc-500">// index.js</div>
+      <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.9)]">require('@dotenvx/dotenvx').config()</span></pre>
+      <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
+      <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
+    </div>
+  </div>
+  <div
+    class="relative mx-auto mt-10 w-fit max-w-full text-xs leading-none"
+    x-data="{
+      copyText: 'npm install @dotenvx/dotenvx --save',
+      copyNotification: false,
+      copyToClipboard() {
+        navigator.clipboard.writeText(this.copyText);
+        this.copyNotification = true;
+        let that = this;
+        setTimeout(function(){
+          that.copyNotification = false;
+        }, 3000);
+      }
+    }"
+  >
+    <button
+      type="button"
+      class="inline-flex max-w-full items-center justify-center overflow-hidden rounded-xl px-5 py-3 font-extrabold tracking-tight no-underline transition-all duration-200 active:translate-y-px whitespace-nowrap"
+      x-bind:class="copyNotification ? 'border border-zinc-800 bg-zinc-100 text-zinc-950 shadow-[0_0_24px_rgba(236,213,63,0.12)]' : 'border border-transparent bg-transparent text-zinc-500 hover:text-zinc-100'"
+      x-on:click="copyToClipboard();"
+    >
+      <span x-show="!copyNotification" class="min-w-0 overflow-x-auto font-mono">npm install @dotenvx/dotenvx --save</span>
+      <span x-show="copyNotification" x-cloak>copied</span>
+    </button>
   </div>
 </section>
 

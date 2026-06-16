@@ -273,11 +273,70 @@ html.dark .contact-muted-link:hover,
 }
 
 .hero-title-shaded {
-  background: linear-gradient(180deg, #ffffff 0%, #fffdf4 30%, #f4edcf 58%, #e4c97f 84%, #bd8f2d 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fffefa 34%, #f4f0df 66%, #d8ca9c 88%, #a58544 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 24px rgba(11, 7, 2, 0.34);
+}
+
+.hero-announcement {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(24, 24, 27, 0.74), rgba(9, 9, 11, 0.72)),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.08), transparent 44%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 0 0 1px rgba(39, 39, 42, 0.72),
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+.hero-announcement > span {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-announcement::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(113, 113, 122, 0.42) 0%,
+      rgba(244, 244, 245, 0.5) 20%,
+      rgba(211, 178, 83, 0.28) 50%,
+      rgba(244, 244, 245, 0.36) 72%,
+      rgba(63, 63, 70, 0.42) 100%
+    );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.hero-announcement::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 18%, rgba(255, 255, 255, 0.08) 38%, transparent 58%);
+  opacity: 0.55;
+}
+
+.hero-announcement:hover {
+  background:
+    linear-gradient(180deg, rgba(31, 31, 35, 0.82), rgba(12, 12, 15, 0.78)),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.1), transparent 44%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.075),
+    0 0 0 1px rgba(63, 63, 70, 0.78),
+    0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
 .hero-title-steel {
@@ -906,6 +965,22 @@ width: 100%;
   filter: brightness(1) drop-shadow(0 0 12px rgba(236, 213, 63, 0.16));
   opacity: 1;
   transform: translateY(-1px) scale(1.012);
+}
+
+.trust-logo-grid-icons a {
+  color: rgb(244 244 245) !important;
+}
+
+.trust-proof-grid a {
+  color: rgb(212 212 216) !important;
+}
+
+.trust-proof-grid a:hover {
+  color: rgb(244 244 245) !important;
+}
+
+.trust-proof-grid a > span:first-child {
+  color: rgb(82 82 91) !important;
 }
 
 .whitepaper-artifact {

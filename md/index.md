@@ -1,12 +1,12 @@
 # A Secure Dotenv
 
-Run anywhere. Multi-environment. Encrypted envs.
+A secure dotenv-from the creator of dotenv.
 
 From the creator of dotenv.
 
 ## Actions
 
-- Install the CLI: `curl -sfS https://dotenvx.sh | sh`
+- [Quickstart](https://dotenvx.com/docs/secrets-with-cli)
 - [Documentation](https://dotenvx.com/docs)
 
 ## Open Source, Trusted Across Leading Developer Stacks

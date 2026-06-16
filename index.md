@@ -6,11 +6,12 @@ title: ""
   <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.18fr)] gap-x-0 items-center">
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include components/dotenv.html %}</div>
-      <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5rem] xl:whitespace-nowrap text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secure Dotenv</h1>
-      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Encrypt .env files. Inject secrets at runtime.</p>
+      <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5rem] xl:whitespace-nowrap text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">A secure dotenv.</h1>
+      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Run anywhere. Multi-environment. Encrypted envs.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <div
-          class="group relative h-12 w-full max-w-md md:w-auto cursor-pointer overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 font-mono text-sm font-semibold leading-none text-zinc-100 shadow-[0_0_22px_rgba(236,213,63,0.08)] transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white hover:shadow-[0_0_24px_rgba(236,213,63,0.16)] active:translate-y-px"
+        <button
+          type="button"
+          class="relative inline-flex w-full max-w-md md:w-auto items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 font-extrabold tracking-tight text-white dark:text-white no-underline transition-all duration-200 hover:bg-zinc-100 hover:text-zinc-950 dark:hover:text-zinc-950 hover:shadow-[0_0_24px_rgba(236,213,63,0.18)] active:translate-y-px whitespace-nowrap"
           x-data="{
             copyText: 'curl -sfS https://dotenvx.sh | sh',
             copyNotification: false,
@@ -26,21 +27,14 @@ title: ""
           x-on:click="copyToClipboard();"
           x-on:keydown.enter.prevent="copyToClipboard();"
           x-on:keydown.space.prevent="copyToClipboard();"
-          role="button"
-          tabindex="0"
           aria-label="Copy curl install command"
         >
-          <div class="flex h-full max-w-full items-center gap-2 px-4">
-            <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap">curl -sfS https://dotenvx.sh | sh</code>
-            <div class="flex h-4 w-4 flex-none items-center justify-center text-[#ecd53f] transition-colors duration-150 group-hover:text-[#f4df4f] [&_svg]:h-4 [&_svg]:w-4">
-              {% include components/copy.html class="text-[#ecd53f] group-hover:text-[#f4df4f]" %}
-            </div>
-          </div>
+          <span class="min-w-0 overflow-x-auto whitespace-nowrap font-mono">curl -sfS https://dotenvx.sh | sh</span>
           <div
             class="pointer-events-none absolute inset-0 flex items-center justify-center bg-zinc-100 text-xs font-extrabold tracking-tight text-zinc-950 transition-opacity duration-150"
             x-bind:class="copyNotification ? 'opacity-100' : 'opacity-0'"
           >copied</div>
-        </div>
+        </button>
         <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
       </div>
     </div>
@@ -142,7 +136,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file — encrypted.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file -- encrypted.</h2>
     <p class="mt-4 text-zinc-400 text-lg">Commit encrypted secrets to git while keeping decryption keys separate.</p>
   </div>
   <div class="mx-auto mt-10 md:mt-12 max-w-3xl relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-left: 1px solid rgba(86, 86, 94, 0.24);">
@@ -287,7 +281,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are keeping .env — and encrypting it.</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are keeping .env -- and encrypting it.</h2>
     <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 6.5 million times a week on npm to secure local development, CI, cloud infrastructure, and software agents.</p>
   </div>
 
@@ -612,11 +606,11 @@ title: ""
   </div>
   <div class="relative z-10">
     <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03]">
-      Keep .env.<br />Encrypt its secrets.
+      Dotenv. Secured.
     </h3>
     <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
-      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/start">
-        <span>Get Started</span>
+      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
+        <span>GitHub</span>
         <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
         </svg>

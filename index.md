@@ -7,9 +7,40 @@ title: ""
     <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
       <div class="mx-auto md:mx-0 mb-1 md:mb-0 flex items-center gap-2 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-zinc-500 dark:text-zinc-400"><span>From the creator of</span> {% include components/dotenv.html %}</div>
       <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5rem] xl:whitespace-nowrap text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Secure Dotenv</h1>
-      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Keep .env. Encrypt its secrets.</p>
+      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Encrypt .env files. Inject secrets at runtime.</p>
       <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <a class="btn-primary w-full max-w-md md:w-auto text-center" href="/start">Get Started</a>
+        <div
+          class="group relative h-12 w-full max-w-md md:w-auto cursor-pointer overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 font-mono text-sm font-semibold leading-none text-zinc-100 shadow-[0_0_22px_rgba(236,213,63,0.08)] transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white hover:shadow-[0_0_24px_rgba(236,213,63,0.16)] active:translate-y-px"
+          x-data="{
+            copyText: 'curl -sfS https://dotenvx.sh | sh',
+            copyNotification: false,
+            copyToClipboard() {
+              navigator.clipboard.writeText(this.copyText);
+              this.copyNotification = true;
+              let that = this;
+              setTimeout(function(){
+                that.copyNotification = false;
+              }, 3000);
+            }
+          }"
+          x-on:click="copyToClipboard();"
+          x-on:keydown.enter.prevent="copyToClipboard();"
+          x-on:keydown.space.prevent="copyToClipboard();"
+          role="button"
+          tabindex="0"
+          aria-label="Copy curl install command"
+        >
+          <div class="flex h-full max-w-full items-center gap-2 px-4">
+            <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap">curl -sfS https://dotenvx.sh | sh</code>
+            <div class="flex h-4 w-4 flex-none items-center justify-center text-[#ecd53f] transition-colors duration-150 group-hover:text-[#f4df4f] [&_svg]:h-4 [&_svg]:w-4">
+              {% include components/copy.html class="text-[#ecd53f] group-hover:text-[#f4df4f]" %}
+            </div>
+          </div>
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-zinc-100 text-xs font-extrabold tracking-tight text-zinc-950 transition-opacity duration-150"
+            x-bind:class="copyNotification ? 'opacity-100' : 'opacity-0'"
+          >copied</div>
+        </div>
         <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
       </div>
     </div>

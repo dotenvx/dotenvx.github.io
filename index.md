@@ -6,131 +6,188 @@ title: ""
 
 {% include components/homepage-trust.html %}
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-0 mb-16 md:mb-20 lg:mb-24">
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-16 md:mb-20 lg:mb-24">
   <div class="space-y-16 md:space-y-20 lg:space-y-24">
-    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12 lg:gap-16">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run Anywhere</h2>
+        <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run on Anything</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
-          <p>Inject envs anywhere with a single CLI.</p>
+          <p>Whether you're using Node, Python, Ruby, Docker, CI, or AI agents, dotenvx works the same way. No custom integrations required. It just works &ndash; anywhere.</p>
         </div>
-        <div class="mt-6 flex items-center gap-4 text-zinc-300 opacity-75">
-          {% include icons/nodejs.html class="h-6 w-6" %}
-          {% include icons/python.html class="h-6 w-6" %}
-          {% include icons/ruby.html class="h-6 w-6" %}
-          {% include icons/go.html class="h-6 w-6" %}
-          {% include icons/rust.html class="h-6 w-6" %}
-          {% include icons/php.html class="h-6 w-6" %}
-          {% include logos/openai.html class="h-6 w-6" %}
-          {% include logos/claude.html class="h-6 w-6" %}
+        <div class="mt-7 max-w-[34rem]">
+          <p class="homepage-testimonial-quote m-0 text-[0.95rem] md:text-base italic font-normal leading-relaxed">&ldquo;It has cross-platform and cross-language support so you can use it with Node.js, Python, Ruby, Go, Rust, and more.&rdquo;</p>
+          {% include components/homepage-testimonial-author.html href="https://rebeccamdeprey.com/blog/dotenvx-encrypted-env-files-for-javascript-apps" img="/assets/img/testimonials/rebecca-deprey.jpg" alt="Rebecca Deprey" name="Rebecca" title="Software Engineer" %}
         </div>
       </div>
 
       <div class="min-w-0 py-2 md:py-4">
         <div class="homepage-code-window">
-          <div class="homepage-code-toolbar" aria-hidden="true">
+          <div class="homepage-code-toolbar">
             <div class="homepage-code-dots">
               <span class="homepage-code-dot bg-[#ff6b5e]"></span>
               <span class="homepage-code-dot bg-[#f5bd4f]"></span>
               <span class="homepage-code-dot bg-[#61c554]"></span>
             </div>
+            {% include components/homepage-code-copy-button.html %}
           </div>
           <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"HELLO=Dotenvx"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">.env</span>
 <span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"console.log('Hello ' + process.env.HELLO)"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">index.js</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-muted">run --</span> <span class="homepage-code-file">node index.js</span></code></pre>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">run --</span> <span class="homepage-code-file">node index.js</span>
+<span class="homepage-code-output">⟐ injected env (1) from .env</span>
+<span class="homepage-code-result">Hello Dotenvx</span></code></pre>
         </div>
       </div>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12 lg:gap-16">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Multiple Environments</h2>
+        <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Multiple Environments</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
-          <p>Create a .env.production file and use -f to load it. It's straightforward, yet flexible.</p>
+          <p>Development, production, agents, or anywhere in between. Load the right .env file with a single flag.</p>
+        </div>
+        <div class="mt-7 max-w-[34rem]">
+          <p class="homepage-testimonial-quote m-0 text-[0.95rem] md:text-base italic font-normal leading-relaxed">&ldquo;You can deploy env files to prod now? Creators of dotenv have been working on dotenvx which encrypts your env variables.&rdquo;</p>
+          {% include components/homepage-testimonial-author.html href="https://x.com/zaidmukaddam/status/1941193539486089311?s=46" img="/assets/img/testimonials/zaid.jpg" name="Zaid" title="Founder, Scira.ai" %}
         </div>
       </div>
 
       <div class="min-w-0 py-2 md:py-4">
         <div class="homepage-code-window">
-          <div class="homepage-code-toolbar" aria-hidden="true">
+          <div class="homepage-code-toolbar">
             <div class="homepage-code-dots">
               <span class="homepage-code-dot bg-[#ff6b5e]"></span>
               <span class="homepage-code-dot bg-[#f5bd4f]"></span>
               <span class="homepage-code-dot bg-[#61c554]"></span>
             </div>
+            {% include components/homepage-code-copy-button.html %}
           </div>
-          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-muted">encrypt -f</span> <span class="homepage-code-file">.env.production</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-muted">run -f</span> <span class="homepage-code-file">.env.production</span> <span class="homepage-code-muted">--</span> <span class="homepage-code-file">npm start</span></code></pre>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"HELLO=Production"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">.env.prod</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"console.log('Hello ' + process.env.HELLO)"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">index.js</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">run -f</span> <span class="homepage-code-command">.env.prod</span> <span class="homepage-code-command">--</span> <span class="homepage-code-file">node index.js</span>
+<span class="homepage-code-output">⟐ injected env (1) from .env.prod</span>
+<span class="homepage-code-result">Hello Production</span></code></pre>
         </div>
       </div>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12 lg:gap-16">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encryption</h2>
+        <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypt in One Command</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
-          <p>Add encryption to your .env files with a single command. Use dotenvx encrypt.</p>
+          <p>Add encryption to your .env files with a single command. Generate a public/private keypair and securely share encrypted secrets without changing your workflow.</p>
+        </div>
+        <div class="mt-7 max-w-[34rem]">
+          <p class="homepage-testimonial-quote m-0 text-[0.95rem] md:text-base italic font-normal leading-relaxed">&ldquo;Dotenvx is the strongest option for sharing .env files. It&rsquo;s a tool that lets you commit .env files to Git while keeping them encrypted. Same convenience, almost zero leak risk.&rdquo;</p>
+          {% include components/homepage-testimonial-author.html href="https://x.com/commte/status/1996144456891060730?s=46" img="/assets/img/testimonials/commte.jpg" alt="コムテ" name="Comte" title="Founder, Izanami" %}
         </div>
       </div>
 
-      <div class="homepage-code-window homepage-encryption-preview mx-auto w-full max-w-2xl min-w-0">
-        <div class="homepage-code-toolbar" aria-hidden="true">
-          <div class="homepage-code-dots">
-            <span class="homepage-code-dot bg-[#ff6b5e]"></span>
-            <span class="homepage-code-dot bg-[#f5bd4f]"></span>
-            <span class="homepage-code-dot bg-[#61c554]"></span>
+      <div class="mx-auto w-full max-w-2xl min-w-0 space-y-4">
+        <div class="homepage-code-window">
+          <div class="homepage-code-toolbar">
+            <div class="homepage-code-dots">
+              <span class="homepage-code-dot bg-[#ff6b5e]"></span>
+              <span class="homepage-code-dot bg-[#f5bd4f]"></span>
+              <span class="homepage-code-dot bg-[#61c554]"></span>
+            </div>
+            {% include components/homepage-code-copy-button.html %}
           </div>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">encrypt -f</span> <span class="homepage-code-command">.env.prod</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">cat</span> <span class="homepage-code-command">.env.prod</span>
+<span class="homepage-code-cat-output"><span class="homepage-code-muted">#/-------------------[DOTENV_PUBLIC_KEY]--------------------/</span>
+<span class="homepage-code-muted">#/            public-key encryption for .env files          /</span>
+<span class="homepage-code-muted">#/       [how it works](https://dotenvx.com/encryption)     /</span>
+<span class="homepage-code-muted">#/----------------------------------------------------------/</span>
+<span class="homepage-code-command">DOTENV_PUBLIC_KEY_PROD</span><span class="homepage-code-muted">="</span><span class="homepage-code-string">03d4b0d392c92320fe751163293282bc434f38d7fe72a0429c3e449f312abd5121</span><span class="homepage-code-muted">"</span>
+
+<span class="homepage-code-muted"># .env.prod</span>
+<span class="homepage-code-command">HELLO</span><span class="homepage-code-muted">=</span><span class="homepage-code-string">encrypted:BH1SPwuO10wBx/V1in3L9Hgkcap75QKIiMXUXqniJDd9xA6WJwvWedyuvRk0M1HdZt9MlvFMUHrqmuwzE0dPDEcpvx4MIMhSJzzSyGbwdFniJ1pjqjEqjRkQfdroB6iOVZR8UmsyaJcz/18=</span></span>
+<span class="homepage-code-return" aria-hidden="true">↵</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">run -f</span> <span class="homepage-code-command">.env.prod</span> <span class="homepage-code-command">--</span> <span class="homepage-code-file">node index.js</span>
+<span class="homepage-code-output">⟐ injected env (2) from .env.prod</span>
+<span class="homepage-code-result">Hello Production</span></code></pre>
         </div>
-        {% include components/encrypted-env-file.html bare=true %}
       </div>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mb-28 md:mb-40 lg:mb-48">
-  <div class="relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black px-4 py-8 md:px-8 md:py-10" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[42%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <p class="relative mx-auto mb-7 max-w-[62rem] text-center text-sm md:text-base leading-relaxed text-zinc-500">Backed by open source usage and a documented security model</p>
-    <div class="trust-proof-grid relative grid gap-4 md:grid-cols-3 md:gap-5">
-      <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
-        <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">GitHub</span>
-        <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">5,500</span>
-      </a>
-      <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
-        <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">NPM</span>
-        <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">131,000,000</span>
-      </a>
-      <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="block w-full rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
-        <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">Whitepaper</span>
-        <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">99.5% less exposure</span>
-      </a>
-    </div>
-  </div>
-</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.homepage-code-copy-button').forEach(function (button) {
+      button.addEventListener('click', function () {
+        const code = button.closest('.homepage-code-window')?.querySelector('.homepage-code-body code')
+        if (!code) return
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-40 md:mb-56 lg:mb-72">
-  <div class="mx-auto max-w-3xl text-center">
-    <div class="mx-auto inline-flex items-center justify-center gap-2 text-zinc-100">
-      <img src="/assets/img/testimonials/warp.jpg" alt="Warp" class="h-8 w-8 rounded-md object-cover" />
-      <span class="text-lg font-semibold tracking-tight">warp</span>
+        const text = code.innerText
+          .split('\n')
+          .filter((line) => /^\$\s?/.test(line))
+          .map((line) => line.replace(/^\$\s?/, ''))
+          .join('\n')
+          .trim()
+
+        const markCopied = function () {
+          button.classList.add('is-copied')
+          window.clearTimeout(button._copyTimeout)
+          button._copyTimeout = window.setTimeout(function () {
+            button.classList.remove('is-copied')
+          }, 1100)
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(markCopied)
+          return
+        }
+
+        const textarea = document.createElement('textarea')
+        textarea.value = text
+        textarea.setAttribute('readonly', '')
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        document.body.removeChild(textarea)
+        markCopied()
+      })
+    })
+  })
+</script>
+
+<section class="w-full max-w-6xl mx-auto px-6 mt-36 md:mt-52 lg:mt-64">
+  <div class="mx-auto max-w-5xl text-center">
+    <div class="mx-auto flex items-center justify-center text-zinc-100">
+      {% include logos/warp.html class="h-7 w-auto" %}
     </div>
-    <blockquote class="mx-auto mt-9 max-w-3xl text-zinc-200 text-xl md:text-[1.55rem] leading-relaxed font-normal tracking-tight">
-      <p class="m-0">Dotenvx is really smart concept. Instead of plaintext .env&rsquo;s, secrets are encrypted files. Agents can't read them, and they're shippable to cloud runners with a single key.</p>
+    <blockquote class="mx-auto mt-12 max-w-[39rem] text-zinc-100 text-lg md:text-[1.45rem] leading-[1.06] font-semibold tracking-tight">
+      <p class="m-0">Dotenvx is a really smart concept. Instead of plaintext .envs, secrets are encrypted files. Agents can't read them, and they're shippable to cloud runners with a single key.</p>
     </blockquote>
-    <div class="mt-9 inline-flex items-center justify-center gap-3 text-left">
-      <img src="/assets/img/testimonials/ben-holmes.jpg" alt="Ben Holmes" class="h-10 w-10 rounded-full border border-zinc-700 object-cover" />
-      <div>
-        <p class="m-0 text-sm font-medium leading-tight text-zinc-100">Ben Holmes</p>
-        <p class="m-0 mt-1 text-sm leading-tight text-zinc-500">Warp Dev Rel Lead</p>
-      </div>
+    <div class="mt-9 flex justify-center">
+      {% include components/homepage-testimonial-author.html href="https://x.com/BHolmesDev" img="/assets/img/testimonials/ben-holmes.jpg" name="Ben Holmes" title="Warp Dev Rel Lead" %}
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
+<section class="w-full max-w-6xl mx-auto px-6 mt-36 md:mt-52 lg:mt-72 mb-52 md:mb-72 lg:mb-96 py-24 md:py-32 lg:py-40">
+  <div class="min-h-[14rem] md:min-h-[18rem] lg:min-h-[22rem] flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+    <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+      <span class="homepage-proof-strip-label">GitHub</span>
+      <span class="homepage-proof-strip-value">5,500 stars</span>
+    </a>
+    <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+      <span class="homepage-proof-strip-label">NPM</span>
+      <span class="homepage-proof-strip-value">135 Million downloads</span>
+    </a>
+    <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+      <span class="homepage-proof-strip-label">Whitepaper</span>
+      <span class="homepage-proof-strip-value">99.5% less exposure</span>
+    </a>
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Easy to switch</h2>
+    <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Easy to switch</h2>
     <p class="mt-4 text-zinc-400 text-lg">Install and use it in code just like dotenv.</p>
   </div>
   <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
@@ -145,37 +202,12 @@ title: ""
       <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
     </div>
   </div>
-  <div
-    class="relative mx-auto mt-10 w-fit max-w-full text-xs leading-none"
-    x-data="{
-      copyText: 'npm install @dotenvx/dotenvx --save',
-      copyNotification: false,
-      copyToClipboard() {
-        navigator.clipboard.writeText(this.copyText);
-        this.copyNotification = true;
-        let that = this;
-        setTimeout(function(){
-          that.copyNotification = false;
-        }, 3000);
-      }
-    }"
-  >
-    <button
-      type="button"
-      class="inline-flex max-w-full items-center justify-center overflow-hidden rounded-xl px-5 py-3 font-extrabold tracking-tight no-underline transition-all duration-200 active:translate-y-px whitespace-nowrap"
-      x-bind:class="copyNotification ? 'border border-zinc-800 bg-zinc-100 text-zinc-950 shadow-[0_0_24px_rgba(236,213,63,0.12)]' : 'border border-transparent bg-transparent text-zinc-500 hover:text-zinc-100'"
-      x-on:click="copyToClipboard();"
-    >
-      <span x-show="!copyNotification" class="min-w-0 overflow-x-auto font-mono">npm install @dotenvx/dotenvx --save</span>
-      <span x-show="copyNotification" x-cloak>copied</span>
-    </button>
-  </div>
 </section>
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-36 md:mb-56 lg:mb-72">
   <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start md:gap-12 lg:gap-16">
     <div class="max-w-xl">
-      <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built because .env files still matter.</h2>
+      <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built because .env files still matter.</h2>
       <p class="mt-5 max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">A message from the creator of dotenv and dotenvx.</p>
     </div>
     <div class="border-l border-zinc-800/80 pl-6 md:pl-8">
@@ -188,9 +220,8 @@ title: ""
         <p>As software becomes increasingly autonomous, secrets become increasingly valuable. API keys, credentials, tokens, and signing keys are now operational infrastructure. They deserve stronger protection.</p>
         <p>That is what we are building with Dotenvx.</p>
       </div>
-      <div class="mt-9 font-mono text-sm leading-6 text-zinc-500">
-        <p class="m-0">- Scott Motte</p>
-        <p class="m-0 mt-1">Creator of dotenv and dotenvx</p>
+      <div class="mt-5">
+        {% include components/homepage-testimonial-author.html href="https://github.com/motdotla" img="/assets/img/mot.jpg" alt="Scott Motte" name="Scott Motte" title="Creator of dotenv and dotenvx" %}
       </div>
     </div>
   </div>
@@ -208,6 +239,10 @@ title: ""
   </div>
 </section>
 -->
+
+<section class="homepage-trust-boundary w-full px-6" aria-hidden="true">
+  <div class="homepage-trust-boundary-frame relative mx-auto max-w-7xl"></div>
+</section>
 
 <section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">

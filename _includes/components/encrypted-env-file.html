@@ -14,29 +14,24 @@
       <div class="ee-shell">
         <div class="ee-editor-pane overflow-x-auto">
           <div class="ee-pane">
-            <pre class="ee-code" data-ee-state="encrypted"><span class="ee-banner-comment"># .env.production</span>
-<span class="ee-wrap-line"><span class="ee-key">DOTENV_PUBLIC_KEY_PRODUCTION</span><span class="ee-eq">="</span><span class="ee-val">03b0c2e0089e18d4e419178fdacf60dc529b37406d45fdd7bfb8098d4236803725</span><span class="ee-eq">"</span></span>
-
+            <pre class="ee-code" data-ee-state="encrypted"><span class="ee-banner-comment"># .env.prod</span>
+<span class="ee-wrap-line"><span class="ee-key">DOTENV_PUBLIC_KEY_PROD</span><span class="ee-eq">="</span><span class="ee-val">03b0c2e0089e18d4e419178fdacf60dc529b37406d45fdd7bfb8098d4236803725</span><span class="ee-eq">"</span></span>
 <span class="ee-banner-comment"># Hosting</span>
 <span class="ee-key">DATABASE_URL</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BCSNFMr9zzUjFs4dpyS82HbSOTvnoW0yghNWz96+BFcrYezTQqgE6X/5oYBp9iQDvdySQAAeqrCkXIAjxvDEfwULyOLd6Qdwj5ob3ayulr/ja/20kWAz+sqaqoRN9bQ87dCKWBq4HQ5aMNDtFMOFu95p8NTp3gLMquuAHZsYkU3eoBLyB/vXm//TxX2ohgNOiTUaCHegW0rwbYFk</span><span class="ee-eq">"</span>
 <span class="ee-key">VERCEL_TOKEN</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BKzpst7lK68aHgDZihiN9kzVa9hqhAnf+GP6mbva0cKO774+k2bCJWdTZTLbDC37uVhcz3k8ulplz0yNxoEf5Myqm9R63MxQ3Ro5KZHaufUfyOQPKcRKxDkyXGaENl9Q9bsdKOO0Ed1j</span><span class="ee-eq">"</span>
-
 <span class="ee-banner-comment"># AI</span>
 <span class="ee-key">OPENAI_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BL0J+oOTvsvAbKhcNThlvNXlqlHIrurJJ2UyE5uzbJ9peWOjChKYz1wB1nDzZp3UN+LiZtB5hETM6qsz6ZTFYP6TQVkzWf3vK4La1vShZvQyFI5xoi8ewwPoBOCMtJcLl3UR9Dku/pI=</span><span class="ee-eq">"</span>
 <span class="ee-key">ANTHROPIC_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">encrypted:BFfKWA87GMc6b7j3FnEVJN0sOcpKtMnTZ4FdLS7FEjzGNejjxmuaYypA1o20mxL9QMsb5Opt/VPFZyHQlQybY8kyOCc1c/MJFAaAb/gE9roF82/wOSnoF91gDB9MZLRF72oz/3unvFxkAMey</span><span class="ee-eq">"</span></pre>
-            <pre class="ee-code" data-ee-state="decrypted" hidden><span class="ee-banner-comment"># .env.production</span>
-<span class="ee-wrap-line"><span class="ee-key">DOTENV_PUBLIC_KEY_PRODUCTION</span><span class="ee-eq">="</span><span class="ee-val">03b0c2e0089e18d4e419178fdacf60dc529b37406d45fdd7bfb8098d4236803725</span><span class="ee-eq">"</span></span>
-
+            <pre class="ee-code" data-ee-state="decrypted" hidden><span class="ee-banner-comment"># .env.prod</span>
+<span class="ee-wrap-line"><span class="ee-key">DOTENV_PUBLIC_KEY_PROD</span><span class="ee-eq">="</span><span class="ee-val">03b0c2e0089e18d4e419178fdacf60dc529b37406d45fdd7bfb8098d4236803725</span><span class="ee-eq">"</span></span>
 <span class="ee-banner-comment"># ── Hosting ──────────────────────────────────────</span>
 <span class="ee-key">AWS_ACCESS_KEY_ID</span><span class="ee-eq">="</span><span class="ee-val">xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">AWS_SECRET_ACCESS_KEY</span><span class="ee-eq">="</span><span class="ee-val">xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">DATABASE_URL</span><span class="ee-eq">="</span><span class="ee-val">postgresql://postgres:pass@db.ref.supabase.co:5432/postgres</span><span class="ee-eq">"</span>
 <span class="ee-key">VERCEL_TOKEN</span><span class="ee-eq">="</span><span class="ee-val">vcp_xxxx</span><span class="ee-eq">"</span>
-
 <span class="ee-banner-comment"># ── AI ───────────────────────────────────────────</span>
 <span class="ee-key">OPENAI_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">sk-xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">ANTHROPIC_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">sk-ant-xxxx</span><span class="ee-eq">"</span>
-
 <span class="ee-banner-comment"># ── Infrastructure ───────────────────────────────</span>
 <span class="ee-key">RESEND_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">re_xxxx</span><span class="ee-eq">"</span>
 <span class="ee-key">STRIPE_API_KEY</span><span class="ee-eq">="</span><span class="ee-val">sk_test_xxxx</span><span class="ee-eq">"</span>
@@ -50,8 +45,8 @@
 
 <style>
   .encrypted-env-window {
-    --ee-key-line: rgba(189, 164, 78, 0.22);
-    --ee-key-line-soft: rgba(189, 164, 78, 0.1);
+    --ee-key-line: rgba(113, 113, 122, 0.36);
+    --ee-key-line-soft: rgba(113, 113, 122, 0.12);
     position: relative;
     width: 100%;
     max-width: 60rem;
@@ -61,7 +56,7 @@
     box-shadow:
       inset 0 0 0 1px rgba(189, 164, 78, 0.035),
       0 2rem 4.5rem rgba(0, 0, 0, 0.32);
-    color: #f4f4f5;
+    color: #d8d6cf;
   }
 
   .encrypted-env-window::before,
@@ -81,8 +76,8 @@
 
   .encrypted-env-window::after {
     background:
-      linear-gradient(180deg, var(--ee-key-line) 0%, rgba(189, 164, 78, 0.14) 38%, rgba(189, 164, 78, 0) 100%) left top / 1px 100% no-repeat,
-      linear-gradient(180deg, var(--ee-key-line) 0%, rgba(189, 164, 78, 0.14) 38%, rgba(189, 164, 78, 0) 100%) right top / 1px 100% no-repeat;
+      linear-gradient(180deg, var(--ee-key-line) 0%, rgba(113, 113, 122, 0.16) 38%, rgba(113, 113, 122, 0) 100%) left top / 1px 100% no-repeat,
+      linear-gradient(180deg, var(--ee-key-line) 0%, rgba(113, 113, 122, 0.16) 38%, rgba(113, 113, 122, 0) 100%) right top / 1px 100% no-repeat;
     inset: 1.95rem 0 0;
   }
 
@@ -117,23 +112,25 @@
   }
 
   .encrypted-env-window-dots span {
+    background: #8a7950;
+    border: 1px solid rgba(199, 173, 99, 0.16);
     display: block;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.46rem;
+    height: 0.46rem;
     border-radius: 999px;
-    background: #d2bd36;
+    opacity: 0.56;
   }
 
   .encrypted-env-window-dots span:nth-child(2) {
-    background: #847832;
+    background: #8a7950;
   }
 
   .encrypted-env-window-dots span:nth-child(3) {
-    background: #5f5729;
+    background: #8a7950;
   }
 
   .encrypted-env-window-title {
-    color: rgba(244, 244, 245, 0.22);
+    color: rgba(216, 214, 207, 0.24);
     font-size: 0.62rem;
     left: 50%;
     line-height: 1;
@@ -146,7 +143,7 @@
   .encrypted-env-file-body {
     font-size: 0.875rem;
     line-height: 1.48;
-    color: #f4f4f5;
+    color: #d8d6cf;
     background: transparent;
   }
 
@@ -221,17 +218,20 @@
   }
 
   .encrypted-env-file-body .ee-comment,
-  .encrypted-env-file-body .ee-eq,
+  .encrypted-env-file-body .ee-eq {
+    color: #8a857a;
+  }
+
   .encrypted-env-file-body .ee-val {
-    color: rgba(236, 213, 63, 0.86);
+    color: #c9c4b8;
   }
 
   .encrypted-env-file-body .ee-banner-comment {
-    color: rgba(244, 244, 245, 0.34);
+    color: #77736b;
   }
 
   .encrypted-env-file-body .ee-key {
-    color: #f4f4f5;
+    color: #c7ad63;
   }
 
   @media (min-width: 640px) {

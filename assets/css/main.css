@@ -1341,13 +1341,15 @@ width: 100%;
 .homepage-proof-strip:visited {
   align-items: center;
   color: #e4e4e7 !important;
-  display: flex;
-  gap: 0.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.45rem;
   max-width: 100%;
   padding: 0;
+  text-align: center;
   text-decoration: none !important;
   transition: color 180ms ease;
-  width: fit-content;
+  width: 100%;
 }
 
 .homepage-proof-strip:hover,
@@ -1359,7 +1361,7 @@ width: 100%;
 
 .homepage-proof-strip-label {
   color: #71717a !important;
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   line-height: 1;
@@ -1367,22 +1369,15 @@ width: 100%;
 }
 
 .homepage-proof-strip-label::after {
-  color: #3f3f46;
-  content: "·";
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  margin-left: 0.5rem;
-  transform: translateY(-0.02em);
+  content: none;
 }
 
 .homepage-proof-strip-value {
   color: #e4e4e7 !important;
-  font-size: 0.94rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.1;
+  font-size: clamp(1.15rem, 1rem + 0.65vw, 1.72rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
   white-space: nowrap;
 }
 

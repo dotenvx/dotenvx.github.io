@@ -1,0 +1,7 @@
+<a href="{{ include.href }}" target="_blank" rel="noopener noreferrer" class="homepage-testimonial-link mt-5 inline-flex items-center gap-3 text-left no-underline hover:no-underline">
+  <img src="{{ include.img }}" alt="{{ include.alt | default: include.name }}" class="homepage-testimonial-avatar h-10 w-10 rounded-full border border-zinc-800 object-cover" loading="lazy">
+  <span class="block">
+    <span class="homepage-testimonial-name block text-sm font-medium leading-tight">{{ include.name }}</span>
+    <span class="homepage-testimonial-title mt-1 block text-sm leading-tight">{{ include.title }}</span>
+  </span>
+</a>

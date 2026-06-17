@@ -168,20 +168,43 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-36 md:mt-52 lg:mt-72 mb-52 md:mb-72 lg:mb-96 py-24 md:py-32 lg:py-40">
-  <div class="min-h-[14rem] md:min-h-[18rem] lg:min-h-[22rem] flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-    <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-      <span class="homepage-proof-strip-label">GitHub</span>
-      <span class="homepage-proof-strip-value">5,500 stars</span>
-    </a>
-    <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-      <span class="homepage-proof-strip-label">NPM</span>
-      <span class="homepage-proof-strip-value">135 Million downloads</span>
-    </a>
-    <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-      <span class="homepage-proof-strip-label">Whitepaper</span>
-      <span class="homepage-proof-strip-value">99.5% less exposure</span>
-    </a>
+<section class="w-full max-w-6xl mx-auto px-6 mt-32 md:mt-44 lg:mt-56 mb-36 md:mb-56 lg:mb-72">
+  <div class="text-center">
+    <h2 class="mx-auto max-w-4xl font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
+      Built because<br />.env files still matter.
+    </h2>
+    <ul class="mt-10 flex list-none flex-wrap items-start justify-center gap-x-4 gap-y-6 p-0">
+      <li class="w-full max-w-[18rem] sm:w-[18rem]">
+        <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+          <span class="homepage-proof-strip-value">5,500 stars</span>
+          <span class="homepage-proof-strip-label">GitHub</span>
+        </a>
+      </li>
+      <li class="w-full max-w-[18rem] sm:w-[18rem]">
+        <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+          <span class="homepage-proof-strip-value">135 Million downloads</span>
+          <span class="homepage-proof-strip-label">NPM</span>
+        </a>
+      </li>
+      <li class="w-full max-w-[18rem] sm:w-[18rem]">
+        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+          <span class="homepage-proof-strip-value">99.5% less exposure</span>
+          <span class="homepage-proof-strip-label">Whitepaper</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="mx-auto mt-16 max-w-[42rem] border-l border-zinc-800/80 pl-6 md:pl-8">
+    <div class="space-y-5 text-sm leading-6 text-zinc-400 md:text-[0.92rem] md:leading-7">
+      <p>I love .env files.</p>
+      <p>They work everywhere: local development, CI, containers, servers, cloud platforms, and even agents. Easy to get started with, yet flexible enough for advanced use cases, few tools are as practical as they are elegant.</p>
+      <p>But they've had a downside. Plaintext. Plaintext secrets have spread quietly across laptops, repositories, CI systems, chat messages, screenshots, and production machines. But the answer is not replacing them, a universal standard with more complicated platforms and solutions. The answer is securing them.</p>
+      <p>That's why I built dotenvx and why I continue to build it. I care about .env files and want to see them secured. I want to see them have a bright future and you along with them.</p>
+      <p>Thank you and please enjoy dotenvx.</p>
+    </div>
+    <div class="mt-5">
+      {% include components/homepage-testimonial-author.html href="https://github.com/motdotla" img="/assets/img/mot.jpg" alt="Scott Motte" name="Scott Motte" title="Creator of dotenv and dotenvx" %}
+    </div>
   </div>
 </section>
 
@@ -200,29 +223,6 @@ title: ""
       <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.9)]">require('@dotenvx/dotenvx').config()</span></pre>
       <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
       <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
-    </div>
-  </div>
-</section>
-
-<section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-36 md:mb-56 lg:mb-72">
-  <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start md:gap-12 lg:gap-16">
-    <div class="max-w-xl">
-      <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built because .env files still matter.</h2>
-      <p class="mt-5 max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">A message from the creator of dotenv and dotenvx.</p>
-    </div>
-    <div class="border-l border-zinc-800/80 pl-6 md:pl-8">
-      <div class="space-y-5 text-sm leading-6 text-zinc-400 md:text-[0.92rem] md:leading-7">
-        <p>Developers use environment files because they are simple.</p>
-        <p>They work everywhere: local development, CI, containers, servers, and cloud platforms. They became part of modern software because they reduced friction instead of adding to it.</p>
-        <p>But simplicity came with a cost. Plaintext secrets spread quietly across laptops, repositories, CI systems, chat messages, screenshots, and production machines.</p>
-        <p>We believe the answer is not abandoning environment files. The answer is securing them properly.</p>
-        <p>Dotenvx extends the environment file workflow with encryption, auditing, rotation, and runtime injection while preserving the simplicity that made .env successful in the first place.</p>
-        <p>As software becomes increasingly autonomous, secrets become increasingly valuable. API keys, credentials, tokens, and signing keys are now operational infrastructure. They deserve stronger protection.</p>
-        <p>That is what we are building with Dotenvx.</p>
-      </div>
-      <div class="mt-5">
-        {% include components/homepage-testimonial-author.html href="https://github.com/motdotla" img="/assets/img/mot.jpg" alt="Scott Motte" name="Scott Motte" title="Creator of dotenv and dotenvx" %}
-      </div>
     </div>
   </div>
 </section>
@@ -250,7 +250,7 @@ title: ""
   </div>
   <div class="relative z-10">
     <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03] text-zinc-100">
-      Armored keys.<br />Under guard.
+      Go further.<br />Add armor.
     </h3>
     <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
       <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">

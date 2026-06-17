@@ -14,9 +14,6 @@
     {% include layouts/analytics.html %}
   </head>
   <body class="relative flex flex-col min-h-screen rounded-t-lg">
-    {% if page.url == '/' or page.url == '/index.html' %}
-      {% include components/hero-godrays-canvas.html %}
-    {% endif %}
     {% unless page.hide_nav %}
     <header id="nav-sticky" class="sticky top-0 z-[80] rounded-t-lg overflow-visible border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
       {% include components/nav.html %}

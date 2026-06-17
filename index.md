@@ -2,219 +2,188 @@
 title: ""
 ---
 
-<section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-28 sm:mb-32 md:mb-20 lg:mb-24 mt-20">
-  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.18fr)] gap-x-0 items-center">
-    <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
-      <a href="/armor" class="hero-announcement group mx-auto md:mx-0 mb-1 md:mb-0 inline-flex w-fit items-center rounded-full px-3 py-1.5 text-xs md:text-sm font-semibold tracking-tight !text-zinc-300 no-underline transition-colors duration-200 hover:!text-zinc-100 hover:no-underline">
-        <span><span class="!text-zinc-400">New:</span> <span class="!text-zinc-200">Armored Keys</span></span>
-      </a>
-      <h1 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5rem] xl:whitespace-nowrap text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2">Dotenv. Secured.</h1>
-      <p class="mx-auto md:mx-0 flex flex-wrap items-center justify-center md:justify-start gap-x-1.5 gap-y-1 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">
-        <span>A secure dotenv-from the creator of</span>
-        <span class="inline-flex origin-center translate-y-[0.03em] scale-[0.94]">
-          {% include components/dotenv.html %}
-        </span>
-      </p>
-      <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <a href="/docs/secrets-with-cli" class="relative inline-flex w-full max-w-md md:w-auto items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 font-extrabold tracking-tight text-white dark:text-white no-underline transition-all duration-200 hover:bg-zinc-100 hover:text-zinc-950 dark:hover:text-zinc-950 hover:no-underline hover:shadow-[0_0_24px_rgba(236,213,63,0.18)] active:translate-y-px whitespace-nowrap">
-          <span class="inline-flex items-center gap-2">Quickstart <span aria-hidden="true" class="text-current opacity-80">›</span></span>
-        </a>
-        <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs">Documentation</a>
-      </div>
-    </div>
-    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch">
-      {% include components/three-key-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}
-    </div>
-  </div>
-</section>
+{% include components/homepage-hero.html %}
 
-<section class="w-full max-w-7xl mx-auto px-1 md:px-6 mb-24 sm:mb-32 md:mb-40 lg:mb-48">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+<section class="w-full max-w-6xl mx-auto px-1 md:px-6 mb-16 sm:mb-20 md:mb-24 lg:mb-32">
+  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-10 md:pt-14 pb-10 md:pb-14" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="relative mx-auto mb-12 md:mb-16 max-w-[78rem] px-4 text-center text-sm md:text-base leading-relaxed text-zinc-500 lg:whitespace-nowrap">Backed by a whitepaper security model · Trusted by leading developer stacks</p>
-    <div class="relative mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.38fr)] lg:items-center lg:gap-6">
-      <div class="trust-proof-grid grid content-center gap-5 md:grid-cols-3 md:gap-5 lg:min-h-[20rem] lg:grid-cols-1 lg:gap-6 lg:justify-items-end">
-        <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full lg:max-w-[18rem] rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
-          <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">GitHub</span>
-          <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">5,500</span>
-        </a>
-        <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full lg:max-w-[18rem] rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
-          <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">NPM</span>
-          <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">131,000,000</span>
-        </a>
-        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="block w-full lg:max-w-[18rem] rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
-          <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">Whitepaper</span>
-          <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">99.5% less exposure</span>
-        </a>
-      </div>
-      <div class="trust-logo-grid trust-logo-grid-icons grid grid-cols-3 items-center gap-x-3 gap-y-5 md:grid-cols-4 md:gap-x-5 md:gap-y-7">
-        <a href="https://github.com/search?q=repo%3AGoogleCloudPlatform%2Fcloud-run-mcp%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Google Cloud Run MCP repository">
-          {% include logos/google-icon.html class="h-11 w-11 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=repo%3Anasa%2Fearthdata-search%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="NASA Earthdata Search using dotenvx">
-          {% include logos/nasa.html class="w-20 h-auto mx-auto" %}
-        </a>
-        <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="AWS documentation referencing dotenvx">
-          {% include logos/aws.html class="h-14 w-14 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=org%3A0xPolygon+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Polygon repository">
-          {% include logos/polygon-icon.html class="h-12 w-12 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=repo%3Adaytonaio%2Fdaytona%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Daytona repository">
-          {% include logos/daytona-icon.html class="h-14 w-14 mx-auto" %}
-        </a>
-        <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Supabase documentation using dotenvx for branching">
-          {% include logos/supabase-icon.html class="h-12 w-12 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=org%3Awebflow%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Webflow repository">
-          {% include logos/webflow-icon.html class="w-16 h-auto mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=org%3ATencentCloudBase+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Tencent CloudBase organization">
-          {% include logos/tencent-icon.html class="h-14 w-14 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=repo%3Apaypal%2Fagent-toolkit%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="PayPal agent toolkit using dotenvx">
-          {% include logos/paypal.html class="h-12 w-12 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="CrowdStrike repository">
-          {% include logos/crowdstrike-icon.html class="h-20 w-20 mx-auto" %}
-        </a>
-        <a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Browser Use repository">
-          {% include logos/browser-use-icon.html class="h-12 w-12 mx-auto" %}
-        </a>
-        <a href="https://github.com/search?q=repo%3Ashadcn-ui%2Fui+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-20 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="shadcn/ui repository">
-          {% include logos/shadcn-icon.html class="h-11 w-11 mx-auto" %}
-        </a>
+    <p class="relative mx-auto mb-8 md:mb-10 max-w-[78rem] px-4 text-center text-sm md:text-base leading-relaxed text-zinc-500 lg:whitespace-nowrap">Trusted by leading developer stacks</p>
+    <div class="relative mx-auto px-4 md:px-8">
+      <div class="trust-logo-grid trust-logo-grid-icons mx-auto flex w-fit max-w-full flex-col items-center gap-4 md:gap-5">
+        <div class="flex max-w-full items-center justify-center gap-3 md:gap-5">
+          <a href="https://github.com/search?q=repo%3AGoogleCloudPlatform%2Fcloud-run-mcp%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Google Cloud Run MCP repository">
+            {% include logos/google2.html class="w-24 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=repo%3Anasa%2Fearthdata-search%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="NASA Earthdata Search using dotenvx">
+            {% include logos/nasa.html class="w-24 h-auto mx-auto" %}
+          </a>
+          <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="AWS documentation referencing dotenvx">
+            {% include logos/aws.html class="w-20 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=org%3A0xPolygon+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Polygon repository">
+            {% include logos/polygon.html class="w-24 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=repo%3Adaytonaio%2Fdaytona%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Daytona repository">
+            {% include logos/daytona.html class="w-24 h-auto mx-auto" %}
+          </a>
+        </div>
+        <div class="flex max-w-full items-center justify-center gap-3 md:gap-5">
+          <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Supabase documentation using dotenvx for branching">
+            {% include logos/supabase2.html class="w-24 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=org%3Awebflow%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Webflow repository">
+            {% include logos/webflow.html class="w-24 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=org%3ATencentCloudBase+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Tencent CloudBase organization">
+            {% include logos/tencent.html class="w-24 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=repo%3Apaypal%2Fagent-toolkit%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="PayPal agent toolkit using dotenvx">
+            {% include logos/paypal.html class="w-24 h-auto mx-auto" %}
+          </a>
+        </div>
+        <div class="flex max-w-full items-center justify-center gap-3 md:gap-5">
+          <a href="https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="CrowdStrike repository">
+            {% include logos/crowdstrike.html class="w-28 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Browser Use repository">
+            {% include logos/browser-use.html class="w-28 h-auto mx-auto" %}
+          </a>
+          <a href="https://github.com/search?q=repo%3Ashadcn-ui%2Fui+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="shadcn/ui repository">
+            {% include logos/shadcn.html class="w-24 h-auto mx-auto" %}
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Your .env file -- encrypted.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Commit encrypted secrets to git while keeping decryption keys separate.</p>
-  </div>
-  <div class="mx-auto mt-10 md:mt-12 max-w-3xl relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] pt-5 md:pt-6" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-left: 1px solid rgba(86, 86, 94, 0.24);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.16)_0%,rgba(242,214,134,0.07)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    {% include components/encrypted-env-file.html bare=true %}
+<section class="w-full max-w-6xl mx-auto px-6 mt-0 mb-16 md:mb-20 lg:mb-24">
+  <div class="space-y-16 md:space-y-20 lg:space-y-24">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12 lg:gap-16">
+      <div class="max-w-xl">
+        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run Anywhere</h2>
+        <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
+          <p>Inject envs anywhere with a single CLI.</p>
+        </div>
+        <div class="mt-6 flex items-center gap-4 text-zinc-300 opacity-75">
+          {% include icons/nodejs.html class="h-6 w-6" %}
+          {% include icons/python.html class="h-6 w-6" %}
+          {% include icons/ruby.html class="h-6 w-6" %}
+          {% include icons/go.html class="h-6 w-6" %}
+          {% include icons/rust.html class="h-6 w-6" %}
+          {% include icons/php.html class="h-6 w-6" %}
+          {% include logos/openai.html class="h-6 w-6" %}
+          {% include logos/claude.html class="h-6 w-6" %}
+        </div>
+      </div>
+
+      <div class="min-w-0 py-2 md:py-4">
+        <div class="homepage-code-window">
+          <div class="homepage-code-toolbar" aria-hidden="true">
+            <div class="homepage-code-dots">
+              <span class="homepage-code-dot bg-[#ff6b5e]"></span>
+              <span class="homepage-code-dot bg-[#f5bd4f]"></span>
+              <span class="homepage-code-dot bg-[#61c554]"></span>
+            </div>
+          </div>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"HELLO=Dotenvx"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">.env</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"console.log('Hello ' + process.env.HELLO)"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">index.js</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-muted">run --</span> <span class="homepage-code-file">node index.js</span></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12 lg:gap-16">
+      <div class="max-w-xl">
+        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Multiple Environments</h2>
+        <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
+          <p>Create a .env.production file and use -f to load it. It's straightforward, yet flexible.</p>
+        </div>
+      </div>
+
+      <div class="min-w-0 py-2 md:py-4">
+        <div class="homepage-code-window">
+          <div class="homepage-code-toolbar" aria-hidden="true">
+            <div class="homepage-code-dots">
+              <span class="homepage-code-dot bg-[#ff6b5e]"></span>
+              <span class="homepage-code-dot bg-[#f5bd4f]"></span>
+              <span class="homepage-code-dot bg-[#61c554]"></span>
+            </div>
+          </div>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-muted">encrypt -f</span> <span class="homepage-code-file">.env.production</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-muted">run -f</span> <span class="homepage-code-file">.env.production</span> <span class="homepage-code-muted">--</span> <span class="homepage-code-file">npm start</span></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12 lg:gap-16">
+      <div class="max-w-xl">
+        <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encryption</h2>
+        <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
+          <p>Add encryption to your .env files with a single command. Use dotenvx encrypt.</p>
+        </div>
+      </div>
+
+      <div class="homepage-code-window homepage-encryption-preview mx-auto w-full max-w-2xl min-w-0">
+        <div class="homepage-code-toolbar" aria-hidden="true">
+          <div class="homepage-code-dots">
+            <span class="homepage-code-dot bg-[#ff6b5e]"></span>
+            <span class="homepage-code-dot bg-[#f5bd4f]"></span>
+            <span class="homepage-code-dot bg-[#61c554]"></span>
+          </div>
+        </div>
+        {% include components/encrypted-env-file.html bare=true %}
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="w-full max-w-4xl mx-auto px-6 mb-44 md:mb-64 lg:mb-[18rem]">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built on public-key cryptography.</h2>
-    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Dotenvx encrypts each secret individually using ECIES public-key encryption. Encrypted .env files can be safely committed to Git while decryption keys remain separate.</p>
-  </div>
-  <div class="mt-14 md:mt-16 relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] px-6 py-9 md:px-10 md:py-10" style="border-top: 1px solid rgba(86, 86, 94, 0.32);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.16)_0%,rgba(242,214,134,0.07)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="relative mx-auto max-w-2xl">
-      <div class="flex flex-wrap items-center justify-center gap-1.5">
-        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">ECIES</span>
-        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">AES-256</span>
-        <span class="rounded-full border border-zinc-800/70 bg-zinc-950/30 px-2.5 py-1 text-[11px] font-medium text-zinc-600">secp256k1</span>
-      </div>
-      <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read the Dotenvx whitepaper" class="whitepaper-artifact group relative mx-auto mt-10 block w-56 sm:w-64 md:w-72 no-underline hover:no-underline">
-        <img src="/assets/img/whitepaper-thumb.png" alt="Dotenvx whitepaper preview" class="whitepaper-artifact-img block w-full border border-zinc-800/80 bg-zinc-950/40 shadow-[0_1.8rem_4rem_rgba(0,0,0,0.34)] transition duration-200 group-hover:border-zinc-700/90 group-hover:shadow-[0_2rem_4.5rem_rgba(0,0,0,0.42)]" />
-        <span class="whitepaper-artifact-overlay absolute inset-0 flex items-center justify-center bg-black/18 opacity-100 transition duration-200 group-hover:bg-black/28">
-          <span class="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-black/70 px-4 py-2 text-sm md:text-base font-medium text-zinc-100 shadow-[0_1rem_2.5rem_rgba(0,0,0,0.36)] backdrop-blur-sm">
-            Read Whitepaper
-            <span aria-hidden="true">→</span>
-          </span>
-        </span>
+<section class="w-full max-w-6xl mx-auto px-6 mb-28 md:mb-40 lg:mb-48">
+  <div class="relative overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black px-4 py-8 md:px-8 md:py-10" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[42%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
+    <p class="relative mx-auto mb-7 max-w-[62rem] text-center text-sm md:text-base leading-relaxed text-zinc-500">Backed by open source usage and a documented security model</p>
+    <div class="trust-proof-grid relative grid gap-4 md:grid-cols-3 md:gap-5">
+      <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
+        <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">GitHub</span>
+        <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">5,500</span>
+      </a>
+      <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="block w-full rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
+        <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">NPM</span>
+        <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">131,000,000</span>
+      </a>
+      <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="block w-full rounded-lg border border-zinc-900/80 bg-zinc-950/30 px-5 py-4 text-zinc-300 no-underline hover:no-underline hover:border-zinc-800 hover:bg-zinc-950/55 hover:text-zinc-100 transition-colors duration-200">
+        <span class="block text-[0.68rem] md:text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-600">Whitepaper</span>
+        <span class="mt-2 block text-xl md:text-2xl font-extrabold tracking-tight">99.5% less exposure</span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-10 md:mt-16 lg:mt-20 mb-36 md:mb-56 lg:mb-72">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Built for secure .env workflows.</h2>
-    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Keep the simplicity of .env files while adding encryption, auditing, and rotation.</p>
-  </div>
-
-  <div class="mt-8 md:mt-10 relative">
-  <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-    <article class="feature-cli-card feature-cli-card-primary flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-2 lg:col-span-2 min-h-[14rem] md:min-h-[15.5rem]">
-      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">01</div>
-      <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] font-semibold leading-[1.08]">Encrypt</h3>
-        <div class="feature-cli-cmd"><code>dotenvx encrypt</code></div>
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-40 md:mb-56 lg:mb-72">
+  <div class="mx-auto max-w-3xl text-center">
+    <div class="mx-auto inline-flex items-center justify-center gap-2 text-zinc-100">
+      <img src="/assets/img/testimonials/warp.jpg" alt="Warp" class="h-8 w-8 rounded-md object-cover" />
+      <span class="text-lg font-semibold tracking-tight">warp</span>
+    </div>
+    <blockquote class="mx-auto mt-9 max-w-3xl text-zinc-200 text-xl md:text-[1.55rem] leading-relaxed font-normal tracking-tight">
+      <p class="m-0">Dotenvx is really smart concept. Instead of plaintext .env&rsquo;s, secrets are encrypted files. Agents can't read them, and they're shippable to cloud runners with a single key.</p>
+    </blockquote>
+    <div class="mt-9 inline-flex items-center justify-center gap-3 text-left">
+      <img src="/assets/img/testimonials/ben-holmes.jpg" alt="Ben Holmes" class="h-10 w-10 rounded-full border border-zinc-700 object-cover" />
+      <div>
+        <p class="m-0 text-sm font-medium leading-tight text-zinc-100">Ben Holmes</p>
+        <p class="m-0 mt-1 text-sm leading-tight text-zinc-500">Warp Dev Rel Lead</p>
       </div>
-      {% include components/live-demo-encrypt.html %}
-    </article>
-    <article class="feature-cli-card hidden lg:flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 md:col-span-1 lg:col-span-3 min-h-[14rem] md:min-h-[15.5rem]">
-      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
-      <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-2xl md:text-[2rem] leading-[1.08]">Inject</h3>
-        <div class="feature-cli-cmd"><code>dotenvx run -- your-command</code></div>
-      </div>
-      {% include components/live-demo-run.html %}
-    </article>
-  </div>
-
-  <div class="mt-4 md:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-    <article class="feature-cli-card flex lg:hidden flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
-      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">02</div>
-      <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Inject</h3>
-        <div class="feature-cli-cmd"><code>dotenvx run -- your-command</code></div>
-      </div>
-      {% include components/live-demo-run.html %}
-    </article>
-
-    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
-      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">03</div>
-      <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Scope</h3>
-        <div class="feature-cli-cmd"><code>dotenvx run -f .env.production</code></div>
-      </div>
-      <div class="feature-cli-visual feature-cli-visual-scope">
-        <div class="feature-chip-row">
-          <span class="feature-chip">.env</span>
-          <span class="feature-chip feature-chip-active">.env.production</span>
-          <span class="feature-chip">.env.ci</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
-      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">04</div>
-      <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit</h3>
-        <div class="feature-cli-cmd"><code>git diff .env*</code></div>
-      </div>
-      <div class="feature-cli-visual feature-cli-visual-audit">
-        <div class="feature-diff-line">+ DATABASE_URL="encrypted:..."</div>
-        <div class="feature-diff-line">+ OPENAI_API_KEY="encrypted:..."</div>
-      </div>
-    </article>
-
-    <article class="feature-cli-card flex flex-col rounded-lg border border-zinc-800 bg-zinc-950/60 p-5 md:p-6 min-h-[11.5rem] md:min-h-[12.5rem]">
-      <div class="text-[#ecd53f] text-xs font-semibold tracking-[0.12em] uppercase">05</div>
-      <div class="feature-card-head mt-3">
-        <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotate</h3>
-        <div class="feature-cli-cmd"><code>dotenvx rotate</code></div>
-      </div>
-      <div class="feature-cli-visual feature-cli-visual-rotate">
-        <div class="feature-rotate-row">
-          <span class="feature-rotate-key">DOTENV_PRIVATE_KEY</span>
-          <span class="feature-rotate-v">v3</span>
-          <span class="feature-rotate-arrow">→</span>
-          <span class="feature-rotate-v feature-rotate-v-new">v4</span>
-        </div>
-      </div>
-    </article>
-  </div>
+    </div>
   </div>
 </section>
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem]">
   <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">One-line upgrade</h2>
+    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Easy to switch</h2>
     <p class="mt-4 text-zinc-400 text-lg">Install and use it in code just like dotenv.</p>
   </div>
   <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
@@ -277,314 +246,6 @@ title: ""
         <p class="m-0 mt-1">Creator of dotenv and dotenvx</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="w-full max-w-5xl mx-auto px-6 mt-0 pt-8 md:pt-12 lg:pt-16 mb-24 md:mb-40 lg:mb-52">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Developers are keeping .env -- and encrypting it.</h2>
-    <p class="mt-5 mx-auto max-w-[44rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Developers are installing dotenvx 6.5 million times a week on npm to secure local development, CI, cloud infrastructure, and software agents.</p>
-  </div>
-
-  <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
-    <a href="https://x.com/bholmesdev/status/2029285485693039077?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <img src="/assets/img/testimonials/ben-holmes.jpg" alt="Ben Holmes" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
-          <div class="min-w-0 self-center">
-            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate inline-flex items-center gap-2">
-              <span>Ben Holmes</span>
-              <span class="inline-flex h-4 w-4 items-center justify-center rounded-[3px] border border-zinc-700/80 bg-zinc-950" aria-label="Warp">
-                <img src="/assets/img/testimonials/warp.jpg" alt="Warp" class="h-3 w-3 rounded-[1px] object-cover" />
-              </span>
-            </p>
-            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@BHolmesDev</p>
-          </div>
-        </div>
-      </div>
-      <p class="mt-3.5 text-zinc-300 text-sm leading-relaxed font-normal">
-        <span class="block">dotenvx is really smart concept.</span>
-        <span class="mt-2.5 block">Instead of plaintext <code>.env</code>&rsquo;s, secrets are encrypted files. Agents can't read them, and they're shippable to cloud runners with a single key.</span>
-      </p>
-      <div class="mt-auto">
-      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">11:58 AM · Mar 4, 2026 · <span class="text-zinc-400 font-medium">65.9K</span> views</div>
-      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">21</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m17 1 4 4-4 4"></path>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-            <path d="m7 23-4-4 4-4"></path>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">26</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">426</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">505</span>
-        </div>
-      </div>
-      </div>
-    </a>
-
-    <a href="https://x.com/commte/status/1996144456891060730?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <img src="/assets/img/testimonials/commte.jpg" alt="コムテ" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
-          <div class="min-w-0 self-center">
-            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">コムテ</p>
-            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@commte</p>
-          </div>
-        </div>
-      </div>
-      <p class="mt-3.5 text-zinc-500 text-xs leading-tight font-normal"><span class="text-sky-400">Show translation</span></p>
-      <p class="mt-2.5 text-zinc-300 text-sm leading-relaxed font-normal">
-        <span class="block">.env 共有は dotenvxが最強</span>
-        <span class="block">.env を暗号化したまま Git にコミットできるツール</span>
-        <span class="block">便利さそのまま＋漏洩リスクほぼゼロ</span>
-        <span class="mt-3 block">・平文 .env を配らなくていい</span>
-        <span class="block">・GitHub に上げても解読されない</span>
-        <span class="block">・チーム開発で共有がラク</span>
-      </p>
-      <div class="mt-auto">
-      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">1:08 AM · Dec 3, 2025 · <span class="text-zinc-400 font-medium">505.3K</span> views</div>
-      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">3</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m17 1 4 4-4 4"></path>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-            <path d="m7 23-4-4 4-4"></path>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">346</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">2K</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">1.9K</span>
-        </div>
-      </div>
-      </div>
-    </a>
-
-    <a href="https://x.com/kristianfreeman/status/1808552701673808135?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <img src="/assets/img/testimonials/kristian-freeman.jpg" alt="Kristian Freeman" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
-          <div class="min-w-0 self-center">
-            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate inline-flex items-center gap-1.5">
-              <span>Kristian Freeman</span>
-              <span class="inline-flex h-4 w-4 items-center justify-center rounded-[3px] border border-zinc-700/80 bg-zinc-950">
-                <img src="/assets/img/testimonials/cloudflare.jpg" alt="Cloudflare" class="h-3 w-3 rounded-[1px] object-cover" />
-              </span>
-            </p>
-            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@kristianfreeman</p>
-          </div>
-        </div>
-      </div>
-      <p class="mt-3.5 text-zinc-300 text-sm leading-relaxed font-normal">
-        <span class="block">Dotenvx looks like an interesting upgrade to .env</span>
-        <span class="mt-2.5 block">Automatic encrypting of each value, almost identical usage in CLI and API</span>
-        <span class="mt-2.5 block">Rails does something similar - though the whole file is encrypted!</span>
-      </p>
-      <div class="mt-auto">
-      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">10:25 AM · Jul 3, 2024 · <span class="text-zinc-400 font-medium">652</span> views</div>
-      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">1</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m17 1 4 4-4 4"></path>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-            <path d="m7 23-4-4 4-4"></path>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">3</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">10</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">3</span>
-        </div>
-      </div>
-      </div>
-    </a>
-
-    <a href="https://x.com/mizchi/status/2028845137833631901?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <img src="/assets/img/testimonials/mizchi.jpg" alt="mizchi" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
-          <div class="min-w-0 self-center">
-            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">mizchi</p>
-            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@mizchi</p>
-          </div>
-        </div>
-      </div>
-      <p class="mt-3.5 text-zinc-500 text-xs leading-tight font-normal"><span class="text-sky-400">Show translation</span></p>
-      <p class="mt-2.5 text-zinc-300 text-sm leading-relaxed font-normal">
-        <span class="block">.env とAIの問題、dotenvx がもっと普及したらいいと思う</span>
-      </p>
-      <div class="mt-auto">
-      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">6:49 AM · Mar 3, 2026 · <span class="text-zinc-400 font-medium">43.8K</span> views</div>
-      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m17 1 4 4-4 4"></path>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-            <path d="m7 23-4-4 4-4"></path>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">82</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">640</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">726</span>
-        </div>
-      </div>
-      </div>
-    </a>
-    <a href="https://x.com/zaidmukaddam/status/1941193539486089311?s=46" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <img src="/assets/img/testimonials/zaid.jpg" alt="Zaid" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
-          <div class="min-w-0 self-center">
-            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">Zaid</p>
-            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@zaidmukaddam</p>
-          </div>
-        </div>
-      </div>
-      <p class="mt-3.5 text-zinc-300 text-sm leading-relaxed font-normal">
-        <span class="block">you can deploy env files to prod now?</span>
-        <span class="mt-2.5 block">creators of dotenv have been working on dotenvx which encrypts your env variables so llms can’t read them, basically it keeps secrets from leaking into prompts or model context</span>
-      </p>
-      <div class="mt-auto">
-      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">10:53 AM · Jul 4, 2025 · <span class="text-zinc-400 font-medium">6,760</span> views</div>
-      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">9</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m17 1 4 4-4 4"></path>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-            <path d="m7 23-4-4 4-4"></path>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">10</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">154</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">71</span>
-        </div>
-      </div>
-      </div>
-    </a>
-
-    <a href="https://x.com/kenn/status/1906194315358937095" target="_blank" rel="noopener noreferrer" class="block h-full cursor-pointer select-none rounded-lg border border-zinc-800 bg-[#06080d] p-5 md:p-6 no-underline hover:no-underline hover:border-zinc-700 transition-[border-color,transform] duration-150 active:translate-y-px md:flex md:flex-col">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <img src="/assets/img/testimonials/kenn.jpg" alt="Kenn Ejima" class="h-9 w-9 self-center rounded-full border border-zinc-700 object-cover" />
-          <div class="min-w-0 self-center">
-            <p class="m-0 text-zinc-100 font-semibold text-sm leading-tight truncate">Kenn Ejima</p>
-            <p class="m-0 mt-px text-zinc-500 text-xs leading-tight truncate font-normal">@kenn</p>
-          </div>
-        </div>
-      </div>
-      <p class="mt-3.5 text-zinc-500 text-xs leading-tight font-normal"><span class="text-sky-400">Show translation</span></p>
-      <p class="mt-2.5 text-zinc-300 text-sm leading-relaxed font-normal">
-        <span class="block">今まで1passwordで.envを共有してたけど、dotenvxを使えば.env自体を暗号化してgit管理できるようになることを知ってこれに乗り換えることにした。</span>
-        <span class="mt-2.5 block">管理対象が秘密鍵1個だけになるのでメンバーの入れ替わりなどでAPI Keyを個別にローテーションする手間もなくなる。</span>
-        <span class="mt-2.5 block">時代は進化している！</span>
-      </p>
-      <div class="mt-auto">
-      <div class="mt-3.5 text-[11px] leading-4 font-normal text-zinc-500">8:58 PM · Mar 29, 2025 · <span class="text-zinc-400 font-medium">250.5K</span> views</div>
-      <div class="mt-3 border-t border-zinc-800 py-2.5 flex items-center justify-start gap-5 text-zinc-500 text-xs">
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5h-6l-3.5 2 1.3-3.9A8.5 8.5 0 1 1 21 11.5Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">1</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m17 1 4 4-4 4"></path>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-            <path d="m7 23-4-4 4-4"></path>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">154</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s-7.2-4.5-9.4-8.2C.7 9.8 2 6.2 5.4 5.2c2-.6 4.2.1 5.6 1.8 1.4-1.7 3.6-2.4 5.6-1.8 3.4 1 4.7 4.6 2.8 7.6C19.2 16.5 12 21 12 21Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">1.3K</span>
-        </div>
-        <div class="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"></path>
-          </svg>
-          <span class="text-zinc-300 font-semibold">1.1K</span>
-        </div>
-      </div>
-      </div>
-    </a>
   </div>
 </section>
 

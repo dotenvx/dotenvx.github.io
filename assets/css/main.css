@@ -951,13 +951,16 @@ width: 100%;
 }
 
 .trust-logo-grid a {
+  align-items: center;
   border-radius: 0.5rem;
+  display: flex;
   filter: brightness(0.88);
-  margin: -0.65rem -0.45rem;
-  min-height: 4rem;
+  justify-content: center;
+  min-height: 3rem;
   opacity: 0.88;
-  padding: 0.65rem 0.45rem;
+  padding: 0;
   transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+  width: clamp(3.8rem, 15vw, 8.5rem);
   will-change: opacity, filter, transform;
 }
 
@@ -971,6 +974,14 @@ width: 100%;
   color: rgb(244 244 245) !important;
 }
 
+.trust-logo-grid-icons svg {
+  display: block;
+  height: auto;
+  max-height: 2.2rem;
+  max-width: min(7.2rem, 100%);
+  transform: none;
+}
+
 .trust-proof-grid a {
   color: rgb(212 212 216) !important;
 }
@@ -981,6 +992,163 @@ width: 100%;
 
 .trust-proof-grid a > span:first-child {
   color: rgb(82 82 91) !important;
+}
+
+.run-anywhere-icon-grid a {
+  display: flex;
+  min-height: 3rem;
+  width: 4.25rem;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.78;
+  text-decoration: none !important;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.run-anywhere-icon-grid a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+.run-anywhere-icon-grid svg {
+  display: block;
+  max-height: 2.55rem;
+  max-width: 3rem;
+  filter: brightness(0) invert(1);
+  transform: scale(1.08);
+}
+
+.run-anywhere-icon-grid .run-anywhere-cursor-icon {
+  filter: invert(1) brightness(1.55);
+}
+
+.run-anywhere-icon-grid .run-anywhere-more {
+  align-self: center;
+  color: rgb(113 113 122);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.homepage-encryption-preview {
+  max-height: 22rem;
+}
+
+.homepage-encryption-preview .encrypted-env-file-body {
+  font-size: clamp(0.78rem, 1.05vw, 0.96rem) !important;
+  line-height: 1.5 !important;
+}
+
+.homepage-encryption-preview .encrypted-env-file-body .ee-code,
+.homepage-encryption-preview .encrypted-env-window-bare .ee-code {
+  padding: 0.78rem 1.45rem 1.2rem !important;
+}
+
+.homepage-code-window {
+  --homepage-code-bg: rgba(0, 0, 0, 1);
+  --homepage-code-border-color: rgba(63, 63, 70, 0.62);
+  --homepage-code-fade-top: 2.93rem;
+  --homepage-code-fade-height: 1.95em;
+  --homepage-code-fade-width: min(12rem, 42%);
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 1rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 22px 70px rgba(0, 0, 0, 0.22);
+}
+
+.homepage-code-window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  border: 1px solid var(--homepage-code-border-color);
+  border-right: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(90deg, #000 0%, #000 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+.homepage-code-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0), var(--homepage-code-bg) 82%) right var(--homepage-code-fade-top) / var(--homepage-code-fade-width) var(--homepage-code-fade-height) no-repeat,
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, var(--homepage-code-bg) 100%) left bottom / 100% 1px no-repeat;
+}
+
+.homepage-code-window.homepage-encryption-preview {
+  --homepage-code-fade-top: 2.75rem;
+  --homepage-code-fade-height: 1.5em;
+}
+
+.homepage-code-toolbar {
+  align-items: center;
+  display: flex;
+  height: 2.15rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.homepage-code-dots {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.homepage-code-dot {
+  border-radius: 9999px;
+  display: block;
+  height: 0.64rem;
+  opacity: 0.92;
+  width: 0.64rem;
+}
+
+.homepage-code-body {
+  color: rgb(161 161 170);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: clamp(0.78rem, 1.05vw, 0.96rem);
+  line-height: 1.95;
+  margin: 0;
+  overflow-x: auto;
+  padding: 0.78rem 1.45rem 1.2rem;
+}
+
+.homepage-code-body code {
+  white-space: pre;
+}
+
+.homepage-code-prompt {
+  color: rgb(82 82 91);
+}
+
+.homepage-code-command {
+  color: rgb(244 244 245);
+}
+
+.homepage-code-program {
+  color: rgb(34 211 238);
+}
+
+.homepage-code-string {
+  color: rgb(168 85 247);
+}
+
+.homepage-code-file {
+  color: rgb(250 204 21);
+}
+
+.homepage-code-muted {
+  color: rgb(113 113 122);
 }
 
 .whitepaper-artifact {

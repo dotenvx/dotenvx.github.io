@@ -4,60 +4,7 @@ title: ""
 
 {% include components/homepage-hero.html %}
 
-<section class="w-full max-w-6xl mx-auto px-1 md:px-6 mb-16 sm:mb-20 md:mb-24 lg:mb-32">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-10 md:pt-14 pb-10 md:pb-14" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 top-px h-52 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-    <p class="relative mx-auto mb-8 md:mb-10 max-w-[78rem] px-4 text-center text-sm md:text-base leading-relaxed text-zinc-500 lg:whitespace-nowrap">Trusted by leading developer stacks</p>
-    <div class="relative mx-auto px-4 md:px-8">
-      <div class="trust-logo-grid trust-logo-grid-icons mx-auto flex w-fit max-w-full flex-col items-center gap-4 md:gap-5">
-        <div class="flex max-w-full items-center justify-center gap-3 md:gap-5">
-          <a href="https://github.com/search?q=repo%3AGoogleCloudPlatform%2Fcloud-run-mcp%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Google Cloud Run MCP repository">
-            {% include logos/google2.html class="w-24 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=repo%3Anasa%2Fearthdata-search%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="NASA Earthdata Search using dotenvx">
-            {% include logos/nasa.html class="w-24 h-auto mx-auto" %}
-          </a>
-          <a href="https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/secrets-and-vars/#local-environment-2" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="AWS documentation referencing dotenvx">
-            {% include logos/aws.html class="w-20 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=org%3A0xPolygon+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Polygon repository">
-            {% include logos/polygon.html class="w-24 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=repo%3Adaytonaio%2Fdaytona%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Daytona repository">
-            {% include logos/daytona.html class="w-24 h-auto mx-auto" %}
-          </a>
-        </div>
-        <div class="flex max-w-full items-center justify-center gap-3 md:gap-5">
-          <a href="https://supabase.com/docs/guides/local-development/managing-config#going-further" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Supabase documentation using dotenvx for branching">
-            {% include logos/supabase2.html class="w-24 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=org%3Awebflow%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Webflow repository">
-            {% include logos/webflow.html class="w-24 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=org%3ATencentCloudBase+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Tencent CloudBase organization">
-            {% include logos/tencent.html class="w-24 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=repo%3Apaypal%2Fagent-toolkit%20dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="PayPal agent toolkit using dotenvx">
-            {% include logos/paypal.html class="w-24 h-auto mx-auto" %}
-          </a>
-        </div>
-        <div class="flex max-w-full items-center justify-center gap-3 md:gap-5">
-          <a href="https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="CrowdStrike repository">
-            {% include logos/crowdstrike.html class="w-28 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="Browser Use repository">
-            {% include logos/browser-use.html class="w-28 h-auto mx-auto" %}
-          </a>
-          <a href="https://github.com/search?q=repo%3Ashadcn-ui%2Fui+dotenvx&type=code" target="_blank" rel="noopener noreferrer" class="flex min-h-12 items-center justify-center text-zinc-100 no-underline hover:no-underline" aria-label="shadcn/ui repository">
-            {% include logos/shadcn.html class="w-24 h-auto mx-auto" %}
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% include components/homepage-trust.html %}
 
 <section class="w-full max-w-6xl mx-auto px-6 mt-0 mb-16 md:mb-20 lg:mb-24">
   <div class="space-y-16 md:space-y-20 lg:space-y-24">
@@ -262,17 +209,17 @@ title: ""
 </section>
 -->
 
-<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-44 md:mt-60 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
+<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    <div class="absolute bottom-0 right-0 w-[26rem] sm:w-[24rem] md:w-[34rem] lg:w-[40rem] aspect-[1368/768] bg-no-repeat bg-contain bg-bottom bg-right" style="background-image: url('/assets/img/bg/church-door.jpg'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
+    <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
   <div class="relative z-10">
-    <h3 class="hero-title-shaded font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03]">
-      Dotenv. Secured.
+    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03] text-zinc-100">
+      Armored keys.<br />Under guard.
     </h3>
     <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
-      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
-        <span>GitHub ★ 5.5k</span>
+      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">
+        <span>Create Account</span>
         <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
         </svg>

@@ -982,6 +982,41 @@ width: 100%;
   transform: none;
 }
 
+.homepage-trust-grid a {
+  filter: grayscale(1) brightness(0.74);
+  min-height: 0;
+  opacity: var(--homepage-trust-logo-opacity, 0.62);
+  width: fit-content !important;
+}
+
+.homepage-trust-grid a:hover {
+  filter: grayscale(1) brightness(0.9);
+  opacity: 0.78;
+  transform: none;
+}
+
+.homepage-trust-link,
+.homepage-trust-link:visited {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.homepage-trust-link:hover,
+.homepage-trust-link:focus {
+  color: rgb(161 161 170);
+  text-decoration: none;
+}
+
+.homepage-trust-grid.trust-logo-grid-icons svg {
+  height: var(--homepage-trust-logo-height, 2rem) !important;
+  max-height: none;
+  max-width: none;
+  width: auto !important;
+}
+
+
 .trust-proof-grid a {
   color: rgb(212 212 216) !important;
 }

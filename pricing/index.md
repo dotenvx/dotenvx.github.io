@@ -4,7 +4,7 @@ image: "/assets/img/og-image-pricing.png"
 ---
 
 <section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">
-  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600">Dotenvx Armor ⛨</p>
+  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#ecd53f]">PROFESSIONAL SECURITY</p>
   <h1 class="mb-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 

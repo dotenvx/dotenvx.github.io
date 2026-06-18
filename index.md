@@ -109,6 +109,68 @@ title: ""
         </div>
       </div>
     </div>
+
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
+      <div class="max-w-xl">
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Drop-In for Dotenv</h2>
+        <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
+          <p>Install and use it in code just like dotenv. Or install the CLI globally and unlock dotenv for any language, framework, or platform.</p>
+        </div>
+        <div class="homepage-run-logos mt-7 flex flex-wrap items-center gap-x-5 gap-y-4">
+          <a href="/docs/languages/nodejs" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Node.js">
+            {% include icons/nodejs.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/languages/python" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Python">
+            {% include icons/python.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/languages/ruby" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Ruby">
+            {% include icons/ruby.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/languages/go" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Go">
+            {% include icons/go.html class="h-5 w-auto" %}
+          </a>
+          <a href="/docs/languages/rust" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Rust">
+            {% include icons/rust.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/languages/dotnet" class="text-current no-underline hover:text-current hover:no-underline" aria-label=".NET">
+            {% include icons/dotnet.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/languages/php" class="text-current no-underline hover:text-current hover:no-underline" aria-label="PHP">
+            {% include icons/php.html class="h-5 w-auto" %}
+          </a>
+          <a href="/docs/platforms/openai" class="text-current no-underline hover:text-current hover:no-underline" aria-label="OpenAI">
+            {% include logos/openai.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/platforms/claude" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Claude">
+            {% include logos/claude.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/platforms/cloudflare" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Cloudflare">
+            {% include icons/cloudflare.html class="h-6 w-auto" %}
+          </a>
+          <a href="/docs/frameworks/nextjs" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Next.js">
+            {% include icons/nextjs.html class="h-6 w-auto" %}
+          </a>
+        </div>
+      </div>
+
+      <div class="min-w-0 py-2 md:py-4">
+        <div class="homepage-code-window">
+          <div class="homepage-code-toolbar">
+            <div class="homepage-code-dots">
+              <span class="homepage-code-dot bg-[#ff6b5e]"></span>
+              <span class="homepage-code-dot bg-[#f5bd4f]"></span>
+              <span class="homepage-code-dot bg-[#61c554]"></span>
+            </div>
+            {% include components/homepage-code-copy-button.html %}
+          </div>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">npm install</span> <span class="homepage-code-file">@dotenvx/dotenvx</span> <span class="homepage-code-muted">--save</span>
+
+<span class="homepage-code-muted">// swap require('dotenv').config() for:</span>
+<span class="homepage-code-command">require</span><span class="homepage-code-muted">(</span><span class="homepage-code-string">'@dotenvx/dotenvx'</span><span class="homepage-code-muted">).</span><span class="homepage-code-command">config</span><span class="homepage-code-muted">()</span>
+<span class="homepage-code-muted">// or import '@dotenvx/dotenvx/config' // for esm</span></code></pre>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -208,16 +270,11 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-4xl mx-auto px-6 mt-0 mb-28 md:mb-40 lg:mb-52">
-  <div class="text-center max-w-2xl mx-auto">
-    <h2 class="font-medium text-4xl sm:text-5xl md:text-[3rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
-      Get it all with one line.
-    </h2>
-  </div>
-  <div class="mx-auto mt-8 md:mt-9 max-w-xl overflow-x-auto px-4 md:px-6 font-mono text-base md:text-lg leading-[1.55]">
-      <div class="text-zinc-500">// swap require('dotenv').config() for:</div>
-      <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.9)]">require('@dotenvx/dotenvx').config()</span></pre>
-      <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
+<section class="w-full px-6 mt-12 md:mt-20 lg:mt-28 mb-28 md:mb-36 lg:mb-44 text-center">
+  <div class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-zinc-500 sm:flex-row sm:gap-4 md:text-xs">
+    <span>Free &amp; open source above</span>
+    <span aria-hidden="true">↕︎</span>
+    <span class="text-zinc-300">Professional security below</span>
   </div>
 </section>
 
@@ -238,46 +295,37 @@ title: ""
   <div class="homepage-trust-boundary-frame relative mx-auto max-w-5xl"></div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-0 mb-8 md:mb-10 pt-0 text-center">
-  <div class="text-center text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">
-    PROFESSIONAL SECURITY
-  </div>
-</section>
-
-<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-28 md:mb-36 text-center">
-  <h3 class="font-medium tracking-[-0.025em] text-4xl md:text-[3.25rem] leading-[1.04] text-zinc-100">
-    Armor up in one command.
-  </h3>
-  <p class="mt-4 text-sm md:text-base text-zinc-500">
-    One command to harden your private keys.
-  </p>
-  <div class="homepage-armor-command mx-auto mt-10 max-w-3xl">
-    <pre class="m-0 text-left font-mono text-sm md:text-base leading-7 text-zinc-100"><code>$ dotenvx armor up
-<span class="text-[#ecd53f]">⛨ armored (03C 969)</span></code></pre>
-  </div>
-</section>
-
-<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-0 mb-0 pt-12 md:pt-16 pb-36 md:pb-48 lg:pb-56 text-center">
-  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
-  </div>
-  <div class="relative z-10">
-    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03] text-zinc-100">
-      End with Armor.
-    </h3>
-    <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
-      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">
-        <span>Create Account</span>
-        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-        </svg>
-      </a>
-      <a class="inline-flex items-center justify-center gap-0.5 p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/contact">
-        <span>Contact Us</span>
-        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-        </svg>
-      </a>
+<section class="w-full px-6 mt-0 mb-0">
+  <div class="relative overflow-hidden mx-auto max-w-6xl px-6 pt-0 md:pt-2 pb-36 md:pb-48 lg:pb-56 text-center">
+    <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
+    </div>
+    <div class="relative z-10">
+      <div class="mx-auto mt-4 max-w-4xl text-center md:mt-6">
+        <div class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">
+          PROFESSIONAL SECURITY
+        </div>
+        <h3 class="mt-8 font-canela font-medium uppercase tracking-[-0.018em] text-[3.7rem] md:text-[4.65rem] lg:text-[5.5rem] leading-[0.95] text-zinc-100">
+          Armored<br />Keys <span aria-hidden="true">⛨</span>
+        </h3>
+        <p class="mt-9 text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32] text-zinc-500">
+          Private keys. Off device. Under guard.
+        </p>
+      </div>
+      <div class="mx-auto mt-10 md:mt-12 w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
+        <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/armor">
+          <span>Learn more</span>
+          <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+          </svg>
+        </a>
+        <a class="inline-flex items-center justify-center gap-0.5 p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/pricing">
+          <span>See Pricing</span>
+          <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>

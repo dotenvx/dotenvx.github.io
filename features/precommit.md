@@ -2,13 +2,9 @@
 title: Precommit
 ---
 
-<section class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <p><a href="/features">&larr; back to Features</a></p>
-  <h1 class="font-extrabold text-2xl text-zinc-950 dark:text-zinc-50 text-center">Precommit</h1>
-  <p class="text-center">Prevent .env files from being committed to code.</p>
-  <video class="w-full rounded-md border border-zinc-200 dark:border-zinc-800" controls>
-    <source src="https://github.com/user-attachments/assets/b177b7c5-f009-4466-ac15-5c0c406594a9" type="video/mp4">
-    your browser does not support the video tag
-  </video>
-  <p class="text-center"><a href="/docs/advanced/precommit-install">See documentation</a></p>
-</section>
+{% include components/feature-page.html
+  heading="Stop secrets before commit."
+  description="Install a pre-commit guard that blocks .env files from entering source control."
+  subdescription="Catch mistakes at the moment they happen, before they become repository history."
+  video="https://github.com/user-attachments/assets/b177b7c5-f009-4466-ac15-5c0c406594a9"
+%}

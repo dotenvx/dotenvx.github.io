@@ -1,20 +1,26 @@
 <section class="w-full px-6">
   <div class="mx-auto max-w-5xl pt-20 md:pt-28 lg:pt-32 text-center">
-    <h1 class="mx-auto max-w-4xl font-canela font-medium tracking-[-0.018em] text-[4rem] md:text-[5.5rem] lg:text-[6.75rem] leading-[0.96] text-zinc-950 dark:text-zinc-100">
+    <h1 class="mx-auto max-w-4xl font-canela font-medium tracking-[-0.018em] text-[3.35rem] md:text-[4.5rem] lg:text-[5.35rem] leading-[0.98] text-zinc-950 dark:text-zinc-100">
       {{ include.heading }}
     </h1>
-    <p class="mx-auto mt-8 max-w-3xl text-xl md:text-2xl leading-snug text-zinc-600 dark:text-zinc-400">
-      {{ include.description }}
-    </p>
-    <p class="mx-auto mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-zinc-500 dark:text-zinc-500">
-      {{ include.subdescription }}
+    <p class="mx-auto mt-8 max-w-3xl text-lg md:text-xl leading-relaxed text-zinc-600 dark:text-zinc-400">
+      {{ include.description }} {{ include.subdescription }}
     </p>
   </div>
 
   <div class="mx-auto mt-14 md:mt-20 max-w-4xl">
-    <video class="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-black shadow-[0_18px_60px_rgba(0,0,0,0.28)]" controls playsinline preload="metadata">
-      <source src="{{ include.video }}" type="video/mp4">
-      your browser does not support the video tag
-    </video>
+    <div class="feature-video-frame">
+      <div class="feature-video-toolbar" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="feature-video-stage">
+        <video class="feature-video" controls playsinline preload="metadata">
+          <source src="{{ include.video }}" type="video/mp4">
+          your browser does not support the video tag
+        </video>
+      </div>
+    </div>
   </div>
 </section>

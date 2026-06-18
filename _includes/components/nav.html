@@ -9,7 +9,7 @@
         </a>
       </div>
       <div id="desktop-nav-menu" class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
-        <div class="relative" data-desktop-nav-item data-nav-menu="dotenvx" data-nav-index="0">
+        <div class="relative" data-desktop-nav-item data-nav-menu="armor" data-nav-index="0">
           <button
             type="button"
             class="nav-menu-trigger inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
@@ -17,27 +17,13 @@
             aria-expanded="false"
             data-desktop-nav-trigger
           >
-            <span>Dotenvx</span>
+            <span>Features</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
             </svg>
           </button>
         </div>
-        <div class="relative" data-desktop-nav-item data-nav-menu="armor" data-nav-index="1">
-          <button
-            type="button"
-            class="nav-menu-trigger inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
-            aria-haspopup="true"
-            aria-expanded="false"
-            data-desktop-nav-trigger
-          >
-            <span class="inline-flex items-center gap-1">Armor <span aria-hidden="true">⛨</span></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 translate-y-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-        </div>
-        <div class="relative" data-desktop-nav-item data-nav-menu="company" data-nav-index="2">
+        <div class="relative" data-desktop-nav-item data-nav-menu="company" data-nav-index="1">
           <button
             type="button"
             class="nav-menu-trigger inline-flex items-center gap-1 py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 rounded-md"
@@ -51,84 +37,46 @@
             </svg>
           </button>
         </div>
+        <a href="/docs" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">
+          Documentation
+        </a>
+        <a href="/pricing" class="inline-flex items-center py-5 text-xs md:text-sm font-semibold text-zinc-500 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 whitespace-nowrap">
+          Pricing
+        </a>
       </div>
       <div id="desktop-nav-flyout" class="desktop-nav-flyout fixed left-1/2 top-14 z-[90] hidden w-[min(420px,calc(100vw-3rem))] pt-2 md:block" aria-hidden="true">
         <div class="desktop-nav-frame relative overflow-hidden rounded-2xl border border-zinc-800 bg-black/95 p-3 shadow-[0_18px_60px_rgba(0,0,0,0.48)] backdrop-blur-xl">
-          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.74fr_1.26fr] gap-3" data-desktop-nav-panel="dotenvx" data-nav-index="0">
-              <div class="flex min-w-0 flex-col justify-center py-1">
-                <div class="rounded-xl px-3 py-2.5">
-                  <span class="block whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.08em] text-zinc-400">Free &amp; open source</span>
-                </div>
-                <a href="/" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Secure Dotenv
+          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-2 gap-3 px-2 py-2" data-desktop-nav-panel="armor" data-nav-index="0">
+              <div class="flex min-w-0 flex-col justify-center">
+                <a href="/features/run-anywhere" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Run Anywhere
                 </a>
-                <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  <span>GitHub</span>
-                  <span class="inline-flex min-w-5 items-center justify-center gap-1 rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">5.5k <span aria-hidden="true" class="text-[#ecd53f]">★</span></span>
+                <a href="/features/multiple-environments" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Environments
                 </a>
-                <a href="/docs" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Documentation
+                <a href="/features/variable-expansion" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Expansion
+                </a>
+                <a href="/features/gitignore" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Gitignore
                 </a>
               </div>
-              <div class="grid min-h-40 grid-cols-[0.95fr_0.82fr] gap-3">
-                <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="dotenvx-menu-card dotenvx-menu-card-whitepaper group/card relative flex items-start overflow-hidden rounded-2xl border bg-zinc-900/60 p-4 text-zinc-100 no-underline hover:no-underline transition-colors duration-200">
-                  <div class="absolute inset-0 bg-[radial-gradient(circle_at_48%_0%,rgba(125,211,252,0.12),transparent_62%)] opacity-80"></div>
-                  <div class="relative z-10 flex h-full flex-col justify-between">
-                    <span class="text-sm font-semibold text-zinc-200">Whitepaper</span>
-                    <span class="dotenvx-menu-quote mt-5 max-w-28 border-l pl-2 text-[11px] font-medium leading-snug">99.5% less exposure</span>
-                  </div>
+              <div class="flex min-w-0 flex-col justify-center">
+                <a href="/features/encryption" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Encryption
                 </a>
-                <div class="grid grid-rows-2 gap-3">
-                  <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="dotenvx-menu-card dotenvx-menu-card-github group/card relative flex items-start overflow-hidden rounded-2xl border bg-zinc-900/60 p-3 no-underline hover:no-underline transition-colors duration-200">
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_35%_0%,rgba(250,204,21,0.13),transparent_62%)] opacity-80"></div>
-                    <div class="relative z-10 flex h-full flex-col justify-between">
-                      <span class="text-sm font-semibold text-zinc-200">GitHub</span>
-                      <span class="dotenvx-menu-stat dotenvx-menu-stat-github mt-3 inline-flex w-fit items-center gap-1 rounded-md border px-2 py-0.5 text-[11px] font-semibold leading-none">5.5k <span aria-hidden="true">★</span></span>
-                    </div>
-                  </a>
-                  <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="dotenvx-menu-card dotenvx-menu-card-npm group/card relative flex items-start overflow-hidden rounded-2xl border bg-zinc-900/60 p-3 no-underline hover:no-underline transition-colors duration-200">
-                    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(203,56,55,0.18),transparent_58%)] opacity-80"></div>
-                    <div class="relative z-10 flex h-full flex-col justify-between">
-                      <span class="text-sm font-semibold text-zinc-200">NPM</span>
-                      <span class="dotenvx-menu-stat dotenvx-menu-stat-npm mt-3 inline-flex w-fit rounded-md border px-2 py-0.5 text-[11px] font-semibold leading-none">6.5M/week</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-          </div>
-          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.88fr_1.12fr] gap-3" data-desktop-nav-panel="armor" data-nav-index="1">
-              <div class="flex min-w-0 flex-col justify-center py-1">
-                <div class="rounded-xl px-3 py-2.5">
-                  <span class="block whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Professional Security</span>
-                </div>
-                <a href="/armor" data-armor-nav-link data-armor-preview-kind="product" data-armor-preview-title="Armored Keys ⛨" data-armor-preview-text="For those entrusted with secrets" data-armor-preview-href="/armor" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                <a href="/features/command-substitution" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Substitution
+                </a>
+                <a href="/features/precommit" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Precommit
+                </a>
+                <a href="/armor" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Armored Keys <span aria-hidden="true">⛨</span>
                 </a>
-                <a href="/pricing" data-armor-nav-link data-armor-preview-kind="pricing" data-armor-preview-title="Pricing" data-armor-preview-text="Protection worth paying for" data-armor-preview-href="/pricing" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Pricing
-                </a>
-                <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" data-armor-nav-link data-armor-preview-kind="trust" data-armor-preview-title="Trust" data-armor-preview-text="Security worthy of the responsibility you carry" data-armor-preview-href="https://trust.dotenvx.com" data-armor-preview-target="_blank" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  Trust
-                </a>
               </div>
-              <a href="/armor" class="desktop-nav-card desktop-nav-armor-card group/card relative flex min-h-40 items-end overflow-hidden rounded-2xl p-4 text-zinc-100 no-underline transition-colors duration-200 hover:no-underline" data-armor-preview-card data-armor-preview-kind-current="product">
-                <div class="armor-preview-base absolute inset-0"></div>
-                {% include components/three-ops-rect.html height="160px" zoom="1" mount="data-nav-armor-ops" class="armor-preview-visual armor-preview-product absolute inset-0" %}
-                <div class="armor-preview-visual armor-preview-pricing absolute inset-0">
-                  <div class="absolute inset-0 flex items-center justify-center">
-                    <span class="text-sm font-semibold tracking-tight text-zinc-200">From Pro to Enterprise</span>
-                  </div>
-                </div>
-                <div class="armor-preview-visual armor-preview-trust absolute inset-0">
-                  <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="absolute -bottom-1 left-2 right-1 h-5 rounded-full bg-black/45 blur-md"></div>
-                    <span class="relative z-20 flex h-12 w-12 items-center justify-center drop-shadow-[0_10px_20px_rgba(0,0,0,0.42)]">{% include logos/framework-soc2.html uid="nav-armor-preview-soc2" class="h-12 w-12" %}</span>
-                    <span class="relative z-0 -ml-4 flex h-12 w-12 items-center justify-center opacity-95 drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]">{% include logos/framework-gdpr.html class="h-12 w-12" %}</span>
-                  </div>
-                </div>
-              </a>
           </div>
-          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.78fr_1.22fr] gap-3" data-desktop-nav-panel="company" data-nav-index="2">
+          <div class="desktop-nav-panel absolute inset-3 grid grid-cols-[0.78fr_1.22fr] gap-3" data-desktop-nav-panel="company" data-nav-index="1">
               <div class="flex flex-col justify-center py-1">
                 <a href="/blog" class="group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   <span>Blog</span>
@@ -137,13 +85,8 @@
                 <a href="/contact" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Contact
                 </a>
-                <a href="https://twitter.com/dotenvx" target="_blank" rel="noopener noreferrer" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
-                  <span class="inline-flex items-center gap-2">
-                    <span>Social</span>
-                    <svg class="h-2.5 w-2.5 opacity-80" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                      <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                    </svg>
-                  </span>
+                <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
+                  Trust
                 </a>
                 <a href="/open-source" class="rounded-xl px-3 py-2.5 text-sm font-semibold text-zinc-400 dark:text-zinc-300/90 no-underline hover:no-underline hover:text-zinc-100 hover:bg-zinc-900/90 transition-colors duration-150">
                   Open Source
@@ -207,12 +150,8 @@
 
       <div class="mt-8">
         <nav data-mobile-nav-root class="flex flex-col divide-y divide-zinc-800 border-y border-zinc-800">
-          <button type="button" data-mobile-open-submenu="dotenvx" class="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
-            <span>Dotenvx</span>
-            <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
-          </button>
           <button type="button" data-mobile-open-submenu="armor" class="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
-            <span class="inline-flex items-center gap-1">Armor <span aria-hidden="true">⛨</span></span>
+            <span>Features</span>
             <span aria-hidden="true" class="text-zinc-500 text-base leading-none">&rarr;</span>
           </button>
           <button type="button" data-mobile-open-submenu="company" class="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
@@ -221,57 +160,34 @@
           </button>
         </nav>
 
-        <div data-mobile-nav-submenu="dotenvx" class="hidden">
-          <nav class="flex flex-col divide-y divide-zinc-800 border-b border-zinc-800 border-t" style="border-top-color: rgb(24 24 27);">
-            <button type="button" data-mobile-submenu-back class="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-lg leading-none">&larr;</span><span>Dotenvx</span></span>
-            </button>
-            <div class="py-4 text-center">
-              <span class="block text-[9px] font-semibold uppercase tracking-[0.08em] text-zinc-400">Free &amp; open source</span>
-            </div>
-            <a href="/" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span>Secure Dotenv</span>
-            </a>
-            <a href="/docs" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span>Documentation</span>
-            </a>
-            <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link group/link flex items-center justify-between gap-3 py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-2">
-                <span>Whitepaper</span>
-                <span class="inline-flex w-fit rounded-md border border-[rgba(186,230,253,0.25)] bg-[rgba(125,211,252,0.08)] px-2 py-0.5 text-[11px] font-semibold leading-none text-[rgba(224,242,254,0.7)] transition-colors duration-150 group-hover/link:border-[rgba(186,230,253,0.38)]">99.5% less exposure</span>
-              </span>
-            </a>
-            <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="mobile-nav-link group/link flex items-center justify-between gap-3 py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-2">
-                <span>GitHub</span>
-                <span class="inline-flex min-w-5 items-center justify-center gap-1 rounded-md border border-zinc-800 bg-zinc-900/70 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-zinc-500 transition-colors duration-150 group-hover/link:border-zinc-700 group-hover/link:text-zinc-300">5.5k <span aria-hidden="true" class="text-[#ecd53f]">★</span></span>
-              </span>
-            </a>
-            <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="mobile-nav-link group/link flex items-center justify-between gap-3 py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-2">
-                <span>NPM</span>
-                <span class="inline-flex w-fit rounded-md border border-[rgba(203,56,55,0.35)] bg-[rgba(203,56,55,0.12)] px-2 py-0.5 text-[11px] font-semibold leading-none text-[rgba(254,226,226,0.8)] transition-colors duration-150 group-hover/link:border-[rgba(203,56,55,0.5)]">6.5M/week</span>
-              </span>
-            </a>
-          </nav>
-        </div>
-
         <div data-mobile-nav-submenu="armor" class="hidden">
           <nav class="flex flex-col divide-y divide-zinc-800 border-b border-zinc-800 border-t" style="border-top-color: rgb(24 24 27);">
             <button type="button" data-mobile-submenu-back class="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-zinc-400 hover:text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-lg leading-none">&larr;</span><span>Armor <span aria-hidden="true">⛨</span></span></span>
+              <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-lg leading-none">&larr;</span><span>Features</span></span>
             </button>
-            <div class="py-4 text-center">
-              <span class="block text-[9px] font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Professional Security</span>
-            </div>
+            <a href="/features/run-anywhere" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Run Anywhere</span>
+            </a>
+            <a href="/features/multiple-environments" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Environments</span>
+            </a>
+            <a href="/features/variable-expansion" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Expansion</span>
+            </a>
+            <a href="/features/encryption" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Encryption</span>
+            </a>
+            <a href="/features/command-substitution" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Substitution</span>
+            </a>
+            <a href="/features/gitignore" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Gitignore</span>
+            </a>
+            <a href="/features/precommit" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Precommit</span>
+            </a>
             <a href="/armor" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
               <span>Armored Keys <span aria-hidden="true">⛨</span></span>
-            </a>
-            <a href="/pricing" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span>Pricing</span>
-            </a>
-            <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span>Trust</span>
             </a>
           </nav>
         </div>
@@ -287,13 +203,8 @@
             <a href="/contact" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
               <span>Contact</span>
             </a>
-            <a href="https://twitter.com/dotenvx" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
-              <span class="inline-flex items-center gap-2">
-                <span>Social</span>
-                <svg class="h-3.5 w-3.5 text-zinc-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                </svg>
-              </span>
+            <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
+              <span>Trust</span>
             </a>
             <a href="/open-source" class="mobile-nav-link flex items-center justify-between py-5 text-base font-semibold !text-zinc-400 no-underline hover:no-underline hover:!text-zinc-100 transition-colors duration-200">
               <span>Open Source</span>

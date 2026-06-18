@@ -1072,13 +1072,15 @@ width: 100%;
 
 .homepage-trust-boundary-frame {
   background: rgba(0, 0, 0, 0.22);
+  border-left: 1px solid rgba(245, 223, 152, 0.075);
+  border-right: 1px solid rgba(245, 223, 152, 0.075);
   border-radius: 1.75rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow:
     inset 0 1px 0 rgba(245, 223, 152, 0.045),
     0 0 34px rgba(0, 0, 0, 0.16);
-  height: 4.75rem;
+  height: 3rem;
   isolation: isolate;
   overflow: hidden;
 }
@@ -1101,7 +1103,7 @@ width: 100%;
 }
 
 .homepage-trust-boundary-frame::after {
-  height: 5.75rem;
+  height: 4.25rem;
   width: min(66%, 48rem);
   background: radial-gradient(ellipse at top, rgba(236, 213, 63, 0.06) 0%, rgba(236, 213, 63, 0.024) 46%, rgba(0, 0, 0, 0) 80%);
   filter: blur(2px);
@@ -1160,7 +1162,7 @@ width: 100%;
 
 .homepage-code-window {
   --homepage-code-bg: #000000;
-  --homepage-code-border-color: rgba(113, 113, 122, 0.36);
+  --homepage-code-border-color: rgba(113, 113, 122, 0.24);
   --homepage-code-fade-top: 2.93rem;
   --homepage-code-fade-height: 1.95em;
   --homepage-code-fade-width: min(12rem, 42%);
@@ -1195,12 +1197,47 @@ width: 100%;
   inset: 0;
   z-index: 4;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, var(--homepage-code-bg) 100%) left bottom / 100% 1px no-repeat;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 16%, var(--homepage-code-bg) 20%, var(--homepage-code-bg) 100%) left bottom / 100% 1px no-repeat;
 }
 
 .homepage-code-window.homepage-encryption-preview {
   --homepage-code-fade-top: 2.75rem;
   --homepage-code-fade-height: 1.5em;
+}
+
+.homepage-armor-command {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(113, 113, 122, 0.22);
+  border-radius: 1rem;
+  background: #000;
+  padding: 2.5rem 2rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 22px 70px rgba(0, 0, 0, 0.22);
+}
+
+.homepage-armor-command::before,
+.homepage-armor-command::after {
+  content: "";
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.homepage-armor-command::before {
+  top: -2.25rem;
+  width: min(18rem, 64%);
+  height: 5rem;
+  background: radial-gradient(ellipse at top, rgba(236, 213, 63, 0.085), rgba(236, 213, 63, 0.018) 48%, rgba(0, 0, 0, 0) 76%);
+}
+
+.homepage-armor-command::after {
+  bottom: -2.75rem;
+  width: min(18rem, 64%);
+  height: 5.5rem;
+  background: radial-gradient(ellipse at bottom, rgba(236, 213, 63, 0.06), rgba(236, 213, 63, 0.014) 48%, rgba(0, 0, 0, 0) 78%);
 }
 
 .homepage-code-toolbar {

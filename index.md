@@ -10,7 +10,7 @@ title: ""
   <div class="space-y-16 md:space-y-20 lg:space-y-24">
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run on Anything</h2>
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run on Anything</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
           <p>Whether you're using Node, Python, Ruby, Docker, CI, or AI agents, dotenvx works the same way. No custom integrations required. It just works &ndash; anywhere.</p>
         </div>
@@ -41,7 +41,7 @@ title: ""
 
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Multiple Environments</h2>
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Multiple Environments</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
           <p>Development, production, agents, or anywhere in between. Load the right .env file with a single flag.</p>
         </div>
@@ -72,7 +72,7 @@ title: ""
 
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypt in One Command</h2>
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypt in One Command</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
           <p>Add encryption to your .env files with a single command. Generate a public/private keypair and securely share encrypted secrets without changing your workflow.</p>
         </div>
@@ -159,42 +159,42 @@ title: ""
     <div class="mx-auto flex items-center justify-center text-zinc-100">
       {% include logos/warp.html class="h-7 w-auto" %}
     </div>
-    <blockquote class="mx-auto mt-12 max-w-[39rem] text-zinc-100 text-lg md:text-[1.45rem] leading-[1.06] font-semibold tracking-tight">
+    <blockquote class="mx-auto mt-10 max-w-[39rem] text-zinc-100 text-lg md:text-[1.45rem] leading-[1.06] font-semibold tracking-tight">
       <p class="m-0">Dotenvx is a really smart concept. Instead of plaintext .envs, secrets are encrypted files. Agents can't read them, and they're shippable to cloud runners with a single key.</p>
     </blockquote>
-    <div class="mt-9 flex justify-center">
+    <div class="mt-8 flex justify-center">
       {% include components/homepage-testimonial-author.html href="https://x.com/BHolmesDev" img="/assets/img/testimonials/ben-holmes.jpg" name="Ben Holmes" title="Warp Dev Rel Lead" %}
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-32 md:mt-44 lg:mt-56 mb-36 md:mb-56 lg:mb-72">
+<section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 lg:mt-40 mb-28 md:mb-40 lg:mb-48">
   <div class="text-center">
-    <h2 class="mx-auto max-w-4xl font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
+    <h2 class="mx-auto max-w-4xl font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
       Built because<br />.env files still matter.
     </h2>
-    <ul class="mt-10 flex list-none flex-wrap items-start justify-center gap-x-4 gap-y-6 p-0">
-      <li class="w-full max-w-[18rem] sm:w-[18rem]">
+    <ul class="mx-auto mt-10 flex max-w-[50rem] list-none flex-wrap items-start justify-center gap-x-3 gap-y-6 p-0">
+      <li class="w-full max-w-[16rem] sm:w-[16rem]">
         <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-          <span class="homepage-proof-strip-value">5,500 stars</span>
+          <span class="homepage-proof-strip-value">5,600 stars</span>
           <span class="homepage-proof-strip-label">GitHub</span>
         </a>
       </li>
-      <li class="w-full max-w-[18rem] sm:w-[18rem]">
-        <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-          <span class="homepage-proof-strip-value">135 Million downloads</span>
-          <span class="homepage-proof-strip-label">NPM</span>
-        </a>
-      </li>
-      <li class="w-full max-w-[18rem] sm:w-[18rem]">
+      <li class="w-full max-w-[16rem] sm:w-[16rem]">
         <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
           <span class="homepage-proof-strip-value">99.5% less exposure</span>
           <span class="homepage-proof-strip-label">Whitepaper</span>
         </a>
       </li>
+      <li class="w-full max-w-[16rem] sm:w-[16rem]">
+        <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
+          <span class="homepage-proof-strip-value">131 million</span>
+          <span class="homepage-proof-strip-label">NPM</span>
+        </a>
+      </li>
     </ul>
   </div>
-  <div class="mx-auto mt-16 max-w-[42rem] border-l border-zinc-800/80 pl-6 md:pl-8">
+  <div class="mx-auto mt-16 max-w-[38rem] border-l border-zinc-800/80 pl-6 md:pl-8">
     <div class="space-y-5 text-sm leading-6 text-zinc-400 md:text-[0.92rem] md:leading-7">
       <p>I love .env files.</p>
       <p>They work everywhere: local development, CI, containers, servers, cloud platforms, and even agents. Easy to get started with, yet flexible enough for advanced use cases, few tools are as practical as they are elegant.</p>
@@ -208,22 +208,16 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-44 md:mb-64 lg:mb-[18rem]">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-bold text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Easy to switch</h2>
-    <p class="mt-4 text-zinc-400 text-lg">Install and use it in code just like dotenv.</p>
+<section class="w-full max-w-4xl mx-auto px-6 mt-0 mb-28 md:mb-40 lg:mb-52">
+  <div class="text-center max-w-2xl mx-auto">
+    <h2 class="font-medium text-4xl sm:text-5xl md:text-[3rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
+      Get it all with one line.
+    </h2>
   </div>
-  <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="mx-auto max-w-2xl overflow-x-auto px-4 md:px-6 font-mono text-sm md:text-base leading-[1.55]">
-      <div class="text-zinc-500">// index.js</div>
+  <div class="mx-auto mt-8 md:mt-9 max-w-xl overflow-x-auto px-4 md:px-6 font-mono text-base md:text-lg leading-[1.55]">
+      <div class="text-zinc-500">// swap require('dotenv').config() for:</div>
       <pre class="mt-2 whitespace-nowrap"><span class="text-[rgba(236,213,63,0.9)]">require('@dotenvx/dotenvx').config()</span></pre>
       <pre class="mt-2 whitespace-nowrap"><span class="text-zinc-500">// or import '@dotenvx/dotenvx/config' // for esm</span></pre>
-      <pre class="mt-8 whitespace-nowrap"><span class="text-zinc-400">console.log(`Hello ${process.env.HELLO}`)</span></pre>
-    </div>
   </div>
 </section>
 
@@ -241,16 +235,35 @@ title: ""
 -->
 
 <section class="homepage-trust-boundary w-full px-6" aria-hidden="true">
-  <div class="homepage-trust-boundary-frame relative mx-auto max-w-7xl"></div>
+  <div class="homepage-trust-boundary-frame relative mx-auto max-w-5xl"></div>
 </section>
 
-<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
+<section class="w-full max-w-6xl mx-auto px-6 mt-0 mb-8 md:mb-10 pt-0 text-center">
+  <div class="text-center text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">
+    PROFESSIONAL SECURITY
+  </div>
+</section>
+
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-28 md:mb-36 text-center">
+  <h3 class="font-medium tracking-[-0.025em] text-4xl md:text-[3.25rem] leading-[1.04] text-zinc-100">
+    Armor up in one command.
+  </h3>
+  <p class="mt-4 text-sm md:text-base text-zinc-500">
+    One command to harden your private keys.
+  </p>
+  <div class="homepage-armor-command mx-auto mt-10 max-w-3xl">
+    <pre class="m-0 text-left font-mono text-sm md:text-base leading-7 text-zinc-100"><code>$ dotenvx armor up
+<span class="text-[#ecd53f]">⛨ armored (03C 969)</span></code></pre>
+  </div>
+</section>
+
+<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-0 mb-0 pt-12 md:pt-16 pb-36 md:pb-48 lg:pb-56 text-center">
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
   </div>
   <div class="relative z-10">
     <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03] text-zinc-100">
-      Go further.<br />Add armor.
+      End with Armor.
     </h3>
     <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
       <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">

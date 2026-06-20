@@ -6,8 +6,8 @@ title: ""
 
 {% include components/homepage-trust.html %}
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-16 md:mb-20 lg:mb-24">
-  <div class="space-y-16 md:space-y-20 lg:space-y-24">
+<section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-14 md:mb-[4.5rem] lg:mb-20">
+  <div class="space-y-14 md:space-y-[4.5rem] lg:space-y-20">
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
         <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run on Anything</h2>
@@ -216,7 +216,7 @@ title: ""
   })
 </script>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-36 md:mt-52 lg:mt-64">
+<section class="w-full max-w-6xl mx-auto px-6 mt-28 md:mt-40 lg:mt-48">
   <div class="mx-auto max-w-5xl text-center">
     <div class="mx-auto flex items-center justify-center text-zinc-100">
       {% include logos/warp.html class="h-7 w-auto" %}
@@ -230,7 +230,7 @@ title: ""
   </div>
 </section>
 
-<section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 lg:mt-40 mb-28 md:mb-40 lg:mb-48">
+<section class="w-full max-w-6xl mx-auto px-6 mt-24 md:mt-[7.5rem] lg:mt-36 mb-24 md:mb-32 lg:mb-40">
   <div class="text-center">
     <h2 class="mx-auto max-w-4xl font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
       Built because<br />.env files still matter.
@@ -256,7 +256,7 @@ title: ""
       </li>
     </ul>
   </div>
-  <div class="mx-auto mt-16 max-w-[38rem] border-l border-zinc-800/80 pl-6 md:pl-8">
+  <div class="mx-auto mt-14 md:mt-16 max-w-[38rem] border-l border-zinc-800/80 pl-6 md:pl-8">
     <div class="space-y-5 text-sm leading-6 text-zinc-400 md:text-[0.92rem] md:leading-7">
       <p>I love .env files.</p>
       <p>They work everywhere: local development, CI, containers, servers, cloud platforms, and even agents. Easy to get started with, yet flexible enough for advanced use cases, few tools are as practical as they are elegant.</p>
@@ -270,7 +270,7 @@ title: ""
   </div>
 </section>
 
-<section class="w-full px-6 mt-12 md:mt-20 lg:mt-28 mb-28 md:mb-36 lg:mb-44 text-center">
+<section class="w-full px-6 mt-10 md:mt-14 lg:mt-[4.5rem] mb-24 md:mb-32 lg:mb-40 text-center">
   <div class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-zinc-500 sm:flex-row sm:gap-4 md:text-xs">
     <span>Free &amp; open source above</span>
     <span aria-hidden="true">↕︎</span>
@@ -296,7 +296,7 @@ title: ""
 </section>
 
 <section class="w-full px-6 mt-0 mb-0">
-  <div class="relative overflow-hidden mx-auto max-w-6xl px-6 pt-0 md:pt-2 pb-36 md:pb-48 lg:pb-56 text-center">
+  <div class="relative overflow-hidden mx-auto max-w-6xl px-6 pt-0 md:pt-2 pb-32 md:pb-44 lg:pb-52 text-center">
     <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
       <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
     </div>

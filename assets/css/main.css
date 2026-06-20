@@ -1096,8 +1096,15 @@ width: 100%;
 }
 
 @media (max-width: 480px) {
-  .homepage-trust-row:nth-child(2) {
-    display: none !important;
+  .homepage-trust-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    gap: 2rem 2.25rem !important;
+    justify-content: center;
+  }
+
+  .homepage-trust-row {
+    display: contents !important;
   }
 }
 

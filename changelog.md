@@ -336,6 +336,37 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-06-19-next-env" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-19" data-search-text="next env dotenvx next-env nextjs encrypted env files next environment loading vercel june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 19, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Next.js</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Now available: <code class="text-zinc-300">@dotenvx/next-env</code>, a drop-in replacement for Next.js <code class="text-zinc-300">@next/env</code> that lets encrypted dotenvx files load during Next.js' own environment-loading step.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-nextjs">Read documentation</a>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-06-16-armor-first-class" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-16" data-search-text="armor first class dotenvx login logout professional security local first june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 16, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>First-Class ⛨</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor ⛨ in Dotenvx</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Armor is now built directly into dotenvx. Run <code class="text-zinc-300">dotenvx login</code> to get started.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-06-10-key-guard-development" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-10" data-search-text="key guard development approval context lifecycle approve deny expired command device location private key dotenvx armor june 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 10, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">

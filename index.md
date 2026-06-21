@@ -243,26 +243,6 @@ title: ""
     <h2 class="mx-auto max-w-4xl font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">
       Built because<br />.env files still matter.
     </h2>
-    <ul class="mx-auto mt-10 flex max-w-[50rem] list-none flex-wrap items-start justify-center gap-x-3 gap-y-6 p-0">
-      <li class="w-full max-w-[16rem] sm:w-[16rem]">
-        <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-          <span class="homepage-proof-strip-value">5,600 stars</span>
-          <span class="homepage-proof-strip-label">GitHub</span>
-        </a>
-      </li>
-      <li class="w-full max-w-[16rem] sm:w-[16rem]">
-        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-          <span class="homepage-proof-strip-value">99.5% less exposure</span>
-          <span class="homepage-proof-strip-label">Whitepaper</span>
-        </a>
-      </li>
-      <li class="w-full max-w-[16rem] sm:w-[16rem]">
-        <a href="https://npm.chart.dev/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="homepage-proof-strip">
-          <span class="homepage-proof-strip-value">131 million</span>
-          <span class="homepage-proof-strip-label">NPM</span>
-        </a>
-      </li>
-    </ul>
   </div>
   <div class="mx-auto mt-14 md:mt-16 max-w-[38rem] border-l border-zinc-800/80 pl-6 md:pl-8">
     <div class="space-y-5 text-sm leading-6 text-zinc-400 md:text-[0.92rem] md:leading-7">
@@ -275,14 +255,6 @@ title: ""
     <div class="mt-5">
       {% include components/homepage-testimonial-author.html href="https://github.com/motdotla" img="/assets/img/mot.jpg" alt="Scott Motte" name="Scott Motte" title="Creator of dotenv and dotenvx" %}
     </div>
-  </div>
-</section>
-
-<section class="w-full px-6 mt-10 md:mt-14 lg:mt-[4.5rem] mb-24 md:mb-32 lg:mb-40 text-center">
-  <div class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-zinc-500 sm:flex-row sm:gap-4 md:text-xs">
-    <span>Free &amp; open source above</span>
-    <span aria-hidden="true">↕︎</span>
-    <span class="text-zinc-300">Professional security below</span>
   </div>
 </section>
 
@@ -299,6 +271,14 @@ title: ""
 </section>
 -->
 
+<section class="w-full max-w-5xl mx-auto px-6 mt-24 md:mt-32 lg:mt-40 mb-16 md:mb-20 lg:mb-24 text-center">
+  <div class="mx-auto max-w-3xl">
+    <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">When teams need guardrails</p>
+    <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Local keys work beautifully for individuals.</h2>
+    <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Teams need approvals, access logs, rotation, and policy.</p>
+  </div>
+</section>
+
 <section class="homepage-trust-boundary w-full px-6" aria-hidden="true">
   <div class="homepage-trust-boundary-frame relative mx-auto max-w-5xl"></div>
 </section>
@@ -311,7 +291,7 @@ title: ""
     <div class="relative z-10">
       <div class="mx-auto mt-4 max-w-4xl text-center md:mt-6">
         <div class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">
-          PROFESSIONAL SECURITY
+          TEAM SECURITY
         </div>
         <h3 class="mt-8 font-canela font-medium uppercase tracking-[-0.018em] text-[3.7rem] md:text-[4.65rem] lg:text-[5.5rem] leading-[0.95] text-zinc-100">
           Armored<br />Keys <span aria-hidden="true">⛨</span>

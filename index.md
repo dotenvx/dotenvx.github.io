@@ -6,6 +6,14 @@ title: ""
 
 {% include components/homepage-trust.html %}
 
+<section class="w-full max-w-5xl mx-auto px-6 mt-16 md:mt-20 lg:mt-24 mb-14 md:mb-[4.5rem] lg:mb-20">
+  <div class="mx-auto max-w-3xl text-center">
+    <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Free like Docker</p>
+    <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Start with the CLI. Upgrade when your team needs guardrails.</h2>
+    <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Use dotenvx locally, in CI, and across your stack for free. Add team security when private keys, approvals, access logs, and policy need to move beyond one developer's machine.</p>
+  </div>
+</section>
+
 <section class="w-full max-w-5xl mx-auto px-6 mt-0 mb-14 md:mb-[4.5rem] lg:mb-20">
   <div class="space-y-14 md:space-y-[4.5rem] lg:space-y-20">
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">

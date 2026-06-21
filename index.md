@@ -18,7 +18,7 @@ title: ""
   <div class="space-y-14 md:space-y-[4.5rem] lg:space-y-20">
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run on Anything</h2>
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Run Anywhere</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
           <p>Whether you're using Node, Python, Ruby, Docker, CI, or AI agents, dotenvx works the same way. No custom integrations required. It just works &ndash; anywhere.</p>
         </div>
@@ -49,44 +49,13 @@ title: ""
 
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Multiple Environments</h2>
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypt Secrets</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
-          <p>Development, production, agents, or anywhere in between. Load the right .env file with a single flag.</p>
+          <p>Add encryption to your .env files with a single command. Generate a public/private keypair and keep plaintext secrets out of source control.</p>
         </div>
         <div class="mt-7 max-w-[34rem]">
           <p class="homepage-testimonial-quote m-0 text-[0.95rem] md:text-base italic font-normal leading-relaxed">&ldquo;You can deploy env files to prod now? Creators of dotenv have been working on dotenvx which encrypts your env variables.&rdquo;</p>
           {% include components/homepage-testimonial-author.html href="https://x.com/zaidmukaddam/status/1941193539486089311?s=46" img="/assets/img/testimonials/zaid.jpg" name="Zaid" title="Founder, Scira.ai" %}
-        </div>
-      </div>
-
-      <div class="min-w-0 py-2 md:py-4">
-        <div class="homepage-code-window">
-          <div class="homepage-code-toolbar">
-            <div class="homepage-code-dots">
-              <span class="homepage-code-dot bg-[#ff6b5e]"></span>
-              <span class="homepage-code-dot bg-[#f5bd4f]"></span>
-              <span class="homepage-code-dot bg-[#61c554]"></span>
-            </div>
-            {% include components/homepage-code-copy-button.html %}
-          </div>
-          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"HELLO=Production"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">.env.prod</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-program">echo</span> <span class="homepage-code-string">"console.log('Hello ' + process.env.HELLO)"</span> <span class="homepage-code-muted">&gt;</span> <span class="homepage-code-file">index.js</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">run -f</span> <span class="homepage-code-command">.env.prod</span> <span class="homepage-code-command">--</span> <span class="homepage-code-file">node index.js</span>
-<span class="homepage-code-output">⟐ injected env (1) from .env.prod</span>
-<span class="homepage-code-result">Hello Production</span></code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
-      <div class="max-w-xl">
-        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Encrypt in One Command</h2>
-        <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
-          <p>Add encryption to your .env files with a single command. Generate a public/private keypair and securely share encrypted secrets without changing your workflow.</p>
-        </div>
-        <div class="mt-7 max-w-[34rem]">
-          <p class="homepage-testimonial-quote m-0 text-[0.95rem] md:text-base italic font-normal leading-relaxed">&ldquo;Dotenvx is the strongest option for sharing .env files. It&rsquo;s a tool that lets you commit .env files to Git while keeping them encrypted. Same convenience, almost zero leak risk.&rdquo;</p>
-          {% include components/homepage-testimonial-author.html href="https://x.com/commte/status/1996144456891060730?s=46" img="/assets/img/testimonials/commte.jpg" alt="コムテ" name="Comte" title="Founder, Izanami" %}
         </div>
       </div>
 
@@ -109,55 +78,47 @@ title: ""
 <span class="homepage-code-command">DOTENV_PUBLIC_KEY_PROD</span><span class="homepage-code-muted">="</span><span class="homepage-code-string">03d4b0d392c92320fe751163293282bc434f38d7fe72a0429c3e449f312abd5121</span><span class="homepage-code-muted">"</span>
 
 <span class="homepage-code-muted"># .env.prod</span>
-<span class="homepage-code-command">HELLO</span><span class="homepage-code-muted">=</span><span class="homepage-code-string">encrypted:BH1SPwuO10wBx/V1in3L9Hgkcap75QKIiMXUXqniJDd9xA6WJwvWedyuvRk0M1HdZt9MlvFMUHrqmuwzE0dPDEcpvx4MIMhSJzzSyGbwdFniJ1pjqjEqjRkQfdroB6iOVZR8UmsyaJcz/18=</span></span>
-<span class="homepage-code-return" aria-hidden="true">↵</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">run -f</span> <span class="homepage-code-command">.env.prod</span> <span class="homepage-code-command">--</span> <span class="homepage-code-file">node index.js</span>
-<span class="homepage-code-output">⟐ injected env (2) from .env.prod</span>
-<span class="homepage-code-result">Hello Production</span></code></pre>
+<span class="homepage-code-command">HELLO</span><span class="homepage-code-muted">=</span><span class="homepage-code-string">encrypted:BH1SPwuO10wBx/V1in3L9Hgkcap75QKIiMXUXqniJDd9xA6WJwvWedyuvRk0M1HdZt9MlvFMUHrqmuwzE0dPDEcpvx4MIMhSJzzSyGbwdFniJ1pjqjEqjRkQfdroB6iOVZR8UmsyaJcz/18=</span></span></code></pre>
         </div>
       </div>
     </div>
 
     <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
       <div class="max-w-xl">
-        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Drop-In for Dotenv</h2>
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Commit Safely</h2>
         <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
-          <p>Install and use it in code just like dotenv. Or install the CLI globally and unlock dotenv for any language, framework, or platform.</p>
+          <p>Commit encrypted .env files to git while private keys stay separate. Keep the workflow developers already love, without shipping plaintext secrets.</p>
         </div>
-        <div class="homepage-run-logos mt-7 flex flex-wrap items-center gap-x-5 gap-y-4">
-          <a href="/docs/languages/nodejs" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Node.js">
-            {% include icons/nodejs.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/languages/python" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Python">
-            {% include icons/python.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/languages/ruby" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Ruby">
-            {% include icons/ruby.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/languages/go" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Go">
-            {% include icons/go.html class="h-5 w-auto" %}
-          </a>
-          <a href="/docs/languages/rust" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Rust">
-            {% include icons/rust.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/languages/dotnet" class="text-current no-underline hover:text-current hover:no-underline" aria-label=".NET">
-            {% include icons/dotnet.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/languages/php" class="text-current no-underline hover:text-current hover:no-underline" aria-label="PHP">
-            {% include icons/php.html class="h-5 w-auto" %}
-          </a>
-          <a href="/docs/platforms/openai" class="text-current no-underline hover:text-current hover:no-underline" aria-label="OpenAI">
-            {% include logos/openai.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/platforms/claude" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Claude">
-            {% include logos/claude.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/platforms/cloudflare" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Cloudflare">
-            {% include icons/cloudflare.html class="h-6 w-auto" %}
-          </a>
-          <a href="/docs/frameworks/nextjs" class="text-current no-underline hover:text-current hover:no-underline" aria-label="Next.js">
-            {% include icons/nextjs.html class="h-6 w-auto" %}
-          </a>
+        <div class="mt-7 max-w-[34rem]">
+          <p class="homepage-testimonial-quote m-0 text-[0.95rem] md:text-base italic font-normal leading-relaxed">&ldquo;Dotenvx is the strongest option for sharing .env files. It&rsquo;s a tool that lets you commit .env files to Git while keeping them encrypted. Same convenience, almost zero leak risk.&rdquo;</p>
+          {% include components/homepage-testimonial-author.html href="https://x.com/commte/status/1996144456891060730?s=46" img="/assets/img/testimonials/commte.jpg" alt="コムテ" name="Comte" title="Founder, Izanami" %}
+        </div>
+      </div>
+
+      <div class="mx-auto w-full max-w-2xl min-w-0 space-y-4">
+        <div class="homepage-code-window">
+          <div class="homepage-code-toolbar">
+            <div class="homepage-code-dots">
+              <span class="homepage-code-dot bg-[#ff6b5e]"></span>
+              <span class="homepage-code-dot bg-[#f5bd4f]"></span>
+              <span class="homepage-code-dot bg-[#61c554]"></span>
+            </div>
+            {% include components/homepage-code-copy-button.html %}
+          </div>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">encrypt -f</span> <span class="homepage-code-command">.env.prod</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">git</span> <span class="homepage-code-command">add</span> <span class="homepage-code-file">.env.prod</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">git</span> <span class="homepage-code-command">commit -m</span> <span class="homepage-code-string">"add encrypted production env"</span>
+<span class="homepage-code-output">[main 9f1c2a0] add encrypted production env</span>
+<span class="homepage-code-result">1 file changed, 7 insertions(+)</span></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-12">
+      <div class="max-w-xl">
+        <h2 class="font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Ready for Agents</h2>
+        <div class="mt-5 max-w-[34rem] space-y-5 text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">
+          <p>Let agents inspect, edit, and run your project without handing plaintext secrets to prompts or model context.</p>
         </div>
       </div>
 
@@ -169,13 +130,19 @@ title: ""
               <span class="homepage-code-dot bg-[#f5bd4f]"></span>
               <span class="homepage-code-dot bg-[#61c554]"></span>
             </div>
-            {% include components/homepage-code-copy-button.html %}
           </div>
-          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">npm install</span> <span class="homepage-code-file">@dotenvx/dotenvx</span> <span class="homepage-code-muted">--save</span>
+          <pre class="homepage-code-body"><code><span class="homepage-code-muted">agent scans repo</span>
+<span class="homepage-code-file">project/</span>
+<span class="homepage-code-muted">├─</span> <span class="homepage-code-file">app.js</span>
+<span class="homepage-code-muted">├─</span> <span class="homepage-code-file">package.json</span>
+<span class="homepage-code-muted">└─</span> <span class="homepage-code-file">.env</span>
 
-<span class="homepage-code-muted">// swap require('dotenv').config() for:</span>
-<span class="homepage-code-command">require</span><span class="homepage-code-muted">(</span><span class="homepage-code-string">'@dotenvx/dotenvx'</span><span class="homepage-code-muted">).</span><span class="homepage-code-command">config</span><span class="homepage-code-muted">()</span>
-<span class="homepage-code-muted">// or import '@dotenvx/dotenvx/config' // for esm</span></code></pre>
+<span class="homepage-code-muted"># .env</span>
+<span class="homepage-code-command">OPENAI_API_KEY</span><span class="homepage-code-muted">=</span><span class="homepage-code-string">encrypted:BH1SPw...</span>
+<span class="homepage-code-command">DATABASE_URL</span><span class="homepage-code-muted">=</span><span class="homepage-code-string">encrypted:Qk92...</span>
+
+<span class="homepage-code-muted">agent context</span>
+<span class="homepage-code-result">No plaintext secrets found</span></code></pre>
         </div>
       </div>
     </div>

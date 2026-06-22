@@ -10,7 +10,7 @@ title: ""
   <div class="mx-auto max-w-3xl text-center">
     <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Free like Docker</p>
     <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Start with the CLI. Upgrade when your team needs guardrails.</h2>
-    <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Use dotenvx locally, in CI, and across your stack for free. Add team security when private keys, approvals, access logs, and policy need to move beyond one developer's machine.</p>
+    <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Use dotenvx locally, in CI, and across your stack for free. No account required. Add team controls when shared secrets need policy.</p>
   </div>
 </section>
 
@@ -69,15 +69,15 @@ title: ""
             </div>
             {% include components/homepage-code-copy-button.html %}
           </div>
-          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">encrypt -f</span> <span class="homepage-code-command">.env.prod</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">cat</span> <span class="homepage-code-command">.env.prod</span>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">encrypt</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">cat</span> <span class="homepage-code-command">.env</span>
 <span class="homepage-code-cat-output"><span class="homepage-code-muted">#/-------------------[DOTENV_PUBLIC_KEY]--------------------/</span>
 <span class="homepage-code-muted">#/            public-key encryption for .env files          /</span>
 <span class="homepage-code-muted">#/       [how it works](https://dotenvx.com/encryption)     /</span>
 <span class="homepage-code-muted">#/----------------------------------------------------------/</span>
-<span class="homepage-code-command">DOTENV_PUBLIC_KEY_PROD</span><span class="homepage-code-muted">="</span><span class="homepage-code-string">03d4b0d392c92320fe751163293282bc434f38d7fe72a0429c3e449f312abd5121</span><span class="homepage-code-muted">"</span>
+<span class="homepage-code-command">DOTENV_PUBLIC_KEY</span><span class="homepage-code-muted">="</span><span class="homepage-code-string">03d4b0d392c92320fe751163293282bc434f38d7fe72a0429c3e449f312abd5121</span><span class="homepage-code-muted">"</span>
 
-<span class="homepage-code-muted"># .env.prod</span>
+<span class="homepage-code-muted"># .env</span>
 <span class="homepage-code-command">HELLO</span><span class="homepage-code-muted">=</span><span class="homepage-code-string">encrypted:BH1SPwuO10wBx/V1in3L9Hgkcap75QKIiMXUXqniJDd9xA6WJwvWedyuvRk0M1HdZt9MlvFMUHrqmuwzE0dPDEcpvx4MIMhSJzzSyGbwdFniJ1pjqjEqjRkQfdroB6iOVZR8UmsyaJcz/18=</span></span></code></pre>
         </div>
       </div>
@@ -105,10 +105,10 @@ title: ""
             </div>
             {% include components/homepage-code-copy-button.html %}
           </div>
-          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">encrypt -f</span> <span class="homepage-code-command">.env.prod</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">git</span> <span class="homepage-code-command">add</span> <span class="homepage-code-file">.env.prod</span>
-<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">git</span> <span class="homepage-code-command">commit -m</span> <span class="homepage-code-string">"add encrypted production env"</span>
-<span class="homepage-code-output">[main 9f1c2a0] add encrypted production env</span>
+          <pre class="homepage-code-body"><code><span class="homepage-code-prompt">$</span> <span class="homepage-code-command">dotenvx</span> <span class="homepage-code-command">encrypt</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">git</span> <span class="homepage-code-command">add</span> <span class="homepage-code-file">.env</span>
+<span class="homepage-code-prompt">$</span> <span class="homepage-code-command">git</span> <span class="homepage-code-command">commit -m</span> <span class="homepage-code-string">"add encrypted env"</span>
+<span class="homepage-code-output">[main 9f1c2a0] add encrypted env</span>
 <span class="homepage-code-result">1 file changed, 7 insertions(+)</span></code></pre>
         </div>
       </div>
@@ -240,8 +240,8 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-24 md:mt-32 lg:mt-40 mb-16 md:mb-20 lg:mb-24 text-center">
   <div class="mx-auto max-w-3xl">
-    <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">When teams need guardrails</p>
-    <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Local keys work beautifully for individuals.</h2>
+    <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">When secrets become a team workflow</p>
+    <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Local keys are enough when you work alone.</h2>
     <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Teams need approvals, access logs, rotation, and policy.</p>
   </div>
 </section>

@@ -2657,7 +2657,7 @@ This is known as *Decryption at Access* and is written about in [the whitepaper]
 ```
 ⛨ ARMORED KEYS: Harden your private keys.
 ⮕ install [curl -sfS https://dotenvx.sh/armor | sh]
-⮕ then run [dotenvx-armor login]
+⮕ then run [dotenvx armor login]
 ```
 
 [Learn more](https://dotenvx.com/armor)

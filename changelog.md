@@ -433,7 +433,7 @@ permalink: /changelog/
         </div>
       </article>
 
-      <article id="2026-06-16-armor-first-class" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-16" data-search-text="armor first class dotenvx login logout professional security local first june 2026">
+      <article id="2026-06-16-armor-first-class" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-16" data-search-text="armor first class dotenvx armor login logout professional security local first june 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 16, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -443,7 +443,7 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true"><span>First-Class ⛨</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor ⛨ in Dotenvx</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Armor is now built directly into dotenvx. Run <code class="text-zinc-300">dotenvx login</code> to get started.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Armor is now built directly into dotenvx. Run <code class="text-zinc-300">dotenvx armor login</code> to get started.</p>
           </div>
         </div>
       </article>

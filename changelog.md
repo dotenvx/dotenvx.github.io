@@ -84,6 +84,12 @@ permalink: /changelog/
     font-size: clamp(0.8rem, 3.1vw, 1.35rem);
   }
 
+  .changelog-card-version > span {
+    font-size: clamp(5rem, 18vw, 8.5rem);
+    font-weight: 800;
+    line-height: 0.9;
+  }
+
   .changelog-card-terminal {
     align-items: flex-start;
     background: #0a0a0a;
@@ -281,6 +287,21 @@ permalink: /changelog/
     width: clamp(5rem, 18vw, 8rem);
   }
 
+  .changelog-macos-logo {
+    color: #f4f4f5;
+    height: auto;
+    max-width: min(24%, 6.5rem);
+    position: relative;
+    width: 100%;
+  }
+
+  .changelog-powershell-logo {
+    color: #f4f4f5;
+    height: clamp(5rem, 18vw, 8rem);
+    position: relative;
+    width: clamp(5rem, 18vw, 8rem);
+  }
+
   .changelog-install-chart {
     height: 100%;
     position: relative;
@@ -336,6 +357,66 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-07-07-keychain" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-07" data-search-text="keychain macos private keys local storage dotenvx keychain up down push pull no keychain july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 7, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">{% include logos/macos.html class="changelog-macos-logo" %}</div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Keychain</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use the new <code class="text-zinc-300">dotenvx keychain</code> commands to move your private keys into your macOS Keychain.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-07-06-plain-values" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-06" data-search-text="plain plaintext _plain public env values precommit prebuild sealed dotenvx primitives july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 6, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>HELLO_PLAIN</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">_PLAIN Values</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">_PLAIN</code> to keep a value unencrypted.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-06-30-dotenvx-2-primitives" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-30" data-search-text="dotenvx 2 primitives resolvers transforms keyring parse scan encrypt decrypt set get run config june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 30, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-version" aria-hidden="true"><span>2.0</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx 2.0</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx is now built on <code class="text-zinc-300">@dotenvx/primitives</code>, a cleaner foundation for parsing, keyrings, and transforms.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-06-24-powershell-npm-binaries" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-24" data-search-text="powershell windows npm shim named binaries pack ci dotenvx encrypted env local june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 24, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">{% include logos/powershell.html class="changelog-powershell-logo" %}</div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">PowerShell</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now runs correctly across Windows PowerShell.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-06-19-next-env" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-19" data-search-text="next env dotenvx next-env nextjs encrypted env files next environment loading vercel june 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 19, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">

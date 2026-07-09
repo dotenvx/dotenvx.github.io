@@ -357,7 +357,7 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
-      <article id="2026-07-07-keychain" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-07" data-search-text="keychain macos private keys local storage dotenvx keychain up down push pull no keychain july 2026">
+      <article id="2026-07-07-native" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-07" data-search-text="native macos keychain private keys local storage dotenvx native up down push pull july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 7, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
           <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
@@ -366,8 +366,9 @@ permalink: /changelog/
         <div>
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true">{% include logos/macos.html class="changelog-macos-logo" %}</div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Keychain</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use the new <code class="text-zinc-300">dotenvx keychain</code> commands to move your private keys into your macOS Keychain.</p>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Native</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use the new <code class="text-zinc-300">dotenvx native</code> commands to move your private keys into your OS secret store.</p>
+              <p class="mt-2 text-zinc-500 text-sm">Note: native secret storage is macOS-only right now.</p>
           </div>
         </div>
       </article>

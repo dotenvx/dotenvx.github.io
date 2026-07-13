@@ -357,6 +357,21 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-07-13-mask" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-13" data-search-text="mask masked values secrets run get decrypt stdout config library sdk dotenvx july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 13, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>--mask</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Masked Values</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">--mask</code> with <code class="text-zinc-300">run</code>, <code class="text-zinc-300">get</code>, and <code class="text-zinc-300">decrypt --stdout</code>, or <code class="text-zinc-300">mask: true</code> with <code class="text-zinc-300">config()</code> and <code class="text-zinc-300">get()</code>, to keep secret values obscured.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-07-11-native" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-11" data-search-text="native macos keychain linux secret service windows credential manager private keys local storage dotenvx native up down push pull july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 11, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
@@ -413,6 +428,47 @@ permalink: /changelog/
               <div class="changelog-card changelog-card-command" aria-hidden="true"><span>HELLO_PLAIN</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">_PLAIN Values</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">_PLAIN</code> to keep a value unencrypted.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-06-30-installs" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-06-30" data-search-text="npm installs monthly 30000000 dotenvx june 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jun 30, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
+                  <g stroke="#27272a" stroke-width="1">
+                    <path d="M64 40H690M64 116H690M64 192H690M64 268H690M64 344H690"></path>
+                    <path d="M64 40V344M180 40V344M296 40V344M412 40V344M528 40V344M644 40V344"></path>
+                  </g>
+                  <g fill="#71717a" font-size="14" font-weight="500">
+                    <text x="28" y="47">30M</text>
+                    <text x="28" y="199">15M</text>
+                    <text x="28" y="351">0</text>
+                    <text x="170" y="374">Sep 2024</text>
+                    <text x="492" y="374">Jun 2026</text>
+                  </g>
+                  <path d="M64 344 C118 344 164 341 210 337 C256 332 292 322 326 306 C360 290 388 268 420 238 C452 208 482 169 516 130 C550 91 594 58 632 38 C656 25 674 17 690 24 L690 344 L64 344 Z" fill="#ecd53f" fill-opacity="0.14"></path>
+                  <path d="M64 344 C118 344 164 341 210 337 C256 332 292 322 326 306 C360 290 388 268 420 238 C452 208 482 169 516 130 C550 91 594 58 632 38 C656 25 674 17 690 24" fill="none" stroke="#ecd53f" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle cx="690" cy="24" r="6" fill="#ecd53f"></circle>
+                  <circle cx="690" cy="24" r="11" fill="none" stroke="#ecd53f" stroke-opacity="0.38" stroke-width="2"></circle>
+                  <g style="filter: drop-shadow(0 12px 16px rgba(0,0,0,0.42));">
+                    <rect x="244" y="78" width="330" height="118" rx="12" fill="#f4f4f5"></rect>
+                    <rect x="244.5" y="78.5" width="329" height="117" rx="11.5" fill="none" stroke="#d4d4d8"></rect>
+                    <text x="409" y="119" text-anchor="middle" fill="#18181b" font-size="22" font-weight="700">npm:@dotenvx/dotenvx</text>
+                    <circle cx="300" cy="151" r="5" fill="#ecd53f"></circle>
+                    <text x="318" y="160" fill="#18181b" font-size="26" font-weight="700">30,000,000</text>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">30,000,000 Installs</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">@dotenvx/dotenvx</code> reached 30,000,000 monthly npm installs.</p>
           </div>
         </div>
       </article>

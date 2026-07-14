@@ -357,6 +357,21 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-07-13-armor-sessions" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-13" data-search-text="armor login token native os secret store status settings session macos keychain linux windows credential manager july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 13, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor status</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Safer Armor Sessions</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx armor login</code> now prefers your OS-native secret store for its access token. Use the new <code class="text-zinc-300">armor status</code> and <code class="text-zinc-300">armor settings</code> commands to inspect and manage the local session.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-07-13-mask" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-13" data-search-text="mask masked values secrets run get decrypt stdout config library sdk dotenvx july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 13, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">

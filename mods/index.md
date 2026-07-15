@@ -35,6 +35,13 @@ title: "Mods"
       </div>
       <p class="text-zinc-500">Enhance your llms with high-level knowledge of dotenvx.</p>
     </a>
+    <a class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300" href="/llms-full.txt">
+      <div class="flex gap-x-2 items-center">
+        <h5 class="font-bold text-lg">llms-full.txt</h5>
+        <span class="text-zinc-500 font-normal italic"></span>
+      </div>
+      <p class="text-zinc-500">Enhance your llms with full documented knowledge of dotenvx.</p>
+    </a>
     <a class="card h-100 border border-zinc-200 dark:border-zinc-800 rounded py-3.5 px-4 gap-4 hover:border-yellow-400 dark:hover:border-yellow-300" href="/vscode-extension">
       <div class="flex gap-x-2 items-center">
         <h5 class="font-bold text-lg">VS Code Extension</h5>

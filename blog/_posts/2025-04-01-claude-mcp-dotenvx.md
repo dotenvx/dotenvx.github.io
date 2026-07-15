@@ -80,7 +80,7 @@ Now you can ask Claude to *encrypt my .env file* and it will do it!
 
 ## Bonus
 
-Additionally, be sure to share [llms.txt](https://dotenvx.com/llms.txt) with Claude to make it smarter about all this.
+Additionally, be sure to share [llms.txt](https://dotenvx.com/llms.txt) and [llms-full.txt](https://dotenvx.com/llms-full.txt) with Claude to make it smarter about all this.
 
 Thanks for using Dotenvx.
 

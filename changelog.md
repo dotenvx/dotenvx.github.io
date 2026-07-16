@@ -365,9 +365,9 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx run --redact -- your-command</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Redacted Command Output</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">dotenvx run --redact</code> to keep decrypted secrets out of your command's stdout and stderr.</p>
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>--redact</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Redact Secrets</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Redact secrets from stdout and stderr before they leak into logs or agent output.</p>
           </div>
         </div>
       </article>

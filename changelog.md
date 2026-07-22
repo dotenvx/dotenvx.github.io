@@ -46,6 +46,11 @@ permalink: /changelog/
     box-shadow: 0 0 22px rgba(236, 213, 63, 0.34);
   }
 
+  [data-changelog-entry] h3 code {
+    color: inherit;
+    font-family: inherit;
+  }
+
 
 
   .changelog-card {
@@ -88,6 +93,51 @@ permalink: /changelog/
     font-size: clamp(5rem, 18vw, 8.5rem);
     font-weight: 800;
     line-height: 0.9;
+  }
+
+  .changelog-card-brand-icon {
+    height: clamp(4.5rem, 14vw, 6rem);
+    position: relative;
+    width: clamp(4.5rem, 14vw, 6rem);
+  }
+
+  .changelog-card-brand-icon-1password {
+    color: #f4f4f5;
+  }
+
+  .changelog-card-brand-icon-bitwarden {
+    color: #f4f4f5;
+  }
+
+  .changelog-agent-logos {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .changelog-agent-logo {
+    align-items: center;
+    color: #f4f4f5;
+    display: flex;
+    height: clamp(6rem, 20vw, 8.5rem);
+    justify-content: center;
+    width: clamp(6rem, 20vw, 8.5rem);
+  }
+
+  .changelog-agent-logo + .changelog-agent-logo {
+    margin-left: clamp(-3rem, -7vw, -2.25rem);
+  }
+
+  .changelog-agent-logo svg {
+    height: 72%;
+    width: 72%;
+  }
+
+  .changelog-sublinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
   }
 
   .changelog-card-terminal {
@@ -273,6 +323,33 @@ permalink: /changelog/
     color: #d4d4d8;
   }
 
+  .changelog-enclave-state {
+    align-items: center;
+    color: #e4e4e7;
+    display: flex;
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    font-weight: 650;
+    gap: clamp(0.8rem, 3vw, 1.1rem);
+    position: relative;
+  }
+
+  .changelog-enclave-checkbox {
+    align-items: center;
+    background: rgba(9, 9, 11, 0.72);
+    border: 1px solid rgba(113, 113, 122, 0.68);
+    border-radius: 6px;
+    display: flex;
+    height: clamp(2.5rem, 8vw, 3.25rem);
+    justify-content: center;
+    width: clamp(2.5rem, 8vw, 3.25rem);
+  }
+
+  .changelog-enclave-checkbox svg {
+    color: #ecd53f;
+    height: 58%;
+    width: 58%;
+  }
+
   .changelog-cloudflare-logo {
     height: auto;
     max-width: min(36%, 10rem);
@@ -290,7 +367,7 @@ permalink: /changelog/
   .changelog-macos-logo {
     color: #f4f4f5;
     height: auto;
-    max-width: min(24%, 6.5rem);
+    max-width: min(46%, 12rem);
     position: relative;
     width: 100%;
   }
@@ -357,6 +434,61 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-07-22-dotenv-weekly-installs" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-22" data-search-text="dotenv npm installs weekly 150000000 150 million july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 22, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-version" aria-hidden="true"><span>150M</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">150,000,000 Weekly Installs</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenv</code> just broke 150 million weekly npm installs.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-07-21-bitwarden" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-21" data-search-text="bitwarden bw secrets password manager dotenvx july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 21, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-card-brand-icon changelog-card-brand-icon-bitwarden" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21.722.296A.964.964 0 0 0 21.018 0H2.982a.959.959 0 0 0-.703.296.96.96 0 0 0-.297.702v12c0 .895.174 1.783.523 2.665.349.88.783 1.66 1.3 2.345.517.68 1.132 1.346 1.848 1.993a21.807 21.807 0 0 0 1.98 1.609c.605.427 1.235.83 1.893 1.212.657.381 1.125.638 1.4.772.276.134.5.241.664.311a.916.916 0 0 0 .814 0c.168-.073.389-.177.667-.311.275-.134.743-.394 1.401-.772a25.305 25.305 0 0 0 1.894-1.212A21.891 21.891 0 0 0 18.348 20c.716-.647 1.33-1.31 1.847-1.993s.949-1.463 1.3-2.345c.35-.879.524-1.767.524-2.665V1.001a.95.95 0 0 0-.297-.705zm-2.325 12.815c0 4.344-7.397 8.087-7.397 8.087V2.57h7.397v10.54z"></path>
+                </svg>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Bitwarden</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use Bitwarden secrets in dotenvx with a <code class="text-zinc-300">bw://</code> reference.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-bitwarden">Read documentation</a>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-07-20-1password" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-20" data-search-text="1password op secrets password manager dotenvx july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 20, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <svg class="changelog-card-brand-icon changelog-card-brand-icon-1password" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c6.627 0 12 5.373 12 12 0 6.628-5.373 12-12 12S0 18.628 0 12C0 5.373 5.373 0 12 0m-.893 4.86c-.485 0-.727.001-.913.095a.87.87 0 0 0-.378.379c-.094.185-.095.428-.095.912v2.747c0 .12 0 .182.016.238q.02.075.065.138a1 1 0 0 0 .175.162l.695.564c.113.092.17.139.19.194a.22.22 0 0 1 0 .15c-.02.056-.077.102-.19.194l-.695.564a1 1 0 0 0-.175.162.4.4 0 0 0-.065.138 1 1 0 0 0-.016.238v6.019c0 .485 0 .728.095.913a.87.87 0 0 0 .378.378c.186.094.428.094.913.094h1.786c.485 0 .727 0 .913-.094a.87.87 0 0 0 .378-.378c.095-.185.095-.428.095-.913v-2.747c0-.12 0-.182-.016-.238a.4.4 0 0 0-.065-.138 1 1 0 0 0-.175-.162l-.695-.564c-.113-.092-.17-.138-.191-.193a.22.22 0 0 1 0-.152c.02-.055.078-.1.19-.193l.696-.564a1 1 0 0 0 .175-.162.4.4 0 0 0 .065-.138 1 1 0 0 0 .016-.238V6.246c0-.484 0-.727-.095-.912a.87.87 0 0 0-.378-.379c-.186-.094-.428-.094-.913-.094Z"></path>
+                </svg>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">1Password</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Use 1Password secrets in dotenvx with an <code class="text-zinc-300">op://</code> reference.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-1password">Read documentation</a>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-07-15-redact" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-15" data-search-text="redact secrets command output stdout stderr dotenvx run july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 15, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
@@ -365,9 +497,26 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>--redact</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Redact Secrets</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">Redact secrets from stdout and stderr before they leak into logs or agent output.</p>
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-agent-logos">
+                  <div class="changelog-agent-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"></path>
+                    </svg>
+                  </div>
+                  <div class="changelog-agent-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Redact secrets from Claude and Codex</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Keep secrets out of logs and agent output.</p>
+              <div class="changelog-sublinks mt-2">
+                <a class="font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-claude">Claude guide</a>
+                <a class="font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-codex">Codex guide</a>
+              </div>
           </div>
         </div>
       </article>
@@ -381,8 +530,8 @@ permalink: /changelog/
         <div>
           <div class="max-w-2xl">
               <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx ls --json</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">A Better <code class="text-zinc-300">dotenvx ls</code></h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx ls</code> now reports traversal progress while it searches large directory trees. Add <code class="text-zinc-300">--json</code> for an automation-friendly array of absolute filepaths.</p>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><code class="text-zinc-300">dotenvx ls</code></h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Now with progress updates and <code class="text-zinc-300">--json</code> output.</p>
           </div>
         </div>
       </article>
@@ -395,9 +544,18 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Software Enclaves</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-enclave-state">
+                  <span class="changelog-enclave-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m5 12 4 4L19 6"></path>
+                    </svg>
+                  </span>
+                  <span>Enclaved</span>
+                </div>
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Enclaved Private Keys</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base">dotenvx can now decrypt with Armored private keys held inside a software enclave, so the private key does not have to leave its protected environment.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx can now decrypt with Armored private keys held inside a software enclave, so the private key does not have to leave its protected environment.</p>
           </div>
         </div>
       </article>
@@ -410,9 +568,11 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor status</span></div>
+              <div class="changelog-card" aria-hidden="true">
+                {% include logos/macos.html class="changelog-macos-logo" %}
+              </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Safer Armor Sessions</h3>
-              <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx armor login</code> now prefers your OS-native secret store for its access token. Use the new <code class="text-zinc-300">armor status</code> and <code class="text-zinc-300">armor settings</code> commands to inspect and manage the local session.</p>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now secures your Armor token in your OS-native secret store. Safer for you and safer with agents.</p>
           </div>
         </div>
       </article>

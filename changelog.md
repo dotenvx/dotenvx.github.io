@@ -333,23 +333,6 @@ permalink: /changelog/
     position: relative;
   }
 
-  .changelog-enclave-checkbox {
-    align-items: center;
-    background: rgba(9, 9, 11, 0.72);
-    border: 1px solid rgba(113, 113, 122, 0.68);
-    border-radius: 6px;
-    display: flex;
-    height: clamp(2.5rem, 8vw, 3.25rem);
-    justify-content: center;
-    width: clamp(2.5rem, 8vw, 3.25rem);
-  }
-
-  .changelog-enclave-checkbox svg {
-    color: #ecd53f;
-    height: 58%;
-    width: 58%;
-  }
-
   .changelog-cloudflare-logo {
     height: auto;
     max-width: min(36%, 10rem);
@@ -489,6 +472,26 @@ permalink: /changelog/
         </div>
       </article>
 
+      <article id="2026-07-16-validate" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-16" data-search-text="validate validation env example dotenvx run strict july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 16, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true">
+                <div class="changelog-enclave-state">
+                  <code>.env.example</code>
+                </div>
+              </div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Validate</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Check your <code class="text-zinc-300">.env</code> against <code class="text-zinc-300">.env.example</code> before your app runs.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/cli/validate">Read documentation</a>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-07-15-redact" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-15" data-search-text="redact secrets command output stdout stderr dotenvx run july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 15, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">
@@ -546,11 +549,6 @@ permalink: /changelog/
           <div class="max-w-2xl">
               <div class="changelog-card" aria-hidden="true">
                 <div class="changelog-enclave-state">
-                  <span class="changelog-enclave-checkbox">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="m5 12 4 4L19 6"></path>
-                    </svg>
-                  </span>
                   <span>Enclaved</span>
                 </div>
               </div>

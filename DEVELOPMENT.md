@@ -1,7 +1,9 @@
 ## Development
 
+Use production env for serve/build. Tailwind/PostCSS then match CI, and you avoid a `jekyll-postcss` development-mode socket bug with large CSS (`Unterminated string in JSON` / `Connection reset by peer`):
+
 ```
-bundle exec jekyll serve --livereload --verbose --incremental
+JEKYLL_ENV=production bundle exec jekyll serve --livereload --verbose --incremental
 ```
 
 #### Production build
@@ -10,7 +12,21 @@ bundle exec jekyll serve --livereload --verbose --incremental
 JEKYLL_ENV=production bundle exec jekyll build
 ```
 
-It is recommended to run in production mode since tailwind processing can be slightly different than development.
+#### Pricing plans
+
+`/pricing` loads plan prices and limits from Radar at build time:
+
+```
+https://armor.dotenvx.com/public/plans
+```
+
+The Jekyll plugin `_plugins/plans.rb` fetches that JSON into `site.data.plans`. If the fetch fails (offline, API not deployed yet), it falls back to committed `_data/plans.json`.
+
+Override the URL when needed:
+
+```
+PLANS_API_URL=http://localhost:3000/public/plans JEKYLL_ENV=production bundle exec jekyll serve
+```
 
 #### To include /docs
 

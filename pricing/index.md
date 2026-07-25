@@ -8,121 +8,24 @@ image: "/assets/img/og-image-pricing.png"
   <h1 class="mb-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
   <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
 
+  {% assign members_feature = site.data.plans.features | where: "id", "members" | first %}
+  {% assign armored_keys_feature = site.data.plans.features | where: "id", "armored_keys" | first %}
+
   <div class="mx-auto w-full max-w-7xl">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_120px_rgba(236,213,63,0.20)] ring-1 ring-[rgba(236,213,63,0.16)]">
-    <div class="rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Pro</h2>
-        <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>$5</span><span class="text-zinc-300"> / mo</span>
-        </div>
-        <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">50 Armored Keys</p>
-          <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
-        </div>
-        <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Access</span></li>
-        </ul>
-      </div>
-      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
-        <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
-      </div>
-    </div>
-    <div class="md:rounded-tr-xl lg:rounded-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Team</h2>
-        <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>$20</span><span class="text-zinc-300"> / mo</span>
-        </div>
-        <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">100 Armored Keys</p>
-          <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
-        </div>
-        <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
-        </ul>
-      </div>
-      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
-        <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
-      </div>
-    </div>
-    <div class="md:rounded-bl-xl lg:rounded-none border-x border-b md:border-l md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Business</h2>
-        <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>$90</span><span class="text-zinc-300"> / mo</span>
-        </div>
-        <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">1,000 Armored Keys</p>
-          <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
-        </div>
-        <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
-        </ul>
-      </div>
-      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
-        <a href="/signup" class="btn-primary w-full inline-flex justify-center text-sm">Get Started</a>
-      </div>
-    </div>
-    <div class="rounded-b-xl md:rounded-br-xl md:rounded-bl-none lg:rounded-r-xl lg:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900 flex flex-col">
-      <div class="p-5 md:p-6 lg:p-4 xl:p-5">
-        <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Enterprise</h2>
-        <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>Custom</span>
-        </div>
-        <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-          <p class="text-zinc-100 text-sm">Specific needs</p>
-          <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
-        </div>
-        <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
-          <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
-        </ul>
-      </div>
-      <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
-        <a href="/contact" class="btn-primary w-full inline-flex justify-center text-sm">Contact Us</a>
-      </div>
-    </div>
+      {% for plan in site.data.plans.plans %}
+        {% case plan.id %}
+          {% when "pro" %}
+            {% assign border_classes = "rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900" %}
+          {% when "team" %}
+            {% assign border_classes = "md:rounded-tr-xl lg:rounded-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900" %}
+          {% when "business" %}
+            {% assign border_classes = "md:rounded-bl-xl lg:rounded-none border-x border-b md:border-l md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900" %}
+          {% else %}
+            {% assign border_classes = "rounded-b-xl md:rounded-br-xl md:rounded-bl-none lg:rounded-r-xl lg:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900" %}
+        {% endcase %}
+        {% include components/pricing-plan-card.html plan=plan border_classes=border_classes %}
+      {% endfor %}
     </div>
   </div>
 
@@ -207,10 +110,17 @@ image: "/assets/img/og-image-pricing.png"
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Team Members</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">1</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">3</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Flexible</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.pro }}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.team }}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.business }}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.enterprise }}</td>
+          </tr>
+          <tr class="border-b border-zinc-900">
+            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Armored Keys</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.pro }}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.team }}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.business }}</td>
+            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.enterprise }}</td>
           </tr>
           <tr class="border-b border-zinc-900">
             <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-2 sm:px-4 sm:py-2.5 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Log Retention</td>

@@ -1,0 +1,110 @@
+{
+  "plans": [
+    {
+      "id": "pro",
+      "name": "⛨ Pro",
+      "audience": "Personal",
+      "price": {
+        "display": "$5",
+        "period": "mo",
+        "show_period": true,
+        "amount_cents": 500,
+        "currency": "usd",
+        "interval": "month"
+      },
+      "limits": {
+        "members": 1,
+        "armored_keys": 50
+      },
+      "highlights": [
+        "1 member",
+        "50 armored keys"
+      ]
+    },
+    {
+      "id": "team",
+      "name": "⛨ Team",
+      "audience": "Small teams",
+      "price": {
+        "display": "$20",
+        "period": "mo",
+        "show_period": true,
+        "amount_cents": 2000,
+        "currency": "usd",
+        "interval": "month"
+      },
+      "limits": {
+        "members": 3,
+        "armored_keys": 100
+      },
+      "highlights": [
+        "3 members",
+        "100 armored keys"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "⛨ Business",
+      "audience": "Growing teams",
+      "price": {
+        "display": "$90",
+        "period": "mo",
+        "show_period": true,
+        "amount_cents": 9000,
+        "currency": "usd",
+        "interval": "month"
+      },
+      "limits": {
+        "members": 10,
+        "armored_keys": 1000
+      },
+      "highlights": [
+        "10 members",
+        "1,000 armored keys"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "⛨ Enterprise",
+      "audience": "Organizations with specific needs",
+      "price": {
+        "display": "Custom",
+        "period": null,
+        "show_period": false,
+        "amount_cents": null,
+        "currency": "usd",
+        "interval": null
+      },
+      "limits": {
+        "members": 100,
+        "armored_keys": null
+      },
+      "highlights": [
+        "Custom members",
+        "Custom armored keys"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "members",
+      "label": "Team members",
+      "values": {
+        "pro": "1",
+        "team": "3",
+        "business": "10",
+        "enterprise": "Custom"
+      }
+    },
+    {
+      "id": "armored_keys",
+      "label": "Armored keys",
+      "values": {
+        "pro": "50",
+        "team": "100",
+        "business": "1,000",
+        "enterprise": "Custom"
+      }
+    }
+  ]
+}

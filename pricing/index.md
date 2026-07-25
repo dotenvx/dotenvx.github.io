@@ -14,7 +14,7 @@ image: "/assets/img/og-image-pricing.png"
       <div class="p-5 md:p-6 lg:p-4 xl:p-5">
         <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">Pro</h2>
         <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-          <span>$36</span><span class="text-zinc-300"> / yr</span>
+          <span>$5</span><span class="text-zinc-300"> / mo</span>
         </div>
         <div class="mt-8 border-y border-zinc-900 py-3 text-center">
           <p class="text-zinc-100 text-sm">50 Armored Keys</p>

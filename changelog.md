@@ -417,6 +417,67 @@ permalink: /changelog/
 
   <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
+      <article id="2026-07-28-react-native-dotenv" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-28" data-search-text="react-native-dotenv react native babel plugin env ownership maintain dotenvx expo july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 28, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>react-native-dotenv</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">react-native-dotenv</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now maintains <code class="text-zinc-300">react-native-dotenv</code> — the Babel plugin for loading <code class="text-zinc-300">.env</code> files in React Native. v4 ships smarter <code class="text-zinc-300">process.env</code> inlining and Expo Router compatibility.</p>
+              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-07-27-armor-open" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-27" data-search-text="armor open armored key details browser dotenvx july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 27, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor open</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><code class="text-zinc-300">dotenvx armor open</code></h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Open armored key details in your browser with <code class="text-zinc-300">dotenvx armor open</code>.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-07-27-armor-activity-logs" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-27" data-search-text="armor activity logs api events permissions team audit trail dotenvx july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 27, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card" aria-hidden="true"><span>Logs</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor Activity Logs</h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Armor now records team activity — pushes, permissions, and account events — in the UI and via <code class="text-zinc-300">/api/logs</code>.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="2026-07-25-dotenvx-curl" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-25" data-search-text="dotenvx curl authenticated api armor agent codex claude july 2026">
+        <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 25, 2026</div>
+        <div class="relative hidden md:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-2 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-zinc-800"></div>
+          <div class="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-zinc-400 shadow-[0_0_16px_rgba(228,228,231,0.35)]"></div>
+        </div>
+        <div>
+          <div class="max-w-2xl">
+              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx curl</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><code class="text-zinc-300">dotenvx curl</code></h3>
+              <p class="mt-2 text-zinc-400 text-sm md:text-base">Make authenticated API calls to the Dotenvx Armor API with <code class="text-zinc-300">dotenvx curl</code> — control your Armor account from Codex, Claude, and other agents.</p>
+          </div>
+        </div>
+      </article>
+
       <article id="2026-07-22-dotenv-weekly-installs" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-22" data-search-text="dotenv npm installs weekly 150000000 150 million july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 22, 2026</div>
         <div class="relative hidden md:block" aria-hidden="true">

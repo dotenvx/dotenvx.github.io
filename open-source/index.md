@@ -72,7 +72,7 @@ permalink: /open-source/
       <span class="font-mono text-sm font-normal text-zinc-300 transition-colors duration-200 group-hover:text-zinc-100">dotenvx</span>
       <span class="mt-3 text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Encrypt .env files and run them anywhere.</span>
       <span class="mt-auto flex items-center justify-between pt-8 font-mono text-xs font-normal text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">
-        <span>5.5k ★</span>
+        <span>5.7k ★</span>
         <span aria-hidden="true" class="text-base leading-none">›</span>
       </span>
     </a>

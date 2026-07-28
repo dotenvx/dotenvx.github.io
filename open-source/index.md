@@ -60,49 +60,56 @@ permalink: /open-source/
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(236,213,63,0.16)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
     <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[38%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(236,213,63,0.055)_0%,rgba(236,213,63,0.022)_36%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
 
-    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-zinc-600 md:grid-cols-[8rem_1fr_7rem_2rem] md:px-7">
+    <div class="grid grid-cols-[6.5rem_1fr_auto] gap-4 border-b border-zinc-900 px-5 py-3 font-mono text-[0.64rem] font-normal uppercase tracking-[0.16em] text-zinc-600 md:grid-cols-[11rem_1fr_7rem_2rem] md:px-7">
       <span>Project</span>
       <span>Purpose</span>
       <span class="hidden text-right md:block" aria-hidden="true"></span>
       <span class="sr-only">Open</span>
     </div>
 
-    <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">dotenv</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Load environment variables from .env files.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">20.4k ★</span>
       <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://github.com/motdotla/dotenv-expand" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://github.com/motdotla/dotenv-expand" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">dotenv-expand</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Expand variables already loaded from .env files.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">1.1k ★</span>
       <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group relative grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
+      <span class="font-mono text-xs font-normal text-zinc-500">react-native-dotenv</span>
+      <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Load environment variables in React Native via import statements.</span>
+      <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">857 ★</span>
+      <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
+    </a>
+
+    <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="group relative grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">dotenvx</span>
       <span class="text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Encrypt .env files and run them anywhere.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">5.5k ★</span>
       <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">KEYSEE⎔</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Visual fingerprints for public keys.</span>
       <span aria-hidden="true" class="hidden md:block"></span>
       <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://github.com/vestauth/vestauth" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://github.com/vestauth/vestauth" target="_blank" rel="noopener noreferrer" class="group grid gap-3 border-b border-zinc-900 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">vestauth</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Verifiable identity and authentication for autonomous software.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">139 ★</span>
       <span aria-hidden="true" class="text-right text-base font-normal leading-none text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500">›</span>
     </a>
 
-    <a href="https://github.com/dotenvx/llmstxt" target="_blank" rel="noopener noreferrer" class="group grid gap-3 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[8rem_1fr_7rem_2rem] md:items-center md:px-7">
+    <a href="https://github.com/dotenvx/llmstxt" target="_blank" rel="noopener noreferrer" class="group grid gap-3 px-5 py-5 no-underline transition-colors duration-200 hover:bg-zinc-950/60 hover:no-underline md:grid-cols-[11rem_1fr_7rem_2rem] md:items-center md:px-7">
       <span class="font-mono text-xs font-normal text-zinc-500">llmstxt</span>
       <span class="text-sm font-normal leading-6 text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">Convert sitemap.xml to llms.txt.</span>
       <span class="font-mono text-xs font-normal text-zinc-700 transition-colors duration-200 group-hover:text-zinc-500 md:text-right">145 ★</span>

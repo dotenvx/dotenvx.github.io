@@ -8,7 +8,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-16 md:mt-20 lg:mt-24 mb-14 md:mb-[4.5rem] lg:mb-20">
   <div class="mx-auto max-w-3xl text-center">
-    <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">Free like Docker</p>
+    <p class="homepage-eyebrow">Free like Docker</p>
     <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Start free. Add team controls later.</h2>
     <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Use dotenvx locally, in CI, and across your stack for free. No account required. Add team controls when shared secrets need policy.</p>
   </div>
@@ -240,7 +240,7 @@ title: ""
 
 <section class="w-full max-w-5xl mx-auto px-6 mt-24 md:mt-32 lg:mt-40 mb-16 md:mb-20 lg:mb-24 text-center">
   <div class="mx-auto max-w-3xl">
-    <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">When secrets become a team workflow</p>
+    <p class="homepage-eyebrow">When secrets become a team workflow</p>
     <h2 class="mt-5 font-medium text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Local keys are simple when you work alone.</h2>
     <p class="mx-auto mt-5 max-w-[42rem] text-zinc-500 text-base md:text-[1.05rem] leading-relaxed">Teams need approvals, access logs, rotation, and policy.</p>
   </div>
@@ -257,7 +257,7 @@ title: ""
     </div>
     <div class="relative z-10">
       <div class="mx-auto mt-4 max-w-4xl text-center md:mt-6">
-        <div class="text-xs md:text-sm font-semibold uppercase tracking-[0.08em] text-[#ecd53f]">
+        <div class="homepage-eyebrow">
           TEAM SECURITY
         </div>
         <h3 class="mt-8 font-canela font-medium uppercase tracking-[-0.018em] text-[3.7rem] md:text-[4.65rem] lg:text-[5.5rem] leading-[0.95] text-zinc-100">

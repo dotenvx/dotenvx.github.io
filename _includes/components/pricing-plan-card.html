@@ -13,37 +13,37 @@
   {% assign cta_label = "Get Started" %}
 {% endif %}
 
-<div class="{{ border_classes }} flex flex-col">
-  <div class="p-5 md:p-6 lg:p-4 xl:p-5">
-    <h2 class="text-center font-semibold tracking-tight leading-none text-zinc-50 text-sm">{{ plan_name }}</h2>
-    <div class="mt-16 text-center text-zinc-100 text-4xl font-normal tracking-tight">
-      <span>{{ plan.price.display }}</span>{% if plan.price.show_period %}<span class="text-zinc-300"> / {{ plan.price.period }}</span>{% endif %}
+<div class="pricing-plan {{ border_classes }}">
+  <div class="pricing-plan-body">
+    <h2 class="pricing-plan-name">{{ plan_name }}</h2>
+    <div class="pricing-plan-price">
+      <span>{{ plan.price.display }}</span>{% if plan.price.show_period %}<span class="pricing-plan-period"> / {{ plan.price.period }}</span>{% endif %}
     </div>
-    <div class="mt-8 border-y border-zinc-900 py-3 text-center">
-      <p class="text-zinc-100 text-sm">{{ keys_label }}</p>
-      <p class="mt-2 text-zinc-500 text-sm">Armored Off Device ⛨</p>
+    <div class="pricing-plan-keys">
+      <p class="pricing-plan-keys-main">{{ keys_label }}</p>
+      <p class="pricing-plan-keys-sub">Armored Off Device ⛨</p>
     </div>
-    <ul class="mt-5 text-zinc-400 text-sm space-y-2">
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-      <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
+    <ul class="pricing-plan-features">
+      <li>{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Run Anywhere</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Multi-Environment</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
       {% if plan.id == "pro" %}
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-gray.html %}<span>Personal Access</span></li>
+        <li class="is-muted">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>
+        <li class="is-muted">{% include components/checkmark-circle-gray.html %}<span>Personal Access</span></li>
       {% else %}
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
-        <li class="flex items-center gap-3">{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
+        <li>{% include components/checkmark-circle-green.html %}<span>Team Security</span></li>
+        <li>{% include components/checkmark-circle-green.html %}<span>Access Approvals</span></li>
+        <li>{% include components/checkmark-circle-green.html %}<span>Access Controls</span></li>
+        <li>{% include components/checkmark-circle-green.html %}<span>Access Logs</span></li>
+        <li>{% include components/checkmark-circle-green.html %}<span>Access Alerts</span></li>
       {% endif %}
     </ul>
   </div>
-  <div class="mt-auto p-5 md:p-6 lg:p-4 xl:p-5">
-    <a href="{{ cta_href }}" class="btn-primary w-full inline-flex justify-center text-sm">{{ cta_label }}</a>
+  <div class="pricing-plan-cta">
+    <a href="{{ cta_href }}" class="radar-btn">{{ cta_label }}</a>
   </div>
 </div>

@@ -1,0 +1,36 @@
+{% assign radar_path = page.url | default: '' %}
+<header class="radar-chrome" aria-label="Site">
+  <div class="radar-topbar">
+    <div class="radar-topbar-left">
+      <a href="/" class="radar-brand" aria-label="dotenvx home">
+        <img src="/assets/img/logo-dotenvx.svg" class="radar-brand-light" alt="" aria-hidden="true" />
+        <img src="/assets/img/logo-dotenvx-dark.svg" class="radar-brand-dark" alt="" aria-hidden="true" />
+      </a>
+    </div>
+
+    <nav class="radar-topbar-center" aria-label="Primary">
+      <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}">Docs</a>
+      <a href="/blog" class="radar-nav-link{% if radar_path contains '/blog' %} is-active{% endif %}">Blog</a>
+      <a href="/changelog" class="radar-nav-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
+      <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
+      <a href="/open-source" class="radar-nav-link{% if radar_path == '/open-source/' or radar_path == '/open-source' %} is-active{% endif %}">Open Source</a>
+      <a href="/contact" class="radar-nav-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
+    </nav>
+
+    <div class="radar-topbar-right">
+      <button type="button" class="radar-theme-toggle" data-radar-theme-toggle aria-label="Toggle light and dark mode. Press M." title="Press M to toggle theme">
+        <span class="radar-theme-keycap">M</span>
+        <span class="radar-theme-label" data-radar-theme-label>Dark</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="radar-topbar-mobile" aria-label="Primary mobile">
+    <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}">Docs</a>
+    <a href="/blog" class="radar-nav-link{% if radar_path contains '/blog' %} is-active{% endif %}">Blog</a>
+    <a href="/changelog" class="radar-nav-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
+    <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
+    <a href="/open-source" class="radar-nav-link{% if radar_path == '/open-source/' or radar_path == '/open-source' %} is-active{% endif %}">Open Source</a>
+    <a href="/contact" class="radar-nav-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
+  </nav>
+</header>

@@ -77,6 +77,15 @@ permalink: /open-source/
       </span>
     </a>
 
+    <a href="https://github.com/dotenvx/python-dotenvx" target="_blank" rel="noopener noreferrer" class="os-artifact-card group relative flex min-h-[11.5rem] flex-col overflow-hidden rounded-lg border border-zinc-800/70 bg-black/20 p-6 no-underline transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/50 hover:no-underline">
+      <span class="font-mono text-sm font-normal text-zinc-300 transition-colors duration-200 group-hover:text-zinc-100">python-dotenvx</span>
+      <span class="mt-3 text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Load environment variables from .env files in Python.</span>
+      <span class="mt-auto flex items-center justify-between pt-8 font-mono text-xs font-normal text-zinc-600 transition-colors duration-200 group-hover:text-zinc-500">
+        <span>7 ★</span>
+        <span aria-hidden="true" class="text-base leading-none">›</span>
+      </span>
+    </a>
+
     <a href="https://keysee.io" target="_blank" rel="noopener noreferrer" class="os-artifact-card group relative flex min-h-[11.5rem] flex-col overflow-hidden rounded-lg border border-zinc-800/70 bg-black/20 p-6 no-underline transition-colors duration-200 hover:border-zinc-700 hover:bg-zinc-950/50 hover:no-underline">
       <span class="font-mono text-sm font-normal text-zinc-300 transition-colors duration-200 group-hover:text-zinc-100">KEYSEE⎔</span>
       <span class="mt-3 text-sm font-normal leading-6 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-400">Visual fingerprints for public keys.</span>

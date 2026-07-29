@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+  {% assign is_homepage = false %}
+  {% if page.url == '/' or page.url == '/index.html' %}
+    {% assign is_homepage = true %}
+  {% endif %}
   <head>
     {% include layouts/dark-mode.html %}
-    {% if page.url == '/' or page.url == '/index.html' %}
+    {% if is_homepage %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
       html,
-      body {
+      body.homepage {
         background: #000;
       }
     </style>
@@ -13,9 +20,9 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
-  <body class="relative flex flex-col min-h-screen rounded-t-lg">
+  <body class="relative flex flex-col min-h-screen rounded-t-lg{% if is_homepage %} homepage{% endif %}">
     {% unless page.hide_nav %}
-    <header id="nav-sticky" class="sticky top-0 z-[80] rounded-t-lg overflow-visible border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if page.url == '/' or page.url == '/index.html' %} nav-enter{% endif %}">
+    <header id="nav-sticky" class="sticky top-0 z-[80] rounded-t-lg overflow-visible border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if is_homepage %} nav-enter{% endif %}">
       {% include components/nav.html %}
     </header>
     {% endunless %}

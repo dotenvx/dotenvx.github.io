@@ -456,7 +456,7 @@ layout: radar
               <div class="changelog-card" aria-hidden="true"><span>react-native-dotenv</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">react-native-dotenv</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now maintains <code class="text-zinc-300">react-native-dotenv</code> — the Babel plugin for loading <code class="text-zinc-300">.env</code> files in React Native. v4 ships smarter <code class="text-zinc-300">process.env</code> inlining and Expo Router compatibility.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </div>
         </div>
       </article>
@@ -536,7 +536,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Bitwarden</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use Bitwarden secrets in dotenvx with a <code class="text-zinc-300">bw://</code> reference.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-bitwarden">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-bitwarden">Read documentation</a>
           </div>
         </div>
       </article>
@@ -556,7 +556,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">1Password</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use 1Password secrets in dotenvx with an <code class="text-zinc-300">op://</code> reference.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-1password">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-1password">Read documentation</a>
           </div>
         </div>
       </article>
@@ -576,7 +576,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Validate</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Check your <code class="text-zinc-300">.env</code> against <code class="text-zinc-300">.env.example</code> before your app runs.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/cli/validate">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/cli/validate">Read documentation</a>
           </div>
         </div>
       </article>
@@ -606,8 +606,8 @@ layout: radar
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Redact secrets from Claude and Codex</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Keep secrets out of logs and agent output.</p>
               <div class="changelog-sublinks mt-2">
-                <a class="font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-claude">Claude guide</a>
-                <a class="font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-codex">Codex guide</a>
+                <a class="font-normal radar-text-link" href="/docs/secrets-in-claude">Claude guide</a>
+                <a class="font-normal radar-text-link" href="/docs/secrets-in-codex">Codex guide</a>
               </div>
           </div>
         </div>
@@ -821,7 +821,7 @@ layout: radar
               <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Next.js</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Now available: <code class="text-zinc-300">@dotenvx/next-env</code>, a drop-in replacement for Next.js <code class="text-zinc-300">@next/env</code> that lets encrypted dotenvx files load during Next.js' own environment-loading step.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-nextjs">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-nextjs">Read documentation</a>
           </div>
         </div>
       </article>
@@ -882,7 +882,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">SOC 2 Observation Started</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We started our SOC 2 Type 2 observation process. This begins the formal period where controls are operated, evidence is collected, and Dotenvx moves toward independent assurance for security, confidentiality, and availability.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Center</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Center</a>
           </div>
         </div>
       </article>
@@ -981,7 +981,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Python UV</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We added a new guide for encrypting secrets in Python projects using uv.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/docs/secrets-in-uv" target="_blank" rel="noopener noreferrer">Encrypt secrets in uv</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/docs/secrets-in-uv" target="_blank" rel="noopener noreferrer">Encrypt secrets in uv</a>
           </div>
         </div>
       </article>
@@ -1002,7 +1002,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Trust Page</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We launched <code class="text-zinc-300">trust.dotenvx.com</code> as the home for Dotenvx security, compliance, and trust resources.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Page</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Page</a>
           </div>
         </div>
       </article>
@@ -1075,7 +1075,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔ Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the KEYSEE whitepaper for deterministic visual identity from compressed public keys.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
           </div>
         </div>
       </article>
@@ -1113,7 +1113,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">KEYSEE released as a deterministic visual identity system for public keys.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://keysee.io/" target="_blank" rel="noopener noreferrer">Visit Website</a>
           </div>
         </div>
       </article>
@@ -1182,7 +1182,7 @@ layout: radar
               <div class="changelog-card" aria-hidden="true">{% include logos/cloudflare.html class="changelog-cloudflare-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Cloudflare Workers Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use encrypted dotenvx env files cleanly in Cloudflare Workers and Wrangler workflows.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/docs/secrets-in-cloudflare-workers" target="_blank" rel="noopener noreferrer">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/docs/secrets-in-cloudflare-workers" target="_blank" rel="noopener noreferrer">Read documentation</a>
           </div>
         </div>
       </article>
@@ -1254,7 +1254,7 @@ layout: radar
               <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Next.js Setup</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published a practical guide for using encrypted <code class="text-zinc-300">.env</code> files with Next.js and Vercel, including the serverless runtime gotcha around <code class="text-zinc-300">instrumentation.ts</code>.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2026/02/17/dotenvx-nextjs.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2026/02/17/dotenvx-nextjs.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>
@@ -1270,7 +1270,7 @@ layout: radar
               <div class="changelog-card" aria-hidden="true"><span>Vestauth</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Vestauth</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Research began into removing secrets entirely from agent workflows by giving agents durable identity. Instead of passing long-lived credentials around, Vestauth explores signed agent identity as the trust primitive.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://vestauth.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://vestauth.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
           </div>
         </div>
       </article>
@@ -1429,7 +1429,7 @@ layout: radar
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the dotenvx whitepaper draft.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
           </div>
         </div>
       </article>
@@ -1572,7 +1572,7 @@ layout: radar
               <div class="changelog-card" aria-hidden="true"><span>Feature Complete</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Feature Complete</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">With <code class="text-zinc-300">decrypt</code> added in dotenvx 1.6.0, dotenvx reached feature-complete status across its five core commands: <code class="text-zinc-300">run</code>, <code class="text-zinc-300">get</code>, <code class="text-zinc-300">set</code>, <code class="text-zinc-300">encrypt</code>, and <code class="text-zinc-300">decrypt</code>.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2024/07/11/feature-complete.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2024/07/11/feature-complete.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>
@@ -1589,7 +1589,7 @@ layout: radar
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx 1.0</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx 1.0 shipped as the next generation of configuration management for dotenv, built around three problems developers kept running into: inconsistent env behavior across platforms, juggling multiple environments, and the risk of leaking <code class="text-zinc-300">.env</code> files.</p>
               <p class="mt-3 text-zinc-400 text-sm md:text-base">It introduced a cross-platform <code class="text-zinc-300">dotenvx run -- your-cmd</code> workflow, first-class multiple environment files, and public-key encryption for <code class="text-zinc-300">.env</code> values, replacing the older <code class="text-zinc-300">.env.vault</code> path with a simpler encrypted <code class="text-zinc-300">.env</code> format.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2024/06/24/dotenvx-next-generation-config-management.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2024/06/24/dotenvx-next-generation-config-management.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>

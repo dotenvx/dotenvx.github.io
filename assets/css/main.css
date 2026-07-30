@@ -684,7 +684,7 @@ body.radar-layout .contact-link {
 
 body.radar-layout .contact-link:hover,
 body.radar-layout .contact-link:focus {
-  color: var(--design-mark) !important;
+  color: var(--design-link) !important;
   text-decoration: none !important;
 }
 
@@ -1470,6 +1470,7 @@ body.radar-layout {
   --design-line: rgba(48, 59, 63, 0.22);
   --design-mark: #ecd53f;
   --design-gold: #6d5c32;
+  --design-link: #3f5c2a;
   --design-hover: rgba(48, 59, 63, 0.07);
   --design-panel: rgba(255, 255, 255, 0.28);
   --design-etch:
@@ -1510,6 +1511,7 @@ html.dark body.radar-layout {
   --design-line: rgba(212, 189, 132, 0.22);
   --design-mark: #ecd53f;
   --design-gold: #d4bd84;
+  --design-link: #ecd53f;
   --design-hover: rgba(212, 189, 132, 0.08);
   --design-panel: rgba(0, 0, 0, 0.28);
   --design-etch:
@@ -2479,7 +2481,7 @@ html.dark .radar-btn {
 }
 
 .pricing-faq dd p a {
-  color: var(--design-mark) !important;
+  color: #3f5c2a !important;
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 0.2em;
@@ -2702,8 +2704,10 @@ html.dark .radar-btn {
   margin: 1rem 0;
 }
 
-.blog-prose a {
-  color: var(--design-mark) !important;
+.blog-prose a,
+.blog-prose a:link,
+.blog-prose a:visited {
+  color: #2f5f8a !important;
   font-weight: 500 !important;
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -2711,7 +2715,7 @@ html.dark .radar-btn {
 }
 
 .blog-prose a:hover {
-  color: var(--design-ink) !important;
+  color: #1a3f63 !important;
 }
 
 .blog-prose code {
@@ -2793,6 +2797,40 @@ html.dark .radar-btn {
   color: var(--design-ink) !important;
 }
 
+/* 404 */
+.not-found {
+  padding-bottom: 5rem;
+  padding-top: 4rem;
+}
+
+.not-found-shell {
+  max-width: 36rem;
+  text-align: center;
+}
+
+.not-found-shell .radar-kicker,
+.not-found-shell .radar-title,
+.not-found-shell .radar-lede {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.not-found-code {
+  font-size: clamp(4.5rem, 14vw, 7.5rem);
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.not-found-lede {
+  max-width: 22rem;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 0;
+}
+
 /* Legal pages (terms / privacy) */
 .legal-hero {
   padding-bottom: 1.5rem;
@@ -2843,8 +2881,10 @@ html.dark .radar-btn {
   margin-top: 0.45rem;
 }
 
-.legal-prose a {
-  color: var(--design-mark) !important;
+.legal-prose a,
+.legal-prose a:link,
+.legal-prose a:visited {
+  color: #3f5c2a !important;
   font-weight: 500 !important;
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -2852,7 +2892,45 @@ html.dark .radar-btn {
 }
 
 .legal-prose a:hover {
-  color: var(--design-ink) !important;
+  color: #2a3f1c !important;
+}
+
+.radar-text-link {
+  color: #3f5c2a !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.radar-text-link:hover {
+  color: #2a3f1c !important;
+  text-decoration: underline !important;
+}
+
+/* Dark mode may use yellow; light mode never does */
+html.dark .blog-prose a,
+html.dark .blog-prose a:link,
+html.dark .blog-prose a:visited,
+html.dark .legal-prose a,
+html.dark .legal-prose a:link,
+html.dark .legal-prose a:visited,
+html.dark .pricing-faq dd p a,
+html.dark .pricing-faq dd p a:link,
+html.dark .pricing-faq dd p a:visited,
+html.dark .radar-text-link {
+  color: #ecd53f !important;
+}
+
+html.dark .blog-prose a:hover,
+html.dark .legal-prose a:hover,
+html.dark .pricing-faq dd p a:hover,
+html.dark .radar-text-link:hover {
+  color: #e8e0d2 !important;
+}
+
+/* Kill leftover yellow utility classes on radar pages in light mode */
+html:not(.dark) body.radar-layout a[class*="ecd53f"],
+html:not(.dark) body.radar-layout [class*="ecd53f"]:not(svg):not(path):not(circle) {
+  color: #3f5c2a !important;
 }
 
 

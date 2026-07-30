@@ -4,6 +4,28 @@
     {% include layouts/radar-theme.html %}
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
+    <style>
+      /* Blog links: olive in light, yellow only in dark. Inline so it can't lose to a stale main.css cache. */
+      .blog-prose a,
+      .blog-prose a:link,
+      .blog-prose a:visited {
+        color: #2f5f8a !important;
+        font-weight: 500 !important;
+      }
+      .blog-prose a:hover,
+      .blog-prose a:focus {
+        color: #1a3f63 !important;
+      }
+      html.dark .blog-prose a,
+      html.dark .blog-prose a:link,
+      html.dark .blog-prose a:visited {
+        color: #ecd53f !important;
+      }
+      html.dark .blog-prose a:hover,
+      html.dark .blog-prose a:focus {
+        color: #e8e0d2 !important;
+      }
+    </style>
   </head>
   <body class="radar-layout">
     {% include components/radar-nav.html %}

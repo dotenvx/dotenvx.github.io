@@ -3579,175 +3579,137 @@ html:not(.dark) .armor-lightning {
   z-index: 1;
 }
 
-.armor-shell {
-  max-width: 56rem;
-}
-
-.armor-shell-wide {
-  max-width: 72rem;
-}
-
-.armor-hero {
-  padding-bottom: 3rem;
-}
-
-.armor-hero-grid {
+.armor-hero-links {
   align-items: center;
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .armor-hero-grid {
-    gap: 1.5rem 2rem;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  }
-}
-
-.armor-hero-copy {
+  color: var(--design-dim);
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  order: 2;
-}
-
-@media (min-width: 768px) {
-  .armor-hero-copy {
-    order: 1;
-    padding-left: 0.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .armor-hero-copy {
-    padding-left: 2rem;
-  }
-}
-
-.armor-title {
-  font-size: clamp(3.2rem, 8vw, 5.1rem);
-}
-
-.armor-hero-visual {
-  margin: 0 auto;
-  max-width: 24rem;
-  order: 1;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .armor-hero-visual {
-    justify-self: stretch;
-    margin: 0;
-    max-width: none;
-    order: 2;
-  }
-}
-
-.armor-hero-actions {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-top: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .armor-hero-actions {
-    align-items: center;
-    flex-direction: row;
-  }
-}
-
-.armor-hero-secondary {
-  font-size: 0.84rem !important;
+  flex-wrap: wrap;
+  font-family: var(--design-font-mono);
+  font-size: 0.78rem;
+  gap: 0.55rem;
   justify-content: center;
-  padding: 0.65rem 0.85rem;
+  letter-spacing: 0.02em;
+  margin: 1rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .armor-hero-links {
+    justify-content: flex-start;
+  }
+}
+
+.armor-hero-links a,
+.armor-hero-links a:visited {
+  color: var(--design-dim) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 160ms ease;
+}
+
+.armor-hero-links a:hover,
+.armor-hero-links a:focus {
+  color: var(--design-gold) !important;
 }
 
 .armor-section {
-  padding-bottom: 5.5rem;
-  padding-top: 1.5rem;
+  padding-bottom: 4.5rem;
+  padding-top: 0.5rem;
 }
 
 @media (min-width: 768px) {
   .armor-section {
-    padding-bottom: 7.5rem;
-    padding-top: 2rem;
+    padding-bottom: 6rem;
+    padding-top: 0.75rem;
   }
 }
 
-.armor-center {
+.armor-story {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.armor-story-copy {
+  max-width: 36rem;
   text-align: center;
 }
 
-.armor-center .radar-section-title,
-.armor-center .radar-section-lede,
-.armor-center .radar-title {
+@media (min-width: 768px) {
+  .armor-story-copy {
+    padding-left: 0.5rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .armor-story-copy {
+    padding-left: 2rem;
+  }
+}
+
+.armor-story-title {
+  color: var(--design-ink);
+  font-family: var(--design-font-sans);
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.armor-story-lede {
+  color: var(--design-mid);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  margin: 0.75rem 0 0;
+  max-width: 32rem;
+}
+
+@media (min-width: 768px) {
+  .armor-story-lede {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.armor-story-copy .armor-story-lede {
   margin-left: auto;
   margin-right: auto;
 }
 
-.armor-center-lede {
-  max-width: 40rem;
-}
-
-.armor-terminal {
-  background: var(--design-panel);
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  font-family: var(--design-font-mono);
-  font-size: 0.92rem;
-  line-height: 1.65;
-  margin: 2rem auto 0;
-  max-width: 34rem;
-  overflow-x: auto;
-  padding: 1.6rem 1.35rem;
-  text-align: left;
-}
-
-.armor-terminal pre {
-  margin: 0;
-}
-
-.armor-terminal pre + pre {
-  margin-top: 0.45rem;
-}
-
-.armor-terminal-cmd {
-  color: var(--design-ink);
-}
-
-.armor-terminal-ok {
-  color: var(--design-mark);
+@media (min-width: 768px) {
+  .armor-story-copy .armor-story-lede {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .armor-keys {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.5rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: center;
-  margin: 2rem auto 0;
-  max-width: 56rem;
+  margin: 0 auto;
+  max-width: 52rem;
+  width: 100%;
 }
 
 .armor-key--side {
-  opacity: 0.75;
-  transform: scale(0.64);
+  opacity: 0.72;
+  transform: scale(0.7);
 }
 
 .armor-key--main {
-  transform: scale(0.8);
+  transform: scale(0.88);
 }
 
 @media (min-width: 768px) {
   .armor-keys {
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .armor-key--side {
-    transform: scale(0.62);
+    transform: scale(0.68);
   }
 }
 
@@ -3756,10 +3718,23 @@ html:not(.dark) .armor-lightning {
   border: 1px solid transparent;
   border-radius: 0.35rem;
   box-shadow: var(--design-etch);
-  margin: 2.25rem auto 0;
+  margin: 0;
   max-width: 27rem;
   overflow: hidden;
   text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .armor-grant {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .armor-grant {
+    margin-left: 2rem;
+  }
 }
 
 .armor-grant-body {
@@ -3875,56 +3850,61 @@ html:not(.dark) .armor-lightning {
 }
 
 .armor-cta-section {
-  overflow: hidden;
   padding-bottom: 5rem;
-  padding-top: 2rem;
-}
-
-.armor-cta-section .armor-shell {
-  position: relative;
-}
-
-.armor-cta-bg {
-  background-image: url('/assets/img/bg/armor-gunmetal.png');
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: -4rem;
-  mask-image:
-    radial-gradient(circle at 82% 38%, rgba(0, 0, 0, 1) 22%, rgba(0, 0, 0, 0.92) 36%, rgba(0, 0, 0, 0.55) 52%, rgba(0, 0, 0, 0.2) 66%, rgba(0, 0, 0, 0) 80%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0.34) 86%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 84%, rgba(0, 0, 0, 0.52) 94%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image:
-    radial-gradient(circle at 82% 38%, rgba(0, 0, 0, 1) 22%, rgba(0, 0, 0, 0.92) 36%, rgba(0, 0, 0, 0.55) 52%, rgba(0, 0, 0, 0.2) 66%, rgba(0, 0, 0, 0) 80%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0.34) 86%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 84%, rgba(0, 0, 0, 0.52) 94%, rgba(0, 0, 0, 0) 100%);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in, source-in;
-  opacity: 0.55;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: min(28rem, 70%);
-}
-
-html.dark .armor-cta-bg {
-  opacity: 0.9;
+  padding-top: 1rem;
 }
 
 .armor-cta-copy {
-  position: relative;
-  z-index: 1;
+  max-width: 36rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .armor-cta-copy {
+    padding-left: 0.5rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .armor-cta-copy {
+    padding-left: 2rem;
+  }
 }
 
 .armor-cta-title {
-  font-size: clamp(2.8rem, 7vw, 4.4rem);
-  line-height: 1.05;
+  font-size: clamp(2.6rem, 6vw, 4rem);
 }
 
 .armor-cta-actions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
   justify-content: center;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .armor-cta-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.armor-hero-secondary {
+  color: var(--design-dim) !important;
+  font-family: var(--design-font-mono);
+  font-size: 0.78rem;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  transition: color 160ms ease;
+}
+
+.armor-hero-secondary:hover,
+.armor-hero-secondary:focus {
+  color: var(--design-gold) !important;
 }
 
 /* Spec */

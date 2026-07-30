@@ -8,19 +8,37 @@ layout: radar
   <canvas class="armor-lightning-canvas" data-ops-lightning-canvas></canvas>
 </div>
 
-<section class="radar-hero armor-hero hero-no-select">
-  <div class="radar-shell armor-shell">
-    <div class="armor-hero-grid">
-      <div class="armor-hero-copy hero-copy-enter">
-        <p class="radar-kicker">Professional Security</p>
-        <h1 class="radar-title armor-title">Armored Keys ⛨</h1>
-        <p class="radar-lede">Private keys. Off device. Under guard.</p>
-        <div class="armor-hero-actions">
-          <a class="radar-btn radar-btn--lg" href="/signup">Create Account</a>
-          <a class="radar-nav-link armor-hero-secondary" href="/docs/armor">Documentation</a>
+<section class="home-hero armor-hero hero-no-select">
+  <div class="radar-shell home-hero-shell">
+    <div class="home-hero-grid">
+      <div class="home-hero-copy hero-copy-enter">
+        <p class="home-kicker">Professional Security</p>
+        <h1 class="home-title">Armored Keys ⛨</h1>
+        <p class="home-lede">Private keys. Off device. Under guard.</p>
+
+        <div class="hero-start" id="armor-hero-start">
+          <div class="hero-command-slot">
+            <button type="button" class="hero-command" id="armor-hero-command">
+              <span class="hero-command-prompt" aria-hidden="true">$</span>
+              <code class="hero-command-text">dotenvx armor up</code>
+              <span class="hero-command-copy" id="armor-hero-copy" aria-hidden="true">
+                <svg class="hero-command-copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 8.5A2.5 2.5 0 0 1 10.5 6h6A2.5 2.5 0 0 1 19 8.5v6A2.5 2.5 0 0 1 16.5 17h-6A2.5 2.5 0 0 1 8 14.5v-6Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5h-.5A2.5 2.5 0 0 1 3 11V5.5A2.5 2.5 0 0 1 5.5 3H11a2.5 2.5 0 0 1 2.5 2.5V6" />
+                </svg>
+                <span class="hero-command-copied">copied</span>
+              </span>
+            </button>
+          </div>
+          <p class="armor-hero-links">
+            <a href="/signup">Create Account</a>
+            <span aria-hidden="true">·</span>
+            <a href="/docs/armor">Documentation</a>
+          </p>
         </div>
       </div>
-      <div class="armor-hero-visual">
+
+      <div class="home-hero-visual">
         {% include components/three-ops-rect.html height="170px" mode="shield" class="h-[170px] md:!h-[560px]" %}
       </div>
     </div>
@@ -28,32 +46,25 @@ layout: radar
 </section>
 
 <section class="radar-section armor-section">
-  <div class="radar-shell armor-shell armor-center">
-    <h2 class="radar-section-title">Armor up in one command.</h2>
-    <p class="radar-section-lede armor-center-lede">One command to harden your private keys.</p>
-    <div class="armor-terminal">
-      <pre><span class="armor-terminal-cmd">$ dotenvx armor up</span></pre>
-      <pre><span class="armor-terminal-ok">⛨ armored (03C 969)</span></pre>
+  <div class="radar-shell home-hero-shell armor-story">
+    <div class="armor-story-copy">
+      <h2 class="armor-story-title">Keys move off-device.</h2>
+      <p class="armor-story-lede">No longer in .env.keys. Harder to leak. Harder to steal.</p>
     </div>
-  </div>
-</section>
-
-<section class="radar-section armor-section">
-  <div class="radar-shell armor-shell-wide armor-center">
-    <h2 class="radar-section-title">Keys move off-device.</h2>
-    <p class="radar-section-lede armor-center-lede">No longer in .env.keys. Harder to leak. Harder to steal.</p>
     <div class="armor-keys">
-      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="armor-key armor-key--side relative min-h-[22.4rem] w-full overflow-hidden bg-transparent md:min-h-[45vh]" %}
-      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="armor-key armor-key--main relative min-h-[25.6rem] w-full overflow-hidden bg-transparent md:min-h-[51vh]" %}
-      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="armor-key armor-key--side relative min-h-[22.4rem] w-full overflow-hidden bg-transparent md:min-h-[45vh]" %}
+      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="armor-key armor-key--side relative min-h-[18rem] w-full overflow-hidden bg-transparent md:min-h-[38vh]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="armor-key armor-key--main relative min-h-[20rem] w-full overflow-hidden bg-transparent md:min-h-[44vh]" %}
+      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="armor-key armor-key--side relative min-h-[18rem] w-full overflow-hidden bg-transparent md:min-h-[38vh]" %}
     </div>
   </div>
 </section>
 
 <section class="radar-section armor-section">
-  <div class="radar-shell armor-shell armor-center">
-    <h2 class="radar-section-title">Grant decryption, not possession.</h2>
-    <p class="radar-section-lede armor-center-lede">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
+  <div class="radar-shell home-hero-shell armor-story">
+    <div class="armor-story-copy">
+      <h2 class="armor-story-title">Grant decryption, not possession.</h2>
+      <p class="armor-story-lede">Private keys are retrieved only when an authorized workflow needs them. Used in memory, then gone — so developers, CI, and agents can decrypt without keeping long-lived keys on disk.</p>
+    </div>
 
     <div class="armor-grant">
       <div class="armor-grant-body">
@@ -98,17 +109,58 @@ layout: radar
 </section>
 
 <section class="radar-section armor-cta-section">
-  <div class="radar-shell armor-shell armor-center">
-    <div class="armor-cta-bg" aria-hidden="true"></div>
+  <div class="radar-shell home-hero-shell armor-story">
     <div class="armor-cta-copy">
-      <h2 class="radar-title armor-cta-title">Armored keys.<br />Under guard.</h2>
-      <div class="armor-hero-actions armor-cta-actions">
+      <h2 class="home-title armor-cta-title">Armored keys.<br />Under guard.</h2>
+      <div class="armor-cta-actions">
         <a class="radar-btn radar-btn--lg" href="/signup">Create Account</a>
-        <a class="radar-nav-link armor-hero-secondary" href="/contact">Contact Us</a>
+        <a class="armor-hero-secondary" href="/contact">Contact Us</a>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  var commandText = 'dotenvx armor up'
+  var copyTimeout
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn()
+    else document.addEventListener('DOMContentLoaded', fn)
+  }
+
+  function copyText(text, onDone) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(onDone)
+      return
+    }
+    var textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    onDone()
+  }
+
+  ready(function () {
+    var command = document.getElementById('armor-hero-command')
+    var copyIcon = document.getElementById('armor-hero-copy')
+    if (!command || !copyIcon) return
+
+    command.addEventListener('click', function () {
+      copyText(commandText, function () {
+        copyIcon.classList.add('is-copied')
+        clearTimeout(copyTimeout)
+        copyTimeout = setTimeout(function () {
+          copyIcon.classList.remove('is-copied')
+        }, 1100)
+      })
+    })
+  })
+})()
+</script>
 
 <script>
 (() => {

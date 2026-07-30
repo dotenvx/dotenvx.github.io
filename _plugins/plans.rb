@@ -13,17 +13,23 @@ class Plans < Jekyll::Generator
     url = ENV.fetch("PLANS_API_URL", DEFAULT_URL)
     payload = fetch_plans(url)
 
-    if payload
+    if payload && audit_priced?(payload)
       site.data["plans"] = payload
       Jekyll.logger.info "plans", "loaded from #{url}"
     elsif site.data["plans"]
-      Jekyll.logger.warn "plans", "using committed _data/plans.json (fetch failed)"
+      reason = payload ? "API missing audit pricing fields" : "fetch failed"
+      Jekyll.logger.warn "plans", "using committed _data/plans.json (#{reason})"
     else
       Jekyll.logger.abort_with "plans", "no plan data available from #{url} or _data/plans.json"
     end
   end
 
   private
+
+  def audit_priced?(payload)
+    features = payload["features"] || payload[:features] || []
+    features.any? { |feature| (feature["id"] || feature[:id]) == "audit_events" }
+  end
 
   def fetch_plans(url)
     uri = URI(url)

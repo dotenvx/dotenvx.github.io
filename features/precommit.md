@@ -1,5 +1,6 @@
 ---
 title: Precommit
+layout: radar
 ---
 
 {% include components/feature-page.html

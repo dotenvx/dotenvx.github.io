@@ -1,5 +1,6 @@
 ---
 title: Encryption
+layout: radar
 ---
 
 {% include components/feature-page.html

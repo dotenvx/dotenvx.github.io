@@ -1,5 +1,6 @@
 ---
 title: Multiple Files
+layout: radar
 ---
 
 {% include components/feature-page.html

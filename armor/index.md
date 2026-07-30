@@ -1,174 +1,114 @@
 ---
 title: "Dotenvx Armor ⛨"
 image: "/assets/img/og-image-armor.png"
+layout: radar
 ---
 
-<style>
-  body > footer {
-    margin-top: 0 !important;
-  }
-</style>
-
-<div aria-hidden="true" class="ops-page-lightning-body">
-  <canvas class="ops-hero-lightning-canvas" data-ops-lightning-canvas></canvas>
+<div aria-hidden="true" class="armor-lightning">
+  <canvas class="armor-lightning-canvas" data-ops-lightning-canvas></canvas>
 </div>
 
-<div class="relative overflow-x-hidden">
-  <section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 mb-28 sm:mb-32 md:mb-20 lg:mb-24 mt-20">
-  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-0 items-center">
-    <div class="order-2 md:order-1 flex flex-col gap-4 md:gap-6 hero-copy-enter pl-0 lg:pl-12">
-      <div class="mx-auto md:mx-0 mb-1 md:mb-0 text-center md:text-left text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-[#ecd53f]">PROFESSIONAL SECURITY</div>
-      <h1 class="font-canela font-normal tracking-[-0.018em] text-[4.00rem] md:text-[4.62rem] lg:text-[5.38rem] text-center md:text-left leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">ARMORED KEYS ⛨</h1>
-      <p class="mx-auto md:mx-0 text-center md:text-left text-[1.07rem] md:text-[1.16rem] leading-[1.34] md:leading-[1.32]">Private keys. Off device. Under guard.</p>
-      <div class="flex flex-col md:flex-row gap-3 md:gap-4 my-2 items-center md:items-start justify-center md:justify-start w-full mx-auto">
-        <a class="btn-primary w-full max-w-md md:w-auto text-center" href="/signup">Create Account</a>
-        <a class="inline-flex w-full max-w-md md:w-auto items-center justify-center p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 text-center" href="/docs/armor">Documentation</a>
-      </div>
-    </div>
-    <div class="order-1 md:order-2 w-full max-w-[24rem] md:max-w-none mx-auto md:mx-0 md:justify-self-stretch -translate-y-2 md:-translate-y-4">
-      {% include components/three-ops-rect.html height="170px" mode="shield" class="h-[170px] md:!h-[560px]" %}
-      {% comment %}{% include components/three-gauntlet-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
-      {% comment %}{% include components/three-fortress-gated-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
-      {% comment %}{% include components/three-fortress-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
-      {% comment %}{% include components/three-citadel-rect.html height="170px" class="h-[170px] md:!h-[560px]" %}{% endcomment %}
-    </div>
-  </div>
-  </section>
-
-{% comment %}
-<section class="relative z-10 w-full max-w-7xl mx-auto px-1 md:px-6 mb-24 sm:mb-32 md:mb-40 lg:mb-48">
-  <div class="relative w-full overflow-hidden rounded-t-[0.9rem] md:rounded-t-[1.1rem] bg-black pt-14 md:pt-20 pb-14 md:pb-20" style="border-top: 1px solid rgba(86, 86, 94, 0.42);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.34)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-12 w-[46%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.18)_0%,rgba(242,214,134,0.08)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 top-px h-56 md:h-64 bg-[radial-gradient(ellipse_at_50%_0%,rgba(170,133,56,0.09)_0%,rgba(170,133,56,0.05)_24%,rgba(0,0,0,0)_62%)]" aria-hidden="true"></div>
-
-    <div class="relative z-10 mx-auto max-w-5xl px-5">
-      <div class="text-center">
-        <p class="mx-auto max-w-[52ch] text-center text-lg leading-relaxed text-zinc-500">In use by early teams building with sensitive infrastructure.</p>
-        <div class="trust-logo-grid mt-8 md:mt-10 mx-auto flex flex-wrap items-center justify-center gap-x-7 gap-y-6 md:gap-x-9">
-          <a href="https://wattdata.ai" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Watt Data">
-            {% include logos/wattdata.html class="w-[5.1rem] lg:w-[6.2rem] h-auto mx-auto" %}
-          </a>
-          <a href="https://kortix.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-100 text-zinc-100 dark:text-zinc-100" aria-label="Kortix">
-            {% include logos/kortix.html class="mt-2.5 w-[5.1rem] lg:w-[6.15rem] h-auto mx-auto" %}
-          </a>
+<section class="radar-hero armor-hero hero-no-select">
+  <div class="radar-shell armor-shell">
+    <div class="armor-hero-grid">
+      <div class="armor-hero-copy hero-copy-enter">
+        <p class="radar-kicker">Professional Security</p>
+        <h1 class="radar-title armor-title">Armored Keys ⛨</h1>
+        <p class="radar-lede">Private keys. Off device. Under guard.</p>
+        <div class="armor-hero-actions">
+          <a class="radar-btn radar-btn--lg" href="/signup">Create Account</a>
+          <a class="radar-nav-link armor-hero-secondary" href="/docs/armor">Documentation</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-{% endcomment %}
-
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-44 md:mb-64 lg:mb-[18rem] text-center">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Armor up in one command.</h2>
-    <p class="mt-4 text-zinc-400 text-lg">One command to harden your private keys.</p>
-  </div>
-
-  <div class="mx-auto mt-10 md:mt-12 max-w-2xl relative overflow-hidden rounded-[0.9rem] md:rounded-[1.1rem] py-10 md:py-12 transition-colors duration-150 hover:bg-zinc-950/45" style="border-top: 1px solid rgba(86, 86, 94, 0.32); border-right: 1px solid rgba(86, 86, 94, 0.24); border-bottom: 1px solid rgba(86, 86, 94, 0.32); border-left: 1px solid rgba(86, 86, 94, 0.24);">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.30)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.13)_0%,rgba(242,214,134,0.055)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 bottom-0 h-10 w-[40%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.10)_0%,rgba(242,214,134,0.045)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="mx-auto max-w-2xl overflow-x-auto px-5 text-left md:px-7 font-mono text-sm md:text-base leading-[1.65]">
-      <pre class="whitespace-nowrap"><span class="text-zinc-100">$ dotenvx armor up</span></pre>
-      <pre class="mt-2 whitespace-nowrap text-[rgba(236,213,63,0.9)]">⛨ armored (03C 969)</pre>
+      <div class="armor-hero-visual">
+        {% include components/three-ops-rect.html height="170px" mode="shield" class="h-[170px] md:!h-[560px]" %}
+      </div>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mt-8 md:mt-16 lg:mt-20 mb-40 md:mb-56 lg:mb-72 text-center">
-  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Keys move off-device.</h2>
-  <p class="mt-4 text-zinc-400 text-lg">No longer in .env.keys. Harder to leak. Harder to steal.</p>
-  <div class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-t-[0.9rem] pt-8 md:mt-12 md:rounded-t-[1.1rem] md:pt-12">
-    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-px w-[82%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.32)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/2 top-0 z-10 h-10 w-[58%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(242,214,134,0.14)_0%,rgba(242,214,134,0.06)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-px w-[74%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_14%,rgba(245,223,152,0.22)_50%,rgba(255,255,255,0.04)_86%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-10 w-[50%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(242,214,134,0.09)_0%,rgba(242,214,134,0.04)_34%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-    <div class="relative z-10 grid grid-cols-[repeat(3,minmax(0,7.5rem))] justify-center gap-8 sm:grid-cols-[repeat(3,minmax(0,9.5rem))] md:grid-cols-[repeat(3,minmax(0,13rem))] md:gap-14 lg:grid-cols-[repeat(3,minmax(0,15rem))] lg:gap-20">
-      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="relative min-h-[22.4rem] w-full scale-[0.64] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[45vh] md:scale-[0.62] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="relative min-h-[25.6rem] w-full scale-[0.80] overflow-hidden rounded-t-[0.9rem] bg-transparent md:min-h-[51vh] md:scale-[0.80] md:rounded-t-[1.1rem]" %}
-      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="relative min-h-[22.4rem] w-full scale-[0.64] overflow-hidden rounded-t-[0.9rem] bg-transparent opacity-75 md:min-h-[45vh] md:scale-[0.62] md:rounded-t-[1.1rem]" %}
+<section class="radar-section armor-section">
+  <div class="radar-shell armor-shell armor-center">
+    <h2 class="radar-section-title">Armor up in one command.</h2>
+    <p class="radar-section-lede armor-center-lede">One command to harden your private keys.</p>
+    <div class="armor-terminal">
+      <pre><span class="armor-terminal-cmd">$ dotenvx armor up</span></pre>
+      <pre><span class="armor-terminal-ok">⛨ armored (03C 969)</span></pre>
     </div>
   </div>
 </section>
 
-<section class="w-full max-w-5xl mx-auto px-6 mb-44 md:mb-64 lg:mb-[18rem] text-center">
-  <h2 class="font-normal text-5xl sm:text-5xl md:text-[3.6rem] text-zinc-100 leading-[1.04] tracking-[-0.02em]">Grant decryption, not possession.</h2>
-  <p class="mt-4 mx-auto max-w-3xl text-zinc-400 text-lg">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
+<section class="radar-section armor-section">
+  <div class="radar-shell armor-shell-wide armor-center">
+    <h2 class="radar-section-title">Keys move off-device.</h2>
+    <p class="radar-section-lede armor-center-lede">No longer in .env.keys. Harder to leak. Harder to steal.</p>
+    <div class="armor-keys">
+      {% include components/keysee-viewer.html public_key="03f56df7dca630e89e2faf66add964cfaffc1ab3b7ea72a754e258815d86c0f927" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_direction="-1" spin_delay="650" spin_speed="0.34" class="armor-key armor-key--side relative min-h-[22.4rem] w-full overflow-hidden bg-transparent md:min-h-[45vh]" %}
+      {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.16" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" class="armor-key armor-key--main relative min-h-[25.6rem] w-full overflow-hidden bg-transparent md:min-h-[51vh]" %}
+      {% include components/keysee-viewer.html public_key="03583aea9aa1f6dd0b96924095626ab171c4d4ffeab6bb1ac3f483671abc32eee4" framing_padding="0.32" material_color="0xaeaaa0" render_mode="wire" spin_delay="1300" spin_speed="0.34" class="armor-key armor-key--side relative min-h-[22.4rem] w-full overflow-hidden bg-transparent md:min-h-[45vh]" %}
+    </div>
+  </div>
+</section>
 
-  <div class="relative mx-auto mt-12 max-w-[27rem] overflow-hidden rounded-lg bg-zinc-950 text-center" style="border: 1px solid rgba(113, 113, 122, 0.46);">
+<section class="radar-section armor-section">
+  <div class="radar-shell armor-shell armor-center">
+    <h2 class="radar-section-title">Grant decryption, not possession.</h2>
+    <p class="radar-section-lede armor-center-lede">Private keys are retrieved only when an authorized workflow needs them. They are used in memory, then gone. Developers, CI, and agents can decrypt without keeping long-lived private keys on disk.</p>
 
-    <div class="relative z-10 px-6 py-7 md:px-8 md:py-8">
-      <div class="mb-7 flex justify-center">
-        <div class="rounded-[0.28rem] border border-zinc-800/80 p-1">
-          {% include components/logo.html variant="black" class="h-9 w-9 rounded-[0.2rem]" %}
+    <div class="armor-grant">
+      <div class="armor-grant-body">
+        <div class="armor-grant-mark">
+          {% include components/logo.html variant="black" class="armor-grant-logo" %}
         </div>
-      </div>
-      <div class="mx-auto -mt-1 mb-4 h-36 w-full max-w-[16rem] overflow-hidden">
-        {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.26" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" spin_speed="0.42" class="relative h-36 min-h-0 w-full overflow-hidden bg-transparent opacity-80" %}
-      </div>
-      <div class="mx-auto max-w-[17rem]">
-        <h3 class="text-lg font-semibold leading-snug tracking-tight text-zinc-400">Grant this decryption?</h3>
-      </div>
+        <div class="armor-grant-key">
+          {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.26" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" spin_speed="0.42" class="relative h-36 min-h-0 w-full overflow-hidden bg-transparent opacity-80" %}
+        </div>
+        <h3 class="armor-grant-title">Grant this decryption?</h3>
 
-      <div class="mt-8 text-left">
-        <div class="grid grid-cols-[1.75rem_1fr] items-start gap-4">
-          <div class="flex h-7 w-7 items-center justify-center font-mono text-base font-normal leading-none text-zinc-600" aria-hidden="true">❯</div>
-          <div class="min-w-0">
-            <div class="font-mono text-[0.62rem] font-normal uppercase tracking-[0.16em] text-zinc-700">Command</div>
-            <pre class="mt-1 overflow-x-auto whitespace-nowrap font-mono text-sm font-normal text-zinc-300">dotenvx run -- npm start</pre>
+        <div class="armor-grant-meta">
+          <div class="armor-grant-row">
+            <span class="armor-grant-icon" aria-hidden="true">❯</span>
+            <div>
+              <div class="armor-grant-label">Command</div>
+              <pre class="armor-grant-value">dotenvx run -- npm start</pre>
+            </div>
           </div>
-        </div>
-        <div class="mt-6 grid grid-cols-[1.75rem_1fr] items-start gap-4">
-          <div class="flex h-7 w-7 items-center justify-center font-mono text-lg font-normal leading-none text-zinc-600" aria-hidden="true">⌖</div>
-          <div>
-            <div class="font-mono text-[0.62rem] font-normal uppercase tracking-[0.16em] text-zinc-700">Location</div>
-            <div class="mt-1 text-sm font-normal leading-6 text-zinc-500">Near San Francisco, California, United States</div>
+          <div class="armor-grant-row">
+            <span class="armor-grant-icon" aria-hidden="true">⌖</span>
+            <div>
+              <div class="armor-grant-label">Location</div>
+              <div class="armor-grant-text">Near San Francisco, California, United States</div>
+            </div>
           </div>
-        </div>
-        <div class="mt-6 grid grid-cols-[1.75rem_1fr] items-start gap-4">
-          <div class="flex h-7 w-7 items-center justify-center font-mono text-lg font-normal leading-none text-zinc-600" aria-hidden="true">▭</div>
-          <div>
-            <div class="font-mono text-[0.62rem] font-normal uppercase tracking-[0.16em] text-zinc-700">Device</div>
-            <div class="mt-1 text-sm font-normal leading-6 text-zinc-500">MAC_OS_X</div>
+          <div class="armor-grant-row">
+            <span class="armor-grant-icon" aria-hidden="true">▭</span>
+            <div>
+              <div class="armor-grant-label">Device</div>
+              <div class="armor-grant-text">MAC_OS_X</div>
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
-    <div class="relative z-10 grid grid-cols-2 gap-3 px-6 pb-6 md:px-8 md:pb-8">
-      <button type="button" class="flex min-h-16 items-center justify-center rounded-md border border-zinc-700/70 bg-transparent px-4 py-4 text-base font-semibold text-zinc-400 transition-colors duration-150 hover:border-zinc-600 hover:bg-black/10 hover:text-zinc-200">Yes, approve</button>
-      <button type="button" class="flex min-h-16 items-center justify-center rounded-md border border-zinc-700/70 bg-transparent px-4 py-4 text-base font-semibold text-zinc-400 transition-colors duration-150 hover:border-zinc-600 hover:bg-black/10 hover:text-zinc-200">No, deny</button>
-    </div>
-  </div>
-</section>
-
-<section class="relative overflow-hidden w-full max-w-6xl mx-auto px-6 mt-24 md:mt-32 mb-0 pt-16 md:pt-20 pb-36 md:pb-48 lg:pb-56 text-center">
-  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    <div class="absolute bottom-[-15rem] right-0 w-[26rem] sm:w-[24rem] md:bottom-[-2rem] md:w-[34rem] lg:bottom-[-3rem] lg:w-[40rem] aspect-[1396/1127] bg-no-repeat bg-contain bg-bottom bg-right opacity-70 md:opacity-100" style="background-image: url('/assets/img/bg/armor-gunmetal.png'); -webkit-mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at 82% 38%, rgba(0,0,0,1) 22%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.2) 66%, rgba(0,0,0,0) 80%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.34) 86%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,0.52) 94%, rgba(0,0,0,0) 100%); -webkit-mask-composite: source-in, source-in; mask-composite: intersect; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"></div>
-  </div>
-  <div class="relative z-10">
-    <h3 class="font-canela font-normal tracking-[-0.018em] text-[3.9rem] md:text-[4.25rem] lg:text-[5.05rem] leading-[1.03] text-zinc-100">
-      Armored keys.<br />Under guard.
-    </h3>
-    <div class="mt-12 md:mt-14 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-7">
-      <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3" href="/signup">
-        <span>Create Account</span>
-        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-        </svg>
-      </a>
-      <a class="inline-flex items-center justify-center gap-0.5 p-3 font-extrabold tracking-tight no-underline hover:no-underline text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200" href="/contact">
-        <span>Contact Us</span>
-        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-        </svg>
-      </a>
+      <div class="armor-grant-actions">
+        <button type="button" class="armor-grant-btn">Yes, approve</button>
+        <button type="button" class="armor-grant-btn">No, deny</button>
+      </div>
     </div>
   </div>
 </section>
-</div>
+
+<section class="radar-section armor-cta-section">
+  <div class="radar-shell armor-shell armor-center">
+    <div class="armor-cta-bg" aria-hidden="true"></div>
+    <div class="armor-cta-copy">
+      <h2 class="radar-title armor-cta-title">Armored keys.<br />Under guard.</h2>
+      <div class="armor-hero-actions armor-cta-actions">
+        <a class="radar-btn radar-btn--lg" href="/signup">Create Account</a>
+        <a class="radar-nav-link armor-hero-secondary" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
 (() => {
@@ -355,6 +295,7 @@ image: "/assets/img/og-image-armor.png"
 
   const fireStrike = (count = 1, options = {}) => {
     if (document.hidden) return;
+    if (!document.documentElement.classList.contains('dark')) return;
     for (let i = 0; i < count; i += 1) {
       state.bolts.push(createStrike(state.w, state.h, options));
     }
@@ -362,6 +303,7 @@ image: "/assets/img/og-image-armor.png"
     if (Math.random() < 0.2) {
       window.setTimeout(() => {
         if (document.hidden) return;
+        if (!document.documentElement.classList.contains('dark')) return;
         state.bolts.push(createStrike(state.w, state.h, options));
         startLightningLoop();
       }, randBetween(90, 210));
@@ -395,7 +337,6 @@ image: "/assets/img/og-image-armor.png"
     }, nextStrikeDelayMs());
   };
 
-  // First load: one strike, with occasional follow-up.
   window.setTimeout(() => {
     const initialAnchorX = window.matchMedia('(max-width: 767px)').matches ? 0.5 : 0.68;
     fireStrike(1, { anchorX: initialAnchorX, anchorSpread: 0.1 });

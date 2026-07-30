@@ -1,5 +1,6 @@
 ---
 title: Set
+layout: radar
 ---
 
 {% include components/feature-page.html

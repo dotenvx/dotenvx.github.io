@@ -42,8 +42,6 @@ Dotenvx isn't just a CLI—it's extending into the tools developers use every da
 * **Chrome Extension.** Decrypt your encrypted .env files directly on GitHub with the [Dotenvx Chrome Extension](https://dotenvx.com/chrome-extension).
 * **Buildpacks.** Install dotenvx to Heroku (or any platform that supports buildpacks) with the [Dotenvx Buildpack](https://github.com/dotenvx/heroku-buildpack-dotenvx).
 
-<a href="https://dotenvx.com/mods"><img src="https://github.com/user-attachments/assets/70047aa8-3510-463a-8858-d27a05e8777f" /></a>
-
 This growing ecosystem ensures that no matter where developers work—local editors, browsers, or cloud platforms—dotenvx is increasingly there to seamlessly handle secrets.
 
 ## Standard

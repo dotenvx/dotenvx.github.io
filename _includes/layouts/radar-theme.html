@@ -1,0 +1,27 @@
+<script>
+  (function () {
+    function resolveThemeMode() {
+      var stored = localStorage.getItem('themeMode')
+      var mode = stored === 'light' || stored === 'dark' ? stored : 'dark'
+      if (!stored) localStorage.setItem('themeMode', mode)
+      return mode
+    }
+
+    function applyThemeMode(mode) {
+      document.documentElement.classList.toggle('dark', mode === 'dark')
+      var meta = document.querySelector('meta[name="theme-color"]')
+      if (meta) meta.setAttribute('content', mode === 'dark' ? '#0a0a0a' : '#e4e7e6')
+    }
+
+    window.__radarThemeMode = window.__radarThemeMode || {}
+    window.__radarThemeMode.resolve = resolveThemeMode
+    window.__radarThemeMode.apply = applyThemeMode
+
+    try {
+      applyThemeMode(resolveThemeMode())
+    } catch (e) {
+      document.documentElement.classList.add('dark')
+    }
+  })()
+</script>
+<meta name="theme-color" content="#0a0a0a">

@@ -1,5 +1,6 @@
 ---
 title: Gitignore
+layout: radar
 ---
 
 {% include components/feature-page.html

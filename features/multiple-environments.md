@@ -1,5 +1,6 @@
 ---
 title: Multiple Environments
+layout: radar
 ---
 
 {% include components/feature-page.html

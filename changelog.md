@@ -3,20 +3,17 @@ title: Changelog
 social_title: Changelog
 image: "/assets/img/og-image-changelog.png"
 permalink: /changelog/
+layout: radar
 ---
 
 <style>
-  body > footer {
-    margin-top: 0 !important;
-  }
-
   [data-changelog-entry] > div:first-child {
     transition: color 160ms ease, text-shadow 160ms ease;
   }
 
   [data-changelog-entry] {
     border: 1px solid transparent;
-    border-radius: 10px;
+    border-radius: 0.35rem;
     cursor: pointer;
     margin: -0.875rem -1rem;
     outline: none;
@@ -37,13 +34,13 @@ permalink: /changelog/
   }
 
   [data-changelog-entry]:focus-visible > div:first-child {
-    color: #ecd53f;
-    text-shadow: 0 0 18px rgba(236, 213, 63, 0.28);
+    color: var(--design-mark);
+    text-shadow: 0 0 18px color-mix(in srgb, var(--design-mark) 28%, transparent);
   }
 
   [data-changelog-entry]:focus-visible > div:nth-child(2) > div:last-child {
-    background-color: #ecd53f;
-    box-shadow: 0 0 22px rgba(236, 213, 63, 0.34);
+    background-color: var(--design-mark);
+    box-shadow: 0 0 22px color-mix(in srgb, var(--design-mark) 34%, transparent);
   }
 
   [data-changelog-entry] h3 code {
@@ -51,14 +48,13 @@ permalink: /changelog/
     font-family: inherit;
   }
 
-
-
   .changelog-card {
     align-items: center;
     aspect-ratio: 16 / 9;
-    background: linear-gradient(180deg, rgba(24, 24, 27, 0.94), rgba(9, 9, 11, 0.98));
-    border: 1px solid rgba(63, 63, 70, 0.62);
-    border-radius: 10px;
+    background: var(--design-panel);
+    border: 1px solid transparent;
+    border-radius: 0.35rem;
+    box-shadow: var(--design-etch);
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
@@ -68,7 +64,7 @@ permalink: /changelog/
   }
 
   .changelog-card::before {
-    background: radial-gradient(circle at 50% 0%, rgba(236, 213, 63, 0.1), transparent 44%);
+    background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--design-mark) 12%, transparent), transparent 44%);
     content: "";
     inset: 0;
     pointer-events: none;
@@ -76,7 +72,7 @@ permalink: /changelog/
   }
 
   .changelog-card > span {
-    color: #f4f4f5;
+    color: var(--design-ink);
     font-size: clamp(1.45rem, 5vw, 2.35rem);
     line-height: 1.05;
     max-width: 82%;
@@ -101,12 +97,9 @@ permalink: /changelog/
     width: clamp(4.5rem, 14vw, 6rem);
   }
 
-  .changelog-card-brand-icon-1password {
-    color: #f4f4f5;
-  }
-
+  .changelog-card-brand-icon-1password,
   .changelog-card-brand-icon-bitwarden {
-    color: #f4f4f5;
+    color: var(--design-ink);
   }
 
   .changelog-agent-logos {
@@ -144,9 +137,9 @@ permalink: /changelog/
     align-items: flex-start;
     background: #0a0a0a;
     border-color: rgba(113, 113, 122, 0.28);
-    box-shadow: 0 0 46px rgba(236, 213, 63, 0.08);
+    box-shadow: var(--design-etch), 0 0 46px rgba(236, 213, 63, 0.08);
     color: #d4d4d4;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-family: var(--design-font-mono);
     justify-content: flex-start;
     padding: 2rem;
   }
@@ -206,10 +199,10 @@ permalink: /changelog/
 
   .changelog-keysee-logo-panel {
     align-items: center;
-    background: #050505;
-    border: 1px solid rgba(63, 63, 70, 0.7);
+    background: color-mix(in srgb, var(--design-bg) 86%, #000 14%);
+    border: 1px solid var(--design-line);
     border-radius: 0;
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.46), 0 0 32px rgba(236, 213, 63, 0.06);
+    box-shadow: var(--design-etch);
     display: inline-flex;
     justify-content: center;
     padding: clamp(0.28rem, 1vw, 0.42rem) clamp(0.38rem, 1.3vw, 0.55rem);
@@ -283,7 +276,7 @@ permalink: /changelog/
   }
 
   .changelog-key-guard-panel {
-    background: rgba(9, 9, 11, 0.82);
+    background: color-mix(in srgb, var(--design-bg) 88%, #000 12%);
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -306,8 +299,8 @@ permalink: /changelog/
 
   .changelog-key-guard-action {
     align-items: center;
-    border: 1px solid rgba(113, 113, 122, 0.68);
-    border-radius: 6px;
+    border: 1px solid var(--design-line);
+    border-radius: 0.2rem;
     display: flex;
     font-size: clamp(0.82rem, 2.4vw, 0.96rem);
     font-weight: 650;
@@ -319,13 +312,13 @@ permalink: /changelog/
 
   .changelog-key-guard-approve,
   .changelog-key-guard-deny {
-    background: rgba(9, 9, 11, 0.72);
-    color: #d4d4d8;
+    background: color-mix(in srgb, var(--design-bg) 90%, #000 10%);
+    color: var(--design-ink);
   }
 
   .changelog-enclave-state {
     align-items: center;
-    color: #e4e4e7;
+    color: var(--design-ink);
     display: flex;
     font-size: clamp(1.35rem, 4vw, 2rem);
     font-weight: 650;
@@ -340,26 +333,20 @@ permalink: /changelog/
     width: 100%;
   }
 
-  .changelog-next-logo {
-    color: #f4f4f5;
+  .changelog-next-logo,
+  .changelog-powershell-logo {
+    color: var(--design-ink);
     height: clamp(5rem, 18vw, 8rem);
     position: relative;
     width: clamp(5rem, 18vw, 8rem);
   }
 
   .changelog-macos-logo {
-    color: #f4f4f5;
+    color: var(--design-ink);
     height: auto;
     max-width: min(46%, 12rem);
     position: relative;
     width: 100%;
-  }
-
-  .changelog-powershell-logo {
-    color: #f4f4f5;
-    height: clamp(5rem, 18vw, 8rem);
-    position: relative;
-    width: clamp(5rem, 18vw, 8rem);
   }
 
   .changelog-install-chart {
@@ -369,7 +356,7 @@ permalink: /changelog/
   }
 
   .changelog-install-chart text {
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: var(--design-font-sans);
   }
 
   .ops-lockup {
@@ -389,33 +376,74 @@ permalink: /changelog/
 
   [data-changelog-entry]:hover > div:first-child,
   [data-changelog-entry]:focus-within > div:first-child {
-    color: #ecd53f;
-    text-shadow: 0 0 18px rgba(236, 213, 63, 0.28);
+    color: var(--design-mark);
+    text-shadow: 0 0 18px color-mix(in srgb, var(--design-mark) 28%, transparent);
   }
 
   [data-changelog-entry][data-copied-link="true"] > div:first-child::after {
-    color: #ecd53f;
+    color: var(--design-mark);
     content: " copied";
     display: block;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     margin-top: 0.25rem;
-    text-shadow: 0 0 14px rgba(236, 213, 63, 0.22);
+    text-shadow: 0 0 14px color-mix(in srgb, var(--design-mark) 22%, transparent);
+  }
+
+  /* Remap legacy zinc utilities onto design tokens so light mode works */
+  .changelog-page .text-zinc-100,
+  .changelog-page .text-zinc-300 {
+    color: var(--design-ink) !important;
+  }
+
+  .changelog-page .text-zinc-400,
+  .changelog-page .text-zinc-500 {
+    color: var(--design-mid) !important;
+  }
+
+  .changelog-page .bg-zinc-800 {
+    background-color: var(--design-line) !important;
+  }
+
+  .changelog-page .bg-zinc-400 {
+    background-color: var(--design-gold) !important;
+    box-shadow: 0 0 16px color-mix(in srgb, var(--design-gold) 35%, transparent) !important;
+  }
+
+  .changelog-page [data-changelog-entry] a {
+    color: var(--design-mark) !important;
+    font-weight: 500 !important;
+  }
+
+  .changelog-page [data-changelog-entry] a:hover {
+    text-decoration: underline;
+  }
+
+  .changelog-page code {
+    color: var(--design-ink);
+  }
+
+  .changelog-rail {
+    max-width: 48rem;
+  }
+
+  .changelog-hero {
+    padding-bottom: 2rem;
   }
 </style>
 
-<div class="relative overflow-hidden bg-black text-zinc-100">
-  <div class="pointer-events-none fixed inset-x-0 top-0 z-0 h-[30rem] bg-[radial-gradient(ellipse_at_52%_0%,rgba(85,118,158,0.16)_0%,rgba(35,47,66,0.08)_34%,rgba(0,0,0,0)_70%)]" aria-hidden="true"></div>
-  <div class="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0)_24%,rgba(0,0,0,0.74)_100%)]" aria-hidden="true"></div>
-
-  <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pt-14 md:pt-20 pb-9 md:pb-12">
-    <div class="text-center">
-      <h1 class="font-canela font-normal tracking-[-0.018em] text-[3rem] md:text-[4.2rem] leading-[0.98] text-zinc-100">Changelog</h1>
+<div class="changelog-page">
+  <section class="radar-hero changelog-hero">
+    <div class="radar-shell changelog-rail">
+      <p class="radar-kicker">Updates</p>
+      <h1 class="radar-title">Changelog</h1>
+      <p class="radar-lede">Product updates, releases, and notes from the dotenvx team.</p>
     </div>
   </section>
 
-  <section class="relative z-10 mx-auto w-full max-w-2xl px-6 pb-20 md:pb-28">
+  <section class="radar-section">
+    <div class="radar-shell changelog-rail">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
       <article id="2026-07-28-react-native-dotenv" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-28" data-search-text="react-native-dotenv react native babel plugin env ownership maintain dotenvx expo july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 28, 2026</div>
@@ -428,7 +456,7 @@ permalink: /changelog/
               <div class="changelog-card" aria-hidden="true"><span>react-native-dotenv</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">react-native-dotenv</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now maintains <code class="text-zinc-300">react-native-dotenv</code> — the Babel plugin for loading <code class="text-zinc-300">.env</code> files in React Native. v4 ships smarter <code class="text-zinc-300">process.env</code> inlining and Expo Router compatibility.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </div>
         </div>
       </article>
@@ -456,8 +484,8 @@ permalink: /changelog/
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Logs</span></div>
-              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor Activity Logs</h3>
+              <div class="changelog-card" aria-hidden="true"><span>Audit Logs</span></div>
+              <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit Logs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Armor now records team activity — pushes, permissions, and account events — in the UI and via <code class="text-zinc-300">/api/logs</code>.</p>
           </div>
         </div>
@@ -508,7 +536,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Bitwarden</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use Bitwarden secrets in dotenvx with a <code class="text-zinc-300">bw://</code> reference.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-bitwarden">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-bitwarden">Read documentation</a>
           </div>
         </div>
       </article>
@@ -528,7 +556,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">1Password</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use 1Password secrets in dotenvx with an <code class="text-zinc-300">op://</code> reference.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-1password">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-1password">Read documentation</a>
           </div>
         </div>
       </article>
@@ -548,7 +576,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Validate</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Check your <code class="text-zinc-300">.env</code> against <code class="text-zinc-300">.env.example</code> before your app runs.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/cli/validate">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/cli/validate">Read documentation</a>
           </div>
         </div>
       </article>
@@ -578,8 +606,8 @@ permalink: /changelog/
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Redact secrets from Claude and Codex</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Keep secrets out of logs and agent output.</p>
               <div class="changelog-sublinks mt-2">
-                <a class="font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-claude">Claude guide</a>
-                <a class="font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-codex">Codex guide</a>
+                <a class="font-normal radar-text-link" href="/docs/secrets-in-claude">Claude guide</a>
+                <a class="font-normal radar-text-link" href="/docs/secrets-in-codex">Codex guide</a>
               </div>
           </div>
         </div>
@@ -793,7 +821,7 @@ permalink: /changelog/
               <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Next.js</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Now available: <code class="text-zinc-300">@dotenvx/next-env</code>, a drop-in replacement for Next.js <code class="text-zinc-300">@next/env</code> that lets encrypted dotenvx files load during Next.js' own environment-loading step.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/docs/secrets-in-nextjs">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-nextjs">Read documentation</a>
           </div>
         </div>
       </article>
@@ -854,7 +882,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">SOC 2 Observation Started</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We started our SOC 2 Type 2 observation process. This begins the formal period where controls are operated, evidence is collected, and Dotenvx moves toward independent assurance for security, confidentiality, and availability.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Center</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Center</a>
           </div>
         </div>
       </article>
@@ -953,7 +981,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Python UV</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We added a new guide for encrypting secrets in Python projects using uv.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/docs/secrets-in-uv" target="_blank" rel="noopener noreferrer">Encrypt secrets in uv</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/docs/secrets-in-uv" target="_blank" rel="noopener noreferrer">Encrypt secrets in uv</a>
           </div>
         </div>
       </article>
@@ -974,7 +1002,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Trust Page</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We launched <code class="text-zinc-300">trust.dotenvx.com</code> as the home for Dotenvx security, compliance, and trust resources.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Page</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Visit Trust Page</a>
           </div>
         </div>
       </article>
@@ -1047,7 +1075,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔ Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the KEYSEE whitepaper for deterministic visual identity from compressed public keys.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
           </div>
         </div>
       </article>
@@ -1085,7 +1113,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">KEYSEE released as a deterministic visual identity system for public keys.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://keysee.io/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://keysee.io/" target="_blank" rel="noopener noreferrer">Visit Website</a>
           </div>
         </div>
       </article>
@@ -1154,7 +1182,7 @@ permalink: /changelog/
               <div class="changelog-card" aria-hidden="true">{% include logos/cloudflare.html class="changelog-cloudflare-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Cloudflare Workers Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use encrypted dotenvx env files cleanly in Cloudflare Workers and Wrangler workflows.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/docs/secrets-in-cloudflare-workers" target="_blank" rel="noopener noreferrer">Read documentation</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/docs/secrets-in-cloudflare-workers" target="_blank" rel="noopener noreferrer">Read documentation</a>
           </div>
         </div>
       </article>
@@ -1226,7 +1254,7 @@ permalink: /changelog/
               <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Next.js Setup</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published a practical guide for using encrypted <code class="text-zinc-300">.env</code> files with Next.js and Vercel, including the serverless runtime gotcha around <code class="text-zinc-300">instrumentation.ts</code>.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2026/02/17/dotenvx-nextjs.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2026/02/17/dotenvx-nextjs.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>
@@ -1242,7 +1270,7 @@ permalink: /changelog/
               <div class="changelog-card" aria-hidden="true"><span>Vestauth</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Vestauth</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Research began into removing secrets entirely from agent workflows by giving agents durable identity. Instead of passing long-lived credentials around, Vestauth explores signed agent identity as the trust primitive.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://vestauth.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://vestauth.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
           </div>
         </div>
       </article>
@@ -1401,7 +1429,7 @@ permalink: /changelog/
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Whitepaper</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published the dotenvx whitepaper draft.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="https://dotenvx.com/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
           </div>
         </div>
       </article>
@@ -1544,7 +1572,7 @@ permalink: /changelog/
               <div class="changelog-card" aria-hidden="true"><span>Feature Complete</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Feature Complete</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">With <code class="text-zinc-300">decrypt</code> added in dotenvx 1.6.0, dotenvx reached feature-complete status across its five core commands: <code class="text-zinc-300">run</code>, <code class="text-zinc-300">get</code>, <code class="text-zinc-300">set</code>, <code class="text-zinc-300">encrypt</code>, and <code class="text-zinc-300">decrypt</code>.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2024/07/11/feature-complete.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2024/07/11/feature-complete.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>
@@ -1561,7 +1589,7 @@ permalink: /changelog/
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx 1.0</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx 1.0 shipped as the next generation of configuration management for dotenv, built around three problems developers kept running into: inconsistent env behavior across platforms, juggling multiple environments, and the risk of leaking <code class="text-zinc-300">.env</code> files.</p>
               <p class="mt-3 text-zinc-400 text-sm md:text-base">It introduced a cross-platform <code class="text-zinc-300">dotenvx run -- your-cmd</code> workflow, first-class multiple environment files, and public-key encryption for <code class="text-zinc-300">.env</code> values, replacing the older <code class="text-zinc-300">.env.vault</code> path with a simpler encrypted <code class="text-zinc-300">.env</code> format.</p>
-              <a class="mt-2 inline-block font-normal text-[#ecd53f] no-underline hover:underline" href="/blog/2024/06/24/dotenvx-next-generation-config-management.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
+              <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2024/06/24/dotenvx-next-generation-config-management.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
           </div>
         </div>
       </article>
@@ -1598,7 +1626,7 @@ permalink: /changelog/
         </div>
       </article>
     </div>
-
+    </div>
   </section>
 </div>
 

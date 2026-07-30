@@ -1,5 +1,6 @@
 ---
 title: Variable Expansion
+layout: radar
 ---
 
 {% include components/feature-page.html

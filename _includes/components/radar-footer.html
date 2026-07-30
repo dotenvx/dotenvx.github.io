@@ -1,0 +1,87 @@
+{% assign changelog_page = site.pages | where: "path", "changelog.md" | first %}
+{% assign changelog_count = changelog_page.content | split: "<article" | size | minus: 1 %}
+
+<footer class="radar-footer">
+  <div class="radar-shell radar-footer-inner">
+    <div class="radar-footer-grid">
+      <div class="radar-footer-brand">
+        <div class="radar-footer-address">
+          <p>2450 Colorado Ave #100</p>
+          <p>Santa Monica, CA 90404</p>
+        </div>
+        <div class="radar-footer-social">
+          <a href="https://twitter.com/dotenvx" class="radar-footer-social-btn" aria-label="X" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/dotenvx/dotenvx" class="radar-footer-social-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+          </a>
+        </div>
+        <button type="button" class="radar-footer-theme" data-radar-theme-toggle>
+          Theme <span class="radar-theme-keycap">M</span>
+        </button>
+      </div>
+
+      <div class="radar-footer-col">
+        <p class="radar-footer-heading">Dotenvx</p>
+        <a href="/">Overview</a>
+        <a href="/docs">Documentation</a>
+        <a href="https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#changelog" target="_blank" rel="noopener noreferrer">
+          <span>Changelog</span>
+          <span class="radar-footer-badge">v2.7.3</span>
+        </a>
+        <a href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Whitepaper</a>
+        <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
+          <span class="radar-footer-badge">5.7k ★</span>
+        </a>
+        <a href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">
+          <span>NPM</span>
+          <span class="radar-footer-badge">9.4M/week</span>
+        </a>
+      </div>
+
+      <div class="radar-footer-col">
+        <p class="radar-footer-heading">Armor <span aria-hidden="true">⛨</span></p>
+        <a href="/armor">Overview</a>
+        <a href="/docs/armor">Documentation</a>
+        <a href="/changelog">
+          <span>Changelog</span>
+          <span class="radar-footer-badge">{{ changelog_count }}</span>
+        </a>
+        <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-footer-trust">
+          <span>Trust Center</span>
+          <span class="radar-footer-trust-marks" aria-hidden="true">
+            <span>{% include logos/framework-soc2.html uid="footer-armor-trust-soc2" class="radar-footer-trust-icon" %}</span>
+            <span>{% include logos/framework-gdpr.html class="radar-footer-trust-icon" %}</span>
+          </span>
+        </a>
+        <a href="/pricing">Pricing</a>
+        <a href="https://status.dotenvx.com">Status</a>
+        <a href="/login">Log In</a>
+      </div>
+
+      <div class="radar-footer-col">
+        <p class="radar-footer-heading">Company</p>
+        <a href="/blog">
+          <span>Blog</span>
+          <span class="radar-footer-badge">Apr 2</span>
+        </a>
+        <a href="/contact">Contact</a>
+        <a href="https://twitter.com/dotenvx" target="_blank" rel="noopener noreferrer">
+          <span>Social</span>
+          <svg class="radar-footer-inline-x" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+          </svg>
+        </a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/open-source">Open Source</a>
+      </div>
+    </div>
+  </div>
+</footer>

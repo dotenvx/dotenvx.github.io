@@ -1,5 +1,6 @@
 ---
 title: Command Substitution
+layout: radar
 ---
 
 {% include components/feature-page.html

@@ -1,21 +1,63 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include layouts/radar-theme.html %}
+    {% include layouts/meta.html %}
+    {% include layouts/analytics.html %}
+    <style>
+      /* Blog links: olive in light, yellow only in dark. Inline so it can't lose to a stale main.css cache. */
+      .blog-prose a,
+      .blog-prose a:link,
+      .blog-prose a:visited {
+        color: #2f5f8a !important;
+        font-weight: 500 !important;
+      }
+      .blog-prose a:hover,
+      .blog-prose a:focus {
+        color: #1a3f63 !important;
+      }
+      html.dark .blog-prose a,
+      html.dark .blog-prose a:link,
+      html.dark .blog-prose a:visited {
+        color: #ecd53f !important;
+      }
+      html.dark .blog-prose a:hover,
+      html.dark .blog-prose a:focus {
+        color: #e8e0d2 !important;
+      }
+    </style>
+  </head>
+  <body class="radar-layout">
+    {% include components/radar-nav.html %}
+    <main class="radar-main">
+      <article class="blog-post">
+        <div class="radar-shell blog-post-shell">
+          <a href="/blog" class="blog-back">‹ back to blog</a>
 
-<main class="w-full max-w-2xl mx-auto px-6 mt-12 md:mt-20 flex flex-col gap-4">
-  <a href="/blog">&larr; back to blog</a>
-  <img class="mx-auto h-8 w-8 rounded-full" src="/assets/img/mot.jpg" alt="Mot" />
-  <p class="text-center">Scott (Mot) Motte</p>
-  <p><time datetime="{{ page.date | date: "%Y-%m-%d"  }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
-  <article>
-    <h1 class="text-2xl font-black mb-4 text-zinc-950 dark:text-white">
-      {{ page.title }}
-    </h1>
-    <div class="prose mx-auto max-w-prose">
-      {{ content }}
-    </div>
-  </article>
-  <div class="prose mx-auto max-w-prose my-10">
-    <p class="text-center"><a href="/feed.xml">Subscribe via RSS</a> or follow us <a href="https://x.com/dotenvx">@dotenvx 𝕏</a></p>
-  </div>
-</main>
+          <header class="blog-post-header">
+            <img class="blog-post-avatar" src="/assets/img/mot.jpg" alt="" />
+            <p class="blog-post-author">{% if page.author %}{{ page.author }}{% else %}Scott Motte{% endif %}</p>
+            <p class="blog-post-date">
+              <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            </p>
+            <h1 class="blog-post-title">{{ page.title }}</h1>
+          </header>
+
+          <div class="blog-prose">
+            {{ content }}
+          </div>
+
+          <footer class="blog-post-footer">
+            <p>
+              <a href="/feed.xml">Subscribe via RSS</a>
+              or follow us
+              <a href="https://x.com/dotenvx">@dotenvx 𝕏</a>
+            </p>
+          </footer>
+        </div>
+      </article>
+    </main>
+    {% include components/radar-footer.html %}
+    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
+  </body>
+</html>

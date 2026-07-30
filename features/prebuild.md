@@ -1,5 +1,6 @@
 ---
 title: Prebuild
+layout: radar
 ---
 
 {% include components/feature-page.html

@@ -1,0 +1,262 @@
+{% assign radar_path = page.url | default: '' %}
+{% assign company_active = false %}
+{% if radar_path contains '/blog' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/open-source/' or radar_path == '/open-source' %}
+  {% assign company_active = true %}
+{% endif %}
+
+<header class="radar-chrome" aria-label="Site">
+  <div class="radar-topbar">
+    <div class="radar-topbar-left">
+      <a href="/" class="radar-brand" aria-label="dotenvx home">
+        <img src="/assets/img/logo-dotenvx.svg" class="radar-brand-light" alt="" aria-hidden="true" />
+        <img src="/assets/img/logo-dotenvx-dark.svg" class="radar-brand-dark" alt="" aria-hidden="true" />
+      </a>
+    </div>
+
+    <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
+      <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %} is-active{% endif %}">Docs</a>
+      <a href="/changelog" class="radar-nav-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
+
+      <div class="radar-nav-item" data-radar-nav-item data-nav-menu="company">
+        <button
+          type="button"
+          class="radar-nav-link radar-nav-trigger{% if company_active %} is-active{% endif %}"
+          aria-haspopup="true"
+          aria-expanded="false"
+          data-radar-nav-trigger
+        >
+          <span>Company</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="radar-nav-caret" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
+    </nav>
+
+    <div class="radar-topbar-right">
+      <a href="/login" class="radar-nav-link radar-nav-login" data-umami-event="Login link">Log In</a>
+      <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="radar-nav-icon" aria-label="GitHub repository" data-umami-event="GitHub repository link">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+      <button type="button" class="radar-theme-toggle" data-radar-theme-toggle aria-label="Toggle light and dark mode. Press M." title="Press M to toggle theme">
+        <span class="radar-theme-keycap">M</span>
+        <span class="radar-theme-label" data-radar-theme-label>Dark</span>
+      </button>
+      <button type="button" class="radar-mobile-toggle" id="radar-mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg class="radar-mobile-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg class="radar-mobile-icon-close hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6l-12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="radar-desktop-flyout" class="radar-nav-flyout" aria-hidden="true">
+    <div class="radar-nav-flyout-frame">
+      <div class="radar-nav-panel is-active" data-radar-nav-panel="company">
+        <div class="radar-nav-panel-links">
+          <a href="/blog" class="radar-nav-panel-link{% if radar_path contains '/blog' %} is-active{% endif %}">Blog</a>
+          <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-nav-panel-link">Trust</a>
+          <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
+          <a href="/open-source" class="radar-nav-panel-link{% if radar_path == '/open-source/' or radar_path == '/open-source' %} is-active{% endif %}">Open Source</a>
+        </div>
+        <a href="/contact" class="radar-nav-office">
+          <img
+            src="/dotenvx-la-office.png"
+            data-office-image
+            data-day-src="/dotenvx-la-office.png"
+            data-evening-src="/dotenvx-la-office-evening.png"
+            alt=""
+            class="radar-nav-office-image"
+            loading="lazy"
+          />
+          <span class="radar-nav-office-shade" aria-hidden="true"></span>
+          <span class="radar-nav-office-copy">
+            <span class="radar-nav-office-label">Office</span>
+            <span class="radar-nav-office-line">2450 Colorado Ave #100</span>
+            <span class="radar-nav-office-line radar-nav-office-line--dim">Santa Monica, CA 90404</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="radar-mobile-overlay" class="radar-mobile-overlay" hidden>
+  <div class="radar-mobile-sheet">
+    <div class="radar-mobile-actions">
+      <a href="/docs/secrets-with-cli" class="radar-btn">Get Started</a>
+      <a href="/login" class="radar-nav-link" data-umami-event="Login link">Log In</a>
+    </div>
+
+    <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
+      <a href="/docs" class="radar-mobile-link">Docs</a>
+      <a href="/changelog" class="radar-mobile-link">Changelog</a>
+      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="company">
+        <span>Company</span>
+        <span aria-hidden="true">→</span>
+      </button>
+      <a href="/pricing" class="radar-mobile-link">Pricing</a>
+    </nav>
+
+    <div data-radar-mobile-submenu="company" class="radar-mobile-list" hidden>
+      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
+        <span><span aria-hidden="true">←</span> Company</span>
+      </button>
+      <a href="/blog" class="radar-mobile-link">Blog</a>
+      <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
+      <a href="/contact" class="radar-mobile-link">Contact</a>
+      <a href="/open-source" class="radar-mobile-link">Open Source</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var desktopNav = document.getElementById('radar-desktop-nav')
+  var flyout = document.getElementById('radar-desktop-flyout')
+  var items = desktopNav ? desktopNav.querySelectorAll('[data-radar-nav-item]') : []
+  var officeImage = document.querySelector('[data-office-image]')
+  var mobileToggle = document.getElementById('radar-mobile-toggle')
+  var mobileOverlay = document.getElementById('radar-mobile-overlay')
+  var mobileRoot = mobileOverlay && mobileOverlay.querySelector('[data-radar-mobile-root]')
+  var mobileSubmenus = mobileOverlay ? mobileOverlay.querySelectorAll('[data-radar-mobile-submenu]') : []
+  var activeMenu = null
+  var closeTimer = null
+
+  if (officeImage) {
+    var hour = new Date().getHours()
+    var isEvening = hour >= 18 || hour < 6
+    officeImage.src = officeImage.getAttribute(isEvening ? 'data-evening-src' : 'data-day-src')
+  }
+
+  if (mobileOverlay && mobileOverlay.parentElement !== document.body) {
+    document.body.appendChild(mobileOverlay)
+  }
+
+  function clearClose() {
+    if (closeTimer) {
+      window.clearTimeout(closeTimer)
+      closeTimer = null
+    }
+  }
+
+  function openMenu(name) {
+    if (!flyout) return
+    clearClose()
+    activeMenu = name
+    items.forEach(function (item) {
+      var isActive = item.getAttribute('data-nav-menu') === name
+      item.toggleAttribute('data-nav-active', isActive)
+      var trigger = item.querySelector('[data-radar-nav-trigger]')
+      if (trigger) trigger.setAttribute('aria-expanded', isActive ? 'true' : 'false')
+    })
+    flyout.classList.add('is-open')
+    flyout.setAttribute('aria-hidden', 'false')
+  }
+
+  function closeMenu() {
+    activeMenu = null
+    flyout && flyout.classList.remove('is-open')
+    flyout && flyout.setAttribute('aria-hidden', 'true')
+    items.forEach(function (item) {
+      item.removeAttribute('data-nav-active')
+      var trigger = item.querySelector('[data-radar-nav-trigger]')
+      if (trigger) trigger.setAttribute('aria-expanded', 'false')
+    })
+  }
+
+  function scheduleClose() {
+    clearClose()
+    closeTimer = window.setTimeout(closeMenu, 140)
+  }
+
+  items.forEach(function (item) {
+    var name = item.getAttribute('data-nav-menu')
+    if (!name) return
+    item.addEventListener('pointerenter', function () { openMenu(name) })
+    item.addEventListener('mouseenter', function () { openMenu(name) })
+    item.addEventListener('focusin', function () { openMenu(name) })
+    item.addEventListener('mouseleave', scheduleClose)
+  })
+
+  desktopNav && desktopNav.addEventListener('mouseleave', scheduleClose)
+  desktopNav && desktopNav.addEventListener('focusout', function (event) {
+    if (!desktopNav.contains(event.relatedTarget) && !(flyout && flyout.contains(event.relatedTarget))) {
+      scheduleClose()
+    }
+  })
+
+  flyout && flyout.addEventListener('mouseenter', clearClose)
+  flyout && flyout.addEventListener('mouseleave', scheduleClose)
+  flyout && flyout.addEventListener('focusin', clearClose)
+  flyout && flyout.addEventListener('focusout', function (event) {
+    if (!(flyout.contains(event.relatedTarget)) && !(desktopNav && desktopNav.contains(event.relatedTarget))) {
+      scheduleClose()
+    }
+  })
+
+  document.addEventListener('pointermove', function (event) {
+    if (!activeMenu) return
+    var target = event.target
+    if ((desktopNav && desktopNav.contains(target)) || (flyout && flyout.contains(target))) {
+      clearClose()
+      return
+    }
+    scheduleClose()
+  })
+
+  function setMobileSubmenu(name) {
+    if (!mobileRoot) return
+    mobileRoot.hidden = !!name
+    mobileSubmenus.forEach(function (submenu) {
+      submenu.hidden = submenu.getAttribute('data-radar-mobile-submenu') !== name
+    })
+  }
+
+  function setMobileOpen(isOpen) {
+    if (!mobileOverlay || !mobileToggle) return
+    mobileOverlay.hidden = !isOpen
+    mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+    mobileToggle.querySelector('.radar-mobile-icon-open')?.classList.toggle('hidden', isOpen)
+    mobileToggle.querySelector('.radar-mobile-icon-close')?.classList.toggle('hidden', !isOpen)
+    document.body.classList.toggle('overflow-hidden', isOpen)
+    if (!isOpen) setMobileSubmenu(null)
+  }
+
+  mobileToggle && mobileToggle.addEventListener('click', function () {
+    setMobileOpen(mobileOverlay.hidden)
+  })
+
+  mobileOverlay && mobileOverlay.addEventListener('click', function (event) {
+    if (event.target === mobileOverlay) setMobileOpen(false)
+  })
+
+  mobileOverlay && mobileOverlay.querySelectorAll('a.radar-mobile-link, .radar-mobile-actions a').forEach(function (link) {
+    link.addEventListener('click', function () { setMobileOpen(false) })
+  })
+
+  mobileOverlay && mobileOverlay.querySelectorAll('[data-radar-mobile-open]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      setMobileSubmenu(button.getAttribute('data-radar-mobile-open'))
+    })
+  })
+
+  mobileOverlay && mobileOverlay.querySelectorAll('[data-radar-mobile-back]').forEach(function (button) {
+    button.addEventListener('click', function () { setMobileSubmenu(null) })
+  })
+
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      setMobileOpen(false)
+      if (activeMenu) closeMenu()
+    }
+  })
+})()
+</script>

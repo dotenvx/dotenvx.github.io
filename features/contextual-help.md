@@ -1,5 +1,6 @@
 ---
 title: Contextual Help
+layout: radar
 ---
 
 {% include components/feature-page.html

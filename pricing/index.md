@@ -1,239 +1,235 @@
 ---
 title: "Pricing"
 image: "/assets/img/og-image-pricing.png"
+layout: radar
 ---
 
-<section class="max-w-7xl mx-auto mt-20 flex flex-col px-5 mb-20">
-  <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#ecd53f]">PROFESSIONAL SECURITY</p>
-  <h1 class="mb-5 font-canela font-normal tracking-[-0.018em] text-[2.50rem] md:text-[3.00rem] lg:text-[3.50rem] text-center leading-[1.02] md:leading-[1.00] pb-2 text-zinc-100">Pricing</h1>
-  <p class="mb-10 text-center leading-relaxed text-lg md:text-2xl text-zinc-400">Private keys. Off device. Under guard.</p>
+<div class="pricing-page">
+  <section class="radar-hero pricing-hero">
+    <div class="radar-shell">
+      <p class="radar-kicker pricing-hero-kicker">Professional security</p>
+      <h1 class="radar-title pricing-hero-title">Pricing</h1>
+      <p class="radar-lede pricing-hero-lede">Private keys. Off device. Under guard.</p>
+    </div>
+  </section>
 
   {% assign members_feature = site.data.plans.features | where: "id", "members" | first %}
   {% assign armored_keys_feature = site.data.plans.features | where: "id", "armored_keys" | first %}
 
-  <div class="mx-auto w-full max-w-7xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl shadow-[0_0_120px_rgba(236,213,63,0.20)] ring-1 ring-[rgba(236,213,63,0.16)]">
-      {% for plan in site.data.plans.plans %}
-        {% case plan.id %}
-          {% when "pro" %}
-            {% assign border_classes = "rounded-t-xl md:rounded-tl-xl md:rounded-tr-none lg:rounded-l-xl lg:rounded-r-none border border-zinc-900" %}
-          {% when "team" %}
-            {% assign border_classes = "md:rounded-tr-xl lg:rounded-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900" %}
-          {% when "business" %}
-            {% assign border_classes = "md:rounded-bl-xl lg:rounded-none border-x border-b md:border-l md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900" %}
-          {% else %}
-            {% assign border_classes = "rounded-b-xl md:rounded-br-xl md:rounded-bl-none lg:rounded-r-xl lg:rounded-l-none border-x border-b md:border-l-0 md:border-y md:border-r lg:border-l-0 lg:border-y lg:border-r border-zinc-900" %}
-        {% endcase %}
-        {% include components/pricing-plan-card.html plan=plan border_classes=border_classes %}
-      {% endfor %}
+  <section class="radar-section">
+    <div class="radar-shell">
+      <div class="pricing-plan-grid">
+        {% for plan in site.data.plans.plans %}
+          {% case plan.id %}
+            {% when "pro" %}
+              {% assign border_classes = "pricing-plan--first" %}
+            {% when "team" %}
+              {% assign border_classes = "pricing-plan--mid" %}
+            {% when "business" %}
+              {% assign border_classes = "pricing-plan--mid" %}
+            {% else %}
+              {% assign border_classes = "pricing-plan--last" %}
+          {% endcase %}
+          {% include components/pricing-plan-card.html plan=plan border_classes=border_classes %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
-
-  <section class="mx-auto mt-32 w-full max-w-3xl text-center">
-    <h2 class="text-zinc-100 text-2xl md:text-3xl font-normal tracking-tight">Why Armor?</h2>
-    <p class="mt-4 text-base md:text-lg leading-relaxed text-zinc-500">
-      Armor keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
-    </p>
   </section>
 
-  <section class="mx-auto mt-12 w-full max-w-5xl">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
-      <div class="rounded-xl border border-zinc-900 bg-zinc-950/35 p-5 md:p-6">
-        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Dotenvx</div>
-        <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Encrypted .env file</h3>
-        <p class="mt-3 text-sm leading-relaxed text-zinc-500">Commit ciphertext safely with your application.</p>
-      </div>
-      <div class="flex items-center justify-center text-zinc-700 md:px-1" aria-hidden="true">
-        <span class="hidden md:block">+</span>
-        <span class="md:hidden">+</span>
-      </div>
-      <div class="relative overflow-hidden rounded-xl border border-[rgba(236,213,63,0.18)] bg-zinc-950/35 p-5 shadow-[0_0_90px_rgba(236,213,63,0.10)] md:p-6">
-        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.04)_20%,rgba(236,213,63,0.38)_50%,rgba(255,255,255,0.04)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute left-1/2 top-0 h-10 w-[48%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(236,213,63,0.12)_0%,rgba(236,213,63,0.05)_36%,rgba(0,0,0,0)_74%)] blur-[1px]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.035)_20%,rgba(236,213,63,0.22)_50%,rgba(255,255,255,0.035)_80%,rgba(255,255,255,0.01)_100%)]" aria-hidden="true"></div>
-        <div class="relative z-10">
-          <div class="text-xs font-semibold uppercase tracking-[0.16em] text-[#ecd53f]/65">Armor ⛨</div>
-          <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Armored private key ⛨</h3>
-          <p class="mt-3 text-sm leading-relaxed text-zinc-500">Stored off device, managed by policy, separate from code.</p>
+  <section class="radar-section">
+    <div class="radar-shell pricing-why">
+      <h2 class="radar-section-title pricing-center">Why Armor?</h2>
+      <p class="radar-section-lede pricing-center-lede">
+        Armor keeps your private decryption keys armored off device. Your encrypted environment files stay in code. Your private keys stay under guard.
+      </p>
+
+      <div class="pricing-flow">
+        <div class="radar-card pricing-flow-card">
+          <p class="pricing-flow-label">Dotenvx</p>
+          <h3 class="pricing-flow-title">Encrypted .env file</h3>
+          <p class="pricing-flow-copy">Commit ciphertext safely with your application.</p>
+        </div>
+        <div class="pricing-flow-op" aria-hidden="true">+</div>
+        <div class="radar-card pricing-flow-card pricing-flow-card--accent">
+          <p class="pricing-flow-label pricing-flow-label--mark">Armor ⛨</p>
+          <h3 class="pricing-flow-title">Armored private key ⛨</h3>
+          <p class="pricing-flow-copy">Stored off device, managed by policy, separate from code.</p>
+        </div>
+        <div class="pricing-flow-op" aria-hidden="true">
+          <span class="pricing-flow-op-desktop">→</span>
+          <span class="pricing-flow-op-mobile">↓</span>
+        </div>
+        <div class="radar-card pricing-flow-card">
+          <p class="pricing-flow-label">Runtime</p>
+          <h3 class="pricing-flow-title">Both required to decrypt</h3>
+          <p class="pricing-flow-copy">Secrets resolve only when encrypted values meet the authorized key.</p>
         </div>
       </div>
-      <div class="flex items-center justify-center text-zinc-700 md:px-1" aria-hidden="true">
-        <span class="hidden md:block">→</span>
-        <span class="md:hidden">↓</span>
-      </div>
-      <div class="rounded-xl border border-zinc-900 bg-zinc-950/35 p-5 md:p-6">
-        <div class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-600">Runtime</div>
-        <h3 class="mt-5 text-lg font-medium tracking-tight text-zinc-100">Both required to decrypt</h3>
-        <p class="mt-3 text-sm leading-relaxed text-zinc-500">Secrets resolve only when encrypted values meet the authorized key.</p>
+    </div>
+  </section>
+
+  <section class="radar-section">
+    <div class="radar-shell">
+      <h2 class="radar-section-title pricing-center">Compare capabilities across plans.</h2>
+    </div>
+  </section>
+
+  <section class="radar-section">
+    <div class="radar-shell pricing-compare-shell">
+      <h2 class="radar-section-title">Access &amp; Identity</h2>
+      <div class="radar-panel pricing-table-wrap">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Pro</th>
+              <th>Team</th>
+              <th>Business</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Login with GitHub</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>Automation Tokens</td>
+              <td class="pricing-empty">—</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>Rotations Daily Limit</td>
+              <td>10</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Team Members</td>
+              <td>{{ members_feature.values.pro }}</td>
+              <td>{{ members_feature.values.team }}</td>
+              <td>{{ members_feature.values.business }}</td>
+              <td>{{ members_feature.values.enterprise }}</td>
+            </tr>
+            <tr>
+              <td>Armored Keys</td>
+              <td>{{ armored_keys_feature.values.pro }}</td>
+              <td>{{ armored_keys_feature.values.team }}</td>
+              <td>{{ armored_keys_feature.values.business }}</td>
+              <td>{{ armored_keys_feature.values.enterprise }}</td>
+            </tr>
+            <tr>
+              <td>Log Retention</td>
+              <td>30 days</td>
+              <td>30 days</td>
+              <td>30 days</td>
+              <td>Flexible</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <div class="mx-auto mt-32 w-full max-w-3xl text-center">
-    <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Compare capabilities across plans.</h2>
-  </div>
-
-  <div class="mx-auto mt-12 w-full max-w-5xl">
-    <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Access & Identity</h2>
-    <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
-      <table class="w-full min-w-[540px] sm:min-w-[720px] border-collapse">
-        <thead>
-          <tr class="border-b border-zinc-900 bg-zinc-900/30">
-            <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Pro</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Business</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Login with GitHub</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Automation Tokens</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Rotations Daily Limit</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">10</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">Unlimited</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Team Members</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.pro }}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.team }}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.business }}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ members_feature.values.enterprise }}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Armored Keys</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.pro }}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.team }}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.business }}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-300 text-xs sm:text-sm">{{ armored_keys_feature.values.enterprise }}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-2 sm:px-4 sm:py-2.5 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Log Retention</td>
-            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
-            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
-            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">30 days</td>
-            <td class="px-1.5 py-2 sm:px-3 sm:py-2.5 text-center text-zinc-300 text-xs sm:text-sm">Flexible</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="mx-auto mt-28 w-full max-w-5xl">
-    <h2 class="text-zinc-100 text-3xl md:text-4xl font-normal tracking-tight">Customer Support</h2>
-    <div class="mt-8 rounded-2xl border border-zinc-900 bg-zinc-950/40 overflow-x-auto">
-      <table class="w-full min-w-[540px] sm:min-w-[720px] border-collapse">
-        <thead>
-          <tr class="border-b border-zinc-900 bg-zinc-900/30">
-            <th class="w-[36%] min-w-[132px] sticky left-0 z-20 bg-zinc-900/95 px-2 py-1.5 sm:px-4 sm:py-2 text-left text-[10px] sm:text-xs font-medium text-zinc-400">Feature</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Pro</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Team</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Business</th>
-            <th class="w-[16%] px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-[10px] sm:text-xs font-medium text-zinc-400">Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Billing Method</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Annual</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Monthly</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Flexible</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Payment Method</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Card</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-xs sm:text-sm">Flexible</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Ticket Support</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Slack Support</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">.env Expertise</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Urgent Response SLA</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">Priority Security Updates</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center text-zinc-500 text-base sm:text-lg">—</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr class="border-b border-zinc-900">
-            <td class="sticky left-0 z-10 bg-zinc-950/95 px-2 py-1.5 sm:px-4 sm:py-2 text-zinc-100 text-[11px] sm:text-sm leading-tight whitespace-normal">In-App Documentation</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-            <td class="px-1.5 py-1.5 sm:px-3 sm:py-2 text-center">{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <section class="w-full max-w-2xl mx-auto px-6 mt-32 flex flex-col gap-4">
-    <h2 class="font-normal text-4xl sm:text-4xl md:text-[2.9rem] leading-[1.06] tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">FAQ</h2>
-    <dl class="divide-y divide-zinc-200 dark:divide-zinc-800">
-      {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-      {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx uses ECIES public-key encryption, combining ephemeral key agreement with AES-256 secret encryption so that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-      {% include components/faq-question.html question="How does it protect me from security incidents like Vercel's?" answer="In the Vercel incident scenario, if an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key. To steal your secrets, an attacker needs both the private key and the encrypted .env files." %}
-    </dl>
-  </section>
-
-  <section class="relative overflow-hidden w-full mt-44 md:mt-56 mb-0 pt-2 pb-10 md:pb-14 lg:pb-16 text-center">
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
-      <div class="mx-auto mb-8 h-20 w-20 overflow-hidden rounded-md">
-        <img src="/logo-original.png" alt="dotenvx logo" class="h-full w-full object-cover" />
-      </div>
-      <h3 class="font-canela font-normal tracking-[-0.018em] text-[2.8rem] md:text-[3.1rem] lg:text-[3.7rem] leading-[1.03] text-zinc-100">
-        Armor up.<br />Today.
-      </h3>
-      <div class="mt-10 mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-7 md:gap-6">
-        <a class="btn-primary inline-flex w-full md:w-auto items-center justify-center gap-0.5 py-5 md:py-3 !pl-6 !pr-4 md:!pl-5 md:!pr-3" href="/signup">
-          <span>Get Started</span>
-          <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-          </svg>
-        </a>
+  <section class="radar-section">
+    <div class="radar-shell pricing-compare-shell">
+      <h2 class="radar-section-title">Customer Support</h2>
+      <div class="radar-panel pricing-table-wrap">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Pro</th>
+              <th>Team</th>
+              <th>Business</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Billing Method</td>
+              <td>Annual</td>
+              <td>Monthly</td>
+              <td>Monthly</td>
+              <td>Flexible</td>
+            </tr>
+            <tr>
+              <td>Payment Method</td>
+              <td>Card</td>
+              <td>Card</td>
+              <td>Card</td>
+              <td>Flexible</td>
+            </tr>
+            <tr>
+              <td>Ticket Support</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>Slack Support</td>
+              <td class="pricing-empty">—</td>
+              <td class="pricing-empty">—</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>.env Expertise</td>
+              <td class="pricing-empty">—</td>
+              <td class="pricing-empty">—</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>Urgent Response SLA</td>
+              <td class="pricing-empty">—</td>
+              <td class="pricing-empty">—</td>
+              <td class="pricing-empty">—</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>Priority Security Updates</td>
+              <td class="pricing-empty">—</td>
+              <td class="pricing-empty">—</td>
+              <td class="pricing-empty">—</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+            <tr>
+              <td>In-App Documentation</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+              <td>{% include components/checkmark-circle-green.html %}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
-</section>
+
+  <section class="radar-section">
+    <div class="radar-shell pricing-faq-shell">
+      <h2 class="radar-section-title">FAQ</h2>
+      <dl class="pricing-faq">
+        {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
+        {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx uses ECIES public-key encryption, combining ephemeral key agreement with AES-256 secret encryption so that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
+        {% include components/faq-question.html question="How does it protect me from security incidents like Vercel's?" answer="In the Vercel incident scenario, if an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key. To steal your secrets, an attacker needs both the private key and the encrypted .env files." %}
+      </dl>
+    </div>
+  </section>
+
+  <section class="radar-section pricing-cta-section">
+    <div class="radar-shell pricing-cta">
+      <img src="/logo-original.png" alt="" class="pricing-cta-mark" aria-hidden="true" />
+      <h2 class="radar-title pricing-cta-title">Armor up.<br />Today.</h2>
+      <a class="radar-btn radar-btn--lg" href="/signup">Get Started</a>
+    </div>
+  </section>
+</div>

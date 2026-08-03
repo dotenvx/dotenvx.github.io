@@ -22,7 +22,7 @@ https://armor.dotenvx.com/public/plans
 
 The Jekyll plugin `_plugins/plans.rb` fetches that JSON into `site.data.plans`. If the fetch fails, or the API payload is missing audit pricing fields, it falls back to committed `_data/plans.json`.
 
-Plans are priced by **users** and **audit events** (decrypt trail). Armored keys are unlimited on every plan.
+Plans are priced by **users** and **audit retention**. Armored keys and audit log volume are unlimited on every plan.
 
 Override the URL when needed:
 

@@ -9,12 +9,11 @@ layout: radar
     <div class="radar-shell">
       <p class="radar-kicker pricing-hero-kicker">Professional security</p>
       <h1 class="radar-title pricing-hero-title">Pricing</h1>
-      <p class="radar-lede pricing-hero-lede">Price by people and audit. Unlimited armored keys.</p>
+      <p class="radar-lede pricing-hero-lede">Price by people and retention. Unlimited armored keys.</p>
     </div>
   </section>
 
   {% assign members_feature = site.data.plans.features | where: "id", "members" | first %}
-  {% assign audit_events_feature = site.data.plans.features | where: "id", "audit_events" | first %}
   {% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
   {% assign armored_keys_feature = site.data.plans.features | where: "id", "armored_keys" | first %}
 
@@ -148,18 +147,11 @@ layout: radar
           </thead>
           <tbody>
             <tr>
-              <td>Decrypt Audit Trail</td>
+              <td>Audit Logs</td>
               <td>{% include components/checkmark-circle-green.html %}</td>
               <td>{% include components/checkmark-circle-green.html %}</td>
               <td>{% include components/checkmark-circle-green.html %}</td>
               <td>{% include components/checkmark-circle-green.html %}</td>
-            </tr>
-            <tr>
-              <td>Audit Events / mo</td>
-              <td>{{ audit_events_feature.values.pro }}</td>
-              <td>{{ audit_events_feature.values.team }}</td>
-              <td>{{ audit_events_feature.values.business }}</td>
-              <td>{{ audit_events_feature.values.enterprise }}</td>
             </tr>
             <tr>
               <td>Audit Retention</td>
@@ -205,7 +197,7 @@ layout: radar
           <tbody>
             <tr>
               <td>Billing Method</td>
-              <td>Annual</td>
+              <td>Monthly</td>
               <td>Monthly</td>
               <td>Monthly</td>
               <td>Flexible</td>
@@ -269,8 +261,8 @@ layout: radar
     <div class="radar-shell pricing-faq-shell">
       <h2 class="radar-section-title">FAQ</h2>
       <dl class="pricing-faq">
-        {% include components/faq-question.html question="What counts as an audit event?" answer="Each authorized decrypt (keypair access) creates an audit event—who accessed which key, and when. That trail is how Armor turns decryption into trust. Plans include a monthly allotment of audit events and a retention window. Higher plans include more events, longer retention, and export options." %}
-        {% include components/faq-question.html question="Are armored keys limited?" answer="No. Every plan includes unlimited armored keys. You pay for users and audit coverage—not for how many keys you protect." %}
+        {% include components/faq-question.html question="What are audit logs?" answer="Armor records access activity across your workspace—who accessed what, and when. That trail is how Armor turns decryption into trust. Every plan includes unlimited audit logs with a retention window: 3 days on Pro, 30 days on Team, and 90 days on Business. Higher plans keep evidence longer and add export options." %}
+        {% include components/faq-question.html question="Are armored keys limited?" answer="No. Every plan includes unlimited armored keys. You pay for users and how long you keep the audit trail—not for how many keys you protect." %}
         {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
         {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx uses ECIES public-key encryption, combining ephemeral key agreement with AES-256 secret encryption so that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
         {% include components/faq-question.html question="How does it protect me from security incidents like Vercel's?" answer="In the Vercel incident scenario, if an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key. To steal your secrets, an attacker needs both the private key and the encrypted .env files." %}

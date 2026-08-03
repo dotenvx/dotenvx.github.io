@@ -1,9 +1,9 @@
 {% assign plan_name = plan.name | remove: "⛨ " %}
 {% assign members_feature = site.data.plans.features | where: "id", "members" | first %}
-{% assign audit_events_feature = site.data.plans.features | where: "id", "audit_events" | first %}
+{% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
 {% if plan.id == "enterprise" %}
   {% assign users_label = "Custom users" %}
-  {% assign audit_label = "Custom audit events" %}
+  {% assign retention_label = "Custom audit retention" %}
 {% else %}
   {% assign member_count = members_feature.values[plan.id] %}
   {% if member_count == "1" %}
@@ -11,7 +11,7 @@
   {% else %}
     {% assign users_label = member_count | append: " users" %}
   {% endif %}
-  {% assign audit_label = audit_events_feature.values[plan.id] | append: " audit events/mo" %}
+  {% assign retention_label = audit_retention_feature.values[plan.id] | append: " audit retention" %}
 {% endif %}
 {% if plan.id == "enterprise" %}
   {% assign cta_href = "/contact" %}
@@ -29,7 +29,7 @@
     </div>
     <div class="pricing-plan-keys">
       <p class="pricing-plan-keys-main">{{ users_label }}</p>
-      <p class="pricing-plan-keys-sub">{{ audit_label }}</p>
+      <p class="pricing-plan-keys-sub">{{ retention_label }}</p>
       <p class="pricing-plan-keys-sub">Unlimited Armored Keys ⛨</p>
     </div>
     <ul class="pricing-plan-features">
@@ -39,7 +39,7 @@
       <li>{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
       <li>{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
       <li>{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
-      <li>{% include components/checkmark-circle-green.html %}<span>Decrypt Audit Trail</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Audit Logs</span></li>
       <li>{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
       {% if plan.id == "pro" %}
         <li class="is-muted">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>

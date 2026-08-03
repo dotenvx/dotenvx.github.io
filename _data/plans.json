@@ -16,11 +16,11 @@
         "members": 1,
         "armored_keys": null,
         "audit_events": 50000,
-        "audit_retention_days": 30
+        "audit_retention_days": 3
       },
       "highlights": [
         "1 user",
-        "50,000 audit events/mo",
+        "3 days audit retention",
         "Unlimited armored keys"
       ]
     },
@@ -40,11 +40,11 @@
         "members": 3,
         "armored_keys": null,
         "audit_events": 500000,
-        "audit_retention_days": 90
+        "audit_retention_days": 30
       },
       "highlights": [
         "3 users",
-        "500,000 audit events/mo",
+        "30 days audit retention",
         "Unlimited armored keys"
       ]
     },
@@ -64,11 +64,11 @@
         "members": 10,
         "armored_keys": null,
         "audit_events": 2000000,
-        "audit_retention_days": 365
+        "audit_retention_days": 90
       },
       "highlights": [
         "10 users",
-        "2,000,000 audit events/mo",
+        "90 days audit retention",
         "Unlimited armored keys"
       ]
     },
@@ -92,7 +92,7 @@
       },
       "highlights": [
         "Custom users",
-        "Custom audit events",
+        "Custom audit retention",
         "Unlimited armored keys"
       ]
     }
@@ -122,9 +122,9 @@
       "id": "audit_retention",
       "label": "Audit retention",
       "values": {
-        "pro": "30 days",
-        "team": "90 days",
-        "business": "1 year",
+        "pro": "3 days",
+        "team": "30 days",
+        "business": "90 days",
         "enterprise": "Flexible"
       }
     },

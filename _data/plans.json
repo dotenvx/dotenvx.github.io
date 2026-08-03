@@ -14,11 +14,14 @@
       },
       "limits": {
         "members": 1,
-        "armored_keys": 50
+        "armored_keys": null,
+        "audit_events": 50000,
+        "audit_retention_days": 3
       },
       "highlights": [
-        "1 member",
-        "50 armored keys"
+        "1 user",
+        "3 days audit retention",
+        "Unlimited armored keys"
       ]
     },
     {
@@ -35,11 +38,14 @@
       },
       "limits": {
         "members": 3,
-        "armored_keys": 100
+        "armored_keys": null,
+        "audit_events": 500000,
+        "audit_retention_days": 30
       },
       "highlights": [
-        "3 members",
-        "100 armored keys"
+        "3 users",
+        "30 days audit retention",
+        "Unlimited armored keys"
       ]
     },
     {
@@ -56,11 +62,14 @@
       },
       "limits": {
         "members": 10,
-        "armored_keys": 1000
+        "armored_keys": null,
+        "audit_events": 2000000,
+        "audit_retention_days": 90
       },
       "highlights": [
-        "10 members",
-        "1,000 armored keys"
+        "10 users",
+        "90 days audit retention",
+        "Unlimited armored keys"
       ]
     },
     {
@@ -77,18 +86,21 @@
       },
       "limits": {
         "members": 100,
-        "armored_keys": null
+        "armored_keys": null,
+        "audit_events": null,
+        "audit_retention_days": null
       },
       "highlights": [
-        "Custom members",
-        "Custom armored keys"
+        "Custom users",
+        "Custom audit retention",
+        "Unlimited armored keys"
       ]
     }
   ],
   "features": [
     {
       "id": "members",
-      "label": "Team members",
+      "label": "Users",
       "values": {
         "pro": "1",
         "team": "3",
@@ -97,13 +109,33 @@
       }
     },
     {
+      "id": "audit_events",
+      "label": "Audit events / mo",
+      "values": {
+        "pro": "50,000",
+        "team": "500,000",
+        "business": "2,000,000",
+        "enterprise": "Custom"
+      }
+    },
+    {
+      "id": "audit_retention",
+      "label": "Audit retention",
+      "values": {
+        "pro": "3 days",
+        "team": "30 days",
+        "business": "90 days",
+        "enterprise": "Flexible"
+      }
+    },
+    {
       "id": "armored_keys",
       "label": "Armored keys",
       "values": {
-        "pro": "50",
-        "team": "100",
-        "business": "1,000",
-        "enterprise": "Custom"
+        "pro": "Unlimited",
+        "team": "Unlimited",
+        "business": "Unlimited",
+        "enterprise": "Unlimited"
       }
     }
   ]

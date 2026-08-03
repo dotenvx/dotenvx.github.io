@@ -1,9 +1,17 @@
 {% assign plan_name = plan.name | remove: "⛨ " %}
-{% assign armored_keys_feature = site.data.plans.features | where: "id", "armored_keys" | first %}
+{% assign members_feature = site.data.plans.features | where: "id", "members" | first %}
+{% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
 {% if plan.id == "enterprise" %}
-  {% assign keys_label = "Specific needs" %}
+  {% assign users_label = "Custom users" %}
+  {% assign retention_label = "Custom audit retention" %}
 {% else %}
-  {% assign keys_label = armored_keys_feature.values[plan.id] | append: " Armored Keys" %}
+  {% assign member_count = members_feature.values[plan.id] %}
+  {% if member_count == "1" %}
+    {% assign users_label = "1 user" %}
+  {% else %}
+    {% assign users_label = member_count | append: " users" %}
+  {% endif %}
+  {% assign retention_label = audit_retention_feature.values[plan.id] | append: " audit retention" %}
 {% endif %}
 {% if plan.id == "enterprise" %}
   {% assign cta_href = "/contact" %}
@@ -20,8 +28,9 @@
       <span>{{ plan.price.display }}</span>{% if plan.price.show_period %}<span class="pricing-plan-period"> / {{ plan.price.period }}</span>{% endif %}
     </div>
     <div class="pricing-plan-keys">
-      <p class="pricing-plan-keys-main">{{ keys_label }}</p>
-      <p class="pricing-plan-keys-sub">Armored Off Device ⛨</p>
+      <p class="pricing-plan-keys-main">{{ users_label }}</p>
+      <p class="pricing-plan-keys-sub">{{ retention_label }}</p>
+      <p class="pricing-plan-keys-sub">Unlimited Armored Keys ⛨</p>
     </div>
     <ul class="pricing-plan-features">
       <li>{% include components/checkmark-circle-green.html %}<span>CLI / UI / API</span></li>
@@ -30,6 +39,7 @@
       <li>{% include components/checkmark-circle-green.html %}<span>Encrypted .env Files</span></li>
       <li>{% include components/checkmark-circle-green.html %}<span>Fully Managed</span></li>
       <li>{% include components/checkmark-circle-green.html %}<span>Armored Private Keys ⛨</span></li>
+      <li>{% include components/checkmark-circle-green.html %}<span>Audit Logs</span></li>
       <li>{% include components/checkmark-circle-green.html %}<span>Rotations</span></li>
       {% if plan.id == "pro" %}
         <li class="is-muted">{% include components/checkmark-circle-gray.html %}<span>Personal Security</span></li>

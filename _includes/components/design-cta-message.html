@@ -1,0 +1,5 @@
+{% assign text = include.text %}
+{% assign message_class = include.class %}
+<p class="design-cta-message{% if message_class %} {{ message_class }}{% endif %}">
+  {% if text and text != "" %}{{ text }}{% else %}{{ include.content }}{% endif %}
+</p>

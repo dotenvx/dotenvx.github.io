@@ -1,0 +1,11 @@
+{% assign title = include.title %}
+{% assign list_class = include.class %}
+
+<div class="design-list{% if list_class %} {{ list_class }}{% endif %}">
+  {% if title and title != "" %}
+    <p class="design-list-title">{{ title }}</p>
+  {% endif %}
+  <ul class="design-list-items">
+    {{ include.items }}
+  </ul>
+</div>

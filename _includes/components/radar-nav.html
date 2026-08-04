@@ -1,6 +1,6 @@
 {% assign radar_path = page.url | default: '' %}
 {% assign company_active = false %}
-{% if radar_path contains '/blog' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' %}
+{% if radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' %}
   {% assign company_active = true %}
 {% endif %}
 
@@ -15,7 +15,6 @@
 
     <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
       <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %} is-active{% endif %}">Docs</a>
-      <a href="/changelog" class="radar-nav-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
 
       <div class="radar-nav-item" data-radar-nav-item data-nav-menu="company">
         <button
@@ -57,22 +56,18 @@
     <div class="radar-nav-flyout-frame">
       <div class="radar-nav-panel is-active" data-radar-nav-panel="company">
         <div class="radar-nav-panel-links">
-          <a href="/blog" class="radar-nav-panel-link{% if radar_path contains '/blog' %} is-active{% endif %}">Blog</a>
-          <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-nav-panel-link">Trust</a>
-          <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
           <a href="/opensource" class="radar-nav-panel-link{% if radar_path == '/opensource/' or radar_path == '/opensource' %} is-active{% endif %}">Open Source</a>
+          <a href="/changelog" class="radar-nav-panel-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
+          <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
+          <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-nav-panel-link">Trust</a>
         </div>
         <a href="/contact" class="radar-nav-office">
           <img
-            src="/dotenvx-la-office.png"
-            data-office-image
-            data-day-src="/dotenvx-la-office.png"
-            data-evening-src="/dotenvx-la-office-evening.png"
-            alt=""
+            src="/dotenvx-la-office-evening-dither.png"
+            alt="dotenvx Los Angeles office"
             class="radar-nav-office-image"
             loading="lazy"
           />
-          <span class="radar-nav-office-shade" aria-hidden="true"></span>
           <span class="radar-nav-office-copy">
             <span class="radar-nav-office-label">Office</span>
             <span class="radar-nav-office-line">2450 Colorado Ave #100</span>
@@ -93,7 +88,6 @@
 
     <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
       <a href="/docs" class="radar-mobile-link">Docs</a>
-      <a href="/changelog" class="radar-mobile-link">Changelog</a>
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="company">
         <span>Company</span>
         <span aria-hidden="true">→</span>
@@ -105,10 +99,10 @@
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
         <span><span aria-hidden="true">←</span> Company</span>
       </button>
-      <a href="/blog" class="radar-mobile-link">Blog</a>
-      <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
-      <a href="/contact" class="radar-mobile-link">Contact</a>
       <a href="/opensource" class="radar-mobile-link">Open Source</a>
+      <a href="/changelog" class="radar-mobile-link">Changelog</a>
+      <a href="/contact" class="radar-mobile-link">Contact</a>
+      <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
     </div>
   </div>
 </div>
@@ -118,19 +112,12 @@
   var desktopNav = document.getElementById('radar-desktop-nav')
   var flyout = document.getElementById('radar-desktop-flyout')
   var items = desktopNav ? desktopNav.querySelectorAll('[data-radar-nav-item]') : []
-  var officeImage = document.querySelector('[data-office-image]')
   var mobileToggle = document.getElementById('radar-mobile-toggle')
   var mobileOverlay = document.getElementById('radar-mobile-overlay')
   var mobileRoot = mobileOverlay && mobileOverlay.querySelector('[data-radar-mobile-root]')
   var mobileSubmenus = mobileOverlay ? mobileOverlay.querySelectorAll('[data-radar-mobile-submenu]') : []
   var activeMenu = null
   var closeTimer = null
-
-  if (officeImage) {
-    var hour = new Date().getHours()
-    var isEvening = hour >= 18 || hour < 6
-    officeImage.src = officeImage.getAttribute(isEvening ? 'data-evening-src' : 'data-day-src')
-  }
 
   if (mobileOverlay && mobileOverlay.parentElement !== document.body) {
     document.body.appendChild(mobileOverlay)

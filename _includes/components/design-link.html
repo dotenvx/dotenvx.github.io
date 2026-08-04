@@ -1,0 +1,9 @@
+{% assign href = include.href | default: "#" %}
+{% assign label = include.label %}
+{% assign link_class = include.class %}
+<a
+  href="{{ href }}"
+  class="design-link{% if link_class %} {{ link_class }}{% endif %}"
+  {% if include.target %}target="{{ include.target }}"{% endif %}
+  {% if include.rel %}rel="{{ include.rel }}"{% endif %}
+>{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</a>

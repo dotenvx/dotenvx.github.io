@@ -3,13 +3,12 @@ title: "Blog"
 layout: radar
 ---
 
-<section class="radar-hero blog-index-hero">
-  <div class="armor-shell blog-index-shell">
-    <p class="radar-kicker">Company</p>
-    <h1 class="radar-title">Blog</h1>
-    <p class="radar-lede">Notes on secrets, .env files, and building dotenvx.</p>
-  </div>
-</section>
+{% include components/design-hero.html
+  eyebrow="Company"
+  title="Blog"
+  description="Notes on secrets, .env files, and building dotenvx."
+  shell_class="blog-index-shell"
+%}
 
 <section class="radar-section">
   <div class="armor-shell blog-index-shell">

@@ -1,0 +1,165 @@
+- date: 2026-07-28
+  summary: "Dotenvx maintains react-native-dotenv."
+  url: "https://github.com/dotenvx/react-native-dotenv"
+- date: 2026-07-27
+  summary: "Open armored key details in your browser."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2190-2026-07-27"
+- date: 2026-07-27
+  summary: "Armor records team activity and audit logs."
+- date: 2026-07-25
+  summary: "Call the Armor API with dotenvx curl."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2180-2026-07-25"
+- date: 2026-07-22
+  summary: "Dotenv hits 150M weekly npm installs."
+  milestone: true
+- date: 2026-07-21
+  summary: "Use Bitwarden secrets via bw:// references."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2170-2026-07-21"
+- date: 2026-07-20
+  summary: "Use 1Password secrets via op:// references."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2150-2026-07-20"
+- date: 2026-07-16
+  summary: "Validate .env against .env.example before run."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2140-2026-07-16"
+- date: 2026-07-15
+  summary: "Redact secrets from logs and agent output."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2100-2026-07-15"
+- date: 2026-07-14
+  summary: "Dotenvx ls gains progress updates and --json."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#290-2026-07-14"
+- date: 2026-07-14
+  summary: "Decrypt with private keys held in a software enclave."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#280-2026-07-14"
+- date: 2026-07-13
+  summary: "Store Armor tokens in your OS secret store."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#271-2026-07-13"
+- date: 2026-07-13
+  summary: "Mask secret values in run, get, and decrypt output."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#270-2026-07-13"
+- date: 2026-07-11
+  summary: "Store private keys in OS-native secret stores."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#250-2026-07-11"
+- date: 2026-07-10
+  summary: "Load env files from a monorepo directory path."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#241-2026-07-10"
+- date: 2026-07-08
+  summary: "Protect .env.keys with a local passphrase."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#230-2026-07-08"
+- date: 2026-07-06
+  summary: "Keep values unencrypted with _PLAIN."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#210-2026-07-02"
+- date: 2026-06-30
+  summary: "Dotenvx reaches 30M monthly npm installs."
+  milestone: true
+- date: 2026-06-30
+  summary: "Dotenvx 2.0 ships on a cleaner primitives core."
+  milestone: true
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#200-2026-06-30"
+- date: 2026-06-24
+  summary: "Dotenvx runs correctly in PowerShell."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1760-2026-06-24"
+- date: 2026-06-19
+  summary: "Load encrypted env files natively in Next.js."
+  url: "/docs/secrets-in-nextjs"
+- date: 2026-06-16
+  summary: "Armor is built directly into dotenvx."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1730-2026-06-16"
+- date: 2026-06-10
+  summary: "Key Guard development begins for access approvals."
+- date: 2026-06-01
+  summary: "SOC 2 Type 2 observation process starts."
+  milestone: true
+  url: "https://trust.dotenvx.com"
+- date: 2026-06-01
+  summary: "Run Armor workflows with --token in CI and agents."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1710-2026-06-01"
+- date: 2026-05-31
+  summary: "Dotenvx Ops is renamed to Dotenvx Armor."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1700-2026-05-31"
+- date: 2026-05-21
+  summary: "Lenient rate limiting lands to keep systems stable."
+- date: 2026-05-15
+  summary: "Change your organization avatar in Settings."
+- date: 2026-05-14
+  summary: "Choose local or armored key storage on first create."
+- date: 2026-05-13
+  summary: "New guide for encrypting secrets with Python uv."
+  url: "https://dotenvx.com/docs/secrets-in-uv"
+- date: 2026-05-12
+  summary: "Trust Center launches for security and compliance."
+  milestone: true
+  url: "https://trust.dotenvx.com"
+- date: 2026-05-11
+  summary: "Sign in with Google for faster team onboarding."
+- date: 2026-05-08
+  summary: "Run an automated pentest against armor.dotenvx.com."
+- date: 2026-05-07
+  summary: "Pick the right team when armoring keys across orgs."
+- date: 2026-05-07
+  summary: "KEYSEE publishes whitepaper for public-key identity."
+  url: "https://keysee.io/whitepaper.pdf"
+- date: 2026-05-06
+  summary: "Armor up, down, push, pull, and move commands ship."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1640-2026-04-27"
+- date: 2026-05-04
+  summary: "KEYSEE releases deterministic public-key visuals."
+  url: "https://keysee.io/"
+- date: 2026-04-26
+  summary: "Dotenv reaches 500M monthly npm installs."
+  milestone: true
+- date: 2026-04-24
+  summary: "Encrypted env files work in Cloudflare Workers."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1620-2026-04-23"
+- date: 2026-04-17
+  summary: "Dotenvx Ops opens in beta for early teams."
+- date: 2026-03-01
+  summary: "Dotenvx reaches 15M monthly npm installs."
+  milestone: true
+- date: 2026-02-17
+  summary: "Publish a guide for encrypted env with Next.js."
+  url: "/blog/2026/02/17/dotenvx-nextjs.html"
+- date: 2026-02-10
+  summary: "Vestauth research begins on agent identity."
+  url: "https://vestauth.com"
+- date: 2026-01-17
+  summary: "Ops gateway starts with initial OpenAI support."
+- date: 2026-01-01
+  summary: "Dotenvx reaches 6M monthly npm installs."
+  milestone: true
+- date: 2025-12-22
+  summary: "Ops adds secure .env.keys backup and recovery."
+- date: 2025-12-14
+  summary: "Rotation tokens and provider connect flows land."
+- date: 2025-09-18
+  summary: "First Ops command lands in dotenvx."
+- date: 2025-06-01
+  summary: "Dotenvx reaches 2M monthly npm installs."
+  milestone: true
+- date: 2025-02-20
+  summary: "Dotenvx whitepaper draft is published."
+  url: "https://dotenvx.com/dotenvx.pdf"
+- date: 2025-02-07
+  summary: "Decryption-at-access via main.get and main.set."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1350-2025-02-07"
+- date: 2025-01-01
+  summary: "Dotenvx reaches 1M monthly npm installs."
+  milestone: true
+- date: 2024-12-13
+  summary: "Share one .env.keys file across monorepo apps."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1300-2024-12-13"
+- date: 2024-11-25
+  summary: "Strict mode for safer CI missing-file handling."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1250-2024-11-25"
+- date: 2024-09-01
+  summary: "Dotenvx reaches 500K monthly npm installs."
+  milestone: true
+- date: 2024-07-11
+  summary: "Dotenvx hits feature-complete across five commands."
+  milestone: true
+  url: "/blog/2024/07/11/feature-complete.html"
+- date: 2024-06-24
+  summary: "Dotenvx 1.0 ships as next-gen config for dotenv."
+  milestone: true
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#100-2024-06-24"
+- date: 2024-05-09
+  summary: "Encrypted .env replaces the older .env.vault path."

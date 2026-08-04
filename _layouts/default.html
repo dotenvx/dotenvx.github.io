@@ -5,7 +5,7 @@
     {% assign is_homepage = true %}
   {% endif %}
   <head>
-    {% include layouts/dark-mode.html %}
+    {% include layouts/radar-theme.html %}
     {% if is_homepage %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +20,9 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
-  <body class="relative flex flex-col min-h-screen rounded-t-lg{% if is_homepage %} homepage{% endif %}">
+  <body class="radar-layout relative flex flex-col min-h-screen rounded-t-lg{% if is_homepage %} homepage{% endif %}">
     {% unless page.hide_nav %}
-    <header id="nav-sticky" class="sticky top-0 z-[80] rounded-t-lg overflow-visible border-t border-t-yellow-300 border-b border-b-transparent transition-colors duration-200{% if is_homepage %} nav-enter{% endif %}">
-      {% include components/nav.html %}
-    </header>
+      {% include components/radar-nav.html %}
     {% endunless %}
     <main class="relative z-10 flex-grow">
       {{ content }}
@@ -35,5 +33,6 @@
     </footer>
     {% endunless %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
   </body>
 </html>

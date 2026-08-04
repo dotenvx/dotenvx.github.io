@@ -1,5 +1,4 @@
-{% assign changelog_page = site.pages | where: "path", "changelog.md" | first %}
-{% assign changelog_count = changelog_page.content | split: "<article" | size | minus: 1 %}
+{% assign changelog_count = site.data.changelog | size %}
 
 <footer class="radar-footer">
   <div class="radar-shell radar-footer-inner">
@@ -67,10 +66,7 @@
 
       <div class="radar-footer-col">
         <p class="radar-footer-heading">Company</p>
-        <a href="/blog">
-          <span>Blog</span>
-          <span class="radar-footer-badge">Apr 2</span>
-        </a>
+        <a href="/changelog">Changelog</a>
         <a href="/contact">Contact</a>
         <a href="https://twitter.com/dotenvx" target="_blank" rel="noopener noreferrer">
           <span>Social</span>

@@ -1,6 +1,5 @@
 <div class="w-full bg-black">
-  {% assign changelog_page = site.pages | where: "path", "changelog.md" | first %}
-  {% assign changelog_count = changelog_page.content | split: "<article" | size | minus: 1 %}
+  {% assign changelog_count = site.data.changelog | size %}
   <div class="mx-auto w-full max-w-7xl px-6 py-16 md:py-24">
     <div class="grid grid-cols-2 lg:grid-cols-[1.2fr_repeat(3,minmax(0,1fr))] gap-12 md:gap-10">
       <div class="col-span-2 space-y-8 lg:col-span-1">
@@ -68,9 +67,7 @@
       <div class="space-y-4">
         <p class="m-0 text-zinc-500 dark:text-zinc-300/90 text-sm font-medium">Company</p>
         <div class="space-y-3 text-sm font-normal">
-          <a href="/blog" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
-            <span class="inline-flex items-center gap-2">Blog <span class="inline-flex items-center justify-center rounded-md border border-zinc-500/60 px-1 py-0.5 text-[9px] font-normal leading-none text-zinc-500">Apr 2</span></span>
-          </a>
+          <a href="/changelog" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Changelog</a>
           <a href="/contact" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">Contact</a>
           <a href="https://twitter.com/dotenvx" target="_blank" rel="noopener noreferrer" class="block font-normal text-zinc-500 dark:text-zinc-300/90 hover:text-zinc-700 dark:hover:text-zinc-100 transition-colors duration-200 no-underline hover:no-underline">
             <span class="inline-flex items-center gap-2">

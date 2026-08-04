@@ -788,13 +788,6 @@ a.btn-primary:hover, button.btn-primary:hover {
 .prose a { @apply text-blue-600 font-bold no-underline hover:underline dark:text-blue-400; }
 hr { @apply border border-zinc-100 dark:border-zinc-800; }
 
-.changelog h3, .changelog h4, .changelog p {
-  @apply font-bold text-sm;
-}
-.changelog ul {
-  @apply text-sm list-disc list-inside space-y-2 text-sm ml-3;
-}
-
 .btn-dark {
   @apply text-center dark:border dark:border-zinc-600 rounded-md bg-zinc-900 dark:bg-black px-4 py-2.5 font-semibold text-zinc-50 dark:text-zinc-950 hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-yellow-300 dark:hover:outline-yellow-200 active:bg-zinc-600 dark:active:bg-zinc-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 dark:text-zinc-50;
 }
@@ -1423,42 +1416,55 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
   }
 }
 
-/* ── Radar marketing layout (wider than product shell, system fonts) ── */
+/*
+ * Design tokens — keep in sync with ../radar design-body.
+ * Prefer changing tokens in radar first, then mirror here.
+ *
+ * Type color tiers:
+ *   1. --design-ink        titles / hero / emphasis
+ *   2. --design-body       paragraphs, links, list items, descriptions
+ *   3. --design-secondary  breadcrumbs, list titles, eyebrows, quiet UI
+ *   --design-dim aliases --design-secondary
+ */
 body.radar-layout {
-  --design-bg: #e4e7e6;
-  --design-bg-deep: #e4e7e6;
-  --design-bg-lift: #e4e7e6;
-  --design-ink: #303b3f;
-  --design-dim: rgba(48, 59, 63, 0.42);
+  --design-bg: #fafafa;
+  --design-bg-deep: #fafafa;
+  --design-bg-lift: #f4f4f5;
+  --design-menu-bg: #ffffff;
+  --design-ink: #1f282c;
+  --design-body: #303b3f;
+  --design-secondary: rgba(48, 59, 63, 0.42);
+  --design-dim: var(--design-secondary);
   --design-mid: rgba(48, 59, 63, 0.58);
-  --design-line: rgba(48, 59, 63, 0.22);
+  --design-line: rgba(48, 59, 63, 0.16);
   --design-mark: #ecd53f;
   --design-gold: #6d5c32;
-  --design-hover: rgba(48, 59, 63, 0.07);
-  --design-panel: rgba(255, 255, 255, 0.28);
+  --design-hover: rgba(48, 59, 63, 0.06);
+  --design-panel: #ffffff;
   --design-etch:
-    inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    inset 0 -1px 0 rgba(48, 59, 63, 0.14),
-    inset 0 0 0 1px rgba(48, 59, 63, 0.14);
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(48, 59, 63, 0.10),
+    inset 0 0 0 1px rgba(48, 59, 63, 0.12);
   --design-etch-divider:
     linear-gradient(
       180deg,
-      rgba(48, 59, 63, 0.18) 0,
-      rgba(48, 59, 63, 0.18) 1px,
-      rgba(255, 255, 255, 0.55) 1px,
-      rgba(255, 255, 255, 0.55) 2px
+      rgba(48, 59, 63, 0.12) 0,
+      rgba(48, 59, 63, 0.12) 1px,
+      rgba(255, 255, 255, 0.85) 1px,
+      rgba(255, 255, 255, 0.85) 2px
     );
   --design-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --design-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --design-control-radius: 0.125rem;
+  --design-text-size: 15px;
   --radar-shell: 72rem;
 
   background: var(--design-bg) !important;
-  color: var(--design-ink);
+  color: var(--design-body);
   display: flex;
   flex-direction: column;
   font-family: var(--design-font-sans);
-  font-size: 15px;
+  font-size: var(--design-text-size);
   letter-spacing: 0;
   line-height: 1.5;
   min-height: 100vh;
@@ -1468,8 +1474,11 @@ html.dark body.radar-layout {
   --design-bg: #0a0a0a;
   --design-bg-deep: #050505;
   --design-bg-lift: #12110e;
+  --design-menu-bg: var(--design-bg);
   --design-ink: #e8e0d2;
-  --design-dim: rgba(203, 187, 160, 0.42);
+  --design-body: #c4b08a;
+  --design-secondary: rgba(203, 187, 160, 0.42);
+  --design-dim: var(--design-secondary);
   --design-mid: rgba(212, 189, 132, 0.58);
   --design-line: rgba(212, 189, 132, 0.22);
   --design-mark: #ecd53f;
@@ -1772,38 +1781,25 @@ html.dark .radar-nav-flyout-frame {
 }
 
 .radar-nav-office {
-  border: 1px solid transparent;
-  border-radius: 0.3rem;
-  box-shadow: var(--design-etch);
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   color: #f4f4f5 !important;
   display: flex;
-  min-height: 9.5rem;
   overflow: hidden;
   padding: 0.85rem;
   position: relative;
   text-decoration: none !important;
+  width: 100%;
 }
 
 .radar-nav-office-image {
   height: 100%;
   inset: 0;
   object-fit: cover;
-  opacity: 0.72;
   position: absolute;
-  transition: opacity 160ms ease;
   width: 100%;
-}
-
-.radar-nav-office:hover .radar-nav-office-image {
-  opacity: 0.86;
-}
-
-.radar-nav-office-shade {
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.72)),
-    radial-gradient(circle at 50% 0%, rgba(236, 213, 63, 0.12), transparent 58%);
-  inset: 0;
-  position: absolute;
 }
 
 .radar-nav-office-copy {
@@ -2156,7 +2152,7 @@ html.dark .radar-theme-keycap {
 }
 
 .radar-lede {
-  color: var(--design-mid);
+  color: var(--design-body, var(--design-ink));
   font-size: 1.15rem;
   line-height: 1.45;
   margin: 1.4rem 0 0;
@@ -2173,11 +2169,45 @@ html.dark .radar-theme-keycap {
 }
 
 .radar-section-lede {
-  color: var(--design-mid);
+  color: var(--design-body, var(--design-ink));
   font-size: 1rem;
   line-height: 1.55;
   margin: 0.85rem 0 0;
   max-width: 40rem;
+}
+
+.radar-plain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.radar-plain-list a {
+  align-items: baseline;
+  color: var(--design-ink) !important;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+  font-weight: 400 !important;
+  gap: 0.45rem 0.85rem;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  text-decoration: none !important;
+  width: fit-content;
+}
+
+.radar-plain-list a:hover,
+.radar-plain-list a:focus {
+  color: var(--design-mark) !important;
+}
+
+.radar-plain-meta {
+  color: var(--design-dim);
+  font-family: var(--design-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .radar-card-grid {
@@ -2241,7 +2271,7 @@ html.dark .radar-theme-keycap {
 }
 
 .radar-card-desc {
-  color: var(--design-mid);
+  color: var(--design-body, var(--design-ink));
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2250,7 +2280,7 @@ html.dark .radar-theme-keycap {
 
 .radar-card-meta {
   align-items: center;
-  color: var(--design-dim);
+  color: var(--design-secondary, var(--design-dim));
   display: flex;
   font-family: var(--design-font-mono);
   font-size: 0.72rem;
@@ -2406,6 +2436,165 @@ html:not(.dark) .radar-card--terminal {
   width: 2.75rem;
 }
 
+.radar-table-thumb--glyph {
+  color: var(--design-gold);
+  font-family: var(--design-font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Components mirrored from ../radar design components */
+.design-link {
+  color: var(--design-body, var(--design-ink)) !important;
+  font-family: var(--design-font-sans);
+  font-size: 1em;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em;
+  text-decoration: underline !important;
+  text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 10%, transparent) !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-thickness 140ms ease, text-decoration-color 140ms ease;
+}
+
+html.dark .design-link {
+  /* Gold-on-black needs more resting presence than ink-on-white */
+  text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 28%, transparent) !important;
+}
+
+button.design-link {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.design-link:hover,
+.design-link:focus {
+  color: var(--design-body, var(--design-ink)) !important;
+  text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 28%, transparent) !important;
+  text-decoration-thickness: 3px;
+}
+
+html.dark .design-link:hover,
+html.dark .design-link:focus {
+  text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 48%, transparent) !important;
+}
+
+.design-link.design-link--milestone,
+.design-link--milestone {
+  color: var(--design-ink) !important;
+  font-weight: 600 !important;
+}
+
+.design-paragraph {
+  color: var(--design-body, var(--design-ink));
+  font-family: var(--design-font-sans);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  margin: 0 0 1em;
+  text-transform: none;
+}
+
+.design-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.radar-section:has(.design-cta-message) {
+  padding-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .radar-section:has(.design-cta-message) {
+    padding-top: 5rem;
+  }
+}
+
+.design-cta-message,
+a.design-cta-message,
+a.design-cta-message:visited {
+  color: var(--design-ink) !important;
+  display: block;
+  font-family: var(--design-font-sans);
+  font-size: 1.75rem;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin: 0 auto;
+  max-width: 28rem;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: none;
+  text-wrap: balance;
+  width: 100%;
+}
+
+a.design-cta-message:hover,
+a.design-cta-message:focus {
+  color: var(--design-ink) !important;
+  text-decoration: none !important;
+}
+
+.design-cta-message .design-link {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.design-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+}
+
+.design-list-title {
+  color: var(--design-secondary, var(--design-dim));
+  font-family: var(--design-font-sans);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.design-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.design-list-items li {
+  margin: 0;
+  padding: 0;
+}
+
+.design-list-items li:has(.design-list-meta) {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+}
+
+.design-list-meta {
+  color: var(--design-secondary, var(--design-dim));
+  font-family: var(--design-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.design-list + .design-list,
+.radar-section-lede + .design-list,
+.design-paragraph + .design-list,
+.radar-section-title + .design-list {
+  margin-top: 1.5rem;
+}
+
 .radar-table-thumb--doc {
   height: 4rem;
   width: 3rem;
@@ -2484,6 +2673,123 @@ html:not(.dark) .radar-card--terminal {
     gap: 2.5rem;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   }
+}
+
+/* Design hero — mirrored from radar */
+.design-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.design-page-header .design-page-title {
+  margin: 0;
+}
+
+.design-page-header-eyebrow {
+  color: var(--design-secondary, var(--design-dim));
+  font-family: var(--design-font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.design-page-title {
+  color: var(--design-ink);
+  font-family: var(--design-font-sans);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  text-transform: none;
+}
+
+.design-page-title--flush {
+  margin-bottom: 0;
+}
+
+.design-page-header-desc {
+  color: var(--design-body, var(--design-ink));
+  font-family: var(--design-font-sans);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  margin: 0;
+  text-transform: none;
+}
+
+.design-hero-header {
+  gap: 1.1rem;
+}
+
+.design-hero-header .design-page-header-eyebrow {
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+}
+
+.design-hero-header .design-page-title {
+  font-size: clamp(2.85rem, 7vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.design-hero-header .design-page-header-desc {
+  font-size: clamp(1.125rem, 2.4vw, 1.35rem);
+  line-height: 1.4;
+}
+
+.design-hero {
+  padding: 2.5rem 0 3.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .design-hero {
+    padding: 3.5rem 0 4.5rem;
+  }
+}
+
+.design-hero-grid {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .design-hero-grid {
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+.design-hero-copy {
+  min-width: 0;
+}
+
+.design-hero-visual {
+  min-height: 17rem;
+  min-width: 0;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .design-hero-visual {
+    min-height: 23rem;
+  }
+}
+
+.design-hero-visual .design-hero-key,
+.design-hero-visual .keysee-tile {
+  height: 100%;
+  min-height: inherit;
+  width: 100%;
 }
 
 .radar-section {
@@ -2943,22 +3249,30 @@ html.dark .radar-btn {
   padding-bottom: 2rem;
 }
 
-.blog-index-shell .radar-card-grid,
-.open-source-shell .radar-card-grid {
+.blog-index-shell .radar-card-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.radar-card:has(.radar-card-thumb) {
+  padding: 0;
+}
+
+.radar-card:has(.radar-card-thumb)::after {
+  display: none;
+}
+
 .radar-card-thumb {
-  border: 1px solid var(--design-line);
+  border: 0;
   display: block;
   height: auto;
+  object-fit: cover;
   width: 100%;
 }
 
 .radar-card-meta--top {
   justify-content: flex-start;
   margin-top: 0;
-  padding-top: 0;
+  padding: 1rem 1.35rem 0;
 }
 
 .radar-card:has(.radar-card-thumb) .radar-card-name {
@@ -2966,7 +3280,12 @@ html.dark .radar-btn {
   font-size: 1.05rem;
   letter-spacing: -0.02em;
   line-height: 1.25;
-  margin-top: 0.55rem;
+  margin-top: 0;
+  padding: 1rem 1.35rem 0;
+}
+
+.radar-card:has(.radar-card-thumb) .radar-card-meta {
+  padding: 1.1rem 1.35rem 1.2rem;
 }
 
 .blog-post {
@@ -3295,7 +3614,7 @@ html.dark .blog-prose a:hover,
 html.dark .legal-prose a:hover,
 html.dark .pricing-faq dd p a:hover,
 html.dark .radar-text-link:hover {
-  color: #e8e0d2 !important;
+  color: var(--design-ink) !important;
 }
 
 /* Kill leftover yellow utility classes on radar pages in light mode */
@@ -3377,7 +3696,7 @@ html.dark .as2-prose a:visited {
 }
 
 html.dark .as2-prose a:hover {
-  color: #e8e0d2 !important;
+  color: var(--design-ink) !important;
 }
 
 .as2-signoff {
@@ -3491,7 +3810,7 @@ html.dark .ext-prose a:visited {
 }
 
 html.dark .ext-prose a:hover {
-  color: #e8e0d2 !important;
+  color: var(--design-ink) !important;
 }
 
 .ext-cta {
@@ -4055,133 +4374,5 @@ html.dark .spec-table-link a {
 
 .spec-tip:hover .spec-tip-panel {
   opacity: 1;
-}
-
-/* Design system specimens */
-.design-hero {
-  padding-bottom: 1.5rem;
-}
-
-.design-section {
-  padding: 0 0 3.25rem;
-}
-
-.design-section-heading {
-  display: grid;
-  gap: 0.35rem 1.5rem;
-  grid-template-columns: 2.5rem 1fr;
-  margin-bottom: 1.75rem;
-}
-
-.design-section-heading p,
-.design-section-heading h2 {
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.design-section-heading h2 {
-  color: var(--design-ink);
-}
-
-.design-swatch-grid {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-@media (min-width: 640px) {
-  .design-swatch-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.design-swatch {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.design-swatch-chip {
-  aspect-ratio: 1.6 / 1;
-  background: var(--design-panel);
-  border: 1px solid var(--design-line);
-  display: block;
-  width: 100%;
-}
-
-.design-swatch code,
-.design-specimen-note {
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: 0.68rem;
-}
-
-.design-specimen-note {
-  margin: 1rem 0 0;
-}
-
-.design-brand-row {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.design-brand-mark {
-  border-radius: 0.2rem;
-  display: block;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
-.design-brand-row code {
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: 0.68rem;
-}
-
-.design-card-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.design-control-row {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem 1.1rem;
-}
-
-.design-shell-demo {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.design-shell-bar {
-  background: var(--design-panel);
-  box-shadow: var(--design-etch);
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: 0.68rem;
-  padding: 0.7rem 0.85rem;
-}
-
-.design-shell-bar--wide {
-  width: 100%;
-}
-
-.design-shell-bar--reading {
-  width: 78%;
-}
-
-.design-shell-bar--narrow {
-  width: 62%;
-}
-
-.design-shell-bar code {
-  color: var(--design-ink);
 }
 

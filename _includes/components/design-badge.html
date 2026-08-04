@@ -1,0 +1,12 @@
+{% comment %}
+  Mirrors ../radar design-badge.
+  Use badge_size (not size) — in Jekyll, include.size is the param hash length.
+{% endcomment %}
+{% assign label = include.label %}
+{% assign tone = include.tone | default: "neutral" %}
+{% assign badge_size = include.badge_size %}
+{% assign badge_class = include.class %}
+<span
+  class="design-badge design-badge--{{ tone }}{% if badge_size %} design-badge--{{ badge_size }}{% endif %}{% if badge_class %} {{ badge_class }}{% endif %}"
+  {% if include.title %}title="{{ include.title }}"{% endif %}
+>{{ label }}</span>

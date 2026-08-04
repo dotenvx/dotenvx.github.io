@@ -1737,7 +1737,7 @@ html.dark .radar-brand-dark {
 }
 
 .radar-nav-flyout-frame {
-  background: color-mix(in srgb, var(--design-bg) 92%, transparent);
+  background: var(--design-menu-bg, var(--design-bg));
   border: 1px solid transparent;
   border-radius: 0.35rem;
   box-shadow: var(--design-etch), 0 18px 48px rgba(0, 0, 0, 0.12);
@@ -1782,6 +1782,7 @@ html.dark .radar-nav-flyout-frame {
 
 .radar-nav-office {
   aspect-ratio: 4 / 3;
+  background: #000;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -2540,6 +2541,102 @@ a.design-cta-message:focus {
 .design-cta-message .design-link {
   font-size: inherit;
   font-weight: inherit;
+}
+
+/* Mirrored from ../radar design-badge */
+.design-badge {
+  align-items: center;
+  background: color-mix(in srgb, var(--design-ink) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--design-ink) 16%, transparent);
+  border-radius: var(--design-control-radius);
+  color: var(--design-mid);
+  display: inline-flex;
+  font-family: var(--design-font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 0.32rem 0.48rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.design-badge.design-badge--sm {
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.32rem;
+}
+
+.design-badge.design-badge--plain {
+  background: transparent;
+  border-color: var(--design-secondary, var(--design-dim));
+  color: var(--design-secondary, var(--design-dim));
+}
+
+.design-badge.design-badge--neutral {
+  background: color-mix(in srgb, var(--design-ink) 6%, transparent);
+  border-color: color-mix(in srgb, var(--design-ink) 16%, transparent);
+  color: var(--design-mid);
+}
+
+.design-badge.design-badge--success {
+  background: #dcefe2;
+  border-color: #5f9e72;
+  color: #2a6b3f;
+}
+
+html.dark .design-badge.design-badge--success {
+  background: #1a2e22;
+  border-color: #5f9e72;
+  color: #8fd4a6;
+}
+
+.design-badge.design-badge--info {
+  background: #dce8f6;
+  border-color: #5b87c0;
+  color: #215891;
+}
+
+html.dark .design-badge.design-badge--info {
+  background: #1a2533;
+  border-color: #5b87c0;
+  color: #9bc4ef;
+}
+
+.design-badge.design-badge--beta {
+  background: #d7efec;
+  border-color: #3f9a90;
+  color: #1f6f67;
+}
+
+html.dark .design-badge.design-badge--beta {
+  background: #152825;
+  border-color: #3f9a90;
+  color: #7fd4c8;
+}
+
+.design-badge.design-badge--warn {
+  background: #ebe6da;
+  border-color: #8a7a4a;
+  color: #6d5c32;
+}
+
+html.dark .design-badge.design-badge--warn {
+  background: #2a2416;
+  border-color: #8a7a4a;
+  color: #d4bd84;
+}
+
+.design-badge.design-badge--danger {
+  background: #f5e1df;
+  border-color: #c4564d;
+  color: #b42318;
+}
+
+html.dark .design-badge.design-badge--danger {
+  background: #2e1a1a;
+  border-color: #c4564d;
+  color: #f87171;
 }
 
 .design-list {

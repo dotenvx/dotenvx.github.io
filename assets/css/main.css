@@ -564,41 +564,6 @@ html.dark body {
   animation: hero-copy-enter-rise 2300ms cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
 }
 
-.contact-aside-fade {
-  opacity: 0;
-  transform: translateY(14px);
-  animation: contact-aside-fade-in 3000ms cubic-bezier(0.16, 1, 0.3, 1) 260ms forwards;
-}
-
-.contact-aside-fade > div {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: contact-aside-fade-in 2400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.contact-aside-fade > div:nth-child(1) {
-  animation-delay: 420ms;
-}
-
-.contact-aside-fade > div:nth-child(2) {
-  animation-delay: 760ms;
-}
-
-.contact-aside-fade > div:nth-child(3) {
-  animation-delay: 1100ms;
-}
-
-@keyframes contact-aside-fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 html.dark .contact-muted-label,
 .contact-muted-label {
   color: rgba(161, 161, 170, 0.9) !important;
@@ -614,10 +579,6 @@ html.dark .contact-muted-link:hover,
 .contact-muted-link:hover {
   color: rgba(244, 244, 245, 0.98) !important;
   text-decoration: none !important;
-}
-
-body.radar-layout .contact-shell {
-  max-width: 48rem;
 }
 
 body.radar-layout .contact-grid {
@@ -693,7 +654,7 @@ body.radar-layout .contact-link {
 
 body.radar-layout .contact-link:hover,
 body.radar-layout .contact-link:focus {
-  color: var(--design-link) !important;
+  color: var(--design-mark) !important;
   text-decoration: none !important;
 }
 
@@ -732,12 +693,6 @@ body.radar-layout .contact-link:focus {
     animation: none;
   }
 
-  .contact-aside-fade,
-  .contact-aside-fade > div {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
 }
 
 /* Prevent sticky hover state on touch for mobile nav icon buttons. */
@@ -1479,7 +1434,6 @@ body.radar-layout {
   --design-line: rgba(48, 59, 63, 0.22);
   --design-mark: #ecd53f;
   --design-gold: #6d5c32;
-  --design-link: #3f5c2a;
   --design-hover: rgba(48, 59, 63, 0.07);
   --design-panel: rgba(255, 255, 255, 0.28);
   --design-etch:
@@ -1520,7 +1474,6 @@ html.dark body.radar-layout {
   --design-line: rgba(212, 189, 132, 0.22);
   --design-mark: #ecd53f;
   --design-gold: #d4bd84;
-  --design-link: #ecd53f;
   --design-hover: rgba(212, 189, 132, 0.08);
   --design-panel: rgba(0, 0, 0, 0.28);
   --design-etch:
@@ -1561,8 +1514,18 @@ body.radar-layout a:focus {
   width: 100%;
 }
 
+.armor-shell {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
-  .radar-shell {
+  .radar-shell,
+  .armor-shell {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -2296,6 +2259,66 @@ html.dark .radar-theme-keycap {
   padding-top: 1.6rem;
 }
 
+/* Media card: centered visual (changelog heroes, logos, commands) */
+.radar-card--media {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  justify-content: center;
+  margin-bottom: 1rem;
+  min-height: 0;
+  padding: 0;
+  width: 100%;
+}
+
+div.radar-card--media:hover {
+  background: var(--design-panel);
+}
+
+.radar-card--media > span {
+  color: var(--design-ink);
+  font-size: clamp(1.45rem, 5vw, 2.35rem);
+  line-height: 1.05;
+  max-width: 82%;
+  position: relative;
+  text-align: center;
+}
+
+.radar-card--command > span {
+  font-family: var(--design-font-mono);
+  font-size: clamp(0.8rem, 3.1vw, 1.35rem);
+}
+
+.radar-card--version > span {
+  font-size: clamp(5rem, 18vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.radar-card--terminal {
+  align-items: flex-start;
+  background: #0a0a0a;
+  color: #d4d4d4;
+  font-family: var(--design-font-mono);
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+html:not(.dark) .radar-card--terminal {
+  background: color-mix(in srgb, var(--design-bg) 35%, #0a0a0a 65%);
+}
+
+.radar-card--terminal pre {
+  color: #ededed;
+  font-size: clamp(0.72rem, 2vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: pre;
+}
+
 .radar-panel {
   background: var(--design-panel);
   border: 1px solid transparent;
@@ -2918,12 +2941,6 @@ html.dark .radar-btn {
 /* Blog (radar layout) */
 .blog-index-hero {
   padding-bottom: 2rem;
-}
-
-.blog-index-shell,
-.blog-post-shell,
-.radar-shell.open-source-shell {
-  max-width: 48rem;
 }
 
 .blog-index-shell .radar-card-grid,
@@ -4041,10 +4058,6 @@ html.dark .spec-table-link a {
 }
 
 /* Design system specimens */
-.design-shell {
-  max-width: 40rem;
-}
-
 .design-hero {
   padding-bottom: 1.5rem;
 }

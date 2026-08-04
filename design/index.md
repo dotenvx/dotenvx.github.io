@@ -5,15 +5,15 @@ layout: radar
 ---
 
 <section class="radar-hero design-hero">
-  <div class="radar-shell design-shell">
-    <p class="radar-kicker">dotenvx</p>
+  <div class="armor-shell design-shell">
+    <p class="radar-kicker">Company</p>
     <h1 class="radar-title">Design</h1>
     <p class="radar-lede">Marketing radar specimens. Shared chrome for cards, panels, type, and controls — keep pages aligned here.</p>
   </div>
 </section>
 
 <section class="radar-section">
-  <div class="radar-shell design-shell">
+  <div class="armor-shell design-shell">
 
     <section class="design-section" aria-labelledby="design-tokens">
       <div class="design-section-heading">
@@ -25,7 +25,6 @@ layout: radar
         <div class="design-swatch"><span class="design-swatch-chip" style="background: var(--design-ink)"></span><code>--design-ink</code></div>
         <div class="design-swatch"><span class="design-swatch-chip" style="background: var(--design-gold)"></span><code>--design-gold</code></div>
         <div class="design-swatch"><span class="design-swatch-chip" style="background: var(--design-mark)"></span><code>--design-mark</code></div>
-        <div class="design-swatch"><span class="design-swatch-chip" style="background: var(--design-link)"></span><code>--design-link</code></div>
         <div class="design-swatch"><span class="design-swatch-chip" style="background: var(--design-panel); box-shadow: var(--design-etch)"></span><code>--design-panel + etch</code></div>
       </div>
     </section>
@@ -75,39 +74,50 @@ layout: radar
           <span class="radar-card-name">Blog card specimen</span>
         </a>
       </div>
-      <p class="design-specimen-note"><code>.radar-card</code> · square etch · used by open-source + blog</p>
+      <div class="radar-card radar-card--media" style="margin-top: 0.85rem" aria-hidden="true">
+        <span>react-native-dotenv</span>
+      </div>
+      <p class="design-specimen-note"><code>.radar-card</code> · <code>.radar-card--media</code> · open-source / blog / changelog</p>
     </section>
 
-    <section class="design-section" aria-labelledby="design-panel">
+    <section class="design-section" aria-labelledby="design-table">
       <div class="design-section-heading">
         <p>05</p>
-        <h2 id="design-panel">Panel</h2>
+        <h2 id="design-table">Table</h2>
       </div>
       <div class="radar-panel radar-panel-gap">
-        <div class="radar-table-head">
-          <span>File</span>
-          <span>Title</span>
-          <span class="radar-table-meta">Format</span>
+        <div class="radar-table-head radar-table-head--sponsor">
+          <span>Project</span>
+          <span>Repository</span>
+          <span class="radar-table-meta">Maintainer</span>
           <span class="sr-only">Open</span>
         </div>
-        <a href="#" class="radar-table-row" onclick="return false">
-          <span class="radar-table-thumb radar-table-thumb--doc">
-            <img src="/assets/img/whitepaper-thumb.png" alt="" aria-hidden="true" loading="lazy">
+        <a href="#" class="radar-table-row radar-table-row--sponsor" onclick="return false">
+          <span class="radar-table-thumb radar-table-thumb--square">
+            <img src="https://opengraph.githubassets.com/ac3f8d5cf843f6baa1eafd2ea05edaceecb4be06ecb2ec9cc7c56db954b66d29/yao-pkg/pkg" alt="" aria-hidden="true" loading="lazy">
           </span>
-          <span class="radar-table-title">Dotenvx: Reducing Secrets Risk with Cryptographic Separation</span>
-          <span class="radar-table-meta">PDF</span>
+          <span class="radar-table-title radar-table-title--mono">yao-pkg/pkg</span>
+          <span class="radar-table-meta">@robertsLando</span>
           <span class="radar-table-arrow" aria-hidden="true">›</span>
         </a>
-        <a href="#" class="radar-table-row" onclick="return false">
-          <span class="radar-table-thumb radar-table-thumb--doc">
-            <img src="/assets/img/keysee-whitepaper-thumb.png" alt="" aria-hidden="true" loading="lazy">
+        <a href="#" class="radar-table-row radar-table-row--sponsor" onclick="return false">
+          <span class="radar-table-thumb radar-table-thumb--square">
+            <img src="https://opengraph.githubassets.com/f730c56355f8b9ff50160668f1de9cbfe60d26642abe0430ddd86442f25603db/ecies/js" alt="" aria-hidden="true" loading="lazy">
           </span>
-          <span class="radar-table-title">KEYSEE⎔: Deterministic Visual Identity for Public Keys</span>
-          <span class="radar-table-meta">PDF</span>
+          <span class="radar-table-title radar-table-title--mono">ecies/js</span>
+          <span class="radar-table-meta">@kigawas</span>
+          <span class="radar-table-arrow" aria-hidden="true">›</span>
+        </a>
+        <a href="#" class="radar-table-row radar-table-row--sponsor" onclick="return false">
+          <span class="radar-table-thumb radar-table-thumb--square">
+            <img src="https://avatars.githubusercontent.com/u/846454?v=4?s=400" alt="" aria-hidden="true" loading="lazy">
+          </span>
+          <span class="radar-table-title radar-table-title--mono">abetomo</span>
+          <span class="radar-table-meta">@abetomo</span>
           <span class="radar-table-arrow" aria-hidden="true">›</span>
         </a>
       </div>
-      <p class="design-specimen-note"><code>.radar-panel</code> · <code>.radar-table-row</code> · square etch</p>
+      <p class="design-specimen-note"><code>.radar-table-head</code> · <code>.radar-table-row</code> · square etch</p>
     </section>
 
     <section class="design-section" aria-labelledby="design-controls">
@@ -132,8 +142,8 @@ layout: radar
       </div>
       <div class="design-shell-demo">
         <div class="design-shell-bar design-shell-bar--wide"><code>.radar-shell</code> 72rem</div>
-        <div class="design-shell-bar design-shell-bar--reading"><code>.open-source-shell</code> / <code>.blog-*-shell</code> / <code>.contact-shell</code> 48rem</div>
-        <div class="design-shell-bar design-shell-bar--narrow"><code>.legal-shell</code> 42rem · <code>.design-shell</code> 40rem</div>
+        <div class="design-shell-bar design-shell-bar--reading"><code>.armor-shell</code> 48rem · open-source / blog / contact / design / changelog</div>
+        <div class="design-shell-bar design-shell-bar--narrow"><code>.legal-shell</code> 42rem</div>
       </div>
     </section>
 

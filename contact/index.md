@@ -4,7 +4,7 @@ layout: radar
 ---
 
 <section class="radar-hero">
-  <div class="radar-shell contact-shell">
+  <div class="armor-shell contact-shell">
     <div class="contact-grid">
       <div>
         <p class="radar-kicker">Company</p>
@@ -35,7 +35,7 @@ layout: radar
         </div>
       </div>
 
-      <aside class="contact-aside contact-aside-fade">
+      <aside class="contact-aside">
         <div>
           <p class="contact-label">Get help</p>
           <a href="mailto:support@dotenvx.com" class="contact-link">support@dotenvx.com</a>

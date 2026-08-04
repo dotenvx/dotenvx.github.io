@@ -4,7 +4,7 @@ layout: radar
 ---
 
 <section class="radar-hero blog-index-hero">
-  <div class="radar-shell blog-index-shell">
+  <div class="armor-shell blog-index-shell">
     <p class="radar-kicker">Company</p>
     <h1 class="radar-title">Blog</h1>
     <p class="radar-lede">Notes on secrets, .env files, and building dotenvx.</p>
@@ -12,7 +12,7 @@ layout: radar
 </section>
 
 <section class="radar-section">
-  <div class="radar-shell blog-index-shell">
+  <div class="armor-shell blog-index-shell">
     <div class="radar-card-grid">
       {% for post in site.categories.blog %}
         <a href="{{ post.url }}" class="radar-card">

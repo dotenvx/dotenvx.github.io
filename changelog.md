@@ -48,49 +48,6 @@ layout: radar
     font-family: inherit;
   }
 
-  .changelog-card {
-    align-items: center;
-    aspect-ratio: 16 / 9;
-    background: var(--design-panel);
-    border: 1px solid transparent;
-    border-radius: 0.35rem;
-    box-shadow: var(--design-etch);
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
-
-  .changelog-card::before {
-    background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--design-mark) 12%, transparent), transparent 44%);
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-  }
-
-  .changelog-card > span {
-    color: var(--design-ink);
-    font-size: clamp(1.45rem, 5vw, 2.35rem);
-    line-height: 1.05;
-    max-width: 82%;
-    position: relative;
-    text-align: center;
-  }
-
-  .changelog-card-command > span {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-    font-size: clamp(0.8rem, 3.1vw, 1.35rem);
-  }
-
-  .changelog-card-version > span {
-    font-size: clamp(5rem, 18vw, 8.5rem);
-    font-weight: 800;
-    line-height: 0.9;
-  }
-
   .changelog-card-brand-icon {
     height: clamp(4.5rem, 14vw, 6rem);
     position: relative;
@@ -131,34 +88,6 @@ layout: radar
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
-  }
-
-  .changelog-card-terminal {
-    align-items: flex-start;
-    background: #0a0a0a;
-    border-color: rgba(113, 113, 122, 0.28);
-    box-shadow: var(--design-etch), 0 0 46px rgba(236, 213, 63, 0.08);
-    color: #d4d4d4;
-    font-family: var(--design-font-mono);
-    justify-content: flex-start;
-    padding: 2rem;
-  }
-
-  .changelog-card-terminal::before {
-    background: radial-gradient(70% 90% at 12% 80%, rgba(236, 213, 63, 0.12) 0%, rgba(236, 213, 63, 0.06) 34%, rgba(236, 213, 63, 0) 74%);
-    display: block;
-  }
-
-  .changelog-card-terminal pre {
-    color: #ededed;
-    font-size: clamp(0.72rem, 2vw, 0.98rem);
-    font-weight: 400;
-    line-height: 1.45;
-    margin: 0;
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
-    white-space: pre;
   }
 
   .terminal-yellow {
@@ -424,10 +353,6 @@ layout: radar
     color: var(--design-ink);
   }
 
-  .changelog-rail {
-    max-width: 48rem;
-  }
-
   .changelog-hero {
     padding-bottom: 2rem;
   }
@@ -435,15 +360,15 @@ layout: radar
 
 <div class="changelog-page">
   <section class="radar-hero changelog-hero">
-    <div class="radar-shell changelog-rail">
-      <p class="radar-kicker">Updates</p>
+    <div class="armor-shell">
+      <p class="radar-kicker">Company</p>
       <h1 class="radar-title">Changelog</h1>
       <p class="radar-lede">Product updates, releases, and notes from the dotenvx team.</p>
     </div>
   </section>
 
   <section class="radar-section">
-    <div class="radar-shell changelog-rail">
+    <div class="armor-shell">
     <div class="space-y-10 md:space-y-12" data-changelog-list>
       <article id="2026-07-28-react-native-dotenv" class="grid gap-4 md:grid-cols-[6.5rem_1.5rem_minmax(0,1fr)]" data-changelog-entry data-date="2026-07-28" data-search-text="react-native-dotenv react native babel plugin env ownership maintain dotenvx expo july 2026">
         <div class="pt-1 text-left md:text-right text-sm font-semibold text-zinc-500">Jul 28, 2026</div>
@@ -453,7 +378,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>react-native-dotenv</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>react-native-dotenv</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">react-native-dotenv</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now maintains <code class="text-zinc-300">react-native-dotenv</code> — the Babel plugin for loading <code class="text-zinc-300">.env</code> files in React Native. v4 ships smarter <code class="text-zinc-300">process.env</code> inlining and Expo Router compatibility.</p>
               <a class="mt-2 inline-block font-normal radar-text-link" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -469,7 +394,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor open</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx armor open</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><code class="text-zinc-300">dotenvx armor open</code></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Open armored key details in your browser with <code class="text-zinc-300">dotenvx armor open</code>.</p>
           </div>
@@ -484,7 +409,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Audit Logs</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Audit Logs</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Audit Logs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Armor now records team activity — pushes, permissions, and account events — in the UI and via <code class="text-zinc-300">/api/logs</code>.</p>
           </div>
@@ -499,7 +424,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx curl</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx curl</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><code class="text-zinc-300">dotenvx curl</code></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Make authenticated API calls to the Dotenvx Armor API with <code class="text-zinc-300">dotenvx curl</code> — control your Armor account from Codex, Claude, and other agents.</p>
           </div>
@@ -514,7 +439,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-version" aria-hidden="true"><span>150M</span></div>
+              <div class="radar-card radar-card--media radar-card--version" aria-hidden="true"><span>150M</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">150,000,000 Weekly Installs</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenv</code> just broke 150 million weekly npm installs.</p>
           </div>
@@ -529,7 +454,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-card-brand-icon changelog-card-brand-icon-bitwarden" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M21.722.296A.964.964 0 0 0 21.018 0H2.982a.959.959 0 0 0-.703.296.96.96 0 0 0-.297.702v12c0 .895.174 1.783.523 2.665.349.88.783 1.66 1.3 2.345.517.68 1.132 1.346 1.848 1.993a21.807 21.807 0 0 0 1.98 1.609c.605.427 1.235.83 1.893 1.212.657.381 1.125.638 1.4.772.276.134.5.241.664.311a.916.916 0 0 0 .814 0c.168-.073.389-.177.667-.311.275-.134.743-.394 1.401-.772a25.305 25.305 0 0 0 1.894-1.212A21.891 21.891 0 0 0 18.348 20c.716-.647 1.33-1.31 1.847-1.993s.949-1.463 1.3-2.345c.35-.879.524-1.767.524-2.665V1.001a.95.95 0 0 0-.297-.705zm-2.325 12.815c0 4.344-7.397 8.087-7.397 8.087V2.57h7.397v10.54z"></path>
                 </svg>
@@ -549,7 +474,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-card-brand-icon changelog-card-brand-icon-1password" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0c6.627 0 12 5.373 12 12 0 6.628-5.373 12-12 12S0 18.628 0 12C0 5.373 5.373 0 12 0m-.893 4.86c-.485 0-.727.001-.913.095a.87.87 0 0 0-.378.379c-.094.185-.095.428-.095.912v2.747c0 .12 0 .182.016.238q.02.075.065.138a1 1 0 0 0 .175.162l.695.564c.113.092.17.139.19.194a.22.22 0 0 1 0 .15c-.02.056-.077.102-.19.194l-.695.564a1 1 0 0 0-.175.162.4.4 0 0 0-.065.138 1 1 0 0 0-.016.238v6.019c0 .485 0 .728.095.913a.87.87 0 0 0 .378.378c.186.094.428.094.913.094h1.786c.485 0 .727 0 .913-.094a.87.87 0 0 0 .378-.378c.095-.185.095-.428.095-.913v-2.747c0-.12 0-.182-.016-.238a.4.4 0 0 0-.065-.138 1 1 0 0 0-.175-.162l-.695-.564c-.113-.092-.17-.138-.191-.193a.22.22 0 0 1 0-.152c.02-.055.078-.1.19-.193l.696-.564a1 1 0 0 0 .175-.162.4.4 0 0 0 .065-.138 1 1 0 0 0 .016-.238V6.246c0-.484 0-.727-.095-.912a.87.87 0 0 0-.378-.379c-.186-.094-.428-.094-.913-.094Z"></path>
                 </svg>
@@ -569,7 +494,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-enclave-state">
                   <code>.env.example</code>
                 </div>
@@ -589,7 +514,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-agent-logos">
                   <div class="changelog-agent-logo">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -621,7 +546,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx ls --json</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx ls --json</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><code class="text-zinc-300">dotenvx ls</code></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Now with progress updates and <code class="text-zinc-300">--json</code> output.</p>
           </div>
@@ -636,7 +561,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-enclave-state">
                   <span>Enclaved</span>
                 </div>
@@ -655,7 +580,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 {% include logos/macos.html class="changelog-macos-logo" %}
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Safer Armor Sessions</h3>
@@ -672,7 +597,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>--mask</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>--mask</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Masked Values</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">--mask</code> with <code class="text-zinc-300">run</code>, <code class="text-zinc-300">get</code>, and <code class="text-zinc-300">decrypt --stdout</code>, or <code class="text-zinc-300">mask: true</code> with <code class="text-zinc-300">config()</code> and <code class="text-zinc-300">get()</code>, to keep secret values obscured.</p>
           </div>
@@ -687,7 +612,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx native up</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx native up</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Native Secret Stores</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Move private keys into macOS Keychain, Linux Secret Service, or Windows Credential Manager with <code class="text-zinc-300">dotenvx native</code>.</p>
           </div>
@@ -702,7 +627,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Monorepos</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Monorepos</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Monorepo Directories</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Point <code class="text-zinc-300">-f</code>, <code class="text-zinc-300">-fk</code>, or <code class="text-zinc-300">config(path:)</code> at a directory to load a workspace's env files and conventions from its monorepo root.</p>
           </div>
@@ -717,7 +642,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx lock up</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx lock up</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Passphrase Protected Secrets</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">dotenvx lock up</code> and <code class="text-zinc-300">dotenvx lock down</code> to protect private keys in <code class="text-zinc-300">.env.keys</code> with a local passphrase.</p>
           </div>
@@ -732,7 +657,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>HELLO_PLAIN</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>HELLO_PLAIN</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">_PLAIN Values</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use <code class="text-zinc-300">_PLAIN</code> to keep a value unencrypted.</p>
           </div>
@@ -747,7 +672,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
                   <g stroke="#27272a" stroke-width="1">
@@ -788,7 +713,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-version" aria-hidden="true"><span>2.0</span></div>
+              <div class="radar-card radar-card--media radar-card--version" aria-hidden="true"><span>2.0</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx 2.0</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx is now built on <code class="text-zinc-300">@dotenvx/primitives</code>, a cleaner foundation for parsing, keyrings, and transforms.</p>
           </div>
@@ -803,7 +728,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">{% include logos/powershell.html class="changelog-powershell-logo" %}</div>
+              <div class="radar-card radar-card--media" aria-hidden="true">{% include logos/powershell.html class="changelog-powershell-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">PowerShell</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx now runs correctly across Windows PowerShell.</p>
           </div>
@@ -818,7 +743,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
+              <div class="radar-card radar-card--media" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Next.js</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Now available: <code class="text-zinc-300">@dotenvx/next-env</code>, a drop-in replacement for Next.js <code class="text-zinc-300">@next/env</code> that lets encrypted dotenvx files load during Next.js' own environment-loading step.</p>
               <a class="mt-2 inline-block font-normal radar-text-link" href="/docs/secrets-in-nextjs">Read documentation</a>
@@ -834,7 +759,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>First-Class ⛨</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>First-Class ⛨</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Armor ⛨ in Dotenvx</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Armor is now built directly into dotenvx. Run <code class="text-zinc-300">dotenvx armor login</code> to get started.</p>
           </div>
@@ -849,7 +774,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-key-guard-visual">
                   <div class="changelog-key-guard-panel">
                     <div class="changelog-key-guard-body">
@@ -875,7 +800,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-trust-logos">
                   {% include logos/framework-soc2.html uid="changelog-soc2-observation" class="h-20 w-20 md:h-28 md:w-28" %}
                 </div>
@@ -895,7 +820,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx run --token</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx run --token</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Automation Tokens for Armor</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx run</code> now accepts an optional <code class="text-zinc-300">--token</code> for Armor users, making it easier to run approved secret workflows from automation, CI, and agentic environments.</p>
           </div>
@@ -910,7 +835,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Ops is now Armor ⛨</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Ops is now Armor ⛨</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Ops is now Armor ⛨</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx Ops has been renamed to Dotenvx Armor ⛨. Product copy, docs, CLI references, service constants, account messaging, and URLs now use Armor ⛨ naming.</p>
           </div>
@@ -925,7 +850,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Rate Limiting</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Rate Limiting</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rate Limiting</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We added lenient rate limiting today to keep attackers at bay and make sure our systems serve you well.</p>
           </div>
@@ -940,7 +865,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Team Avatars</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Team Avatars</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Team Avatars</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">You can now change the avatar for your organization under Settings.</p>
           </div>
@@ -955,7 +880,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx encrypt</span>
+              <div class="radar-card radar-card--media radar-card--terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx encrypt</span>
 <span class="terminal-yellow">? Select key storage</span>
   Local (.env.keys)
 <span class="terminal-yellow">› Armored ⛨</span></pre></div>
@@ -973,7 +898,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-python-uv-logos">
                   {% include logos/python.html class="changelog-python-uv-logo" %}
                   {% include logos/uv.html class="changelog-uv-logo" %}
@@ -994,7 +919,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-trust-logos">
                   {% include logos/framework-soc2.html uid="changelog-soc2" class="h-20 w-20 md:h-28 md:w-28" %}
                   {% include logos/framework-gdpr.html class="h-20 w-20 md:h-28 md:w-28" %}
@@ -1015,7 +940,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-google-button">
                   <svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"></path><path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.35 0-4.34-1.58-5.05-3.71H.94v2.33A9 9 0 0 0 9 18z"></path><path fill="#FBBC05" d="M3.95 10.71a5.41 5.41 0 0 1 0-3.42V4.96H.94a9 9 0 0 0 0 8.08l3.01-2.33z"></path><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.43 1.34l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.96l3.01 2.33C4.66 5.16 6.65 3.58 9 3.58z"></path></svg>
                   <span>Login with Google</span>
@@ -1035,7 +960,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Pentest - May 2026</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Pentest - May 2026</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Pentest - May 2026</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">We ran an automated security assessment against <code class="text-zinc-300">armor.dotenvx.com</code> and supporting application code, covering public network exposure, TLS posture, passive web behavior, dependency vulnerabilities, static analysis, and secret exposure.</p>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Evidence was retained from HostedScan, Nuclei, OWASP ZAP, Nmap, testssl.sh, Gitleaks, Trivy, and Semgrep. Remediation work will get its own follow-up entry.</p>
@@ -1051,7 +976,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx armor up</span>
+              <div class="radar-card radar-card--media radar-card--terminal" aria-hidden="true"><pre><span class="terminal-muted">$ dotenvx armor up</span>
 <span class="terminal-yellow">⟐ select team</span>
 <span class="terminal-yellow">› acme-team</span>
   orbit-labs
@@ -1070,7 +995,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <img class="changelog-whitepaper-thumb" src="/assets/img/keysee-whitepaper-thumb.png" alt="" loading="lazy">
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">KEYSEE⎔ Whitepaper</h3>
@@ -1088,7 +1013,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx armor up</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx armor up</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Armor</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">armor up</code>, <code class="text-zinc-300">armor down</code>, <code class="text-zinc-300">armor push</code>, <code class="text-zinc-300">armor pull</code>, and <code class="text-zinc-300">armor move</code> shipped for moving private keys under <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> control.</p>
           </div>
@@ -1103,7 +1028,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <div class="changelog-keysee-logo-panel">
                   <svg class="changelog-keysee-logo" viewBox="0 0 448 126" role="img" aria-label="KEYSEE">
                     <text x="36" y="86" fill="#ffffff" stroke="#ffffff" stroke-width="4.2" stroke-linejoin="round" paint-order="stroke fill" font-family="Inter, Arial, Helvetica, sans-serif" font-size="72" font-weight="900" letter-spacing="3">KEYSEE</text>
@@ -1126,7 +1051,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="install-area-gradient" x1="0" y1="0" x2="0" y2="1">
@@ -1179,7 +1104,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">{% include logos/cloudflare.html class="changelog-cloudflare-logo" %}</div>
+              <div class="radar-card radar-card--media" aria-hidden="true">{% include logos/cloudflare.html class="changelog-cloudflare-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Cloudflare Workers Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Use encrypted dotenvx env files cleanly in Cloudflare Workers and Wrangler workflows.</p>
               <a class="mt-2 inline-block font-normal radar-text-link" href="https://dotenvx.com/docs/secrets-in-cloudflare-workers" target="_blank" rel="noopener noreferrer">Read documentation</a>
@@ -1195,7 +1120,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span></span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span></span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> opened to early teams testing hardened private keys, access control, and agent-driven secret workflows.</p>
           </div>
@@ -1210,7 +1135,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
                   <g stroke="#27272a" stroke-width="1">
@@ -1251,7 +1176,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
+              <div class="radar-card radar-card--media" aria-hidden="true">{% include logos/next.html class="changelog-next-logo" %}</div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Next.js Setup</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Published a practical guide for using encrypted <code class="text-zinc-300">.env</code> files with Next.js and Vercel, including the serverless runtime gotcha around <code class="text-zinc-300">instrumentation.ts</code>.</p>
               <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2026/02/17/dotenvx-nextjs.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
@@ -1267,7 +1192,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Vestauth</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Vestauth</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Vestauth</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Research began into removing secrets entirely from agent workflows by giving agents durable identity. Instead of passing long-lived credentials around, Vestauth explores signed agent identity as the trust primitive.</p>
               <a class="mt-2 inline-block font-normal radar-text-link" href="https://vestauth.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
@@ -1283,7 +1208,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Gateway [beta]</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Gateway [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Gateway <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">dotenvx-ops gateway start</code> launched with initial OpenAI support.</p>
           </div>
@@ -1298,7 +1223,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
                   <g stroke="#27272a" stroke-width="1">
@@ -1339,7 +1264,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Backup [beta]</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Backup [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Backup <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> added secure <code class="text-zinc-300">.env.keys</code> backup, automatic login, project opening, and path settings for smoother recovery workflows.</p>
           </div>
@@ -1354,7 +1279,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Rotation [beta]</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Rotation [beta]</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Rotation <span class="ml-1 align-middle text-xs font-normal text-zinc-500">[beta]</span></h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Rotation tokens, <code class="text-zinc-300">rotate</code>, URI rotation, and npm, GitHub, and OpenAI connection flows landed in <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span>.</p>
           </div>
@@ -1368,7 +1293,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card changelog-card-command" aria-hidden="true"><span>$ dotenvx ops</span></div>
+              <div class="radar-card radar-card--media radar-card--command" aria-hidden="true"><span>$ dotenvx ops</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]"><span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> Command</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">The first <span class="ops-lockup">Ops <span class="ops-glyph" aria-hidden="true">⛨</span></span> command landed in dotenvx, introducing operational primitives for teams, infrastructure, agents, and more.</p>
           </div>
@@ -1383,7 +1308,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
                   <g stroke="#27272a" stroke-width="1">
@@ -1424,7 +1349,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <img class="changelog-whitepaper-thumb" src="/assets/img/whitepaper-thumb.png" alt="" loading="lazy">
               </div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Whitepaper</h3>
@@ -1442,7 +1367,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Decryption at Access</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Decryption at Access</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Decryption at Access</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added <code class="text-zinc-300">main.get</code> and <code class="text-zinc-300">main.set</code>, enabling programmatic encrypted value access and write workflows.</p>
           </div>
@@ -1457,7 +1382,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
                   <g stroke="#27272a" stroke-width="1">
@@ -1498,7 +1423,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Monorepo Support</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Monorepo Support</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Monorepo Support</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added <code class="text-zinc-300">--env-keys-file</code> so monorepos can share one <code class="text-zinc-300">.env.keys</code> file across many apps.</p>
           </div>
@@ -1513,7 +1438,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>--strict</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>--strict</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Strict Mode</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Added strict failure behavior and ignore controls for CI-safe missing-file and decryption-error handling.</p>
           </div>
@@ -1528,7 +1453,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true">
+              <div class="radar-card radar-card--media" aria-hidden="true">
                 <svg class="changelog-install-chart" viewBox="0 0 720 405" preserveAspectRatio="none">
                   <rect x="0" y="0" width="720" height="405" fill="#09090b"></rect>
                   <g stroke="#27272a" stroke-width="1">
@@ -1569,7 +1494,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Feature Complete</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Feature Complete</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Feature Complete</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">With <code class="text-zinc-300">decrypt</code> added in dotenvx 1.6.0, dotenvx reached feature-complete status across its five core commands: <code class="text-zinc-300">run</code>, <code class="text-zinc-300">get</code>, <code class="text-zinc-300">set</code>, <code class="text-zinc-300">encrypt</code>, and <code class="text-zinc-300">decrypt</code>.</p>
               <a class="mt-2 inline-block font-normal radar-text-link" href="/blog/2024/07/11/feature-complete.html" target="_blank" rel="noopener noreferrer">Read Blogpost</a>
@@ -1585,7 +1510,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Dotenvx 1.0</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Dotenvx 1.0</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx 1.0</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">Dotenvx 1.0 shipped as the next generation of configuration management for dotenv, built around three problems developers kept running into: inconsistent env behavior across platforms, juggling multiple environments, and the risk of leaking <code class="text-zinc-300">.env</code> files.</p>
               <p class="mt-3 text-zinc-400 text-sm md:text-base">It introduced a cross-platform <code class="text-zinc-300">dotenvx run -- your-cmd</code> workflow, first-class multiple environment files, and public-key encryption for <code class="text-zinc-300">.env</code> values, replacing the older <code class="text-zinc-300">.env.vault</code> path with a simpler encrypted <code class="text-zinc-300">.env</code> format.</p>
@@ -1602,7 +1527,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Encrypted .env</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Encrypted .env</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Encrypted .env</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base"><code class="text-zinc-300">.env.vault</code> helped prove that encrypted environment files could work in real teams. It got dotenv users much farther than plaintext secrets alone.</p>
               <p class="mt-3 text-zinc-400 text-sm md:text-base">With dotenvx, that mechanism became deprecated in favor of the new encrypted <code class="text-zinc-300">.env</code> format: public-key encryption, safe-to-commit secret values, and local <code class="text-zinc-300">.env.keys</code> for decryption.</p>
@@ -1618,7 +1543,7 @@ layout: radar
         </div>
         <div>
           <div class="max-w-2xl">
-              <div class="changelog-card" aria-hidden="true"><span>Dotenvx Begins</span></div>
+              <div class="radar-card radar-card--media" aria-hidden="true"><span>Dotenvx Begins</span></div>
               <h3 class="m-0 text-zinc-100 text-xl md:text-[1.55rem] leading-[1.1]">Dotenvx Begins</h3>
               <p class="mt-2 text-zinc-400 text-sm md:text-base">From the creator of dotenv, the first dotenvx work began as a next-generation approach to configuration. The goal was to keep the simplicity developers loved about <code class="text-zinc-300">.env</code> files while solving the problems that show up as teams and systems grow.</p>
               <p class="mt-3 text-zinc-400 text-sm md:text-base">That early work laid the foundation for cross-platform env loading, multiple environment files, encrypted environment values, and safer secrets workflows built for modern teams.</p>

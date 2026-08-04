@@ -1,6 +1,6 @@
 {% assign radar_path = page.url | default: '' %}
 {% assign company_active = false %}
-{% if radar_path contains '/blog' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/open-source/' or radar_path == '/open-source' %}
+{% if radar_path contains '/blog' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' %}
   {% assign company_active = true %}
 {% endif %}
 
@@ -60,7 +60,7 @@
           <a href="/blog" class="radar-nav-panel-link{% if radar_path contains '/blog' %} is-active{% endif %}">Blog</a>
           <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-nav-panel-link">Trust</a>
           <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
-          <a href="/open-source" class="radar-nav-panel-link{% if radar_path == '/open-source/' or radar_path == '/open-source' %} is-active{% endif %}">Open Source</a>
+          <a href="/opensource" class="radar-nav-panel-link{% if radar_path == '/opensource/' or radar_path == '/opensource' %} is-active{% endif %}">Open Source</a>
         </div>
         <a href="/contact" class="radar-nav-office">
           <img
@@ -108,7 +108,7 @@
       <a href="/blog" class="radar-mobile-link">Blog</a>
       <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
       <a href="/contact" class="radar-mobile-link">Contact</a>
-      <a href="/open-source" class="radar-mobile-link">Open Source</a>
+      <a href="/opensource" class="radar-mobile-link">Open Source</a>
     </div>
   </div>
 </div>

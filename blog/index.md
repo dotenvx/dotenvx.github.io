@@ -13,20 +13,18 @@ layout: radar
 
 <section class="radar-section">
   <div class="radar-shell blog-index-shell">
-    <ul class="blog-index-grid">
+    <div class="radar-card-grid">
       {% for post in site.categories.blog %}
-        <li>
-          <a href="{{ post.url }}" class="blog-index-card">
-            {% if post.image %}
-              <img alt="" loading="lazy" width="395" height="208" decoding="async" class="blog-index-thumb" src="{{ post.image }}">
-            {% endif %}
-            <time class="blog-index-date" datetime="{{ post.date | date: "%Y-%m-%d" }}">
-              {{ post.date | date: "%B %d, %Y" }}
-            </time>
-            <h2 class="blog-index-title">{{ post.title }}</h2>
-          </a>
-        </li>
+        <a href="{{ post.url }}" class="radar-card">
+          {% if post.image %}
+            <img alt="" loading="lazy" width="395" height="208" decoding="async" class="radar-card-thumb" src="{{ post.image }}">
+          {% endif %}
+          <time class="radar-card-meta radar-card-meta--top" datetime="{{ post.date | date: "%Y-%m-%d" }}">
+            {{ post.date | date: "%B %d, %Y" }}
+          </time>
+          <span class="radar-card-name">{{ post.title }}</span>
+        </a>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </section>

@@ -617,7 +617,7 @@ html.dark .contact-muted-link:hover,
 }
 
 body.radar-layout .contact-shell {
-  max-width: 56rem;
+  max-width: 48rem;
 }
 
 body.radar-layout .contact-grid {
@@ -2926,84 +2926,30 @@ html.dark .radar-btn {
   max-width: 48rem;
 }
 
+.blog-index-shell .radar-card-grid,
 .open-source-shell .radar-card-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.blog-index-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media (min-width: 640px) {
-  .blog-index-grid {
-    gap: 1.1rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.blog-index-card {
-  background: var(--design-panel);
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  color: inherit !important;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  height: 100%;
-  overflow: hidden;
-  padding: 0.85rem;
-  position: relative;
-  text-decoration: none !important;
-  transition: background-color 160ms ease;
-}
-
-.blog-index-card::after {
-  background-image: var(--design-etch-divider);
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-  content: "";
-  height: 2px;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.blog-index-card:hover {
-  background: color-mix(in srgb, var(--design-hover) 80%, var(--design-panel));
-  color: inherit !important;
-}
-
-.blog-index-thumb {
+.radar-card-thumb {
   border: 1px solid var(--design-line);
-  border-radius: 0.2rem;
   display: block;
   height: auto;
   width: 100%;
 }
 
-.blog-index-date {
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
+.radar-card-meta--top {
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.blog-index-title {
-  color: var(--design-ink);
+.radar-card:has(.radar-card-thumb) .radar-card-name {
+  font-family: var(--design-font-sans);
   font-size: 1.05rem;
-  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.25;
-  margin: 0;
+  margin-top: 0.55rem;
 }
 
 .blog-post {
@@ -4094,4 +4040,135 @@ html.dark .spec-table-link a {
   opacity: 1;
 }
 
+/* Design system specimens */
+.design-shell {
+  max-width: 40rem;
+}
+
+.design-hero {
+  padding-bottom: 1.5rem;
+}
+
+.design-section {
+  padding: 0 0 3.25rem;
+}
+
+.design-section-heading {
+  display: grid;
+  gap: 0.35rem 1.5rem;
+  grid-template-columns: 2.5rem 1fr;
+  margin-bottom: 1.75rem;
+}
+
+.design-section-heading p,
+.design-section-heading h2 {
+  color: var(--design-dim);
+  font-family: var(--design-font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.design-section-heading h2 {
+  color: var(--design-ink);
+}
+
+.design-swatch-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .design-swatch-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.design-swatch {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.design-swatch-chip {
+  aspect-ratio: 1.6 / 1;
+  background: var(--design-panel);
+  border: 1px solid var(--design-line);
+  display: block;
+  width: 100%;
+}
+
+.design-swatch code,
+.design-specimen-note {
+  color: var(--design-dim);
+  font-family: var(--design-font-mono);
+  font-size: 0.68rem;
+}
+
+.design-specimen-note {
+  margin: 1rem 0 0;
+}
+
+.design-brand-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.design-brand-mark {
+  border-radius: 0.2rem;
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.design-brand-row code {
+  color: var(--design-dim);
+  font-family: var(--design-font-mono);
+  font-size: 0.68rem;
+}
+
+.design-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.design-control-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.1rem;
+}
+
+.design-shell-demo {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.design-shell-bar {
+  background: var(--design-panel);
+  box-shadow: var(--design-etch);
+  color: var(--design-dim);
+  font-family: var(--design-font-mono);
+  font-size: 0.68rem;
+  padding: 0.7rem 0.85rem;
+}
+
+.design-shell-bar--wide {
+  width: 100%;
+}
+
+.design-shell-bar--reading {
+  width: 78%;
+}
+
+.design-shell-bar--narrow {
+  width: 62%;
+}
+
+.design-shell-bar code {
+  color: var(--design-ink);
+}
 

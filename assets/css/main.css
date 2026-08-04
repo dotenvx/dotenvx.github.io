@@ -1636,8 +1636,9 @@ body.radar-layout a:focus {
 }
 
 .radar-brand img {
-  height: 0.95rem;
-  width: auto;
+  border-radius: 0.2rem;
+  height: 1.55rem;
+  width: 1.55rem;
 }
 
 .radar-brand-light {
@@ -2237,7 +2238,7 @@ html.dark .radar-theme-keycap {
 .radar-card {
   background: var(--design-panel);
   border: 1px solid transparent;
-  border-radius: 0.35rem;
+  border-radius: 0;
   box-shadow: var(--design-etch);
   color: inherit !important;
   display: flex;
@@ -2298,7 +2299,7 @@ html.dark .radar-theme-keycap {
 .radar-panel {
   background: var(--design-panel);
   border: 1px solid transparent;
-  border-radius: 0.35rem;
+  border-radius: 0;
   box-shadow: var(--design-etch);
   overflow: hidden;
   position: relative;
@@ -2920,8 +2921,13 @@ html.dark .radar-btn {
 }
 
 .blog-index-shell,
-.blog-post-shell {
+.blog-post-shell,
+.radar-shell.open-source-shell {
   max-width: 48rem;
+}
+
+.open-source-shell .radar-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .blog-index-grid {

@@ -5,10 +5,10 @@ layout: radar
 ---
 
 <section class="radar-hero">
-  <div class="radar-shell">
+  <div class="radar-shell open-source-shell">
     <div class="radar-hero-grid">
       <div>
-        <p class="radar-kicker">Community</p>
+        <p class="radar-kicker">Company</p>
         <h1 class="radar-title">Open Source</h1>
         <p class="radar-lede">Our open work and contributions to the community.</p>
       </div>
@@ -18,7 +18,7 @@ layout: radar
 </section>
 
 <section class="radar-section">
-  <div class="radar-shell">
+  <div class="radar-shell open-source-shell">
     <div class="radar-card-grid">
       <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer" class="radar-card">
         <span class="radar-card-name">dotenv</span>
@@ -96,7 +96,7 @@ layout: radar
 </section>
 
 <section class="radar-section">
-  <div class="radar-shell">
+  <div class="radar-shell open-source-shell">
     <h2 class="radar-section-title">Published Work</h2>
     <p class="radar-section-lede">Technical papers and presentations from our work on secrets, cryptography, and identity.</p>
 
@@ -130,7 +130,7 @@ layout: radar
 </section>
 
 <section class="radar-section">
-  <div class="radar-shell">
+  <div class="radar-shell open-source-shell">
     <h2 class="radar-section-title">Talks</h2>
     <p class="radar-section-lede">Conference talks and presentations from our work on application configuration.</p>
 
@@ -164,7 +164,7 @@ layout: radar
 </section>
 
 <section class="radar-section">
-  <div class="radar-shell">
+  <div class="radar-shell open-source-shell">
     <h2 class="radar-section-title">Sponsorship</h2>
     <p class="radar-section-lede">Our financial contributions to the community through direct sponsorship.</p>
 

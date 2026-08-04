@@ -7,8 +7,8 @@ layout: radar
   <div class="radar-shell contact-shell">
     <div class="contact-grid">
       <div>
-        <p class="radar-kicker">Contact</p>
-        <h1 class="radar-title">Get in touch</h1>
+        <p class="radar-kicker">Company</p>
+        <h1 class="radar-title">Contact</h1>
 
         <div class="contact-offices">
           <div class="contact-office">
@@ -48,7 +48,7 @@ layout: radar
 
         <div>
           <p class="contact-label">Enterprise plans and custom needs</p>
-          <a href="mailto:sales@dotenvx.com" class="contact-link">sales@dotenvx.com</a>
+          <a href="mailto:scott@dotenvx.com" class="contact-link">scott@dotenvx.com</a>
         </div>
       </aside>
     </div>

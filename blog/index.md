@@ -5,7 +5,7 @@ layout: radar
 
 <section class="radar-hero blog-index-hero">
   <div class="radar-shell blog-index-shell">
-    <p class="radar-kicker">Writing</p>
+    <p class="radar-kicker">Company</p>
     <h1 class="radar-title">Blog</h1>
     <p class="radar-lede">Notes on secrets, .env files, and building dotenvx.</p>
   </div>

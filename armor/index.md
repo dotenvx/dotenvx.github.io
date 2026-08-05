@@ -33,7 +33,7 @@ layout: radar
     <div class="armor-shell">
       {% capture armor_choice_current %}
         {% include components/design-btn.html
-          label="Sign Up"
+          label="Get Started"
           href="/signup"
           id="armor-panel-you"
         %}

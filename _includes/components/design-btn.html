@@ -1,0 +1,19 @@
+{% assign label = include.label %}
+{% assign href = include.href %}
+{% assign btn_class = include.class %}
+{% assign btn_type = include.type | default: "button" %}
+
+{% if href and href != "" %}
+  <a
+    href="{{ href }}"
+    class="design-btn{% if btn_class %} {{ btn_class }}{% endif %}"
+    {% if include.target %}target="{{ include.target }}"{% endif %}
+    {% if include.rel %}rel="{{ include.rel }}"{% endif %}
+  >{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</a>
+{% else %}
+  <button
+    type="{{ btn_type }}"
+    class="design-btn{% if btn_class %} {{ btn_class }}{% endif %}"
+    {% if include.disabled %}disabled aria-disabled="true"{% endif %}
+  >{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</button>
+{% endif %}

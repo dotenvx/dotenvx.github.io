@@ -2874,6 +2874,132 @@ html.dark .design-badge.design-badge--danger {
   padding: 0 1.25rem 1.35rem;
 }
 
+/* Mirrored from ../radar design-btn (design-body treatment) */
+.design-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: var(--design-control-radius);
+  box-shadow: var(--design-etch);
+  color: var(--design-ink) !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--design-font-mono);
+  font-size: 12px;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: background-color 140ms ease, color 140ms ease;
+  width: fit-content;
+}
+
+.design-btn:hover,
+.design-btn:focus-visible {
+  background: var(--design-hover);
+  color: var(--design-ink) !important;
+  outline: none;
+  text-decoration: none !important;
+}
+
+.design-btn--block {
+  width: 100%;
+}
+
+.design-btn--danger {
+  border-color: rgba(180, 35, 24, 0.45);
+  color: #b42318 !important;
+}
+
+html.dark .design-btn--danger {
+  border-color: rgba(248, 113, 113, 0.45);
+  color: #f87171 !important;
+}
+
+.design-btn--danger:hover,
+.design-btn--danger:focus-visible {
+  background: rgba(180, 35, 24, 0.08);
+  color: #b42318 !important;
+}
+
+html.dark .design-btn--danger:hover,
+html.dark .design-btn--danger:focus-visible {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171 !important;
+}
+
+.design-btn--trial {
+  background: #dce8f6;
+  border-color: #5b87c0;
+  color: #215891 !important;
+}
+
+.design-btn--trial:hover,
+.design-btn--trial:focus-visible {
+  background: color-mix(in srgb, #dce8f6 70%, #5b87c0);
+  color: #215891 !important;
+  outline: none;
+}
+
+html.dark .design-btn--trial {
+  background: #1a2533;
+  border-color: #5b87c0;
+  color: #9bc4ef !important;
+}
+
+html.dark .design-btn--trial:hover,
+html.dark .design-btn--trial:focus-visible {
+  background: color-mix(in srgb, #1a2533 70%, #5b87c0);
+  color: #9bc4ef !important;
+}
+
+.design-btn.is-disabled,
+.design-btn:disabled {
+  cursor: default;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.design-btn-paid {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.design-btn-paid > .design-btn {
+  width: 100%;
+}
+
+.design-btn-paid--inline {
+  display: inline-block;
+  width: fit-content;
+}
+
+.design-settings-paid {
+  background: #dce8f6;
+  border: 1px solid #5b87c0;
+  color: #215891;
+  font-family: var(--design-font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0.22rem 0.35rem;
+  position: absolute;
+  right: -0.4rem;
+  text-transform: uppercase;
+  top: -0.45rem;
+  z-index: 1;
+}
+
+html.dark .design-settings-paid {
+  background: #1a2533;
+  border-color: #5b87c0;
+  color: #9bc4ef;
+}
+
 .radar-btn {
   align-items: center;
   background: color-mix(in srgb, var(--design-ink) 92%, transparent);

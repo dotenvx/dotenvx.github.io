@@ -18,7 +18,7 @@
   {% assign cta_label = "Contact Us" %}
 {% else %}
   {% assign cta_href = "/signup" %}
-  {% assign cta_label = "Get Started" %}
+  {% assign cta_label = "Choose " | append: plan_name %}
 {% endif %}
 
 <div class="pricing-plan {{ border_classes }}">
@@ -54,6 +54,19 @@
     </ul>
   </div>
   <div class="pricing-plan-cta">
-    <a href="{{ cta_href }}" class="radar-btn">{{ cta_label }}</a>
+    {% if plan.id == "enterprise" %}
+      {% include components/design-btn.html
+        href=cta_href
+        label=cta_label
+        class="design-btn--block"
+      %}
+    {% else %}
+      {% include components/design-btn-paid.html
+        href=cta_href
+        label=cta_label
+        btn_class="design-btn--block"
+        badge=plan.price.display
+      %}
+    {% endif %}
   </div>
 </div>

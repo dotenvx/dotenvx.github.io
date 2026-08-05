@@ -1,0 +1,18 @@
+{% assign badge = include.badge %}
+{% assign paid_class = include.class %}
+
+<span class="design-btn-paid{% if paid_class %} {{ paid_class }}{% endif %}">
+  {% include components/design-btn.html
+    href=include.href
+    label=include.label
+    class=include.btn_class
+    type=include.type
+    target=include.target
+    rel=include.rel
+    disabled=include.disabled
+    content=include.content
+  %}
+  {% if badge and badge != "" %}
+    <span class="design-settings-paid" aria-hidden="true">{{ badge }}</span>
+  {% endif %}
+</span>

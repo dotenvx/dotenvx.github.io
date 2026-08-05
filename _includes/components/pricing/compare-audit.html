@@ -1,0 +1,50 @@
+{% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
+
+<section class="radar-section">
+  <div class="radar-shell pricing-compare-shell">
+    <h2 class="radar-section-title">Audit &amp; Trust</h2>
+    <div class="radar-panel pricing-table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Pro</th>
+            <th>Team</th>
+            <th>Business</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Audit Logs</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+          </tr>
+          <tr>
+            <td>Audit Retention</td>
+            <td>{{ audit_retention_feature.values.pro }}</td>
+            <td>{{ audit_retention_feature.values.team }}</td>
+            <td>{{ audit_retention_feature.values.business }}</td>
+            <td>{{ audit_retention_feature.values.enterprise }}</td>
+          </tr>
+          <tr>
+            <td>Access Alerts</td>
+            <td class="pricing-empty">—</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+          </tr>
+          <tr>
+            <td>SIEM / Log Export</td>
+            <td class="pricing-empty">—</td>
+            <td class="pricing-empty">—</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+            <td>{% include components/checkmark-circle-green.html %}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

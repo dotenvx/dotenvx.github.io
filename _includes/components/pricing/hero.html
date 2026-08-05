@@ -1,0 +1,27 @@
+<style>
+  .pricing-hero-shield {
+    height: 17rem !important;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-hero-shield {
+      height: 23rem !important;
+    }
+  }
+</style>
+
+{% capture pricing_hero_visual %}
+  {% include components/three-ops-rect.html
+    height="23rem"
+    mode="shield"
+    class="pricing-hero-shield"
+  %}
+{% endcapture %}
+
+{% include components/design-hero.html
+  eyebrow="Armor ⛨"
+  title="Pricing"
+  description="Dotenvx is free and open source. Armor is paid — armored keys, audit, and access control."
+  visual=pricing_hero_visual
+%}

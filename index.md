@@ -109,7 +109,7 @@ layout: radar
   class="home-design-hero"
   eyebrow=home_hero_eyebrow
   title="Dotenvx"
-  description="Designed as a secure dotenv. You can encrypt your .env files."
+  description="Designed as a secure dotenv. You can encrypt your .env files–and more."
   visual=home_hero_visual
 %}
 

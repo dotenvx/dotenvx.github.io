@@ -2,10 +2,11 @@
 {% assign keysee_render_mode = include.keysee_render_mode | default: "wire" %}
 {% assign shell_class = include.shell_class %}
 {% assign hero_class = include.class %}
+{% assign hide_visual = include.hide_visual %}
 
 <section class="design-hero{% if hero_class %} {{ hero_class }}{% endif %}">
   <div class="armor-shell{% if shell_class %} {{ shell_class }}{% endif %}">
-    <div class="design-hero-grid">
+    <div class="design-hero-grid{% if hide_visual %} design-hero-grid--copy-only{% endif %}">
       <div class="design-hero-copy">
         {% include components/design-hero-header.html
           eyebrow=include.eyebrow
@@ -14,17 +15,19 @@
           heading_tag=include.heading_tag
         %}
       </div>
-      <div class="design-hero-visual">
-        {% if include.visual and include.visual != "" %}
-          {{ include.visual }}
-        {% else %}
-          {% include components/keysee-viewer.html
-            public_key=public_key
-            render_mode=keysee_render_mode
-            class="design-hero-key relative h-full min-h-[inherit] w-full overflow-hidden bg-transparent"
-          %}
-        {% endif %}
-      </div>
+      {% unless hide_visual %}
+        <div class="design-hero-visual">
+          {% if include.visual and include.visual != "" %}
+            {{ include.visual }}
+          {% else %}
+            {% include components/keysee-viewer.html
+              public_key=public_key
+              render_mode=keysee_render_mode
+              class="design-hero-key relative h-full min-h-[inherit] w-full overflow-hidden bg-transparent"
+            %}
+          {% endif %}
+        </div>
+      {% endunless %}
     </div>
   </div>
 </section>

@@ -1,6 +1,136 @@
 ---
-title: ""
+title: "Dotenvx"
 layout: radar
 ---
 
-{% include components/homepage-hero.html %}
+<style>
+  .home-start {
+    max-width: 36rem;
+  }
+</style>
+
+{% capture home_hero_eyebrow %}
+  From the creator of
+  <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer">
+    <span>dotenv</span>
+    <span aria-hidden="true">★</span>
+    <span>20.5k</span>
+  </a>
+{% endcapture %}
+
+{% include components/design-hero.html
+  class="home-design-hero"
+  eyebrow=home_hero_eyebrow
+  title="Dotenvx"
+  description="A secure dotenv – encrypt your .env files."
+  public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
+  keysee_render_mode="solid"
+%}
+
+<section class="radar-section" aria-label="Install dotenvx">
+  <div class="armor-shell">
+    <div class="home-start hero-start" id="hero-start">
+      <div class="hero-audience">
+        <button type="button" class="hero-audience-tab is-active" id="hero-tab-you">For you</button>
+        <span class="hero-audience-rule" aria-hidden="true"></span>
+        <button type="button" class="hero-audience-tab" id="hero-tab-agent">For your agent</button>
+      </div>
+
+      <div class="hero-command-slot">
+        <button type="button" class="hero-command" id="hero-panel-you">
+          <span class="hero-command-prompt" aria-hidden="true">$</span>
+          <code class="hero-command-text">curl -sfS https://dotenvx.sh | sh</code>
+          <span class="hero-command-copy" id="hero-copy-icon-you" aria-hidden="true">
+            <svg class="hero-command-copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 8.5A2.5 2.5 0 0 1 10.5 6h6A2.5 2.5 0 0 1 19 8.5v6A2.5 2.5 0 0 1 16.5 17h-6A2.5 2.5 0 0 1 8 14.5v-6Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5h-.5A2.5 2.5 0 0 1 3 11V5.5A2.5 2.5 0 0 1 5.5 3H11a2.5 2.5 0 0 1 2.5 2.5V6" />
+            </svg>
+            <span class="hero-command-copied">copied</span>
+          </span>
+        </button>
+
+        <button type="button" class="hero-command hero-prompt-btn" id="hero-panel-agent" hidden>
+          <span class="hero-command-prompt" aria-hidden="true">⟐</span>
+          <span class="hero-command-text hero-prompt-label" id="hero-prompt-label">Copy Prompt</span>
+          <span class="hero-command-copy" aria-hidden="true">
+            <svg class="hero-command-copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 8.5A2.5 2.5 0 0 1 10.5 6h6A2.5 2.5 0 0 1 19 8.5v6A2.5 2.5 0 0 1 16.5 17h-6A2.5 2.5 0 0 1 8 14.5v-6Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5h-.5A2.5 2.5 0 0 1 3 11V5.5A2.5 2.5 0 0 1 5.5 3H11a2.5 2.5 0 0 1 2.5 2.5V6" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var youText = 'curl -sfS https://dotenvx.sh | sh'
+  var agentText = 'Install dotenvx (curl -sfS https://dotenvx.sh | sh), encrypt this project\'s .env with dotenvx encrypt, keep .env.keys out of git, and run the app with dotenvx run -- your-command.'
+  var tab = 'you'
+  var copyTimeout
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn()
+    else document.addEventListener('DOMContentLoaded', fn)
+  }
+
+  function copyText(text, onDone) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(onDone)
+      return
+    }
+    var textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    onDone()
+  }
+
+  ready(function () {
+    var tabYou = document.getElementById('hero-tab-you')
+    var tabAgent = document.getElementById('hero-tab-agent')
+    var panelYou = document.getElementById('hero-panel-you')
+    var panelAgent = document.getElementById('hero-panel-agent')
+    var copyIconYou = document.getElementById('hero-copy-icon-you')
+    var promptLabel = document.getElementById('hero-prompt-label')
+    if (!tabYou || !tabAgent || !panelYou || !panelAgent) return
+
+    function show(next) {
+      tab = next
+      tabYou.classList.toggle('is-active', tab === 'you')
+      tabAgent.classList.toggle('is-active', tab === 'agent')
+      panelYou.hidden = tab !== 'you'
+      panelAgent.hidden = tab !== 'agent'
+      copyIconYou.classList.remove('is-copied')
+      promptLabel.textContent = 'Copy Prompt'
+    }
+
+    tabYou.addEventListener('click', function () { show('you') })
+    tabAgent.addEventListener('click', function () { show('agent') })
+
+    panelYou.addEventListener('click', function () {
+      copyText(youText, function () {
+        copyIconYou.classList.add('is-copied')
+        clearTimeout(copyTimeout)
+        copyTimeout = setTimeout(function () {
+          copyIconYou.classList.remove('is-copied')
+        }, 1100)
+      })
+    })
+
+    panelAgent.addEventListener('click', function () {
+      copyText(agentText, function () {
+        promptLabel.textContent = 'Copied'
+        clearTimeout(copyTimeout)
+        copyTimeout = setTimeout(function () {
+          promptLabel.textContent = 'Copy Prompt'
+        }, 1100)
+      })
+    })
+  })
+})()
+</script>

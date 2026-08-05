@@ -187,8 +187,9 @@ html.dark body {
   }
 }
 
-.home-hero-shell {
-  max-width: 80rem;
+.home-hero-shell,
+.armor-shell.home-hero-shell {
+  max-width: 52rem;
 }
 
 .home-hero-grid {
@@ -2333,6 +2334,39 @@ html.dark .design-link:focus {
   margin-bottom: 0;
 }
 
+.design-prose > .design-list-title {
+  margin-bottom: 0.85rem;
+  margin-top: 2rem;
+}
+
+.design-prose > .design-list-title:first-child {
+  margin-top: 0;
+}
+
+/* Mirrored as a site design component — not in ../radar yet */
+.design-bullets {
+  color: var(--design-body, var(--design-ink));
+  font-family: var(--design-font-sans);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  margin: 0 0 1em;
+  padding-left: 1.25rem;
+}
+
+ul.design-bullets {
+  list-style-type: disc;
+}
+
+ol.design-bullets {
+  list-style-type: decimal;
+}
+
+.design-bullets > li + li {
+  margin-top: 0.45rem;
+}
+
 .radar-section:has(.design-cta-message) {
   padding-top: 3.5rem;
 }
@@ -2624,6 +2658,22 @@ html.dark .design-badge.design-badge--danger {
   text-transform: uppercase;
 }
 
+.design-page-header-eyebrow a,
+.design-page-header-eyebrow a:visited {
+  align-items: center;
+  color: inherit !important;
+  display: inline-flex;
+  font-weight: inherit !important;
+  gap: 0.3rem;
+  text-decoration: none !important;
+  transition: color 160ms ease;
+}
+
+.design-page-header-eyebrow a:hover,
+.design-page-header-eyebrow a:focus {
+  color: var(--design-gold) !important;
+}
+
 .design-page-title {
   color: var(--design-ink);
   font-family: var(--design-font-sans);
@@ -2665,6 +2715,13 @@ html.dark .design-badge.design-badge--danger {
   line-height: 1.05;
 }
 
+.home-design-hero .design-page-title {
+  font-size: clamp(3.75rem, 10vw, 5.75rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
 .design-hero-header .design-page-header-desc {
   font-size: clamp(1.125rem, 2.4vw, 1.35rem);
   line-height: 1.4;
@@ -2693,10 +2750,23 @@ html.dark .design-badge.design-badge--danger {
     gap: 2.5rem;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   }
+
+  .design-hero-grid--copy-only {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.design-hero-grid--copy-only {
+  gap: 0;
 }
 
 .design-hero-copy {
   min-width: 0;
+}
+
+.design-hero-grid--copy-only .design-hero-copy {
+  max-width: none;
+  width: 100%;
 }
 
 .design-hero-visual {
@@ -3449,12 +3519,22 @@ html.dark .radar-btn {
 }
 
 /* Legal pages (terms / privacy) */
-.legal-hero {
-  padding-bottom: 1.5rem;
+.legal-hero-visual {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-height: inherit;
+  width: 100%;
 }
 
-.legal-shell {
-  max-width: 42rem;
+.legal-hero-image {
+  display: block;
+  height: auto;
+  max-height: 23rem;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
 }
 
 .legal-prose {

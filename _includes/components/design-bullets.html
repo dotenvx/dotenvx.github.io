@@ -1,0 +1,14 @@
+{% assign bullet_tag = include.type | default: "ul" %}
+{% assign bullet_class = include.class %}
+
+{% if bullet_tag != "ol" %}
+  {% assign bullet_tag = "ul" %}
+{% endif %}
+
+<{{ bullet_tag }} class="design-bullets{% if bullet_class %} {{ bullet_class }}{% endif %}">
+  {% if include.items and include.items != "" %}
+    {{ include.items }}
+  {% else %}
+    {{ include.content }}
+  {% endif %}
+</{{ bullet_tag }}>

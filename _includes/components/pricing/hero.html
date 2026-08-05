@@ -1,27 +1,46 @@
 <style>
-  .pricing-hero-shield {
-    height: 17rem !important;
+  .pricing-hero-media {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    min-height: inherit;
+    width: 100%;
+  }
+
+  .pricing-hero-video {
+    background: #000;
+    display: block;
+    height: 17rem;
+    max-width: 100%;
+    object-fit: cover;
     width: 100%;
   }
 
   @media (min-width: 768px) {
-    .pricing-hero-shield {
-      height: 23rem !important;
+    .pricing-hero-video {
+      height: 23rem;
     }
   }
 </style>
 
 {% capture pricing_hero_visual %}
-  {% include components/three-ops-rect.html
-    height="23rem"
-    mode="shield"
-    class="pricing-hero-shield"
-  %}
+  <div class="pricing-hero-media">
+    <video
+      class="pricing-hero-video"
+      src="/dotenvx-la-office-desk.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-label="dotenvx Los Angeles office desk"
+    ></video>
+  </div>
 {% endcapture %}
 
 {% include components/design-hero.html
-  eyebrow="Armor ⛨"
+  eyebrow="Dotenvx Armor ⛨"
   title="Pricing"
-  description="Dotenvx is free and open source. Armor is paid — armored keys, audit, and access control."
+  description="Dotenvx is free and open source. But you can pay for Dotenvx Armor."
   visual=pricing_hero_visual
 %}

@@ -1,10 +1,10 @@
 <style>
   /* Sparse ascii visual — don't inherit the 17rem/23rem hero media slot */
-  .pricing-design-hero .design-hero-visual {
+  .legal-design-hero .design-hero-visual {
     min-height: 8.5rem;
   }
 
-  .pricing-hero-ascii {
+  .legal-hero-ascii {
     align-items: center;
     display: flex;
     height: 100%;
@@ -13,13 +13,13 @@
     width: 100%;
   }
 
-  .pricing-hero-ascii-art {
+  .legal-hero-ascii-art {
     color: var(--design-ink);
     font-family: var(--design-font-mono);
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(0.95rem, 2vw, 1.35rem);
     font-weight: 400;
-    letter-spacing: 0.12em;
-    line-height: 1;
+    letter-spacing: 0;
+    line-height: 1.2;
     margin: 0;
     text-align: center;
     user-select: none;
@@ -27,27 +27,27 @@
   }
 
   @media (min-width: 900px) {
-    .pricing-design-hero .design-hero-visual {
+    .legal-design-hero .design-hero-visual {
       min-height: 23rem;
     }
 
-    .pricing-hero-ascii {
+    .legal-hero-ascii {
       height: 100%;
       min-height: inherit;
     }
   }
 </style>
 
-{% capture pricing_hero_visual %}
-  <div class="pricing-hero-ascii" aria-hidden="true">
-    <pre class="pricing-hero-ascii-art">▁▃▅█</pre>
+{% capture legal_hero_visual %}
+  <div class="legal-hero-ascii" aria-hidden="true">
+    <pre class="legal-hero-ascii-art">───────✎</pre>
   </div>
 {% endcapture %}
 
 {% include components/design-hero.html
-  class="pricing-design-hero"
-  eyebrow="Armor ⛨"
-  title="Pricing"
-  description="Dotenvx is free and open source. But you can pay for Dotenvx Armor."
-  visual=pricing_hero_visual
+  class="legal-design-hero"
+  eyebrow=include.eyebrow
+  title=include.title
+  description=include.description
+  visual=legal_hero_visual
 %}

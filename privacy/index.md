@@ -3,22 +3,10 @@ title: "Privacy Policy"
 layout: radar
 ---
 
-{% capture legal_hero_visual %}
-  <div class="legal-hero-visual">
-    <img
-      src="/dotenvx-legal.png"
-      alt=""
-      class="legal-hero-image"
-      loading="lazy"
-    />
-  </div>
-{% endcapture %}
-
-{% include components/design-hero.html
+{% include components/legal/hero.html
   eyebrow="Legal"
   title="Privacy Policy"
   description="How Dotenvx handles your data."
-  visual=legal_hero_visual
 %}
 
 <section class="radar-section">

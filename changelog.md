@@ -23,6 +23,11 @@ layout: radar
     line-height: 1.45;
   }
 
+  /* Two-line ascii — taller than single-line legal/pricing so top padding matches */
+  .changelog-design-hero .design-hero-visual {
+    min-height: 11rem;
+  }
+
   .changelog-hero-ascii {
     align-items: center;
     display: flex;
@@ -44,6 +49,17 @@ layout: radar
     user-select: none;
     white-space: pre;
   }
+
+  @media (min-width: 900px) {
+    .changelog-design-hero .design-hero-visual {
+      min-height: 23rem;
+    }
+
+    .changelog-hero-ascii {
+      height: 100%;
+      min-height: inherit;
+    }
+  }
 </style>
 
 {% capture changelog_hero_visual %}
@@ -55,6 +71,7 @@ v1   v2   v3   v4</pre>
 
 <div class="changelog-page">
   {% include components/design-hero.html
+    class="changelog-design-hero"
     eyebrow="Dotenvx"
     title="Changelog"
     description="We're continually improving Dotenvx and Armor."

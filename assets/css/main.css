@@ -3569,24 +3569,6 @@ html.dark .radar-btn {
 }
 
 /* Legal pages (terms / privacy) */
-.legal-hero-visual {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  min-height: inherit;
-  width: 100%;
-}
-
-.legal-hero-image {
-  display: block;
-  height: auto;
-  max-height: 23rem;
-  max-width: 100%;
-  object-fit: contain;
-  width: auto;
-}
-
 .legal-prose {
   color: var(--design-mid);
   font-size: 1rem;

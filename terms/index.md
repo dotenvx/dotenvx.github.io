@@ -3,22 +3,10 @@ title: "Terms of Service"
 layout: radar
 ---
 
-{% capture legal_hero_visual %}
-  <div class="legal-hero-visual">
-    <img
-      src="/dotenvx-legal.png"
-      alt=""
-      class="legal-hero-image"
-      loading="lazy"
-    />
-  </div>
-{% endcapture %}
-
-{% include components/design-hero.html
+{% include components/legal/hero.html
   eyebrow="Legal"
   title="Terms of Service"
   description="Terms of use for the dotenvx service."
-  visual=legal_hero_visual
 %}
 
 <section class="radar-section">

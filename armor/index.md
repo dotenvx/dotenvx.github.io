@@ -16,20 +16,10 @@ layout: radar
         <h1 class="home-title">Armored Keys ⛨</h1>
         <p class="home-lede">Private keys. Off device. Under guard.</p>
 
-        <div class="hero-start" id="armor-hero-start">
-          <div class="hero-command-slot">
-            <button type="button" class="hero-command" id="armor-hero-command">
-              <span class="hero-command-prompt" aria-hidden="true">$</span>
-              <code class="hero-command-text">dotenvx armor up</code>
-              <span class="hero-command-copy" id="armor-hero-copy" aria-hidden="true">
-                <svg class="hero-command-copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 8.5A2.5 2.5 0 0 1 10.5 6h6A2.5 2.5 0 0 1 19 8.5v6A2.5 2.5 0 0 1 16.5 17h-6A2.5 2.5 0 0 1 8 14.5v-6Z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5h-.5A2.5 2.5 0 0 1 3 11V5.5A2.5 2.5 0 0 1 5.5 3H11a2.5 2.5 0 0 1 2.5 2.5V6" />
-                </svg>
-                <span class="hero-command-copied">copied</span>
-              </span>
-            </button>
-          </div>
+        <div class="armor-hero-start" id="armor-hero-start">
+          <button type="button" class="armor-hero-copy" id="armor-hero-command">
+            <code id="armor-hero-command-text">dotenvx armor up</code>
+          </button>
           <p class="armor-hero-links">
             <a href="/signup">Create Account</a>
             <span aria-hidden="true">·</span>
@@ -146,15 +136,15 @@ layout: radar
 
   ready(function () {
     var command = document.getElementById('armor-hero-command')
-    var copyIcon = document.getElementById('armor-hero-copy')
-    if (!command || !copyIcon) return
+    var commandLabel = document.getElementById('armor-hero-command-text')
+    if (!command || !commandLabel) return
 
     command.addEventListener('click', function () {
       copyText(commandText, function () {
-        copyIcon.classList.add('is-copied')
+        commandLabel.textContent = 'copied'
         clearTimeout(copyTimeout)
         copyTimeout = setTimeout(function () {
-          copyIcon.classList.remove('is-copied')
+          commandLabel.textContent = commandText
         }, 1100)
       })
     })

@@ -318,174 +318,6 @@ html.dark body {
   }
 }
 
-.hero-start {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.35rem;
-  max-width: 28rem;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .hero-start {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 32rem;
-  }
-}
-
-.hero-audience {
-  align-items: center;
-  display: flex;
-  gap: 0.85rem;
-  justify-content: center;
-  margin-bottom: 0.85rem;
-}
-
-@media (min-width: 768px) {
-  .hero-audience {
-    justify-content: flex-start;
-  }
-}
-
-.hero-audience-tab {
-  background: transparent;
-  border: 0;
-  color: var(--design-dim);
-  cursor: pointer;
-  font-family: var(--design-font-mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  padding: 0.15rem 0;
-  transition: color 160ms ease;
-}
-
-.hero-audience-tab:hover,
-.hero-audience-tab:focus-visible {
-  color: var(--design-ink);
-  outline: none;
-}
-
-.hero-audience-tab.is-active {
-  color: var(--design-ink);
-  font-weight: 600;
-}
-
-.hero-audience-rule {
-  background: var(--design-line);
-  height: 0.9rem;
-  width: 1px;
-}
-
-.hero-command-slot {
-  height: 3.35rem;
-  position: relative;
-  width: 100%;
-}
-
-.hero-command {
-  align-items: center;
-  background: var(--design-panel);
-  border: 1px solid transparent;
-  border-radius: 999px;
-  box-shadow: var(--design-etch);
-  cursor: pointer;
-  display: flex;
-  gap: 0.65rem;
-  height: 100%;
-  inset: 0;
-  padding: 0 0.95rem 0 1.15rem;
-  position: absolute;
-  text-align: left;
-  transition: background-color 160ms ease, box-shadow 160ms ease;
-  width: 100%;
-}
-
-.hero-command[hidden] {
-  display: none !important;
-}
-
-.hero-command:hover {
-  background: color-mix(in srgb, var(--design-hover) 70%, var(--design-panel));
-}
-
-.hero-prompt-btn {
-  justify-content: space-between;
-}
-
-.hero-prompt-label {
-  flex: 1 1 auto;
-  overflow: visible;
-  text-align: center;
-  text-overflow: clip;
-  white-space: nowrap;
-}
-
-.hero-command-prompt {
-  color: var(--design-mark);
-  flex: 0 0 auto;
-  font-family: var(--design-font-mono);
-  font-size: 0.92rem;
-  font-weight: 500;
-  line-height: 1.35;
-}
-
-.hero-command-text {
-  color: var(--design-ink);
-  flex: 1 1 auto;
-  font-family: var(--design-font-mono);
-  font-size: 0.86rem;
-  font-weight: 500;
-  line-height: 1.35;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.hero-command-copy {
-  align-items: center;
-  color: var(--design-dim);
-  display: inline-flex;
-  flex: 0 0 auto;
-  height: 1.9rem;
-  justify-content: center;
-  position: relative;
-  width: 1.9rem;
-}
-
-.hero-command-copy-icon {
-  height: 1.05rem;
-  width: 1.05rem;
-}
-
-.hero-command-copied {
-  background: var(--design-bg);
-  border: 1px solid var(--design-line);
-  border-radius: 999px;
-  box-shadow: var(--design-etch);
-  color: var(--design-gold);
-  font-family: var(--design-font-mono);
-  font-size: 0.62rem;
-  line-height: 1;
-  opacity: 0;
-  padding: 0.28rem 0.42rem;
-  pointer-events: none;
-  position: absolute;
-  right: calc(100% + 0.35rem);
-  top: 50%;
-  transform: translate(0.18rem, -50%);
-  transition: opacity 140ms ease, transform 140ms ease;
-  white-space: nowrap;
-}
-
-.hero-command-copy.is-copied .hero-command-copied {
-  opacity: 1;
-  transform: translate(0, -50%);
-}
-
 .terminal-hero-card {
   position: relative;
   --terminal-rx: 0deg;
@@ -2343,6 +2175,66 @@ html.dark .design-link:focus {
   margin-top: 0;
 }
 
+/* Mirrored from ../radar design-choice */
+.design-choice {
+  border: 1px solid var(--design-line, var(--design-mid));
+  box-shadow: var(--design-etch);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.design-choice-current {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 5.5rem;
+  padding: 1rem 0.85rem;
+}
+
+.design-choice-current-label {
+  color: var(--design-ink);
+  font-size: clamp(1.15rem, 5vw, 1.65rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.design-choice-options {
+  border: 0;
+  border-top: 1px solid var(--design-line, var(--design-mid));
+  display: grid;
+  grid-template-columns: repeat(var(--design-choice-count, 2), minmax(0, 1fr));
+  width: 100%;
+}
+
+.design-choice-option {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--design-line, var(--design-mid));
+  color: var(--design-dim);
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  padding: 0.7rem 0.75rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.design-choice-option:last-child {
+  border-right: 0;
+}
+
+.design-choice-option:hover,
+.design-choice-option:focus-visible,
+.design-choice-option[aria-pressed="true"] {
+  background: var(--design-hover);
+  color: var(--design-ink);
+  outline: none;
+}
+
 /* Mirrored as a site design component — not in ../radar yet */
 .design-bullets {
   color: var(--design-body, var(--design-ink));
@@ -3872,6 +3764,38 @@ html:not(.dark) .armor-lightning {
 .armor-cta-section {
   position: relative;
   z-index: 1;
+}
+
+.armor-hero-start {
+  margin-top: 0.35rem;
+  width: 100%;
+}
+
+.armor-hero-copy {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--design-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+}
+
+.armor-hero-copy code {
+  color: inherit;
+  font-family: var(--design-font-mono);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.armor-hero-copy:hover,
+.armor-hero-copy:focus-visible {
+  color: var(--design-gold);
+  outline: none;
 }
 
 .armor-hero-links {

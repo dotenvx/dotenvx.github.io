@@ -1,0 +1,20 @@
+{% assign aria_label = include.aria_label | default: "Options" %}
+{% assign count = include.count | default: 2 %}
+{% assign selected_label = include.selected_label %}
+{% assign choice_class = include.class %}
+
+<div
+  class="design-choice{% if choice_class %} {{ choice_class }}{% endif %}"
+  style="--design-choice-count: {{ count }};"
+>
+  <div class="design-choice-current">
+    {% if include.current and include.current != "" %}
+      {{ include.current }}
+    {% else %}
+      <span class="design-choice-current-label"{% if include.current_id %} id="{{ include.current_id }}"{% endif %}>{{ selected_label }}</span>
+    {% endif %}
+  </div>
+  <div class="design-choice-options" role="group" aria-label="{{ aria_label }}">
+    {{ include.options }}
+  </div>
+</div>

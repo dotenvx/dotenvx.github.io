@@ -4,8 +4,47 @@ layout: radar
 ---
 
 <style>
-  .home-start {
-    max-width: 36rem;
+  .home-install-choice {
+    width: 100%;
+  }
+
+  .home-install-choice .design-choice-current {
+    min-height: 6.5rem;
+    padding: 1.25rem 1.35rem;
+  }
+
+  .home-install-copy {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: var(--design-ink);
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-install-copy[hidden] {
+    display: none !important;
+  }
+
+  .home-install-copy code,
+  .home-install-copy-label {
+    color: inherit;
+    font-family: var(--design-font-mono);
+    font-size: clamp(1rem, 2.4vw, 1.35rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .home-install-copy:hover,
+  .home-install-copy:focus-visible {
+    color: var(--design-gold);
+    outline: none;
   }
 </style>
 
@@ -29,38 +68,32 @@ layout: radar
 
 <section class="radar-section" aria-label="Install dotenvx">
   <div class="armor-shell">
-    <div class="home-start hero-start" id="hero-start">
-      <div class="hero-audience">
-        <button type="button" class="hero-audience-tab is-active" id="hero-tab-you">For you</button>
-        <span class="hero-audience-rule" aria-hidden="true"></span>
-        <button type="button" class="hero-audience-tab" id="hero-tab-agent">For your agent</button>
-      </div>
-
-      <div class="hero-command-slot">
-        <button type="button" class="hero-command" id="hero-panel-you">
-          <span class="hero-command-prompt" aria-hidden="true">$</span>
-          <code class="hero-command-text">curl -sfS https://dotenvx.sh | sh</code>
-          <span class="hero-command-copy" id="hero-copy-icon-you" aria-hidden="true">
-            <svg class="hero-command-copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 8.5A2.5 2.5 0 0 1 10.5 6h6A2.5 2.5 0 0 1 19 8.5v6A2.5 2.5 0 0 1 16.5 17h-6A2.5 2.5 0 0 1 8 14.5v-6Z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5h-.5A2.5 2.5 0 0 1 3 11V5.5A2.5 2.5 0 0 1 5.5 3H11a2.5 2.5 0 0 1 2.5 2.5V6" />
-            </svg>
-            <span class="hero-command-copied">copied</span>
-          </span>
-        </button>
-
-        <button type="button" class="hero-command hero-prompt-btn" id="hero-panel-agent" hidden>
-          <span class="hero-command-prompt" aria-hidden="true">⟐</span>
-          <span class="hero-command-text hero-prompt-label" id="hero-prompt-label">Copy Prompt</span>
-          <span class="hero-command-copy" aria-hidden="true">
-            <svg class="hero-command-copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 8.5A2.5 2.5 0 0 1 10.5 6h6A2.5 2.5 0 0 1 19 8.5v6A2.5 2.5 0 0 1 16.5 17h-6A2.5 2.5 0 0 1 8 14.5v-6Z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5h-.5A2.5 2.5 0 0 1 3 11V5.5A2.5 2.5 0 0 1 5.5 3H11a2.5 2.5 0 0 1 2.5 2.5V6" />
-            </svg>
-          </span>
-        </button>
-      </div>
-    </div>
+    {% capture home_choice_current %}
+      <button type="button" class="home-install-copy" id="hero-panel-you">
+        <code>curl -sfS https://dotenvx.sh | sh</code>
+      </button>
+      <button type="button" class="home-install-copy" id="hero-panel-agent" hidden>
+        <span class="home-install-copy-label" id="hero-prompt-label">Copy Prompt</span>
+      </button>
+    {% endcapture %}
+    {% capture home_choice_options %}
+      {% include components/design-choice-option.html
+        label="For you"
+        selected=true
+        value="you"
+      %}
+      {% include components/design-choice-option.html
+        label="For your agent"
+        value="agent"
+      %}
+    {% endcapture %}
+    {% include components/design-choice.html
+      count=2
+      aria_label="Audience"
+      current=home_choice_current
+      options=home_choice_options
+      class="home-install-choice"
+    %}
   </div>
 </section>
 
@@ -91,33 +124,37 @@ layout: radar
   }
 
   ready(function () {
-    var tabYou = document.getElementById('hero-tab-you')
-    var tabAgent = document.getElementById('hero-tab-agent')
+    var choice = document.querySelector('.home-install-choice')
+    var options = choice ? choice.querySelectorAll('.design-choice-option') : []
     var panelYou = document.getElementById('hero-panel-you')
     var panelAgent = document.getElementById('hero-panel-agent')
-    var copyIconYou = document.getElementById('hero-copy-icon-you')
     var promptLabel = document.getElementById('hero-prompt-label')
-    if (!tabYou || !tabAgent || !panelYou || !panelAgent) return
+    if (!choice || !options.length || !panelYou || !panelAgent) return
 
     function show(next) {
       tab = next
-      tabYou.classList.toggle('is-active', tab === 'you')
-      tabAgent.classList.toggle('is-active', tab === 'agent')
+      options.forEach(function (option) {
+        option.setAttribute('aria-pressed', option.getAttribute('data-choice-value') === tab ? 'true' : 'false')
+      })
       panelYou.hidden = tab !== 'you'
       panelAgent.hidden = tab !== 'agent'
-      copyIconYou.classList.remove('is-copied')
       promptLabel.textContent = 'Copy Prompt'
     }
 
-    tabYou.addEventListener('click', function () { show('you') })
-    tabAgent.addEventListener('click', function () { show('agent') })
+    options.forEach(function (option) {
+      option.addEventListener('click', function () {
+        show(option.getAttribute('data-choice-value') || 'you')
+      })
+    })
 
     panelYou.addEventListener('click', function () {
       copyText(youText, function () {
-        copyIconYou.classList.add('is-copied')
+        var code = panelYou.querySelector('code')
+        var prev = code.textContent
+        code.textContent = 'copied'
         clearTimeout(copyTimeout)
         copyTimeout = setTimeout(function () {
-          copyIconYou.classList.remove('is-copied')
+          code.textContent = prev
         }, 1100)
       })
     })

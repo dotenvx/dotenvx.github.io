@@ -11,46 +11,49 @@ layout: radar
     max-width: 36rem;
   }
 
-  .contact-hero-office {
+  .contact-hero-media {
     align-items: center;
     display: flex;
     height: 100%;
-    justify-content: flex-end;
+    justify-content: center;
     min-height: inherit;
+    width: 100%;
   }
 
-  .contact-hero-office .radar-nav-office {
-    flex: 0 0 auto;
+  .contact-hero-video {
+    aspect-ratio: 4 / 3;
+    background: #000;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
     width: min(22rem, 100%);
+  }
+
+  @media (min-width: 900px) {
+    .contact-hero-media {
+      justify-content: flex-end;
+    }
   }
 </style>
 
 {% capture contact_hero_visual %}
-  <div class="contact-hero-office">
-    <a
-      href="https://maps.google.com/?q=2450+Colorado+Ave+%23100,+Santa+Monica,+CA+90404"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="radar-nav-office"
-    >
-      <img
-        src="/dotenvx-la-office-evening-dither.gif"
-        alt="dotenvx Los Angeles office"
-        class="radar-nav-office-image"
-        loading="lazy"
-      />
-      <span class="radar-nav-office-copy">
-        <span class="radar-nav-office-label">Office</span>
-        <span class="radar-nav-office-line">2450 Colorado Ave #100</span>
-        <span class="radar-nav-office-line radar-nav-office-line--dim">Santa Monica, CA 90404</span>
-      </span>
-    </a>
+  <div class="contact-hero-media">
+    <video
+      class="contact-hero-video"
+      src="/dotenvx-la-office-evening.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-label="dotenvx Los Angeles office"
+    ></video>
   </div>
 {% endcapture %}
 {% include components/design-hero.html
-  eyebrow="Company"
+  eyebrow="Dotenvx"
   title="Contact"
-  description="Offices, support, and how to reach the dotenvx team."
+  description="We are based in LA and are back and forth often to SF."
   visual=contact_hero_visual
 %}
 

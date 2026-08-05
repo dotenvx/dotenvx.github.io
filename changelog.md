@@ -55,9 +55,9 @@ v1   v2   v3   v4</pre>
 
 <div class="changelog-page">
   {% include components/design-hero.html
-    eyebrow="Company"
+    eyebrow="Dotenvx"
     title="Changelog"
-    description="Product updates, releases, and notes from the dotenvx team."
+    description="We're continually improving Dotenvx and Armor."
     visual=changelog_hero_visual
   %}
 

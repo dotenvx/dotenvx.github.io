@@ -14,9 +14,9 @@ layout: radar
 </style>
 
 {% include components/design-hero.html
-  eyebrow="Company"
+  eyebrow="Dotenvx"
   title="Open Source"
-  description="Our open work and contributions to the community."
+  description="We're big into secrets, encryption, and agentic identity."
   public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
   keysee_render_mode="wire"
 %}

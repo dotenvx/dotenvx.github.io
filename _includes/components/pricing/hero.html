@@ -1,25 +1,35 @@
 <style>
+  .pricing-design-hero .design-hero-visual {
+    min-height: 0;
+  }
+
   .pricing-hero-media {
     align-items: center;
     display: flex;
     height: 100%;
     justify-content: center;
-    min-height: inherit;
     width: 100%;
   }
 
   .pricing-hero-video {
+    /* Native desk footage is portrait 2560×3184 */
+    aspect-ratio: 2560 / 3184;
     background: #000;
     display: block;
-    height: 17rem;
+    height: auto;
     max-width: 100%;
     object-fit: cover;
-    width: 100%;
+    width: 25%;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
+    .pricing-design-hero .design-hero-visual {
+      min-height: 23rem;
+    }
+
     .pricing-hero-video {
       height: 23rem;
+      width: 100%;
     }
   }
 </style>
@@ -39,7 +49,8 @@
 {% endcapture %}
 
 {% include components/design-hero.html
-  eyebrow="Dotenvx Armor ⛨"
+  class="pricing-design-hero"
+  eyebrow="Armor ⛨"
   title="Pricing"
   description="Dotenvx is free and open source. But you can pay for Dotenvx Armor."
   visual=pricing_hero_visual

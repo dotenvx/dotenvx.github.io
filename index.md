@@ -61,7 +61,7 @@ layout: radar
   class="home-design-hero"
   eyebrow=home_hero_eyebrow
   title="Dotenvx"
-  description="A secure dotenv–encrypt your .env files."
+  description="Designed as a secure dotenv. You can encrypt your .env files."
   public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
   keysee_render_mode="solid"
 %}

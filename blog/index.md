@@ -4,7 +4,7 @@ layout: radar
 ---
 
 {% include components/design-hero.html
-  eyebrow="Company"
+  eyebrow="Dotenvx"
   title="Blog"
   description="Notes on secrets, .env files, and building dotenvx."
   shell_class="blog-index-shell"

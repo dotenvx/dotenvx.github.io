@@ -23,7 +23,7 @@ layout: radar
     <p>
       Software is changing, and dotenv must change with it. That is why I built
       <a href="https://as2.dotenvx.com">agentic secret storage (AS2)</a>. Agents run code without humans at terminals, so plaintext
-      <code>.env</code> files are the wrong primitive.
+      {% include components/design-code.html value=".env" %} files are the wrong primitive.
     </p>
     <p>
       AS2 is built for autonomous software: encrypted by default, zero console access, and
@@ -48,10 +48,10 @@ layout: radar
 
 vestauth agent init</code></pre>
 
-      <p>Your agent sets secrets with a simple <code>curl</code> endpoint:</p>
+      <p>Your agent sets secrets with a simple {% include components/design-code.html value="curl" %} endpoint:</p>
       <pre><code>vestauth agent curl -X POST https://as2.dotenvx.com/set -d '{"KEY":"value"}'</code></pre>
 
-      <p>And your agent gets secrets with a simple <code>curl</code> endpoint:</p>
+      <p>And your agent gets secrets with a simple {% include components/design-code.html value="curl" %} endpoint:</p>
       <pre><code>vestauth agent curl "https://as2.dotenvx.com/get?key=KEY"</code></pre>
 
       <p>

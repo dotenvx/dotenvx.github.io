@@ -2228,6 +2228,37 @@ html.dark .design-link:focus {
   font-weight: 600 !important;
 }
 
+/* Mirrored from ../radar design-code */
+.design-code {
+  background: color-mix(in srgb, var(--design-ink) 6%, transparent) !important;
+  border: 0 !important;
+  border-radius: 0.25rem !important;
+  box-shadow: none !important;
+  color: var(--design-mid) !important;
+  display: inline-block;
+  font-family: var(--design-font-mono) !important;
+  font-size: 0.84em !important;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  line-height: inherit;
+  padding: 0.12rem 0.35rem !important;
+  text-transform: none;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+html.dark .design-code {
+  background: color-mix(in srgb, var(--design-ink) 8%, transparent) !important;
+  color: var(--design-mid) !important;
+}
+
+.design-code-row {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
 .design-paragraph {
   color: var(--design-body, var(--design-ink));
   font-family: var(--design-font-sans);
@@ -2357,7 +2388,7 @@ a.design-cta-message:visited {
   letter-spacing: -0.02em;
   line-height: 1.3;
   margin: 0 auto;
-  max-width: 28rem;
+  max-width: 36rem;
   text-align: center;
   text-decoration: none !important;
   text-transform: none;

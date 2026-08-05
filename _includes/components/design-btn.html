@@ -7,6 +7,8 @@
   <a
     href="{{ href }}"
     class="design-btn{% if btn_class %} {{ btn_class }}{% endif %}"
+    {% if include.id %}id="{{ include.id }}"{% endif %}
+    {% if include.hidden %}hidden{% endif %}
     {% if include.target %}target="{{ include.target }}"{% endif %}
     {% if include.rel %}rel="{{ include.rel }}"{% endif %}
   >{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</a>
@@ -14,6 +16,8 @@
   <button
     type="{{ btn_type }}"
     class="design-btn{% if btn_class %} {{ btn_class }}{% endif %}"
+    {% if include.id %}id="{{ include.id }}"{% endif %}
+    {% if include.hidden %}hidden{% endif %}
     {% if include.disabled %}disabled aria-disabled="true"{% endif %}
   >{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</button>
 {% endif %}

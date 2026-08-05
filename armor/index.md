@@ -14,38 +14,8 @@ layout: radar
     padding: 1.25rem 1.35rem;
   }
 
-  .armor-install-copy {
-    align-items: center;
-    background: transparent;
-    border: 0;
-    color: var(--design-ink);
-    cursor: pointer;
-    display: flex;
-    font: inherit;
-    justify-content: center;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-  }
-
-  .armor-install-copy[hidden] {
+  .armor-install-choice .design-btn[hidden] {
     display: none !important;
-  }
-
-  .armor-install-copy code,
-  .armor-install-copy-label {
-    color: inherit;
-    font-family: var(--design-font-mono);
-    font-size: clamp(1rem, 2.4vw, 1.35rem);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.35;
-  }
-
-  .armor-install-copy:hover,
-  .armor-install-copy:focus-visible {
-    color: var(--design-gold);
-    outline: none;
   }
 </style>
 
@@ -62,30 +32,43 @@ layout: radar
   <section class="radar-section" aria-label="Get started with Armor">
     <div class="armor-shell">
       {% capture armor_choice_current %}
-        <button type="button" class="armor-install-copy" id="armor-panel-you">
-          <code>dotenvx armor up</code>
-        </button>
-        <button type="button" class="armor-install-copy" id="armor-panel-agent" hidden>
-          <span class="armor-install-copy-label" id="armor-prompt-label">Copy Prompt</span>
-        </button>
+        {% include components/design-btn.html
+          label="Sign Up"
+          href="/signup"
+          id="armor-panel-you"
+        %}
+        {% include components/design-btn.html
+          label="Copy Prompt"
+          id="armor-panel-agent"
+          class="armor-install-prompt-btn"
+          hidden=true
+        %}
       {% endcapture %}
       {% capture armor_choice_options %}
         {% include components/design-choice-option.html
-          label="For you"
+          label="Signup yourself"
           selected=true
           value="you"
         %}
         {% include components/design-choice-option.html
-          label="For your agent"
+          label="Signup your agent"
           value="agent"
         %}
       {% endcapture %}
       {% include components/design-choice.html
         count=2
-        aria_label="Audience"
+        aria_label="Signup"
         current=armor_choice_current
         options=armor_choice_options
         class="armor-install-choice"
+      %}
+    </div>
+  </section>
+
+  <section class="radar-section" aria-label="Next step">
+    <div class="armor-shell">
+      {% include components/design-cta-message.html
+        text="Armor is my vision of what good secrets managagement and encryption should be. There is so much original design put into it, and I really hope you like it. – Scott Motte"
       %}
     </div>
   </section>
@@ -101,9 +84,7 @@ layout: radar
 
 <script>
 (function () {
-  var youText = 'dotenvx armor up'
-  var agentText = 'Log in to Dotenvx Armor with `dotenvx login`, generate a .env file that includes a private key, run `dotenvx armor up` to move that key off device under Armor, then run `dotenvx armor open` to open and view it.'
-  var tab = 'you'
+  var agentText = 'Sign up for Dotenvx Armor: run `dotenvx login`, create or open a .env with a private key, run `dotenvx armor up` to move that key off device under Armor, then run `dotenvx armor open` to open and view it.'
   var copyTimeout
 
   function ready(fn) {
@@ -130,17 +111,15 @@ layout: radar
     var options = choice ? choice.querySelectorAll('.design-choice-option') : []
     var panelYou = document.getElementById('armor-panel-you')
     var panelAgent = document.getElementById('armor-panel-agent')
-    var promptLabel = document.getElementById('armor-prompt-label')
     if (!choice || !options.length || !panelYou || !panelAgent) return
 
     function show(next) {
-      tab = next
       options.forEach(function (option) {
-        option.setAttribute('aria-pressed', option.getAttribute('data-choice-value') === tab ? 'true' : 'false')
+        option.setAttribute('aria-pressed', option.getAttribute('data-choice-value') === next ? 'true' : 'false')
       })
-      panelYou.hidden = tab !== 'you'
-      panelAgent.hidden = tab !== 'agent'
-      promptLabel.textContent = 'Copy Prompt'
+      panelYou.hidden = next !== 'you'
+      panelAgent.hidden = next !== 'agent'
+      panelAgent.textContent = 'Copy Prompt'
     }
 
     options.forEach(function (option) {
@@ -149,24 +128,13 @@ layout: radar
       })
     })
 
-    panelYou.addEventListener('click', function () {
-      copyText(youText, function () {
-        var code = panelYou.querySelector('code')
-        var prev = code.textContent
-        code.textContent = 'copied'
-        clearTimeout(copyTimeout)
-        copyTimeout = setTimeout(function () {
-          code.textContent = prev
-        }, 1100)
-      })
-    })
-
-    panelAgent.addEventListener('click', function () {
+    panelAgent.addEventListener('click', function (event) {
+      event.preventDefault()
       copyText(agentText, function () {
-        promptLabel.textContent = 'Copied'
+        panelAgent.textContent = 'Copied'
         clearTimeout(copyTimeout)
         copyTimeout = setTimeout(function () {
-          promptLabel.textContent = 'Copy Prompt'
+          panelAgent.textContent = 'Copy Prompt'
         }, 1100)
       })
     })

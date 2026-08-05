@@ -4,6 +4,52 @@ layout: radar
 ---
 
 <style>
+  /* Sparse ascii visual — don't inherit the 17rem/23rem hero media slot */
+  .home-design-hero .design-hero-visual {
+    min-height: 8.5rem;
+  }
+
+  .home-hero-code {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    min-height: inherit;
+    width: 100%;
+  }
+
+  .home-hero-code-copy {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .home-hero-code-copy:hover .design-code,
+  .home-hero-code-copy:focus-visible .design-code {
+    color: var(--design-ink) !important;
+    outline: none;
+  }
+
+  .home-hero-code-copy:focus-visible {
+    outline: none;
+  }
+
+  @media (min-width: 900px) {
+    .home-design-hero .design-hero-visual {
+      min-height: 23rem;
+    }
+
+    .home-hero-code {
+      height: 100%;
+      min-height: inherit;
+    }
+  }
+
   .home-install-choice {
     width: 100%;
   }
@@ -31,20 +77,14 @@ layout: radar
     display: none !important;
   }
 
-  .home-install-copy code,
-  .home-install-copy-label {
-    color: inherit;
-    font-family: var(--design-font-mono);
-    font-size: clamp(1rem, 2.4vw, 1.35rem);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.35;
-  }
-
   .home-install-copy:hover,
   .home-install-copy:focus-visible {
     color: var(--design-gold);
     outline: none;
+  }
+
+  .home-install-prompt-btn[hidden] {
+    display: none !important;
   }
 </style>
 
@@ -57,24 +97,34 @@ layout: radar
   </a>
 {% endcapture %}
 
+{% capture home_hero_visual %}
+  <div class="home-hero-code">
+    <button type="button" class="home-hero-code-copy" id="home-hero-encrypt" aria-label="Copy dotenvx encrypt">
+      {% include components/design-code.html value="$ dotenvx encrypt" %}
+    </button>
+  </div>
+{% endcapture %}
+
 {% include components/design-hero.html
   class="home-design-hero"
   eyebrow=home_hero_eyebrow
   title="Dotenvx"
   description="Designed as a secure dotenv. You can encrypt your .env files."
-  public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
-  keysee_render_mode="solid"
+  visual=home_hero_visual
 %}
 
 <section class="radar-section" aria-label="Install dotenvx">
   <div class="armor-shell">
     {% capture home_choice_current %}
       <button type="button" class="home-install-copy" id="hero-panel-you">
-        <code>curl -sfS https://dotenvx.sh | sh</code>
+        {% include components/design-code.html value="$ curl -sfS https://dotenvx.sh | sh" %}
       </button>
-      <button type="button" class="home-install-copy" id="hero-panel-agent" hidden>
-        <span class="home-install-copy-label" id="hero-prompt-label">Copy Prompt</span>
-      </button>
+      {% include components/design-btn.html
+        label="Copy Prompt"
+        id="hero-panel-agent"
+        class="home-install-prompt-btn"
+        hidden=true
+      %}
     {% endcapture %}
     {% capture home_choice_options %}
       {% include components/design-choice-option.html
@@ -97,8 +147,17 @@ layout: radar
   </div>
 </section>
 
+<section class="radar-section" aria-label="Next step">
+  <div class="armor-shell">
+    {% include components/design-cta-message.html
+      text="Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It just feels so good."
+    %}
+  </div>
+</section>
+
 <script>
 (function () {
+  var encryptText = 'dotenvx encrypt'
   var youText = 'curl -sfS https://dotenvx.sh | sh'
   var agentText = 'Install dotenvx (curl -sfS https://dotenvx.sh | sh), encrypt this project\'s .env with dotenvx encrypt, keep .env.keys out of git, and run the app with dotenvx run -- your-command.'
   var tab = 'you'
@@ -123,12 +182,32 @@ layout: radar
     onDone()
   }
 
+  function flashCode(button, nextLabel) {
+    var code = button.querySelector('code')
+    if (!code) return
+    var prev = code.textContent
+    code.textContent = nextLabel
+    clearTimeout(copyTimeout)
+    copyTimeout = setTimeout(function () {
+      code.textContent = prev
+    }, 1100)
+  }
+
   ready(function () {
+    var encryptBtn = document.getElementById('home-hero-encrypt')
     var choice = document.querySelector('.home-install-choice')
     var options = choice ? choice.querySelectorAll('.design-choice-option') : []
     var panelYou = document.getElementById('hero-panel-you')
     var panelAgent = document.getElementById('hero-panel-agent')
-    var promptLabel = document.getElementById('hero-prompt-label')
+
+    if (encryptBtn) {
+      encryptBtn.addEventListener('click', function () {
+        copyText(encryptText, function () {
+          flashCode(encryptBtn, 'copied')
+        })
+      })
+    }
+
     if (!choice || !options.length || !panelYou || !panelAgent) return
 
     function show(next) {
@@ -138,7 +217,7 @@ layout: radar
       })
       panelYou.hidden = tab !== 'you'
       panelAgent.hidden = tab !== 'agent'
-      promptLabel.textContent = 'Copy Prompt'
+      panelAgent.textContent = 'Copy Prompt'
     }
 
     options.forEach(function (option) {
@@ -149,22 +228,16 @@ layout: radar
 
     panelYou.addEventListener('click', function () {
       copyText(youText, function () {
-        var code = panelYou.querySelector('code')
-        var prev = code.textContent
-        code.textContent = 'copied'
-        clearTimeout(copyTimeout)
-        copyTimeout = setTimeout(function () {
-          code.textContent = prev
-        }, 1100)
+        flashCode(panelYou, 'copied')
       })
     })
 
     panelAgent.addEventListener('click', function () {
       copyText(agentText, function () {
-        promptLabel.textContent = 'Copied'
+        panelAgent.textContent = 'Copied'
         clearTimeout(copyTimeout)
         copyTimeout = setTimeout(function () {
-          promptLabel.textContent = 'Copy Prompt'
+          panelAgent.textContent = 'Copy Prompt'
         }, 1100)
       })
     })

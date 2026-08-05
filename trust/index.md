@@ -265,7 +265,7 @@ image: "/assets/img/og-image-trust.png"
       <div class="relative z-10">
         <h1 class="max-w-3xl text-2xl font-semibold leading-tight text-white md:text-3xl">Dotenvx</h1>
         <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
-          From the creator of dotenv, Dotenvx extends the <code>.env</code> workflow trusted by developers for over a decade with encryption, key separation, and secure secret distribution.
+          From the creator of dotenv, Dotenvx extends the {% include components/design-code.html value=".env" %} workflow trusted by developers for over a decade with encryption, key separation, and secure secret distribution.
         </p>
         <a class="trust-email-address mt-5 inline-flex items-center gap-2 text-sm font-medium !text-[#ecd53f] no-underline hover:!text-[#f7e87a] hover:no-underline" href="mailto:security@dotenvx.com">
           <svg class="trust-email-icon h-4 w-4 text-[#ecd53f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">

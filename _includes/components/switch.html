@@ -12,9 +12,9 @@
   </p>
 
   <div class="rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 p-6 font-mono text-xs md:text-base text-zinc-800 dark:text-zinc-100 shadow-sm overflow-x-auto">
-    <code class="block text-zinc-500">// before</code>
+    {% include components/design-code.html value="// before" class="block" %}
     <div class="my-1 text-slate-400 font-semibold">require('dotenv').config()</div>
-    <code class="block text-zinc-500 mt-6">// after</code>
+    {% include components/design-code.html value="// after" class="block mt-6" %}
     <div class="text-green-500 dark:text-green-400 font-semibold">require('@dotenvx/dotenvx').config()</div>
   </div>
 

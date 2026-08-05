@@ -74,7 +74,7 @@ v1   v2   v3   v4</pre>
     class="changelog-design-hero"
     eyebrow="Dotenvx"
     title="Changelog"
-    description="We're continually improving Dotenvx and Armor."
+    description="Check back often. We're working hard still on Dotenvx and Armor."
     visual=changelog_hero_visual
   %}
 

@@ -1,0 +1,6 @@
+{% assign value = include.value %}
+{% assign code_class = include.class %}
+<code
+  class="design-code{% if code_class %} {{ code_class }}{% endif %}"
+  {% if include.id %}id="{{ include.id }}"{% endif %}
+>{% if value and value != "" %}{{ value }}{% else %}{{ include.content }}{% endif %}</code>

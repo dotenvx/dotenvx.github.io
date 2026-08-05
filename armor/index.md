@@ -5,13 +5,6 @@ layout: radar
 ---
 
 <style>
-  .armor-design-hero .design-page-title {
-    font-size: clamp(3.25rem, 8.5vw, 4.85rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1.02;
-  }
-
   .armor-install-choice {
     width: 100%;
   }
@@ -58,7 +51,7 @@ layout: radar
 
 <div class="armor-page">
   {% include components/design-hero.html
-    class="armor-design-hero"
+    class="home-design-hero"
     eyebrow="For professional software teams"
     title="Armor ⛨"
     description="Move your private keys off device. And keep their secrets under guard."

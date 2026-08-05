@@ -16,7 +16,6 @@
     <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
       <a href="/" class="radar-nav-link{% if radar_path == '/' or radar_path == '' %} is-active{% endif %}">Dotenvx</a>
       <a href="/armor" class="radar-nav-link{% if radar_path == '/armor/' or radar_path == '/armor' %} is-active{% endif %}">Armor <span aria-hidden="true">⛨</span></a>
-      <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %} is-active{% endif %}">Docs</a>
 
       <div class="radar-nav-item" data-radar-nav-item data-nav-menu="company">
         <button
@@ -33,6 +32,7 @@
         </button>
       </div>
 
+      <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %} is-active{% endif %}">Docs</a>
       <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
     </nav>
 
@@ -94,11 +94,11 @@
     <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
       <a href="/" class="radar-mobile-link">Dotenvx</a>
       <a href="/armor" class="radar-mobile-link">Armor <span aria-hidden="true">⛨</span></a>
-      <a href="/docs" class="radar-mobile-link">Docs</a>
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="company">
         <span>Company</span>
         <span aria-hidden="true">→</span>
       </button>
+      <a href="/docs" class="radar-mobile-link">Docs</a>
       <a href="/pricing" class="radar-mobile-link">Pricing</a>
     </nav>
 

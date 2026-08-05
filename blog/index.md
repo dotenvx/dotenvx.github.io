@@ -3,7 +3,7 @@ title: "Blog"
 layout: radar
 ---
 
-{% include components/design-hero.html
+{% include components/blog/hero.html
   eyebrow="Dotenvx"
   title="Blog"
   description="Notes on secrets, .env files, and building dotenvx."

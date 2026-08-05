@@ -1,0 +1,3 @@
+{% assign key = include.key %}
+{% assign kbd_class = include.class %}
+<kbd class="design-kbd{% if kbd_class %} {{ kbd_class }}{% endif %}">{{ key }}</kbd>

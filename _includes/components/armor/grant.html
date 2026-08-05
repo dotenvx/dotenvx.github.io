@@ -1,0 +1,48 @@
+<section class="radar-section armor-section">
+  <div class="radar-shell home-hero-shell armor-story">
+    <div class="armor-story-copy">
+      <h2 class="armor-story-title">Grant decryption, not possession.</h2>
+      <p class="armor-story-lede">Private keys are retrieved only when an authorized workflow needs them. Used in memory, then gone — so developers, CI, and agents can decrypt without keeping long-lived keys on disk.</p>
+    </div>
+
+    <div class="armor-grant">
+      <div class="armor-grant-body">
+        <div class="armor-grant-mark">
+          {% include components/logo.html variant="black" class="armor-grant-logo" %}
+        </div>
+        <div class="armor-grant-key">
+          {% include components/keysee-viewer.html public_key="03c969504ab3c95c2873cab950575d874b061f4582186971c740dc60b27e87de7f" framing_padding="0.26" material_color="0xaeaaa0" render_mode="wire" spin_delay="0" spin_speed="0.42" class="relative h-36 min-h-0 w-full overflow-hidden bg-transparent opacity-80" %}
+        </div>
+        <h3 class="armor-grant-title">Grant this decryption?</h3>
+
+        <div class="armor-grant-meta">
+          <div class="armor-grant-row">
+            <span class="armor-grant-icon" aria-hidden="true">❯</span>
+            <div>
+              <div class="armor-grant-label">Command</div>
+              <pre class="armor-grant-value">dotenvx run -- npm start</pre>
+            </div>
+          </div>
+          <div class="armor-grant-row">
+            <span class="armor-grant-icon" aria-hidden="true">⌖</span>
+            <div>
+              <div class="armor-grant-label">Location</div>
+              <div class="armor-grant-text">Near San Francisco, California, United States</div>
+            </div>
+          </div>
+          <div class="armor-grant-row">
+            <span class="armor-grant-icon" aria-hidden="true">▭</span>
+            <div>
+              <div class="armor-grant-label">Device</div>
+              <div class="armor-grant-text">MAC_OS_X</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="armor-grant-actions">
+        <button type="button" class="armor-grant-btn">Yes, approve</button>
+        <button type="button" class="armor-grant-btn">No, deny</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+<section class="home-hero armor-hero hero-no-select">
+  <div class="radar-shell home-hero-shell">
+    <div class="home-hero-grid">
+      <div class="home-hero-copy hero-copy-enter">
+        <p class="home-kicker">Professional Security</p>
+        <h1 class="home-title">Armored Keys ⛨</h1>
+        <p class="home-lede">Private keys. Off device. Under guard.</p>
+
+        <div class="armor-hero-start" id="armor-hero-start">
+          <button type="button" class="armor-hero-copy" id="armor-hero-command">
+            <code id="armor-hero-command-text">dotenvx armor up</code>
+          </button>
+          <p class="armor-hero-links">
+            <a href="/signup">Create Account</a>
+            <span aria-hidden="true">·</span>
+            <a href="/docs/armor">Documentation</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="home-hero-visual">
+        {% include components/three-ops-rect.html height="170px" mode="shield" class="h-[170px] md:!h-[560px]" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var commandText = 'dotenvx armor up'
+  var copyTimeout
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn()
+    else document.addEventListener('DOMContentLoaded', fn)
+  }
+
+  function copyText(text, onDone) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(onDone)
+      return
+    }
+    var textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    onDone()
+  }
+
+  ready(function () {
+    var command = document.getElementById('armor-hero-command')
+    var commandLabel = document.getElementById('armor-hero-command-text')
+    if (!command || !commandLabel) return
+
+    command.addEventListener('click', function () {
+      copyText(commandText, function () {
+        commandLabel.textContent = 'copied'
+        clearTimeout(copyTimeout)
+        copyTimeout = setTimeout(function () {
+          commandLabel.textContent = commandText
+        }, 1100)
+      })
+    })
+  })
+})()
+</script>

@@ -1,50 +1,83 @@
 {% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
+{% assign armored_keys_feature = site.data.plans.features | where: "id", "armored_keys" | first %}
+{% capture yes %}{% include components/design-check.html tone="success" size="sm" label="Included" %}{% endcapture %}
+{% assign no = "—" %}
 
-<section class="radar-section">
-  <div class="radar-shell pricing-compare-shell">
-    <h2 class="radar-section-title">Audit &amp; Trust</h2>
-    <div class="radar-panel pricing-table-wrap">
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Pro</th>
-            <th>Team</th>
-            <th>Business</th>
-            <th>Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Audit Logs</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr>
-            <td>Audit Retention</td>
-            <td>{{ audit_retention_feature.values.pro }}</td>
-            <td>{{ audit_retention_feature.values.team }}</td>
-            <td>{{ audit_retention_feature.values.business }}</td>
-            <td>{{ audit_retention_feature.values.enterprise }}</td>
-          </tr>
-          <tr>
-            <td>Access Alerts</td>
-            <td class="pricing-empty">—</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-          <tr>
-            <td>SIEM / Log Export</td>
-            <td class="pricing-empty">—</td>
-            <td class="pricing-empty">—</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-            <td>{% include components/checkmark-circle-green.html %}</td>
-          </tr>
-        </tbody>
-      </table>
+{% capture compare_audit_body %}
+  <thead>
+    <tr>
+      <th scope="col">Feature</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Pro</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Team</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Business</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Enterprise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Armor Keys</th>
+      <td class="design-table-cell--center">{{ armored_keys_feature.values.pro }}</td>
+      <td class="design-table-cell--center">{{ armored_keys_feature.values.team }}</td>
+      <td class="design-table-cell--center">{{ armored_keys_feature.values.business }}</td>
+      <td class="design-table-cell--center">{{ armored_keys_feature.values.enterprise }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Guard Keys</th>
+      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Enclave Keys</th>
+      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Rotate Keys</th>
+      <td class="design-table-cell--center">Manual</td>
+      <td class="design-table-cell--center">Command</td>
+      <td class="design-table-cell--center">Command</td>
+      <td class="design-table-cell--center">Command</td>
+    </tr>
+    <tr>
+      <th scope="row">Audit Logs</th>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Audit Retention</th>
+      <td class="design-table-cell--center">{{ audit_retention_feature.values.pro }}</td>
+      <td class="design-table-cell--center">{{ audit_retention_feature.values.team }}</td>
+      <td class="design-table-cell--center">{{ audit_retention_feature.values.business }}</td>
+      <td class="design-table-cell--center">custom</td>
+    </tr>
+    <tr>
+      <th scope="row">SIEM / Log Export</th>
+      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
+      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
+      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+    </tr>
+  </tbody>
+{% endcapture %}
+
+{% capture compare_audit_table %}
+  {% include components/design-table.html class="design-table-wrap--fill" content=compare_audit_body %}
+{% endcapture %}
+
+<section class="radar-section" aria-label="Security comparison">
+  <div class="armor-shell">
+    {% include components/design-page-header.html
+      title="Security"
+      heading_tag="h2"
+    %}
+    <div class="pricing-compare">
+      {% include components/design-card.html content=compare_audit_table %}
     </div>
   </div>
 </section>

@@ -16,11 +16,11 @@
         "members": 1,
         "armored_keys": null,
         "audit_events": 50000,
-        "audit_retention_days": 3
+        "audit_retention_days": 5
       },
       "highlights": [
         "1 user",
-        "3 days audit retention",
+        "Audit retention: 5 days",
         "Unlimited armored keys"
       ]
     },
@@ -44,7 +44,7 @@
       },
       "highlights": [
         "3 users",
-        "30 days audit retention",
+        "Audit retention: 30 days",
         "Unlimited armored keys"
       ]
     },
@@ -68,7 +68,7 @@
       },
       "highlights": [
         "10 users",
-        "90 days audit retention",
+        "Audit retention: 90 days",
         "Unlimited armored keys"
       ]
     },
@@ -92,7 +92,7 @@
       },
       "highlights": [
         "Custom users",
-        "Custom audit retention",
+        "Audit retention: Custom",
         "Unlimited armored keys"
       ]
     }
@@ -112,7 +112,7 @@
       "id": "audit_retention",
       "label": "Audit retention",
       "values": {
-        "pro": "3 days",
+        "pro": "5 days",
         "team": "30 days",
         "business": "90 days",
         "enterprise": "Flexible"

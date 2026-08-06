@@ -1,12 +1,31 @@
-<section class="radar-section">
-  <div class="radar-shell pricing-faq-shell">
-    <h2 class="radar-section-title">FAQ</h2>
-    <dl class="pricing-faq">
-      {% include components/faq-question.html question="What are audit logs?" answer="Armor records access activity across your workspace—who accessed what, and when. That trail is how Armor turns decryption into trust. Every plan includes unlimited audit logs with a retention window: 3 days on Pro, 30 days on Team, and 90 days on Business. Higher plans keep evidence longer and add export options." %}
-      {% include components/faq-question.html question="Are armored keys limited?" answer="No. Every plan includes unlimited armored keys. You pay for users and how long you keep the audit trail—not for how many keys you protect." %}
-      {% include components/faq-question.html question="How does encryption work?" answer='Dotenvx uses Elliptic Curve Integrated Encryption Scheme (ECIES) to encrypt each secret with a unique ephemeral key, while ensuring it can be decrypted using a long-term private key.<br/><br/>When you initialize encryption, a DOTENV_PUBLIC_KEY (encryption key) and DOTENV_PRIVATE_KEY (decryption key) are generated. The DOTENV_PUBLIC_KEY is used to encrypt secrets, and the DOTENV_PRIVATE_KEY is securely stored in your cloud secrets manager or .env.keys file.<br/><br/>Your encrypted .env file is then safely committed to code. Even if the file is exposed, secrets remain protected since decryption requires the separate DOTENV_PRIVATE_KEY, which is never stored alongside it. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-      {% include components/faq-question.html question="Is it safe to commit an encrypted .env file to code?" answer='Yes. Dotenvx uses ECIES public-key encryption, combining ephemeral key agreement with AES-256 secret encryption so that even if the encrypted .env file is exposed, its contents remain secure. The encryption keys themselves are protected using Secp256k1 elliptic curve cryptography, which is widely used for secure key exchange in technologies like Bitcoin.<br/><br/>This means that every secret in the .env file is encrypted with a unique AES-256 key, and that key is further encrypted using a public key (Secp256k1). Even if an attacker obtains the encrypted .env file, they would still need the corresponding private key—stored separately—to decrypt anything.<br/><br/>Breaking this encryption would require brute-forcing both AES-256 and elliptic curve cryptography, which is computationally infeasible with current technology. Read <a href="/dotenvx.pdf">the whitepaper</a> for more details.' %}
-      {% include components/faq-question.html question="How does it protect me from security incidents like Vercel's?" answer="In the Vercel incident scenario, if an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key. To steal your secrets, an attacker needs both the private key and the encrypted .env files." %}
-    </dl>
+{% capture pricing_faq_items %}
+  <li class="pricing-faq-item">
+    <span class="pricing-faq-q">What are audit logs?</span>
+    <span class="pricing-faq-a">Armor records access activity across your workspace—who accessed what, and when. Every plan includes unlimited audit logs with a retention window: 5 days on Pro, 30 days on Team, and 90 days on Business.</span>
+  </li>
+  <li class="pricing-faq-item">
+    <span class="pricing-faq-q">Are armored keys limited?</span>
+    <span class="pricing-faq-a">No. Every plan includes unlimited armored keys. You pay for users and how long you keep the audit trail—not for how many keys you protect.</span>
+  </li>
+  <li class="pricing-faq-item">
+    <span class="pricing-faq-q">How does encryption work?</span>
+    <span class="pricing-faq-a">Dotenvx uses ECIES to encrypt each secret with a unique ephemeral key, decrypted with a long-term private key. The public key encrypts; the private key stays in your secrets manager or .env.keys. Read <a class="design-link" href="/dotenvx.pdf">the whitepaper</a> for details.</span>
+  </li>
+  <li class="pricing-faq-item">
+    <span class="pricing-faq-q">Is it safe to commit an encrypted .env file?</span>
+    <span class="pricing-faq-a">Yes. Even if the encrypted file is exposed, secrets stay protected without the separate private key. Breaking that requires brute-forcing AES-256 and elliptic curve crypto. Read <a class="design-link" href="/dotenvx.pdf">the whitepaper</a> for details.</span>
+  </li>
+  <li class="pricing-faq-item">
+    <span class="pricing-faq-q">How does it protect me from incidents like Vercel’s?</span>
+    <span class="pricing-faq-a">If an attacker accesses environment variables, they still cannot decrypt your encrypted .env secrets without the separate private decryption key.</span>
+  </li>
+{% endcapture %}
+
+<section class="radar-section" aria-label="Pricing FAQ">
+  <div class="armor-shell">
+    {% include components/design-list.html
+      title="FAQ"
+      items=pricing_faq_items
+    %}
   </div>
 </section>

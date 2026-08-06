@@ -1,0 +1,33 @@
+{% assign tone = include.tone | default: "neutral" %}
+{% assign size = include.size %}
+{% assign title = include.title %}
+{% if include.label and include.label != "" %}
+  {% assign label = include.label %}
+{% elsif tone == "success" %}
+  {% assign label = "Success" %}
+{% elsif tone == "danger" %}
+  {% assign label = "Failed" %}
+{% else %}
+  {% assign label = "Pending" %}
+{% endif %}
+{% if tone == "danger" %}
+  {% assign mark = "x" %}
+{% else %}
+  {% assign mark = "check" %}
+{% endif %}
+<span
+  class="design-check design-check--{{ tone }}{% if size and size != "" %} design-check--{{ size }}{% endif %}{% if include.class %} {{ include.class }}{% endif %}"
+  role="img"
+  aria-label="{{ label }}"
+  {% if title and title != "" %}title="{{ title }}"{% endif %}
+>
+  {% if mark == "x" %}
+    <svg class="design-check-mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <path d="M4.2 4.2l7.6 7.6M11.8 4.2l-7.6 7.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"/>
+    </svg>
+  {% else %}
+    <svg class="design-check-mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <path d="M3.2 8.2l3.1 3.1 6.5-6.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"/>
+    </svg>
+  {% endif %}
+</span>

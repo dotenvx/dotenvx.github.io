@@ -14,21 +14,16 @@ JEKYLL_ENV=production bundle exec jekyll build
 
 #### Pricing plans
 
-`/pricing` loads plan prices and limits from Radar at build time:
+`/pricing` loads plan prices and limits from committed `_data/plans.json` (Pro audit retention is **5 days**).
+
+Optionally sync from Radar by setting `PLANS_API_URL`:
 
 ```
-https://armor.dotenvx.com/public/plans
-```
-
-The Jekyll plugin `_plugins/plans.rb` fetches that JSON into `site.data.plans`. If the fetch fails, or the API payload is missing retention pricing fields, it falls back to committed `_data/plans.json`.
-
-Plans are priced by **users** and **audit retention**. Armored keys and audit log volume are unlimited on every plan.
-
-Override the URL when needed:
-
-```
+PLANS_API_URL=https://armor.dotenvx.com/public/plans JEKYLL_ENV=production bundle exec jekyll serve
 PLANS_API_URL=http://localhost:3000/public/plans JEKYLL_ENV=production bundle exec jekyll serve
 ```
+
+Plans are priced by **users** and **audit retention**. Armored keys and audit log volume are unlimited on every plan.
 
 #### To include /docs
 

@@ -1,19 +1,5 @@
-<section class="radar-section">
-  <div class="radar-shell">
-    <div class="pricing-plan-grid">
-      {% for plan in site.data.plans.plans %}
-        {% case plan.id %}
-          {% when "pro" %}
-            {% assign border_classes = "pricing-plan--first" %}
-          {% when "team" %}
-            {% assign border_classes = "pricing-plan--mid" %}
-          {% when "business" %}
-            {% assign border_classes = "pricing-plan--mid" %}
-          {% else %}
-            {% assign border_classes = "pricing-plan--last" %}
-        {% endcase %}
-        {% include components/pricing-plan-card.html plan=plan border_classes=border_classes %}
-      {% endfor %}
-    </div>
+<section class="radar-section" aria-label="Pricing overview">
+  <div class="armor-shell">
+    {% include components/pricing/summary.html %}
   </div>
 </section>

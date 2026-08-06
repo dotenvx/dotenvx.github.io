@@ -1,0 +1,5 @@
+{% assign tone = include.tone %}
+{% assign card_class = include.class %}
+<div class="design-card{% if tone and tone != "" %} design-card--{{ tone }}{% endif %}{% if card_class %} {{ card_class }}{% endif %}">
+  {% if include.content %}{{ include.content }}{% endif %}
+</div>

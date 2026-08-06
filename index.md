@@ -161,7 +161,7 @@ layout: radar
   var youText = 'curl -sfS https://dotenvx.sh | sh'
   var agentText = 'Install dotenvx (curl -sfS https://dotenvx.sh | sh), encrypt this project\'s .env with dotenvx encrypt, keep .env.keys out of git, and run the app with dotenvx run -- your-command.'
   var tab = 'you'
-  var copyTimeout
+  var copyTimeouts = new WeakMap()
 
   function ready(fn) {
     if (document.readyState !== 'loading') fn()
@@ -182,15 +182,23 @@ layout: radar
     onDone()
   }
 
+  function scheduleReset(target, reset) {
+    var prevTimeout = copyTimeouts.get(target)
+    if (prevTimeout) clearTimeout(prevTimeout)
+    copyTimeouts.set(target, setTimeout(function () {
+      copyTimeouts.delete(target)
+      reset()
+    }, 1100))
+  }
+
   function flashCode(button, nextLabel) {
     var code = button.querySelector('code')
     if (!code) return
-    var prev = code.textContent
+    if (!button.dataset.copyLabel) button.dataset.copyLabel = code.textContent
     code.textContent = nextLabel
-    clearTimeout(copyTimeout)
-    copyTimeout = setTimeout(function () {
-      code.textContent = prev
-    }, 1100)
+    scheduleReset(button, function () {
+      code.textContent = button.dataset.copyLabel
+    })
   }
 
   ready(function () {
@@ -235,10 +243,9 @@ layout: radar
     panelAgent.addEventListener('click', function () {
       copyText(agentText, function () {
         panelAgent.textContent = 'Copied'
-        clearTimeout(copyTimeout)
-        copyTimeout = setTimeout(function () {
+        scheduleReset(panelAgent, function () {
           panelAgent.textContent = 'Copy Prompt'
-        }, 1100)
+        })
       })
     })
   })

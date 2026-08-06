@@ -1,0 +1,73 @@
+{% assign members_feature = site.data.plans.features | where: "id", "members" | first %}
+{% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
+
+{% capture pricing_summary_table_body %}
+  <thead>
+    <tr>
+      <th scope="col">Plan</th>
+      <th scope="col" class="design-table-cell--center">Users</th>
+      <th scope="col" class="design-table-cell--center">Audit retention</th>
+      <th scope="col" class="design-table-cell--center">Price</th>
+      <th scope="col" class="design-table-cell--right"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for plan in site.data.plans.plans %}
+      {% assign plan_name = plan.name | remove: "⛨ " %}
+      {% assign retention_cell = audit_retention_feature.values[plan.id] %}
+      {% if plan.id == "enterprise" %}
+        {% assign users_cell = "∞" %}
+        {% assign retention_cell = "custom" %}
+        {% assign price_cell = "custom" %}
+        {% assign cta_href = "/contact" %}
+        {% assign cta_label = "Contact Us" %}
+      {% else %}
+        {% assign users_cell = members_feature.values[plan.id] %}
+        {% assign price_cell = plan.price.display %}
+        {% assign cta_href = "/signup" %}
+        {% if plan.id == "pro" %}
+          {% assign cta_label = "Start Free Trial" %}
+        {% else %}
+          {% assign cta_label = "Get " | append: plan_name %}
+        {% endif %}
+      {% endif %}
+      <tr>
+        <th scope="row" class="pricing-summary-plan">{{ plan_name }}</th>
+        <td class="design-table-cell--center">{{ users_cell }}</td>
+        <td class="design-table-cell--center">{{ retention_cell }}</td>
+        <td class="design-table-cell--center">{{ price_cell }}</td>
+        <td class="design-table-cell--right pricing-summary-action">
+          {% if plan.id == "enterprise" %}
+            {% include components/design-btn.html
+              href=cta_href
+              label=cta_label
+              class="design-btn--block"
+            %}
+          {% elsif plan.id == "pro" %}
+            {% include components/design-btn-paid.html
+              href=cta_href
+              label=cta_label
+              btn_class="design-btn--block design-btn--trial"
+              badge=plan.price.display
+            %}
+          {% else %}
+            {% include components/design-btn-paid.html
+              href=cta_href
+              label=cta_label
+              btn_class="design-btn--block"
+              badge=plan.price.display
+            %}
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+{% endcapture %}
+
+{% capture pricing_summary_table %}
+  {% include components/design-table.html class="design-table-wrap--fill" content=pricing_summary_table_body %}
+{% endcapture %}
+
+<div class="pricing-summary">
+  {% include components/design-card.html class="pricing-summary-card" content=pricing_summary_table %}
+</div>

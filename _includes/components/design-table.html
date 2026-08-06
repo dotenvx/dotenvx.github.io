@@ -1,0 +1,10 @@
+{% assign table_class = include.class %}
+{% assign caption = include.caption %}
+<div class="design-table-wrap{% if table_class %} {{ table_class }}{% endif %}">
+  <table class="design-table">
+    {% if caption and caption != "" %}
+      <caption class="design-table-caption">{{ caption }}</caption>
+    {% endif %}
+    {% if include.content %}{{ include.content }}{% endif %}
+  </table>
+</div>

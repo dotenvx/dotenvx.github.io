@@ -1,15 +1,11 @@
-{% assign eyebrow = include.eyebrow %}
-{% assign title = include.title %}
-{% assign description = include.description %}
-{% assign heading_tag = include.heading_tag | default: "h1" %}
-{% assign header_class = include.class %}
-
-<div class="design-page-header design-hero-header{% if header_class %} {{ header_class }}{% endif %}">
-  {% if eyebrow and eyebrow != "" %}
-    <p class="design-page-header-eyebrow">{{ eyebrow }}</p>
-  {% endif %}
-  <{{ heading_tag }} class="design-page-title design-page-title--flush">{{ title }}</{{ heading_tag }}>
-  {% if description and description != "" %}
-    <p class="design-page-header-desc">{{ description }}</p>
-  {% endif %}
-</div>
+{% assign hero_header_class = "design-hero-header" %}
+{% if include.class %}
+  {% assign hero_header_class = hero_header_class | append: " " | append: include.class %}
+{% endif %}
+{% include components/design-page-header.html
+  eyebrow=include.eyebrow
+  title=include.title
+  description=include.description
+  heading_tag=include.heading_tag
+  class=hero_header_class
+%}

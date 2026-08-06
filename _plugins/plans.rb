@@ -2,25 +2,35 @@ require "json"
 require "net/http"
 require "uri"
 
-# Fetches plan catalog from Radar at build time so dotenvx.com/pricing
-# stays in sync with armor.dotenvx.com. Falls back to _data/plans.json.
+# Uses committed _data/plans.json by default.
+# Set PLANS_API_URL to pull from Radar instead (e.g. production sync).
 class Plans < Jekyll::Generator
   priority :high
 
-  DEFAULT_URL = "https://armor.dotenvx.com/public/plans".freeze
-
   def generate(site)
-    url = ENV.fetch("PLANS_API_URL", DEFAULT_URL)
-    payload = fetch_plans(url)
+    url = ENV["PLANS_API_URL"]
 
-    if payload && retention_priced?(payload)
-      site.data["plans"] = payload
-      Jekyll.logger.info "plans", "loaded from #{url}"
-    elsif site.data["plans"]
+    if url && !url.empty?
+      payload = fetch_plans(url)
+      if payload && retention_priced?(payload)
+        site.data["plans"] = payload
+        Jekyll.logger.info "plans", "loaded from #{url}"
+        return
+      end
+
       reason = payload ? "API missing retention pricing fields" : "fetch failed"
-      Jekyll.logger.warn "plans", "using committed _data/plans.json (#{reason})"
-    else
+      if site.data["plans"]
+        Jekyll.logger.warn "plans", "using committed _data/plans.json (#{reason})"
+        return
+      end
+
       Jekyll.logger.abort_with "plans", "no plan data available from #{url} or _data/plans.json"
+    end
+
+    if site.data["plans"]
+      Jekyll.logger.info "plans", "loaded from _data/plans.json"
+    else
+      Jekyll.logger.abort_with "plans", "no plan data available from _data/plans.json"
     end
   end
 

@@ -51,7 +51,7 @@ layout: radar
   </div>
 {% endcapture %}
 {% include components/design-hero.html
-  eyebrow="Dotenvx"
+  eyebrow="Company"
   title="Contact"
   description="We are based in LA and are back and forth often to SF."
   visual=contact_hero_visual

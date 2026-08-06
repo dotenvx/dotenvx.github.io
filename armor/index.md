@@ -14,8 +14,16 @@ layout: radar
     padding: 1.25rem 1.35rem;
   }
 
-  .armor-install-choice .design-btn[hidden] {
+  .armor-install-choice .design-btn[hidden],
+  .armor-install-choice [hidden] {
     display: none !important;
+  }
+
+  .armor-you-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 </style>
 
@@ -32,11 +40,17 @@ layout: radar
   <section class="radar-section" aria-label="Get started with Armor">
     <div class="armor-shell">
       {% capture armor_choice_current %}
-        {% include components/design-btn.html
-          label="Get Started"
-          href="/signup"
-          id="armor-panel-you"
-        %}
+        <div id="armor-panel-you" class="armor-you-actions">
+          {% include components/design-btn.html
+            label="Sign up free"
+            href="/signup"
+            class="design-btn--trial"
+          %}
+          {% include components/design-btn.html
+            label="See Pricing"
+            href="/pricing"
+          %}
+        </div>
         {% include components/design-btn.html
           label="Copy Prompt"
           id="armor-panel-agent"
@@ -46,18 +60,18 @@ layout: radar
       {% endcapture %}
       {% capture armor_choice_options %}
         {% include components/design-choice-option.html
-          label="Signup yourself"
+          label="Sign up yourself"
           selected=true
           value="you"
         %}
         {% include components/design-choice-option.html
-          label="Signup your agent"
+          label="Sign up your agent"
           value="agent"
         %}
       {% endcapture %}
       {% include components/design-choice.html
         count=2
-        aria_label="Signup"
+        aria_label="Sign up"
         current=armor_choice_current
         options=armor_choice_options
         class="armor-install-choice"

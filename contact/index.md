@@ -53,7 +53,7 @@ layout: radar
 {% include components/design-hero.html
   eyebrow="Company"
   title="Contact"
-  description="We are based in LA and are back and forth often to SF."
+  description="We are based in LA and are keep a satellite office in SF–visiting often."
   visual=contact_hero_visual
 %}
 

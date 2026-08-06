@@ -1,7 +1,9 @@
 {% assign audit_retention_feature = site.data.plans.features | where: "id", "audit_retention" | first %}
-{% assign armored_keys_feature = site.data.plans.features | where: "id", "armored_keys" | first %}
 {% capture yes %}{% include components/design-check.html tone="success" size="sm" label="Included" %}{% endcapture %}
 {% assign no = "—" %}
+{% capture unlimited_cell %}<span class="pricing-plan-label-full">Unlimited</span><span class="pricing-plan-label-short">∞</span>{% endcapture %}
+{% capture rotate_manual %}<span class="pricing-plan-label-full">Manual</span><span class="pricing-plan-label-short">Man</span>{% endcapture %}
+{% capture rotate_command %}<span class="pricing-plan-label-full">Command</span><span class="pricing-plan-label-short">Cmd</span>{% endcapture %}
 
 {% capture compare_audit_body %}
   <thead>
@@ -9,17 +11,17 @@
       <th scope="col">Feature</th>
       <th scope="col" class="design-table-cell--center pricing-summary-plan">Pro</th>
       <th scope="col" class="design-table-cell--center pricing-summary-plan">Team</th>
-      <th scope="col" class="design-table-cell--center pricing-summary-plan">Business</th>
-      <th scope="col" class="design-table-cell--center pricing-summary-plan">Enterprise</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan"><span class="pricing-plan-label-full">Business</span><span class="pricing-plan-label-short">Biz</span></th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan"><span class="pricing-plan-label-full">Enterprise</span><span class="pricing-plan-label-short">Ent</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">Armor Keys</th>
-      <td class="design-table-cell--center">{{ armored_keys_feature.values.pro }}</td>
-      <td class="design-table-cell--center">{{ armored_keys_feature.values.team }}</td>
-      <td class="design-table-cell--center">{{ armored_keys_feature.values.business }}</td>
-      <td class="design-table-cell--center">{{ armored_keys_feature.values.enterprise }}</td>
+      <td class="design-table-cell--center">{{ unlimited_cell }}</td>
+      <td class="design-table-cell--center">{{ unlimited_cell }}</td>
+      <td class="design-table-cell--center">{{ unlimited_cell }}</td>
+      <td class="design-table-cell--center">{{ unlimited_cell }}</td>
     </tr>
     <tr>
       <th scope="row">Guard Keys</th>
@@ -37,10 +39,10 @@
     </tr>
     <tr>
       <th scope="row">Rotate Keys</th>
-      <td class="design-table-cell--center">Manual</td>
-      <td class="design-table-cell--center">Command</td>
-      <td class="design-table-cell--center">Command</td>
-      <td class="design-table-cell--center">Command</td>
+      <td class="design-table-cell--center">{{ rotate_manual }}</td>
+      <td class="design-table-cell--center">{{ rotate_command }}</td>
+      <td class="design-table-cell--center">{{ rotate_command }}</td>
+      <td class="design-table-cell--center">{{ rotate_command }}</td>
     </tr>
     <tr>
       <th scope="row">Audit Logs</th>
@@ -54,7 +56,7 @@
       <td class="design-table-cell--center">{{ audit_retention_feature.values.pro }}</td>
       <td class="design-table-cell--center">{{ audit_retention_feature.values.team }}</td>
       <td class="design-table-cell--center">{{ audit_retention_feature.values.business }}</td>
-      <td class="design-table-cell--center">custom</td>
+      <td class="design-table-cell--center">∞</td>
     </tr>
     <tr>
       <th scope="row">SIEM / Log Export</th>

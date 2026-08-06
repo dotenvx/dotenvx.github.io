@@ -6,8 +6,8 @@
     <tr>
       <th scope="col">Plan</th>
       <th scope="col" class="design-table-cell--center">Users</th>
-      <th scope="col" class="design-table-cell--center">Audit retention</th>
-      <th scope="col" class="design-table-cell--center">Price</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-retention">Audit retention</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-price">Price</th>
       <th scope="col" class="design-table-cell--right"></th>
     </tr>
   </thead>
@@ -34,8 +34,8 @@
       <tr>
         <th scope="row" class="pricing-summary-plan">{{ plan_name }}</th>
         <td class="design-table-cell--center">{{ users_cell }}</td>
-        <td class="design-table-cell--center">{{ retention_cell }}</td>
-        <td class="design-table-cell--center">{{ price_cell }}</td>
+        <td class="design-table-cell--center pricing-summary-retention">{{ retention_cell }}</td>
+        <td class="design-table-cell--center pricing-summary-price">{{ price_cell }}</td>
         <td class="design-table-cell--right pricing-summary-action">
           {% if plan.id == "enterprise" %}
             {% include components/design-btn.html

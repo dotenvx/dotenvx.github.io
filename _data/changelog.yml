@@ -1,3 +1,6 @@
+- date: 2026-08-05
+  summary: "Dotenvx reaches 10M weekly npm installs."
+  milestone: true
 - date: 2026-07-28
   summary: "Dotenvx maintains react-native-dotenv."
   url: "https://github.com/dotenvx/react-native-dotenv"

@@ -3010,6 +3010,20 @@ html.dark .design-badge.design-badge--danger {
   text-transform: uppercase;
 }
 
+.pricing-plan-label-short {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .pricing-plan-label-full {
+    display: none;
+  }
+
+  .pricing-plan-label-short {
+    display: inline;
+  }
+}
+
 .pricing-compare {
   margin-top: 1.5rem;
 }
@@ -3074,6 +3088,22 @@ html.dark .design-badge.design-badge--danger {
   justify-content: center;
   text-align: center;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .pricing-summary-retention,
+  .pricing-summary-price {
+    display: none;
+  }
+
+  .pricing-summary-action {
+    min-width: 8.5rem;
+  }
+
+  .pricing-summary-action .design-btn {
+    font-size: 0.65rem;
+    padding: 0.45rem 0.55rem;
+  }
 }
 
 /* Mirrored from ../radar design-check */

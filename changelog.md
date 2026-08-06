@@ -172,9 +172,10 @@ v1   v2   v3   v4</pre>
       sparse = null
     }
 
-    monthKeys.forEach((monthKey) => {
+    monthKeys.forEach((monthKey, index) => {
       const items = groups.get(monthKey)
-      const isSparse = items.length <= SPARSE_MAX
+      // Newest month always gets its own section (e.g. "August 2026")
+      const isSparse = index > 0 && items.length <= SPARSE_MAX
 
       if (!isSparse) {
         flushSparse()

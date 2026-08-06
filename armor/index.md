@@ -60,12 +60,12 @@ layout: radar
       {% endcapture %}
       {% capture armor_choice_options %}
         {% include components/design-choice-option.html
-          label="Sign up yourself"
+          label="For you"
           selected=true
           value="you"
         %}
         {% include components/design-choice-option.html
-          label="Sign up your agent"
+          label="For your agent"
           value="agent"
         %}
       {% endcapture %}

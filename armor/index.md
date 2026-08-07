@@ -52,7 +52,7 @@ Move your private keys off device. <span class="armor-hero-desc-line2">And keep 
       {% capture armor_choice_current %}
         <div id="armor-panel-you" class="armor-you-actions">
           {% include components/design-btn.html
-            label="Sign up free"
+            label="Try it free"
             href="/signup"
             class="design-btn--trial"
           %}

@@ -1,8 +1,15 @@
+- date: 2026-08-07
+  summary: "Delete keys from .env files with dotenvx del."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2200-2026-08-07"
 - date: 2026-08-05
   summary: "Dotenvx reaches 10M weekly npm installs."
   milestone: true
+- date: 2026-07-29
+  summary: "Dotenv-expand 1000 adds command substitution and decryption."
+  milestone: true
+  url: "https://github.com/dotenvx/dotenv-expand/blob/master/CHANGELOG.md#100000-2026-07-29"
 - date: 2026-07-28
-  summary: "Dotenvx maintains react-native-dotenv."
+  summary: "Dotenvx takes over maintenance of react-native-dotenv."
   url: "https://github.com/dotenvx/react-native-dotenv"
 - date: 2026-07-27
   summary: "Open armored key details in your browser."

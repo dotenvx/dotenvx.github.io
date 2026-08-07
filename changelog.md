@@ -80,7 +80,40 @@ v1   v2   v3   v4</pre>
 
   <section class="radar-section">
     <div class="armor-shell">
-      <nav class="changelog-index" data-changelog-index aria-label="Changelog by month"></nav>
+      <nav class="changelog-index" aria-label="Changelog by month">
+        {% assign current_month = "" %}
+        {% for entry in site.data.changelog %}
+          {% assign entry_month = entry.date | date: "%Y-%m" %}
+          {% assign entry_month_label = entry.date | date: "%B %Y" %}
+          {% if entry_month != current_month %}
+            {% unless current_month == "" %}
+                </ul>
+              </div>
+            {% endunless %}
+            {% assign current_month = entry_month %}
+            <div class="design-list">
+              <p class="design-list-title">{{ entry_month_label }}</p>
+              <ul class="design-list-items">
+          {% endif %}
+                <li>
+                  {% if entry.url and entry.url != "" %}
+                    <a
+                      class="design-link{% if entry.milestone %} design-link--milestone{% endif %}"
+                      href="{{ entry.url }}"
+                      {% if entry.url contains "://" %}target="_blank" rel="noopener noreferrer"{% endif %}
+                    >{{ entry.summary }}</a>
+                  {% elsif entry.milestone %}
+                    <span class="design-link--milestone">{{ entry.summary }}</span>
+                  {% else %}
+                    {{ entry.summary }}
+                  {% endif %}
+                </li>
+        {% endfor %}
+        {% unless current_month == "" %}
+              </ul>
+            </div>
+        {% endunless %}
+      </nav>
     </div>
   </section>
 
@@ -92,159 +125,3 @@ v1   v2   v3   v4</pre>
     </div>
   </section>
 </div>
-
-<script type="application/json" id="changelog-data">
-{{ site.data.changelog | jsonify }}
-</script>
-
-<script>
-  (() => {
-    const indexRoot = document.querySelector('[data-changelog-index]')
-    const dataEl = document.getElementById('changelog-data')
-    if (!indexRoot || !dataEl) return
-
-    let entries = []
-    try {
-      entries = JSON.parse(dataEl.textContent || '[]')
-    } catch (_) {
-      return
-    }
-
-    const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
-    ]
-
-    const monthValue = (monthKey) => {
-      const year = Number(monthKey.slice(0, 4))
-      const month = Number(monthKey.slice(5, 7))
-      return year * 12 + month
-    }
-
-    const formatMonthLabel = (monthKey) => {
-      const year = monthKey.slice(0, 4)
-      const monthIndex = Number(monthKey.slice(5, 7)) - 1
-      return `${monthNames[monthIndex] || monthKey} ${year}`
-    }
-
-    const formatRangeLabel = (startKey, endKey) => {
-      if (startKey === endKey) return formatMonthLabel(startKey)
-
-      const startYear = startKey.slice(0, 4)
-      const endYear = endKey.slice(0, 4)
-      const startName = monthNames[Number(startKey.slice(5, 7)) - 1] || startKey
-      const endName = monthNames[Number(endKey.slice(5, 7)) - 1] || endKey
-
-      if (startYear === endYear) return `${startName} – ${endName} ${startYear}`
-      return `${startName} ${startYear} – ${endName} ${endYear}`
-    }
-
-    const groups = new Map()
-
-    entries.forEach((entry) => {
-      const date = entry.date || ''
-      let summary = (entry.summary || '').replace(/\s+/g, ' ').trim()
-      if (summary) summary = summary.charAt(0).toUpperCase() + summary.slice(1)
-      if (!date || !summary) return
-
-      const [year, month] = date.split('-')
-      if (!year || !month) return
-
-      const monthKey = `${year}-${month}`
-      if (!groups.has(monthKey)) groups.set(monthKey, [])
-      groups.get(monthKey).push({
-        title: summary,
-        milestone: entry.milestone === true,
-        url: entry.url || ''
-      })
-    })
-
-    const monthKeys = Array.from(groups.keys())
-    const SPARSE_MAX = 2
-    const MERGE_MAX_ITEMS = 6
-    const MERGE_MAX_MONTHS = 6
-    const buckets = []
-    let sparse = null
-
-    const flushSparse = () => {
-      if (!sparse) return
-      buckets.push(sparse)
-      sparse = null
-    }
-
-    monthKeys.forEach((monthKey, index) => {
-      const items = groups.get(monthKey)
-      // Newest month always gets its own section (e.g. "August 2026")
-      const isSparse = index > 0 && items.length <= SPARSE_MAX
-
-      if (!isSparse) {
-        flushSparse()
-        buckets.push({ keys: [monthKey], items: items.slice() })
-        return
-      }
-
-      if (!sparse) {
-        sparse = { keys: [monthKey], items: items.slice() }
-        return
-      }
-
-      const nextCount = sparse.items.length + items.length
-      const newest = sparse.keys[0]
-      const nextSpan = monthValue(newest) - monthValue(monthKey) + 1
-      const canMerge = nextCount <= MERGE_MAX_ITEMS && nextSpan <= MERGE_MAX_MONTHS
-
-      if (!canMerge) {
-        flushSparse()
-        sparse = { keys: [monthKey], items: items.slice() }
-        return
-      }
-
-      sparse.keys.push(monthKey)
-      sparse.items.push(...items)
-    })
-    flushSparse()
-
-    const frag = document.createDocumentFragment()
-
-    buckets.forEach((bucket) => {
-      const newestKey = bucket.keys[0]
-      const oldestKey = bucket.keys[bucket.keys.length - 1]
-      const list = document.createElement('div')
-      list.className = 'design-list'
-
-      const title = document.createElement('p')
-      title.className = 'design-list-title'
-      title.textContent = formatRangeLabel(oldestKey, newestKey)
-      list.appendChild(title)
-
-      const ul = document.createElement('ul')
-      ul.className = 'design-list-items'
-      bucket.items.forEach((item) => {
-        const li = document.createElement('li')
-        if (item.url) {
-          const link = document.createElement('a')
-          link.className = item.milestone ? 'design-link design-link--milestone' : 'design-link'
-          link.href = item.url
-          if (/^https?:\/\//.test(item.url)) {
-            link.target = '_blank'
-            link.rel = 'noopener noreferrer'
-          }
-          link.textContent = item.title
-          li.appendChild(link)
-        } else if (item.milestone) {
-          const mark = document.createElement('span')
-          mark.className = 'design-link--milestone'
-          mark.textContent = item.title
-          li.appendChild(mark)
-        } else {
-          li.textContent = item.title
-        }
-        ul.appendChild(li)
-      })
-      list.appendChild(ul)
-      frag.appendChild(list)
-    })
-
-    indexRoot.replaceChildren(frag)
-  })()
-</script>

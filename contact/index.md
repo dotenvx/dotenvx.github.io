@@ -51,6 +51,7 @@ layout: radar
   </div>
 {% endcapture %}
 {% include components/design-hero.html
+  class="company-design-hero"
   eyebrow="Company"
   title="Contact"
   description="We are based in LA and keep an office in SF–visiting often."

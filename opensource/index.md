@@ -14,6 +14,7 @@ layout: radar
 </style>
 
 {% include components/design-hero.html
+  class="company-design-hero"
   eyebrow="Company"
   title="Open Source"
   description="We're big into secrets, encryption, and agentic identity."

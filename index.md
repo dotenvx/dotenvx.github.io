@@ -4,11 +4,6 @@ layout: radar
 ---
 
 <style>
-  /* Sparse ascii visual — don't inherit the 17rem/23rem hero media slot */
-  .home-design-hero .design-hero-visual {
-    min-height: 8.5rem;
-  }
-
   .home-hero-code {
     align-items: center;
     display: flex;
@@ -40,10 +35,6 @@ layout: radar
   }
 
   @media (min-width: 900px) {
-    .home-design-hero .design-hero-visual {
-      min-height: 23rem;
-    }
-
     .home-hero-code {
       height: 100%;
       min-height: inherit;
@@ -86,6 +77,12 @@ layout: radar
   .home-install-prompt-btn[hidden] {
     display: none !important;
   }
+
+  @media (max-width: 480px) {
+    .home-hero-desc-line2 {
+      display: block;
+    }
+  }
 </style>
 
 {% capture home_hero_eyebrow %}
@@ -95,6 +92,10 @@ layout: radar
     <span aria-hidden="true">★</span>
     <span>20.5k</span>
   </a>
+{% endcapture %}
+
+{% capture home_hero_description %}
+Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt your .env files–and more.</span>
 {% endcapture %}
 
 {% capture home_hero_visual %}
@@ -109,7 +110,7 @@ layout: radar
   class="home-design-hero"
   eyebrow=home_hero_eyebrow
   title="Dotenvx"
-  description="Designed as a secure dotenv. You can encrypt your .env files–and more."
+  description=home_hero_description
   visual=home_hero_visual
 %}
 

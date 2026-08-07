@@ -25,14 +25,24 @@ layout: radar
     flex-wrap: wrap;
     gap: 0.75rem;
   }
+
+  @media (max-width: 480px) {
+    .armor-hero-desc-line2 {
+      display: block;
+    }
+  }
 </style>
+
+{% capture armor_hero_description %}
+Move your private keys off device. <span class="armor-hero-desc-line2">And keep their secrets under guard.</span>
+{% endcapture %}
 
 <div class="armor-page">
   {% include components/design-hero.html
     class="home-design-hero"
     eyebrow="For professional software teams"
     title="Armor ⛨"
-    description="Move your private keys off device. And keep their secrets under guard."
+    description=armor_hero_description
     public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
     keysee_render_mode="solid"
   %}

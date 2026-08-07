@@ -23,11 +23,6 @@ layout: radar
     line-height: 1.45;
   }
 
-  /* Two-line ascii — taller than single-line legal/pricing so top padding matches */
-  .changelog-design-hero .design-hero-visual {
-    min-height: 11rem;
-  }
-
   .changelog-hero-ascii {
     align-items: center;
     display: flex;
@@ -51,10 +46,6 @@ layout: radar
   }
 
   @media (min-width: 900px) {
-    .changelog-design-hero .design-hero-visual {
-      min-height: 23rem;
-    }
-
     .changelog-hero-ascii {
       height: 100%;
       min-height: inherit;
@@ -71,7 +62,7 @@ v1   v2   v3   v4</pre>
 
 <div class="changelog-page">
   {% include components/design-hero.html
-    class="changelog-design-hero"
+    class="company-design-hero"
     eyebrow="Company"
     title="Changelog"
     description="Check back often. We're working hard still on Dotenvx and Armor."

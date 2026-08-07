@@ -89,6 +89,8 @@ Move your private keys off device. <span class="armor-hero-desc-line2">And keep 
     </div>
   </section>
 
+  {% include components/armor-trust.html %}
+
   <section class="radar-section" aria-label="Next step">
     <div class="armor-shell">
       {% include components/design-cta-message.html

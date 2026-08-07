@@ -148,6 +148,8 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
   </div>
 </section>
 
+{% include components/home-trust.html %}
+
 <section class="radar-section" aria-label="Next step">
   <div class="armor-shell">
     {% include components/design-cta-message.html

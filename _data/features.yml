@@ -1,0 +1,26 @@
+title: Features
+items:
+  - label: Make .env safe to commit
+    meta: dotenvx encrypt
+    href: /docs/quickstart/encryption
+  - label: Same on Mac, Linux, and Windows
+    meta: dotenvx run
+    href: /docs/quickstart/run
+  - label: Ship the right secrets to each environment
+    meta: dotenvx run -f .env.production
+    href: /docs/quickstart/environments
+  - label: Let agents use secrets without spilling them
+    meta: dotenvx run --redact -- claude
+    href: /docs/cli/run-redact
+  - label: Catch missing keys before you run
+    meta: dotenvx validate
+    href: /docs/cli/validate
+  - label: Protect your team from secret leaks
+    meta: dotenvx precommit
+    href: /docs/cli/precommit
+  - label: Give .env live, computed values
+    meta: "${OTHER_VAR} $(whoami)"
+    href: /docs/cli/run-variable-expansion
+  - label: Pull secrets remotely from places like 1Password
+    meta: op://.. bw://..
+    href: /docs/secrets-in-1password

@@ -1,36 +1,16 @@
-<section class="radar-section" aria-label="Features">
+<section class="radar-section" aria-label="{{ site.data.features.title }}">
   <div class="armor-shell">
     <div class="design-list">
-      <p class="design-list-title">Features</p>
+      <p class="design-list-title">{{ site.data.features.title }}</p>
       <ul class="design-list-items">
+        {%- for item in site.data.features.items %}
         <li>
-          <a class="design-link" href="/docs/quickstart/encryption">Make .env safe to commit</a>
-          <span class="design-list-meta">dotenvx encrypt</span>
+          <a class="design-link" href="{{ item.href }}">{{ item.label }}</a>
+          {%- if item.meta %}
+          <span class="design-list-meta">{{ item.meta }}</span>
+          {%- endif %}
         </li>
-        <li>
-          <a class="design-link" href="/docs/quickstart/run">Same on Mac, Linux, and Windows</a>
-          <span class="design-list-meta">dotenvx run</span>
-        </li>
-        <li>
-          <a class="design-link" href="/docs/quickstart/environments">Ship the right secrets to each environment</a>
-          <span class="design-list-meta">dotenvx run -f .env.production</span>
-        </li>
-        <li>
-          <a class="design-link" href="/docs/cli/run-redact">Let agents use secrets without spilling them</a>
-          <span class="design-list-meta">dotenvx run --redact -- claude</span>
-        </li>
-        <li>
-          <a class="design-link" href="/docs/cli/precommit">Protect your team from secret leaks</a>
-          <span class="design-list-meta">dotenvx precommit</span>
-        </li>
-        <li>
-          <a class="design-link" href="/docs/cli/run-variable-expansion">Give .env live, computed values</a>
-          <span class="design-list-meta">${OTHER_VAR} $(whoami)</span>
-        </li>
-        <li>
-          <a class="design-link" href="/docs/secrets-in-1password">Pull secrets remotely from places like 1Password</a>
-          <span class="design-list-meta">op://.. bw://..</span>
-        </li>
+        {%- endfor %}
       </ul>
     </div>
   </div>

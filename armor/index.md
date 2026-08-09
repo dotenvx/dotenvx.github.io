@@ -34,14 +34,14 @@ layout: radar
 </style>
 
 {% capture armor_hero_description %}
-Move your private keys off device. <span class="armor-hero-desc-line2">And keep their secrets under guard.</span>
+Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move them off device–and more.</span>
 {% endcapture %}
 
 <div class="armor-page">
   {% include components/design-hero.html
     class="home-design-hero"
     eyebrow="For professional software teams"
-    title="Armor ⛨"
+    title="ARMOR⛨"
     description=armor_hero_description
     public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
     keysee_render_mode="solid"

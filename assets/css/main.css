@@ -1897,6 +1897,11 @@ html.dark .radar-nav-flyout-frame {
   font-size: inherit;
 }
 
+/* Keep "link ·" together so a wrap never leads with the bullet. */
+.radar-footer-item {
+  white-space: nowrap;
+}
+
 .radar-footer-sep {
   color: var(--design-secondary, var(--design-dim));
   font-weight: 400;
@@ -3952,22 +3957,30 @@ html.dark .radar-btn {
   color: var(--design-ink) !important;
 }
 
-/* 404 */
+/* 404 / error heroes — keep copy + action in one narrow column */
+.not-found-design-hero .armor-shell {
+  max-width: 28rem;
+}
+
+.not-found-design-hero .design-hero-copy,
+.not-found-design-hero .design-hero-copy .design-page-header {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.not-found-hero-action {
+  display: block;
+  margin-top: 1.1rem;
+}
+
 .not-found {
   padding-bottom: 5rem;
   padding-top: 4rem;
 }
 
 .not-found-shell {
-  max-width: 36rem;
-  text-align: center;
-}
-
-.not-found-shell .radar-kicker,
-.not-found-shell .radar-title,
-.not-found-shell .radar-lede {
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 28rem;
+  text-align: left;
 }
 
 .not-found-code {
@@ -3982,7 +3995,7 @@ html.dark .radar-btn {
 
 .not-found-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 2rem 0 0;
 }
 

@@ -2772,6 +2772,21 @@ html.dark .design-badge.design-badge--danger {
   gap: 0.45rem 0.85rem;
 }
 
+.design-list-items li:has(.design-list-label) {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+}
+
+.design-list-label {
+  color: var(--design-body, var(--design-ink));
+  font-family: var(--design-font-sans);
+  font-size: var(--design-text-size);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
 .design-list-meta {
   color: var(--design-secondary, var(--design-dim));
   font-family: var(--design-font-mono);

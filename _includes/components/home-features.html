@@ -1,13 +1,22 @@
-<section class="radar-section" aria-label="{{ site.data.features.title }}">
+{% assign feature_data = site.data.features %}
+{% if include.data %}
+  {% assign feature_data = site.data[include.data] %}
+{% endif %}
+
+<section class="radar-section" aria-label="{{ feature_data.title }}">
   <div class="armor-shell">
     <div class="design-list">
       {%- unless include.hide_title %}
-      <p class="design-list-title">{{ site.data.features.title }}</p>
+      <p class="design-list-title">{{ feature_data.title }}</p>
       {%- endunless %}
       <ul class="design-list-items">
-        {%- for item in site.data.features.items %}
+        {%- for item in feature_data.items %}
         <li>
+          {%- if item.href %}
           <a class="design-link" href="{{ item.href }}">{{ item.label }}</a>
+          {%- else %}
+          <span class="design-list-label">{{ item.label }}</span>
+          {%- endif %}
           {%- if item.meta %}
           <span class="design-list-meta">{{ item.meta }}</span>
           {%- endif %}

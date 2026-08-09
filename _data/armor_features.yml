@@ -1,0 +1,14 @@
+title: Features
+items:
+  - label: Harden keys by moving them off device
+    meta: dotenvx armor up
+  - label: Share access with your team—not the private key
+    meta: Team Members
+  - label: Require human approval before decrypt
+    meta: Settings › Guard
+  - label: Decrypt from a software enclave
+    meta: Settings › Enclave
+  - label: Audit every decrypt
+    meta: Audit Logs
+  - label: Control everything from the API
+    meta: dotenvx curl

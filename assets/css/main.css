@@ -1295,7 +1295,7 @@ body.radar-layout {
   --design-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --design-control-radius: 0.125rem;
   /*
-    Type size scale (only these — don't invent one-offs):
+    Type size scale (only these — do not invent one-offs):
     1. --design-text-display  hero brand titles
     2. --design-text-title    page titles, CTA messages
     3. --design-text-size     body / lists / descriptions

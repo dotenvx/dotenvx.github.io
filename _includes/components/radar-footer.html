@@ -1,23 +1,10 @@
 <footer class="radar-footer">
   <div class="armor-shell radar-footer-inner">
-    <p class="design-list-title">DOTENVX LLC</p>
+    <p class="design-list-title">{{ site.data.footer.title }}</p>
     <p class="radar-footer-cloud">
-      <span class="radar-footer-item"><a class="design-link" href="/">Dotenvx</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/armor">Armor ⛨</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/docs">Documentation</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/pricing">Pricing</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/dotenvx.pdf" target="_blank" rel="noopener noreferrer">Whitepaper</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/changelog">Changelog</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/opensource">Open Source</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">GitHub</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">NPM</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Trust Center</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="https://status.dotenvx.com">Status</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/contact">Contact</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="https://twitter.com/dotenvx" target="_blank" rel="noopener noreferrer">X</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/privacy">Privacy</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/terms">Terms</a><span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span></span>
-      <span class="radar-footer-item"><a class="design-link" href="/login">Log In</a></span>
+      {%- for link in site.data.footer.links %}
+      <span class="radar-footer-item"><a class="design-link" href="{{ link.href }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>{% unless forloop.last %}<span class="radar-footer-sep" aria-hidden="true">&nbsp;·</span>{% endunless %}</span>
+      {%- endfor %}
     </p>
   </div>
 </footer>

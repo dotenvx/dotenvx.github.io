@@ -1,0 +1,40 @@
+title: DOTENVX LLC
+links:
+  - label: Dotenvx
+    href: /
+  - label: Armor ⛨
+    href: /armor
+  - label: Open Source
+    href: /opensource
+  - label: Changelog
+    href: /changelog
+  - label: Trust Center
+    href: https://trust.dotenvx.com
+    external: true
+  - label: Status
+    href: https://status.dotenvx.com
+    external: true
+  - label: Contact
+    href: /contact
+  - label: Whitepaper
+    href: /dotenvx.pdf
+    external: true
+  - label: GitHub
+    href: https://github.com/dotenvx/dotenvx
+    external: true
+  - label: NPM
+    href: https://www.npmjs.com/package/@dotenvx/dotenvx
+    external: true
+  - label: Pricing
+    href: /pricing
+  - label: Docs
+    href: /docs
+  - label: Privacy
+    href: /privacy
+  - label: Terms
+    href: /terms
+  - label: X
+    href: https://twitter.com/dotenvx
+    external: true
+  - label: Log In
+    href: /login

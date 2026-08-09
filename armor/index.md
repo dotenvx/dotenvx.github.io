@@ -89,12 +89,10 @@ Move your private keys off device. <span class="armor-hero-desc-line2">And keep 
     </div>
   </section>
 
-  {% include components/armor-trust.html %}
-
   <section class="radar-section" aria-label="Next step">
     <div class="armor-shell">
       {% include components/design-cta-message.html
-        text="Armor is my vision of what good secrets managagement and encryption should be. There is so much original design put into it, and I really hope you like it. – Scott Motte"
+        text="Armor is new. It's an alternative to using 1Password for secrets - which it was never really meant for."
       %}
     </div>
   </section>

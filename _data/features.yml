@@ -30,3 +30,5 @@ items:
   - label: Pull secrets remotely from places like 1Password
     meta: op://.. bw://..
     href: /docs/secrets-in-1password
+  - label: and more
+    href: /docs

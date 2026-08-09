@@ -1,11 +1,28 @@
 ---
 title: Set
-layout: radar
+redirect_to: /docs/cli/set-key-value
 ---
 
-{% include components/feature-page.html
-  heading="Set env values fast."
-  description="Write a single key and value into an environment file from the command line."
-  subdescription="Update configuration without opening an editor or touching unrelated values."
-  video="https://github.com/user-attachments/assets/b4aef2f4-5e8d-469b-a3e3-24e43534a07f"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/set-key-value"><u>/docs/cli/set-key-value</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/set-key-value">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/set-key-value")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

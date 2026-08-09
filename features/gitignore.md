@@ -1,11 +1,28 @@
 ---
 title: Gitignore
-layout: radar
+redirect_to: /docs/cli/gitignore
 ---
 
-{% include components/feature-page.html
-  heading="Gitignore env files."
-  description="Add .env files to gitignore before they accidentally enter your repository."
-  subdescription="Protect local secrets with one command and keep your working tree clean."
-  video="https://github.com/user-attachments/assets/c993d899-7041-4f5e-868f-59ae204a9d21"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/gitignore"><u>/docs/cli/gitignore</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/gitignore">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/gitignore")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

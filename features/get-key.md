@@ -1,11 +1,28 @@
 ---
 title: Get
-layout: radar
+redirect_to: /docs/cli/get-key
 ---
 
-{% include components/feature-page.html
-  heading="Read one env value."
-  description="Return a single environment variable from your loaded .env files."
-  subdescription="Inspect values quickly without dumping the rest of your environment."
-  video="https://github.com/user-attachments/assets/84eb8164-53ab-45a7-bcc1-57ebfe919725"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/get-key"><u>/docs/cli/get-key</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/get-key">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/get-key")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

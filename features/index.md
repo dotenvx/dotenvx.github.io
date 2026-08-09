@@ -1,28 +1,37 @@
 ---
 title: Features
-redirect_to: /
+permalink: /features/
+layout: radar
 ---
 
-<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
-  <div class="flex flex-col gap-2">
-    <span class="">You are being redirected to</span>
-    <a href="/"><u>/</u></a>
-  </div>
+<style>
+  .features-hero-tbd {
+    align-items: center;
+    color: var(--design-secondary, var(--design-dim));
+    display: flex;
+    font-family: var(--design-font-mono);
+    font-size: var(--design-text-compact);
+    font-weight: 500;
+    height: 100%;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    min-height: inherit;
+    text-transform: uppercase;
+    user-select: none;
+    width: 100%;
+  }
+</style>
 
-  <a class="btn-outline w-fit" href="/">Continue</a>
+{% capture features_hero_visual %}
+  <div class="features-hero-tbd" aria-hidden="true">TBD</div>
+{% endcapture %}
 
-  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
-</div>
+{% include components/design-hero.html
+  class="company-design-hero"
+  eyebrow="Dotenvx"
+  title="Features"
+  description="A secure dotenv—with encryption, redaction, and the workflow extras teams actually use."
+  visual=features_hero_visual
+%}
 
-<script>
-  var interval
-  interval = setInterval(function() {
-    var div = document.querySelector("#counter")
-    var count = div.textContent * 1 - 1
-    div.textContent = count
-    if (count <= 0) {
-      window.location.replace("/")
-      clearInterval(interval)
-    }
-  }, 1000)
-</script>
+{% include components/home-features.html hide_title=true %}

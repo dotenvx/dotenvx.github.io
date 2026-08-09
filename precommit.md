@@ -1,15 +1,15 @@
 ---
 title: precommit 
-redirect_to: /features/precommit
+redirect_to: /docs/cli/precommit
 ---
 
 <div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
   <div class="flex flex-col gap-2">
     <span class="">You are being redirected to</span>
-    <a href="/features/precommit"><u>/features/precommit</u></a>
+    <a href="/docs/cli/precommit"><u>/docs/cli/precommit</u></a>
   </div>
 
-  <a class="btn-outline w-fit" href="/features/precommit">Continue</a>
+  <a class="btn-outline w-fit" href="/docs/cli/precommit">Continue</a>
 
   <span class="text-xs">in <span id="counter">4</span> second(s)</span>
 </div>
@@ -21,7 +21,7 @@ redirect_to: /features/precommit
     var count = div.textContent * 1 - 1
     div.textContent = count
     if (count <= 0) {
-      window.location.replace("/features/precommit")
+      window.location.replace("/docs/cli/precommit")
       clearInterval(interval)
     }
   }, 1000)

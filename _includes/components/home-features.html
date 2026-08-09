@@ -1,7 +1,9 @@
 <section class="radar-section" aria-label="{{ site.data.features.title }}">
   <div class="armor-shell">
     <div class="design-list">
+      {%- unless include.hide_title %}
       <p class="design-list-title">{{ site.data.features.title }}</p>
+      {%- endunless %}
       <ul class="design-list-items">
         {%- for item in site.data.features.items %}
         <li>

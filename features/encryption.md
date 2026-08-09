@@ -1,11 +1,28 @@
 ---
 title: Encryption
-layout: radar
+redirect_to: /docs/quickstart/encryption
 ---
 
-{% include components/feature-page.html
-  heading="Encrypt env files."
-  description="Turn plaintext .env files into encrypted files with public key cryptography."
-  subdescription="Commit encrypted secrets safely while keeping private keys out of your repository."
-  video="https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/quickstart/encryption"><u>/docs/quickstart/encryption</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/quickstart/encryption">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/quickstart/encryption")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

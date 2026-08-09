@@ -1,11 +1,28 @@
 ---
 title: Prebuild
-layout: radar
+redirect_to: /docs/cli/prebuild
 ---
 
-{% include components/feature-page.html
-  heading="Stop secrets before build."
-  description="Block .env files from being bundled into images, artifacts, and production builds."
-  subdescription="Add a final checkpoint before code leaves your machine or CI system."
-  video="https://github.com/user-attachments/assets/6e3c22bb-0d71-4121-9954-346f35c7e58f"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/prebuild"><u>/docs/cli/prebuild</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/prebuild">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/prebuild")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

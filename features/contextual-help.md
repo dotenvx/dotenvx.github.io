@@ -1,11 +1,28 @@
 ---
 title: Contextual Help
-layout: radar
+redirect_to: /docs/cli/run-contextual-help
 ---
 
-{% include components/feature-page.html
-  heading="Get unstuck in context."
-  description="When dotenvx sees a problem, it shows help for the command you are running."
-  subdescription="Fix the issue in front of you instead of searching through generic error output."
-  video="https://github.com/user-attachments/assets/75b7d048-552a-4a7c-bccf-195749b3b7a3"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/run-contextual-help"><u>/docs/cli/run-contextual-help</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/run-contextual-help">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/run-contextual-help")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

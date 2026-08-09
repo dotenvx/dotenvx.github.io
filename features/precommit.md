@@ -1,11 +1,28 @@
 ---
 title: Precommit
-layout: radar
+redirect_to: /docs/cli/precommit
 ---
 
-{% include components/feature-page.html
-  heading="Stop secrets before commit."
-  description="Install a pre-commit guard that blocks .env files from entering source control."
-  subdescription="Catch mistakes at the moment they happen, before they become repository history."
-  video="https://github.com/user-attachments/assets/b177b7c5-f009-4466-ac15-5c0c406594a9"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/precommit"><u>/docs/cli/precommit</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/precommit">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/precommit")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

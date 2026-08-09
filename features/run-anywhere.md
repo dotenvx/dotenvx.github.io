@@ -1,11 +1,28 @@
 ---
 title: Run Anywhere
-layout: radar
+redirect_to: /docs/quickstart/run
 ---
 
-{% include components/feature-page.html
-  heading="Run env anywhere."
-  description="Use one command across Node, Python, Ruby, Docker, CI, and agents."
-  subdescription="Dotenvx works the same way wherever your process starts, so environment loading stays portable."
-  video="https://github.com/user-attachments/assets/7fd8f338-38d2-4875-9091-d08fc3134521"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/quickstart/run"><u>/docs/quickstart/run</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/quickstart/run">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/quickstart/run")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

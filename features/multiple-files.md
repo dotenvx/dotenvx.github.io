@@ -1,11 +1,28 @@
 ---
 title: Multiple Files
-layout: radar
+redirect_to: /docs/cli/run-f
 ---
 
-{% include components/feature-page.html
-  heading="Compose multiple env files."
-  description="Load more than one .env file and layer configuration in the order you choose."
-  subdescription="Keep shared defaults, local overrides, and environment-specific values cleanly separated."
-  video="https://github.com/user-attachments/assets/2ae47f12-ac3c-47a5-af88-436f50ade3e4"
-%}
+<div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
+  <div class="flex flex-col gap-2">
+    <span class="">You are being redirected to</span>
+    <a href="/docs/cli/run-f"><u>/docs/cli/run-f</u></a>
+  </div>
+
+  <a class="btn-outline w-fit" href="/docs/cli/run-f">Continue</a>
+
+  <span class="text-xs">in <span id="counter">4</span> second(s)</span>
+</div>
+
+<script>
+  var interval
+  interval = setInterval(function() {
+    var div = document.querySelector("#counter")
+    var count = div.textContent * 1 - 1
+    div.textContent = count
+    if (count <= 0) {
+      window.location.replace("/docs/cli/run-f")
+      clearInterval(interval)
+    }
+  }, 1000)
+</script>

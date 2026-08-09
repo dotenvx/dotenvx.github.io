@@ -8,6 +8,8 @@ links:
     href: /opensource
   - label: Changelog
     href: /changelog
+  - label: Blog
+    href: /blog
   - label: Trust Center
     href: https://trust.dotenvx.com
     external: true

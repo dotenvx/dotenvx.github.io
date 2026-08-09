@@ -40,7 +40,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
 <div class="armor-page">
   {% include components/design-hero.html
     class="home-design-hero"
-    eyebrow="For professional software teams"
+    eyebrow="For security teams"
     title="ARMOR⛨"
     description=armor_hero_description
     public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"

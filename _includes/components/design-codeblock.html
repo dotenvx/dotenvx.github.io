@@ -1,0 +1,6 @@
+{% assign value = include.value %}
+{% assign block_class = include.class %}
+<pre
+  class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"
+  {% if include.label %}aria-label="{{ include.label }}"{% endif %}
+><code>{% if value and value != "" %}{{ value | strip }}{% else %}{{ include.content | strip }}{% endif %}</code></pre>

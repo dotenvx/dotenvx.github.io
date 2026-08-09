@@ -92,7 +92,7 @@ Move your private keys off device. <span class="armor-hero-desc-line2">And keep 
   <section class="radar-section" aria-label="Next step">
     <div class="armor-shell">
       {% include components/design-cta-message.html
-        text="Armor is new. It's an alternative to using 1Password for secrets - which it was never really meant for."
+        text="Once the private key isn't on the machine, encrypted .env finally feels finished. That's Armor."
       %}
     </div>
   </section>

@@ -148,6 +148,8 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
   </div>
 </section>
 
+{% include components/home-workflow.html %}
+
 {% include components/home-proof.html %}
 
 {% include components/home-trust.html %}
@@ -164,7 +166,31 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
 (function () {
   var encryptText = 'dotenvx encrypt'
   var youText = 'curl -sfS https://dotenvx.sh | sh'
-  var agentText = 'Install dotenvx (curl -sfS https://dotenvx.sh | sh), encrypt this project\'s .env with dotenvx encrypt, keep .env.keys out of git, and run the app with dotenvx run -- your-command.'
+  var agentText = [
+    'Demo dotenvx for me with a hello-world encrypted env workflow. Walk through each step and show the commands and output.',
+    '',
+    'Important: Do NOT overwrite, modify, or encrypt any existing .env (or .env.* / .env.keys) in this project. Work in a fresh temp demo directory only.',
+    '',
+    '1. Install dotenvx:',
+    '   curl -sfS https://dotenvx.sh | sh',
+    '',
+    '2. Create a tiny demo app in a new empty directory (for example /tmp/dotenvx-hello):',
+    '   mkdir -p /tmp/dotenvx-hello && cd /tmp/dotenvx-hello',
+    '   echo "HELLO=World" > .env',
+    '   echo "console.log(\'Hello \' + process.env.HELLO)" > index.js',
+    '',
+    '3. Encrypt that demo .env (use local .env.keys / file storage if prompted):',
+    '   dotenvx encrypt',
+    '   Show that HELLO is now an encrypted: value.',
+    '',
+    '4. Commit it safely (still only inside the demo directory):',
+    '   Keep .env.keys out of git (gitignore it).',
+    '   git init && git add .env index.js && git commit -m "add encrypted env"',
+    '',
+    '5. Decrypt at runtime:',
+    '   dotenvx run -- node index.js',
+    '   Expect: Hello World'
+  ].join('\n')
   var tab = 'you'
   var copyTimeouts = new WeakMap()
 

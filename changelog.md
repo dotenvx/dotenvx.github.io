@@ -17,7 +17,7 @@ layout: radar
   .changelog-index .design-list-items li {
     color: var(--design-body, var(--design-ink));
     font-family: var(--design-font-sans);
-    font-size: 1em;
+    font-size: var(--design-text-size);
     font-weight: 400;
     letter-spacing: -0.01em;
     line-height: 1.45;
@@ -35,7 +35,7 @@ layout: radar
   .changelog-hero-ascii-art {
     color: var(--design-ink);
     font-family: var(--design-font-mono);
-    font-size: clamp(0.95rem, 2vw, 1.35rem);
+    font-size: var(--design-text-size);
     font-weight: 400;
     letter-spacing: 0;
     line-height: 1.2;

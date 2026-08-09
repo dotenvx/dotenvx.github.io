@@ -91,6 +91,8 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
 
   {% include components/home-features.html data="armor_features" %}
 
+  {% include components/armor-in-use.html %}
+
   <section class="radar-section" aria-label="Next step">
     <div class="armor-shell">
       {% include components/design-cta-message.html

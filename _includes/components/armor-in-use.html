@@ -1,0 +1,19 @@
+<section class="radar-section" aria-label="{{ site.data.armor_in_use.title }}">
+  <div class="armor-shell">
+    <div class="design-list">
+      <p class="design-list-title">{{ site.data.armor_in_use.title }}</p>
+      <ul class="design-list-items">
+        {%- for item in site.data.armor_in_use.items %}
+        <li>
+          <a
+            class="design-link"
+            href="{{ item.href }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{{ item.label }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -3,6 +3,12 @@ items:
   - label: Make .env safe to commit
     meta: dotenvx encrypt
     href: /docs/quickstart/encryption
+  - label: Password protect your .env file
+    meta: dotenvx lock
+    href: /docs/cli/lock
+  - label: Store keys in your OS keychain
+    meta: dotenvx native
+    href: /docs/cli/native
   - label: Same on Mac, Linux, and Windows
     meta: dotenvx run
     href: /docs/quickstart/run

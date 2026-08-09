@@ -1868,12 +1868,12 @@ html.dark .radar-nav-flyout-frame {
   transform: translateX(0);
 }
 
-.radar-footer {
+.footer {
   margin-top: 4rem;
   padding: 2.25rem 0 3rem;
 }
 
-.radar-footer-inner {
+.footer-inner {
   box-shadow: var(--design-etch-divider);
   display: flex;
   flex-direction: column;
@@ -1881,7 +1881,7 @@ html.dark .radar-nav-flyout-frame {
   padding-top: 1.75rem;
 }
 
-.radar-footer-cloud {
+.footer-cloud {
   color: var(--design-secondary, var(--design-dim));
   font-family: var(--design-font-sans);
   font-size: var(--design-text-size);
@@ -1893,16 +1893,16 @@ html.dark .radar-nav-flyout-frame {
   text-wrap: pretty;
 }
 
-.radar-footer-cloud .design-link {
+.footer-cloud .design-link {
   font-size: inherit;
 }
 
 /* Keep "link ·" together so a wrap never leads with the bullet. */
-.radar-footer-item {
+.footer-item {
   white-space: nowrap;
 }
 
-.radar-footer-sep {
+.footer-sep {
   color: var(--design-secondary, var(--design-dim));
   font-weight: 400;
   user-select: none;

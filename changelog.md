@@ -65,7 +65,7 @@ v1   v2   v3   v4</pre>
     class="company-design-hero"
     eyebrow="Company"
     title="Changelog"
-    description="Check back often. We're working hard still on Dotenvx and Armor."
+    description="Check back often. We're working hard almost daily on Dotenvx and Armor."
     visual=changelog_hero_visual
   %}
 

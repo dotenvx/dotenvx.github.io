@@ -156,9 +156,15 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
 
 <section class="radar-section" aria-label="Next step">
   <div class="armor-shell">
-    {% include components/design-cta-message.html
-      text="Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It just feels so good."
-    %}
+    <div class="home-cta">
+      {% include components/design-cta-message.html
+        text="Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It just feels so good."
+      %}
+      {% include components/design-btn.html
+        label="Read the docs"
+        href="/docs"
+      %}
+    </div>
   </div>
 </section>
 

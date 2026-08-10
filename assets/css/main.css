@@ -1418,7 +1418,6 @@ html.storm .storm-lightning.is-active {
 
 .storm-lightning-canvas {
   display: block;
-  filter: blur(0.2px);
   height: 100%;
   opacity: 0.56;
   position: relative;
@@ -1447,11 +1446,23 @@ html.storm .storm-lightning.is-active {
   100% { opacity: 0; }
 }
 
-html.storm body.radar-layout .radar-chrome,
+/* Keep chrome above main so flyouts stay clickable; only lift page content over lightning. */
 html.storm body.radar-layout .radar-main,
 html.storm body.radar-layout .footer {
   position: relative;
   z-index: 1;
+}
+
+/* Storm: open air — no frosted bar so sky / lightning reads through */
+html.storm body.radar-layout .radar-chrome {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: transparent;
+  isolation: auto;
+}
+
+html.storm body.radar-layout .radar-chrome:has(.radar-mobile-toggle[aria-expanded="true"]) {
+  background: var(--design-bg);
 }
 
 @media (max-width: 767px) {

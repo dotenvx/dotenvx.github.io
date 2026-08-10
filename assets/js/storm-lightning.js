@@ -17,8 +17,11 @@
     bolts: [],
     raf: 0,
     strikeTimerId: 0,
+    resizeTimerId: 0,
     active: false
   }
+  var timers = new Set()
+  var paths = []
 
   function randBetween(min, max) {
     return min + Math.random() * (max - min)
@@ -35,23 +38,55 @@
     return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT'
   }
 
-  function subdivide(x1, y1, x2, y2, displacement, minDisp) {
+  function scheduleTimeout(fn, delay) {
+    var id = window.setTimeout(function () {
+      timers.delete(id)
+      fn()
+    }, delay)
+    timers.add(id)
+    return id
+  }
+
+  function clearTimers(options) {
+    options = options || {}
+    for (var id of timers) window.clearTimeout(id)
+    timers.clear()
+    if (!options.keepStrike && state.strikeTimerId) {
+      window.clearTimeout(state.strikeTimerId)
+      state.strikeTimerId = 0
+    }
+    if (state.resizeTimerId) {
+      window.clearTimeout(state.resizeTimerId)
+      state.resizeTimerId = 0
+    }
+  }
+
+  // Build points into `out` — avoids allocating left/right arrays per recurse.
+  function subdivide(x1, y1, x2, y2, displacement, minDisp, out) {
     if (displacement < minDisp) {
-      return [{ x: x1, y: y1 }, { x: x2, y: y2 }]
+      if (out.length === 0) out.push({ x: x1, y: y1 })
+      out.push({ x: x2, y: y2 })
+      return out
     }
     var midX = (x1 + x2) / 2 + (Math.random() - 0.5) * displacement
     var midY = (y1 + y2) / 2 + (Math.random() - 0.5) * displacement
-    var left = subdivide(x1, y1, midX, midY, displacement / 2, minDisp)
-    var right = subdivide(midX, midY, x2, y2, displacement / 2, minDisp)
-    return left.slice(0, -1).concat(right)
+    subdivide(x1, y1, midX, midY, displacement / 2, minDisp, out)
+    subdivide(midX, midY, x2, y2, displacement / 2, minDisp, out)
+    return out
   }
 
   function branchFrom(startPoint, angle, length, depth) {
-    var endX = startPoint.x + Math.cos(angle) * length
-    var endY = startPoint.y + Math.sin(angle) * length
-    var segments = subdivide(startPoint.x, startPoint.y, endX, endY, length * 0.45, 6)
+    var segments = subdivide(
+      startPoint.x,
+      startPoint.y,
+      startPoint.x + Math.cos(angle) * length,
+      startPoint.y + Math.sin(angle) * length,
+      length * 0.45,
+      8,
+      []
+    )
     var branches = []
-    if (depth < 2 && Math.random() < 0.55) {
+    if (depth < 2 && Math.random() < 0.55 && segments.length > 2) {
       var branchIdx = Math.floor(Math.random() * (segments.length - 2)) + 1
       var branchPoint = segments[branchIdx]
       var branchAngle = angle + (Math.random() - 0.5) * 1.8
@@ -81,11 +116,12 @@
       : w * clamp(anchorX + (Math.random() - 0.5) * (anchorSpread * 1.8), 0.06, 0.94)
     var endY = h * (distant ? (0.45 + Math.random() * 0.35) : (0.68 + Math.random() * 0.4))
     var roughness = Math.hypot(endX - startX, endY - startY) * 0.44
-    var segments = subdivide(startX, startY, endX, endY, roughness, 6)
+    var segments = subdivide(startX, startY, endX, endY, roughness, 8, [])
     var branches = []
     var branchCount = distant ? (1 + Math.floor(Math.random() * 2)) : (2 + Math.floor(Math.random() * 4))
     var angle = Math.atan2(endY - startY, endX - startX)
     for (var i = 0; i < branchCount; i += 1) {
+      if (segments.length < 3) break
       var idx = Math.floor(Math.random() * (segments.length - 2)) + 1
       var p = segments[idx]
       var branchAngle = angle + (Math.random() - 0.5) * 2.1
@@ -101,12 +137,12 @@
     }
   }
 
-  function collectPaths(bolt, parentAlpha, paths) {
+  function collectPaths(bolt, parentAlpha, out) {
     var alpha = Math.min(parentAlpha, bolt.alpha)
     if (alpha <= 0 || bolt.segments.length < 2) return
-    paths.push({ segments: bolt.segments, alpha: alpha, width: bolt.width })
+    out.push({ segments: bolt.segments, alpha: alpha, width: bolt.width })
     for (var i = 0; i < bolt.branches.length; i += 1) {
-      collectPaths(bolt.branches[i], alpha * 0.58, paths)
+      collectPaths(bolt.branches[i], alpha * 0.58, out)
     }
   }
 
@@ -117,11 +153,24 @@
     }
   }
 
+  function scheduleResize() {
+    if (!state.active) return
+    if (state.resizeTimerId) window.clearTimeout(state.resizeTimerId)
+    state.resizeTimerId = window.setTimeout(function () {
+      state.resizeTimerId = 0
+      resize()
+    }, 100)
+  }
+
   function resize() {
     var rect = root.getBoundingClientRect()
-    var dpr = Math.min(window.devicePixelRatio || 1, 2)
-    canvas.width = Math.max(1, Math.floor(rect.width * dpr))
-    canvas.height = Math.max(1, Math.floor(rect.height * dpr))
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5)
+    var nextW = Math.max(1, Math.floor(rect.width * dpr))
+    var nextH = Math.max(1, Math.floor(rect.height * dpr))
+    if (canvas.width !== nextW || canvas.height !== nextH) {
+      canvas.width = nextW
+      canvas.height = nextH
+    }
     canvas.style.width = rect.width + 'px'
     canvas.style.height = rect.height + 'px'
     state.w = rect.width
@@ -130,6 +179,7 @@
   }
 
   function startLoop() {
+    if (!state.active) return
     if (!state.raf) state.raf = requestAnimationFrame(tick)
   }
 
@@ -150,7 +200,7 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     ctx.clearRect(0, 0, w, h)
 
-    var paths = []
+    paths.length = 0
     for (var i = 0; i < state.bolts.length; i += 1) {
       collectPaths(state.bolts[i], 1, paths)
     }
@@ -201,28 +251,35 @@
     flash.classList.remove('is-flashing')
   }
 
+  function pushBolt(bolt) {
+    // Hard cap so aftershock bursts can't stack unbounded.
+    if (state.bolts.length >= 8) state.bolts.shift()
+    state.bolts.push(bolt)
+  }
+
   function fireStrike(count, options) {
     count = count || 1
     options = options || {}
     if (!state.active || document.hidden) return
     for (var i = 0; i < count; i += 1) {
-      state.bolts.push(createStrike(state.w, state.h, options))
+      pushBolt(createStrike(state.w, state.h, options))
     }
     if (options.flash || (!options.distant && Math.random() < 0.55)) flashScreen()
     startLoop()
+    // Aftershocks keep the cell alive — storm never goes quiet.
     if (Math.random() < 0.55) {
-      window.setTimeout(function () {
+      scheduleTimeout(function () {
         if (!state.active || document.hidden) return
-        state.bolts.push(createStrike(state.w, state.h, Object.assign({}, options, {
+        pushBolt(createStrike(state.w, state.h, Object.assign({}, options, {
           distant: options.distant || Math.random() < 0.45
         })))
         startLoop()
       }, randBetween(60, 180))
     }
     if (Math.random() < 0.35) {
-      window.setTimeout(function () {
+      scheduleTimeout(function () {
         if (!state.active || document.hidden) return
-        state.bolts.push(createStrike(state.w, state.h, {
+        pushBolt(createStrike(state.w, state.h, {
           distant: true,
           anchorX: Math.random(),
           anchorSpread: 0.3
@@ -242,6 +299,8 @@
     if (!state.active) return
     var delay = immediate ? randBetween(120, 320) : nextStrikeDelayMs()
     state.strikeTimerId = window.setTimeout(function () {
+      state.strikeTimerId = 0
+      if (!state.active || document.hidden) return
       var roll = Math.random()
       if (roll < 0.35) {
         fireStrike(roll < 0.12 ? 2 : 1, { flash: true })
@@ -262,22 +321,19 @@
   function syncActive(active, announce) {
     state.active = Boolean(active)
     root.classList.toggle('is-active', state.active)
+    clearTimers()
     if (!state.active) {
       state.bolts = []
       stopLoop()
-      if (state.strikeTimerId) {
-        window.clearTimeout(state.strikeTimerId)
-        state.strikeTimerId = 0
-      }
       clearFlash()
       return
     }
 
     resize()
     if (announce) {
-      window.setTimeout(function () { fireStrike(3, { flash: true }) }, 80)
-      window.setTimeout(function () { fireStrike(1, { distant: true, anchorX: 0.2 }) }, 220)
-      window.setTimeout(function () { fireStrike(1, { distant: true, anchorX: 0.8 }) }, 360)
+      scheduleTimeout(function () { fireStrike(3, { flash: true }) }, 80)
+      scheduleTimeout(function () { fireStrike(1, { distant: true, anchorX: 0.2 }) }, 220)
+      scheduleTimeout(function () { fireStrike(1, { distant: true, anchorX: 0.8 }) }, 360)
     } else {
       fireStrike(2, { flash: Math.random() < 0.6 })
     }
@@ -302,15 +358,19 @@
   }
 
   function onVisibility() {
-    if (document.hidden) stopLoop()
-    else if (state.active) queueNextStrike()
+    if (document.hidden) {
+      state.bolts = []
+      stopLoop()
+      clearTimers()
+    } else if (state.active) {
+      queueNextStrike()
+    }
   }
 
   window.addEventListener('radar:theme-change', onThemeChange)
-  window.addEventListener('resize', resize, { passive: true })
+  window.addEventListener('resize', scheduleResize, { passive: true })
   window.addEventListener('keydown', onHotkey)
   document.addEventListener('visibilitychange', onVisibility)
 
-  resize()
   syncActive(document.documentElement.classList.contains('storm'), false)
 })()

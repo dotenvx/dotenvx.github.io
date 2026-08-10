@@ -17,8 +17,8 @@
       {% assign retention_cell = audit_retention_feature.values[plan.id] %}
       {% if plan.id == "enterprise" %}
         {% assign users_cell = "∞" %}
-        {% assign retention_cell = "custom" %}
-        {% assign price_cell = "custom" %}
+        {% assign retention_cell = "Custom" %}
+        {% assign price_cell = "Custom" %}
         {% assign cta_href = "/contact" %}
         {% assign cta_label = "Contact Us" %}
       {% else %}

@@ -5,12 +5,16 @@
       <ul class="design-list-items">
         {%- for item in site.data.armor_in_use.items %}
         <li>
+          {%- if item.href %}
           <a
             class="design-link"
             href="{{ item.href }}"
             target="_blank"
             rel="noopener noreferrer"
           >{{ item.label }}</a>
+          {%- else %}
+          <span class="design-list-label">{{ item.label }}</span>
+          {%- endif %}
         </li>
         {%- endfor %}
       </ul>

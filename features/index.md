@@ -54,4 +54,4 @@ layout: radar
   visual=features_hero_visual
 %}
 
-{% include components/home-features.html hide_title=true %}
+{% include components/home-features.html data="features_page" hide_title=true %}

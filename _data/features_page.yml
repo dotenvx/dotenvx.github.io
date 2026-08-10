@@ -1,0 +1,79 @@
+title: Features
+items:
+  - label: Make .env safe to commit
+    meta: dotenvx encrypt
+    href: /docs/quickstart/encryption
+  - label: Password protect your .env file
+    meta: dotenvx lock
+    href: /docs/cli/lock
+  - label: Store keys in your OS keychain
+    meta: dotenvx native
+    href: /docs/cli/native
+  - label: Same on Mac, Linux, and Windows
+    meta: dotenvx run
+    href: /docs/quickstart/run
+  - label: Ship the right secrets to each environment
+    meta: dotenvx run -f .env.production
+    href: /docs/quickstart/environments
+  - label: Compose multiple .env files
+    meta: dotenvx run -f
+    href: /docs/cli/run-f
+  - label: Let agents use secrets without spilling them
+    meta: dotenvx run --redact -- claude
+    href: /docs/cli/run-redact
+  - label: Catch missing keys before you run
+    meta: dotenvx validate
+    href: /docs/cli/validate
+  - label: Protect your team from secret leaks
+    meta: dotenvx precommit
+    href: /docs/cli/precommit
+  - label: Keep .env out of Docker images
+    meta: dotenvx prebuild
+    href: /docs/cli/prebuild
+  - label: Give .env live, computed values
+    meta: "${OTHER_VAR} $(whoami)"
+    href: /docs/cli/run-variable-expansion
+  - label: Support multi-line secrets
+    meta: dotenvx run
+    href: /docs/cli/run-multiline
+  - label: Read and write single keys
+    meta: dotenvx get / set
+    href: /docs/cli/get-key
+  - label: Delete keys cleanly
+    meta: dotenvx del
+    href: /docs/cli/del-key
+  - label: Decrypt when you need plaintext
+    meta: dotenvx decrypt
+    href: /docs/cli/decrypt
+  - label: Generate a .env.example
+    meta: dotenvx genexample
+    href: /docs/cli/genexample
+  - label: Append .env to .gitignore
+    meta: dotenvx gitignore
+    href: /docs/cli/gitignore
+  - label: Get help when something goes wrong
+    meta: dotenvx run
+    href: /docs/cli/run-contextual-help
+  - label: Debug what dotenvx is doing
+    meta: dotenvx run --debug
+    href: /docs/cli/run-debug
+  - label: Follow Next.js env conventions
+    meta: --convention=nextjs
+    href: /docs/cli/run-convention-nextjs
+  - label: Pull secrets remotely from places like 1Password
+    meta: op://..
+    href: /docs/secrets-in-1password
+  - label: Pull secrets remotely from Bitwarden
+    meta: bw://..
+    href: /docs/secrets-in-bitwarden
+  - label: Use secrets with Claude
+    meta: dotenvx run --redact -- claude
+    href: /docs/secrets-in-claude
+  - label: Use secrets with Cursor
+    meta: dotenvx run --redact -- agent
+    href: /docs/secrets-in-cursor
+  - label: Use secrets with Codex
+    meta: dotenvx run --redact -- codex
+    href: /docs/secrets-in-codex
+  - label: and more
+    href: /docs

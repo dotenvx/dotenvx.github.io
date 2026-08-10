@@ -52,7 +52,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
       {% capture armor_choice_current %}
         <div id="armor-panel-you" class="armor-you-actions">
           {% include components/design-btn.html
-            label="Get Pro — $5/mo"
+            label="Sign Up"
             href="/signup"
           %}
           {% include components/design-btn.html

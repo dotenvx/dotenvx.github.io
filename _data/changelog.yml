@@ -1,3 +1,6 @@
+- date: 2026-08-10
+  summary: "Type dx instead of dotenvx—dx encrypt, dx run, and more."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2210-2026-08-10"
 - date: 2026-08-07
   summary: "Delete keys from .env files with dotenvx del."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2200-2026-08-07"

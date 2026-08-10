@@ -28,6 +28,7 @@
     </style>
   </head>
   <body class="radar-layout">
+    {% include components/storm-lightning.html %}
     {% include components/radar-nav.html %}
     <main class="radar-main">
       <article class="blog-post">
@@ -58,6 +59,7 @@
       </article>
     </main>
     {% include components/footer.html %}
+    {% include components/design-theme-control.html %}
     <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
   </body>
 </html>

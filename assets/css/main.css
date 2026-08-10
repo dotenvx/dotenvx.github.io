@@ -1349,6 +1349,138 @@ html.dark body.radar-layout {
   background: linear-gradient(180deg, var(--design-bg-deep) 0%, var(--design-bg) 48%, var(--design-bg-lift) 100%) !important;
 }
 
+/*
+  Storm — third theme: cool battle-gray, not light and not parchment-dark.
+  html carries both .dark (for shared dark component rules) and .storm (token override + lightning).
+  Mirrored from ../radar.
+*/
+html.storm body.radar-layout {
+  --design-bg: #161a21;
+  --design-bg-deep: #0e1116;
+  --design-bg-lift: #1c222b;
+  --design-menu-bg: #1a1f28;
+  --design-ink: #e4e9f1;
+  --design-body: #a7b1c2;
+  --design-secondary: rgba(167, 177, 194, 0.42);
+  --design-dim: var(--design-secondary);
+  --design-mid: rgba(176, 190, 212, 0.62);
+  --design-line: rgba(176, 190, 212, 0.2);
+  --design-mark: #ecd53f;
+  --design-gold: #9eb0c8;
+  --design-hover: rgba(176, 190, 212, 0.09);
+  --design-panel: rgba(14, 17, 22, 0.45);
+  --design-etch:
+    inset 0 1px 0 rgba(210, 225, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(150, 170, 200, 0.2),
+    inset 0 0 0 2px rgba(40, 48, 60, 0.45);
+  --design-etch-divider:
+    linear-gradient(
+      180deg,
+      rgba(176, 190, 212, 0.22) 0,
+      rgba(176, 190, 212, 0.22) 1px,
+      rgba(0, 0, 0, 0.55) 1px,
+      rgba(0, 0, 0, 0.55) 2px
+    );
+  background:
+    radial-gradient(ellipse 110% 70% at 70% -10%, rgba(120, 150, 200, 0.14), transparent 52%),
+    radial-gradient(ellipse 90% 55% at 15% 0%, rgba(70, 85, 115, 0.18), transparent 48%),
+    linear-gradient(180deg, var(--design-bg-deep) 0%, var(--design-bg) 48%, var(--design-bg-lift) 100%) !important;
+}
+
+.storm-lightning {
+  display: none;
+  height: min(96vh, 1080px);
+  left: 0;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0) 100%);
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+html.storm .storm-lightning.is-active {
+  display: block;
+}
+
+.storm-lightning::before {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(140, 165, 210, 0.16), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 10%, rgba(90, 110, 150, 0.14), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 18% 5%, rgba(70, 85, 120, 0.12), transparent 50%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.storm-lightning-canvas {
+  display: block;
+  height: 100%;
+  opacity: 0.56;
+  position: relative;
+  width: 100%;
+}
+
+.storm-lightning-flash {
+  background:
+    radial-gradient(ellipse 85% 60% at 50% 0%, rgba(220, 232, 255, 0.34), transparent 72%),
+    rgba(205, 220, 250, 0.14);
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.storm-lightning-flash.is-flashing {
+  animation: storm-flash 380ms ease-out;
+}
+
+@keyframes storm-flash {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  22% { opacity: 0.2; }
+  38% { opacity: 0.85; }
+  100% { opacity: 0; }
+}
+
+/* Keep chrome above main so flyouts stay clickable; only lift page content over lightning. */
+html.storm body.radar-layout .radar-main,
+html.storm body.radar-layout .footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Storm: open air — no frosted bar so sky / lightning reads through */
+html.storm body.radar-layout .radar-chrome {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: transparent;
+  isolation: auto;
+}
+
+html.storm body.radar-layout .radar-chrome:has(.radar-mobile-toggle[aria-expanded="true"]) {
+  background: var(--design-bg);
+}
+
+@media (max-width: 767px) {
+  .storm-lightning {
+    height: min(88vh, 820px);
+  }
+
+  .storm-lightning-canvas {
+    opacity: 0.48;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .storm-lightning {
+    display: none !important;
+  }
+}
+
 body.radar-layout a,
 body.radar-layout a:visited {
   color: var(--design-mid);

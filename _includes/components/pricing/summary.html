@@ -25,11 +25,7 @@
         {% assign users_cell = members_feature.values[plan.id] %}
         {% assign price_cell = plan.price.display %}
         {% assign cta_href = "/signup" %}
-        {% if plan.id == "pro" %}
-          {% assign cta_label = "Start Free Trial" %}
-        {% else %}
-          {% assign cta_label = "Get " | append: plan_name %}
-        {% endif %}
+        {% assign cta_label = "Get " | append: plan_name %}
       {% endif %}
       <tr>
         <th scope="row" class="pricing-summary-plan">{{ plan_name }}</th>
@@ -42,13 +38,6 @@
               href=cta_href
               label=cta_label
               class="design-btn--block"
-            %}
-          {% elsif plan.id == "pro" %}
-            {% include components/design-btn-paid.html
-              href=cta_href
-              label=cta_label
-              btn_class="design-btn--block design-btn--trial"
-              badge=plan.price.display
             %}
           {% else %}
             {% include components/design-btn-paid.html

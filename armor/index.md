@@ -52,9 +52,8 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
       {% capture armor_choice_current %}
         <div id="armor-panel-you" class="armor-you-actions">
           {% include components/design-btn.html
-            label="Try it free"
+            label="Get Pro — $5/mo"
             href="/signup"
-            class="design-btn--trial"
           %}
           {% include components/design-btn.html
             label="See Pricing"

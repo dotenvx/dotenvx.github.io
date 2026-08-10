@@ -1,7 +1,8 @@
 {% capture yes %}{% include components/design-check.html tone="success" size="sm" label="Included" %}{% endcapture %}
 {% assign no = "—" %}
-{% capture billing_monthly %}<span class="pricing-plan-label-full">Monthly</span><span class="pricing-plan-label-short">Mo</span>{% endcapture %}
-{% capture billing_flexible %}<span class="pricing-plan-label-full">Flexible</span><span class="pricing-plan-label-short">Flex</span>{% endcapture %}
+{% capture billing_monthly %}<span class="pricing-value-detail" tabindex="0" aria-label="Monthly billing. Pay upfront for each month." data-tooltip="Pay upfront for each month"><span class="pricing-plan-label-full">Monthly</span><span class="pricing-plan-label-short">Mo</span></span>{% endcapture %}
+{% capture billing_flexible %}<span class="pricing-value-detail" tabindex="0" aria-label="Flexible billing terms based on your organization's needs." data-tooltip="Custom billing terms based on your needs"><span class="pricing-plan-label-full">Flexible</span><span class="pricing-plan-label-short">Flex</span></span>{% endcapture %}
+{% capture payment_flexible %}<span class="pricing-plan-label-full">Flexible</span><span class="pricing-plan-label-short">Flex</span>{% endcapture %}
 
 {% capture compare_support_body %}
   <thead>
@@ -26,17 +27,17 @@
       <td class="design-table-cell--center">Card</td>
       <td class="design-table-cell--center">Card</td>
       <td class="design-table-cell--center">Card</td>
-      <td class="design-table-cell--center">{{ billing_flexible }}</td>
+      <td class="design-table-cell--center">{{ payment_flexible }}</td>
     </tr>
     <tr>
-      <th scope="row">Ticket Support</th>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Ticket Support. Email support@dotenvx.com for help." data-tooltip="Email support@dotenvx.com">Ticket Support</span></th>
       <td class="design-table-cell--center">{{ yes }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>
     </tr>
     <tr>
-      <th scope="row">Slack Support</th>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Slack Support. Connect your organization's Slack workspace for direct support." data-tooltip="Connect your organization’s Slack for direct support">Slack Support</span></th>
       <td class="design-table-cell--center pricing-empty">{{ no }}</td>
       <td class="design-table-cell--center pricing-empty">{{ no }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>

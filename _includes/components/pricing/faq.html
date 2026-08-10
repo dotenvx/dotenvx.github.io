@@ -1,7 +1,11 @@
 {% capture pricing_faq_items %}
   <li class="pricing-faq-item">
     <span class="pricing-faq-q">What are audit logs?</span>
-    <span class="pricing-faq-a">Armor records access activity across your workspace—who accessed what, and when. Every plan includes unlimited audit logs with a retention window: 5 days on Pro, 30 days on Team, and 90 days on Business.</span>
+    <span class="pricing-faq-a">Armor records each key access across your workspace—who accessed what, and when. Pro includes 25,000 audited accesses per month with 5-day retention, Team includes 250,000 with 30-day retention, and Business includes 1 million with 90-day retention.</span>
+  </li>
+  <li class="pricing-faq-item">
+    <span class="pricing-faq-q">What happens if I exceed the included audited accesses?</span>
+    <span class="pricing-faq-a">Key access keeps working. Additional audited accesses are billed as overages, with usage alerts before charges begin. Pro is $0.20, Team is $0.10, and Business is $0.025 per additional 1,000 audited accesses.</span>
   </li>
   <li class="pricing-faq-item">
     <span class="pricing-faq-q">Are armored keys limited?</span>
@@ -9,7 +13,7 @@
   </li>
   <li class="pricing-faq-item">
     <span class="pricing-faq-q">How does encryption work?</span>
-    <span class="pricing-faq-a">Dotenvx uses ECIES to encrypt each secret with a unique ephemeral key, decrypted with a long-term private key. The public key encrypts; the private key stays in your secrets manager or .env.keys. Read <a class="design-link" href="/dotenvx.pdf">the whitepaper</a> for details.</span>
+    <span class="pricing-faq-a">Dotenvx uses ECIES to encrypt each secret with a unique ephemeral key. The public key encrypts; Armor secures the long-term private key, controls who can access it, and records each access in your audit trail. Read <a class="design-link" href="/dotenvx.pdf">the whitepaper</a> for details.</span>
   </li>
   <li class="pricing-faq-item">
     <span class="pricing-faq-q">Is it safe to commit an encrypted .env file?</span>

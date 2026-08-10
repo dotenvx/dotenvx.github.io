@@ -3227,6 +3227,72 @@ html.dark .design-badge.design-badge--danger {
   width: 18%;
 }
 
+.pricing-value-detail {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.pricing-value-detail::after {
+  background: var(--design-ink);
+  border-radius: 0.35rem;
+  bottom: calc(100% + 0.6rem);
+  color: var(--design-panel);
+  content: attr(data-tooltip);
+  font-family: var(--design-font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  left: 50%;
+  line-height: 1.35;
+  max-width: 15rem;
+  opacity: 0;
+  padding: 0.5rem 0.65rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  transform: translate(-50%, 0.25rem);
+  transition: opacity 120ms ease, transform 120ms ease;
+  visibility: hidden;
+  white-space: normal;
+  width: max-content;
+  z-index: 10;
+}
+
+.pricing-value-detail:hover::after,
+.pricing-value-detail:focus::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.pricing-value-detail:focus-visible {
+  border-radius: 0.15rem;
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.pricing-value-detail--right::after {
+  left: auto;
+  right: 0;
+  transform: translate(0, 0.25rem);
+}
+
+.pricing-value-detail--right:hover::after,
+.pricing-value-detail--right:focus::after {
+  transform: translate(0, 0);
+}
+
+.pricing-value-detail--label::after {
+  left: 0;
+  transform: translate(0, 0.25rem);
+}
+
+.pricing-value-detail--label:hover::after,
+.pricing-value-detail--label:focus::after {
+  transform: translate(0, 0);
+}
+
 .pricing-faq-item {
   align-items: flex-start !important;
   display: flex;

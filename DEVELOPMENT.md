@@ -23,7 +23,7 @@ PLANS_API_URL=https://armor.dotenvx.com/public/plans JEKYLL_ENV=production bundl
 PLANS_API_URL=http://localhost:3000/public/plans JEKYLL_ENV=production bundle exec jekyll serve
 ```
 
-Plans are priced by **users** and **audit retention**. Armored keys and audit log volume are unlimited on every plan.
+Plans are priced by **users**, **audit retention**, and included monthly audited accesses. Armored keys are unlimited on every plan; audit usage beyond the included allowance is billed as an overage.
 
 #### To include /docs
 

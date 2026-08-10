@@ -15,23 +15,39 @@
     {% for plan in site.data.plans.plans %}
       {% assign plan_name = plan.name | remove: "⛨ " %}
       {% assign retention_cell = audit_retention_feature.values[plan.id] %}
+      {% assign retention_detail = "Audit events remain available for a rolling " | append: retention_cell | append: "." %}
+      {% assign retention_tooltip = "Events remain available for a rolling " | append: retention_cell %}
       {% if plan.id == "enterprise" %}
         {% assign users_cell = "∞" %}
         {% assign retention_cell = "Custom" %}
         {% assign price_cell = "Custom" %}
         {% assign cta_href = "/contact" %}
         {% assign cta_label = "Contact Us" %}
+        {% assign retention_detail = "Custom audit retention period based on your organization's needs." %}
+        {% assign retention_tooltip = "Custom retention based on your needs" %}
+        {% assign users_detail = "A custom number of users based on your organization's needs." %}
+        {% assign users_tooltip = "Custom user count based on your needs" %}
+        {% assign price_detail = "Custom pricing based on your organization's needs." %}
+        {% assign price_tooltip = "Custom pricing based on your needs" %}
       {% else %}
         {% assign users_cell = members_feature.values[plan.id] %}
         {% assign price_cell = plan.price.display %}
+        {% assign users_detail = users_cell | append: " users are included with this plan." %}
+        {% assign users_tooltip = "Includes " | append: users_cell | append: " users" %}
+        {% if plan.id == "pro" %}
+          {% assign users_detail = "1 user is included with this plan." %}
+          {% assign users_tooltip = "Includes 1 user" %}
+        {% endif %}
+        {% assign price_detail = price_cell | append: " billed monthly on a month-to-month plan." %}
+        {% assign price_tooltip = price_cell | append: " billed month to month" %}
         {% assign cta_href = "/signup" %}
         {% assign cta_label = "Get " | append: plan_name %}
       {% endif %}
       <tr>
         <th scope="row" class="pricing-summary-plan">{{ plan_name }}</th>
-        <td class="design-table-cell--center">{{ users_cell }}</td>
-        <td class="design-table-cell--center pricing-summary-retention">{{ retention_cell }}</td>
-        <td class="design-table-cell--center pricing-summary-price">{{ price_cell }}</td>
+        <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="{{ users_detail }}" data-tooltip="{{ users_tooltip }}">{{ users_cell }}</span></td>
+        <td class="design-table-cell--center pricing-summary-retention"><span class="pricing-value-detail" tabindex="0" aria-label="{{ retention_detail }}" data-tooltip="{{ retention_tooltip }}">{{ retention_cell }}</span></td>
+        <td class="design-table-cell--center pricing-summary-price"><span class="pricing-value-detail" tabindex="0" aria-label="{{ price_detail }}" data-tooltip="{{ price_tooltip }}">{{ price_cell }}</span></td>
         <td class="design-table-cell--right pricing-summary-action">
           {% if plan.id == "enterprise" %}
             {% include components/design-btn.html

@@ -15,7 +15,7 @@
       "limits": {
         "members": 1,
         "armored_keys": null,
-        "audit_events": 50000,
+        "audit_events": 25000,
         "audit_retention_days": 5
       },
       "highlights": [
@@ -39,7 +39,7 @@
       "limits": {
         "members": 3,
         "armored_keys": null,
-        "audit_events": 500000,
+        "audit_events": 250000,
         "audit_retention_days": 30
       },
       "highlights": [
@@ -63,7 +63,7 @@
       "limits": {
         "members": 10,
         "armored_keys": null,
-        "audit_events": 2000000,
+        "audit_events": 1000000,
         "audit_retention_days": 90
       },
       "highlights": [
@@ -105,6 +105,16 @@
         "pro": "1",
         "team": "3",
         "business": "10",
+        "enterprise": "Custom"
+      }
+    },
+    {
+      "id": "audit_events",
+      "label": "Audit events",
+      "values": {
+        "pro": "25,000",
+        "team": "250,000",
+        "business": "1,000,000",
         "enterprise": "Custom"
       }
     },

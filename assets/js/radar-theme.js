@@ -1,14 +1,26 @@
 (function () {
+  var MODES = ['light', 'dark', 'storm']
   var mode = 'dark'
+
+  function modes() {
+    return (window.__radarThemeMode && window.__radarThemeMode.modes) || MODES
+  }
 
   function resolve() {
     if (window.__radarThemeMode && window.__radarThemeMode.resolve) {
       return window.__radarThemeMode.resolve()
     }
     var stored = localStorage.getItem('themeMode')
-    mode = stored === 'light' || stored === 'dark' ? stored : 'dark'
+    var list = modes()
+    mode = list.indexOf(stored) !== -1 ? stored : 'dark'
     if (!stored) localStorage.setItem('themeMode', mode)
     return mode
+  }
+
+  function labelFor(next) {
+    if (next === 'storm') return 'Storm'
+    if (next === 'dark') return 'Dark'
+    return 'Light'
   }
 
   function apply(next) {
@@ -16,15 +28,20 @@
     if (window.__radarThemeMode && window.__radarThemeMode.apply) {
       window.__radarThemeMode.apply(mode)
     } else {
-      document.documentElement.classList.toggle('dark', mode === 'dark')
+      document.documentElement.classList.toggle('dark', mode === 'dark' || mode === 'storm')
+      document.documentElement.classList.toggle('storm', mode === 'storm')
     }
     document.querySelectorAll('[data-radar-theme-label]').forEach(function (el) {
-      el.textContent = mode === 'dark' ? 'Dark' : 'Light'
+      el.textContent = labelFor(mode)
     })
   }
 
   function toggle() {
-    apply(mode === 'dark' ? 'light' : 'dark')
+    var list = modes()
+    var next = window.__radarThemeMode && window.__radarThemeMode.next
+      ? window.__radarThemeMode.next(mode)
+      : list[(list.indexOf(mode) + 1) % list.length]
+    apply(next)
     localStorage.setItem('themeMode', mode)
   }
 

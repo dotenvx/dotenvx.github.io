@@ -1,21 +1,42 @@
 <script>
   (function () {
+    var MODES = ['light', 'dark', 'storm']
+
     function resolveThemeMode() {
       var stored = localStorage.getItem('themeMode')
-      var mode = stored === 'light' || stored === 'dark' ? stored : 'dark'
+      var mode = MODES.indexOf(stored) !== -1 ? stored : 'dark'
       if (!stored) localStorage.setItem('themeMode', mode)
       return mode
     }
 
     function applyThemeMode(mode) {
-      document.documentElement.classList.toggle('dark', mode === 'dark')
+      var root = document.documentElement
+      root.classList.toggle('dark', mode === 'dark' || mode === 'storm')
+      root.classList.toggle('storm', mode === 'storm')
       var meta = document.querySelector('meta[name="theme-color"]')
-      if (meta) meta.setAttribute('content', mode === 'dark' ? '#0a0a0a' : '#e4e7e6')
+      if (meta) {
+        meta.setAttribute(
+          'content',
+          mode === 'storm' ? '#14171c' : mode === 'dark' ? '#0a0a0a' : '#e4e7e6'
+        )
+      }
+      try {
+        window.dispatchEvent(new CustomEvent('radar:theme-change', { detail: { mode: mode } }))
+      } catch (e) {}
     }
 
     window.__radarThemeMode = window.__radarThemeMode || {}
+    window.__radarThemeMode.modes = MODES
     window.__radarThemeMode.resolve = resolveThemeMode
     window.__radarThemeMode.apply = applyThemeMode
+    window.__radarThemeMode.next = function (mode) {
+      var i = MODES.indexOf(mode)
+      return MODES[(i + 1) % MODES.length]
+    }
+    window.__radarThemeMode.prev = function (mode) {
+      var i = MODES.indexOf(mode)
+      return MODES[(i - 1 + MODES.length) % MODES.length]
+    }
 
     try {
       applyThemeMode(resolveThemeMode())

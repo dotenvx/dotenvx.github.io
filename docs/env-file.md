@@ -13,7 +13,8 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell docs-guide-body design-prose">
+  <div class="armor-shell">
+    <div class="docs-guide-body design-prose">
     <h2 class="design-list-title">Format</h2>
     <p class="design-paragraph"><code class="design-code">.env</code> files use a simple format – key/values separated by an equal sign.</p>
 
@@ -171,5 +172,6 @@ $ dotenvx encrypt
     <p class="design-paragraph">A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials. — <a class="design-link" href="https://12factor.net/config">The Twelve-Factor App</a></p>
     <p class="design-paragraph">Other languages, frameworks, platforms, and infra tools like Docker followed soon after – implementing environment variable support. Today, it has become an industry standard.</p>
     <p class="design-paragraph">Encryption support was introduced <a class="design-link" href="https://github.com/dotenvx/dotenvx/issues/189">May of 2024</a>.</p>
+    </div>
   </div>
 </section>

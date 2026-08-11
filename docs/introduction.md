@@ -150,6 +150,21 @@ layout: radar
   </li>
 {% endcapture %}
 
+{% capture docs_resources_items %}
+  <li>
+    <a class="design-link" href="/docs/env-file">.env</a>
+    <span class="design-list-meta">separates secrets from code</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/env-keys-file">.env.keys</a>
+    <span class="design-list-meta">private decryption keys</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/stats">Stats</a>
+    <span class="design-list-meta">download stats</span>
+  </li>
+{% endcapture %}
+
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-intro-lists">
@@ -164,6 +179,10 @@ layout: radar
       {% include components/design-list.html
         title="SDKs"
         items=docs_sdk_items
+      %}
+      {% include components/design-list.html
+        title="Resources"
+        items=docs_resources_items
       %}
     </div>
   </div>

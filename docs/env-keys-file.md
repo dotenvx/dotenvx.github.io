@@ -13,7 +13,8 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell docs-guide-body design-prose">
+  <div class="armor-shell">
+    <div class="docs-guide-body design-prose">
     <h2 class="design-list-title">Format</h2>
 
     {% capture env_keys_example %}
@@ -52,5 +53,6 @@ $ dotenvx set HELLO World
 
     <h2 class="design-list-title">History</h2>
     <p class="design-paragraph">The <code class="design-code">.env.keys</code> file originally came out of development work on <a class="design-link" href="https://github.com/dotenv-org/dotenv-vault">dotenv-vault</a> in early 2023. Its current format came out during <a class="design-link" href="https://github.com/dotenvx/dotenvx/issues/189">an effort in May 2024</a> to support encryption without the ability to decrypt.</p>
+    </div>
   </div>
 </section>

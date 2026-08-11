@@ -2865,6 +2865,11 @@ html.dark .design-codeblock code {
   display: none !important;
 }
 
+.design-choice--code .design-codeblock-wrap,
+.design-choice--code .design-codeblock {
+  margin: 0;
+}
+
 .design-choice--code .design-codeblock-wrap {
   display: block;
   height: auto;

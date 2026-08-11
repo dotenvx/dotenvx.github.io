@@ -131,7 +131,7 @@ layout: radar
   </li>
   <li>
     <a class="design-link" href="/docs/uv">uv</a>
-    <span class="design-list-meta">dotenvx run -- uv run</span>
+    <span class="design-list-meta">uv add python-dotenvx</span>
   </li>
 {% endcapture %}
 

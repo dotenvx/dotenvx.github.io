@@ -102,10 +102,6 @@
             class="radar-nav-panel-link{% if radar_path == '/docs/introduction/' or radar_path == '/docs/introduction' or radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}"
           >Getting started</a>
           <a
-            href="/docs/quickstarts"
-            class="radar-nav-panel-link{% if radar_path == '/docs/quickstarts/' or radar_path == '/docs/quickstarts' %} is-active{% endif %}"
-          >Quickstarts</a>
-          <a
             href="/docs/cli"
             class="radar-nav-panel-link{% if radar_path == '/docs/cli/' or radar_path == '/docs/cli' or radar_path contains '/docs/cli/' %} is-active{% endif %}"
           >CLI</a>
@@ -113,6 +109,10 @@
             href="/docs/sdk"
             class="radar-nav-panel-link{% if radar_path == '/docs/sdk/' or radar_path == '/docs/sdk' or radar_path contains '/docs/sdk/' %} is-active{% endif %}"
           >SDKs</a>
+          <a
+            href="/docs/quickstarts"
+            class="radar-nav-panel-link{% if radar_path == '/docs/quickstarts/' or radar_path == '/docs/quickstarts' %} is-active{% endif %}"
+          >Quickstarts</a>
         </div>
         <div class="radar-nav-docs-icons" aria-label="Quickstarts">
           <a href="/docs/cli-quickstart" class="radar-nav-docs-icon" aria-label="CLI">{% include icons/docs/bash.html class="radar-nav-docs-icon-svg" %}</a>
@@ -169,9 +169,9 @@
         <span><span aria-hidden="true">←</span> Docs</span>
       </button>
       <a href="/docs/introduction" class="radar-mobile-link">Getting started</a>
-      <a href="/docs/quickstarts" class="radar-mobile-link">Quickstarts</a>
       <a href="/docs/cli" class="radar-mobile-link">CLI</a>
       <a href="/docs/sdk" class="radar-mobile-link">SDKs</a>
+      <a href="/docs/quickstarts" class="radar-mobile-link">Quickstarts</a>
     </div>
   </div>
 </div>

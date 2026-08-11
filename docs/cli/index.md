@@ -17,86 +17,34 @@ layout: radar
   icon="cli"
 %}
 
-{% capture cli_commands_items %}
-  <li>
-    <a class="design-link" href="/docs/cli/run">Run</a>
-    <span class="design-list-meta">dotenvx run</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/get">Get</a>
-    <span class="design-list-meta">dotenvx get</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/set">Set</a>
-    <span class="design-list-meta">dotenvx set</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/del">Del</a>
-    <span class="design-list-meta">dotenvx del</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/encrypt">Encrypt</a>
-    <span class="design-list-meta">dotenvx encrypt</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/decrypt">Decrypt</a>
-    <span class="design-list-meta">dotenvx decrypt</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/keypair">Keypair</a>
-    <span class="design-list-meta">dotenvx keypair</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/ls">Ls</a>
-    <span class="design-list-meta">dotenvx ls</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/gitignore">Gitignore</a>
-    <span class="design-list-meta">dotenvx gitignore</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/genexample">Genexample</a>
-    <span class="design-list-meta">dotenvx genexample</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/validate">Validate</a>
-    <span class="design-list-meta">dotenvx validate</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/precommit">Precommit</a>
-    <span class="design-list-meta">dotenvx precommit</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/prebuild">Prebuild</a>
-    <span class="design-list-meta">dotenvx prebuild</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/help">Help</a>
-    <span class="design-list-meta">dotenvx help</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/version">Version</a>
-    <span class="design-list-meta">dotenvx --version</span>
-  </li>
-{% endcapture %}
+<style>
+  .docs-cli-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+  }
 
-{% capture cli_better_security_items %}
-  <li>
-    <a class="design-link" href="/docs/cli/lock">Lock ⊡</a>
-    <span class="design-list-meta">dotenvx lock</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/native">Native ⌥</a>
-    <span class="design-list-meta">dotenvx native</span>
-  </li>
-{% endcapture %}
+  .docs-cli-cards .design-settings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-{% capture cli_security_teams_items %}
-  <li>
-    <a class="design-link" href="/docs/cli/armor/introduction">Armor ⛨</a>
-    <span class="design-list-meta">dotenvx armor</span>
-  </li>
-{% endcapture %}
+  @media (min-width: 640px) {
+    .docs-cli-cards .design-settings-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .docs-cli-cards .design-settings-tile-glyph {
+    font-size: 1.85rem;
+  }
+
+  @media (min-width: 900px) {
+    .docs-cli-cards .design-settings-tile-glyph {
+      font-size: 2.25rem;
+    }
+  }
+</style>
 
 {% capture cli_all_permutations_items %}
   <li>
@@ -480,26 +428,55 @@ layout: radar
   <div class="armor-shell">
     <div class="docs-cli-lists">
       {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">Commands</h2>
-        {% include components/design-list.html items=cli_commands_items %}
+        <div class="docs-cli-cards">
+          <p class="design-list-title">Commands</p>
+          <div class="design-settings-grid">
+            {% include components/design-settings-tile.html href="/docs/cli/run" label="Run" glyph="›" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/get" label="Get" glyph="↓" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/set" label="Set" glyph="↑" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/del" label="Del" glyph="×" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/encrypt" label="Encrypt" glyph="◈" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/decrypt" label="Decrypt" glyph="◇" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/keypair" label="Keypair" glyph="¤" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/ls" label="Ls" glyph="≡" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/gitignore" label="Gitignore" glyph="#" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/genexample" label="Genexample" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/validate" label="Validate" glyph="✓" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/precommit" label="Precommit" glyph="⇢" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/prebuild" label="Prebuild" glyph="▣" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/help" label="Help" glyph="?" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/version" label="Version" glyph="v" glyph_class="design-settings-tile-glyph--soft" %}
+          </div>
+        </div>
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">Better Security</h2>
-        {% include components/design-list.html items=cli_better_security_items %}
+        <div class="docs-cli-cards">
+          <p class="design-list-title">Better Security</p>
+          <div class="design-settings-grid">
+            {% include components/design-settings-tile.html href="/docs/cli/lock" label="Lock" glyph="⊡" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/native" label="Native" glyph="⌥" glyph_class="design-settings-tile-glyph--soft" %}
+          </div>
+        </div>
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">For Security Teams</h2>
-        {% include components/design-list.html items=cli_security_teams_items %}
+        <div class="docs-cli-cards">
+          <p class="design-list-title">For Security Teams</p>
+          <div class="design-settings-grid">
+            {% include components/design-settings-tile.html href="/docs/cli/armor/introduction" label="Armor" glyph="⛨" glyph_class="design-settings-tile-glyph--soft" %}
+          </div>
+        </div>
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">All Command Permutations</h2>
-        {% include components/design-list.html items=cli_all_permutations_items %}
+        {% include components/design-list.html
+          title="Options"
+          items=cli_all_permutations_items
+        %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
     </div>

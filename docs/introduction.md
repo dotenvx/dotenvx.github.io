@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Documentation
 permalink: /docs/introduction/
 layout: radar
 ---
@@ -51,69 +51,103 @@ layout: radar
 {% include components/design-hero.html
   class="company-design-hero docs-design-hero"
 
-  eyebrow="Docs"
-  eyebrow_href="/docs/introduction"
-  title="Introduction"
-  description="Get started with dotenvx—install, encrypt, and run."
+  eyebrow="Dotenvx"
+  eyebrow_href="/"
+  title="Documentation"
+  description="Get started with dotenvx—install, encrypt, and run. Guides for languages, infra, coding agents, and more."
   visual=docs_hero_visual
 %}
 
 
 {% capture docs_quickstart_items %}
   <li>
-    <a class="design-link" href="/docs/secrets-with-cli">CLI</a>
+    <a class="design-link" href="/docs/cli-quickstart">CLI</a>
     <span class="design-list-meta">dotenvx encrypt</span>
   </li>
   <li>
     <a class="design-link" href="/docs/claude">Claude</a>
-    <a class="design-link" href="/docs/codex">Codex</a>
-    <a class="design-link" href="/docs/cursor">Cursor</a>
     <span class="design-list-meta">dotenvx run --redact -- claude</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/1password">1Password</a>
-    <a class="design-link" href="/docs/bitwarden">Bitwarden</a>
-    <span class="design-list-meta">op:// bw://</span>
+    <a class="design-link" href="/docs/codex">Codex</a>
+    <span class="design-list-meta">dotenvx run --redact -- codex</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cursor">Cursor</a>
+    <span class="design-list-meta">dotenvx run --redact -- cursor</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/github-actions">GitHub Actions</a>
+    <span class="design-list-meta">.github/workflows</span>
   </li>
   <li>
     <a class="design-link" href="/docs/nodejs">Node.js</a>
     <span class="design-list-meta">dotenvx run -- node index.js</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/python">Python</a>
-    <span class="design-list-meta">dotenvx run -- python main.py</span>
+    <a class="design-link" href="/docs/quickstarts">…</a>
+    <span class="design-list-meta">30+ Quickstart Guides</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/quickstarts">more</a>
+    <a class="design-link" href="/docs/1password">1Password</a>
+    <span class="design-list-meta">op://</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/bitwarden">Bitwarden</a>
+    <span class="design-list-meta">bw://</span>
   </li>
 {% endcapture %}
 
 {% capture docs_cli_items %}
   <li>
-    <a class="design-link" href="/docs/cli/encrypt">Encrypt</a>
-    <span class="design-list-meta">dotenvx encrypt</span>
-  </li>
-  <li>
     <a class="design-link" href="/docs/cli/run">Run</a>
     <span class="design-list-meta">dotenvx run</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/set">Set</a>
-    <span class="design-list-meta">dotenvx set</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/get">Get</a>
     <span class="design-list-meta">dotenvx get</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/cli">more</a>
+    <a class="design-link" href="/docs/cli/set">Set</a>
+    <span class="design-list-meta">dotenvx set</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/del">Del</a>
+    <span class="design-list-meta">dotenvx del</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/encrypt">Encrypt</a>
+    <span class="design-list-meta">dotenvx encrypt</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli">…</a>
+    <span class="design-list-meta">full reference</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/lock">Lock ⊡</a>
+    <span class="design-list-meta">dotenvx lock</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/native">Native ⌥</a>
+    <span class="design-list-meta">dotenvx native</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/introduction">Armor ⛨</a>
+    <span class="design-list-meta">dotenvx armor</span>
   </li>
 {% endcapture %}
 
 {% capture docs_sdk_items %}
-  <li><a class="design-link" href="/docs/sdk/config">config</a></li>
-  <li><a class="design-link" href="/docs/sdk/parse">parse</a></li>
-  <li><a class="design-link" href="/docs/sdk">more</a></li>
+  <li>
+    <a class="design-link" href="/docs/sdk/config">config</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/sdk/parse">parse</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/sdk">…</a>
+    <span class="design-list-meta">full reference</span>
+  </li>
 {% endcapture %}
 
 <section class="radar-section">
@@ -128,7 +162,7 @@ layout: radar
         items=docs_cli_items
       %}
       {% include components/design-list.html
-        title="SDK"
+        title="SDKs"
         items=docs_sdk_items
       %}
     </div>

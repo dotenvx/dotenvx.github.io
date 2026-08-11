@@ -4312,6 +4312,11 @@ html.dark .radar-btn {
   width: 100%;
 }
 
+/* Black base so invert reliably becomes white in dark/storm (not flip of --design-ink). */
+.docs-hero-icon--invert-dark {
+  color: #000 !important;
+}
+
 html.dark .docs-hero-icon--invert-dark,
 html.storm .docs-hero-icon--invert-dark {
   filter: invert(1);

@@ -1,13 +1,17 @@
 quickstart_crumbs:
-  - label: Docs
-    href: /docs/introduction
   - label: Quickstarts
     href: /docs/quickstarts
+
+cli_crumbs:
+  - label: Docs
+    href: /docs/introduction
+  - label: CLI
+    href: /docs/cli
 
 # Order matches /docs/quickstarts — used for prev/next pager
 quickstarts:
   - label: CLI
-    href: /docs/secrets-with-cli/
+    href: /docs/cli-quickstart/
   - label: Claude
     href: /docs/claude/
   - label: Codex
@@ -16,10 +20,6 @@ quickstarts:
     href: /docs/cursor/
   - label: GitHub Actions
     href: /docs/github-actions/
-  - label: 1Password
-    href: /docs/1password/
-  - label: Bitwarden
-    href: /docs/bitwarden/
   - label: Node.js
     href: /docs/nodejs/
   - label: Next.js
@@ -68,5 +68,11 @@ quickstarts:
     href: /docs/bash/
   - label: Fish
     href: /docs/fish/
+  - label: Zsh
+    href: /docs/zsh/
   - label: Cron
     href: /docs/cron/
+  - label: 1Password
+    href: /docs/1password/
+  - label: Bitwarden
+    href: /docs/bitwarden/

@@ -60,7 +60,7 @@ layout: radar
 
 {% capture qs_cli_items %}
   <li>
-    <a class="design-link" href="/docs/secrets-with-cli">CLI</a>
+    <a class="design-link" href="/docs/cli-quickstart">CLI</a>
     <span class="design-list-meta">dotenvx encrypt</span>
   </li>
 {% endcapture %}
@@ -226,6 +226,10 @@ layout: radar
     <span class="design-list-meta">dotenvx run -- fish</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/zsh">Zsh</a>
+    <span class="design-list-meta">dotenvx run -- zsh</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/cron">Cron</a>
     <span class="design-list-meta">crontab</span>
   </li>
@@ -235,9 +239,8 @@ layout: radar
   <div class="armor-shell">
     <div class="docs-quickstarts-lists">
       {% include components/design-list.html title="CLI" items=qs_cli_items %}
-      {% include components/design-list.html title="Agents" items=qs_agents_items %}
+      {% include components/design-list.html title="Coding Agents" items=qs_agents_items %}
       {% include components/design-list.html title="CI" items=qs_ci_items %}
-      {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
       {% include components/design-list.html title="Node.js" items=qs_nodejs_items %}
       {% include components/design-list.html title="Python" items=qs_python_items %}
       {% include components/design-list.html title="PHP" items=qs_php_items %}
@@ -249,6 +252,7 @@ layout: radar
       {% include components/design-list.html title="Docker" items=qs_docker_items %}
       {% include components/design-list.html title="Monorepos" items=qs_monorepos_items %}
       {% include components/design-list.html title="Other" items=qs_other_items %}
+      {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
     </div>
   </div>
 </section>

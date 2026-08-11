@@ -1,61 +1,18 @@
 ---
 title: CLI
+description: Encrypt, run, and manage .env files from the command line.
 permalink: /docs/cli/
+redirect_from:
+  - /docs/ref/cli/
+  - /docs/ref/cli
 layout: radar
 ---
 
-<style>
-  .docs-hero-ascii {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    min-height: inherit;
-    width: 100%;
-  }
-
-  .docs-hero-ascii-art {
-    color: var(--design-ink);
-    font-family: var(--design-font-mono);
-    font-size: var(--design-text-title);
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    line-height: 1;
-    margin: 0;
-    text-align: center;
-    user-select: none;
-    white-space: pre;
-  }
-
-  @media (min-width: 900px) {
-    .docs-hero-ascii {
-      height: 100%;
-      min-height: inherit;
-    }
-  }
-
-  .docs-cli-lists {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-width: 36rem;
-  }
-</style>
-
-{% capture docs_hero_visual %}
-  <div class="docs-hero-ascii" aria-hidden="true">
-    <pre class="docs-hero-ascii-art">&lt;docs/&gt;</pre>
-  </div>
-{% endcapture %}
-
-{% include components/design-hero.html
-  class="company-design-hero docs-design-hero"
-
+{% include components/docs-hero.html
   eyebrow="Docs"
-  eyebrow_href="/docs/introduction"
   title="CLI"
   description="Encrypt, run, and manage .env files from the command line."
-  visual=docs_hero_visual
+  icon="cli"
 %}
 
 {% capture cli_commands_items %}

@@ -12,9 +12,14 @@
   {% when "cli" %}
     {% assign icon_cli = true %}
   {% when "bash" %}
-    {% assign icon_cli = true %}
+    {% assign icon_file = "bash.html" %}
+    {% assign icon_color = "#4EAA25" %}
   {% when "fish" %}
-    {% assign icon_cli = true %}
+    {% assign icon_file = "fish.html" %}
+    {% assign icon_invert = true %}
+  {% when "zsh" %}
+    {% assign icon_file = "zsh.html" %}
+    {% assign icon_color = "#F15A24" %}
   {% when "cron" %}
     {% assign icon_cli = true %}
   {% when "claude" %}
@@ -37,8 +42,8 @@
     {% assign icon_file = "nodejs.html" %}
     {% assign icon_color = "#339933" %}
   {% when "bun" %}
-    {% assign icon_file = "nodejs.html" %}
-    {% assign icon_color = "#339933" %}
+    {% assign icon_file = "bun.html" %}
+    {% assign icon_invert = true %}
   {% when "nextjs" %}
     {% assign icon_file = "nextjs.html" %}
     {% assign icon_invert = true %}
@@ -48,7 +53,7 @@
   {% when "astro" %}
     {% assign icon_file = "astro.html" %}
   {% when "cloudflare-workers" %}
-    {% assign icon_file = "bolt.html" %}
+    {% assign icon_file = "cloudflare-workers.html" %}
     {% assign icon_color = "#F38020" %}
   {% when "python" %}
     {% assign icon_file = "python.html" %}
@@ -72,11 +77,11 @@
     {% assign icon_file = "java.html" %}
     {% assign icon_color = "#F89820" %}
   {% when "kotlin" %}
-    {% assign icon_file = "java.html" %}
-    {% assign icon_color = "#F89820" %}
+    {% assign icon_file = "kotlin.html" %}
+    {% assign icon_color = "#7F52FF" %}
   {% when "clojure" %}
-    {% assign icon_file = "java.html" %}
-    {% assign icon_color = "#F89820" %}
+    {% assign icon_file = "clojure.html" %}
+    {% assign icon_color = "#5881D8" %}
   {% when "dotnet" %}
     {% assign icon_file = "dotnet.html" %}
     {% assign icon_color = "#512BD4" %}

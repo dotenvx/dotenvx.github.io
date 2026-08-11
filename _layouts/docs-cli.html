@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include layouts/radar-theme.html %}
+    {% include layouts/meta.html %}
+    {% include layouts/analytics.html %}
+  </head>
+  <body class="radar-layout">
+    {% include components/storm-lightning.html %}
+    {% include components/radar-nav.html %}
+    <main class="radar-main">
+      {% assign crumbs = page.crumbs | default: site.data.docs.cli_crumbs %}
+      {% assign options_title = page.options_title | default: "Options" %}
+      {% comment %} Option pages (Docs » CLI » Parent): eyelash back to parent only {% endcomment %}
+      {% assign use_parent_eyelash = false %}
+      {% if page.crumbs and page.crumbs.size > 2 %}
+        {% assign use_parent_eyelash = true %}
+        {% assign parent_crumb = page.crumbs | last %}
+        {% assign parent_eyelash = parent_crumb.label | downcase %}
+        {% assign parent_eyelash_href = parent_crumb.href %}
+      {% endif %}
+      <div class="armor-shell docs-page">
+        {% if use_parent_eyelash %}
+          {% include components/docs-hero.html
+            bare=true
+            eyebrow=parent_eyelash
+            eyebrow_href=parent_eyelash_href
+            title=page.title
+            description=page.description
+            icon=page.icon
+            mark=page.mark
+          %}
+        {% else %}
+          {% include components/docs-hero.html
+            bare=true
+            eyebrow="Docs"
+            crumbs=crumbs
+            title=page.title
+            description=page.description
+            icon=page.icon
+            mark=page.mark
+          %}
+        {% endif %}
+
+        <section class="docs-cli-body docs-guide-body">
+          {{ content }}
+
+          {% if page.options and page.options.size > 0 %}
+            {% capture cli_options_items %}
+              {% for opt in page.options %}
+                <li>
+                  <a class="design-link" href="{{ opt.href }}">{{ opt.title }}</a>
+                </li>
+              {% endfor %}
+            {% endcapture %}
+            {% include components/design-list.html
+              title=options_title
+              items=cli_options_items
+            %}
+          {% endif %}
+        </section>
+      </div>
+    </main>
+    {% include components/footer.html %}
+    {% if page.video and page.video != "" %}
+      {% include components/design-video-corner.html
+        mp4=page.video
+        webm=page.video_webm
+        poster=page.video_poster
+        label=page.video_title
+      %}
+    {% endif %}
+    {% include components/design-theme-control.html %}
+    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
+    {% if page.video and page.video != "" %}
+      <script src="{{ '/assets/js/design-video-corner.js' | relative_url }}"></script>
+    {% endif %}
+  </body>
+</html>

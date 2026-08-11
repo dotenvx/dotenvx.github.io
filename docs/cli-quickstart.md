@@ -4,7 +4,10 @@ title: "CLI"
 social_title: "Encrypt a .env file with the Dotenvx CLI"
 description: "Encrypt a .env file with the Dotenvx CLI, commit it safely, and inject its secrets at runtime."
 icon: cli
-permalink: /docs/secrets-with-cli/
+permalink: /docs/cli-quickstart/
+redirect_from:
+  - /docs/secrets-with-cli/
+  - /docs/secrets-with-cli
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 install: |
   $ curl -sfS https://dotenvx.sh | sh

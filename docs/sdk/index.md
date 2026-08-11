@@ -1,6 +1,9 @@
 ---
 title: SDK
 permalink: /docs/sdk/
+redirect_from:
+  - /docs/ref/sdk/
+  - /docs/ref/sdk
 layout: radar
 ---
 

@@ -3,7 +3,7 @@ layout: docs-quickstart
 title: "Cron"
 social_title: "Encrypt .env secrets for cron jobs"
 description: "Encrypt .env secrets for cron jobs with dotenvx and inject them securely at runtime."
-icon: cron
+mark: "* * * * *"
 permalink: /docs/cron/
 redirect_from:
   - /docs/secrets-in-cron/

@@ -1,4 +1,5 @@
 {% assign eyebrow = include.eyebrow | default: "Docs" %}
+{% assign eyebrow_href = include.eyebrow_href | default: "/docs/introduction" %}
 {% assign mark = include.mark | default: "<docs/>" %}
 {% assign icon = include.icon %}
 {% assign crumbs = include.crumbs %}
@@ -21,7 +22,7 @@
   class="company-design-hero docs-design-hero"
   bare=include.bare
   eyebrow=eyebrow
-  eyebrow_href="/docs/introduction"
+  eyebrow_href=eyebrow_href
   crumbs=crumbs
   title=include.title
   description=include.description

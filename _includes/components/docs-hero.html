@@ -3,17 +3,39 @@
 {% assign mark = include.mark | default: "<docs/>" %}
 {% assign icon = include.icon %}
 {% assign crumbs = include.crumbs %}
+{% assign video = include.video %}
+{% assign video_webm = include.video_webm %}
+{% assign video_poster = include.video_poster %}
+{% assign video_title = include.video_title %}
+
+{% capture docs_hero_video %}
+  {% if video and video != "" %}
+    {% include components/design-video-corner.html
+      class="design-video-corner--hero"
+      mp4=video
+      webm=video_webm
+      poster=video_poster
+      label=video_title
+    %}
+  {% endif %}
+{% endcapture %}
 
 {% if icon and icon != "" %}
   {% capture docs_hero_visual %}
-    <div class="docs-hero-icon-wrap" aria-hidden="true">
-      {% include components/docs-hero-icon.html icon=icon %}
+    <div class="docs-hero-icon-wrap">
+      <div class="docs-hero-mark-frame">
+        {% include components/docs-hero-icon.html icon=icon %}
+        {{ docs_hero_video }}
+      </div>
     </div>
   {% endcapture %}
 {% else %}
   {% capture docs_hero_visual %}
-    <div class="docs-hero-ascii" aria-hidden="true">
-      <pre class="docs-hero-ascii-art">{{ mark }}</pre>
+    <div class="docs-hero-ascii">
+      <div class="docs-hero-mark-frame docs-hero-mark-frame--ascii">
+        <pre class="docs-hero-ascii-art" aria-hidden="true">{{ mark }}</pre>
+        {{ docs_hero_video }}
+      </div>
     </div>
   {% endcapture %}
 {% endif %}

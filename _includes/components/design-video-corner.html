@@ -5,7 +5,7 @@
 {% if include.label and include.label != "" %}
   {% assign label = include.label %}
 {% else %}
-  {% assign label = "Watch" %}
+  {% assign label = "Play video" %}
 {% endif %}
 {% assign video_class = include.class %}
 
@@ -34,6 +34,11 @@
           <source src="{{ webm }}" type="video/webm">
         {% endif %}
       </video>
+      <span class="design-video-corner-play" aria-hidden="true">
+        <svg class="design-video-corner-play-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false">
+          <path d="M8 5.5v13l11-6.5-11-6.5z"/>
+        </svg>
+      </span>
     </span>
   </button>
 

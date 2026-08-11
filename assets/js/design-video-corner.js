@@ -4,6 +4,10 @@
     else document.addEventListener('DOMContentLoaded', fn)
   }
 
+  function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  }
+
   function bindCorner(root) {
     var hit = root.querySelector('[data-design-video-corner-hit]')
     var player = root.querySelector('[data-design-video-corner-player]')
@@ -11,11 +15,31 @@
     var stagePlayer = root.querySelector('[data-design-video-corner-stage-player]')
     var close = root.querySelector('[data-design-video-corner-close]')
     var expanded = false
+    var hovering = false
+    // Hero dock: still + play glyph only. Fixed corner may preview on hover.
+    var hoverPreview = !root.classList.contains('design-video-corner--hero')
+
+    function showIdleFrame() {
+      if (!player) return
+      player.muted = true
+      player.pause()
+      // Nudge so browsers paint a frame instead of a blank box.
+      try {
+        if (player.readyState >= 1 && player.currentTime < 0.05) {
+          player.currentTime = 0.05
+        }
+      } catch (_) {}
+    }
 
     function previewPlay() {
-      if (!player || expanded) return
+      if (!hoverPreview || !player || expanded || prefersReducedMotion()) return
       player.muted = true
       player.play().catch(function () {})
+    }
+
+    function previewPause() {
+      if (!player || expanded) return
+      player.pause()
     }
 
     function expand() {
@@ -45,7 +69,8 @@
       document.removeEventListener('keydown', onKeydown)
 
       if (stagePlayer) stagePlayer.pause()
-      previewPlay()
+      if (hovering) previewPlay()
+      else showIdleFrame()
     }
 
     function onKeydown(event) {
@@ -57,6 +82,22 @@
         if (expanded) collapse()
         else expand()
       })
+      hit.addEventListener('pointerenter', function () {
+        hovering = true
+        previewPlay()
+      })
+      hit.addEventListener('pointerleave', function () {
+        hovering = false
+        previewPause()
+      })
+      hit.addEventListener('focus', function () {
+        hovering = true
+        previewPlay()
+      })
+      hit.addEventListener('blur', function () {
+        hovering = false
+        previewPause()
+      })
     }
     if (close) close.addEventListener('click', collapse)
     if (stage) {
@@ -65,7 +106,14 @@
       })
     }
 
-    previewPlay()
+    if (player) {
+      player.addEventListener('loadeddata', showIdleFrame, { once: true })
+      // Load enough to show a still; do not autoplay.
+      try {
+        player.load()
+      } catch (_) {}
+      showIdleFrame()
+    }
   }
 
   ready(function () {

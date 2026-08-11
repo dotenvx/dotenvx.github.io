@@ -19,6 +19,10 @@
           description=page.description
           mark=page.mark
           icon=page.icon
+          video=page.video
+          video_webm=page.video_webm
+          video_poster=page.video_poster
+          video_title=page.video_title
         %}
 
         <section class="docs-quickstart-body">
@@ -136,14 +140,6 @@
       </div>
     </main>
     {% include components/footer.html %}
-    {% if page.video %}
-      {% include components/design-video-corner.html
-        mp4=page.video
-        webm=page.video_webm
-        poster=page.video_poster
-        label=page.video_title
-      %}
-    {% endif %}
     {% include components/design-theme-control.html %}
     <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>

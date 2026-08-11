@@ -2569,6 +2569,26 @@ html.dark .design-link:focus {
   z-index: 40;
 }
 
+/* Small docked preview over the docs hero mark */
+.design-video-corner--hero {
+  bottom: auto;
+  position: absolute;
+  right: -0.4rem;
+  top: -0.4rem;
+  width: 4.25rem;
+  z-index: 2;
+}
+
+.design-video-corner--hero .design-video-corner-play {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.design-video-corner--hero .design-video-corner-play-icon {
+  height: 0.62rem;
+  width: 0.62rem;
+}
+
 .design-video-corner-hit {
   background: transparent;
   border: 0;
@@ -2585,7 +2605,6 @@ html.dark .design-link:focus {
   background: var(--design-panel, #fff);
   border: 1px solid var(--design-line, var(--design-mid));
   bottom: calc(100% + 0.3rem);
-  box-shadow: var(--design-etch);
   color: var(--design-ink);
   font-family: var(--design-font-sans);
   font-size: 0.7rem;
@@ -2601,27 +2620,68 @@ html.dark .design-link:focus {
 .design-video-corner-frame {
   background: #000;
   border: 1px solid var(--design-line, var(--design-mid));
-  box-shadow: var(--design-etch), 0 10px 28px rgba(0, 0, 0, 0.18);
   display: block;
   line-height: 0;
   overflow: hidden;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  position: relative;
   width: 100%;
-}
-
-.design-video-corner-hit:hover .design-video-corner-frame,
-.design-video-corner-hit:focus-visible .design-video-corner-frame {
-  box-shadow: var(--design-etch), 0 14px 34px rgba(0, 0, 0, 0.24);
-  transform: translateY(-2px);
 }
 
 .design-video-corner-player {
   aspect-ratio: 16 / 9;
   display: block;
+  filter: grayscale(1) brightness(1.04);
   height: auto;
+  /* Crop letterbox / accent bars common in loom-style captures */
   object-fit: cover;
+  opacity: 0.72;
   pointer-events: none;
+  transform: scale(1.28);
+  transition: filter 180ms ease, opacity 180ms ease;
   width: 100%;
+}
+
+.design-video-corner-play {
+  align-items: center;
+  background: color-mix(in srgb, var(--design-panel, #fff) 92%, transparent);
+  border: 1px solid var(--design-line, var(--design-mid));
+  color: var(--design-ink);
+  display: flex;
+  height: 1.55rem;
+  justify-content: center;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 160ms ease, transform 160ms ease;
+  width: 1.55rem;
+}
+
+.design-video-corner-play-icon {
+  display: block;
+  height: 0.78rem;
+  margin-left: 0.08rem;
+  width: 0.78rem;
+}
+
+.design-video-corner-hit:hover .design-video-corner-player,
+.design-video-corner-hit:focus-visible .design-video-corner-player {
+  filter: none;
+  opacity: 1;
+}
+
+.design-video-corner-hit:hover .design-video-corner-play,
+.design-video-corner-hit:focus-visible .design-video-corner-play {
+  background: var(--design-panel, #fff);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design-video-corner-player,
+  .design-video-corner-play {
+    transition: none;
+  }
 }
 
 .design-video-corner-stage {
@@ -4334,6 +4394,15 @@ html.dark .radar-btn {
   justify-content: center;
   min-height: inherit;
   width: 100%;
+}
+
+.docs-hero-mark-frame {
+  display: block;
+  position: relative;
+}
+
+.docs-hero-mark-frame--ascii {
+  display: inline-block;
 }
 
 .docs-hero-icon {

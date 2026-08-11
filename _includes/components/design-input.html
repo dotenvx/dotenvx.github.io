@@ -1,0 +1,28 @@
+{% comment %} Mirrored from ../radar design-input {% endcomment %}
+{% assign type = include.type | default: "text" %}
+{% assign name = include.name %}
+{% assign id = include.id | default: name %}
+{% assign input_class = "design-input" %}
+{% if include.input_class %}{% assign input_class = input_class | append: " " | append: include.input_class %}{% endif %}
+
+{% if include.label and include.label != "" %}
+  <label class="design-label{% if include.label_class %} {{ include.label_class }}{% endif %}"{% if id %} for="{{ id }}"{% endif %}>{{ include.label }}</label>
+{% endif %}
+<input
+  type="{{ type }}"
+  class="{{ input_class }}"
+  {% if name %}name="{{ name }}"{% endif %}
+  {% if id %}id="{{ id }}"{% endif %}
+  {% if include.value %}value="{{ include.value }}"{% endif %}
+  {% if include.placeholder %}placeholder="{{ include.placeholder }}"{% endif %}
+  {% if include.autocomplete %}autocomplete="{{ include.autocomplete }}"{% else %}autocomplete="off"{% endif %}
+  {% if include.inputmode %}inputmode="{{ include.inputmode }}"{% endif %}
+  {% if include.autofocus %}autofocus{% endif %}
+  {% if include.required %}required{% endif %}
+  {% if include.disabled %}disabled{% endif %}
+  {% if include.readonly %}readonly{% endif %}
+  data-1p-ignore="true"
+  data-lpignore="true"
+  data-bwignore="true"
+  data-form-type="other"
+>

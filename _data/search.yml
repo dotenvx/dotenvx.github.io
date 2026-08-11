@@ -1,0 +1,135 @@
+# Canonical search ranking hints (merged into /search.json at build time).
+# Higher boost = more likely to win when multiple pages match.
+entries:
+  /pricing/:
+    boost: 80
+    aliases:
+      - price
+      - plans
+      - enterprise pricing
+  /armor/:
+    boost: 70
+    aliases:
+      - dotenvx armor
+      - ops
+  /features/:
+    boost: 55
+  /:
+    boost: 50
+    aliases:
+      - home
+      - dotenvx
+  /docs/introduction/:
+    boost: 60
+    aliases:
+      - docs
+      - documentation
+      - getting started
+  /docs/quickstarts/:
+    boost: 55
+    aliases:
+      - quickstart
+      - guides
+  /docs/cli/:
+    boost: 45
+  /docs/sdk/:
+    boost: 40
+  /docs/claude/:
+    boost: 75
+    aliases:
+      - anthropic
+      - claude code
+      - secrets in claude
+  /docs/cursor/:
+    boost: 75
+    aliases:
+      - secrets in cursor
+  /docs/codex/:
+    boost: 75
+    aliases:
+      - openai
+      - secrets in codex
+  /docs/cli-quickstart/:
+    boost: 65
+    aliases:
+      - cli
+      - secrets with cli
+  /docs/nodejs/:
+    boost: 60
+    aliases:
+      - node
+      - node.js
+      - javascript
+  /docs/python/:
+    boost: 55
+  /docs/go/:
+    boost: 50
+  /docs/ruby/:
+    boost: 50
+  /docs/php/:
+    boost: 50
+  /docs/java/:
+    boost: 50
+  /docs/rust/:
+    boost: 50
+  /docs/dotnet/:
+    boost: 50
+  /docs/1password/:
+    boost: 60
+    aliases:
+      - 1p
+      - op://
+      - secrets in 1password
+  /docs/bitwarden/:
+    boost: 55
+    aliases:
+      - bw://
+      - secrets in bitwarden
+  /docs/docker/:
+    boost: 55
+  /docs/github-actions/:
+    boost: 55
+    aliases:
+      - gha
+      - ci
+      - github action
+  /docs/learn/installing/:
+    boost: 65
+    aliases:
+      - install
+      - installation
+      - curl
+      - brew
+  /docs/quickstart/encryption/:
+    boost: 55
+    aliases:
+      - encrypt
+      - encryption
+  /docs/quickstart/run/:
+    boost: 50
+    aliases:
+      - run
+  /docs/armor/production/:
+    boost: 45
+    aliases:
+      - production
+  /changelog/:
+    boost: 40
+  /opensource/:
+    boost: 35
+    aliases:
+      - open source
+  /contact/:
+    boost: 35
+  /company/:
+    boost: 30
+  /legal/:
+    boost: 20
+  /privacy/:
+    boost: 20
+  /terms/:
+    boost: 20
+  /search/:
+    boost: 5
+    aliases:
+      - find

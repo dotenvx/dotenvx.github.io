@@ -5,6 +5,9 @@ _site/
 .jekyll-metadata
 node_modules
 
+# Built by `npm run build:css` from assets/css/main.src.css
+assets/css/main.css
+
 .env*
 .flaskenv*
 !.env.project

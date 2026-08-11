@@ -69,7 +69,6 @@ GEM
       jekyll (>= 3.5)
       json-minify (~> 0.0.3)
       uglifier (~> 4.1)
-    jekyll-postcss (0.5.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-responsive-image (1.6.0)
@@ -148,7 +147,6 @@ DEPENDENCIES
   jekyll-gzip
   jekyll-loading-lazy
   jekyll-minifier
-  jekyll-postcss
   jekyll-redirect-from
   jekyll-responsive-image
   jekyll-seo-tag

@@ -1,0 +1,150 @@
+---
+layout: null
+permalink: /search.json
+search: false
+---
+[
+{%- assign emitted = false -%}
+{%- for page in site.pages -%}
+  {%- assign page_url = page.url -%}
+  {%- assign include_page = true -%}
+  {%- if page.search == false -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if page.title == nil or page.title == "" -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if page.redirect_to -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if page_url == "/search.json" -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if page_url contains ".json" or page_url contains ".xml" or page_url contains ".css" or page_url contains ".js" -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if page_url == "/404.html" or page_url contains "/banner" -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if include_page -%}
+  {%- assign url_key = page_url -%}
+  {%- unless url_key contains "." -%}
+    {%- assign url_last = url_key | slice: -1, 1 -%}
+    {%- if url_last != "/" -%}{%- assign url_key = url_key | append: "/" -%}{%- endif -%}
+  {%- endunless -%}
+  {%- assign hint = site.data.search.entries[url_key] -%}
+  {%- assign boost = 0 -%}
+  {%- if page.search_boost -%}
+    {%- assign boost = page.search_boost -%}
+  {%- elsif hint.boost -%}
+    {%- assign boost = hint.boost -%}
+  {%- elsif page.layout == "docs-quickstart" -%}
+    {%- assign boost = 35 -%}
+  {%- elsif page.layout == "docs-cli" -%}
+    {%- assign boost = 8 -%}
+  {%- elsif page_url == "/" -%}
+    {%- assign boost = 50 -%}
+  {%- elsif page_url contains "/docs/" -%}
+    {%- assign boost = 12 -%}
+  {%- elsif page_url contains "/blog/" -%}
+    {%- assign boost = 6 -%}
+  {%- else -%}
+    {%- assign boost = 10 -%}
+  {%- endif -%}
+  {%- if page_url contains "/docs/" -%}
+    {%- assign section = "Docs" -%}
+  {%- elsif page_url contains "/blog" -%}
+    {%- assign section = "Blog" -%}
+  {%- elsif page_url == "/pricing/" or page_url == "/armor/" or page_url == "/features/" or page_url == "/" -%}
+    {%- assign section = "Product" -%}
+  {%- else -%}
+    {%- assign section = "Site" -%}
+  {%- endif -%}
+  {%- assign slug_parts = page_url | split: "/" -%}
+  {%- assign slug = "" -%}
+  {%- for part in slug_parts -%}
+    {%- if part != "" -%}{%- assign slug = part -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if page_url == "/" -%}{%- assign slug = "home" -%}{%- endif -%}
+  {%- assign desc = page.description | default: page.social_title | default: "" -%}
+  {%- if emitted -%},{%- endif -%}
+  {%- assign emitted = true -%}
+  {
+    "title": {{ page.title | jsonify }},
+    "url": {{ page_url | jsonify }},
+    "description": {{ desc | jsonify }},
+    "section": {{ section | jsonify }},
+    "slug": {{ slug | jsonify }},
+    "boost": {{ boost }},
+    "aliases": [
+      {%- assign alias_emitted = false -%}
+      {%- assign seen = "|" -%}
+      {%- if page.search_aliases -%}
+        {%- for alias in page.search_aliases -%}
+          {%- assign alias_norm = alias | strip | downcase -%}
+          {%- unless alias_norm == "" -%}
+            {%- assign seen_token = alias_norm | prepend: "|" | append: "|" -%}
+            {%- unless seen contains seen_token -%}
+              {%- assign seen = seen | append: alias_norm | append: "|" -%}
+              {%- if alias_emitted -%},{%- endif -%}
+              {%- assign alias_emitted = true -%}
+              {{ alias_norm | jsonify }}
+            {%- endunless -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if hint.aliases -%}
+        {%- for alias in hint.aliases -%}
+          {%- assign alias_norm = alias | strip | downcase -%}
+          {%- unless alias_norm == "" -%}
+            {%- assign seen_token = alias_norm | prepend: "|" | append: "|" -%}
+            {%- unless seen contains seen_token -%}
+              {%- assign seen = seen | append: alias_norm | append: "|" -%}
+              {%- if alias_emitted -%},{%- endif -%}
+              {%- assign alias_emitted = true -%}
+              {{ alias_norm | jsonify }}
+            {%- endunless -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if page.redirect_from -%}
+        {%- for redir in page.redirect_from -%}
+          {%- assign redir_slug = "" -%}
+          {%- assign redir_parts = redir | split: "/" -%}
+          {%- for part in redir_parts -%}
+            {%- if part != "" -%}{%- assign redir_slug = part -%}{%- endif -%}
+          {%- endfor -%}
+          {%- assign alias_norm = redir_slug | strip | downcase -%}
+          {%- unless alias_norm == "" -%}
+            {%- assign seen_token = alias_norm | prepend: "|" | append: "|" -%}
+            {%- unless seen contains seen_token -%}
+              {%- assign seen = seen | append: alias_norm | append: "|" -%}
+              {%- if alias_emitted -%},{%- endif -%}
+              {%- assign alias_emitted = true -%}
+              {{ alias_norm | jsonify }}
+            {%- endunless -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+    ]
+  }
+  {%- endif -%}
+{%- endfor -%}
+{%- for post in site.posts -%}
+  {%- assign include_post = true -%}
+  {%- if post.search == false -%}{%- assign include_post = false -%}{%- endif -%}
+  {%- if post.title == nil or post.title == "" -%}{%- assign include_post = false -%}{%- endif -%}
+  {%- if include_post -%}
+  {%- assign page_url = post.url -%}
+  {%- assign boost = post.search_boost | default: 6 -%}
+  {%- assign slug = "" -%}
+  {%- assign slug_parts = page_url | split: "/" -%}
+  {%- for part in slug_parts -%}
+    {%- if part != "" -%}{%- assign slug = part -%}{%- endif -%}
+  {%- endfor -%}
+  {%- assign desc = post.description | default: "" -%}
+  {%- if desc == "" and post.excerpt -%}
+    {%- assign desc = post.excerpt | strip_html | strip_newlines | truncate: 160 -%}
+  {%- endif -%}
+  {%- if emitted -%},{%- endif -%}
+  {%- assign emitted = true -%}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ page_url | jsonify }},
+    "description": {{ desc | jsonify }},
+    "section": "Blog",
+    "slug": {{ slug | jsonify }},
+    "boost": {{ boost }},
+    "aliases": []
+  }
+  {%- endif -%}
+{%- endfor -%}
+]

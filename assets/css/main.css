@@ -2691,11 +2691,12 @@ html.dark .design-link:focus {
   display: flex;
   justify-content: center;
   left: 0;
-  padding: clamp(1rem, 4vw, 2.5rem);
+  padding: clamp(0.75rem, 2.5vw, 1.5rem);
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 50;
+  /* Above nav (110) — stage is portaled to body while open */
+  z-index: 120;
 }
 
 .design-video-corner-stage[hidden] {
@@ -2715,6 +2716,7 @@ html.dark .design-link:focus {
   position: absolute;
   right: clamp(1rem, 3vw, 1.5rem);
   top: clamp(1rem, 3vw, 1.5rem);
+  z-index: 1;
 }
 
 .design-video-corner-close:hover,
@@ -2724,9 +2726,9 @@ html.dark .design-link:focus {
 
 .design-video-corner-stage-frame {
   line-height: 0;
-  max-height: min(92vh, 100%);
+  max-height: calc(100vh - 1.5rem);
   max-width: min(96rem, 100%);
-  width: 100%;
+  width: min(100%, calc((100vh - 1.5rem) * 16 / 9));
 }
 
 .design-video-corner-stage-player {
@@ -2734,7 +2736,7 @@ html.dark .design-link:focus {
   background: #000;
   display: block;
   height: auto;
-  max-height: min(92vh, 100%);
+  max-height: calc(100vh - 1.5rem);
   object-fit: contain;
   width: 100%;
 }
@@ -2744,7 +2746,8 @@ html.dark .design-link:focus {
   pointer-events: none;
 }
 
-html.design-video-corner-open {
+html.design-video-corner-open,
+html.design-video-corner-open body {
   overflow: hidden;
 }
 

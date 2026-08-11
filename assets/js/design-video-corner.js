@@ -18,6 +18,18 @@
     var hovering = false
     // Hero dock: still + play glyph only. Fixed corner may preview on hover.
     var hoverPreview = !root.classList.contains('design-video-corner--hero')
+    // Hero (and any transformed ancestor) breaks position:fixed — park stage on body.
+    var stageHome = stage ? stage.parentNode : null
+
+    function mountStage() {
+      if (!stage || stage.parentNode === document.body) return
+      document.body.appendChild(stage)
+    }
+
+    function unmountStage() {
+      if (!stage || !stageHome || stage.parentNode === stageHome) return
+      stageHome.appendChild(stage)
+    }
 
     function showIdleFrame() {
       if (!player) return
@@ -46,6 +58,7 @@
       expanded = true
       root.classList.add('is-expanded')
       if (hit) hit.setAttribute('aria-expanded', 'true')
+      mountStage()
       if (stage) stage.hidden = false
       document.documentElement.classList.add('design-video-corner-open')
       document.addEventListener('keydown', onKeydown)
@@ -65,6 +78,7 @@
       root.classList.remove('is-expanded')
       if (hit) hit.setAttribute('aria-expanded', 'false')
       if (stage) stage.hidden = true
+      unmountStage()
       document.documentElement.classList.remove('design-video-corner-open')
       document.removeEventListener('keydown', onKeydown)
 

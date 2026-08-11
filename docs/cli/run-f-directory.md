@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run -f directory
+title: "-f directory"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Run a command using the .env file in a directory. This is useful with monorepos.
 permalink: /docs/cli/run-f-directory/
 redirect_from:

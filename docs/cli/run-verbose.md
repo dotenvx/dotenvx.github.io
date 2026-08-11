@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --verbose
+title: "--verbose"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Set log level to `verbose`."
 permalink: /docs/cli/run-verbose/
 redirect_from:

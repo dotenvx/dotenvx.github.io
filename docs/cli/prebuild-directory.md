@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: prebuild directory
+title: directory
+eyebrow: "dotenvx prebuild"
+eyebrow_href: /docs/cli/prebuild/
 description: Prevent .env files from being built into your docker containers for a specified directory. Useful for monorepos.
 permalink: /docs/cli/prebuild-directory/
 redirect_from:

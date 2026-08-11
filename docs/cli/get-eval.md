@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --format eval
+title: "--format eval"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return an eval-ready shell formatted response of all key/value pairs in a .env file.
 permalink: /docs/cli/get-eval/
 redirect_from:

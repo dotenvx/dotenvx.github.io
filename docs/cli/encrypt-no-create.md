@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt --no-create
+title: "--no-create"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Do not create missing .env files.
 permalink: /docs/cli/encrypt-no-create/
 redirect_from:

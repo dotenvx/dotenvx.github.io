@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt KEY_PLAIN
+title: KEY_PLAIN
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Skip encryption for keys ending in _PLAIN.
 permalink: /docs/cli/encrypt-plain-suffix/
 redirect_from:

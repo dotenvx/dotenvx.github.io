@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: open
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Open an armored key in your browser.
 permalink: /docs/cli/armor/open/
 redirect_from:

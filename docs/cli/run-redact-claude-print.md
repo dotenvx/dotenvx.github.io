@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --redact -- claude -p
+title: "--redact -- claude -p"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Run Claude in print mode while redacting injected values from its output.
 permalink: /docs/cli/run-redact-claude-print/
 redirect_from:

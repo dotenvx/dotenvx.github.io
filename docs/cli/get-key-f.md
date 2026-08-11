@@ -1,7 +1,9 @@
 ---
 layout: docs-cli
-title: get KEY -f
-description: Return a single environment variable\
+title: "KEY -f"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
+description: "Return a single environment variable's value from a specific .env file."
 permalink: /docs/cli/get-key-f/
 redirect_from:
   - /docs/advanced/get-key-f
@@ -16,8 +18,6 @@ crumbs:
   - label: Get
     href: /docs/cli/get/
 ---
-s value from a specific .env file.'
-
 {% capture cli_code_0 %}
 $ echo "HELLO=World" > .env
 echo "HELLO=production" > .env.production

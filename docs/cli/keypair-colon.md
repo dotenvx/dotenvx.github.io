@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair --format colon
+title: "--format colon"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Print a colon formatted response of public/private keys.
 permalink: /docs/cli/keypair-colon/
 redirect_from:

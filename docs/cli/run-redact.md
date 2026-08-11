@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --redact
+title: "--redact"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Run commands with real environment variables while redacting their values from output.
 permalink: /docs/cli/run-redact/
 redirect_from:

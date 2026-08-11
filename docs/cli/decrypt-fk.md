@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: decrypt -fk
+title: "-fk"
+eyebrow: "dotenvx decrypt"
+eyebrow_href: /docs/cli/decrypt/
 description: Specify path to .env.keys. This is useful with monorepos.
 permalink: /docs/cli/decrypt-fk/
 redirect_from:

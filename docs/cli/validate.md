@@ -15,7 +15,7 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: validate --ignore
+  - title: "validate --ignore"
     href: /docs/cli/validate-ignore/
 ---
 Use `.env.example` to declare required environment variables and validate `.env` file(s) before running your app.

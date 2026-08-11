@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: decrypt -k
+title: "-k"
+eyebrow: "dotenvx decrypt"
+eyebrow_href: /docs/cli/decrypt/
 description: Decrypt the contents of a specified key inside an encrypted .env file.
 permalink: /docs/cli/decrypt-k/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: settings
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Inspect and manage local Dotenvx Armor settings.
 permalink: /docs/cli/armor/settings/
 redirect_from:

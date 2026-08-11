@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run -fk
+title: "-fk"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Specify a .env.keys file or a directory containing one. This is useful with monorepos.
 permalink: /docs/cli/run-fk/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: decrypt -f
+title: "-f"
+eyebrow: "dotenvx decrypt"
+eyebrow_href: /docs/cli/decrypt/
 description: Decrypt the contents of a specified encrypted .env file to an unencrypted .env file.
 permalink: /docs/cli/decrypt-f/
 redirect_from:

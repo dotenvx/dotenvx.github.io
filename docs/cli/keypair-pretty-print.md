@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair --pretty-print
+title: "--pretty-print"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Make JSON output more readable.
 permalink: /docs/cli/keypair-pretty-print/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run - Shell Expansion
+title: "Shell Expansion"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Prevent your shell from expanding inline `$VARIABLES` before dotenvx has a chance to inject them. Use a subshell."
 permalink: /docs/cli/run-shell-expansion/
 redirect_from:
@@ -27,10 +29,10 @@ Hello World
 
 Given your `.env` file looks like this,
 
-{% capture cli_fix_4937586 %}
+{% capture cli_env %}
 HELLO=World
-
-{% capture cli_code_1 %}
+{% endcapture %}
+{% include components/design-codeblock.html value=cli_env copy_text="HELLO=World" %}
 
 You might assume running `dotenvx run -- echo "Hello $HELLO"` would print `Hello World`. But, that's not what happens.
 
@@ -44,41 +46,32 @@ There are two solutions to this:
 ## Subshell
 
 As detailed above, use a subshell.
-{% endcapture %}
-{% capture cli_code_1_copy %}You might assume running `dotenvx run -- echo "Hello $HELLO"` would print `Hello World`. But, that's not what happens.{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
 
-bash
+{% capture cli_code_1 %}
 $ dotenvx run -- bash -c 'echo Hello $HELLO'
-
-{% capture cli_code_2 %}
+{% endcapture %}
+{% capture cli_code_1_copy %}dotenvx run -- bash -c 'echo Hello $HELLO'{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
 
 Make sure to use single quotes `'` so values are NOT interpreted.
 
 ## Subscript
 
 Or you can encapsulate in a script. Here's an example using [npm scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts).
-{% endcapture %}
-{% capture cli_code_2_copy %}Make sure to use single quotes `'` so values are NOT interpreted.{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
 
-json {{ title: "package.json" }}
+{% capture cli_code_2 %}
 {
   "scripts": {
     "_echo": "echo Hello $HELLO",
     "hello": "dotenvx run -- npm run _echo"
   }
 }
+{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_2 label="package.json" copy_text=cli_code_2 %}
 
 {% capture cli_code_3 %}
-
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_3 copy=false %}
-
-sh
 $ npm run hello
 Hello World
 {% endcapture %}
-{% capture cli_fix_4937586_copy %}dotenvx run -- bash -c 'echo Hello $HELLO'
-npm run hello{% endcapture %}
-{% include components/design-codeblock.html value=cli_fix_4937586 copy_text=cli_fix_4937586_copy %}
+{% capture cli_code_3_copy %}npm run hello{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_3 copy_text=cli_code_3_copy %}

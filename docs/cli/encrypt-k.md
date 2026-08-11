@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt -k
+title: "-k"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Specify the key(s) to encrypt by passing --key.
 permalink: /docs/cli/encrypt-k/
 redirect_from:

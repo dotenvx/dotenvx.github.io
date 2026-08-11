@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --strict
+title: "--strict"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Exit with code 1 if any errors are encountered - like a missing .env file or decryption failure.
 permalink: /docs/cli/run-strict/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY -f directory --convention=nextjs
+title: "-f directory + nextjs"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return an environment variable using the Next.js convention from a directory. This is useful with monorepos.
 permalink: /docs/cli/get-key-f-directory-convention-nextjs/
 redirect_from:

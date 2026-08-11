@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --quiet
+title: "--quiet"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Use `--quiet` to suppress all output (except errors)."
 permalink: /docs/cli/run-quiet/
 redirect_from:

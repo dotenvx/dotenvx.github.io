@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --redact -- codex exec
+title: "--redact -- codex exec"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Run Codex non-interactively while redacting injected values from its output.
 permalink: /docs/cli/run-redact-codex-exec/
 redirect_from:

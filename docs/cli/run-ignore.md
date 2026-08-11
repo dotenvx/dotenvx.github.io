@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --ignore
+title: "--ignore"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Ignore specific error codes.
 permalink: /docs/cli/run-ignore/
 redirect_from:

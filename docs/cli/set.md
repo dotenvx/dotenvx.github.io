@@ -13,27 +13,27 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: set KEY value
+  - title: "set KEY value"
     href: /docs/cli/set-key-value/
-  - title: set KEY value -f
+  - title: "set KEY value -f"
     href: /docs/cli/set-key-value-f/
-  - title: set KEY value -fk
+  - title: "set KEY value -fk"
     href: /docs/cli/set-key-value-fk/
-  - title: set KEY value --encrypt
+  - title: "set KEY value --encrypt"
     href: /docs/cli/set-key-value-encrypt/
-  - title: set KEY value --plain
+  - title: "set KEY value --plain"
     href: /docs/cli/set-key-value-plain/
-  - title: set KEY_PLAIN value
+  - title: "set KEY_PLAIN value"
     href: /docs/cli/set-key-plain-suffix/
-  - title: set KEY value --no-create
+  - title: "set KEY value --no-create"
     href: /docs/cli/set-key-value-no-create/
-  - title: set KEY value --no-armor
+  - title: "set KEY value --no-armor"
     href: /docs/cli/set-key-value-no-armor/
-  - title: set KEY value --no-native
+  - title: "set KEY value --no-native"
     href: /docs/cli/set-key-value-no-native/
-  - title: "set KEY \"value with spaces\""
+  - title: 'set KEY "value with spaces"'
     href: /docs/cli/set-key-value-with-spaces/
-  - title: "set KEY -- \"- + * ÷\""
+  - title: 'set KEY -- "- + * ÷"'
     href: /docs/cli/set-key-value-with-leading-dash/
 ---
 {% capture cli_code_0 %}

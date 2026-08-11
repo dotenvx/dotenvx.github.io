@@ -15,21 +15,21 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: decrypt -f
+  - title: "decrypt -f"
     href: /docs/cli/decrypt-f/
-  - title: decrypt -fk
+  - title: "decrypt -fk"
     href: /docs/cli/decrypt-fk/
-  - title: decrypt -k
+  - title: "decrypt -k"
     href: /docs/cli/decrypt-k/
-  - title: decrypt -ek
+  - title: "decrypt -ek"
     href: /docs/cli/decrypt-ek/
-  - title: decrypt --stdout
+  - title: "decrypt --stdout"
     href: /docs/cli/decrypt-stdout/
-  - title: decrypt --stdout --mask
+  - title: "decrypt --stdout --mask"
     href: /docs/cli/decrypt-stdout-mask/
-  - title: decrypt --no-armor
+  - title: "decrypt --no-armor"
     href: /docs/cli/decrypt-no-armor/
-  - title: decrypt --no-native
+  - title: "decrypt --no-native"
     href: /docs/cli/decrypt-no-native/
 ---
 {% capture cli_code_0 %}

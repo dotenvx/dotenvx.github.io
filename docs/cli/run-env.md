@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --env HELLO=String
+title: "--env HELLO=String"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Set environment variables as a simple KEY=value string pair.
 permalink: /docs/cli/run-env/
 redirect_from:

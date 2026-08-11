@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --redact -- codex
+title: "--redact -- codex"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Start an interactive Codex session while redacting injected values from its output.
 permalink: /docs/cli/run-redact-codex/
 redirect_from:

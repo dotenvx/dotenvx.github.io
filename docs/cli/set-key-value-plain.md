@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value --plain
+title: "KEY value --plain"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Set a plain key/value.
 permalink: /docs/cli/set-key-value-plain/
 redirect_from:

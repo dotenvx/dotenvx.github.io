@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --all
+title: "--all"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return preset machine envs as well.
 permalink: /docs/cli/get-all/
 redirect_from:

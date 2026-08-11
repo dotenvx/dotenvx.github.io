@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY --ignore
+title: "KEY --ignore"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Ignore specific error codes.
 permalink: /docs/cli/get-key-ignore/
 redirect_from:

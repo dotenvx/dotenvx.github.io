@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: "run - Interpolation Syntax Summary (Variable Expansion, Default/Alternate Values)"
+title: "Interpolation Syntax Summary"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Complete reference for variable interpolation patterns supported by dotenvx.
 permalink: /docs/cli/run-interpolation-syntax-summary/
 redirect_from:
@@ -45,12 +47,13 @@ TEST12=${UNDEFINED_VAR+alternate}  # Result: "" (empty)
 {% capture cli_code_0_copy %}# .env{% endcapture %}
 {% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
 
-**Key differences:**
+<h2 class="design-page-title design-page-title--flush" id="key-differences">Key differences</h2>
+
 - `:-` vs `-`: The colon makes empty values trigger the fallback
 - `:+` vs `+`: The colon makes empty values not trigger the alternate
 - Default syntax (`-`): Use variable value or fallback
 - Alternate syntax (`+`): Use alternate value or empty string
 
-**Disabling Variable Expansion:**
+<h2 class="design-page-title design-page-title--flush" id="disabling">Disabling</h2>
 
 To disable variable expansion use single quotes like `PASSWORD='pa$$word@'` to get the result 'pa$$word@'.

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: precommit --install
+title: "--install"
+eyebrow: "dotenvx precommit"
+eyebrow_href: /docs/cli/precommit/
 description: Install a shell script to .git/hooks/pre-commit to prevent accidentally committing any .env files to source control.
 permalink: /docs/cli/precommit-install/
 redirect_from:

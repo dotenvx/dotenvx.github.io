@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt --no-armor
+title: "--no-armor"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Disable Dotenvx Armor features.
 permalink: /docs/cli/encrypt-no-armor/
 redirect_from:

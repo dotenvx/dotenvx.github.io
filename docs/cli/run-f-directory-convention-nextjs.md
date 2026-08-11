@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run -f directory --convention=nextjs
+title: "-f directory + nextjs"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Run a command using the Next.js convention from a directory. This is useful with monorepos.
 permalink: /docs/cli/run-f-directory-convention-nextjs/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value --encrypt
+title: "KEY value --encrypt"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Set an encrypted key/value.
 permalink: /docs/cli/set-key-value-encrypt/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair --format shell
+title: "--format shell"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Print a shell formatted response of public/private keys.
 permalink: /docs/cli/keypair-shell/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: DOTENV_PRIVATE_KEY=key DOTENV_PRIVATE_KEY_PRODUCTION=key dotenvx run
+title: "Combine Multiple"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Decrypt your encrypted `.env` and `.env.production` files by setting `DOTENV_PRIVATE_KEY` and `DOTENV_PRIVATE_KEY_PRODUCTION` before dotenvx run."
 permalink: /docs/cli/run-dotenv-private-key-multiple/
 redirect_from:

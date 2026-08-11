@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value --no-create
+title: "KEY value --no-create"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Do not create missing .env files.
 permalink: /docs/cli/set-key-value-no-create/
 redirect_from:

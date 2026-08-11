@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --format shell
+title: "--format shell"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return a shell formatted response of all key/value pairs in a .env file.
 permalink: /docs/cli/get-shell/
 redirect_from:

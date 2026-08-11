@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt --stdout
+title: "--stdout"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Encrypt the contents of a .env file and send to stdout.
 permalink: /docs/cli/encrypt-stdout/
 redirect_from:

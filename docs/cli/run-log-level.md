@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --log-level
+title: "--log-level"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Set `--log-level` to whatever you wish."
 permalink: /docs/cli/run-log-level/
 redirect_from:

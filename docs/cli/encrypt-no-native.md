@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt --no-native
+title: "--no-native"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Disable loading private keys from the OS secret store.
 permalink: /docs/cli/encrypt-no-native/
 redirect_from:

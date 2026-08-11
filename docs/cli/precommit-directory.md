@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: precommit directory
+title: directory
+eyebrow: "dotenvx precommit"
+eyebrow_href: /docs/cli/precommit/
 description: Prevent .env files from being committed to code for a specified directory. Useful for monorepos.
 permalink: /docs/cli/precommit-directory/
 redirect_from:

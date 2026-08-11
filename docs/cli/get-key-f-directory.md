@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY -f directory
+title: "-f directory"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return an environment variable from the .env file in a directory. This is useful with monorepos.
 permalink: /docs/cli/get-key-f-directory/
 redirect_from:

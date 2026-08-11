@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: move
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Move armored key to another team.
 permalink: /docs/cli/armor/move/
 redirect_from:

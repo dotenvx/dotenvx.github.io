@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY --no-native
+title: "KEY --no-native"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Disable loading private keys from the OS secret store.
 permalink: /docs/cli/get-no-native/
 redirect_from:

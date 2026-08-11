@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --token
+title: "--token"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Set the Armor token for retrieving armored private keys.
 permalink: /docs/cli/run-token/
 redirect_from:

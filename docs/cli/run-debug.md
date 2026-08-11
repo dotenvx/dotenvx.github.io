@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --debug
+title: "--debug"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Set log level to `debug`."
 permalink: /docs/cli/run-debug/
 redirect_from:

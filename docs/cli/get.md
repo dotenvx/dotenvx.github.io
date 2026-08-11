@@ -13,53 +13,53 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: get KEY
+  - title: "get KEY"
     href: /docs/cli/get-key/
-  - title: get KEY --mask
+  - title: "get KEY --mask"
     href: /docs/cli/get-key-mask/
-  - title: get KEY -f
+  - title: "get KEY -f"
     href: /docs/cli/get-key-f/
-  - title: get KEY -f directory
+  - title: "get KEY -f directory"
     href: /docs/cli/get-key-f-directory/
-  - title: get KEY -fk
+  - title: "get KEY -fk"
     href: /docs/cli/get-key-fk/
-  - title: get KEY --env
+  - title: "get KEY --env"
     href: /docs/cli/get-key-env/
-  - title: get KEY --overload
+  - title: "get KEY --overload"
     href: /docs/cli/get-key-overload/
-  - title: get KEY --strict
+  - title: "get KEY --strict"
     href: /docs/cli/get-key-strict/
-  - title: get KEY --ignore
+  - title: "get KEY --ignore"
     href: /docs/cli/get-key-ignore/
-  - title: get KEY --convention=nextjs
+  - title: "get KEY --convention=nextjs"
     href: /docs/cli/get-key-convention-nextjs/
-  - title: get KEY -f directory --convention=nextjs
+  - title: "get KEY -f directory --convention=nextjs"
     href: /docs/cli/get-key-f-directory-convention-nextjs/
-  - title: get KEY --convention=flow
+  - title: "get KEY --convention=flow"
     href: /docs/cli/get-key-convention-flow/
-  - title: get (json)
+  - title: "get (json)"
     href: /docs/cli/get-json/
-  - title: get -ik
+  - title: "get -ik"
     href: /docs/cli/get-include-key/
-  - title: get -ek
+  - title: "get -ek"
     href: /docs/cli/get-exclude-key/
-  - title: get --format shell
+  - title: "get --format shell"
     href: /docs/cli/get-shell/
-  - title: get --format colon
+  - title: "get --format colon"
     href: /docs/cli/get-colon/
-  - title: get --format eval
+  - title: "get --format eval"
     href: /docs/cli/get-eval/
-  - title: get --format eval-export
+  - title: "get --format eval-export"
     href: /docs/cli/get-eval-export/
-  - title: get --all
+  - title: "get --all"
     href: /docs/cli/get-all/
-  - title: get --pretty-print
+  - title: "get --pretty-print"
     href: /docs/cli/get-pretty-print/
-  - title: get --all --pretty-print
+  - title: "get --all --pretty-print"
     href: /docs/cli/get-all-pretty-print/
-  - title: get --no-armor
+  - title: "get --no-armor"
     href: /docs/cli/get-no-armor/
-  - title: get KEY --no-native
+  - title: "get KEY --no-native"
     href: /docs/cli/get-no-native/
 ---
 {% capture cli_code_0 %}

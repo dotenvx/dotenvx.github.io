@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --no-armor
+title: "--no-armor"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Disable Dotenvx Armor features.
 permalink: /docs/cli/get-no-armor/
 redirect_from:

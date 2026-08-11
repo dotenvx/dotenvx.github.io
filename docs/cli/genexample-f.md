@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: genexample -f
+title: "-f"
+eyebrow: "dotenvx genexample"
+eyebrow_href: /docs/cli/genexample/
 description: Pass multiple .env files to generate your .env.example file from the combination of their contents.
 permalink: /docs/cli/genexample-f/
 redirect_from:

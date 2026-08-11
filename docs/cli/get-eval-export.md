@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --format eval-export
+title: "--format eval-export"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return export statements for loading .env values into the current shell.
 permalink: /docs/cli/get-eval-export/
 redirect_from:

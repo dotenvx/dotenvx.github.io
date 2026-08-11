@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: login
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Log in to Dotenvx Armor.
 permalink: /docs/cli/armor/login/
 redirect_from:

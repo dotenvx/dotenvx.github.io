@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value
+title: "KEY value"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Set a single key/value.
 permalink: /docs/cli/set-key-value/
 redirect_from:

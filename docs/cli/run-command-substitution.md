@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run - Command Substitution
+title: "Command Substitution"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Add the output of a command to one of your variables in your .env file.
 permalink: /docs/cli/run-command-substitution/
 redirect_from:

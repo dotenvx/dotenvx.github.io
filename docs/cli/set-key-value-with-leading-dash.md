@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: "set KEY -- \"- + * ÷\""
+title: "Values with leading dash"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Set a value containing a leading dash.
 permalink: /docs/cli/set-key-value-with-leading-dash/
 redirect_from:

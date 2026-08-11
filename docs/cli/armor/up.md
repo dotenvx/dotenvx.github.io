@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: up
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Armor private key.
 permalink: /docs/cli/armor/up/
 redirect_from:

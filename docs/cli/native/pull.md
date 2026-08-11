@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: pull
+eyebrow: "dotenvx native"
+eyebrow_href: /docs/cli/native/
 description: Copy a private key from your OS secret store into .env.keys.
 permalink: /docs/cli/native/pull/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value -fk
+title: "KEY value -fk"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Specify path to .env.keys.
 permalink: /docs/cli/set-key-value-fk/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair KEY
+title: KEY
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Print specific keypair for .env file.
 permalink: /docs/cli/keypair-key/
 redirect_from:

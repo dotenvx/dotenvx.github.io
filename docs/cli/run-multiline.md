@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run - Multiline
+title: "Multiline"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Dotenvx supports multiline values.
 permalink: /docs/cli/run-multiline/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt -fk
+title: "-fk"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Specify path to .env.keys. This is useful with monorepos.
 permalink: /docs/cli/encrypt-fk/
 redirect_from:

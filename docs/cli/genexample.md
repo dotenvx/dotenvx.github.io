@@ -15,9 +15,9 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: genexample -f
+  - title: "genexample -f"
     href: /docs/cli/genexample-f/
-  - title: genexample directory
+  - title: "genexample directory"
     href: /docs/cli/genexample-directory/
 ---
 {% capture cli_code_0 %}

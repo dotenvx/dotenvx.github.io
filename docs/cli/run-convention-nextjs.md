@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --convention=nextjs
+title: "--convention=nextjs"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Load envs using the Next.js convention.
 permalink: /docs/cli/run-convention-nextjs/
 redirect_from:

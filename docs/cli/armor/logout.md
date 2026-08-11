@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: logout
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Log out of Dotenvx Armor.
 permalink: /docs/cli/armor/logout/
 redirect_from:

@@ -10,11 +10,22 @@
     {% include components/radar-nav.html %}
     <main class="radar-main">
       {% assign options_title = page.options_title | default: "Options" %}
+
+      {% comment %}Parent command eyebrow for option/detail pages; top-level commands stay "CLI".{% endcomment %}
+      {% assign cli_eyebrow = "CLI" %}
+      {% assign cli_eyebrow_href = "/docs/cli" %}
+      {% if page.eyebrow and page.eyebrow != "" %}
+        {% assign cli_eyebrow = page.eyebrow %}
+      {% endif %}
+      {% if page.eyebrow_href and page.eyebrow_href != "" %}
+        {% assign cli_eyebrow_href = page.eyebrow_href %}
+      {% endif %}
+
       <div class="armor-shell docs-page">
         {% include components/docs-hero.html
           bare=true
-          eyebrow="CLI"
-          eyebrow_href="/docs/cli"
+          eyebrow=cli_eyebrow
+          eyebrow_href=cli_eyebrow_href
           title=page.title
           description=page.description
           icon=page.icon

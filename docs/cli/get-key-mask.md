@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY --mask
+title: "KEY --mask"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return a masked environment variable value.
 permalink: /docs/cli/get-key-mask/
 redirect_from:

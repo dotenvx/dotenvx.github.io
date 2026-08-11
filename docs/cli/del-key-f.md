@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: del KEY -f
+title: "KEY -f"
+eyebrow: "dotenvx del"
+eyebrow_href: /docs/cli/del/
 description: Delete a key from another .env file.
 permalink: /docs/cli/del-key-f/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get -ik
+title: "-ik"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Include only keys that match a glob pattern.
 permalink: /docs/cli/get-include-key/
 redirect_from:

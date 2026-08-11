@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --convention=flow
+title: "--convention=flow"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Load envs using the dotenv-flow convention.
 permalink: /docs/cli/run-convention-flow/
 redirect_from:

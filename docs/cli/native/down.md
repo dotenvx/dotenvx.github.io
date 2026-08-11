@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: down
+eyebrow: "dotenvx native"
+eyebrow_href: /docs/cli/native/
 description: Move a private key from your OS secret store back into .env.keys.
 permalink: /docs/cli/native/down/
 redirect_from:

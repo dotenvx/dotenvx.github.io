@@ -15,23 +15,23 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: keypair -f
+  - title: "keypair -f"
     href: /docs/cli/keypair-f/
-  - title: keypair -fk
+  - title: "keypair -fk"
     href: /docs/cli/keypair-fk/
-  - title: keypair DOTENV_PRIVATE_KEY
+  - title: "keypair KEY"
     href: /docs/cli/keypair-key/
-  - title: keypair --format json
+  - title: "keypair --format json"
     href: /docs/cli/keypair-json/
-  - title: keypair --format shell
+  - title: "keypair --format shell"
     href: /docs/cli/keypair-shell/
-  - title: keypair --format colon
+  - title: "keypair --format colon"
     href: /docs/cli/keypair-colon/
-  - title: keypair --pretty-print
+  - title: "keypair --pretty-print"
     href: /docs/cli/keypair-pretty-print/
-  - title: keypair --no-armor
+  - title: "keypair --no-armor"
     href: /docs/cli/keypair-no-armor/
-  - title: keypair --no-native
+  - title: "keypair --no-native"
     href: /docs/cli/keypair-no-native/
 ---
 {% capture cli_code_0 %}

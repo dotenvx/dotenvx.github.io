@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: DOTENV_PRIVATE_KEY=key dotenvx run
+title: DOTENV_PRIVATE_KEY
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Decrypt your encrypted `.env` by setting `DOTENV_PRIVATE_KEY` before dotenvx run."
 permalink: /docs/cli/run-dotenv-private-key/
 redirect_from:

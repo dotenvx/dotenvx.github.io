@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run - Variable Expansion
+title: "Variable Expansion"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Reference and expand variables already on your machine for use in your .env file.
 permalink: /docs/cli/run-variable-expansion/
 redirect_from:
@@ -40,6 +42,6 @@ DATABASE_URL postgres://username@localhost/my_database
 {% capture cli_code_2_copy %}dotenvx run --debug -- node index.js{% endcapture %}
 {% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
 
-**Disabling Variable Expansion:**
+<h2 class="design-page-title design-page-title--flush" id="disabling">Disabling</h2>
 
 To disable variable expansion use single quotes like `PASSWORD='pa$$word@'` to get the result 'pa$$word@'.

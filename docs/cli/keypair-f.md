@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair -f
+title: "-f"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: "Print public/private keys for chosen .env* files."
 permalink: /docs/cli/keypair-f/
 redirect_from:

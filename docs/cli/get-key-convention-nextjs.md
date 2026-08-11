@@ -1,7 +1,9 @@
 ---
 layout: docs-cli
-title: get KEY --convention=nextjs
-description: Return a single environment variable\
+title: "--convention=nextjs"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
+description: "Return a single environment variable's value using the Next.js convention."
 permalink: /docs/cli/get-key-convention-nextjs/
 redirect_from:
   - /docs/advanced/get-key-convention-nextjs
@@ -16,8 +18,6 @@ crumbs:
   - label: Get
     href: /docs/cli/get/
 ---
-s value using the Next.js convention'
-
 {% capture cli_code_0 %}
 $ echo "HELLO=development local" > .env.development.local
 echo "HELLO=local" > .env.local

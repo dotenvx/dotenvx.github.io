@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value -f
+title: "KEY value -f"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Set an (encrypted) key/value for another .env file.
 permalink: /docs/cli/set-key-value-f/
 redirect_from:

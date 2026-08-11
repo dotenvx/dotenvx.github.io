@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get -ek
+title: "-ek"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Exclude keys that match a glob pattern.
 permalink: /docs/cli/get-exclude-key/
 redirect_from:

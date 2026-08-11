@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run - Contextual Help
+title: "Contextual Help"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: "Unlike other dotenv libraries, dotenvx attempts to unblock you with contextual help."
 permalink: /docs/cli/run-contextual-help/
 redirect_from:

@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: "set KEY \"value with spaces\""
+title: "Values with spaces"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Set a value containing spaces.
 permalink: /docs/cli/set-key-value-with-spaces/
 redirect_from:

@@ -1,7 +1,9 @@
 ---
 layout: docs-cli
-title: get KEY --convention=flow
-description: Return a single environment variable\
+title: "--convention=flow"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
+description: "Return a single environment variable's value using the dotenv-flow convention."
 permalink: /docs/cli/get-key-convention-flow/
 redirect_from:
   - /docs/advanced/get-key-convention-flow
@@ -16,8 +18,6 @@ crumbs:
   - label: Get
     href: /docs/cli/get/
 ---
-s value using the dotenv-flow convention'
-
 {% capture cli_code_0 %}
 $ echo "HELLO=development local" > .env.development.local
 echo "HELLO=development" > .env.development

@@ -13,9 +13,9 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: del KEY
+  - title: "del KEY"
     href: /docs/cli/del-key/
-  - title: del KEY -f
+  - title: "del KEY -f"
     href: /docs/cli/del-key-f/
 ---
 {% capture cli_code_0 %}

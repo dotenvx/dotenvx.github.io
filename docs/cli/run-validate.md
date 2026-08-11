@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --validate
+title: "--validate"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Validate .env file(s) against .env.example.
 permalink: /docs/cli/run-validate/
 redirect_from:

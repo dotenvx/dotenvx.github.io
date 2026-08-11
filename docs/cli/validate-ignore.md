@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: validate --ignore
+title: "--ignore"
+eyebrow: "dotenvx validate"
+eyebrow_href: /docs/cli/validate/
 description: Ignore specific validation error codes.
 permalink: /docs/cli/validate-ignore/
 redirect_from:

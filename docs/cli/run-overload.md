@@ -1,7 +1,9 @@
 ---
 layout: docs-cli
-title: run --overload
-description: Override existing env variables. These can be variables already on your machine or variables loaded as files consecutively. The last variable seen will \
+title: "--overload"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
+description: "Override existing env variables. These can be variables already on your machine or variables loaded as files consecutively. The last variable seen will win."
 permalink: /docs/cli/run-overload/
 redirect_from:
   - /docs/advanced/run-overload
@@ -16,8 +18,6 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-win\'.'
-
 {% capture cli_code_0 %}
 $ echo "HELLO=local" > .env.local
 echo "HELLO=World" > .env

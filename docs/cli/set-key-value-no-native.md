@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value --no-native
+title: "KEY value --no-native"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Disable loading private keys from the OS secret store.
 permalink: /docs/cli/set-key-value-no-native/
 redirect_from:

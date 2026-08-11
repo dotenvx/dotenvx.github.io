@@ -15,9 +15,9 @@ crumbs:
     href: /docs/cli
 options_title: Options
 options:
-  - title: precommit directory
+  - title: "precommit directory"
     href: /docs/cli/precommit-directory/
-  - title: precommit --install
+  - title: "precommit --install"
     href: /docs/cli/precommit-install/
 video: https://github.com/user-attachments/assets/b177b7c5-f009-4466-ac15-5c0c406594a9
 ---

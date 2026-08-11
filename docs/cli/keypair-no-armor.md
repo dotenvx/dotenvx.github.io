@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair --no-armor
+title: "--no-armor"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Disable Dotenvx Armor features.
 permalink: /docs/cli/keypair-no-armor/
 redirect_from:

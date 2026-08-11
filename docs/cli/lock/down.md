@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: down
+eyebrow: "dotenvx lock"
+eyebrow_href: /docs/cli/lock/
 description: Unlock a private key in .env.keys with its local passphrase.
 permalink: /docs/cli/lock/down/
 redirect_from:

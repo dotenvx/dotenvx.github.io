@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: genexample directory
+title: directory
+eyebrow: "dotenvx genexample"
+eyebrow_href: /docs/cli/genexample/
 description: Generate a .env.example file inside the specified directory. Useful for monorepos.
 permalink: /docs/cli/genexample-directory/
 redirect_from:

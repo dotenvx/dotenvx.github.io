@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: decrypt --stdout --mask
+title: "--stdout --mask"
+eyebrow: "dotenvx decrypt"
+eyebrow_href: /docs/cli/decrypt/
 description: Decrypt an encrypted .env file to stdout with its values masked.
 permalink: /docs/cli/decrypt-stdout-mask/
 redirect_from:

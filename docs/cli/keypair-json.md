@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair --format json
+title: "--format json"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Return keypairs as JSON.
 permalink: /docs/cli/keypair-json/
 redirect_from:

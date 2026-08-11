@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY -fk
+title: "KEY -fk"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Specify a .env.keys file or a directory containing one.
 permalink: /docs/cli/get-key-fk/
 redirect_from:

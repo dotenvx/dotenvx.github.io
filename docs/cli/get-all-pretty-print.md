@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --all --pretty-print
+title: "--all --pretty-print"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Make the output more readable - pretty print it.
 permalink: /docs/cli/get-all-pretty-print/
 redirect_from:

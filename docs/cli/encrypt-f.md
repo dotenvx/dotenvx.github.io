@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt -f
+title: "-f"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Encrypt the contents of a specified .env file to an encrypted .env file.
 permalink: /docs/cli/encrypt-f/
 redirect_from:

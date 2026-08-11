@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: decrypt --stdout
+title: "--stdout"
+eyebrow: "dotenvx decrypt"
+eyebrow_href: /docs/cli/decrypt/
 description: Decrypt the contents of an encrypted .env file and send to stdout.
 permalink: /docs/cli/decrypt-stdout/
 redirect_from:

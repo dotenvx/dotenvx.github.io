@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get KEY --strict
+title: "KEY --strict"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: "Exit with code 1 if any errors are encountered - like a missing key, missing .env file, or decryption failure."
 permalink: /docs/cli/get-key-strict/
 redirect_from:

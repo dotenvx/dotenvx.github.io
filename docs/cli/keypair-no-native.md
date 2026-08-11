@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair --no-native
+title: "--no-native"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Disable loading private keys from the OS secret store.
 permalink: /docs/cli/keypair-no-native/
 redirect_from:

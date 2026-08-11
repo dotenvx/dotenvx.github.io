@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: pull
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Pull armored key into .env.keys.
 permalink: /docs/cli/armor/pull/
 redirect_from:

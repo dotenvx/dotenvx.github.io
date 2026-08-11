@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get
+title: "(json)"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return a json response of all key/value pairs in a .env file.
 permalink: /docs/cli/get-json/
 redirect_from:

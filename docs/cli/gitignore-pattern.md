@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: gitignore --pattern
+title: "--pattern"
+eyebrow: "dotenvx gitignore"
+eyebrow_href: /docs/cli/gitignore/
 description: Gitignore specific pattern(s) of .env files.
 permalink: /docs/cli/gitignore-pattern/
 redirect_from:

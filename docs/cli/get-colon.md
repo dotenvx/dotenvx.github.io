@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: get --format colon
+title: "--format colon"
+eyebrow: "dotenvx get"
+eyebrow_href: /docs/cli/get/
 description: Return a colon formatted response.
 permalink: /docs/cli/get-colon/
 redirect_from:

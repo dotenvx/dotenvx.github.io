@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
 title: status
+eyebrow: "dotenvx armor"
+eyebrow_href: /docs/cli/armor/introduction/
 description: Print the current Dotenvx Armor status.
 permalink: /docs/cli/armor/status/
 redirect_from:

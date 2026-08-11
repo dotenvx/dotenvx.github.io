@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: set KEY value --no-armor
+title: "KEY value --no-armor"
+eyebrow: "dotenvx set"
+eyebrow_href: /docs/cli/set/
 description: Disable Dotenvx Armor features.
 permalink: /docs/cli/set-key-value-no-armor/
 redirect_from:

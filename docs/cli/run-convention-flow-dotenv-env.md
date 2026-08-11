@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: DOTENV_ENV=production run --convention=flow
+title: "DOTENV_ENV=production"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Use DOTENV_ENV to control dotenv-flow's environment.
 permalink: /docs/cli/run-convention-flow-dotenv-env/
 redirect_from:

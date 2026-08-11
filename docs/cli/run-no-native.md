@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: Run --no-native
+title: "--no-native"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Disable loading private keys from the OS secret store.
 permalink: /docs/cli/run-no-native/
 redirect_from:

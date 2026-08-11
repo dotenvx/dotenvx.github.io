@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: encrypt -ek
+title: "-ek"
+eyebrow: "dotenvx encrypt"
+eyebrow_href: /docs/cli/encrypt/
 description: Specify the key(s) to NOT encrypt by passing --exclude-key.
 permalink: /docs/cli/encrypt-ek/
 redirect_from:

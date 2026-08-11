@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: run --mask
+title: "--mask"
+eyebrow: "dotenvx run"
+eyebrow_href: /docs/cli/run/
 description: Inject masked values into a command.
 permalink: /docs/cli/run-mask/
 redirect_from:

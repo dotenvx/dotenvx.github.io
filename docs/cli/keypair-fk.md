@@ -1,6 +1,8 @@
 ---
 layout: docs-cli
-title: keypair -fk
+title: "-fk"
+eyebrow: "dotenvx keypair"
+eyebrow_href: /docs/cli/keypair/
 description: Specify path to .env.keys. This is useful for printing public/private keys for monorepos.
 permalink: /docs/cli/keypair-fk/
 redirect_from:

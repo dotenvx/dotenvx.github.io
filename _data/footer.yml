@@ -33,6 +33,8 @@ links:
     external: true
   - label: Docs
     href: /docs
+  - label: Search
+    href: /search
   - label: Pricing
     href: /pricing
   - label: Legal

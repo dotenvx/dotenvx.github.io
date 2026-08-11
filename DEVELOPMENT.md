@@ -1,14 +1,20 @@
 ## Development
 
-Use production env for serve/build. Tailwind/PostCSS then match CI, and you avoid a `jekyll-postcss` development-mode socket bug with large CSS (`Unterminated string in JSON` / `Connection reset by peer`):
+Compile CSS first (Tailwind/PostCSS), then serve/build with production env:
 
 ```
+npm install
+npm run build:css
 JEKYLL_ENV=production bundle exec jekyll serve --livereload --verbose --incremental
 ```
+
+`assets/css/main.src.css` is the source. `npm run build:css` writes `assets/css/main.css` (gitignored). We do **not** use `jekyll-postcss` — it passes the whole stylesheet on the CLI and fails with `Argument list too long` once the file is large.
 
 #### Production build
 
 ```
+npm ci
+npm run build:css
 JEKYLL_ENV=production bundle exec jekyll build
 ```
 
@@ -25,11 +31,9 @@ PLANS_API_URL=http://localhost:3000/public/plans JEKYLL_ENV=production bundle ex
 
 Plans are priced by **users**, **audit retention**, and included monthly audited accesses. Armored keys are unlimited on every plan; audit usage beyond the included allowance is billed as an overage.
 
-#### To include /docs
+#### Search
 
-GitHub Actions takes care of building the docs into the deploy.
-
-Make sure you run `NODE_ENV='production' npm run build` on the `/docs` project and push that to main before the CI here runs.
+`/search` loads `/search.json` (generated at build from pages + posts). Tune ranking in `_data/search.yml` (`boost`, `aliases`). Optional per-page front matter: `search_boost`, `search_aliases`, or `search: false`.
 
 ## Other Notes
 

@@ -15,6 +15,10 @@ layout: radar
 
 {% capture company_items %}
   <li>
+    <a class="design-link" href="/search">Search</a>
+    <span class="design-list-meta">docs &amp; site</span>
+  </li>
+  <li>
     <a class="design-link" href="/opensource">Open Source</a>
     <span class="design-list-meta">projects &amp; talks</span>
   </li>

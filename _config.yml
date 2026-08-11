@@ -47,6 +47,7 @@ exclude:
   - yarn.lock
   - postcss.config.js
   - tailwind.config.js
+  - assets/css/main.src.css
 
 markdown: kramdown
 kramdown:
@@ -69,10 +70,6 @@ plugins:
   - jekyll-gzip
   - jekyll-loading-lazy
   - jekyll-responsive-image
-  - jekyll-postcss
-
-postcss:
-  cache: false
 
 responsive_image:
   # [Required]

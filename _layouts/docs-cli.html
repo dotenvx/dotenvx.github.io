@@ -28,7 +28,10 @@
         <section class="docs-cli-body docs-guide-body">
           {% if content != blank %}
             {% capture step_content %}
-              {{ content }}
+              <div class="design-list">
+                <p class="design-list-title">{{ page.usage_title | default: "Usage" }}</p>
+                {{ content }}
+              </div>
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
           {% endif %}

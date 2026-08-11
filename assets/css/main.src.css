@@ -4745,31 +4745,41 @@ html.storm .docs-hero-icon--invert-dark {
 
 .docs-quickstart-pager {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.75rem;
   margin-top: 0;
   width: 100%;
 }
 
+.docs-quickstart-pager--both {
+  justify-content: space-between;
+}
+
+.docs-quickstart-pager--next-only {
+  justify-content: flex-end;
+}
+
 .docs-quickstart-pager .design-btn {
   align-items: center;
   display: inline-flex;
+  flex: 0 1 auto;
   gap: 0.4rem;
   justify-content: center;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  width: fit-content;
 }
 
-@media (min-width: 640px) {
-  .docs-quickstart-pager {
-    flex-direction: row;
-  }
+.docs-quickstart-pager--both .design-btn {
+  max-width: calc(50% - 0.375rem);
+}
 
-  .docs-quickstart-pager--both {
-    justify-content: space-between;
-  }
-
-  .docs-quickstart-pager--next-only {
-    justify-content: flex-end;
-  }
+.docs-quickstart-pager-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .docs-guide-body .design-codeblock-wrap,

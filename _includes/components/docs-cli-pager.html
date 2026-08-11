@@ -37,7 +37,7 @@
             href="{{ prev_item.href }}"
             aria-label="Previous: {{ prev_item.label }}"
             data-docs-quickstart-prev
-          ><span aria-hidden="true">‹</span> {{ prev_item.label }}</a>
+          ><span aria-hidden="true">‹</span> <span class="docs-quickstart-pager-label">{{ prev_item.label }}</span></a>
         {% endif %}
         {% if next_item %}
           <a
@@ -45,7 +45,7 @@
             href="{{ next_item.href }}"
             aria-label="Next: {{ next_item.label }}"
             data-docs-quickstart-next
-          >{{ next_item.label }} <span aria-hidden="true">›</span></a>
+          ><span class="docs-quickstart-pager-label">{{ next_item.label }}</span> <span aria-hidden="true">›</span></a>
         {% endif %}
       </nav>
     {% endif %}

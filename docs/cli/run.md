@@ -90,17 +90,24 @@ options:
   - title: "run --no-armor"
     href: /docs/cli/run-no-armor/
 ---
+Given you have an app with environment variables:
 {% capture cli_code_0 %}
 console.log(`Hello ${process.env.HELLO}`)
 {% endcapture %}
 {% capture cli_code_0_copy %}console.log(`Hello ${process.env.HELLO}`){% endcapture %}
 {% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
-
+Encrypt your .env file. Your secrets stay safely encrypted at rest.
 {% capture cli_code_1 %}
 $ dotenvx encrypt
+◈ encrypted (.env)
+{% endcapture %}
+{% capture cli_code_1_copy %}dotenvx encrypt{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+And then decrypt and inject them at runtime - just in time.
+{% capture cli_code_2 %}
 $ dotenvx run -- node index.js
 ⟐ injected env (14) from .env
 {% endcapture %}
-{% capture cli_code_1_copy %}dotenvx encrypt
-dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% capture cli_code_2_copy %}dotenvx run -- node index.js{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+This works cross-platform across plaintext and encrypted .env files.

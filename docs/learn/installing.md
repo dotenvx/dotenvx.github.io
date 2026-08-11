@@ -68,9 +68,7 @@ $ winget install dotenvx
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Other</h2>
-
-    <h3 class="design-list-title" id="brew">Brew</h3>
+    <h2 class="design-page-title design-page-title--flush" id="brew">Brew</h2>
     <p class="design-paragraph">Install with <a class="design-link" href="https://brew.sh">brew</a>:</p>
 
     {% capture install_brew %}
@@ -82,8 +80,11 @@ brew install dotenvx
     {% include components/design-codeblock.html value=install_brew copy=false %}
 
     <p class="design-paragraph">Find the <a class="design-link" href="https://github.com/dotenvx/homebrew-brew">dotenvx brew tap here</a>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="docker">Docker</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="docker">Docker</h2>
     <p class="design-paragraph">We also provide a <a class="design-link" href="https://hub.docker.com/r/dotenv/dotenvx">docker image</a> for your convenience:</p>
 
     {% capture install_docker %}
@@ -101,8 +102,11 @@ RUN curl -sfS https://dotenvx.sh/install.sh | sh
 CMD ["dotenvx", "run", "--", "echo", "Hello $HELLO"]
     {% endcapture %}
     {% include components/design-codeblock.html value=install_docker_dockerfile copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="github">GitHub Releases</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="github">GitHub Releases</h2>
     <p class="design-paragraph">You can also download straight from <a class="design-link" href="https://github.com/dotenvx/dotenvx/releases">GitHub Releases</a>.</p>
 
     {% capture install_github %}
@@ -113,8 +117,11 @@ tar -xzf dotenvx.tar.gz
     {% include components/design-codeblock.html value=install_github copy=false %}
 
     <p class="design-paragraph">If you download manually you'll need to move the binary somewhere in your PATH.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="heroku">Heroku Buildpack</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="heroku">Heroku Buildpack</h2>
     <p class="design-paragraph">For our Heroku friends, we have a <a class="design-link" href="https://github.com/dotenvx/heroku-buildpack-dotenvx">heroku buildpack</a>.</p>
 
     {% capture install_heroku %}
@@ -129,8 +136,11 @@ heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx
 web: dotenvx run -- node index.js
     {% endcapture %}
     {% include components/design-codeblock.html value=install_heroku_procfile copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="standalone">Standalone</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="standalone">Standalone</h2>
     <p class="design-paragraph"><code class="design-code">dotenvx</code> is a standalone binary, so (if you want) you can just download it directly:</p>
 
     {% capture install_standalone %}
@@ -157,8 +167,11 @@ curl -sfS --proto '=https' "https://dotenvx.sh/$(uname)/$(uname -m).tgz?version=
     {% include components/design-codeblock.html value=install_standalone_version copy=false %}
 
     <p class="design-paragraph">You can view available versions at <a class="design-link" href="https://github.com/dotenvx/releases/tree/main">github.com/dotenvx/releases</a>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="npm-local">Npm local</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="npm-local">Npm local</h2>
     <p class="design-paragraph">Use dotenvx locally as a cli in your node project.</p>
 
     {% capture install_npm_local %}
@@ -177,8 +190,11 @@ npm i @dotenvx/dotenvx --save
 }
     {% endcapture %}
     {% include components/design-codeblock.html value=install_npm_local_pkg copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="npm-global">Npm global</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="npm-global">Npm global</h2>
     <p class="design-paragraph">You can also install globally using npm's <code class="design-code">--global</code> flag.</p>
 
     {% capture install_npm_global %}
@@ -186,16 +202,22 @@ npm install @dotenvx/dotenvx --global
 dotenvx help
     {% endcapture %}
     {% include components/design-codeblock.html value=install_npm_global copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="npx">Npx</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="npx">Npx</h2>
     <p class="design-paragraph">Or prefer to run as needed, uses <code class="design-code">npx</code>.</p>
 
     {% capture install_npx %}
 npx @dotenvx/dotenvx help
     {% endcapture %}
     {% include components/design-codeblock.html value=install_npx copy_text="npx @dotenvx/dotenvx help" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h3 class="design-list-title" id="wget">Wget</h3>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="wget">Wget</h2>
 
     {% capture install_wget %}
 wget -qO- https://dotenvx.sh | sh

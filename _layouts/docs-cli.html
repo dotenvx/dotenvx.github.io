@@ -28,10 +28,8 @@
         <section class="docs-cli-body docs-guide-body">
           {% if content != blank %}
             {% capture step_content %}
-              <div class="design-list">
-                <p class="design-list-title">{{ page.usage_title | default: "Usage" }}</p>
-                {{ content }}
-              </div>
+              <h2 class="design-page-title design-page-title--flush">{{ page.usage_title | default: "Usage" }}</h2>
+              {{ content }}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
           {% endif %}
@@ -52,6 +50,8 @@
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
           {% endif %}
+
+          {% include components/docs-cli-pager.html %}
         </section>
       </div>
     </main>
@@ -59,6 +59,7 @@
     {% include components/design-theme-control.html %}
     <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}"></script>
     {% if page.video and page.video != "" %}
       <script src="{{ '/assets/js/design-video-corner.js' | relative_url }}"></script>
     {% endif %}

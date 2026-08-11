@@ -14,6 +14,30 @@ sdk_crumbs:
   - label: SDK
     href: /docs/sdk
 
+# Top-level CLI commands in index order. Pager walks each command,
+# then its front-matter options (and nested options) for prev/next.
+cli_commands:
+  - /docs/cli/run/
+  - /docs/cli/get/
+  - /docs/cli/set/
+  - /docs/cli/del/
+  - /docs/cli/encrypt/
+  - /docs/cli/decrypt/
+  - /docs/cli/keypair/
+  - /docs/cli/ls/
+  - /docs/cli/gitignore/
+  - /docs/cli/genexample/
+  - /docs/cli/validate/
+  - /docs/cli/doctor/
+  - /docs/cli/scan/
+  - /docs/cli/precommit/
+  - /docs/cli/prebuild/
+  - /docs/cli/help/
+  - /docs/cli/version/
+  - /docs/cli/lock/
+  - /docs/cli/native/
+  - /docs/cli/armor/introduction/
+
 # Order matches /docs/quickstarts — used for prev/next pager
 quickstarts:
   - label: CLI

@@ -31,6 +31,10 @@ options:
     href: /docs/cli/set-key-value-no-armor/
   - title: set KEY value --no-native
     href: /docs/cli/set-key-value-no-native/
+  - title: "set KEY \"value with spaces\""
+    href: /docs/cli/set-key-value-with-spaces/
+  - title: "set KEY -- \"- + * ÷\""
+    href: /docs/cli/set-key-value-with-leading-dash/
 ---
 {% capture cli_code_0 %}
 $ dotenvx set HELLO World

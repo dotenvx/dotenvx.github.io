@@ -1,0 +1,101 @@
+{% comment %}
+  Prev/next across CLI pages: each top-level command, then its options
+  (and nested options), in the same order as the Options lists.
+{% endcomment %}
+{% if page.url contains "/docs/cli/" %}
+  {% assign current_href = page.url | append: "/" | replace: "//", "/" %}
+  {% assign cli_nav = "" | split: "" %}
+
+  {% for cmd_href in site.data.docs.cli_commands %}
+    {% assign cmd_url = cmd_href | append: "/" | replace: "//", "/" %}
+    {% assign cmd_page = site.pages | where_exp: "p", "p.url == cmd_url" | first %}
+    {% if cmd_page == nil %}
+      {% assign cmd_page = site.pages | where_exp: "p", "p.permalink == cmd_url" | first %}
+    {% endif %}
+    {% if cmd_page %}
+      {% assign entry = cmd_page.title | append: "|||" | append: cmd_url %}
+      {% assign cli_nav = cli_nav | push: entry %}
+
+      {% if cmd_page.options %}
+        {% for opt in cmd_page.options %}
+          {% assign opt_url = opt.href | append: "/" | replace: "//", "/" %}
+          {% assign opt_page = site.pages | where_exp: "p", "p.url == opt_url" | first %}
+          {% if opt_page %}
+            {% assign opt_label = opt_page.title | default: opt.title %}
+          {% else %}
+            {% assign opt_label = opt.title %}
+          {% endif %}
+          {% assign entry = opt_label | append: "|||" | append: opt_url %}
+          {% assign cli_nav = cli_nav | push: entry %}
+
+          {% if opt_page.options %}
+            {% for nested in opt_page.options %}
+              {% assign nested_url = nested.href | append: "/" | replace: "//", "/" %}
+              {% assign nested_page = site.pages | where_exp: "p", "p.url == nested_url" | first %}
+              {% if nested_page %}
+                {% assign nested_label = nested_page.title | default: nested.title %}
+              {% else %}
+                {% assign nested_label = nested.title %}
+              {% endif %}
+              {% assign entry = nested_label | append: "|||" | append: nested_url %}
+              {% assign cli_nav = cli_nav | push: entry %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign current_index = nil %}
+  {% for entry in cli_nav %}
+    {% assign parts = entry | split: "|||" %}
+    {% assign href = parts[1] %}
+    {% if href == current_href %}
+      {% assign current_index = forloop.index0 %}
+    {% endif %}
+  {% endfor %}
+
+  {% if current_index != nil %}
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+    {% assign prev_item = false %}
+    {% assign next_item = false %}
+    {% if prev_index >= 0 %}
+      {% assign prev_parts = cli_nav[prev_index] | split: "|||" %}
+      {% assign prev_item = true %}
+      {% assign prev_label = prev_parts[0] %}
+      {% assign prev_href = prev_parts[1] %}
+    {% endif %}
+    {% if next_index < cli_nav.size %}
+      {% assign next_parts = cli_nav[next_index] | split: "|||" %}
+      {% assign next_item = true %}
+      {% assign next_label = next_parts[0] %}
+      {% assign next_href = next_parts[1] %}
+    {% endif %}
+
+    {% if prev_item or next_item %}
+      <nav
+        class="docs-quickstart-pager{% if prev_item and next_item %} docs-quickstart-pager--both{% elsif next_item %} docs-quickstart-pager--next-only{% endif %}"
+        aria-label="CLI pages"
+        data-docs-quickstart-pager
+      >
+        {% if prev_item %}
+          <a
+            class="design-btn"
+            href="{{ prev_href }}"
+            aria-label="Previous: {{ prev_label }}"
+            data-docs-quickstart-prev
+          ><span aria-hidden="true">‹</span> {{ prev_label }}</a>
+        {% endif %}
+        {% if next_item %}
+          <a
+            class="design-btn"
+            href="{{ next_href }}"
+            aria-label="Next: {{ next_label }}"
+            data-docs-quickstart-next
+          >{{ next_label }} <span aria-hidden="true">›</span></a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% endif %}
+{% endif %}

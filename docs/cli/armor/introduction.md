@@ -21,6 +21,28 @@ crumbs:
     href: /docs/cli
   - label: Armor
     href: /docs/cli/armor/introduction/
+options_title: Commands
+options:
+  - title: up
+    href: /docs/cli/armor/up/
+  - title: down
+    href: /docs/cli/armor/down/
+  - title: login
+    href: /docs/cli/armor/login/
+  - title: logout
+    href: /docs/cli/armor/logout/
+  - title: push
+    href: /docs/cli/armor/push/
+  - title: pull
+    href: /docs/cli/armor/pull/
+  - title: move
+    href: /docs/cli/armor/move/
+  - title: open
+    href: /docs/cli/armor/open/
+  - title: status
+    href: /docs/cli/armor/status/
+  - title: settings
+    href: /docs/cli/armor/settings/
 ---
 ## Installation
 

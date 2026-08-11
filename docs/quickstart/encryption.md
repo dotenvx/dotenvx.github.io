@@ -8,11 +8,26 @@ redirect_from:
   - /docs/quickstarts/encryption/
 ---
 
+{% capture encrypt_hero_file %}
+# .env
+STRIPE_API_KEY="encrypted:dfjkdfjd"
+TWILIO_API_KEY="encrypted:a1b2c3d4"
+{% endcapture %}
+{% assign encrypt_hero_copy = "STRIPE_API_KEY=\"encrypted:dfjkdfjd\"
+TWILIO_API_KEY=\"encrypted:a1b2c3d4\"" %}
+
+{% capture encrypt_hero_visual %}
+  <div class="docs-env-hero-example">
+    {% include components/design-codeblock.html value=encrypt_hero_file copy_text=encrypt_hero_copy %}
+  </div>
+{% endcapture %}
+
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="Encryption"
   description="Add encryption to your .env files with a single command. Use dotenvx encrypt."
-  mark="encrypt"
+  visual=encrypt_hero_visual
+  video="https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d"
 %}
 
 <div class="armor-shell">
@@ -44,6 +59,8 @@ HELLO="encrypted:BAZb6wDPFaFeFzq8Ut48oiNFSPtYvJmv4AwVDFVcNKiIcGxrxuRIFGWxZ3xVjxO
     <p class="design-paragraph">The public encryption key <code class="design-code">DOTENV_PUBLIC_KEY</code> is placed at the top of your <code class="design-code">.env</code> file. This allows anyone on your team to encrypt secrets.</p>
 
     <p class="design-paragraph">The private decryption key <code class="design-code">DOTENV_PRIVATE_KEY</code> is placed in your <code class="design-code">.env.keys</code> file. Only those holding this key can decrypt secrets.</p>
+
+    <p class="design-paragraph">We recommend <a class="design-link" href="/docs/cli/lock/">locking</a>, <a class="design-link" href="/docs/cli/native/">keychaining</a>, or most seriously <a class="design-link" href="/docs/cli/armor/introduction/">armoring</a> your private key.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -92,10 +109,6 @@ Hello production
     {% include components/design-codeblock.html value=encrypt_prod copy=false %}
 
     <p class="design-paragraph">No more scattering your secrets across multiple third-parties platforms where they <a class="design-link" href="https://techcrunch.com/2023/01/05/circleci-breach/">could leak</a>!</p>
-
-    {% include components/design-video.html
-      mp4="https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d"
-    %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

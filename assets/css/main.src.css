@@ -1534,6 +1534,11 @@ body.radar-layout a:focus {
   width: 100%;
 }
 
+/* Keep #hash targets clear of the sticky radar chrome */
+html {
+  scroll-padding-top: 5.5rem;
+}
+
 .radar-chrome {
   -webkit-backdrop-filter: blur(12px) saturate(1.2);
   backdrop-filter: blur(12px) saturate(1.2);
@@ -2492,8 +2497,12 @@ html.dark .design-link:focus {
   font-weight: 600 !important;
 }
 
-/* Mirrored from ../radar design-code */
-.design-code {
+/* Mirrored from ../radar design-code — also cover markdown `code` in docs surfaces */
+.design-code,
+.design-step code,
+.docs-guide-body code,
+.docs-quickstart-body code,
+.design-prose code {
   background: var(--design-code-bg) !important;
   border: 1px solid var(--design-code-border, transparent) !important;
   border-radius: 0.25rem !important;
@@ -4638,10 +4647,6 @@ html.dark .radar-btn {
   width: 100%;
 }
 
-.docs-env-file-body .design-page-title {
-  scroll-margin-top: 1.25rem;
-}
-
 .docs-env-syntax-table .design-table th,
 .docs-env-syntax-table .design-table td {
   font-size: var(--design-text-compact);
@@ -4905,11 +4910,6 @@ html.storm .docs-hero-icon--invert-dark {
 .design-step .design-paragraph a:focus {
   text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 28%, transparent) !important;
   text-decoration-thickness: 3px;
-}
-
-.design-step .design-paragraph code {
-  font-family: var(--design-font-mono);
-  font-size: 0.92em;
 }
 
 .docs-intro-lists,

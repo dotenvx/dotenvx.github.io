@@ -54,6 +54,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
           {% include components/design-btn.html
             label="Sign Up"
             href="/signup"
+            class="design-btn--trial"
           %}
           {% include components/design-btn.html
             label="See Pricing"

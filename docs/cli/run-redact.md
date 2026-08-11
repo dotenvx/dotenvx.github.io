@@ -15,6 +15,14 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
+options_title: Related
+options:
+  - title: Claude
+    href: /docs/claude/
+  - title: Cursor
+    href: /docs/cursor/
+  - title: Codex
+    href: /docs/codex/
 ---
 Run any command with real environment variables while automatically redacting their values from stdout and stderr. Keys ending in `_PLAIN` are left visible.
 

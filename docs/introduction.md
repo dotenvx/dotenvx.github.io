@@ -126,12 +126,9 @@ layout: radar
       <p class="design-list-title">CLI</p>
       <div class="design-settings-grid">
         {% include components/design-settings-tile.html href="/docs/cli/run" label="Run" glyph="›" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/cli/get" label="Get" glyph="↓" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/cli/set" label="Set" glyph="↑" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/cli/del" label="Del" glyph="×" glyph_class="design-settings-tile-glyph--soft" %}
         {% include components/design-settings-tile.html href="/docs/cli/encrypt" label="Encrypt" glyph="◈" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/cli/lock" label="Lock" glyph="⊡" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/cli/native" label="Native" glyph="⌥" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/run-redact" label="Redact" glyph="░" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/validate" label="Validate" glyph="✓" glyph_class="design-settings-tile-glyph--soft" %}
         {% include components/design-settings-tile.html href="/docs/cli/armor/introduction" label="Armor" glyph="⛨" glyph_class="design-settings-tile-glyph--soft" %}
         {% include components/design-settings-tile.html href="/docs/cli" label="Full Reference" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>

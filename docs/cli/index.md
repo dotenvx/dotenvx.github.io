@@ -17,42 +17,6 @@ layout: radar
   icon="cli"
 %}
 
-<style>
-  .docs-cli-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-  }
-
-  .docs-cli-cards .design-settings-grid {
-    gap: 0.7rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (min-width: 480px) {
-    .docs-cli-cards .design-settings-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 720px) {
-    .docs-cli-cards .design-settings-grid {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-  }
-
-  .docs-cli-cards .design-settings-tile-glyph {
-    font-size: 1.55rem;
-  }
-
-  @media (min-width: 900px) {
-    .docs-cli-cards .design-settings-tile-glyph {
-      font-size: 1.85rem;
-    }
-  }
-</style>
-
 {% capture cli_all_permutations_items %}
   <li>
     <a class="design-link" href="/docs/cli/run-variable-expansion">run - Variable Expansion</a>

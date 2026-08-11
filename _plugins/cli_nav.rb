@@ -43,6 +43,8 @@ module DocsCliNav
 
         opt_url = normalize_url(opt["href"])
         next unless opt_url
+        # Skip non-CLI links (e.g. Related quickstart guides).
+        next unless opt_url.start_with?("/docs/cli/")
 
         opt_page = by_url[opt_url]
         opt_label = if opt_page && opt_page.data["title"]
@@ -63,6 +65,7 @@ module DocsCliNav
 
           nested_url = normalize_url(nested["href"])
           next unless nested_url
+          next unless nested_url.start_with?("/docs/cli/")
 
           nested_page = by_url[nested_url]
           nested_label = if nested_page && nested_page.data["title"]

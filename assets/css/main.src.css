@@ -3528,7 +3528,9 @@ html.dark .design-badge.design-badge--danger {
   color: #f87171;
 }
 
-.design-list {
+.design-list,
+.docs-intro-cards,
+.docs-cli-cards {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
@@ -4806,6 +4808,38 @@ html.dark .radar-btn {
   }
 }
 
+/* /docs/env-file — hero example + on-page TOC */
+.docs-env-hero-example {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-height: inherit;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.docs-env-hero-example .design-codeblock-wrap {
+  margin: 0;
+  max-width: 22rem;
+  width: 100%;
+}
+
+.docs-env-file-body .design-page-title {
+  scroll-margin-top: 1.25rem;
+}
+
+.docs-env-syntax-table .design-table th,
+.docs-env-syntax-table .design-table td {
+  font-size: var(--design-text-compact);
+}
+
+.docs-env-syntax-table .design-table tbody th {
+  font-family: var(--design-font-mono);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
 .docs-hero-icon {
   color: var(--design-ink);
   display: block;
@@ -5069,13 +5103,6 @@ html.storm .docs-hero-icon--invert-dark {
 
 .docs-cli-lists:has(.docs-cli-cards) .design-list {
   max-width: 36rem;
-}
-
-.docs-cli-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  width: 100%;
 }
 
 .docs-cli-cards .design-settings-grid {

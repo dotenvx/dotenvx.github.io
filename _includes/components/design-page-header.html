@@ -32,4 +32,19 @@
   {% if description and description != "" %}
     <p class="design-page-header-desc">{{ description }}</p>
   {% endif %}
+  {% if include.video and include.video != "" %}
+    {% if include.video_title and include.video_title != "" %}
+      {% assign video_link_label = include.video_title %}
+    {% else %}
+      {% assign video_link_label = "Watch demo" %}
+    {% endif %}
+    <p class="design-page-header-action">
+      <a
+        class="design-link"
+        href="{{ include.video }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >{{ video_link_label }} →</a>
+    </p>
+  {% endif %}
 </div>

@@ -8,7 +8,6 @@ permalink: /docs/codex/
 redirect_from:
   - /docs/secrets-in-codex/
   - /docs/secrets-in-codex
-prerequisite_title: "Prerequisite"
 prerequisite_lede: "Install the [Codex CLI](https://developers.openai.com/codex/cli/) to get the `codex` command."
 prerequisite_copy: |
   npm install -g @openai/codex

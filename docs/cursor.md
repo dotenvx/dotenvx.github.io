@@ -8,7 +8,6 @@ permalink: /docs/cursor/
 redirect_from:
   - /docs/secrets-in-cursor/
   - /docs/secrets-in-cursor
-prerequisite_title: "Prerequisite"
 prerequisite_lede: "Install the [Cursor CLI](https://cursor.com/cli). The Cursor desktop app does not necessarily install the separate `agent` command."
 prerequisite_copy: |
   curl https://cursor.com/install -fsS | bash

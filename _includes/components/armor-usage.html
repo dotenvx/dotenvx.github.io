@@ -1,0 +1,17 @@
+{% assign title = include.title | default: "Worldwide Usage" %}
+{% assign usage_url = include.url %}
+
+<section class="radar-section" aria-label="{{ title }}">
+  <div class="armor-shell">
+    <div class="design-list">
+      <p class="design-list-title">{{ title }}</p>
+      <div
+        class="design-card armor-usage-card"
+        data-armor-usage
+        {% if usage_url and usage_url != "" %}data-usage-url="{{ usage_url }}"{% endif %}
+      >
+        <div class="design-access-days design-access-days--lg" data-armor-usage-root role="img" aria-label="Armor event usage over the last 90 days"></div>
+      </div>
+    </div>
+  </div>
+</section>

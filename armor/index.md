@@ -92,6 +92,8 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
 
   {% include components/armor-in-use.html %}
 
+  {% include components/armor-usage.html url="https://armor.dotenvx.com/public/usage" %}
+
   <section class="radar-section" aria-label="Next step">
     <div class="armor-shell">
       {% include components/design-cta-message.html
@@ -165,6 +167,10 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
         }, 1100)
       })
     })
+
+    var usageScript = document.createElement('script')
+    usageScript.src = '/assets/js/armor-usage.js'
+    document.body.appendChild(usageScript)
   })
 })()
 </script>

@@ -10,7 +10,6 @@ redirect_from:
   - /docs/guides/bitwarden/
   - /docs/secrets-in-bitwarden
   - /docs/secrets-in-bitwarden/
-prerequisite_title: "Prerequisites"
 prerequisite_lede: "To get the most out of this guide, you'll need to:"
 prerequisite_links:
   - label: Install the Bitwarden CLI

@@ -27,28 +27,31 @@
 
         <section class="docs-quickstart-body">
           {% if page.prerequisite_lede or page.prerequisite or page.prerequisite_links %}
-            <div class="docs-quickstart-step">
-              <h2 class="design-page-title design-page-title--flush">{{ page.prerequisite_title | default: "Prerequisite" }}</h2>
-              {% if page.prerequisite_lede %}
-                <div class="design-paragraph">{{ page.prerequisite_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
-              {% endif %}
-              {% if page.prerequisite_links %}
-                <ul class="design-list-items">
-                  {% for link in page.prerequisite_links %}
-                    <li>
-                      <a class="design-link" href="{{ link.href }}"{% if link.href contains "://" %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-              {% if page.prerequisite %}
-                {% include components/design-codeblock.html value=page.prerequisite copy_text=page.prerequisite_copy %}
-              {% endif %}
-            </div>
+            {% capture step_content %}
+              <div class="design-list">
+                <p class="design-list-title">Prerequisites</p>
+                {% if page.prerequisite_lede %}
+                  <div class="design-paragraph">{{ page.prerequisite_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+                {% endif %}
+                {% if page.prerequisite_links %}
+                  <ul class="design-list-items">
+                    {% for link in page.prerequisite_links %}
+                      <li>
+                        <a class="design-link" href="{{ link.href }}"{% if link.href contains "://" %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if page.prerequisite %}
+                  {% include components/design-codeblock.html value=page.prerequisite copy_text=page.prerequisite_copy %}
+                {% endif %}
+              </div>
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
 
           {% if page.setup or page.setup_lede %}
-            <div class="docs-quickstart-step">
+            {% capture step_content %}
               {% if page.setup_title and page.setup_title != "" %}
                 <h2 class="design-page-title design-page-title--flush">{{ page.setup_title }}</h2>
               {% elsif page.setup_title == nil %}
@@ -60,11 +63,12 @@
               {% if page.setup %}
                 {% include components/design-codeblock.html value=page.setup copy_text=page.setup_copy %}
               {% endif %}
-            </div>
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
 
           {% if page.install %}
-            <div class="docs-quickstart-step">
+            {% capture step_content %}
               <h2 class="design-page-title design-page-title--flush">{{ page.install_title | default: "1. Install" }}</h2>
               {% if page.install_lede %}
                 <div class="design-paragraph">{{ page.install_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -78,11 +82,12 @@
               {% if page.install_after %}
                 {% include components/design-codeblock.html value=page.install_after copy_text=page.install_after_copy %}
               {% endif %}
-            </div>
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
 
           {% if page.encrypt %}
-            <div class="docs-quickstart-step">
+            {% capture step_content %}
               <h2 class="design-page-title design-page-title--flush">{{ page.encrypt_title | default: "2. Encrypt" }}</h2>
               {% if page.encrypt_lede %}
                 <div class="design-paragraph">{{ page.encrypt_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -96,11 +101,12 @@
               {% if page.encrypt_after %}
                 {% include components/design-codeblock.html value=page.encrypt_after copy_text=page.encrypt_after_copy %}
               {% endif %}
-            </div>
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
 
           {% if page.inject or page.inject_lede or page.inject_after %}
-            <div class="docs-quickstart-step">
+            {% capture step_content %}
               <h2 class="design-page-title design-page-title--flush">{{ page.inject_title | default: "3. Inject" }}</h2>
               {% if page.inject_lede %}
                 <div class="design-paragraph">{{ page.inject_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -116,17 +122,19 @@
               {% if page.inject_after %}
                 {% include components/design-codeblock.html value=page.inject_after copy_text=page.inject_after_copy %}
               {% endif %}
-            </div>
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
 
           {% if page.run %}
-            <div class="docs-quickstart-step">
+            {% capture step_content %}
               <h2 class="design-page-title design-page-title--flush">{{ page.run_title | default: "4. Run" }}</h2>
               {% if page.run_lede %}
                 <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
               {% include components/design-codeblock.html value=page.run copy_text=page.run_copy %}
-            </div>
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
 
           {% if content != blank %}

@@ -8,7 +8,6 @@ permalink: /docs/claude/
 redirect_from:
   - /docs/secrets-in-claude/
   - /docs/secrets-in-claude
-prerequisite_title: "Prerequisite"
 prerequisite_lede: "Install [Claude Code](https://code.claude.com/docs/en/setup) to get the `claude` command."
 prerequisite_copy: |
   curl -fsSL https://claude.ai/install.sh | bash

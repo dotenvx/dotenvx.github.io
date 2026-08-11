@@ -10,7 +10,6 @@ redirect_from:
   - /docs/guides/1password/
   - /docs/secrets-in-1password
   - /docs/secrets-in-1password/
-prerequisite_title: "Prerequisites"
 prerequisite_lede: "To get the most out of this guide, you'll need to:"
 prerequisite_links:
   - label: Install op

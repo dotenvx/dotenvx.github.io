@@ -9,7 +9,7 @@ layout: radar
   eyebrow="Docs"
   title=".env"
   description="The .env file separates your secrets from code."
-  mark=".env"
+  mark="KEY=VALUE"
 %}
 
 <section class="radar-section">

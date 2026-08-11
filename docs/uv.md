@@ -8,7 +8,6 @@ permalink: /docs/uv/
 redirect_from:
   - /docs/secrets-in-uv/
   - /docs/secrets-in-uv
-prerequisite_title: "Prerequisites"
 prerequisite_lede: "To get the most out of this guide, you'll need to:"
 prerequisite_links:
   - label: Install uv

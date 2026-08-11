@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(noBitwarden: true)"
 description: Leave bw:// values unresolved and avoid calling the Bitwarden CLI.
-permalink: /docs/sdk/config-no-bitwarden/
+permalink: /docs/sdk/nodejs/config-no-bitwarden/
 redirect_from:
+  - /docs/sdk/config-no-bitwarden
+  - /docs/sdk/config-no-bitwarden/
   - /docs/advanced/config-no-bitwarden
   - /docs/advanced/config-no-bitwarden/
   - /docs/ref/sdk/config-no-bitwarden
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 <p class="design-paragraph">By default, <code class="design-code">config()</code> resolves <code class="design-code">bw://</code> values through the installed <a class="design-link" href="https://bitwarden.com/help/cli/">Bitwarden Password Manager CLI</a>.</p>
 

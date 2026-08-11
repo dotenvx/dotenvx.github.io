@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(ignore: ['.env.missing', '.env'])"
 description: Use ignore to suppress specific errors like MISSING_ENV_FILE.
-permalink: /docs/sdk/config-ignore/
+permalink: /docs/sdk/nodejs/config-ignore/
 redirect_from:
+  - /docs/sdk/config-ignore
+  - /docs/sdk/config-ignore/
   - /docs/advanced/config-ignore
   - /docs/advanced/config-ignore/
   - /docs/ref/sdk/config-ignore
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 {% capture sdk_code_0 %}
 # .env

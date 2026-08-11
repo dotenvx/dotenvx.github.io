@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "parse(src, {privateKey:})"
 description: Decrypt an encrypted .env string with privateKey.
-permalink: /docs/sdk/parse-private-key/
+permalink: /docs/sdk/nodejs/parse-private-key/
 redirect_from:
+  - /docs/sdk/parse-private-key
+  - /docs/sdk/parse-private-key/
   - /docs/advanced/parse-private-key
   - /docs/advanced/parse-private-key/
   - /docs/ref/sdk/parse-private-key
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: parse
-    href: /docs/sdk/parse/
+    href: /docs/sdk/nodejs/parse/
 ---
 {% capture sdk_code_0 %}
 {% raw %}

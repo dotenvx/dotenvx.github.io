@@ -1,9 +1,14 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
+command: "parse()"
 title: parse
 description: Parse a .env string directly in node.js code.
-permalink: /docs/sdk/parse/
+permalink: /docs/sdk/nodejs/parse/
 redirect_from:
+  - /docs/sdk/parse
+  - /docs/sdk/parse/
   - /docs/advanced/parse
   - /docs/advanced/parse/
   - /docs/ref/sdk/parse
@@ -11,14 +16,16 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
 options_title: Advanced
 options:
   - title: "parse(src, {processEnv:})"
-    href: /docs/sdk/parse-process-env/
+    href: /docs/sdk/nodejs/parse-process-env/
   - title: "parse(src, {privateKey:})"
-    href: /docs/sdk/parse-private-key/
+    href: /docs/sdk/nodejs/parse-private-key/
 ---
 {% capture sdk_code_0 %}
 {% raw %}

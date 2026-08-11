@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(overload: true)"
 description: Use overload to overwrite the prior set value.
-permalink: /docs/sdk/config-overload/
+permalink: /docs/sdk/nodejs/config-overload/
 redirect_from:
+  - /docs/sdk/config-overload
+  - /docs/sdk/config-overload/
   - /docs/advanced/config-overload
   - /docs/advanced/config-overload/
   - /docs/ref/sdk/config-overload
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 {% capture sdk_code_0 %}
 # .env.local

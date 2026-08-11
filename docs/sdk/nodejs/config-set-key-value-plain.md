@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "set(KEY, value, {plain: true})"
 description: Programmatically set a plaintext environment variable.
-permalink: /docs/sdk/config-set-key-value-plain/
+permalink: /docs/sdk/nodejs/config-set-key-value-plain/
 redirect_from:
+  - /docs/sdk/config-set-key-value-plain
+  - /docs/sdk/config-set-key-value-plain/
   - /docs/advanced/config-set-key-value-plain
   - /docs/advanced/config-set-key-value-plain/
   - /docs/ref/sdk/config-set-key-value-plain
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: set
-    href: /docs/sdk/config-set-key-value/
+    href: /docs/sdk/nodejs/config-set-key-value/
 ---
 {% capture sdk_code_0 %}
 // index.js

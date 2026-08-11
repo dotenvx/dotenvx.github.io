@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(strict: true)"
 description: Exit with code 1 if any errors are encountered - like a missing .env file or decryption failure.
-permalink: /docs/sdk/config-strict/
+permalink: /docs/sdk/nodejs/config-strict/
 redirect_from:
+  - /docs/sdk/config-strict
+  - /docs/sdk/config-strict/
   - /docs/advanced/config-strict
   - /docs/advanced/config-strict/
   - /docs/ref/sdk/config-strict
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 {% capture sdk_code_0 %}
 # .env

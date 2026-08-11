@@ -1,9 +1,14 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
+command: "set()"
 title: set
 description: Programmatically set an environment variable.
-permalink: /docs/sdk/config-set-key-value/
+permalink: /docs/sdk/nodejs/config-set-key-value/
 redirect_from:
+  - /docs/sdk/config-set-key-value
+  - /docs/sdk/config-set-key-value/
   - /docs/sdk/set
   - /docs/sdk/set/
   - /docs/advanced/config-set-key-value
@@ -17,12 +22,14 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
 options_title: Advanced
 options:
   - title: "set(KEY, value, {plain: true})"
-    href: /docs/sdk/config-set-key-value-plain/
+    href: /docs/sdk/nodejs/config-set-key-value-plain/
 ---
 {% capture sdk_code_0 %}
 // index.js

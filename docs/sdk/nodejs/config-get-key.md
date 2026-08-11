@@ -1,9 +1,14 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
+command: "get()"
 title: get
 description: Programmatically get an environment variable at access/runtime.
-permalink: /docs/sdk/config-get-key/
+permalink: /docs/sdk/nodejs/config-get-key/
 redirect_from:
+  - /docs/sdk/config-get-key
+  - /docs/sdk/config-get-key/
   - /docs/sdk/get
   - /docs/sdk/get/
   - /docs/advanced/config-get-key
@@ -17,12 +22,14 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
 options_title: Options
 options:
   - title: "get(KEY, {mask: true})"
-    href: /docs/sdk/get-mask/
+    href: /docs/sdk/nodejs/get-mask/
 ---
 {% capture sdk_code_0 %}
 // index.js

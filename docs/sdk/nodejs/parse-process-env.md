@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "parse(src, {processEnv:})"
 description: Parse a .env string directly in node.js code without accessing process.env.
-permalink: /docs/sdk/parse-process-env/
+permalink: /docs/sdk/nodejs/parse-process-env/
 redirect_from:
+  - /docs/sdk/parse-process-env
+  - /docs/sdk/parse-process-env/
   - /docs/advanced/parse-process-env
   - /docs/advanced/parse-process-env/
   - /docs/ref/sdk/parse-process-env
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: parse
-    href: /docs/sdk/parse/
+    href: /docs/sdk/nodejs/parse/
 ---
 <p class="design-paragraph">Sometimes, you want to run <code class="design-code">parse</code> without it accessing <code class="design-code">process.env</code>. (You can pass a fake <code class="design-code">processEnv</code> this way as well - sometimes useful.)</p>
 

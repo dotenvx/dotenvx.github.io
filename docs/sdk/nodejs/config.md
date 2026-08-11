@@ -1,9 +1,14 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
+command: "config()"
 title: config
 description: Use directly in node.js code.
-permalink: /docs/sdk/config/
+permalink: /docs/sdk/nodejs/config/
 redirect_from:
+  - /docs/sdk/config
+  - /docs/sdk/config/
   - /docs/advanced/config
   - /docs/advanced/config/
   - /docs/ref/sdk/config
@@ -11,34 +16,36 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
 options_title: Advanced
 options:
   - title: "config(path: ['.env.local', '.env'])"
-    href: /docs/sdk/config-path/
+    href: /docs/sdk/nodejs/config-path/
   - title: "config(overload: true)"
-    href: /docs/sdk/config-overload/
+    href: /docs/sdk/nodejs/config-overload/
   - title: "config(mask: true)"
-    href: /docs/sdk/config-mask/
+    href: /docs/sdk/nodejs/config-mask/
   - title: "config(quiet: true)"
-    href: /docs/sdk/config-quiet/
+    href: /docs/sdk/nodejs/config-quiet/
   - title: "config(strict: true)"
-    href: /docs/sdk/config-strict/
+    href: /docs/sdk/nodejs/config-strict/
   - title: "config(ignore: ['.env.missing', '.env'])"
-    href: /docs/sdk/config-ignore/
+    href: /docs/sdk/nodejs/config-ignore/
   - title: "config(envKeysFile: '../../.env.keys')"
-    href: /docs/sdk/config-env-keys-file/
+    href: /docs/sdk/nodejs/config-env-keys-file/
   - title: "config(convention: 'nextjs')"
-    href: /docs/sdk/config-convention/
+    href: /docs/sdk/nodejs/config-convention/
   - title: "config(path: directory, convention: 'nextjs')"
-    href: /docs/sdk/config-path-directory-convention/
+    href: /docs/sdk/nodejs/config-path-directory-convention/
   - title: "config(noArmor: true)"
-    href: /docs/sdk/config-no-armor/
+    href: /docs/sdk/nodejs/config-no-armor/
   - title: "config(no1Password: true)"
-    href: /docs/sdk/config-no-1password/
+    href: /docs/sdk/nodejs/config-no-1password/
   - title: "config(noBitwarden: true)"
-    href: /docs/sdk/config-no-bitwarden/
+    href: /docs/sdk/nodejs/config-no-bitwarden/
 ---
 {% capture sdk_code_0 %}
 # .env

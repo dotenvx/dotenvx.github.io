@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(path: ['.env.local', '.env'])"
 description: Specify path(s) to multiple .env files.
-permalink: /docs/sdk/config-path/
+permalink: /docs/sdk/nodejs/config-path/
 redirect_from:
+  - /docs/sdk/config-path
+  - /docs/sdk/config-path/
   - /docs/advanced/config-path
   - /docs/advanced/config-path/
   - /docs/ref/sdk/config-path
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 {% capture sdk_code_0 %}
 # .env.local
@@ -47,4 +53,4 @@ Hello Me
 
 <p class="design-paragraph">This is the equivalent of using <code class="design-code">-f</code> from the command line.</p>
 
-<p class="design-paragraph">To use a directory as the base for convention files, see <a class="design-link" href="/docs/sdk/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>
+<p class="design-paragraph">To use a directory as the base for convention files, see <a class="design-link" href="/docs/sdk/nodejs/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>

@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(convention: 'nextjs')"
 description: Use convention in node.js code.
-permalink: /docs/sdk/config-convention/
+permalink: /docs/sdk/nodejs/config-convention/
 redirect_from:
+  - /docs/sdk/config-convention
+  - /docs/sdk/config-convention/
   - /docs/advanced/config-convention
   - /docs/advanced/config-convention/
   - /docs/ref/sdk/config-convention
@@ -11,14 +15,16 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 <p class="design-paragraph">Set a convention when using <code class="design-code">dotenvx.config()</code>. This allows you to use the same file loading order as the CLI without needing to specify each file individually.</p>
 
-<p class="design-paragraph">To load a convention from another directory, see <a class="design-link" href="/docs/sdk/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>
+<p class="design-paragraph">To load a convention from another directory, see <a class="design-link" href="/docs/sdk/nodejs/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>
 
 <h2 class="design-page-title">Next.js convention</h2>
 

@@ -11,7 +11,7 @@ cli_crumbs:
 sdk_crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
 
 # Top-level CLI commands in index order. Pager walks each command,

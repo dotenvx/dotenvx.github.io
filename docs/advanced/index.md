@@ -404,64 +404,64 @@ layout: radar
 
 {% capture advanced_library_items %}
   <li>
-    <a class="design-link" href="/docs/sdk/config">config()</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config">config()</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-path">config(path: ['.env.local', '.env'])</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-path">config(path: ['.env.local', '.env'])</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-overload">config(overload: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-overload">config(overload: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-mask">config(mask: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-mask">config(mask: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-quiet">config(quiet: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-quiet">config(quiet: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-strict">config(strict: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-strict">config(strict: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-ignore">config(ignore: ['.env.missing', '.env'])</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-ignore">config(ignore: ['.env.missing', '.env'])</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-env-keys-file">config(envKeysFile: '../../.env.keys')</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-env-keys-file">config(envKeysFile: '../../.env.keys')</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-convention">config(convention: 'nextjs')</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-convention">config(convention: 'nextjs')</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-path-directory-convention">config(path: directory, convention: 'nextjs')</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-path-directory-convention">config(path: directory, convention: 'nextjs')</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-no-armor">config(noArmor: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-no-armor">config(noArmor: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-no-1password">config(no1Password: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-no-1password">config(no1Password: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-no-bitwarden">config(noBitwarden: true)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-no-bitwarden">config(noBitwarden: true)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/parse">parse(src)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/parse">parse(src)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/parse-process-env">parse(src, {processEnv:})</a>
+    <a class="design-link" href="/docs/sdk/nodejs/parse-process-env">parse(src, {processEnv:})</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/parse-private-key">parse(src, {privateKey:})</a>
+    <a class="design-link" href="/docs/sdk/nodejs/parse-private-key">parse(src, {privateKey:})</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-set-key-value">set(KEY, value)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-set-key-value">set(KEY, value)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-set-key-value-plain">set(KEY, value, {plain: true})</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-set-key-value-plain">set(KEY, value, {plain: true})</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/config-get-key">get(KEY)</a>
+    <a class="design-link" href="/docs/sdk/nodejs/config-get-key">get(KEY)</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/sdk/get-mask">get(KEY, {mask: true})</a>
+    <a class="design-link" href="/docs/sdk/nodejs/get-mask">get(KEY, {mask: true})</a>
   </li>
 {% endcapture %}
 

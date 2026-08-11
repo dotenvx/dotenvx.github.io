@@ -1,9 +1,13 @@
 ---
 layout: docs-cli
+eyebrow: Node
+eyebrow_href: /docs/sdk/nodejs/
 title: "config(mask: true)"
 description: Inject and return masked values.
-permalink: /docs/sdk/config-mask/
+permalink: /docs/sdk/nodejs/config-mask/
 redirect_from:
+  - /docs/sdk/config-mask
+  - /docs/sdk/config-mask/
   - /docs/advanced/config-mask
   - /docs/advanced/config-mask/
   - /docs/ref/sdk/config-mask
@@ -11,10 +15,12 @@ redirect_from:
 crumbs:
   - label: Docs
     href: /docs/introduction
-  - label: SDK
+  - label: SDKs
     href: /docs/sdk
+  - label: Node
+    href: /docs/sdk/nodejs
   - label: config
-    href: /docs/sdk/config/
+    href: /docs/sdk/nodejs/config/
 ---
 <p class="design-paragraph">By default, up to the first six characters are visible.</p>
 

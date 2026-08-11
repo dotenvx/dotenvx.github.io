@@ -141,9 +141,11 @@ layout: radar
     <div class="docs-intro-cards">
       <p class="design-list-title">SDKs</p>
       <div class="design-settings-grid">
-        {% include components/design-settings-tile.html href="/docs/sdk/config" label="config" glyph="{}" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/sdk/parse" label="parse" glyph="</>" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/sdk" label="Full Reference" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/sdk/nodejs" label="Node" icon="nodejs" %}
+        {% include components/design-settings-tile.html href="/docs/sdk/python" label="Python" icon="python" %}
+        {% include components/design-settings-tile.html href="/docs/sdk/ruby" label="Ruby" icon="ruby" %}
+        {% include components/design-settings-tile.html href="/docs/sdk/rust" label="Rust" icon="rust" %}
+        {% include components/design-settings-tile.html href="/docs/sdk" label="All SDKs" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>
     </div>
   </div>

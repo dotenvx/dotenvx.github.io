@@ -1741,27 +1741,24 @@ html.dark .radar-brand-dark {
   border: 1px solid var(--design-line, var(--design-mid));
   border-radius: 0;
   box-shadow: var(--design-etch);
+  display: grid;
   overflow: hidden;
   padding: 0.7rem;
 }
 
+/* Stack panels in one cell so Company ↔ Docs swaps content without resizing/closing the card */
 .radar-nav-panel {
+  align-items: stretch;
   display: grid;
   gap: 0.7rem;
+  grid-area: 1 / 1;
   grid-template-columns: 0.9fr 1.1fr;
 }
 
 .radar-nav-panel[hidden] {
-  display: none !important;
-}
-
-.radar-nav-panel--docs {
-  align-items: stretch;
-  grid-template-columns: 0.85fr 1.15fr;
-}
-
-.radar-nav-flyout:has(.radar-nav-panel--docs.is-active) {
-  width: min(26rem, calc(100vw - 2.5rem));
+  display: grid !important;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .radar-nav-docs-icons {
@@ -1771,7 +1768,7 @@ html.dark .radar-brand-dark {
   gap: 0.15rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, 1fr));
-  height: 100%;
+  min-height: 0;
   padding: 0;
   width: 100%;
 }

@@ -1796,6 +1796,14 @@ html.dark .radar-brand-dark {
   width: 1.7rem;
 }
 
+.radar-nav-docs-icon-cli {
+  font-family: var(--design-font-mono);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
 .radar-nav-panel-links {
   display: flex;
   flex-direction: column;

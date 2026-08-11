@@ -45,7 +45,7 @@ HELLO="encrypted:BBLDHBFNnbfWt2A3PS8fzjEaLlZNB695T527ZrbF707xIv/OTmhnnxIr2bF07kr
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_result copy=false %}
 
-    <h2 class="design-list-title">Next</h2>
+    <h2 class="design-page-title">Next</h2>
     <ul class="design-bullets">
       <li><a class="design-link" href="/docs/learn/encrypting/encrypted-files">Encrypted Files</a></li>
       <li><a class="design-link" href="/docs/learn/encrypting/private-keys">Private Keys</a></li>

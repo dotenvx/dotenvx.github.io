@@ -6,6 +6,8 @@ description: "Encrypt a .env file in PHP with dotenvx, commit it safely, and inj
 icon: php
 permalink: /docs/php/
 redirect_from:
+  - /docs/languages/php
+  - /docs/languages/php/
   - /docs/secrets-in-php/
   - /docs/secrets-in-php
 install_copy: "curl -sfS https://dotenvx.sh | sh"

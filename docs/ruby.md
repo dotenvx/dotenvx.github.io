@@ -6,6 +6,8 @@ description: "Encrypt a .env file in Ruby with dotenvx, commit it safely, and in
 icon: ruby
 permalink: /docs/ruby/
 redirect_from:
+  - /docs/languages/ruby
+  - /docs/languages/ruby/
   - /docs/secrets-in-ruby/
   - /docs/secrets-in-ruby
 install_copy: "curl -sfS https://dotenvx.sh | sh"

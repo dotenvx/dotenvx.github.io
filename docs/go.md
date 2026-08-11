@@ -6,6 +6,8 @@ description: "Encrypt a .env file in Go with dotenvx, commit it safely, and inje
 icon: go
 permalink: /docs/go/
 redirect_from:
+  - /docs/languages/go
+  - /docs/languages/go/
   - /docs/secrets-in-go/
   - /docs/secrets-in-go
 install_copy: "curl -sfS https://dotenvx.sh | sh"

@@ -19,7 +19,7 @@ layout: radar
 
     <p class="design-paragraph">Deploying to <a class="design-link" href="https://render.com">Render</a> takes more steps than we document here. Follow their <a class="design-link" href="https://docs.render.com/docker#docker-builds-on-render">Docker guide</a> (Render recognizes your <code class="design-code">Dockerfile</code> automatically). This guide shows the dotenvx pieces in a Docker context.</p>
 
-    <h2 class="design-list-title">Dockerfile</h2>
+    <h2 class="design-page-title">Dockerfile</h2>
 
     {% capture render_dockerignore %}
 # .dockerignore
@@ -45,7 +45,7 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 
     <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/learn/installing#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
 
-    <h2 class="design-list-title">Encrypt production</h2>
+    <h2 class="design-page-title">Encrypt production</h2>
 
     {% capture render_env_prod %}
 # .env.production
@@ -60,7 +60,7 @@ $ dotenvx encrypt -f .env.production
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
 
-    <h2 class="design-list-title">Set decryption key</h2>
+    <h2 class="design-page-title">Set decryption key</h2>
     <p class="design-paragraph">Set <code class="design-code">DOTENV_PRIVATE_KEY_PRODUCTION</code> in Render's environment variable manager, then redeploy. Your app injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
     </div>
   </div>

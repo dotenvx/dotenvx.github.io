@@ -20,7 +20,7 @@ crumbs:
 
 <p class="design-paragraph">To load a convention from another directory, see <a class="design-link" href="/docs/sdk/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>
 
-<h2 class="design-list-title">Next.js convention</h2>
+<h2 class="design-page-title">Next.js convention</h2>
 
 <p class="design-paragraph">Load environment files using the Next.js convention:</p>
 
@@ -64,7 +64,7 @@ $ DOTENV_CONFIG_CONVENTION=nextjs node index.js
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_4 %}
 
-<h2 class="design-list-title">Flow convention</h2>
+<h2 class="design-page-title">Flow convention</h2>
 
 <p class="design-paragraph">Load environment files using the dotenv-flow convention:</p>
 

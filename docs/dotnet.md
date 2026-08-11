@@ -6,6 +6,8 @@ description: "Encrypt a .env file in .NET with dotenvx, commit it safely, and in
 icon: dotnet
 permalink: /docs/dotnet/
 redirect_from:
+  - /docs/languages/dotnet
+  - /docs/languages/dotnet/
   - /docs/secrets-in-dotnet/
   - /docs/secrets-in-dotnet
 install_copy: "curl -sfS https://dotenvx.sh | sh"

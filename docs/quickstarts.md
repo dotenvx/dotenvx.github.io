@@ -221,6 +221,31 @@ layout: radar
   </li>
 {% endcapture %}
 
+{% capture qs_package_managers_items %}
+  <li>
+    <a class="design-link" href="/docs/package-managers/npm">npm</a>
+    <span class="design-list-meta">dotenvx run --</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/package-managers/pnpm">pnpm</a>
+    <span class="design-list-meta">like npm</span>
+  </li>
+{% endcapture %}
+
+{% capture qs_process_managers_items %}
+  <li>
+    <a class="design-link" href="/docs/process-managers/pm2">PM2</a>
+    <span class="design-list-meta">pm2-runtime</span>
+  </li>
+{% endcapture %}
+
+{% capture qs_background_jobs_items %}
+  <li>
+    <a class="design-link" href="/docs/background-jobs/triggerdotdev">Trigger.dev</a>
+    <span class="design-list-meta">dotenv.config</span>
+  </li>
+{% endcapture %}
+
 {% capture qs_monorepos_items %}
   <li>
     <a class="design-link" href="/docs/monorepos">Monorepos</a>
@@ -270,6 +295,9 @@ layout: radar
       {% include components/design-list.html title="Java" items=qs_java_items %}
       {% include components/design-list.html title=".NET" items=qs_dotnet_items %}
       {% include components/design-list.html title="Docker" items=qs_docker_items %}
+      {% include components/design-list.html title="Package Managers" items=qs_package_managers_items %}
+      {% include components/design-list.html title="Process Managers" items=qs_process_managers_items %}
+      {% include components/design-list.html title="Background Jobs" items=qs_background_jobs_items %}
       {% include components/design-list.html title="Monorepos" items=qs_monorepos_items %}
       {% include components/design-list.html title="Other" items=qs_other_items %}
       {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}

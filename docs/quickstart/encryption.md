@@ -44,7 +44,7 @@ HELLO="encrypted:BAZb6wDPFaFeFzq8Ut48oiNFSPtYvJmv4AwVDFVcNKiIcGxrxuRIFGWxZ3xVjxO
 
     <p class="design-paragraph">The private decryption key <code class="design-code">DOTENV_PRIVATE_KEY</code> is placed in your <code class="design-code">.env.keys</code> file. Only those holding this key can decrypt secrets.</p>
 
-    <h2 class="design-list-title">DOTENV_PRIVATE_KEY</h2>
+    <h2 class="design-page-title">DOTENV_PRIVATE_KEY</h2>
     <p class="design-paragraph">Locate your <code class="design-code">DOTENV_PRIVATE_KEY</code> in <code class="design-code">.env.keys</code>.</p>
 
     {% capture encrypt_cat_keys %}
@@ -63,7 +63,7 @@ DOTENV_PRIVATE_KEY="81dac4d2c42e67a2c6542d3b943a4674a05c4be5e7e5a40a689be7a3bd49
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_keys copy=false %}
 
-    <h2 class="design-list-title">Run</h2>
+    <h2 class="design-page-title">Run</h2>
     <p class="design-paragraph">In development the <code class="design-code">dotenvx run</code> command reads from your <code class="design-code">.env.keys</code> file to decrypt and inject your secrets at runtime.</p>
 
     {% capture encrypt_dev %}

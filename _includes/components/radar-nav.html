@@ -1,6 +1,6 @@
 {% assign radar_path = page.url | default: '' %}
 {% assign company_active = false %}
-{% if radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' %}
+{% if radar_path == '/company/' or radar_path == '/company' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' %}
   {% assign company_active = true %}
 {% endif %}
 {% assign docs_active = false %}
@@ -96,39 +96,34 @@
         </a>
       </div>
       <div class="radar-nav-panel radar-nav-panel--docs" data-radar-nav-panel="docs" hidden>
-        <div class="radar-nav-docs">
+        <div class="radar-nav-panel-links">
           <a
             href="/docs/introduction"
-            class="radar-nav-doc-card radar-nav-doc-card--intro{% if radar_path == '/docs/introduction/' or radar_path == '/docs/introduction' or radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}"
-          >
-            <span class="radar-nav-doc-card-title">Introduction</span>
-            <span class="radar-nav-doc-card-meta">Get started with dotenvx</span>
-          </a>
-          <div class="radar-nav-docs-side">
-            <a
-              href="/docs/quickstarts"
-              class="radar-nav-doc-card{% if radar_path == '/docs/quickstarts/' or radar_path == '/docs/quickstarts' %} is-active{% endif %}"
-            >
-              <span class="radar-nav-doc-card-title">Quickstarts</span>
-              <span class="radar-nav-doc-card-stat">30+ guides</span>
-            </a>
-            <div class="radar-nav-docs-pair">
-              <a
-                href="/docs/cli"
-                class="radar-nav-doc-card{% if radar_path == '/docs/cli/' or radar_path == '/docs/cli' or radar_path contains '/docs/cli/' %} is-active{% endif %}"
-              >
-                <span class="radar-nav-doc-card-title">CLI</span>
-                <span class="radar-nav-doc-card-stat">reference</span>
-              </a>
-              <a
-                href="/docs/sdk"
-                class="radar-nav-doc-card{% if radar_path == '/docs/sdk/' or radar_path == '/docs/sdk' or radar_path contains '/docs/sdk/' %} is-active{% endif %}"
-              >
-                <span class="radar-nav-doc-card-title">SDKs</span>
-                <span class="radar-nav-doc-card-stat">config</span>
-              </a>
-            </div>
-          </div>
+            class="radar-nav-panel-link{% if radar_path == '/docs/introduction/' or radar_path == '/docs/introduction' or radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}"
+          >Getting started</a>
+          <a
+            href="/docs/quickstarts"
+            class="radar-nav-panel-link{% if radar_path == '/docs/quickstarts/' or radar_path == '/docs/quickstarts' %} is-active{% endif %}"
+          >Quickstarts</a>
+          <a
+            href="/docs/cli"
+            class="radar-nav-panel-link{% if radar_path == '/docs/cli/' or radar_path == '/docs/cli' or radar_path contains '/docs/cli/' %} is-active{% endif %}"
+          >CLI</a>
+          <a
+            href="/docs/sdk"
+            class="radar-nav-panel-link{% if radar_path == '/docs/sdk/' or radar_path == '/docs/sdk' or radar_path contains '/docs/sdk/' %} is-active{% endif %}"
+          >SDKs</a>
+        </div>
+        <div class="radar-nav-docs-icons" aria-label="Quickstarts">
+          <a href="/docs/cli-quickstart" class="radar-nav-docs-icon" aria-label="CLI">{% include icons/docs/bash.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/claude" class="radar-nav-docs-icon" aria-label="Claude">{% include icons/docs/claude-code.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/codex" class="radar-nav-docs-icon" aria-label="Codex">{% include icons/docs/openai.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/cursor" class="radar-nav-docs-icon" aria-label="Cursor">{% include icons/docs/cursor.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/github-actions" class="radar-nav-docs-icon" aria-label="GitHub Actions">{% include icons/docs/github.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/nodejs" class="radar-nav-docs-icon" aria-label="Node.js">{% include icons/docs/nodejs.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/1password" class="radar-nav-docs-icon" aria-label="1Password">{% include icons/docs/1password.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/bitwarden" class="radar-nav-docs-icon" aria-label="Bitwarden">{% include icons/docs/bitwarden.html class="radar-nav-docs-icon-svg" %}</a>
+          <a href="/docs/docker" class="radar-nav-docs-icon" aria-label="Docker">{% include icons/docs/docker.html class="radar-nav-docs-icon-svg" %}</a>
         </div>
       </div>
     </div>
@@ -173,22 +168,10 @@
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
         <span><span aria-hidden="true">←</span> Docs</span>
       </button>
-      <a href="/docs/introduction" class="radar-mobile-link">
-        <span>Introduction</span>
-        <span class="radar-mobile-link-meta">Get started</span>
-      </a>
-      <a href="/docs/quickstarts" class="radar-mobile-link">
-        <span>Quickstarts</span>
-        <span class="radar-mobile-link-meta">30+ guides</span>
-      </a>
-      <a href="/docs/cli" class="radar-mobile-link">
-        <span>CLI</span>
-        <span class="radar-mobile-link-meta">reference</span>
-      </a>
-      <a href="/docs/sdk" class="radar-mobile-link">
-        <span>SDKs</span>
-        <span class="radar-mobile-link-meta">config</span>
-      </a>
+      <a href="/docs/introduction" class="radar-mobile-link">Getting started</a>
+      <a href="/docs/quickstarts" class="radar-mobile-link">Quickstarts</a>
+      <a href="/docs/cli" class="radar-mobile-link">CLI</a>
+      <a href="/docs/sdk" class="radar-mobile-link">SDKs</a>
     </div>
   </div>
 </div>

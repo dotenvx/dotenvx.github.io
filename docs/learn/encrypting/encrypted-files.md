@@ -24,7 +24,7 @@ HELLO="encrypted:BBLDHBFNnbfWt2A3PS8fzjEaLlZNB695T527ZrbF707xIv/OTmhnnxIr2bF07kr
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypted_file copy=false %}
 
-    <h2 class="design-list-title">Format</h2>
+    <h2 class="design-page-title">Format</h2>
     <ul class="design-bullets">
       <li><code class="design-code">KEY</code> names are preserved.</li>
       <li><code class="design-code">encrypted:</code> values are ciphertext.</li>

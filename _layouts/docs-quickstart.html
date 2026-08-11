@@ -24,7 +24,7 @@
         <section class="docs-quickstart-body">
           {% if page.prerequisite_lede or page.prerequisite or page.prerequisite_links %}
             <div class="docs-quickstart-step">
-              <p class="design-list-title">{{ page.prerequisite_title | default: "Prerequisite" }}</p>
+              <h2 class="design-page-title design-page-title--flush">{{ page.prerequisite_title | default: "Prerequisite" }}</h2>
               {% if page.prerequisite_lede %}
                 <div class="design-paragraph">{{ page.prerequisite_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
@@ -46,9 +46,9 @@
           {% if page.setup or page.setup_lede %}
             <div class="docs-quickstart-step">
               {% if page.setup_title and page.setup_title != "" %}
-                <p class="design-list-title">{{ page.setup_title }}</p>
+                <h2 class="design-page-title design-page-title--flush">{{ page.setup_title }}</h2>
               {% elsif page.setup_title == nil %}
-                <p class="design-list-title">0. Setup</p>
+                <h2 class="design-page-title design-page-title--flush">0. Setup</h2>
               {% endif %}
               {% if page.setup_lede %}
                 <div class="design-paragraph">{{ page.setup_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -61,7 +61,7 @@
 
           {% if page.install %}
             <div class="docs-quickstart-step">
-              <p class="design-list-title">{{ page.install_title | default: "1. Install" }}</p>
+              <h2 class="design-page-title design-page-title--flush">{{ page.install_title | default: "1. Install" }}</h2>
               {% if page.install_lede %}
                 <div class="design-paragraph">{{ page.install_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -79,7 +79,7 @@
 
           {% if page.encrypt %}
             <div class="docs-quickstart-step">
-              <p class="design-list-title">{{ page.encrypt_title | default: "2. Encrypt" }}</p>
+              <h2 class="design-page-title design-page-title--flush">{{ page.encrypt_title | default: "2. Encrypt" }}</h2>
               {% if page.encrypt_lede %}
                 <div class="design-paragraph">{{ page.encrypt_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -97,7 +97,7 @@
 
           {% if page.inject or page.inject_lede or page.inject_after %}
             <div class="docs-quickstart-step">
-              <p class="design-list-title">{{ page.inject_title | default: "3. Inject" }}</p>
+              <h2 class="design-page-title design-page-title--flush">{{ page.inject_title | default: "3. Inject" }}</h2>
               {% if page.inject_lede %}
                 <div class="design-paragraph">{{ page.inject_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% elsif page.inject %}
@@ -117,7 +117,7 @@
 
           {% if page.run %}
             <div class="docs-quickstart-step">
-              <p class="design-list-title">{{ page.run_title | default: "4. Run" }}</p>
+              <h2 class="design-page-title design-page-title--flush">{{ page.run_title | default: "4. Run" }}</h2>
               {% if page.run_lede %}
                 <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}

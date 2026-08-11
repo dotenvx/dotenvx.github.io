@@ -15,7 +15,7 @@ layout: radar
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-guide-body design-prose">
-    <h2 class="design-list-title">Initial setup</h2>
+    <h2 class="design-page-title">Initial setup</h2>
     <p class="design-paragraph">Select Build System v3 (bun) and install dependencies:</p>
 
     {% capture cf_install %}
@@ -24,7 +24,7 @@ bun install @dotenvx/dotenvx wrangler --save
     {% endcapture %}
     {% include components/design-codeblock.html value=cf_install copy_text="bun install @dotenvx/dotenvx wrangler --save" %}
 
-    <h2 class="design-list-title">Cloudflare Workers</h2>
+    <h2 class="design-page-title">Cloudflare Workers</h2>
     <p class="design-paragraph">Add dotenvx to your Worker entrypoint to load environment variables at startup:</p>
 
     {% capture cf_worker %}
@@ -64,7 +64,7 @@ wrangler publish
     {% endcapture %}
     {% include components/design-codeblock.html value=cf_secret copy=false %}
 
-    <h2 class="design-list-title">Cloudflare Pages</h2>
+    <h2 class="design-page-title">Cloudflare Pages</h2>
     <p class="design-paragraph">For Pages builds, run dotenvx during the build and dev scripts:</p>
 
     {% capture cf_pages_scripts %}

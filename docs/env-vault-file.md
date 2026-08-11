@@ -42,7 +42,7 @@ DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWt
       <li><code class="design-code">DOTENV_VAULT_PRODUCTION</code> contains encrypted contents of <code class="design-code">.env.production</code></li>
     </ul>
 
-    <h2 class="design-list-title">Generating</h2>
+    <h2 class="design-page-title">Generating</h2>
     <p class="design-paragraph">It's generated with <a class="design-link" href="/docs/quickstart/encryption"><code class="design-code">dotenvx encrypt</code></a>. Create your <code class="design-code">.env</code> files like you usually do.</p>
 
     {% capture vault_env %}
@@ -76,7 +76,7 @@ DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWt
     {% endcapture %}
     {% include components/design-codeblock.html value=vault_result copy=false %}
 
-    <h2 class="design-list-title">History</h2>
+    <h2 class="design-page-title">History</h2>
     <p class="design-paragraph">The <code class="design-code">.env.vault</code> came out of development work on <a class="design-link" href="https://github.com/dotenv-org/dotenv-vault">dotenv-vault</a> – around early 2023.</p>
     </div>
   </div>

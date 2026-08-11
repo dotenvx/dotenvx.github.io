@@ -22,7 +22,7 @@ redirect_from:
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-guide-body design-prose">
-    <h2 class="design-list-title" id="curl">cURL</h2>
+    <h2 class="design-page-title" id="curl">cURL</h2>
 
     {% capture install_curl %}
 $ curl -sfS https://dotenvx.sh | sh
@@ -31,7 +31,7 @@ $ curl -sfS https://dotenvx.sh | sh
 
     <p class="design-paragraph"><a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a></p>
 
-    <h2 class="design-list-title" id="npm">NPM</h2>
+    <h2 class="design-page-title" id="npm">NPM</h2>
     <p class="design-paragraph"><code class="design-code">dotenvx</code> is made with javascript – so use it just like <code class="design-code">dotenv</code> – as a drop-in replacement.</p>
 
     {% capture install_npm %}
@@ -50,7 +50,7 @@ console.log(`Hello ${process.env.HELLO}`)
 
     <p class="design-paragraph"><a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx">npmjs.com</a></p>
 
-    <h2 class="design-list-title" id="windows">Windows</h2>
+    <h2 class="design-page-title" id="windows">Windows</h2>
 
     {% capture install_winget %}
 $ winget install dotenvx
@@ -59,7 +59,7 @@ $ winget install dotenvx
 
     <p class="design-paragraph"><a class="design-link" href="https://github.com/dotenvx/dotenvx/releases">releases</a> · <a class="design-link" href="https://github.com/dotenvx/releases/raw/main/latest/dotenvx-windows-amd64.zip">amd64</a> · <a class="design-link" href="https://github.com/dotenvx/releases/raw/main/latest/dotenvx-windows-x86_64.zip">x86_64</a> · unzip to extract dotenvx.exe</p>
 
-    <h2 class="design-list-title">Other</h2>
+    <h2 class="design-page-title">Other</h2>
     <p class="design-paragraph">Other ways to install.</p>
     <ul class="design-bullets">
       <li><a class="design-link" href="#brew">Brew</a></li>

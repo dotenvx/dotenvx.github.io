@@ -19,7 +19,7 @@ layout: radar
 
     <p class="design-paragraph">DigitalOcean has multiple deploy paths—<a class="design-link" href="https://docs.digitalocean.com/products/droplets/getting-started/quickstart/">droplets</a>, <a class="design-link" href="https://docs.digitalocean.com/products/kubernetes/getting-started/quickstart/">Kubernetes</a>, and <a class="design-link" href="https://docs.digitalocean.com/products/app-platform/getting-started/quickstart/">App Platform</a>. This guide assumes Docker (the most common path).</p>
 
-    <h2 class="design-list-title">Dockerfile</h2>
+    <h2 class="design-page-title">Dockerfile</h2>
 
     {% capture do_dockerignore %}
 # .dockerignore
@@ -43,7 +43,7 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
     {% include components/design-codeblock.html value=do_dockerfile copy=false %}
 
-    <h2 class="design-list-title">Encrypt production</h2>
+    <h2 class="design-page-title">Encrypt production</h2>
 
     {% capture do_env_prod %}
 # .env.production
@@ -58,7 +58,7 @@ $ dotenvx encrypt -f .env.production
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
 
-    <h2 class="design-list-title">Set decryption key</h2>
+    <h2 class="design-page-title">Set decryption key</h2>
     <p class="design-paragraph">Set <code class="design-code">DOTENV_PRIVATE_KEY_PRODUCTION</code> in DigitalOcean's environment variable manager (or pass it into <code class="design-code">docker run -e</code>), then redeploy. Your app injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
     </div>
   </div>

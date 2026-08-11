@@ -36,7 +36,7 @@ DOTENV_KEY_PRODUCTION="dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021
       <li><code class="design-code">DOTENV_KEY_PRODUCTION</code> contains the decryption key to <code class="design-code">DOTENV_VAULT_PRODUCTION</code> in <a class="design-link" href="/docs/env-vault-file">.env.vault</a></li>
     </ul>
 
-    <h2 class="design-list-title">Generating</h2>
+    <h2 class="design-page-title">Generating</h2>
     <p class="design-paragraph">It's auto-generated when running <a class="design-link" href="/docs/quickstart/encryption"><code class="design-code">dotenvx encrypt</code></a>.</p>
 
     {% capture keys_deprecated_gen %}
@@ -48,7 +48,7 @@ $ dotenvx encrypt
 
     <p class="design-paragraph">Do not commit <code class="design-code">.env.keys</code> to source code. Keep them somewhere safe like 1Password or <a class="design-link" href="/armor">Armor ⛨</a>.</p>
 
-    <h2 class="design-list-title">History</h2>
+    <h2 class="design-page-title">History</h2>
     <p class="design-paragraph">The <code class="design-code">.env.keys</code> file came out of development work on <a class="design-link" href="https://github.com/dotenv-org/dotenv-vault">dotenv-vault</a> – around early 2023.</p>
     </div>
   </div>

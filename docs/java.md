@@ -6,6 +6,8 @@ description: "Encrypt a .env file in Java with dotenvx, commit it safely, and in
 icon: java
 permalink: /docs/java/
 redirect_from:
+  - /docs/languages/java
+  - /docs/languages/java/
   - /docs/secrets-in-java/
   - /docs/secrets-in-java
 install_copy: "curl -sfS https://dotenvx.sh | sh"

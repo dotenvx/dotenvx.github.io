@@ -18,7 +18,7 @@ redirect_from:
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-guide-body design-prose">
-    <h2 class="design-list-title">Node</h2>
+    <h2 class="design-page-title">Node</h2>
 
     {% capture run_node %}
 $ echo "HELLO=World" > .env
@@ -33,7 +33,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_node copy_text="dotenvx run -- node index.js" %}
 
-    <h2 class="design-list-title">Python</h2>
+    <h2 class="design-page-title">Python</h2>
 
     {% capture run_python %}
 $ echo "HELLO=World" > .env
@@ -44,7 +44,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_python copy_text="dotenvx run -- python3 index.py" %}
 
-    <h2 class="design-list-title">PHP</h2>
+    <h2 class="design-page-title">PHP</h2>
 
     {% capture run_php %}
 $ echo "HELLO=World" > .env
@@ -55,7 +55,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_php copy_text="dotenvx run -- php index.php" %}
 
-    <h2 class="design-list-title">Ruby</h2>
+    <h2 class="design-page-title">Ruby</h2>
 
     {% capture run_ruby %}
 $ echo "HELLO=World" > .env
@@ -66,7 +66,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_ruby copy_text="dotenvx run -- ruby index.rb" %}
 
-    <h2 class="design-list-title">Go</h2>
+    <h2 class="design-page-title">Go</h2>
 
     {% capture run_go %}
 $ echo "HELLO=World" > .env
@@ -77,7 +77,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_go copy_text="dotenvx run -- go run main.go" %}
 
-    <h2 class="design-list-title">Rust</h2>
+    <h2 class="design-page-title">Rust</h2>
 
     {% capture run_rust %}
 $ echo "HELLO=World" > .env
@@ -88,7 +88,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_rust copy_text="dotenvx run -- cargo run" %}
 
-    <h2 class="design-list-title">Java</h2>
+    <h2 class="design-page-title">Java</h2>
 
     {% capture run_java %}
 $ echo "HELLO=World" > .env
@@ -99,7 +99,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_java copy_text="dotenvx run -- java index.java" %}
 
-    <h2 class="design-list-title">.NET</h2>
+    <h2 class="design-page-title">.NET</h2>
 
     {% capture run_dotnet %}
 $ dotnet new console -n HelloWorld -o HelloWorld
@@ -112,7 +112,7 @@ Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=run_dotnet copy_text="dotenvx run -- dotnet run" %}
 
-    <h2 class="design-list-title">Frameworks</h2>
+    <h2 class="design-page-title">Frameworks</h2>
 
     {% capture run_frameworks %}
 $ dotenvx run -- next dev
@@ -122,7 +122,7 @@ $ dotenvx run -- php artisan serve
     {% endcapture %}
     {% include components/design-codeblock.html value=run_frameworks copy=false %}
 
-    <h2 class="design-list-title">Anywhere</h2>
+    <h2 class="design-page-title">Anywhere</h2>
 
     {% capture run_anywhere %}
 # dotenvx works with any language or framework

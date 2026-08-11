@@ -17,7 +17,7 @@ layout: radar
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/netlify">code examples for this guide</a> on GitHub (Next.js and Astro).</p>
 
-    <h2 class="design-list-title">Initial setup</h2>
+    <h2 class="design-page-title">Initial setup</h2>
 
     {% capture netlify_create %}
 npx create-next-app@latest --example hello-world .
@@ -39,7 +39,7 @@ npx netlify-cli@latest deploy --build --prod
     {% endcapture %}
     {% include components/design-codeblock.html value=netlify_deploy copy_text="npx netlify-cli@latest deploy --build --prod" %}
 
-    <h2 class="design-list-title">Run dotenvx</h2>
+    <h2 class="design-page-title">Run dotenvx</h2>
 
     {% capture netlify_install %}
 npm install @dotenvx/dotenvx --save
@@ -58,7 +58,7 @@ npm install @dotenvx/dotenvx --save
     {% endcapture %}
     {% include components/design-codeblock.html value=netlify_scripts copy=false %}
 
-    <h2 class="design-list-title">Encrypt production</h2>
+    <h2 class="design-page-title">Encrypt production</h2>
 
     {% capture netlify_env_prod %}
 # .env.production
@@ -73,7 +73,7 @@ npm run dotenvx -- set HELLO production -f .env.production
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
 
-    <h2 class="design-list-title">Set decryption key</h2>
+    <h2 class="design-page-title">Set decryption key</h2>
 
     {% capture netlify_env_set %}
 npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY_PRODUCTION "your-private-key"

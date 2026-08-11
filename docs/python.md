@@ -6,6 +6,8 @@ description: "Encrypt a .env file in Python with dotenvx, commit it safely, and 
 icon: python
 permalink: /docs/python/
 redirect_from:
+  - /docs/languages/python
+  - /docs/languages/python/
   - /docs/secrets-in-python/
   - /docs/secrets-in-python
 install_copy: "curl -sfS https://dotenvx.sh | sh"

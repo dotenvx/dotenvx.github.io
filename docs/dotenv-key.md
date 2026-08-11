@@ -31,7 +31,7 @@ DOTENV_KEY=dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021fbebeb9fd858
     {% endcapture %}
     {% include components/design-codeblock.html value=dotenv_key_example copy=false %}
 
-    <h2 class="design-list-title">Spec</h2>
+    <h2 class="design-page-title">Spec</h2>
     <p class="design-paragraph">A <code class="design-code">DOTENV_KEY</code> uses the tried and true uri format. This trusted yet flexible format can grow as dotenvx grows.</p>
 
     {% capture dotenv_key_url %}

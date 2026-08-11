@@ -18,7 +18,7 @@ redirect_from:
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-guide-body design-prose">
-    <h2 class="design-list-title">--env-file</h2>
+    <h2 class="design-page-title">--env-file</h2>
 
     {% capture env_file %}
 $ echo "HELLO=production" > .env.production
@@ -30,7 +30,7 @@ Hello production
     {% endcapture %}
     {% include components/design-codeblock.html value=env_file copy_text="dotenvx run -f=.env.production -- node index.js" %}
 
-    <h2 class="design-list-title">--env-file (multiple)</h2>
+    <h2 class="design-page-title">--env-file (multiple)</h2>
 
     {% capture env_file_multi %}
 $ echo "HELLO=local" > .env.local
@@ -44,7 +44,7 @@ Hello local
 
     <p class="design-paragraph">The order matters. The first <code class="design-code">-f</code> will 'win' for an environment variable. You can use <code class="design-code">--overload</code> if you prefer the last to 'win'.</p>
 
-    <h2 class="design-list-title">--overload</h2>
+    <h2 class="design-page-title">--overload</h2>
 
     {% capture env_overload %}
 $ echo "HELLO=local" > .env.local
@@ -58,7 +58,7 @@ Hello World
 
     <p class="design-paragraph">Keep in mind that <code class="design-code">--overload</code> will also overload any environment variables already set on your machine or server. Use <code class="design-code">--verbose</code> to get better visibility into this.</p>
 
-    <h2 class="design-list-title">--verbose</h2>
+    <h2 class="design-page-title">--verbose</h2>
 
     {% capture env_verbose %}
 $ echo "HELLO=production" > .env.production
@@ -74,7 +74,7 @@ Hello production
 
     <p class="design-paragraph">If you also want to see the secret value being set, use <code class="design-code">--debug</code>.</p>
 
-    <h2 class="design-list-title">--debug</h2>
+    <h2 class="design-page-title">--debug</h2>
 
     {% capture env_debug %}
 $ echo "HELLO=production" > .env.production

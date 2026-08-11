@@ -2,8 +2,6 @@
 title: Documentation
 permalink: /docs/introduction/
 redirect_from:
-  - /docs
-  - /docs/
   - /docs/package-managers
   - /docs/package-managers/
   - /docs/process-managers
@@ -185,10 +183,12 @@ layout: radar
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-intro-lists">
+      <div id="languages">
       {% include components/design-list.html
         title="Quickstarts"
         items=docs_quickstart_items
       %}
+      </div>
       {% include components/design-list.html
         title="CLI"
         items=docs_cli_items

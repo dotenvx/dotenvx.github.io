@@ -4,6 +4,8 @@ title: set
 description: Programmatically set an environment variable.
 permalink: /docs/sdk/config-set-key-value/
 redirect_from:
+  - /docs/sdk/set
+  - /docs/sdk/set/
   - /docs/advanced/config-set-key-value
   - /docs/advanced/config-set-key-value/
   - /docs/advanced/set

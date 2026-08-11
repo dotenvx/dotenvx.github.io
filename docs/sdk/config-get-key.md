@@ -4,6 +4,8 @@ title: get
 description: Programmatically get an environment variable at access/runtime.
 permalink: /docs/sdk/config-get-key/
 redirect_from:
+  - /docs/sdk/get
+  - /docs/sdk/get/
   - /docs/advanced/config-get-key
   - /docs/advanced/config-get-key/
   - /docs/advanced/get

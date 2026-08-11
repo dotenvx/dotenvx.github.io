@@ -6,6 +6,8 @@ description: "Encrypt a .env file in Node.js with the Dotenvx SDK, commit it saf
 icon: nodejs
 permalink: /docs/nodejs/
 redirect_from:
+  - /docs/languages/nodejs
+  - /docs/languages/nodejs/
   - /docs/secrets-in-nodejs/
   - /docs/secrets-in-nodejs
 install_lede: "Get the Dotenvx Node.js SDK."

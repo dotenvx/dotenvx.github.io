@@ -6,6 +6,8 @@ description: "Encrypt a .env file in Rust with dotenvx, commit it safely, and in
 icon: rust
 permalink: /docs/rust/
 redirect_from:
+  - /docs/languages/rust
+  - /docs/languages/rust/
   - /docs/secrets-in-rust/
   - /docs/secrets-in-rust
 install_copy: "curl -sfS https://dotenvx.sh | sh"

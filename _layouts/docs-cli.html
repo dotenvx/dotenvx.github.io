@@ -26,20 +26,28 @@
         %}
 
         <section class="docs-cli-body docs-guide-body">
-          {{ content }}
+          {% if content != blank %}
+            {% capture step_content %}
+              {{ content }}
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
+          {% endif %}
 
           {% if page.options and page.options.size > 0 %}
-            {% capture cli_options_items %}
-              {% for opt in page.options %}
-                <li>
-                  <a class="design-link" href="{{ opt.href }}">{{ opt.title }}</a>
-                </li>
-              {% endfor %}
+            {% capture step_content %}
+              {% capture cli_options_items %}
+                {% for opt in page.options %}
+                  <li>
+                    <a class="design-link" href="{{ opt.href }}">{{ opt.title }}</a>
+                  </li>
+                {% endfor %}
+              {% endcapture %}
+              {% include components/design-list.html
+                title=options_title
+                items=cli_options_items
+              %}
             {% endcapture %}
-            {% include components/design-list.html
-              title=options_title
-              items=cli_options_items
-            %}
+            {% include components/design-step.html content=step_content %}
           {% endif %}
         </section>
       </div>

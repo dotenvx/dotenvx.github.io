@@ -12,12 +12,15 @@ layout: radar
   mark="railway"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/railway">code examples for this guide</a> on GitHub.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Initial setup</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
     <p class="design-paragraph">Create a Hello World app and <code class="design-code">Dockerfile</code>, then deploy to Railway.</p>
 
     {% capture railway_dockerfile %}
@@ -47,8 +50,11 @@ npx @railway/cli@latest domain
     {% include components/design-codeblock.html value=railway_up copy=false %}
 
     <p class="design-paragraph">Set <code class="design-code">PORT</code> to <code class="design-code">3000</code> (or your app's listen port) in the Railway dashboard, then redeploy.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Run dotenvx</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
     <p class="design-paragraph">Install dotenvx in your <code class="design-code">Dockerfile</code> and prepend your app command with <code class="design-code">dotenvx run --</code>.</p>
 
     {% capture railway_dockerfile_dx %}
@@ -66,8 +72,11 @@ EXPOSE 3000
 CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
     {% include components/design-codeblock.html value=railway_dockerfile_dx copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Encrypt production</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
 
     {% capture railway_env_prod %}
 # .env.production
@@ -81,8 +90,11 @@ $ dotenvx set HELLO production -f .env.production
     {% include components/design-codeblock.html value=railway_encrypt copy_text="dotenvx set HELLO production -f .env.production" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Set decryption key</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
     <p class="design-paragraph">Set <code class="design-code">DOTENV_PRIVATE_KEY_PRODUCTION</code> in the Railway environment variable manager (apply the change), then redeploy.</p>
 
     {% capture railway_redeploy %}
@@ -91,6 +103,7 @@ npx @railway/cli@latest up
     {% include components/design-codeblock.html value=railway_redeploy copy_text="npx @railway/cli@latest up" %}
 
     <p class="design-paragraph">Your app reboots and env is injected from the encrypted production file.</p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

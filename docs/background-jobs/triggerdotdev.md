@@ -12,12 +12,15 @@ layout: radar
   mark="trigger"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/background-jobs/triggerdotdev">code examples for this guide</a> on GitHub.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Initial setup</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
     <p class="design-paragraph">First, complete the <a class="design-link" href="https://trigger.dev/docs/quick-start">Trigger.dev quickstart steps</a> so you end up with a <code class="design-code">trigger/example.ts</code> file like this.</p>
 
     {% capture trigger_example %}
@@ -38,8 +41,11 @@ export const helloWorldTask = task({
 });
     {% endcapture %}
     {% include components/design-codeblock.html value=trigger_example copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Install dotenvx</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Install dotenvx</h2>
     <p class="design-paragraph">Install <a class="design-link" href="https://github.com/dotenvx/dotenvx">dotenvx</a>.</p>
 
     {% capture trigger_install %}
@@ -70,8 +76,11 @@ export const helloWorldTask = task({
 });
     {% endcapture %}
     {% include components/design-codeblock.html value=trigger_config copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Add production environment</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Add production environment</h2>
     <p class="design-paragraph">Create <code class="design-code">.env.production</code> in the root of your project.</p>
 
     {% capture trigger_env %}
@@ -79,8 +88,11 @@ export const helloWorldTask = task({
 HELLO="production"
     {% endcapture %}
     {% include components/design-codeblock.html value=trigger_env copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Encrypt production</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
 
     {% capture trigger_encrypt %}
 dotenvx encrypt -f .env.production
@@ -113,10 +125,14 @@ DOTENV_PRIVATE_KEY_PRODUCTION="424d0ea072eb17c6bee9b4b42ff6333513cf128ea3d5d60cc
     {% include components/design-codeblock.html value=trigger_keys copy=false %}
 
     <p class="design-paragraph">You SHOULD commit <code class="design-code">.env.production</code> to code. It is now encrypted, safe, and recommended to do so. But DO NOT commit <code class="design-code">.env.keys</code> to code. Keep them somewhere safe like 1Password or <a class="design-link" href="https://dotenvx.com/armor">Armor</a>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Run your task</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Run your task</h2>
     <p class="design-paragraph">Run your task in Trigger's UI. Your env is successfully injected using the encrypted contents of <code class="design-code">.env.production</code>.</p>
     <p class="design-paragraph">Visit the dashboard and it says <code class="design-code">Hello production</code>.</p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

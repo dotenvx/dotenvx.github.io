@@ -12,10 +12,10 @@ layout: radar
   mark="cf"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
-    <h2 class="design-page-title">Initial setup</h2>
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
     <p class="design-paragraph">Select Build System v3 (bun) and install dependencies:</p>
 
     {% capture cf_install %}
@@ -23,8 +23,11 @@ layout: radar
 bun install @dotenvx/dotenvx wrangler --save
     {% endcapture %}
     {% include components/design-codeblock.html value=cf_install copy_text="bun install @dotenvx/dotenvx wrangler --save" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Cloudflare Workers</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Cloudflare Workers</h2>
     <p class="design-paragraph">Add dotenvx to your Worker entrypoint to load environment variables at startup:</p>
 
     {% capture cf_worker %}
@@ -63,8 +66,11 @@ wrangler secret put DOTENV_PRIVATE_KEY
 wrangler publish
     {% endcapture %}
     {% include components/design-codeblock.html value=cf_secret copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Cloudflare Pages</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Cloudflare Pages</h2>
     <p class="design-paragraph">For Pages builds, run dotenvx during the build and dev scripts:</p>
 
     {% capture cf_pages_scripts %}
@@ -99,6 +105,7 @@ bunx dotenvx encrypt -f .env.production
     <p class="design-paragraph">In the Pages dashboard: Settings → Environment Variables, add <code class="design-code">DOTENV_PRIVATE_KEY</code> from <code class="design-code">.env.keys</code>. Pages injects the encrypted values during build.</p>
 
     <p class="design-paragraph">For a shorter Workers quickstart, see <a class="design-link" href="/docs/cloudflare-workers">Cloudflare Workers</a>.</p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

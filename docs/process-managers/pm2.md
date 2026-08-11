@@ -12,12 +12,15 @@ layout: radar
   mark="pm2"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/process-managers/pm2">code examples for this guide</a> on GitHub.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Initial setup</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
     <p class="design-paragraph">Generate an <code class="design-code">ecosystem.config.js</code> file.</p>
 
     {% capture pm2_init %}
@@ -54,8 +57,11 @@ server.listen(PORT, () => {
 });
     {% endcapture %}
     {% include components/design-codeblock.html value=pm2_index copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Run dotenvx</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
     <p class="design-paragraph">Add <code class="design-code">@dotenvx/dotenvx</code> and <code class="design-code">pm2</code> as dependencies.</p>
 
     {% capture pm2_install %}
@@ -95,8 +101,11 @@ npm start
     {% include components/design-codeblock.html value=pm2_start copy_text="npm start" %}
 
     <p class="design-paragraph">Your app will say <code class="design-code">Hello World</code>. That covers local development. Let's solve for production next.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Add production environment</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Add production environment</h2>
     <p class="design-paragraph">Create a <code class="design-code">.env.production</code> file in the root of your project.</p>
 
     {% capture pm2_env_prod %}
@@ -118,6 +127,7 @@ HELLO="production"
     {% include components/design-codeblock.html value=pm2_pkg_prod copy=false %}
 
     <p class="design-paragraph">Your app will say <code class="design-code">Hello production</code>, simulating production.</p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

@@ -19,10 +19,10 @@ redirect_from:
   mark="↓_"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
-    <h2 class="design-page-title" id="curl">cURL</h2>
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="curl">cURL</h2>
 
     {% capture install_curl %}
 $ curl -sfS https://dotenvx.sh | sh
@@ -30,8 +30,11 @@ $ curl -sfS https://dotenvx.sh | sh
     {% include components/design-codeblock.html value=install_curl copy_text="curl -sfS https://dotenvx.sh | sh" %}
 
     <p class="design-paragraph"><a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a></p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title" id="npm">NPM</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="npm">NPM</h2>
     <p class="design-paragraph"><code class="design-code">dotenvx</code> is made with javascript – so use it just like <code class="design-code">dotenv</code> – as a drop-in replacement.</p>
 
     {% capture install_npm %}
@@ -49,8 +52,11 @@ console.log(`Hello ${process.env.HELLO}`)
     {% include components/design-codeblock.html value=install_npm_js copy=false %}
 
     <p class="design-paragraph"><a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx">npmjs.com</a></p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title" id="windows">Windows</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="windows">Windows</h2>
 
     {% capture install_winget %}
 $ winget install dotenvx
@@ -58,8 +64,11 @@ $ winget install dotenvx
     {% include components/design-codeblock.html value=install_winget copy_text="winget install dotenvx" %}
 
     <p class="design-paragraph"><a class="design-link" href="https://github.com/dotenvx/dotenvx/releases">releases</a> · <a class="design-link" href="https://github.com/dotenvx/releases/raw/main/latest/dotenvx-windows-amd64.zip">amd64</a> · <a class="design-link" href="https://github.com/dotenvx/releases/raw/main/latest/dotenvx-windows-x86_64.zip">x86_64</a> · unzip to extract dotenvx.exe</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Other</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Other</h2>
 
     <h3 class="design-list-title" id="brew">Brew</h3>
     <p class="design-paragraph">Install with <a class="design-link" href="https://brew.sh">brew</a>:</p>
@@ -194,6 +203,7 @@ wget -qO- https://dotenvx.sh | sh
     {% include components/design-codeblock.html value=install_wget copy_text="wget -qO- https://dotenvx.sh | sh" %}
 
     <p class="design-paragraph"><a class="design-link" href="https://github.com/dotenvx/dotenvx.sh/blob/main/install.sh">install.sh source</a></p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

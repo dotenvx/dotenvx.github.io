@@ -39,12 +39,6 @@ layout: radar
     }
   }
 
-  .docs-sdk-lists {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-width: 36rem;
-  }
 </style>
 
 {% capture docs_hero_visual %}
@@ -73,10 +67,13 @@ layout: radar
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-sdk-lists">
-      {% include components/design-list.html
-        title="Methods"
-        items=sdk_methods_items
-      %}
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="Methods"
+          items=sdk_methods_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
     </div>
   </div>
 </section>

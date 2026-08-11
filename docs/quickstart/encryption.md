@@ -15,9 +15,9 @@ redirect_from:
   mark="encrypt"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     {% capture encrypt_setup %}
 $ touch .env
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js
@@ -43,8 +43,11 @@ HELLO="encrypted:BAZb6wDPFaFeFzq8Ut48oiNFSPtYvJmv4AwVDFVcNKiIcGxrxuRIFGWxZ3xVjxO
     <p class="design-paragraph">The public encryption key <code class="design-code">DOTENV_PUBLIC_KEY</code> is placed at the top of your <code class="design-code">.env</code> file. This allows anyone on your team to encrypt secrets.</p>
 
     <p class="design-paragraph">The private decryption key <code class="design-code">DOTENV_PRIVATE_KEY</code> is placed in your <code class="design-code">.env.keys</code> file. Only those holding this key can decrypt secrets.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">DOTENV_PRIVATE_KEY</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">DOTENV_PRIVATE_KEY</h2>
     <p class="design-paragraph">Locate your <code class="design-code">DOTENV_PRIVATE_KEY</code> in <code class="design-code">.env.keys</code>.</p>
 
     {% capture encrypt_cat_keys %}
@@ -62,8 +65,11 @@ $ cat .env.keys
 DOTENV_PRIVATE_KEY="81dac4d2c42e67a2c6542d3b943a4674a05c4be5e7e5a40a689be7a3bd49a07e"
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_keys copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Run</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Run</h2>
     <p class="design-paragraph">In development the <code class="design-code">dotenvx run</code> command reads from your <code class="design-code">.env.keys</code> file to decrypt and inject your secrets at runtime.</p>
 
     {% capture encrypt_dev %}
@@ -89,6 +95,7 @@ Hello production
     {% include components/design-video.html
       mp4="https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d"
     %}
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

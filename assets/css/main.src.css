@@ -2912,15 +2912,44 @@ html.dark .design-codeblock code {
 
 .design-prose > .design-list-title,
 .design-prose > .design-page-title,
-.docs-guide-body > .design-page-title {
+.docs-guide-body > .design-page-title,
+.design-prose > h2,
+.docs-guide-body > h2 {
   margin-bottom: 0.85rem;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
-.design-prose > .design-list-title:first-child,
-.design-prose > .design-page-title:first-child,
-.docs-guide-body > .design-page-title:first-child {
-  margin-top: 0;
+/* Match design-step / radar-section air between major guide sections */
+.design-prose > .design-page-title:not(:first-child),
+.docs-guide-body > .design-page-title:not(:first-child),
+.design-prose > h2:not(:first-child),
+.docs-guide-body > h2:not(:first-child) {
+  margin-top: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .design-prose > .design-page-title:not(:first-child),
+  .docs-guide-body > .design-page-title:not(:first-child),
+  .design-prose > h2:not(:first-child),
+  .docs-guide-body > h2:not(:first-child) {
+    margin-top: 5.5rem;
+  }
+}
+
+.design-step > .design-list-title:not(:first-child) {
+  margin-top: 1.65rem;
+}
+
+.design-step > h2:not(:first-child),
+.design-step > .design-page-title:not(:first-child) {
+  margin-top: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .design-step > h2:not(:first-child),
+  .design-step > .design-page-title:not(:first-child) {
+    margin-top: 5.5rem;
+  }
 }
 
 /* Mirrored from ../radar design-choice */
@@ -3897,6 +3926,11 @@ html.dark .design-badge.design-badge--danger {
   .radar-section {
     padding-bottom: 5.5rem;
   }
+}
+
+/* design-step already owns section air — avoid stacking with radar-section */
+.radar-section:has(.design-step) {
+  padding-bottom: 0;
 }
 
 .radar-panel-gap {
@@ -4964,7 +4998,7 @@ html.storm .docs-hero-icon--invert-dark {
 .docs-sdk-lists {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 0;
   max-width: 36rem;
   width: 100%;
 }

@@ -468,25 +468,40 @@ layout: radar
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-intro-lists">
-      {% include components/design-list.html
-        title="CLI"
-        items=advanced_cli_items
-      %}
-      {% include components/design-list.html
-        title="Utility Commands"
-        items=advanced_utility_items
-      %}
-      {% include components/design-list.html
-        title="Extensions"
-        items=advanced_extensions_items
-      %}
-      {% include components/design-list.html
-        title="Library"
-        items=advanced_library_items
-      %}
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="CLI"
+          items=advanced_cli_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="Utility Commands"
+          items=advanced_utility_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="Extensions"
+          items=advanced_extensions_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="Library"
+          items=advanced_library_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
     </div>
 
-    <div class="docs-guide-body design-prose" style="margin-top: 2.5rem;">
+    <div class="docs-guide-body design-prose">
       <h2 class="design-page-title">Whitepaper</h2>
       <p class="design-paragraph"><strong>Dotenvx: Reducing Secrets Risk with Cryptographic Separation</strong></p>
       <p class="design-paragraph">An ideal secrets solution would not only centralize secrets but also contain the fallout of a breach. While secrets managers offer centralized storage and distribution, their design creates a large blast radius. Dotenvx reduces that blast radius by splitting secrets management into an encrypted secrets file and a separate decryption key.</p>

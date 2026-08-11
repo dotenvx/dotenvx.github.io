@@ -15,9 +15,9 @@ redirect_from:
   mark=".env.vault"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The <code class="design-code">.env.vault</code> file has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/quickstart/encryption">updated encryption instructions</a>.</p>
 
     <p class="design-paragraph"><code class="design-code">.env.vault</code> is an encrypted version of your .env file. Here is what it looks like.</p>
@@ -41,8 +41,11 @@ DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWt
       <li><code class="design-code">DOTENV_VAULT_DEVELOPMENT</code> contains encrypted contents of <code class="design-code">.env</code></li>
       <li><code class="design-code">DOTENV_VAULT_PRODUCTION</code> contains encrypted contents of <code class="design-code">.env.production</code></li>
     </ul>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Generating</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Generating</h2>
     <p class="design-paragraph">It's generated with <a class="design-link" href="/docs/quickstart/encryption"><code class="design-code">dotenvx encrypt</code></a>. Create your <code class="design-code">.env</code> files like you usually do.</p>
 
     {% capture vault_env %}
@@ -75,9 +78,13 @@ DOTENV_VAULT_DEVELOPMENT="V4NYVn0Pow6Uf2ez2mbHEzTrYURloHL6VDAFRLqnQBppA/OmHI5x5A
 DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWtIYyhiW/vHhFbqbsvo5+P9b27OC6ZC7qU="
     {% endcapture %}
     {% include components/design-codeblock.html value=vault_result copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">History</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">History</h2>
     <p class="design-paragraph">The <code class="design-code">.env.vault</code> came out of development work on <a class="design-link" href="https://github.com/dotenv-org/dotenv-vault">dotenv-vault</a> – around early 2023.</p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

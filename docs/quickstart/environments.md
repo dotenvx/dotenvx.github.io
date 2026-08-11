@@ -15,10 +15,10 @@ redirect_from:
   mark="-f"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
-    <h2 class="design-page-title">--env-file</h2>
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">--env-file</h2>
 
     {% capture env_file %}
 $ echo "HELLO=production" > .env.production
@@ -29,8 +29,11 @@ Hello production
 > ^^
     {% endcapture %}
     {% include components/design-codeblock.html value=env_file copy_text="dotenvx run -f=.env.production -- node index.js" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">--env-file (multiple)</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">--env-file (multiple)</h2>
 
     {% capture env_file_multi %}
 $ echo "HELLO=local" > .env.local
@@ -43,8 +46,11 @@ Hello local
     {% include components/design-codeblock.html value=env_file_multi copy_text="dotenvx run -f=.env.local -f=.env -- node index.js" %}
 
     <p class="design-paragraph">The order matters. The first <code class="design-code">-f</code> will 'win' for an environment variable. You can use <code class="design-code">--overload</code> if you prefer the last to 'win'.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">--overload</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">--overload</h2>
 
     {% capture env_overload %}
 $ echo "HELLO=local" > .env.local
@@ -57,8 +63,11 @@ Hello World
     {% include components/design-codeblock.html value=env_overload copy_text="dotenvx run -f=.env.local -f=.env --overload -- node index.js" %}
 
     <p class="design-paragraph">Keep in mind that <code class="design-code">--overload</code> will also overload any environment variables already set on your machine or server. Use <code class="design-code">--verbose</code> to get better visibility into this.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">--verbose</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">--verbose</h2>
 
     {% capture env_verbose %}
 $ echo "HELLO=production" > .env.production
@@ -73,8 +82,11 @@ Hello production
     {% include components/design-codeblock.html value=env_verbose copy_text="dotenvx run -f=.env.production --verbose -- node index.js" %}
 
     <p class="design-paragraph">If you also want to see the secret value being set, use <code class="design-code">--debug</code>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">--debug</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">--debug</h2>
 
     {% capture env_debug %}
 $ echo "HELLO=production" > .env.production
@@ -95,6 +107,7 @@ Hello production
     {% include components/design-video.html
       mp4="https://github.com/user-attachments/assets/aea4176e-52ba-4e78-8448-9563207d55f5"
     %}
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

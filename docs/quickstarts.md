@@ -34,12 +34,6 @@ layout: radar
     }
   }
 
-  .docs-quickstarts-lists {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-width: 36rem;
-  }
 </style>
 
 {% capture docs_hero_visual %}
@@ -283,24 +277,95 @@ layout: radar
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-quickstarts-lists">
-      {% include components/design-list.html title="CLI" items=qs_cli_items %}
-      {% include components/design-list.html title="Coding Agents" items=qs_agents_items %}
-      {% include components/design-list.html title="CI" items=qs_ci_items %}
-      {% include components/design-list.html title="Node.js" items=qs_nodejs_items %}
-      {% include components/design-list.html title="Python" items=qs_python_items %}
-      {% include components/design-list.html title="PHP" items=qs_php_items %}
-      {% include components/design-list.html title="Ruby" items=qs_ruby_items %}
-      {% include components/design-list.html title="Go" items=qs_go_items %}
-      {% include components/design-list.html title="Rust" items=qs_rust_items %}
-      {% include components/design-list.html title="Java" items=qs_java_items %}
-      {% include components/design-list.html title=".NET" items=qs_dotnet_items %}
-      {% include components/design-list.html title="Docker" items=qs_docker_items %}
-      {% include components/design-list.html title="Package Managers" items=qs_package_managers_items %}
-      {% include components/design-list.html title="Process Managers" items=qs_process_managers_items %}
-      {% include components/design-list.html title="Background Jobs" items=qs_background_jobs_items %}
-      {% include components/design-list.html title="Monorepos" items=qs_monorepos_items %}
-      {% include components/design-list.html title="Other" items=qs_other_items %}
-      {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
+      {% capture step_content %}
+        {% include components/design-list.html title="CLI" items=qs_cli_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Coding Agents" items=qs_agents_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="CI" items=qs_ci_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Node.js" items=qs_nodejs_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Python" items=qs_python_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="PHP" items=qs_php_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Ruby" items=qs_ruby_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Go" items=qs_go_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Rust" items=qs_rust_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Java" items=qs_java_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title=".NET" items=qs_dotnet_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Docker" items=qs_docker_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Package Managers" items=qs_package_managers_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Process Managers" items=qs_process_managers_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Background Jobs" items=qs_background_jobs_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Monorepos" items=qs_monorepos_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Other" items=qs_other_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
     </div>
   </div>
 </section>

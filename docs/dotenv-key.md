@@ -15,9 +15,9 @@ redirect_from:
   mark="DOTENV_KEY"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The <code class="design-code">DOTENV_KEY</code> has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/quickstart/encryption">updated encryption instructions</a>.</p>
 
     <p class="design-paragraph"><code class="design-code">DOTENV_KEY</code> is used to decrypt an environment inside your <code class="design-code">.env.vault</code> file.</p>
@@ -30,8 +30,11 @@ redirect_from:
 DOTENV_KEY=dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021fbebeb9fd858caa01852e@dotenvx.com/vault/.env.vault?environment=production dotenv run -- yourcommand
     {% endcapture %}
     {% include components/design-codeblock.html value=dotenv_key_example copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Spec</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Spec</h2>
     <p class="design-paragraph">A <code class="design-code">DOTENV_KEY</code> uses the tried and true uri format. This trusted yet flexible format can grow as dotenvx grows.</p>
 
     {% capture dotenv_key_url %}
@@ -67,6 +70,7 @@ URL {
       <li><strong>username</strong>: (not in use at this time)</li>
       <li><strong>pathname</strong>: <code class="design-code">/vault/.env.vault</code> (can be anything at this time. in the future, might be used to combine multiple vaults)</li>
     </ul>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

@@ -109,18 +109,29 @@ layout: radar
 <section class="radar-section">
   <div class="armor-shell">
     <div class="docs-cli-lists">
-      {% include components/design-list.html
-        title="Commands"
-        items=cli_commands_items
-      %}
-      {% include components/design-list.html
-        title="Better Security"
-        items=cli_better_security_items
-      %}
-      {% include components/design-list.html
-        title="For Security Teams"
-        items=cli_security_teams_items
-      %}
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="Commands"
+          items=cli_commands_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="Better Security"
+          items=cli_better_security_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html
+          title="For Security Teams"
+          items=cli_security_teams_items
+        %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
     </div>
   </div>
 </section>

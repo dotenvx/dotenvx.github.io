@@ -12,12 +12,15 @@ layout: radar
   mark="netlify"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/netlify">code examples for this guide</a> on GitHub (Next.js and Astro).</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Initial setup</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
 
     {% capture netlify_create %}
 npx create-next-app@latest --example hello-world .
@@ -38,8 +41,11 @@ npx create-next-app@latest --example hello-world .
 npx netlify-cli@latest deploy --build --prod
     {% endcapture %}
     {% include components/design-codeblock.html value=netlify_deploy copy_text="npx netlify-cli@latest deploy --build --prod" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Run dotenvx</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
 
     {% capture netlify_install %}
 npm install @dotenvx/dotenvx --save
@@ -57,8 +63,11 @@ npm install @dotenvx/dotenvx --save
 }
     {% endcapture %}
     {% include components/design-codeblock.html value=netlify_scripts copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Encrypt production</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
 
     {% capture netlify_env_prod %}
 # .env.production
@@ -72,8 +81,11 @@ npm run dotenvx -- set HELLO production -f .env.production
     {% include components/design-codeblock.html value=netlify_encrypt copy_text="npm run dotenvx -- set HELLO production -f .env.production" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Set decryption key</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
 
     {% capture netlify_env_set %}
 npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY_PRODUCTION "your-private-key"
@@ -82,6 +94,7 @@ npx netlify-cli@latest deploy --build --prod
     {% include components/design-codeblock.html value=netlify_env_set copy=false %}
 
     <p class="design-paragraph">Your build injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

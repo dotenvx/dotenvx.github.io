@@ -12,12 +12,15 @@ layout: radar
   mark="npm"
 %}
 
-<section class="radar-section">
-  <div class="armor-shell">
-    <div class="docs-guide-body design-prose">
+<div class="armor-shell">
+  <section class="docs-quickstart-body">
+    {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/package-managers/npm">code examples on GitHub</a> for these framework guides.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Astro</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Astro</h2>
     <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/withastro/astro">astro.js</a>.</p>
     <p class="design-paragraph">Create an Astro application.</p>
 
@@ -80,8 +83,11 @@ $ npm run dev
 ┃ Local    http://localhost:4321/
     {% endcapture %}
     {% include components/design-codeblock.html value=npm_astro_run copy_text="npm run dev" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Express</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Express</h2>
     <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/expressjs/express">express.js</a>.</p>
 
     {% capture npm_express_install %}
@@ -134,8 +140,11 @@ $ npm start
 Server running on port:3000
     {% endcapture %}
     {% include components/design-codeblock.html value=npm_express_run copy_text="npm start" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Next</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Next</h2>
     <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/vercel/next.js">next.js</a>.</p>
 
     {% capture npm_next_create %}
@@ -182,8 +191,11 @@ $ npm run dev
    - Local:        http://localhost:3000
     {% endcapture %}
     {% include components/design-codeblock.html value=npm_next_run copy_text="npm run dev" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <h2 class="design-page-title">Remix</h2>
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Remix</h2>
     <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/remix-run/remix">remix.js</a>.</p>
 
     {% capture npm_remix_create %}
@@ -256,6 +268,7 @@ $ npm run dev
 [remix-serve] http://localhost:3000
     {% endcapture %}
     {% include components/design-codeblock.html value=npm_remix_run copy_text="npm run dev" %}
-    </div>
-  </div>
-</section>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+  </section>
+</div>

@@ -1,6 +1,6 @@
 {% assign radar_path = page.url | default: '' %}
 {% assign company_active = false %}
-{% if radar_path == '/company/' or radar_path == '/company' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' or radar_path == '/search/' or radar_path == '/search' %}
+{% if radar_path == '/company/' or radar_path == '/company' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' %}
   {% assign company_active = true %}
 {% endif %}
 {% assign docs_active = false %}
@@ -76,7 +76,6 @@
     <div class="radar-nav-flyout-frame">
       <div class="radar-nav-panel" data-radar-nav-panel="company" hidden>
         <div class="radar-nav-panel-links">
-          <a href="/search" class="radar-nav-panel-link{% if radar_path == '/search/' or radar_path == '/search' %} is-active{% endif %}">Search</a>
           <a href="/opensource" class="radar-nav-panel-link{% if radar_path == '/opensource/' or radar_path == '/opensource' %} is-active{% endif %}">Open Source</a>
           <a href="/changelog" class="radar-nav-panel-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
           <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
@@ -159,7 +158,6 @@
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
         <span><span aria-hidden="true">←</span> Company</span>
       </button>
-      <a href="/search" class="radar-mobile-link">Search</a>
       <a href="/opensource" class="radar-mobile-link">Open Source</a>
       <a href="/changelog" class="radar-mobile-link">Changelog</a>
       <a href="/contact" class="radar-mobile-link">Contact</a>

@@ -1,8 +1,8 @@
 ---
 layout: docs-quickstart
 title: "Cursor"
-social_title: "Redact secrets from Cursor agents"
-description: "Redact secrets from your Cursor agents and prevent them from leaking into logs."
+social_title: "Runtime leak protection for Cursor agents"
+description: "Runtime leak protection and log redaction for Cursor agents. Give Cursor real secrets while redacting them from output, terminals, and agent transcripts."
 icon: cursor
 permalink: /docs/cursor/
 redirect_from:
@@ -24,7 +24,7 @@ encrypt_copy: 'echo "HELLO=World" > .env'
 encrypt: |
   $ echo "HELLO=World" > .env
 inject_title: "3. Run Cursor with redaction"
-inject_lede: "Run Cursor with your real secrets while redacting them from its output."
+inject_lede: "Runtime leak protection: Cursor gets real secrets, while log redaction strips them from its output."
 inject_copy: "dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text"
 inject: |
   $ dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text

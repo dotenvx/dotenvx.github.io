@@ -56,18 +56,23 @@ layout: radar
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-redact">run --redact</a>
+    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-redact-claude-print">run --redact -- claude -p</a>
+    <span class="design-list-meta">log redaction</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-redact-claude">run --redact -- claude</a>
+    <span class="design-list-meta">runtime leak protection</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-redact-codex-exec">run --redact -- codex exec</a>
+    <span class="design-list-meta">log redaction</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-redact-codex">run --redact -- codex</a>
+    <span class="design-list-meta">runtime leak protection</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-mask">run --mask</a>

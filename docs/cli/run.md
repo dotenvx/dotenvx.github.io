@@ -1,7 +1,7 @@
 ---
 layout: docs-cli
 title: Run
-description: Inject env at runtime.
+description: Inject env at runtime. Use --redact for runtime leak protection and log redaction.
 permalink: /docs/cli/run/
 redirect_from:
   - /docs/ref/cli/run/
@@ -37,15 +37,15 @@ options:
     href: /docs/cli/run-fk/
   - title: "run --env HELLO=String"
     href: /docs/cli/run-env/
-  - title: "run --redact"
+  - title: "run --redact — runtime leak protection & log redaction"
     href: /docs/cli/run-redact/
-  - title: "run --redact -- claude -p"
+  - title: "run --redact -- claude -p — log redaction"
     href: /docs/cli/run-redact-claude-print/
-  - title: "run --redact -- claude"
+  - title: "run --redact -- claude — runtime leak protection"
     href: /docs/cli/run-redact-claude/
-  - title: "run --redact -- codex exec"
+  - title: "run --redact -- codex exec — log redaction"
     href: /docs/cli/run-redact-codex-exec/
-  - title: "run --redact -- codex"
+  - title: "run --redact -- codex — runtime leak protection"
     href: /docs/cli/run-redact-codex/
   - title: "run --mask"
     href: /docs/cli/run-mask/

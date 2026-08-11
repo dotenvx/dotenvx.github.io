@@ -3,8 +3,9 @@
 {% assign icon = include.icon %}
 {% assign glyph = include.glyph %}
 {% assign tile_class = include.class %}
+{% assign aria_label = include.aria_label | default: include.title | default: label %}
 
-<a class="design-settings-tile{% if tile_class %} {{ tile_class }}{% endif %}" href="{{ href }}"{% if label and label != "" %} aria-label="{{ label }}"{% endif %}>
+<a class="design-settings-tile{% if tile_class %} {{ tile_class }}{% endif %}" href="{{ href }}"{% if aria_label and aria_label != "" %} aria-label="{{ aria_label }}"{% endif %}{% if include.title %} title="{{ include.title }}"{% endif %}>
   {% if label and label != "" %}
     <span class="design-settings-tile-label">{{ label }}</span>
   {% endif %}

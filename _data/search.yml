@@ -40,15 +40,30 @@ entries:
       - anthropic
       - claude code
       - secrets in claude
+      - runtime leak protection
+      - log redaction
   /docs/cursor/:
     boost: 75
     aliases:
       - secrets in cursor
+      - runtime leak protection
+      - log redaction
   /docs/codex/:
     boost: 75
     aliases:
       - openai
       - secrets in codex
+      - runtime leak protection
+      - log redaction
+  /docs/cli/run-redact/:
+    boost: 80
+    aliases:
+      - redact
+      - --redact
+      - runtime leak protection
+      - log redaction
+      - secret redaction
+      - redact secrets from logs
   /docs/cli-quickstart/:
     boost: 65
     aliases:

@@ -1,8 +1,8 @@
 ---
 layout: docs-quickstart
 title: "Claude Code"
-social_title: "Redact secrets from Claude coding agents"
-description: "Redact secrets from your Claude coding agents and prevent them from leaking into logs."
+social_title: "Runtime leak protection for Claude coding agents"
+description: "Runtime leak protection and log redaction for Claude Code. Give Claude real secrets while redacting them from output, terminals, and agent transcripts."
 icon: claude
 permalink: /docs/claude/
 redirect_from:
@@ -24,7 +24,7 @@ encrypt_copy: 'echo "HELLO=World" > .env'
 encrypt: |
   $ echo "HELLO=World" > .env
 inject_title: "3. Run Claude with redaction"
-inject_lede: "Run Claude with your real secrets while redacting them from its output."
+inject_lede: "Runtime leak protection: Claude gets real secrets, while log redaction strips them from its output."
 inject_copy: "dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions"
 inject: |
   $ dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions

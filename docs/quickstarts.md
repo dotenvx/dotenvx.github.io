@@ -62,15 +62,15 @@ layout: radar
 {% capture qs_agents_items %}
   <li>
     <a class="design-link" href="/docs/claude">Claude</a>
-    <span class="design-list-meta">dotenvx run --redact -- claude</span>
+    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
   <li>
     <a class="design-link" href="/docs/codex">Codex</a>
-    <span class="design-list-meta">dotenvx run --redact -- codex</span>
+    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cursor">Cursor</a>
-    <span class="design-list-meta">dotenvx run --redact -- cursor</span>
+    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
 {% endcapture %}
 

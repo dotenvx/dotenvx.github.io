@@ -18,7 +18,7 @@ items:
   - label: Compose multiple .env files
     meta: dotenvx run -f
     href: /docs/cli/run-f
-  - label: Let agents use secrets without spilling them
+  - label: Runtime leak protection and log redaction
     meta: dotenvx run --redact -- claude
     href: /docs/cli/run-redact
   - label: Catch missing keys before you run
@@ -66,13 +66,13 @@ items:
   - label: Pull secrets remotely from Bitwarden
     meta: bw://..
     href: /docs/bitwarden
-  - label: Use secrets with Claude
+  - label: Runtime leak protection with Claude
     meta: dotenvx run --redact -- claude
     href: /docs/claude
-  - label: Use secrets with Cursor
+  - label: Runtime leak protection with Cursor
     meta: dotenvx run --redact -- agent
     href: /docs/cursor
-  - label: Use secrets with Codex
+  - label: Runtime leak protection with Codex
     meta: dotenvx run --redact -- codex
     href: /docs/codex
   - label: and more

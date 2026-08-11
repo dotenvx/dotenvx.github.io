@@ -15,7 +15,7 @@ items:
   - label: Ship the right secrets to each environment
     meta: dotenvx run -f .env.production
     href: /docs/quickstart/environments
-  - label: Let agents use secrets without spilling them
+  - label: Runtime leak protection and log redaction
     meta: dotenvx run --redact -- claude
     href: /docs/cli/run-redact
   - label: Catch missing keys before you run

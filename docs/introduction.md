@@ -127,7 +127,7 @@ layout: radar
       <div class="design-settings-grid">
         {% include components/design-settings-tile.html href="/docs/cli/run" label="Run" glyph="›" glyph_class="design-settings-tile-glyph--soft" %}
         {% include components/design-settings-tile.html href="/docs/cli/encrypt" label="Encrypt" glyph="◈" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-settings-tile.html href="/docs/cli/run-redact" label="Redact" glyph="░" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/run-redact" label="Redact" glyph="░" glyph_class="design-settings-tile-glyph--soft" title="Runtime leak protection & log redaction" %}
         {% include components/design-settings-tile.html href="/docs/cli/validate" label="Validate" glyph="✓" glyph_class="design-settings-tile-glyph--soft" %}
         {% include components/design-settings-tile.html href="/docs/cli/armor/introduction" label="Armor" glyph="⛨" glyph_class="design-settings-tile-glyph--soft" %}
         {% include components/design-settings-tile.html href="/docs/cli" label="Full Reference" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}

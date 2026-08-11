@@ -3,7 +3,7 @@ layout: docs-cli
 title: "--redact -- codex"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/
-description: Start an interactive Codex session while redacting injected values from its output.
+description: Runtime leak protection and log redaction for Codex. Start an interactive Codex session with real secrets while redacting them from output and transcripts.
 permalink: /docs/cli/run-redact-codex/
 redirect_from:
   - /docs/ref/cli/run-redact-codex/
@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli/run/
 video: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
 ---
-Codex receives the real environment variables, but any matching values it prints are replaced with `[REDACTED]` throughout the interactive session.
+Runtime leak protection for Codex: Codex receives the real environment variables, but log redaction replaces any matching values it prints with `[REDACTED]` throughout the interactive session — so secrets stay out of the terminal and agent transcript.
 
 {% capture cli_code_0 %}
 $ echo "SECRET=super-secret-value" > .env

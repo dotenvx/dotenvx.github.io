@@ -21,27 +21,34 @@ layout: radar
   .docs-cli-cards {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.75rem;
     width: 100%;
   }
 
   .docs-cli-cards .design-settings-grid {
+    gap: 0.7rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 480px) {
     .docs-cli-cards .design-settings-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 720px) {
+    .docs-cli-cards .design-settings-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
 
   .docs-cli-cards .design-settings-tile-glyph {
-    font-size: 1.85rem;
+    font-size: 1.55rem;
   }
 
   @media (min-width: 900px) {
     .docs-cli-cards .design-settings-tile-glyph {
-      font-size: 2.25rem;
+      font-size: 1.85rem;
     }
   }
 </style>

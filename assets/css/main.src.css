@@ -5003,6 +5003,15 @@ html.storm .docs-hero-icon--invert-dark {
   width: 100%;
 }
 
+/* CLI index: card grids use full shell width; Options list stays readable. */
+.docs-cli-lists:has(.docs-cli-cards) {
+  max-width: none;
+}
+
+.docs-cli-lists:has(.docs-cli-cards) .design-list {
+  max-width: 36rem;
+}
+
 /* Blog (radar layout) */
 .blog-index-hero {
   padding-bottom: 2rem;

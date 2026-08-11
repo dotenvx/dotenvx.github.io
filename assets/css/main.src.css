@@ -1686,11 +1686,12 @@ html.dark .radar-brand-dark {
 .radar-nav-login {
   display: none;
   flex-shrink: 0;
+  line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .radar-nav-login {
-    display: inline-flex;
+    display: inline-block;
   }
 }
 
@@ -4101,6 +4102,12 @@ html.dark .design-check--danger {
 
 .design-btn--block {
   width: 100%;
+}
+
+.design-btn--sm {
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.55rem;
 }
 
 .design-btn--danger {

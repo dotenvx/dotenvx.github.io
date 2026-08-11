@@ -11,6 +11,7 @@
     {% if include.hidden %}hidden{% endif %}
     {% if include.target %}target="{{ include.target }}"{% endif %}
     {% if include.rel %}rel="{{ include.rel }}"{% endif %}
+    {% if include.data_umami_event %}data-umami-event="{{ include.data_umami_event }}"{% endif %}
   >{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</a>
 {% else %}
   <button
@@ -19,5 +20,6 @@
     {% if include.id %}id="{{ include.id }}"{% endif %}
     {% if include.hidden %}hidden{% endif %}
     {% if include.disabled %}disabled aria-disabled="true"{% endif %}
+    {% if include.data_umami_event %}data-umami-event="{{ include.data_umami_event }}"{% endif %}
   >{% if label and label != "" %}{{ label }}{% else %}{{ include.content }}{% endif %}</button>
 {% endif %}

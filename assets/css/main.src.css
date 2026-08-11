@@ -1738,15 +1738,11 @@ html.dark .radar-brand-dark {
 
 .radar-nav-flyout-frame {
   background: var(--design-menu-bg, var(--design-bg));
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch), 0 18px 48px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: 0;
+  box-shadow: var(--design-etch);
   overflow: hidden;
   padding: 0.7rem;
-}
-
-html.dark .radar-nav-flyout-frame {
-  box-shadow: var(--design-etch), 0 18px 48px rgba(0, 0, 0, 0.42);
 }
 
 .radar-nav-panel {

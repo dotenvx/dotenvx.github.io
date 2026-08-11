@@ -238,9 +238,10 @@
     })
   }
 
-  function scheduleClose() {
+  function scheduleClose(delay) {
     clearClose()
-    closeTimer = window.setTimeout(closeMenu, 140)
+    // Short bridge so pointer can cross trigger → flyout gap; dismisses feel instant otherwise.
+    closeTimer = window.setTimeout(closeMenu, typeof delay === 'number' ? delay : 60)
   }
 
   items.forEach(function (item) {
@@ -271,11 +272,29 @@
   document.addEventListener('pointermove', function (event) {
     if (!activeMenu) return
     var target = event.target
-    if ((desktopNav && desktopNav.contains(target)) || (flyout && flyout.contains(target))) {
+    // Keep open only over the flyout or the trigger that opened it.
+    // Sibling links (Dotenvx, Armor, Pricing) should dismiss the card.
+    if (flyout && flyout.contains(target)) {
       clearClose()
       return
     }
+    var activeItem = desktopNav && desktopNav.querySelector('[data-nav-menu="' + activeMenu + '"]')
+    if (activeItem && activeItem.contains(target)) {
+      clearClose()
+      return
+    }
+    var nextMenuItem = target.closest && target.closest('[data-radar-nav-item]')
+    if (nextMenuItem && desktopNav && desktopNav.contains(nextMenuItem)) {
+      // Crossing to another dropdown trigger — its pointerenter opens that menu.
+      return
+    }
     scheduleClose()
+  })
+
+  // Plain top-level links are still inside #radar-desktop-nav, so explicitly dismiss.
+  desktopNav && desktopNav.querySelectorAll(':scope > a.radar-nav-link').forEach(function (link) {
+    link.addEventListener('pointerenter', function () { scheduleClose(0) })
+    link.addEventListener('mouseenter', function () { scheduleClose(0) })
   })
 
   function setMobileSubmenu(name) {

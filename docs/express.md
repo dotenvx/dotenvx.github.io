@@ -8,6 +8,8 @@ permalink: /docs/express/
 redirect_from:
   - /docs/secrets-in-express/
   - /docs/secrets-in-express
+  - /docs/frameworks/express
+  - /docs/frameworks/express/
 install_lede: "Get the Dotenvx Node.js SDK."
 install_copy: "npm install @dotenvx/dotenvx"
 install: |

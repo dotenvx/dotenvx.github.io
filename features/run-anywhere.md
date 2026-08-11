@@ -1,15 +1,15 @@
 ---
 title: Run Anywhere
-redirect_to: /docs/cli/run
+redirect_to: /docs/quickstart/run
 ---
 
 <div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
   <div class="flex flex-col gap-2">
     <span class="">You are being redirected to</span>
-    <a href="/docs/cli/run"><u>/docs/cli/run</u></a>
+    <a href="/docs/quickstart/run"><u>/docs/quickstart/run</u></a>
   </div>
 
-  <a class="btn-outline w-fit" href="/docs/cli/run">Continue</a>
+  <a class="btn-outline w-fit" href="/docs/quickstart/run">Continue</a>
 
   <span class="text-xs">in <span id="counter">4</span> second(s)</span>
 </div>
@@ -21,7 +21,7 @@ redirect_to: /docs/cli/run
     var count = div.textContent * 1 - 1
     div.textContent = count
     if (count <= 0) {
-      window.location.replace("/docs/cli/run")
+      window.location.replace("/docs/quickstart/run")
       clearInterval(interval)
     }
   }, 1000)

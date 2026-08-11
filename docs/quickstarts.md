@@ -109,6 +109,10 @@ layout: radar
     <span class="design-list-meta">dotenvx run -- astro</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/remix">Remix</a>
+    <span class="design-list-meta">dotenvx run -- remix</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/expo">Expo</a>
     <span class="design-list-meta">dotenvx run -- expo</span>
   </li>
@@ -128,6 +132,10 @@ layout: radar
     <span class="design-list-meta">dotenvx run -- python main.py</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/flask">Flask</a>
+    <span class="design-list-meta">platforms</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/uv">uv</a>
     <span class="design-list-meta">dotenvx run -- uv run</span>
   </li>
@@ -145,6 +153,10 @@ layout: radar
     <a class="design-link" href="/docs/ruby">Ruby</a>
     <span class="design-list-meta">dotenvx run -- ruby index.rb</span>
   </li>
+  <li>
+    <a class="design-link" href="/docs/sinatra">Sinatra</a>
+    <span class="design-list-meta">platforms</span>
+  </li>
 {% endcapture %}
 
 {% capture qs_go_items %}
@@ -152,12 +164,20 @@ layout: radar
     <a class="design-link" href="/docs/go">Go</a>
     <span class="design-list-meta">dotenvx run -- go run</span>
   </li>
+  <li>
+    <a class="design-link" href="/docs/echo">Echo</a>
+    <span class="design-list-meta">platforms</span>
+  </li>
 {% endcapture %}
 
 {% capture qs_rust_items %}
   <li>
     <a class="design-link" href="/docs/rust">Rust</a>
     <span class="design-list-meta">dotenvx run -- cargo run</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/rocket">Rocket</a>
+    <span class="design-list-meta">platforms</span>
   </li>
 {% endcapture %}
 

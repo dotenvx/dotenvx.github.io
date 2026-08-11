@@ -52,6 +52,9 @@
     {% assign icon_invert = true %}
   {% when "astro" %}
     {% assign icon_file = "astro.html" %}
+  {% when "remix" %}
+    {% assign icon_file = "remix.html" %}
+    {% assign icon_invert = true %}
   {% when "cloudflare-workers" %}
     {% assign icon_file = "cloudflare-workers.html" %}
     {% assign icon_color = "#F38020" %}

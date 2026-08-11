@@ -8,6 +8,8 @@ permalink: /docs/astro/
 redirect_from:
   - /docs/secrets-in-astro/
   - /docs/secrets-in-astro
+  - /docs/frameworks/astro
+  - /docs/frameworks/astro/
 install_lede: "Get the Dotenvx Node.js SDK."
 install_copy: "npm install @dotenvx/dotenvx"
 install: |

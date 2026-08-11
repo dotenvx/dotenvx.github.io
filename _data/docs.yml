@@ -34,6 +34,8 @@ quickstarts:
     href: /docs/express/
   - label: Astro
     href: /docs/astro/
+  - label: Remix
+    href: /docs/remix/
   - label: Expo
     href: /docs/expo/
   - label: Bun
@@ -42,16 +44,24 @@ quickstarts:
     href: /docs/cloudflare-workers/
   - label: Python
     href: /docs/python/
+  - label: Flask
+    href: /docs/flask/
   - label: uv
     href: /docs/uv/
   - label: PHP
     href: /docs/php/
   - label: Ruby
     href: /docs/ruby/
+  - label: Sinatra
+    href: /docs/sinatra/
   - label: Go
     href: /docs/go/
+  - label: Echo
+    href: /docs/echo/
   - label: Rust
     href: /docs/rust/
+  - label: Rocket
+    href: /docs/rocket/
   - label: Java
     href: /docs/java/
   - label: Kotlin

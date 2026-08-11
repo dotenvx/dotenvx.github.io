@@ -28,8 +28,6 @@ cli_commands:
   - /docs/cli/gitignore/
   - /docs/cli/genexample/
   - /docs/cli/validate/
-  - /docs/cli/doctor/
-  - /docs/cli/scan/
   - /docs/cli/precommit/
   - /docs/cli/prebuild/
   - /docs/cli/help/

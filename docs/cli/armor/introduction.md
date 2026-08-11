@@ -44,10 +44,8 @@ options:
   - title: "armor settings"
     href: /docs/cli/armor/settings/
 ---
-## Installation
-
-<InstallArmorCodeGroup/>
-
-## Commands
-
-<ArmorCliReferenceCards />
+{% capture cli_code_0 %}
+$ dotenvx armor up
+{% endcapture %}
+{% capture cli_code_0_copy %}dotenvx armor up{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}

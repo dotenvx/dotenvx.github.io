@@ -18,6 +18,7 @@ redirect_from:
 <div class="armor-shell">
   <section class="docs-quickstart-body">
     {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Usage</h2>
     {% capture encrypt_setup %}
 $ touch .env
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js

@@ -3757,6 +3757,8 @@ html.dark .design-badge.design-badge--danger {
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.05;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .home-design-hero .design-page-title {

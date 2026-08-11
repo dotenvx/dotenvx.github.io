@@ -63,14 +63,6 @@ layout: radar
     <span class="design-list-meta">dotenvx validate</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/cli/doctor">Doctor</a>
-    <span class="design-list-meta">dotenvx doctor</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/scan">Scan</a>
-    <span class="design-list-meta">dotenvx ext scan</span>
-  </li>
-  <li>
     <a class="design-link" href="/docs/cli/precommit">Precommit</a>
     <span class="design-list-meta">dotenvx precommit</span>
   </li>
@@ -110,26 +102,20 @@ layout: radar
   <div class="armor-shell">
     <div class="docs-cli-lists">
       {% capture step_content %}
-        {% include components/design-list.html
-          title="Commands"
-          items=cli_commands_items
-        %}
+        <h2 class="design-page-title design-page-title--flush">Commands</h2>
+        {% include components/design-list.html items=cli_commands_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        {% include components/design-list.html
-          title="Better Security"
-          items=cli_better_security_items
-        %}
+        <h2 class="design-page-title design-page-title--flush">Better Security</h2>
+        {% include components/design-list.html items=cli_better_security_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        {% include components/design-list.html
-          title="For Security Teams"
-          items=cli_security_teams_items
-        %}
+        <h2 class="design-page-title design-page-title--flush">For Security Teams</h2>
+        {% include components/design-list.html items=cli_security_teams_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
     </div>

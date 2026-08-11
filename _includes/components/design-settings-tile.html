@@ -1,0 +1,16 @@
+{% assign href = include.href %}
+{% assign label = include.label %}
+{% assign icon = include.icon %}
+{% assign glyph = include.glyph %}
+{% assign tile_class = include.class %}
+
+<a class="design-settings-tile{% if tile_class %} {{ tile_class }}{% endif %}" href="{{ href }}"{% if label and label != "" %} aria-label="{{ label }}"{% endif %}>
+  {% if label and label != "" %}
+    <span class="design-settings-tile-label">{{ label }}</span>
+  {% endif %}
+  {% if icon and icon != "" %}
+    {% include components/docs-hero-icon.html icon=icon %}
+  {% else %}
+    <span class="design-settings-tile-glyph{% if include.glyph_class %} {{ include.glyph_class }}{% endif %}" aria-hidden="true">{{ glyph }}</span>
+  {% endif %}
+</a>

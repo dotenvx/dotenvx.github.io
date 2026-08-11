@@ -4173,6 +4173,97 @@ html.dark .design-settings-paid {
   color: #9bc4ef;
 }
 
+/* Mirrored from ../radar design-settings-grid / tile */
+.design-settings-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+}
+
+.design-settings-grid--five {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 480px) {
+  .design-settings-grid--five {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.design-settings-tile {
+  --design-hover: rgba(17, 17, 17, 0.06);
+  aspect-ratio: 1;
+  background: transparent;
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: var(--design-control-radius);
+  box-shadow: var(--design-etch);
+  color: var(--design-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--design-font-mono);
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
+html.dark .design-settings-tile {
+  --design-hover: rgba(242, 242, 242, 0.07);
+}
+
+.design-settings-tile:hover,
+.design-settings-tile:focus-visible {
+  background: var(--design-hover);
+  outline: none;
+}
+
+.design-settings-tile-label {
+  color: var(--design-dim);
+  font-size: var(--design-text-compact);
+  font-weight: 600;
+  left: 0.55rem;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  max-width: calc(100% - 1.1rem);
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  top: 0.55rem;
+  white-space: nowrap;
+}
+
+.design-settings-tile-glyph {
+  color: var(--design-ink);
+  font-size: var(--design-text-title);
+  line-height: 1;
+}
+
+.design-settings-tile-glyph--soft {
+  font-weight: 400;
+}
+
+.design-settings-tile .docs-hero-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.design-settings-tile .docs-hero-icon--cli {
+  font-size: 1.35rem;
+  height: auto;
+  width: auto;
+}
+
+@media (min-width: 900px) {
+  .design-settings-tile .docs-hero-icon {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+}
+
 .radar-btn {
   align-items: center;
   background: color-mix(in srgb, var(--design-ink) 92%, transparent);

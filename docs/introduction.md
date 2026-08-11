@@ -41,11 +41,46 @@ layout: radar
     }
   }
 
-  .docs-intro-lists {
+  .docs-intro-cards {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    max-width: 36rem;
+    gap: 0.85rem;
+    width: 100%;
+  }
+
+  .docs-intro-cards .design-settings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 640px) {
+    .docs-intro-cards .design-settings-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .docs-intro-cards .design-settings-tile .docs-hero-icon {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .docs-intro-cards .design-settings-tile .docs-hero-icon--cli {
+    font-size: 1.85rem;
+  }
+
+  .docs-intro-cards .design-settings-tile-glyph {
+    font-size: 1.85rem;
+  }
+
+  @media (min-width: 900px) {
+    .docs-intro-cards .design-settings-tile .docs-hero-icon {
+      height: 4.5rem;
+      width: 4.5rem;
+    }
+
+    .docs-intro-cards .design-settings-tile .docs-hero-icon--cli,
+    .docs-intro-cards .design-settings-tile-glyph {
+      font-size: 2.25rem;
+    }
   }
 </style>
 
@@ -66,141 +101,66 @@ layout: radar
 %}
 
 
-{% capture docs_quickstart_items %}
-  <li>
-    <a class="design-link" href="/docs/cli-quickstart">CLI</a>
-    <span class="design-list-meta">dotenvx encrypt</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/claude">Claude</a>
-    <span class="design-list-meta">dotenvx run --redact -- claude</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/codex">Codex</a>
-    <span class="design-list-meta">dotenvx run --redact -- codex</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cursor">Cursor</a>
-    <span class="design-list-meta">dotenvx run --redact -- cursor</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/github-actions">GitHub Actions</a>
-    <span class="design-list-meta">.github/workflows</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/nodejs">Node.js</a>
-    <span class="design-list-meta">dotenvx run -- node index.js</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/quickstarts">…</a>
-    <span class="design-list-meta">30+ Quickstart Guides</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/1password">1Password</a>
-    <span class="design-list-meta">op://</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/bitwarden">Bitwarden</a>
-    <span class="design-list-meta">bw://</span>
-  </li>
-{% endcapture %}
-
-{% capture docs_cli_items %}
-  <li>
-    <a class="design-link" href="/docs/cli/run">Run</a>
-    <span class="design-list-meta">dotenvx run</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/get">Get</a>
-    <span class="design-list-meta">dotenvx get</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/set">Set</a>
-    <span class="design-list-meta">dotenvx set</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/del">Del</a>
-    <span class="design-list-meta">dotenvx del</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/encrypt">Encrypt</a>
-    <span class="design-list-meta">dotenvx encrypt</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli">…</a>
-    <span class="design-list-meta">full reference</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/lock">Lock ⊡</a>
-    <span class="design-list-meta">dotenvx lock</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/native">Native ⌥</a>
-    <span class="design-list-meta">dotenvx native</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cli/armor/introduction">Armor ⛨</a>
-    <span class="design-list-meta">dotenvx armor</span>
-  </li>
-{% endcapture %}
-
-{% capture docs_sdk_items %}
-  <li>
-    <a class="design-link" href="/docs/sdk/config">config</a>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/sdk/parse">parse</a>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/sdk">…</a>
-    <span class="design-list-meta">full reference</span>
-  </li>
-{% endcapture %}
-
-{% capture docs_resources_items %}
-  <li>
-    <a class="design-link" href="/docs/env-file">.env</a>
-    <span class="design-list-meta">separates secrets from code</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/env-keys-file">.env.keys</a>
-    <span class="design-list-meta">private decryption keys</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/learn/installing">Installing</a>
-    <span class="design-list-meta">curl, npm, brew, more</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/platforms">Platforms</a>
-    <span class="design-list-meta">Vercel, Fly, Heroku, more</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/stats">Stats</a>
-    <span class="design-list-meta">download stats</span>
-  </li>
-{% endcapture %}
-
-<section class="radar-section">
+<section class="radar-section" aria-label="Quickstarts">
   <div class="armor-shell">
-    <div class="docs-intro-lists">
-      <div id="languages">
-      {% include components/design-list.html
-        title="Quickstarts"
-        items=docs_quickstart_items
-      %}
+    <div id="languages" class="docs-intro-cards">
+      <p class="design-list-title">Quickstarts</p>
+      <div class="design-settings-grid">
+        {% include components/design-settings-tile.html href="/docs/cli-quickstart" label="CLI" icon="cli" %}
+        {% include components/design-settings-tile.html href="/docs/claude" label="Claude" icon="claude" %}
+        {% include components/design-settings-tile.html href="/docs/codex" label="Codex" icon="codex" %}
+        {% include components/design-settings-tile.html href="/docs/cursor" label="Cursor" icon="cursor" %}
+        {% include components/design-settings-tile.html href="/docs/github-actions" label="GitHub Actions" icon="github-actions" %}
+        {% include components/design-settings-tile.html href="/docs/nodejs" label="Node.js" icon="nodejs" %}
+        {% include components/design-settings-tile.html href="/docs/1password" label="1Password" icon="1password" %}
+        {% include components/design-settings-tile.html href="/docs/bitwarden" label="Bitwarden" icon="bitwarden" %}
+        {% include components/design-settings-tile.html href="/docs/quickstarts" label="30+ Quickstarts" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>
-      {% include components/design-list.html
-        title="CLI"
-        items=docs_cli_items
-      %}
-      {% include components/design-list.html
-        title="SDKs"
-        items=docs_sdk_items
-      %}
-      {% include components/design-list.html
-        title="Resources"
-        items=docs_resources_items
-      %}
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="CLI">
+  <div class="armor-shell">
+    <div class="docs-intro-cards">
+      <p class="design-list-title">CLI</p>
+      <div class="design-settings-grid">
+        {% include components/design-settings-tile.html href="/docs/cli/run" label="Run" glyph="›" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/get" label="Get" glyph="↓" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/set" label="Set" glyph="↑" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/del" label="Del" glyph="×" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/encrypt" label="Encrypt" glyph="◈" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/lock" label="Lock" glyph="⊡" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/native" label="Native" glyph="⌥" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli/armor/introduction" label="Armor" glyph="⛨" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/cli" label="Full Reference" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="SDKs">
+  <div class="armor-shell">
+    <div class="docs-intro-cards">
+      <p class="design-list-title">SDKs</p>
+      <div class="design-settings-grid">
+        {% include components/design-settings-tile.html href="/docs/sdk/config" label="config" glyph="{}" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/sdk/parse" label="parse" glyph="</>" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/sdk" label="Full Reference" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Resources">
+  <div class="armor-shell">
+    <div class="docs-intro-cards">
+      <p class="design-list-title">Resources</p>
+      <div class="design-settings-grid">
+        {% include components/design-settings-tile.html href="/docs/env-file" label=".env" glyph=".env" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/env-keys-file" label=".env.keys" glyph="key" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-settings-tile.html href="/docs/resources" label="More Resources" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
+      </div>
     </div>
   </div>
 </section>

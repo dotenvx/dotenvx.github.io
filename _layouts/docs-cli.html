@@ -9,46 +9,21 @@
     {% include components/storm-lightning.html %}
     {% include components/radar-nav.html %}
     <main class="radar-main">
-      {% assign crumbs = page.crumbs | default: site.data.docs.cli_crumbs %}
       {% assign options_title = page.options_title | default: "Options" %}
-      {% comment %} Option pages (Docs » CLI » Parent): eyelash back to parent only {% endcomment %}
-      {% assign use_parent_eyelash = false %}
-      {% if page.crumbs and page.crumbs.size > 2 %}
-        {% assign use_parent_eyelash = true %}
-        {% assign parent_crumb = page.crumbs | last %}
-        {% assign parent_eyelash = parent_crumb.label | downcase %}
-        {% assign parent_eyelash_href = parent_crumb.href %}
-      {% endif %}
       <div class="armor-shell docs-page">
-        {% if use_parent_eyelash %}
-          {% include components/docs-hero.html
-            bare=true
-            eyebrow=parent_eyelash
-            eyebrow_href=parent_eyelash_href
-            title=page.title
-            description=page.description
-            icon=page.icon
-            mark=page.mark
-            video=page.video
-            video_webm=page.video_webm
-            video_poster=page.video_poster
-            video_title=page.video_title
-          %}
-        {% else %}
-          {% include components/docs-hero.html
-            bare=true
-            eyebrow="Docs"
-            crumbs=crumbs
-            title=page.title
-            description=page.description
-            icon=page.icon
-            mark=page.mark
-            video=page.video
-            video_webm=page.video_webm
-            video_poster=page.video_poster
-            video_title=page.video_title
-          %}
-        {% endif %}
+        {% include components/docs-hero.html
+          bare=true
+          eyebrow="CLI"
+          eyebrow_href="/docs/cli"
+          title=page.title
+          description=page.description
+          icon=page.icon
+          mark=page.mark
+          video=page.video
+          video_webm=page.video_webm
+          video_poster=page.video_poster
+          video_title=page.video_title
+        %}
 
         <section class="docs-cli-body docs-guide-body">
           {{ content }}

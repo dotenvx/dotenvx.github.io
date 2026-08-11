@@ -16,7 +16,7 @@ redirect_from:
   eyebrow="Docs"
   title="Installing"
   description="Install dotenvx."
-  mark="install"
+  mark="↓_"
 %}
 
 <section class="radar-section">
@@ -60,18 +60,9 @@ $ winget install dotenvx
     <p class="design-paragraph"><a class="design-link" href="https://github.com/dotenvx/dotenvx/releases">releases</a> · <a class="design-link" href="https://github.com/dotenvx/releases/raw/main/latest/dotenvx-windows-amd64.zip">amd64</a> · <a class="design-link" href="https://github.com/dotenvx/releases/raw/main/latest/dotenvx-windows-x86_64.zip">x86_64</a> · unzip to extract dotenvx.exe</p>
 
     <h2 class="design-page-title">Other</h2>
-    <p class="design-paragraph">Other ways to install.</p>
-    <ul class="design-bullets">
-      <li><a class="design-link" href="#brew">Brew</a></li>
-      <li><a class="design-link" href="#docker">Docker</a></li>
-      <li><a class="design-link" href="#github">GitHub Releases</a></li>
-      <li><a class="design-link" href="#heroku">Heroku</a></li>
-      <li><a class="design-link" href="#standalone">Standalone</a></li>
-      <li><a class="design-link" href="#wget">Wget</a></li>
-    </ul>
 
     <h3 class="design-list-title" id="brew">Brew</h3>
-    <p class="design-paragraph">Installing with <a class="design-link" href="https://brew.sh">brew</a> is the most straight forward global install:</p>
+    <p class="design-paragraph">Install with <a class="design-link" href="https://brew.sh">brew</a>:</p>
 
     {% capture install_brew %}
 # install with Homebrew and then use the dotenvx command

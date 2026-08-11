@@ -137,9 +137,7 @@
 
           {% if content != blank %}
             {% capture step_content %}
-              <div class="docs-quickstart-extra design-prose">
-                {{ content }}
-              </div>
+              {{ content }}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
           {% endif %}

@@ -53,12 +53,13 @@ inject: |
   }
 ---
 
-<p class="design-list-title">Troubleshooting</p>
-<p class="design-paragraph">Not taking effect? NPM can be inconsistent with overrides. Delete <code class="design-code">package-lock.json</code>, <code class="design-code">node_modules</code>, and reinstall.</p>
-
-{% capture nextjs_reinstall %}
+<div class="design-list">
+  <p class="design-list-title">Troubleshooting</p>
+  <p class="design-paragraph">Not taking effect? NPM can be inconsistent with overrides. Delete <code class="design-code">package-lock.json</code>, <code class="design-code">node_modules</code>, and reinstall.</p>
+  {% capture nextjs_reinstall %}
 rm -rf node_modules package-lock.json
 npm install
-{% endcapture %}
-{% include components/design-codeblock.html value=nextjs_reinstall copy_text="rm -rf node_modules package-lock.json
+  {% endcapture %}
+  {% include components/design-codeblock.html value=nextjs_reinstall copy_text="rm -rf node_modules package-lock.json
 npm install" %}
+</div>

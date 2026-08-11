@@ -33,53 +33,33 @@ TWILIO_API_KEY=\"encrypted:a1b2c3d4\"" %}
 <div class="armor-shell">
   <section class="docs-quickstart-body">
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Usage</h2>
-    {% capture encrypt_setup %}
-$ touch .env
-$ echo "console.log('Hello ' + process.env.HELLO)" > index.js
-
+    <h2 class="design-page-title design-page-title--flush">1. Encrypt</h2>
+    <p class="design-paragraph">Encrypt your <code class="design-code">.env</code> file.</p>
+    {% capture encrypt_cmd %}
 $ dotenvx encrypt
     {% endcapture %}
-    {% include components/design-codeblock.html value=encrypt_setup copy_text="dotenvx encrypt" %}
-
-    <p class="design-paragraph">Your <code class="design-code">.env</code> file will now look something like this.</p>
-
-    {% capture encrypt_env %}
-#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
-#/            public-key encryption for .env files          /
-#/       [how it works](https://dotenvx.com/encryption)     /
-#/----------------------------------------------------------/
-DOTENV_PUBLIC_KEY="037cfbfc90234cfdab7eb54050566293789efaa1a35dc420749662db400dc9c4b2"
-
-# .env
-HELLO="encrypted:BAZb6wDPFaFeFzq8Ut48oiNFSPtYvJmv4AwVDFVcNKiIcGxrxuRIFGWxZ3xVjxOgOo6w65bWFTpAfbatSz52+VvwDYZ3nFUO828nzovH5ZhsIoxPuPb7K0ZphmNynR7Hxci4a+fB"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=encrypt_env copy=false %}
-
-    <p class="design-paragraph">The public encryption key <code class="design-code">DOTENV_PUBLIC_KEY</code> is placed at the top of your <code class="design-code">.env</code> file. This allows anyone on your team to encrypt secrets.</p>
-
-    <p class="design-paragraph">The private decryption key <code class="design-code">DOTENV_PRIVATE_KEY</code> is placed in your <code class="design-code">.env.keys</code> file. Only those holding this key can decrypt secrets.</p>
-
-    <p class="design-paragraph">We recommend <a class="design-link" href="/docs/cli/lock/">locking</a>, <a class="design-link" href="/docs/cli/native/">keychaining</a>, or most seriously <a class="design-link" href="/docs/cli/armor/introduction/">armoring</a> your private key.</p>
+    {% include components/design-codeblock.html value=encrypt_cmd copy_text="dotenvx encrypt" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">DOTENV_PRIVATE_KEY</h2>
-    <p class="design-paragraph">Locate your <code class="design-code">DOTENV_PRIVATE_KEY</code> in <code class="design-code">.env.keys</code>.</p>
-
-    {% capture encrypt_cat_keys %}
-$ cat .env.keys
-    {% endcapture %}
-    {% include components/design-codeblock.html value=encrypt_cat_keys copy_text="cat .env.keys" %}
-
-    {% capture encrypt_keys %}
-#/------------------!DOTENV_PRIVATE_KEYS!-------------------/
-#/ private decryption keys. DO NOT commit to source control /
-#/     [how it works](https://dotenvx.com/encryption)       /
-#/----------------------------------------------------------/
-
+    <h2 class="design-page-title design-page-title--flush">2. Encrypted .env</h2>
+    <p class="design-paragraph">Your public encryption key <code class="design-code">DOTENV_PUBLIC_KEY</code> lands at the top of <code class="design-code">.env</code> so anyone on your team can encrypt secrets.</p>
+    {% capture encrypt_env %}
 # .env
+DOTENV_PUBLIC_KEY="037cfbfc90234cfdab7eb54050566293789efaa1a35dc420749662db400dc9c4b2"
+
+HELLO="encrypted:BAZb6wDPFaFeFzq8Ut48oiNFSPtYvJmv4AwVDFVcNKiIcGxrxuRIFGWxZ3xVjxOgOo6w65bWFTpAfbatSz52+VvwDYZ3nFUO828nzovH5ZhsIoxPuPb7K0ZphmNynR7Hxci4a+fB"
+    {% endcapture %}
+    {% include components/design-codeblock.html value=encrypt_env copy=false %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">3. Private key</h2>
+    <p class="design-paragraph">Your private decryption key lives in <code class="design-code">.env.keys</code>. Do not commit it — only holders of this key can decrypt secrets.</p>
+    {% capture encrypt_keys %}
+# .env.keys
 DOTENV_PRIVATE_KEY="81dac4d2c42e67a2c6542d3b943a4674a05c4be5e7e5a40a689be7a3bd49a07e"
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_keys copy=false %}
@@ -87,28 +67,47 @@ DOTENV_PRIVATE_KEY="81dac4d2c42e67a2c6542d3b943a4674a05c4be5e7e5a40a689be7a3bd49
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Run</h2>
-    <p class="design-paragraph">In development the <code class="design-code">dotenvx run</code> command reads from your <code class="design-code">.env.keys</code> file to decrypt and inject your secrets at runtime.</p>
-
+    <h2 class="design-page-title design-page-title--flush">4. Run locally</h2>
+    <p class="design-paragraph">In development, <code class="design-code">dotenvx run</code> reads <code class="design-code">.env.keys</code> to decrypt and inject secrets at runtime.</p>
     {% capture encrypt_dev %}
 $ dotenvx run -- node index.js
 ⟐ injected env (2) from .env
 Hello World
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_dev copy_text="dotenvx run -- node index.js" %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <p class="design-paragraph">In production, do NOT include your <code class="design-code">.env.keys</code> file. Instead, set your <code class="design-code">DOTENV_PRIVATE_KEY</code> ahead of your <code class="design-code">dotenvx run</code> command and it will smartly run the associated <code class="design-code">.env</code> file — decrypting and injecting your secrets at runtime.</p>
-
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">5. Run in production</h2>
+    <p class="design-paragraph">Do not ship <code class="design-code">.env.keys</code>. Set <code class="design-code">DOTENV_PRIVATE_KEY</code> in the environment instead — dotenvx decrypts and injects at runtime.</p>
     {% capture encrypt_prod %}
-$ dotenvx set HELLO production -f .env.production
-$ DOTENV_PRIVATE_KEY_PRODUCTION="4a650a4159790e2341a388ebcd7526036fd33cc6240667c7cd940cde7b11cfaf" dotenvx run -- node index.js
-⟐ injected env (2) from .env.production
-Hello production
-> :-D
+$ DOTENV_PRIVATE_KEY="…" dotenvx run -- node index.js
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_prod copy=false %}
+    <p class="design-paragraph">No more scattering secrets across third-party platforms where they <a class="design-link" href="https://techcrunch.com/2023/01/05/circleci-breach/">could leak</a>.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
 
-    <p class="design-paragraph">No more scattering your secrets across multiple third-parties platforms where they <a class="design-link" href="https://techcrunch.com/2023/01/05/circleci-breach/">could leak</a>!</p>
+    {% capture step_content %}
+    {% capture encrypt_related_items %}
+      <li>
+        <a class="design-link" href="/docs/cli/lock/">Lock</a>
+        <span class="design-list-meta">password-protect your private key</span>
+      </li>
+      <li>
+        <a class="design-link" href="/docs/cli/native/">Native</a>
+        <span class="design-list-meta">store the key in your OS keychain</span>
+      </li>
+      <li>
+        <a class="design-link" href="/docs/cli/armor/introduction/">Armor</a>
+        <span class="design-list-meta">managed private keys</span>
+      </li>
+    {% endcapture %}
+    {% include components/design-list.html
+      title="Related"
+      items=encrypt_related_items
+    %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

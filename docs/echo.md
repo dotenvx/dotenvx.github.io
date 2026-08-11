@@ -1,36 +1,61 @@
 ---
-title: Echo
-description: Use dotenvx with Echo.
+layout: docs-quickstart
+title: "Echo"
+social_title: "Encrypt a .env file in Echo"
+description: "Encrypt a .env file in Echo with dotenvx, commit it safely, and inject its secrets at runtime."
+icon: go
 permalink: /docs/echo/
-layout: radar
 redirect_from:
   - /docs/frameworks/echo
   - /docs/frameworks/echo/
+  - /docs/secrets-in-echo/
+  - /docs/secrets-in-echo
+install_copy: "curl -sfS https://dotenvx.sh | sh"
+encrypt_copy: "dotenvx encrypt"
+install: |
+  $ curl -sfS https://dotenvx.sh | sh
+encrypt: |
+  $ dotenvx encrypt
+inject_lede: |
+  Then inject your encrypted secrets at runtime with `dotenvx run`.
+inject_copy: |
+  package main
+
+  import (
+    "fmt"
+    "net/http"
+    "os"
+
+    "github.com/labstack/echo/v4"
+  )
+
+  func main() {
+    e := echo.New()
+    e.GET("/", func(c echo.Context) error {
+      return c.String(http.StatusOK, fmt.Sprintf("HELLO: %s", os.Getenv("HELLO")))
+    })
+    e.Logger.Fatal(e.Start(":1323"))
+  }
+inject: |
+  package main
+
+  import (
+    "fmt"
+    "net/http"
+    "os"
+
+    "github.com/labstack/echo/v4"
+  )
+
+  func main() {
+    e := echo.New()
+    e.GET("/", func(c echo.Context) error {
+      return c.String(http.StatusOK, fmt.Sprintf("HELLO: %s", os.Getenv("HELLO")))
+    })
+    e.Logger.Fatal(e.Start(":1323"))
+  }
+inject_after_copy: |
+  dotenvx run -- go run main.go
+inject_after: |
+  $ dotenvx run -- go run main.go
 ---
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Echo"
-  description="Use dotenvx with Echo."
-  mark="echo"
-%}
-
-{% capture echo_platforms_items %}
-  <li>
-    <a class="design-link" href="/docs/docker">Docker</a>
-    <span class="design-list-meta">dotenvx, Echo, and Docker</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/platforms/heroku">Heroku</a>
-    <span class="design-list-meta">dotenvx, Echo, and Heroku</span>
-  </li>
-{% endcapture %}
-
-<section class="radar-section">
-  <div class="armor-shell">
-    {% include components/design-list.html
-      title="Platforms"
-      items=echo_platforms_items
-    %}
-  </div>
-</section>

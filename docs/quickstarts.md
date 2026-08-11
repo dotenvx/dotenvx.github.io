@@ -164,7 +164,7 @@ layout: radar
   </li>
   <li>
     <a class="design-link" href="/docs/echo">Echo</a>
-    <span class="design-list-meta">platforms</span>
+    <span class="design-list-meta">dotenvx run -- go run</span>
   </li>
 {% endcapture %}
 

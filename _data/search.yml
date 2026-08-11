@@ -66,6 +66,8 @@ entries:
     boost: 50
   /docs/go/:
     boost: 50
+  /docs/echo/:
+    boost: 50
   /docs/ruby/:
     boost: 50
   /docs/rails/:

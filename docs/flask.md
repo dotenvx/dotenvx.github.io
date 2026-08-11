@@ -12,7 +12,7 @@ redirect_from:
   eyebrow="Docs"
   title="Flask"
   description="Use dotenvx with Flask."
-  mark="flask"
+  icon="flask"
 %}
 
 {% capture flask_platforms_items %}

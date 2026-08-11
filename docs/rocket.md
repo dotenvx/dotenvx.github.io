@@ -12,7 +12,7 @@ redirect_from:
   eyebrow="Docs"
   title="Rocket"
   description="Use dotenvx with Rocket."
-  mark="rocket"
+  icon="rocket"
 %}
 
 {% capture rocket_platforms_items %}

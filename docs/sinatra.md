@@ -12,7 +12,7 @@ redirect_from:
   eyebrow="Docs"
   title="Sinatra"
   description="Use dotenvx with Sinatra."
-  mark="sinatra"
+  icon="sinatra"
 %}
 
 {% capture sinatra_platforms_items %}

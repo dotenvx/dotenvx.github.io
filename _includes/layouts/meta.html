@@ -21,12 +21,3 @@
 <script src="https://unpkg.com/alpinejs" defer></script>
 {% assign cacheBust = site.time | date:'?v=%s' | append: '-r23' %}
 <link rel="stylesheet" media="all" href="{{ "/assets/css/main.css" | relative_url | append: cacheBust }}">
-
-{% if jekyll.environment != "production" %}
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
-  </script>
-{% endif %}

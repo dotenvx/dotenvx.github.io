@@ -9,7 +9,7 @@ layout: radar
   eyebrow="Docs"
   title="Heroku"
   description="Use dotenvx with Heroku."
-  mark="heroku"
+  icon="heroku"
 %}
 
 <section class="radar-section">

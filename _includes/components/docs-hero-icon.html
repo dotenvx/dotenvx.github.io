@@ -39,8 +39,8 @@
     {% assign icon_file = "nodejs.html" %}
     {% assign icon_color = "#339933" %}
   {% when "expo" %}
-    {% assign icon_file = "nodejs.html" %}
-    {% assign icon_color = "#339933" %}
+    {% assign icon_file = "expo.html" %}
+    {% assign icon_invert = true %}
   {% when "bun" %}
     {% assign icon_file = "bun.html" %}
     {% assign icon_invert = true %}
@@ -61,21 +61,30 @@
   {% when "python" %}
     {% assign icon_file = "python.html" %}
     {% assign icon_color = "#3776AB" %}
+  {% when "flask" %}
+    {% assign icon_file = "flask.html" %}
+    {% assign icon_invert = true %}
   {% when "uv" %}
-    {% assign icon_file = "python.html" %}
-    {% assign icon_color = "#3776AB" %}
+    {% assign icon_file = "uv.html" %}
+    {% assign icon_color = "#DE5FE9" %}
   {% when "php" %}
     {% assign icon_file = "php.html" %}
     {% assign icon_color = "#777BB4" %}
   {% when "ruby" %}
     {% assign icon_file = "ruby.html" %}
     {% assign icon_color = "#CC342D" %}
+  {% when "sinatra" %}
+    {% assign icon_file = "sinatra.html" %}
+    {% assign icon_invert = true %}
   {% when "go" %}
     {% assign icon_file = "go.html" %}
     {% assign icon_color = "#00ADD8" %}
   {% when "rust" %}
     {% assign icon_file = "rust.html" %}
     {% assign icon_invert = true %}
+  {% when "rocket" %}
+    {% assign icon_file = "rocket.html" %}
+    {% assign icon_color = "#D33847" %}
   {% when "java" %}
     {% assign icon_file = "java.html" %}
     {% assign icon_color = "#F89820" %}
@@ -94,6 +103,9 @@
   {% when "docker-compose" %}
     {% assign icon_file = "docker.html" %}
     {% assign icon_color = "#2496ED" %}
+  {% when "heroku" %}
+    {% assign icon_file = "heroku.html" %}
+    {% assign icon_color = "#430098" %}
   {% when "github-actions" %}
     {% assign icon_file = "github.html" %}
   {% when "monorepos" %}

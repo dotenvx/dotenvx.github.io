@@ -3840,6 +3840,13 @@ html.dark .design-badge.design-badge--danger {
   width: 100%;
 }
 
+/* Tooltip ::after nodes expand scrollWidth under overflow-x:auto — same fix as .pricing-summary */
+.pricing-compare .design-table-wrap {
+  max-width: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
 .pricing-compare .design-table {
   table-layout: fixed;
   width: 100%;
@@ -3867,7 +3874,8 @@ html.dark .design-badge.design-badge--danger {
   border-radius: 0.35rem;
   bottom: calc(100% + 0.6rem);
   color: var(--design-panel);
-  content: attr(data-tooltip);
+  /* Only materialize on hover/focus — hidden ::after still expands overflow-x:auto scrollWidth */
+  content: none;
   font-family: var(--design-font-sans);
   font-size: 0.75rem;
   font-weight: 400;
@@ -3889,6 +3897,7 @@ html.dark .design-badge.design-badge--danger {
 
 .pricing-value-detail:hover::after,
 .pricing-value-detail:focus::after {
+  content: attr(data-tooltip);
   opacity: 1;
   transform: translate(-50%, 0);
   visibility: visible;

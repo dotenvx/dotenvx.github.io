@@ -23,7 +23,7 @@ layout: radar
         <div class="docs-cli-cards">
           <p class="design-list-title">Languages</p>
           <div class="design-settings-grid">
-            {% include components/design-settings-tile.html href="/docs/sdk/nodejs" label="Node" icon="nodejs" %}
+            {% include components/design-settings-tile.html href="/docs/sdk/nodejs" label="Node.js" icon="nodejs" %}
             {% include components/design-settings-tile.html href="/docs/sdk/python" label="Python" icon="python" %}
             {% include components/design-settings-tile.html href="/docs/sdk/ruby" label="Ruby" icon="ruby" %}
             {% include components/design-settings-tile.html href="/docs/sdk/rust" label="Rust" icon="rust" %}

@@ -1,5 +1,5 @@
 ---
-title: Node
+title: Node.js
 description: Load and manage encrypted env from Node.js.
 permalink: /docs/sdk/nodejs/
 layout: radar
@@ -8,7 +8,7 @@ layout: radar
 {% include components/docs-hero.html
   eyebrow="SDKs"
   eyebrow_href="/docs/sdk"
-  title="Node"
+  title="Node.js"
   description="Load and manage encrypted env from Node.js."
   icon="nodejs"
 %}
@@ -46,6 +46,17 @@ $ npm install @dotenvx/dotenvx
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush">Usage</h2>
+    {% capture sdk_node_usage %}
+require('@dotenvx/dotenvx').config()
+    {% endcapture %}
+    {% include components/design-codeblock.html value=sdk_node_usage copy_text="require('@dotenvx/dotenvx').config()" %}
+
+    <p class="design-paragraph">See the <a class="design-link" href="/docs/nodejs/">Node.js quickstart</a> for a full walkthrough.</p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+
+    {% capture step_content %}
     {% capture sdk_methods_items %}
       <li><a class="design-link" href="/docs/sdk/nodejs/config/">config</a></li>
       <li><a class="design-link" href="/docs/sdk/nodejs/parse/">parse</a></li>
@@ -56,25 +67,6 @@ $ npm install @dotenvx/dotenvx
       title="Methods"
       items=sdk_methods_items
     %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">next-env</h2>
-    <p class="design-paragraph"><a class="design-link" href="https://www.npmjs.com/package/@dotenvx/next-env" target="_blank" rel="noopener noreferrer"><code class="design-code">@dotenvx/next-env</code></a> is a drop-in replacement for Next.js <code class="design-code">@next/env</code>, so encrypted dotenvx files load during Next’s own environment step.</p>
-
-    {% capture sdk_next_env %}
-{
-  "dependencies": {
-    "@dotenvx/next-env": "^2.0.0",
-    "next": "^16.0.0"
-  },
-  "overrides": {
-    "@next/env": "npm:@dotenvx/next-env"
-  }
-}
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_next_env copy=false %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

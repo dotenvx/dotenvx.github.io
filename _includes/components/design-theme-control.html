@@ -4,6 +4,11 @@
   data-radar-theme-toggle
   aria-label="Cycle theme"
 >
-  {% include components/design-kbd.html key="M" class="design-theme-control-key" %}
+  <svg class="design-theme-control-fan" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    <path d="M0 100 L0 0 A100 100 0 0 1 100 100 Z" />
+  </svg>
+  <span class="design-theme-control-disc">
+    {% include components/design-kbd.html key="M" class="design-theme-control-key" %}
+  </span>
   <span class="design-theme-control-label">Cycle theme</span>
 </button>

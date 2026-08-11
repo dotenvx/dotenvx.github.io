@@ -1,0 +1,8 @@
+{% assign id = include.id %}
+{% assign active = include.active %}
+{% assign code = include.code %}
+{% assign copy_text = include.copy_text %}
+{% assign label = include.label %}
+<div class="design-choice-code-panel{% if active %} is-active{% endif %}" data-design-choice-panel data-choice-id="{{ id }}"{% unless active %} hidden{% endunless %} aria-hidden="{% if active %}false{% else %}true{% endif %}">
+{% include components/design-codeblock.html value=code copy=include.copy copy_text=copy_text label=label %}
+</div>

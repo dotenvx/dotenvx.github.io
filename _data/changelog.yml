@@ -73,7 +73,7 @@
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1760-2026-06-24"
 - date: 2026-06-19
   summary: "Load encrypted env files natively in Next.js."
-  url: "/docs/secrets-in-nextjs"
+  url: "/docs/nextjs"
 - date: 2026-06-16
   summary: "Armor is built directly into dotenvx."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1730-2026-06-16"
@@ -97,7 +97,7 @@
   summary: "Choose local or armored key storage on first create."
 - date: 2026-05-13
   summary: "New guide for encrypting secrets with Python uv."
-  url: "https://dotenvx.com/docs/secrets-in-uv"
+  url: "https://dotenvx.com/docs/uv"
 - date: 2026-05-12
   summary: "Trust Center launches for security and compliance."
   milestone: true

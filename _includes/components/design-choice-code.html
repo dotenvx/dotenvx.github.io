@@ -1,0 +1,23 @@
+{% comment %}
+  Mirrored from ../radar design/choice_code.
+  locals: count, selected, lines, aria_label, class, panels (html), options (html)
+{% endcomment %}
+{% assign aria_label = include.aria_label | default: "Code options" %}
+{% assign count = include.count | default: 2 %}
+{% assign selected = include.selected %}
+{% assign lines = include.lines %}
+{% assign choice_class = include.class %}
+
+<div
+  class="design-choice design-choice--code{% if lines %} has-lines{% endif %}{% if choice_class %} {{ choice_class }}{% endif %}"
+  style="--design-choice-count: {{ count }};{% if lines %} --design-choice-code-lines: {{ lines }};{% endif %}"
+  data-design-choice
+  {% if selected %}data-design-choice-selected="{{ selected }}"{% endif %}
+>
+  <div class="design-choice-current">
+    {{ include.panels | strip }}
+  </div>
+  <div class="design-choice-options" role="group" aria-label="{{ aria_label }}">
+    {{ include.options | strip }}
+  </div>
+</div>

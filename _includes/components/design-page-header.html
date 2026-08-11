@@ -4,10 +4,30 @@
 {% assign heading_tag = include.heading_tag | default: "h1" %}
 {% assign header_class = include.class %}
 {% assign title_class = include.title_class %}
+{% assign crumbs = include.crumbs %}
 
 <div class="design-page-header{% if header_class %} {{ header_class }}{% endif %}">
-  {% if eyebrow and eyebrow != "" %}
-    <p class="design-page-header-eyebrow">{{ eyebrow }}</p>
+  {% if crumbs and crumbs.size > 0 %}
+    <nav class="design-page-header-eyebrow" aria-label="Breadcrumb">
+      {% for crumb in crumbs %}
+        {% unless forloop.first %}
+          <span class="design-page-crumbs-sep" aria-hidden="true">»</span>
+        {% endunless %}
+        {% if crumb.href and crumb.href != "" %}
+          <a href="{{ crumb.href }}">{{ crumb.label }}</a>
+        {% else %}
+          <span>{{ crumb.label }}</span>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  {% elsif eyebrow and eyebrow != "" %}
+    <p class="design-page-header-eyebrow">
+      {% if include.eyebrow_href and include.eyebrow_href != "" %}
+        <a href="{{ include.eyebrow_href }}">{{ eyebrow }}</a>
+      {% else %}
+        {{ eyebrow }}
+      {% endif %}
+    </p>
   {% endif %}
   <{{ heading_tag }} class="design-page-title design-page-title--flush{% if title_class %} {{ title_class }}{% endif %}">{{ title }}</{{ heading_tag }}>
   {% if description and description != "" %}

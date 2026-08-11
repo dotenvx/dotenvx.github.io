@@ -1,0 +1,152 @@
+{% comment %}
+  Homepage install — centered design-choice (armor-style), not choice-code.
+  Kept out of index.md so Kramdown cannot break nested HTML.
+{% endcomment %}
+{% assign home_install_you_copy = "curl -sfS https://dotenvx.sh | sh" %}
+{% capture home_install_agent_prompt %}Demo dotenvx for me with a hello-world encrypted env workflow. Walk through each step and show the commands and output.
+
+Important: Do NOT overwrite, modify, or encrypt any existing .env (or .env.* / .env.keys) in this project. Work in a fresh temp demo directory only.
+
+1. Install dotenvx:
+   curl -sfS https://dotenvx.sh | sh
+
+2. Create a tiny demo app in a new empty directory (for example /tmp/dotenvx-hello):
+   mkdir -p /tmp/dotenvx-hello && cd /tmp/dotenvx-hello
+   echo "HELLO=World" > .env
+   echo "console.log('Hello ' + process.env.HELLO)" > index.js
+
+3. Encrypt that demo .env (use local .env.keys / file storage if prompted):
+   dotenvx encrypt
+   Show that HELLO is now an encrypted: value.
+
+4. Commit it safely (still only inside the demo directory):
+   Keep .env.keys out of git (gitignore it).
+   git init && git add .env index.js && git commit -m "add encrypted env"
+
+5. Decrypt at runtime:
+   dotenvx run -- node index.js
+   Expect: Hello World{% endcapture %}
+
+{% capture home_choice_current %}
+  <div id="home-panel-you" class="home-install-you">
+    <button
+      type="button"
+      class="home-install-code-copy"
+      id="home-install-curl"
+      aria-label="Copy install command"
+      data-copy="{{ home_install_you_copy | strip | escape }}"
+    >
+      {% include components/design-code.html value="$ curl -sfS https://dotenvx.sh | sh" %}
+    </button>
+  </div>
+  {% include components/design-btn.html
+    label="Copy Prompt"
+    id="home-panel-agent"
+    class="home-install-prompt-btn"
+    hidden=true
+  %}
+{% endcapture %}
+
+{% capture home_choice_options %}
+  {% include components/design-choice-option.html
+    label="For you"
+    selected=true
+    value="you"
+  %}
+  {% include components/design-choice-option.html
+    label="For your agent"
+    value="agent"
+  %}
+{% endcapture %}
+
+<section class="radar-section" aria-label="Install dotenvx">
+  <div class="armor-shell">
+    {% include components/design-choice.html
+      count=2
+      aria_label="Audience"
+      current=home_choice_current
+      options=home_choice_options
+      class="home-install-choice"
+    %}
+  </div>
+</section>
+
+<script type="text/plain" id="home-install-agent-prompt">{{ home_install_agent_prompt | strip }}</script>
+<script>
+(function () {
+  var copyTimeout
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn()
+    else document.addEventListener('DOMContentLoaded', fn)
+  }
+
+  function copyText(text, onDone) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(onDone).catch(function () {})
+      return
+    }
+    var textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    onDone()
+  }
+
+  ready(function () {
+    var choice = document.querySelector('.home-install-choice')
+    var options = choice ? choice.querySelectorAll('.design-choice-option') : []
+    var panelYou = document.getElementById('home-panel-you')
+    var panelAgent = document.getElementById('home-panel-agent')
+    var curlBtn = document.getElementById('home-install-curl')
+    var agentPromptEl = document.getElementById('home-install-agent-prompt')
+    var agentText = agentPromptEl ? agentPromptEl.textContent.trim() : ''
+    if (!choice || !options.length || !panelYou || !panelAgent) return
+
+    function show(next) {
+      options.forEach(function (option) {
+        option.setAttribute('aria-pressed', option.getAttribute('data-choice-value') === next ? 'true' : 'false')
+      })
+      panelYou.hidden = next !== 'you'
+      panelAgent.hidden = next !== 'agent'
+      panelAgent.textContent = 'Copy Prompt'
+    }
+
+    options.forEach(function (option) {
+      option.addEventListener('click', function () {
+        show(option.getAttribute('data-choice-value') || 'you')
+      })
+    })
+
+    if (curlBtn) {
+      curlBtn.addEventListener('click', function () {
+        var text = curlBtn.getAttribute('data-copy') || ''
+        var code = curlBtn.querySelector('code')
+        if (!text || !code) return
+        if (!curlBtn.dataset.copyLabel) curlBtn.dataset.copyLabel = code.textContent
+        copyText(text, function () {
+          code.textContent = 'copied'
+          clearTimeout(copyTimeout)
+          copyTimeout = setTimeout(function () {
+            code.textContent = curlBtn.dataset.copyLabel
+          }, 1100)
+        })
+      })
+    }
+
+    panelAgent.addEventListener('click', function (event) {
+      event.preventDefault()
+      if (!agentText) return
+      copyText(agentText, function () {
+        panelAgent.textContent = 'Copied'
+        clearTimeout(copyTimeout)
+        copyTimeout = setTimeout(function () {
+          panelAgent.textContent = 'Copy Prompt'
+        }, 1100)
+      })
+    })
+  })
+})()
+</script>

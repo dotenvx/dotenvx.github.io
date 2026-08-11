@@ -1,0 +1,29 @@
+{% assign eyebrow = include.eyebrow | default: "Docs" %}
+{% assign mark = include.mark | default: "<docs/>" %}
+{% assign icon = include.icon %}
+{% assign crumbs = include.crumbs %}
+
+{% if icon and icon != "" %}
+  {% capture docs_hero_visual %}
+    <div class="docs-hero-icon-wrap" aria-hidden="true">
+      {% include components/docs-hero-icon.html icon=icon %}
+    </div>
+  {% endcapture %}
+{% else %}
+  {% capture docs_hero_visual %}
+    <div class="docs-hero-ascii" aria-hidden="true">
+      <pre class="docs-hero-ascii-art">{{ mark }}</pre>
+    </div>
+  {% endcapture %}
+{% endif %}
+
+{% include components/design-hero.html
+  class="company-design-hero docs-design-hero"
+  bare=include.bare
+  eyebrow=eyebrow
+  eyebrow_href="/docs/introduction"
+  crumbs=crumbs
+  title=include.title
+  description=include.description
+  visual=docs_hero_visual
+%}

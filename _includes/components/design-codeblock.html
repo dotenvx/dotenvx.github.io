@@ -1,6 +1,18 @@
 {% assign value = include.value %}
 {% assign block_class = include.class %}
-<pre
-  class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"
-  {% if include.label %}aria-label="{{ include.label }}"{% endif %}
-><code>{% if value and value != "" %}{{ value | strip }}{% else %}{{ include.content | strip }}{% endif %}</code></pre>
+{% assign copy_text = include.copy_text %}
+{% comment %} Copy on by default — pass copy=false to opt out {% endcomment %}
+{% if include.copy == false or include.copy == "false" %}
+  {% assign want_copy = false %}
+{% else %}
+  {% assign want_copy = true %}
+{% endif %}
+{% capture code_body %}{% if value and value != "" %}{{ value | strip }}{% else %}{{ include.content | strip }}{% endif %}{% endcapture %}
+{% if want_copy %}
+<div class="design-codeblock-wrap" data-design-codeblock{% if copy_text and copy_text != "" %} data-copy="{{ copy_text | strip | escape }}"{% endif %}>
+<button type="button" class="design-codeblock-copy" data-design-codeblock-copy aria-label="Copy code"><span data-design-codeblock-label>Copy</span></button>
+<pre class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}><code>{{ code_body | escape }}</code></pre>
+</div>
+{% else %}
+<pre class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}><code>{{ code_body | escape }}</code></pre>
+{% endif %}

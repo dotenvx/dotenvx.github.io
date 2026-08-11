@@ -1,13 +1,15 @@
 {% assign label = include.label %}
 {% assign selected = include.selected %}
 {% assign option_class = include.class %}
+{% assign choice_id = include.value | default: include.id %}
 
 <button
   type="button"
   class="design-choice-option{% if option_class %} {{ option_class }}{% endif %}"
   aria-pressed="{% if selected %}true{% else %}false{% endif %}"
+  data-design-choice-option
   {% if include.id %}id="{{ include.id }}"{% endif %}
-  {% if include.value %}data-choice-value="{{ include.value }}"{% endif %}
+  {% if choice_id %}data-choice-id="{{ choice_id }}" data-choice-value="{{ choice_id }}"{% endif %}
 >
   {{ label }}
 </button>

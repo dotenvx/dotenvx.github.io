@@ -1,0 +1,47 @@
+{% comment %} Prev/next across site.data.docs.quickstarts — mirrored from ../docs Footer PageNavigation {% endcomment %}
+{% assign items = site.data.docs.quickstarts %}
+{% assign current_href = page.url %}
+{% assign current_index = nil %}
+{% for item in items %}
+  {% if item.href == current_href %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index != nil %}
+  {% assign prev_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  {% assign prev_item = nil %}
+  {% assign next_item = nil %}
+  {% if prev_index >= 0 %}
+    {% assign prev_item = items[prev_index] %}
+  {% endif %}
+  {% if next_index < items.size %}
+    {% assign next_item = items[next_index] %}
+  {% endif %}
+
+  {% if prev_item or next_item %}
+    <nav
+      class="docs-quickstart-pager{% if prev_item and next_item %} docs-quickstart-pager--both{% elsif next_item %} docs-quickstart-pager--next-only{% endif %}"
+      aria-label="Quickstart pages"
+      data-docs-quickstart-pager
+    >
+      {% if prev_item %}
+        <a
+          class="design-btn"
+          href="{{ prev_item.href }}"
+          aria-label="Previous: {{ prev_item.label }}"
+          data-docs-quickstart-prev
+        ><span aria-hidden="true">‹</span> {{ prev_item.label }}</a>
+      {% endif %}
+      {% if next_item %}
+        <a
+          class="design-btn"
+          href="{{ next_item.href }}"
+          aria-label="Next: {{ next_item.label }}"
+          data-docs-quickstart-next
+        >{{ next_item.label }} <span aria-hidden="true">›</span></a>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% endif %}

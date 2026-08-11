@@ -4783,10 +4783,8 @@ html.dark .radar-btn {
 }
 
 .docs-cli-hero-command-copy .design-code {
-  font-size: var(--design-text-size) !important;
   max-width: 100%;
   overflow-wrap: anywhere;
-  padding: 0.35rem 0.55rem !important;
   text-align: left;
   white-space: normal !important;
 }
@@ -4805,10 +4803,6 @@ html.dark .radar-btn {
   .docs-cli-hero-command {
     height: 100%;
     min-height: inherit;
-  }
-
-  .docs-cli-hero-command-copy .design-code {
-    font-size: var(--design-text-title) !important;
   }
 }
 

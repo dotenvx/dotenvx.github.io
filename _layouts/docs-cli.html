@@ -10,6 +10,7 @@
     {% include components/radar-nav.html %}
     <main class="radar-main">
       {% assign options_title = page.options_title | default: "Options" %}
+      {% assign related_title = page.related_title | default: "Related" %}
 
       {% comment %}Parent command eyebrow for option/detail pages; top-level commands stay "CLI".{% endcomment %}
       {% assign cli_eyebrow = "CLI" %}
@@ -57,6 +58,23 @@
               {% include components/design-list.html
                 title=options_title
                 items=cli_options_items
+              %}
+            {% endcapture %}
+            {% include components/design-step.html content=step_content %}
+          {% endif %}
+
+          {% if page.related and page.related.size > 0 %}
+            {% capture step_content %}
+              {% capture cli_related_items %}
+                {% for item in page.related %}
+                  <li>
+                    <a class="design-link" href="{{ item.href }}">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              {% endcapture %}
+              {% include components/design-list.html
+                title=related_title
+                items=cli_related_items
               %}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}

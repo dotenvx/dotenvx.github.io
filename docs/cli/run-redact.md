@@ -15,8 +15,8 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
-options_title: Related
-options:
+related_title: Related
+related:
   - title: Claude
     href: /docs/claude/
   - title: Cursor

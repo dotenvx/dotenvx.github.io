@@ -2,7 +2,7 @@
 layout: docs-cli
 eyebrow: Node
 eyebrow_href: /docs/sdk/nodejs/
-command: "get()"
+command: "dotenvx.get()"
 title: get
 description: Programmatically get an environment variable at access/runtime.
 permalink: /docs/sdk/nodejs/config-get-key/

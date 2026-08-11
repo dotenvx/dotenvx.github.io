@@ -58,7 +58,7 @@ Dotenvx.load
     {% endcapture %}
     {% include components/design-codeblock.html value=sdk_ruby_usage copy=false %}
 
-    <p class="design-paragraph">See the <a class="design-link" href="/docs/ruby/">Ruby quickstart</a> for encrypting and running with the CLI.</p>
+    <p class="design-paragraph">See the <a class="design-link" href="/docs/ruby/">Ruby</a>, <a class="design-link" href="/docs/rails/">Rails</a>, or <a class="design-link" href="/docs/sinatra/">Sinatra</a> quickstart for a full walkthrough.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

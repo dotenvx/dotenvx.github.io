@@ -2,7 +2,7 @@
 layout: docs-cli
 eyebrow: Node
 eyebrow_href: /docs/sdk/nodejs/
-command: "parse()"
+command: "dotenvx.parse()"
 title: parse
 description: Parse a .env string directly in node.js code.
 permalink: /docs/sdk/nodejs/parse/

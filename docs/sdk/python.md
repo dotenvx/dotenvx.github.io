@@ -46,7 +46,7 @@ load_dotenv()
     {% endcapture %}
     {% include components/design-codeblock.html value=sdk_python_usage copy=false %}
 
-    <p class="design-paragraph">See the <a class="design-link" href="/docs/python/">Python quickstart</a> for a full walkthrough.</p>
+    <p class="design-paragraph">See the <a class="design-link" href="/docs/python/">Python</a> or <a class="design-link" href="/docs/flask/">Flask</a> quickstart for a full walkthrough.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

@@ -2,7 +2,7 @@
 layout: docs-cli
 eyebrow: Node
 eyebrow_href: /docs/sdk/nodejs/
-command: "set()"
+command: "dotenvx.set()"
 title: set
 description: Programmatically set an environment variable.
 permalink: /docs/sdk/nodejs/config-set-key-value/

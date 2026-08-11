@@ -52,7 +52,7 @@ require('@dotenvx/dotenvx').config()
     {% endcapture %}
     {% include components/design-codeblock.html value=sdk_node_usage copy_text="require('@dotenvx/dotenvx').config()" %}
 
-    <p class="design-paragraph">See the <a class="design-link" href="/docs/nodejs/">Node.js quickstart</a> for a full walkthrough.</p>
+    <p class="design-paragraph">See the <a class="design-link" href="/docs/nodejs/">Node.js quickstart</a> or <a class="design-link" href="/docs/nextjs/">Next.js quickstart</a> for a full walkthrough.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

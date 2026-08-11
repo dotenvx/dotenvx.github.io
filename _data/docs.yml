@@ -74,6 +74,8 @@ quickstarts:
     href: /docs/php/
   - label: Ruby
     href: /docs/ruby/
+  - label: Rails
+    href: /docs/rails/
   - label: Sinatra
     href: /docs/sinatra/
   - label: Go

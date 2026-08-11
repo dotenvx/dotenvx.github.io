@@ -62,10 +62,20 @@ entries:
       - javascript
   /docs/python/:
     boost: 55
+  /docs/flask/:
+    boost: 50
   /docs/go/:
     boost: 50
   /docs/ruby/:
     boost: 50
+  /docs/rails/:
+    boost: 55
+    aliases:
+      - dotenvx-rails
+      - secrets in rails
+  /docs/sinatra/:
+    boost: 50
+
   /docs/php/:
     boost: 50
   /docs/java/:

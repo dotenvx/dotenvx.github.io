@@ -23,8 +23,25 @@
       {% endif %}
 
       {% comment %}Core command shown in the hero (homepage-style copyable).{% endcomment %}
+      {% assign cli_is_sdk = false %}
+      {% if page.permalink contains "/docs/sdk/" %}
+        {% assign cli_is_sdk = true %}
+      {% endif %}
+      {% assign cli_show_prompt = true %}
+      {% if cli_is_sdk %}
+        {% assign cli_show_prompt = false %}
+      {% endif %}
+      {% if page.command_prompt == false %}
+        {% assign cli_show_prompt = false %}
+      {% endif %}
+      {% if page.command_prompt == true %}
+        {% assign cli_show_prompt = true %}
+      {% endif %}
+
       {% if page.command and page.command != "" %}
         {% assign cli_command = page.command %}
+      {% elsif cli_is_sdk %}
+        {% assign cli_command = page.title | prepend: "dotenvx." %}
       {% elsif cli_eyebrow contains "dotenvx" %}
         {% assign cli_title = page.title | strip %}
         {% assign cli_title_down = cli_title | downcase %}
@@ -53,7 +70,11 @@
       {% endif %}
 
       {% capture cli_hero_visual %}
-        {% include components/docs-cli-hero-command.html command=cli_command %}
+        {% if cli_show_prompt %}
+          {% include components/docs-cli-hero-command.html command=cli_command %}
+        {% else %}
+          {% include components/docs-cli-hero-command.html command=cli_command prompt=false %}
+        {% endif %}
       {% endcapture %}
 
       <div class="armor-shell docs-page">

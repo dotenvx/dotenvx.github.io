@@ -53,9 +53,8 @@ inject: |
   }
 ---
 
-### Troubleshooting
-
-Not taking effect? NPM can be inconsistent with overrides. Delete `package-lock.json`, `node_modules`, and reinstall.
+<p class="design-list-title">Troubleshooting</p>
+<p class="design-paragraph">Not taking effect? NPM can be inconsistent with overrides. Delete <code class="design-code">package-lock.json</code>, <code class="design-code">node_modules</code>, and reinstall.</p>
 
 {% capture nextjs_reinstall %}
 rm -rf node_modules package-lock.json

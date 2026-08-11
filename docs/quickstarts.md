@@ -88,15 +88,15 @@ layout: radar
 {% capture qs_nodejs_items %}
   <li>
     <a class="design-link" href="/docs/nodejs">Node.js</a>
-    <span class="design-list-meta">dotenvx run -- node index.js</span>
+    <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
     <a class="design-link" href="/docs/nextjs">Next.js</a>
-    <span class="design-list-meta">dotenvx run -- next</span>
+    <span class="design-list-meta">npm install @dotenvx/next-env</span>
   </li>
   <li>
     <a class="design-link" href="/docs/express">Express</a>
-    <span class="design-list-meta">dotenvx run -- node server.js</span>
+    <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
     <a class="design-link" href="/docs/astro">Astro</a>
@@ -112,22 +112,22 @@ layout: radar
   </li>
   <li>
     <a class="design-link" href="/docs/bun">Bun</a>
-    <span class="design-list-meta">dotenvx run -- bun</span>
+    <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cloudflare-workers">Cloudflare Workers</a>
-    <span class="design-list-meta">dotenvx run -- wrangler</span>
+    <span class="design-list-meta">import dotenvx from '@dotenvx/dotenvx'</span>
   </li>
 {% endcapture %}
 
 {% capture qs_python_items %}
   <li>
     <a class="design-link" href="/docs/python">Python</a>
-    <span class="design-list-meta">dotenvx run -- python main.py</span>
+    <span class="design-list-meta">pip install python-dotenvx</span>
   </li>
   <li>
     <a class="design-link" href="/docs/flask">Flask</a>
-    <span class="design-list-meta">platforms</span>
+    <span class="design-list-meta">pip install python-dotenvx</span>
   </li>
   <li>
     <a class="design-link" href="/docs/uv">uv</a>
@@ -145,11 +145,15 @@ layout: radar
 {% capture qs_ruby_items %}
   <li>
     <a class="design-link" href="/docs/ruby">Ruby</a>
-    <span class="design-list-meta">dotenvx run -- ruby index.rb</span>
+    <span class="design-list-meta">gem install dotenvx</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/rails">Rails</a>
+    <span class="design-list-meta">gem "dotenvx-rails"</span>
   </li>
   <li>
     <a class="design-link" href="/docs/sinatra">Sinatra</a>
-    <span class="design-list-meta">platforms</span>
+    <span class="design-list-meta">gem install dotenvx</span>
   </li>
 {% endcapture %}
 

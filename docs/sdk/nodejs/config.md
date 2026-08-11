@@ -2,7 +2,7 @@
 layout: docs-cli
 eyebrow: Node
 eyebrow_href: /docs/sdk/nodejs/
-command: "config()"
+command: "dotenvx.config()"
 title: config
 description: Use directly in node.js code.
 permalink: /docs/sdk/nodejs/config/

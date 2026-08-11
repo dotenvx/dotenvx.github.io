@@ -1,9 +1,17 @@
 {% comment %}
   Homepage-style copyable command for CLI docs heroes.
-  locals: command (required)
+  locals: command (required), prompt (optional, default true — false for SDK code)
 {% endcomment %}
 {% assign command = include.command | strip %}
-{% assign command_display = "$ " | append: command %}
+{% assign show_prompt = true %}
+{% if include.prompt == false or include.prompt == "false" %}
+  {% assign show_prompt = false %}
+{% endif %}
+{% if show_prompt %}
+  {% assign command_display = "$ " | append: command %}
+{% else %}
+  {% assign command_display = command %}
+{% endif %}
 
 <div class="docs-cli-hero-command">
   <div class="docs-hero-mark-frame docs-hero-mark-frame--command">

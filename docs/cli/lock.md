@@ -15,9 +15,9 @@ crumbs:
     href: /docs/cli
 options_title: Commands
 options:
-  - title: up
+  - title: "lock up"
     href: /docs/cli/lock/up/
-  - title: down
+  - title: "lock down"
     href: /docs/cli/lock/down/
 ---
 {% capture cli_code_0 %}

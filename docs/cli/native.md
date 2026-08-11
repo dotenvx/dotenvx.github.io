@@ -13,13 +13,13 @@ crumbs:
     href: /docs/cli
 options_title: Commands
 options:
-  - title: up
+  - title: "native up"
     href: /docs/cli/native/up/
-  - title: down
+  - title: "native down"
     href: /docs/cli/native/down/
-  - title: push
+  - title: "native push"
     href: /docs/cli/native/push/
-  - title: pull
+  - title: "native pull"
     href: /docs/cli/native/pull/
 ---
 Native uses your operating system's secret store:

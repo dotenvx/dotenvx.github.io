@@ -22,6 +22,46 @@
         {% assign cli_eyebrow_href = page.eyebrow_href %}
       {% endif %}
 
+      {% comment %}Core command shown in the hero (homepage-style copyable).{% endcomment %}
+      {% if page.command and page.command != "" %}
+        {% assign cli_command = page.command %}
+      {% elsif cli_eyebrow contains "dotenvx" %}
+        {% assign cli_title = page.title | strip %}
+        {% assign cli_title_down = cli_title | downcase %}
+        {% assign cli_title_first = cli_title | slice: 0 %}
+        {% assign cli_is_flag = false %}
+        {% if cli_title_first == "-" %}
+          {% assign cli_is_flag = true %}
+        {% endif %}
+        {% if cli_title contains "KEY" or cli_title contains "DOTENV_" or cli_title contains "_PLAIN" %}
+          {% assign cli_is_flag = true %}
+        {% endif %}
+        {% assign cli_subcommands = "up|down|push|pull|login|logout|move|open|status|settings|directory" | split: "|" %}
+        {% for sub in cli_subcommands %}
+          {% if cli_title_down == sub %}
+            {% assign cli_is_flag = true %}
+            {% assign cli_title = sub %}
+          {% endif %}
+        {% endfor %}
+        {% if cli_is_flag %}
+          {% assign cli_command = cli_eyebrow | append: " " | append: cli_title %}
+        {% else %}
+          {% assign cli_command = cli_eyebrow %}
+        {% endif %}
+      {% else %}
+        {% assign cli_command = page.title | downcase | prepend: "dotenvx " %}
+      {% endif %}
+
+      {% capture cli_hero_visual %}
+        {% include components/docs-cli-hero-command.html
+          command=cli_command
+          video=page.video
+          video_webm=page.video_webm
+          video_poster=page.video_poster
+          video_title=page.video_title
+        %}
+      {% endcapture %}
+
       <div class="armor-shell docs-page">
         {% include components/docs-hero.html
           bare=true
@@ -29,12 +69,7 @@
           eyebrow_href=cli_eyebrow_href
           title=page.title
           description=page.description
-          icon=page.icon
-          mark=page.mark
-          video=page.video
-          video_webm=page.video_webm
-          video_poster=page.video_poster
-          video_title=page.video_title
+          visual=cli_hero_visual
         %}
 
         <section class="docs-cli-body docs-guide-body">
@@ -89,6 +124,7 @@
     <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/docs-cli-hero-copy.js' | relative_url }}"></script>
     {% if page.video and page.video != "" %}
       <script src="{{ '/assets/js/design-video-corner.js' | relative_url }}"></script>
     {% endif %}

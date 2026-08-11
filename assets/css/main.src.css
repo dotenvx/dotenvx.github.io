@@ -4755,6 +4755,63 @@ html.dark .radar-btn {
   display: inline-block;
 }
 
+.docs-cli-hero-command {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-height: inherit;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.docs-hero-mark-frame--command {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.docs-cli-hero-command-copy {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0;
+}
+
+.docs-cli-hero-command-copy .design-code {
+  font-size: var(--design-text-size) !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 0.35rem 0.55rem !important;
+  text-align: left;
+  white-space: normal !important;
+}
+
+.docs-cli-hero-command-copy:hover .design-code,
+.docs-cli-hero-command-copy:focus-visible .design-code {
+  color: var(--design-ink) !important;
+  outline: none;
+}
+
+.docs-cli-hero-command-copy:focus-visible {
+  outline: none;
+}
+
+@media (min-width: 900px) {
+  .docs-cli-hero-command {
+    height: 100%;
+    min-height: inherit;
+  }
+
+  .docs-cli-hero-command-copy .design-code {
+    font-size: var(--design-text-title) !important;
+  }
+}
+
 .docs-hero-icon {
   color: var(--design-ink);
   display: block;

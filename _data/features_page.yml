@@ -62,18 +62,18 @@ items:
     href: /docs/cli/run-convention-nextjs
   - label: Pull secrets remotely from places like 1Password
     meta: op://..
-    href: /docs/secrets-in-1password
+    href: /docs/1password
   - label: Pull secrets remotely from Bitwarden
     meta: bw://..
-    href: /docs/secrets-in-bitwarden
+    href: /docs/bitwarden
   - label: Use secrets with Claude
     meta: dotenvx run --redact -- claude
-    href: /docs/secrets-in-claude
+    href: /docs/claude
   - label: Use secrets with Cursor
     meta: dotenvx run --redact -- agent
-    href: /docs/secrets-in-cursor
+    href: /docs/cursor
   - label: Use secrets with Codex
     meta: dotenvx run --redact -- codex
-    href: /docs/secrets-in-codex
+    href: /docs/codex
   - label: and more
     href: /docs

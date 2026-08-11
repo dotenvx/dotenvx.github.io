@@ -183,7 +183,7 @@ export async function GET() {
 }
 ```
 
-see [astro guide](https://dotenvx.com/docs/secrets-in-astro)
+see [astro guide](https://dotenvx.com/docs/astro)
 
 </details>
 <details><summary>Expo 🧭</summary><br>
@@ -203,7 +203,7 @@ Preface Expo scripts with `dotenvx run --`.
 }
 ```
 
-see [expo guide](https://dotenvx.com/docs/secrets-in-expo)
+see [expo guide](https://dotenvx.com/docs/expo)
 
 </details>
 <details><summary>Next.js ▲</summary><br>
@@ -3223,8 +3223,8 @@ Set `mask: 0` to fully mask values.
   * [PHP](https://dotenvx.com/docs/languages/php)
   * [Rust](https://dotenvx.com/docs/languages/rust)
 * [Frameworks](https://dotenvx.com/docs#frameworks)
-  * [Astro](https://dotenvx.com/docs/secrets-in-astro)
-  * [Expo](https://dotenvx.com/docs/secrets-in-expo)
+  * [Astro](https://dotenvx.com/docs/astro)
+  * [Expo](https://dotenvx.com/docs/expo)
   * [Express](https://dotenvx.com/docs/frameworks/express)
   * [Next](https://dotenvx.com/docs/frameworks/next)
   * [Remix](https://dotenvx.com/docs/frameworks/remix)

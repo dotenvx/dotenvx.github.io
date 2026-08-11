@@ -3,13 +3,15 @@
 {% assign shell_class = include.shell_class %}
 {% assign hero_class = include.class %}
 {% assign hide_visual = include.hide_visual %}
+{% assign bare = include.bare %}
 
-<section class="design-hero{% if hero_class %} {{ hero_class }}{% endif %}">
-  <div class="armor-shell{% if shell_class %} {{ shell_class }}{% endif %}">
+{% capture design_hero_grid %}
     <div class="design-hero-grid{% if hide_visual %} design-hero-grid--copy-only{% endif %}">
       <div class="design-hero-copy">
         {% include components/design-hero-header.html
           eyebrow=include.eyebrow
+          eyebrow_href=include.eyebrow_href
+          crumbs=include.crumbs
           title=include.title
           description=include.description
           heading_tag=include.heading_tag
@@ -29,5 +31,14 @@
         </div>
       {% endunless %}
     </div>
-  </div>
+{% endcapture %}
+
+<section class="design-hero{% if hero_class %} {{ hero_class }}{% endif %}">
+  {% if bare %}
+    {{ design_hero_grid }}
+  {% else %}
+    <div class="armor-shell{% if shell_class %} {{ shell_class }}{% endif %}">
+      {{ design_hero_grid }}
+    </div>
+  {% endif %}
 </section>

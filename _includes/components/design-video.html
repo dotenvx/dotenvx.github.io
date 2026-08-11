@@ -1,0 +1,38 @@
+{% comment %} Mirrored from ../radar design-video {% endcomment %}
+{% assign mp4 = include.mp4 %}
+{% assign webm = include.webm %}
+{% assign poster = include.poster %}
+{% if include.hide_title %}
+  {% assign title = "" %}
+{% elsif include.title and include.title != "" %}
+  {% assign title = include.title %}
+{% else %}
+  {% assign title = "Watch it in action" %}
+{% endif %}
+{% assign video_class = include.class %}
+
+<figure class="design-video{% if video_class %} {{ video_class }}{% endif %}">
+  {% if title != "" %}
+    <figcaption class="design-video-title">{{ title }}</figcaption>
+  {% endif %}
+  <div class="design-video-frame">
+    <video
+      class="design-video-player"
+      controls
+      playsinline
+      {% if poster and poster != "" %}poster="{{ poster }}"{% endif %}
+    >
+      {% if mp4 and mp4 != "" %}
+        <source src="{{ mp4 }}" type="video/mp4">
+      {% endif %}
+      {% if webm and webm != "" %}
+        <source src="{{ webm }}" type="video/webm">
+      {% endif %}
+      {% if mp4 and mp4 != "" %}
+        Download the <a class="design-link" href="{{ mp4 }}">mp4</a>{% if webm and webm != "" %} <a class="design-link" href="{{ webm }}">webm</a>{% endif %} video.
+      {% elsif webm and webm != "" %}
+        Download the <a class="design-link" href="{{ webm }}">webm</a> video.
+      {% endif %}
+    </video>
+  </div>
+</figure>

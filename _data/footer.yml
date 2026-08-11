@@ -6,6 +6,8 @@ links:
     href: /armor
   - label: Features
     href: /features
+  - label: Company
+    href: /company
   - label: Open Source
     href: /opensource
   - label: Changelog
@@ -29,10 +31,12 @@ links:
   - label: NPM
     href: https://www.npmjs.com/package/@dotenvx/dotenvx
     external: true
-  - label: Pricing
-    href: /pricing
   - label: Docs
     href: /docs
+  - label: Pricing
+    href: /pricing
+  - label: Legal
+    href: /legal
   - label: Privacy
     href: /privacy
   - label: Terms

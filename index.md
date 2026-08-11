@@ -41,6 +41,7 @@ layout: radar
     }
   }
 
+  /* Centered install choice — same arresting layout as /armor */
   .home-install-choice {
     width: 100%;
   }
@@ -50,32 +51,37 @@ layout: radar
     padding: 1.25rem 1.35rem;
   }
 
-  .home-install-copy {
+  .home-install-choice .design-btn[hidden],
+  .home-install-choice [hidden] {
+    display: none !important;
+  }
+
+  .home-install-you {
     align-items: center;
-    background: transparent;
-    border: 0;
-    color: var(--design-ink);
-    cursor: pointer;
     display: flex;
-    font: inherit;
     justify-content: center;
-    padding: 0;
-    text-align: center;
     width: 100%;
   }
 
-  .home-install-copy[hidden] {
-    display: none !important;
+  .home-install-code-copy {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    justify-content: center;
+    padding: 0;
   }
 
-  .home-install-copy:hover,
-  .home-install-copy:focus-visible {
-    color: var(--design-gold);
+  .home-install-code-copy:hover .design-code,
+  .home-install-code-copy:focus-visible .design-code {
+    color: var(--design-ink) !important;
     outline: none;
   }
 
-  .home-install-prompt-btn[hidden] {
-    display: none !important;
+  .home-install-code-copy:focus-visible {
+    outline: none;
   }
 
   @media (max-width: 480px) {
@@ -114,39 +120,7 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
   visual=home_hero_visual
 %}
 
-<section class="radar-section" aria-label="Install dotenvx">
-  <div class="armor-shell">
-    {% capture home_choice_current %}
-      <button type="button" class="home-install-copy" id="hero-panel-you">
-        {% include components/design-code.html value="$ curl -sfS https://dotenvx.sh | sh" %}
-      </button>
-      {% include components/design-btn.html
-        label="Copy Prompt"
-        id="hero-panel-agent"
-        class="home-install-prompt-btn"
-        hidden=true
-      %}
-    {% endcapture %}
-    {% capture home_choice_options %}
-      {% include components/design-choice-option.html
-        label="For you"
-        selected=true
-        value="you"
-      %}
-      {% include components/design-choice-option.html
-        label="For your agent"
-        value="agent"
-      %}
-    {% endcapture %}
-    {% include components/design-choice.html
-      count=2
-      aria_label="Audience"
-      current=home_choice_current
-      options=home_choice_options
-      class="home-install-choice"
-    %}
-  </div>
-</section>
+{% include components/home-install.html %}
 
 {% include components/home-workflow.html %}
 
@@ -173,33 +147,6 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
 <script>
 (function () {
   var encryptText = 'dotenvx encrypt'
-  var youText = 'curl -sfS https://dotenvx.sh | sh'
-  var agentText = [
-    'Demo dotenvx for me with a hello-world encrypted env workflow. Walk through each step and show the commands and output.',
-    '',
-    'Important: Do NOT overwrite, modify, or encrypt any existing .env (or .env.* / .env.keys) in this project. Work in a fresh temp demo directory only.',
-    '',
-    '1. Install dotenvx:',
-    '   curl -sfS https://dotenvx.sh | sh',
-    '',
-    '2. Create a tiny demo app in a new empty directory (for example /tmp/dotenvx-hello):',
-    '   mkdir -p /tmp/dotenvx-hello && cd /tmp/dotenvx-hello',
-    '   echo "HELLO=World" > .env',
-    '   echo "console.log(\'Hello \' + process.env.HELLO)" > index.js',
-    '',
-    '3. Encrypt that demo .env (use local .env.keys / file storage if prompted):',
-    '   dotenvx encrypt',
-    '   Show that HELLO is now an encrypted: value.',
-    '',
-    '4. Commit it safely (still only inside the demo directory):',
-    '   Keep .env.keys out of git (gitignore it).',
-    '   git init && git add .env index.js && git commit -m "add encrypted env"',
-    '',
-    '5. Decrypt at runtime:',
-    '   dotenvx run -- node index.js',
-    '   Expect: Hello World'
-  ].join('\n')
-  var tab = 'you'
   var copyTimeouts = new WeakMap()
 
   function ready(fn) {
@@ -242,49 +189,10 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
 
   ready(function () {
     var encryptBtn = document.getElementById('home-hero-encrypt')
-    var choice = document.querySelector('.home-install-choice')
-    var options = choice ? choice.querySelectorAll('.design-choice-option') : []
-    var panelYou = document.getElementById('hero-panel-you')
-    var panelAgent = document.getElementById('hero-panel-agent')
-
-    if (encryptBtn) {
-      encryptBtn.addEventListener('click', function () {
-        copyText(encryptText, function () {
-          flashCode(encryptBtn, 'copied')
-        })
-      })
-    }
-
-    if (!choice || !options.length || !panelYou || !panelAgent) return
-
-    function show(next) {
-      tab = next
-      options.forEach(function (option) {
-        option.setAttribute('aria-pressed', option.getAttribute('data-choice-value') === tab ? 'true' : 'false')
-      })
-      panelYou.hidden = tab !== 'you'
-      panelAgent.hidden = tab !== 'agent'
-      panelAgent.textContent = 'Copy Prompt'
-    }
-
-    options.forEach(function (option) {
-      option.addEventListener('click', function () {
-        show(option.getAttribute('data-choice-value') || 'you')
-      })
-    })
-
-    panelYou.addEventListener('click', function () {
-      copyText(youText, function () {
-        flashCode(panelYou, 'copied')
-      })
-    })
-
-    panelAgent.addEventListener('click', function () {
-      copyText(agentText, function () {
-        panelAgent.textContent = 'Copied'
-        scheduleReset(panelAgent, function () {
-          panelAgent.textContent = 'Copy Prompt'
-        })
+    if (!encryptBtn) return
+    encryptBtn.addEventListener('click', function () {
+      copyText(encryptText, function () {
+        flashCode(encryptBtn, 'copied')
       })
     })
   })

@@ -1,0 +1,28 @@
+---
+layout: docs-cli
+title: get KEY -f directory --convention=nextjs
+description: Return an environment variable using the Next.js convention from a directory. This is useful with monorepos.
+permalink: /docs/cli/get-key-f-directory-convention-nextjs/
+redirect_from:
+  - /docs/advanced/get-key-f-directory-convention-nextjs
+  - /docs/advanced/get-key-f-directory-convention-nextjs/
+  - /docs/ref/cli/get-key-f-directory-convention-nextjs
+  - /docs/ref/cli/get-key-f-directory-convention-nextjs/
+crumbs:
+  - label: Docs
+    href: /docs/introduction
+  - label: CLI
+    href: /docs/cli
+  - label: Get
+    href: /docs/cli/get/
+---
+The directory becomes the base for every file in the convention:
+
+{% capture cli_code_0 %}
+$ cd apps/web
+
+dotenvx get HELLO -f ../.. --convention=nextjs
+development local
+{% endcapture %}
+{% capture cli_code_0_copy %}cd apps/web{% endcapture %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}

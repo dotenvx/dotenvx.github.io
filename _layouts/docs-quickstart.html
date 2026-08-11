@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include layouts/radar-theme.html %}
+    {% include layouts/meta.html %}
+    {% include layouts/analytics.html %}
+  </head>
+  <body class="radar-layout">
+    {% include components/storm-lightning.html %}
+    {% include components/radar-nav.html %}
+    <main class="radar-main">
+      {% assign docs_crumbs = page.crumbs | default: site.data.docs.quickstart_crumbs %}
+      <div class="armor-shell docs-page">
+        {% include components/docs-hero.html
+          bare=true
+          eyebrow=page.eyebrow
+          crumbs=docs_crumbs
+          title=page.title
+          description=page.description
+          mark=page.mark
+          icon=page.icon
+          video=page.video
+          video_webm=page.video_webm
+          video_poster=page.video_poster
+          video_title=page.video_title
+        %}
+
+        <section class="docs-quickstart-body">
+          {% if page.prerequisite_lede or page.prerequisite or page.prerequisite_links %}
+            <div class="docs-quickstart-step">
+              <h2 class="design-page-title design-page-title--flush">{{ page.prerequisite_title | default: "Prerequisite" }}</h2>
+              {% if page.prerequisite_lede %}
+                <div class="design-paragraph">{{ page.prerequisite_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% if page.prerequisite_links %}
+                <ul class="design-list-items">
+                  {% for link in page.prerequisite_links %}
+                    <li>
+                      <a class="design-link" href="{{ link.href }}"{% if link.href contains "://" %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if page.prerequisite %}
+                {% include components/design-codeblock.html value=page.prerequisite copy_text=page.prerequisite_copy %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if page.setup or page.setup_lede %}
+            <div class="docs-quickstart-step">
+              {% if page.setup_title and page.setup_title != "" %}
+                <h2 class="design-page-title design-page-title--flush">{{ page.setup_title }}</h2>
+              {% elsif page.setup_title == nil %}
+                <h2 class="design-page-title design-page-title--flush">0. Setup</h2>
+              {% endif %}
+              {% if page.setup_lede %}
+                <div class="design-paragraph">{{ page.setup_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% if page.setup %}
+                {% include components/design-codeblock.html value=page.setup copy_text=page.setup_copy %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if page.install %}
+            <div class="docs-quickstart-step">
+              <h2 class="design-page-title design-page-title--flush">{{ page.install_title | default: "1. Install" }}</h2>
+              {% if page.install_lede %}
+                <div class="design-paragraph">{{ page.install_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% else %}
+                <p class="design-paragraph">Get the Dotenvx CLI.</p>
+              {% endif %}
+              {% include components/design-codeblock.html value=page.install copy_text=page.install_copy %}
+              {% if page.install_after_lede %}
+                <div class="design-paragraph">{{ page.install_after_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% if page.install_after %}
+                {% include components/design-codeblock.html value=page.install_after copy_text=page.install_after_copy %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if page.encrypt %}
+            <div class="docs-quickstart-step">
+              <h2 class="design-page-title design-page-title--flush">{{ page.encrypt_title | default: "2. Encrypt" }}</h2>
+              {% if page.encrypt_lede %}
+                <div class="design-paragraph">{{ page.encrypt_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% else %}
+                <p class="design-paragraph">Encrypt your .env file.</p>
+              {% endif %}
+              {% include components/design-codeblock.html value=page.encrypt copy_text=page.encrypt_copy %}
+              {% if page.encrypt_after_lede %}
+                <div class="design-paragraph">{{ page.encrypt_after_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% if page.encrypt_after %}
+                {% include components/design-codeblock.html value=page.encrypt_after copy_text=page.encrypt_after_copy %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if page.inject or page.inject_lede or page.inject_after %}
+            <div class="docs-quickstart-step">
+              <h2 class="design-page-title design-page-title--flush">{{ page.inject_title | default: "3. Inject" }}</h2>
+              {% if page.inject_lede %}
+                <div class="design-paragraph">{{ page.inject_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% elsif page.inject %}
+                <p class="design-paragraph">Then inject your encrypted secrets at runtime.</p>
+              {% endif %}
+              {% if page.inject %}
+                {% include components/design-codeblock.html value=page.inject copy_text=page.inject_copy %}
+              {% endif %}
+              {% if page.inject_after_lede %}
+                <div class="design-paragraph">{{ page.inject_after_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% if page.inject_after %}
+                {% include components/design-codeblock.html value=page.inject_after copy_text=page.inject_after_copy %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if page.run %}
+            <div class="docs-quickstart-step">
+              <h2 class="design-page-title design-page-title--flush">{{ page.run_title | default: "4. Run" }}</h2>
+              {% if page.run_lede %}
+                <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% include components/design-codeblock.html value=page.run copy_text=page.run_copy %}
+            </div>
+          {% endif %}
+
+          {% if content != blank %}
+            <div class="docs-quickstart-extra design-prose">
+              {{ content }}
+            </div>
+          {% endif %}
+
+          {% include components/docs-quickstart-pager.html %}
+        </section>
+      </div>
+    </main>
+    {% include components/footer.html %}
+    {% include components/design-theme-control.html %}
+    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}"></script>
+    {% if page.video %}
+      <script src="{{ '/assets/js/design-video-corner.js' | relative_url }}"></script>
+    {% endif %}
+  </body>
+</html>

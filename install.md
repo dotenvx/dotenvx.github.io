@@ -1,15 +1,15 @@
 ---
 title: install
-redirect_to: /docs/install
+redirect_to: /docs/cli-quickstart
 ---
 
 <div class="flex flex-col gap-6 mx-auto w-fit text-center items-center mt-40">
   <div class="flex flex-col gap-2">
     <span class="">You are being redirected to</span>
-    <a href="/docs/install"><u>/docs/install</u></a>
+    <a href="/docs/cli-quickstart"><u>/docs/cli-quickstart</u></a>
   </div>
 
-  <a class="btn-outline w-fit" href="/docs/install">Continue</a>
+  <a class="btn-outline w-fit" href="/docs/cli-quickstart">Continue</a>
 
   <span class="text-xs">in <span id="counter">4</span> second(s)</span>
 </div>
@@ -21,7 +21,7 @@ redirect_to: /docs/install
     var count = div.textContent * 1 - 1
     div.textContent = count
     if (count <= 0) {
-      window.location.replace("/docs/install")
+      window.location.replace("/docs/cli-quickstart")
       clearInterval(interval)
     }
   }, 1000)

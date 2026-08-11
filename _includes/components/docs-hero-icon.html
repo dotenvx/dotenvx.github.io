@@ -1,0 +1,116 @@
+{% comment %}
+  Quickstart hero icon — maps page.icon keys to SVG includes + brand color.
+  Mirrors ../docs QuickstartHero ICONS.
+{% endcomment %}
+{% assign icon_key = include.icon | default: "cli" %}
+{% assign icon_color = "var(--design-ink)" %}
+{% assign icon_file = "" %}
+{% assign icon_invert = false %}
+{% assign icon_cli = false %}
+
+{% case icon_key %}
+  {% when "cli" %}
+    {% assign icon_cli = true %}
+  {% when "bash" %}
+    {% assign icon_file = "bash.html" %}
+    {% assign icon_color = "#4EAA25" %}
+  {% when "fish" %}
+    {% assign icon_file = "fish.html" %}
+    {% assign icon_invert = true %}
+  {% when "zsh" %}
+    {% assign icon_file = "zsh.html" %}
+    {% assign icon_color = "#F15A24" %}
+  {% when "cron" %}
+    {% assign icon_cli = true %}
+  {% when "claude" %}
+    {% assign icon_file = "claude-code.html" %}
+    {% assign icon_color = "#D97757" %}
+  {% when "codex" %}
+    {% assign icon_file = "openai.html" %}
+  {% when "cursor" %}
+    {% assign icon_file = "cursor.html" %}
+  {% when "1password" %}
+    {% assign icon_file = "1password.html" %}
+    {% assign icon_color = "#0572EC" %}
+  {% when "bitwarden" %}
+    {% assign icon_file = "bitwarden.html" %}
+    {% assign icon_color = "#175DDC" %}
+  {% when "nodejs" %}
+    {% assign icon_file = "nodejs.html" %}
+    {% assign icon_color = "#339933" %}
+  {% when "expo" %}
+    {% assign icon_file = "nodejs.html" %}
+    {% assign icon_color = "#339933" %}
+  {% when "bun" %}
+    {% assign icon_file = "bun.html" %}
+    {% assign icon_invert = true %}
+  {% when "nextjs" %}
+    {% assign icon_file = "nextjs.html" %}
+    {% assign icon_invert = true %}
+  {% when "express" %}
+    {% assign icon_file = "express.html" %}
+    {% assign icon_invert = true %}
+  {% when "astro" %}
+    {% assign icon_file = "astro.html" %}
+  {% when "remix" %}
+    {% assign icon_file = "remix.html" %}
+    {% assign icon_invert = true %}
+  {% when "cloudflare-workers" %}
+    {% assign icon_file = "cloudflare-workers.html" %}
+    {% assign icon_color = "#F38020" %}
+  {% when "python" %}
+    {% assign icon_file = "python.html" %}
+    {% assign icon_color = "#3776AB" %}
+  {% when "uv" %}
+    {% assign icon_file = "python.html" %}
+    {% assign icon_color = "#3776AB" %}
+  {% when "php" %}
+    {% assign icon_file = "php.html" %}
+    {% assign icon_color = "#777BB4" %}
+  {% when "ruby" %}
+    {% assign icon_file = "ruby.html" %}
+    {% assign icon_color = "#CC342D" %}
+  {% when "go" %}
+    {% assign icon_file = "go.html" %}
+    {% assign icon_color = "#00ADD8" %}
+  {% when "rust" %}
+    {% assign icon_file = "rust.html" %}
+    {% assign icon_invert = true %}
+  {% when "java" %}
+    {% assign icon_file = "java.html" %}
+    {% assign icon_color = "#F89820" %}
+  {% when "kotlin" %}
+    {% assign icon_file = "kotlin.html" %}
+    {% assign icon_color = "#7F52FF" %}
+  {% when "clojure" %}
+    {% assign icon_file = "clojure.html" %}
+    {% assign icon_color = "#5881D8" %}
+  {% when "dotnet" %}
+    {% assign icon_file = "dotnet.html" %}
+    {% assign icon_color = "#512BD4" %}
+  {% when "docker" %}
+    {% assign icon_file = "docker.html" %}
+    {% assign icon_color = "#2496ED" %}
+  {% when "docker-compose" %}
+    {% assign icon_file = "docker.html" %}
+    {% assign icon_color = "#2496ED" %}
+  {% when "github-actions" %}
+    {% assign icon_file = "github.html" %}
+  {% when "monorepos" %}
+    {% assign icon_file = "folder.html" %}
+  {% when "nx" %}
+    {% assign icon_file = "nx.html" %}
+  {% when "turborepo" %}
+    {% assign icon_file = "turborepo.html" %}
+  {% else %}
+    {% assign icon_cli = true %}
+{% endcase %}
+
+{% if icon_cli %}
+  <span class="docs-hero-icon docs-hero-icon--cli{% if icon_invert %} docs-hero-icon--invert-dark{% endif %}" style="color: {{ icon_color }};" aria-hidden="true">❯_</span>
+{% else %}
+  {% assign icon_path = "icons/docs/" | append: icon_file %}
+  <span class="docs-hero-icon{% if icon_invert %} docs-hero-icon--invert-dark{% endif %}" style="color: {{ icon_color }};">
+    {% include {{ icon_path }} class="docs-hero-icon-svg" %}
+  </span>
+{% endif %}

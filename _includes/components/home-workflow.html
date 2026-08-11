@@ -10,17 +10,8 @@ $ echo "HELLO=World" > .env
 $ dotenvx encrypt
 ◈ encrypted (.env)
         {% endcapture %}
-        {% include components/design-codeblock.html value=home_workflow_encrypt label="Encrypt" %}
-      </div>
-
-      <div class="home-workflow-step">
-        <p class="design-list-title">Commit it safely</p>
-        {% capture home_workflow_commit %}
-HELLO=encrypted:BAgYNmJ3PV9+aajRwCh1Wx...
-$ git add .env
-$ git commit -m "add encrypted env"
-        {% endcapture %}
-        {% include components/design-codeblock.html value=home_workflow_commit label="Commit encrypted env" %}
+        {% assign home_workflow_encrypt_copy = 'echo "HELLO=World" > .env && dotenvx encrypt' %}
+        {% include components/design-codeblock.html value=home_workflow_encrypt copy_text=home_workflow_encrypt_copy label="Encrypt" %}
       </div>
 
       <div class="home-workflow-step">
@@ -31,7 +22,19 @@ $ dotenvx run -- node index.js
 ⟐ injected env (2) from .env
 Hello World
         {% endcapture %}
-        {% include components/design-codeblock.html value=home_workflow_run label="Run" %}
+        {% capture home_workflow_run_copy %}echo "console.log('Hello ' + process.env.HELLO)" > index.js && dotenvx run -- node index.js{% endcapture %}
+        {% include components/design-codeblock.html value=home_workflow_run copy_text=home_workflow_run_copy label="Run" %}
+      </div>
+
+      <div class="home-workflow-step">
+        <p class="design-list-title">Commit it safely</p>
+        {% capture home_workflow_commit %}
+HELLO=encrypted:BAgYNmJ3PV9+aajRwCh1Wx...
+$ git add .env
+$ git commit -m "add encrypted env"
+        {% endcapture %}
+        {% assign home_workflow_commit_copy = 'git add .env && git commit -m "add encrypted env"' %}
+        {% include components/design-codeblock.html value=home_workflow_commit copy_text=home_workflow_commit_copy label="Commit encrypted env" %}
       </div>
     </div>
   </div>

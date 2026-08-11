@@ -1,0 +1,94 @@
+quickstart_crumbs:
+  - label: Quickstarts
+    href: /docs/quickstarts
+
+cli_crumbs:
+  - label: Docs
+    href: /docs/introduction
+  - label: CLI
+    href: /docs/cli
+
+sdk_crumbs:
+  - label: Docs
+    href: /docs/introduction
+  - label: SDK
+    href: /docs/sdk
+
+# Order matches /docs/quickstarts — used for prev/next pager
+quickstarts:
+  - label: CLI
+    href: /docs/cli-quickstart/
+  - label: Claude
+    href: /docs/claude/
+  - label: Codex
+    href: /docs/codex/
+  - label: Cursor
+    href: /docs/cursor/
+  - label: GitHub Actions
+    href: /docs/github-actions/
+  - label: Node.js
+    href: /docs/nodejs/
+  - label: Next.js
+    href: /docs/nextjs/
+  - label: Express
+    href: /docs/express/
+  - label: Astro
+    href: /docs/astro/
+  - label: Remix
+    href: /docs/remix/
+  - label: Expo
+    href: /docs/expo/
+  - label: Bun
+    href: /docs/bun/
+  - label: Cloudflare Workers
+    href: /docs/cloudflare-workers/
+  - label: Python
+    href: /docs/python/
+  - label: Flask
+    href: /docs/flask/
+  - label: uv
+    href: /docs/uv/
+  - label: PHP
+    href: /docs/php/
+  - label: Ruby
+    href: /docs/ruby/
+  - label: Sinatra
+    href: /docs/sinatra/
+  - label: Go
+    href: /docs/go/
+  - label: Echo
+    href: /docs/echo/
+  - label: Rust
+    href: /docs/rust/
+  - label: Rocket
+    href: /docs/rocket/
+  - label: Java
+    href: /docs/java/
+  - label: Kotlin
+    href: /docs/kotlin/
+  - label: Clojure
+    href: /docs/clojure/
+  - label: .NET
+    href: /docs/dotnet/
+  - label: Docker
+    href: /docs/docker/
+  - label: Docker Compose
+    href: /docs/docker-compose/
+  - label: Monorepos
+    href: /docs/monorepos/
+  - label: Nx
+    href: /docs/nx/
+  - label: Turborepo
+    href: /docs/turborepo/
+  - label: Bash
+    href: /docs/bash/
+  - label: Fish
+    href: /docs/fish/
+  - label: Zsh
+    href: /docs/zsh/
+  - label: Cron
+    href: /docs/cron/
+  - label: 1Password
+    href: /docs/1password/
+  - label: Bitwarden
+    href: /docs/bitwarden/

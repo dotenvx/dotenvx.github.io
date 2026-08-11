@@ -6,7 +6,7 @@ From the creator of dotenv.
 
 ## Actions
 
-- [Quickstart](https://dotenvx.com/docs/secrets-with-cli)
+- [Quickstart](https://dotenvx.com/docs/cli-quickstart)
 - [Documentation](https://dotenvx.com/docs)
 
 ## Open Source, Trusted Across Leading Developer Stacks

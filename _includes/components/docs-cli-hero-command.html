@@ -1,21 +1,9 @@
 {% comment %}
   Homepage-style copyable command for CLI docs heroes.
-  locals: command (required), video, video_webm, video_poster, video_title
+  locals: command (required)
 {% endcomment %}
 {% assign command = include.command | strip %}
 {% assign command_display = "$ " | append: command %}
-
-{% capture docs_cli_hero_video %}
-  {% if include.video and include.video != "" %}
-    {% include components/design-video-corner.html
-      class="design-video-corner--hero"
-      mp4=include.video
-      webm=include.video_webm
-      poster=include.video_poster
-      label=include.video_title
-    %}
-  {% endif %}
-{% endcapture %}
 
 <div class="docs-cli-hero-command">
   <div class="docs-hero-mark-frame docs-hero-mark-frame--command">
@@ -28,6 +16,5 @@
     >
       {% include components/design-code.html value=command_display %}
     </button>
-    {{ docs_cli_hero_video }}
   </div>
 </div>

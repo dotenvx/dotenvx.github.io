@@ -53,13 +53,7 @@
       {% endif %}
 
       {% capture cli_hero_visual %}
-        {% include components/docs-cli-hero-command.html
-          command=cli_command
-          video=page.video
-          video_webm=page.video_webm
-          video_poster=page.video_poster
-          video_title=page.video_title
-        %}
+        {% include components/docs-cli-hero-command.html command=cli_command %}
       {% endcapture %}
 
       <div class="armor-shell docs-page">
@@ -70,6 +64,8 @@
           title=page.title
           description=page.description
           visual=cli_hero_visual
+          video=page.video
+          video_title=page.video_title
         %}
 
         <section class="docs-cli-body docs-guide-body">
@@ -125,8 +121,5 @@
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/docs-cli-hero-copy.js' | relative_url }}"></script>
-    {% if page.video and page.video != "" %}
-      <script src="{{ '/assets/js/design-video-corner.js' | relative_url }}"></script>
-    {% endif %}
   </body>
 </html>

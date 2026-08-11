@@ -20,8 +20,6 @@
           mark=page.mark
           icon=page.icon
           video=page.video
-          video_webm=page.video_webm
-          video_poster=page.video_poster
           video_title=page.video_title
         %}
 
@@ -155,8 +153,5 @@
     <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}"></script>
-    {% if page.video %}
-      <script src="{{ '/assets/js/design-video-corner.js' | relative_url }}"></script>
-    {% endif %}
   </body>
 </html>

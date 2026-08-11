@@ -147,7 +147,10 @@ $ dotenvx encrypt
     {% endcapture %}
     {% include components/design-codeblock.html value=env_encrypt_cmd copy_text="dotenvx encrypt" %}
 
-    <p class="design-paragraph"><a class="design-link" href="/docs/quickstart/encryption">Encryption quickstart →</a></p>
+    {% include components/design-btn.html
+      label="Encryption quickstart"
+      href="/docs/quickstart/encryption"
+    %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

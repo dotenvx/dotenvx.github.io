@@ -1,12 +1,105 @@
 {% comment %}
-  Mirrored from ../radar design/choice_code.
-  locals: count, selected, lines, aria_label, class, panels (html), options (html)
+  Switchable code panels in choice chrome. Mirrored from ../radar design/choice_code.
+
+  Preferred API (array of hashes — same shape as radar):
+    items: [{ id, label, code, copy_text? }, ...]
+    selected: id (defaults to first item)
+    lines: fixed visible line count so toggling doesn't resize
+    aria_label: options group label
+    class: extra classes on the root
+    copy: false to hide copy buttons
+
+  Example:
+    {% include components/design-choice-code.html
+      items=page.platforms
+      selected="macos"
+      lines=1
+      aria_label="Operating system"
+    %}
+
+  Legacy API (still supported):
+    panels: pre-rendered panel HTML
+    options: pre-rendered option HTML
+    count: option count (required with legacy panels/options)
 {% endcomment %}
 {% assign aria_label = include.aria_label | default: "Code options" %}
-{% assign count = include.count | default: 2 %}
-{% assign selected = include.selected %}
 {% assign lines = include.lines %}
 {% assign choice_class = include.class %}
+{% assign items = include.items %}
+{% assign selected = include.selected %}
+
+{% if items and items.size > 0 %}
+  {% assign count = items.size %}
+  {% if selected == nil or selected == "" %}
+    {% assign selected = items.first.id %}
+  {% endif %}
+  {% if include.copy == false or include.copy == "false" %}
+    {% assign want_copy = false %}
+  {% else %}
+    {% assign want_copy = true %}
+  {% endif %}
+
+  {% capture choice_panels %}
+    {% for item in items %}
+      {% assign item_id = item.id %}
+      {% assign item_copy = item.copy_text | default: item.copy %}
+      {% if item_id == selected %}
+        {% if want_copy %}
+          {% include components/design-choice-code-panel.html
+            id=item_id
+            active=true
+            code=item.code
+            copy_text=item_copy
+          %}
+        {% else %}
+          {% include components/design-choice-code-panel.html
+            id=item_id
+            active=true
+            code=item.code
+            copy=false
+          %}
+        {% endif %}
+      {% else %}
+        {% if want_copy %}
+          {% include components/design-choice-code-panel.html
+            id=item_id
+            code=item.code
+            copy_text=item_copy
+          %}
+        {% else %}
+          {% include components/design-choice-code-panel.html
+            id=item_id
+            code=item.code
+            copy=false
+          %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+
+  {% capture choice_options %}
+    {% for item in items %}
+      {% assign item_id = item.id %}
+      {% assign item_label = item.label | default: item_id %}
+      {% if item_id == selected %}
+        {% include components/design-choice-option.html
+          label=item_label
+          value=item_id
+          selected=true
+        %}
+      {% else %}
+        {% include components/design-choice-option.html
+          label=item_label
+          value=item_id
+        %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+{% else %}
+  {% assign count = include.count | default: 2 %}
+  {% assign choice_panels = include.panels %}
+  {% assign choice_options = include.options %}
+{% endif %}
 
 <div
   class="design-choice design-choice--code{% if lines %} has-lines{% endif %}{% if choice_class %} {{ choice_class }}{% endif %}"
@@ -15,9 +108,9 @@
   {% if selected %}data-design-choice-selected="{{ selected }}"{% endif %}
 >
   <div class="design-choice-current">
-    {{ include.panels | strip }}
+    {{ choice_panels | strip }}
   </div>
   <div class="design-choice-options" role="group" aria-label="{{ aria_label }}">
-    {{ include.options | strip }}
+    {{ choice_options | strip }}
   </div>
 </div>

@@ -3,6 +3,19 @@ title: ".env"
 description: "The .env file separates your secrets from code."
 permalink: /docs/env-file/
 layout: radar
+lang_examples:
+  - id: node
+    label: Node
+    code: "console.log('Hello ' + process.env.HELLO)"
+    copy_text: "console.log('Hello ' + process.env.HELLO)"
+  - id: python
+    label: Python
+    code: |
+      import os
+      print("Hello " + os.getenv("HELLO", ""))
+    copy_text: |
+      import os
+      print("Hello " + os.getenv("HELLO", ""))
 ---
 
 {% capture env_hero_file %}
@@ -74,37 +87,11 @@ URL=https://${HOST}/api
 
     <p class="design-paragraph">Load values in your app with <code class="design-code">process.env</code> (or your language’s equivalent).</p>
 
-    {% capture env_node %}
-console.log('Hello ' + process.env.HELLO)
-    {% endcapture %}
-    {% capture env_python %}
-import os
-print("Hello " + os.getenv("HELLO", ""))
-    {% endcapture %}
-    {% capture env_lang_panels %}
-      {% include components/design-choice-code-panel.html
-        id="node"
-        active=true
-        code=env_node
-        copy_text=env_node
-      %}
-      {% include components/design-choice-code-panel.html
-        id="python"
-        code=env_python
-        copy_text=env_python
-      %}
-    {% endcapture %}
-    {% capture env_lang_options %}
-      {% include components/design-choice-option.html label="Node" value="node" selected=true %}
-      {% include components/design-choice-option.html label="Python" value="python" %}
-    {% endcapture %}
     {% include components/design-choice-code.html
-      count=2
+      items=page.lang_examples
       selected="node"
       lines=2
       aria_label="Language"
-      panels=env_lang_panels
-      options=env_lang_options
     %}
 
     <p class="design-paragraph">It's a convenient and widely adopted format for separating your secrets and config from your code.</p>

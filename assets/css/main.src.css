@@ -2838,22 +2838,35 @@ html.dark .design-codeblock code {
   outline: none;
 }
 
-/* Mirrored from ../radar design-choice--code */
+/* Mirrored from ../radar design-choice--code
+   Self-contained: flush code surface inside the choice frame, immune to
+   parent page rules (e.g. .docs-guide-body .design-codeblock-wrap margins). */
+.design-choice--code {
+  overflow: hidden;
+}
+
 .design-choice--code .design-choice-current {
   align-items: stretch;
+  background: var(--design-code-bg);
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   min-height: 0;
-  padding: 0;
+  padding: 0 !important;
   position: relative;
   width: 100%;
 }
 
 .design-choice--code .design-codeblock {
+  background: transparent !important;
   border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
 }
 
 .design-choice-code-panel {
   display: none;
+  margin: 0 !important;
   width: 100%;
 }
 
@@ -2865,14 +2878,10 @@ html.dark .design-codeblock code {
   display: none !important;
 }
 
-.design-choice--code .design-codeblock-wrap,
-.design-choice--code .design-codeblock {
-  margin: 0;
-}
-
 .design-choice--code .design-codeblock-wrap {
   display: block;
   height: auto;
+  margin: 0 !important;
   max-height: none;
   overflow: visible;
   position: relative;

@@ -4,8 +4,10 @@ title: get KEY --overload
 description: Return a single environment variable\
 permalink: /docs/cli/get-key-overload/
 redirect_from:
-  - /docs/ref/cli/get-key-overload/
+  - /docs/advanced/get-key-overload
+  - /docs/advanced/get-key-overload/
   - /docs/ref/cli/get-key-overload
+  - /docs/ref/cli/get-key-overload/
 crumbs:
   - label: Docs
     href: /docs/introduction

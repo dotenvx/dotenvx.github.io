@@ -4,8 +4,10 @@ title: get
 description: Return a json response of all key/value pairs in a .env file.
 permalink: /docs/cli/get-json/
 redirect_from:
-  - /docs/ref/cli/get-json/
+  - /docs/advanced/get-json
+  - /docs/advanced/get-json/
   - /docs/ref/cli/get-json
+  - /docs/ref/cli/get-json/
 crumbs:
   - label: Docs
     href: /docs/introduction

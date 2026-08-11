@@ -4,8 +4,10 @@ title: run --convention=flow
 description: Load envs using the dotenv-flow convention.
 permalink: /docs/cli/run-convention-flow/
 redirect_from:
-  - /docs/ref/cli/run-convention-flow/
+  - /docs/advanced/run-convention-flow
+  - /docs/advanced/run-convention-flow/
   - /docs/ref/cli/run-convention-flow
+  - /docs/ref/cli/run-convention-flow/
 crumbs:
   - label: Docs
     href: /docs/introduction

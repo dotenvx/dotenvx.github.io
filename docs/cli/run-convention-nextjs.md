@@ -4,8 +4,10 @@ title: run --convention=nextjs
 description: Load envs using the Next.js convention.
 permalink: /docs/cli/run-convention-nextjs/
 redirect_from:
-  - /docs/ref/cli/run-convention-nextjs/
+  - /docs/advanced/run-convention-nextjs
+  - /docs/advanced/run-convention-nextjs/
   - /docs/ref/cli/run-convention-nextjs
+  - /docs/ref/cli/run-convention-nextjs/
 crumbs:
   - label: Docs
     href: /docs/introduction

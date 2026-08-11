@@ -59,6 +59,8 @@ options:
     href: /docs/cli/get-all-pretty-print/
   - title: get --no-armor
     href: /docs/cli/get-no-armor/
+  - title: get KEY --no-native
+    href: /docs/cli/get-no-native/
 ---
 {% capture cli_code_0 %}
 $ dotenvx get HELLO

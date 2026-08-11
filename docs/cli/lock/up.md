@@ -4,8 +4,10 @@ title: up
 description: Lock a private key in .env.keys with a local passphrase.
 permalink: /docs/cli/lock/up/
 redirect_from:
-  - /docs/ref/cli/lock/up/
+  - /docs/advanced/lock-up
+  - /docs/advanced/lock-up/
   - /docs/ref/cli/lock/up
+  - /docs/ref/cli/lock/up/
 crumbs:
   - label: Docs
     href: /docs/introduction

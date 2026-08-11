@@ -4,8 +4,10 @@ title: move
 description: Move armored key to another team.
 permalink: /docs/cli/armor/move/
 redirect_from:
-  - /docs/ref/cli/armor/move/
+  - /docs/advanced/armor-move
+  - /docs/advanced/armor-move/
   - /docs/ref/cli/armor/move
+  - /docs/ref/cli/armor/move/
 crumbs:
   - label: Docs
     href: /docs/introduction

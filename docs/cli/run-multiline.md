@@ -4,8 +4,10 @@ title: run - Multiline
 description: Dotenvx supports multiline values.
 permalink: /docs/cli/run-multiline/
 redirect_from:
-  - /docs/ref/cli/run-multiline/
+  - /docs/advanced/run-multiline
+  - /docs/advanced/run-multiline/
   - /docs/ref/cli/run-multiline
+  - /docs/ref/cli/run-multiline/
 crumbs:
   - label: Docs
     href: /docs/introduction

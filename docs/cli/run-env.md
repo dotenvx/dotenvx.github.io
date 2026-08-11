@@ -4,8 +4,10 @@ title: run --env HELLO=String
 description: Set environment variables as a simple KEY=value string pair.
 permalink: /docs/cli/run-env/
 redirect_from:
-  - /docs/ref/cli/run-env/
+  - /docs/advanced/run-env
+  - /docs/advanced/run-env/
   - /docs/ref/cli/run-env
+  - /docs/ref/cli/run-env/
 crumbs:
   - label: Docs
     href: /docs/introduction

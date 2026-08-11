@@ -3,6 +3,10 @@
 {% if radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' %}
   {% assign company_active = true %}
 {% endif %}
+{% assign docs_active = false %}
+{% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %}
+  {% assign docs_active = true %}
+{% endif %}
 
 <header class="radar-chrome" aria-label="Site">
   <div class="radar-topbar">
@@ -32,7 +36,21 @@
         </button>
       </div>
 
-      <a href="/docs" class="radar-nav-link{% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %} is-active{% endif %}">Docs</a>
+      <div class="radar-nav-item" data-radar-nav-item data-nav-menu="docs">
+        <button
+          type="button"
+          class="radar-nav-link radar-nav-trigger{% if docs_active %} is-active{% endif %}"
+          aria-haspopup="true"
+          aria-expanded="false"
+          data-radar-nav-trigger
+        >
+          <span>Docs</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="radar-nav-caret" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+      </div>
+
       <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
     </nav>
 
@@ -56,7 +74,7 @@
 
   <div id="radar-desktop-flyout" class="radar-nav-flyout" aria-hidden="true">
     <div class="radar-nav-flyout-frame">
-      <div class="radar-nav-panel is-active" data-radar-nav-panel="company">
+      <div class="radar-nav-panel" data-radar-nav-panel="company" hidden>
         <div class="radar-nav-panel-links">
           <a href="/opensource" class="radar-nav-panel-link{% if radar_path == '/opensource/' or radar_path == '/opensource' %} is-active{% endif %}">Open Source</a>
           <a href="/changelog" class="radar-nav-panel-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
@@ -76,6 +94,42 @@
             <span class="radar-nav-office-line radar-nav-office-line--dim">Santa Monica, CA 90404</span>
           </span>
         </a>
+      </div>
+      <div class="radar-nav-panel radar-nav-panel--docs" data-radar-nav-panel="docs" hidden>
+        <div class="radar-nav-docs">
+          <a
+            href="/docs/introduction"
+            class="radar-nav-doc-card radar-nav-doc-card--intro{% if radar_path == '/docs/introduction/' or radar_path == '/docs/introduction' or radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}"
+          >
+            <span class="radar-nav-doc-card-title">Introduction</span>
+            <span class="radar-nav-doc-card-meta">Get started with dotenvx</span>
+          </a>
+          <div class="radar-nav-docs-side">
+            <a
+              href="/docs/quickstarts"
+              class="radar-nav-doc-card{% if radar_path == '/docs/quickstarts/' or radar_path == '/docs/quickstarts' %} is-active{% endif %}"
+            >
+              <span class="radar-nav-doc-card-title">Quickstarts</span>
+              <span class="radar-nav-doc-card-stat">30+ guides</span>
+            </a>
+            <div class="radar-nav-docs-pair">
+              <a
+                href="/docs/cli"
+                class="radar-nav-doc-card{% if radar_path == '/docs/cli/' or radar_path == '/docs/cli' or radar_path contains '/docs/cli/' %} is-active{% endif %}"
+              >
+                <span class="radar-nav-doc-card-title">CLI</span>
+                <span class="radar-nav-doc-card-stat">reference</span>
+              </a>
+              <a
+                href="/docs/sdk"
+                class="radar-nav-doc-card{% if radar_path == '/docs/sdk/' or radar_path == '/docs/sdk' or radar_path contains '/docs/sdk/' %} is-active{% endif %}"
+              >
+                <span class="radar-nav-doc-card-title">SDKs</span>
+                <span class="radar-nav-doc-card-stat">config</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -98,7 +152,10 @@
         <span>Company</span>
         <span aria-hidden="true">→</span>
       </button>
-      <a href="/docs" class="radar-mobile-link">Docs</a>
+      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="docs">
+        <span>Docs</span>
+        <span aria-hidden="true">→</span>
+      </button>
       <a href="/pricing" class="radar-mobile-link">Pricing</a>
     </nav>
 
@@ -110,6 +167,28 @@
       <a href="/changelog" class="radar-mobile-link">Changelog</a>
       <a href="/contact" class="radar-mobile-link">Contact</a>
       <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
+    </div>
+
+    <div data-radar-mobile-submenu="docs" class="radar-mobile-list" hidden>
+      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
+        <span><span aria-hidden="true">←</span> Docs</span>
+      </button>
+      <a href="/docs/introduction" class="radar-mobile-link">
+        <span>Introduction</span>
+        <span class="radar-mobile-link-meta">Get started</span>
+      </a>
+      <a href="/docs/quickstarts" class="radar-mobile-link">
+        <span>Quickstarts</span>
+        <span class="radar-mobile-link-meta">30+ guides</span>
+      </a>
+      <a href="/docs/cli" class="radar-mobile-link">
+        <span>CLI</span>
+        <span class="radar-mobile-link-meta">reference</span>
+      </a>
+      <a href="/docs/sdk" class="radar-mobile-link">
+        <span>SDKs</span>
+        <span class="radar-mobile-link-meta">config</span>
+      </a>
     </div>
   </div>
 </div>
@@ -123,6 +202,7 @@
   var mobileOverlay = document.getElementById('radar-mobile-overlay')
   var mobileRoot = mobileOverlay && mobileOverlay.querySelector('[data-radar-mobile-root]')
   var mobileSubmenus = mobileOverlay ? mobileOverlay.querySelectorAll('[data-radar-mobile-submenu]') : []
+  var panels = flyout ? flyout.querySelectorAll('[data-radar-nav-panel]') : []
   var activeMenu = null
   var closeTimer = null
 
@@ -137,6 +217,14 @@
     }
   }
 
+  function showPanel(name) {
+    panels.forEach(function (panel) {
+      var isActive = panel.getAttribute('data-radar-nav-panel') === name
+      panel.hidden = !isActive
+      panel.classList.toggle('is-active', isActive)
+    })
+  }
+
   function openMenu(name) {
     if (!flyout) return
     clearClose()
@@ -147,6 +235,7 @@
       var trigger = item.querySelector('[data-radar-nav-trigger]')
       if (trigger) trigger.setAttribute('aria-expanded', isActive ? 'true' : 'false')
     })
+    showPanel(name)
     flyout.classList.add('is-open')
     flyout.setAttribute('aria-hidden', 'false')
   }
@@ -159,6 +248,10 @@
       item.removeAttribute('data-nav-active')
       var trigger = item.querySelector('[data-radar-nav-trigger]')
       if (trigger) trigger.setAttribute('aria-expanded', 'false')
+    })
+    panels.forEach(function (panel) {
+      panel.hidden = true
+      panel.classList.remove('is-active')
     })
   }
 

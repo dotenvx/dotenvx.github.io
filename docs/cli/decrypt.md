@@ -4,8 +4,10 @@ title: Decrypt
 description: Convert encrypted .env file to plain .env file.
 permalink: /docs/cli/decrypt/
 redirect_from:
-  - /docs/ref/cli/decrypt/
+  - /docs/advanced/decrypt
+  - /docs/advanced/decrypt/
   - /docs/ref/cli/decrypt
+  - /docs/ref/cli/decrypt/
 crumbs:
   - label: Docs
     href: /docs/introduction
@@ -27,6 +29,8 @@ options:
     href: /docs/cli/decrypt-stdout-mask/
   - title: decrypt --no-armor
     href: /docs/cli/decrypt-no-armor/
+  - title: decrypt --no-native
+    href: /docs/cli/decrypt-no-native/
 ---
 {% capture cli_code_0 %}
 $ dotenvx decrypt

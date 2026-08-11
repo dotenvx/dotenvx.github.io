@@ -4,8 +4,12 @@ title: logout
 description: Log out of Dotenvx Armor.
 permalink: /docs/cli/armor/logout/
 redirect_from:
-  - /docs/ref/cli/armor/logout/
+  - /docs/advanced/armor-logout
+  - /docs/advanced/armor-logout/
+  - /docs/cli/logout
+  - /docs/cli/logout/
   - /docs/ref/cli/armor/logout
+  - /docs/ref/cli/armor/logout/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: run - Variable Expansion
 description: Reference and expand variables already on your machine for use in your .env file.
 permalink: /docs/cli/run-variable-expansion/
 redirect_from:
-  - /docs/ref/cli/run-variable-expansion/
+  - /docs/advanced/run-variable-expansion
+  - /docs/advanced/run-variable-expansion/
   - /docs/ref/cli/run-variable-expansion
+  - /docs/ref/cli/run-variable-expansion/
 crumbs:
   - label: Docs
     href: /docs/introduction

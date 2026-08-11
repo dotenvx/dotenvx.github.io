@@ -4,8 +4,10 @@ title: encrypt -f
 description: Encrypt the contents of a specified .env file to an encrypted .env file.
 permalink: /docs/cli/encrypt-f/
 redirect_from:
-  - /docs/ref/cli/encrypt-f/
+  - /docs/advanced/encrypt-f
+  - /docs/advanced/encrypt-f/
   - /docs/ref/cli/encrypt-f
+  - /docs/ref/cli/encrypt-f/
 crumbs:
   - label: Docs
     href: /docs/introduction

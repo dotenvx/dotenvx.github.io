@@ -3,8 +3,10 @@ title: CLI
 description: Encrypt, run, and manage .env files from the command line.
 permalink: /docs/cli/
 redirect_from:
-  - /docs/ref/cli/
+  - /docs/cli/introduction
+  - /docs/cli/introduction/
   - /docs/ref/cli
+  - /docs/ref/cli/
 layout: radar
 ---
 
@@ -59,6 +61,14 @@ layout: radar
   <li>
     <a class="design-link" href="/docs/cli/validate">Validate</a>
     <span class="design-list-meta">dotenvx validate</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/doctor">Doctor</a>
+    <span class="design-list-meta">dotenvx doctor</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/scan">Scan</a>
+    <span class="design-list-meta">dotenvx ext scan</span>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/precommit">Precommit</a>

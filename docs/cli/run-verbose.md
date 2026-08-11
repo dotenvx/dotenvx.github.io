@@ -4,8 +4,10 @@ title: run --verbose
 description: "Set log level to `verbose`."
 permalink: /docs/cli/run-verbose/
 redirect_from:
-  - /docs/ref/cli/run-verbose/
+  - /docs/advanced/run-verbose
+  - /docs/advanced/run-verbose/
   - /docs/ref/cli/run-verbose
+  - /docs/ref/cli/run-verbose/
 crumbs:
   - label: Docs
     href: /docs/introduction

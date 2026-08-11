@@ -4,8 +4,10 @@ title: run -f directory
 description: Run a command using the .env file in a directory. This is useful with monorepos.
 permalink: /docs/cli/run-f-directory/
 redirect_from:
-  - /docs/ref/cli/run-f-directory/
+  - /docs/advanced/run-f-directory
+  - /docs/advanced/run-f-directory/
   - /docs/ref/cli/run-f-directory
+  - /docs/ref/cli/run-f-directory/
 crumbs:
   - label: Docs
     href: /docs/introduction

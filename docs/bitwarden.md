@@ -6,8 +6,10 @@ description: "Use Bitwarden secret references in .env files and resolve them sec
 icon: bitwarden
 permalink: /docs/bitwarden/
 redirect_from:
-  - /docs/secrets-in-bitwarden/
+  - /docs/guides/bitwarden
+  - /docs/guides/bitwarden/
   - /docs/secrets-in-bitwarden
+  - /docs/secrets-in-bitwarden/
 prerequisite_title: "Prerequisites"
 prerequisite_lede: "To get the most out of this guide, you'll need to:"
 prerequisite_links:

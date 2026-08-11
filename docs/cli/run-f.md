@@ -4,8 +4,10 @@ title: run -f
 description: "Compose multiple .env files for environment variables loading, as you need."
 permalink: /docs/cli/run-f/
 redirect_from:
-  - /docs/ref/cli/run-f/
+  - /docs/advanced/run-f
+  - /docs/advanced/run-f/
   - /docs/ref/cli/run-f
+  - /docs/ref/cli/run-f/
 crumbs:
   - label: Docs
     href: /docs/introduction

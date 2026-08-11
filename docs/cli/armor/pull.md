@@ -4,8 +4,10 @@ title: pull
 description: Pull armored key into .env.keys.
 permalink: /docs/cli/armor/pull/
 redirect_from:
-  - /docs/ref/cli/armor/pull/
+  - /docs/advanced/armor-pull
+  - /docs/advanced/armor-pull/
   - /docs/ref/cli/armor/pull
+  - /docs/ref/cli/armor/pull/
 crumbs:
   - label: Docs
     href: /docs/introduction

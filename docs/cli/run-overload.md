@@ -4,8 +4,10 @@ title: run --overload
 description: Override existing env variables. These can be variables already on your machine or variables loaded as files consecutively. The last variable seen will \
 permalink: /docs/cli/run-overload/
 redirect_from:
-  - /docs/ref/cli/run-overload/
+  - /docs/advanced/run-overload
+  - /docs/advanced/run-overload/
   - /docs/ref/cli/run-overload
+  - /docs/ref/cli/run-overload/
 crumbs:
   - label: Docs
     href: /docs/introduction

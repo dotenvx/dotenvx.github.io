@@ -4,8 +4,10 @@ title: "run - Interpolation Syntax Summary (Variable Expansion, Default/Alternat
 description: Complete reference for variable interpolation patterns supported by dotenvx.
 permalink: /docs/cli/run-interpolation-syntax-summary/
 redirect_from:
-  - /docs/ref/cli/run-interpolation-syntax-summary/
+  - /docs/advanced/run-interpolation-syntax-summary
+  - /docs/advanced/run-interpolation-syntax-summary/
   - /docs/ref/cli/run-interpolation-syntax-summary
+  - /docs/ref/cli/run-interpolation-syntax-summary/
 crumbs:
   - label: Docs
     href: /docs/introduction

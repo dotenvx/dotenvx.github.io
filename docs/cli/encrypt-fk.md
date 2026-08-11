@@ -4,8 +4,10 @@ title: encrypt -fk
 description: Specify path to .env.keys. This is useful with monorepos.
 permalink: /docs/cli/encrypt-fk/
 redirect_from:
-  - /docs/ref/cli/encrypt-fk/
+  - /docs/advanced/encrypt-fk
+  - /docs/advanced/encrypt-fk/
   - /docs/ref/cli/encrypt-fk
+  - /docs/ref/cli/encrypt-fk/
 crumbs:
   - label: Docs
     href: /docs/introduction

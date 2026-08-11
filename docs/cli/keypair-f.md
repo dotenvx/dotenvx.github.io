@@ -4,8 +4,10 @@ title: keypair -f
 description: "Print public/private keys for chosen .env* files."
 permalink: /docs/cli/keypair-f/
 redirect_from:
-  - /docs/ref/cli/keypair-f/
+  - /docs/advanced/keypair-f
+  - /docs/advanced/keypair-f/
   - /docs/ref/cli/keypair-f
+  - /docs/ref/cli/keypair-f/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: get KEY -f directory --convention=nextjs
 description: Return an environment variable using the Next.js convention from a directory. This is useful with monorepos.
 permalink: /docs/cli/get-key-f-directory-convention-nextjs/
 redirect_from:
-  - /docs/ref/cli/get-key-f-directory-convention-nextjs/
+  - /docs/advanced/get-key-f-directory-convention-nextjs
+  - /docs/advanced/get-key-f-directory-convention-nextjs/
   - /docs/ref/cli/get-key-f-directory-convention-nextjs
+  - /docs/ref/cli/get-key-f-directory-convention-nextjs/
 crumbs:
   - label: Docs
     href: /docs/introduction

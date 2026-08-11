@@ -4,8 +4,10 @@ title: "set KEY -- \"- + * ÷\""
 description: Set a value containing a leading dash.
 permalink: /docs/cli/set-key-value-with-leading-dash/
 redirect_from:
-  - /docs/ref/cli/set-key-value-with-leading-dash/
+  - /docs/advanced/set-key-value-with-leading-dash
+  - /docs/advanced/set-key-value-with-leading-dash/
   - /docs/ref/cli/set-key-value-with-leading-dash
+  - /docs/ref/cli/set-key-value-with-leading-dash/
 crumbs:
   - label: Docs
     href: /docs/introduction

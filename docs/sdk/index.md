@@ -2,8 +2,10 @@
 title: SDK
 permalink: /docs/sdk/
 redirect_from:
-  - /docs/ref/sdk/
   - /docs/ref/sdk
+  - /docs/ref/sdk/
+  - /docs/sdk/introduction
+  - /docs/sdk/introduction/
 layout: radar
 ---
 

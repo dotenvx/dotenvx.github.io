@@ -117,7 +117,7 @@ layout: radar
 {% endcapture %}
 
 {% capture docs_stats_table %}
-  {% include components/design-table.html class="docs-stats-table" content=docs_stats_table_body %}
+  {% include components/design-table.html class="design-table-wrap--fill docs-stats-table" content=docs_stats_table_body %}
 {% endcapture %}
 
 <section class="radar-section">

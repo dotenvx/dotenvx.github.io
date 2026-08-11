@@ -4,8 +4,10 @@ title: decrypt -ek
 description: Decrypt the contents inside an encrypted .env file except for an excluded key.
 permalink: /docs/cli/decrypt-ek/
 redirect_from:
-  - /docs/ref/cli/decrypt-ek/
+  - /docs/advanced/decrypt-ek
+  - /docs/advanced/decrypt-ek/
   - /docs/ref/cli/decrypt-ek
+  - /docs/ref/cli/decrypt-ek/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: get --all --pretty-print
 description: Make the output more readable - pretty print it.
 permalink: /docs/cli/get-all-pretty-print/
 redirect_from:
-  - /docs/ref/cli/get-all-pretty-print/
+  - /docs/advanced/get-all-pretty-print
+  - /docs/advanced/get-all-pretty-print/
   - /docs/ref/cli/get-all-pretty-print
+  - /docs/ref/cli/get-all-pretty-print/
 crumbs:
   - label: Docs
     href: /docs/introduction

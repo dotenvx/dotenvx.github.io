@@ -4,8 +4,10 @@ title: run --log-level
 description: "Set `--log-level` to whatever you wish."
 permalink: /docs/cli/run-log-level/
 redirect_from:
-  - /docs/ref/cli/run-log-level/
+  - /docs/advanced/run-log-level
+  - /docs/advanced/run-log-level/
   - /docs/ref/cli/run-log-level
+  - /docs/ref/cli/run-log-level/
 crumbs:
   - label: Docs
     href: /docs/introduction

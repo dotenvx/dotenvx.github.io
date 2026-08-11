@@ -4,8 +4,10 @@ title: run - Default Values
 description: Use default values when environment variables are unset or empty.
 permalink: /docs/cli/run-default-values/
 redirect_from:
-  - /docs/ref/cli/run-default-values/
+  - /docs/advanced/run-default-values
+  - /docs/advanced/run-default-values/
   - /docs/ref/cli/run-default-values
+  - /docs/ref/cli/run-default-values/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: get --format shell
 description: Return a shell formatted response of all key/value pairs in a .env file.
 permalink: /docs/cli/get-shell/
 redirect_from:
-  - /docs/ref/cli/get-shell/
+  - /docs/advanced/get-shell
+  - /docs/advanced/get-shell/
   - /docs/ref/cli/get-shell
+  - /docs/ref/cli/get-shell/
 crumbs:
   - label: Docs
     href: /docs/introduction

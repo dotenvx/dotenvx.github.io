@@ -4,8 +4,10 @@ title: run - Command Substitution
 description: Add the output of a command to one of your variables in your .env file.
 permalink: /docs/cli/run-command-substitution/
 redirect_from:
-  - /docs/ref/cli/run-command-substitution/
+  - /docs/advanced/run-command-substitution
+  - /docs/advanced/run-command-substitution/
   - /docs/ref/cli/run-command-substitution
+  - /docs/ref/cli/run-command-substitution/
 crumbs:
   - label: Docs
     href: /docs/introduction

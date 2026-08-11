@@ -4,8 +4,10 @@ title: Keypair
 description: Print public/private keys for .env file.
 permalink: /docs/cli/keypair/
 redirect_from:
-  - /docs/ref/cli/keypair/
+  - /docs/advanced/keypair
+  - /docs/advanced/keypair/
   - /docs/ref/cli/keypair
+  - /docs/ref/cli/keypair/
 crumbs:
   - label: Docs
     href: /docs/introduction
@@ -29,6 +31,8 @@ options:
     href: /docs/cli/keypair-pretty-print/
   - title: keypair --no-armor
     href: /docs/cli/keypair-no-armor/
+  - title: keypair --no-native
+    href: /docs/cli/keypair-no-native/
 ---
 {% capture cli_code_0 %}
 $ dotenvx keypair

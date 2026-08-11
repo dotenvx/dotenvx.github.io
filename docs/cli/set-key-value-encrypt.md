@@ -4,8 +4,10 @@ title: set KEY value --encrypt
 description: Set an encrypted key/value.
 permalink: /docs/cli/set-key-value-encrypt/
 redirect_from:
-  - /docs/ref/cli/set-key-value-encrypt/
+  - /docs/advanced/set-key-value-encrypt
+  - /docs/advanced/set-key-value-encrypt/
   - /docs/ref/cli/set-key-value-encrypt
+  - /docs/ref/cli/set-key-value-encrypt/
 crumbs:
   - label: Docs
     href: /docs/introduction

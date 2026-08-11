@@ -6,8 +6,10 @@ description: "Encrypt a .env file for Docker, include it safely in your image, a
 icon: docker
 permalink: /docs/docker/
 redirect_from:
-  - /docs/secrets-in-docker/
+  - /docs/platforms/docker
+  - /docs/platforms/docker/
   - /docs/secrets-in-docker
+  - /docs/secrets-in-docker/
 encrypt_title: "1. Encrypt"
 encrypt_lede: "Encrypt your `.env` file before building the image."
 encrypt_copy: "dotenvx encrypt"

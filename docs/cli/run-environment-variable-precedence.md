@@ -4,8 +4,10 @@ title: run - Environment Variable Precedence
 description: "When deploying applications in containers or cloud environments, you often need to override specific environment variables at runtime without modifying committed .env files. By default, dotenvx follows the historic dotenv principle: environment variables already present take precedence over .env files."
 permalink: /docs/cli/run-environment-variable-precedence/
 redirect_from:
-  - /docs/ref/cli/run-environment-variable-precedence/
+  - /docs/advanced/run-environment-variable-precedence
+  - /docs/advanced/run-environment-variable-precedence/
   - /docs/ref/cli/run-environment-variable-precedence
+  - /docs/ref/cli/run-environment-variable-precedence/
 crumbs:
   - label: Docs
     href: /docs/introduction

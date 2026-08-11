@@ -6,8 +6,10 @@ description: "Encrypt a .env file for GitHub Actions and inject its secrets into
 icon: github-actions
 permalink: /docs/github-actions/
 redirect_from:
-  - /docs/secrets-in-github-actions/
+  - /docs/cis/github-actions
+  - /docs/cis/github-actions/
   - /docs/secrets-in-github-actions
+  - /docs/secrets-in-github-actions/
 encrypt_title: "1. Encrypt"
 encrypt_lede: "Create a CI environment file and encrypt it."
 encrypt_copy: "dotenvx encrypt -f .env.ci"

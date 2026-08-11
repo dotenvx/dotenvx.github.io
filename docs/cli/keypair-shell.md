@@ -4,8 +4,10 @@ title: keypair --format shell
 description: Print a shell formatted response of public/private keys.
 permalink: /docs/cli/keypair-shell/
 redirect_from:
-  - /docs/ref/cli/keypair-shell/
+  - /docs/advanced/keypair-shell
+  - /docs/advanced/keypair-shell/
   - /docs/ref/cli/keypair-shell
+  - /docs/ref/cli/keypair-shell/
 crumbs:
   - label: Docs
     href: /docs/introduction

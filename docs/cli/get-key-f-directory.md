@@ -4,8 +4,10 @@ title: get KEY -f directory
 description: Return an environment variable from the .env file in a directory. This is useful with monorepos.
 permalink: /docs/cli/get-key-f-directory/
 redirect_from:
-  - /docs/ref/cli/get-key-f-directory/
+  - /docs/advanced/get-key-f-directory
+  - /docs/advanced/get-key-f-directory/
   - /docs/ref/cli/get-key-f-directory
+  - /docs/ref/cli/get-key-f-directory/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: DOTENV_PRIVATE_KEY_PRODUCTION=key dotenvx run
 description: "Decrypt your encrypted `.env.production` by setting `DOTENV_PRIVATE_KEY_PRODUCTION` before dotenvx run."
 permalink: /docs/cli/run-dotenv-private-key-production/
 redirect_from:
-  - /docs/ref/cli/run-dotenv-private-key-production/
+  - /docs/advanced/run-dotenv-private-key-production
+  - /docs/advanced/run-dotenv-private-key-production/
   - /docs/ref/cli/run-dotenv-private-key-production
+  - /docs/ref/cli/run-dotenv-private-key-production/
 crumbs:
   - label: Docs
     href: /docs/introduction

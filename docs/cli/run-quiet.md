@@ -4,8 +4,10 @@ title: run --quiet
 description: "Use `--quiet` to suppress all output (except errors)."
 permalink: /docs/cli/run-quiet/
 redirect_from:
-  - /docs/ref/cli/run-quiet/
+  - /docs/advanced/run-quiet
+  - /docs/advanced/run-quiet/
   - /docs/ref/cli/run-quiet
+  - /docs/ref/cli/run-quiet/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: get KEY
 description: Return a single environment variable\
 permalink: /docs/cli/get-key/
 redirect_from:
-  - /docs/ref/cli/get-key/
+  - /docs/advanced/get-key
+  - /docs/advanced/get-key/
   - /docs/ref/cli/get-key
+  - /docs/ref/cli/get-key/
 crumbs:
   - label: Docs
     href: /docs/introduction

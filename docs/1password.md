@@ -6,8 +6,10 @@ description: "Use 1Password secret references in .env files and resolve them sec
 icon: 1password
 permalink: /docs/1password/
 redirect_from:
-  - /docs/secrets-in-1password/
+  - /docs/guides/1password
+  - /docs/guides/1password/
   - /docs/secrets-in-1password
+  - /docs/secrets-in-1password/
 prerequisite_title: "Prerequisites"
 prerequisite_lede: "To get the most out of this guide, you'll need to:"
 prerequisite_links:

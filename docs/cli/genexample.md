@@ -4,13 +4,21 @@ title: Genexample
 description: Generate a .env.example file from your current .env file contents.
 permalink: /docs/cli/genexample/
 redirect_from:
-  - /docs/ref/cli/genexample/
+  - /docs/advanced/genexample
+  - /docs/advanced/genexample/
   - /docs/ref/cli/genexample
+  - /docs/ref/cli/genexample/
 crumbs:
   - label: Docs
     href: /docs/introduction
   - label: CLI
     href: /docs/cli
+options_title: Options
+options:
+  - title: genexample -f
+    href: /docs/cli/genexample-f/
+  - title: genexample directory
+    href: /docs/cli/genexample-directory/
 ---
 {% capture cli_code_0 %}
 $ echo "HELLO=World" > .env

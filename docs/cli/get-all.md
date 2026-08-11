@@ -4,8 +4,10 @@ title: get --all
 description: Return preset machine envs as well.
 permalink: /docs/cli/get-all/
 redirect_from:
-  - /docs/ref/cli/get-all/
+  - /docs/advanced/get-all
+  - /docs/advanced/get-all/
   - /docs/ref/cli/get-all
+  - /docs/ref/cli/get-all/
 crumbs:
   - label: Docs
     href: /docs/introduction

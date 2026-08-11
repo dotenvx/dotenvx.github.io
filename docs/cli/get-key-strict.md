@@ -4,8 +4,10 @@ title: get KEY --strict
 description: "Exit with code 1 if any errors are encountered - like a missing key, missing .env file, or decryption failure."
 permalink: /docs/cli/get-key-strict/
 redirect_from:
-  - /docs/ref/cli/get-key-strict/
+  - /docs/advanced/get-key-strict
+  - /docs/advanced/get-key-strict/
   - /docs/ref/cli/get-key-strict
+  - /docs/ref/cli/get-key-strict/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: run --debug
 description: "Set log level to `debug`."
 permalink: /docs/cli/run-debug/
 redirect_from:
-  - /docs/ref/cli/run-debug/
+  - /docs/advanced/run-debug
+  - /docs/advanced/run-debug/
   - /docs/ref/cli/run-debug
+  - /docs/ref/cli/run-debug/
 crumbs:
   - label: Docs
     href: /docs/introduction

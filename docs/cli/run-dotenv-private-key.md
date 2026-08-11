@@ -4,8 +4,10 @@ title: DOTENV_PRIVATE_KEY=key dotenvx run
 description: "Decrypt your encrypted `.env` by setting `DOTENV_PRIVATE_KEY` before dotenvx run."
 permalink: /docs/cli/run-dotenv-private-key/
 redirect_from:
-  - /docs/ref/cli/run-dotenv-private-key/
+  - /docs/advanced/run-dotenv-private-key
+  - /docs/advanced/run-dotenv-private-key/
   - /docs/ref/cli/run-dotenv-private-key
+  - /docs/ref/cli/run-dotenv-private-key/
 crumbs:
   - label: Docs
     href: /docs/introduction

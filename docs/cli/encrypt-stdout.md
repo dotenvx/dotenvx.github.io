@@ -4,8 +4,10 @@ title: encrypt --stdout
 description: Encrypt the contents of a .env file and send to stdout.
 permalink: /docs/cli/encrypt-stdout/
 redirect_from:
-  - /docs/ref/cli/encrypt-stdout/
+  - /docs/advanced/encrypt-stdout
+  - /docs/advanced/encrypt-stdout/
   - /docs/ref/cli/encrypt-stdout
+  - /docs/ref/cli/encrypt-stdout/
 crumbs:
   - label: Docs
     href: /docs/introduction

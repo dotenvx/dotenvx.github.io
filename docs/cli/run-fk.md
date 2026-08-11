@@ -4,8 +4,10 @@ title: run -fk
 description: Specify a .env.keys file or a directory containing one. This is useful with monorepos.
 permalink: /docs/cli/run-fk/
 redirect_from:
-  - /docs/ref/cli/run-fk/
+  - /docs/advanced/run-fk
+  - /docs/advanced/run-fk/
   - /docs/ref/cli/run-fk
+  - /docs/ref/cli/run-fk/
 crumbs:
   - label: Docs
     href: /docs/introduction

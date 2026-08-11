@@ -4,8 +4,10 @@ title: encrypt -k
 description: Specify the key(s) to encrypt by passing --key.
 permalink: /docs/cli/encrypt-k/
 redirect_from:
-  - /docs/ref/cli/encrypt-k/
+  - /docs/advanced/encrypt-k
+  - /docs/advanced/encrypt-k/
   - /docs/ref/cli/encrypt-k
+  - /docs/ref/cli/encrypt-k/
 crumbs:
   - label: Docs
     href: /docs/introduction

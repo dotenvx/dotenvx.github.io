@@ -83,6 +83,8 @@ options:
     href: /docs/cli/run-f-directory-convention-nextjs/
   - title: run --convention=flow
     href: /docs/cli/run-convention-flow/
+  - title: DOTENV_ENV=production run --convention=flow
+    href: /docs/cli/run-convention-flow-dotenv-env/
   - title: run --no-native
     href: /docs/cli/run-no-native/
   - title: run --no-armor

@@ -4,8 +4,10 @@ title: run - Alternate Values
 description: Use alternate values when environment variables are set and non-empty.
 permalink: /docs/cli/run-alternate-values/
 redirect_from:
-  - /docs/ref/cli/run-alternate-values/
+  - /docs/advanced/run-alternate-values
+  - /docs/advanced/run-alternate-values/
   - /docs/ref/cli/run-alternate-values
+  - /docs/ref/cli/run-alternate-values/
 crumbs:
   - label: Docs
     href: /docs/introduction

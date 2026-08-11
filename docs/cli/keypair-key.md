@@ -4,8 +4,10 @@ title: keypair KEY
 description: Print specific keypair for .env file.
 permalink: /docs/cli/keypair-key/
 redirect_from:
-  - /docs/ref/cli/keypair-key/
+  - /docs/advanced/keypair-key
+  - /docs/advanced/keypair-key/
   - /docs/ref/cli/keypair-key
+  - /docs/ref/cli/keypair-key/
 crumbs:
   - label: Docs
     href: /docs/introduction

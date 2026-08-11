@@ -4,8 +4,10 @@ title: Lock
 description: Lock private keys with a local passphrase to keep them protected inside .env.keys.
 permalink: /docs/cli/lock/
 redirect_from:
-  - /docs/ref/cli/lock/
+  - /docs/advanced/lock
+  - /docs/advanced/lock/
   - /docs/ref/cli/lock
+  - /docs/ref/cli/lock/
 crumbs:
   - label: Docs
     href: /docs/introduction

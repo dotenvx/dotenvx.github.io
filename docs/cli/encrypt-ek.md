@@ -4,8 +4,10 @@ title: encrypt -ek
 description: Specify the key(s) to NOT encrypt by passing --exclude-key.
 permalink: /docs/cli/encrypt-ek/
 redirect_from:
-  - /docs/ref/cli/encrypt-ek/
+  - /docs/advanced/encrypt-ek
+  - /docs/advanced/encrypt-ek/
   - /docs/ref/cli/encrypt-ek
+  - /docs/ref/cli/encrypt-ek/
 crumbs:
   - label: Docs
     href: /docs/introduction

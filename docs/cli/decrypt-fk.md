@@ -4,8 +4,10 @@ title: decrypt -fk
 description: Specify path to .env.keys. This is useful with monorepos.
 permalink: /docs/cli/decrypt-fk/
 redirect_from:
-  - /docs/ref/cli/decrypt-fk/
+  - /docs/advanced/decrypt-fk
+  - /docs/advanced/decrypt-fk/
   - /docs/ref/cli/decrypt-fk
+  - /docs/ref/cli/decrypt-fk/
 crumbs:
   - label: Docs
     href: /docs/introduction

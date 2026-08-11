@@ -6,8 +6,10 @@ description: "Encrypt a Turborepo workspace .env file and inject its secrets whe
 icon: turborepo
 permalink: /docs/turborepo/
 redirect_from:
-  - /docs/secrets-in-turborepo/
+  - /docs/monorepos/turborepo
+  - /docs/monorepos/turborepo/
   - /docs/secrets-in-turborepo
+  - /docs/secrets-in-turborepo/
 encrypt_title: "1. Encrypt"
 encrypt_lede: "Keep the environment file beside the workspace that uses it and encrypt it."
 encrypt_copy: "dotenvx encrypt -f apps/web/.env"

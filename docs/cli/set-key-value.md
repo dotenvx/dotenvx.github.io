@@ -4,8 +4,10 @@ title: set KEY value
 description: Set a single key/value.
 permalink: /docs/cli/set-key-value/
 redirect_from:
-  - /docs/ref/cli/set-key-value/
+  - /docs/advanced/set-key-value
+  - /docs/advanced/set-key-value/
   - /docs/ref/cli/set-key-value
+  - /docs/ref/cli/set-key-value/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -4,8 +4,10 @@ title: get --format eval
 description: Return an eval-ready shell formatted response of all key/value pairs in a .env file.
 permalink: /docs/cli/get-eval/
 redirect_from:
-  - /docs/ref/cli/get-eval/
+  - /docs/advanced/get-eval
+  - /docs/advanced/get-eval/
   - /docs/ref/cli/get-eval
+  - /docs/ref/cli/get-eval/
 crumbs:
   - label: Docs
     href: /docs/introduction

@@ -8,6 +8,12 @@ cli_crumbs:
   - label: CLI
     href: /docs/cli
 
+sdk_crumbs:
+  - label: Docs
+    href: /docs/introduction
+  - label: SDK
+    href: /docs/sdk
+
 # Order matches /docs/quickstarts — used for prev/next pager
 quickstarts:
   - label: CLI

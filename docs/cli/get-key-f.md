@@ -4,8 +4,10 @@ title: get KEY -f
 description: Return a single environment variable\
 permalink: /docs/cli/get-key-f/
 redirect_from:
-  - /docs/ref/cli/get-key-f/
+  - /docs/advanced/get-key-f
+  - /docs/advanced/get-key-f/
   - /docs/ref/cli/get-key-f
+  - /docs/ref/cli/get-key-f/
 crumbs:
   - label: Docs
     href: /docs/introduction

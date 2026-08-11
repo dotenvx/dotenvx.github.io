@@ -4,8 +4,10 @@ title: "set KEY \"value with spaces\""
 description: Set a value containing spaces.
 permalink: /docs/cli/set-key-value-with-spaces/
 redirect_from:
-  - /docs/ref/cli/set-key-value-with-spaces/
+  - /docs/advanced/set-key-value-with-spaces
+  - /docs/advanced/set-key-value-with-spaces/
   - /docs/ref/cli/set-key-value-with-spaces
+  - /docs/ref/cli/set-key-value-with-spaces/
 crumbs:
   - label: Docs
     href: /docs/introduction

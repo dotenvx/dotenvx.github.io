@@ -6,8 +6,10 @@ description: "Encrypt a .env file for Docker Compose and inject its secrets when
 icon: docker-compose
 permalink: /docs/docker-compose/
 redirect_from:
-  - /docs/secrets-in-docker-compose/
+  - /docs/platforms/docker-compose
+  - /docs/platforms/docker-compose/
   - /docs/secrets-in-docker-compose
+  - /docs/secrets-in-docker-compose/
 encrypt_title: "1. Encrypt"
 encrypt_lede: "Encrypt your `.env` file before building the image."
 encrypt_copy: "dotenvx encrypt"

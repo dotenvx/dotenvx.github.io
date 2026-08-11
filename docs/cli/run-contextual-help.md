@@ -4,8 +4,10 @@ title: run - Contextual Help
 description: "Unlike other dotenv libraries, dotenvx attempts to unblock you with contextual help."
 permalink: /docs/cli/run-contextual-help/
 redirect_from:
-  - /docs/ref/cli/run-contextual-help/
+  - /docs/advanced/run-contextual-help
+  - /docs/advanced/run-contextual-help/
   - /docs/ref/cli/run-contextual-help
+  - /docs/ref/cli/run-contextual-help/
 crumbs:
   - label: Docs
     href: /docs/introduction

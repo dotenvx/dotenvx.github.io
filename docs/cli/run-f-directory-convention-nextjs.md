@@ -4,8 +4,10 @@ title: run -f directory --convention=nextjs
 description: Run a command using the Next.js convention from a directory. This is useful with monorepos.
 permalink: /docs/cli/run-f-directory-convention-nextjs/
 redirect_from:
-  - /docs/ref/cli/run-f-directory-convention-nextjs/
+  - /docs/advanced/run-f-directory-convention-nextjs
+  - /docs/advanced/run-f-directory-convention-nextjs/
   - /docs/ref/cli/run-f-directory-convention-nextjs
+  - /docs/ref/cli/run-f-directory-convention-nextjs/
 crumbs:
   - label: Docs
     href: /docs/introduction

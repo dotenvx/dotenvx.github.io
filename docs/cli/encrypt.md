@@ -4,8 +4,10 @@ title: Encrypt
 description: Convert any .env file to an encrypted .env file.
 permalink: /docs/cli/encrypt/
 redirect_from:
-  - /docs/ref/cli/encrypt/
+  - /docs/advanced/encrypt
+  - /docs/advanced/encrypt/
   - /docs/ref/cli/encrypt
+  - /docs/ref/cli/encrypt/
 crumbs:
   - label: Docs
     href: /docs/introduction
@@ -31,6 +33,8 @@ options:
     href: /docs/cli/encrypt-no-create/
   - title: encrypt --no-armor
     href: /docs/cli/encrypt-no-armor/
+  - title: encrypt --no-native
+    href: /docs/cli/encrypt-no-native/
 ---
 {% capture cli_code_0 %}
 $ dotenvx encrypt

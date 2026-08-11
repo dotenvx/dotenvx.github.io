@@ -6,8 +6,10 @@ description: "Encrypt a .env file in Next.js with Dotenvx, commit it safely, and
 icon: nextjs
 permalink: /docs/nextjs/
 redirect_from:
-  - /docs/secrets-in-nextjs/
+  - /docs/frameworks/next
+  - /docs/frameworks/next/
   - /docs/secrets-in-nextjs
+  - /docs/secrets-in-nextjs/
 install_lede: "Get the Dotenvx Node.js SDK and [`@dotenvx/next-env`](https://www.npmjs.com/package/@dotenvx/next-env)."
 install_copy: |
   npm install @dotenvx/dotenvx

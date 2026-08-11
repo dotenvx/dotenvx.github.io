@@ -6,8 +6,10 @@ description: "Encrypt an Nx workspace .env file and inject its secrets when Nx r
 icon: nx
 permalink: /docs/nx/
 redirect_from:
-  - /docs/secrets-in-nx/
+  - /docs/monorepos/nx
+  - /docs/monorepos/nx/
   - /docs/secrets-in-nx
+  - /docs/secrets-in-nx/
 encrypt_title: "1. Encrypt"
 encrypt_lede: "Keep the environment file beside the Nx application and encrypt it."
 encrypt_copy: "dotenvx encrypt -f apps/app/.env"

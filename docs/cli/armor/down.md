@@ -4,8 +4,10 @@ title: down
 description: Dearmor private key.
 permalink: /docs/cli/armor/down/
 redirect_from:
-  - /docs/ref/cli/armor/down/
+  - /docs/advanced/armor-down
+  - /docs/advanced/armor-down/
   - /docs/ref/cli/armor/down
+  - /docs/ref/cli/armor/down/
 crumbs:
   - label: Docs
     href: /docs/introduction

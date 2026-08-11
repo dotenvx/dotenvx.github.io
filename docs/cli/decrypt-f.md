@@ -4,8 +4,10 @@ title: decrypt -f
 description: Decrypt the contents of a specified encrypted .env file to an unencrypted .env file.
 permalink: /docs/cli/decrypt-f/
 redirect_from:
-  - /docs/ref/cli/decrypt-f/
+  - /docs/advanced/decrypt-f
+  - /docs/advanced/decrypt-f/
   - /docs/ref/cli/decrypt-f
+  - /docs/ref/cli/decrypt-f/
 crumbs:
   - label: Docs
     href: /docs/introduction

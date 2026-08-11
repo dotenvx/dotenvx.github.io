@@ -114,7 +114,7 @@ layout: radar
 <section class="radar-section" aria-label="Open source next step">
   <div class="armor-shell">
     {% include components/design-cta-message.html
-      text="Built in the open — come build with us."
+      text="Contributing to open source for almost two decades."
     %}
   </div>
 </section>

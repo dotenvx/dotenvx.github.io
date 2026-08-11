@@ -4,8 +4,10 @@ title: set KEY value -f
 description: Set an (encrypted) key/value for another .env file.
 permalink: /docs/cli/set-key-value-f/
 redirect_from:
-  - /docs/ref/cli/set-key-value-f/
+  - /docs/advanced/set-key-value-f
+  - /docs/advanced/set-key-value-f/
   - /docs/ref/cli/set-key-value-f
+  - /docs/ref/cli/set-key-value-f/
 crumbs:
   - label: Docs
     href: /docs/introduction

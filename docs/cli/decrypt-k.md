@@ -4,8 +4,10 @@ title: decrypt -k
 description: Decrypt the contents of a specified key inside an encrypted .env file.
 permalink: /docs/cli/decrypt-k/
 redirect_from:
-  - /docs/ref/cli/decrypt-k/
+  - /docs/advanced/decrypt-k
+  - /docs/advanced/decrypt-k/
   - /docs/ref/cli/decrypt-k
+  - /docs/ref/cli/decrypt-k/
 crumbs:
   - label: Docs
     href: /docs/introduction

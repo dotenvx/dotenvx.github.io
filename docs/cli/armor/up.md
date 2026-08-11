@@ -4,8 +4,10 @@ title: up
 description: Armor private key.
 permalink: /docs/cli/armor/up/
 redirect_from:
-  - /docs/ref/cli/armor/up/
+  - /docs/advanced/armor-up
+  - /docs/advanced/armor-up/
   - /docs/ref/cli/armor/up
+  - /docs/ref/cli/armor/up/
 crumbs:
   - label: Docs
     href: /docs/introduction

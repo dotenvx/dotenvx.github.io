@@ -4,8 +4,18 @@ title: Ls
 description: Print all .env files in a tree structure.
 permalink: /docs/cli/ls/
 redirect_from:
-  - /docs/ref/cli/ls/
+  - /docs/cli/ext
+  - /docs/cli/ext-ls
+  - /docs/cli/ext-ls-directory
+  - /docs/cli/ext-ls-directory/
+  - /docs/cli/ext-ls-ef
+  - /docs/cli/ext-ls-ef/
+  - /docs/cli/ext-ls-f
+  - /docs/cli/ext-ls-f/
+  - /docs/cli/ext-ls/
+  - /docs/cli/ext/
   - /docs/ref/cli/ls
+  - /docs/ref/cli/ls/
 crumbs:
   - label: Docs
     href: /docs/introduction

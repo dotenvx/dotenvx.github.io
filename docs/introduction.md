@@ -1,6 +1,15 @@
 ---
 title: Documentation
 permalink: /docs/introduction/
+redirect_from:
+  - /docs
+  - /docs/
+  - /docs/package-managers
+  - /docs/package-managers/
+  - /docs/process-managers
+  - /docs/process-managers/
+  - /docs/quickstart
+  - /docs/quickstart/
 layout: radar
 ---
 
@@ -158,6 +167,14 @@ layout: radar
   <li>
     <a class="design-link" href="/docs/env-keys-file">.env.keys</a>
     <span class="design-list-meta">private decryption keys</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/learn/installing">Installing</a>
+    <span class="design-list-meta">curl, npm, brew, more</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/platforms">Platforms</a>
+    <span class="design-list-meta">Vercel, Fly, Heroku, more</span>
   </li>
   <li>
     <a class="design-link" href="/docs/stats">Stats</a>

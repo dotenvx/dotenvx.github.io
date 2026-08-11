@@ -4,8 +4,12 @@ title: login
 description: Log in to Dotenvx Armor.
 permalink: /docs/cli/armor/login/
 redirect_from:
-  - /docs/ref/cli/armor/login/
+  - /docs/advanced/armor-login
+  - /docs/advanced/armor-login/
+  - /docs/cli/login
+  - /docs/cli/login/
   - /docs/ref/cli/armor/login
+  - /docs/ref/cli/armor/login/
 crumbs:
   - label: Docs
     href: /docs/introduction

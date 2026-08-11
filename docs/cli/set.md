@@ -29,6 +29,8 @@ options:
     href: /docs/cli/set-key-value-no-create/
   - title: set KEY value --no-armor
     href: /docs/cli/set-key-value-no-armor/
+  - title: set KEY value --no-native
+    href: /docs/cli/set-key-value-no-native/
 ---
 {% capture cli_code_0 %}
 $ dotenvx set HELLO World

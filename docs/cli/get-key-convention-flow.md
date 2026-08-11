@@ -4,8 +4,10 @@ title: get KEY --convention=flow
 description: Return a single environment variable\
 permalink: /docs/cli/get-key-convention-flow/
 redirect_from:
-  - /docs/ref/cli/get-key-convention-flow/
+  - /docs/advanced/get-key-convention-flow
+  - /docs/advanced/get-key-convention-flow/
   - /docs/ref/cli/get-key-convention-flow
+  - /docs/ref/cli/get-key-convention-flow/
 crumbs:
   - label: Docs
     href: /docs/introduction

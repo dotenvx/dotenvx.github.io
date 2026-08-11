@@ -4,8 +4,10 @@ title: Validate
 description: Validate .env file(s) against .env.example.
 permalink: /docs/cli/validate/
 redirect_from:
-  - /docs/ref/cli/validate/
+  - /docs/advanced/validate
+  - /docs/advanced/validate/
   - /docs/ref/cli/validate
+  - /docs/ref/cli/validate/
 crumbs:
   - label: Docs
     href: /docs/introduction

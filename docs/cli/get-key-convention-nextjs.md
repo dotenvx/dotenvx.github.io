@@ -4,8 +4,10 @@ title: get KEY --convention=nextjs
 description: Return a single environment variable\
 permalink: /docs/cli/get-key-convention-nextjs/
 redirect_from:
-  - /docs/ref/cli/get-key-convention-nextjs/
+  - /docs/advanced/get-key-convention-nextjs
+  - /docs/advanced/get-key-convention-nextjs/
   - /docs/ref/cli/get-key-convention-nextjs
+  - /docs/ref/cli/get-key-convention-nextjs/
 crumbs:
   - label: Docs
     href: /docs/introduction

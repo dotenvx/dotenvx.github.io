@@ -4,8 +4,10 @@ title: push
 description: Push armored key from .env.keys.
 permalink: /docs/cli/armor/push/
 redirect_from:
-  - /docs/ref/cli/armor/push/
+  - /docs/advanced/armor-push
+  - /docs/advanced/armor-push/
   - /docs/ref/cli/armor/push
+  - /docs/ref/cli/armor/push/
 crumbs:
   - label: Docs
     href: /docs/introduction

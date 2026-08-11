@@ -4,8 +4,10 @@ title: set KEY value --plain
 description: Set a plain key/value.
 permalink: /docs/cli/set-key-value-plain/
 redirect_from:
-  - /docs/ref/cli/set-key-value-plain/
+  - /docs/advanced/set-key-value-plain
+  - /docs/advanced/set-key-value-plain/
   - /docs/ref/cli/set-key-value-plain
+  - /docs/ref/cli/set-key-value-plain/
 crumbs:
   - label: Docs
     href: /docs/introduction

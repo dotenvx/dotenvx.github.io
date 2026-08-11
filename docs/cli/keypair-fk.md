@@ -4,8 +4,10 @@ title: keypair -fk
 description: Specify path to .env.keys. This is useful for printing public/private keys for monorepos.
 permalink: /docs/cli/keypair-fk/
 redirect_from:
-  - /docs/ref/cli/keypair-fk/
+  - /docs/advanced/keypair-fk
+  - /docs/advanced/keypair-fk/
   - /docs/ref/cli/keypair-fk
+  - /docs/ref/cli/keypair-fk/
 crumbs:
   - label: Docs
     href: /docs/introduction

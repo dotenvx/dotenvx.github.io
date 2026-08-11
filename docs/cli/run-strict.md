@@ -4,8 +4,10 @@ title: run --strict
 description: Exit with code 1 if any errors are encountered - like a missing .env file or decryption failure.
 permalink: /docs/cli/run-strict/
 redirect_from:
-  - /docs/ref/cli/run-strict/
+  - /docs/advanced/run-strict
+  - /docs/advanced/run-strict/
   - /docs/ref/cli/run-strict
+  - /docs/ref/cli/run-strict/
 crumbs:
   - label: Docs
     href: /docs/introduction

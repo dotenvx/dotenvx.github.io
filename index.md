@@ -137,7 +137,7 @@ Designed as a secure dotenv. <span class="home-hero-desc-line2">You can encrypt 
         text="Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It just feels so good."
       %}
       {% include components/design-btn.html
-        label="Get Started"
+        label="Get Started ›"
         href="/docs"
       %}
     </div>

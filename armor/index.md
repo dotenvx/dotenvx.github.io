@@ -52,7 +52,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
       {% capture armor_choice_current %}
         <div id="armor-panel-you" class="armor-you-actions">
           {% include components/design-btn.html
-            label="Sign Up"
+            label="Sign Up Free"
             href="/signup"
             class="design-btn--trial"
           %}
@@ -95,11 +95,19 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
 
   {% include components/armor-usage.html url="https://armor.dotenvx.com/public/usage" %}
 
+  {% include components/faq-yes.html %}
+
   <section class="radar-section" aria-label="Next step">
     <div class="armor-shell">
-      {% include components/design-cta-message.html
-        text="Once the private key isn't on the machine, encrypted .env finally feels finished. That's Armor."
-      %}
+      <div class="home-cta">
+        {% include components/design-cta-message.html
+          text="Once the private key isn't on the machine, encrypted .env finally feels finished. That's Armor."
+        %}
+        {% include components/design-btn.html
+          label="Sign Up Free ›"
+          href="https://armor.dotenvx.com/signup"
+        %}
+      </div>
     </div>
   </section>
 

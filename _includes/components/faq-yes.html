@@ -1,0 +1,67 @@
+{% capture faq_yes_items %}
+  <li>
+    <span class="design-list-label">Can I <strong>move private keys</strong> off device?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I <strong>share access with my team</strong>—not the private key?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I <strong>require human approval</strong> before decrypt?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I <strong>decrypt from a software enclave</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I <strong>audit every decrypt</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I <strong>control everything</strong> from the API?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Is <strong>Dotenvx free</strong> and open source?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Is <strong>Dotenvx Armor paid</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Does <strong>Dotenvx Armor</strong> have a free trial?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Is it <strong>safe to commit</strong> an encrypted .env file?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Are <strong>armored keys unlimited</strong> on every plan?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I still decrypt if I <strong>exceed included audit events</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Does Armor record <strong>who accessed what, and when</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Do secrets stay protected if the <strong>encrypted file is exposed</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+{% endcapture %}
+
+<section class="radar-section" aria-label="FAQ">
+  <div class="armor-shell">
+    {% include components/design-list.html
+      title="FAQ"
+      items=faq_yes_items
+    %}
+  </div>
+</section>

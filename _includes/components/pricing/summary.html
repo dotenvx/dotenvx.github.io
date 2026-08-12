@@ -6,7 +6,7 @@
     <tr>
       <th scope="col">Plan</th>
       <th scope="col" class="design-table-cell--center">Users</th>
-      <th scope="col" class="design-table-cell--center pricing-summary-retention">Audit retention</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-retention">Audit Logs</th>
       <th scope="col" class="design-table-cell--center pricing-summary-price">Price</th>
       <th scope="col" class="design-table-cell--right"></th>
     </tr>
@@ -41,10 +41,25 @@
         {% assign price_detail = price_cell | append: " billed monthly on a month-to-month plan." %}
         {% assign price_tooltip = price_cell | append: " billed month to month" %}
         {% assign cta_href = "/signup" %}
-        {% assign cta_label = "Get " | append: plan_name %}
+        {% if plan.id == "pro" %}
+          {% assign cta_label = "Sign Up Free" %}
+        {% else %}
+          {% assign cta_label = "Get " | append: plan_name %}
+        {% endif %}
       {% endif %}
       <tr>
-        <th scope="row" class="pricing-summary-plan">{{ plan_name }}</th>
+        <th scope="row" class="pricing-summary-plan">
+          <span class="pricing-summary-plan-row">
+            <span>{{ plan_name }}</span>
+            {% if plan.id == "pro" %}
+              {% include components/design-badge.html
+                label="Free trial"
+                tone="info"
+                badge_size="sm"
+              %}
+            {% endif %}
+          </span>
+        </th>
         <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="{{ users_detail }}" data-tooltip="{{ users_tooltip }}">{{ users_cell }}</span></td>
         <td class="design-table-cell--center pricing-summary-retention"><span class="pricing-value-detail" tabindex="0" aria-label="{{ retention_detail }}" data-tooltip="{{ retention_tooltip }}">{{ retention_cell }}</span></td>
         <td class="design-table-cell--center pricing-summary-price"><span class="pricing-value-detail" tabindex="0" aria-label="{{ price_detail }}" data-tooltip="{{ price_tooltip }}">{{ price_cell }}</span></td>
@@ -54,6 +69,13 @@
               href=cta_href
               label=cta_label
               class="design-btn--block"
+            %}
+          {% elsif plan.id == "pro" %}
+            {% include components/design-btn-paid.html
+              href=cta_href
+              label=cta_label
+              btn_class="design-btn--block design-btn--trial"
+              badge=plan.price.display
             %}
           {% else %}
             {% include components/design-btn-paid.html

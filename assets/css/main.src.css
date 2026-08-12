@@ -1296,11 +1296,13 @@ body.radar-layout {
     2. --design-text-title    page titles, CTA messages
     3. --design-text-size     body / lists / descriptions
     4. --design-text-compact  code, meta, eyebrows, buttons, nav
+    5. --design-text-micro    badges, tight chips
   */
   --design-text-display: clamp(2.85rem, 7vw, 4rem);
   --design-text-title: 1.75rem;
   --design-text-size: 15px;
   --design-text-compact: 13px;
+  --design-text-micro: 11px;
   --radar-shell: 72rem;
   /* Soft well — terminal amber #c09e3f holds; no light-mode border */
   --design-code-bg: color-mix(in srgb, var(--design-ink) 5%, transparent);
@@ -3274,19 +3276,20 @@ html.dark .design-card--danger {
   color: var(--design-mid);
   display: inline-flex;
   font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
+  font-size: var(--design-text-micro);
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1;
-  padding: 0.32rem 0.48rem;
+  padding: 0.28rem 0.42rem;
+  text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .design-badge.design-badge--sm {
-  font-size: var(--design-text-compact);
+  font-size: var(--design-text-micro);
   letter-spacing: 0.08em;
-  padding: 0.18rem 0.32rem;
+  padding: 0.16rem 0.3rem;
 }
 
 .design-badge.design-badge--plain {
@@ -3837,6 +3840,31 @@ html.dark .design-badge.design-badge--danger {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+/* Keep plan + metric columns content-sized so CTAs absorb leftover width */
+.pricing-summary .design-table thead th:first-child,
+.pricing-summary .design-table tbody th.pricing-summary-plan {
+  padding-right: 0.85rem;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.pricing-summary .design-table thead th:nth-child(2),
+.pricing-summary .design-table tbody td:nth-child(2),
+.pricing-summary .design-table thead th.pricing-summary-retention,
+.pricing-summary .design-table tbody td.pricing-summary-retention,
+.pricing-summary .design-table thead th.pricing-summary-price,
+.pricing-summary .design-table tbody td.pricing-summary-price {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.pricing-summary-plan-row {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 0.45rem;
 }
 
 .pricing-plan-label-short {

@@ -10,5 +10,5 @@ layout: radar
   {% include components/pricing/compare-access.html %}
   {% include components/pricing/compare-audit.html %}
   {% include components/pricing/compare-support.html %}
-  {% include components/pricing/faq.html %}
+  {% include components/faq-yes.html %}
 </div>

@@ -1685,14 +1685,14 @@ html.dark .radar-brand-dark {
   transform: translateY(1px);
 }
 
-.radar-nav-login {
+.design-btn.radar-nav-login {
   display: none;
   flex-shrink: 0;
   line-height: 1.2;
 }
 
 @media (min-width: 768px) {
-  .radar-nav-login {
+  .design-btn.radar-nav-login {
     display: inline-block;
   }
 }

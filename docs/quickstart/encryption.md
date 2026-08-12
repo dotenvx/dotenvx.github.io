@@ -63,6 +63,7 @@ HELLO="encrypted:BAZb6wDPFaFeFzq8Ut48oiNFSPtYvJmv4AwVDFVcNKiIcGxrxuRIFGWxZ3xVjxO
 DOTENV_PRIVATE_KEY="81dac4d2c42e67a2c6542d3b943a4674a05c4be5e7e5a40a689be7a3bd49a07e"
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_keys copy=false %}
+    <p class="design-paragraph">We recommend <a class="design-link" href="/docs/cli/armor/introduction/">Armor</a> to move the private key off your device and harden it.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

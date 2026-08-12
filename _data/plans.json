@@ -1,8 +1,8 @@
 {
   "plans": [
     {
-      "id": "pro",
-      "name": "⛨ Pro",
+      "id": "solo",
+      "name": "⛨ Solo",
       "audience": "Personal",
       "price": {
         "display": "$5",
@@ -102,7 +102,7 @@
       "id": "members",
       "label": "Users",
       "values": {
-        "pro": "1",
+        "solo": "1",
         "team": "3",
         "business": "10",
         "enterprise": "Custom"
@@ -112,7 +112,7 @@
       "id": "audit_events",
       "label": "Audit events",
       "values": {
-        "pro": "25,000",
+        "solo": "25,000",
         "team": "250,000",
         "business": "1,000,000",
         "enterprise": "Custom"
@@ -122,7 +122,7 @@
       "id": "audit_retention",
       "label": "Audit retention",
       "values": {
-        "pro": "5 days",
+        "solo": "5 days",
         "team": "30 days",
         "business": "90 days",
         "enterprise": "Flexible"
@@ -132,7 +132,7 @@
       "id": "armored_keys",
       "label": "Armored keys",
       "values": {
-        "pro": "Unlimited",
+        "solo": "Unlimited",
         "team": "Unlimited",
         "business": "Unlimited",
         "enterprise": "Unlimited"

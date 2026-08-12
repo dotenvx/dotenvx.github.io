@@ -24,7 +24,7 @@ JEKYLL_ENV=production bundle exec jekyll build
 
 #### Pricing plans
 
-`/pricing` loads plan prices and limits from committed `_data/plans.json` (Pro audit retention is **5 days**).
+`/pricing` loads plan prices and limits from committed `_data/plans.json` (Solo audit retention is **5 days**).
 
 Optionally sync from Radar by setting `PLANS_API_URL`:
 

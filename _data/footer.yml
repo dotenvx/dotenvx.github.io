@@ -43,10 +43,10 @@ links:
     href: /privacy
   - label: Terms
     href: /terms
-  - label: X
+  - label: Twitter
     href: https://twitter.com/dotenvx
     external: true
-  - label: Log In
-    href: /login
   - label: Theme
     theme_toggle: true
+  - label: Log In
+    href: /login

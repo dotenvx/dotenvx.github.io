@@ -1614,24 +1614,9 @@ html {
 
 .radar-brand img {
   border-radius: 0.05rem;
+  display: block;
   height: 1.8rem;
   width: 1.8rem;
-}
-
-.radar-brand-light {
-  display: block;
-}
-
-.radar-brand-dark {
-  display: none;
-}
-
-html.dark .radar-brand-light {
-  display: none;
-}
-
-html.dark .radar-brand-dark {
-  display: block;
 }
 
 .radar-nav-item {

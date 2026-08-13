@@ -3205,18 +3205,18 @@ html.dark .design-table tbody tr:last-child {
   border-radius: 6px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   color: #fff;
+  /* Hidden tips still expand page scrollWidth (nowrap + translateX(-50%)) */
+  display: none;
   font-family: var(--design-font-sans);
   font-size: var(--design-text-compact);
   left: 50%;
   letter-spacing: 0;
   line-height: 1.25;
-  opacity: 0;
   padding: 0.4rem 0.65rem;
   pointer-events: none;
   position: absolute;
   text-transform: none;
   transform: translateX(-50%);
-  transition: opacity 100ms ease;
   white-space: nowrap;
   z-index: 40;
 }
@@ -3240,11 +3240,12 @@ html.dark .design-table tbody tr:last-child {
 
 .design-tooltip:hover .design-tooltip-tip,
 .design-tooltip:focus-within .design-tooltip-tip {
-  opacity: 1;
+  display: block;
 }
 
 .armor-usage-card {
   background: var(--design-panel);
+  max-width: 100%;
   overflow: visible;
   padding: 1rem 1rem 1.1rem;
   width: 100%;

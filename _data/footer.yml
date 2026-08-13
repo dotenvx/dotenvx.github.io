@@ -48,3 +48,5 @@ links:
     external: true
   - label: Log In
     href: /login
+  - label: Theme
+    theme_toggle: true

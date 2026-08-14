@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" width="200" height="200" viewBox="0 0 200 200">
-  <title>Dotenvx</title>
-  <desc>Dotenvx</desc>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" overflow="visible" xml:space="preserve">
+<title>Dotenvx</title>
+<desc>Dotenvx</desc>
+<g id="design">
   <path fill="#000000" d="M0 0h200v200H0z"/>
   <path fill="#ECD53F" d="M31 164h14v14H31z"/>
   <path fill="#ECD53F" fill-rule="nonzero" d="M91.986 178.41v-7.75H66.288v-12.52h23.094v-7.75H66.288v-10.198h24.82v-7.782H57v46zM108.585 178.41v-29.997l18.545 29.997h9.319v-46h-8.63v30.72l-18.826-30.72h-9.037v46zM167.92 178.41l16.474-46h-9.852l-11.265 34.045-11.641-34.045h-10.073l16.442 46z"/>
+</g>
 </svg>

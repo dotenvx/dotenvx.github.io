@@ -1,6 +1,7 @@
 (function () {
   var INDEX_URL = '/search.json'
-  var MAX_RESULTS = 24
+  var PAGE_MAX_RESULTS = 24
+  var MODAL_MAX_RESULTS = 10
 
   function ready(fn) {
     if (document.readyState !== 'loading') fn()
@@ -67,8 +68,51 @@
       .replace(/"/g, '&quot;')
   }
 
-  function renderResults(root, items, query) {
-      if (!query) {
+  function search(index, query, max) {
+    return index
+      .map(function (entry) {
+        return { entry: entry, score: rank(entry, query) }
+      })
+      .filter(function (row) { return row.score > 0 })
+      .sort(function (a, b) {
+        if (b.score !== a.score) return b.score - a.score
+        return String(a.entry.title).localeCompare(String(b.entry.title))
+      })
+      .slice(0, max)
+      .map(function (row) { return row.entry })
+  }
+
+  function isSearchPage() {
+    return window.location.pathname.replace(/\/+$/, '') === '/search'
+  }
+
+  function readQuery() {
+    try {
+      return new URLSearchParams(window.location.search).get('q') || ''
+    } catch (_) {
+      return ''
+    }
+  }
+
+  function writeQuery(query) {
+    if (!isSearchPage()) return
+    try {
+      var url = new URL(window.location.href)
+      if (query) url.searchParams.set('q', query)
+      else url.searchParams.delete('q')
+      window.history.replaceState({}, '', url.pathname + url.search + url.hash)
+    } catch (_) {}
+  }
+
+  function isTypingTarget(node) {
+    if (!node) return false
+    var tag = node.tagName
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true
+    return !!(node.isContentEditable)
+  }
+
+  function renderPageResults(root, items, query) {
+    if (!query) {
       root.innerHTML = '<p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>'
       return
     }
@@ -90,56 +134,99 @@
     root.innerHTML = html
   }
 
-  function search(index, query) {
-    return index
-      .map(function (entry) {
-        return { entry: entry, score: rank(entry, query) }
-      })
-      .filter(function (row) { return row.score > 0 })
-      .sort(function (a, b) {
-        if (b.score !== a.score) return b.score - a.score
-        return String(a.entry.title).localeCompare(String(b.entry.title))
-      })
-      .slice(0, MAX_RESULTS)
-      .map(function (row) { return row.entry })
-  }
-
-  function readQuery() {
-    try {
-      return new URLSearchParams(window.location.search).get('q') || ''
-    } catch (_) {
-      return ''
+  function renderModalResults(root, items, query) {
+    if (!query) {
+      root.innerHTML = '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
+      return
     }
-  }
+    if (!items.length) {
+      root.innerHTML = '<p class="site-search-empty">No results for <span class="design-code">' + escapeHtml(query) + '</span>.</p>'
+      return
+    }
 
-  function writeQuery(query) {
-    try {
-      var url = new URL(window.location.href)
-      if (query) url.searchParams.set('q', query)
-      else url.searchParams.delete('q')
-      window.history.replaceState({}, '', url.pathname + url.search + url.hash)
-    } catch (_) {}
+    var html = '<ul class="site-search-hits">'
+    items.forEach(function (item, i) {
+      html += '<li>'
+      html += '<a class="site-search-hit' + (i === 0 ? ' is-active' : '') + '" href="' + escapeHtml(item.url) + '" data-site-search-hit="' + i + '">'
+      html += '<span class="site-search-hit-title">' + escapeHtml(item.title) + '</span>'
+      if (item.section) {
+        html += '<span class="site-search-hit-meta">' + escapeHtml(item.section) + '</span>'
+      }
+      html += '</a></li>'
+    })
+    html += '</ul>'
+    root.innerHTML = html
   }
 
   ready(function () {
-    var form = document.querySelector('[data-site-search]')
-    if (!form) return
+    var overlay = document.querySelector('[data-site-search-overlay]')
+    var modalForm = overlay && overlay.querySelector('[data-site-search]')
+    var pageForm = document.querySelector('[data-site-search-page]')
+    if (!overlay || !modalForm) return
 
-    var input = form.querySelector('[data-site-search-input]')
-    var results = form.querySelector('[data-site-search-results]')
-    if (!input || !results) return
-
-    var index = null
-    var timer = null
-
-    function run(query) {
-      if (!index) return
-      renderResults(results, search(index, query), query)
+    if (overlay.parentElement !== document.body) {
+      document.body.appendChild(overlay)
     }
 
-    function onQuery(query) {
-      writeQuery(query)
-      run(query)
+    var modalInput = modalForm.querySelector('[data-site-search-input]')
+    var modalResults = modalForm.querySelector('[data-site-search-results]')
+    if (!modalInput || !modalResults) return
+
+    var pageInput = pageForm && pageForm.querySelector('[data-site-search-input]')
+    var pageResults = pageForm && pageForm.querySelector('[data-site-search-results]')
+
+    var index = null
+    var pageTimer = null
+    var modalTimer = null
+    var activeIndex = -1
+    var lastFocus = null
+
+    function isOpen() {
+      return !overlay.hidden
+    }
+
+    function runPage(query) {
+      if (!index || !pageResults) return
+      renderPageResults(pageResults, search(index, query, PAGE_MAX_RESULTS), query)
+    }
+
+    function runModal(query) {
+      if (!index) return
+      renderModalResults(modalResults, search(index, query, MODAL_MAX_RESULTS), query)
+      activeIndex = query && modalResults.querySelector('[data-site-search-hit]') ? 0 : -1
+    }
+
+    function setActive(next) {
+      var nodes = modalResults.querySelectorAll('[data-site-search-hit]')
+      if (!nodes.length) {
+        activeIndex = -1
+        return
+      }
+      if (next < 0) next = nodes.length - 1
+      if (next >= nodes.length) next = 0
+      activeIndex = next
+      nodes.forEach(function (node, i) {
+        node.classList.toggle('is-active', i === activeIndex)
+      })
+      nodes[activeIndex].scrollIntoView({ block: 'nearest' })
+    }
+
+    function open() {
+      lastFocus = document.activeElement
+      overlay.hidden = false
+      document.body.classList.add('overflow-hidden')
+      modalInput.focus()
+      modalInput.select()
+      if (index && modalInput.value) runModal(modalInput.value)
+    }
+
+    function close() {
+      if (!isOpen()) return
+      overlay.hidden = true
+      document.body.classList.remove('overflow-hidden')
+      if (lastFocus && typeof lastFocus.focus === 'function') {
+        try { lastFocus.focus() } catch (_) {}
+      }
     }
 
     fetch(INDEX_URL, { credentials: 'same-origin' })
@@ -150,26 +237,88 @@
       .then(function (data) {
         index = Array.isArray(data) ? data : []
         var initial = readQuery()
-        if (initial) {
-          input.value = initial
-          run(initial)
-        } else {
-          renderResults(results, [], '')
+        if (pageInput) {
+          if (initial) pageInput.value = initial
+          runPage(pageInput.value)
+        } else if (initial) {
+          modalInput.value = initial
         }
+        if (isOpen()) runModal(modalInput.value)
       })
       .catch(function () {
-        results.innerHTML = '<p class="design-paragraph">Search is unavailable right now.</p>'
+        var message = '<p class="site-search-empty">Search is unavailable right now.</p>'
+        modalResults.innerHTML = message
+        if (pageResults) {
+          pageResults.innerHTML = '<p class="design-paragraph">Search is unavailable right now.</p>'
+        }
       })
 
-    input.addEventListener('input', function () {
-      var query = input.value
-      window.clearTimeout(timer)
-      timer = window.setTimeout(function () { onQuery(query) }, 80)
+    if (pageInput) {
+      pageInput.addEventListener('input', function () {
+        var query = pageInput.value
+        window.clearTimeout(pageTimer)
+        pageTimer = window.setTimeout(function () {
+          writeQuery(query)
+          runPage(query)
+        }, 80)
+      })
+
+      pageForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+        writeQuery(pageInput.value)
+        runPage(pageInput.value)
+      })
+    }
+
+    modalInput.addEventListener('input', function () {
+      var query = modalInput.value
+      window.clearTimeout(modalTimer)
+      modalTimer = window.setTimeout(function () { runModal(query) }, 80)
     })
 
-    form.addEventListener('submit', function (event) {
+    modalForm.addEventListener('submit', function (event) {
       event.preventDefault()
-      onQuery(input.value)
+      var active = modalResults.querySelector('.site-search-hit.is-active')
+      if (active && active.href) {
+        window.location.href = active.href
+        return
+      }
+      runModal(modalInput.value)
+    })
+
+    modalResults.addEventListener('mousemove', function (event) {
+      var hit = event.target.closest('[data-site-search-hit]')
+      if (!hit) return
+      setActive(Number(hit.getAttribute('data-site-search-hit')))
+    })
+
+    overlay.addEventListener('click', function (event) {
+      if (event.target === overlay) close()
+    })
+
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && isOpen()) {
+        event.preventDefault()
+        close()
+        return
+      }
+
+      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey && !isOpen()) {
+        if (isTypingTarget(event.target)) return
+        event.preventDefault()
+        open()
+        return
+      }
+
+      if (!isOpen()) return
+
+      if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        setActive(activeIndex + 1)
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault()
+        setActive(activeIndex - 1)
+      }
     })
   })
 })()

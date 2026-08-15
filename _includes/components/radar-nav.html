@@ -54,6 +54,11 @@
     </nav>
 
     <div class="radar-topbar-right">
+      <a href="/search" class="radar-nav-search" aria-label="Search">
+        <span>Search</span>
+        {% include components/design-kbd.html key="/" %}
+      </a>
+
       {% include components/design-btn.html
         label="Log In"
         href="/login"
@@ -146,6 +151,7 @@
     </div>
 
     <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
+      <a href="/search" class="radar-mobile-link">Search</a>
       <a href="/" class="radar-mobile-link">Dotenvx <span aria-hidden="true">◈</span></a>
       <a href="/armor" class="radar-mobile-link">Armor <span aria-hidden="true">⛨</span></a>
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="company">

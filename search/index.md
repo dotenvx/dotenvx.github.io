@@ -15,13 +15,13 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
-    <form class="site-search" data-site-search action="/search/" method="get" role="search">
-      <div class="site-search-field">
+    <form class="site-search-page" data-site-search-page action="/search/" method="get" role="search">
+      <div class="site-search-page-field">
         <input
           type="search"
           class="design-input site-search-input"
           name="q"
-          id="site-search-input"
+          id="site-search-page-input"
           data-site-search-input
           placeholder="Search for Claude, pricing, encrypt…"
           autocomplete="off"
@@ -32,11 +32,9 @@ layout: radar
           data-form-type="other"
         >
       </div>
-      <div class="site-search-results" data-site-search-results aria-live="polite">
+      <div class="site-search-page-results" data-site-search-results aria-live="polite">
         <p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>
       </div>
     </form>
   </div>
 </section>
-
-<script src="{{ '/assets/js/site-search.js' | relative_url }}"></script>

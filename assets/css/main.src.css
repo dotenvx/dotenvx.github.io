@@ -2567,6 +2567,7 @@ html.dark .design-link:focus {
 }
 
 .design-input {
+  -webkit-appearance: none;
   appearance: none;
   background: color-mix(in srgb, var(--design-ink) 4%, var(--design-bg, #fafafa));
   border: 1px solid var(--design-line, var(--design-mid));
@@ -2584,6 +2585,15 @@ html.dark .design-link:focus {
   text-indent: 0;
   text-transform: none;
   width: 100%;
+}
+
+.design-input::-webkit-search-decoration,
+.design-input::-webkit-search-cancel-button,
+.design-input::-webkit-search-results-button,
+.design-input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 
 html.dark .design-input,
@@ -2631,12 +2641,20 @@ html.storm .design-input:focus {
 .site-search-overlay {
   align-items: flex-start;
   background: color-mix(in srgb, var(--design-bg) 72%, transparent);
-  display: flex;
+  display: none;
   inset: 0;
   justify-content: center;
+  left: 0;
   padding: 12vh 1.25rem 2rem;
   position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
   z-index: 130;
+}
+
+.site-search-overlay.is-open {
+  display: flex;
 }
 
 .site-search-overlay[hidden] {

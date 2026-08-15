@@ -111,6 +111,10 @@
     return !!(node.isContentEditable)
   }
 
+  function isSlashKey(event) {
+    return event.key === '/' || event.code === 'Slash'
+  }
+
   function renderPageResults(root, items, query) {
     if (!query) {
       root.innerHTML = '<p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>'
@@ -182,7 +186,7 @@
     var lastFocus = null
 
     function isOpen() {
-      return !overlay.hidden
+      return overlay.classList.contains('is-open')
     }
 
     function runPage(query) {
@@ -211,20 +215,31 @@
       nodes[activeIndex].scrollIntoView({ block: 'nearest' })
     }
 
+    function focusModalInput() {
+      try {
+        modalInput.focus()
+        if (typeof modalInput.select === 'function') modalInput.select()
+      } catch (_) {}
+    }
+
     function open() {
       lastFocus = document.activeElement
       overlay.hidden = false
+      overlay.classList.add('is-open')
+      overlay.setAttribute('aria-hidden', 'false')
       document.body.classList.add('overflow-hidden')
-      modalInput.focus()
-      modalInput.select()
+      focusModalInput()
+      window.requestAnimationFrame(focusModalInput)
       if (index && modalInput.value) runModal(modalInput.value)
     }
 
     function close() {
       if (!isOpen()) return
+      overlay.classList.remove('is-open')
       overlay.hidden = true
+      overlay.setAttribute('aria-hidden', 'true')
       document.body.classList.remove('overflow-hidden')
-      if (lastFocus && typeof lastFocus.focus === 'function') {
+      if (lastFocus && typeof lastFocus.focus === 'function' && lastFocus !== modalInput) {
         try { lastFocus.focus() } catch (_) {}
       }
     }
@@ -240,6 +255,7 @@
         if (pageInput) {
           if (initial) pageInput.value = initial
           runPage(pageInput.value)
+          pageInput.focus()
         } else if (initial) {
           modalInput.value = initial
         }
@@ -296,14 +312,14 @@
       if (event.target === overlay) close()
     })
 
-    window.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && isOpen()) {
         event.preventDefault()
         close()
         return
       }
 
-      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey && !isOpen()) {
+      if (isSlashKey(event) && !event.metaKey && !event.ctrlKey && !event.altKey && !isOpen()) {
         if (isTypingTarget(event.target)) return
         event.preventDefault()
         open()
@@ -319,6 +335,11 @@
         event.preventDefault()
         setActive(activeIndex - 1)
       }
+    }, true)
+
+    modalInput.addEventListener('keypress', function (event) {
+      if (!isSlashKey(event) || modalInput.value) return
+      event.preventDefault()
     })
   })
 })()

@@ -18,12 +18,14 @@ layout: radar
     <form class="site-search-page" data-site-search-page action="/search/" method="get" role="search">
       <div class="site-search-page-field">
         <input
-          type="search"
+          type="text"
           class="design-input site-search-input"
           name="q"
           id="site-search-page-input"
           data-site-search-input
           placeholder="Search for Claude, pricing, encrypt…"
+          inputmode="search"
+          enterkeyhint="search"
           autocomplete="off"
           autofocus
           data-1p-ignore="true"

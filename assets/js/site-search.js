@@ -1,5 +1,9 @@
 (function () {
   var INDEX_URL = '/search.json'
+
+  function indexUrl(overlay) {
+    return (overlay && overlay.getAttribute('data-site-search-index')) || INDEX_URL
+  }
   var PAGE_MAX_RESULTS = 24
   var MODAL_MAX_RESULTS = 10
 
@@ -244,7 +248,7 @@
       }
     }
 
-    fetch(INDEX_URL, { credentials: 'same-origin' })
+    fetch(indexUrl(overlay), { credentials: 'same-origin' })
       .then(function (res) {
         if (!res.ok) throw new Error('search index failed')
         return res.json()

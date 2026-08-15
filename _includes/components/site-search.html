@@ -1,4 +1,4 @@
-<div class="site-search-overlay" data-site-search-overlay hidden aria-hidden="true">
+<div class="site-search-overlay" data-site-search-overlay data-site-search-index="{{ '/search.json' | relative_url | append: cacheBust }}" hidden aria-hidden="true">
   <div class="site-search-dialog design-card" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
     <form class="site-search" data-site-search action="/search/" method="get" role="search">
       <div class="site-search-bar">
@@ -24,4 +24,4 @@
     </form>
   </div>
 </div>
-<script src="{{ '/assets/js/site-search.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/site-search.js' | relative_url | append: cacheBust }}"></script>

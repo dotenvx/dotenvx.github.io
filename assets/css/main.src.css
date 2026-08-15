@@ -2625,7 +2625,6 @@ html.storm .design-input:focus {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-  max-width: 36rem;
   width: 100%;
 }
 
@@ -2636,6 +2635,16 @@ html.storm .design-input:focus {
 
 .site-search-page-results {
   min-height: 1.5rem;
+}
+
+.site-search-page-results > .design-paragraph {
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .site-search-page-results > .design-paragraph {
+    text-align: left;
+  }
 }
 
 .site-search-overlay {
@@ -2788,7 +2797,7 @@ html.storm .design-input:focus {
   color: var(--design-mid);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
   .radar-nav-search {
     display: inline-flex;
   }

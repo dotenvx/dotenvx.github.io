@@ -5,12 +5,52 @@ permalink: /search/
 layout: radar
 ---
 
+<style>
+  .search-hero-ascii {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    min-height: inherit;
+    width: 100%;
+  }
+
+  .search-hero-ascii-art {
+    color: var(--design-ink);
+    font-family: var(--design-font-mono);
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    margin: 0;
+    user-select: none;
+  }
+
+  @media (min-width: 900px) {
+    .search-hero-ascii {
+      height: 100%;
+      justify-content: flex-end;
+      min-height: inherit;
+    }
+
+    .search-hero-ascii-art {
+      font-size: 12rem;
+    }
+  }
+</style>
+
+{% capture search_hero_visual %}
+  <div class="search-hero-ascii" aria-hidden="true">
+    <span class="search-hero-ascii-art">/</span>
+  </div>
+{% endcapture %}
+
 {% include components/design-hero.html
   class="company-design-hero"
   eyebrow="Dotenvx"
   title="Search"
   description="Find docs, pricing, and product pages."
-  hide_visual=true
+  visual=search_hero_visual
 %}
 
 <section class="radar-section">

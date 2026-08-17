@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+set -e
+cd "$(dirname "$0")/.."
+
+# -e /dev/null keeps foreman from loading .env on its own
+exec bundle exec foreman start -f Procfile.dev -e /dev/null "$@"

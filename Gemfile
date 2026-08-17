@@ -16,3 +16,7 @@ gem "jekyll-brotli"
 gem "jekyll-loading-lazy"
 gem "jekyll-responsive-image"
 gem "jekyll-commonmark"
+
+group :development do
+  gem "foreman"
+end

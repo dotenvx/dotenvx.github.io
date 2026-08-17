@@ -1,0 +1,2 @@
+web: bundle exec jekyll serve --livereload --verbose --incremental
+css: npm run watch:css

@@ -1610,6 +1610,10 @@ html {
   z-index: 80;
 }
 
+.radar-topbar-icons .design-tooltip--bottom-end .design-tooltip-tip {
+  transform: translateX(0.8rem);
+}
+
 @media (min-width: 768px) {
   .radar-topbar-icons .design-tooltip {
     display: inline-flex;

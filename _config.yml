@@ -48,6 +48,8 @@ exclude:
   - postcss.config.js
   - tailwind.config.js
   - assets/css/main.src.css
+  - Procfile.dev
+  - bin
 
 markdown: kramdown
 kramdown:

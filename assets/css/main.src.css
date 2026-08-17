@@ -1593,6 +1593,13 @@ html {
   justify-content: flex-end;
 }
 
+.radar-topbar-icons {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.45rem;
+}
+
 .radar-topbar-center {
   align-items: center;
   display: none;
@@ -1670,15 +1677,14 @@ html {
   transform: translateY(1px);
 }
 
-.design-btn.radar-nav-login {
+.radar-nav-login {
   display: none;
   flex-shrink: 0;
-  line-height: 1.2;
 }
 
 @media (min-width: 768px) {
-  .design-btn.radar-nav-login {
-    display: inline-block;
+  .radar-nav-login {
+    display: inline-flex;
   }
 }
 
@@ -1691,7 +1697,7 @@ html {
   justify-content: center;
   text-decoration: none !important;
   transition: color 140ms ease;
-  width: 2rem;
+  width: auto;
 }
 
 .radar-nav-icon svg {
@@ -2769,36 +2775,32 @@ html.storm .design-input:focus {
   letter-spacing: 0.04em;
 }
 
-.radar-nav-search {
+.radar-nav-search,
+.radar-nav-theme {
   align-items: center;
+  appearance: none;
   background: transparent;
   border: 0;
-  color: var(--design-dim) !important;
   cursor: pointer;
   display: none;
   flex-shrink: 0;
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  gap: 0.4rem;
-  letter-spacing: 0.02em;
+  height: 2rem;
+  justify-content: center;
   padding: 0;
   text-decoration: none !important;
 }
 
-.radar-nav-search:hover,
-.radar-nav-search:focus-visible {
-  color: var(--design-ink) !important;
-  outline: none;
-}
-
 .radar-nav-search:hover .design-kbd,
-.radar-nav-search:focus-visible .design-kbd {
-  border-color: var(--design-dim);
-  color: var(--design-mid);
+.radar-nav-search:focus-visible .design-kbd,
+.radar-nav-theme:hover .design-kbd,
+.radar-nav-theme:focus-visible .design-kbd {
+  border-color: var(--design-ink);
+  color: var(--design-ink);
 }
 
-@media (min-width: 1100px) {
-  .radar-nav-search {
+@media (min-width: 768px) {
+  .radar-nav-search,
+  .radar-nav-theme {
     display: inline-flex;
   }
 }

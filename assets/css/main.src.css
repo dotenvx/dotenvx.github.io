@@ -3418,6 +3418,38 @@ html.dark .design-table tbody tr:last-child {
   bottom: 100%;
 }
 
+.design-tooltip--top-end .design-tooltip-tip,
+.design-tooltip--bottom-end .design-tooltip-tip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.design-tooltip--top-end .design-tooltip-tip::after,
+.design-tooltip--bottom-end .design-tooltip-tip::after {
+  left: auto;
+  right: 0.65rem;
+  transform: none;
+}
+
+.design-tooltip--top-end .design-tooltip-tip {
+  bottom: calc(100% + 0.4rem);
+}
+
+.design-tooltip--top-end .design-tooltip-tip::after {
+  border-top-color: #1c1c1a;
+  top: 100%;
+}
+
+.design-tooltip--bottom-end .design-tooltip-tip {
+  top: calc(100% + 0.4rem);
+}
+
+.design-tooltip--bottom-end .design-tooltip-tip::after {
+  border-bottom-color: #1c1c1a;
+  bottom: 100%;
+}
+
 .design-tooltip:hover .design-tooltip-tip,
 .design-tooltip:focus-within .design-tooltip-tip {
   display: block;

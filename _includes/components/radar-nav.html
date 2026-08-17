@@ -62,14 +62,14 @@
           {% include components/design-kbd.html key="/" %}
         </a>
         {% endcapture %}
-        {% include components/design-tooltip.html text="Search - type /" position="bottom" content=nav_search_trigger %}
+        {% include components/design-tooltip.html text="Search - type /" position="bottom-end" content=nav_search_trigger %}
 
         {% capture nav_theme_trigger %}
         <button type="button" class="radar-nav-theme" data-radar-theme-toggle aria-label="Mode/Theme - type M">
           {% include components/design-kbd.html key="M" %}
         </button>
         {% endcapture %}
-        {% include components/design-tooltip.html text="Mode/Theme - type M" position="bottom" content=nav_theme_trigger %}
+        {% include components/design-tooltip.html text="Mode/Theme - type M" position="bottom-end" content=nav_theme_trigger %}
 
         {% capture nav_github_trigger %}
         <a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="radar-nav-icon" aria-label="Star on GitHub - 5.7k" data-umami-event="GitHub repository link">
@@ -78,7 +78,7 @@
           </svg>
         </a>
         {% endcapture %}
-        {% include components/design-tooltip.html text="Star on GitHub - 5.7k" position="bottom" content=nav_github_trigger %}
+        {% include components/design-tooltip.html text="Star on GitHub - 5.7k" position="bottom-end" content=nav_github_trigger %}
       </div>
       <button type="button" class="radar-mobile-toggle" id="radar-mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
         <svg class="radar-mobile-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">

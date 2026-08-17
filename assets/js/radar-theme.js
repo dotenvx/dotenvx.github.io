@@ -42,7 +42,11 @@
       ? window.__radarThemeMode.next(mode)
       : list[(list.indexOf(mode) + 1) % list.length]
     apply(next)
-    localStorage.setItem('themeMode', mode)
+    if (window.__radarThemeMode && window.__radarThemeMode.persist) {
+      window.__radarThemeMode.persist(mode)
+    } else {
+      localStorage.setItem('themeMode', mode)
+    }
   }
 
   function onKey(e) {

@@ -2,10 +2,43 @@
   (function () {
     var MODES = ['light', 'dark', 'storm']
 
+    function cookieDomain() {
+      var host = location.hostname
+      if (host === 'dotenvx.com' || host.slice(-12) === '.dotenvx.com') return '.dotenvx.com'
+      return ''
+    }
+
+    function readCookie(name) {
+      var parts = document.cookie.split(';')
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i].replace(/^\s+/, '')
+        if (part.indexOf(name + '=') === 0) {
+          return decodeURIComponent(part.slice(name.length + 1))
+        }
+      }
+      return null
+    }
+
+    function persistThemeMode(mode) {
+      try { localStorage.setItem('themeMode', mode) } catch (e) {}
+      var cookie = 'themeMode=' + encodeURIComponent(mode) + '; Path=/; Max-Age=31536000; SameSite=Lax'
+      var domain = cookieDomain()
+      if (domain) cookie += '; Domain=' + domain
+      if (location.protocol === 'https:') cookie += '; Secure'
+      document.cookie = cookie
+    }
+
+    function readThemeMode() {
+      var fromCookie = readCookie('themeMode')
+      var fromStore = null
+      try { fromStore = localStorage.getItem('themeMode') } catch (e) {}
+      return fromCookie || fromStore
+    }
+
     function resolveThemeMode() {
-      var stored = localStorage.getItem('themeMode')
+      var stored = readThemeMode()
       var mode = MODES.indexOf(stored) !== -1 ? stored : 'storm'
-      if (!stored) localStorage.setItem('themeMode', mode)
+      persistThemeMode(mode)
       return mode
     }
 
@@ -28,6 +61,7 @@
     window.__radarThemeMode = window.__radarThemeMode || {}
     window.__radarThemeMode.modes = MODES
     window.__radarThemeMode.resolve = resolveThemeMode
+    window.__radarThemeMode.persist = persistThemeMode
     window.__radarThemeMode.apply = applyThemeMode
     window.__radarThemeMode.next = function (mode) {
       var i = MODES.indexOf(mode)

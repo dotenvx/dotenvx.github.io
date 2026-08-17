@@ -1,0 +1,8 @@
+{% comment %}Mirrors ../radar design-tooltip — design-tooltip design-tooltip-tip design-tooltip--top design-tooltip--bottom{% endcomment %}
+{% assign tip_text = include.text %}
+{% assign tip_position = include.position | default: "top" %}
+{% assign tip_class = include.class %}
+<span class="design-tooltip design-tooltip--{{ tip_position }}{% if tip_class %} {{ tip_class }}{% endif %}">
+  {{ include.content }}
+  <span class="design-tooltip-tip" role="tooltip">{{ tip_text }}</span>
+</span>

@@ -1600,6 +1600,20 @@ html {
   gap: 0.45rem;
 }
 
+.radar-topbar-icons .design-tooltip {
+  display: none;
+}
+
+.radar-topbar-icons .design-tooltip-tip {
+  z-index: 80;
+}
+
+@media (min-width: 768px) {
+  .radar-topbar-icons .design-tooltip {
+    display: inline-flex;
+  }
+}
+
 .radar-topbar-center {
   align-items: center;
   display: none;
@@ -2071,28 +2085,23 @@ html {
   color: var(--design-mid);
 }
 
-.design-theme-control-label {
-  bottom: 0.5rem;
-  color: var(--design-mid);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  letter-spacing: 0.04em;
-  left: 2.15rem;
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  text-transform: none;
-  transform: translateX(-0.15rem);
-  transition: opacity 140ms ease, max-width 160ms ease, transform 160ms ease;
-  white-space: nowrap;
+.design-theme-control .design-tooltip-tip {
+  bottom: calc(100% + 0.35rem);
+  left: 0.35rem;
+  transform: none;
+  z-index: 46;
 }
 
-.design-theme-control:hover .design-theme-control-label,
-.design-theme-control:focus-visible .design-theme-control-label {
-  max-width: 8rem;
-  opacity: 1;
-  transform: translateX(0);
+.design-theme-control .design-tooltip-tip::after {
+  border-top-color: #1c1c1a;
+  left: 0.85rem;
+  top: 100%;
+  transform: none;
+}
+
+.design-theme-control:hover .design-tooltip-tip,
+.design-theme-control:focus-visible .design-tooltip-tip {
+  display: block;
 }
 
 .footer {
@@ -3398,6 +3407,15 @@ html.dark .design-table tbody tr:last-child {
 .design-tooltip--top .design-tooltip-tip::after {
   border-top-color: #1c1c1a;
   top: 100%;
+}
+
+.design-tooltip--bottom .design-tooltip-tip {
+  top: calc(100% + 0.4rem);
+}
+
+.design-tooltip--bottom .design-tooltip-tip::after {
+  border-bottom-color: #1c1c1a;
+  bottom: 100%;
 }
 
 .design-tooltip:hover .design-tooltip-tip,

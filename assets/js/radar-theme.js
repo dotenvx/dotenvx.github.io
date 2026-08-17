@@ -68,8 +68,18 @@
     apply(resolve())
     window.addEventListener('keydown', onKey)
     document.querySelectorAll('[data-radar-theme-toggle]').forEach(function (el) {
+      var pressed = false
+      el.addEventListener('pointerdown', function (e) {
+        if (e.button) return
+        pressed = true
+        toggle()
+      })
       el.addEventListener('click', function (e) {
         e.preventDefault()
+        if (pressed) {
+          pressed = false
+          return
+        }
         toggle()
       })
     })

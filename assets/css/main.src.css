@@ -1602,6 +1602,8 @@ html {
 
 .radar-topbar-icons .design-tooltip {
   display: none;
+  font-size: 0;
+  line-height: 0;
 }
 
 .radar-topbar-icons .design-tooltip-tip {
@@ -2086,17 +2088,21 @@ html {
 }
 
 .design-theme-control .design-tooltip-tip {
-  bottom: calc(100% + 0.35rem);
-  left: 0.35rem;
-  transform: none;
+  bottom: 1.125rem;
+  left: 2.55rem;
+  top: auto;
+  transform: translateY(50%);
   z-index: 46;
 }
 
 .design-theme-control .design-tooltip-tip::after {
-  border-top-color: #1c1c1a;
-  left: 0.85rem;
-  top: 100%;
-  transform: none;
+  border-bottom-color: transparent;
+  border-right-color: #1c1c1a;
+  border-top-color: transparent;
+  left: auto;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .design-theme-control:hover .design-tooltip-tip,
@@ -3421,14 +3427,14 @@ html.dark .design-table tbody tr:last-child {
 .design-tooltip--top-end .design-tooltip-tip,
 .design-tooltip--bottom-end .design-tooltip-tip {
   left: auto;
-  right: 0;
-  transform: none;
+  right: 50%;
+  transform: translateX(0.35rem);
 }
 
 .design-tooltip--top-end .design-tooltip-tip::after,
 .design-tooltip--bottom-end .design-tooltip-tip::after {
   left: auto;
-  right: 0.65rem;
+  right: 0.5rem;
   transform: none;
 }
 
@@ -3448,6 +3454,34 @@ html.dark .design-table tbody tr:last-child {
 .design-tooltip--bottom-end .design-tooltip-tip::after {
   border-bottom-color: #1c1c1a;
   bottom: 100%;
+}
+
+.design-tooltip--right .design-tooltip-tip {
+  left: calc(100% + 0.4rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.design-tooltip--right .design-tooltip-tip::after {
+  border-right-color: #1c1c1a;
+  left: auto;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.design-tooltip--left .design-tooltip-tip {
+  left: auto;
+  right: calc(100% + 0.4rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.design-tooltip--left .design-tooltip-tip::after {
+  border-left-color: #1c1c1a;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .design-tooltip:hover .design-tooltip-tip,

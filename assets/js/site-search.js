@@ -119,6 +119,29 @@
     return event.key === '/' || event.code === 'Slash'
   }
 
+  function sanitizeQuery(value) {
+    var query = String(value || '').replace(/\s+/g, ' ').trim().toLowerCase()
+    if (!query) return ''
+    if (query.length > 80) query = query.slice(0, 80)
+    if (/@/.test(query)) return ''
+    if (/encrypted:[a-z0-9+/=]+/i.test(query)) return ''
+    if (/^[0-9a-f]{32,}$/i.test(query.replace(/\s/g, ''))) return ''
+    return query
+  }
+
+  function trackSearch(query, source, resultCount) {
+    var cleaned = sanitizeQuery(query)
+    if (!cleaned) return
+    if (!window.umami || typeof window.umami.track !== 'function') return
+    try {
+      window.umami.track('Search', {
+        query: cleaned,
+        source: source,
+        results: Number(resultCount) || 0
+      })
+    } catch (_) {}
+  }
+
   function renderPageResults(root, items, query) {
     if (!query) {
       root.innerHTML = '<p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>'
@@ -186,8 +209,30 @@
     var index = null
     var pageTimer = null
     var modalTimer = null
+    var pageTrackTimer = null
+    var modalTrackTimer = null
     var activeIndex = -1
     var lastFocus = null
+    var lastTracked = { page: '', modal: '' }
+
+    function countedResults(query, max) {
+      if (!index || !query) return 0
+      return search(index, query, max).length
+    }
+
+    function commitSearch(query, source, max) {
+      var cleaned = sanitizeQuery(query)
+      if (!cleaned || lastTracked[source] === cleaned) return
+      lastTracked[source] = cleaned
+      trackSearch(query, source, countedResults(query, max))
+    }
+
+    function scheduleTrack(query, source, max, timerName) {
+      window.clearTimeout(timerName === 'page' ? pageTrackTimer : modalTrackTimer)
+      var wait = function () { commitSearch(query, source, max) }
+      if (timerName === 'page') pageTrackTimer = window.setTimeout(wait, 1000)
+      else modalTrackTimer = window.setTimeout(wait, 1000)
+    }
 
     function isOpen() {
       return overlay.classList.contains('is-open')
@@ -239,6 +284,8 @@
 
     function close() {
       if (!isOpen()) return
+      window.clearTimeout(modalTrackTimer)
+      commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
       overlay.classList.remove('is-open')
       overlay.hidden = true
       overlay.setAttribute('aria-hidden', 'true')
@@ -260,6 +307,7 @@
           if (initial) pageInput.value = initial
           runPage(pageInput.value)
           pageInput.focus()
+          if (initial) commitSearch(initial, 'page', PAGE_MAX_RESULTS)
         } else if (initial) {
           modalInput.value = initial
         }
@@ -281,12 +329,21 @@
           writeQuery(query)
           runPage(query)
         }, 80)
+        scheduleTrack(query, 'page', PAGE_MAX_RESULTS, 'page')
       })
 
       pageForm.addEventListener('submit', function (event) {
         event.preventDefault()
+        window.clearTimeout(pageTrackTimer)
         writeQuery(pageInput.value)
         runPage(pageInput.value)
+        commitSearch(pageInput.value, 'page', PAGE_MAX_RESULTS)
+      })
+
+      pageResults.addEventListener('click', function (event) {
+        if (!event.target.closest('a[href]')) return
+        window.clearTimeout(pageTrackTimer)
+        commitSearch(pageInput.value, 'page', PAGE_MAX_RESULTS)
       })
     }
 
@@ -294,16 +351,25 @@
       var query = modalInput.value
       window.clearTimeout(modalTimer)
       modalTimer = window.setTimeout(function () { runModal(query) }, 80)
+      scheduleTrack(query, 'modal', MODAL_MAX_RESULTS, 'modal')
     })
 
     modalForm.addEventListener('submit', function (event) {
       event.preventDefault()
+      window.clearTimeout(modalTrackTimer)
+      commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
       var active = modalResults.querySelector('.site-search-hit.is-active')
       if (active && active.href) {
         window.location.href = active.href
         return
       }
       runModal(modalInput.value)
+    })
+
+    modalResults.addEventListener('click', function (event) {
+      if (!event.target.closest('[data-site-search-hit]')) return
+      window.clearTimeout(modalTrackTimer)
+      commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
     })
 
     modalResults.addEventListener('mousemove', function (event) {

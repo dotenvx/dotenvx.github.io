@@ -1,3 +1,8 @@
+- date: 2026-08-17
+  summary: "Light, dark, and storm stay in sync across dotenvx.com and Armor."
+- date: 2026-08-14
+  summary: "Search dotenvx.com. Type / on any page."
+  url: "/search"
 - date: 2026-08-10
   summary: "Type dx instead of dotenvx—dx encrypt, dx run, and more."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2210-2026-08-10"

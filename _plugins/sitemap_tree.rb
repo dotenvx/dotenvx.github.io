@@ -30,7 +30,8 @@ module Jekyll
             node["label"] = if blog_post
               "#{document.date.strftime('%Y-%m-%d')} — #{document.data['title']}"
             else
-              document.data["title"] || node["label"]
+              title = document.data["title"].to_s.strip
+              title.empty? ? node["label"] : title
             end
             node["href"] = document.url
           end

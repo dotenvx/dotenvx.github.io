@@ -10,18 +10,21 @@ layout: radar
     color: var(--design-ink);
     display: flex;
     font-family: var(--design-font-mono);
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     height: 100%;
     justify-content: center;
-    line-height: 1;
+    line-height: 1.2;
+    margin: 0;
     min-height: inherit;
     user-select: none;
+    white-space: pre;
     width: 100%;
   }
 </style>
 
 {% capture sitemap_hero_visual %}
-  <div class="sitemap-hero-ascii" aria-hidden="true">┬</div>
+  <pre class="sitemap-hero-ascii" aria-hidden="true">--.     .--.     .--X
+   `---'    `---'</pre>
 {% endcapture %}
 
 {% include components/design-hero.html

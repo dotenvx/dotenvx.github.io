@@ -1,0 +1,15 @@
+{% assign tree_nodes = include.nodes %}
+{% for tree_node in tree_nodes %}
+  <li>
+    {% if tree_node.href %}
+      <a class="design-link" href="{{ tree_node.href | relative_url }}">{{ tree_node.label | escape }}</a>
+    {% else %}
+      <span class="design-list-label">{{ tree_node.label | escape }}</span>
+    {% endif %}
+    {% if tree_node.children and tree_node.children != empty %}
+      <ul class="design-list-items">
+        {% include components/design-list-tree.html nodes=tree_node.children %}
+      </ul>
+    {% endif %}
+  </li>
+{% endfor %}

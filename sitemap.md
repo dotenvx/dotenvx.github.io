@@ -4,24 +4,37 @@ permalink: /sitemap
 layout: radar
 ---
 
+<style>
+  .sitemap-hero-ascii {
+    align-items: center;
+    color: var(--design-ink);
+    display: flex;
+    font-family: var(--design-font-mono);
+    font-size: clamp(3rem, 8vw, 6rem);
+    height: 100%;
+    justify-content: center;
+    line-height: 1;
+    min-height: inherit;
+    user-select: none;
+    width: 100%;
+  }
+</style>
+
+{% capture sitemap_hero_visual %}
+  <div class="sitemap-hero-ascii" aria-hidden="true">┬</div>
+{% endcapture %}
+
 {% include components/design-hero.html
   class="company-design-hero"
   eyebrow="Dotenvx"
   title="Sitemap"
   description="Every public page on dotenvx.com, in one place."
+  visual=sitemap_hero_visual
 %}
 
-{% assign sitemap_pages = site.html_pages | concat: site.posts | sort: "url" %}
 {% capture sitemap_items %}
-  {% for sitemap_page in sitemap_pages %}
-    {% assign sitemap_url = sitemap_page.url %}
-    {% unless sitemap_page.redirect_to or sitemap_page.sitemap == false or sitemap_url == "/404.html" or sitemap_url == "/sitemap" %}
-      <li>
-        <a class="design-link" href="{{ sitemap_url | relative_url }}">{{ sitemap_page.title | default: sitemap_url | escape }}</a>
-        <span class="design-list-meta">{{ sitemap_url }}</span>
-      </li>
-    {% endunless %}
-  {% endfor %}
+  <li><a class="design-link" href="{{ '/' | relative_url }}">Home</a></li>
+  {% include components/design-list-tree.html nodes=site.data.sitemap_tree %}
 {% endcapture %}
 
 <section class="radar-section">

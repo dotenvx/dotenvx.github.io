@@ -46,6 +46,8 @@ links:
   - label: Twitter
     href: https://twitter.com/dotenvx
     external: true
+  - label: Sitemap
+    href: /sitemap
   - label: Theme
     theme_toggle: true
   - label: Log In

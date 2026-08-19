@@ -3648,18 +3648,28 @@ html.dark .design-badge.design-badge--danger {
   padding: 0;
 }
 
-.design-list-items li:has(.design-list-meta) {
+.design-list-items .design-list-items {
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.design-list-items li:has(> .design-list-meta) {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem 0.85rem;
 }
 
-.design-list-items li:has(.design-list-label) {
+.design-list-items li:has(> .design-list-label) {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem 0.85rem;
+}
+
+.design-list-items li:has(> .design-list-items) {
+  display: block;
 }
 
 .design-list-label {

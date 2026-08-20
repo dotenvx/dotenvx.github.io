@@ -64,7 +64,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
         {% include components/design-btn.html
           label="Copy Prompt"
           id="armor-panel-agent"
-          class="armor-install-prompt-btn"
+          class="armor-install-prompt-btn design-btn--trial"
           hidden=true
         %}
       {% endcapture %}
@@ -122,7 +122,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
 
 <script>
 (function () {
-  var agentText = 'Sign up for Dotenvx Armor and complete the full flow.\n\n1. Run `dotenvx login`.\n2. Open the authentication UI and let me choose the sign-in provider and complete authentication. Do not ask which provider I selected. Monitor the waiting CLI process and continue automatically once it reports a successful login.\n3. Run `dotenvx set HELLO "World" -f .env` to create an encrypted `.env` with a local private key.\n4. Run `dotenvx armor up -f .env` to move the private key off-device into Armor.\n5. Confirm the local `.env.keys` private key was removed without displaying any private keys, device keys, tokens, or credentials.\n6. Run `dotenvx armor open -f .env` and leave the resulting Armor page open for me to view.\n7. Run `dotenvx get HELLO -f .env` and confirm it returns `World`, proving Armor can retrieve the off-device private key and decrypt the value.\n\nOnly pause when the authentication UI requires action from me; afterward, detect success from the waiting CLI and continue automatically.'
+  var agentText = 'Sign up for Dotenvx Armor and complete the full flow.\n\n1. Run `dotenvx login`.\n2. Open the authentication UI and let me choose the sign-in provider and complete authentication. Do not ask which provider I selected. Monitor the waiting CLI process and continue automatically once it reports a successful login.\n3. Run `dotenvx set HELLO "World" -f .env` to create an encrypted `.env` with a local private key.\n4. Run `dotenvx armor up -f .env` to move the private key off-device into Armor.\n5. Confirm the local `.env.keys` private key was removed without displaying any private keys, device keys, tokens, or credentials.\n6. Run `dotenvx armor open -f .env` and leave the resulting Armor page open for me to view.\n7. Run `dotenvx get HELLO -f .env` and confirm it returns `World`, proving Armor can retrieve the off-device private key and decrypt the value.\n8. Demonstrate that `dotenvx curl` makes Armor an agent-controllable security API. Run read-only requests to `https://armor.dotenvx.com/api/account`, `https://armor.dotenvx.com/api/armor/keypairs`, and `https://armor.dotenvx.com/api/teams`, then summarize what an agent can inspect and manage without displaying emails, full identifiers, tokens, private keys, device credentials, or other sensitive data. Mention that the API can also control keypair security settings, team invitations, and audit logs, but do not make any API mutation without my explicit approval.\n\nOnly pause when the authentication UI requires action from me; afterward, detect success from the waiting CLI and continue automatically. Keep all `dotenvx curl` requests read-only unless I explicitly approve a mutation.'
   var copyTimeout
 
   function ready(fn) {

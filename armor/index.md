@@ -122,7 +122,7 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
 
 <script>
 (function () {
-  var agentText = 'Sign up for Dotenvx Armor: run `dotenvx login`, create or open a .env with a private key, run `dotenvx armor up` to move that key off device under Armor, then run `dotenvx armor open` to open and view it.'
+  var agentText = 'Sign up for Dotenvx Armor and complete the full flow.\n\n1. Run `dotenvx login`.\n2. Open the authentication UI and let me choose the sign-in provider and complete authentication. Do not ask which provider I selected. Monitor the waiting CLI process and continue automatically once it reports a successful login.\n3. Run `dotenvx set HELLO "World" -f .env` to create an encrypted `.env` with a local private key.\n4. Run `dotenvx armor up -f .env` to move the private key off-device into Armor.\n5. Confirm the local `.env.keys` private key was removed without displaying any private keys, device keys, tokens, or credentials.\n6. Run `dotenvx armor open -f .env` and leave the resulting Armor page open for me to view.\n7. Run `dotenvx get HELLO -f .env` and confirm it returns `World`, proving Armor can retrieve the off-device private key and decrypt the value.\n\nOnly pause when the authentication UI requires action from me; afterward, detect success from the waiting CLI and continue automatically.'
   var copyTimeout
 
   function ready(fn) {

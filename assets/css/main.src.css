@@ -759,7 +759,7 @@ hr { @apply border border-zinc-100 dark:border-zinc-800; }
 .armor-plan-bar {
   position: relative;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   width: 2.35rem;
   border: 1px solid rgb(63 63 70);

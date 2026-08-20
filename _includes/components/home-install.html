@@ -3,29 +3,107 @@
   Kept out of index.md so Kramdown cannot break nested HTML.
 {% endcomment %}
 {% assign home_install_you_copy = "curl -sfS https://dotenvx.sh | sh" %}
-{% capture home_install_agent_prompt %}Demo dotenvx for me with a hello-world encrypted env workflow. Walk through each step and show the commands and output.
+{% capture home_install_agent_prompt %}Teach me how to wield dotenvx by building and operating a small encrypted environment from beginning to end. Execute each step, show the relevant command and concise output, and explain what dotenvx is doing as we go.
 
-Important: Do NOT overwrite, modify, or encrypt any existing .env (or .env.* / .env.keys) in this project. Work in a fresh temp demo directory only.
+Important: Do not overwrite, modify, encrypt, or display any existing `.env`, `.env.*`, or `.env.keys` files in this project. Work only in a fresh temporary demo directory. Never print a complete private key or other credential.
 
-1. Install dotenvx:
+1. Check whether dotenvx is installed with `dotenvx --version`. If it is missing, install it:
+
    curl -sfS https://dotenvx.sh | sh
 
-2. Create a tiny demo app in a new empty directory (for example /tmp/dotenvx-hello):
-   mkdir -p /tmp/dotenvx-hello && cd /tmp/dotenvx-hello
+2. Create a fresh temporary demo directory with a plaintext environment, an environment contract, and a tiny app:
+
+   demo_dir="$(mktemp -d)" && cd "$demo_dir"
    echo "HELLO=World" > .env
+   echo "HELLO=" > .env.example
    echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-3. Encrypt that demo .env (use local .env.keys / file storage if prompted):
-   dotenvx encrypt
-   Show that HELLO is now an encrypted: value.
+3. Demonstrate runtime injection:
 
-4. Commit it safely (still only inside the demo directory):
-   Keep .env.keys out of git (gitignore it).
-   git init && git add .env index.js && git commit -m "add encrypted env"
-
-5. Decrypt at runtime:
    dotenvx run -- node index.js
-   Expect: Hello World{% endcapture %}
+
+   Confirm the app prints `Hello World`. Explain that dotenvx injects values into the child process without requiring application-specific dotenv code.
+
+4. Encrypt `.env` using local `.env.keys` file storage when prompted:
+
+   dotenvx encrypt
+
+   Show that `HELLO` is now stored as an `encrypted:` value without printing unnecessary ciphertext. Explain the key model:
+
+   - `.env` contains ciphertext and `DOTENV_PUBLIC_KEY`, so it can be safely committed and shared.
+   - `.env.keys` contains `DOTENV_PRIVATE_KEY`, which grants decryption authority and must never be committed or exposed.
+   - The public key can encrypt values; the private key can decrypt them.
+
+   Confirm `.env.keys` exists without displaying its private-key value.
+
+5. Prove the encrypted environment remains usable:
+
+   dotenvx get HELLO
+   dotenvx run -- node index.js
+
+   Confirm they recover `World` and `Hello World` through decryption.
+
+6. Update the encrypted value without decrypting the file:
+
+   dotenvx set HELLO "Sword"
+   dotenvx get HELLO
+   dotenvx run -- node index.js
+
+   Confirm they return `Sword` and `Hello Sword`. Explain that `dotenvx set` uses the public key to update encrypted values safely.
+
+7. Demonstrate safe output handling:
+
+   dotenvx run --redact -- node -e "console.log(process.env.HELLO)"
+
+   Explain how `--redact` helps prevent injected secrets from leaking into terminal and agent output.
+
+8. Create and wield multiple encrypted environments:
+
+   echo "HELLO=Development" > .env.development
+   echo "HELLO=Production" > .env.production
+   dotenvx encrypt -f .env.development
+   dotenvx encrypt -f .env.production
+
+   Use local `.env.keys` file storage when prompted. Confirm both files contain encrypted values without displaying private keys. Then run:
+
+   dotenvx get HELLO -f .env.development
+   dotenvx get HELLO -f .env.production
+   dotenvx run -f .env.development -- node index.js
+   dotenvx run -f .env.production -- node index.js
+
+   Confirm the environments return `Development` and `Production`, and the app prints `Hello Development` and `Hello Production`. Explain that each encrypted `.env.*` file is independently versioned, while `-f` selects which environment dotenvx reads, updates, validates, or injects.
+
+9. Update production without decrypting its file:
+
+   dotenvx set HELLO "Production v2" -f .env.production
+   dotenvx get HELLO -f .env.production
+   dotenvx run -f .env.production -- node index.js
+
+   Confirm the production environment remains encrypted while returning the updated value.
+
+10. Make the encrypted environments safe to share through Git and install the repository guardrail:
+
+    git init
+    dotenvx gitignore --pattern .env.keys
+    dotenvx precommit --install
+    git add .env .env.development .env.production .env.example index.js
+    dotenvx precommit
+
+    Confirm that the encrypted `.env` files are intentionally staged and safe to commit, `.env.keys` is ignored and remains local, and the precommit hook helps prevent plaintext secrets or private keys from being committed accidentally. Do not create a commit.
+
+    Explain the Git model clearly: encrypted `.env` files should travel with the code so developers, CI, deployments, and agents use the same versioned configuration. Decryption authority remains separate in `.env.keys` or a secure key service.
+
+11. Use validation as the final control boundary for humans and agents:
+
+    dotenvx validate -f .env
+    dotenvx validate -f .env.development
+    dotenvx validate -f .env.production
+
+    Confirm every encrypted environment satisfies `.env.example`. Explain that `.env.example` is a shared environment contract, and that validation should be the final check after humans or agents add, remove, or change environment variables.
+
+Finish with a concise command map for `dotenvx set`, `dotenvx get`, `dotenvx run`, `dotenvx encrypt`, `dotenvx validate`, `dotenvx gitignore`, and `dotenvx precommit`.
+
+Finally, explain the security model: encryption protects secret values, the precommit hook protects the repository boundary, and validation controls whether an environment is acceptable. The encrypted `.env` files belong with the code; `.env.keys` remains the sensitive local object. Introduce Dotenvx Armor as the natural next step: `dotenvx armor up` moves private keys off-device while preserving authorized decryption for developers, CI, deployments, and agents. Do not start the Armor flow unless I ask.{% endcapture %}
 
 {% capture home_choice_current %}
   <div id="home-panel-you" class="home-install-you">

@@ -2099,14 +2099,22 @@ html {
   z-index: 46;
 }
 
+.design-theme-control .design-tooltip-tip::before,
 .design-theme-control .design-tooltip-tip::after {
-  border-bottom-color: transparent;
-  border-right-color: #1c1c1a;
-  border-top-color: transparent;
+  border-color: transparent;
   left: auto;
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.design-theme-control .design-tooltip-tip::before {
+  border-right-color: var(--design-tooltip-line);
+}
+
+.design-theme-control .design-tooltip-tip::after {
+  border-right-color: var(--design-tooltip-fill);
+  margin-right: -1px;
 }
 
 .design-theme-control:hover .design-tooltip-tip,
@@ -3382,10 +3390,13 @@ html.dark .design-table tbody tr:last-child {
 }
 
 .design-tooltip-tip {
-  background: #1c1c1a;
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  color: #fff;
+  --design-tooltip-fill: var(--design-menu-bg, var(--design-bg));
+  --design-tooltip-line: var(--design-line, var(--design-mid));
+  background: var(--design-tooltip-fill);
+  border: 1px solid var(--design-tooltip-line);
+  border-radius: 0;
+  box-shadow: var(--design-etch);
+  color: var(--design-ink);
   /* Hidden tips still expand page scrollWidth (nowrap + translateX(-50%)) */
   display: none;
   font-family: var(--design-font-sans);
@@ -3393,7 +3404,7 @@ html.dark .design-table tbody tr:last-child {
   left: 50%;
   letter-spacing: 0;
   line-height: 1.25;
-  padding: 0.4rem 0.65rem;
+  padding: 0.32rem 0.5rem;
   pointer-events: none;
   position: absolute;
   text-transform: none;
@@ -3402,30 +3413,60 @@ html.dark .design-table tbody tr:last-child {
   z-index: 40;
 }
 
+.design-tooltip-tip::before,
 .design-tooltip-tip::after {
-  border: 5px solid transparent;
+  border-color: transparent;
+  border-style: solid;
   content: "";
-  left: 50%;
   position: absolute;
-  transform: translateX(-50%);
+}
+
+.design-tooltip-tip::before {
+  border-width: 5px;
+}
+
+.design-tooltip-tip::after {
+  border-width: 4px;
 }
 
 .design-tooltip--top .design-tooltip-tip {
   bottom: calc(100% + 0.4rem);
 }
 
+.design-tooltip--top .design-tooltip-tip::before,
 .design-tooltip--top .design-tooltip-tip::after {
-  border-top-color: #1c1c1a;
+  left: 50%;
   top: 100%;
+  transform: translateX(-50%);
+}
+
+.design-tooltip--top .design-tooltip-tip::before {
+  border-top-color: var(--design-tooltip-line);
+}
+
+.design-tooltip--top .design-tooltip-tip::after {
+  border-top-color: var(--design-tooltip-fill);
+  margin-top: -1px;
 }
 
 .design-tooltip--bottom .design-tooltip-tip {
   top: calc(100% + 0.4rem);
 }
 
+.design-tooltip--bottom .design-tooltip-tip::before,
 .design-tooltip--bottom .design-tooltip-tip::after {
-  border-bottom-color: #1c1c1a;
   bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.design-tooltip--bottom .design-tooltip-tip::before {
+  border-bottom-color: var(--design-tooltip-line);
+}
+
+.design-tooltip--bottom .design-tooltip-tip::after {
+  border-bottom-color: var(--design-tooltip-fill);
+  margin-bottom: -1px;
 }
 
 .design-tooltip--top-end .design-tooltip-tip,
@@ -3435,7 +3476,9 @@ html.dark .design-table tbody tr:last-child {
   transform: translateX(0.35rem);
 }
 
+.design-tooltip--top-end .design-tooltip-tip::before,
 .design-tooltip--top-end .design-tooltip-tip::after,
+.design-tooltip--bottom-end .design-tooltip-tip::before,
 .design-tooltip--bottom-end .design-tooltip-tip::after {
   left: auto;
   right: 0.5rem;
@@ -3446,18 +3489,36 @@ html.dark .design-table tbody tr:last-child {
   bottom: calc(100% + 0.4rem);
 }
 
+.design-tooltip--top-end .design-tooltip-tip::before,
 .design-tooltip--top-end .design-tooltip-tip::after {
-  border-top-color: #1c1c1a;
   top: 100%;
+}
+
+.design-tooltip--top-end .design-tooltip-tip::before {
+  border-top-color: var(--design-tooltip-line);
+}
+
+.design-tooltip--top-end .design-tooltip-tip::after {
+  border-top-color: var(--design-tooltip-fill);
+  margin-top: -1px;
 }
 
 .design-tooltip--bottom-end .design-tooltip-tip {
   top: calc(100% + 0.4rem);
 }
 
+.design-tooltip--bottom-end .design-tooltip-tip::before,
 .design-tooltip--bottom-end .design-tooltip-tip::after {
-  border-bottom-color: #1c1c1a;
   bottom: 100%;
+}
+
+.design-tooltip--bottom-end .design-tooltip-tip::before {
+  border-bottom-color: var(--design-tooltip-line);
+}
+
+.design-tooltip--bottom-end .design-tooltip-tip::after {
+  border-bottom-color: var(--design-tooltip-fill);
+  margin-bottom: -1px;
 }
 
 .design-tooltip--right .design-tooltip-tip {
@@ -3466,12 +3527,21 @@ html.dark .design-table tbody tr:last-child {
   transform: translateY(-50%);
 }
 
+.design-tooltip--right .design-tooltip-tip::before,
 .design-tooltip--right .design-tooltip-tip::after {
-  border-right-color: #1c1c1a;
   left: auto;
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.design-tooltip--right .design-tooltip-tip::before {
+  border-right-color: var(--design-tooltip-line);
+}
+
+.design-tooltip--right .design-tooltip-tip::after {
+  border-right-color: var(--design-tooltip-fill);
+  margin-right: -1px;
 }
 
 .design-tooltip--left .design-tooltip-tip {
@@ -3481,16 +3551,83 @@ html.dark .design-table tbody tr:last-child {
   transform: translateY(-50%);
 }
 
+.design-tooltip--left .design-tooltip-tip::before,
 .design-tooltip--left .design-tooltip-tip::after {
-  border-left-color: #1c1c1a;
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
 }
 
+.design-tooltip--left .design-tooltip-tip::before {
+  border-left-color: var(--design-tooltip-line);
+}
+
+.design-tooltip--left .design-tooltip-tip::after {
+  border-left-color: var(--design-tooltip-fill);
+  margin-left: -1px;
+}
+
 .design-tooltip:hover .design-tooltip-tip,
-.design-tooltip:focus-within .design-tooltip-tip {
+.design-tooltip:focus-within .design-tooltip-tip,
+.design-tooltip--open .design-tooltip-tip {
   display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .design-tooltip--open.design-tooltip--top .design-tooltip-tip,
+  .design-tooltip--open.design-tooltip--top-end .design-tooltip-tip {
+    animation: design-tooltip-float-up 2.4s ease-in-out infinite;
+  }
+  .design-tooltip--open.design-tooltip--bottom .design-tooltip-tip,
+  .design-tooltip--open.design-tooltip--bottom-end .design-tooltip-tip {
+    animation: design-tooltip-float-down 2.4s ease-in-out infinite;
+  }
+  .design-tooltip--open.design-tooltip--right .design-tooltip-tip {
+    animation: design-tooltip-float-right 2.4s ease-in-out infinite;
+  }
+  .design-tooltip--open.design-tooltip--left .design-tooltip-tip {
+    animation: design-tooltip-float-left 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes design-tooltip-float-up {
+  0%,
+  100% {
+    bottom: calc(100% + 0.4rem);
+  }
+  50% {
+    bottom: calc(100% + 0.65rem);
+  }
+}
+
+@keyframes design-tooltip-float-down {
+  0%,
+  100% {
+    top: calc(100% + 0.4rem);
+  }
+  50% {
+    top: calc(100% + 0.65rem);
+  }
+}
+
+@keyframes design-tooltip-float-right {
+  0%,
+  100% {
+    left: calc(100% + 0.4rem);
+  }
+  50% {
+    left: calc(100% + 0.65rem);
+  }
+}
+
+@keyframes design-tooltip-float-left {
+  0%,
+  100% {
+    right: calc(100% + 0.4rem);
+  }
+  50% {
+    right: calc(100% + 0.65rem);
+  }
 }
 
 .armor-usage-card {
@@ -4182,20 +4319,22 @@ html.dark .design-badge.design-badge--danger {
 }
 
 .pricing-value-detail::after {
-  background: var(--design-ink);
-  border-radius: 0.35rem;
+  background: var(--design-menu-bg, var(--design-bg));
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: 0;
   bottom: calc(100% + 0.6rem);
-  color: var(--design-panel);
+  box-shadow: var(--design-etch);
+  color: var(--design-ink);
   /* Only materialize on hover/focus — hidden ::after still expands overflow-x:auto scrollWidth */
   content: none;
   font-family: var(--design-font-sans);
-  font-size: 0.75rem;
+  font-size: var(--design-text-compact);
   font-weight: 400;
   left: 50%;
   line-height: 1.35;
   max-width: 15rem;
   opacity: 0;
-  padding: 0.5rem 0.65rem;
+  padding: 0.32rem 0.5rem;
   pointer-events: none;
   position: absolute;
   text-align: left;
@@ -5155,18 +5294,20 @@ html.storm .docs-hero-icon--invert-dark {
 }
 
 .docs-stats-source::after {
-  background: var(--design-ink);
-  border-radius: 0.35rem;
+  background: var(--design-menu-bg, var(--design-bg));
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: 0;
   bottom: calc(100% + 0.55rem);
-  color: var(--design-panel);
+  box-shadow: var(--design-etch);
+  color: var(--design-ink);
   content: attr(data-tooltip);
-  font-family: var(--design-font-mono);
+  font-family: var(--design-font-sans);
   font-size: var(--design-text-compact);
   font-weight: 400;
   left: 0;
   line-height: 1.35;
   opacity: 0;
-  padding: 0.45rem 0.6rem;
+  padding: 0.32rem 0.5rem;
   pointer-events: none;
   position: absolute;
   text-align: left;

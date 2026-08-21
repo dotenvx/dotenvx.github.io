@@ -119,6 +119,14 @@
     return event.key === '/' || event.code === 'Slash'
   }
 
+  function isUnmodifiedSlash(event) {
+    return isSlashKey(event) && !event.metaKey && !event.ctrlKey && !event.altKey && !event.shiftKey
+  }
+
+  function isCommandK(event) {
+    return event.key.toLowerCase() === 'k' && (event.metaKey || event.ctrlKey) && !event.altKey && !event.shiftKey
+  }
+
   function sanitizeQuery(value) {
     var query = String(value || '').replace(/\s+/g, ' ').trim().toLowerCase()
     if (!query) return ''
@@ -388,8 +396,8 @@
         return
       }
 
-      if (isSlashKey(event) && !event.metaKey && !event.ctrlKey && !event.altKey && !isOpen()) {
-        if (isTypingTarget(event.target)) return
+      if ((isUnmodifiedSlash(event) || isCommandK(event)) && !isOpen()) {
+        if (isUnmodifiedSlash(event) && isTypingTarget(event.target)) return
         event.preventDefault()
         open()
         return

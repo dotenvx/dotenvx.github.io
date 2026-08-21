@@ -142,36 +142,13 @@
     } catch (_) {}
   }
 
-  function renderPageResults(root, items, query) {
+  function renderHits(root, items, query, emptyClass) {
     if (!query) {
-      root.innerHTML = '<p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>'
+      root.innerHTML = '<p class="' + emptyClass + '">Type to search docs, pricing, and the rest of the site.</p>'
       return
     }
     if (!items.length) {
-      root.innerHTML = '<p class="design-paragraph">No results for <span class="design-code">' + escapeHtml(query) + '</span>.</p>'
-      return
-    }
-
-    var html = '<div class="design-list"><p class="design-list-title">Results</p><ul class="design-list-items">'
-    items.forEach(function (item) {
-      html += '<li>'
-      html += '<a class="design-link" href="' + escapeHtml(item.url) + '">' + escapeHtml(item.title) + '</a>'
-      if (item.section) {
-        html += '<span class="design-list-meta">' + escapeHtml(item.section) + '</span>'
-      }
-      html += '</li>'
-    })
-    html += '</ul></div>'
-    root.innerHTML = html
-  }
-
-  function renderModalResults(root, items, query) {
-    if (!query) {
-      root.innerHTML = '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
-      return
-    }
-    if (!items.length) {
-      root.innerHTML = '<p class="site-search-empty">No results for <span class="design-code">' + escapeHtml(query) + '</span>.</p>'
+      root.innerHTML = '<p class="' + emptyClass + '">No results for <span class="design-code">' + escapeHtml(query) + '</span>.</p>'
       return
     }
 
@@ -240,17 +217,28 @@
 
     function runPage(query) {
       if (!index || !pageResults) return
-      renderPageResults(pageResults, search(index, query, PAGE_MAX_RESULTS), query)
+      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, 'site-search-empty')
+      activeIndex = query && pageResults.querySelector('[data-site-search-hit]') ? 0 : -1
     }
 
     function runModal(query) {
       if (!index) return
-      renderModalResults(modalResults, search(index, query, MODAL_MAX_RESULTS), query)
+      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, 'site-search-empty')
       activeIndex = query && modalResults.querySelector('[data-site-search-hit]') ? 0 : -1
     }
 
+    function hitRoot() {
+      if (isOpen()) return modalResults
+      return pageResults || null
+    }
+
     function setActive(next) {
-      var nodes = modalResults.querySelectorAll('[data-site-search-hit]')
+      var root = hitRoot()
+      if (!root) {
+        activeIndex = -1
+        return
+      }
+      var nodes = root.querySelectorAll('[data-site-search-hit]')
       if (!nodes.length) {
         activeIndex = -1
         return
@@ -335,15 +323,26 @@
       pageForm.addEventListener('submit', function (event) {
         event.preventDefault()
         window.clearTimeout(pageTrackTimer)
+        commitSearch(pageInput.value, 'page', PAGE_MAX_RESULTS)
+        var active = pageResults.querySelector('.site-search-hit.is-active')
+        if (active && active.href) {
+          window.location.href = active.href
+          return
+        }
         writeQuery(pageInput.value)
         runPage(pageInput.value)
-        commitSearch(pageInput.value, 'page', PAGE_MAX_RESULTS)
       })
 
       pageResults.addEventListener('click', function (event) {
         if (!event.target.closest('a[href]')) return
         window.clearTimeout(pageTrackTimer)
         commitSearch(pageInput.value, 'page', PAGE_MAX_RESULTS)
+      })
+
+      pageResults.addEventListener('mousemove', function (event) {
+        var hit = event.target.closest('[data-site-search-hit]')
+        if (!hit) return
+        setActive(Number(hit.getAttribute('data-site-search-hit')))
       })
     }
 
@@ -396,14 +395,11 @@
         return
       }
 
-      if (!isOpen()) return
-
-      if (event.key === 'ArrowDown') {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        var root = hitRoot()
+        if (!root || !root.querySelector('[data-site-search-hit]')) return
         event.preventDefault()
-        setActive(activeIndex + 1)
-      } else if (event.key === 'ArrowUp') {
-        event.preventDefault()
-        setActive(activeIndex - 1)
+        setActive(activeIndex + (event.key === 'ArrowDown' ? 1 : -1))
       }
     }, true)
 

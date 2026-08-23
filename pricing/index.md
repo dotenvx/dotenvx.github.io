@@ -9,6 +9,7 @@ layout: radar
   {% include components/pricing/plans.html %}
   {% include components/pricing/compare-access.html %}
   {% include components/pricing/compare-audit.html %}
+  {% include components/pricing/compare-auditability.html %}
   {% include components/pricing/compare-support.html %}
   {% include components/faq-yes.html %}
 </div>

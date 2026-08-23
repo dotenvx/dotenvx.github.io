@@ -4376,6 +4376,14 @@ html.dark .design-badge.design-badge--danger {
   transform: translate(0, 0.25rem);
 }
 
+.pricing-value-detail--label {
+  border-bottom: 0;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
 .pricing-value-detail--label:hover::after,
 .pricing-value-detail--label:focus::after {
   transform: translate(0, 0);

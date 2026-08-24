@@ -1,12 +1,8 @@
 - date: 2026-08-23
-  summary: "Control which team members can access each armored key."
-- date: 2026-08-23
-  summary: "Review team join requests with safer access defaults."
+  summary: "Control which team members can access each armored key with fine-grained access controls."
 - date: 2026-08-22
   summary: "Manage Armor teams, invitations, and key access through the dotenvx API."
   url: "https://github.com/dotenvx/dotenvx/pull/954"
-- date: 2026-08-21
-  summary: "Request a private Slack channel for your Armor team."
 - date: 2026-08-17
   summary: "Light, dark, and storm stay in sync across dotenvx.com and Armor."
 - date: 2026-08-14

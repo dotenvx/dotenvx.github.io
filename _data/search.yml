@@ -34,6 +34,18 @@ entries:
     boost: 45
   /docs/sdk/:
     boost: 40
+  /docs/errors/:
+    boost: 40
+    aliases:
+      - error codes
+      - error
+  /docs/events/:
+    boost: 40
+    aliases:
+      - activity
+      - audit
+      - logs
+      - armor events
   /docs/claude/:
     boost: 75
     aliases:

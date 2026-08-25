@@ -30,6 +30,14 @@ layout: radar
     <span class="design-list-meta">Vercel, Fly, Heroku, more</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/errors">Errors</a>
+    <span class="design-list-meta">Dotenvx and Armor error codes</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/events">Events</a>
+    <span class="design-list-meta">Armor activity event names</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/stats">Stats</a>
     <span class="design-list-meta">download stats</span>
   </li>

@@ -40,7 +40,7 @@ layout: radar
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>GET</code></td><td><code>/api/armor/keypairs</code></td><td>List armored keys available to the authenticated account.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/armor/keypairs</code></td><td>List armored keys available to the authenticated account. Paginate with <code>page</code> and <code>per</code>. Set <code>sort</code> to <code>name_asc</code>, <code>name_desc</code>, <code>public_key_asc</code>, or <code>public_key_desc</code>.</td></tr>
           <tr><td><code>GET</code></td><td><code>/api/armor/keypairs/:public_key</code></td><td>Return one armored key.</td></tr>
           <tr><td><code>POST</code></td><td><code>/api/armor/keypairs/:public_key/name</code></td><td>Set or clear an armored key's name.</td></tr>
           <tr><td><code>POST</code></td><td><code>/api/armor/keypairs/:public_key/members/:member_id/grant</code></td><td>Grant a team member access to an armored key.</td></tr>
@@ -92,7 +92,7 @@ layout: radar
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>GET</code></td><td><code>/api/logs?team=:team</code></td><td>List activity logs for a team. Filter with <code>events</code>, <code>user</code>, <code>keypair</code>, <code>page</code>, and <code>per</code>. <code>user</code> accepts usernames, <code>missing</code>, <code>none</code>, or a comma list. <code>keypair</code> accepts keypair ids, public keys, <code>missing</code> (no keypair), <code>none</code>, or a comma list.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/logs?team=:team</code></td><td>List team activity logs. Account events such as <code>user/create</code>, <code>device/create</code>, and <code>oauth_token/*</code> are omitted. Filter with <code>events</code>, <code>user</code>, <code>keypair</code>, <code>page</code>, and <code>per</code>. <code>user</code> accepts usernames, <code>missing</code>, <code>none</code>, or a comma list. <code>keypair</code> accepts keypair ids, public keys, <code>missing</code> (no keypair), <code>none</code>, or a comma list.</td></tr>
         </tbody>
       {% endcapture %}
       {% include components/design-table.html class="design-table-wrap--fill" content=logs_api %}
@@ -126,10 +126,17 @@ layout: radar
       {% include components/design-table.html class="design-table-wrap--fill" content=protocol_api %}
 
       <h3 class="design-page-title">Example</h3>
-      <pre><code>dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs"
+      {% capture api_examples %}
+dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs"
+
+dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=name_asc"
+
+dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=public_key_desc"
 
 dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
-  --data '{"name":"Production"}'</code></pre>
+  --data '{"name":"Production"}'
+      {% endcapture %}
+      {% include components/design-codeblock.html value=api_examples copy=false %}
 
       <p class="design-paragraph">See <a class="design-link" href="/docs/errors">Errors</a> for Armor error codes and <a class="design-link" href="/docs/events">Events</a> for activity names recorded by these operations.</p>
     </div>

@@ -3297,8 +3297,9 @@ html.dark .design-table tbody tr:last-child {
   flex-direction: column;
 }
 
-/* Mirrored from ../radar design-access-days (+ large marketing variant) */
+/* Mirrored from ../radar design-access-days */
 .design-access-days {
+  min-width: 0;
   overflow: visible;
   width: 100%;
 }
@@ -3306,11 +3307,12 @@ html.dark .design-table tbody tr:last-child {
 .design-access-days-months,
 .design-access-days-grid {
   display: grid;
-  gap: 0.14rem;
-  grid-auto-columns: 0.55rem;
+  gap: 0.22rem;
+  grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
-  justify-content: start;
+  justify-content: stretch;
   max-width: 100%;
+  width: 100%;
 }
 
 .design-access-days-months {
@@ -3322,7 +3324,7 @@ html.dark .design-table tbody tr:last-child {
   color: var(--design-dim);
   font-family: var(--design-font-mono);
   font-size: var(--design-text-compact);
-  height: 0.75rem;
+  height: 0.9rem;
   letter-spacing: 0.02em;
   line-height: 1;
   overflow: visible;
@@ -3330,13 +3332,14 @@ html.dark .design-table tbody tr:last-child {
 }
 
 .design-access-days-grid {
-  grid-template-rows: repeat(7, 0.55rem);
+  grid-template-rows: repeat(7, clamp(0.85rem, 1.6vw, 1.25rem));
   overflow: visible;
 }
 
 .design-access-days-grid > .design-tooltip {
-  height: 0.55rem;
-  width: 0.55rem;
+  display: block;
+  height: clamp(0.85rem, 1.6vw, 1.25rem);
+  width: 100%;
 }
 
 .design-access-day {
@@ -3361,6 +3364,17 @@ html.dark .design-table tbody tr:last-child {
 
 .design-access-day--4 {
   background: var(--design-gold, #d4bd84);
+}
+
+.design-access-day--locked {
+  background: repeating-linear-gradient(
+    -45deg,
+    color-mix(in srgb, var(--design-ink) 12%, transparent),
+    color-mix(in srgb, var(--design-ink) 12%, transparent) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  cursor: pointer;
 }
 
 .design-access-days--lg .design-access-days-months,

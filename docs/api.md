@@ -92,7 +92,7 @@ layout: radar
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>GET</code></td><td><code>/api/logs?team=:team</code></td><td>List activity logs for a team. Filter with <code>events</code>, <code>before</code>, <code>page</code>, and <code>per</code>.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/logs?team=:team</code></td><td>List activity logs for a team. Filter with <code>events</code>, <code>user</code>, <code>keypair</code>, <code>page</code>, and <code>per</code>. <code>user</code> accepts usernames, <code>missing</code>, <code>none</code>, or a comma list. <code>keypair</code> accepts keypair ids, public keys, <code>missing</code> (no keypair), <code>none</code>, or a comma list.</td></tr>
         </tbody>
       {% endcapture %}
       {% include components/design-table.html class="design-table-wrap--fill" content=logs_api %}

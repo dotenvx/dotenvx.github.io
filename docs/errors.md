@@ -9,7 +9,7 @@ layout: radar
   eyebrow="Docs"
   title="Errors"
   description="Error codes surfaced by Dotenvx and Armor."
-  mark="errors"
+  mark="[!]"
 %}
 
 <section class="radar-section">

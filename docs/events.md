@@ -9,7 +9,7 @@ layout: radar
   eyebrow="Docs"
   title="Events"
   description="Activity events recorded by Armor."
-  mark="events"
+  mark=":::"
 %}
 
 <section class="radar-section">

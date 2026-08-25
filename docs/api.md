@@ -9,7 +9,7 @@ layout: radar
   eyebrow="Docs"
   title="API"
   description="API endpoints available through Dotenvx Armor."
-  mark="api"
+  mark="&lt;/&gt;"
 %}
 
 <section class="radar-section">

@@ -38,6 +38,10 @@ layout: radar
     <span class="design-list-meta">Armor activity event names</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/api">API</a>
+    <span class="design-list-meta">Armor API endpoints</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/stats">Stats</a>
     <span class="design-list-meta">download stats</span>
   </li>

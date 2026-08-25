@@ -49,7 +49,7 @@ layout: radar
     <h2 class="design-list-title">General Conditions</h2>
     <ol class="design-bullets">
       <li>Your use of the Service is at your sole risk. The service is provided on an "as is" and "as available" basis.</li>
-      <li>Account support is only provided via email.</li>
+      <li>Account support is provided via email. Certain plans may also include support through Slack, as described on our <a class="design-link" href="/pricing/">pricing page</a>.</li>
       <li>You understand that the Company uses third party vendors, hosting partners, and other partners to provide the necessary hardware, software, networking, storage, and related technology and security required to run the Service.</li>
       <li>You must not modify, adapt or hack the Service.</li>
       <li>You must not modify another website so as to falsely imply that it is associated with the Service or the Company.</li>

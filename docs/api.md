@@ -32,7 +32,7 @@ layout: radar
           <tr><td><code>GET</code></td><td><code>/api/account</code></td><td>Return the authenticated Armor account.</td></tr>
         </tbody>
       {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=account_api %}
+      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=account_api %}
 
       <h3 class="design-page-title">Armored keys</h3>
       {% capture keypair_api %}
@@ -49,7 +49,7 @@ layout: radar
           <tr><td><code>POST</code></td><td><code>/api/armor/keypairs/:public_key/settings/enclave</code></td><td>Turn Enclave on or off for an armored key.</td></tr>
         </tbody>
       {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=keypair_api %}
+      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=keypair_api %}
 
       <h3 class="design-page-title">Teams</h3>
       {% capture team_api %}
@@ -71,7 +71,7 @@ layout: radar
           <tr><td><code>POST</code></td><td><code>/api/armor/:team/settings/join_requests</code></td><td>Turn join requests on or off for a team.</td></tr>
         </tbody>
       {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=team_api %}
+      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=team_api %}
 
       <h3 class="design-page-title">Your join requests</h3>
       {% capture join_request_api %}
@@ -84,7 +84,7 @@ layout: radar
           <tr><td><code>POST</code></td><td><code>/api/join_requests/:id/cancel</code></td><td>Cancel one of your pending join requests.</td></tr>
         </tbody>
       {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=join_request_api %}
+      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=join_request_api %}
 
       <h3 class="design-page-title">Logs</h3>
       {% capture logs_api %}
@@ -95,7 +95,7 @@ layout: radar
           <tr><td><code>GET</code></td><td><code>/api/logs?team=:team</code></td><td>List team activity logs. Account events such as <code>user/create</code>, <code>device/create</code>, and <code>oauth_token/*</code> are omitted. Filter with <code>events</code>, <code>user</code>, <code>keypair</code>, <code>page</code>, and <code>per</code>. <code>user</code> accepts usernames, <code>missing</code>, <code>none</code>, or a comma list. <code>keypair</code> accepts keypair ids, public keys, <code>missing</code> (no keypair), <code>none</code>, or a comma list.</td></tr>
         </tbody>
       {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=logs_api %}
+      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=logs_api %}
 
       <h3 class="design-page-title">Dotenvx command protocol</h3>
       <p class="design-paragraph">Dotenvx uses these Armor endpoints to implement Armor-backed commands. Prefer the corresponding Dotenvx command unless you are building an Armor client.</p>
@@ -123,7 +123,7 @@ layout: radar
           <tr><td><code>GET</code> / <code>POST</code></td><td><code>/api/observe</code></td><td>Deprecated observation endpoint; retained as a no-op for older clients.</td></tr>
         </tbody>
       {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=protocol_api %}
+      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=protocol_api %}
 
       <h3 class="design-page-title">Example</h3>
       {% capture api_examples %}

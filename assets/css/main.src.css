@@ -3289,6 +3289,53 @@ html.dark .design-table tbody tr:last-child {
   background-image: none;
 }
 
+.design-api-table .design-table thead tr,
+.design-api-table .design-table tbody tr {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+}
+
+.design-api-table .design-table thead th:nth-child(3) {
+  display: none;
+}
+
+.design-api-table .design-table tbody td:first-child {
+  align-self: start;
+  grid-row: 1 / span 2;
+}
+
+.design-api-table .design-table tbody td:nth-child(2) {
+  min-width: 0;
+  padding-bottom: 0.25rem;
+}
+
+.design-api-table .design-table tbody td:nth-child(2) code {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.design-api-table .design-table tbody td:nth-child(3) {
+  color: var(--design-secondary, var(--design-dim));
+  font-size: var(--design-text-compact);
+  grid-column: 2;
+  line-height: 1.45;
+  padding-bottom: 1rem;
+  padding-top: 0;
+}
+
+@media (max-width: 640px) {
+  .design-api-table .design-table thead tr,
+  .design-api-table .design-table tbody tr {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+
+  .design-api-table .design-table th,
+  .design-api-table .design-table td {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+
 /* Mirrored from ../radar design-card (+ design-body etch frame) */
 .design-card {
   border: 1px solid var(--design-line, var(--design-mid));

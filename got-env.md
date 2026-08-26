@@ -3,15 +3,27 @@ title: "got .env?"
 description: Ask Claude to install dotenvx and protect your project’s secrets.
 permalink: /got-env
 layout: radar
+force_light: true
+body_class: gotenv-layout
 ---
 
 <style>
   .gotenv-page {
     align-items: center;
+    aspect-ratio: 2 / 3;
+    background:
+      linear-gradient(rgba(7, 10, 12, 0.34), rgba(7, 10, 12, 0.5)),
+      url('/assets/img/got-env-portrait.png') center 28% / cover no-repeat;
+    box-sizing: border-box;
     display: flex;
-    min-height: min(48rem, calc(100vh - 8rem));
+    height: calc(100svh - 4.5rem);
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 93.75rem;
+    max-width: 62.5rem;
     padding: clamp(5rem, 14vh, 10rem) 0;
     text-align: center;
+    width: auto;
   }
 
   .gotenv-inner {
@@ -20,43 +32,61 @@ layout: radar
     flex-direction: column;
     margin: 0 auto;
     max-width: 44rem;
+    transform: translateY(clamp(3rem, 7vh, 4.5rem));
     width: 100%;
   }
 
   .gotenv-title {
-    color: var(--design-ink);
+    color: #ffffff;
     font-family: var(--design-font-sans);
-    font-size: clamp(4.5rem, 15vw, 10rem);
+    font-size: 72px;
     font-weight: 400;
     letter-spacing: -0.07em;
     line-height: 0.9;
     margin: 0;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.32);
+    white-space: nowrap;
   }
 
   .gotenv-lede {
-    color: var(--design-body);
+    color: rgba(255, 255, 255, 0.94);
     font-family: var(--design-font-sans);
-    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-size: 16.5px;
     letter-spacing: -0.02em;
     line-height: 1.45;
     margin: 2rem 0 0;
     max-width: 29rem;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.52);
   }
 
   .gotenv-action {
     margin-top: 2rem;
+    width: 100%;
   }
 
   .gotenv-action .design-btn {
-    min-width: 11rem;
+    box-sizing: border-box;
+    display: block;
+    font-size: 13.5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.95rem 1.5rem;
+    width: min(21rem, 70%);
   }
 
   .gotenv-hint {
-    color: var(--design-secondary);
+    color: rgba(255, 255, 255, 0.74);
     font-family: var(--design-font-mono);
-    font-size: var(--design-text-compact);
+    font-size: 13px;
     letter-spacing: 0.04em;
     margin: 0.85rem 0 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.58);
+  }
+
+  @media (max-width: 640px) {
+    .gotenv-page {
+      background-position: center 20%;
+    }
   }
 </style>
 
@@ -112,7 +142,7 @@ Finish with a concise summary of files changed, commands to use, which encrypted
           label="Copy prompt"
           id="gotenv-copy-prompt"
           class="design-btn--trial"
-          data_umami_event="gotenv-copy-prompt"
+          data_umami_event="Got env copy prompt click"
         %}
       </div>
       <p class="gotenv-hint" id="gotenv-copy-status" aria-live="polite">Paste into Claude Code</p>

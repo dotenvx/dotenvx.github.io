@@ -1,6 +1,7 @@
 <script>
   (function () {
     var MODES = ['light', 'dark', 'storm']
+    var FORCE_LIGHT = {{ page.force_light | default: false | jsonify }}
 
     function cookieDomain() {
       var host = location.hostname
@@ -36,6 +37,7 @@
     }
 
     function resolveThemeMode() {
+      if (FORCE_LIGHT) return 'light'
       var stored = readThemeMode()
       var mode = MODES.indexOf(stored) !== -1 ? stored : 'storm'
       persistThemeMode(mode)
@@ -43,6 +45,7 @@
     }
 
     function applyThemeMode(mode) {
+      if (FORCE_LIGHT) mode = 'light'
       var root = document.documentElement
       root.classList.toggle('dark', mode === 'dark' || mode === 'storm')
       root.classList.toggle('storm', mode === 'storm')
@@ -75,8 +78,9 @@
     try {
       applyThemeMode(resolveThemeMode())
     } catch (e) {
-      document.documentElement.classList.add('dark', 'storm')
+      if (FORCE_LIGHT) document.documentElement.classList.remove('dark', 'storm')
+      else document.documentElement.classList.add('dark', 'storm')
     }
   })()
 </script>
-<meta name="theme-color" content="#14171c">
+<meta name="theme-color" content="{% if page.force_light %}#e4e7e6{% else %}#14171c{% endif %}">

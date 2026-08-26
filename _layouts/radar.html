@@ -5,16 +5,16 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
-  <body class="radar-layout">
+  <body class="radar-layout{% if page.body_class %} {{ page.body_class }}{% endif %}">
     {% include components/storm-lightning.html %}
     {% include components/radar-nav.html %}
     <main class="radar-main">
       {{ content }}
     </main>
-    {% include components/footer.html %}
-    {% include components/design-theme-control.html %}
+    {% unless page.hide_footer %}{% include components/footer.html %}{% endunless %}
+    {% unless page.force_light %}{% include components/design-theme-control.html %}{% endunless %}
     {% include components/site-search.html %}
-    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
+    {% unless page.force_light %}<script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>{% endunless %}
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}"></script>
   </body>
 </html>

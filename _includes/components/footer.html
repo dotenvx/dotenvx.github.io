@@ -3,7 +3,9 @@
     <p class="design-list-title">{{ site.data.footer.title }}</p>
     <p class="footer-cloud">
       {%- for link in site.data.footer.links %}
+      {%- unless link.theme_toggle and page.force_light %}
       <span class="footer-item">{% if link.theme_toggle %}<button type="button" class="design-link" data-radar-theme-toggle>{{ link.label }}</button>{% else %}<a class="design-link" href="{{ link.href }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>{% endif %}{% unless forloop.last %}<span class="footer-sep" aria-hidden="true">&nbsp;·</span>{% endunless %}</span>
+      {%- endunless %}
       {%- endfor %}
     </p>
   </div>

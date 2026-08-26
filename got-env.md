@@ -84,12 +84,74 @@ body_class: gotenv-layout
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.58);
   }
 
+  .gotenv-v2 .gotenv-page {
+    aspect-ratio: 16 / 9;
+    background:
+      linear-gradient(90deg, rgba(7, 10, 12, 0.72) 0%, rgba(7, 10, 12, 0.48) 43%, rgba(7, 10, 12, 0.12) 72%),
+      url('/assets/img/got-env-v2.png') center center / cover no-repeat;
+    height: auto;
+    max-height: calc(100svh - 4.5rem);
+    max-width: 80rem;
+    min-height: 31rem;
+    padding: 0;
+    width: min(100%, calc((100svh - 4.5rem) * 16 / 9));
+  }
+
+  .gotenv-v2 .gotenv-page .armor-shell {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+
+  .gotenv-v2 .gotenv-inner {
+    align-items: flex-start;
+    margin: 0;
+    max-width: 35rem;
+    padding: 2.5rem 0 2.5rem clamp(2rem, 6vw, 5rem);
+    text-align: left;
+    transform: none;
+    width: 46%;
+  }
+
+  .gotenv-v2 .gotenv-lede {
+    margin-top: 1.5rem;
+    max-width: 27rem;
+  }
+
+  .gotenv-v2 .gotenv-action {
+    margin-top: 1.75rem;
+  }
+
+  .gotenv-v2 .gotenv-action .design-btn {
+    margin-left: 0;
+    margin-right: 0;
+    width: min(21rem, 100%);
+  }
+
   @media (max-width: 640px) {
     .gotenv-page {
       background-position: center 20%;
     }
+
+    .gotenv-v2 .gotenv-page {
+      background-position: 58% center;
+      min-height: 28rem;
+      width: 100%;
+    }
+
+    .gotenv-v2 .gotenv-inner {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      width: 62%;
+    }
   }
 </style>
+
+<script>
+  if (new URLSearchParams(window.location.search).get('v2') === 'true') {
+    document.documentElement.classList.add('gotenv-v2')
+  }
+</script>
 
 {% capture gotenv_prompt %}Protect this project’s secrets with dotenvx. Work directly in this repository, keep the changes focused, and explain what you changed when finished.
 

@@ -1,6 +1,7 @@
 ---
 title: "got .env?"
 description: Ask Claude to install dotenvx and protect your project’s secrets.
+image: "/assets/img/og-image-got-env.png"
 permalink: /got-env
 layout: radar
 force_light: true

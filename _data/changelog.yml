@@ -1,3 +1,13 @@
+- date: 2026-08-26
+  summary: "Armor generates privacy-friendly avatars without third-party lookups."
+- date: 2026-08-25
+  summary: "Weekly Armor digests include a summary of your team's activity."
+- date: 2026-08-25
+  summary: "See team activity trends at a glance with the new logs chart."
+- date: 2026-08-25
+  summary: "Name armored keys and find them faster through Armor search."
+- date: 2026-08-23
+  summary: "Review team join requests before approving access."
 - date: 2026-08-23
   summary: "Control which team members can access each armored key with fine-grained access controls."
 - date: 2026-08-22

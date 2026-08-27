@@ -77,7 +77,7 @@ layout: radar
           <tr><td><code>PROJECT_ID_NOT_FOUND</code></td><td>The requested <code>DOTENVX_PROJECT_ID</code> does not exist.</td></tr>
           <tr><td><code>SERVER_SIDE_DECRYPTION_REQUIRED</code></td><td>The private key cannot be returned; Armor must perform decryption.</td></tr>
           <tr><td><code>SYNC_ACCESS_DENIED</code></td><td>The authenticated member cannot access one or more synchronized files.</td></tr>
-          <tr><td><code>TEAM_REQUIRED</code></td><td>The request must identify a team.</td></tr>
+          <tr><td><code>DOTENVX_TEAM_REQUIRED</code></td><td>The request must identify a team.</td></tr>
           <tr><td><code>UNAUTHORIZED</code></td><td>The request is not authenticated.</td></tr>
         </tbody>
       {% endcapture %}

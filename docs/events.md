@@ -58,9 +58,7 @@ layout: radar
           <tr><td><code>member/delete</code></td><td>A member was removed from the team.</td></tr>
           <tr><td><code>member/update</code></td><td>A member's role was changed.</td></tr>
           <tr><td><code>member/view</code></td><td>A team member's profile was opened.</td></tr>
-          <tr><td><code>member_danger_zone/view</code></td><td>A team member's danger zone was opened.</td></tr>
           <tr><td><code>member_keypairs/view</code></td><td>A team member's keypair access was opened.</td></tr>
-          <tr><td><code>member_role/view</code></td><td>A team member's role settings were opened.</td></tr>
           <tr><td><code>oauth_token/activate</code></td><td>An OAuth access token was activated.</td></tr>
           <tr><td><code>oauth_token/create</code></td><td>An OAuth access token was created.</td></tr>
           <tr><td><code>oauth_token/delete</code></td><td>An OAuth access token was deleted.</td></tr>

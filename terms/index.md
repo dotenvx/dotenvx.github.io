@@ -25,6 +25,15 @@ layout: radar
       <li>You may access and use the Service through automated agents or tools that you control, provided you remain responsible for their actions and comply with these Terms of Service.</li>
     </ol>
 
+    <h2 class="design-list-title">Third-Party Integrations</h2>
+    <ol class="design-bullets">
+      <li>When you connect Dotenvx to a third-party service, such as Vercel, you authorize Dotenvx to access that service on your behalf.</li>
+      <li>Dotenvx may write the secrets you select as environment variables in the projects and environments you select.</li>
+      <li>You are responsible for selecting the right secrets, projects, and environments.</li>
+      <li>You can revoke Dotenvx's access by disconnecting the integration.</li>
+      <li>Your use of a third-party service remains subject to that service's own terms and policies.</li>
+    </ol>
+
     <h2 class="design-list-title">Payment, Refunds, Upgrading and Downgrading Terms</h2>
     <ol class="design-bullets">
       <li>All fees are exclusive of all taxes, levies, or duties imposed by taxing authorities, and you shall be responsible for payment of all such taxes, levies, or duties, excluding only United States (federal or state) taxes. Where required, The Company will collect those taxes on behalf of taxing authority and remit those taxes to taxing authorities.</li>

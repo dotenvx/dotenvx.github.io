@@ -1,3 +1,5 @@
+<meta name="theme-color" content="{% if page.force_light %}#fafafa{% else %}#0e1116{% endif %}">
+<meta name="color-scheme" content="light dark">
 <script>
   (function () {
     var MODES = ['light', 'dark', 'storm']
@@ -47,15 +49,13 @@
     function applyThemeMode(mode) {
       if (FORCE_LIGHT) mode = 'light'
       var root = document.documentElement
+      var themeColor = mode === 'storm' ? '#0e1116' : mode === 'dark' ? '#050505' : '#fafafa'
       root.classList.toggle('dark', mode === 'dark' || mode === 'storm')
       root.classList.toggle('storm', mode === 'storm')
+      root.style.backgroundColor = themeColor
+      root.style.colorScheme = mode === 'light' ? 'light' : 'dark'
       var meta = document.querySelector('meta[name="theme-color"]')
-      if (meta) {
-        meta.setAttribute(
-          'content',
-          mode === 'storm' ? '#14171c' : mode === 'dark' ? '#0a0a0a' : '#e4e7e6'
-        )
-      }
+      if (meta) meta.setAttribute('content', themeColor)
       try {
         window.dispatchEvent(new CustomEvent('radar:theme-change', { detail: { mode: mode } }))
       } catch (e) {}
@@ -83,4 +83,3 @@
     }
   })()
 </script>
-<meta name="theme-color" content="{% if page.force_light %}#e4e7e6{% else %}#14171c{% endif %}">

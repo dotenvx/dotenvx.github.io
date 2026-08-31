@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Get
     href: /docs/cli/get/
-video: https://github.com/user-attachments/assets/84eb8164-53ab-45a7-bcc1-57ebfe919725
+video: cli-get-key
 ---
 {% capture cli_code_0 %}
 $ echo "HELLO=World" > .env

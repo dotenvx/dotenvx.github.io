@@ -17,7 +17,7 @@ options_title: Options
 options:
   - title: "gitignore --pattern"
     href: /docs/cli/gitignore-pattern/
-video: https://github.com/user-attachments/assets/c993d899-7041-4f5e-868f-59ae204a9d21
+video: cli-gitignore
 ---
 {% capture cli_code_0 %}
 $ dotenvx gitignore

@@ -19,7 +19,7 @@ layout: radar
 <section class="radar-section">
   <div class="radar-shell ext-shell">
     <video class="ext-media" controls>
-      <source src="https://github.com/user-attachments/assets/b2d1f448-4706-4a56-8e00-1a41328db3e0" type="video/mp4">
+      <source src="{{ site.data.videos['vscode-extension'].url }}" type="video/mp4">
       your browser does not support the video tag
     </video>
   </div>

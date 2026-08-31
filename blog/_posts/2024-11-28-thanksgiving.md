@@ -31,7 +31,7 @@ I remember it was cold, and we got 'robbed' on the train by cowboys on horses. I
 <img src="https://github.com/user-attachments/assets/b14fc047-9817-4939-a239-292d963d56d6" />
 
 <video class="w-full rounded-md" controls>
-  <source src="https://github.com/user-attachments/assets/9caf3e7d-2fd5-428b-af95-381ae9958573" type="video/mp4">
+  <source src="{{ site.data.videos['thanksgiving-2024'].url }}" type="video/mp4">
   Your browser does not support the video tag
 </video>
 

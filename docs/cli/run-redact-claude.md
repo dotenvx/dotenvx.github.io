@@ -15,7 +15,7 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
-video: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
+video: ai-redaction
 ---
 Runtime leak protection for Claude Code: Claude receives the real environment variables, but log redaction replaces any matching values it prints with `[REDACTED]` throughout the interactive session — so secrets stay out of the terminal and agent transcript.
 

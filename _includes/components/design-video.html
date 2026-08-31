@@ -1,7 +1,14 @@
 {% comment %} Mirrored from ../radar design-video {% endcomment %}
-{% assign mp4 = include.mp4 %}
-{% assign webm = include.webm %}
-{% assign poster = include.poster %}
+{% assign video_entry = site.data.videos[include.video] %}
+{% if video_entry %}
+  {% assign mp4 = video_entry.url %}
+  {% assign webm = video_entry.webm %}
+  {% assign poster = video_entry.poster %}
+{% else %}
+  {% assign mp4 = include.mp4 %}
+  {% assign webm = include.webm %}
+  {% assign poster = include.poster %}
+{% endif %}
 {% if include.hide_title %}
   {% assign title = "" %}
 {% elsif include.title and include.title != "" %}

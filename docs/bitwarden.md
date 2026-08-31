@@ -29,5 +29,5 @@ inject_copy: "dotenvx run -- sh -c 'echo Password loaded: ${PASSWORD:+yes}'"
 inject: |
   $ dotenvx run -- sh -c 'echo Password loaded: ${PASSWORD:+yes}'
   Password loaded: yes
-video: https://github.com/user-attachments/assets/ea4a2306-8179-49c4-a4b5-cfb43b5eeea2
+video: bitwarden
 ---

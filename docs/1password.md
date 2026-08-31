@@ -28,5 +28,5 @@ inject_copy: "dotenvx run -- sh -c 'echo Hello $HELLO'"
 inject: |
   $ dotenvx run -- sh -c 'echo Hello $HELLO'
   Hello World
-video: https://github.com/user-attachments/assets/689a6c2e-b21f-4067-8c64-9e84e6287889
+video: one-password
 ---

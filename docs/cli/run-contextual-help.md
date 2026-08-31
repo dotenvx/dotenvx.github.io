@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
-video: https://github.com/user-attachments/assets/75b7d048-552a-4a7c-bccf-195749b3b7a3
+video: cli-contextual-help
 ---
 For example, when missing a custom .env file:
 

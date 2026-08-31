@@ -17,7 +17,7 @@ options_title: Options
 options:
   - title: "prebuild directory"
     href: /docs/cli/prebuild-directory/
-video: https://github.com/user-attachments/assets/6e3c22bb-0d71-4121-9954-346f35c7e58f
+video: cli-prebuild
 ---
 Add it to your Dockerfile.
 

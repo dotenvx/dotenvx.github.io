@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Lock
     href: /docs/cli/lock/
-video: https://github.com/user-attachments/assets/ab1818c6-9ee4-41a4-92e2-27984a97e8c5
+video: cli-lock
 ---
 {% capture cli_code_0 %}
 $ dotenvx lock up

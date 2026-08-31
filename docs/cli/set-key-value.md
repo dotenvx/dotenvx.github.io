@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Set
     href: /docs/cli/set/
-video: https://github.com/user-attachments/assets/b4aef2f4-5e8d-469b-a3e3-24e43534a07f
+video: cli-set-key-value
 ---
 {% capture cli_code_0 %}
 $ touch .env

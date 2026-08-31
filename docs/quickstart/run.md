@@ -160,9 +160,7 @@ $ dotenvx run -- your-app-boot-command
     {% endcapture %}
     {% include components/design-codeblock.html value=run_anywhere copy_text="dotenvx run -- your-app-boot-command" %}
 
-    {% include components/design-video.html
-      mp4="https://github.com/user-attachments/assets/7fd8f338-38d2-4875-9091-d08fc3134521"
-    %}
+    {% include components/design-video.html video="quickstart-run" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

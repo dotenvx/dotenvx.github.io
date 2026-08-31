@@ -1,0 +1,137 @@
+# Central video catalog. Reference entries by key from front matter and includes.
+# Optional poster, description, and duration fields can be added for video peek cards.
+
+ai-redaction:
+  title: AI redaction
+  url: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
+  source: github
+
+one-password:
+  title: 1Password integration
+  url: https://github.com/user-attachments/assets/689a6c2e-b21f-4067-8c64-9e84e6287889
+  source: github
+
+bitwarden:
+  title: Bitwarden integration
+  url: https://github.com/user-attachments/assets/ea4a2306-8179-49c4-a4b5-cfb43b5eeea2
+  source: github
+
+quickstart-encryption:
+  title: Encrypt an env file
+  url: https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d
+  source: github
+
+quickstart-run:
+  title: Run anywhere
+  url: https://github.com/user-attachments/assets/7fd8f338-38d2-4875-9091-d08fc3134521
+  source: github
+
+quickstart-environments:
+  title: Multiple environments
+  url: https://github.com/user-attachments/assets/aea4176e-52ba-4e78-8448-9563207d55f5
+  source: github
+
+cli-prebuild:
+  title: Prebuild
+  url: https://github.com/user-attachments/assets/6e3c22bb-0d71-4121-9954-346f35c7e58f
+  source: github
+
+cli-get-key:
+  title: Get a key
+  url: https://github.com/user-attachments/assets/84eb8164-53ab-45a7-bcc1-57ebfe919725
+  source: github
+
+cli-native-up:
+  title: Native up
+  url: https://github.com/user-attachments/assets/57cc4f94-8513-4b61-9a25-250d3da528b5f
+  source: github
+
+cli-gitignore:
+  title: Gitignore
+  url: https://github.com/user-attachments/assets/c993d899-7041-4f5e-868f-59ae204a9d21
+  source: github
+
+cli-run-file:
+  title: Run with an env file
+  url: https://github.com/user-attachments/assets/2ae47f12-ac3c-47a5-af88-436f50ade3e4
+  source: github
+
+cli-run-files-comma-separated:
+  title: Run with comma-separated env files
+  url: https://github.com/user-attachments/assets/b8114fe9-5235-49bc-86c9-b00bf5b987fc
+  source: github
+
+cli-variable-expansion:
+  title: Variable expansion
+  url: https://github.com/user-attachments/assets/d2222afd-ec60-4329-bc1d-a9f24c85340f
+  source: github
+
+cli-lock:
+  title: Lock an env file
+  url: https://github.com/user-attachments/assets/ab1818c6-9ee4-41a4-92e2-27984a97e8c5
+  source: github
+
+cli-contextual-help:
+  title: Contextual help
+  url: https://github.com/user-attachments/assets/75b7d048-552a-4a7c-bccf-195749b3b7a3
+  source: github
+
+cli-command-substitution:
+  title: Command substitution
+  url: https://github.com/user-attachments/assets/5a2b04ef-d5de-433a-b6a6-34cd39e0449e
+  source: github
+
+cli-precommit:
+  title: Precommit
+  url: https://github.com/user-attachments/assets/b177b7c5-f009-4466-ac15-5c0c406594a9
+  source: github
+
+cli-armor-up:
+  title: Armor up
+  url: https://github.com/user-attachments/assets/ecc906ef-ecd2-47ec-87dc-4c6ffad173d4
+  source: github
+
+cli-armor-open:
+  title: Armor open
+  url: https://github.com/user-attachments/assets/ba931339-f60f-41e2-9430-e094ab4a960c
+  source: github
+
+cli-set-key-value:
+  title: Set a key value
+  url: https://github.com/user-attachments/assets/b4aef2f4-5e8d-469b-a3e3-24e43534a07f
+  source: github
+
+cli-ls:
+  title: List env files
+  url: https://github.com/user-attachments/assets/e4be662b-7102-41ec-857a-c5d82f965885
+  source: github
+
+chrome-extension:
+  title: Chrome extension demo
+  url: https://github.com/user-attachments/assets/c5401116-9192-4340-be59-e691f2fe3b4e
+  source: github
+
+vscode-extension:
+  title: VS Code extension demo
+  url: https://github.com/user-attachments/assets/b2d1f448-4706-4a56-8e00-1a41328db3e0
+  source: github
+
+feature-complete:
+  title: Feature complete
+  url: https://github.com/dotenvx/dotenvx/assets/3848/8cdb37eb-e01a-4807-a5ff-13e5d3a06908
+  source: github
+
+thanksgiving-2024:
+  title: Dotenvx Thanksgiving 2024
+  url: https://github.com/user-attachments/assets/9caf3e7d-2fd5-428b-af95-381ae9958573
+  source: github
+
+claude-mcp:
+  title: Claude MCP with dotenvx
+  url: https://github.com/user-attachments/assets/5f974de0-1831-4ae7-a3c8-a724418863db
+  source: github
+
+la-office-evening:
+  title: Dotenvx LA office at evening
+  url: /dotenvx-la-office-evening.mp4
+  source: repository

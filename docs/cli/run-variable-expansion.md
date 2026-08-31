@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
-video: https://github.com/user-attachments/assets/d2222afd-ec60-4329-bc1d-a9f24c85340f
+video: cli-variable-expansion
 ---
 {% capture cli_code_0 %}
 # .env

@@ -15,7 +15,7 @@ crumbs:
     href: /docs/cli
   - label: Native
     href: /docs/cli/native/
-video: https://github.com/user-attachments/assets/57cc4f94-8513-4b61-9a25-250d3da528b5f
+video: cli-native-up
 ---
 {% capture cli_code_0 %}
 $ dotenvx native up

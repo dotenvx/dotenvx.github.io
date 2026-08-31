@@ -41,7 +41,7 @@ layout: radar
   <div class="contact-hero-media">
     <video
       class="contact-hero-video"
-      src="/dotenvx-la-office-evening.mp4"
+      src="{{ site.data.videos['la-office-evening'].url }}"
       autoplay
       muted
       loop

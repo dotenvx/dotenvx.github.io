@@ -29,5 +29,5 @@ inject_copy: "dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and ech
 inject: |
   $ dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions
   Hello [REDACTED]
-video: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
+video: ai-redaction
 ---

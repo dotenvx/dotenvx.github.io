@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
-video: https://github.com/user-attachments/assets/5a2b04ef-d5de-433a-b6a6-34cd39e0449e
+video: cli-command-substitution
 ---
 {% capture cli_code_0 %}
 # .env

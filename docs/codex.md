@@ -29,5 +29,5 @@ inject_copy: "dotenvx run --redact -- codex exec 'Run `dotenvx get HELLO` and ec
 inject: |
   $ dotenvx run --redact -- codex exec 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --skip-git-repo-check
   Hello [REDACTED]
-video: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
+video: ai-redaction
 ---

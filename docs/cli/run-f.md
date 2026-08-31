@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Run
     href: /docs/cli/run/
-video: https://github.com/user-attachments/assets/2ae47f12-ac3c-47a5-af88-436f50ade3e4
+video: cli-run-files-comma-separated
 ---
 {% capture cli_code_0 %}
 $ echo "HELLO=local" > .env.local

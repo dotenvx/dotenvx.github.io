@@ -4,6 +4,12 @@
 {% assign header_class = include.class %}
 {% assign title_class = include.title_class %}
 {% assign crumbs = include.crumbs %}
+{% assign video_entry = site.data.videos[include.video] %}
+{% if video_entry %}
+  {% assign video_url = video_entry.url %}
+{% else %}
+  {% assign video_url = include.video %}
+{% endif %}
 
 <div class="design-page-header{% if header_class %} {{ header_class }}{% endif %}">
   {% if include.eyebrow and include.eyebrow != "" %}
@@ -32,7 +38,7 @@
   {% if description and description != "" %}
     <p class="design-page-header-desc">{{ description }}</p>
   {% endif %}
-  {% if include.video and include.video != "" %}
+  {% if video_url and video_url != "" %}
     {% if include.video_title and include.video_title != "" %}
       {% assign video_link_label = include.video_title %}
     {% else %}
@@ -41,7 +47,7 @@
     <p class="design-page-header-action">
       <a
         class="design-link"
-        href="{{ include.video }}"
+        href="{{ video_url }}"
         target="_blank"
         rel="noopener noreferrer"
       >{{ video_link_label }} →</a>

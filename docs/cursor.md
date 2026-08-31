@@ -29,5 +29,5 @@ inject_copy: "dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` 
 inject: |
   $ dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text
   Hello [REDACTED]
-video: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
+video: ai-redaction
 ---

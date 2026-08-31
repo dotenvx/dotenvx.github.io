@@ -21,7 +21,7 @@ crumbs:
     href: /docs/introduction
   - label: CLI
     href: /docs/cli
-video: https://github.com/user-attachments/assets/e4be662b-7102-41ec-857a-c5d82f965885
+video: cli-ls
 ---
 {% capture cli_code_0 %}
 $ dotenvx ls

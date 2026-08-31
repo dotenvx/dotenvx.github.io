@@ -9,7 +9,7 @@ excerpt: "Add Dotenvx as a Claude MCP Server."
 <p class="text-center small">Add Dotenvx to Claude as an MCP Server.</p>
 
 <video class="my-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800" controls>
-<source src="https://github.com/user-attachments/assets/5f974de0-1831-4ae7-a3c8-a724418863db" type="video/mp4">
+<source src="{{ site.data.videos['claude-mcp'].url }}" type="video/mp4">
 your browser does not support the video tag
 </video>
 

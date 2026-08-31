@@ -27,7 +27,7 @@ TWILIO_API_KEY=\"encrypted:a1b2c3d4\"" %}
   title="Encryption"
   description="Add encryption to your .env files with a single command. Use dotenvx encrypt."
   visual=encrypt_hero_visual
-  video="https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d"
+  video="quickstart-encryption"
 %}
 
 <div class="armor-shell">

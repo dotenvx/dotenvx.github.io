@@ -17,7 +17,7 @@ crumbs:
     href: /docs/cli
   - label: Armor
     href: /docs/cli/armor/introduction/
-video: https://github.com/user-attachments/assets/ecc906ef-ecd2-47ec-87dc-4c6ffad173d4
+video: cli-armor-up
 ---
 {% capture cli_code_0 %}
 $ dotenvx armor up

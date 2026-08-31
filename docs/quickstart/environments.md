@@ -46,6 +46,8 @@ Hello local
     {% include components/design-codeblock.html value=env_file_multi copy_text="dotenvx run -f=.env.local,.env -- node index.js" %}
 
     <p class="design-paragraph">Comma-separate multiple files after a single <code class="design-code">-f</code>. The order matters: the first file will 'win' for an environment variable. You can use <code class="design-code">--overload</code> if you prefer the last to 'win'.</p>
+
+    {% include components/design-video.html video="cli-run-files-comma-separated" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -104,9 +106,7 @@ Hello production
 
     <p class="design-paragraph">Be careful with <code class="design-code">--debug</code> as this will leak your secrets out to your logs unless you've configured your logs to avoid it.</p>
 
-    {% include components/design-video.html
-      mp4="https://github.com/user-attachments/assets/aea4176e-52ba-4e78-8448-9563207d55f5"
-    %}
+    {% include components/design-video.html video="quickstart-environments" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

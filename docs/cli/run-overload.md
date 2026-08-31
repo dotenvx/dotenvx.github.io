@@ -23,7 +23,7 @@ $ echo "HELLO=local" > .env.local
 echo "HELLO=World" > .env
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-dotenvx run -f .env.local -f .env --overload -- node index.js
+dotenvx run -f .env.local,.env --overload -- node index.js
 ⟐ injected env (1) from .env.local, .env
 Hello World
 {% endcapture %}

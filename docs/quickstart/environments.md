@@ -40,12 +40,12 @@ $ echo "HELLO=local" > .env.local
 $ echo "HELLO=World" > .env
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-$ dotenvx run -f=.env.local -f=.env -- node index.js
+$ dotenvx run -f=.env.local,.env -- node index.js
 Hello local
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_file_multi copy_text="dotenvx run -f=.env.local -f=.env -- node index.js" %}
+    {% include components/design-codeblock.html value=env_file_multi copy_text="dotenvx run -f=.env.local,.env -- node index.js" %}
 
-    <p class="design-paragraph">The order matters. The first <code class="design-code">-f</code> will 'win' for an environment variable. You can use <code class="design-code">--overload</code> if you prefer the last to 'win'.</p>
+    <p class="design-paragraph">Comma-separate multiple files after a single <code class="design-code">-f</code>. The order matters: the first file will 'win' for an environment variable. You can use <code class="design-code">--overload</code> if you prefer the last to 'win'.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -57,10 +57,10 @@ $ echo "HELLO=local" > .env.local
 $ echo "HELLO=World" > .env
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-$ dotenvx run -f=.env.local -f=.env --overload -- node index.js
+$ dotenvx run -f=.env.local,.env --overload -- node index.js
 Hello World
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_overload copy_text="dotenvx run -f=.env.local -f=.env --overload -- node index.js" %}
+    {% include components/design-codeblock.html value=env_overload copy_text="dotenvx run -f=.env.local,.env --overload -- node index.js" %}
 
     <p class="design-paragraph">Keep in mind that <code class="design-code">--overload</code> will also overload any environment variables already set on your machine or server. Use <code class="design-code">--verbose</code> to get better visibility into this.</p>
     {% endcapture %}

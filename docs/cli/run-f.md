@@ -24,11 +24,11 @@ $ echo "HELLO=local" > .env.local
 echo "HELLO=World" > .env
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-dotenvx run -f .env.local -f .env -- node index.js
+dotenvx run -f .env.local,.env -- node index.js
 ⟐ injected env (1) from .env.local, .env
 Hello local
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=local" > .env.local{% endcapture %}
 {% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
 
-Note subsequent files do NOT override pre-existing variables defined in previous files or env. This follows historic principle. For example, above local wins – from the first file.
+Comma-separate multiple files after a single `-f`. The order matters: subsequent files do NOT override pre-existing variables defined in previous files or env. This follows historic principle. For example, above local wins – from the first file.

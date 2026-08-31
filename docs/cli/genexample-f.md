@@ -22,7 +22,7 @@ crumbs:
 $ echo "HELLO=World" > .env
 echo "DB_HOST=example.com" > .env.production
 
-dotenvx genexample -f .env -f .env.production
+dotenvx genexample -f .env,.env.production
 ▣ generated (.env.example)
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}

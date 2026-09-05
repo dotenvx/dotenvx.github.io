@@ -4278,6 +4278,20 @@ html.dark .design-badge.design-badge--danger {
   width: 100%;
 }
 
+.pricing-usage-disclosure {
+  margin-top: 1.5rem;
+}
+
+.pricing-usage-disclosure .design-paragraph {
+  font-size: var(--design-text-compact);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-usage-disclosure .design-paragraph:last-child {
+  margin-bottom: 0;
+}
+
 .pricing-summary .design-card,
 .pricing-summary-card {
   background: var(--design-panel);

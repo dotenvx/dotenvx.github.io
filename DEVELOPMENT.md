@@ -33,7 +33,7 @@ PLANS_API_URL=https://armor.dotenvx.com/public/plans bundle exec jekyll serve
 PLANS_API_URL=http://localhost:3000/public/plans bundle exec jekyll serve
 ```
 
-Plans are priced by **users**, **audit retention**, and included monthly audited accesses. Armored keys are unlimited on every plan; audit usage beyond the included allowance is billed as an overage.
+Plans are priced by **users**, **audit retention**, and included monthly audited accesses. Armored keys are unlimited on every plan; additional usage is disclosed per 1,000 events at $0.20 on Solo, $0.10 on Team, and $0.025 on Business, charged only for complete blocks of 1,000 extra events. Collection timing and payment mechanics are not yet defined. This repository contains public copy only; it does not implement billing.
 
 #### Search
 

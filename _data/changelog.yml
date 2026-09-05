@@ -104,8 +104,6 @@
 - date: 2026-05-31
   summary: "Dotenvx Ops is renamed to Dotenvx Armor."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1700-2026-05-31"
-- date: 2026-05-21
-  summary: "Lenient rate limiting lands to keep systems stable."
 - date: 2026-05-15
   summary: "Change your organization avatar in Settings."
 - date: 2026-05-14

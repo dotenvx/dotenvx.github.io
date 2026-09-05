@@ -1,0 +1,5 @@
+<aside class="design-prose" aria-label="Additional usage billing">
+  <p class="design-paragraph">Extra events cost $0.20 per 1,000 on Solo, $0.10 on Team, and $0.025 on Business.</p>
+  <p class="design-paragraph">Included audit events per billing month: {% assign event_feature = site.data.plans.features | where: "id", "audit_events" | first %}{% for plan in site.data.plans.plans %}{% unless plan.id == "enterprise" %}{{ plan.name | remove: "⛨ " }}: {{ event_feature.values[plan.id] }}{% unless plan.id == "business" %}; {% endunless %}{% endunless %}{% endfor %}. Enterprise plans have custom allowances and rates.</p>
+  <p class="design-paragraph"><a class="design-link" href="/terms/">Terms</a> · <a class="design-link" href="/pricing/#usage-billing">Usage details</a></p>
+</aside>

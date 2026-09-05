@@ -39,6 +39,23 @@ layout: radar
       <li>All fees are exclusive of all taxes, levies, or duties imposed by taxing authorities, and you shall be responsible for payment of all such taxes, levies, or duties, excluding only United States (federal or state) taxes. Where required, The Company will collect those taxes on behalf of taxing authority and remit those taxes to taxing authorities.</li>
     </ol>
 
+    <h2 class="design-list-title" id="armor-usage-billing">Armor Subscriptions and Usage</h2>
+    <ol class="design-bullets">
+      <li>Armor subscriptions include the audit-event allowance shown on our <a class="design-link" href="/pricing/">pricing page</a>. Solo, Team, and Business allowances reset each monthly billing period. Unused events do not roll over. Enterprise pricing, allowances, and billing periods follow your custom agreement.</li>
+      <li>Audit events record activity such as decrypting with an armored keypair, navigating the UI, and making other API calls. Each recorded action counts toward your event allowance. How long we keep your audit logs is separate from your monthly event allowance. Unlimited armored keys does not mean unlimited requests or included audit events.</li>
+      <li>Additional events cost $0.20 per 1,000 on Solo, $0.10 per 1,000 on Team, and $0.025 per 1,000 on Business. Additional usage does not automatically upgrade your plan.</li>
+      <li>Contact <a class="design-link" href="mailto:support@dotenvx.com">support@dotenvx.com</a> if you think a charge or usage count is wrong. We will investigate and fix any errors we find.</li>
+      <li>If a payment fails, we will notify you and explain how to fix it. We may temporarily restrict access if the bill remains unpaid after we give you notice and a chance to pay. Once you have paid, contact support if your access is still restricted.</li>
+      <li>We give 30 days notice before changing prices, as described below.</li>
+    </ol>
+
+    <h2 class="design-list-title" id="armor-service-limits">Armor Service Limits</h2>
+    <ol class="design-bullets">
+      <li>You must not send traffic that substantially disrupts the Service for others.</li>
+      <li>We may slow or temporarily restrict traffic as needed to keep the Service available. We will match restrictions to the problem and notify you promptly when practical. Contact support to resolve the issue and restore access.</li>
+      <li>Going over your allowance is not abuse on its own and does not by itself stop decryption. You will be billed for overages. Restrictions for unpaid bills or harmful traffic still apply.</li>
+    </ol>
+
     <h2 class="design-list-title">Cancellation and Termination</h2>
     <ol class="design-bullets">
       <li>All of your content will be inaccessible from the Service immediately upon cancellation. Within 30 days, all content will be permanently deleted from backups and logs. This information can not be recovered once it has been permanently deleted.</li>

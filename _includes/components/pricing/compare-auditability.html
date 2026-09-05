@@ -22,7 +22,7 @@
       <td class="design-table-cell--center">{{ yes }}</td>
     </tr>
     <tr>
-      <th scope="row">Included audit events per billing month</th>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Included events. Audit events included each billing month." data-tooltip="Audit events included each billing month">Included events</span></th>
       {% assign standard_plans = "solo,team,business" | split: "," %}
       {% for key in standard_plans %}
         <td class="design-table-cell--center"><span class="pricing-plan-label-full">{{ audit_events_feature.values[key] }}</span><span class="pricing-plan-label-short" aria-label="{{ audit_events_feature.values[key] }}">{% case key %}{% when "solo" %}25k{% when "team" %}250k{% when "business" %}1M{% endcase %}</span></td>
@@ -30,7 +30,7 @@
       <td class="design-table-cell--center">Custom</td>
     </tr>
     <tr>
-      <th scope="row">Additional usage<br>Per 1,000 extra events</th>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Additional usage. Price per 1,000 audit events beyond your monthly allowance." data-tooltip="Price per 1,000 audit events beyond your monthly allowance">Additional usage</span></th>
       <td class="design-table-cell--center">$0.20</td>
       <td class="design-table-cell--center">$0.10</td>
       <td class="design-table-cell--center">$0.025</td>

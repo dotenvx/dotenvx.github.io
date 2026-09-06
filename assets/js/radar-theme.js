@@ -1,6 +1,6 @@
 (function () {
   var MODES = ['light', 'dark', 'storm']
-  var mode = 'storm'
+  var mode = 'dark'
 
   function modes() {
     return (window.__radarThemeMode && window.__radarThemeMode.modes) || MODES
@@ -12,7 +12,7 @@
     }
     var stored = localStorage.getItem('themeMode')
     var list = modes()
-    mode = list.indexOf(stored) !== -1 ? stored : 'storm'
+    mode = list.indexOf(stored) !== -1 ? stored : 'dark'
     if (!stored) localStorage.setItem('themeMode', mode)
     return mode
   }

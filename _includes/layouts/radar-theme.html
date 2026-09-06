@@ -1,4 +1,4 @@
-<meta name="theme-color" content="{% if page.force_light %}#fafafa{% else %}#0e1116{% endif %}">
+<meta name="theme-color" content="{% if page.force_light %}#fafafa{% else %}#050505{% endif %}">
 <meta name="color-scheme" content="light dark">
 <script>
   (function () {
@@ -41,7 +41,7 @@
     function resolveThemeMode() {
       if (FORCE_LIGHT) return 'light'
       var stored = readThemeMode()
-      var mode = MODES.indexOf(stored) !== -1 ? stored : 'storm'
+      var mode = MODES.indexOf(stored) !== -1 ? stored : 'dark'
       persistThemeMode(mode)
       return mode
     }
@@ -79,7 +79,10 @@
       applyThemeMode(resolveThemeMode())
     } catch (e) {
       if (FORCE_LIGHT) document.documentElement.classList.remove('dark', 'storm')
-      else document.documentElement.classList.add('dark', 'storm')
+      else {
+        document.documentElement.classList.add('dark')
+        document.documentElement.classList.remove('storm')
+      }
     }
   })()
 </script>

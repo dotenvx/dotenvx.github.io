@@ -266,8 +266,8 @@
     }
     if (options.flash || (!options.distant && Math.random() < 0.55)) flashScreen()
     startLoop()
-    // Aftershocks keep the cell alive — storm never goes quiet.
-    if (Math.random() < 0.55) {
+    // An occasional echo from the distant storm cell.
+    if (Math.random() < 0.15) {
       scheduleTimeout(function () {
         if (!state.active || document.hidden) return
         pushBolt(createStrike(state.w, state.h, Object.assign({}, options, {
@@ -276,7 +276,7 @@
         startLoop()
       }, randBetween(60, 180))
     }
-    if (Math.random() < 0.35) {
+    if (Math.random() < 0.05) {
       scheduleTimeout(function () {
         if (!state.active || document.hidden) return
         pushBolt(createStrike(state.w, state.h, {
@@ -291,7 +291,7 @@
 
   function nextStrikeDelayMs() {
     var mobile = window.matchMedia('(max-width: 767px)').matches
-    return mobile ? randBetween(700, 1800) : randBetween(450, 1200)
+    return mobile ? randBetween(10000, 18000) : randBetween(8000, 16000)
   }
 
   function queueNextStrike(immediate) {
@@ -301,19 +301,13 @@
     state.strikeTimerId = window.setTimeout(function () {
       state.strikeTimerId = 0
       if (!state.active || document.hidden) return
-      var roll = Math.random()
-      if (roll < 0.35) {
-        fireStrike(roll < 0.12 ? 2 : 1, { flash: true })
-      } else if (roll < 0.7) {
-        fireStrike(1, { flash: Math.random() < 0.55 })
-      } else {
-        fireStrike(1 + (Math.random() < 0.4 ? 1 : 0), {
-          distant: true,
-          flash: Math.random() < 0.25,
-          anchorX: Math.random(),
-          anchorSpread: 0.35
-        })
-      }
+      var distant = Math.random() < 0.85
+      fireStrike(1, {
+        distant: distant,
+        flash: !distant,
+        anchorX: Math.random() < 0.5 ? 0.15 : 0.85,
+        anchorSpread: 0.2
+      })
       queueNextStrike()
     }, delay)
   }
@@ -330,14 +324,9 @@
     }
 
     resize()
-    if (announce) {
-      scheduleTimeout(function () { fireStrike(3, { flash: true }) }, 80)
-      scheduleTimeout(function () { fireStrike(1, { distant: true, anchorX: 0.2 }) }, 220)
-      scheduleTimeout(function () { fireStrike(1, { distant: true, anchorX: 0.8 }) }, 360)
-    } else {
-      fireStrike(2, { flash: Math.random() < 0.6 })
-    }
-    queueNextStrike(true)
+    root.classList.toggle('is-paused', document.hidden)
+    if (announce) scheduleTimeout(function () { fireStrike(1, { distant: true }) }, 1200)
+    queueNextStrike()
   }
 
   function onThemeChange(event) {
@@ -358,6 +347,7 @@
   }
 
   function onVisibility() {
+    root.classList.toggle("is-paused", document.hidden)
     if (document.hidden) {
       state.bolts = []
       stopLoop()

@@ -1401,7 +1401,7 @@ html.storm body.radar-layout {
 
 .storm-lightning {
   display: none;
-  height: min(96vh, 1080px);
+  height: 100vh;
   left: 0;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0) 100%);
@@ -1419,18 +1419,32 @@ html.storm .storm-lightning.is-active {
 
 .storm-lightning::before {
   background:
-    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(140, 165, 210, 0.16), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 10%, rgba(90, 110, 150, 0.14), transparent 55%),
-    radial-gradient(ellipse 45% 35% at 18% 5%, rgba(70, 85, 120, 0.12), transparent 50%);
+    radial-gradient(ellipse 65% 45% at 18% 15%, rgb(5 12 20 / 0.7), transparent 75%),
+    radial-gradient(ellipse 60% 38% at 78% 24%, rgb(82 111 137 / 0.22), transparent 75%),
+    radial-gradient(ellipse 85% 45% at 45% -5%, rgb(121 148 168 / 0.18), transparent 70%);
   content: "";
-  inset: 0;
+  inset: -12%;
   position: absolute;
+  animation: storm-cloud-drift 32s ease-in-out infinite alternate;
 }
-
+.storm-rain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@keyframes storm-cloud-drift {
+  from { transform: translateX(-4%) scale(1); opacity: 0.65; }
+  to { transform: translateX(4%) scale(1.08); opacity: 1; }
+}
+.storm-lightning.is-paused::before {
+  animation-play-state: paused;
+}
 .storm-lightning-canvas {
   display: block;
   height: 100%;
-  opacity: 0.56;
+  opacity: 0.35;
   position: relative;
   width: 100%;
 }
@@ -1478,11 +1492,11 @@ html.storm body.radar-layout .radar-chrome:has(.radar-mobile-toggle[aria-expande
 
 @media (max-width: 767px) {
   .storm-lightning {
-    height: min(88vh, 820px);
+    height: 100vh;
   }
 
   .storm-lightning-canvas {
-    opacity: 0.48;
+    opacity: 0.3;
   }
 }
 
@@ -6836,3 +6850,85 @@ html.dark .spec-table-link a {
     font-size: var(--design-text-display) !important;
   }
 }
+
+/* Centered three-part hero, shared with Radar hero2. */
+  .design-hero2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.25rem, 3.25vw, 2.5rem);
+    text-align: center;
+    width: 100%;
+  }
+  .design-hero2 .design-hero2-title {
+    font-size: var(--design-text-display);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    margin: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .design-hero2-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 48rem);
+    min-width: 0;
+  }
+  .design-hero2-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 32rem;
+    object-fit: contain;
+  }
+  .design-hero2-container-stack {
+    display: block;
+    width: min(50%, 18rem);
+    height: auto;
+    overflow: visible;
+  }
+  .design-container-draggable {
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    transition: transform 220ms ease-out;
+    outline: none;
+  }
+  .design-container-lift {
+    transition: transform 180ms ease-out, filter 180ms ease-out;
+  }
+  .design-container-draggable:hover .design-container-lift,
+  .design-container-draggable:focus-visible .design-container-lift,
+  .design-container-draggable.is-dragging .design-container-lift {
+    transform: translateY(-22px);
+    filter: drop-shadow(0 16px 10px rgb(0 0 0 / 0.22));
+  }
+  .design-container-draggable:focus-visible .design-container-lift {
+    filter: drop-shadow(0 0 5px #2496ed);
+  }
+  .design-container-draggable.is-dragging {
+    cursor: grabbing;
+    transition: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .design-container-draggable,
+    .design-container-lift {
+      transition: none;
+    }
+  }
+  .design-hero2-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 42rem;
+    margin: 0;
+  }
+  .design-hero2-brand {
+    color: var(--design-ink);
+    font-size: var(--design-text-title);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }

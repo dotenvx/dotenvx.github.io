@@ -1,0 +1,32 @@
+<section class="design-hero home-hero2">
+  <div class="armor-shell">
+    {% capture hero2_content %}
+    <svg class="design-hero2-container-stack" viewBox="60 -335.061526 973 1089" role="group" aria-label="Interactive container stack" data-container-stack>
+      
+      <g transform="translate(207.8460969 -120)" aria-hidden="true">
+        {% include components/shipping-container.html color="#2496ED" %}
+      </g>
+      <g aria-hidden="true">
+        {% include components/shipping-container.html color="#2496ED" %}
+      </g>
+      
+      <g class="design-container-draggable" style="transform: translate(207.8460969px, -375.06152584px)"
+        role="button" tabindex="0" aria-label="Move black Dotenvx container">
+        <g class="design-container-lift" aria-hidden="true">
+          {% include components/shipping-container.html color="#575B60" face_color="#111214" logo=true %}
+        </g>
+      </g>
+    </svg>
+    {% endcapture %}
+    {% capture hero2_description %}
+      <span class="design-hero2-brand">Dotenvx is docker for secrets</span>
+      <span><a href="https://github.com/motdotla/dotenv">From the creator of dotenv <span aria-hidden="true">★</span> 20.5k</a></span>
+    {% endcapture %}
+    {% include components/design-hero2.html
+      title="Encrypt your secrets.<br>Ship them with your code."
+      content=hero2_content
+      description=hero2_description
+    %}
+  </div>
+</section>
+<script src="{{ '/assets/js/container-stack.js' | relative_url }}" defer></script>

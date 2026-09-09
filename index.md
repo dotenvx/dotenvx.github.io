@@ -57,7 +57,7 @@ layout: radar
 
 {% include components/home-trust.html %}
 
-<section class="radar-section" id="install" aria-label="Next step">
+<section class="radar-section !pt-0" id="install" aria-label="Next step">
   <div class="armor-shell">
     <div class="home-cta">
       {% include components/design-cta-message.html

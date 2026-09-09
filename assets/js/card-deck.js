@@ -5,7 +5,7 @@ class CardDeck {
     this.cards = [...root.querySelectorAll('.design-card-deck-stage > .design-card')]
     this.buttons = [...root.querySelectorAll('[data-deck-step]')]
     this.next = root.querySelector('[data-deck-next]')
-    this.expanded = false
+    this.expanded = matchMedia('(min-width: 1024px)').matches
     this.expand = root.querySelector('[data-deck-expand]')
     this.index = 0
     this.busy = false
@@ -23,6 +23,13 @@ class CardDeck {
     }
     root.addEventListener('click', this.click)
     root.classList.add('is-ready')
+    root.classList.toggle('is-expanded', this.expanded)
+    if (this.expand) {
+      this.expand.setAttribute('aria-expanded', String(this.expanded))
+      const label = this.expanded ? 'Collapse to card stack' : 'Show all three steps'
+      this.expand.setAttribute('aria-label', label)
+      this.expand.title = label
+    }
     this.paint()
   }
   paint() {

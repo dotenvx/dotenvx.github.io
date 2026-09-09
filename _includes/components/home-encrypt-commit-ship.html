@@ -1,4 +1,4 @@
-<section class="radar-section pt-0 md:pt-4" aria-label="Encrypt, commit, and ship">
+<section class="radar-section pt-0" aria-label="Encrypt, commit, and ship">
   <div class="armor-shell">
     {% capture workflow_cards %}
       {% capture encrypt_card %}
@@ -14,7 +14,7 @@ echo "HELLO=Secret" > .env
 dotenvx encrypt
     {% endcapture %}
     {% include components/design-codeblock.html value=encrypt_example copy_text=encrypt_copy label="Encrypt your .env file" %}
-    <p class="radar-section-lede">Encrypt your secrets in .env files. Only your private key can unlock them.</p>
+    <p class="radar-section-lede">Encrypt your secrets in .env files. The values become encrypted text, while the variable names stay readable. Only your private key can unlock the secrets.</p>
         </div>
       {% endcapture %}
       {% include components/design-card.html content=encrypt_card class="min-w-0" %}
@@ -31,7 +31,7 @@ git add .env
 git commit -m "Add encrypted secrets"
     {% endcapture %}
     {% include components/design-codeblock.html value=commit_example copy_text=commit_copy label="Commit your encrypted .env file" %}
-    <p class="radar-section-lede">Commit your encrypted .env. Your secrets ship with your code.</p>
+    <p class="radar-section-lede">Commit your encrypted .env alongside your code. Share secrets through git, but keep your private key out of the repository.</p>
         </div>
       {% endcapture %}
       {% include components/design-card.html content=commit_card class="min-w-0" %}
@@ -41,11 +41,9 @@ git commit -m "Add encrypted secrets"
     {% capture ship_example %}
 $ dotenvx run -- node index.js
 ⟐ injected env (2) from .env
-Hello Secret
     {% endcapture %}
     {% include components/design-codeblock.html value=ship_example copy_text="dotenvx run -- node index.js" label="Run your deployed app" %}
-    <p class="radar-section-lede">Ship your code and encrypted secrets together. Your deployment supplies the private key separately, and Dotenvx uses it to unlock your secrets at runtime.</p>
-    <p class="mt-3"><a class="design-link" href="/docs/env-keys-file/">Where do I put the private key?</a></p>
+    <p class="radar-section-lede">Ship your code and encrypted secrets together. Your deployment supplies the private key so Dotenvx can unlock your secrets at runtime. <a class="design-link" href="/docs/quickstart/encryption/">Where do I put the private key?</a></p>
         </div>
       {% endcapture %}
       {% include components/design-card.html content=ship_card class="min-w-0" %}

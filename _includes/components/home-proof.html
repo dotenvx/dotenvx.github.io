@@ -1,42 +1,13 @@
+{% unless include.embedded %}
 <section class="radar-section" aria-label="About Dotenvx">
   <div class="armor-shell">
-    <div>
-      <h2 class="design-page-title design-page-title--bold design-page-title--flush">Three foundational technologies.<br>One elegant way to manage secrets.</h2>
-      <p class="radar-section-lede">Dotenvx brings together .env’s simplicity, git’s distribution, and ECIES’ battle-tested encryption, built on the same elliptic curve used by Bitcoin, so your secrets can ship with your code.</p>
-      <ul class="design-list-items !mt-6">
-        <li><a
-            class="design-link"
-            href="https://github.com/dotenvx/dotenvx/blob/main/LICENSE"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Open Source</a>
-          <span class="design-list-meta">BSD-3</span>
-        </li>
-        <li><a
-            class="design-link"
-            href="https://npm.chart.dev/@dotenvx/dotenvx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >230 Million installs</a>
-          <span class="design-list-meta">NPM</span>
-        </li>
-        <li><a
-            class="design-link"
-            href="/dotenvx.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >99.5% less exposure</a>
-          <span class="design-list-meta">Whitepaper</span>
-        </li>
-        <li><a
-            class="design-link"
-            href="https://mot.la"
-            target="_blank"
-            rel="noopener noreferrer"
-          >From the creator of dotenv</a>
-          <span class="design-list-meta">Scott Motte</span>
-        </li>
-      </ul>
+{% endunless %}
+    <div class="design-list !mt-0">
+      <h2 class="design-page-title design-page-title--bold design-page-title--flush">Built on three foundational primitives.</h2>
+      <p class="radar-section-lede !max-w-none"><a class="design-link" href="https://git-scm.com/">Git</a> for distribution, <a class="design-link" href="https://github.com/motdotla/dotenv">.env</a> for secrets storage, and <a class="design-link" href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a> for encryption. Dotenvx is <a class="design-link" href="https://github.com/dotenvx/dotenvx/blob/main/LICENSE">open source</a>, with over <a class="design-link" href="https://npm.chart.dev/@dotenvx/dotenvx">200 million installs</a>, and comes <a class="design-link" href="https://github.com/motdotla/dotenv">from the creator of dotenv</a>.</p>
+      <p class="radar-section-lede !max-w-none"><a class="design-link" href="/dotenvx.pdf">Read the whitepaper →</a></p>
     </div>
+{% unless include.embedded %}
   </div>
 </section>
+{% endunless %}

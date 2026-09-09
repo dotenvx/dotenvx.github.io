@@ -21,7 +21,7 @@
     {% capture hero2_description %}
       <span class="design-page-title design-page-title--flush design-page-title--bold">Dotenvx is docker for secrets</span>
       <span><a href="https://github.com/motdotla/dotenv">From the creator of dotenv <span aria-hidden="true">★</span> 20.5k</a></span>
-      <div class="flex flex-wrap justify-center gap-3 mt-4">
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
         {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Install button" %}
         {% include components/design-btn.html label="Docs" href="/docs" data_umami_event="Homepage Docs button" %}
       </div>
@@ -31,7 +31,6 @@
       content=hero2_content
       description=hero2_description
     %}
-    {% include components/home-logo-cloud.html %}
   </div>
 </section>
 <script src="{{ '/assets/js/container-stack.js' | relative_url }}" defer></script>

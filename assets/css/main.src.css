@@ -6965,10 +6965,43 @@ html.dark .spec-table-link a {
 
 /* A gently scattered desk layout, while preserving the reading order. */
 .design-card-deck.is-expanded .design-card-deck-stage { padding: 2rem .75rem .75rem; gap: 1.75rem; }
-.design-card-deck.is-expanded .design-card-deck-stage > .design-card { transform-origin: center; box-shadow: 0 5px 12px rgb(0 0 0 / .06); }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card { transform-origin: center; }
 .design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(1) { transform: translateX(-.3rem) rotate(-.7deg); }
 .design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(2) { transform: translateX(.3rem) rotate(.55deg); }
 .design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(3) { transform: translateX(-.1rem) rotate(-.35deg); }
 @media (prefers-reduced-motion: reduce) {
   .design-card-deck.is-expanded .design-card-deck-stage > .design-card { transform: none; }
 }
+
+
+
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(1) { z-index: 3; }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(2) { z-index: 2; }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(3) { z-index: 1; }
+
+/* Homepage rhythm: each boundary has one spacing owner. */
+.home-page {
+  --home-connected-gap: 2.5rem;
+  --home-section-gap: 4rem;
+  --home-ending-gap: 6rem;
+  --home-footer-gap: 2.5rem;
+}
+.home-page .home-hero2 { padding-bottom: 0; }
+.home-page .home-company-cloud { padding-block: var(--home-connected-gap); }
+.home-page .home-company-cloud + section { padding-bottom: var(--home-section-gap); }
+.home-page .home-company-cloud + section .design-card-deck.is-expanded .design-card-deck-stage { padding-top: 0; }
+.home-page .design-card-deck.is-expanded .design-card-deck-stage { gap: 1.75rem; }
+.home-page .home-foundations { padding-bottom: 0; }
+.home-page .home-ending { padding-top: var(--home-ending-gap); padding-bottom: 0; }
+.home-page .footer { margin-top: 0; padding-top: var(--home-footer-gap); }
+@media (min-width: 768px) {
+  .home-page {
+    --home-connected-gap: 4rem;
+    --home-section-gap: 6rem;
+    --home-ending-gap: 9rem;
+    --home-footer-gap: 3rem;
+  }
+}
+
+.home-try-panel { position: relative; isolation: isolate; }
+.home-try-panel::before { content: ""; position: absolute; inset: -1.25rem; background: var(--design-hover); z-index: -1; pointer-events: none; }

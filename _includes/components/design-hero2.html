@@ -1,5 +1,9 @@
 <div class="design-hero2">
-  <div class="design-hero-header home-design-hero"><h1 class="design-page-title design-page-title--flush">{{ include.title }}</h1></div>
+  <div class="design-hero-header home-design-hero">
+    {% if include.eyebrow %}
+      <p class="design-page-header-eyebrow justify-center !mb-3"><a href="{{ include.eyebrow_href }}">{{ include.eyebrow }}</a></p>
+    {% endif %}
+    <h1 class="design-page-title design-page-title--flush">{{ include.title }}</h1></div>
   <div class="design-hero2-content">{{ include.content }}</div>
   {% if include.description %}
     <div class="design-page-header-desc design-hero2-description">{{ include.description }}</div>

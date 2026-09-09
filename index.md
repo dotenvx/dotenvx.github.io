@@ -1,6 +1,7 @@
 ---
 title: "Dotenvx"
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -51,20 +52,26 @@ layout: radar
 
 {% include components/home-hero2.html %}
 
+{% include components/home-logo-cloud.html %}
+
 {% include components/home-encrypt-commit-ship.html %}
 
-{% include components/home-proof.html %}
+<section class="radar-section home-foundations" aria-label="Foundations and getting started">
+  <div class="armor-shell">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {% include components/home-proof.html embedded=true %}
+      {% include components/home-trust.html embedded=true %}
+    </div>
+  </div>
+</section>
 
-{% include components/home-trust.html %}
-
-<section class="radar-section !pt-0" id="install" aria-label="Next step">
+<section class="radar-section home-ending" id="install" aria-label="Next step">
   <div class="armor-shell">
     <div class="home-cta">
       {% include components/design-cta-message.html
-        class="!max-w-none !text-left"
         text="Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It just feels so good."
       %}
-      {% include components/home-install.html embedded=true %}
+      {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Closing Install button" %}
     </div>
   </div>
 </section>

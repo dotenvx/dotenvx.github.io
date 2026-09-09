@@ -1,8 +1,13 @@
-<section class="radar-section" aria-label="Features">
+{% unless include.embedded %}
+<section class="radar-section" aria-label="Try Dotenvx">
   <div class="armor-shell">
-    <div class="design-list">
-      <h2 class="design-page-title design-page-title--bold design-page-title--flush">Everything you need to work with secrets, right where you write code.</h2>
-      {% include components/home-features.html embedded=true hide_title=true %}
+{% endunless %}
+    <div class="design-list !mt-0 home-try-panel">
+      <h2 class="design-page-title design-page-title--bold design-page-title--flush">See how it feels for yourself.</h2>
+      <p class="radar-section-lede !max-w-none">Encrypt, Commit, and Ship, and keep your private key out of git. Try the whole workflow locally before changing how you deploy.</p>
+      <p class="radar-section-lede !max-w-none"><a class="design-link" href="/docs/quickstart/encryption/">Encrypt your first .env file →</a></p>
     </div>
+{% unless include.embedded %}
   </div>
 </section>
+{% endunless %}

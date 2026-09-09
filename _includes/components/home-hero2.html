@@ -27,10 +27,11 @@
       </div>
     {% endcapture %}
     {% include components/design-hero2.html
-      title="Encrypt your secrets.<br>Ship them with your code."
+      title="Encrypt your secrets. <br class='hidden md:block'>Ship them with your code."
       content=hero2_content
       description=hero2_description
     %}
+    {% include components/home-logo-cloud.html %}
   </div>
 </section>
 <script src="{{ '/assets/js/container-stack.js' | relative_url }}" defer></script>

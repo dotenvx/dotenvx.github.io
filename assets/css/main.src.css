@@ -6942,3 +6942,33 @@ html.dark .spec-table-link a {
 .design-card-deck-steps { text-align: center; }
 .design-card-deck-steps button[aria-pressed="true"] { color: var(--design-ink); text-decoration: underline; text-underline-offset: 0.3em; }
 @media (prefers-reduced-motion: reduce) { .design-card-deck.is-ready .design-card-deck-stage > .design-card { transition: none; } }
+
+
+
+.home-company-cloud [role="img"] { color: var(--design-ink) !important; }
+.home-company-cloud svg [fill]:not([fill="none"]),
+.home-company-cloud svg { fill: currentColor; }
+
+.design-card-deck-controls { position: relative; min-height: 1.5rem; }
+.design-card-deck-expand svg { width: 12px; height: 12px; }
+.design-card-deck-expand { position: absolute; right: 0; padding: .35rem; color: var(--design-mid); cursor: pointer; }
+.design-card-deck-expand:hover, .design-card-deck-expand:focus-visible { color: var(--design-ink); }
+.design-card-deck-expand:focus-visible { outline: 1px solid currentColor; }
+.design-card-deck-expand[aria-expanded="true"] svg { transform: rotate(180deg) scale(.8); }
+.design-card-deck.is-expanded { width: 100%; }
+.design-card-deck.is-expanded .design-card-deck-stage { padding-top: 1.5rem; gap: 1rem; }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card { grid-area: auto; transform: none; transform-origin: top left; transition: none; cursor: default; }
+.design-card-deck.is-expanded [data-slot] > * { visibility: visible; }
+.design-card-deck.is-expanded .design-card-deck-steps { visibility: hidden; }
+.design-card-deck.is-expanded .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+
+/* A gently scattered desk layout, while preserving the reading order. */
+.design-card-deck.is-expanded .design-card-deck-stage { padding: 2rem .75rem .75rem; gap: 1.75rem; }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card { transform-origin: center; box-shadow: 0 5px 12px rgb(0 0 0 / .06); }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(1) { transform: translateX(-.3rem) rotate(-.7deg); }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(2) { transform: translateX(.3rem) rotate(.55deg); }
+.design-card-deck.is-expanded .design-card-deck-stage > .design-card:nth-child(3) { transform: translateX(-.1rem) rotate(-.35deg); }
+@media (prefers-reduced-motion: reduce) {
+  .design-card-deck.is-expanded .design-card-deck-stage > .design-card { transform: none; }
+}

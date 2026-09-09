@@ -1,9 +1,9 @@
-<section class="radar-section pt-8 md:pt-16" aria-label="Encrypt, commit, and ship">
+<section class="radar-section pt-0 md:pt-4" aria-label="Encrypt, commit, and ship">
   <div class="armor-shell">
     {% capture workflow_cards %}
       {% capture encrypt_card %}
         <div class="p-6 home-workflow-section min-w-0">
-    <h2 class="design-page-title design-page-title--flush design-page-title--bold" id="home-encrypt-title">Encrypt</h2>
+          <h2 class="design-page-title design-page-title--bold design-page-title--flush">Encrypt</h2>
     {% capture encrypt_example %}
 $ echo "HELLO=Secret" > .env
 $ dotenvx encrypt
@@ -20,7 +20,7 @@ dotenvx encrypt
       {% include components/design-card.html content=encrypt_card class="min-w-0" %}
       {% capture commit_card %}
         <div class="p-6 home-workflow-section min-w-0">
-    <h2 class="design-page-title design-page-title--flush design-page-title--bold" id="home-commit-title">Commit</h2>
+          <h2 class="design-page-title design-page-title--bold design-page-title--flush">Commit</h2>
     {% capture commit_example %}
 HELLO=encrypted:BAgYNmJ3PV9+aajRwCh1Wx...
 $ git add .env
@@ -37,14 +37,15 @@ git commit -m "Add encrypted secrets"
       {% include components/design-card.html content=commit_card class="min-w-0" %}
       {% capture ship_card %}
         <div class="p-6 home-workflow-section min-w-0">
-    <h2 class="design-page-title design-page-title--flush design-page-title--bold" id="home-ship-title">Ship</h2>
+          <h2 class="design-page-title design-page-title--bold design-page-title--flush">Ship</h2>
     {% capture ship_example %}
 $ dotenvx run -- node index.js
 ⟐ injected env (2) from .env
 Hello Secret
     {% endcapture %}
     {% include components/design-codeblock.html value=ship_example copy_text="dotenvx run -- node index.js" label="Run your deployed app" %}
-    <p class="radar-section-lede">Ship your code and encrypted secrets together. Dotenvx unlocks them at runtime.</p>
+    <p class="radar-section-lede">Ship your code and encrypted secrets together. Your deployment supplies the private key separately, and Dotenvx uses it to unlock your secrets at runtime.</p>
+    <p class="mt-3"><a class="design-link" href="/docs/env-keys-file/">Where do I put the private key?</a></p>
         </div>
       {% endcapture %}
       {% include components/design-card.html content=ship_card class="min-w-0" %}

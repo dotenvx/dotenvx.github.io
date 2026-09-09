@@ -1,6 +1,9 @@
 <div class="design-card-deck" data-card-deck>
 <div class="design-card-deck-stage">{{ include.content }}</div>
 <div class="design-card-deck-controls">
+  <button type="button" class="design-card-deck-expand" data-deck-expand aria-expanded="false" aria-label="Show all three steps" title="Show all three steps">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><path d="m3 3 6 6m12-6-6 6M3 21l6-6m12 6-6-6"/></svg>
+  </button>
   <div class="design-card-deck-steps footer-cloud" aria-label="Workflow step">
     <span class="footer-item"><button type="button" class="design-link" data-deck-step="0">Encrypt</button><span class="footer-sep" aria-hidden="true">&nbsp;·</span></span>
     <span class="footer-item"><button type="button" class="design-link" data-deck-step="1">Commit</button><span class="footer-sep" aria-hidden="true">&nbsp;·</span></span>
@@ -8,4 +11,4 @@
   </div>
 </div>
 </div>
-<script src="{{ "/assets/js/card-deck.js" | relative_url }}" defer></script>
+<script src="{{ "/assets/js/card-deck.js" | relative_url }}?v=expand-3" defer></script>

@@ -1,0 +1,11 @@
+<div class="design-card-deck" data-card-deck>
+<div class="design-card-deck-stage">{{ include.content }}</div>
+<div class="design-card-deck-controls">
+  <div class="design-card-deck-steps footer-cloud" aria-label="Workflow step">
+    <span class="footer-item"><button type="button" class="design-link" data-deck-step="0">Encrypt</button><span class="footer-sep" aria-hidden="true">&nbsp;·</span></span>
+    <span class="footer-item"><button type="button" class="design-link" data-deck-step="1">Commit</button><span class="footer-sep" aria-hidden="true">&nbsp;·</span></span>
+    <span class="footer-item"><button type="button" class="design-link" data-deck-step="2">Ship</button></span>
+  </div>
+</div>
+</div>
+<script src="{{ "/assets/js/card-deck.js" | relative_url }}" defer></script>

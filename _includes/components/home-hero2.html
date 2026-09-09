@@ -19,8 +19,12 @@
     </svg>
     {% endcapture %}
     {% capture hero2_description %}
-      <span class="design-hero2-brand">Dotenvx is docker for secrets</span>
+      <span class="design-page-title design-page-title--flush design-page-title--bold">Dotenvx is docker for secrets</span>
       <span><a href="https://github.com/motdotla/dotenv">From the creator of dotenv <span aria-hidden="true">★</span> 20.5k</a></span>
+      <div class="flex flex-wrap justify-center gap-3 mt-4">
+        {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Install button" %}
+        {% include components/design-btn.html label="Docs" href="/docs" data_umami_event="Homepage Docs button" %}
+      </div>
     {% endcapture %}
     {% include components/design-hero2.html
       title="Encrypt your secrets.<br>Ship them with your code."

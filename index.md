@@ -51,26 +51,20 @@ layout: radar
 
 {% include components/home-hero2.html %}
 
-{% include components/home-install.html %}
-
-{% include components/home-workflow.html %}
+{% include components/home-encrypt-commit-ship.html %}
 
 {% include components/home-proof.html %}
 
 {% include components/home-trust.html %}
 
-{% include components/home-features.html %}
-
-<section class="radar-section" aria-label="Next step">
+<section class="radar-section" id="install" aria-label="Next step">
   <div class="armor-shell">
     <div class="home-cta">
       {% include components/design-cta-message.html
+        class="!max-w-none !text-left"
         text="Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It just feels so good."
       %}
-      {% include components/design-btn.html
-        label="Get Started ›"
-        href="/docs"
-      %}
+      {% include components/home-install.html embedded=true %}
     </div>
   </div>
 </section>

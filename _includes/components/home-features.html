@@ -3,8 +3,10 @@
   {% assign feature_data = site.data[include.data] %}
 {% endif %}
 
+{% unless include.embedded %}
 <section class="radar-section" aria-label="{{ feature_data.title }}">
   <div class="armor-shell">
+{% endunless %}
     <div class="design-list">
       {%- unless include.hide_title %}
       <p class="design-list-title">{{ feature_data.title }}</p>
@@ -24,5 +26,7 @@
         {%- endfor %}
       </ul>
     </div>
+{% unless include.embedded %}
   </div>
 </section>
+{% endunless %}

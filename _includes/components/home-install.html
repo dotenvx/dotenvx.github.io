@@ -137,8 +137,10 @@ Finally, explain the security model: encryption protects secret values, the prec
   %}
 {% endcapture %}
 
+{% unless include.embedded %}
 <section class="radar-section" aria-label="Install dotenvx">
   <div class="armor-shell">
+{% endunless %}
     {% include components/design-choice.html
       count=2
       aria_label="Audience"
@@ -146,8 +148,10 @@ Finally, explain the security model: encryption protects secret values, the prec
       options=home_choice_options
       class="home-install-choice"
     %}
+{% unless include.embedded %}
   </div>
 </section>
+{% endunless %}
 
 <script type="text/plain" id="home-install-agent-prompt">{{ home_install_agent_prompt | strip }}</script>
 <script>

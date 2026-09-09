@@ -1,0 +1,54 @@
+<section class="radar-section pt-8 md:pt-16" aria-label="Encrypt, commit, and ship">
+  <div class="armor-shell">
+    {% capture workflow_cards %}
+      {% capture encrypt_card %}
+        <div class="p-6 home-workflow-section min-w-0">
+    <h2 class="design-page-title design-page-title--flush design-page-title--bold" id="home-encrypt-title">Encrypt</h2>
+    {% capture encrypt_example %}
+$ echo "HELLO=Secret" > .env
+$ dotenvx encrypt
+◈ encrypted (.env)
+    {% endcapture %}
+    {% capture encrypt_copy %}
+echo "HELLO=Secret" > .env
+dotenvx encrypt
+    {% endcapture %}
+    {% include components/design-codeblock.html value=encrypt_example copy_text=encrypt_copy label="Encrypt your .env file" %}
+    <p class="radar-section-lede">Encrypt your secrets in .env files. Only your private key can unlock them.</p>
+        </div>
+      {% endcapture %}
+      {% include components/design-card.html content=encrypt_card class="min-w-0" %}
+      {% capture commit_card %}
+        <div class="p-6 home-workflow-section min-w-0">
+    <h2 class="design-page-title design-page-title--flush design-page-title--bold" id="home-commit-title">Commit</h2>
+    {% capture commit_example %}
+HELLO=encrypted:BAgYNmJ3PV9+aajRwCh1Wx...
+$ git add .env
+$ git commit -m "Add encrypted secrets"
+    {% endcapture %}
+    {% capture commit_copy %}
+git add .env
+git commit -m "Add encrypted secrets"
+    {% endcapture %}
+    {% include components/design-codeblock.html value=commit_example copy_text=commit_copy label="Commit your encrypted .env file" %}
+    <p class="radar-section-lede">Commit your encrypted .env. Your secrets ship with your code.</p>
+        </div>
+      {% endcapture %}
+      {% include components/design-card.html content=commit_card class="min-w-0" %}
+      {% capture ship_card %}
+        <div class="p-6 home-workflow-section min-w-0">
+    <h2 class="design-page-title design-page-title--flush design-page-title--bold" id="home-ship-title">Ship</h2>
+    {% capture ship_example %}
+$ dotenvx run -- node index.js
+⟐ injected env (2) from .env
+Hello Secret
+    {% endcapture %}
+    {% include components/design-codeblock.html value=ship_example copy_text="dotenvx run -- node index.js" label="Run your deployed app" %}
+    <p class="radar-section-lede">Ship your code and encrypted secrets together. Dotenvx unlocks them at runtime.</p>
+        </div>
+      {% endcapture %}
+      {% include components/design-card.html content=ship_card class="min-w-0" %}
+    {% endcapture %}
+    {% include components/design-card-deck.html content=workflow_cards %}
+  </div>
+</section>

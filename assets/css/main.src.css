@@ -6860,15 +6860,6 @@ html.dark .spec-table-link a {
     text-align: center;
     width: 100%;
   }
-  .design-hero2 .design-hero2-title {
-    font-size: var(--design-text-display);
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.05;
-    margin: 0;
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
   .design-hero2-content {
     display: flex;
     align-items: center;
@@ -6926,9 +6917,28 @@ html.dark .spec-table-link a {
     max-width: 42rem;
     margin: 0;
   }
-  .design-hero2-brand {
-    color: var(--design-ink);
-    font-size: var(--design-text-title);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-  }
+
+.home-workflow-section .design-page-title + .design-codeblock-wrap {
+  margin-top: 0.75rem;
+}
+
+.design-page-title--bold {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.design-card-deck { width: min(100%, 42rem); margin-inline: auto; }
+.design-card-deck-stage { display: grid; gap: 1rem; }
+.design-card-deck .design-card { min-width: 0; background: var(--design-bg); }
+.design-card-deck-controls { display: none; }
+.design-card-deck.is-ready .design-card-deck-stage { padding-top: 1.5rem; isolation: isolate; }
+.design-card-deck.is-ready .design-card-deck-stage > .design-card { grid-area: 1 / 1; transition: transform 300ms ease, opacity 220ms ease; }
+.design-card-deck [data-slot="0"] { cursor: pointer; z-index: 3; transform: translateY(0); }
+.design-card-deck [data-slot="1"] { z-index: 2; transform: translateY(-0.75rem) scale(0.97); }
+.design-card-deck [data-slot="2"] { z-index: 1; transform: translateY(-1.5rem) scale(0.94); }
+.design-card-deck [data-slot]:not([data-slot="0"]) > * { visibility: hidden; }
+.design-card-deck [data-slot="0"].is-leaving { transform: translate(2rem, -1rem) rotate(2deg); opacity: 0; }
+.design-card-deck.is-ready .design-card-deck-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.design-card-deck-steps { text-align: center; }
+.design-card-deck-steps button[aria-pressed="true"] { color: var(--design-ink); text-decoration: underline; text-underline-offset: 0.3em; }
+@media (prefers-reduced-motion: reduce) { .design-card-deck.is-ready .design-card-deck-stage > .design-card { transition: none; } }

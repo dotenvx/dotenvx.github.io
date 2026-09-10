@@ -1,0 +1,28 @@
+{% comment %}
+  Install page — installation commands and agent prompts.
+  Kept out of install.md so Kramdown cannot break nested HTML.
+{% endcomment %}
+{% capture install_hero_visual %}
+  <div class="install-hero-visual" aria-hidden="true">
+    <pre class="docs-hero-ascii-art">↓_</pre>
+  </div>
+{% endcapture %}
+
+<div class="install-page">
+  {% include components/design-hero.html
+    class="company-design-hero"
+    eyebrow="Dotenvx"
+    eyebrow_href="/"
+    title="Install"
+    description="Use dotenvx from the command line or directly in your code."
+    visual=install_hero_visual
+  %}
+
+  <section class="radar-section" aria-label="Installation methods">
+    <div class="armor-shell">
+      {% include components/install-methods-table.html methods=site.data.install_methods %}
+      {% include components/install-methods-table.html methods=site.data.install_sdks label="SDK" %}
+      <p class="design-paragraph install-other-methods"><a class="design-link" href="/docs/learn/installing/">More installation methods</a></p>
+    </div>
+  </section>
+</div>

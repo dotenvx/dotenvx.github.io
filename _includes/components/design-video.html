@@ -26,6 +26,7 @@
     <video
       class="design-video-player"
       controls
+      preload="{{ include.preload | default: 'metadata' }}"
       playsinline
       {% if poster and poster != "" %}poster="{{ poster }}"{% endif %}
     >

@@ -58,7 +58,7 @@ body_class: home-page
 
 <section class="radar-section home-foundations" aria-label="Foundations and getting started">
   <div class="armor-shell">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
       {% include components/home-proof.html embedded=true %}
       {% include components/home-trust.html embedded=true %}
     </div>

@@ -114,6 +114,7 @@
     paintCliSuccess(wrap.querySelector('code'))
     if (!button || !label) return
     var timer
+    var originalLabel = label.textContent
 
     button.addEventListener('click', function () {
       copyFrom(wrap).then(function () {
@@ -122,7 +123,7 @@
         label.textContent = 'Copied'
         timer = setTimeout(function () {
           wrap.classList.remove('is-copied')
-          label.textContent = 'Copy'
+          label.textContent = originalLabel
           timer = null
         }, 1200)
       }).catch(function () {})

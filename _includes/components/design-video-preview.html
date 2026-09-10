@@ -1,0 +1,19 @@
+{% comment %} Mirrored from ../radar design-video-preview {% endcomment %}
+{% assign preview_video = site.data.videos[include.video] %}
+{% assign preview_title = include.title | default: preview_video.title %}
+{% assign preview_class = include.class %}
+<a class="design-video-preview{% if preview_class %} {{ preview_class }}{% endif %}" href="{{ preview_video.url }}" aria-label="Watch: {{ preview_title | escape }}">
+  <span class="design-video-preview-frame">
+    {% if preview_video.poster and preview_video.poster != "" %}
+      <img src="{{ preview_video.poster | relative_url }}" alt="" loading="lazy" decoding="async">
+    {% endif %}
+    <span class="design-video-preview-play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor" focusable="false">
+        <path d="M8 5.14v13.72L19.5 12 8 5.14z"/>
+      </svg>
+    </span>
+  </span>
+  {% if preview_title and preview_title != "" %}
+    <span class="design-video-preview-title">{{ preview_title }}</span>
+  {% endif %}
+</a>

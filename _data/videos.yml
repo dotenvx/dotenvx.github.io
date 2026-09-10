@@ -2,6 +2,7 @@
 # Optional poster, description, and duration fields can be added for video peek cards.
 
 ai-redaction:
+  poster: /assets/img/videos/ai-redaction.jpg
   title: AI redaction
   url: https://github.com/user-attachments/assets/36cdfe6b-429a-4cb7-a087-894c5f043a2b
   source: github
@@ -17,16 +18,19 @@ bitwarden:
   source: github
 
 quickstart-encryption:
+  poster: /assets/img/videos/quickstart-encryption.jpg
   title: Encrypt an env file
   url: https://github.com/user-attachments/assets/48f1ef52-073f-4f91-b1ea-6390795c860d
   source: github
 
 quickstart-run:
+  poster: /assets/img/videos/quickstart-run.jpg
   title: Run anywhere
   url: https://github.com/user-attachments/assets/7fd8f338-38d2-4875-9091-d08fc3134521
   source: github
 
 quickstart-environments:
+  poster: /assets/img/videos/quickstart-environments.jpg
   title: Multiple environments
   url: https://github.com/user-attachments/assets/aea4176e-52ba-4e78-8448-9563207d55f5
   source: github

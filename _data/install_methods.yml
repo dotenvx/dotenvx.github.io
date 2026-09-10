@@ -1,0 +1,21 @@
+- name: CLI
+  command: curl -sfS https://dotenvx.sh | sh
+  prompt: Install the Dotenvx CLI using the official shell installer at https://dotenvx.sh. Check that this method suits my operating system, run the installer, and verify with dotenvx --version. Do not change my .env files.
+- name: NPM
+  command: npm install @dotenvx/dotenvx
+  prompt: Install @dotenvx/dotenvx in this project using npm. Inspect the package setup first, add the dependency, and verify with npx dotenvx --version. Do not change my .env files or application code.
+- name: Windows
+  command: winget install dotenvx
+  prompt: Install the Dotenvx CLI on Windows using winget install dotenvx. Check whether it is already installed, install if needed, and verify with dotenvx --version. Do not change my .env files.
+- name: Brew
+  command: |-
+    brew tap dotenvx/brew
+    brew trust dotenvx/brew
+    brew install dotenvx
+  prompt: Install the Dotenvx CLI using Homebrew. Check that Homebrew is available, run brew tap dotenvx/brew, brew trust dotenvx/brew, and brew install dotenvx, then verify with dotenvx --version. Do not change my .env files.
+- name: GitHub Releases
+  command: |-
+    curl -L -o dotenvx.tar.gz "https://github.com/dotenvx/dotenvx/releases/latest/download/dotenvx-$(uname -s)-$(uname -m).tar.gz"
+    tar -xzf dotenvx.tar.gz
+    ./dotenvx help
+  prompt: Install the Dotenvx CLI from the latest official GitHub release at https://github.com/dotenvx/dotenvx/releases. Detect my operating system and architecture, download and extract the matching binary, put it in an appropriate location on my PATH, and verify with dotenvx --version. Do not change my .env files.

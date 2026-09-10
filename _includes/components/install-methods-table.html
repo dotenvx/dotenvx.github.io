@@ -1,0 +1,20 @@
+{% capture install_table %}
+<thead><tr><th scope="col">{{ include.label | default: "Method" }}</th><th scope="col">Command</th><th scope="col" aria-label="Installation prompt"></th></tr></thead>
+<tbody>
+  {% for method in include.methods %}
+  <tr>
+    <th scope="row">{% if method.href %}<a class="design-link" href="{{ method.href }}">{{ method.name }}</a>{% else %}{{ method.name }}{% endif %}</th>
+    <td>{% include components/design-codeblock.html value=method.command copy_text=method.command %}</td>
+    <td>
+      <div data-design-codeblock data-copy="{{ method.prompt | escape }}">
+        <button type="button" class="design-btn install-copy-prompt" data-design-codeblock-copy aria-label="Copy {{ method.name }} installation prompt"><span data-design-codeblock-label aria-live="polite">Prompt</span></button>
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+{% endcapture %}
+{% capture install_table_card %}
+  {% include components/design-table.html class="design-table-wrap--fill install-method-table" content=install_table %}
+{% endcapture %}
+{% include components/design-card.html class="install-table-card" content=install_table_card %}

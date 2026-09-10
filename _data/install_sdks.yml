@@ -1,0 +1,12 @@
+- name: Node.js
+  href: /docs/sdk/nodejs/
+  command: npm install @dotenvx/dotenvx
+  prompt: Install the Dotenvx Node.js SDK in this project using npm install @dotenvx/dotenvx. Inspect the package setup first, add the dependency, and verify that the package can be imported. See https://dotenvx.com/docs/sdk/nodejs/ for usage. Do not change my .env files or application code.
+- name: Ruby
+  href: /docs/sdk/ruby/
+  command: gem install dotenvx
+  prompt: Install the Dotenvx Ruby SDK in this project. Inspect its Ruby and Bundler setup first, add the dotenvx gem using the project's dependency workflow, and verify that require "dotenvx" succeeds. See https://github.com/dotenvx/dotenvx-ruby for usage. Do not change my .env files or application code.
+- name: Python
+  href: /docs/sdk/python/
+  command: pip install python-dotenvx
+  prompt: Install the Dotenvx Python SDK in this project using pip install python-dotenvx. Inspect its Python environment and dependency workflow first, add the dependency in the appropriate environment, and verify that import dotenvx succeeds. See https://github.com/dotenvx/python-dotenvx for usage. Do not change my .env files or application code.

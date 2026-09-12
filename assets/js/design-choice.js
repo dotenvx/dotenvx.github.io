@@ -93,14 +93,14 @@
       .replace(/>/g, '&gt;')
   }
 
-  /* Wrap ✔ / ◈ / ⟐ lines for .design-code-ok (terminal amber) */
+  /* Wrap ✔ / ◈ / ⟐ / ▣ lines for .design-code-ok (terminal amber) */
   function paintCliSuccess(code) {
     if (!code || code.getAttribute('data-cli-painted') === '1') return
     var text = code.textContent || ''
-    if (!/^[✔◈⟐]/m.test(text)) return
+    if (!/^[✔◈⟐▣]/m.test(text)) return
     code.innerHTML = text.split('\n').map(function (line) {
       var escaped = escapeHtml(line)
-      if (/^[✔◈⟐]/.test(line)) {
+      if (/^[✔◈⟐▣]/.test(line)) {
         return '<span class="design-code-ok">' + escaped + '</span>'
       }
       return escaped

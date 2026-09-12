@@ -26,6 +26,18 @@ layout: radar
           <tr><th scope="col">Event</th><th scope="col">Description</th></tr>
         </thead>
         <tbody>
+          <tr><td><code>connection/create</code></td><td>A provider connection was added.</td></tr>
+          <tr><td><code>connection/delete</code></td><td>A provider connection was removed from Dotenvx.</td></tr>
+          <tr><td><code>connection/reauthorize</code></td><td>A provider connection was reauthorized, or reauthorization failed.</td></tr>
+          <tr><td><code>connection/revoke</code></td><td>A provider connection was revoked or disconnected, or revocation failed.</td></tr>
+          <tr><td><code>connection/update</code></td><td>A provider connection was renamed.</td></tr>
+          <tr><td><code>destination/create</code></td><td>Infra was added to Dotenvx.</td></tr>
+          <tr><td><code>destination/delete</code></td><td>Infra was removed from Dotenvx. The remote infrastructure and its secrets were left unchanged.</td></tr>
+          <tr><td><code>destination/sync</code></td><td>A sync attempt finished with a success or unsuccessful outcome. This is the summary for the selected secrets.</td></tr>
+          <tr><td><code>destination/update</code></td><td>An infra display name was changed.</td></tr>
+          <tr><td><code>destination/view</code></td><td>An infra Secrets or Settings page was opened.</td></tr>
+          <tr><td><code>destinations/view</code></td><td>The Infra list was opened.</td></tr>
+          <tr><td><code>destinations_new/view</code></td><td>The Add infra page was opened.</td></tr>
           <tr><td><code>device/create</code></td><td>A CLI device was registered.</td></tr>
           <tr><td><code>invitation/create</code></td><td>A team invitation was created.</td></tr>
           <tr><td><code>invitation/delete</code></td><td>A team invitation was cancelled.</td></tr>
@@ -45,6 +57,7 @@ layout: radar
           <tr><td><code>keypair/view</code></td><td>The keypair Details page was opened.</td></tr>
           <tr><td><code>keypair_access/grant</code></td><td>A member was granted access to a keypair.</td></tr>
           <tr><td><code>keypair_access/revoke</code></td><td>A member's keypair access was revoked.</td></tr>
+          <tr><td><code>keypair_infra/view</code></td><td>The Infra tab for an armored key was opened.</td></tr>
           <tr><td><code>keypair_name/update</code></td><td>A keypair name was changed.</td></tr>
           <tr><td><code>keypair_setting_enclave/update</code></td><td>Enclave was turned on or off.</td></tr>
           <tr><td><code>keypair_setting_guard/update</code></td><td>Guard was turned on or off.</td></tr>
@@ -64,10 +77,17 @@ layout: radar
           <tr><td><code>oauth_token/delete</code></td><td>An OAuth access token was deleted.</td></tr>
           <tr><td><code>oauth_token/revoke</code></td><td>An OAuth access token was revoked.</td></tr>
           <tr><td><code>organization/create</code></td><td>A team or workspace was created.</td></tr>
+          <tr><td><code>secret/create</code></td><td>A managed secret was added, including starting management of an existing remote secret. Its source can be a literal value or a linked keypair.</td></tr>
+          <tr><td><code>secret/delete</code></td><td>Management of a secret was stopped by removing its Dotenvx record. The remote secret was left unchanged.</td></tr>
+          <tr><td><code>secret/sync</code></td><td>A managed secret write succeeded or failed during a sync attempt.</td></tr>
+          <tr><td><code>secret/update</code></td><td>A managed secret was saved after editing its name, value, or linked keypair.</td></tr>
           <tr><td><code>settings/view</code></td><td>Settings home was opened.</td></tr>
           <tr><td><code>settings_avatar/update</code></td><td>The team avatar was changed.</td></tr>
           <tr><td><code>settings_avatar/view</code></td><td>Avatar settings were opened.</td></tr>
           <tr><td><code>settings_billing/view</code></td><td>Billing settings were opened.</td></tr>
+          <tr><td><code>settings_connection/view</code></td><td>A provider connection detail page was opened.</td></tr>
+          <tr><td><code>settings_connections/view</code></td><td>The Connections list was opened.</td></tr>
+          <tr><td><code>settings_connections_new/view</code></td><td>The Add connection page was opened.</td></tr>
           <tr><td><code>settings_danger_zone/cancel</code></td><td>The team plan was cancelled.</td></tr>
           <tr><td><code>settings_danger_zone/delete</code></td><td>The team was deleted.</td></tr>
           <tr><td><code>settings_danger_zone/view</code></td><td>The danger zone was opened.</td></tr>
@@ -88,6 +108,12 @@ layout: radar
         </tbody>
       {% endcapture %}
       {% include components/design-table.html class="design-table-wrap--fill" content=armor_events %}
+
+      <h2 class="design-page-title">Infra and secret events</h2>
+      <p class="design-paragraph">Adding or editing a managed secret saves it in Dotenvx; it does not write to the provider until sync. Starting management uses <code>secret/create</code>, just like Add secret. Linked keypairs use the same events with <code>source: keypair</code>.</p>
+      <p class="design-paragraph">Each sync records <code>secret/sync</code> for the secrets whose writes were attempted, plus one <code>destination/sync</code> summary. This also applies when syncing a single secret. Check <code>outcome</code> for <code>success</code> or <code>unsuccessful</code>; a failed summary can include earlier successful secret writes.</p>
+      <p class="design-paragraph">Secret event metadata identifies the destination, secret, endpoint, and actor. It never includes secret values or private keys. These audit entries use the existing activity log; they are separate from the stored secret records.</p>
+      <p class="design-paragraph">Validation failures on create or update, and failures fetching remote secrets, do not currently produce dedicated audit events. Opening or cancelling an editor does not create a secret event. Existing historical events retain their original names.</p>
     </div>
   </div>
 </section>

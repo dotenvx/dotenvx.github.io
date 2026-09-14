@@ -16,6 +16,7 @@ redirect_from:
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush">--env-file</h2>
@@ -110,4 +111,5 @@ Hello production
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

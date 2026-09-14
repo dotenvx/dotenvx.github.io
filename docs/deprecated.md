@@ -26,10 +26,12 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <p class="design-paragraph" style="max-width: 36rem; margin-bottom: 1.5rem;">These file formats and technologies have come and gone and been deprecated.</p>
     {% include components/design-list.html
       title="Resources"
       items=deprecated_items
     %}
   </div>
+</div>
 </section>

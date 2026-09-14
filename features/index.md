@@ -48,7 +48,7 @@ body_class: home-page
         compact=true
         secondary=true
         name="Features"
-        description="A secure dotenv—with encryption, redaction, and the workflow extras teams actually use."
+        description="A secure dotenv—with encryption, redaction, and the workflow extras."
         content=features_hero_visual
       %}
     </div>

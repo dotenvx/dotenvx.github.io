@@ -14,6 +14,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
       <p class="design-paragraph">Events appear in Armor logs as <code>name</code> plus metadata. The event name identifies what happened; metadata adds context such as who performed the action, which team it affected, and where it occurred.</p>
 
@@ -116,4 +117,5 @@ layout: radar
       <p class="design-paragraph">Validation failures on create or update, and failures fetching remote secrets, do not currently produce dedicated audit events. Opening or cancelling an editor does not create a secret event. Existing historical events retain their original names.</p>
     </div>
   </div>
+</div>
 </section>

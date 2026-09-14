@@ -13,6 +13,7 @@ layout: radar
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph">When <code class="design-code">dotenvx encrypt</code> creates encrypted values, it also creates a private decryption key.</p>
@@ -50,4 +51,5 @@ $ dotenvx armor up
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

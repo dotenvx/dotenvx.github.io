@@ -5,7 +5,7 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
-  <body class="radar-layout">
+  <body class="radar-layout home-page docs-site">
     {% include components/radar-nav.html %}
     <main class="radar-main">
       {% assign options_title = page.options_title | default: "Options" %}
@@ -76,9 +76,8 @@
         {% endif %}
       {% endcapture %}
 
-      <div class="armor-shell docs-page">
+      <div class="home-sections">
         {% include components/docs-hero.html
-          bare=true
           eyebrow=cli_eyebrow
           eyebrow_href=cli_eyebrow_href
           title=page.title
@@ -88,7 +87,9 @@
           video_title=page.video_title
         %}
 
-        <section class="docs-cli-body docs-guide-body">
+        <section class="radar-section">
+          <div class="armor-shell">
+            <div class="design-content-width docs-cli-body docs-guide-body">
           {% if content != blank %}
             {% capture step_content %}
               <h2 class="design-page-title design-page-title--flush">{{ page.usage_title | default: "Usage" }}</h2>
@@ -132,6 +133,8 @@
           {% endif %}
 
           {% include components/docs-cli-pager.html %}
+            </div>
+          </div>
         </section>
       </div>
     </main>

@@ -14,6 +14,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
       <p class="design-paragraph">Errors are written to stderr in the form <code>[ERROR_CODE] message</code>. Use the code to identify the failure independently of its contextual message.</p>
 
@@ -84,4 +85,5 @@ layout: radar
       {% include components/design-table.html class="design-table-wrap--fill" content=armor_errors %}
     </div>
   </div>
+</div>
 </section>

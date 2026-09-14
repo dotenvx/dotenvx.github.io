@@ -64,9 +64,11 @@ redirect_from:
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     {% include components/design-list.html
       title="Guides"
       items=platforms_items
     %}
   </div>
+</div>
 </section>

@@ -13,8 +13,6 @@ body_class: home-page contact-page
 
   .design-content-width.contact-content { max-width: 23rem; }
 
-  .contact-page .design-hero2-content { width: min(14rem, 100%); }
-
   .contact-hero-video {
     aspect-ratio: 4 / 3;
     background: #000;

@@ -49,6 +49,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-intro-lists">
       {% include components/design-list.html
         title="Resources"
@@ -56,4 +57,5 @@ layout: radar
       %}
     </div>
   </div>
+</div>
 </section>

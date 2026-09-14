@@ -14,6 +14,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph">Once encrypted, the <code class="design-code">.env</code> file is safe, and recommended, to commit to code.</p>
 
@@ -35,4 +36,5 @@ HELLO="encrypted:BBLDHBFNnbfWt2A3PS8fzjEaLlZNB695T527ZrbF707xIv/OTmhnnxIr2bF07kr
     <p class="design-paragraph">The public key can live in source control because it can only encrypt values. It cannot decrypt them.</p>
     </div>
   </div>
+</div>
 </section>

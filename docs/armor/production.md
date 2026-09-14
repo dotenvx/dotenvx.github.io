@@ -16,6 +16,7 @@ redirect_from:
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph">Deploying to production with <code class="design-code">dotenvx armor</code> is the same as deploying with <code class="design-code">dotenvx</code>.</p>
@@ -91,4 +92,5 @@ $ dotenvx run -- your-command
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

@@ -17,10 +17,12 @@ redirect_from:
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph"><em>Guide coming soon.</em></p>
 
     <p class="design-paragraph">In the meantime, see the <a class="design-link" href="/docs/platforms">platform guides</a> and <a class="design-link" href="/docs/quickstart/encryption">encryption quickstart</a>.</p>
     </div>
   </div>
+</div>
 </section>

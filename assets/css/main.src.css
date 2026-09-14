@@ -7017,3 +7017,26 @@ html.dark .spec-table-link a {
 
 html.dark .hero-container-base { color: #34393d; }
 html.dark .hero-container-primary { color: #7b838a; }
+
+/* Docs use the compact secondary hero and shared readable content column. */
+.design-hero2-name { font: inherit; font-weight: 700; margin: 0; }
+.docs-hero-navigation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .5rem; font-size: var(--design-text-compact); }
+.docs-hero2 .design-hero2-actions { align-items: center; font-size: var(--design-text-compact); }
+.docs-hero2 .docs-hero-icon { width: clamp(3.5rem, 7vw, 5rem); height: clamp(3.5rem, 7vw, 5rem); }
+.docs-hero2 .docs-hero-icon--cli { width: auto; height: auto; }
+.docs-hero2 .docs-hero-ascii-art { font-size: var(--design-text-size); }
+.docs-hero2--example .design-hero2-content {
+  width: min(28rem, 100%);
+  min-height: calc(var(--hero2-illustration-width) * .75);
+  height: auto;
+  aspect-ratio: auto;
+}
+.docs-hero2 .docs-cli-hero-command-copy .design-code { text-align: center; }
+.docs-site .design-content-width { overflow-wrap: anywhere; }
+.docs-site .design-content-width > * { min-width: 0; max-width: 100%; }
+.docs-site .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
+.docs-site .design-table-wrap { max-width: 100%; overflow-x: auto; }
+.docs-site .radar-section { padding-bottom: 0; }
+.docs-site .design-step { padding-bottom: var(--home-section-gap); }
+.docs-site .design-step:last-child { padding-bottom: 0; }
+.docs-site .docs-intro-cards .design-settings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

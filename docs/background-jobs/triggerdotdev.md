@@ -13,6 +13,7 @@ layout: radar
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/background-jobs/triggerdotdev">code examples for this guide</a> on GitHub.</p>
@@ -135,4 +136,5 @@ DOTENV_PRIVATE_KEY_PRODUCTION="424d0ea072eb17c6bee9b4b42ff6333513cf128ea3d5d60cc
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

@@ -25,6 +25,7 @@ redirect_from:
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph">Armoring stores private decryption keys remotely as armored keys instead of writing them locally to <code class="design-code">.env.keys</code>.</p>
 
@@ -53,4 +54,5 @@ $ dotenvx armor pull
     <p class="design-paragraph">See the <a class="design-link" href="/docs/cli/armor/introduction">Armor CLI reference</a> for the full command set.</p>
     </div>
   </div>
+</div>
 </section>

@@ -13,6 +13,7 @@ layout: radar
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The format detailed here has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/env-keys-file">updated .env.keys file format</a>.</p>
@@ -59,4 +60,5 @@ $ dotenvx encrypt
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

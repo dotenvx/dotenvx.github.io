@@ -14,6 +14,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph">Use the same encryption workflow for each environment. Create a <code class="design-code">.env.ENVIRONMENT</code> file, encrypt it, and decrypt it at runtime with <code class="design-code">-f</code>.</p>
 
@@ -41,4 +42,5 @@ Hello Production
     <p class="design-paragraph">This keeps each environment's values separate while preserving the same encrypted-file workflow.</p>
     </div>
   </div>
+</div>
 </section>

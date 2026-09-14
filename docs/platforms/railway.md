@@ -13,6 +13,7 @@ layout: radar
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/railway">code examples for this guide</a> on GitHub.</p>
@@ -106,4 +107,5 @@ npx @railway/cli@latest up
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

@@ -40,6 +40,7 @@ TWILIO_API_KEY=abcd1234" %}
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body docs-env-file-body">
     {% capture step_content %}
     <nav class="design-list" aria-label="On this page">
@@ -314,4 +315,5 @@ DATABASE_URL="postgres://$(whoami)@localhost/my_database"
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

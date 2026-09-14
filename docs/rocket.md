@@ -28,9 +28,11 @@ redirect_from:
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     {% include components/design-list.html
       title="Platforms"
       items=rocket_platforms_items
     %}
   </div>
+</div>
 </section>

@@ -14,6 +14,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph">Use <code class="design-code">dotenvx run</code> to inject encrypted and plaintext values into a process just in time.</p>
 
@@ -35,4 +36,5 @@ Hello World
     <p class="design-paragraph">The application receives normal environment variables. It does not need to know whether a value came from plaintext or ciphertext.</p>
     </div>
   </div>
+</div>
 </section>

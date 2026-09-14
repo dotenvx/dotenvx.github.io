@@ -9,10 +9,12 @@
   {% if include.content and include.content != "" %}
     <div class="design-hero2-content">{{ include.content }}</div>
   {% endif %}
-  {% if include.description %}
+  {% if include.description or include.name %}
     <div class="design-page-header-desc design-hero2-description">
-      {% if include.compact %}<strong>{{ include.name | default: "Dotenvx" }}</strong>{% endif %}
-      <div>{{ include.description }}</div>
+      {% if include.compact %}
+        {% if include.name_heading %}<h1 class="design-hero2-name">{{ include.name }}</h1>{% else %}<strong>{{ include.name | default: "Dotenvx" }}</strong>{% endif %}
+      {% endif %}
+      {% if include.description %}<div>{{ include.description }}</div>{% endif %}
     </div>
   {% endif %}
   {% if include.actions %}

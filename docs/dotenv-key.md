@@ -16,6 +16,7 @@ redirect_from:
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The <code class="design-code">DOTENV_KEY</code> has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/quickstart/encryption">updated encryption instructions</a>.</p>
@@ -73,4 +74,5 @@ URL {
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

@@ -402,6 +402,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-cli-lists">
       {% capture step_content %}
         <div class="docs-cli-cards">
@@ -457,4 +458,5 @@ layout: radar
       {% include components/design-step.html content=step_content %}
     </div>
   </div>
+</div>
 </section>

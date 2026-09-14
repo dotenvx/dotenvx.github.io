@@ -14,6 +14,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
       <h2 class="design-page-title">Dotenvx</h2>
       <p class="design-paragraph">Dotenvx does not have an API of its own. Its core encrypt, decrypt, get, set, and run workflows stay local—simple, private, and independent of a hosted service.</p>
@@ -141,4 +142,5 @@ dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
       <p class="design-paragraph">See <a class="design-link" href="/docs/errors">Errors</a> for Armor error codes and <a class="design-link" href="/docs/events">Events</a> for activity names recorded by these operations.</p>
     </div>
   </div>
+</div>
 </section>

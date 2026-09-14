@@ -24,15 +24,33 @@
   {% endcapture %}
 {% endif %}
 
-{% include components/design-hero.html
-  class="company-design-hero docs-design-hero"
-  bare=include.bare
-  eyebrow=docs_hero_eyebrow
-  eyebrow_href=docs_hero_eyebrow_href
-  crumbs=crumbs
-  title=include.title
-  description=include.description
-  visual=docs_hero_visual
-  video=include.video
-  video_title=include.video_title
-%}
+{% capture docs_hero_actions %}
+  <nav class="docs-hero-navigation" aria-label="Breadcrumb">
+    {% if crumbs and crumbs.size > 0 %}
+      {% for crumb in crumbs %}
+        {% unless forloop.first %}<span aria-hidden="true">»</span>{% endunless %}
+        {% if crumb.href %}<a class="design-link" href="{{ crumb.href }}">{{ crumb.label }}</a>{% else %}<span>{{ crumb.label }}</span>{% endif %}
+      {% endfor %}
+    {% else %}
+      <a class="design-link" href="{{ docs_hero_eyebrow_href }}">{{ docs_hero_eyebrow }}</a>
+    {% endif %}
+  </nav>
+  {% if include.video and include.video != "" %}
+    {% assign docs_video_entry = site.data.videos[include.video] %}
+    {% assign docs_video_url = docs_video_entry.url | default: include.video %}
+    <a class="design-link" href="{{ docs_video_url }}" target="_blank" rel="noopener noreferrer">{{ include.video_title | default: "Watch demo" }} →</a>
+  {% endif %}
+{% endcapture %}
+<section class="design-hero home-hero2 docs-hero2{% if include.visual %} docs-hero2--example{% endif %}">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name_heading=true
+      name=include.title
+      description=include.description
+      content=docs_hero_visual
+      actions=docs_hero_actions
+    %}
+  </div>
+</section>

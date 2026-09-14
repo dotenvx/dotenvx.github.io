@@ -4,6 +4,7 @@
     const spacing = 550
     const height = 255.06152584
     let drag = null
+    let depthFrame
     let depthTimer
     const state = () => new Map(boxes.map(box => [box, { column: Number(box.dataset.slot), level: Number(box.dataset.level || 0) }]))
     const coords = place => ({ x: place.column * spacing, y: -place.level * height })
@@ -78,6 +79,28 @@
         if (boxes.includes(focused)) focused.focus({ preventScroll: true })
       }, 720)
     }
+    // Only move dragged nodes in the paint order: reparenting an animating
+    // neighbor would interrupt its smooth swap transition.
+    const dragDepth = () => {
+      if (!drag) return
+      const placements = new Map(boxes.map(box => {
+        const matrix = new DOMMatrix(getComputedStyle(box).transform)
+        return [box, { x: matrix.e, y: matrix.f }]
+      }))
+      const ordered = boxes.slice().sort((a, b) => {
+        const pa = placements.get(a), pb = placements.get(b)
+        // Vertically aligned containers form a stack, with its top in front.
+        if (Math.abs(pa.x - pb.x) < 160 && Math.abs(pa.y - pb.y) > height * .55) return pb.y - pa.y
+        return (pa.y - pa.x * .57735) - (pb.y - pb.x * .57735)
+      })
+      for (let i = ordered.length - 1; i >= 0; i--) {
+        const box = ordered[i]
+        if (!drag.group.includes(box)) continue
+        const next = ordered[i + 1] || null
+        if (box.nextElementSibling !== next) svg.insertBefore(box, next)
+      }
+      depthFrame = requestAnimationFrame(dragDepth)
+    }
     const preview = target => {
       drag.target = target
       const layout = plan(drag.layout, drag.box, target)
@@ -89,9 +112,10 @@
       if (!drag) return
       const { box, id, layout, target, group } = drag
       drag = null
+      cancelAnimationFrame(depthFrame)
       hint.style.display = 'none'
       group.forEach(item => item.classList.remove('is-dragging'))
-      if (box.hasPointerCapture(id)) box.releasePointerCapture(id)
+      if (svg.hasPointerCapture(id)) svg.releasePointerCapture(id)
       arrange(cancelled ? layout : plan(layout, box, target))
       box.focus({ preventScroll: true })
     }
@@ -106,13 +130,14 @@
         const group = carried(layout, box)
         drag = { box, group, id: event.pointerId, start, layout, origin: coords(layout.get(box)), target: null }
         group.forEach(item => {
-          svg.append(item)
           item.classList.add('is-dragging')
         })
         box.focus({ preventScroll: true })
-        box.setPointerCapture(event.pointerId)
+        // Capture on the stable SVG so changing a box’s paint order keeps dragging.
+        svg.setPointerCapture(event.pointerId)
+        dragDepth()
       })
-      box.addEventListener('pointermove', event => {
+      svg.addEventListener('pointermove', event => {
         if (!drag || drag.box !== box || drag.id !== event.pointerId) return
         const current = point(event)
         if (!current) return
@@ -132,11 +157,11 @@
         if (Math.hypot(moved.x - drag.origin.x, moved.y - drag.origin.y) < 70) target = null
         preview(target)
       })
-      box.addEventListener('pointerup', event => {
+      svg.addEventListener('pointerup', event => {
         if (drag?.box === box && drag.id === event.pointerId) release(false)
       })
       for (const type of ['pointercancel', 'lostpointercapture']) {
-        box.addEventListener(type, event => {
+        svg.addEventListener(type, event => {
           if (drag?.box === box && drag.id === event.pointerId) release(true)
         })
       }

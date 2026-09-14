@@ -13,6 +13,7 @@ layout: radar
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/package-managers/npm">code examples on GitHub</a> for these framework guides.</p>
@@ -271,4 +272,5 @@ $ npm run dev
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

@@ -122,9 +122,11 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-stats-shell">
       {% include components/design-card.html class="docs-stats-card" content=docs_stats_table %}
       <p class="design-paragraph docs-stats-note">Platform totals compare npm package downloads with GitHub release downloads for each OS-architecture archive.</p>
     </div>
   </div>
+</div>
 </section>

@@ -17,6 +17,7 @@ redirect_from:
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-guide-body design-prose">
     <p class="design-paragraph">Dotenvx encrypts secret values in <code class="design-code">.env</code> files while keeping the file readable, reviewable, and safe to commit.</p>
 
@@ -54,4 +55,5 @@ HELLO="encrypted:BBLDHBFNnbfWt2A3PS8fzjEaLlZNB695T527ZrbF707xIv/OTmhnnxIr2bF07kr
     </ul>
     </div>
   </div>
+</div>
 </section>

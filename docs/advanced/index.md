@@ -472,6 +472,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
+  <div class="design-content-width">
     <div class="docs-intro-lists">
       {% capture step_content %}
         {% include components/design-list.html
@@ -513,4 +514,5 @@ layout: radar
       <p class="design-paragraph"><a class="design-link" href="https://dotenvx.com/dotenvx.pdf">Read the whitepaper</a></p>
     </div>
   </div>
+</div>
 </section>

@@ -13,6 +13,7 @@ layout: radar
 %}
 
 <div class="armor-shell">
+  <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
@@ -108,4 +109,5 @@ bunx dotenvx encrypt -f .env.production
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>
+</div>
 </div>

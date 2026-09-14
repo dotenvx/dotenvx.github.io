@@ -5,13 +5,12 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
-  <body class="radar-layout">
+  <body class="radar-layout home-page docs-site">
     {% include components/radar-nav.html %}
     <main class="radar-main">
       {% assign docs_crumbs = page.crumbs | default: site.data.docs.quickstart_crumbs %}
-      <div class="armor-shell docs-page">
+      <div class="home-sections">
         {% include components/docs-hero.html
-          bare=true
           eyebrow=page.eyebrow
           crumbs=docs_crumbs
           title=page.title
@@ -22,7 +21,9 @@
           video_title=page.video_title
         %}
 
-        <section class="docs-quickstart-body">
+        <section class="radar-section">
+          <div class="armor-shell">
+            <div class="design-content-width docs-quickstart-body">
           {% if page.prerequisite_lede or page.prerequisite or page.prerequisite_links %}
             {% capture step_content %}
               <div class="design-list">
@@ -142,6 +143,8 @@
           {% endif %}
 
           {% include components/docs-quickstart-pager.html %}
+            </div>
+          </div>
         </section>
       </div>
     </main>

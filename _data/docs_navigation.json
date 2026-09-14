@@ -1,0 +1,1299 @@
+[
+  {
+    "label": "Start here",
+    "children": [
+      {
+        "label": "Documentation",
+        "href": "/docs/introduction/",
+        "children": []
+      },
+      {
+        "label": "Installing",
+        "href": "/docs/learn/installing/",
+        "children": []
+      },
+      {
+        "label": "Quickstarts",
+        "href": "/docs/quickstarts/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Quickstarts",
+    "children": [
+      {
+        "label": ".NET",
+        "href": "/docs/dotnet/",
+        "children": []
+      },
+      {
+        "label": "1Password",
+        "href": "/docs/1password/",
+        "children": []
+      },
+      {
+        "label": "Astro",
+        "href": "/docs/astro/",
+        "children": []
+      },
+      {
+        "label": "Bash",
+        "href": "/docs/bash/",
+        "children": []
+      },
+      {
+        "label": "Bitwarden",
+        "href": "/docs/bitwarden/",
+        "children": []
+      },
+      {
+        "label": "Bun",
+        "href": "/docs/bun/",
+        "children": []
+      },
+      {
+        "label": "Claude Code",
+        "href": "/docs/claude/",
+        "children": []
+      },
+      {
+        "label": "CLI",
+        "href": "/docs/cli-quickstart/",
+        "children": []
+      },
+      {
+        "label": "Clojure",
+        "href": "/docs/clojure/",
+        "children": []
+      },
+      {
+        "label": "Cloudflare Workers",
+        "href": "/docs/cloudflare-workers/",
+        "children": []
+      },
+      {
+        "label": "Codex",
+        "href": "/docs/codex/",
+        "children": []
+      },
+      {
+        "label": "Cron",
+        "href": "/docs/cron/",
+        "children": []
+      },
+      {
+        "label": "Cursor",
+        "href": "/docs/cursor/",
+        "children": []
+      },
+      {
+        "label": "Docker",
+        "href": "/docs/docker/",
+        "children": []
+      },
+      {
+        "label": "Docker Compose",
+        "href": "/docs/docker-compose/",
+        "children": []
+      },
+      {
+        "label": "Echo",
+        "href": "/docs/echo/",
+        "children": []
+      },
+      {
+        "label": "Expo",
+        "href": "/docs/expo/",
+        "children": []
+      },
+      {
+        "label": "Express",
+        "href": "/docs/express/",
+        "children": []
+      },
+      {
+        "label": "Fish",
+        "href": "/docs/fish/",
+        "children": []
+      },
+      {
+        "label": "Flask",
+        "href": "/docs/flask/",
+        "children": []
+      },
+      {
+        "label": "GitHub Actions",
+        "href": "/docs/github-actions/",
+        "children": []
+      },
+      {
+        "label": "Go",
+        "href": "/docs/go/",
+        "children": []
+      },
+      {
+        "label": "Java",
+        "href": "/docs/java/",
+        "children": []
+      },
+      {
+        "label": "Kotlin",
+        "href": "/docs/kotlin/",
+        "children": []
+      },
+      {
+        "label": "Monorepos",
+        "href": "/docs/monorepos/",
+        "children": []
+      },
+      {
+        "label": "Next.js",
+        "href": "/docs/nextjs/",
+        "children": []
+      },
+      {
+        "label": "Node.js",
+        "href": "/docs/nodejs/",
+        "children": []
+      },
+      {
+        "label": "Nx",
+        "href": "/docs/nx/",
+        "children": []
+      },
+      {
+        "label": "PHP",
+        "href": "/docs/php/",
+        "children": []
+      },
+      {
+        "label": "Python",
+        "href": "/docs/python/",
+        "children": []
+      },
+      {
+        "label": "Rails",
+        "href": "/docs/rails/",
+        "children": []
+      },
+      {
+        "label": "Remix",
+        "href": "/docs/remix/",
+        "children": []
+      },
+      {
+        "label": "Ruby",
+        "href": "/docs/ruby/",
+        "children": []
+      },
+      {
+        "label": "Rust",
+        "href": "/docs/rust/",
+        "children": []
+      },
+      {
+        "label": "Sinatra",
+        "href": "/docs/sinatra/",
+        "children": []
+      },
+      {
+        "label": "Turborepo",
+        "href": "/docs/turborepo/",
+        "children": []
+      },
+      {
+        "label": "uv",
+        "href": "/docs/uv/",
+        "children": []
+      },
+      {
+        "label": "Zsh",
+        "href": "/docs/zsh/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "CLI reference",
+    "children": [
+      {
+        "label": "CLI",
+        "href": "/docs/cli/",
+        "children": []
+      },
+      {
+        "label": "Decrypt",
+        "href": "/docs/cli/decrypt/",
+        "children": [
+          {
+            "label": "--no-armor",
+            "href": "/docs/cli/decrypt-no-armor/",
+            "children": []
+          },
+          {
+            "label": "--no-native",
+            "href": "/docs/cli/decrypt-no-native/",
+            "children": []
+          },
+          {
+            "label": "--stdout",
+            "href": "/docs/cli/decrypt-stdout/",
+            "children": []
+          },
+          {
+            "label": "--stdout --mask",
+            "href": "/docs/cli/decrypt-stdout-mask/",
+            "children": []
+          },
+          {
+            "label": "-ek",
+            "href": "/docs/cli/decrypt-ek/",
+            "children": []
+          },
+          {
+            "label": "-f",
+            "href": "/docs/cli/decrypt-f/",
+            "children": []
+          },
+          {
+            "label": "-fk",
+            "href": "/docs/cli/decrypt-fk/",
+            "children": []
+          },
+          {
+            "label": "-k",
+            "href": "/docs/cli/decrypt-k/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Del",
+        "href": "/docs/cli/del/",
+        "children": [
+          {
+            "label": "KEY",
+            "href": "/docs/cli/del-key/",
+            "children": []
+          },
+          {
+            "label": "KEY -f",
+            "href": "/docs/cli/del-key-f/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Doctor",
+        "href": "/docs/cli/doctor/",
+        "children": []
+      },
+      {
+        "label": "Encrypt",
+        "href": "/docs/cli/encrypt/",
+        "children": [
+          {
+            "label": "--no-armor",
+            "href": "/docs/cli/encrypt-no-armor/",
+            "children": []
+          },
+          {
+            "label": "--no-create",
+            "href": "/docs/cli/encrypt-no-create/",
+            "children": []
+          },
+          {
+            "label": "--no-native",
+            "href": "/docs/cli/encrypt-no-native/",
+            "children": []
+          },
+          {
+            "label": "--stdout",
+            "href": "/docs/cli/encrypt-stdout/",
+            "children": []
+          },
+          {
+            "label": "--token",
+            "href": "/docs/cli/encrypt-token/",
+            "children": []
+          },
+          {
+            "label": "-ek",
+            "href": "/docs/cli/encrypt-ek/",
+            "children": []
+          },
+          {
+            "label": "-f",
+            "href": "/docs/cli/encrypt-f/",
+            "children": []
+          },
+          {
+            "label": "-fk",
+            "href": "/docs/cli/encrypt-fk/",
+            "children": []
+          },
+          {
+            "label": "-k",
+            "href": "/docs/cli/encrypt-k/",
+            "children": []
+          },
+          {
+            "label": "KEY_PLAIN",
+            "href": "/docs/cli/encrypt-plain-suffix/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Genexample",
+        "href": "/docs/cli/genexample/",
+        "children": [
+          {
+            "label": "-f",
+            "href": "/docs/cli/genexample-f/",
+            "children": []
+          },
+          {
+            "label": "directory",
+            "href": "/docs/cli/genexample-directory/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Get",
+        "href": "/docs/cli/get/",
+        "children": [
+          {
+            "label": "(json)",
+            "href": "/docs/cli/get-json/",
+            "children": []
+          },
+          {
+            "label": "--all",
+            "href": "/docs/cli/get-all/",
+            "children": []
+          },
+          {
+            "label": "--all --pretty-print",
+            "href": "/docs/cli/get-all-pretty-print/",
+            "children": []
+          },
+          {
+            "label": "--convention=flow",
+            "href": "/docs/cli/get-key-convention-flow/",
+            "children": []
+          },
+          {
+            "label": "--convention=nextjs",
+            "href": "/docs/cli/get-key-convention-nextjs/",
+            "children": []
+          },
+          {
+            "label": "--format colon",
+            "href": "/docs/cli/get-colon/",
+            "children": []
+          },
+          {
+            "label": "--format eval",
+            "href": "/docs/cli/get-eval/",
+            "children": []
+          },
+          {
+            "label": "--format eval-export",
+            "href": "/docs/cli/get-eval-export/",
+            "children": []
+          },
+          {
+            "label": "--format shell",
+            "href": "/docs/cli/get-shell/",
+            "children": []
+          },
+          {
+            "label": "--no-armor",
+            "href": "/docs/cli/get-no-armor/",
+            "children": []
+          },
+          {
+            "label": "--pretty-print",
+            "href": "/docs/cli/get-pretty-print/",
+            "children": []
+          },
+          {
+            "label": "-ek",
+            "href": "/docs/cli/get-exclude-key/",
+            "children": []
+          },
+          {
+            "label": "-f directory",
+            "href": "/docs/cli/get-key-f-directory/",
+            "children": []
+          },
+          {
+            "label": "-f directory + nextjs",
+            "href": "/docs/cli/get-key-f-directory-convention-nextjs/",
+            "children": []
+          },
+          {
+            "label": "-ik",
+            "href": "/docs/cli/get-include-key/",
+            "children": []
+          },
+          {
+            "label": "KEY",
+            "href": "/docs/cli/get-key/",
+            "children": []
+          },
+          {
+            "label": "KEY --env",
+            "href": "/docs/cli/get-key-env/",
+            "children": []
+          },
+          {
+            "label": "KEY --ignore",
+            "href": "/docs/cli/get-key-ignore/",
+            "children": []
+          },
+          {
+            "label": "KEY --mask",
+            "href": "/docs/cli/get-key-mask/",
+            "children": []
+          },
+          {
+            "label": "KEY --no-native",
+            "href": "/docs/cli/get-no-native/",
+            "children": []
+          },
+          {
+            "label": "KEY --overload",
+            "href": "/docs/cli/get-key-overload/",
+            "children": []
+          },
+          {
+            "label": "KEY --strict",
+            "href": "/docs/cli/get-key-strict/",
+            "children": []
+          },
+          {
+            "label": "KEY -f",
+            "href": "/docs/cli/get-key-f/",
+            "children": []
+          },
+          {
+            "label": "KEY -fk",
+            "href": "/docs/cli/get-key-fk/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Gitignore",
+        "href": "/docs/cli/gitignore/",
+        "children": [
+          {
+            "label": "--pattern",
+            "href": "/docs/cli/gitignore-pattern/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Help",
+        "href": "/docs/cli/help/",
+        "children": []
+      },
+      {
+        "label": "Keypair",
+        "href": "/docs/cli/keypair/",
+        "children": [
+          {
+            "label": "--format colon",
+            "href": "/docs/cli/keypair-colon/",
+            "children": []
+          },
+          {
+            "label": "--format json",
+            "href": "/docs/cli/keypair-json/",
+            "children": []
+          },
+          {
+            "label": "--format shell",
+            "href": "/docs/cli/keypair-shell/",
+            "children": []
+          },
+          {
+            "label": "--no-armor",
+            "href": "/docs/cli/keypair-no-armor/",
+            "children": []
+          },
+          {
+            "label": "--no-native",
+            "href": "/docs/cli/keypair-no-native/",
+            "children": []
+          },
+          {
+            "label": "--pretty-print",
+            "href": "/docs/cli/keypair-pretty-print/",
+            "children": []
+          },
+          {
+            "label": "-f",
+            "href": "/docs/cli/keypair-f/",
+            "children": []
+          },
+          {
+            "label": "-fk",
+            "href": "/docs/cli/keypair-fk/",
+            "children": []
+          },
+          {
+            "label": "KEY",
+            "href": "/docs/cli/keypair-key/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Lock",
+        "href": "/docs/cli/lock/",
+        "children": [
+          {
+            "label": "down",
+            "href": "/docs/cli/lock/down/",
+            "children": []
+          },
+          {
+            "label": "up",
+            "href": "/docs/cli/lock/up/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Ls",
+        "href": "/docs/cli/ls/",
+        "children": []
+      },
+      {
+        "label": "Native",
+        "href": "/docs/cli/native/",
+        "children": [
+          {
+            "label": "down",
+            "href": "/docs/cli/native/down/",
+            "children": []
+          },
+          {
+            "label": "pull",
+            "href": "/docs/cli/native/pull/",
+            "children": []
+          },
+          {
+            "label": "push",
+            "href": "/docs/cli/native/push/",
+            "children": []
+          },
+          {
+            "label": "up",
+            "href": "/docs/cli/native/up/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Prebuild",
+        "href": "/docs/cli/prebuild/",
+        "children": [
+          {
+            "label": "directory",
+            "href": "/docs/cli/prebuild-directory/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Precommit",
+        "href": "/docs/cli/precommit/",
+        "children": [
+          {
+            "label": "--install",
+            "href": "/docs/cli/precommit-install/",
+            "children": []
+          },
+          {
+            "label": "directory",
+            "href": "/docs/cli/precommit-directory/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Redirecting",
+        "href": "/docs/cli/armor/",
+        "children": [
+          {
+            "label": "Armor",
+            "href": "/docs/cli/armor/introduction/",
+            "children": [
+              {
+                "label": "down",
+                "href": "/docs/cli/armor/down/",
+                "children": []
+              },
+              {
+                "label": "login",
+                "href": "/docs/cli/armor/login/",
+                "children": []
+              },
+              {
+                "label": "logout",
+                "href": "/docs/cli/armor/logout/",
+                "children": []
+              },
+              {
+                "label": "move",
+                "href": "/docs/cli/armor/move/",
+                "children": []
+              },
+              {
+                "label": "open",
+                "href": "/docs/cli/armor/open/",
+                "children": []
+              },
+              {
+                "label": "pull",
+                "href": "/docs/cli/armor/pull/",
+                "children": []
+              },
+              {
+                "label": "push",
+                "href": "/docs/cli/armor/push/",
+                "children": []
+              },
+              {
+                "label": "settings",
+                "href": "/docs/cli/armor/settings/",
+                "children": []
+              },
+              {
+                "label": "status",
+                "href": "/docs/cli/armor/status/",
+                "children": []
+              },
+              {
+                "label": "up",
+                "href": "/docs/cli/armor/up/",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Run",
+        "href": "/docs/cli/run/",
+        "children": [
+          {
+            "label": "--convention=flow",
+            "href": "/docs/cli/run-convention-flow/",
+            "children": []
+          },
+          {
+            "label": "--convention=nextjs",
+            "href": "/docs/cli/run-convention-nextjs/",
+            "children": []
+          },
+          {
+            "label": "--debug",
+            "href": "/docs/cli/run-debug/",
+            "children": []
+          },
+          {
+            "label": "--env HELLO=String",
+            "href": "/docs/cli/run-env/",
+            "children": []
+          },
+          {
+            "label": "--ignore",
+            "href": "/docs/cli/run-ignore/",
+            "children": []
+          },
+          {
+            "label": "--log-level",
+            "href": "/docs/cli/run-log-level/",
+            "children": []
+          },
+          {
+            "label": "--mask",
+            "href": "/docs/cli/run-mask/",
+            "children": []
+          },
+          {
+            "label": "--no-armor",
+            "href": "/docs/cli/run-no-armor/",
+            "children": []
+          },
+          {
+            "label": "--no-native",
+            "href": "/docs/cli/run-no-native/",
+            "children": []
+          },
+          {
+            "label": "--overload",
+            "href": "/docs/cli/run-overload/",
+            "children": []
+          },
+          {
+            "label": "--quiet",
+            "href": "/docs/cli/run-quiet/",
+            "children": []
+          },
+          {
+            "label": "--redact",
+            "href": "/docs/cli/run-redact/",
+            "children": []
+          },
+          {
+            "label": "--redact -- claude",
+            "href": "/docs/cli/run-redact-claude/",
+            "children": []
+          },
+          {
+            "label": "--redact -- claude -p",
+            "href": "/docs/cli/run-redact-claude-print/",
+            "children": []
+          },
+          {
+            "label": "--redact -- codex",
+            "href": "/docs/cli/run-redact-codex/",
+            "children": []
+          },
+          {
+            "label": "--redact -- codex exec",
+            "href": "/docs/cli/run-redact-codex-exec/",
+            "children": []
+          },
+          {
+            "label": "--strict",
+            "href": "/docs/cli/run-strict/",
+            "children": []
+          },
+          {
+            "label": "--token",
+            "href": "/docs/cli/run-token/",
+            "children": []
+          },
+          {
+            "label": "--validate",
+            "href": "/docs/cli/run-validate/",
+            "children": []
+          },
+          {
+            "label": "--verbose",
+            "href": "/docs/cli/run-verbose/",
+            "children": []
+          },
+          {
+            "label": "-f",
+            "href": "/docs/cli/run-f/",
+            "children": []
+          },
+          {
+            "label": "-f directory",
+            "href": "/docs/cli/run-f-directory/",
+            "children": []
+          },
+          {
+            "label": "-f directory + nextjs",
+            "href": "/docs/cli/run-f-directory-convention-nextjs/",
+            "children": []
+          },
+          {
+            "label": "-fk",
+            "href": "/docs/cli/run-fk/",
+            "children": []
+          },
+          {
+            "label": "Alternate Values",
+            "href": "/docs/cli/run-alternate-values/",
+            "children": []
+          },
+          {
+            "label": "Combine Multiple",
+            "href": "/docs/cli/run-dotenv-private-key-multiple/",
+            "children": []
+          },
+          {
+            "label": "Command Substitution",
+            "href": "/docs/cli/run-command-substitution/",
+            "children": []
+          },
+          {
+            "label": "Contextual Help",
+            "href": "/docs/cli/run-contextual-help/",
+            "children": []
+          },
+          {
+            "label": "Default Values",
+            "href": "/docs/cli/run-default-values/",
+            "children": []
+          },
+          {
+            "label": "DOTENV_ENV=production",
+            "href": "/docs/cli/run-convention-flow-dotenv-env/",
+            "children": []
+          },
+          {
+            "label": "DOTENV_PRIVATE_KEY",
+            "href": "/docs/cli/run-dotenv-private-key/",
+            "children": []
+          },
+          {
+            "label": "DOTENV_PRIVATE_KEY_CI",
+            "href": "/docs/cli/run-dotenv-private-key-ci/",
+            "children": []
+          },
+          {
+            "label": "DOTENV_PRIVATE_KEY_PRODUCTION",
+            "href": "/docs/cli/run-dotenv-private-key-production/",
+            "children": []
+          },
+          {
+            "label": "Environment Variable Precedence",
+            "href": "/docs/cli/run-environment-variable-precedence/",
+            "children": []
+          },
+          {
+            "label": "Interpolation Syntax Summary",
+            "href": "/docs/cli/run-interpolation-syntax-summary/",
+            "children": []
+          },
+          {
+            "label": "Multiline",
+            "href": "/docs/cli/run-multiline/",
+            "children": []
+          },
+          {
+            "label": "Shell Expansion",
+            "href": "/docs/cli/run-shell-expansion/",
+            "children": []
+          },
+          {
+            "label": "Variable Expansion",
+            "href": "/docs/cli/run-variable-expansion/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Scan",
+        "href": "/docs/cli/scan/",
+        "children": []
+      },
+      {
+        "label": "Set",
+        "href": "/docs/cli/set/",
+        "children": [
+          {
+            "label": "KEY value",
+            "href": "/docs/cli/set-key-value/",
+            "children": []
+          },
+          {
+            "label": "KEY value --encrypt",
+            "href": "/docs/cli/set-key-value-encrypt/",
+            "children": []
+          },
+          {
+            "label": "KEY value --no-armor",
+            "href": "/docs/cli/set-key-value-no-armor/",
+            "children": []
+          },
+          {
+            "label": "KEY value --no-create",
+            "href": "/docs/cli/set-key-value-no-create/",
+            "children": []
+          },
+          {
+            "label": "KEY value --no-native",
+            "href": "/docs/cli/set-key-value-no-native/",
+            "children": []
+          },
+          {
+            "label": "KEY value --plain",
+            "href": "/docs/cli/set-key-value-plain/",
+            "children": []
+          },
+          {
+            "label": "KEY value -f",
+            "href": "/docs/cli/set-key-value-f/",
+            "children": []
+          },
+          {
+            "label": "KEY value -fk",
+            "href": "/docs/cli/set-key-value-fk/",
+            "children": []
+          },
+          {
+            "label": "KEY_PLAIN value",
+            "href": "/docs/cli/set-key-plain-suffix/",
+            "children": []
+          },
+          {
+            "label": "Values with leading dash",
+            "href": "/docs/cli/set-key-value-with-leading-dash/",
+            "children": []
+          },
+          {
+            "label": "Values with spaces",
+            "href": "/docs/cli/set-key-value-with-spaces/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Validate",
+        "href": "/docs/cli/validate/",
+        "children": [
+          {
+            "label": "--ignore",
+            "href": "/docs/cli/validate-ignore/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Version",
+        "href": "/docs/cli/version/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "SDKs",
+    "children": [
+      {
+        "label": "Node.js",
+        "href": "/docs/sdk/nodejs/",
+        "children": [
+          {
+            "label": "config",
+            "href": "/docs/sdk/nodejs/config/",
+            "children": [
+              {
+                "label": "config(convention: 'nextjs')",
+                "href": "/docs/sdk/nodejs/config-convention/",
+                "children": []
+              },
+              {
+                "label": "config(envKeysFile: '../../.env.keys')",
+                "href": "/docs/sdk/nodejs/config-env-keys-file/",
+                "children": []
+              },
+              {
+                "label": "config(ignore: ['.env.missing', '.env'])",
+                "href": "/docs/sdk/nodejs/config-ignore/",
+                "children": []
+              },
+              {
+                "label": "config(mask: true)",
+                "href": "/docs/sdk/nodejs/config-mask/",
+                "children": []
+              },
+              {
+                "label": "config(no1Password: true)",
+                "href": "/docs/sdk/nodejs/config-no-1password/",
+                "children": []
+              },
+              {
+                "label": "config(noArmor: true)",
+                "href": "/docs/sdk/nodejs/config-no-armor/",
+                "children": []
+              },
+              {
+                "label": "config(noBitwarden: true)",
+                "href": "/docs/sdk/nodejs/config-no-bitwarden/",
+                "children": []
+              },
+              {
+                "label": "config(overload: true)",
+                "href": "/docs/sdk/nodejs/config-overload/",
+                "children": []
+              },
+              {
+                "label": "config(path: ['.env.local', '.env'])",
+                "href": "/docs/sdk/nodejs/config-path/",
+                "children": []
+              },
+              {
+                "label": "config(path: directory, convention: 'nextjs')",
+                "href": "/docs/sdk/nodejs/config-path-directory-convention/",
+                "children": []
+              },
+              {
+                "label": "config(quiet: true)",
+                "href": "/docs/sdk/nodejs/config-quiet/",
+                "children": []
+              },
+              {
+                "label": "config(strict: true)",
+                "href": "/docs/sdk/nodejs/config-strict/",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "get",
+            "href": "/docs/sdk/nodejs/config-get-key/",
+            "children": [
+              {
+                "label": "get(KEY, {mask: true})",
+                "href": "/docs/sdk/nodejs/get-mask/",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "parse",
+            "href": "/docs/sdk/nodejs/parse/",
+            "children": [
+              {
+                "label": "parse(src, {privateKey:})",
+                "href": "/docs/sdk/nodejs/parse-private-key/",
+                "children": []
+              },
+              {
+                "label": "parse(src, {processEnv:})",
+                "href": "/docs/sdk/nodejs/parse-process-env/",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "Primitives",
+            "href": "/docs/sdk/nodejs/primitives/",
+            "children": []
+          },
+          {
+            "label": "set",
+            "href": "/docs/sdk/nodejs/config-set-key-value/",
+            "children": [
+              {
+                "label": "set(KEY, value, {plain: true})",
+                "href": "/docs/sdk/nodejs/config-set-key-value-plain/",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Python",
+        "href": "/docs/sdk/python/",
+        "children": []
+      },
+      {
+        "label": "Ruby",
+        "href": "/docs/sdk/ruby/",
+        "children": []
+      },
+      {
+        "label": "Rust",
+        "href": "/docs/sdk/rust/",
+        "children": [
+          {
+            "label": "Primitives",
+            "href": "/docs/sdk/rust/primitives/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SDKs",
+        "href": "/docs/sdk/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Guides & deployment",
+    "children": [
+      {
+        "label": "Armoring",
+        "href": "/docs/learn/armoring/introduction/",
+        "children": []
+      },
+      {
+        "label": "AWS Lambda",
+        "href": "/docs/platforms/aws-lambda/",
+        "children": []
+      },
+      {
+        "label": "Cloudflare",
+        "href": "/docs/platforms/cloudflare/",
+        "children": []
+      },
+      {
+        "label": "Deploy",
+        "href": "/docs/quickstart/deploy/",
+        "children": []
+      },
+      {
+        "label": "DigitalOcean",
+        "href": "/docs/platforms/digital-ocean/",
+        "children": []
+      },
+      {
+        "label": "Encrypted Files",
+        "href": "/docs/learn/encrypting/encrypted-files/",
+        "children": []
+      },
+      {
+        "label": "Encrypting",
+        "href": "/docs/learn/encrypting/introduction/",
+        "children": []
+      },
+      {
+        "label": "Fly",
+        "href": "/docs/platforms/fly/",
+        "children": []
+      },
+      {
+        "label": "Heroku",
+        "href": "/docs/platforms/heroku/",
+        "children": []
+      },
+      {
+        "label": "Multiple Environments",
+        "href": "/docs/learn/encrypting/multiple-environments/",
+        "children": []
+      },
+      {
+        "label": "Multiple Environments",
+        "href": "/docs/quickstart/environments/",
+        "children": []
+      },
+      {
+        "label": "Netlify",
+        "href": "/docs/platforms/netlify/",
+        "children": []
+      },
+      {
+        "label": "npm",
+        "href": "/docs/package-managers/npm/",
+        "children": []
+      },
+      {
+        "label": "Platforms",
+        "href": "/docs/platforms/",
+        "children": []
+      },
+      {
+        "label": "PM2",
+        "href": "/docs/process-managers/pm2/",
+        "children": []
+      },
+      {
+        "label": "pnpm",
+        "href": "/docs/package-managers/pnpm/",
+        "children": []
+      },
+      {
+        "label": "Private Keys",
+        "href": "/docs/learn/encrypting/private-keys/",
+        "children": []
+      },
+      {
+        "label": "Production",
+        "href": "/docs/armor/production/",
+        "children": []
+      },
+      {
+        "label": "Quickstart",
+        "href": "/docs/quickstart/encryption/",
+        "children": []
+      },
+      {
+        "label": "Railway",
+        "href": "/docs/platforms/railway/",
+        "children": []
+      },
+      {
+        "label": "Render",
+        "href": "/docs/platforms/render/",
+        "children": []
+      },
+      {
+        "label": "Run Anywhere",
+        "href": "/docs/quickstart/run/",
+        "children": []
+      },
+      {
+        "label": "Runtime Decryption",
+        "href": "/docs/learn/encrypting/runtime-decryption/",
+        "children": []
+      },
+      {
+        "label": "Trigger.dev",
+        "href": "/docs/background-jobs/triggerdotdev/",
+        "children": []
+      },
+      {
+        "label": "Vercel",
+        "href": "/docs/platforms/vercel/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Files & reference",
+    "children": [
+      {
+        "label": ".env",
+        "href": "/docs/env-file/",
+        "children": []
+      },
+      {
+        "label": ".env.keys",
+        "href": "/docs/env-keys-file/",
+        "children": []
+      },
+      {
+        "label": "Advanced",
+        "href": "/docs/advanced/",
+        "children": []
+      },
+      {
+        "label": "API",
+        "href": "/docs/api/",
+        "children": []
+      },
+      {
+        "label": "Errors",
+        "href": "/docs/errors/",
+        "children": []
+      },
+      {
+        "label": "Events",
+        "href": "/docs/events/",
+        "children": []
+      },
+      {
+        "label": "Resources",
+        "href": "/docs/resources/",
+        "children": []
+      },
+      {
+        "label": "Rocket",
+        "href": "/docs/rocket/",
+        "children": []
+      },
+      {
+        "label": "Stats",
+        "href": "/docs/stats/",
+        "children": []
+      }
+    ]
+  }
+]

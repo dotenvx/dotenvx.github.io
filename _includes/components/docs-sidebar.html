@@ -1,9 +1,10 @@
 <aside class="docs-sidebar" aria-label="Documentation navigation">
-  <details class="docs-sidebar-disclosure">
+  <details class="docs-sidebar-disclosure" open>
     <summary>Browse docs</summary>
     <nav class="docs-sidebar-scroll" aria-label="All docs">
-      <ul>{% include components/docs-sidebar-tree.html nodes=site.data.docs_sidebar_tree %}</ul>
+      <ul>{% include components/docs-sidebar-tree.html nodes=site.data.docs_navigation %}</ul>
     </nav>
   </details>
+  <div class="docs-sidebar-resizer" role="separator" aria-label="Resize documentation sidebar" aria-orientation="vertical" tabindex="0" title="Drag to resize. Double-click to reset."></div>
 </aside>
 <script src="{{ '/assets/js/docs-sidebar.js' | relative_url }}" defer></script>

@@ -7039,4 +7039,13 @@ html.dark .hero-container-primary { color: #7b838a; }
 .docs-site .radar-section { padding-bottom: 0; }
 .docs-site .design-step { padding-bottom: var(--home-section-gap); }
 .docs-site .design-step:last-child { padding-bottom: 0; }
-.docs-site .docs-intro-cards .design-settings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* Quickstarts read as compact instructions with one paragraph gap throughout. */
+.docs-quickstart-body {
+  gap: 1em;
+  font-size: var(--design-text-size);
+}
+.docs-site .docs-quickstart-body > .design-step {
+  gap: 1em;
+  padding-bottom: 0;
+}

@@ -51,9 +51,9 @@
           {% if page.setup or page.setup_lede %}
             {% capture step_content %}
               {% if page.setup_title and page.setup_title != "" %}
-                <h2 class="design-page-title design-page-title--flush">{{ page.setup_title }}</h2>
+                <p class="design-paragraph"><strong>{{ page.setup_title }}</strong></p>
               {% elsif page.setup_title == nil %}
-                <h2 class="design-page-title design-page-title--flush">0. Setup</h2>
+                <p class="design-paragraph"><strong>0. Setup</strong></p>
               {% endif %}
               {% if page.setup_lede %}
                 <div class="design-paragraph">{{ page.setup_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -67,7 +67,7 @@
 
           {% if page.install %}
             {% capture step_content %}
-              <h2 class="design-page-title design-page-title--flush">{{ page.install_title | default: "1. Install" }}</h2>
+              <p class="design-paragraph"><strong>{{ page.install_title | default: "1. Install" }}</strong></p>
               {% if page.install_lede %}
                 <div class="design-paragraph">{{ page.install_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -86,7 +86,7 @@
 
           {% if page.encrypt %}
             {% capture step_content %}
-              <h2 class="design-page-title design-page-title--flush">{{ page.encrypt_title | default: "2. Encrypt" }}</h2>
+              <p class="design-paragraph"><strong>{{ page.encrypt_title | default: "2. Encrypt" }}</strong></p>
               {% if page.encrypt_lede %}
                 <div class="design-paragraph">{{ page.encrypt_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -105,7 +105,7 @@
 
           {% if page.inject or page.inject_lede or page.inject_after %}
             {% capture step_content %}
-              <h2 class="design-page-title design-page-title--flush">{{ page.inject_title | default: "3. Inject" }}</h2>
+              <p class="design-paragraph"><strong>{{ page.inject_title | default: "3. Inject" }}</strong></p>
               {% if page.inject_lede %}
                 <div class="design-paragraph">{{ page.inject_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% elsif page.inject %}
@@ -126,7 +126,7 @@
 
           {% if page.run %}
             {% capture step_content %}
-              <h2 class="design-page-title design-page-title--flush">{{ page.run_title | default: "4. Run" }}</h2>
+              <p class="design-paragraph"><strong>{{ page.run_title | default: "4. Run" }}</strong></p>
               {% if page.run_lede %}
                 <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}

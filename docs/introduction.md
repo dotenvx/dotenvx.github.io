@@ -30,8 +30,8 @@ layout: radar
   }
 
   .docs-intro-cards .design-settings-tile .docs-hero-icon {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
   .docs-intro-cards .design-settings-tile .docs-hero-icon--cli {
@@ -44,8 +44,8 @@ layout: radar
 
   @media (min-width: 900px) {
     .docs-intro-cards .design-settings-tile .docs-hero-icon {
-      height: 4.5rem;
-      width: 4.5rem;
+      height: 2.5rem;
+      width: 2.5rem;
     }
 
     .docs-intro-cards .design-settings-tile .docs-hero-icon--cli,

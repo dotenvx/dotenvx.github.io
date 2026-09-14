@@ -91,6 +91,7 @@ layout: radar
 {% endcapture %}
 
 <div class="armor-page">
+  <div class="home-sections armor-intro">
   {% include components/home-hero2.html
     compact=true
     name="Dotenvx + Armor ⛨"
@@ -98,6 +99,9 @@ layout: radar
     content=armor_hero_container
     description=armor_hero2_description
   %}
+
+    {% include components/armor/logo-cloud.html %}
+  </div>
 
   {% include components/home-features.html data="armor_features" %}
 

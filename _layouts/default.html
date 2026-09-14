@@ -21,7 +21,6 @@
     {% include layouts/analytics.html %}
   </head>
   <body class="radar-layout relative flex flex-col min-h-screen rounded-t-lg{% if is_homepage %} homepage{% endif %}">
-    {% include components/storm-lightning.html %}
     {% unless page.hide_nav %}
       {% include components/radar-nav.html %}
     {% endunless %}

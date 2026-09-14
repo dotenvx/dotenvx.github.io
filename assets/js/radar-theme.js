@@ -1,5 +1,5 @@
 (function () {
-  var MODES = ['light', 'dark', 'storm']
+  var MODES = ['light', 'dark']
   var mode = 'dark'
 
   function modes() {
@@ -18,7 +18,6 @@
   }
 
   function labelFor(next) {
-    if (next === 'storm') return 'Storm'
     if (next === 'dark') return 'Dark'
     return 'Light'
   }
@@ -28,8 +27,7 @@
     if (window.__radarThemeMode && window.__radarThemeMode.apply) {
       window.__radarThemeMode.apply(mode)
     } else {
-      document.documentElement.classList.toggle('dark', mode === 'dark' || mode === 'storm')
-      document.documentElement.classList.toggle('storm', mode === 'storm')
+      document.documentElement.classList.toggle('dark', mode === 'dark')
     }
     document.querySelectorAll('[data-radar-theme-label]').forEach(function (el) {
       el.textContent = labelFor(mode)

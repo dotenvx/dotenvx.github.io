@@ -2,7 +2,7 @@
 <meta name="color-scheme" content="light dark">
 <script>
   (function () {
-    var MODES = ['light', 'dark', 'storm']
+    var MODES = ['light', 'dark']
     var FORCE_LIGHT = {{ page.force_light | default: false | jsonify }}
 
     function cookieDomain() {
@@ -49,9 +49,8 @@
     function applyThemeMode(mode) {
       if (FORCE_LIGHT) mode = 'light'
       var root = document.documentElement
-      var themeColor = mode === 'storm' ? '#0e1116' : mode === 'dark' ? '#050505' : '#fafafa'
-      root.classList.toggle('dark', mode === 'dark' || mode === 'storm')
-      root.classList.toggle('storm', mode === 'storm')
+      var themeColor = mode === 'dark' ? '#050505' : '#fafafa'
+      root.classList.toggle('dark', mode === 'dark')
       root.style.backgroundColor = themeColor
       root.style.colorScheme = mode === 'light' ? 'light' : 'dark'
       var meta = document.querySelector('meta[name="theme-color"]')
@@ -78,10 +77,9 @@
     try {
       applyThemeMode(resolveThemeMode())
     } catch (e) {
-      if (FORCE_LIGHT) document.documentElement.classList.remove('dark', 'storm')
+      if (FORCE_LIGHT) document.documentElement.classList.remove('dark')
       else {
         document.documentElement.classList.add('dark')
-        document.documentElement.classList.remove('storm')
       }
     }
   })()

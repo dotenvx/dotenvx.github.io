@@ -2005,7 +2005,8 @@ html {
   line-height: 1.75;
   margin: 0;
   max-width: 40rem;
-  text-wrap: pretty;
+  text-align: justify;
+  text-wrap: wrap;
 }
 
 .footer-cloud .design-link {
@@ -6946,12 +6947,14 @@ html.dark .spec-table-link a {
 
 
 .design-hero2--compact {
+  --hero2-illustration-width: clamp(7rem, 14vw, 10rem);
   padding-top: clamp(1.5rem, 4vw, 3rem);
   padding-bottom: clamp(3rem, 8vw, 6rem);
   gap: clamp(1.25rem, 3vw, 2rem);
 }
 .design-hero2--compact .design-hero2-content {
-  width: clamp(7rem, 14vw, 10rem);
+  width: var(--hero2-illustration-width);
+  height: calc(var(--hero2-illustration-width) * 1.119218911);
   aspect-ratio: 973 / 1089;
   flex: none;
 }
@@ -6966,6 +6969,8 @@ html.dark .spec-table-link a {
   line-height: 1.5;
   text-wrap: balance;
 }
+.design-hero2--secondary .design-hero2-content { height: auto; aspect-ratio: 4 / 3; }
+
 .design-hero2-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
 
 .design-content-width { width: 100%; max-width: 28rem; margin-inline: auto; min-width: 0; }

@@ -4,6 +4,7 @@ social_title: Changelog
 image: "/assets/img/og-image-changelog.png"
 permalink: /changelog/
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -11,7 +12,6 @@ layout: radar
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    max-width: 36rem;
   }
 
   .changelog-index .design-list-items li {
@@ -45,12 +45,6 @@ layout: radar
     white-space: pre;
   }
 
-  @media (min-width: 900px) {
-    .changelog-hero-ascii {
-      height: 100%;
-      min-height: inherit;
-    }
-  }
 </style>
 
 {% capture changelog_hero_visual %}
@@ -60,17 +54,22 @@ v1   v2   v3   v99</pre>
   </div>
 {% endcapture %}
 
-<div class="changelog-page">
-  {% include components/design-hero.html
-    class="company-design-hero"
-    eyebrow="Company"
-    title="Changelog"
-    description="Check back often. We're working hard almost daily on Dotenvx and Armor."
-    visual=changelog_hero_visual
-  %}
+<div class="changelog-page home-sections">
+  <section class="design-hero home-hero2" aria-label="Changelog">
+    <div class="armor-shell">
+      {% include components/design-hero2.html
+        compact=true
+      secondary=true
+        name="Changelog"
+        description="Check back often. We're working hard almost daily on Dotenvx and Armor."
+        content=changelog_hero_visual
+      %}
+    </div>
+  </section>
 
   <section class="radar-section">
     <div class="armor-shell">
+      {% capture changelog_content %}
       <nav class="changelog-index" aria-label="Changelog">
         {% comment %}
           Busy months (3+ entries) stay monthly. Sparse months (1–2) roll into quarters.
@@ -133,14 +132,20 @@ v1   v2   v3   v99</pre>
             </div>
         {% endunless %}
       </nav>
+      {% endcapture %}
+      {% include components/design-content-width.html content=changelog_content %}
     </div>
   </section>
 
   <section class="radar-section" aria-label="Install dotenvx">
     <div class="armor-shell">
-      {% include components/design-cta-message.html
-        text="From here, the fastest next step is installing dotenvx."
-      %}
+      <div class="home-cta">
+      {% capture changelog_closing %}
+        <p class="design-paragraph text-center">From here, the fastest next step is installing dotenvx.</p>
+      {% endcapture %}
+      {% include components/design-content-width.html content=changelog_closing %}
+      {% include components/design-btn.html label="Install" href="/install" data_umami_event="Changelog Closing Install button" %}
+      </div>
     </div>
   </section>
 </div>

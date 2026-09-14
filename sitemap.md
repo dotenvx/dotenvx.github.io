@@ -2,6 +2,7 @@
 title: Sitemap
 permalink: /sitemap
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -10,7 +11,7 @@ layout: radar
     color: var(--design-ink);
     display: flex;
     font-family: var(--design-font-mono);
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.55rem, 1.1vw, 0.8rem);
     height: 100%;
     justify-content: center;
     line-height: 1.2;
@@ -27,13 +28,18 @@ layout: radar
    `---'    `---'</pre>
 {% endcapture %}
 
-{% include components/design-hero.html
-  class="company-design-hero"
-  eyebrow="Dotenvx"
-  title="Sitemap"
-  description="Every public page on dotenvx.com, in one place."
-  visual=sitemap_hero_visual
-%}
+<div class="home-sections">
+<section class="design-hero home-hero2" aria-label="Sitemap">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name="Sitemap"
+      description="Every public page on dotenvx.com, in one place."
+      content=sitemap_hero_visual
+    %}
+  </div>
+</section>
 
 {% capture sitemap_items %}
   <li><a class="design-link" href="{{ '/' | relative_url }}">Home</a></li>
@@ -42,9 +48,11 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
-    {% include components/design-list.html
-      title="Pages"
-      items=sitemap_items
-    %}
+    {% capture sitemap_content %}
+      {% include components/design-list.html title="Pages" items=sitemap_items %}
+    {% endcapture %}
+    {% include components/design-content-width.html content=sitemap_content %}
   </div>
 </section>
+
+</div>

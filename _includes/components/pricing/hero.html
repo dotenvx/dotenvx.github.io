@@ -1,53 +1,49 @@
 <style>
-  /* Sparse ascii visual — don't inherit the 17rem hero media slot */
-  .pricing-design-hero .design-hero-visual {
-    min-height: 8.5rem;
+  .pricing-hero .design-hero2-content {
+    width: calc(var(--hero2-illustration-width) * 1904 / 973);
+    aspect-ratio: auto;
   }
-
-  .pricing-hero-ascii {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    min-height: inherit;
-    width: 100%;
+  .pricing-container-group { overflow: visible; }
+  .pricing-drop-hint { fill: #ecd53f; fill-opacity: .04; stroke: #858b8e; stroke-width: 2; stroke-dasharray: 10 9; pointer-events: none; }
+  .pricing-box { cursor: grab; touch-action: none; outline: none; transition: transform 700ms cubic-bezier(.4,0,.2,1); }
+  .pricing-box-visual { pointer-events: none; transition: transform 220ms ease; }
+  .pricing-box-hit { fill: transparent; pointer-events: all; }
+  .pricing-box.is-dragging { cursor: grabbing; transition: none; }
+  .pricing-box.is-dragging .pricing-box-visual,
+  .pricing-box:focus-visible .pricing-box-visual { transform: translateY(-28px); }
+  .pricing-box:focus-visible .pricing-box-visual { filter: drop-shadow(0 0 6px #858b8e); }
+  @media (hover: hover) {
+    .pricing-box:hover .pricing-box-visual { transform: translateY(-28px); }
   }
-
-  .pricing-hero-ascii-art {
-    color: var(--design-ink);
-    font-family: var(--design-font-mono);
-    font-size: var(--design-text-compact);
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    line-height: 1;
-    margin: 0;
-    text-align: center;
-    user-select: none;
-    white-space: pre;
-  }
-
-  @media (min-width: 900px) {
-    .pricing-design-hero .design-hero-visual {
-      min-height: 17rem;
-    }
-
-    .pricing-hero-ascii {
-      height: 100%;
-      min-height: inherit;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-box, .pricing-box-visual { transition: none; }
   }
 </style>
 
 {% capture pricing_hero_visual %}
-  <div class="pricing-hero-ascii" aria-hidden="true">
-    <pre class="pricing-hero-ascii-art">$5 ── $20 ── $90 ── $10k+</pre>
-  </div>
+  <svg class="design-hero2-container-stack pricing-container-group" viewBox="40 0 1904 790" role="group" aria-label="Secrets containers. Drag to swap or stack containers, or focus a container and use arrow keys." data-container-slots>
+    {% assign container_labels = '.ENV,.ENV.CI,.ENV.PROD' | split: ',' %}
+    {% for label in container_labels reversed %}
+      {% assign slot = 2 | minus: forloop.index0 %}
+      <g class="pricing-box" data-slot="{{ slot }}" data-label="{{ label }}" style="transform: translate({{ slot | times: 550 }}px, 0px)" role="button" tabindex="0" aria-label="{{ label }}, position {{ slot | plus: 1 }} of 3. Drag or use arrow keys to swap.">
+        <g class="pricing-box-visual" aria-hidden="true">
+          {% include components/shipping-container.html color="#575B60" face_color="#111214" label=label %}
+        </g>
+        <path class="pricing-box-hit" aria-hidden="true" d="M80 180L287.8461 60L804.307 358.1788V613.2404L596.4609 733.2404L80 435.0615Z" />
+      </g>
+    {% endfor %}
+  </svg>
 {% endcapture %}
 
-{% include components/design-hero.html
-  class="pricing-design-hero"
-  eyebrow="Armor ⛨"
-  title="Pricing"
-  description="Dotenvx is free and open source. But you can pay for Dotenvx Armor."
-  visual=pricing_hero_visual
-%}
+<section class="design-hero home-hero2 pricing-hero">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      name="Pricing"
+      description="Dotenvx is free and open source. But you can pay for Dotenvx Armor."
+      content=pricing_hero_visual
+    %}
+  </div>
+</section>
+
+<script src="{{ '/assets/js/container-slots.js' | relative_url }}?v=6" defer></script>

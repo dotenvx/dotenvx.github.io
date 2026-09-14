@@ -7,7 +7,7 @@ layout: radar
 ---
 
 <style>
-  .armor-forcefield { pointer-events: none; outline: none; -webkit-user-select: none; user-select: none; }
+  .armor-forcefield { overflow: visible; pointer-events: none; outline: none; -webkit-user-select: none; user-select: none; }
   .armor-forcefield * { pointer-events: none; }
   .armor-forcefield .armor-forcefield-hit { pointer-events: all; cursor: pointer; }
   .armor-forcefield:focus-visible { outline: none; }
@@ -32,10 +32,6 @@ layout: radar
     scale: var(--field-rest-scale);
     transition: scale 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  @media (hover: hover) and (pointer: fine) {
-    .armor-forcefield:hover .armor-field { --field-rest-scale: 0.95; }
-  }
-  .armor-forcefield:focus-visible .armor-field { --field-rest-scale: 0.95; }
   .is-repelling .armor-field { animation: armor-field-release 850ms ease-out; }
   @keyframes armor-field-release {
     0%, 100% { scale: var(--field-rest-scale); }
@@ -72,10 +68,10 @@ layout: radar
 </style>
 
 {% capture armor_hero_container %}
-  <svg class="design-hero2-container-stack armor-forcefield" viewBox="60 -335.061526 973 1089" role="button" tabindex="0" aria-label="Test the protective field—it repels contact" data-armor-forcefield>
-    <g transform="translate(207.8460969 -375.06152584)">
+  <svg class="design-hero2-container-stack armor-forcefield" viewBox="60 -335.061526 973 1089" role="button" tabindex="0" aria-label="Launch a dart at the clicked point on the protective field" data-armor-forcefield>
+    <g transform="translate(106.5 -197.561526)">
     <g aria-hidden="true">
-      {% include components/shipping-container.html color="#575B60" face_color="#111214" logo=true %}
+      {% include components/shipping-container.html color="#575B60" face_color="#111214" label=".ENV.PROD" %}
       {% include components/armor/forcefield.html %}
     </g>
     {% comment %}Stable silhouette hit area keeps hover from flickering as the field tightens.{% endcomment %}
@@ -86,7 +82,7 @@ layout: radar
   </svg>
 {% endcapture %}
 
-<script src="{{ '/assets/js/armor-forcefield.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/armor-forcefield.js' | relative_url }}?v=4" defer></script>
 
 {% capture armor_hero2_description %}
   {{ page.description }}

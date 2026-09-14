@@ -1,6 +1,7 @@
 ---
 title: "Contact"
 layout: radar
+body_class: home-page contact-page
 ---
 
 <style>
@@ -8,37 +9,22 @@ layout: radar
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    max-width: 36rem;
   }
 
-  .contact-hero-media {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    min-height: inherit;
-    width: 100%;
-  }
+  .design-content-width.contact-content { max-width: 23rem; }
+
+  .contact-page .design-hero2-content { width: min(14rem, 100%); }
 
   .contact-hero-video {
     aspect-ratio: 4 / 3;
     background: #000;
     display: block;
-    height: auto;
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
-    width: min(22rem, 100%);
-  }
-
-  @media (min-width: 900px) {
-    .contact-hero-media {
-      justify-content: flex-end;
-    }
   }
 </style>
 
 {% capture contact_hero_visual %}
-  <div class="contact-hero-media">
     <video
       class="contact-hero-video"
       src="{{ site.data.videos['la-office-evening'].url }}"
@@ -48,18 +34,23 @@ layout: radar
       playsinline
       aria-label="dotenvx Los Angeles office"
     ></video>
-  </div>
 {% endcapture %}
-{% include components/design-hero.html
-  class="company-design-hero"
-  eyebrow="Company"
-  title="Contact"
-  description="We are based in LA and keep an office in SF–visiting often."
-  visual=contact_hero_visual
-%}
+<div class="home-sections">
+<section class="design-hero home-hero2" aria-label="Contact">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name="Contact"
+      description="We are based in LA and keep an office in SF–visiting often."
+      content=contact_hero_visual
+    %}
+  </div>
+</section>
 
 <section class="radar-section">
   <div class="armor-shell">
+    {% capture contact_lists %}
     <div class="contact-lists">
       <div class="design-list">
         <p class="design-list-title">Offices</p>
@@ -71,7 +62,7 @@ layout: radar
               target="_blank"
               rel="noopener noreferrer"
             >Los Angeles</a>
-            <span class="design-list-meta">2450 Colorado Ave #100, Santa Monica, CA 90404</span>
+            <p class="design-paragraph">2450 Colorado Ave #100, Santa Monica, CA 90404</p>
           </li>
           <li>
             <a
@@ -80,7 +71,7 @@ layout: radar
               target="_blank"
               rel="noopener noreferrer"
             >San Francisco</a>
-            <span class="design-list-meta">1160 Battery Street East #100, San Francisco, CA 94111</span>
+            <p class="design-paragraph">1160 Battery Street East #100, San Francisco, CA 94111</p>
           </li>
         </ul>
       </div>
@@ -93,13 +84,8 @@ layout: radar
         </ul>
       </div>
     </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=contact_lists class="contact-content" %}
   </div>
 </section>
-
-<section class="radar-section" aria-label="Enterprise sales">
-  <div class="armor-shell">
-    <a class="design-cta-message" href="mailto:scott@dotenvx.com">
-      Work with the founder — enterprise inquiries go straight through.
-    </a>
-  </div>
-</section>
+</div>

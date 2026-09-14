@@ -1,5 +1,11 @@
 {% comment %}A dark containment field: diffuse pressure, straight currents, and no solid panels.{% endcomment %}
 <defs>
+  <radialGradient id="armor-heat-glow">
+    <stop offset="0" stop-color="#fff4b0" stop-opacity="0.95" />
+    <stop offset="0.22" stop-color="#ecd53f" stop-opacity="0.8" />
+    <stop offset="0.55" stop-color="#ed8037" stop-opacity="0.4" />
+    <stop offset="1" stop-color="#d94c2e" stop-opacity="0" />
+  </radialGradient>
   <clipPath id="armor-impact-boundary">
     <path d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 607 785L38 456Q29 451 29 441Z" />
   </clipPath>
@@ -37,6 +43,7 @@
     <use class="armor-energy-flow" href="#armor-energy-gate" stroke="#A3ADBC" stroke-width="2" stroke-dasharray="55 1100" opacity="0.65" />
   </g>
   <path class="armor-energy-contact" d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 607 785L38 456Q29 451 29 441Z" pathLength="100" stroke="#A9B5C5" stroke-width="3" stroke-dasharray="8 100" opacity="0" />
+  <g data-armor-heat clip-path="url(#armor-impact-boundary)" />
   <g clip-path="url(#armor-impact-boundary)">
     <circle class="armor-impact-wave" cx="616" cy="487" r="0" stroke-width="4" opacity="0" />
     <circle class="armor-impact-wave armor-impact-wave-echo" cx="616" cy="487" r="0" stroke-width="14" filter="url(#armor-energy-haze)" opacity="0" />

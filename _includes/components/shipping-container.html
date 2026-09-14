@@ -112,10 +112,9 @@
 <path d="M797.3788,366.2598 L800.8429,364.2598 L800.8429,370.3813 L797.3788,372.3813 Z" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
 <path d="M793.9147,604.9569 L804.3070,598.9569 L804.3070,613.2404 L793.9147,619.2404 Z" fill="{{ include.face_color | default: 'var(--design-bg, white)' }}" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" />
 <path d="M797.3788,607.0379 L800.8429,605.0379 L800.8429,611.1594 L797.3788,613.1594 Z" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
-{% if include.logo %}
-  
+{% if include.logo or include.label %}
   <g transform="matrix(0.866025404 0.5 0 1 80 180)">
-    <image href="{{ '/assets/img/logo-dotenvx-dark.svg' | relative_url }}" x="330" y="80" width="230" height="36.09" preserveAspectRatio="xMidYMid meet" />
+    <text x="560" y="150" transform="translate(560 0) scale(0.88 1) translate(-560 0)" text-anchor="end" fill="#ecd53f" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="0">{{ include.label | default: '.ENV' | escape }}</text>
   </g>
 {% endif %}
 </svg>

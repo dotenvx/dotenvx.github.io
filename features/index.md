@@ -2,6 +2,7 @@
 title: Features
 permalink: /features/
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -17,22 +18,16 @@ layout: radar
   .features-hero-ascii-art {
     color: var(--design-ink);
     font-family: var(--design-font-mono);
-    font-size: var(--design-text-size);
+    font-size: clamp(0.55rem, 1.1vw, 0.8rem);
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 1.35;
+    line-height: 1.2;
     margin: 0;
     text-align: left;
     user-select: none;
     white-space: pre;
   }
 
-  @media (min-width: 900px) {
-    .features-hero-ascii {
-      height: 100%;
-      min-height: inherit;
-    }
-  }
 </style>
 
 {% capture features_hero_visual %}
@@ -46,12 +41,25 @@ layout: radar
   </div>
 {% endcapture %}
 
-{% include components/design-hero.html
-  class="company-design-hero"
-  eyebrow="Dotenvx"
-  title="Features"
-  description="A secure dotenv—with encryption, redaction, and the workflow extras teams actually use."
-  visual=features_hero_visual
-%}
+<div class="home-sections">
+  <section class="design-hero home-hero2" aria-label="Features">
+    <div class="armor-shell">
+      {% include components/design-hero2.html
+        compact=true
+        secondary=true
+        name="Features"
+        description="A secure dotenv—with encryption, redaction, and the workflow extras teams actually use."
+        content=features_hero_visual
+      %}
+    </div>
+  </section>
 
-{% include components/home-features.html data="features_page" hide_title=true %}
+  <section class="radar-section" aria-label="Features list">
+    <div class="armor-shell">
+      {% capture features_content %}
+        {% include components/home-features.html data="features_page" hide_title=true embedded=true %}
+      {% endcapture %}
+      {% include components/design-content-width.html content=features_content %}
+    </div>
+  </section>
+</div>

@@ -2,8 +2,10 @@ title: DOTENVX LLC
 links:
   - label: Dotenvx
     href: /
-  - label: Armor ⛨
+  - label: Armor
     href: /armor
+  - label: Pricing
+    href: /pricing
   - label: Features
     href: /features
   - label: Company
@@ -35,8 +37,6 @@ links:
     href: /docs
   - label: Search
     href: /search
-  - label: Pricing
-    href: /pricing
   - label: Legal
     href: /legal
   - label: Privacy

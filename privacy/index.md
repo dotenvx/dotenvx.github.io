@@ -1,16 +1,19 @@
 ---
 title: "Privacy Policy"
 layout: radar
+body_class: home-page
 ---
 
+<div class="home-sections">
 {% include components/legal/hero.html
-  eyebrow="Legal"
   title="Privacy Policy"
   description="How Dotenvx handles your data."
 %}
 
 <section class="radar-section">
-  <div class="armor-shell design-prose">
+  <div class="armor-shell">
+    {% capture legal_content %}
+    <div class="design-prose">
     <p class="design-paragraph">The privacy of your data is paramount to us. It's our entire business. We'll only ever access your account to help you with a problem or squash a software bug. We'll never access the content of an encryption key and/or secret unless you ask us to. We log all access to all accounts by IP address, so we can verify that no unauthorized access has happened for as long as the logs are kept.</p>
 
     <h2 class="design-list-title">Identity &amp; Access</h2>
@@ -40,5 +43,9 @@ layout: radar
     <h2 class="design-list-title">Changes &amp; Questions</h2>
     <p class="design-paragraph">Dotenvx may update this policy from time to time - we'll notify you about significant changes by email or by placing a prominent notice on our site. You can access, change or delete your personal information any time by contacting <a class="design-link" href="mailto:support@dotenvx.com">our support team</a>.</p>
     <p class="design-paragraph">Questions about this privacy policy? Please <a class="design-link" href="mailto:support@dotenvx.com">get in touch</a> and we'll be happy to answer them.</p>
+    </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=legal_content %}
   </div>
 </section>
+</div>

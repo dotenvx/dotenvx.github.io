@@ -2,16 +2,33 @@
 title: Company
 permalink: /company/
 layout: radar
+body_class: home-page
 ---
 
-{% include components/design-hero.html
-  class="company-design-hero"
-  eyebrow="Dotenvx"
-  title="Company"
-  description="Open source, changelog, trust, and how to reach us."
-  public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
-  keysee_render_mode="wire"
-%}
+<style>
+  .company-hero-key { aspect-ratio: 4 / 3; width: 100%; }
+</style>
+
+{% capture company_visual %}
+  {% include components/keysee-viewer.html
+    public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
+    render_mode="wire"
+    class="company-hero-key relative min-h-0 overflow-hidden bg-transparent"
+  %}
+{% endcapture %}
+
+<div class="home-sections">
+<section class="design-hero home-hero2" aria-label="Company">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name="Company"
+      description="Open source, changelog, trust, and how to reach us."
+      content=company_visual
+    %}
+  </div>
+</section>
 
 {% capture company_items %}
   <li>
@@ -38,9 +55,11 @@ layout: radar
 
 <section class="radar-section">
   <div class="armor-shell">
-    {% include components/design-list.html
-      title="Pages"
-      items=company_items
-    %}
+    {% capture company_content %}
+      {% include components/design-list.html title="Pages" items=company_items %}
+    {% endcapture %}
+    {% include components/design-content-width.html content=company_content %}
   </div>
 </section>
+
+</div>

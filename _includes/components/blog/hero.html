@@ -1,9 +1,4 @@
 <style>
-  /* Sparse ascii visual — don't inherit the 17rem hero media slot */
-  .blog-design-hero .design-hero-visual {
-    min-height: 8.5rem;
-  }
-
   .blog-hero-ascii {
     align-items: center;
     display: flex;
@@ -26,16 +21,6 @@
     white-space: pre;
   }
 
-  @media (min-width: 900px) {
-    .blog-design-hero .design-hero-visual {
-      min-height: 17rem;
-    }
-
-    .blog-hero-ascii {
-      height: 100%;
-      min-height: inherit;
-    }
-  }
 </style>
 
 {% capture blog_hero_visual %}
@@ -44,11 +29,14 @@
   </div>
 {% endcapture %}
 
-{% include components/design-hero.html
-  class="blog-design-hero"
-  eyebrow=include.eyebrow
-  title=include.title
-  description=include.description
-  shell_class=include.shell_class
-  visual=blog_hero_visual
-%}
+<section class="design-hero home-hero2" aria-label="{{ include.title }}">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name=include.title
+      description=include.description
+      content=blog_hero_visual
+    %}
+  </div>
+</section>

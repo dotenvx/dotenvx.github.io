@@ -1,16 +1,19 @@
 ---
 title: "Terms of Service"
 layout: radar
+body_class: home-page
 ---
 
+<div class="home-sections">
 {% include components/legal/hero.html
-  eyebrow="Legal"
   title="Terms of Service"
   description="Terms of use for the dotenvx service."
 %}
 
 <section class="radar-section">
-  <div class="armor-shell design-prose">
+  <div class="armor-shell">
+    {% capture legal_content %}
+    <div class="design-prose">
     <p class="design-paragraph">By using Dotenvx ("Service"), you are agreeing to be bound by the following terms and conditions ("Terms of Service").</p>
 
     <p class="design-paragraph">Dotenvx ("Company") reserves the right to update and change these Terms of Service without notice.</p>
@@ -115,5 +118,9 @@ layout: radar
     <h2 class="design-list-title">Changes &amp; Questions</h2>
     <p class="design-paragraph">Dotenvx may update this policy from time to time - we'll notify you about significant changes by email or by placing a prominent notice on our site. You can access, change or delete your personal information any time by contacting <a class="design-link" href="mailto:support@dotenvx.com">our support team</a>.</p>
     <p class="design-paragraph">Questions about this privacy policy? Please <a class="design-link" href="mailto:support@dotenvx.com">get in touch</a> and we'll be happy to answer them.</p>
+    </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=legal_content %}
   </div>
 </section>
+</div>

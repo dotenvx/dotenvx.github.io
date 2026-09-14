@@ -1,6 +1,7 @@
 ---
 title: "Blog"
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -8,18 +9,18 @@ layout: radar
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    max-width: 36rem;
   }
 </style>
 
+<div class="home-sections">
 {% include components/blog/hero.html
-  eyebrow="Dotenvx"
   title="Blog"
   description="Notes on secrets, .env files, and building dotenvx."
 %}
 
 <section class="radar-section">
   <div class="armor-shell">
+    {% capture blog_content %}
     <div class="blog-index-lists">
       {% assign posts_by_year = site.categories.blog | group_by_exp: "post", "post.date | date: '%Y'" %}
       {% for year_group in posts_by_year %}
@@ -39,5 +40,8 @@ layout: radar
         %}
       {% endfor %}
     </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=blog_content %}
   </div>
 </section>
+</div>

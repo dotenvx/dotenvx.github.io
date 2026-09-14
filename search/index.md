@@ -3,6 +3,7 @@ title: Search
 description: Search Dotenvx docs, pricing, and the rest of the site.
 permalink: /search/
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -26,17 +27,6 @@ layout: radar
     user-select: none;
   }
 
-  @media (min-width: 900px) {
-    .search-hero-ascii {
-      height: 100%;
-      justify-content: flex-end;
-      min-height: inherit;
-    }
-
-    .search-hero-ascii-art {
-      font-size: 12rem;
-    }
-  }
 </style>
 
 {% capture search_hero_visual %}
@@ -45,16 +35,22 @@ layout: radar
   </div>
 {% endcapture %}
 
-{% include components/design-hero.html
-  class="company-design-hero"
-  eyebrow="Dotenvx"
-  title="Search"
-  description="Find docs, pricing, and product pages."
-  visual=search_hero_visual
-%}
+<div class="home-sections">
+<section class="design-hero home-hero2" aria-label="Search">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name="Search"
+      description="Find docs, pricing, and product pages."
+      content=search_hero_visual
+    %}
+  </div>
+</section>
 
 <section class="radar-section">
   <div class="armor-shell">
+    {% capture search_content %}
     <form class="site-search-page" data-site-search-page action="/search/" method="get" role="search">
       <div class="site-search-page-field">
         <input
@@ -78,5 +74,9 @@ layout: radar
         <p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>
       </div>
     </form>
+    {% endcapture %}
+    {% include components/design-content-width.html content=search_content %}
   </div>
 </section>
+
+</div>

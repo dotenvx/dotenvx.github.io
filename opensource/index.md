@@ -2,6 +2,7 @@
 title: Open Source
 permalink: /opensource/
 layout: radar
+body_class: home-page
 ---
 
 <style>
@@ -9,21 +10,34 @@ layout: radar
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    max-width: 36rem;
   }
+  .open-source-hero-key { aspect-ratio: 4 / 3; width: 100%; }
 </style>
 
-{% include components/design-hero.html
-  class="company-design-hero"
-  eyebrow="Company"
-  title="Open Source"
-  description="We're big into secrets, encryption, and agentic identity."
-  public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
-  keysee_render_mode="wire"
-%}
+{% capture open_source_visual %}
+  {% include components/keysee-viewer.html
+    public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
+    render_mode="wire"
+    class="open-source-hero-key relative min-h-0 overflow-hidden bg-transparent"
+  %}
+{% endcapture %}
+
+<div class="home-sections">
+<section class="design-hero home-hero2" aria-label="Open Source">
+  <div class="armor-shell">
+    {% include components/design-hero2.html
+      compact=true
+      secondary=true
+      name="Open Source"
+      description="We're big into secrets, encryption, and agentic identity."
+      content=open_source_visual
+    %}
+  </div>
+</section>
 
 <section class="radar-section">
   <div class="armor-shell">
+    {% capture open_source_content %}
     <div class="open-source-lists">
       <div class="design-list">
         <p class="design-list-title">Projects</p>
@@ -108,13 +122,18 @@ layout: radar
         </ul>
       </div>
     </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=open_source_content %}
   </div>
 </section>
 
 <section class="radar-section" aria-label="Open source next step">
   <div class="armor-shell">
-    {% include components/design-cta-message.html
-      text="Contributing to open source for almost two decades."
-    %}
+    {% capture open_source_closing %}
+      <p class="design-paragraph text-center">Contributing to open source for almost two decades.</p>
+    {% endcapture %}
+    {% include components/design-content-width.html content=open_source_closing %}
   </div>
 </section>
+
+</div>

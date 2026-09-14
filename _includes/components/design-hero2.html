@@ -1,13 +1,21 @@
-<div class="design-hero2">
+<div class="design-hero2{% if include.compact %} design-hero2--compact{% endif %}">
+  {% if include.title %}
   <div class="design-hero-header home-design-hero">
     {% if include.eyebrow %}
       <p class="design-page-header-eyebrow justify-center !mb-3"><a href="{{ include.eyebrow_href }}">{{ include.eyebrow }}</a></p>
     {% endif %}
     <h1 class="design-page-title design-page-title--flush">{{ include.title }}</h1></div>
+  {% endif %}
   {% if include.content and include.content != "" %}
     <div class="design-hero2-content">{{ include.content }}</div>
   {% endif %}
   {% if include.description %}
-    <div class="design-page-header-desc design-hero2-description">{{ include.description }}</div>
+    <div class="design-page-header-desc design-hero2-description">
+      {% if include.compact %}<strong>{{ include.name | default: "Dotenvx" }}</strong>{% endif %}
+      <div>{{ include.description }}</div>
+    </div>
+  {% endif %}
+  {% if include.actions %}
+    <div class="design-hero2-actions">{{ include.actions }}</div>
   {% endif %}
 </div>

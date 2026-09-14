@@ -28,7 +28,17 @@
       </svg>
       {% endcapture %}
     {% endif %}
-    {% if include.description %}
+    {% assign hero2_actions = nil %}
+    {% if include.compact %}
+      {% assign hero2_title = nil %}
+      {% capture hero2_description %}
+        Encrypted secrets that travel with your code—from the creator of {% include components/design-link.html href="https://github.com/motdotla/dotenv" label="dotenv" %}.
+      {% endcapture %}
+      {% capture hero2_actions %}
+        {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Install button" %}
+        {% include components/design-btn.html label="Docs" href="/docs" data_umami_event="Homepage Docs button" %}
+      {% endcapture %}
+    {% elsif include.description %}
       {% assign hero2_description = include.description %}
     {% elsif hero2_hide_content or hero2_custom_content and hero2_custom_content != "" %}
       {% assign hero2_description = nil %}
@@ -42,7 +52,16 @@
         </div>
       {% endcapture %}
     {% endif %}
+    {% if include.compact and include.description %}
+      {% assign hero2_description = include.description %}
+    {% endif %}
+    {% if include.actions %}
+      {% assign hero2_actions = include.actions %}
+    {% endif %}
     {% include components/design-hero2.html
+      name=include.name
+      compact=include.compact
+      actions=hero2_actions
       title=hero2_title
       content=hero2_content
       description=hero2_description

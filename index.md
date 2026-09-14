@@ -5,6 +5,11 @@ body_class: home-page
 ---
 
 <style>
+  @media (min-width: 640px) {
+    /* Balance the wider Ericsson mark against Google at the opposite end. */
+    .home-page .home-company-cloud > div { transform: translateX(-0.25rem); }
+  }
+
   /* Centered install choice — same arresting layout as /armor */
   .home-install-choice {
     width: 100%;
@@ -50,18 +55,20 @@ body_class: home-page
 
 </style>
 
-{% include components/home-hero2.html %}
+<div class="home-sections">
+{% include components/home-hero2.html compact=true %}
 
 {% include components/home-logo-cloud.html %}
 
-{% include components/home-encrypt-commit-ship.html %}
+{% include components/home-commands-plain.html %}
 
-<section class="radar-section home-foundations" aria-label="Foundations and getting started">
+<section class="radar-section home-foundations" aria-labelledby="home-foundations-title">
   <div class="armor-shell">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
-      {% include components/home-proof.html embedded=true %}
-      {% include components/home-trust.html embedded=true %}
-    </div>
+    {% include components/design-page-title.html title="Design" heading_tag="h2" title_class="text-center" id="home-foundations-title" %}
+    {% capture foundations_content %}
+      {% include components/home-proof.html %}
+    {% endcapture %}
+    {% include components/design-content-width.html content=foundations_content %}
   </div>
 </section>
 
@@ -75,3 +82,4 @@ body_class: home-page
     </div>
   </div>
 </section>
+</div>

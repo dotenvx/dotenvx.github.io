@@ -1,13 +1,9 @@
-{% unless include.embedded %}
-<section class="radar-section" aria-label="About Dotenvx">
-  <div class="armor-shell">
-{% endunless %}
-    <div class="design-list !mt-0">
-      <h2 class="design-page-title design-page-title--bold design-page-title--flush">Built on three foundational primitives.</h2>
-      <p class="radar-section-lede !max-w-none"><a class="design-link" href="https://git-scm.com/">Git</a> for distribution, <a class="design-link" href="https://github.com/motdotla/dotenv">.env</a> for secrets storage, and <a class="design-link" href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a> for encryption. Dotenvx is <a class="design-link" href="https://github.com/dotenvx/dotenvx/blob/main/LICENSE">open source</a>, with over <a class="design-link" href="https://npm.chart.dev/@dotenvx/dotenvx">200 million installs</a>, and comes <a class="design-link" href="https://github.com/motdotla/dotenv">from the creator of dotenv</a>.</p>
-      <p class="radar-section-lede !max-w-none"><a class="design-link" href="/dotenvx.pdf">Read the whitepaper →</a></p>
-    </div>
-{% unless include.embedded %}
-  </div>
-</section>
-{% endunless %}
+<div class="home-design-copy">
+  <p class="design-paragraph">Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.</p>
+  <p class="design-paragraph">We chose git because it is the best way to deliver digital goods. It is the container ship of the digital world. All code travels on its ships. Why not secrets? Why invent an inferior secrets delivery mechanism when the world class one is right there at your fingertips.</p>
+  <p class="design-paragraph">We chose .env because it is the open standard for loading secrets into code. It represents environment variables, the core primitive that all secrets end up injected into at runtime of code.</p>
+  <p class="design-paragraph">Lastly, we needed to choose an encryption algorithm. Encryption of the values inside the .env file would allow us to place those values with code, leveraging git's distribution advantages while still following the twelve-factor config – by separating the decryption key from the code (environment).</p>
+  <p class="design-paragraph">It was important that we choose a proven, simple, asymmetric standard with small keys. We chose secp256k1, battle-tested by Bitcoin for more than seventeen years. We made cryptography an opinionated choice so developers wouldn't have to. Encryption just worked.</p>
+  <p class="design-paragraph">The result is a system built entirely from primitives, developers already understand, and infrastructure they already use. Secrets can travel with code without becoming part of the code. Git distributes them, .env defines how apps consume them, and secp256k1 keeps their values unreadable. The kicker, all this works by setting a single private key on your infrastructure - no more risky async coordination of secrets, no more centralized downtime risk. Your secrets are always just there with your code, ready to be unlocked at runtime.</p>
+  <p class="design-paragraph">{% include components/design-link.html href="/dotenvx.pdf" label="Read the whitepaper" %} or {% include components/design-link.html href="/docs/quickstart/encryption/" label="try it yourself" %}.</p>
+</div>

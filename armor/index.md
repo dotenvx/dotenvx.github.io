@@ -5,89 +5,99 @@ layout: radar
 ---
 
 <style>
-  .armor-install-choice {
-    width: 100%;
+  .armor-forcefield { pointer-events: none; outline: none; -webkit-user-select: none; user-select: none; }
+  .armor-forcefield * { pointer-events: none; }
+  .armor-forcefield .armor-forcefield-hit { pointer-events: all; cursor: pointer; }
+  .armor-forcefield:focus-visible { outline: none; }
+  html:not(.dark) .armor-energy-haze { opacity: 0.045; }
+  html:not(.dark) .armor-energy-edge { opacity: 0.22; }
+  html:not(.dark) .armor-energy-trace { opacity: 0.07; }
+  .armor-energy-flow { animation: armor-energy-flow 8s linear infinite; }
+  .armor-field-side .armor-energy-flow { animation-delay: -3s; }
+  .armor-field-end .armor-energy-flow { animation-delay: -5s; }
+  @keyframes armor-energy-flow { to { stroke-dashoffset: -1155; } }
+  .armor-field-panel { transform-box: fill-box; transform-origin: center; }
+  .is-arming .armor-field-panel { animation: armor-field-snap 1.6s both; }
+  .is-arming .armor-field-top { animation-delay: 0s; }
+  .is-arming .armor-field-side { animation-delay: 0.1s; }
+  .is-arming .armor-field-end { animation-delay: 0.2s; }
+  .armor-field {
+    /* Ripple circles grow beyond the shield; they must not move its scale origin. */
+    transform-box: view-box; transform-origin: 440px 407px;
+    --field-rest-scale: 1.06;
+    scale: var(--field-rest-scale);
+    transition: scale 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .armor-forcefield:hover .armor-field { --field-rest-scale: 0.95; }
+  }
+  .armor-forcefield:focus-visible .armor-field { --field-rest-scale: 0.95; }
+  .is-repelling .armor-field { animation: armor-field-release 850ms ease-out; }
+  @keyframes armor-field-release {
+    0%, 100% { scale: var(--field-rest-scale); }
+    18%, 40% { scale: 0.91; }
+  }
+  .armor-impact-wave { stroke: #65758b; }
+  html.dark .armor-impact-wave { stroke: #c5d4e8; }
+  .is-repelling .armor-impact-wave { animation: armor-impact-wave 950ms linear both; }
+  .is-repelling .armor-impact-wave-echo { animation-delay: 85ms; }
+  @keyframes armor-impact-wave {
+    0% { r: 2px; opacity: 0.8; }
+    12% { r: 55px; opacity: 0.7; }
+    40% { r: 270px; opacity: 0.38; }
+    70% { r: 570px; opacity: 0.13; }
+    100% { r: 900px; opacity: 0; }
+  }
+  @keyframes armor-field-snap {
+    0% { transform: scale(1.16); opacity: 0; }
+    35% { transform: scale(1.1); opacity: 0.35; }
+    72% { transform: scale(0.985); opacity: 1; }
+    86%, 100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes armor-field-seal {
+    0% { opacity: 0; }
+    18% { opacity: 0.55; }
+    100% { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .armor-field { transition: none; }
+    .is-arming .armor-field-panel, .armor-energy-flow,
+    .is-repelling .armor-impact-wave, .is-repelling .armor-field { animation: none; }
   }
 
-  .armor-install-choice .design-choice-current {
-    min-height: 6.5rem;
-    padding: 1.25rem 1.35rem;
-  }
-
-  .armor-install-choice .design-btn[hidden],
-  .armor-install-choice [hidden] {
-    display: none !important;
-  }
-
-  .armor-you-actions {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  @media (max-width: 480px) {
-    .armor-hero-desc-line2 {
-      display: block;
-    }
-  }
 </style>
 
-{% capture armor_hero_description %}
-Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move them off device–and more.</span>
+{% capture armor_hero_container %}
+  <svg class="design-hero2-container-stack armor-forcefield" viewBox="0 -20 900 860" role="button" tabindex="0" aria-label="Test the protective field—it repels contact" data-armor-forcefield>
+    <g aria-hidden="true">
+      {% include components/shipping-container.html color="#575B60" face_color="#111214" logo=true %}
+      {% include components/armor/forcefield.html %}
+    </g>
+    {% comment %}Stable silhouette hit area keeps hover from flickering as the field tightens.{% endcomment %}
+    <path class="armor-forcefield-hit" aria-hidden="true" fill="transparent"
+      transform="translate(440 407) scale(1.06) translate(-440 -407)"
+      d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 607 785L38 456Q29 451 29 441Z" />
+  </svg>
+{% endcapture %}
+
+<script src="{{ '/assets/js/armor-forcefield.js' | relative_url }}" defer></script>
+
+{% capture armor_hero2_description %}
+  Access control for your encrypted secrets—govern every unlock and see every access.
+{% endcapture %}
+{% capture armor_hero2_actions %}
+  {% include components/design-btn.html label="Sign Up" href="/signup" data_umami_event="Armor Hero Signup button" %}
+  {% include components/design-btn.html label="Pricing" href="/pricing" data_umami_event="Armor Hero Pricing button" %}
 {% endcapture %}
 
 <div class="armor-page">
-  {% include components/design-hero.html
-    class="home-design-hero"
-    eyebrow="For security teams"
-    title="ARMOR⛨"
-    description=armor_hero_description
-    public_key="025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646"
-    keysee_render_mode="solid"
+  {% include components/home-hero2.html
+    compact=true
+    name="Dotenvx + Armor ⛨"
+    actions=armor_hero2_actions
+    content=armor_hero_container
+    description=armor_hero2_description
   %}
-
-  <section class="radar-section" aria-label="Get started with Armor">
-    <div class="armor-shell">
-      {% capture armor_choice_current %}
-        <div id="armor-panel-you" class="armor-you-actions">
-          {% include components/design-btn.html
-            label="Sign Up Free"
-            href="/signup"
-            class="design-btn--trial"
-          %}
-          {% include components/design-btn.html
-            label="See Pricing"
-            href="/pricing"
-          %}
-        </div>
-        {% include components/design-btn.html
-          label="Copy Prompt"
-          id="armor-panel-agent"
-          class="armor-install-prompt-btn design-btn--trial"
-          hidden=true
-        %}
-      {% endcapture %}
-      {% capture armor_choice_options %}
-        {% include components/design-choice-option.html
-          label="For you"
-          selected=true
-          value="you"
-        %}
-        {% include components/design-choice-option.html
-          label="For your agent"
-          value="agent"
-        %}
-      {% endcapture %}
-      {% include components/design-choice.html
-        count=2
-        aria_label="Sign up"
-        current=armor_choice_current
-        options=armor_choice_options
-        class="armor-install-choice"
-      %}
-    </div>
-  </section>
 
   {% include components/home-features.html data="armor_features" %}
 
@@ -120,66 +130,4 @@ Turn your keys into Armored Keys ⛨. <span class="armor-hero-desc-line2">Move t
   {% endcomment %}
 </div>
 
-<script>
-(function () {
-  var agentText = 'Sign up for Dotenvx Armor and complete the full flow.\n\n1. Run `dotenvx login`.\n2. Open the authentication UI and let me choose the sign-in provider and complete authentication. Do not ask which provider I selected. Monitor the waiting CLI process and continue automatically once it reports a successful login.\n3. Run `dotenvx set HELLO "World" -f .env` to create an encrypted `.env` with a local private key.\n4. Run `dotenvx armor up -f .env` to move the private key off-device into Armor.\n5. Confirm the local `.env.keys` private key was removed without displaying any private keys, device keys, tokens, or credentials.\n6. Run `dotenvx armor open -f .env` and leave the resulting Armor page open for me to view.\n7. Run `dotenvx get HELLO -f .env` and confirm it returns `World`, proving Armor can retrieve the off-device private key and decrypt the value.\n8. Demonstrate that `dotenvx curl` makes Armor an agent-controllable security API. Run read-only requests to `https://armor.dotenvx.com/api/account`, `https://armor.dotenvx.com/api/armor/keypairs`, and `https://armor.dotenvx.com/api/teams`, then summarize what an agent can inspect and manage without displaying emails, full identifiers, tokens, private keys, device credentials, or other sensitive data. Mention that the API can also control keypair security settings, team invitations, and audit logs, but do not make any API mutation without my explicit approval.\n\nOnly pause when the authentication UI requires action from me; afterward, detect success from the waiting CLI and continue automatically. Keep all `dotenvx curl` requests read-only unless I explicitly approve a mutation.'
-  var copyTimeout
-
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn()
-    else document.addEventListener('DOMContentLoaded', fn)
-  }
-
-  function copyText(text, onDone) {
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(onDone)
-      return
-    }
-    var textarea = document.createElement('textarea')
-    textarea.value = text
-    document.body.appendChild(textarea)
-    textarea.select()
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
-    onDone()
-  }
-
-  ready(function () {
-    var choice = document.querySelector('.armor-install-choice')
-    var options = choice ? choice.querySelectorAll('.design-choice-option') : []
-    var panelYou = document.getElementById('armor-panel-you')
-    var panelAgent = document.getElementById('armor-panel-agent')
-    if (!choice || !options.length || !panelYou || !panelAgent) return
-
-    function show(next) {
-      options.forEach(function (option) {
-        option.setAttribute('aria-pressed', option.getAttribute('data-choice-value') === next ? 'true' : 'false')
-      })
-      panelYou.hidden = next !== 'you'
-      panelAgent.hidden = next !== 'agent'
-      panelAgent.textContent = 'Copy Prompt'
-    }
-
-    options.forEach(function (option) {
-      option.addEventListener('click', function () {
-        show(option.getAttribute('data-choice-value') || 'you')
-      })
-    })
-
-    panelAgent.addEventListener('click', function (event) {
-      event.preventDefault()
-      copyText(agentText, function () {
-        panelAgent.textContent = 'Copied'
-        clearTimeout(copyTimeout)
-        copyTimeout = setTimeout(function () {
-          panelAgent.textContent = 'Copy Prompt'
-        }, 1100)
-      })
-    })
-
-    var usageScript = document.createElement('script')
-    usageScript.src = '/assets/js/armor-usage.js'
-    document.body.appendChild(usageScript)
-  })
-})()
-</script>
+<script src="{{ '/assets/js/armor-usage.js' | relative_url }}" defer></script>

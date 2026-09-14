@@ -1,0 +1,2 @@
+{% assign page_title_tag = include.heading_tag | default: "h1" %}
+<{{ page_title_tag }} class="design-page-title{% if include.title_class %} {{ include.title_class }}{% endif %}"{% if include.id %} id="{{ include.id }}"{% endif %}><span class="design-page-title-text">{{ include.title }}</span></{{ page_title_tag }}>

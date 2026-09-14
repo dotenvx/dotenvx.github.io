@@ -1,0 +1,49 @@
+{% comment %}A dark containment field: diffuse pressure, straight currents, and no solid panels.{% endcomment %}
+<defs>
+  <clipPath id="armor-impact-boundary">
+    <path d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 607 785L38 456Q29 451 29 441Z" />
+  </clipPath>
+  <filter id="armor-energy-haze" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
+    <feGaussianBlur stdDeviation="9" />
+  </filter>
+  <linearGradient id="armor-energy-current" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0" stop-color="#06090F" stop-opacity="0.05" />
+    <stop offset="0.28" stop-color="#151B25" stop-opacity="0.85" />
+    <stop offset="0.52" stop-color="#7D899A" stop-opacity="0.7" />
+    <stop offset="0.74" stop-color="#080D15" stop-opacity="0.95" />
+    <stop offset="1" stop-color="#0A1019" stop-opacity="0.05" />
+  </linearGradient>
+  <path id="armor-energy-crown" d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361" />
+  <path id="armor-energy-flank" d="M29 184V441Q29 451 38 456L607 785Q616 790 625 785" />
+  <path id="armor-energy-gate" d="M616 497Q616 487 625 482L842 356Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 616 780Z" />
+</defs>
+<g class="armor-field" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <g class="armor-field-panel armor-field-top">
+    <use class="armor-energy-haze" href="#armor-energy-crown" stroke="#080C13" stroke-width="27" opacity="0.35" filter="url(#armor-energy-haze)" />
+    <use class="armor-energy-edge" href="#armor-energy-crown" stroke="url(#armor-energy-current)" stroke-width="2.4" />
+    <path class="armor-energy-trace" d="M44 182L277 47Q286 42 295 47L836 360" stroke="#384352" stroke-width="1" opacity="0.3" />
+    <use class="armor-energy-flow" href="#armor-energy-crown" stroke="#939EAE" stroke-width="2" stroke-dasharray="42 950" opacity="0.7" />
+  </g>
+  <g class="armor-field-panel armor-field-side">
+    <use class="armor-energy-haze" href="#armor-energy-flank" stroke="#070B12" stroke-width="25" opacity="0.32" filter="url(#armor-energy-haze)" />
+    <use class="armor-energy-edge" href="#armor-energy-flank" stroke="url(#armor-energy-current)" stroke-width="2" />
+    <path class="armor-energy-trace" d="M44 212V432Q44 442 53 447L599 763" stroke="#323C4B" stroke-width="1" opacity="0.25" />
+    <use class="armor-energy-flow" href="#armor-energy-flank" stroke="#667487" stroke-width="1.6" stroke-dasharray="30 1050" opacity="0.55" />
+  </g>
+  <g class="armor-field-panel armor-field-end">
+    <use class="armor-energy-haze" href="#armor-energy-gate" stroke="#060A11" stroke-width="32" opacity="0.32" filter="url(#armor-energy-haze)" />
+    <use class="armor-energy-edge" href="#armor-energy-gate" stroke="url(#armor-energy-current)" stroke-width="2.5" />
+    <path class="armor-energy-trace" d="M631 496L827 382Q836 377 836 387V635Q836 645 827 650L631 764" stroke="#667286" stroke-width="1.2" opacity="0.25" />
+    <use class="armor-energy-flow" href="#armor-energy-gate" stroke="#A3ADBC" stroke-width="2" stroke-dasharray="55 1100" opacity="0.65" />
+  </g>
+  <path class="armor-energy-contact" d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 607 785L38 456Q29 451 29 441Z" pathLength="100" stroke="#A9B5C5" stroke-width="3" stroke-dasharray="8 100" opacity="0" />
+  <g clip-path="url(#armor-impact-boundary)">
+    <circle class="armor-impact-wave" cx="616" cy="487" r="0" stroke-width="4" opacity="0" />
+    <circle class="armor-impact-wave armor-impact-wave-echo" cx="616" cy="487" r="0" stroke-width="14" filter="url(#armor-energy-haze)" opacity="0" />
+  </g>
+  <g class="armor-field-seal" stroke="#303C4E" stroke-width="10" filter="url(#armor-energy-haze)" opacity="0">
+    <use href="#armor-energy-crown" />
+    <use href="#armor-energy-flank" />
+    <use href="#armor-energy-gate" />
+  </g>
+</g>

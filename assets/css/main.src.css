@@ -6984,3 +6984,17 @@ html.dark .spec-table-link a {
 @media (min-width: 768px) {
   .armor-intro { --home-section-gap: 6rem; }
 }
+
+/* Read-only example of Radar's secrets artifact. */
+.design-secrets-artifact, .design-secrets-artifact-card { width: 100%; min-width: 0; }
+.design-secret-row { padding: .55rem; }
+.design-secret-pair { display: grid; gap: .55rem; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); width: 100%; }
+.design-secret-field.design-input { font-family: var(--design-font-mono); font-size: var(--design-text-compact); height: 2rem; min-height: 2rem; min-width: 0; padding: 0 .6rem; width: 100%; }
+@media (max-width: 639px) { .design-secret-pair { grid-template-columns: minmax(0, 1fr); } }
+
+.one-key-artifact { margin-bottom: 1em; }
+
+.one-key-artifact > .design-secret-row { padding: 0; }
+.one-key-artifact > .design-secret-row + .design-secret-row { margin-top: .55rem; }
+
+.design-paragraph.one-key-action { margin-top: 1em; }

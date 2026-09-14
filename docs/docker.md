@@ -10,7 +10,7 @@ redirect_from:
   - /docs/platforms/docker/
   - /docs/secrets-in-docker
   - /docs/secrets-in-docker/
-encrypt_title: "1. Encrypt"
+encrypt_title: "Encrypt"
 encrypt_lede: "Encrypt your `.env` file before building the image."
 encrypt_copy: "dotenvx encrypt"
 encrypt: |
@@ -19,7 +19,7 @@ encrypt_after_lede: "Commit the encrypted `.env` file, but never commit or copy 
 encrypt_after_copy: ".env.keys"
 encrypt_after: |
   .env.keys
-inject_title: "2. Add dotenvx to your image"
+inject_title: "Add dotenvx to your image"
 inject_lede: "Install dotenvx and use `dotenvx run --` as the image entrypoint. Docker appends the existing `CMD`, so your application command stays easy to change."
 inject_copy: |
   FROM node:22-alpine
@@ -49,7 +49,7 @@ inject: |
 
   ENTRYPOINT ["dotenvx", "run", "--"]
   CMD ["node", "index.js"]
-run_title: "3. Run"
+run_title: "Run"
 run_lede: "For a local check, pass the private key from your ignored `.env.keys` file."
 run_copy: |
   docker build -t myapp .

@@ -9,7 +9,7 @@ redirect_from:
   - /docs/secrets-in-cron/
   - /docs/secrets-in-cron
 inject_lede: "Then inject your encrypted secrets in cron jobs with `dotenvx run`."
-inject_title: "3. Inject"
+inject_title: "Inject"
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 encrypt_copy: "dotenvx encrypt"
 inject_copy: |

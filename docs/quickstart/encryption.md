@@ -25,7 +25,7 @@ redirect_from:
   <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">1. Encrypt</h2>
+    <h2 class="design-page-title design-page-title--flush">Encrypt</h2>
     <p class="design-paragraph">Start with a value in your .env file, like:</p>
     {% capture plaintext_example %}
 # .env
@@ -43,7 +43,7 @@ $ dotenvx encrypt
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">2. Commit</h2>
+    <h2 class="design-page-title design-page-title--flush">Commit</h2>
     <p class="design-paragraph">Edit your .gitignore to ignore .env.keys and allow .env.</p>
     {% capture gitignore_example %}
 # .gitignore
@@ -71,7 +71,7 @@ git commit -m "Add encrypted sample secret"
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">3. Run</h2>
+    <h2 class="design-page-title design-page-title--flush">Run</h2>
     <p class="design-paragraph">Use your secret in an app. Ours is a simple hello world Node.js app—create an index.js file:</p>
     {% capture app_example %}
 // index.js

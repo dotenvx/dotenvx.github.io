@@ -17,12 +17,12 @@ prerequisite_links:
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 install: |
   $ curl -sfS https://dotenvx.sh | sh
-encrypt_title: "2. Add a secret reference"
+encrypt_title: "Add a secret reference"
 encrypt_lede: "Reference a secret from your 1Password vault."
 encrypt_copy: 'echo "HELLO=op://Personal/hello/password" > .env'
 encrypt: |
   $ echo "HELLO=op://Personal/hello/password" > .env
-inject_title: "3. Run"
+inject_title: "Run"
 inject_lede: "Run your command with the secret resolved from 1Password."
 inject_copy: "dotenvx run -- sh -c 'echo Hello $HELLO'"
 inject: |

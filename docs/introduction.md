@@ -29,30 +29,6 @@ layout: radar
     }
   }
 
-  .docs-intro-cards .design-settings-tile .docs-hero-icon {
-    height: 2.5rem;
-    width: 2.5rem;
-  }
-
-  .docs-intro-cards .design-settings-tile .docs-hero-icon--cli {
-    font-size: 1.85rem;
-  }
-
-  .docs-intro-cards .design-settings-tile-glyph {
-    font-size: 1.85rem;
-  }
-
-  @media (min-width: 900px) {
-    .docs-intro-cards .design-settings-tile .docs-hero-icon {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-
-    .docs-intro-cards .design-settings-tile .docs-hero-icon--cli,
-    .docs-intro-cards .design-settings-tile-glyph {
-      font-size: 2.25rem;
-    }
-  }
 </style>
 
 {% capture docs_hero_visual %}

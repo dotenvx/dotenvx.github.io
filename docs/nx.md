@@ -10,19 +10,19 @@ redirect_from:
   - /docs/monorepos/nx/
   - /docs/secrets-in-nx
   - /docs/secrets-in-nx/
-encrypt_title: "1. Encrypt"
+encrypt_title: "Encrypt"
 encrypt_lede: "Keep the environment file beside the Nx application and encrypt it."
 encrypt_copy: "dotenvx encrypt -f apps/app/.env"
 encrypt: |
   $ dotenvx encrypt -f apps/app/.env
 encrypt_after_lede: "Commit `apps/app/.env`, but never commit `apps/app/.env.keys`."
-inject_title: "2. Run"
+inject_title: "Run"
 inject_lede: "Point `-f` at the application directory and run the Nx target through dotenvx."
 inject_copy: "dotenvx run -f apps/app -- npx nx serve app"
 inject: |
   $ dotenvx run -f apps/app -- npx nx serve app
 inject_after_lede: "Dotenvx resolves `apps/app/.env`, decrypts it, and injects its values only into the Nx process."
-run_title: "3. Add a script"
+run_title: "Add a script"
 run_lede: "Keep the same command in the root package scripts if the team runs it frequently."
 run_copy: |
   {

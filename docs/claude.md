@@ -18,12 +18,12 @@ prerequisite: |
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 install: |
   $ curl -sfS https://dotenvx.sh | sh
-encrypt_title: "2. Add your secrets"
+encrypt_title: "Add your secrets"
 encrypt_lede: "Add a secret to your `.env` file."
 encrypt_copy: 'echo "HELLO=World" > .env'
 encrypt: |
   $ echo "HELLO=World" > .env
-inject_title: "3. Run Claude with redaction"
+inject_title: "Run Claude with redaction"
 inject_lede: "Runtime leak protection: Claude gets real secrets, while log redaction strips them from its output."
 inject_copy: "dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions"
 inject: |

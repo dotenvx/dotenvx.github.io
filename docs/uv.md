@@ -12,7 +12,7 @@ prerequisite_lede: "To get the most out of this guide, you'll need to:"
 prerequisite_links:
   - label: Install uv
     href: https://github.com/astral-sh/uv#installation
-setup_title: "0. Setup"
+setup_title: "Setup"
 setup_lede: "Create a uv project."
 setup_copy: |
   uv init hello-world

@@ -10,15 +10,15 @@ redirect_from:
   - /docs/cis/github-actions/
   - /docs/secrets-in-github-actions
   - /docs/secrets-in-github-actions/
-encrypt_title: "1. Encrypt"
+encrypt_title: "Encrypt"
 encrypt_lede: "Create a CI environment file and encrypt it."
 encrypt_copy: "dotenvx encrypt -f .env.ci"
 encrypt: |
   $ dotenvx encrypt -f .env.ci
 encrypt_after_lede: "Commit the encrypted `.env.ci` file, but never commit `.env.keys`."
-inject_title: "2. Add the private key to GitHub"
+inject_title: "Add the private key to GitHub"
 inject_lede: "Copy `DOTENV_PRIVATE_KEY_CI` from `.env.keys`. In your GitHub repository, open **Settings → Secrets and variables → Actions**, create a repository secret, and name it `DOTENV_PRIVATE_KEY_CI`.\n\nThe encrypted values stay in `.env.ci`. GitHub stores only the private key needed to decrypt them during the workflow."
-run_title: "3. Run"
+run_title: "Run"
 run_lede: "Install dotenvx, pass the GitHub secret to the step, and run your command through `dotenvx run`."
 run_copy: |
   name: CI

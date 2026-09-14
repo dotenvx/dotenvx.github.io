@@ -6887,7 +6887,7 @@ html.dark .spec-table-link a {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    max-width: 42rem;
+    max-width: 36rem;
     margin: 0;
   }
 
@@ -6964,7 +6964,7 @@ html.dark .spec-table-link a {
 }
 
 .design-hero2--compact .design-hero2-description {
-  max-width: 64rem;
+  max-width: 36rem;
   font-size: 1em;
   line-height: 1.5;
   text-wrap: balance;
@@ -7020,7 +7020,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 
 /* Docs use the compact secondary hero and shared readable content column. */
 .design-hero2-name { font: inherit; font-weight: 700; margin: 0; }
-.docs-hero-navigation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .5rem; font-size: var(--design-text-compact); }
+.docs-hero-navigation { display: flex; align-items: center; justify-content: flex-start; text-align: left; flex-wrap: wrap; gap: .5rem; font-size: var(--design-text-compact); }
 .docs-hero2 .design-hero2-actions { align-items: center; font-size: var(--design-text-compact); }
 .docs-hero2 .docs-hero-icon { width: clamp(3.5rem, 7vw, 5rem); height: clamp(3.5rem, 7vw, 5rem); }
 .docs-hero2 .docs-hero-icon--cli { width: auto; height: auto; }
@@ -7048,4 +7048,90 @@ html.dark .hero-container-primary { color: #7b838a; }
 .docs-site .docs-quickstart-body > .design-step {
   gap: 1em;
   padding-bottom: 0;
+}
+
+/* Compact tile marks fit the docs' 28rem grids at every breakpoint. */
+.docs-site .design-settings-tile .docs-hero-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.docs-site .design-settings-tile .docs-hero-icon--cli {
+  width: auto;
+  height: auto;
+  font-size: 1.35rem;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.docs-site .design-settings-tile .design-settings-tile-glyph {
+  font-size: 1.35rem;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 639px) {
+  .docs-site .design-content-width .design-settings-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.design-hero2--secondary .design-hero2-description {
+  width: 100%;
+  max-width: 36rem;
+}
+
+/* Secondary pages lead with content rather than a large hero entrance. */
+.home-sections:has(> .home-hero2 .design-hero2--secondary) {
+  --home-section-gap: 3rem;
+}
+.home-sections > .home-hero2:has(.design-hero2--secondary) {
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+.design-hero2.design-hero2--secondary {
+  --hero2-illustration-width: clamp(4rem, 7vw, 5.5rem);
+  padding-top: .75rem;
+  padding-bottom: 0;
+  gap: .75rem;
+}
+.docs-hero2--example .design-hero2-content {
+  min-height: 0;
+}
+
+/* Secondary introductions share the same column as the page content. */
+.design-hero2.design-hero2--secondary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(3rem, 10vw, 4.5rem);
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: .75rem;
+  max-width: 28rem;
+  margin-inline: auto;
+  text-align: left;
+}
+.design-hero2--secondary .design-hero2-description {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  text-wrap: pretty;
+}
+.design-hero2--secondary .design-hero2-content {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  min-height: 0;
+}
+.design-hero2--secondary .design-hero2-actions {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  justify-content: flex-start;
+}
+/* Copyable examples remain readable beneath their introduction. */
+.design-hero2--secondary:has(.design-codeblock, .docs-cli-hero-command-copy) .design-hero2-description {
+  grid-column: 1 / -1;
+}
+.design-hero2--secondary .design-hero2-content:has(.design-codeblock, .docs-cli-hero-command-copy) {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  aspect-ratio: auto;
+  justify-content: flex-start;
 }

@@ -27,7 +27,7 @@
           {% if page.prerequisite_lede or page.prerequisite or page.prerequisite_links %}
             {% capture step_content %}
               <div class="design-list">
-                <p class="design-list-title">Prerequisites</p>
+                <p class="design-paragraph"><strong>Prerequisites</strong></p>
                 {% if page.prerequisite_lede %}
                   <div class="design-paragraph">{{ page.prerequisite_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
                 {% endif %}
@@ -53,7 +53,7 @@
               {% if page.setup_title and page.setup_title != "" %}
                 <p class="design-paragraph"><strong>{{ page.setup_title }}</strong></p>
               {% elsif page.setup_title == nil %}
-                <p class="design-paragraph"><strong>0. Setup</strong></p>
+                <p class="design-paragraph"><strong>Setup</strong></p>
               {% endif %}
               {% if page.setup_lede %}
                 <div class="design-paragraph">{{ page.setup_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -67,7 +67,7 @@
 
           {% if page.install %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.install_title | default: "1. Install" }}</strong></p>
+              <p class="design-paragraph"><strong>{{ page.install_title | default: "Install" }}</strong></p>
               {% if page.install_lede %}
                 <div class="design-paragraph">{{ page.install_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -86,7 +86,7 @@
 
           {% if page.encrypt %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.encrypt_title | default: "2. Encrypt" }}</strong></p>
+              <p class="design-paragraph"><strong>{{ page.encrypt_title | default: "Encrypt" }}</strong></p>
               {% if page.encrypt_lede %}
                 <div class="design-paragraph">{{ page.encrypt_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -105,7 +105,7 @@
 
           {% if page.inject or page.inject_lede or page.inject_after %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.inject_title | default: "3. Inject" }}</strong></p>
+              <p class="design-paragraph"><strong>{{ page.inject_title | default: "Inject" }}</strong></p>
               {% if page.inject_lede %}
                 <div class="design-paragraph">{{ page.inject_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% elsif page.inject %}
@@ -126,7 +126,7 @@
 
           {% if page.run %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.run_title | default: "4. Run" }}</strong></p>
+              <p class="design-paragraph"><strong>{{ page.run_title | default: "Run" }}</strong></p>
               {% if page.run_lede %}
                 <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}

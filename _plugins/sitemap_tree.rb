@@ -41,6 +41,7 @@ module Jekyll
       end
 
       site.data["sitemap_tree"] = serialize(root)
+      site.data["docs_sidebar_tree"] = serialize(root.fetch("docs", {}).fetch("children", {}))
     end
 
     private

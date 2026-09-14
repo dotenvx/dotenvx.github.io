@@ -6922,18 +6922,14 @@ html.dark .spec-table-link a {
 /* A personal walkthrough with room for readable video previews. */
 .home-videos { padding-top: var(--home-section-gap); }
 
-.install-table-card { margin-top: 1.25rem; padding: .5rem; }
-.install-method-table { margin-top: 0; }
-.install-method-table td:nth-child(2) { width: 70%; }
-.install-method-table .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
+.install-methods { display: flex; flex-direction: column; gap: 2rem; }
+.install-methods + .install-methods { margin-top: 2rem; }
+.install-method-title.design-paragraph { margin: 0 0 .25rem; }
+.install-method-title .design-link { font-weight: 700 !important; }
+.install-method .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
+.install-method-prompt { display: flex; justify-content: flex-end; margin-top: .75rem; }
 .install-copy-prompt { white-space: nowrap; cursor: pointer; }
 .install-other-methods { margin-top: 1.5rem; text-align: center; }
-.install-other-methods summary { cursor: pointer; }
-@media (max-width: 639px) {
-  .install-method-table thead { display: none; }
-  .install-method-table tr { display: flex; flex-direction: column; padding-block: .75rem; }
-  .install-method-table th, .install-method-table td, .install-method-table td:nth-child(2) { display: block; width: 100%; padding: .4rem 0; }
-}
 
 .home-section-title {
   text-align: center;
@@ -6992,7 +6988,7 @@ html.dark .spec-table-link a {
 .design-secret-row { padding: .55rem; }
 .design-secret-pair { display: grid; gap: .55rem; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); width: 100%; }
 .design-secret-field.design-input { font-family: var(--design-font-mono); font-size: var(--design-text-compact); height: 2rem; min-height: 2rem; min-width: 0; padding: 0 .6rem; width: 100%; }
-@media (max-width: 639px) { .design-secret-pair { grid-template-columns: minmax(0, 1fr); } }
+.design-secret-pair > * { min-width: 0; }
 
 .one-key-artifact { margin-bottom: 1em; }
 
@@ -7020,7 +7016,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 
 /* Docs use the compact secondary hero and shared readable content column. */
 .design-hero2-name { font: inherit; font-weight: 700; margin: 0; }
-.docs-hero-navigation { display: flex; align-items: center; justify-content: flex-start; text-align: left; flex-wrap: wrap; gap: .5rem; font-size: var(--design-text-compact); }
+.docs-hero-navigation { display: flex; align-items: center; justify-content: flex-start; text-align: left; flex-wrap: wrap; gap: .5rem; font-size: var(--design-text-micro); }
 .docs-hero2 .design-hero2-actions { align-items: center; font-size: var(--design-text-compact); }
 .docs-hero2 .docs-hero-icon { width: clamp(3.5rem, 7vw, 5rem); height: clamp(3.5rem, 7vw, 5rem); }
 .docs-hero2 .docs-hero-icon--cli { width: auto; height: auto; }
@@ -7085,7 +7081,7 @@ html.dark .hero-container-primary { color: #7b838a; }
   --home-section-gap: 3rem;
 }
 .home-sections > .home-hero2:has(.design-hero2--secondary) {
-  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-top: 3.25rem;
 }
 .design-hero2.design-hero2--secondary {
   --hero2-illustration-width: clamp(4rem, 7vw, 5.5rem);
@@ -7097,41 +7093,111 @@ html.dark .hero-container-primary { color: #7b838a; }
   min-height: 0;
 }
 
-/* Secondary introductions share the same column as the page content. */
+/* Centered secondary headers share the page's readable content width. */
 .design-hero2.design-hero2--secondary {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(3rem, 10vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  column-gap: 1rem;
-  row-gap: .75rem;
+  gap: 1.25rem;
   max-width: 28rem;
   margin-inline: auto;
-  text-align: left;
+  text-align: center;
 }
 .design-hero2--secondary .design-hero2-description {
-  grid-column: 1;
-  grid-row: 1;
   min-width: 0;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 .design-hero2--secondary .design-hero2-content {
-  grid-column: 2;
-  grid-row: 1;
-  width: 100%;
+  width: clamp(4.5rem, 15vw, 6.75rem);
   min-height: 0;
 }
 .design-hero2--secondary .design-hero2-actions {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  justify-content: flex-start;
-}
-/* Copyable examples remain readable beneath their introduction. */
-.design-hero2--secondary:has(.design-codeblock, .docs-cli-hero-command-copy) .design-hero2-description {
-  grid-column: 1 / -1;
+  justify-content: center;
 }
 .design-hero2--secondary .design-hero2-content:has(.design-codeblock, .docs-cli-hero-command-copy) {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  width: 100%;
   aspect-ratio: auto;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+
+.design-hero2--secondary .design-hero2-content:not(:has(.design-codeblock, .docs-cli-hero-command-copy)) {
+  display: none;
+}
+
+/* Inline docs references blend into prose; full code examples keep their styling. */
+.docs-site main code:not(pre code):not(.design-codeblock code):not(.docs-cli-hero-command-copy code) {
+  display: inline;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: inherit;
+  padding: 0 !important;
+  white-space: normal;
+}
+
+.docs-site .docs-quickstart-pager {
+  margin-top: 4rem;
+}
+
+/* Section labels belong to the paragraph or example immediately below them. */
+.docs-site .design-step .design-section-title {
+  margin: 0 0 .25rem;
+}
+.docs-site .docs-quickstart-body > .design-step > .design-section-title {
+  margin-bottom: calc(.25rem - 1em);
+}
+
+.docs-hero-navigation .design-link {
+  font-size: inherit;
+}
+
+/* All docs section headings use the same quiet, paragraph-sized hierarchy. */
+.docs-site .design-content-width :is(h2, h3, h4, h5, h6) {
+  color: var(--design-body);
+  font-family: var(--design-font-sans);
+  font-size: var(--design-text-size) !important;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.6;
+  margin-bottom: .25rem;
+}
+.docs-site .design-step > :is(h2, h3, h4, h5, h6) {
+  margin-bottom: calc(.25rem - .85rem);
+}
+.docs-site .docs-quickstart-body > .design-step > :is(h2, h3, h4, h5, h6) {
+  margin-bottom: calc(.25rem - 1em);
+}
+
+/* Separate steps more than the title and explanation within each step. */
+.docs-site .docs-quickstart-body > .design-step + .design-step {
+  margin-top: .75rem;
+}
+
+/* Docs-only navigation beside the existing narrow reading column. */
+.docs-layout { width: 100%; min-width: 0; }
+.docs-layout > main { min-width: 0; }
+.docs-sidebar { padding: 1rem 1.25rem 0; }
+.docs-sidebar-disclosure { max-width: 28rem; margin-inline: auto; }
+.docs-sidebar summary { cursor: pointer; font-size: var(--design-text-compact); color: var(--design-body); }
+.docs-sidebar-scroll { max-height: 65dvh; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-block: .75rem; }
+.docs-sidebar ul { list-style: none; margin: 0; padding: 0; }
+.docs-sidebar ul ul { padding-left: .75rem; }
+.docs-sidebar nav > ul > li { margin-bottom: .75rem; }
+.docs-sidebar a, .docs-sidebar-group { display: block; padding: .2rem .4rem; font-size: var(--design-text-compact); line-height: 1.5; overflow-wrap: anywhere; }
+.docs-sidebar a { color: var(--design-body); text-decoration: none; border-radius: 2px; }
+.docs-sidebar-group { color: var(--design-dim); }
+.docs-sidebar a:hover, .docs-sidebar a[aria-current="page"] { background: color-mix(in srgb, var(--design-ink) 6%, transparent); }
+.docs-sidebar a[aria-current="page"] { font-weight: 700; color: var(--design-ink); }
+@media (min-width: 64rem) {
+  .docs-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr); align-items: start; padding-inline: 1rem; }
+  .docs-sidebar { position: sticky; top: var(--docs-nav-top, 5rem); padding: 1.5rem 0 0; }
+  .docs-sidebar summary { display: none; }
+  .docs-sidebar-scroll { max-height: calc(100dvh - var(--docs-nav-top, 5rem) - 2.5rem); padding: 0 .5rem 1rem 0; }
+}
+@media (min-width: 90rem) {
+  .docs-layout { grid-template-columns: 13rem minmax(0, 1fr) 13rem; }
 }

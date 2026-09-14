@@ -24,21 +24,6 @@
   {% endcapture %}
 {% endif %}
 
-{% capture docs_hero_breadcrumbs %}
-{% unless docs_hero_eyebrow_href == "/" and crumbs == nil %}
-  <nav class="docs-hero-navigation" aria-label="Breadcrumb">
-    {% if crumbs and crumbs.size > 0 %}
-      {% for crumb in crumbs %}
-        {% unless forloop.first %}<span aria-hidden="true">/</span>{% endunless %}
-        {% if crumb.href %}<a class="design-link" href="{{ crumb.href }}">{% if forloop.first %}<span aria-hidden="true">←</span> {% endif %}{{ crumb.label }}</a>{% else %}<span>{{ crumb.label }}</span>{% endif %}
-      {% endfor %}
-    {% else %}
-      <a class="design-link" href="{{ docs_hero_eyebrow_href }}"><span aria-hidden="true">←</span> {{ docs_hero_eyebrow }}</a>
-    {% endif %}
-  </nav>
-{% endunless %}
-{% endcapture %}
-{% assign docs_hero_breadcrumbs = docs_hero_breadcrumbs | strip %}
 {% assign docs_hero_actions = nil %}
 {% if include.video and include.video != "" %}
 {% capture docs_hero_actions %}
@@ -49,7 +34,6 @@
 {% endif %}
 <section class="design-hero home-hero2 docs-hero2{% if include.visual %} docs-hero2--example{% endif %}">
   <div class="armor-shell">
-    {% if docs_hero_breadcrumbs != "" %}<div class="design-content-width">{{ docs_hero_breadcrumbs }}</div>{% endif %}
     {% include components/design-hero2.html
       compact=true
       secondary=true

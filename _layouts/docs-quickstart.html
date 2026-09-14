@@ -7,6 +7,8 @@
   </head>
   <body class="radar-layout home-page docs-site">
     {% include components/radar-nav.html %}
+    <div class="docs-layout">
+      {% include components/docs-sidebar.html %}
     <main class="radar-main">
       {% assign docs_crumbs = page.crumbs | default: site.data.docs.quickstart_crumbs %}
       <div class="home-sections">
@@ -27,7 +29,7 @@
           {% if page.prerequisite_lede or page.prerequisite or page.prerequisite_links %}
             {% capture step_content %}
               <div class="design-list">
-                <p class="design-paragraph"><strong>Prerequisites</strong></p>
+                <p class="design-paragraph design-section-title"><strong>Prerequisites</strong></p>
                 {% if page.prerequisite_lede %}
                   <div class="design-paragraph">{{ page.prerequisite_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
                 {% endif %}
@@ -51,9 +53,9 @@
           {% if page.setup or page.setup_lede %}
             {% capture step_content %}
               {% if page.setup_title and page.setup_title != "" %}
-                <p class="design-paragraph"><strong>{{ page.setup_title }}</strong></p>
+                <p class="design-paragraph design-section-title"><strong>{{ page.setup_title }}</strong></p>
               {% elsif page.setup_title == nil %}
-                <p class="design-paragraph"><strong>Setup</strong></p>
+                <p class="design-paragraph design-section-title"><strong>Setup</strong></p>
               {% endif %}
               {% if page.setup_lede %}
                 <div class="design-paragraph">{{ page.setup_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
@@ -67,7 +69,7 @@
 
           {% if page.install %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.install_title | default: "Install" }}</strong></p>
+              <p class="design-paragraph design-section-title"><strong>{{ page.install_title | default: "Install" }}</strong></p>
               {% if page.install_lede %}
                 <div class="design-paragraph">{{ page.install_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -86,7 +88,7 @@
 
           {% if page.encrypt %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.encrypt_title | default: "Encrypt" }}</strong></p>
+              <p class="design-paragraph design-section-title"><strong>{{ page.encrypt_title | default: "Encrypt" }}</strong></p>
               {% if page.encrypt_lede %}
                 <div class="design-paragraph">{{ page.encrypt_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% else %}
@@ -105,7 +107,7 @@
 
           {% if page.inject or page.inject_lede or page.inject_after %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.inject_title | default: "Inject" }}</strong></p>
+              <p class="design-paragraph design-section-title"><strong>{{ page.inject_title | default: "Inject" }}</strong></p>
               {% if page.inject_lede %}
                 <div class="design-paragraph">{{ page.inject_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% elsif page.inject %}
@@ -126,7 +128,7 @@
 
           {% if page.run %}
             {% capture step_content %}
-              <p class="design-paragraph"><strong>{{ page.run_title | default: "Run" }}</strong></p>
+              <p class="design-paragraph design-section-title"><strong>{{ page.run_title | default: "Run" }}</strong></p>
               {% if page.run_lede %}
                 <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
@@ -148,6 +150,7 @@
         </section>
       </div>
     </main>
+    </div>
     {% include components/footer.html %}
     {% include components/design-theme-control.html %}
     {% include components/site-search.html %}

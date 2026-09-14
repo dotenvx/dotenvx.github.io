@@ -11,8 +11,6 @@ body_class: home-page contact-page
     gap: 2.5rem;
   }
 
-  .design-content-width.contact-content { max-width: 23rem; }
-
   .contact-hero-video {
     aspect-ratio: 4 / 3;
     background: #000;

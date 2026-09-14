@@ -7,6 +7,8 @@
   </head>
   <body class="radar-layout home-page docs-site">
     {% include components/radar-nav.html %}
+    <div class="docs-layout">
+      {% include components/docs-sidebar.html %}
     <main class="radar-main">
       {% assign options_title = page.options_title | default: "Options" %}
       {% assign related_title = page.related_title | default: "Related" %}
@@ -138,6 +140,7 @@
         </section>
       </div>
     </main>
+    </div>
     {% include components/footer.html %}
     {% include components/design-theme-control.html %}
     {% include components/site-search.html %}

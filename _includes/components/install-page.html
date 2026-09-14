@@ -8,21 +8,27 @@
   </div>
 {% endcapture %}
 
-<div class="install-page">
-  {% include components/design-hero.html
-    class="company-design-hero"
-    eyebrow="Dotenvx"
-    eyebrow_href="/"
-    title="Install"
-    description="Use dotenvx from the command line or directly in your code."
-    visual=install_hero_visual
-  %}
+<div class="install-page home-sections">
+  <section class="design-hero home-hero2" aria-label="Install">
+    <div class="armor-shell">
+      {% include components/design-hero2.html
+        compact=true
+        secondary=true
+        name_heading=true
+        name="Install"
+        description="Use dotenvx from the command line or directly in your code."
+        content=install_hero_visual
+      %}
+    </div>
+  </section>
 
   <section class="radar-section" aria-label="Installation methods">
     <div class="armor-shell">
-      {% include components/install-methods-table.html methods=site.data.install_methods %}
-      {% include components/install-methods-table.html methods=site.data.install_sdks label="SDK" %}
+      <div class="design-content-width">
+      {% include components/install-methods.html methods=site.data.install_methods %}
+      {% include components/install-methods.html methods=site.data.install_sdks label="SDK" %}
       <p class="design-paragraph install-other-methods"><a class="design-link" href="/docs/learn/installing/">More installation methods</a></p>
+      </div>
     </div>
   </section>
 </div>

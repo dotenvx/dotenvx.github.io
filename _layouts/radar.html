@@ -8,11 +8,13 @@
   {% assign route_prefix = page.url | slice: 0, 6 %}
   <body class="radar-layout{% if page.body_class %} {{ page.body_class }}{% endif %}{% if route_prefix == '/docs/' %} home-page docs-site{% endif %}">
     {% include components/radar-nav.html %}
+    {% if route_prefix == "/docs/" %}<div class="docs-layout">{% include components/docs-sidebar.html %}{% endif %}
     <main class="radar-main">
       {% if route_prefix == '/docs/' %}<div class="home-sections">{% endif %}
       {{ content }}
       {% if route_prefix == '/docs/' %}</div>{% endif %}
     </main>
+    {% if route_prefix == "/docs/" %}</div>{% endif %}
     {% unless page.hide_footer %}{% include components/footer.html %}{% endunless %}
     {% unless page.force_light %}{% include components/design-theme-control.html %}{% endunless %}
     {% include components/site-search.html %}

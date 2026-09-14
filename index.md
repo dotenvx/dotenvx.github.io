@@ -1,5 +1,7 @@
 ---
 title: "Dotenvx"
+social_title: "Dotenvx"
+description: "Encrypted secrets that travel with your code—from the creator of dotenv."
 layout: radar
 body_class: home-page
 ---
@@ -81,7 +83,7 @@ body_class: home-page
       spin_speed="1"
       class="relative h-28 w-28 mx-auto mb-4 min-h-0 overflow-hidden bg-transparent"
     %}
-    {% include components/design-page-title.html title="One Key" heading_tag="h2" title_class="text-center" id="home-one-key-title" %}
+    {% include components/design-page-title.html title="One Private Key" heading_tag="h2" title_class="text-center" id="home-one-key-title" %}
     {% capture one_key_content %}
       <p class="design-paragraph">Set DOTENV_PRIVATE_KEY where your app runs. That one key unlocks the secrets in its encrypted .env file—so you provision a single key for each environment instead of copying every secret into every deployment.</p>
 

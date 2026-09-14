@@ -1,5 +1,7 @@
 ---
-title: "Armor ⛨"
+title: "Dotenvx Armor for Security Teams"
+social_title: "Dotenvx Armor for Security Teams"
+description: "Hardened Dotenvx for security teams with full access control of your secrets–govern every unlock and see every access."
 image: "/assets/img/og-image-armor.png"
 layout: radar
 ---
@@ -9,6 +11,8 @@ layout: radar
   .armor-forcefield * { pointer-events: none; }
   .armor-forcefield .armor-forcefield-hit { pointer-events: all; cursor: pointer; }
   .armor-forcefield:focus-visible { outline: none; }
+  .armor-attack-tracer { stroke: #626b73; stroke-width: 1.4; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  html.dark .armor-attack-tracer { stroke: #b9c3cc; }
   html:not(.dark) .armor-energy-haze { opacity: 0.045; }
   html:not(.dark) .armor-energy-edge { opacity: 0.22; }
   html:not(.dark) .armor-energy-trace { opacity: 0.07; }
@@ -68,7 +72,8 @@ layout: radar
 </style>
 
 {% capture armor_hero_container %}
-  <svg class="design-hero2-container-stack armor-forcefield" viewBox="0 -20 900 860" role="button" tabindex="0" aria-label="Test the protective field—it repels contact" data-armor-forcefield>
+  <svg class="design-hero2-container-stack armor-forcefield" viewBox="60 -335.061526 973 1089" role="button" tabindex="0" aria-label="Test the protective field—it repels contact" data-armor-forcefield>
+    <g transform="translate(207.8460969 -375.06152584)">
     <g aria-hidden="true">
       {% include components/shipping-container.html color="#575B60" face_color="#111214" logo=true %}
       {% include components/armor/forcefield.html %}
@@ -77,13 +82,14 @@ layout: radar
     <path class="armor-forcefield-hit" aria-hidden="true" fill="transparent"
       transform="translate(440 407) scale(1.06) translate(-440 -407)"
       d="M29 184Q29 174 38 169L277 30Q286 25 295 30L842 346Q851 351 851 361V644Q851 654 842 659L625 785Q616 790 607 785L38 456Q29 451 29 441Z" />
+    </g>
   </svg>
 {% endcapture %}
 
 <script src="{{ '/assets/js/armor-forcefield.js' | relative_url }}" defer></script>
 
 {% capture armor_hero2_description %}
-  Access control for your encrypted secrets—govern every unlock and see every access.
+  {{ page.description }}
 {% endcapture %}
 {% capture armor_hero2_actions %}
   {% include components/design-btn.html label="Sign Up" href="/signup" data_umami_event="Armor Hero Signup button" %}
@@ -94,7 +100,7 @@ layout: radar
   <div class="home-sections armor-intro">
   {% include components/home-hero2.html
     compact=true
-    name="Dotenvx + Armor ⛨"
+    name=page.title
     actions=armor_hero2_actions
     content=armor_hero_container
     description=armor_hero2_description

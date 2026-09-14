@@ -13,9 +13,15 @@
 {% assign social_share_title = social_base_title | append: " · " | append: site.title %}
 {% endif %}
 <title>{{ social_share_title }}</title>
-{% seo %}
+{% capture seo_metadata %}{% seo title=false %}{% endcapture %}
+{% assign seo_lines = seo_metadata | split: "
+" %}
+{% for seo_line in seo_lines %}
+{% unless seo_line contains 'property="og:title"' or seo_line contains 'twitter:title' %}{{ seo_line }}{% endunless %}
+{% endfor %}
 <meta property="og:title" content="{{ social_share_title }}">
 <meta name="twitter:title" content="{{ social_share_title }}">
+{% if page.description %}<meta name="twitter:description" content="{{ page.description | escape }}">{% endif %}
 {% favicon %}
 
 <script src="https://unpkg.com/alpinejs" defer></script>

@@ -36,20 +36,7 @@
         </button>
       </div>
 
-      <div class="radar-nav-item" data-radar-nav-item data-nav-menu="docs">
-        <button
-          type="button"
-          class="radar-nav-link radar-nav-trigger{% if docs_active %} is-active{% endif %}"
-          aria-haspopup="true"
-          aria-expanded="false"
-          data-radar-nav-trigger
-        >
-          <span>Docs</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="radar-nav-caret" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
-          </svg>
-        </button>
-      </div>
+      <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Docs</a>
 
     </nav>
 
@@ -94,37 +81,7 @@
           </span>
         </a>
       </div>
-      <div class="radar-nav-panel radar-nav-panel--docs" data-radar-nav-panel="docs" hidden>
-        <div class="radar-nav-panel-links">
-          <a
-            href="/docs/introduction"
-            class="radar-nav-panel-link{% if radar_path == '/docs/introduction/' or radar_path == '/docs/introduction' or radar_path == '/docs/' or radar_path == '/docs' %} is-active{% endif %}"
-          >Getting started</a>
-          <a
-            href="/docs/cli"
-            class="radar-nav-panel-link{% if radar_path == '/docs/cli/' or radar_path == '/docs/cli' or radar_path contains '/docs/cli/' %} is-active{% endif %}"
-          >CLI</a>
-          <a
-            href="/docs/sdk"
-            class="radar-nav-panel-link{% if radar_path == '/docs/sdk/' or radar_path == '/docs/sdk' or radar_path contains '/docs/sdk/' %} is-active{% endif %}"
-          >SDKs</a>
-          <a
-            href="/docs/quickstarts"
-            class="radar-nav-panel-link{% if radar_path == '/docs/quickstarts/' or radar_path == '/docs/quickstarts' %} is-active{% endif %}"
-          >Quickstarts</a>
-        </div>
-        <div class="radar-nav-docs-icons" aria-label="Quickstarts">
-          <a href="/docs/cli-quickstart" class="radar-nav-docs-icon" aria-label="CLI"><span class="radar-nav-docs-icon-cli" aria-hidden="true">❯_</span></a>
-          <a href="/docs/claude" class="radar-nav-docs-icon" aria-label="Claude">{% include icons/docs/claude-code.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/codex" class="radar-nav-docs-icon" aria-label="Codex">{% include icons/docs/openai.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/cursor" class="radar-nav-docs-icon" aria-label="Cursor">{% include icons/docs/cursor.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/github-actions" class="radar-nav-docs-icon" aria-label="GitHub Actions">{% include icons/docs/github.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/nodejs" class="radar-nav-docs-icon" aria-label="Node.js">{% include icons/docs/nodejs.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/1password" class="radar-nav-docs-icon" aria-label="1Password">{% include icons/docs/1password.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/bitwarden" class="radar-nav-docs-icon" aria-label="Bitwarden">{% include icons/docs/bitwarden.html class="radar-nav-docs-icon-svg" %}</a>
-          <a href="/docs/docker" class="radar-nav-docs-icon" aria-label="Docker">{% include icons/docs/docker.html class="radar-nav-docs-icon-svg" %}</a>
-        </div>
-      </div>
+
     </div>
   </div>
 </header>
@@ -147,10 +104,7 @@
         <span>Company</span>
         <span aria-hidden="true">→</span>
       </button>
-      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="docs">
-        <span>Docs</span>
-        <span aria-hidden="true">→</span>
-      </button>
+      <a href="/docs" class="radar-mobile-link">Docs</a>
     </nav>
 
     <div data-radar-mobile-submenu="company" class="radar-mobile-list" hidden>
@@ -163,15 +117,7 @@
       <a href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
     </div>
 
-    <div data-radar-mobile-submenu="docs" class="radar-mobile-list" hidden>
-      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
-        <span><span aria-hidden="true">←</span> Docs</span>
-      </button>
-      <a href="/docs/introduction" class="radar-mobile-link">Getting started</a>
-      <a href="/docs/cli" class="radar-mobile-link">CLI</a>
-      <a href="/docs/sdk" class="radar-mobile-link">SDKs</a>
-      <a href="/docs/quickstarts" class="radar-mobile-link">Quickstarts</a>
-    </div>
+
   </div>
 </div>
 
@@ -232,7 +178,7 @@
       if (trigger) trigger.setAttribute('aria-expanded', isActive ? 'true' : 'false')
     })
     showPanel(name)
-    // Keep the card open when swapping Company ↔ Docs — only content changes.
+    // Keep the card open while its active content changes.
     if (!flyout.classList.contains('is-open')) {
       flyout.classList.add('is-open')
       flyout.setAttribute('aria-hidden', 'false')
@@ -270,7 +216,7 @@
     item.addEventListener('focusin', function () { openMenu(name) })
     item.addEventListener('mouseleave', function (event) {
       var related = event.relatedTarget
-      // Stay open while moving Company ↔ Docs (or down into the card).
+      // Stay open while moving into the card.
       if (related && (isMenuNavTarget(related) || (flyout && flyout.contains(related)))) return
       scheduleClose()
     })

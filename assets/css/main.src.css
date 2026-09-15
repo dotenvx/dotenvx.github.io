@@ -7198,7 +7198,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 @media (min-width: 64rem) {
   .docs-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr) 13rem; align-items: start; padding-inline: 1rem; }
   .docs-layout > main { grid-column: 2; }
-  .docs-sidebar { position: fixed; left: 1rem; top: var(--docs-nav-top, 5rem); bottom: 0; padding: 1.5rem 0 0; width: var(--docs-sidebar-width, min(32rem, calc(50vw - 17rem))); }
+  .docs-sidebar { position: fixed; left: 1rem; top: var(--docs-nav-top, 5rem); bottom: 0; padding: 1.5rem 0 0; width: var(--docs-sidebar-width, min(17rem, calc(50vw - 17rem))); }
   .docs-sidebar-disclosure { height: 100%; }
   .docs-sidebar-disclosure { max-width: none; }
   .docs-sidebar-resizer { display: block; position: absolute; inset: 0 -5px 0 auto; width: 10px; cursor: col-resize; touch-action: none; }

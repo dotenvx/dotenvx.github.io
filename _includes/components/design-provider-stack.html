@@ -1,0 +1,9 @@
+<div class="home-production-providers" role="img" aria-label="Vercel, Cloudflare, GitHub, and AWS">
+  {% assign providers = "vercel,cloudflare,github,aws" | split: "," %}
+  {% for provider in providers %}
+    <span class="home-production-provider home-production-provider--{{ provider }}" aria-hidden="true">
+      {% assign provider_icon = "icons/" | append: provider | append: ".html" %}
+      {% include {{ provider_icon }} class="home-production-provider-icon" %}
+    </span>
+  {% endfor %}
+</div>

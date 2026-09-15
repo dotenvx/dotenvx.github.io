@@ -85,12 +85,11 @@ body_class: home-page
     %}
     {% include components/design-page-title.html title="One Private Key" heading_tag="h2" title_class="text-center" id="home-one-key-title" %}
     {% capture one_key_content %}
-      <p class="design-paragraph">Set DOTENV_PRIVATE_KEY where your app runs. That one key unlocks the secrets in its encrypted .env file—so you provision a single key for each environment instead of copying every secret into every deployment.</p>
-
-      <p class="design-paragraph">Your secrets stay encrypted as they travel with your code. When you launch your app with dotenvx run, Dotenvx decrypts them just in time and injects them into the app’s environment. Keep the private key outside Git; the encrypted secrets can go wherever your code goes.</p>
+      <p class="design-paragraph">One private key unlocks all the secrets in an encrypted .env file. Default stored in your operating system's secret store—macOS Keychain, Windows Credential Manager, or Linux Secret Service—the key is retrieved by dotenvx when your app runs.</p>
+      <p class="design-paragraph">Your encrypted .env travels with your code. Launch your app with dotenvx run to decrypt its secrets just in time and inject them into the app’s environment. The private key stays in your OS secret store, outside your project and Git.</p>
       {% capture one_key_run %}
 $ dotenvx run -- npm start
-⟐ injected env (2) from .env.production
+⟐ injected env (2) from .env
 
 > my-app@1.0.0 start
 > node server.js
@@ -98,11 +97,7 @@ $ dotenvx run -- npm start
 App listening on port 3000
 
     {% endcapture %}
-      <div class="one-key-artifact">
-      {% include components/design-secrets-artifact-row.html secret=true key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
-      {% include components/design-secrets-artifact-row.html key="DOTENV_PATH" value=".env.production" %}
-      </div>
-      {% include components/design-codeblock.html value=one_key_run copy_text="dotenvx run -- npm start" label="Example application startup with production secrets" %}
+      {% include components/design-codeblock.html value=one_key_run copy_text="dotenvx run -- npm start" label="Example application startup with encrypted secrets" %}
       <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/encryption/" label="Try it for yourself →" %}</p>
     {% endcapture %}
     {% include components/design-content-width.html content=one_key_content %}

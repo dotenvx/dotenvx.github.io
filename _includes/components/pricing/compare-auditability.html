@@ -10,13 +10,11 @@
       <th scope="col" class="design-table-cell--center pricing-summary-plan">Solo</th>
       <th scope="col" class="design-table-cell--center pricing-summary-plan">Team</th>
       <th scope="col" class="design-table-cell--center pricing-summary-plan"><span class="pricing-plan-label-full">Business</span><span class="pricing-plan-label-short">Biz</span></th>
-      <th scope="col" class="design-table-cell--center pricing-summary-plan"><span class="pricing-plan-label-full">Enterprise</span><span class="pricing-plan-label-short">Ent</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Audit Logs. Records who accessed a protected key and when." data-tooltip="Records who accessed a protected key and when">Audit Logs</span></th>
-      <td class="design-table-cell--center">{{ yes }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>
       <td class="design-table-cell--center">{{ yes }}</td>
@@ -27,29 +25,20 @@
       {% for key in standard_plans %}
         <td class="design-table-cell--center"><span class="pricing-plan-label-full">{{ audit_events_feature.values[key] }}</span><span class="pricing-plan-label-short" aria-label="{{ audit_events_feature.values[key] }}">{% case key %}{% when "solo" %}25k{% when "team" %}250k{% when "business" %}1M{% endcase %}</span></td>
       {% endfor %}
-      <td class="design-table-cell--center">Custom</td>
     </tr>
     <tr>
       <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Additional usage. Price per 1,000 audit events beyond your monthly allowance." data-tooltip="Price per 1,000 audit events beyond your monthly allowance">Additional usage</span></th>
       <td class="design-table-cell--center">$0.20</td>
       <td class="design-table-cell--center">$0.10</td>
       <td class="design-table-cell--center">$0.025</td>
-      <td class="design-table-cell--center">Custom</td>
     </tr>
     <tr>
       <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Audit Retention. How long each audit event remains available in Armor." data-tooltip="How long each audit event remains available">Audit Retention</span></th>
       <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Audit events remain available for a rolling 5 days." data-tooltip="Events remain available for a rolling 5 days">{{ audit_retention_feature.values.solo }}</span></td>
       <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Audit events remain available for a rolling 30 days." data-tooltip="Events remain available for a rolling 30 days">{{ audit_retention_feature.values.team }}</span></td>
       <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Audit events remain available for a rolling 90 days." data-tooltip="Events remain available for a rolling 90 days">{{ audit_retention_feature.values.business }}</span></td>
-      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Custom audit retention period based on your organization's needs." data-tooltip="Custom retention based on your needs">∞</span></td>
     </tr>
-    <tr>
-      <th scope="row">SIEM / Log Export</th>
-      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
-      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
-      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
-      <td class="design-table-cell--center">{{ yes }}</td>
-    </tr>
+
   </tbody>
 {% endcapture %}
 

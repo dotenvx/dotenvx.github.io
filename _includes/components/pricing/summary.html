@@ -13,6 +13,7 @@
   </thead>
   <tbody>
     {% for plan in site.data.plans.plans %}
+      {% if plan.id == "enterprise" %}{% continue %}{% endif %}
       {% assign plan_name = plan.name | remove: "⛨ " %}
       {% assign retention_cell = audit_retention_feature.values[plan.id] %}
       {% assign retention_detail = "Audit events remain available for a rolling " | append: retention_cell | append: "." %}
@@ -88,6 +89,21 @@
         </td>
       </tr>
     {% endfor %}
+    <tr>
+      <th scope="row" class="pricing-summary-plan">
+        <span class="pricing-summary-plan-row">
+          <span>Source</span>
+          {% include components/design-badge.html label="Pre-release" tone="info" badge_size="sm" %}
+        </span>
+      </th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Self-hosted edition; user limits not finalized" data-tooltip="Self-hosted edition; user limits not finalized">—</span></td>
+      <td class="design-table-cell--center pricing-summary-retention"><span class="pricing-value-detail" tabindex="0" aria-label="Self-hosted edition; audit retention terms not finalized" data-tooltip="Self-hosted edition; audit retention terms not finalized">—</span></td>
+      <td class="design-table-cell--center pricing-summary-price">{{ site.data.armor_source.price }} once</td>
+      <td class="design-table-cell--right pricing-summary-action">
+        {% capture source_button_label %}Buy — {{ site.data.armor_source.price }} once{% endcapture %}
+        {% include components/design-btn.html href="/source/" label=source_button_label class="design-btn--block" data_umami_event="Armor Source from pricing" %}
+      </td>
+    </tr>
   </tbody>
 {% endcapture %}
 

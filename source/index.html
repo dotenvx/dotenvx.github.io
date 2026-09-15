@@ -1,0 +1,46 @@
+---
+title: Armor Source
+description: "Get the source. Run it yourself. Keep it."
+permalink: /source/
+layout: radar
+body_class: home-page
+---
+
+{% assign offer = site.data.armor_source %}
+{% assign request_subject = "Buy Armor Source" %}
+{% capture request_body %}I'd like to buy Armor Source for {{ offer.price }} {{ offer.currency }}. Please send me the details.{% endcapture %}
+{% assign encoded_subject = request_subject | url_encode | replace: '+', '%20' %}
+{% assign encoded_body = request_body | url_encode | replace: '+', '%20' %}
+{% capture request_href %}mailto:{{ offer.email }}?subject={{ encoded_subject }}&amp;body={{ encoded_body }}{% endcapture %}
+{% capture request_label %}Buy Armor Source — {{ offer.price }}{% endcapture %}
+
+<style>
+  .source-offer {
+    min-height: 70svh;
+    display: grid;
+    place-items: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+  .source-offer-content { width: 100%; max-width: 28rem; }
+  .source-offer h1 { margin: 0 0 1rem; font: inherit; font-weight: bold; }
+  .source-offer .design-paragraph { margin: 0; }
+  .source-offer-action { margin-top: 2.5rem; }
+  .source-offer .design-btn { max-width: 100%; white-space: normal; text-align: center; }
+  .source-offer-note {
+    margin: .75rem 0 0;
+    color: var(--design-dim);
+    font-size: var(--design-text-compact);
+  }
+</style>
+
+<section class="source-offer" aria-labelledby="source-title">
+  <div class="source-offer-content">
+    <h1 id="source-title">Armor Source</h1>
+    <p class="design-paragraph">Get the source. Run it yourself. Keep it.</p>
+    <div class="source-offer-action">
+      {% include components/design-btn.html label=request_label href=request_href data_umami_event=offer.event %}
+      <p class="source-offer-note">{{ offer.currency }} · One time · Pre-release</p>
+    </div>
+  </div>
+</section>

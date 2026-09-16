@@ -71,7 +71,7 @@ layout: radar
   <svg class="design-hero2-container-stack armor-forcefield" viewBox="60 -335.061526 973 1089" role="button" tabindex="0" aria-label="Launch a dart at the clicked point on the protective field" data-armor-forcefield>
     <g transform="translate(106.5 -197.561526)">
     <g aria-hidden="true">
-      {% include components/shipping-container.html color="#575B60" face_color="#111214" label=".ENV.PROD" %}
+      {% include components/shipping-container.html color="#575B60" face_color="#111214" label=".ENV.PROD ⛨" %}
       {% include components/armor/forcefield.html %}
     </g>
     {% comment %}Stable silhouette hit area keeps hover from flickering as the field tightens.{% endcomment %}

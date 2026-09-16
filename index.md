@@ -77,6 +77,17 @@ body_class: home-page
   .home-production-provider--cloudflare { background: #f38020; }
   .home-production-provider--aws { background: #232f3e; }
   .home-production-provider-icon { width: 72%; height: 72%; margin: auto; }
+  .home-custody .design-settings-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-custody div.design-settings-tile:hover { background: transparent; }
+  .home-custody .design-settings-tile .docs-hero-icon {
+    color: var(--design-ink) !important;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .home-custody .home-custody-1password .docs-hero-icon {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
   .home-agents .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
   .home-agents .design-codeblock-wrap { margin-bottom: 1.25rem; }
 </style>
@@ -149,6 +160,25 @@ App listening on port 80
       <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/encryption/" label="Deploy with dotenvx →" %}</p>
     {% endcapture %}
     {% include components/design-content-width.html content=production_content %}
+  </div>
+</section>
+
+<section class="radar-section home-custody" aria-labelledby="home-custody-title">
+  <div class="armor-shell">
+    {% include components/design-page-title.html title="Your Keys. Your Choice." heading_tag="h2" title_class="text-center" id="home-custody-title" %}
+    {% capture custody_content %}
+      <p class="design-paragraph">Your private keys unlock your secrets. Keep them safe, outside git, in a place you trust. Use your operating system's secret store, a password manager you already rely on, or Armor ⛨.</p>
+      <p class="design-paragraph">The encrypted .env stays with your code. You decide who has custody of the keys.</p>
+      <div class="design-settings-grid">
+        {% include components/design-settings-tile.html label="Keychain" icon="apple" %}
+        {% include components/design-settings-tile.html label="Windows" icon="windows" title="Windows Credential Manager" %}
+        {% include components/design-settings-tile.html label="Linux" icon="linux" title="Linux Secret Service" %}
+        {% include components/design-settings-tile.html label="1Password" icon="1password" class="home-custody-1password" %}
+        {% include components/design-settings-tile.html label="Bitwarden" icon="bitwarden" %}
+        {% include components/design-settings-tile.html href="/armor" label="Armor" glyph="⛨" glyph_class="design-settings-tile-glyph--soft" %}
+      </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=custody_content %}
   </div>
 </section>
 

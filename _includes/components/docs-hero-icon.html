@@ -9,6 +9,12 @@
 {% assign icon_cli = false %}
 
 {% case icon_key %}
+  {% when "windows" %}
+    {% assign icon_file = "windows.html" %}
+  {% when "linux" %}
+    {% assign icon_file = "linux.html" %}
+  {% when "apple" %}
+    {% assign icon_file = "apple.html" %}
   {% when "cli" %}
     {% assign icon_cli = true %}
   {% when "bash" %}

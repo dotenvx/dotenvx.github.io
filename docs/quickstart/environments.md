@@ -19,7 +19,7 @@ redirect_from:
   <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">--env-file</h2>
+    <h2 class="design-page-title design-page-title--flush">--file</h2>
 
     {% capture env_file %}
 $ echo "HELLO=production" > .env.production
@@ -34,7 +34,7 @@ Hello production
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">--env-file (multiple)</h2>
+    <h2 class="design-page-title design-page-title--flush">--file (multiple)</h2>
 
     {% capture env_file_multi %}
 $ echo "HELLO=local" > .env.local

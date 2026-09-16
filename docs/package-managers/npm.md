@@ -145,53 +145,8 @@ Server running on port:3000
     {% include components/design-step.html content=step_content %}
 
     {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Next</h2>
-    <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/vercel/next.js">next.js</a>.</p>
-
-    {% capture npm_next_create %}
-npx create-next-app@latest --example hello-world .
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_next_create copy_text="npx create-next-app@latest --example hello-world ." %}
-
-    {% capture npm_next_install %}
-npm install @dotenvx/dotenvx --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_next_install copy_text="npm install @dotenvx/dotenvx --save" %}
-
-    <p class="design-paragraph">Edit <code class="design-code">app/page.tsx</code> to include <code class="design-code">process.env.HELLO</code>.</p>
-
-    {% capture npm_next_page %}
-export default function Page() {
-  return <h1>Hello {process.env.HELLO}</h1>;
-}
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_next_page copy=false %}
-
-    <p class="design-paragraph">Preload Next.js scripts with dotenvx.</p>
-
-    {% capture npm_next_scripts %}
-...
-"scripts": {
-  "dev": "dotenvx run -- next dev --turbo",
-  "build": "dotenvx run -- next build",
-  "start": "dotenvx run -- next start"
-},
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_next_scripts copy=false %}
-
-    <p class="design-paragraph">Run it.</p>
-
-    {% capture npm_next_run %}
-$ npm run dev
-
-> dev
-> dotenvx run -- next dev --turbo
-
-⟐ injected env (1) from .env
-   ▲ Next.js 14.0.4 (turbo)
-   - Local:        http://localhost:3000
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_next_run copy_text="npm run dev" %}
+    <h2 class="design-page-title design-page-title--flush">Next.js</h2>
+    <p class="design-paragraph">Follow the <a class="design-link" href="/docs/nextjs/">canonical Next.js guide</a> to use <code class="design-code">@dotenvx/next-env</code> with an npm override for <code class="design-code">@next/env</code>. This setup works locally and for Next.js apps on Vercel.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

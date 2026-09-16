@@ -227,6 +227,8 @@ pattern is about secrets at rest on disk, not secrets in a running process.
 
 ## Next.js integration
 
+> **Update:** For the standard Next.js setup, including deployments on Vercel, use the [canonical `@dotenvx/next-env` guide](/docs/nextjs/). The custom instrumentation below belongs to this article's local macOS Keychain workflow; it is not the recommended general Next.js integration or a Vercel deployment recipe.
+
 If you are using Next.js, you cannot just call `loadEnv()` from anywhere and
 expect it to work. Next.js has its own env loading built in, and by the time
 your application code runs, it has already resolved which variables are

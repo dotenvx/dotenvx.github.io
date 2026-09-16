@@ -57,7 +57,7 @@ redirect_from:
     <span class="design-list-meta">Docker</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/platforms/vercel">Vercel</a>
+    <a class="design-link" href="/docs/nextjs/">Vercel</a>
     <span class="design-list-meta">env add</span>
   </li>
 {% endcapture %}

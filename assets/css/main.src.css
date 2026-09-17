@@ -7250,3 +7250,29 @@ html.dark .hero-container-primary { color: #7b838a; }
   }
   .docs-sidebar { padding-top: 0; }
 }
+
+/* Mirrored from Radar's design/quote component. */
+.design-quote {
+  border-left: 2px solid var(--design-line);
+  margin: 1.5em 0;
+  padding: 0 0 0 1rem;
+  font-family: var(--design-font-sans);
+  font-size: var(--design-text-size);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  text-align: left;
+}
+.design-quote .design-quote-text {
+  color: var(--design-body, var(--design-ink));
+  font: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.design-quote-attribution {
+  color: var(--design-body, var(--design-ink));
+  font-size: 0.875em;
+  margin-top: 0.5rem;
+}

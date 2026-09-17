@@ -1,0 +1,8 @@
+<figure class="design-quote{% if include.class %} {{ include.class | escape }}{% endif %}">
+  <blockquote class="design-quote-text">{{ include.text | escape }}</blockquote>
+  {% if include.author %}
+    <figcaption class="design-quote-attribution">
+      — {% if include.author_url %}<a class="design-link" href="{{ include.author_url | escape }}">{{ include.author | escape }}</a>{% else %}{{ include.author | escape }}{% endif %}{% if include.organization %}, {{ include.organization | escape }}{% endif %}
+    </figcaption>
+  {% endif %}
+</figure>

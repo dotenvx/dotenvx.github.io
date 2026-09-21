@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: "Scott Motte – Mot"
+author: "Scott Motte"
 title: "Dotenvx is Feature Complete"
 image: "/assets/img/blog/blog-4.png"
 excerpt: "With decrypt now supported, dotenvx is feature complete."

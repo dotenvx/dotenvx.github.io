@@ -2337,7 +2337,8 @@ html:not(.dark) .radar-card--terminal {
 }
 
 /* Components mirrored from ../radar design components */
-.design-link {
+.design-link,
+.design-prose a {
   color: var(--design-body, var(--design-ink)) !important;
   font-family: var(--design-font-sans);
   font-size: var(--design-text-size);
@@ -2350,7 +2351,8 @@ html:not(.dark) .radar-card--terminal {
   transition: text-decoration-thickness 140ms ease, text-decoration-color 140ms ease;
 }
 
-html.dark .design-link {
+html.dark .design-link,
+html.dark .design-prose a {
   /* Gold-on-black needs more resting presence than ink-on-white */
   text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 28%, transparent) !important;
 }
@@ -2363,14 +2365,18 @@ button.design-link {
 }
 
 .design-link:hover,
-.design-link:focus {
+.design-link:focus,
+.design-prose a:hover,
+.design-prose a:focus {
   color: var(--design-body, var(--design-ink)) !important;
   text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 28%, transparent) !important;
   text-decoration-thickness: 3px;
 }
 
 html.dark .design-link:hover,
-html.dark .design-link:focus {
+html.dark .design-link:focus,
+html.dark .design-prose a:hover,
+html.dark .design-prose a:focus {
   text-decoration-color: color-mix(in srgb, var(--design-body, var(--design-ink)) 48%, transparent) !important;
 }
 
@@ -2800,7 +2806,8 @@ html.dark .design-input:focus {
 
 /* Mirrored from ../radar design-codeblock — full-width multi-line companion to .design-code */
 .design-codeblock-wrap { position: relative; width: 100%; min-width: 0; }
-.design-codeblock {
+.design-codeblock,
+.design-prose pre {
   background: var(--design-bg) !important;
   border: 1px solid var(--design-line) !important;
   border-radius: 0 !important;
@@ -2853,7 +2860,8 @@ html.dark .design-input:focus {
 
 /* Beat global `code` utilities (bg, padding, border, radius) */
 .design-codeblock code,
-html.dark .design-codeblock code {
+html.dark .design-codeblock code,
+.design-prose pre code {
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -2868,7 +2876,8 @@ html.dark .design-codeblock code {
   white-space: inherit;
 }
 
-.design-paragraph {
+.design-paragraph,
+.design-prose {
   color: var(--design-body, var(--design-ink));
   font-family: var(--design-font-sans);
   font-size: var(--design-text-size);
@@ -2883,10 +2892,35 @@ html.dark .design-codeblock code {
   margin-bottom: 0;
 }
 
+
+/* Markdown structure for shared long-form content. */
+.design-prose { overflow-wrap: anywhere; }
+.design-prose :not(pre) > code { white-space: normal; }
+.design-prose p { margin: 0 0 1em; }
+.design-prose :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--design-ink);
+  font: inherit;
+  font-weight: 600;
+  margin: 2rem 0 .85rem;
+}
+.design-prose strong { color: var(--design-ink); font-weight: 600; }
+.design-prose pre { margin: 1.25rem 0; overflow-wrap: normal; }
+.design-prose blockquote {
+  border-left: 2px solid var(--design-line);
+  margin: 1.25rem 0;
+  padding-left: 1rem;
+}
+.design-prose :is(img, video, iframe) { max-width: 100%; margin-block: 1.5rem; }
+.design-prose :is(img, video) { display: block; height: auto; }
+.design-prose hr { border: 0; border-top: 1px solid var(--design-line); margin: 2.5rem 0; }
+.design-prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0; }
+.design-prose :is(th, td) { border-bottom: 1px solid var(--design-line); padding: .6rem; text-align: left; }
+.design-prose > :first-child { margin-top: 0; }
+.design-prose > :last-child { margin-bottom: 0; }
+
 .design-prose > .design-list-title,
 .design-prose > .design-page-title,
 .docs-guide-body > .design-page-title,
-.design-prose > h2,
 .docs-guide-body > h2 {
   margin-bottom: 0.85rem;
   margin-top: 0;
@@ -2895,7 +2929,6 @@ html.dark .design-codeblock code {
 /* Match design-step / radar-section air between major guide sections */
 .design-prose > .design-page-title:not(:first-child),
 .docs-guide-body > .design-page-title:not(:first-child),
-.design-prose > h2:not(:first-child),
 .docs-guide-body > h2:not(:first-child) {
   margin-top: 4.5rem;
 }
@@ -2903,7 +2936,6 @@ html.dark .design-codeblock code {
 @media (min-width: 768px) {
   .design-prose > .design-page-title:not(:first-child),
   .docs-guide-body > .design-page-title:not(:first-child),
-  .design-prose > h2:not(:first-child),
   .docs-guide-body > h2:not(:first-child) {
     margin-top: 5.5rem;
   }
@@ -3056,7 +3088,9 @@ html.dark .design-codeblock code {
 }
 
 /* Mirrored as a site design component — not in ../radar yet */
-.design-bullets {
+.design-bullets,
+.design-prose ul,
+.design-prose ol {
   color: var(--design-body, var(--design-ink));
   font-family: var(--design-font-sans);
   font-size: var(--design-text-size);
@@ -3067,15 +3101,18 @@ html.dark .design-codeblock code {
   padding-left: 1.25rem;
 }
 
-ul.design-bullets {
+ul.design-bullets,
+.design-prose ul {
   list-style-type: disc;
 }
 
-ol.design-bullets {
+ol.design-bullets,
+.design-prose ol {
   list-style-type: decimal;
 }
 
-.design-bullets > li + li {
+.design-bullets > li + li,
+.design-prose li + li {
   margin-top: 0.45rem;
 }
 
@@ -5514,205 +5551,6 @@ html.dark .docs-hero-icon--invert-dark {
   padding: 1.1rem 1.35rem 1.2rem;
 }
 
-.blog-post {
-  padding: 2rem 0 4rem;
-}
-
-@media (min-width: 768px) {
-  .blog-post {
-    padding: 2.75rem 0 5rem;
-  }
-}
-
-.blog-back {
-  color: var(--design-dim) !important;
-  display: inline-flex;
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  font-weight: 500 !important;
-  letter-spacing: 0.02em;
-  margin-bottom: 2rem;
-  text-decoration: none !important;
-}
-
-.blog-back:hover {
-  color: var(--design-ink) !important;
-}
-
-.blog-post-header {
-  margin-bottom: 2.25rem;
-  text-align: center;
-}
-
-.blog-post-avatar {
-  border: 1px solid var(--design-line);
-  border-radius: 999px;
-  box-shadow: var(--design-etch);
-  display: block;
-  height: 2.5rem;
-  margin: 0 auto;
-  object-fit: cover;
-  width: 2.5rem;
-}
-
-.blog-post-author {
-  color: var(--design-ink);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  font-weight: 500;
-  margin: 0.85rem 0 0;
-}
-
-.blog-post-date {
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  letter-spacing: 0.04em;
-  margin: 0.35rem 0 0;
-}
-
-.blog-post-title {
-  color: var(--design-ink);
-  font-size: var(--design-text-title);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin: 1.4rem 0 0;
-}
-
-.blog-prose {
-  color: var(--design-mid);
-  font-size: var(--design-text-size);
-  line-height: 1.7;
-}
-
-.blog-prose > *:first-child {
-  margin-top: 0;
-}
-
-.blog-prose h1,
-.blog-prose h2,
-.blog-prose h3,
-.blog-prose h4,
-.blog-prose h5,
-.blog-prose h6,
-.blog-prose strong {
-  color: var(--design-ink);
-  font-weight: 600;
-}
-
-.blog-prose h2 {
-  font-size: var(--design-text-size);
-  letter-spacing: -0.02em;
-  margin: 2.2rem 0 0.85rem;
-}
-
-.blog-prose h3 {
-  font-size: var(--design-text-size);
-  margin: 1.8rem 0 0.7rem;
-}
-
-.blog-prose p,
-.blog-prose ul,
-.blog-prose ol,
-.blog-prose blockquote,
-.blog-prose pre {
-  margin: 1rem 0;
-}
-
-.blog-prose a,
-.blog-prose a:link,
-.blog-prose a:visited {
-  color: #2f5f8a !important;
-  font-weight: 500 !important;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 0.2em;
-}
-
-.blog-prose a:hover {
-  color: #1a3f63 !important;
-}
-
-.blog-prose code {
-  color: var(--design-ink);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-size);
-}
-
-.blog-prose pre {
-  background: color-mix(in srgb, var(--design-panel) 80%, #000 20%);
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  color: var(--design-ink);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  line-height: 1.5;
-  overflow-x: auto;
-  padding: 1rem 1.1rem;
-}
-
-.blog-prose pre code {
-  font-size: inherit;
-}
-
-.blog-prose blockquote {
-  border-left: 2px solid var(--design-line);
-  color: var(--design-mid);
-  margin-left: 0;
-  padding-left: 1rem;
-}
-
-.blog-prose img {
-  border: 1px solid var(--design-line);
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  display: block;
-  height: auto;
-  margin: 1.5rem auto;
-  max-width: 100%;
-}
-
-.blog-prose hr {
-  border: 0;
-  box-shadow: var(--design-etch-divider);
-  height: 2px;
-  margin: 2rem 0;
-}
-
-.blog-prose ul,
-.blog-prose ol {
-  padding-left: 1.25rem;
-}
-
-.blog-prose li + li {
-  margin-top: 0.35rem;
-}
-
-.blog-post-footer {
-  background-image: var(--design-etch-divider);
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-  color: var(--design-dim);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  text-align: center;
-}
-
-.blog-post-footer a {
-  color: var(--design-mid) !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-}
-
-.blog-post-footer a:hover {
-  color: var(--design-ink) !important;
-}
-
 /* 404 / error heroes — keep copy + action in one narrow column */
 .not-found-design-hero .armor-shell {
   max-width: 28rem;
@@ -5823,9 +5661,6 @@ html.dark .docs-hero-icon--invert-dark {
 }
 
 /* Dark mode may use yellow; light mode never does */
-html.dark .blog-prose a,
-html.dark .blog-prose a:link,
-html.dark .blog-prose a:visited,
 html.dark .legal-prose a,
 html.dark .legal-prose a:link,
 html.dark .legal-prose a:visited,
@@ -5836,7 +5671,6 @@ html.dark .radar-text-link {
   color: #ecd53f !important;
 }
 
-html.dark .blog-prose a:hover,
 html.dark .legal-prose a:hover,
 html.dark .pricing-faq dd p a:hover,
 html.dark .radar-text-link:hover {
@@ -6914,7 +6748,7 @@ html.dark .spec-table-link a {
 /* One shared gap between homepage sections. */
 .home-page { --home-section-gap: 4rem; --home-footer-gap: 2.5rem; }
 .home-sections { display: flex; flex-direction: column; gap: var(--home-section-gap); }
-.home-sections > section { margin-block: 0; padding-block: 0; }
+.home-sections > :is(section, header, footer) { margin-block: 0; padding-block: 0; }
 .home-sections > .home-hero2 { padding-top: 2.5rem; }
 .home-sections .design-hero2--compact { padding-bottom: 0; }
 .home-page .footer { margin-top: 0; padding-top: var(--home-section-gap); }

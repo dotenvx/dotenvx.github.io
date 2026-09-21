@@ -40,7 +40,7 @@ body_class: home-page
     <span class="design-list-meta">terms of service</span>
   </li>
   <li>
-    <a class="design-link" href="https://trust.dotenvx.com" target="_blank" rel="noopener noreferrer">Trust</a>
+    <a class="design-link" href="https://trust.oneleet.com/dotenvx" target="_blank" rel="noopener noreferrer">Trust</a>
     <span class="design-list-meta">trust center</span>
   </li>
 {% endcapture %}

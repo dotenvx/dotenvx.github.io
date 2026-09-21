@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: "Scott Motte – Mot"
+author: "Scott Motte"
 title: "From dotenv to dotenvx: Next Generation Config Management"
 image: "/assets/img/blog/blog-1.png"
 excerpt: "A leap forward in configuration management for dotenv"

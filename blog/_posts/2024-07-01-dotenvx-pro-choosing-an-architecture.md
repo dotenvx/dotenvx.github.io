@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: "Scott Motte – Mot"
+author: "Scott Motte"
 title: "Choosing an Architecture for Pro"
 image: "/assets/img/blog/blog-3.png"
 excerpt: "Which architecture do we go with for pro - zero-knowledge or managed-encryption."

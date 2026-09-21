@@ -6,10 +6,10 @@ image: "/assets/img/blog/blog-12.png"
 excerpt: "Use the canonical @dotenvx/next-env setup for Next.js, locally and on Vercel."
 ---
 
-<aside aria-labelledby="nextjs-update-warning" style="border: 2px solid #b8860b; border-left-width: 8px; border-radius: 8px; background: rgba(184, 134, 11, 0.12); padding: 24px; margin: 0 0 32px;">
-  <h2 id="nextjs-update-warning" style="margin: 0 0 12px; font-size: 1.5rem; line-height: 1.3;">⚠️ Use the new Next.js approach</h2>
-  <p style="margin: 0 0 16px;"><strong>This article's original setup has been superseded.</strong> Use <code>@dotenvx/next-env</code> for Next.js, including apps deployed on Vercel. It replaces the earlier CLI wrapper and instrumentation approach.</p>
-  <p style="margin: 0; font-size: 1.125rem;"><a href="/docs/nextjs/">Follow the current Next.js setup →</a></p>
+<aside aria-labelledby="nextjs-update-warning">
+  <h2 id="nextjs-update-warning">⚠️ Use the new Next.js approach</h2>
+  <p><strong>This article's original setup has been superseded.</strong> Use <code>@dotenvx/next-env</code> for Next.js, including apps deployed on Vercel. It replaces the earlier CLI wrapper and instrumentation approach.</p>
+  <p><a href="/docs/nextjs/">Follow the current Next.js setup →</a></p>
 </aside>
 
 *By [Tony Vantur](https://tonyvantur.com)*

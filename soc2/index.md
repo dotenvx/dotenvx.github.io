@@ -1,4 +1,4 @@
 ---
 title: "Dotenvx Trust Center"
-redirect_to: https://trust.dotenvx.com
+redirect_to: https://trust.oneleet.com/dotenvx
 ---

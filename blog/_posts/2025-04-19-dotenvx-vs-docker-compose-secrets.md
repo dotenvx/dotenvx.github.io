@@ -1,6 +1,6 @@
 ---
 layout: blog
-author: "Scott Motte – Mot"
+author: "Scott Motte"
 title: "Dotenvx vs Docker Compose Secrets: Avoiding False Security"
 image: "/assets/img/blog/blog-10.png"
 excerpt: "Why secrets in plaintext files might be more dangerous than environment variables — and how dotenvx helps."

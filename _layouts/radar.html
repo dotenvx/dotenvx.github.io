@@ -5,8 +5,9 @@
     {% include layouts/meta.html %}
     {% include layouts/analytics.html %}
   </head>
+  {% assign body_class = page.body_class | default: layout.body_class %}
   {% assign route_prefix = page.url | slice: 0, 6 %}
-  <body class="radar-layout{% if page.body_class %} {{ page.body_class }}{% endif %}{% if route_prefix == '/docs/' %} home-page docs-site{% endif %}">
+  <body class="radar-layout{% if body_class %} {{ body_class }}{% endif %}{% if route_prefix == '/docs/' %} home-page docs-site{% endif %}">
     {% include components/radar-nav.html %}
     {% if route_prefix == "/docs/" %}<div class="docs-layout">{% include components/docs-sidebar.html %}{% endif %}
     <main class="radar-main">

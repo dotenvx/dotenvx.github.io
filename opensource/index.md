@@ -44,7 +44,7 @@ body_class: home-page
         <ul class="design-list-items">
           <li>
             <a class="design-link" href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer">dotenv</a>
-            <span class="design-list-meta">20.4k ★</span>
+            <span class="design-list-meta">20.5k ★</span>
           </li>
           <li>
             <a class="design-link" href="https://github.com/motdotla/dotenv-expand" target="_blank" rel="noopener noreferrer">dotenv-expand</a>

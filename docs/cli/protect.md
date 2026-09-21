@@ -20,27 +20,34 @@ Run once to set up protection for your Git user across existing and future repos
 
 {% capture protect_setup %}
 $ dotenvx protect
-? Keep plaintext secrets (.env*) secure from code? (Y/n)
-? Keep private keys (.env.keys*) secure from code? (Y/n)
+? Set protections
+● Protect plaintext secrets from code commits (.env*)
+● Protect private keys from code commits (.env.keys*)
+
+  Install protections
 {% endcapture %}
 {% capture protect_setup_copy %}dotenvx protect{% endcapture %}
 {% include components/design-codeblock.html value=protect_setup copy_text=protect_setup_copy %}
 
-Both choices default to yes. They do different jobs:
+Both protections start selected every time, even if you previously turned them off. Use arrow keys to move and Enter or Space to toggle a choice. The action row reads **Install protections**, **Apply changes**, **Remove protections**, or **Done**, based on how your selections compare with the installed protections. Press Enter on that row to apply; cancelling leaves settings unchanged. The two protections do different jobs:
 
-### Keep plaintext secrets secure
+### Protect plaintext secrets from code commits
 
 This adds a check to `git add`. If an env file contains plaintext secrets, Git refuses to add it to the next commit, even with `git add -f`. Encrypt the file or exclude it from Git before trying again.
 
 Encrypted env files pass through unchanged. No private key is needed for this check, and `protect` does not encrypt or rewrite your files.
 
-### Keep private keys secure
+### Protect private keys from code commits
 
 This tells Git to skip `.env.keys*` files automatically during normal adds, so you do not have to exclude them yourself in every repository. Existing ignore rules are preserved.
 
 If both choices are enabled, an explicit `git add -f .env.keys` is still blocked by the first check. Ignoring alone does not block forced adds or stop tracking a file already in Git.
 
-Declining a choice leaves its existing settings unchanged. In CI or without an interactive terminal, `protect` installs only the env-file check without prompting.
+Unchecking a choice removes that protection. Clearing both reports `⁑ unprotected (none)`; otherwise the success message lists the selected protections, such as `⁑ protected (plaintext *.env, .env.keys*)`.
+
+Unrelated Git settings and ignore rules are preserved. Older or manually added `.env.keys*` ignore rules without a dotenvx ownership record require manual removal; the command reports their location rather than silently deleting them. Other ignore rules can still keep private-key files out of Git after dotenvx's rule is removed.
+
+In CI or without an interactive terminal, `protect` installs only the env-file check without prompting or removing existing protections.
 
 ### Supported files
 
@@ -67,8 +74,7 @@ In a disposable repository, create an env file with a dummy value and try adding
 {% capture protect_test %}
 $ printf 'HELLO=world\n' > .env
 $ git add -f .env
-☠ [PLAINTEXT_ENV] refusing to stage ".env"
-fix: run [dotenvx encrypt -f .env]
+☠ [PLAINTEXT_ENV] ".env" contains plaintext secrets. fix: run [dotenvx encrypt -f .env]
 {% endcapture %}
 {% capture protect_test_copy %}printf 'HELLO=world\n' > .env
 git add -f .env{% endcapture %}
@@ -100,6 +106,6 @@ The second adds `.env.keys*` to your global ignore file. It respects `core.exclu
 
 Git invokes `dotenvx protect --git-file <pathname>`, passing the contents through stdin. The pathname identifies the incoming contents; dotenvx does not open that file to perform the check.
 
-Re-run `dotenvx protect` after upgrading or moving the installed executable to refresh your setup. Repeated installation does not duplicate its rules.
+To refresh an existing filter after moving the installed executable, disable it and then enable it again. Repeated installation does not duplicate its rules.
 
 Protection applies to future adds. It does not remove secrets already added to the next commit or stored in Git history. Repository-specific attributes and Git settings can override global rules. Each developer needs to set up protection for their own Git user.

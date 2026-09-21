@@ -55,6 +55,10 @@ exclude:
 markdown: kramdown
 kramdown:
   input: GFM
+  # Preserve literal hyphens in command-line flags and separators.
+  typographic_symbols:
+    ndash: "--"
+    mdash: "---"
   syntax_highlighter: none
   syntax_highlighter_opts:
     disable: true

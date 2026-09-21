@@ -1,7 +1,7 @@
 ---
-title: "Dotenvx"
-social_title: "Dotenvx"
-description: "Encrypted secrets that travel with your code—from the creator of dotenv."
+title: "Dotenvx · A secure dotenv–from the creator of dotenv"
+social_title: "Dotenvx · A secure dotenv–from the creator of dotenv"
+description: "A secure dotenv–from the creator of dotenv."
 layout: radar
 body_class: home-page
 ---

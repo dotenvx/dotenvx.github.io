@@ -18,10 +18,7 @@
 {% endif %}
 {% assign video_class = include.class %}
 
-<figure class="design-video{% if video_class %} {{ video_class }}{% endif %}">
-  {% if title != "" %}
-    <figcaption class="design-video-title">{{ title }}</figcaption>
-  {% endif %}
+<figure data-design-video class="design-video{% if video_class %} {{ video_class }}{% endif %}">
   <div class="design-video-frame">
     <video
       class="design-video-player"
@@ -42,5 +39,9 @@
         Download the <a class="design-link" href="{{ webm }}">webm</a> video.
       {% endif %}
     </video>
+    <button class="design-video-preview-play design-video-play" type="button" aria-label="Play {{ title | default: 'video' | escape }}" hidden>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19.5 12 8 5.14z"/></svg>
+    </button>
   </div>
+  {% if title != "" %}<figcaption class="design-video-title">{{ title }}</figcaption>{% endif %}
 </figure>

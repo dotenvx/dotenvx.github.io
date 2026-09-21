@@ -8,18 +8,6 @@
 
 <section class="radar-section feature-media-section">
   <div class="radar-shell feature-shell">
-    <div class="feature-video-frame">
-      <div class="feature-video-toolbar" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="feature-video-stage">
-        <video class="feature-video" controls playsinline preload="metadata">
-          <source src="{{ include.video }}" type="video/mp4">
-          your browser does not support the video tag
-        </video>
-      </div>
-    </div>
+    {% include components/design-video.html mp4=include.video title=include.heading %}
   </div>
 </section>

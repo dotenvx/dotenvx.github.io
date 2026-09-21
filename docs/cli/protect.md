@@ -43,7 +43,7 @@ This tells Git to skip `.env.keys*` files automatically during normal adds, so y
 
 If both choices are enabled, an explicit `git add -f .env.keys` is still blocked by the first check. Ignoring alone does not block forced adds or stop tracking a file already in Git.
 
-Unchecking a choice removes that protection. Clearing both reports `⁑ unprotected (none)`; otherwise the success message lists the selected protections, such as `⁑ protected (plaintext *.env, .env.keys*)`.
+Unchecking a choice removes that protection. Clearing both reports `⛉ unprotected (none)`; otherwise the success message lists the selected protections, such as `⛉ protected (plaintext *.env, .env.keys*)`.
 
 Unrelated Git settings and ignore rules are preserved. Older or manually added `.env.keys*` ignore rules without a dotenvx ownership record require manual removal; the command reports their location rather than silently deleting them. Other ignore rules can still keep private-key files out of Git after dotenvx's rule is removed.
 
@@ -80,7 +80,7 @@ $ git add -f .env
 git add -f .env{% endcapture %}
 {% include components/design-codeblock.html value=protect_test copy_text=protect_test_copy %}
 
-Git also prints its own filter-failure diagnostics. Encrypt the file, then try again:
+Git also prints a short `fatal: .env: clean filter 'dotenvx.protect' failed` line. Expected rejections no longer produce the duplicate external-command errors. Encrypt the file, then try again:
 
 {% capture protect_encrypt %}
 $ dotenvx encrypt -f .env
@@ -96,7 +96,7 @@ The encrypted file can now be added to your next commit.
 
 `dotenvx precommit` is deprecated. Run `dotenvx protect` inside a repository and enable the plaintext-secret check to install protection and remove recognized dotenvx pre-commit hook blocks. Other hook commands are preserved. Customized, symlinked, or external shared hooks may need manual cleanup.
 
-Run it in each repository that still has an old hook. To remove only the hook, use `dotenvx precommit --uninstall`.
+With the plaintext-secret protection selected, `protect` also removes recognized repo-local `precommit --clean` filter registrations so Git uses the updated global filter. Custom filter commands are left untouched. Run it in each repository that still has an old hook or filter override. To remove only the hook, use `dotenvx precommit --uninstall`.
 
 ### What gets installed
 
@@ -104,8 +104,8 @@ The first choice configures a required Git clean filter in your global Git confi
 
 The second adds `.env.keys*` to your global ignore file. It respects `core.excludesFile`, otherwise using `$XDG_CONFIG_HOME/git/ignore` or `~/.config/git/ignore`. It does not add rules that force other env files to be included in Git.
 
-Git invokes `dotenvx protect --git-file <pathname>`, passing the contents through stdin. The pathname identifies the incoming contents; dotenvx does not open that file to perform the check.
+Git invokes `dotenvx protect --git-process` using its version 2 process-filter protocol. It sends pathnames and contents through stdin and can check multiple files in one process. Dotenvx checks the supplied contents, not files on disk, and returns accepted bytes unchanged. The older `--git-file <pathname>` single-file interface remains available as a fallback.
 
-To refresh an existing filter after moving the installed executable, disable it and then enable it again. Repeated installation does not duplicate its rules.
+Re-run `dotenvx protect` with plaintext-secret protection selected to refresh the global filter after upgrading or moving the executable. Repeated installation does not duplicate its rules.
 
 Protection applies to future adds. It does not remove secrets already added to the next commit or stored in Git history. Repository-specific attributes and Git settings can override global rules. Each developer needs to set up protection for their own Git user.

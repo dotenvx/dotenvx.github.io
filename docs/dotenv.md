@@ -12,8 +12,6 @@ og_image:
   .dotenv-page .dotenv-jump-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 1.5rem; margin-bottom: 1.5rem; }
   .dotenv-page .dotenv-section { scroll-margin-top: 6rem; }
   .dotenv-page .dotenv-demo { max-width: 30rem; margin: 2rem auto; }
-  .dotenv-page .dotenv-demo video { display: block; width: 100%; height: auto; margin: 0; border-radius: .5rem; }
-  .dotenv-page .dotenv-demo figcaption { margin-top: .65rem; text-align: center; color: var(--design-secondary, var(--design-dim)); }
   .dotenv-page .design-table-wrap { margin-block: 1.5rem; }
   .dotenv-page .design-table td { vertical-align: top; }
   .dotenv-page .design-prose { overflow-wrap: anywhere; }
@@ -75,13 +73,9 @@ Hello Dotenv
         {% include components/design-codeblock.html value="npx dotenv run -- node index.js" %}
       </section>
 
-      <figure id="demo" class="dotenv-demo dotenv-section">
-        <video controls playsinline preload="metadata" aria-label="Dotenv CLI demo">
-          <source src="https://github.com/user-attachments/assets/79395e92-5ce0-430d-b8b5-31631aac25bb" type="video/mp4">
-          <a href="https://github.com/user-attachments/assets/79395e92-5ce0-430d-b8b5-31631aac25bb">Watch the 30 second demo</a>.
-        </video>
-        <figcaption>Watch the 30 second demo</figcaption>
-      </figure>
+      <div id="demo" class="dotenv-demo dotenv-section">
+        {% include components/design-video.html mp4="https://github.com/user-attachments/assets/79395e92-5ce0-430d-b8b5-31631aac25bb" title="Watch the 30 second demo" %}
+      </div>
 
       <section id="sdk" class="dotenv-section" aria-labelledby="sdk-title">
         <h2 id="sdk-title">SDK</h2>

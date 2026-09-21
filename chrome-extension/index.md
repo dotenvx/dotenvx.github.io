@@ -18,10 +18,7 @@ layout: radar
 
 <section class="radar-section">
   <div class="radar-shell ext-shell">
-    <video class="ext-media" controls>
-      <source src="{{ site.data.videos['chrome-extension'].url }}" type="video/mp4">
-      your browser does not support the video tag
-    </video>
+    {% include components/design-video.html video="chrome-extension" title="Chrome extension demo" %}
   </div>
 </section>
 

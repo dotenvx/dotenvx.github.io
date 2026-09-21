@@ -29,10 +29,7 @@ I remember it was cold, and we got 'robbed' on the train by cowboys on horses. I
 
 <img src="https://github.com/user-attachments/assets/b14fc047-9817-4939-a239-292d963d56d6" />
 
-<video class="w-full rounded-md" controls>
-  <source src="{{ site.data.videos['thanksgiving-2024'].url }}" type="video/mp4">
-  Your browser does not support the video tag
-</video>
+{% include components/design-video.html video="thanksgiving-2024" title="Thanksgiving 2024" %}
 
 We returned from the Grand Canyon and spent the next day hanging out with Will's family. It was great to catch up. His parents were also in town, and I hadn't seen them in probably a decade. Somehow we all ended up at a pool hall at the end of the day.
 

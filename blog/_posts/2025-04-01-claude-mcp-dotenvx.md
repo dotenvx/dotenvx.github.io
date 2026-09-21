@@ -7,10 +7,7 @@ excerpt: "Add Dotenvx as a Claude MCP Server."
 
 <p class="text-center small">Add Dotenvx to Claude as an MCP Server.</p>
 
-<video class="my-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800" controls>
-<source src="{{ site.data.videos['claude-mcp'].url }}" type="video/mp4">
-your browser does not support the video tag
-</video>
+{% include components/design-video.html video="claude-mcp" title="Claude MCP with dotenvx" %}
 
 Dotenvx works with [Claude MCP](https://www.anthropic.com/news/model-context-protocol). Here's how to get it in your Claude.
 

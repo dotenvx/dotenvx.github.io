@@ -7,10 +7,7 @@ excerpt: "With decrypt now supported, dotenvx is feature complete."
 
 [dotenvx 1.6.0](https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#160) is released 🎉 – adding support for `decrypt`.
 
-<video class="w-full rounded-md" controls>
-  <source src="{{ site.data.videos['feature-complete'].url }}" type="video/mp4">
-  your browser does not support the video tag
-</video>
+{% include components/design-video.html video="feature-complete" title="Dotenvx is feature complete" %}
 
 ## Feature Complete
 

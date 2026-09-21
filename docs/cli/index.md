@@ -420,6 +420,7 @@ layout: radar
             {% include components/design-settings-tile.html href="/docs/cli/genexample" label="Genexample" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
             {% include components/design-settings-tile.html href="/docs/cli/validate" label="Validate" glyph="✓" glyph_class="design-settings-tile-glyph--soft" %}
             {% include components/design-settings-tile.html href="/docs/cli/precommit" label="Precommit" glyph="⇢" glyph_class="design-settings-tile-glyph--soft" %}
+            {% include components/design-settings-tile.html href="/docs/cli/protect" label="Protect" glyph="⁑" glyph_class="design-settings-tile-glyph--soft" %}
             {% include components/design-settings-tile.html href="/docs/cli/prebuild" label="Prebuild" glyph="▣" glyph_class="design-settings-tile-glyph--soft" %}
             {% include components/design-settings-tile.html href="/docs/cli/help" label="Help" glyph="?" glyph_class="design-settings-tile-glyph--soft" %}
             {% include components/design-settings-tile.html href="/docs/cli/version" label="Version" glyph="v" glyph_class="design-settings-tile-glyph--soft" %}

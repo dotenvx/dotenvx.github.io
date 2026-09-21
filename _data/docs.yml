@@ -29,6 +29,7 @@ cli_commands:
   - /docs/cli/genexample/
   - /docs/cli/validate/
   - /docs/cli/precommit/
+  - /docs/cli/protect/
   - /docs/cli/prebuild/
   - /docs/cli/help/
   - /docs/cli/version/

@@ -629,6 +629,11 @@
         ]
       },
       {
+        "label": "Protect",
+        "href": "/docs/cli/protect/",
+        "children": []
+      },
+      {
         "label": "Redirecting",
         "href": "/docs/cli/armor/",
         "children": [

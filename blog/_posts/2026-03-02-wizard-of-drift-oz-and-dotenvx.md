@@ -2,7 +2,6 @@
 layout: blog
 author: "Scott Motte"
 title: "Stop .env Drift Before Merge with Wizard of Drift"
-image: "/assets/img/blog/blog-13.png"
 excerpt: "Catch .env key drift on pull requests automatically with Warp's Oz + Dotenvx."
 ---
 

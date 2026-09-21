@@ -2,7 +2,6 @@
 layout: blog
 author: "Scott Motte"
 title: "1 Million Installs: From Experimental to Essential"
-image: "/assets/img/blog/blog-8.png"
 excerpt: "Eight months ago, dotenvx was just an experiment. Today, it's an essential tool with over 1 million monthly installs."
 ---
 

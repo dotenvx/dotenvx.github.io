@@ -3,6 +3,10 @@ title: "Supermemory: One key. No chasing."
 description: How Supermemory uses one private key to unlock all its secrets with Dotenvx.
 permalink: /customers/supermemory
 layout: radar
+og_image:
+  template: logo
+  logo: _includes/logos/supermemory.svg
+  alt: Supermemory
 body_class: home-page
 ---
 

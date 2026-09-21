@@ -39,8 +39,14 @@ jobs:
       - name: Bundle install
         run: bundle install
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
       - name: Npm install
-        run: npm install
+        run: npm ci
 
       # Compile Tailwind/PostCSS via files (jekyll-postcss hits ARG_MAX on large CSS).
       - name: Build CSS

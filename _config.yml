@@ -50,6 +50,7 @@ exclude:
   - assets/css/main.src.css
   - Procfile.dev
   - bin
+  - scripts
 
 markdown: kramdown
 kramdown:

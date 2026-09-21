@@ -2,7 +2,6 @@
 layout: blog
 author: "Ustun Ozgur"
 title: "Harden .env.local: dotenvx + OS Keychain"
-image: "/assets/img/blog/blog-14.png"
 excerpt: "A defense layer against increasing supply chain attacks that read your .env files"
 ---
 

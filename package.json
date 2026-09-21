@@ -1,15 +1,20 @@
 {
   "scripts": {
     "build:css": "postcss assets/css/main.src.css -o assets/css/main.css",
-    "watch:css": "postcss assets/css/main.src.css -o assets/css/main.css --watch"
+    "watch:css": "postcss assets/css/main.src.css -o assets/css/main.css --watch",
+    "test:og": "node --test scripts/build-og-images.test.mjs"
   },
   "devDependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/noto-sans-symbols": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "postcss": "^8.4.26",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^15.1.0",
+    "satori": "^0.33.4",
     "tailwindcss": "^3.3.3"
   }
 }

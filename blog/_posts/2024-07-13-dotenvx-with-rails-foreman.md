@@ -2,7 +2,6 @@
 layout: blog
 author: "Scott Motte"
 title: "Protip – dotenvx with Rails foreman"
-image: "/assets/img/blog/protip.png"
 excerpt: "With decrypt now supported, dotenvx is feature complete."
 ---
 

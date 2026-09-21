@@ -2,7 +2,6 @@
 layout: blog
 author: "Tony Vantur"
 title: "Setting Up dotenvx with Next.js"
-image: "/assets/img/blog/blog-12.png"
 excerpt: "Use the canonical @dotenvx/next-env setup for Next.js, locally and on Vercel."
 ---
 

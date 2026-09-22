@@ -16,112 +16,39 @@ related:
   - title: Precommit
     href: /docs/cli/precommit/
 ---
-Run once to set up protection for your Git user across existing and future repositories on this machine. You can run it outside a repository too.
+Run once to protect existing and future repositories on this machine:
 
 {% capture protect_setup %}
 $ dotenvx protect
-? Set protections
-● Protect plaintext secrets from code commits (.env*)
-● Protect private keys from code commits (.env.keys*)
-
-  Install protections
+⛉ protection: full (.env*, .env.keys*)
 {% endcapture %}
 {% capture protect_setup_copy %}dotenvx protect{% endcapture %}
 {% include components/design-codeblock.html value=protect_setup copy_text=protect_setup_copy %}
 
-Both protections start selected every time, even if you previously turned them off. Use arrow keys to move and Enter or Space to toggle a choice. The action row reads **Install protections**, **Apply changes**, **Remove protections**, or **Done**, based on how your selections compare with the installed protections. Press Enter on that row to apply; cancelling leaves settings unchanged. The two protections do different jobs:
+That's it! Attempts to add unencrypted .env secrets to a commit by you (or your coding agent) will be blocked. It even works if your coding agent attempts git add -f.
 
-### Protect plaintext secrets from code commits
+Under the hood, this uses a Git filter to check env files before they're staged, letting encrypted files through unchanged. It's installed globally for your Git user, so it works across existing and future repositories on this machine.
 
-This adds a check to `git add`. If an env file contains plaintext secrets, Git refuses to add it to the next commit, even with `git add -f`. Encrypt the file or exclude it from Git before trying again.
-
-Encrypted env files pass through unchanged. No private key is needed for this check, and `protect` does not encrypt or rewrite your files.
-
-### Protect private keys from code commits
-
-This tells Git to skip `.env.keys*` files automatically during normal adds, so you do not have to exclude them yourself in every repository. Existing ignore rules are preserved.
-
-If both choices are enabled, an explicit `git add -f .env.keys` is still blocked by the first check. Ignoring alone does not block forced adds or stop tracking a file already in Git.
-
-Unchecking a choice removes that protection. Clearing both reports `⛉ unprotected (none)`; otherwise the success message lists the selected protections, such as `⛉ protected (plaintext *.env, .env.keys*)`.
-
-Unrelated Git settings and ignore rules are preserved. Older or manually added `.env.keys*` ignore rules without a dotenvx ownership record require manual removal; the command reports their location rather than silently deleting them. Other ignore rules can still keep private-key files out of Git after dotenvx's rule is removed.
-
-In CI or without an interactive terminal, `protect` installs only the env-file check without prompting or removing existing protections.
-
-### Supported files
-
-Protection covers these filenames at any directory depth, including monorepos:
-
-| Pattern | Examples |
-| --- | --- |
-| `.env*` | `.env`, `apps/web/.env.production` |
-| `*.env` | `services/api/config.env` |
-| `.flaskenv` | `services/api/.flaskenv` |
-| `.dev.vars*` | `apps/worker/.dev.vars`, `.dev.vars.staging` |
-| `.env.d/*` | `.env.d/production`, `apps/web/.env.d/local` |
-
-The `.env.d/` rule covers files directly inside those directories. Dockerfiles and other configuration formats are not included. Gitignored directories such as `node_modules/` are skipped during normal adds.
-
-`.env.example`, `.env.vault`, and `.env.x` are exempt. Public-key entries (`DOTENV_PUBLIC_KEY*`) and variables ending in `_PLAIN` may remain plaintext. Private-key files named `.env.keys*` are always rejected by the check.
-
-The content check recognizes the `encrypted:` prefix; it does not verify that ciphertext can be decrypted. Empty and comment-only env files pass.
-
-### Try it
-
-In a disposable repository, create an env file with a dummy value and try adding it:
-
-{% capture protect_test %}
-$ printf 'HELLO=world\n' > .env
-$ git add -f .env
-☠ [PLAINTEXT_ENV] ".env" contains plaintext secrets. fix: run [dotenvx encrypt -f .env]
+{% capture protect_faq_items %}
+  <li>
+    <span class="design-list-label">Does it protect <strong>existing and future repositories</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Does it work in <strong>monorepos and subdirectories</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Does the plaintext check block <strong>git add -f</strong> too?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I still commit <strong>encrypted env files</strong>?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
+  <li>
+    <span class="design-list-label">Can I check <strong>Docker builds</strong> with dotenvx protect --docker?</span>
+    <span class="design-list-meta">Yes</span>
+  </li>
 {% endcapture %}
-{% capture protect_test_copy %}printf 'HELLO=world\n' > .env
-git add -f .env{% endcapture %}
-{% include components/design-codeblock.html value=protect_test copy_text=protect_test_copy %}
-
-Git also prints a short `fatal: .env: clean filter 'dotenvx.protect' failed` line. Expected rejections no longer produce the duplicate external-command errors. Encrypt the file, then try again:
-
-{% capture protect_encrypt %}
-$ dotenvx encrypt -f .env
-$ git add .env
-{% endcapture %}
-{% capture protect_encrypt_copy %}dotenvx encrypt -f .env
-git add .env{% endcapture %}
-{% include components/design-codeblock.html value=protect_encrypt copy_text=protect_encrypt_copy %}
-
-The encrypted file can now be added to your next commit.
-
-### Docker build check
-
-Use `dotenvx protect --docker` in place of `dotenvx prebuild` inside your Dockerfile, after dotenvx is installed and the application files are available:
-
-{% capture protect_docker %}
-RUN dotenvx protect --docker
-{% endcapture %}
-{% capture protect_docker_copy %}RUN dotenvx protect --docker{% endcapture %}
-{% include components/design-codeblock.html value=protect_docker copy_text=protect_docker_copy %}
-
-For a specific directory, use `RUN dotenvx protect --docker apps/backend`.
-
-This runs the existing prebuild check: env files must be encrypted, exempt, or excluded by `.dockerignore`. A failed check exits nonzero and stops the build. It does not show the protection checklist, install Git settings, edit your Dockerfile, or encrypt files. Existing prebuild exclusions and warnings are unchanged.
-
-This is a build-time check, not a guarantee that secrets never reach the builder or earlier build layers. Use `.dockerignore` to exclude private-key files from the build context. `prebuild` is deprecated and points to this replacement.
-
-### Moving from precommit
-
-`dotenvx precommit` is deprecated. Run `dotenvx protect` inside a repository and enable the plaintext-secret check to install protection and remove recognized dotenvx pre-commit hook blocks. Other hook commands are preserved. Customized, symlinked, or external shared hooks may need manual cleanup.
-
-With the plaintext-secret protection selected, `protect` also removes recognized repo-local `precommit --clean` filter registrations so Git uses the updated global filter. Custom filter commands are left untouched. Run it in each repository that still has an old hook or filter override. To remove only the hook, use `dotenvx precommit --uninstall`.
-
-### What gets installed
-
-The first choice configures a required Git clean filter in your global Git configuration and adds filename rules to your global attributes file. It respects `core.attributesFile`, otherwise using `$XDG_CONFIG_HOME/git/attributes` or `~/.config/git/attributes`.
-
-The second adds `.env.keys*` to your global ignore file. It respects `core.excludesFile`, otherwise using `$XDG_CONFIG_HOME/git/ignore` or `~/.config/git/ignore`. It does not add rules that force other env files to be included in Git.
-
-Git invokes `dotenvx protect --git-process` using its version 2 process-filter protocol. It sends pathnames and contents through stdin and can check multiple files in one process. Dotenvx checks the supplied contents, not files on disk, and returns accepted bytes unchanged. The older `--git-file <pathname>` single-file interface remains available as a fallback.
-
-Re-run `dotenvx protect` with plaintext-secret protection selected to refresh the global filter after upgrading or moving the executable. Repeated installation does not duplicate its rules.
-
-Protection applies to future adds. It does not remove secrets already added to the next commit or stored in Git history. Repository-specific attributes and Git settings can override global rules. Each developer needs to set up protection for their own Git user.
+{% include components/design-list.html title="FAQ" items=protect_faq_items %}

@@ -27,6 +27,8 @@ $ dotenvx protect
 
 That's it! Attempts to add unencrypted .env secrets to a commit by you (or your coding agent) will be blocked. It even works if your coding agent attempts git add -f.
 
+{% include components/design-video.html mp4="https://github.com/user-attachments/assets/da8da6ec-7acb-4d37-8283-7bf3e7856ac3" title="Watch dotenvx protect in action" %}
+
 Under the hood, this uses a Git filter to check env files before they're staged, letting encrypted files through unchanged. It's installed globally for your Git user, so it works across existing and future repositories on this machine.
 
 {% capture protect_faq_items %}

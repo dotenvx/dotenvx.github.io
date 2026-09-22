@@ -8,7 +8,7 @@ body_class: home-page
 
 {% assign offer = site.data.armor_source %}
 {% assign request_subject = "Buy Armor Source" %}
-{% capture request_body %}I'd like to buy Armor Source for {{ offer.price }} {{ offer.currency }}. Please send me the details.{% endcapture %}
+{% capture request_body %}I'd like to buy Armor Source for {{ offer.price }} {{ offer.currency }} for up to {{ offer.seats }} seats. Please send me the details.{% endcapture %}
 {% assign encoded_subject = request_subject | url_encode | replace: '+', '%20' %}
 {% assign encoded_body = request_body | url_encode | replace: '+', '%20' %}
 {% capture request_href %}mailto:{{ offer.email }}?subject={{ encoded_subject }}&amp;body={{ encoded_body }}{% endcapture %}
@@ -32,6 +32,10 @@ body_class: home-page
     color: var(--design-dim);
     font-size: var(--design-text-compact);
   }
+  .source-offer-details { margin-top: 2.5rem; text-align: left; }
+  .source-offer-table { margin: 1.25rem 0; }
+  .source-offer-table .design-table { display: table; margin: 0; }
+  .source-offer-table .design-table :is(th, td) { border-bottom: 0; }
 </style>
 
 <section class="source-offer" aria-labelledby="source-title">
@@ -41,6 +45,37 @@ body_class: home-page
     <div class="source-offer-action">
       {% include components/design-btn.html label=request_label href=request_href data_umami_event=offer.event %}
       <p class="source-offer-note">{{ offer.currency }} · One time · Pre-release</p>
+    </div>
+    <div class="source-offer-details design-prose">
+      <p>One-time pricing based on the people using Armor. Every tier includes unlimited apps and installations.</p>
+      {% capture pricing_rows %}
+        <thead><tr><th>Seats</th><th class="design-table-cell--right">One-time price</th></tr></thead>
+        <tbody>
+          <tr><td>Up to {{ offer.seats }}</td><td class="design-table-cell--right">{{ offer.price }}</td></tr>
+          <tr><td>Up to 50</td><td class="design-table-cell--right"><a href="mailto:{{ offer.email }}?subject=Armor%20Source%20%E2%80%94%2050%20seats">{{ offer.price_50 }}</a></td></tr>
+          <tr><td>Up to 100</td><td class="design-table-cell--right"><a href="mailto:{{ offer.email }}?subject=Armor%20Source%20%E2%80%94%20100%20seats">{{ offer.price_100 }}</a></td></tr>
+          <tr><td>More than 100</td><td class="design-table-cell--right"><a href="mailto:{{ offer.email }}?subject=Armor%20Source%20%E2%80%94%20more%20than%20100%20seats">Negotiable</a></td></tr>
+        </tbody>
+      {% endcapture %}
+      {% capture pricing_table %}
+        {% include components/design-table.html content=pricing_rows class="design-table-wrap--fill" %}
+      {% endcapture %}
+      {% include components/design-card.html content=pricing_table class="pricing-summary-card source-offer-table" %}
+      <p><strong>Optional software updates</strong></p>
+      <p>Receive an updated copy of the source every six months. Keep every version delivered to you, even if you stop renewing.</p>
+      {% capture updates_rows %}
+        <thead><tr><th>Seats</th><th class="design-table-cell--right">Updates / year</th></tr></thead>
+        <tbody>
+          <tr><td>Up to {{ offer.seats }}</td><td class="design-table-cell--right">{{ offer.updates_price }}</td></tr>
+          <tr><td>Up to 50</td><td class="design-table-cell--right">{{ offer.updates_price_50 }}</td></tr>
+          <tr><td>Up to 100</td><td class="design-table-cell--right">{{ offer.updates_price_100 }}</td></tr>
+          <tr><td>More than 100</td><td class="design-table-cell--right"><a href="mailto:{{ offer.email }}?subject=Armor%20Source%20updates%20%E2%80%94%20more%20than%20100%20seats">Negotiable</a></td></tr>
+        </tbody>
+      {% endcapture %}
+      {% capture updates_table %}
+        {% include components/design-table.html content=updates_rows class="design-table-wrap--fill" %}
+      {% endcapture %}
+      {% include components/design-card.html content=updates_table class="pricing-summary-card source-offer-table" %}
     </div>
   </div>
 </section>

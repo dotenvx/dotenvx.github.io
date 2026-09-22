@@ -1,0 +1,37 @@
+{% comment %}
+Two containers long, eight deep, four high; the top rear pair is omitted.
+Reuse the homepage artwork, with roughly one secrets container in every five.
+Translations follow the artwork's isometric length, depth, and height vectors.
+{% endcomment %}
+<svg class="design-hero2-container-stack infra-container-stack" xmlns="http://www.w3.org/2000/svg" viewBox="20 -1600 2820 2720" role="img" aria-label="A solid stack of containers with black secrets containers integrated throughout">
+  <defs aria-hidden="true">
+    <g id="infra-container-regular">
+      {% include components/shipping-container.html class="hero-container-base" color="#858b8e" %}
+    </g>
+    <g id="infra-container-secrets">
+      {% include components/shipping-container.html color="#575B60" face_color="#111214" logo=true %}
+    </g>
+  </defs>
+  <g aria-hidden="true">
+    {% for level in (0..3) %}
+      {% for row in (0..7) reversed %}
+        {% if level == 3 and row == 7 %}{% continue %}{% endif %}
+        {% for column in (0..1) %}
+          {% assign row_seed = row | times: 7 %}
+          {% assign column_seed = column | times: 3 %}
+          {% assign secret_slot = level | times: 17 | plus: row_seed | plus: column_seed | modulo: 5 %}
+          {% assign length_x = column | times: 516.4609 %}
+          {% assign x = row | times: 207.8461 | plus: length_x %}
+          {% assign length_y = column | times: 298.1788 %}
+          {% assign height_y = level | times: 255.0615 %}
+          {% assign y = row | times: -120 | plus: length_y | minus: height_y %}
+          {% if secret_slot == 0 %}
+            <use href="#infra-container-secrets" transform="translate({{ x }} {{ y }})" />
+          {% else %}
+            <use href="#infra-container-regular" transform="translate({{ x }} {{ y }})" />
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </g>
+</svg>

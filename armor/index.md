@@ -105,10 +105,6 @@ layout: radar
     {% include components/armor/logo-cloud.html %}
   </div>
 
-  {% include components/home-features.html data="armor_features" %}
-
-  {% include components/armor-in-use.html %}
-
   {% include components/faq-yes.html %}
 
   <section class="radar-section" aria-label="Next step">

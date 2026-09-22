@@ -64,25 +64,17 @@
         <td class="design-table-cell--center pricing-summary-retention"><span class="pricing-value-detail" tabindex="0" aria-label="{{ retention_detail }}" data-tooltip="{{ retention_tooltip }}">{{ retention_cell }}</span></td>
         <td class="design-table-cell--center pricing-summary-price"><span class="pricing-value-detail" tabindex="0" aria-label="{{ price_detail }}" data-tooltip="{{ price_tooltip }}">{{ price_cell }}</span></td>
         <td class="design-table-cell--right pricing-summary-action">
-          {% if plan.id == "enterprise" %}
+          {% if plan.id == "solo" %}
+            {% include components/design-btn.html
+              href=cta_href
+              label=cta_label
+              class="design-btn--block design-btn--trial"
+            %}
+          {% else %}
             {% include components/design-btn.html
               href=cta_href
               label=cta_label
               class="design-btn--block"
-            %}
-          {% elsif plan.id == "solo" %}
-            {% include components/design-btn-paid.html
-              href=cta_href
-              label=cta_label
-              btn_class="design-btn--block design-btn--trial"
-              badge=plan.price.display
-            %}
-          {% else %}
-            {% include components/design-btn-paid.html
-              href=cta_href
-              label=cta_label
-              btn_class="design-btn--block"
-              badge=plan.price.display
             %}
           {% endif %}
         </td>

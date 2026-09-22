@@ -109,8 +109,6 @@ layout: radar
 
   {% include components/armor-in-use.html %}
 
-  {% include components/armor-usage.html url="https://armor.dotenvx.com/public/usage" %}
-
   {% include components/faq-yes.html %}
 
   <section class="radar-section" aria-label="Next step">
@@ -135,5 +133,3 @@ layout: radar
   {% include components/armor/cta.html %}
   {% endcomment %}
 </div>
-
-<script src="{{ '/assets/js/armor-usage.js' | relative_url }}" defer></script>

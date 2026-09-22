@@ -18,7 +18,7 @@ crumbs:
   - label: Prebuild
     href: /docs/cli/prebuild/
 ---
-Add it to your Dockerfile.
+Deprecated. Use [`dotenvx protect --docker apps/backend`](/docs/cli/protect/#docker-build-check) in your Dockerfile instead. The build check is unchanged.
 
 {% capture cli_code_0 %}
 # Dockerfile
@@ -26,7 +26,7 @@ RUN curl -fsS https://dotenvx.sh | sh
 
 ...
 
-RUN dotenvx prebuild apps/backend
+RUN dotenvx protect --docker apps/backend
 CMD ["dotenvx", "run", "--", "node", "apps/backend/index.js"]
 {% endcapture %}
 {% capture cli_code_0_copy %}# Dockerfile{% endcapture %}

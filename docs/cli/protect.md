@@ -92,6 +92,22 @@ git add .env{% endcapture %}
 
 The encrypted file can now be added to your next commit.
 
+### Docker build check
+
+Use `dotenvx protect --docker` in place of `dotenvx prebuild` inside your Dockerfile, after dotenvx is installed and the application files are available:
+
+{% capture protect_docker %}
+RUN dotenvx protect --docker
+{% endcapture %}
+{% capture protect_docker_copy %}RUN dotenvx protect --docker{% endcapture %}
+{% include components/design-codeblock.html value=protect_docker copy_text=protect_docker_copy %}
+
+For a specific directory, use `RUN dotenvx protect --docker apps/backend`.
+
+This runs the existing prebuild check: env files must be encrypted, exempt, or excluded by `.dockerignore`. A failed check exits nonzero and stops the build. It does not show the protection checklist, install Git settings, edit your Dockerfile, or encrypt files. Existing prebuild exclusions and warnings are unchanged.
+
+This is a build-time check, not a guarantee that secrets never reach the builder or earlier build layers. Use `.dockerignore` to exclude private-key files from the build context. `prebuild` is deprecated and points to this replacement.
+
 ### Moving from precommit
 
 `dotenvx precommit` is deprecated. Run `dotenvx protect` inside a repository and enable the plaintext-secret check to install protection and remove recognized dotenvx pre-commit hook blocks. Other hook commands are preserved. Customized, symlinked, or external shared hooks may need manual cleanup.

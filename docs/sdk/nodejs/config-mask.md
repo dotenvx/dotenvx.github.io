@@ -28,7 +28,7 @@ crumbs:
 # .env
 SECRET="abcdefghijkl"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 {% capture sdk_code_1 %}
 // index.js
@@ -38,13 +38,13 @@ const result = dotenvx.config({ mask: true, quiet: true })
 console.log(process.env.SECRET)
 console.log(result.parsed.SECRET)
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
 {% capture sdk_code_2 %}
 $ node index.js
 abcdef******
 abcdef******
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
 
 <p class="design-paragraph">Set <code class="design-code">mask: 0</code> to fully mask values.</p>

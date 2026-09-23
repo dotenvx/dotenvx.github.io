@@ -26,4 +26,4 @@ export HELLO='World'
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "DOTENV_PUBLIC_KEY=public\nHELLO=World" > .env
 dotenvx get --format=eval-export -ek "DOTENV_PUBLIC_KEY*"{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

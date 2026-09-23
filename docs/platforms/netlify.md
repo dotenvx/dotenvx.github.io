@@ -26,7 +26,7 @@ layout: radar
     {% capture netlify_create %}
 npx create-next-app@latest --example hello-world .
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_create copy_text="npx create-next-app@latest --example hello-world ." %}
+    {% include components/design-codeblock.html value=netlify_create copy_text="npx create-next-app@latest --example hello-world ." language="bash" %}
 
     {% capture netlify_toml %}
 [[plugins]]
@@ -36,12 +36,12 @@ npx create-next-app@latest --example hello-world .
   command = "npm run build"
   publish = ".next"
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_toml copy=false %}
+    {% include components/design-codeblock.html value=netlify_toml copy=false language="toml" %}
 
     {% capture netlify_deploy %}
 npx netlify-cli@latest deploy --build --prod
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_deploy copy_text="npx netlify-cli@latest deploy --build --prod" %}
+    {% include components/design-codeblock.html value=netlify_deploy copy_text="npx netlify-cli@latest deploy --build --prod" language="bash" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -51,7 +51,7 @@ npx netlify-cli@latest deploy --build --prod
     {% capture netlify_install %}
 npm install @dotenvx/dotenvx --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_install copy_text="npm install @dotenvx/dotenvx --save" %}
+    {% include components/design-codeblock.html value=netlify_install copy_text="npm install @dotenvx/dotenvx --save" language="bash" %}
 
     <p class="design-paragraph">Preload scripts with dotenvx so environment variables inject ahead of build, start, or dev.</p>
 
@@ -63,7 +63,7 @@ npm install @dotenvx/dotenvx --save
   "start": "dotenvx run -- next start"
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_scripts copy=false %}
+    {% include components/design-codeblock.html value=netlify_scripts copy=false language="json" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -74,12 +74,12 @@ npm install @dotenvx/dotenvx --save
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_env_prod copy=false %}
+    {% include components/design-codeblock.html value=netlify_env_prod copy=false language="dotenv" %}
 
     {% capture netlify_encrypt %}
 npm run dotenvx -- set HELLO production -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_encrypt copy_text="npm run dotenvx -- set HELLO production -f .env.production" %}
+    {% include components/design-codeblock.html value=netlify_encrypt copy_text="npm run dotenvx -- set HELLO production -f .env.production" language="bash" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
     {% endcapture %}
@@ -92,7 +92,7 @@ npm run dotenvx -- set HELLO production -f .env.production
 npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY_PRODUCTION "your-private-key"
 npx netlify-cli@latest deploy --build --prod
     {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_env_set copy=false %}
+    {% include components/design-codeblock.html value=netlify_env_set copy=false language="bash" %}
 
     <p class="design-paragraph">Your build injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
     {% endcapture %}

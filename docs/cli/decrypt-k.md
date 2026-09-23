@@ -26,7 +26,7 @@ dotenvx decrypt -k HELLO
 ◇ decrypted (.env)
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=World\nHOLA=Mundo" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Even specify a glob pattern.
 
@@ -38,4 +38,4 @@ dotenvx decrypt -k "HE*"
 ◇ decrypted (.env)
 {% endcapture %}
 {% capture cli_code_1_copy %}echo "HELLO=World\nHOLA=Mundo" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}

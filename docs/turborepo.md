@@ -13,12 +13,14 @@ redirect_from:
 encrypt_title: "Encrypt"
 encrypt_lede: "Keep the environment file beside the workspace that uses it and encrypt it."
 encrypt_copy: "dotenvx encrypt -f apps/web/.env"
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt -f apps/web/.env
 encrypt_after_lede: "Commit `apps/web/.env`, but never commit `apps/web/.env.keys`."
 inject_title: "Run"
 inject_lede: "Point `-f` at the workspace directory and run Turbo through dotenvx."
 inject_copy: "dotenvx run -f apps/web -- npx turbo dev --filter=web"
+inject_format: cli
 inject: |
   $ dotenvx run -f apps/web -- npx turbo dev --filter=web
 inject_after_lede: "Dotenvx resolves `apps/web/.env`, decrypts it, and injects its values into the Turbo process."
@@ -30,6 +32,7 @@ run_copy: |
       "dev:web": "dotenvx run -f apps/web -- turbo dev --filter=web"
     }
   }
+run_language: json
 run: |
   {
     "scripts": {

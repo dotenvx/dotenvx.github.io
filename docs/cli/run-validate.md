@@ -29,13 +29,13 @@ env "SENTRY_DSN", optional: true
 env "DATABASE_URL", type: "url"
 env "API_KEY"
 env "SENTRY_DSN", optional: true{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="ruby" %}
 
 {% capture cli_code_1 %}
 $ dotenvx run -- node index.js
 [INVALID_ENV] DATABASE_URL is required; API_KEY is required
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 Envfile validation failures stop the command. Other loading errors require `--strict` to stop execution.

@@ -30,7 +30,7 @@ DOTENV_PRIVATE_KEY="ccc387ba193a315cbcd1ad7d8d007e6124763894554418e7c90b7dbcd7ed
 # .env.production
 DOTENV_PRIVATE_KEY_PRODUCTION="d4d2e22102c58f741cdddacaf69a1a64751fc014aafb90de0f1e7e6cb4d08330"
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_keys_example copy=false %}
+    {% include components/design-codeblock.html value=env_keys_example copy=false language="dotenv" %}
 
     <p class="design-paragraph">Some quick takeaways:</p>
     <ul class="design-bullets">
@@ -54,7 +54,7 @@ DOTENV_PRIVATE_KEY_PRODUCTION="d4d2e22102c58f741cdddacaf69a1a64751fc014aafb90de0
     {% capture env_keys_set %}
 $ dotenvx set HELLO World
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_keys_set copy_text="dotenvx set HELLO World" %}
+    {% include components/design-codeblock.html value=env_keys_set copy_text="dotenvx set HELLO World" format="cli" %}
 
     <p class="design-paragraph">Do not commit <code class="design-code">.env.keys</code> to source code. Keep them somewhere safe like 1Password or <a class="design-link" href="/armor">Armor ⛨</a>.</p>
     {% endcapture %}

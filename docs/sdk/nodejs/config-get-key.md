@@ -43,6 +43,6 @@ async function main() {
 
 main()
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
 <p class="design-paragraph">This is known as <em>Decryption at Access</em> and is written about in <a class="design-link" href="https://dotenvx.com/dotenvx.pdf">the whitepaper</a>.</p>

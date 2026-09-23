@@ -17,6 +17,7 @@ setup_lede: "Create a uv project."
 setup_copy: |
   uv init hello-world
   cd hello-world
+setup_format: cli
 setup: |
   $ uv init hello-world
   $ cd hello-world
@@ -33,12 +34,16 @@ inject_copy: |
   load_dotenv()
 
   print(f"HELLO: {os.getenv('HELLO')}")
+install_format: cli
 install: |
   $ uv add python-dotenvx
+install_after_format: cli
 install_after: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
+inject_language: python
 inject: |
   import os
   from dotenvx import load_dotenv
@@ -48,6 +53,7 @@ inject: |
   print(f"HELLO: {os.getenv('HELLO')}")
 inject_after_lede: "Run it with uv."
 inject_after_copy: "uv run main.py"
+inject_after_format: cli
 inject_after: |
   $ uv run main.py
 ---

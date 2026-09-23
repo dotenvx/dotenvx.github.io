@@ -26,7 +26,7 @@ crumbs:
 # .env
 HELLO="World"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -36,10 +36,10 @@ require('@dotenvx/dotenvx').config({path: ['.env.missing', '.env'], strict: true
 console.log(`Hello ${process.env.HELLO}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
 {% capture sdk_code_2 %}
 $ node index.js
 Error: [MISSING_ENV_FILE] missing .env.missing file (/path/to/.env.missing)
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}

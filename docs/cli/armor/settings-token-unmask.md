@@ -16,4 +16,4 @@ Print the complete access token.
 $ dotenvx armor settings token --unmask
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor settings token --unmask{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

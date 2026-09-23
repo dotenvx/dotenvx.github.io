@@ -3,7 +3,7 @@
     {% assign method_id = method.name | slugify %}
     <section class="install-method" id="{{ method.id | default: method_id }}" aria-label="{{ method.name | escape }}">
       <p class="design-paragraph install-method-title"><strong>{% if method.href %}<a class="design-link" href="{{ method.href }}">{{ method.name }}</a>{% else %}{{ method.name }}{% endif %}</strong></p>
-      {% include components/design-codeblock.html value=method.command copy_text=method.command %}
+      {% include components/design-codeblock.html value=method.command language="bash" copy_text=method.command %}
       {% if method.description %}<p class="design-paragraph">{{ method.description }}</p>{% endif %}
       <div class="install-method-prompt" data-design-codeblock data-copy="{{ method.prompt | escape }}">
         <button type="button" class="design-btn install-copy-prompt" data-design-codeblock-copy aria-label="Copy {{ method.name }} installation prompt"><span data-design-codeblock-label aria-live="polite">Prompt</span></button>

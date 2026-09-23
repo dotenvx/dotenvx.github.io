@@ -41,6 +41,6 @@ echo "console.log('MODEL_REGISTRY:', process.env.MODEL_REGISTRY)" > app.js
 dotenvx run -f .env.prod -- node app.js
 MODEL_REGISTRY=registry.azure.com/models/v2 dotenvx run -f .env.prod -- node app.js
 MODEL_REGISTRY=registry.azure.com/models/v2 dotenvx run -f .env.prod --overload -- node app.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 For container deployments: Set environment variables through your cloud provider's UI/configuration (Azure Container Service, AWS ECS, etc.) to override specific values from committed .env files without rebuilding your application.

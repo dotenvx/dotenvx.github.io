@@ -33,7 +33,7 @@ DOTENV_VAULT_DEVELOPMENT="V4NYVn0Pow6Uf2ez2mbHEzTrYURloHL6VDAFRLqnQBppA/OmHI5x5A
 # production
 DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWtIYyhiW/vHhFbqbsvo5+P9b27OC6ZC7qU="
     {% endcapture %}
-    {% include components/design-codeblock.html value=vault_example copy=false %}
+    {% include components/design-codeblock.html value=vault_example copy=false language="dotenv" %}
 
     <p class="design-paragraph">Some quick takeaways:</p>
     <ul class="design-bullets">
@@ -53,20 +53,20 @@ DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWt
 # .env
 HELLO="World"
     {% endcapture %}
-    {% include components/design-codeblock.html value=vault_env copy=false %}
+    {% include components/design-codeblock.html value=vault_env copy=false language="dotenv" %}
 
     {% capture vault_env_prod %}
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=vault_env_prod copy=false %}
+    {% include components/design-codeblock.html value=vault_env_prod copy=false language="dotenv" %}
 
     <p class="design-paragraph">and then run <code class="design-code">dotenvx encrypt</code>.</p>
 
     {% capture vault_encrypt %}
 $ dotenvx encrypt
     {% endcapture %}
-    {% include components/design-codeblock.html value=vault_encrypt copy_text="dotenvx encrypt" %}
+    {% include components/design-codeblock.html value=vault_encrypt copy_text="dotenvx encrypt" format="cli" %}
 
     {% capture vault_result %}
 #/-------------------.env.vault---------------------/
@@ -78,7 +78,7 @@ DOTENV_VAULT_DEVELOPMENT="V4NYVn0Pow6Uf2ez2mbHEzTrYURloHL6VDAFRLqnQBppA/OmHI5x5A
 # production
 DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWtIYyhiW/vHhFbqbsvo5+P9b27OC6ZC7qU="
     {% endcapture %}
-    {% include components/design-codeblock.html value=vault_result copy=false %}
+    {% include components/design-codeblock.html value=vault_result copy=false language="dotenv" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

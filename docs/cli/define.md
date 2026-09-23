@@ -21,7 +21,7 @@ $ dotenvx define
 ≡ defined (Envfile)
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx define{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Merges variable names from both `.env.example` and `.env`, skipping missing files and including each name once. If neither default file exists, it creates a starter. An existing `Envfile` is always left unchanged.
 

@@ -26,7 +26,7 @@ abcdef******
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "SECRET=abcdefghijkl" > .env
 dotenvx get SECRET --mask{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Pass a number to control how many characters are visible.
 
@@ -35,4 +35,4 @@ $ dotenvx get SECRET --mask 0
 ************
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx get SECRET --mask 0{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}

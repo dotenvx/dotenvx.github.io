@@ -27,4 +27,4 @@ dotenvx set HELLO -f .env.ci -- "- + * ÷"
 ◈ encrypted HELLO (.env.ci)
 {% endcapture %}
 {% capture cli_code_0_copy %}touch .env.ci{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

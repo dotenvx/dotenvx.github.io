@@ -26,6 +26,6 @@ crumbs:
 // index.js
 require('@dotenvx/dotenvx').config({noArmor: true})
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
 <p class="design-paragraph">Use <code class="design-code">noArmor</code> when you do not want <code class="design-code">config()</code> to communicate with <a class="design-link" href="https://dotenvx.com/armor">Dotenvx Armor</a>.</p>

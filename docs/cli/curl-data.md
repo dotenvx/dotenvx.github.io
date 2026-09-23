@@ -14,4 +14,4 @@ $ dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" --
 {% capture cli_example_copy %}
 dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" --data '{"name":"Production"}'
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

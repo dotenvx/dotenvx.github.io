@@ -13,10 +13,12 @@ redirect_from:
 encrypt_title: "Encrypt"
 encrypt_lede: "Encrypt your `.env` file before building the image."
 encrypt_copy: "dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 encrypt_after_lede: "Commit the encrypted `.env` file, but never commit or copy `.env.keys` into the image."
 encrypt_after_copy: ".env.keys"
+encrypt_after_language: text
 encrypt_after: |
   .env.keys
 inject_title: "Add dotenvx to your image"
@@ -34,6 +36,7 @@ inject_copy: |
   COPY . .
 
   CMD ["node", "index.js"]
+inject_language: docker
 inject: |
   FROM node:22-alpine
 
@@ -56,6 +59,7 @@ run_copy: |
       command: dotenvx run -- node index.js
       environment:
         DOTENV_PRIVATE_KEY: ${DOTENV_PRIVATE_KEY}
+run_language: yaml
 run: |
   services:
     app:
@@ -70,4 +74,4 @@ For a local check, let Compose read the private key from your ignored `.env.keys
 {% capture compose_up %}
 $ docker compose --env-file .env.keys up --build
 {% endcapture %}
-{% include components/design-codeblock.html value=compose_up copy_text="docker compose --env-file .env.keys up --build" %}
+{% include components/design-codeblock.html value=compose_up copy_text="docker compose --env-file .env.keys up --build" format="cli" %}

@@ -34,4 +34,4 @@ Move a private key from `.env.keys` into Dotenvx Armor.
 $ dotenvx armor up
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor up{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

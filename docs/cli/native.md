@@ -24,14 +24,17 @@ options:
 platforms:
   - id: macos
     label: macOS
+    format: cli
     code: "$ dotenvx native"
     copy_text: dotenvx native
   - id: windows
     label: Windows
+    format: cli
     code: "$ dotenvx native"
     copy_text: dotenvx native
   - id: linux
     label: Linux
+    format: cli
     code: "$ dotenvx native"
     copy_text: dotenvx native
 ---

@@ -35,6 +35,6 @@ expanding process command to [/opt/homebrew/bin/node index.js]
 Hello production
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=production" > .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 [log levels](https://github.com/winstonjs/winston?tab=readme-ov-file#logging)

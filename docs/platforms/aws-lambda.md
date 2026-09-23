@@ -32,7 +32,7 @@ exports.handler = async (event) => {
   }
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_handler copy=false %}
+    {% include components/design-codeblock.html value=lambda_handler copy=false language="javascript" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -42,7 +42,7 @@ exports.handler = async (event) => {
     {% capture lambda_install %}
 $ npm install @dotenvx/dotenvx --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_install copy_text="npm install @dotenvx/dotenvx --save" %}
+    {% include components/design-codeblock.html value=lambda_install copy_text="npm install @dotenvx/dotenvx --save" format="cli" %}
 
     {% capture lambda_handler_dx %}
 // index.js
@@ -55,7 +55,7 @@ exports.handler = async (event) => {
   }
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_handler_dx copy=false %}
+    {% include components/design-codeblock.html value=lambda_handler_dx copy=false language="javascript" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -66,12 +66,12 @@ exports.handler = async (event) => {
 # .env
 HELLO="World"
     {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_env copy=false %}
+    {% include components/design-codeblock.html value=lambda_env copy=false language="dotenv" %}
 
     {% capture lambda_encrypt %}
 $ dotenvx encrypt
     {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_encrypt copy_text="dotenvx encrypt" %}
+    {% include components/design-codeblock.html value=lambda_encrypt copy_text="dotenvx encrypt" format="cli" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -82,7 +82,7 @@ $ dotenvx encrypt
     {% capture lambda_zip %}
 zip -r function.zip . -x ".env.keys"
     {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_zip copy_text='zip -r function.zip . -x ".env.keys"' %}
+    {% include components/design-codeblock.html value=lambda_zip copy_text='zip -r function.zip . -x ".env.keys"' language="bash" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

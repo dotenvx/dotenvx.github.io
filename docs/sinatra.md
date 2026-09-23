@@ -25,12 +25,16 @@ inject_copy: |
   get "/" do
     "HELLO: #{ENV['HELLO']}"
   end
+install_format: cli
 install: |
   $ gem install dotenvx
+install_after_format: cli
 install_after: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
+inject_language: ruby
 inject: |
   require "dotenvx"
   require "sinatra"

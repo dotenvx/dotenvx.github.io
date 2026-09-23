@@ -15,10 +15,13 @@ encrypt_copy: "dotenvx encrypt"
 inject_copy: |
   # run every day at 8am
   0 8 * * * dotenvx run -- /path/to/myscript.sh
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
+inject_language: shell
 inject: |
   # run every day at 8am
   0 8 * * * dotenvx run -- /path/to/myscript.sh

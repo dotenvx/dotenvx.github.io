@@ -86,32 +86,9 @@
     })
   }
 
-  function escapeHtml(text) {
-    return String(text)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-  }
-
-  /* Wrap ✔ / ◈ / ⟐ / ▣ lines for .design-code-ok (terminal amber) */
-  function paintCliSuccess(code) {
-    if (!code || code.getAttribute('data-cli-painted') === '1') return
-    var text = code.textContent || ''
-    if (!/^[✔◈⟐▣]/m.test(text)) return
-    code.innerHTML = text.split('\n').map(function (line) {
-      var escaped = escapeHtml(line)
-      if (/^[✔◈⟐▣]/.test(line)) {
-        return '<span class="design-code-ok">' + escaped + '</span>'
-      }
-      return escaped
-    }).join('\n')
-    code.setAttribute('data-cli-painted', '1')
-  }
-
   function bindCodeblock(wrap) {
     var button = wrap.querySelector('[data-design-codeblock-copy]')
     var label = wrap.querySelector('[data-design-codeblock-label]')
-    paintCliSuccess(wrap.querySelector('code'))
     if (!button || !label) return
     var timer
     var originalLabel = label.textContent
@@ -133,6 +110,5 @@
   ready(function () {
     document.querySelectorAll('[data-design-choice]').forEach(bindChoice)
     document.querySelectorAll('[data-design-codeblock]').forEach(bindCodeblock)
-    document.querySelectorAll('.design-codeblock code').forEach(paintCliSuccess)
   })
 })()

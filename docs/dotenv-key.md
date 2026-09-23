@@ -30,7 +30,7 @@ redirect_from:
     {% capture dotenv_key_example %}
 DOTENV_KEY=dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021fbebeb9fd858caa01852e@dotenvx.com/vault/.env.vault?environment=production dotenv run -- yourcommand
     {% endcapture %}
-    {% include components/design-codeblock.html value=dotenv_key_example copy=false %}
+    {% include components/design-codeblock.html value=dotenv_key_example copy=false language="bash" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -56,7 +56,7 @@ URL {
   hash: ''
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=dotenv_key_url copy=false %}
+    {% include components/design-codeblock.html value=dotenv_key_url copy=false format="cli" %}
 
     <p class="design-paragraph">Required:</p>
     <ul class="design-bullets">

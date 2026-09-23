@@ -39,12 +39,30 @@ Plans are priced by **users**, **audit retention**, and included monthly audited
 
 `/search` is the dedicated search page. Press `/` on any public page to open the search modal. Both load `/search.json` (generated at build from pages + posts). Tune ranking in `_data/search.yml` (`boost`, `aliases`). Optional per-page front matter: `search_boost`, `search_aliases`, or `search: false`. Committed queries send a production Umami `Search` event (`query`, `source`, `results`) — Events → Properties.
 
-## Other Notes
+## Codeblock syntax highlighting
 
-To change the kramdown rouge theme:
+Use the shared component with an explicit language:
 
+```liquid
+{% include components/design-codeblock.html value=example language="javascript" %}
+{% include components/design-codeblock.html value=env_example language="dotenv" %}
+{% include components/design-codeblock.html value=terminal_example format="cli" %}
 ```
-gem install rouge
-rougify help style
-rougify style monokai > _sass/rouge-theme.scss
-```
+
+`format="cli"` highlights `$ ` commands (including backslash continuations), keeps
+ordinary output neutral, and colors dotenvx status lines amber. Use `language="bash"`
+for shell scripts without prompts. Omit the language for plain text. Unknown languages
+also fall back to escaped plain text. `copy_text` still controls exactly what gets copied.
+
+Choice-code items accept `language` and `format`; the choice include accepts defaults.
+Quickstart front matter accepts matching fields such as `inject_language: python` or
+`install_format: cli`. Markdown fences use Rouge and the same syntax palette.
+
+The renderer in `_plugins/design_syntax.rb` and palette in `assets/css/design-syntax.css`
+are mirrored in Radar (`lib/design_syntax.rb` and the syntax section at the end of
+`app/assets/stylesheets/application.tailwind.css`). Keep both copies aligned. Dotenv
+has a dedicated lexer for assignments, comments, multiline values, and interpolation.
+
+Run `bundle exec ruby scripts/test-design-syntax.rb`, then `npm run build:css` and
+`bundle exec jekyll build`. Preview `/docs/quickstart/`, `/docs/env-file/`, and
+`/docs/cloudflare/` in both themes. Radar's `/design/codeblock` is the specimen gallery.

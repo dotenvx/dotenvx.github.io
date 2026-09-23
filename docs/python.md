@@ -23,12 +23,16 @@ inject_copy: |
   load_dotenv()
 
   print(f"HELLO: {os.getenv('HELLO')}")
+install_format: cli
 install: |
   $ pip install python-dotenvx
+install_after_format: cli
 install_after: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
+inject_language: python
 inject: |
   import os
   from dotenvx import load_dotenv

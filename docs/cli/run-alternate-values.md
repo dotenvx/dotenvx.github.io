@@ -30,7 +30,7 @@ LOG_LEVEL=${NODE_ENV:+error}
 CACHE_ENABLED=${NODE_ENV+true}
 {% endcapture %}
 {% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
 
 {% capture cli_code_1 %}
 // index.js
@@ -40,7 +40,7 @@ console.log('LOG_LEVEL', process.env.LOG_LEVEL)
 console.log('CACHE_ENABLED', process.env.CACHE_ENABLED)
 {% endcapture %}
 {% capture cli_code_1_copy %}// index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="javascript" %}
 
 {% capture cli_code_2 %}
 $ dotenvx run --debug -- node index.js
@@ -51,4 +51,4 @@ LOG_LEVEL error
 CACHE_ENABLED true
 {% endcapture %}
 {% capture cli_code_2_copy %}dotenvx run --debug -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}

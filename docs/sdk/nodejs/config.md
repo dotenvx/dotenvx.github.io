@@ -51,7 +51,7 @@ options:
 # .env
 HELLO="World"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -62,13 +62,13 @@ require('@dotenvx/dotenvx').config()
 console.log(`Hello ${process.env.HELLO}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
 {% capture sdk_code_2 %}
 $ node index.js
 ⟐ injected env (1) from .env
 Hello World
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
 
 <p class="design-paragraph">It defaults to looking for a <code class="design-code">.env</code> file.</p>

@@ -28,6 +28,6 @@ dotenvx run -f .env.local,.env --overload -- node index.js
 Hello World
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=local" > .env.local{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Note that with `--overload` subsequent files DO override pre-existing variables defined in previous files.

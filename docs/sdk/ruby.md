@@ -39,14 +39,14 @@ layout: radar
     {% capture sdk_ruby_install %}
 $ gem install dotenvx
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_ruby_install copy_text="gem install dotenvx" %}
+    {% include components/design-codeblock.html value=sdk_ruby_install copy_text="gem install dotenvx" format="cli" %}
 
     <p class="design-paragraph">Rails:</p>
     {% capture sdk_rails_install %}
 # Gemfile
 gem "dotenvx-rails"
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_rails_install copy=false %}
+    {% include components/design-codeblock.html value=sdk_rails_install copy=false language="ruby" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -57,7 +57,7 @@ require "dotenvx"
 Dotenvx.load
 # or: require "dotenvx/load"
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_ruby_usage copy=false %}
+    {% include components/design-codeblock.html value=sdk_ruby_usage copy=false language="ruby" %}
 
     <p class="design-paragraph">See the <a class="design-link" href="/docs/ruby/">Ruby</a>, <a class="design-link" href="/docs/rails/">Rails</a>, or <a class="design-link" href="/docs/sinatra/">Sinatra</a> quickstart for a full walkthrough.</p>
     {% endcapture %}

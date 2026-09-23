@@ -28,14 +28,14 @@ layout: radar
     {% capture npm_astro_create %}
 npm create astro@latest
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_create copy_text="npm create astro@latest" %}
+    {% include components/design-codeblock.html value=npm_astro_create copy_text="npm create astro@latest" language="bash" %}
 
     <p class="design-paragraph">Install <code class="design-code">dotenvx</code> as an npm module.</p>
 
     {% capture npm_astro_install %}
 npm install @dotenvx/dotenvx --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_install copy_text="npm install @dotenvx/dotenvx --save" %}
+    {% include components/design-codeblock.html value=npm_astro_install copy_text="npm install @dotenvx/dotenvx --save" language="bash" %}
 
     <p class="design-paragraph">Edit <code class="design-code">src/pages/index.astro</code> to include <code class="design-code">process.env.HELLO</code>.</p>
 
@@ -56,7 +56,7 @@ npm install @dotenvx/dotenvx --save
     </body>
 </html>
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_page copy=false %}
+    {% include components/design-codeblock.html value=npm_astro_page copy=false language="html" %}
 
     <p class="design-paragraph">Preload Astro scripts with dotenvx. This injects environment variables ahead of Astro.</p>
 
@@ -70,7 +70,7 @@ npm install @dotenvx/dotenvx --save
   "astro": "astro"
 },
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_scripts copy=false %}
+    {% include components/design-codeblock.html value=npm_astro_scripts copy=false language="json" %}
 
     <p class="design-paragraph">Run it.</p>
 
@@ -83,7 +83,7 @@ $ npm run dev
 ⟐ injected env (1) from .env
 ┃ Local    http://localhost:4321/
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_run copy_text="npm run dev" %}
+    {% include components/design-codeblock.html value=npm_astro_run copy_text="npm run dev" format="cli" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -94,7 +94,7 @@ $ npm run dev
     {% capture npm_express_install %}
 npm install express @dotenvx/dotenvx --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_install copy_text="npm install express @dotenvx/dotenvx --save" %}
+    {% include components/design-codeblock.html value=npm_express_install copy_text="npm install express @dotenvx/dotenvx --save" language="bash" %}
 
     <p class="design-paragraph">Create a simple Hello World application.</p>
 
@@ -112,7 +112,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port:${PORT}`)
 })
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_index copy=false %}
+    {% include components/design-codeblock.html value=npm_express_index copy=false language="javascript" %}
 
     <p class="design-paragraph">Add <code class="design-code">dotenvx run --</code> to your start script.</p>
 
@@ -127,7 +127,7 @@ app.listen(PORT, () => {
   }
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_pkg copy=false %}
+    {% include components/design-codeblock.html value=npm_express_pkg copy=false language="json" %}
 
     <p class="design-paragraph">Run it.</p>
 
@@ -140,7 +140,7 @@ $ npm start
 ⟐ injected env (1) from .env
 Server running on port:3000
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_run copy_text="npm start" %}
+    {% include components/design-codeblock.html value=npm_express_run copy_text="npm start" format="cli" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -157,12 +157,12 @@ Server running on port:3000
     {% capture npm_remix_create %}
 npx create-remix@latest
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_create copy_text="npx create-remix@latest" %}
+    {% include components/design-codeblock.html value=npm_remix_create copy_text="npx create-remix@latest" language="bash" %}
 
     {% capture npm_remix_install %}
 npm install @dotenvx/dotenvx --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_install copy_text="npm install @dotenvx/dotenvx --save" %}
+    {% include components/design-codeblock.html value=npm_remix_install copy_text="npm install @dotenvx/dotenvx --save" language="bash" %}
 
     <p class="design-paragraph">Edit <code class="design-code">app/routes/_index.tsx</code> to include <code class="design-code">process.env.HELLO</code> using a Remix loader.</p>
 
@@ -196,7 +196,7 @@ export default function Index() {
   );
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_page copy=false %}
+    {% include components/design-codeblock.html value=npm_remix_page copy=false language="tsx" %}
 
     <p class="design-paragraph">Preload Remix scripts with dotenvx.</p>
 
@@ -210,7 +210,7 @@ export default function Index() {
   "typecheck": "tsc"
 },
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_scripts copy=false %}
+    {% include components/design-codeblock.html value=npm_remix_scripts copy=false language="json" %}
 
     <p class="design-paragraph">Run it.</p>
 
@@ -223,7 +223,7 @@ $ npm run dev
 ⟐ injected env (1) from .env
 [remix-serve] http://localhost:3000
     {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_run copy_text="npm run dev" %}
+    {% include components/design-codeblock.html value=npm_remix_run copy_text="npm run dev" format="cli" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

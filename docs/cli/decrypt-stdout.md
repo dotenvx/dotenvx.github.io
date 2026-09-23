@@ -29,7 +29,7 @@ DOTENV_PUBLIC_KEY="034af93e93708b994c10f236c96ef88e47291066946cce2e8d98c9e02c741
 HELLO="World"
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx decrypt --stdout{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 or send to a file:
 
@@ -37,4 +37,4 @@ or send to a file:
 $ dotenvx decrypt --stdout > somefile.txt
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx decrypt --stdout > somefile.txt{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}

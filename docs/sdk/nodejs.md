@@ -42,7 +42,7 @@ layout: radar
     {% capture sdk_node_install %}
 $ npm install @dotenvx/dotenvx
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_node_install copy_text="npm install @dotenvx/dotenvx" %}
+    {% include components/design-codeblock.html value=sdk_node_install copy_text="npm install @dotenvx/dotenvx" format="cli" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -51,7 +51,7 @@ $ npm install @dotenvx/dotenvx
     {% capture sdk_node_usage %}
 require('@dotenvx/dotenvx').config()
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_node_usage copy_text="require('@dotenvx/dotenvx').config()" %}
+    {% include components/design-codeblock.html value=sdk_node_usage copy_text="require('@dotenvx/dotenvx').config()" language="javascript" %}
 
     <p class="design-paragraph">See the <a class="design-link" href="/docs/nodejs/">Node.js quickstart</a> or <a class="design-link" href="/docs/nextjs/">Next.js quickstart</a> for a full walkthrough.</p>
     {% endcapture %}

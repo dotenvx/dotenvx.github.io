@@ -29,7 +29,7 @@ DOTENV_PRIVATE_KEY="122...0b8" dotenvx run -- node index.js
 Hello encrypted
 {% endcapture %}
 {% capture cli_code_0_copy %}touch .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 You can also load this value from 1Password with `op read`.
 
@@ -37,7 +37,7 @@ You can also load this value from 1Password with `op read`.
 DOTENV_PRIVATE_KEY="$(op read op://Engineering/my-app/DOTENV_PRIVATE_KEY)" dotenvx run -- node index.js
 {% endcapture %}
 {% capture cli_code_1_copy %}DOTENV_PRIVATE_KEY="$(op read op://Engineering/my-app/DOTENV_PRIVATE_KEY)" dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="bash" %}
 
 See [Use dotenvx with 1Password](/docs/secrets-in-1password).
 
@@ -48,6 +48,6 @@ export BW_SESSION="$(bw unlock --raw)"
 DOTENV_PRIVATE_KEY="$(bw get password DOTENV_PRIVATE_KEY)" dotenvx run -- node index.js
 {% endcapture %}
 {% capture cli_code_2_copy %}export BW_SESSION="$(bw unlock --raw)"{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy language="bash" %}
 
 See [Use dotenvx with Bitwarden](/docs/secrets-in-bitwarden).

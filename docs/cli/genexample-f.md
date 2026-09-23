@@ -26,11 +26,11 @@ dotenvx genexample -f .env,.env.production
 ▣ generated (.env.example)
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 {% capture cli_file_0 %}
 # .env.example
 HELLO=""
 DB_HOST=""
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_file_0 copy=false %}
+{% include components/design-codeblock.html value=cli_file_0 copy=false language="dotenv" %}

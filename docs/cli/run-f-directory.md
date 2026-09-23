@@ -28,6 +28,6 @@ dotenvx run -f ../.. -- node index.js
 Hello World
 {% endcapture %}
 {% capture cli_code_0_copy %}cd apps/web{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 When `.env.keys` sits beside the resolved `.env`, encrypted values are decrypted automatically.

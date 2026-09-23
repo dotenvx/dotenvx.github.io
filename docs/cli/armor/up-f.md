@@ -16,4 +16,4 @@ Select a specific env file.
 $ dotenvx armor up -f .env.production
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor up -f .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

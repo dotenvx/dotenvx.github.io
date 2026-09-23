@@ -31,7 +31,7 @@ require('@dotenvx/dotenvx').config({
   convention: 'nextjs'
 })
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
 <p class="design-paragraph">The directory becomes the base for every file in the convention:</p>
 
@@ -50,4 +50,4 @@ require('@dotenvx/dotenvx').config({
   path: 'apps/web'
 })
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 language="javascript" %}

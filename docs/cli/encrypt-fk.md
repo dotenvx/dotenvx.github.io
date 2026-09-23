@@ -26,7 +26,7 @@ dotenvx encrypt -fk .env.keys -f apps/app1/.env
 ◈ encrypted (apps/app1/.env)
 {% endcapture %}
 {% capture cli_code_0_copy %}mkdir -p apps/app1{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Put it to use.
 
@@ -34,7 +34,7 @@ Put it to use.
 $ dotenvx run -fk .env.keys -f apps/app1/.env
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx run -fk .env.keys -f apps/app1/.env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 Use with a relative path.
 
@@ -43,4 +43,4 @@ $ cd apps/app1
 dotenvx run -fk ../../.env.keys -f .env
 {% endcapture %}
 {% capture cli_code_2_copy %}cd apps/app1{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}

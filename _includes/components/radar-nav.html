@@ -17,8 +17,8 @@
     </div>
 
     <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
-      <a href="/" class="radar-nav-link{% if radar_path == '/' or radar_path == '' %} is-active{% endif %}">Dotenvx</a>
-      <a href="/armor" class="radar-nav-link{% if radar_path == '/armor/' or radar_path == '/armor' %} is-active{% endif %}">Armor <span aria-hidden="true">⛨</span></a>
+      <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Documentation</a>
+
       <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
 
       <div class="radar-nav-item" data-radar-nav-item data-nav-menu="company">
@@ -36,7 +36,6 @@
         </button>
       </div>
 
-      <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Docs</a>
 
     </nav>
 
@@ -63,7 +62,7 @@
       <div class="radar-nav-panel" data-radar-nav-panel="company" hidden>
         <div class="radar-nav-panel-links">
           <a href="/opensource" class="radar-nav-panel-link{% if radar_path == '/opensource/' or radar_path == '/opensource' %} is-active{% endif %}">Open Source</a>
-          <a href="/changelog" class="radar-nav-panel-link{% if radar_path == '/changelog/' or radar_path == '/changelog' %} is-active{% endif %}">Changelog</a>
+          <a href="/changelog" class="radar-nav-panel-link{% if radar_path == '/changelog/' or radar_path == '/changelog' or radar_path == '/security/' or radar_path == '/security' %} is-active{% endif %}">Changelog</a>
           <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
           <a href="https://trust.oneleet.com/dotenvx" target="_blank" rel="noopener noreferrer" class="radar-nav-panel-link">Trust</a>
         </div>
@@ -97,14 +96,12 @@
     </div>
 
     <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
-      <a href="/" class="radar-mobile-link">Dotenvx <span aria-hidden="true">◈</span></a>
-      <a href="/armor" class="radar-mobile-link">Armor <span aria-hidden="true">⛨</span></a>
+      <a href="/docs" class="radar-mobile-link">Documentation</a>
       <a href="/pricing" class="radar-mobile-link">Pricing <span aria-hidden="true">$</span></a>
       <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="company">
         <span>Company</span>
         <span aria-hidden="true">→</span>
       </button>
-      <a href="/docs" class="radar-mobile-link">Docs</a>
     </nav>
 
     <div data-radar-mobile-submenu="company" class="radar-mobile-list" hidden>

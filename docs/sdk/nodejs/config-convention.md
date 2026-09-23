@@ -37,7 +37,7 @@ $ echo "HELLO=local" > .env.local
 $ echo "HELLO=development" > .env.development
 $ echo "HELLO=env" > .env
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 format="cli" %}
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -47,28 +47,28 @@ require('@dotenvx/dotenvx').config({ convention: 'nextjs' })
 console.log(`Hello ${process.env.HELLO}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
 {% capture sdk_code_2 %}
 $ NODE_ENV=development node index.js
 ⟐ injected env (1) from .env.development.local, .env.local, .env.development, .env
 Hello development local
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
 
 <p class="design-paragraph">This is equivalent to using <code class="design-code">--convention=nextjs</code> with the CLI:</p>
 
 {% capture sdk_code_3 %}
 $ dotenvx run --convention=nextjs -- node index.js
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_3 %}
+{% include components/design-codeblock.html value=sdk_code_3 format="cli" %}
 
 <p class="design-paragraph">You can also set <code class="design-code">DOTENV_CONFIG_CONVENTION=nextjs</code>.</p>
 
 {% capture sdk_code_4 %}
 $ DOTENV_CONFIG_CONVENTION=nextjs node index.js
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_4 %}
+{% include components/design-codeblock.html value=sdk_code_4 format="cli" %}
 
 <h2 class="design-page-title">Flow convention</h2>
 
@@ -81,7 +81,7 @@ $ echo "HELLO=development" > .env.development
 $ echo "HELLO=local" > .env.local
 $ echo "HELLO=env" > .env
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_5 %}
+{% include components/design-codeblock.html value=sdk_code_5 format="cli" %}
 
 {% capture sdk_code_6 %}
 {% raw %}
@@ -91,18 +91,18 @@ require('@dotenvx/dotenvx').config({ convention: 'flow' })
 console.log(`Hello ${process.env.HELLO}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_6 %}
+{% include components/design-codeblock.html value=sdk_code_6 language="javascript" %}
 
 {% capture sdk_code_7 %}
 $ NODE_ENV=development node index.js
 ⟐ injected env (1) from .env.development.local, .env.development, .env.local, .env
 Hello development local
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_7 %}
+{% include components/design-codeblock.html value=sdk_code_7 format="cli" %}
 
 <p class="design-paragraph">You can also set <code class="design-code">DOTENV_CONFIG_CONVENTION=flow</code>.</p>
 
 {% capture sdk_code_8 %}
 $ NODE_ENV=development DOTENV_CONFIG_CONVENTION=flow node index.js
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_8 %}
+{% include components/design-codeblock.html value=sdk_code_8 format="cli" %}

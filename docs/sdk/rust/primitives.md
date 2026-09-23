@@ -34,7 +34,7 @@ layout: radar
     {% capture sdk_rust_primitives_install %}
 $ cargo add dotenvx-primitives
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_rust_primitives_install copy_text="cargo add dotenvx-primitives" %}
+    {% include components/design-codeblock.html value=sdk_rust_primitives_install copy_text="cargo add dotenvx-primitives" format="cli" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

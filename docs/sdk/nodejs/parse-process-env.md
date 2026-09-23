@@ -33,10 +33,10 @@ const parsed = dotenvx.parse(src, { processEnv: {} })
 console.log(`Hello ${parsed.USER}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
 {% capture sdk_code_1 %}
 $ node index.js
 Hello Me
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 format="cli" %}

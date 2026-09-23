@@ -15,11 +15,14 @@ inject_copy: |
   require('@dotenvx/dotenvx').config()
 
   console.log(`HELLO: ${process.env.HELLO}`)
+install_format: cli
 install: |
   $ bun add @dotenvx/dotenvx
 encrypt_copy: "bunx dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ bunx dotenvx encrypt
+inject_language: javascript
 inject: |
   require('@dotenvx/dotenvx').config()
 

@@ -26,15 +26,15 @@ dotenvx run -f .env.production --quiet -- node index.js
 Hello production
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=production" > .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 You can also set `DOTENV_CONFIG_QUIET=true`.
 
 {% capture cli_code_1 %}
-DOTENV_CONFIG_QUIET=true dotenvx run -f .env.production -- node index.js
+$ DOTENV_CONFIG_QUIET=true dotenvx run -f .env.production -- node index.js
 Hello production
 {% endcapture %}
 {% capture cli_code_1_copy %}DOTENV_CONFIG_QUIET=true dotenvx run -f .env.production -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 [log levels](https://github.com/winstonjs/winston?tab=readme-ov-file#logging)

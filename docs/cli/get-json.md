@@ -25,4 +25,4 @@ dotenvx get
 {"HELLO":"World"}
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

@@ -21,4 +21,4 @@ $ dotenvx encrypt --no-armor
 ◈ encrypted (.env)
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx encrypt --no-armor{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

@@ -26,7 +26,7 @@ crumbs:
 # .env
 HELLO="World"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -36,14 +36,14 @@ require('@dotenvx/dotenvx').config({path: ['.env.missing', '.env'], ignore: ['MI
 console.log(`Hello ${process.env.HELLO}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
 {% capture sdk_code_2 %}
 $ node index.js
 ⟐ injected env (1) from .env
 Hello World
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
 
 <p class="design-paragraph">You can also set <code class="design-code">DOTENV_CONFIG_IGNORE</code>. Its value is a comma-separated list.</p>
 
@@ -52,4 +52,4 @@ $ DOTENV_CONFIG_IGNORE=MISSING_ENV_FILE,OTHER node index.js
 ⟐ injected env (1) from .env
 Hello World
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_3 %}
+{% include components/design-codeblock.html value=sdk_code_3 format="cli" %}

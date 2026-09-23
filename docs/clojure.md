@@ -10,18 +10,22 @@ redirect_from:
   - /docs/secrets-in-clojure
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 encrypt_copy: "dotenvx encrypt"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 inject_lede: |
   Then inject your encrypted secrets at runtime with `dotenvx run`.
 inject_copy: |
   (println "Hello" (System/getenv "HELLO"))
+inject_language: clojure
 inject: |
   (println "Hello" (System/getenv "HELLO"))
 inject_after_copy: |
   dotenvx run -- clojure -M index.clj
+inject_after_format: cli
 inject_after: |
   $ dotenvx run -- clojure -M index.clj
 ---

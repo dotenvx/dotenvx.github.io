@@ -14,4 +14,4 @@ $ dotenvx keypair --format shell
 {% capture cli_example_copy %}
 dotenvx keypair --format shell
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

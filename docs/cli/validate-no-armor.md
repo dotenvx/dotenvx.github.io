@@ -14,4 +14,4 @@ $ dotenvx validate --no-armor
 {% capture cli_example_copy %}
 dotenvx validate --no-armor
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

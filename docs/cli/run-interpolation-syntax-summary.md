@@ -45,7 +45,7 @@ TEST11=${EMPTY_VAR+alternate}      # Result: "alternate" (empty but set)
 TEST12=${UNDEFINED_VAR+alternate}  # Result: "" (empty)
 {% endcapture %}
 {% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
 
 <h2 class="design-page-title design-page-title--flush" id="key-differences">Key differences</h2>
 

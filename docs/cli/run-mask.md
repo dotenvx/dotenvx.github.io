@@ -28,7 +28,7 @@ abcdef******
 {% capture cli_code_0_copy %}echo "SECRET=abcdefghijkl" > .env
 echo "console.log(process.env.SECRET)" > index.js
 dotenvx run --mask --quiet -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Pass a number to control how many characters are visible.
 
@@ -37,4 +37,4 @@ $ dotenvx run --mask 0 --quiet -- node index.js
 ************
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx run --mask 0 --quiet -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}

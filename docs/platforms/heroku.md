@@ -28,7 +28,7 @@ layout: radar
 # Procfile
 web: node index.js
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_procfile copy=false %}
+    {% include components/design-codeblock.html value=heroku_procfile copy=false language="yaml" %}
 
     {% capture heroku_app %}
 // index.js
@@ -44,7 +44,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port:${PORT}`)
 })
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_app copy=false %}
+    {% include components/design-codeblock.html value=heroku_app copy=false language="javascript" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -55,7 +55,7 @@ app.listen(PORT, () => {
     {% capture heroku_buildpack %}
 heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_buildpack copy_text="heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx" %}
+    {% include components/design-codeblock.html value=heroku_buildpack copy_text="heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx" language="bash" %}
 
     <p class="design-paragraph">Update your <code class="design-code">Procfile</code> to use <code class="design-code">dotenvx</code>.</p>
 
@@ -63,7 +63,7 @@ heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx
 # Procfile
 web: dotenvx run -- node index.js
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_procfile_dx copy=false %}
+    {% include components/design-codeblock.html value=heroku_procfile_dx copy=false language="yaml" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -74,7 +74,7 @@ web: dotenvx run -- node index.js
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_env_prod copy=false %}
+    {% include components/design-codeblock.html value=heroku_env_prod copy=false language="dotenv" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -84,7 +84,7 @@ HELLO="production"
     {% capture heroku_encrypt %}
 $ dotenvx encrypt -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_encrypt copy_text="dotenvx encrypt -f .env.production" %}
+    {% include components/design-codeblock.html value=heroku_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>. Keep private keys somewhere safe like 1Password or <a class="design-link" href="https://dotenvx.com/armor">Armor ⛨</a>.</p>
     {% endcapture %}
@@ -98,7 +98,7 @@ $ dotenvx encrypt -f .env.production
 heroku config:set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key'
 git push heroku
     {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_config copy=false %}
+    {% include components/design-codeblock.html value=heroku_config copy=false language="bash" %}
 
     <p class="design-paragraph">Your app restarts and env is injected from the encrypted <code class="design-code">.env.production</code> file.</p>
     {% endcapture %}

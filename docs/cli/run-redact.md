@@ -38,7 +38,7 @@ $ dotenvx run --redact --quiet -- node index.js
 echo "VISIBLE_PLAIN=visible-value" >> .env
 echo "console.log(process.env.SECRET, process.env.VISIBLE_PLAIN)" > index.js
 dotenvx run --redact --quiet -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Redaction is off by default. It applies to every key declared in `.env` files and `--env` flags unless the key ends in `_PLAIN`. If an existing environment variable takes precedence, its effective value is redacted too. Matching is exact, so transformed or derived values are not redacted.
 

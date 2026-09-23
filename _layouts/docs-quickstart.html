@@ -44,7 +44,7 @@
                   </ul>
                 {% endif %}
                 {% if page.prerequisite %}
-                  {% include components/design-codeblock.html value=page.prerequisite copy_text=page.prerequisite_copy %}
+                  {% include components/design-codeblock.html value=page.prerequisite language=page.prerequisite_language format=page.prerequisite_format copy_text=page.prerequisite_copy %}
                 {% endif %}
               </div>
             {% endcapture %}
@@ -62,7 +62,7 @@
                 <div class="design-paragraph">{{ page.setup_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
               {% if page.setup %}
-                {% include components/design-codeblock.html value=page.setup copy_text=page.setup_copy %}
+                {% include components/design-codeblock.html value=page.setup language=page.setup_language format=page.setup_format copy_text=page.setup_copy %}
               {% endif %}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
@@ -76,12 +76,12 @@
               {% else %}
                 <p class="design-paragraph">Get the Dotenvx CLI.</p>
               {% endif %}
-              {% include components/design-codeblock.html value=page.install copy_text=page.install_copy %}
+              {% include components/design-codeblock.html value=page.install language=page.install_language format=page.install_format copy_text=page.install_copy %}
               {% if page.install_after_lede %}
                 <div class="design-paragraph">{{ page.install_after_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
               {% if page.install_after %}
-                {% include components/design-codeblock.html value=page.install_after copy_text=page.install_after_copy %}
+                {% include components/design-codeblock.html value=page.install_after language=page.install_after_language format=page.install_after_format copy_text=page.install_after_copy %}
               {% endif %}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
@@ -95,12 +95,12 @@
               {% else %}
                 <p class="design-paragraph">Encrypt your .env file.</p>
               {% endif %}
-              {% include components/design-codeblock.html value=page.encrypt copy_text=page.encrypt_copy %}
+              {% include components/design-codeblock.html value=page.encrypt language=page.encrypt_language format=page.encrypt_format copy_text=page.encrypt_copy %}
               {% if page.encrypt_after_lede %}
                 <div class="design-paragraph">{{ page.encrypt_after_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
               {% if page.encrypt_after %}
-                {% include components/design-codeblock.html value=page.encrypt_after copy_text=page.encrypt_after_copy %}
+                {% include components/design-codeblock.html value=page.encrypt_after language=page.encrypt_after_language format=page.encrypt_after_format copy_text=page.encrypt_after_copy %}
               {% endif %}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
@@ -115,13 +115,13 @@
                 <p class="design-paragraph">Then inject your encrypted secrets at runtime.</p>
               {% endif %}
               {% if page.inject %}
-                {% include components/design-codeblock.html value=page.inject copy_text=page.inject_copy %}
+                {% include components/design-codeblock.html value=page.inject language=page.inject_language format=page.inject_format copy_text=page.inject_copy %}
               {% endif %}
               {% if page.inject_after_lede %}
                 <div class="design-paragraph">{{ page.inject_after_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
               {% if page.inject_after %}
-                {% include components/design-codeblock.html value=page.inject_after copy_text=page.inject_after_copy %}
+                {% include components/design-codeblock.html value=page.inject_after language=page.inject_after_language format=page.inject_after_format copy_text=page.inject_after_copy %}
               {% endif %}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
@@ -133,7 +133,7 @@
               {% if page.run_lede %}
                 <div class="design-paragraph">{{ page.run_lede | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
-              {% include components/design-codeblock.html value=page.run copy_text=page.run_copy %}
+              {% include components/design-codeblock.html value=page.run language=page.run_language format=page.run_format copy_text=page.run_copy %}
             {% endcapture %}
             {% include components/design-step.html content=step_content %}
           {% endif %}

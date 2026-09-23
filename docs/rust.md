@@ -12,8 +12,10 @@ redirect_from:
   - /docs/secrets-in-rust
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 encrypt_copy: "dotenvx encrypt"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 inject_lede: |
@@ -25,6 +27,7 @@ inject_copy: |
       let hello = env::var("HELLO").unwrap_or_default();
       println!("HELLO: {}", hello);
   }
+inject_language: rust
 inject: |
   use std::env;
 
@@ -34,6 +37,7 @@ inject: |
   }
 inject_after_copy: |
   dotenvx run -- cargo run
+inject_after_format: cli
 inject_after: |
   $ dotenvx run -- cargo run
 ---

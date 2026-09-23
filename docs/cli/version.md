@@ -17,7 +17,7 @@ $ dotenvx --version
 X.X.X
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx --version{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 The short `-V` flag is equivalent:
 
@@ -26,4 +26,4 @@ $ dotenvx -V
 X.X.X
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx -V{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}

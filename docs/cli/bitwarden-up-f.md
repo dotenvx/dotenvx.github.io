@@ -14,4 +14,4 @@ $ dotenvx bitwarden up -f .env.production
 {% capture cli_example_copy %}
 dotenvx bitwarden up -f .env.production
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

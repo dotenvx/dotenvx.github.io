@@ -1,3 +1,4 @@
+{% comment %} language: Rouge language / dotenv; format: cli for $ command + output transcripts. Unknown or omitted languages render safely as plain text. {% endcomment %}
 {% assign value = include.value %}
 {% assign block_class = include.class %}
 {% assign copy_text = include.copy_text %}
@@ -11,8 +12,8 @@
 {% if want_copy %}
 <div class="design-codeblock-wrap" data-design-codeblock{% if copy_text and copy_text != "" %} data-copy="{{ copy_text | strip | escape }}"{% endif %}>
 <button type="button" class="design-codeblock-copy" data-design-codeblock-copy aria-label="Copy code"><svg class="design-copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="design-copy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span class="design-copy-status" data-design-codeblock-label aria-live="polite">Copy</span></button>
-<pre class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}><code>{{ code_body | escape }}</code></pre>
+<pre class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}><code>{{ code_body | design_highlight: include.language, include.format }}</code></pre>
 </div>
 {% else %}
-<pre class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}><code>{{ code_body | escape }}</code></pre>
+<pre class="design-codeblock{% if block_class %} {{ block_class }}{% endif %}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}><code>{{ code_body | design_highlight: include.language, include.format }}</code></pre>
 {% endif %}

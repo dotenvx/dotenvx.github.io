@@ -17,6 +17,7 @@ setup_copy: |
     apps/
       web/
         index.js
+setup_language: text
 setup: |
   my-monorepo/
     .env
@@ -27,6 +28,7 @@ setup: |
 encrypt_title: "Load the root `.env`"
 encrypt_lede: "From `apps/web`, point `-f` two directories up."
 encrypt_copy: "dotenvx run -f ../.. -- node index.js"
+encrypt_format: cli
 encrypt: |
   $ dotenvx run -f ../.. -- node index.js
   ⟐ injected env (1) from ../../.env
@@ -35,6 +37,7 @@ encrypt_after_lede: "Encrypted values work without extra configuration when `.en
 inject_title: "Use a convention"
 inject_lede: "With a convention, the directory becomes the base for every convention file."
 inject_copy: "dotenvx run -f ../.. --convention=nextjs -- node index.js"
+inject_format: cli
 inject: |
   $ dotenvx run -f ../.. --convention=nextjs -- node index.js
   ⟐ injected env (1) from ../../.env.development.local, ../../.env.local, ../../.env.development, ../../.env
@@ -42,6 +45,7 @@ inject: |
 run_title: "Share only `.env.keys`"
 run_lede: "If a workspace has its own `.env` but uses the root `.env.keys`, point `-fk` at the root directory."
 run_copy: "dotenvx run -f . -fk ../.. -- node index.js"
+run_format: cli
 run: |
   $ dotenvx run -f . -fk ../.. -- node index.js
 ---

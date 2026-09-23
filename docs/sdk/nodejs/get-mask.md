@@ -36,12 +36,12 @@ async function main() {
 
 main()
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
 {% capture sdk_code_1 %}
 $ node index.js
 abcdef******
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 format="cli" %}
 
 <p class="design-paragraph">Set <code class="design-code">mask: 0</code> to fully mask values.</p>

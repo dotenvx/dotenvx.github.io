@@ -27,7 +27,7 @@ HELLO="World"
 KEY="value"
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Note that this exports newlines and quoted strings.
 
@@ -39,6 +39,6 @@ eval $(dotenvx get --format=eval) node index.js
 Hello value World
 {% endcapture %}
 {% capture cli_code_1_copy %}echo "console.log('Hello ' + process.env.KEY + ' ' + process.env.HELLO)" > index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 Be careful with `eval` as it allows for arbitrary execution of commands. Prefer `dotenvx run --` but in some cases `eval` is a sharp knife that is useful to have.

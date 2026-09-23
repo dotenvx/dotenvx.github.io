@@ -16,6 +16,10 @@ links:
     href: /changelog
   - label: Blog
     href: /blog
+  - label: Careers
+    href: /careers
+  - label: Security
+    href: /security
   - label: Trust Center
     href: https://trust.oneleet.com/dotenvx
     external: true

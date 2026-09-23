@@ -14,4 +14,4 @@ $ dotenvx bitwarden push
 {% capture cli_example_copy %}
 dotenvx bitwarden push
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

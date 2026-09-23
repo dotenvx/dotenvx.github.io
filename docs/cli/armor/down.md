@@ -22,7 +22,7 @@ crumbs:
 $ dotenvx armor down
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor down{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Use a specific env file.
 
@@ -30,7 +30,7 @@ Use a specific env file.
 $ dotenvx armor down -f .env.production
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx armor down -f .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 Use a token or team.
 
@@ -38,4 +38,4 @@ Use a token or team.
 $ dotenvx armor down --token token --team team
 {% endcapture %}
 {% capture cli_code_2_copy %}dotenvx armor down --token token --team team{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}

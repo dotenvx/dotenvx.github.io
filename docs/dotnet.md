@@ -12,8 +12,10 @@ redirect_from:
   - /docs/secrets-in-dotnet
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 encrypt_copy: "dotenvx encrypt"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 inject_lede: |
@@ -21,11 +23,13 @@ inject_lede: |
 inject_copy: |
   var hello = Environment.GetEnvironmentVariable("HELLO");
   Console.WriteLine($"Hello {hello}");
+inject_language: csharp
 inject: |
   var hello = Environment.GetEnvironmentVariable("HELLO");
   Console.WriteLine($"Hello {hello}");
 inject_after_copy: |
   dotenvx run -- dotnet run
+inject_after_format: cli
 inject_after: |
   $ dotenvx run -- dotnet run
 ---

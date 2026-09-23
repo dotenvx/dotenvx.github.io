@@ -20,4 +20,4 @@ crumbs:
 $ dotenvx encrypt --no-native
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx encrypt --no-native{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

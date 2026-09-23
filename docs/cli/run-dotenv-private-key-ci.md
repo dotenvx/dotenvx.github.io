@@ -29,7 +29,7 @@ DOTENV_PRIVATE_KEY_CI="122...0b8" dotenvx run -- node index.js
 Hello ci encrypted
 {% endcapture %}
 {% capture cli_code_0_copy %}touch .env.ci{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Alternatively, this can be already set on your server or ci runner.
 

@@ -23,6 +23,6 @@ dotenvx get HELLO -f . -fk ../..
 World
 {% endcapture %}
 {% capture cli_code_0_copy %}cd apps/web{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Here the workspace uses its own `.env`, while `-fk ../..` loads the shared root `.env.keys`.

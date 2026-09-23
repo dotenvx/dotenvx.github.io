@@ -59,11 +59,11 @@ kramdown:
   typographic_symbols:
     ndash: "--"
     mdash: "---"
-  syntax_highlighter: none
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
-    disable: true
+    disable: false
 
-highlighter: none
+highlighter: rouge
 
 plugins:
   - jekyll-redirect-from

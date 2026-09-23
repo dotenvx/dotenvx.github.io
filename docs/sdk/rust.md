@@ -34,7 +34,7 @@ layout: radar
     {% capture sdk_rust_install %}
 $ cargo add dotenvx-primitives
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_rust_install copy_text="cargo add dotenvx-primitives" %}
+    {% include components/design-codeblock.html value=sdk_rust_install copy_text="cargo add dotenvx-primitives" format="cli" %}
 
     <p class="design-paragraph">See <a class="design-link" href="/docs/sdk/rust/primitives/">Rust primitives</a> for details, or the <a class="design-link" href="/docs/rust/">Rust quickstart</a> for the CLI.</p>
     {% endcapture %}

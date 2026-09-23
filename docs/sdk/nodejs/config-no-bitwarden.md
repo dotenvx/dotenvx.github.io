@@ -28,7 +28,7 @@ crumbs:
 # .env
 API_KEY="bw://My GitHub Account/password"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 <p class="design-paragraph">Set <code class="design-code">noBitwarden</code> to leave the reference unresolved:</p>
 
@@ -38,4 +38,4 @@ require('@dotenvx/dotenvx').config({noBitwarden: true})
 
 console.log(process.env.API_KEY)
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}

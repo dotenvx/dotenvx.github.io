@@ -30,7 +30,7 @@ dotenvx run --convention=nextjs -- node index.js
 Hello development local
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=development local" > .env.development.local{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 You can also set `DOTENV_CONFIG_CONVENTION=nextjs`.
 
@@ -40,6 +40,6 @@ $ DOTENV_CONFIG_CONVENTION=nextjs dotenvx run -- node index.js
 Hello development local
 {% endcapture %}
 {% capture cli_code_1_copy %}DOTENV_CONFIG_CONVENTION=nextjs dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 [Next.js env load order](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables#environment-variable-load-order)

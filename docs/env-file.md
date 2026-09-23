@@ -5,10 +5,12 @@ permalink: /docs/env-file/
 layout: radar
 lang_examples:
   - id: node
+    language: javascript
     label: Node
     code: "console.log('Hello ' + process.env.HELLO)"
     copy_text: "console.log('Hello ' + process.env.HELLO)"
   - id: python
+    language: python
     label: Python
     code: |
       import os
@@ -33,24 +35,6 @@ lang_examples:
   <div class="design-content-width">
   <section class="docs-quickstart-body docs-env-file-body">
     {% capture step_content %}
-    <nav class="design-list" aria-label="On this page">
-      <p class="design-list-title">On this page</p>
-      <ul class="design-list-items">
-        <li><a class="design-link" href="#format">Format</a></li>
-        <li><a class="design-link" href="#keys">Keys</a></li>
-        <li><a class="design-link" href="#values">Values</a></li>
-        <li><a class="design-link" href="#syntax">Syntax</a></li>
-        <li><a class="design-link" href="#comments">Comments</a></li>
-        <li><a class="design-link" href="#interpolation">Interpolation</a></li>
-        <li><a class="design-link" href="#command-substitution">Command Substitution</a></li>
-        <li><a class="design-link" href="#encryption">Encryption</a></li>
-        <li><a class="design-link" href="#history">History</a></li>
-      </ul>
-    </nav>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-
-    {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush" id="format">Format</h2>
     <p class="design-paragraph"><code class="design-code">.env</code> files use a simple format – keys and values separated by an equal sign. Here's a complete example covering the common cases:</p>
 
@@ -72,7 +56,7 @@ URL=https://${HOST}/api
 # 2MUCH=
 # ÜBER=
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_canonical copy_text=env_canonical %}
+    {% include components/design-codeblock.html value=env_canonical copy_text=env_canonical language="dotenv" %}
 
     <p class="design-paragraph">Load values in your app with <code class="design-code">process.env</code> (or your language’s equivalent).</p>
 
@@ -120,7 +104,7 @@ NON_INTERPOLATED='raw text without variable interpolation'
 MULTILINE = `long text here,
 e.g. a private SSH key`
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_values copy=false %}
+    {% include components/design-codeblock.html value=env_values copy=false language="dotenv" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -203,7 +187,7 @@ e.g. a private SSH key`
 SECRET_KEY=YOURSECRETKEYGOESHERE # also a comment
 SECRET_HASH="something-with-a-hash-#-this-is-not-a-comment"
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_comments copy=false %}
+    {% include components/design-codeblock.html value=env_comments copy=false language="dotenv" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -225,7 +209,7 @@ SECRET_HASH="something-with-a-hash-#-this-is-not-a-comment"
     {% capture env_cmdsub %}
 DATABASE_URL="postgres://$(whoami)@localhost/my_database"
     {% endcapture %}
-    {% include components/design-codeblock.html value=env_cmdsub copy_text='DATABASE_URL="postgres://$(whoami)@localhost/my_database"' %}
+    {% include components/design-codeblock.html value=env_cmdsub copy_text='DATABASE_URL="postgres://$(whoami)@localhost/my_database"' language="dotenv" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

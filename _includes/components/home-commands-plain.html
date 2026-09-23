@@ -10,7 +10,7 @@ $ dotenvx encrypt
 dotenvx encrypt
     {% endcapture %}
     <h3 class="home-command-label"><strong>Encrypt</strong></h3>
-    {% include components/design-codeblock.html value=encrypt_example copy_text=encrypt_copy label="Encrypt your .env file" %}
+    {% include components/design-codeblock.html value=encrypt_example copy_text=encrypt_copy label="Encrypt your .env file" format="cli" %}
     <p class="design-paragraph">Encrypt your secrets in .env files. The values become ciphertext and only your private key can unlock them.</p>
 {% capture commit_example %}
 $ git add .env
@@ -21,14 +21,14 @@ git add .env
 git commit -m "encrypt .env"
     {% endcapture %}
     <h3 class="home-command-label"><strong>Commit</strong></h3>
-    {% include components/design-codeblock.html value=commit_example copy_text=commit_copy label="Commit your encrypted .env file" %}
+    {% include components/design-codeblock.html value=commit_example copy_text=commit_copy label="Commit your encrypted .env file" format="cli" %}
     <p class="design-paragraph">Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.</p>
 {% capture ship_example %}
 $ dotenvx run -- node index.js
 ⟐ injected env (2) from .env
     {% endcapture %}
     <h3 class="home-command-label"><strong>Ship</strong></h3>
-    {% include components/design-codeblock.html value=ship_example copy_text="dotenvx run -- node index.js" label="Run your deployed app" %}
+    {% include components/design-codeblock.html value=ship_example copy_text="dotenvx run -- node index.js" label="Run your deployed app" format="cli" %}
     <p class="design-paragraph">Ship your code and secrets together. Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.</p>
     {% endcapture %}
     {% include components/design-content-width.html content=plain_commands %}

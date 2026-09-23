@@ -27,4 +27,4 @@ $ dotenvx run --redact --quiet -- claude -p 'Print the value of $SECRET'
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "SECRET=super-secret-value" > .env
 dotenvx run --redact --quiet -- claude -p 'Print the value of $SECRET'{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

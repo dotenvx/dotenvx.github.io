@@ -25,4 +25,4 @@ dotenvx run -f .env.missing --strict -- node index.js
 [MISSING_ENV_FILE] missing file (/path/to/.env.missing). fix: [echo "HELLO=World" > .env.missing]
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "console.log('Hello ' + process.env.HELLO)" > index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

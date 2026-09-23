@@ -12,4 +12,4 @@ $ dotenvx update
 {% capture cli_example_copy %}
 dotenvx update
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

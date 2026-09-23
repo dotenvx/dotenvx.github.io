@@ -12,8 +12,10 @@ redirect_from:
   - /docs/secrets-in-php
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 encrypt_copy: "dotenvx encrypt"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 inject_lede: |
@@ -22,12 +24,14 @@ inject_copy: |
   <?php
 
   echo "Hello {$_SERVER['HELLO']}\n";
+inject_language: php
 inject: |
   <?php
 
   echo "Hello {$_SERVER['HELLO']}\n";
 inject_after_copy: |
   dotenvx run -- php index.php
+inject_after_format: cli
 inject_after: |
   $ dotenvx run -- php index.php
 ---

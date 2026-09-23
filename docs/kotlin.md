@@ -9,9 +9,11 @@ redirect_from:
   - /docs/secrets-in-kotlin/
   - /docs/secrets-in-kotlin
 install_copy: "curl -sfS https://dotenvx.sh | sh"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
 encrypt_copy: "dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 inject_lede: "Then inject your encrypted secrets at runtime with `dotenvx run`."
@@ -20,6 +22,7 @@ inject_copy: |
     val hello = System.getenv("HELLO") ?: ""
     println("Hello $hello")
   }
+inject_language: kotlin
 inject: |
   fun main() {
     val hello = System.getenv("HELLO") ?: ""
@@ -28,6 +31,7 @@ inject: |
 inject_after_copy: |
   kotlinc index.kt -include-runtime -d index.jar
   dotenvx run -- java -jar index.jar
+inject_after_format: cli
 inject_after: |
   $ kotlinc index.kt -include-runtime -d index.jar
 

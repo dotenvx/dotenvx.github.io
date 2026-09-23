@@ -32,7 +32,7 @@ $ dotenvx ls
       └─ .env
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx ls{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Pass a directory to list `.env` files under that path.
 
@@ -41,7 +41,7 @@ $ dotenvx ls apps/backend
 └─ .env
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx ls apps/backend{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 ## JSON output
 
@@ -55,7 +55,7 @@ $ dotenvx ls --json
 ]
 {% endcapture %}
 {% capture cli_code_2_copy %}dotenvx ls --json{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
 
 Progress and summary details are written to stderr, so stdout can be safely piped to another command or file.
 
@@ -63,4 +63,4 @@ Progress and summary details are written to stderr, so stdout can be safely pipe
 $ dotenvx ls --json > dotenv-files.json
 {% endcapture %}
 {% capture cli_code_3_copy %}dotenvx ls --json > dotenv-files.json{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_3 copy_text=cli_code_3_copy %}
+{% include components/design-codeblock.html value=cli_code_3 copy_text=cli_code_3_copy format="cli" %}

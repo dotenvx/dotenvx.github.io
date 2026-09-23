@@ -14,4 +14,4 @@ $ dotenvx feedback "The quickstart worked well." --hostname https://armor.dotenv
 {% capture cli_example_copy %}
 dotenvx feedback "The quickstart worked well." --hostname https://armor.dotenvx.com
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

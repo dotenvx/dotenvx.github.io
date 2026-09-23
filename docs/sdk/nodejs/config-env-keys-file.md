@@ -26,10 +26,10 @@ crumbs:
 # .env
 HELLO="World"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 {% capture sdk_code_1 %}
 // index.js
 require('@dotenvx/dotenvx').config({path: ['.env'], envKeysFile: '../../.env.keys'})
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}

@@ -34,7 +34,7 @@ COPY . .
 EXPOSE 3000
 CMD ["node", "index.js"]
     {% endcapture %}
-    {% include components/design-codeblock.html value=railway_dockerfile copy=false %}
+    {% include components/design-codeblock.html value=railway_dockerfile copy=false language="docker" %}
 
     {% capture railway_ignore %}
 # .railwayignore
@@ -48,7 +48,7 @@ npx @railway/cli@latest init
 npx @railway/cli@latest up
 npx @railway/cli@latest domain
     {% endcapture %}
-    {% include components/design-codeblock.html value=railway_up copy=false %}
+    {% include components/design-codeblock.html value=railway_up copy=false language="bash" %}
 
     <p class="design-paragraph">Set <code class="design-code">PORT</code> to <code class="design-code">3000</code> (or your app's listen port) in the Railway dashboard, then redeploy.</p>
     {% endcapture %}
@@ -72,7 +72,7 @@ EXPOSE 3000
 
 CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
-    {% include components/design-codeblock.html value=railway_dockerfile_dx copy=false %}
+    {% include components/design-codeblock.html value=railway_dockerfile_dx copy=false language="docker" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -83,12 +83,12 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=railway_env_prod copy=false %}
+    {% include components/design-codeblock.html value=railway_env_prod copy=false language="dotenv" %}
 
     {% capture railway_encrypt %}
 $ dotenvx set HELLO production -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=railway_encrypt copy_text="dotenvx set HELLO production -f .env.production" %}
+    {% include components/design-codeblock.html value=railway_encrypt copy_text="dotenvx set HELLO production -f .env.production" format="cli" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
     {% endcapture %}
@@ -101,7 +101,7 @@ $ dotenvx set HELLO production -f .env.production
     {% capture railway_redeploy %}
 npx @railway/cli@latest up
     {% endcapture %}
-    {% include components/design-codeblock.html value=railway_redeploy copy_text="npx @railway/cli@latest up" %}
+    {% include components/design-codeblock.html value=railway_redeploy copy_text="npx @railway/cli@latest up" language="bash" %}
 
     <p class="design-paragraph">Your app reboots and env is injected from the encrypted production file.</p>
     {% endcapture %}

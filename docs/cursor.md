@@ -17,20 +17,24 @@ prerequisite_lede: "Install the [Cursor CLI](https://cursor.com/cli). The Cursor
 prerequisite_copy: |
   curl https://cursor.com/install -fsS | bash
   agent --version
+prerequisite_format: cli
 prerequisite: |
   $ curl https://cursor.com/install -fsS | bash
   $ agent --version
 install_copy: "curl -sfS https://dotenvx.sh | sh"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
 encrypt_title: "Add your secrets"
 encrypt_lede: "Add a secret to your `.env` file."
 encrypt_copy: 'echo "HELLO=World" > .env'
+encrypt_format: cli
 encrypt: |
   $ echo "HELLO=World" > .env
 inject_title: "Run Cursor with redaction"
 inject_lede: "Runtime leak protection: Cursor gets real secrets, while log redaction strips them from its output."
 inject_copy: "dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text"
+inject_format: cli
 inject: |
   $ dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text
   Hello [REDACTED]

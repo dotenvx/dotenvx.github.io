@@ -30,6 +30,6 @@ DOTENV_ENV=production dotenvx run --convention=flow -- node index.js
 Hello production local
 {% endcapture %}
 {% capture cli_code_0_copy %}echo "HELLO=production local" > .env.production.local{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 While dotenvx's implementation of [dotenv-flow](https://www.npmjs.com/package/dotenv-flow) supports `NODE_ENV`, it also introduces `DOTENV_ENV`. We recommend using `DOTENV_ENV` over `NODE_ENV` – as dotenvx works everywhere, not just node. [see code](https://github.com/dotenvx/dotenvx/blob/2f35b84a9a3101ec4d2c6cf850fd3659375f7105/src/lib/helpers/conventions.js#L2)

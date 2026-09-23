@@ -45,7 +45,7 @@ EXPOSE 3000
 
 CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
-    {% include components/design-codeblock.html value=render_dockerfile copy=false %}
+    {% include components/design-codeblock.html value=render_dockerfile copy=false language="docker" %}
 
     <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/install/#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
     {% endcapture %}
@@ -58,12 +58,12 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=render_env_prod copy=false %}
+    {% include components/design-codeblock.html value=render_env_prod copy=false language="dotenv" %}
 
     {% capture render_encrypt %}
 $ dotenvx encrypt -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=render_encrypt copy_text="dotenvx encrypt -f .env.production" %}
+    {% include components/design-codeblock.html value=render_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
     {% endcapture %}

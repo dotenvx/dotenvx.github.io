@@ -21,6 +21,6 @@ $ dotenvx armor status
 on
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor status{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 The command prints `on` when you are logged in and Armor is enabled. Otherwise, it prints `off`.

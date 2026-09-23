@@ -34,7 +34,7 @@ COPY . .
 EXPOSE 3000
 CMD ["node", "index.js"]
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_dockerfile copy=false %}
+    {% include components/design-codeblock.html value=fly_dockerfile copy=false language="docker" %}
 
     {% capture fly_dockerignore %}
 # .dockerignore
@@ -46,13 +46,13 @@ CMD ["node", "index.js"]
 [http_service]
   internal_port = 3000
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_toml copy=false %}
+    {% include components/design-codeblock.html value=fly_toml copy=false language="toml" %}
 
     {% capture fly_deploy %}
 flyctl launch
 flyctl deploy
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_deploy copy=false %}
+    {% include components/design-codeblock.html value=fly_deploy copy=false language="bash" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -76,7 +76,7 @@ EXPOSE 3000
 # Prepend dotenvx run
 CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_dockerfile_dx copy=false %}
+    {% include components/design-codeblock.html value=fly_dockerfile_dx copy=false language="docker" %}
 
     <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/install/#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
     {% endcapture %}
@@ -89,12 +89,12 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_env_prod copy=false %}
+    {% include components/design-codeblock.html value=fly_env_prod copy=false language="dotenv" %}
 
     {% capture fly_encrypt %}
 $ dotenvx encrypt -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_encrypt copy_text="dotenvx encrypt -f .env.production" %}
+    {% include components/design-codeblock.html value=fly_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
     {% endcapture %}
@@ -107,7 +107,7 @@ $ dotenvx encrypt -f .env.production
 flyctl secrets set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key'
 flyctl deploy
     {% endcapture %}
-    {% include components/design-codeblock.html value=fly_secrets copy=false %}
+    {% include components/design-codeblock.html value=fly_secrets copy=false language="bash" %}
 
     <p class="design-paragraph">Your app restarts and env is injected from the encrypted <code class="design-code">.env.production</code> file.</p>
     {% endcapture %}

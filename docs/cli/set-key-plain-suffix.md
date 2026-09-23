@@ -23,6 +23,6 @@ dotenvx set HELLO_PLAIN World
 ◇ set HELLO_PLAIN (.env)
 {% endcapture %}
 {% capture cli_code_0_copy %}touch .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Keys ending in `_PLAIN` are not encrypted by `dotenvx set` or `dotenvx encrypt`.

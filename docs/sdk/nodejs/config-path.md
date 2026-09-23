@@ -26,13 +26,13 @@ crumbs:
 # .env.local
 HELLO="Me"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 %}
+{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
 
 {% capture sdk_code_1 %}
 # .env
 HELLO="World"
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+{% include components/design-codeblock.html value=sdk_code_1 language="dotenv" %}
 
 {% capture sdk_code_2 %}
 {% raw %}
@@ -42,14 +42,14 @@ require('@dotenvx/dotenvx').config({path: ['.env.local', '.env']})
 console.log(`Hello ${process.env.HELLO}`)
 {% endraw %}
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 %}
+{% include components/design-codeblock.html value=sdk_code_2 language="javascript" %}
 
 {% capture sdk_code_3 %}
 $ node index.js
 ⟐ injected env (1) from .env.local, .env
 Hello Me
 {% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_3 %}
+{% include components/design-codeblock.html value=sdk_code_3 format="cli" %}
 
 <p class="design-paragraph">This is the equivalent of using <code class="design-code">-f</code> from the command line.</p>
 

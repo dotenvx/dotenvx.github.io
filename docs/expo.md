@@ -10,9 +10,11 @@ redirect_from:
   - /docs/secrets-in-expo
 install_lede: "Get the Dotenvx Node.js SDK."
 install_copy: "npm install @dotenvx/dotenvx"
+install_format: cli
 install: |
   $ npm install @dotenvx/dotenvx
 encrypt_copy: "npx dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ npx dotenvx encrypt
 inject_lede: "Preface Expo scripts with `dotenvx run --`."
@@ -25,6 +27,7 @@ inject_copy: |
       "web": "dotenvx run -- expo start --web"
     }
   }
+inject_language: json
 inject: |
   {
     "scripts": {

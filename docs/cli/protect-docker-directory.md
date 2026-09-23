@@ -16,4 +16,4 @@ Check env files in a specific directory during a Docker build.
 RUN dotenvx protect --docker apps/backend
 {% endcapture %}
 {% capture cli_code_0_copy %}RUN dotenvx protect --docker apps/backend{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="docker" %}

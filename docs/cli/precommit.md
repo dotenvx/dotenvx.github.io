@@ -26,4 +26,4 @@ $ dotenvx precommit
 ▣ encrypted/gitignored (1)
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx precommit{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

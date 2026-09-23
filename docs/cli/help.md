@@ -39,7 +39,7 @@ Commands:
   prebuild [directory]
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx help{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Pass a command name for detailed help:
 
@@ -48,4 +48,4 @@ $ dotenvx help run
 Usage: dotenvx run [options] -- yourcommand
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx help run{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}

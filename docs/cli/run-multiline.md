@@ -29,14 +29,14 @@ u4QuUoobAgMBAAE=
 -----END PUBLIC KEY-----"
 {% endcapture %}
 {% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
 
 {% capture cli_code_1 %}
 // index.js
 console.log('MULTILINE_PEM', process.env.MULTILINE_PEM)
 {% endcapture %}
 {% capture cli_code_1_copy %}// index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="javascript" %}
 
 {% capture cli_code_2 %}
 $ dotenvx run -- node index.js
@@ -49,4 +49,4 @@ u4QuUoobAgMBAAE=
 -----END PUBLIC KEY-----
 {% endcapture %}
 {% capture cli_code_2_copy %}dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}

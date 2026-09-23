@@ -14,4 +14,4 @@ $ dotenvx native pull -fk .env.production.keys
 {% capture cli_example_copy %}
 dotenvx native pull -fk .env.production.keys
 {% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy %}
+{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}

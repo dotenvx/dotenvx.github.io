@@ -12,9 +12,11 @@ redirect_from:
   - /docs/frameworks/astro/
 install_lede: "Get the Dotenvx Node.js SDK."
 install_copy: "npm install @dotenvx/dotenvx"
+install_format: cli
 install: |
   $ npm install @dotenvx/dotenvx
 encrypt_copy: "npx dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ npx dotenvx encrypt
 inject_lede: "Preface Astro scripts with `dotenvx run --` and read your env values in Astro."
@@ -26,6 +28,7 @@ inject_copy: |
       "preview": "dotenvx run -- astro preview"
     }
   }
+inject_language: json
 inject: |
   {
     "scripts": {
@@ -48,6 +51,7 @@ inject_after_copy: |
       }
     );
   }
+inject_after_language: javascript
 inject_after: |
   export async function GET() {
     return new Response(

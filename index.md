@@ -126,7 +126,7 @@ body_class: home-page
 $ dotenvx run -- node index.js
 ⟐ injected env (17) from .env
     {% endcapture %}
-      {% include components/design-codeblock.html value=one_key_run copy_text="dotenvx run -- npm start" label="Example application startup with encrypted secrets" %}
+      {% include components/design-codeblock.html value=one_key_run copy_text="dotenvx run -- npm start" label="Example application startup with encrypted secrets" format="cli" %}
       <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/" label="Try it for yourself →" %}</p>
     {% endcapture %}
     {% include components/design-content-width.html content=one_key_content %}
@@ -156,7 +156,7 @@ $ dotenvx run -- npm start
 
 App listening on port 80
       {% endcapture %}
-      {% include components/design-codeblock.html value=production_run copy_text="dotenvx run-- npm start" label="Example application startup with production secrets" %}
+      {% include components/design-codeblock.html value=production_run copy_text="dotenvx run-- npm start" label="Example application startup with production secrets" format="cli" %}
       <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/" label="Deploy with dotenvx →" %}</p>
     {% endcapture %}
     {% include components/design-content-width.html content=production_content %}
@@ -195,12 +195,12 @@ Ready for Agents: restore this section when the proxy is ready to launch.
 env "STRIPE_SECRET_KEY", proxy: { domain: "api.stripe.com" }
 env "OPENAI_API_KEY", proxy: { domain: "api.openai.com" }
       {% endcapture %}
-      {% include components/design-codeblock.html value=agents_envfile label="Envfile rules for proxied API credentials" %}
+      {% include components/design-codeblock.html value=agents_envfile label="Envfile rules for proxied API credentials" language="ruby" %}
       <p class="design-paragraph">Start your agent with dotenvx run. It can call the APIs it needs while the proxy handles the credentials.</p>
       {% capture agents_run %}
 $ dotenvx run -- claude
       {% endcapture %}
-      {% include components/design-codeblock.html value=agents_run copy_text="dotenvx run -- claude" label="Run an agent with proxied API credentials" %}
+      {% include components/design-codeblock.html value=agents_run copy_text="dotenvx run -- claude" label="Run an agent with proxied API credentials" format="cli" %}
     {% endcapture %}
     {% include components/design-content-width.html content=agents_content %}
   </div>

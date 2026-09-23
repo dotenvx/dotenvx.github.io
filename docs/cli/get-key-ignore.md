@@ -20,7 +20,7 @@ crumbs:
 $ dotenvx get HELLO --ignore=MISSING_ENV_FILE
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx get HELLO --ignore=MISSING_ENV_FILE{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
 
 Ignore multiple error codes by separating them with spaces.
 
@@ -28,7 +28,7 @@ Ignore multiple error codes by separating them with spaces.
 $ dotenvx get HELLO --ignore=MISSING_ENV_FILE MISSING_KEY
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx get HELLO --ignore=MISSING_ENV_FILE MISSING_KEY{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
+{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
 
 You can also set `DOTENV_CONFIG_IGNORE`. Its value is a comma-separated list.
 
@@ -36,4 +36,4 @@ You can also set `DOTENV_CONFIG_IGNORE`. Its value is a comma-separated list.
 $ DOTENV_CONFIG_IGNORE=MISSING_ENV_FILE,OTHER dotenvx get HELLO
 {% endcapture %}
 {% capture cli_code_2_copy %}DOTENV_CONFIG_IGNORE=MISSING_ENV_FILE,OTHER dotenvx get HELLO{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
+{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}

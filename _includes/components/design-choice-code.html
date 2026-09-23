@@ -2,7 +2,7 @@
   Switchable code panels in choice chrome. Mirrored from ../radar design/choice_code.
 
   Preferred API (array of hashes — same shape as radar):
-    items: [{ id, label, code, copy_text? }, ...]
+    items: [{ id, label, code, copy_text?, language?, format? }, ...]
     selected: id (defaults to first item)
     lines: fixed visible line count so toggling doesn't resize
     aria_label: options group label
@@ -43,12 +43,16 @@
     {% for item in items %}
       {% assign item_id = item.id %}
       {% assign item_copy = item.copy_text | default: item.copy %}
+      {% assign item_language = item.language | default: include.language %}
+      {% assign item_format = item.format | default: include.format %}
       {% if item_id == selected %}
         {% if want_copy %}
           {% include components/design-choice-code-panel.html
             id=item_id
             active=true
             code=item.code
+            language=item_language
+            format=item_format
             copy_text=item_copy
           %}
         {% else %}
@@ -56,6 +60,8 @@
             id=item_id
             active=true
             code=item.code
+            language=item_language
+            format=item_format
             copy=false
           %}
         {% endif %}
@@ -64,12 +70,16 @@
           {% include components/design-choice-code-panel.html
             id=item_id
             code=item.code
+            language=item_language
+            format=item_format
             copy_text=item_copy
           %}
         {% else %}
           {% include components/design-choice-code-panel.html
             id=item_id
             code=item.code
+            language=item_language
+            format=item_format
             copy=false
           %}
         {% endif %}

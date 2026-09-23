@@ -1,0 +1,26 @@
+/* Syntax palette shared with Radar. Scope tokens to code; keep the component chrome. */
+:where(.design-codeblock, .highlight) {
+  --syntax-comment: #70736c;
+  --syntax-string: #35704c;
+  --syntax-keyword: #88517f;
+  --syntax-variable: #326d80;
+  --syntax-number: #9a572b;
+  --syntax-function: #3b6193;
+  --syntax-status: #876719;
+}
+.dark :where(.design-codeblock, .highlight) {
+  --syntax-comment: #91958c;
+  --syntax-string: #a2c49a;
+  --syntax-keyword: #c6a0bf;
+  --syntax-variable: #8bbecb;
+  --syntax-number: #d3ad83;
+  --syntax-function: #9fb9dd;
+  --syntax-status: #c09e3f;
+}
+:where(.design-codeblock, .highlight) :is(.c, .c1, .cm, .cp, .cs, .ch, .gp) { color: var(--syntax-comment); }
+:where(.design-codeblock, .highlight) :is(.s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .sr, .ss, .sx) { color: var(--syntax-string); }
+:where(.design-codeblock, .highlight) :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .ow) { color: var(--syntax-keyword); }
+:where(.design-codeblock, .highlight) :is(.nv, .vc, .vg, .vi, .vm, .na, .nl, .nt, .si) { color: var(--syntax-variable); }
+:where(.design-codeblock, .highlight) :is(.m, .mb, .mf, .mh, .mi, .il, .mo, .mx) { color: var(--syntax-number); }
+:where(.design-codeblock, .highlight) :is(.nf, .fm, .nc, .nb, .nn) { color: var(--syntax-function); }
+.design-codeblock .design-code-ok { color: var(--syntax-status); }

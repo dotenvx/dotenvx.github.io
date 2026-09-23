@@ -28,4 +28,4 @@ dotenvx decrypt -fk .env.keys -f apps/app1/.env
 ◇ decrypted (apps/app1/.env)
 {% endcapture %}
 {% capture cli_code_0_copy %}mkdir -p apps/app1{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

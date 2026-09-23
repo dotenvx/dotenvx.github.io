@@ -137,7 +137,7 @@ dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=public_key_desc"
 dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
   --data '{"name":"Production"}'
       {% endcapture %}
-      {% include components/design-codeblock.html value=api_examples copy=false %}
+      {% include components/design-codeblock.html value=api_examples copy=false language="bash" %}
 
       <p class="design-paragraph">See <a class="design-link" href="/docs/errors">Errors</a> for Armor error codes and <a class="design-link" href="/docs/events">Events</a> for activity names recorded by these operations.</p>
     </div>

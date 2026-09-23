@@ -16,4 +16,4 @@ Turn Armor off.
 $ dotenvx armor settings off
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor settings off{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

@@ -23,4 +23,4 @@ $ dotenvx get DOES_NOT_EXIST --strict
 [MISSING_KEY] missing key (DOES_NOT_EXIST)
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx get DOES_NOT_EXIST --strict{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}

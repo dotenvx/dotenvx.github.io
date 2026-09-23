@@ -13,6 +13,7 @@ redirect_from:
 encrypt_title: "Encrypt"
 encrypt_lede: "Create a CI environment file and encrypt it."
 encrypt_copy: "dotenvx encrypt -f .env.ci"
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt -f .env.ci
 encrypt_after_lede: "Commit the encrypted `.env.ci` file, but never commit `.env.keys`."
@@ -39,6 +40,7 @@ run_copy: |
         - run: dotenvx run -f .env.ci -- npm test
           env:
             DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+run_language: yaml
 run: |
   name: CI
 

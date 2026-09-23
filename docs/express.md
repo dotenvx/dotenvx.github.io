@@ -12,9 +12,11 @@ redirect_from:
   - /docs/frameworks/express/
 install_lede: "Get the Dotenvx Node.js SDK."
 install_copy: "npm install @dotenvx/dotenvx"
+install_format: cli
 install: |
   $ npm install @dotenvx/dotenvx
 encrypt_copy: "npx dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ npx dotenvx encrypt
 inject_lede: "Then inject your encrypted secrets at runtime."
@@ -35,6 +37,7 @@ inject_copy: |
   app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`)
   })
+inject_language: javascript
 inject: |
   require('@dotenvx/dotenvx').config()
   const express = require('express')

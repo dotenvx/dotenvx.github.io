@@ -45,7 +45,7 @@ EXPOSE 3000
 
 CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
-    {% include components/design-codeblock.html value=do_dockerfile copy=false %}
+    {% include components/design-codeblock.html value=do_dockerfile copy=false language="docker" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -56,12 +56,12 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=do_env_prod copy=false %}
+    {% include components/design-codeblock.html value=do_env_prod copy=false language="dotenv" %}
 
     {% capture do_encrypt %}
 $ dotenvx encrypt -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=do_encrypt copy_text="dotenvx encrypt -f .env.production" %}
+    {% include components/design-codeblock.html value=do_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
 
     <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
     {% endcapture %}

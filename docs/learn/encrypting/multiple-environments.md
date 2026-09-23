@@ -22,13 +22,13 @@ layout: radar
 # .env.production
 HELLO="Production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=multi_env copy=false %}
+    {% include components/design-codeblock.html value=multi_env copy=false language="dotenv" %}
 
     {% capture multi_encrypt %}
 $ dotenvx encrypt -f .env.production
 ◈ encrypted (.env.production)
     {% endcapture %}
-    {% include components/design-codeblock.html value=multi_encrypt copy_text="dotenvx encrypt -f .env.production" %}
+    {% include components/design-codeblock.html value=multi_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
 
     <p class="design-paragraph">Run with the same file.</p>
 
@@ -37,7 +37,7 @@ $ dotenvx run -f .env.production -- node index.js
 ⟐ injected env (2) from .env.production
 Hello Production
     {% endcapture %}
-    {% include components/design-codeblock.html value=multi_run copy_text="dotenvx run -f .env.production -- node index.js" %}
+    {% include components/design-codeblock.html value=multi_run copy_text="dotenvx run -f .env.production -- node index.js" format="cli" %}
 
     <p class="design-paragraph">This keeps each environment's values separate while preserving the same encrypted-file workflow.</p>
     </div>

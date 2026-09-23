@@ -34,7 +34,7 @@ layout: radar
     {% capture sdk_node_primitives_install %}
 $ npm install @dotenvx/primitives
     {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_node_primitives_install copy_text="npm install @dotenvx/primitives" %}
+    {% include components/design-codeblock.html value=sdk_node_primitives_install copy_text="npm install @dotenvx/primitives" format="cli" %}
 
     <p class="design-paragraph">Use this when you need the crypto building blocks without the full <a class="design-link" href="/docs/sdk/nodejs/"><code class="design-code">@dotenvx/dotenvx</code></a> runtime.</p>
     {% endcapture %}

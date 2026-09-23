@@ -28,7 +28,7 @@ layout: radar
 DOTENV_KEY_DEVELOPMENT="dotenv://:key_e507c60efa8841d8d5bbb85bd701ee92406cf3b06506d1d80f1553c2a72791e4@dotenvx.com/vault/.env.vault?environment=development"
 DOTENV_KEY_PRODUCTION="dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021fbebeb9fd858caa01852e@dotenvx.com/vault/.env.vault?environment=production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=keys_deprecated_example copy=false %}
+    {% include components/design-codeblock.html value=keys_deprecated_example copy=false language="dotenv" %}
 
     <p class="design-paragraph">Some quick takeaways:</p>
     <ul class="design-bullets">
@@ -48,7 +48,7 @@ $ dotenvx encrypt
 ◈ encrypted to .env.vault (.env)
 ◈ key added to .env.keys (DOTENV_KEY_DEVELOPMENT)
     {% endcapture %}
-    {% include components/design-codeblock.html value=keys_deprecated_gen copy_text="dotenvx encrypt" %}
+    {% include components/design-codeblock.html value=keys_deprecated_gen copy_text="dotenvx encrypt" format="cli" %}
 
     <p class="design-paragraph">Do not commit <code class="design-code">.env.keys</code> to source code. Keep them somewhere safe like 1Password or <a class="design-link" href="/armor">Armor ⛨</a>.</p>
     {% endcapture %}

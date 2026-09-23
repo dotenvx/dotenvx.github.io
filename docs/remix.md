@@ -10,9 +10,11 @@ redirect_from:
   - /docs/frameworks/remix/
 install_lede: "Get the Dotenvx Node.js SDK."
 install_copy: "npm install @dotenvx/dotenvx"
+install_format: cli
 install: |
   $ npm install @dotenvx/dotenvx
 encrypt_copy: "npx dotenvx encrypt"
+encrypt_format: cli
 encrypt: |
   $ npx dotenvx encrypt
 inject_lede: "Preface Remix scripts with `dotenvx run --` and read your env values in a Remix loader."
@@ -24,6 +26,7 @@ inject_copy: |
       "start": "dotenvx run -- remix-serve ./build/index.js"
     }
   }
+inject_language: json
 inject: |
   {
     "scripts": {
@@ -53,6 +56,7 @@ inject_after_copy: |
       </div>
     );
   }
+inject_after_language: tsx
 inject_after: |
   import { json } from "@remix-run/node";
   import { useLoaderData } from "@remix-run/react";

@@ -27,7 +27,7 @@ layout: radar
     {% capture pm2_init %}
 pm2 init
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_init copy_text="pm2 init" %}
+    {% include components/design-codeblock.html value=pm2_init copy_text="pm2 init" language="bash" %}
 
     <p class="design-paragraph">Modify it to your needs. Something like this.</p>
 
@@ -39,7 +39,7 @@ module.exports = {
   }]
 };
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_ecosystem copy=false %}
+    {% include components/design-codeblock.html value=pm2_ecosystem copy=false language="javascript" %}
 
     <p class="design-paragraph">Your <code class="design-code">index.js</code> file should look something like this.</p>
 
@@ -57,7 +57,7 @@ server.listen(PORT, () => {
   console.log(`Server running on port:${PORT}/`);
 });
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_index copy=false %}
+    {% include components/design-codeblock.html value=pm2_index copy=false language="javascript" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -69,7 +69,7 @@ server.listen(PORT, () => {
 npm install @dotenvx/dotenvx --save
 npm install pm2 --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_install copy=false %}
+    {% include components/design-codeblock.html value=pm2_install copy=false language="bash" %}
 
     <p class="design-paragraph">Then, in your <code class="design-code">package.json</code>, modify your start script.</p>
 
@@ -84,7 +84,7 @@ npm install pm2 --save
   }
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_pkg copy=false %}
+    {% include components/design-codeblock.html value=pm2_pkg copy=false language="json" %}
 
     <p class="design-paragraph">Create a <code class="design-code">.env</code> file in the root of your project.</p>
 
@@ -92,14 +92,14 @@ npm install pm2 --save
 # .env
 HELLO="World"
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_env copy=false %}
+    {% include components/design-codeblock.html value=pm2_env copy=false language="dotenv" %}
 
     <p class="design-paragraph">Inject your env using your start script — which is using dotenvx and pm2.</p>
 
     {% capture pm2_start %}
 npm start
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_start copy_text="npm start" %}
+    {% include components/design-codeblock.html value=pm2_start copy_text="npm start" language="bash" %}
 
     <p class="design-paragraph">Your app will say <code class="design-code">Hello World</code>. That covers local development. Let's solve for production next.</p>
     {% endcapture %}
@@ -113,7 +113,7 @@ npm start
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_env_prod copy=false %}
+    {% include components/design-codeblock.html value=pm2_env_prod copy=false language="dotenv" %}
 
     <p class="design-paragraph">Modify your start script to load your <code class="design-code">.env.production</code> file.</p>
 
@@ -125,7 +125,7 @@ HELLO="production"
   ...
 }
     {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_pkg_prod copy=false %}
+    {% include components/design-codeblock.html value=pm2_pkg_prod copy=false language="json" %}
 
     <p class="design-paragraph">Your app will say <code class="design-code">Hello production</code>, simulating production.</p>
     {% endcapture %}

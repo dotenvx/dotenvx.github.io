@@ -12,8 +12,10 @@ redirect_from:
   - /docs/secrets-in-go
 install_copy: "curl -sfS https://dotenvx.sh | sh"
 encrypt_copy: "dotenvx encrypt"
+install_format: cli
 install: |
   $ curl -sfS https://dotenvx.sh | sh
+encrypt_format: cli
 encrypt: |
   $ dotenvx encrypt
 inject_lede: |
@@ -29,6 +31,7 @@ inject_copy: |
   func main() {
     fmt.Printf("HELLO: %s\n", os.Getenv("HELLO"))
   }
+inject_language: go
 inject: |
   package main
 
@@ -42,6 +45,7 @@ inject: |
   }
 inject_after_copy: |
   dotenvx run -- go run main.go
+inject_after_format: cli
 inject_after: |
   $ dotenvx run -- go run main.go
 ---

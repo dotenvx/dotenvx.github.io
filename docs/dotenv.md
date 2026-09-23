@@ -44,14 +44,14 @@ og_image:
       <section id="quickstart" class="dotenv-section" aria-labelledby="quickstart-title">
         <h2 id="quickstart-title">Quickstart</h2>
         <p>Install dotenv in your project.</p>
-        {% include components/design-codeblock.html value="npm install dotenv --save" %}
+        {% include components/design-codeblock.html value="npm install dotenv --save" language="bash" %}
         <p>Create a .env file in the root of your project.</p>
         {% capture dotenv_env %}
 # .env
 HELLO="Dotenv"
 OPENAI_API_KEY="your-api-key-goes-here"
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_env %}
+        {% include components/design-codeblock.html value=dotenv_env language="dotenv" %}
         <p>Load dotenv as early as possible in your application.</p>
         {% capture dotenv_app %}
 // index.js
@@ -60,17 +60,17 @@ require('dotenv').config()
 
 console.log(`Hello ${process.env.HELLO}`)
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_app %}
+        {% include components/design-codeblock.html value=dotenv_app language="javascript" %}
         {% capture dotenv_output %}
 $ node index.js
 ◇ injected env (2) from .env
 Hello Dotenv
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_output copy_text="node index.js" %}
+        {% include components/design-codeblock.html value=dotenv_output copy_text="node index.js" format="cli" %}
         <p>That's it. Your variables are now available in process.env.</p>
         <h3>Prefer the command line?</h3>
         <p>Dotenv 18 includes a CLI. Load your .env before the command starts, with no dotenv import needed in your app.</p>
-        {% include components/design-codeblock.html value="npx dotenv run -- node index.js" %}
+        {% include components/design-codeblock.html value="npx dotenv run -- node index.js" language="bash" %}
       </section>
 
       <div id="demo" class="dotenv-demo dotenv-section">
@@ -89,7 +89,7 @@ const result = dotenv.config({ path: ['.env.local', '.env'] })
 if (result.error) throw result.error
 console.log(result.parsed)
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_config %}
+        {% include components/design-codeblock.html value=dotenv_config language="javascript" %}
         {% capture sdk_options %}
         <thead><tr><th scope="col">Option</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
         <tbody>
@@ -111,7 +111,7 @@ const dotenv = require('dotenv')
 const parsed = dotenv.parse('HELLO="Dotenv"')
 // { HELLO: 'Dotenv' }
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_parse %}
+        {% include components/design-codeblock.html value=dotenv_parse language="javascript" %}
         <h3>populate</h3>
         <p>Copy parsed values into a target object. Supports override and debug options, both false by default.</p>
         {% capture dotenv_populate %}
@@ -121,20 +121,20 @@ const target = { HELLO: 'World' }
 dotenv.populate(target, { HELLO: 'Dotenv' }, { override: true })
 console.log(target.HELLO) // Dotenv
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_populate %}
+        {% include components/design-codeblock.html value=dotenv_populate language="javascript" %}
       </section>
 
       <section id="cli" class="dotenv-section" aria-labelledby="cli-title">
         <h2 id="cli-title">CLI</h2>
         <p>Run scripts, tests, or any executable with variables from your .env file. Use npx dotenv, or dotenv directly in npm scripts.</p>
         <h3>run</h3>
-        {% include components/design-codeblock.html value="npx dotenv run [options] -- <command> [args...]" copy=false %}
+        {% include components/design-codeblock.html value="npx dotenv run [options] -- <command> [args...]" copy=false language="bash" %}
         <p>Select another file with -f, or repeat it to load several files in order.</p>
         {% capture dotenv_cli %}
 npx dotenv run -f .env.local -- node index.js
 npx dotenv run -f .env.local -f .env -- npm test
         {% endcapture %}
-        {% include components/design-codeblock.html value=dotenv_cli %}
+        {% include components/design-codeblock.html value=dotenv_cli language="bash" %}
         <p>Put dotenv options before the command. The -- separator is optional; everything after the command is passed through as its arguments.</p>
         {% capture cli_options %}
         <thead><tr><th scope="col">Option</th><th scope="col">What it does</th></tr></thead>
@@ -172,7 +172,7 @@ npx dotenv run -f .env.local -f .env -- npm test
         <p>Keep plaintext secrets out of version control. Use <a href="/">dotenvx</a> if you want to encrypt your .env files and commit them safely while keeping private keys separate.</p>
         <h3>What about ESM?</h3>
         <p>Import dotenv/config before modules that read environment variables, or use the CLI to load variables before Node starts.</p>
-        {% include components/design-codeblock.html value="import 'dotenv/config'" %}
+        {% include components/design-codeblock.html value="import 'dotenv/config'" language="javascript" %}
         <h3>Does dotenv expand variables?</h3>
         <p>Use <a href="https://github.com/dotenvx/dotenv-expand">dotenv-expand</a> for variable expansion, or <a href="/">dotenvx</a> for expansion, command substitution, and encrypted .env files.</p>
         <p>For parsing rules, framework examples, and more answers, see the <a href="https://github.com/motdotla/dotenv#readme">full README</a>.</p>

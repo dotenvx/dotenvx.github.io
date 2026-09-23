@@ -41,7 +41,7 @@ export const helloWorldTask = task({
   },
 });
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_example copy=false %}
+    {% include components/design-codeblock.html value=trigger_example copy=false language="typescript" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -52,7 +52,7 @@ export const helloWorldTask = task({
     {% capture trigger_install %}
 $ npm install @dotenvx/dotenvx --save
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_install copy_text="npm install @dotenvx/dotenvx --save" %}
+    {% include components/design-codeblock.html value=trigger_install copy_text="npm install @dotenvx/dotenvx --save" format="cli" %}
 
     <p class="design-paragraph">And configure dotenvx in <code class="design-code">trigger/example.ts</code>.</p>
 
@@ -76,7 +76,7 @@ export const helloWorldTask = task({
   },
 });
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_config copy=false %}
+    {% include components/design-codeblock.html value=trigger_config copy=false language="typescript" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -88,7 +88,7 @@ export const helloWorldTask = task({
 # .env.production
 HELLO="production"
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_env copy=false %}
+    {% include components/design-codeblock.html value=trigger_env copy=false language="dotenv" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -98,7 +98,7 @@ HELLO="production"
     {% capture trigger_encrypt %}
 dotenvx encrypt -f .env.production
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_encrypt copy_text="dotenvx encrypt -f .env.production" %}
+    {% include components/design-codeblock.html value=trigger_encrypt copy_text="dotenvx encrypt -f .env.production" language="bash" %}
 
     <p class="design-paragraph">Your <code class="design-code">.env.production</code> file is now encrypted, and you have a <code class="design-code">.env.keys</code> file.</p>
 
@@ -112,7 +112,7 @@ DOTENV_PUBLIC_KEY_PRODUCTION="025a54defaeff32caa2bbe60537b88b5b89716eade6df08418
 # .env.production
 HELLO="encrypted:BD+uttK9iBuXnfx6HukDK06IGk0pQARwivtxM+ZiePvhRxHyQL3UD0sf0ayLw/P5Y/BED//zRiTlUf6nENuu7QhNJ24g3uADfrDfhvYi/MOHjmfKyRiu+yOxSw6e+c0yRNukS+n8SxONnec="
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_encrypted copy=false %}
+    {% include components/design-codeblock.html value=trigger_encrypted copy=false language="dotenv" %}
 
     {% capture trigger_keys %}
 #/------------------!DOTENV_PRIVATE_KEYS!-------------------/
@@ -123,7 +123,7 @@ HELLO="encrypted:BD+uttK9iBuXnfx6HukDK06IGk0pQARwivtxM+ZiePvhRxHyQL3UD0sf0ayLw/P
 # .env.production
 DOTENV_PRIVATE_KEY_PRODUCTION="424d0ea072eb17c6bee9b4b42ff6333513cf128ea3d5d60ccf79246ca7c3f786"
     {% endcapture %}
-    {% include components/design-codeblock.html value=trigger_keys copy=false %}
+    {% include components/design-codeblock.html value=trigger_keys copy=false language="dotenv" %}
 
     <p class="design-paragraph">You SHOULD commit <code class="design-code">.env.production</code> to code. It is now encrypted, safe, and recommended to do so. But DO NOT commit <code class="design-code">.env.keys</code> to code. Keep them somewhere safe like 1Password or <a class="design-link" href="https://dotenvx.com/armor">Armor</a>.</p>
     {% endcapture %}

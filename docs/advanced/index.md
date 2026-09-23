@@ -14,7 +14,20 @@ layout: radar
 
 {% capture advanced_sdk_items %}
   {% for option in site.data.advanced_sdk %}
-    <li><a class="design-link" href="{{ option.href }}">{{ option.label | escape }}</a></li>
+    {% if option.href contains "/docs/sdk/nodejs/" %}
+      {% unless option.href == "/docs/sdk/nodejs/primitives/" %}
+      <li><a class="design-link" href="{{ option.href }}">{{ option.label | remove_first: "Node.js " | escape }}</a></li>
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% capture advanced_rust_items %}
+  <li><a class="design-link" href="/docs/sdk/nodejs/primitives/">Node.js – @dotenvx/primitives</a></li>
+  {% for option in site.data.advanced_sdk %}
+    {% if option.href contains "/docs/sdk/rust/" %}
+      <li><a class="design-link" href="{{ option.href }}">Rust – dotenvx-primitives</a></li>
+    {% endif %}
   {% endfor %}
 {% endcapture %}
 
@@ -23,7 +36,7 @@ layout: radar
   <div class="design-content-width">
     <div class="docs-intro-lists">
       {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">CLI commands</h2>
+        <h2 class="design-page-title design-page-title--flush">CLI Commands</h2>
         <ul class="advanced-cli-commands">
           {% for command in site.data.advanced_cli %}
             <li><a class="design-link" href="{{ command.href }}">{{ command.label | escape }}</a></li>
@@ -33,10 +46,27 @@ layout: radar
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        {% include components/design-list.html
-          title="SDK"
-          items=advanced_sdk_items
-        %}
+        <h2 class="design-page-title design-page-title--flush">SDK – Node.js</h2>
+        <ul class="advanced-cli-commands">{{ advanced_sdk_items }}</ul>
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+      {% capture step_content %}
+        <h2 class="design-page-title design-page-title--flush">SDK – Ruby</h2>
+        <ul class="advanced-cli-commands">
+          <li><a class="design-link" href="/docs/sdk/ruby/">Ruby SDK</a></li>
+        </ul>
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+      {% capture step_content %}
+        <h2 class="design-page-title design-page-title--flush">SDK – Python</h2>
+        <ul class="advanced-cli-commands">
+          <li><a class="design-link" href="/docs/sdk/python/">Python SDK</a></li>
+        </ul>
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+      {% capture step_content %}
+        <h2 class="design-page-title design-page-title--flush">Primitives</h2>
+        <ul class="advanced-cli-commands">{{ advanced_rust_items }}</ul>
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
     </div>

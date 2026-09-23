@@ -3,12 +3,12 @@
     "label": "Start here",
     "children": [
       {
-        "label": "Documentation",
+        "label": "Docs",
         "href": "/docs/introduction/",
         "children": []
       },
       {
-        "label": "Installing",
+        "label": "Install",
         "href": "/docs/install/",
         "children": []
       },
@@ -18,13 +18,48 @@
         "children": []
       },
       {
-        "label": "Whitepaper",
-        "href": "/dotenvx.pdf",
+        "label": "Advanced",
+        "href": "/docs/advanced/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "CLI reference",
+    "children": [
+      {
+        "label": "Run",
+        "href": "/docs/cli/run/",
         "children": []
       },
       {
-        "label": "Advanced",
-        "href": "/docs/advanced/",
+        "label": "Encrypt",
+        "href": "/docs/cli/encrypt/",
+        "children": []
+      },
+      {
+        "label": "more...",
+        "href": "/docs/cli/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "SDKs",
+    "children": [
+      {
+        "label": "Node.js",
+        "href": "/docs/sdk/nodejs/",
+        "children": []
+      },
+      {
+        "label": "Python",
+        "href": "/docs/sdk/python/",
+        "children": []
+      },
+      {
+        "label": "more...",
+        "href": "/docs/sdk/",
         "children": []
       }
     ]
@@ -225,41 +260,6 @@
     ]
   },
   {
-    "label": "CLI reference",
-    "children": [
-      {
-        "label": "CLI",
-        "href": "/docs/cli/",
-        "children": []
-      }
-    ]
-  },
-  {
-    "label": "SDKs",
-    "children": [
-      {
-        "label": "Node.js",
-        "href": "/docs/sdk/nodejs/",
-        "children": []
-      },
-      {
-        "label": "Python",
-        "href": "/docs/sdk/python/",
-        "children": []
-      },
-      {
-        "label": "Ruby",
-        "href": "/docs/sdk/ruby/",
-        "children": []
-      },
-      {
-        "label": "Rust",
-        "href": "/docs/sdk/rust/",
-        "children": []
-      }
-    ]
-  },
-  {
     "label": "Guides & deployment",
     "children": [
       {
@@ -280,16 +280,6 @@
       {
         "label": "DigitalOcean",
         "href": "/docs/platforms/digital-ocean/",
-        "children": []
-      },
-      {
-        "label": "Encrypted Files",
-        "href": "/docs/learn/encrypting/encrypted-files/",
-        "children": []
-      },
-      {
-        "label": "Encrypting",
-        "href": "/docs/learn/encrypting/introduction/",
         "children": []
       },
       {
@@ -340,11 +330,6 @@
       {
         "label": "Production",
         "href": "/docs/armor/production/",
-        "children": []
-      },
-      {
-        "label": "Quickstart",
-        "href": "/docs/quickstart/",
         "children": []
       },
       {
@@ -415,6 +400,11 @@
       {
         "label": "Stats",
         "href": "/docs/stats/",
+        "children": []
+      },
+      {
+        "label": "Whitepaper",
+        "href": "/dotenvx.pdf",
         "children": []
       }
     ]

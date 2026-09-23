@@ -15,7 +15,7 @@ layout: radar
 {% include components/docs-hero.html
 
   eyebrow="Docs"
-  eyebrow_href="/docs/introduction"
+  eyebrow_href="/docs/introduction/"
   title="Guides"
   description="Use dotenvx with the tools and languages you already know and love. It works pretty much everywhere that we know of."
   visual=docs_hero_visual
@@ -23,228 +23,249 @@ layout: radar
 
 {% capture qs_cli_items %}
   <li>
-    <a class="design-link" href="/docs/cli-quickstart">CLI</a>
+    <a class="design-link" href="/docs/quickstart/">Quickstart</a>
     <span class="design-list-meta">dotenvx encrypt</span>
   </li>
 {% endcapture %}
 
 {% capture qs_agents_items %}
   <li>
-    <a class="design-link" href="/docs/claude">Claude</a>
+    <a class="design-link" href="/docs/claude/">Claude</a>
     <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/codex">Codex</a>
+    <a class="design-link" href="/docs/codex/">Codex</a>
     <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/cursor">Cursor</a>
+    <a class="design-link" href="/docs/cursor/">Cursor</a>
     <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
   </li>
 {% endcapture %}
 
 {% capture qs_password_managers_items %}
   <li>
-    <a class="design-link" href="/docs/1password">1Password</a>
+    <a class="design-link" href="/docs/1password/">1Password</a>
     <span class="design-list-meta">op://</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/bitwarden">Bitwarden</a>
+    <a class="design-link" href="/docs/bitwarden/">Bitwarden</a>
     <span class="design-list-meta">bw://</span>
   </li>
 {% endcapture %}
 
 {% capture qs_nodejs_items %}
   <li>
-    <a class="design-link" href="/docs/nodejs">Node.js</a>
+    <a class="design-link" href="/docs/nodejs/">Node.js</a>
     <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/nextjs">Next.js</a>
+    <a class="design-link" href="/docs/nextjs/">Next.js</a>
     <span class="design-list-meta">npm install @dotenvx/next-env</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/express">Express</a>
+    <a class="design-link" href="/docs/express/">Express</a>
     <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/astro">Astro</a>
+    <a class="design-link" href="/docs/astro/">Astro</a>
     <span class="design-list-meta">dotenvx run -- astro</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/remix">Remix</a>
+    <a class="design-link" href="/docs/remix/">Remix</a>
     <span class="design-list-meta">dotenvx run -- remix</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/expo">Expo</a>
+    <a class="design-link" href="/docs/expo/">Expo</a>
     <span class="design-list-meta">dotenvx run -- expo</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/bun">Bun</a>
+    <a class="design-link" href="/docs/bun/">Bun</a>
     <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cloudflare-workers">Cloudflare Workers</a>
-    <span class="design-list-meta">import dotenvx from '@dotenvx/dotenvx'</span>
   </li>
 {% endcapture %}
 
 {% capture qs_python_items %}
   <li>
-    <a class="design-link" href="/docs/python">Python</a>
+    <a class="design-link" href="/docs/python/">Python</a>
     <span class="design-list-meta">pip install python-dotenvx</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/flask">Flask</a>
+    <a class="design-link" href="/docs/flask/">Flask</a>
     <span class="design-list-meta">pip install python-dotenvx</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/uv">uv</a>
+    <a class="design-link" href="/docs/uv/">uv</a>
     <span class="design-list-meta">uv add python-dotenvx</span>
   </li>
 {% endcapture %}
 
 {% capture qs_php_items %}
   <li>
-    <a class="design-link" href="/docs/php">PHP</a>
+    <a class="design-link" href="/docs/php/">PHP</a>
     <span class="design-list-meta">dotenvx run -- php index.php</span>
   </li>
 {% endcapture %}
 
 {% capture qs_ruby_items %}
   <li>
-    <a class="design-link" href="/docs/ruby">Ruby</a>
+    <a class="design-link" href="/docs/ruby/">Ruby</a>
     <span class="design-list-meta">gem install dotenvx</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/rails">Rails</a>
+    <a class="design-link" href="/docs/rails/">Rails</a>
     <span class="design-list-meta">gem "dotenvx-rails"</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/sinatra">Sinatra</a>
+    <a class="design-link" href="/docs/sinatra/">Sinatra</a>
     <span class="design-list-meta">gem install dotenvx</span>
   </li>
 {% endcapture %}
 
 {% capture qs_go_items %}
   <li>
-    <a class="design-link" href="/docs/go">Go</a>
+    <a class="design-link" href="/docs/go/">Go</a>
     <span class="design-list-meta">dotenvx run -- go run</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/echo">Echo</a>
+    <a class="design-link" href="/docs/echo/">Echo</a>
     <span class="design-list-meta">dotenvx run -- go run</span>
   </li>
 {% endcapture %}
 
 {% capture qs_rust_items %}
   <li>
-    <a class="design-link" href="/docs/rust">Rust</a>
+    <a class="design-link" href="/docs/rust/">Rust</a>
     <span class="design-list-meta">dotenvx run -- cargo run</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/rocket">Rocket</a>
+    <a class="design-link" href="/docs/rocket/">Rocket</a>
     <span class="design-list-meta">platforms</span>
   </li>
 {% endcapture %}
 
 {% capture qs_java_items %}
   <li>
-    <a class="design-link" href="/docs/java">Java</a>
+    <a class="design-link" href="/docs/java/">Java</a>
     <span class="design-list-meta">dotenvx run -- java</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/kotlin">Kotlin</a>
+    <a class="design-link" href="/docs/kotlin/">Kotlin</a>
     <span class="design-list-meta">dotenvx run -- kotlin</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/clojure">Clojure</a>
+    <a class="design-link" href="/docs/clojure/">Clojure</a>
     <span class="design-list-meta">dotenvx run -- clj</span>
   </li>
 {% endcapture %}
 
 {% capture qs_dotnet_items %}
   <li>
-    <a class="design-link" href="/docs/dotnet">.NET</a>
+    <a class="design-link" href="/docs/dotnet/">.NET</a>
     <span class="design-list-meta">dotenvx run -- dotnet run</span>
   </li>
 {% endcapture %}
 
 {% capture qs_docker_items %}
   <li>
-    <a class="design-link" href="/docs/docker">Docker</a>
+    <a class="design-link" href="/docs/docker/">Docker</a>
     <span class="design-list-meta">Dockerfile</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/docker-compose">Docker Compose</a>
+    <a class="design-link" href="/docs/docker-compose/">Docker Compose</a>
     <span class="design-list-meta">compose.yml</span>
   </li>
 {% endcapture %}
 
 {% capture qs_ci_items %}
   <li>
-    <a class="design-link" href="/docs/github-actions">GitHub Actions</a>
+    <a class="design-link" href="/docs/github-actions/">GitHub Actions</a>
     <span class="design-list-meta">.github/workflows</span>
   </li>
 {% endcapture %}
 
 {% capture qs_package_managers_items %}
   <li>
-    <a class="design-link" href="/docs/package-managers/npm">npm</a>
+    <a class="design-link" href="/docs/package-managers/npm/">npm</a>
     <span class="design-list-meta">dotenvx run --</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/package-managers/pnpm">pnpm</a>
+    <a class="design-link" href="/docs/package-managers/pnpm/">pnpm</a>
     <span class="design-list-meta">like npm</span>
   </li>
 {% endcapture %}
 
 {% capture qs_process_managers_items %}
   <li>
-    <a class="design-link" href="/docs/process-managers/pm2">PM2</a>
+    <a class="design-link" href="/docs/process-managers/pm2/">PM2</a>
     <span class="design-list-meta">pm2-runtime</span>
   </li>
 {% endcapture %}
 
 {% capture qs_background_jobs_items %}
   <li>
-    <a class="design-link" href="/docs/background-jobs/triggerdotdev">Trigger.dev</a>
+    <a class="design-link" href="/docs/background-jobs/triggerdotdev/">Trigger.dev</a>
     <span class="design-list-meta">dotenv.config</span>
   </li>
 {% endcapture %}
 
 {% capture qs_monorepos_items %}
   <li>
-    <a class="design-link" href="/docs/monorepos">Monorepos</a>
+    <a class="design-link" href="/docs/monorepos/">Monorepos</a>
     <span class="design-list-meta">dotenvx run -f</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/nx">Nx</a>
+    <a class="design-link" href="/docs/nx/">Nx</a>
     <span class="design-list-meta">dotenvx run -- nx</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/turborepo">Turborepo</a>
+    <a class="design-link" href="/docs/turborepo/">Turborepo</a>
     <span class="design-list-meta">dotenvx run -- turbo</span>
   </li>
 {% endcapture %}
 
 {% capture qs_other_items %}
   <li>
-    <a class="design-link" href="/docs/bash">Bash</a>
+    <a class="design-link" href="/docs/bash/">Bash</a>
     <span class="design-list-meta">dotenvx run -- bash</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/fish">Fish</a>
+    <a class="design-link" href="/docs/fish/">Fish</a>
     <span class="design-list-meta">dotenvx run -- fish</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/zsh">Zsh</a>
+    <a class="design-link" href="/docs/zsh/">Zsh</a>
     <span class="design-list-meta">dotenvx run -- zsh</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/cron">Cron</a>
+    <a class="design-link" href="/docs/cron/">Cron</a>
     <span class="design-list-meta">crontab</span>
   </li>
+{% endcapture %}
+
+{% capture qs_platforms_items %}
+  <li><a class="design-link" href="/docs/platforms/aws-lambda/">AWS Lambda</a></li>
+  <li><a class="design-link" href="/docs/cloudflare/">Cloudflare</a></li>
+  <li><a class="design-link" href="/docs/platforms/digital-ocean/">DigitalOcean</a></li>
+  <li><a class="design-link" href="/docs/platforms/fly/">Fly</a></li>
+  <li><a class="design-link" href="/docs/platforms/heroku/">Heroku</a></li>
+  <li><a class="design-link" href="/docs/platforms/netlify/">Netlify</a></li>
+  <li><a class="design-link" href="/docs/platforms/railway/">Railway</a></li>
+  <li><a class="design-link" href="/docs/platforms/render/">Render</a></li>
+  <li><a class="design-link" href="/docs/nextjs/">Vercel (Next.js)</a></li>
+{% endcapture %}
+
+{% capture qs_encryption_items %}
+  <li><a class="design-link" href="/docs/learn/encrypting/introduction/">Encrypting</a></li>
+  <li><a class="design-link" href="/docs/learn/encrypting/encrypted-files/">Encrypted Files</a></li>
+  <li><a class="design-link" href="/docs/learn/encrypting/multiple-environments/">Multiple Environments</a></li>
+  <li><a class="design-link" href="/docs/learn/encrypting/private-keys/">Private Keys</a></li>
+  <li><a class="design-link" href="/docs/learn/encrypting/runtime-decryption/">Runtime Decryption</a></li>
+{% endcapture %}
+
+{% capture qs_armor_items %}
+  <li><a class="design-link" href="/docs/learn/armoring/introduction/">Armoring</a></li>
+  <li><a class="design-link" href="/docs/armor/production/">Production</a></li>
 {% endcapture %}
 
 <section class="radar-section">
@@ -262,7 +283,7 @@ layout: radar
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        {% include components/design-list.html title="CI" items=qs_ci_items %}
+        {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
@@ -307,7 +328,17 @@ layout: radar
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
+        {% include components/design-list.html title="Platforms" items=qs_platforms_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
         {% include components/design-list.html title="Docker" items=qs_docker_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="CI" items=qs_ci_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
@@ -332,14 +363,20 @@ layout: radar
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        {% include components/design-list.html title="Other" items=qs_other_items %}
+        {% include components/design-list.html title="Shells & Scheduling" items=qs_other_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 
       {% capture step_content %}
-        {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
+        {% include components/design-list.html title="Encryption" items=qs_encryption_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
+
+      {% capture step_content %}
+        {% include components/design-list.html title="Armor" items=qs_armor_items %}
+      {% endcapture %}
+      {% include components/design-step.html content=step_content %}
+
     </div>
   </div>
 </div>

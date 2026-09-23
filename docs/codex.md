@@ -1,9 +1,14 @@
 ---
+og_image:
+  template: logo
+  logo: _includes/icons/docs/openai.html
+  alt: Codex
 layout: docs-quickstart
 title: "Codex"
 social_title: "Runtime leak protection for Codex agents"
 description: "Runtime leak protection and log redaction for Codex. Give Codex real secrets while redacting them from output, terminals, and agent transcripts."
 icon: codex
+show_icon: true
 permalink: /docs/codex/
 redirect_from:
   - /docs/secrets-in-codex/

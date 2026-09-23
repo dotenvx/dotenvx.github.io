@@ -8,7 +8,7 @@
   {% assign docs_hero_visual = include.visual %}
 {% elsif icon and icon != "" %}
   {% capture docs_hero_visual %}
-    <div class="docs-hero-icon-wrap">
+    <div class="docs-hero-icon-wrap{% if include.show_icon %} docs-hero-icon-wrap--visible{% endif %}">
       <div class="docs-hero-mark-frame">
         {% include components/docs-hero-icon.html icon=icon %}
       </div>

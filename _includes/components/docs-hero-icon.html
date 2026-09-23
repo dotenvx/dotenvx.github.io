@@ -9,6 +9,8 @@
 {% assign icon_cli = false %}
 
 {% case icon_key %}
+  {% when "dotenvx" %}
+    {% assign icon_file = "dotenvx.html" %}
   {% when "windows" %}
     {% assign icon_file = "windows.html" %}
   {% when "linux" %}

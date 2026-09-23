@@ -1,4 +1,8 @@
 ---
+og_image:
+  template: logo
+  logo: _includes/icons/docs/nodejs.html
+  alt: Node.js
 layout: radar
 title: Node.js
 social_title: Encrypt a .env file in Node.js
@@ -12,11 +16,14 @@ redirect_from:
 ---
 
 
+{% capture nodejs_visual %}
+  {% include icons/docs/nodejs.html class="docs-nodejs-logo" %}
+{% endcapture %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="Node.js"
   description="Use Dotenvx with Node.js."
-  icon="nodejs"
+  visual=nodejs_visual
 %}
 
 <div class="armor-shell">

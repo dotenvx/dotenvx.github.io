@@ -12,11 +12,19 @@ redirect_from:
   - /docs/ops/install
 ---
 
+{% capture installing_visual %}
+  <div class="docs-install-icons" role="img" aria-label="npm, curl, Windows, and Docker">
+    <span class="docs-install-icon docs-install-icon--npm" aria-hidden="true">{% include icons/npm.html %}</span>
+    <span class="docs-install-icon docs-install-icon--curl" aria-hidden="true">{% include icons/curl.html %}</span>
+    <span class="docs-install-icon docs-install-icon--windows" aria-hidden="true">{% include icons/docs/windows.html %}</span>
+    <span class="docs-install-icon docs-install-icon--docker" aria-hidden="true">{% include icons/docs/docker.html %}</span>
+  </div>
+{% endcapture %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="Installing"
   description="Install dotenvx."
-  mark="↓_"
+  visual=installing_visual
 %}
 
 <div class="armor-shell">

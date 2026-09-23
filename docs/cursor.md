@@ -1,9 +1,14 @@
 ---
+og_image:
+  template: logo
+  logo: _includes/icons/docs/cursor.html
+  alt: Cursor
 layout: docs-quickstart
 title: "Cursor"
 social_title: "Runtime leak protection for Cursor agents"
 description: "Runtime leak protection and log redaction for Cursor agents. Give Cursor real secrets while redacting them from output, terminals, and agent transcripts."
 icon: cursor
+show_icon: true
 permalink: /docs/cursor/
 redirect_from:
   - /docs/secrets-in-cursor/

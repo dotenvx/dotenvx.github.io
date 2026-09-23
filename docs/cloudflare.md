@@ -1,4 +1,8 @@
 ---
+og_image:
+  template: logo
+  logo: _includes/logos/cloudflare.html
+  alt: Cloudflare
 title: Cloudflare
 description: Use Dotenvx with Cloudflare.
 permalink: /docs/cloudflare/
@@ -96,11 +100,9 @@ npx wrangler pages deploy dist --project-name my-site
     {% include components/design-codeblock.html value=cf_pages copy_text=cf_pages_copy class="design-codeblock--nowrap" %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
-
-
+    {% include components/design-separator.html %}
 
     {% capture step_content %}
-    <hr style="border: 0; border-top: 1px solid var(--design-line); margin: 0 0 2.5rem;">
     <h2 class="design-page-title design-page-title--flush">Advanced</h2>
     <p class="design-paragraph">The above set up is typical for Cloudflare but if you want to get full secrets separation in the spirit of dotenvx you can ship an encrypted .env.txt file to decrypt at runtime.</p>
     <p class="design-paragraph">Install dotenvx.</p>

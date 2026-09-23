@@ -1,9 +1,14 @@
 ---
+og_image:
+  template: logo
+  logo: _includes/icons/docs/claude-code.html
+  alt: Claude Code
 layout: docs-quickstart
 title: "Claude Code"
 social_title: "Runtime leak protection for Claude coding agents"
 description: "Runtime leak protection and log redaction for Claude Code. Give Claude real secrets while redacting them from output, terminals, and agent transcripts."
 icon: claude
+show_icon: true
 permalink: /docs/claude/
 redirect_from:
   - /docs/secrets-in-claude/

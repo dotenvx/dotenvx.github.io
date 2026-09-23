@@ -5260,6 +5260,13 @@ html.dark .docs-hero-icon--invert-dark {
   visibility: visible;
 }
 
+.design-separator {
+  border: 0;
+  border-top: 1px solid var(--design-line);
+  margin: 1rem 0;
+  width: 100%;
+}
+
 .design-step {
   display: flex;
   flex-direction: column;
@@ -6795,15 +6802,49 @@ html.dark .hero-container-primary { color: #7b838a; }
   display: none;
 }
 
-.docs-hero .design-hero--secondary .design-hero-content:has(.docs-cloudflare-logo, .docs-dotenvx-logo) {
+.docs-hero .design-hero--secondary .design-hero-content:has(.docs-cloudflare-logo, .docs-dotenvx-logo, .docs-nodejs-logo, .docs-hero-icon-wrap--visible) {
   display: flex;
   aspect-ratio: auto;
 }
 
-.docs-dotenvx-logo {
+.docs-nodejs-logo {
   width: 100%;
   height: auto;
+  color: #339933;
 }
+
+.docs-dotenvx-logo {
+  width: 3.5rem;
+  height: auto;
+  margin-inline: auto;
+}
+
+.docs-hero .design-hero--secondary .design-hero-content:has(.docs-install-icons) {
+  display: flex;
+  width: auto;
+  aspect-ratio: auto;
+}
+.docs-install-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.docs-install-icon {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--design-line);
+  border-radius: 8px;
+  color: #fff;
+  background: #000;
+}
+.docs-install-icon svg { width: 72%; height: 72%; margin: auto; }
+.docs-install-icon + .docs-install-icon { margin-left: -.5rem; }
+.docs-install-icon--docker { background: #2496ed; }
+.docs-install-icon--npm { background: #cb3837; }
+.docs-install-icon--curl { background: #073551; }
+.docs-install-icon--windows { background: #0078d4; }
 
 .docs-cloudflare-logo {
   width: 100%;

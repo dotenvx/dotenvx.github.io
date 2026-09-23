@@ -51,7 +51,7 @@ layout: radar
     <div id="languages" class="docs-intro-cards">
       <p class="design-list-title">Quickstarts</p>
       <div class="design-settings-grid">
-        {% include components/design-settings-tile.html href="/docs/cli-quickstart" label="CLI" icon="cli" %}
+        {% include components/design-settings-tile.html href="/docs/cli-quickstart" label="CLI" icon="dotenvx" %}
         {% include components/design-settings-tile.html href="/docs/claude" label="Claude" icon="claude" %}
         {% include components/design-settings-tile.html href="/docs/codex" label="Codex" icon="codex" %}
         {% include components/design-settings-tile.html href="/docs/cursor" label="Cursor" icon="cursor" %}

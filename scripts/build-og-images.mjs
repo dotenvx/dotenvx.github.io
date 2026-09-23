@@ -62,7 +62,9 @@ function logoSvg(logo) {
   const scale = Math.min(720 / viewBox[2], 260 / viewBox[3])
   const logoWidth = viewBox[2] * scale
   const logoHeight = viewBox[3] * scale
-  const body = logo.replace(/^.*?<svg\b[^>]*>/s, '').replace(/<\/svg>\s*$/, '').replaceAll('currentColor', ink)
+  const rootFill = logo.match(/<svg\b[^>]*\bfill="([^"]+)"/)?.[1] || ink
+  const content = logo.replace(/^.*?<svg\b[^>]*>/s, '').replace(/<\/svg>\s*$/, '').replaceAll('currentColor', ink)
+  const body = `<g fill="${rootFill.replaceAll('currentColor', ink)}">${content}</g>`
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="${width}" height="${height}" fill="${background}"/><svg x="${(width-logoWidth)/2}" y="${(height-logoHeight)/2}" width="${logoWidth}" height="${logoHeight}" viewBox="${viewBox.join(' ')}">${body}</svg></svg>`
 }
 

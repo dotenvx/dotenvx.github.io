@@ -2,32 +2,32 @@
   Install page — installation commands and agent prompts.
   Kept out of install.md so Kramdown cannot break nested HTML.
 {% endcomment %}
-{% capture install_hero_visual %}
-  <div class="install-hero-visual" aria-hidden="true">
-    <pre class="docs-hero-ascii-art">↓_</pre>
+<div class="install-page home-sections">
+{% capture installing_visual %}
+  <div class="docs-install-icons" role="img" aria-label="npm, Windows, and Docker">
+    <span class="docs-install-icon docs-install-icon--npm" aria-hidden="true">{% include icons/npm.html %}</span>
+    <span class="docs-install-icon docs-install-icon--windows" aria-hidden="true">{% include icons/docs/windows.html %}</span>
+    <span class="docs-install-icon docs-install-icon--docker" aria-hidden="true">{% include icons/docs/docker.html %}</span>
   </div>
 {% endcapture %}
+{% include components/docs-hero.html
+  eyebrow="Docs"
+  title="Install"
+  description="Use dotenvx from the command line or directly in your code."
+  visual=installing_visual
+%}
 
-<div class="install-page home-sections">
-  <section class="design-hero-section home-hero" aria-label="Install">
-    <div class="armor-shell">
-      {% include components/design-hero.html
-        compact=true
-        secondary=true
-        name_heading=true
-        name="Install"
-        description="Use dotenvx from the command line or directly in your code."
-        content=install_hero_visual
-      %}
-    </div>
-  </section>
 
   <section class="radar-section" aria-label="Installation methods">
     <div class="armor-shell">
       <div class="design-content-width">
       {% include components/install-methods.html methods=site.data.install_methods %}
       {% include components/install-methods.html methods=site.data.install_sdks label="SDK" %}
-      <p class="design-paragraph install-other-methods"><a class="design-link" href="/docs/learn/installing/">More installation methods</a></p>
+      <details class="install-other-methods">
+        <summary class="design-paragraph">Other methods</summary>
+        {% include components/install-methods.html methods=site.data.install_other_methods %}
+      </details>
+      <p class="design-paragraph install-other-methods">For usage, follow the <a class="design-link" href="/docs/nodejs/">Node.js guide</a>. Deploying on Heroku? See the <a class="design-link" href="/docs/platforms/heroku/">Heroku guide</a>.</p>
       </div>
     </div>
   </section>

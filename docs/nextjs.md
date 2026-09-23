@@ -1,5 +1,9 @@
 ---
 layout: radar
+og_image:
+  template: logo
+  logo: _includes/icons/docs/nextjs.html
+  alt: Next.js
 title: Next.js
 social_title: Encrypt a .env file in Next.js
 description: Use Dotenvx with Next.js.

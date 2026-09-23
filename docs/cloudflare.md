@@ -1,7 +1,7 @@
 ---
 og_image:
   template: logo
-  logo: _includes/logos/cloudflare.html
+  logo: _includes/icons/cloudflare.html
   alt: Cloudflare
 title: Cloudflare
 description: Use Dotenvx with Cloudflare.

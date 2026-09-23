@@ -22,7 +22,7 @@ layout: radar
     <span class="design-list-meta">private decryption keys</span>
   </li>
   <li>
-    <a class="design-link" href="/docs/learn/installing">Installing</a>
+    <a class="design-link" href="/docs/install/">Installing</a>
     <span class="design-list-meta">curl, npm, brew, more</span>
   </li>
   <li>

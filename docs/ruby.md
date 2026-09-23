@@ -1,5 +1,9 @@
 ---
 layout: radar
+og_image:
+  template: logo
+  logo: _includes/icons/docs/ruby.html
+  alt: Ruby
 title: Ruby
 social_title: Encrypt a .env file in Ruby
 description: Use Dotenvx with Ruby.

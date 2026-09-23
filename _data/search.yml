@@ -132,7 +132,7 @@ entries:
       - gha
       - ci
       - github action
-  /docs/learn/installing/:
+  /docs/install/:
     boost: 65
     aliases:
       - install

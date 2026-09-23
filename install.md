@@ -1,8 +1,4 @@
 ---
-title: Install
-layout: radar
-body_class: home-page
 permalink: /install/
+redirect_to: /docs/install/
 ---
-
-{% include components/install-page.html %}

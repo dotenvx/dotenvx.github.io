@@ -78,7 +78,7 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
     {% endcapture %}
     {% include components/design-codeblock.html value=fly_dockerfile_dx copy=false %}
 
-    <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/learn/installing#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
+    <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/install/#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

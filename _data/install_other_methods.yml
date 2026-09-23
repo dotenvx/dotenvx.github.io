@@ -1,0 +1,9 @@
+- name: NPM global
+  command: npm install --global @dotenvx/dotenvx
+  prompt: Install @dotenvx/dotenvx globally with npm and verify with dotenvx --version. Check the existing installation first. Do not change my .env files.
+- name: NPX
+  command: npx @dotenvx/dotenvx --version
+  prompt: Run npx @dotenvx/dotenvx --version to verify that I can use Dotenvx through npx. Do not change my .env files or project dependencies.
+- name: Wget
+  command: wget -qO- https://dotenvx.sh | sh
+  prompt: Install the Dotenvx CLI using wget -qO- https://dotenvx.sh | sh. Check that this method suits my operating system and verify with dotenvx --version. Do not change my .env files.

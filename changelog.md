@@ -144,7 +144,7 @@ v1   v2   v3   v99</pre>
         <p class="design-paragraph text-center">From here, the fastest next step is installing dotenvx.</p>
       {% endcapture %}
       {% include components/design-content-width.html content=changelog_closing %}
-      {% include components/design-btn.html label="Install" href="/install" data_umami_event="Changelog Closing Install button" %}
+      {% include components/design-btn.html label="Install" href="/docs/install/" data_umami_event="Changelog Closing Install button" %}
       </div>
     </div>
   </section>

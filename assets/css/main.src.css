@@ -2979,7 +2979,7 @@ html.dark .design-codeblock code,
 
 .design-choice--code .design-choice-current {
   align-items: stretch;
-  background: var(--design-code-bg);
+  background: var(--design-bg);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2990,7 +2990,7 @@ html.dark .design-codeblock code,
 }
 
 .design-choice--code .design-codeblock {
-  background: transparent !important;
+  background: var(--design-bg) !important;
   border: 0 !important;
   border-radius: 0 !important;
   margin: 0 !important;

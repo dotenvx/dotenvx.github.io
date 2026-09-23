@@ -1,6 +1,6 @@
 ---
-title: "Encrypted .env"
-description: "The encrypted .env file separates your secrets from their decryption key."
+title: ".env (encrypted)"
+description: "The .env file you can commit."
 permalink: /docs/encrypted-env-file/
 layout: radar
 ---
@@ -11,8 +11,8 @@ layout: radar
 
 {% include components/docs-hero.html
   eyebrow="Docs"
-  title="Encrypted .env"
-  description="The encrypted .env file separates your secrets from their decryption key."
+  title=".env (encrypted)"
+  description="The .env file you can commit."
   visual=encrypted_env_visual
 %}
 
@@ -33,7 +33,6 @@ layout: radar
         <li><a class="design-link" href="#commit">Commit</a></li>
         <li><a class="design-link" href="#run">Run</a></li>
         <li><a class="design-link" href="#multiple-environments">Multiple environments</a></li>
-        <li><a class="design-link" href="#related">Related</a></li>
       </ul>
     </nav>
     {% endcapture %}
@@ -74,6 +73,7 @@ HELLO="encrypted:BDcJe0ksryTFcP9vEGH/DRgvxIFCFym1MoPwA5MhnTPKhSxinnRAQYAUMalR83m
 
     {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush" id="public-and-private-keys">Public and private keys</h2>
+    <p class="design-paragraph">Dotenvx uses public-key encryption with a secp256k1 key pair.</p>
     <p class="design-paragraph"><code class="design-code">DOTENV_PUBLIC_KEY</code> belongs in the encrypted .env file. It encrypts new values, but cannot decrypt them.</p>
     <p class="design-paragraph"><code class="design-code">DOTENV_PRIVATE_KEY</code> decrypts the values. Keep it separate from the encrypted file. For local file-based storage, dotenvx saves it in <a class="design-link" href="/docs/env-keys-file/">.env.keys</a>. Do not commit that file.</p>
     {% endcapture %}
@@ -169,17 +169,6 @@ dotenvx run -f .env.production -- node index.js
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush" id="related">Related</h2>
-    <ul class="design-list-items">
-      <li><a class="design-link" href="/docs/env-file/">.env</a></li>
-      <li><a class="design-link" href="/docs/env-keys-file/">.env.keys</a></li>
-      <li><a class="design-link" href="/docs/quickstart/">Quickstart</a></li>
-      <li><a class="design-link" href="/docs/cli/encrypt/">dotenvx encrypt</a></li>
-      <li><a class="design-link" href="/docs/cli/run/">dotenvx run</a></li>
-    </ul>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
   </section>
   </div>
 </div>

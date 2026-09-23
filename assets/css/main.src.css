@@ -2768,8 +2768,10 @@ html.dark .design-input:focus {
   text-transform: none;
   white-space: pre;
 }
-.design-codeblock-wrap .design-codeblock { padding-right: 3.25rem !important; }
+.design-codeblock-wrap .design-codeblock { padding-right: 4rem !important; }
+.design-codeblock-wrap .design-codeblock > code { width: fit-content; min-width: 100%; }
 .design-codeblock-copy {
+  --codeblock-copy-right: .6rem;
   appearance: none;
   background: transparent;
   border: 0;
@@ -2781,9 +2783,20 @@ html.dark .design-input:focus {
   height: 2rem;
   padding: .4rem;
   position: absolute;
-  right: .6rem;
+  right: var(--codeblock-copy-right);
   top: .7rem;
   z-index: 1;
+}
+/* Fade scrolling text beneath the fixed copy control. End padding lets every character scroll clear. */
+.design-codeblock-copy::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: -1.25rem;
+  right: calc(1px - var(--codeblock-copy-right));
+  background: linear-gradient(to right, transparent, var(--design-bg) 1.25rem);
+  pointer-events: none;
+  z-index: -1;
 }
 .design-codeblock-copy svg { width: 1rem; height: 1rem; }
 .design-codeblock-copy:hover { color: var(--design-ink); }
@@ -3012,6 +3025,7 @@ html.dark .design-codeblock code,
 }
 
 .design-choice--code .design-codeblock-copy {
+  --codeblock-copy-right: .35rem;
   position: absolute;
   right: 0.35rem;
   top: 0.35rem;
@@ -6779,6 +6793,22 @@ html.dark .hero-container-primary { color: #7b838a; }
 
 .design-hero--secondary .design-hero-content:not(:has(.design-codeblock, .docs-cli-hero-command-copy)) {
   display: none;
+}
+
+.docs-hero .design-hero--secondary .design-hero-content:has(.docs-cloudflare-logo, .docs-dotenvx-logo) {
+  display: flex;
+  aspect-ratio: auto;
+}
+
+.docs-dotenvx-logo {
+  width: 100%;
+  height: auto;
+}
+
+.docs-cloudflare-logo {
+  width: 100%;
+  height: auto;
+  color: #f48120;
 }
 
 /* Inline docs references blend into prose; full code examples keep their styling. */

@@ -59,6 +59,7 @@ layout: radar
         {% include components/design-settings-tile.html href="/docs/nodejs" label="Node.js" icon="nodejs" %}
         {% include components/design-settings-tile.html href="/docs/1password" label="1Password" icon="1password" %}
         {% include components/design-settings-tile.html href="/docs/bitwarden" label="Bitwarden" icon="bitwarden" %}
+        {% include components/design-settings-tile.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" %}
         {% include components/design-settings-tile.html href="/docs/guides" label="30+ Guides" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>
     </div>

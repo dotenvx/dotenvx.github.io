@@ -21,9 +21,7 @@ redirect_from:
 ---
 
 {% capture encrypt_hero_visual %}
-  <div class="docs-env-hero-example">
-    <code class="design-code">$ dotenvx encrypt</code>
-  </div>
+  {% include components/logo.html class="docs-dotenvx-logo" %}
 {% endcapture %}
 
 {% include components/docs-hero.html

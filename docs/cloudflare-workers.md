@@ -56,3 +56,5 @@ inject_after: |
     "test": "vitest"
   }
 ---
+
+<p class="design-paragraph">To decrypt during deployment and upload the values as Cloudflare secret bindings, see <a class="design-link" href="/docs/platforms/cloudflare/">Deploy and preview with Wrangler</a>. That guide includes deploy and preview scripts using dotenvx get --strict and Wrangler's --secrets-file flag.</p>

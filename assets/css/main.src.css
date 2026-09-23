@@ -6924,7 +6924,8 @@ html.dark .hero-container-primary { color: #7b838a; }
 .docs-sidebar a, .docs-sidebar-group { display: block; padding: .3rem .4rem; font-family: var(--design-font-sans); font-size: var(--design-text-compact); font-weight: 400; letter-spacing: -.01em; line-height: 1.5; overflow-wrap: anywhere; }
 .docs-sidebar a.design-link { font-size: var(--design-text-compact); }
 .docs-sidebar a { color: var(--design-body); text-decoration: none; border-radius: 2px; }
-.docs-sidebar-group { color: var(--design-dim); }
+.docs-sidebar-group, .docs-sidebar a.docs-sidebar-group { color: var(--design-dim); }
+.docs-sidebar a.docs-sidebar-group:hover { color: var(--design-body); }
 .docs-sidebar a.design-link[aria-current="page"] { font-weight: 700 !important; }
 .docs-sidebar-resizer { display: none; }
 .docs-sidebar-resizing, .docs-sidebar-resizing * { cursor: col-resize !important; user-select: none !important; }

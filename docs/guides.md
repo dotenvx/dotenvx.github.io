@@ -264,7 +264,6 @@ layout: radar
 {% endcapture %}
 
 {% capture qs_armor_items %}
-  <li><a class="design-link" href="/docs/learn/armoring/introduction/">Armoring</a></li>
   <li><a class="design-link" href="/docs/armor/production/">Production</a></li>
 {% endcapture %}
 

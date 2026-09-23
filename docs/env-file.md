@@ -18,18 +18,8 @@ lang_examples:
       print("Hello " + os.getenv("HELLO", ""))
 ---
 
-{% capture env_hero_file %}
-# .env
-STRIPE_API_KEY=scr_12345
-TWILIO_API_KEY=abcd1234
-{% endcapture %}
-{% assign env_hero_copy = "STRIPE_API_KEY=scr_12345
-TWILIO_API_KEY=abcd1234" %}
-
 {% capture env_hero_visual %}
-  <div class="docs-env-hero-example">
-    {% include components/design-codeblock.html value=env_hero_file copy_text=env_hero_copy %}
-  </div>
+  <img class="docs-dotenvx-logo" src="{{ '/assets/img/logo-env-yellow.svg' | relative_url }}" alt="dotenv" width="56" height="56">
 {% endcapture %}
 
 {% include components/docs-hero.html
@@ -47,14 +37,14 @@ TWILIO_API_KEY=abcd1234" %}
       <p class="design-list-title">On this page</p>
       <ul class="design-list-items">
         <li><a class="design-link" href="#format">Format</a></li>
-        <li><a class="design-link" href="#use-with-dotenvx">Use it with dotenvx</a></li>
-        <li><a class="design-link" href="#encryption">Encryption</a></li>
         <li><a class="design-link" href="#keys">Keys</a></li>
         <li><a class="design-link" href="#values">Values</a></li>
         <li><a class="design-link" href="#syntax">Syntax</a></li>
         <li><a class="design-link" href="#comments">Comments</a></li>
         <li><a class="design-link" href="#interpolation">Interpolation</a></li>
         <li><a class="design-link" href="#command-substitution">Command Substitution</a></li>
+        <li><a class="design-link" href="#use-with-dotenvx">Use it with dotenvx</a></li>
+        <li><a class="design-link" href="#encryption">Encryption</a></li>
         <li><a class="design-link" href="#related">Related</a></li>
         <li><a class="design-link" href="#history">History</a></li>
       </ul>
@@ -96,49 +86,6 @@ URL=https://${HOST}/api
     %}
 
     <p class="design-paragraph">It's a convenient and widely adopted format for separating your secrets and config from your code.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush" id="use-with-dotenvx">Use it with dotenvx</h2>
-    <p class="design-paragraph">Dotenvx loads the values from your <code class="design-code">.env</code> file and makes them available to your application. Preface your application's command with <code class="design-code">dotenvx run --</code>.</p>
-
-    {% capture env_run %}
-$ dotenvx run -- your-app-boot-command
-    {% endcapture %}
-    {% include components/design-codeblock.html value=env_run copy_text="dotenvx run -- your-app-boot-command" %}
-
-    <p class="design-paragraph"><a class="design-link" href="/docs/guides">Get started with dotenvx →</a></p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush" id="encryption">Encryption</h2>
-    <p class="design-paragraph"><code class="design-code">.env</code> files can be extended to support encryption. Preface each value with <code class="design-code">encrypted:</code> followed by a <a class="design-link" href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a> encrypted string.</p>
-
-    {% capture env_encrypted %}
-#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
-#/            public-key encryption for .env files          /
-#/       [how it works](https://dotenvx.com/encryption)     /
-#/----------------------------------------------------------/
-DOTENV_PUBLIC_KEY="03f98bf6e00bce6fdb933bc47738d671dffb75a916fa8c89854bdfa3483902632f"
-
-# .env
-HELLO="encrypted:BCV9qZmblsUm77IxgrEqY9t67qDVWQZg6jpogQhBWa9SaOCtvheEQ5/eUfPCigQ7KB6vN//6vFE+2+orG7LmUorWhe1JapWct6Dz58IY6mXi+ONs51F7TSed6R/T9e+lDBWYH04p"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=env_encrypted copy=false %}
-
-    <p class="design-paragraph">Include the <code class="design-code">DOTENV_PUBLIC_KEY</code> inside the <code class="design-code">.env</code> file and commit it. It's encrypted, safe, and recommended.</p>
-
-    {% capture env_encrypt_cmd %}
-$ dotenvx encrypt
-    {% endcapture %}
-    {% include components/design-codeblock.html value=env_encrypt_cmd copy_text="dotenvx encrypt" %}
-
-    {% include components/design-btn.html
-      label="Encryption quickstart"
-      href="/docs/quickstart"
-    %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -281,6 +228,49 @@ SECRET_HASH="something-with-a-hash-#-this-is-not-a-comment"
 DATABASE_URL="postgres://$(whoami)@localhost/my_database"
     {% endcapture %}
     {% include components/design-codeblock.html value=env_cmdsub copy_text='DATABASE_URL="postgres://$(whoami)@localhost/my_database"' %}
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="use-with-dotenvx">Use it with dotenvx</h2>
+    <p class="design-paragraph">Dotenvx loads the values from your <code class="design-code">.env</code> file and makes them available to your application. Preface your application's command with <code class="design-code">dotenvx run --</code>.</p>
+
+    {% capture env_run %}
+$ dotenvx run -- your-app-boot-command
+    {% endcapture %}
+    {% include components/design-codeblock.html value=env_run copy_text="dotenvx run -- your-app-boot-command" %}
+
+    <p class="design-paragraph"><a class="design-link" href="/docs/guides">Get started with dotenvx →</a></p>
+    {% endcapture %}
+    {% include components/design-step.html content=step_content %}
+
+    {% capture step_content %}
+    <h2 class="design-page-title design-page-title--flush" id="encryption">Encryption</h2>
+    <p class="design-paragraph"><code class="design-code">.env</code> files can be extended to support encryption. Preface each value with <code class="design-code">encrypted:</code> followed by a <a class="design-link" href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a> encrypted string.</p>
+
+    {% capture env_encrypted %}
+#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
+#/            public-key encryption for .env files          /
+#/       [how it works](https://dotenvx.com/encryption)     /
+#/----------------------------------------------------------/
+DOTENV_PUBLIC_KEY="03f98bf6e00bce6fdb933bc47738d671dffb75a916fa8c89854bdfa3483902632f"
+
+# .env
+HELLO="encrypted:BCV9qZmblsUm77IxgrEqY9t67qDVWQZg6jpogQhBWa9SaOCtvheEQ5/eUfPCigQ7KB6vN//6vFE+2+orG7LmUorWhe1JapWct6Dz58IY6mXi+ONs51F7TSed6R/T9e+lDBWYH04p"
+    {% endcapture %}
+    {% include components/design-codeblock.html value=env_encrypted copy=false %}
+
+    <p class="design-paragraph">Include the <code class="design-code">DOTENV_PUBLIC_KEY</code> inside the <code class="design-code">.env</code> file and commit it. It's encrypted, safe, and recommended.</p>
+
+    {% capture env_encrypt_cmd %}
+$ dotenvx encrypt
+    {% endcapture %}
+    {% include components/design-codeblock.html value=env_encrypt_cmd copy_text="dotenvx encrypt" %}
+
+    {% include components/design-btn.html
+      label="Encryption quickstart"
+      href="/docs/quickstart"
+    %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 

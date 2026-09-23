@@ -1,7 +1,7 @@
 {% for node in include.nodes %}
   <li>
     {% if node.href %}
-      <a class="design-link" href="{{ node.href | relative_url }}"{% if node.href == page.url %} aria-current="page"{% endif %}>{{ node.label | escape }}</a>
+      <a class="{% if node.children != empty %}docs-sidebar-group{% else %}design-link{% endif %}" href="{{ node.href | relative_url }}"{% if node.href == page.url %} aria-current="page"{% endif %}>{{ node.label | escape }}</a>
     {% else %}
       <span class="docs-sidebar-group">{{ node.label | escape }}</span>
     {% endif %}

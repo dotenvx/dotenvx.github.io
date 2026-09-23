@@ -47,7 +47,6 @@ $ dotenvx armor up
     {% endcapture %}
     {% include components/design-codeblock.html value=armor_up copy_text="dotenvx armor up" %}
 
-    <p class="design-paragraph">Use <a class="design-link" href="/docs/learn/armoring/introduction">Armoring</a> when you want private keys kept off device.</p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
   </section>

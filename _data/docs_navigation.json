@@ -1,12 +1,7 @@
 [
   {
-    "label": "Start here",
+    "label": "Docs",
     "children": [
-      {
-        "label": "Docs",
-        "href": "/docs/introduction/",
-        "children": []
-      },
       {
         "label": "Install",
         "href": "/docs/install/",
@@ -22,7 +17,8 @@
         "href": "/docs/advanced/",
         "children": []
       }
-    ]
+    ],
+    "href": "/docs/introduction/"
   },
   {
     "label": "CLI reference",
@@ -110,11 +106,6 @@
       {
         "label": "Clojure",
         "href": "/docs/clojure/",
-        "children": []
-      },
-      {
-        "label": "Cloudflare Workers",
-        "href": "/docs/cloudflare-workers/",
         "children": []
       },
       {
@@ -263,11 +254,6 @@
     "label": "Guides & deployment",
     "children": [
       {
-        "label": "Armoring",
-        "href": "/docs/learn/armoring/introduction/",
-        "children": []
-      },
-      {
         "label": "AWS Lambda",
         "href": "/docs/platforms/aws-lambda/",
         "children": []
@@ -390,11 +376,6 @@
       {
         "label": "Resources",
         "href": "/docs/resources/",
-        "children": []
-      },
-      {
-        "label": "Rocket",
-        "href": "/docs/rocket/",
         "children": []
       },
       {

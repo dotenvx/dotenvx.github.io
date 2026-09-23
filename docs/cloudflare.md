@@ -100,6 +100,7 @@ npx wrangler pages deploy dist --project-name my-site
 
 
     {% capture step_content %}
+    <hr style="border: 0; border-top: 1px solid var(--design-line); margin: 0 0 2.5rem;">
     <h2 class="design-page-title design-page-title--flush">Advanced</h2>
     <p class="design-paragraph">The above set up is typical for Cloudflare but if you want to get full secrets separation in the spirit of dotenvx you can ship an encrypted .env.txt file to decrypt at runtime.</p>
     <p class="design-paragraph">Install dotenvx.</p>

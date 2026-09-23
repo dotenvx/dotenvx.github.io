@@ -1,9 +1,9 @@
 ---
 layout: docs-cli
-title: pull
+title: "armor pull"
 eyebrow: "dotenvx armor"
 eyebrow_href: /docs/cli/armor/introduction/
-description: Pull armored key into .env.keys.
+description: "Copy a private key from Dotenvx Armor into .env.keys."
 permalink: /docs/cli/armor/pull/
 redirect_from:
   - /docs/advanced/armor-pull
@@ -17,25 +17,20 @@ crumbs:
     href: /docs/cli
   - label: Armor
     href: /docs/cli/armor/introduction/
+command: "dotenvx armor pull"
+options_title: Options
+options:
+  - title: "armor pull -f"
+    href: /docs/cli/armor/pull-f/
+  - title: "armor pull --team"
+    href: /docs/cli/armor/pull-team/
+  - title: "armor pull --token"
+    href: /docs/cli/armor/pull-token/
 ---
+Copy a private key from Dotenvx Armor into `.env.keys`.
+
 {% capture cli_code_0 %}
 $ dotenvx armor pull
 {% endcapture %}
 {% capture cli_code_0_copy %}dotenvx armor pull{% endcapture %}
 {% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
-
-Use a specific env file.
-
-{% capture cli_code_1 %}
-$ dotenvx armor pull -f .env.production
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx armor pull -f .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
-
-Use a token or team.
-
-{% capture cli_code_2 %}
-$ dotenvx armor pull --token token --team team
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx armor pull --token token --team team{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}

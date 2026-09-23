@@ -1,9 +1,9 @@
 ---
 layout: docs-cli
-title: settings
+title: "armor settings"
 eyebrow: "dotenvx armor"
 eyebrow_href: /docs/cli/armor/introduction/
-description: Inspect and manage local Dotenvx Armor settings.
+description: "Inspect and manage local Armor settings. Choose a setting below."
 permalink: /docs/cli/armor/settings/
 redirect_from:
   - /docs/ref/cli/armor/settings/
@@ -15,27 +15,22 @@ crumbs:
     href: /docs/cli
   - label: Armor
     href: /docs/cli/armor/introduction/
+command: "dotenvx armor settings"
+options_title: Options
+options:
+  - title: "armor settings username"
+    href: /docs/cli/armor/settings-username/
+  - title: "armor settings token"
+    href: /docs/cli/armor/settings-token/
+  - title: "armor settings device"
+    href: /docs/cli/armor/settings-device/
+  - title: "armor settings hostname"
+    href: /docs/cli/armor/settings-hostname/
+  - title: "armor settings path"
+    href: /docs/cli/armor/settings-path/
+  - title: "armor settings on"
+    href: /docs/cli/armor/settings-on/
+  - title: "armor settings off"
+    href: /docs/cli/armor/settings-off/
 ---
-These advanced commands let you inspect the active Armor identity and control whether Armor is enabled.
-
-| Command | Description |
-| --- | --- |
-| `dotenvx armor settings username` | Print your username. |
-| `dotenvx armor settings token` | Print your masked access token. |
-| `dotenvx armor settings device` | Print your masked device public key. |
-| `dotenvx armor settings hostname` | Print the Armor hostname. |
-| `dotenvx armor settings path` | Print the path to the settings file. |
-| `dotenvx armor settings on` | Turn Armor on. |
-| `dotenvx armor settings off` | Turn Armor off. |
-
-## Reveal complete values
-
-Access tokens and device public keys are masked by default. Use `--unmask` only when you explicitly need the complete value.
-
-{% capture cli_code_0 %}
-$ dotenvx armor settings token --unmask
-$ dotenvx armor settings device --unmask
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx armor settings token --unmask
-dotenvx armor settings device --unmask{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
+Inspect and manage local Armor settings. Choose a setting below.

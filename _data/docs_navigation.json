@@ -566,7 +566,18 @@
           {
             "label": "up",
             "href": "/docs/cli/lock/up/",
-            "children": []
+            "children": [
+              {
+                "label": "lock up -f",
+                "href": "/docs/cli/lock/up-f/",
+                "children": []
+              },
+              {
+                "label": "lock up -fk",
+                "href": "/docs/cli/lock/up-fk/",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -597,7 +608,18 @@
           {
             "label": "up",
             "href": "/docs/cli/native/up/",
-            "children": []
+            "children": [
+              {
+                "label": "native up -f",
+                "href": "/docs/cli/native/up-f/",
+                "children": []
+              },
+              {
+                "label": "native up -fk",
+                "href": "/docs/cli/native/up-fk/",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -631,7 +653,18 @@
       {
         "label": "Protect",
         "href": "/docs/cli/protect/",
-        "children": []
+        "children": [
+          {
+            "label": "protect --docker",
+            "href": "/docs/cli/protect-docker/",
+            "children": []
+          },
+          {
+            "label": "protect --docker directory",
+            "href": "/docs/cli/protect-docker-directory/",
+            "children": []
+          }
+        ]
       },
       {
         "label": "Redirecting",
@@ -664,12 +697,34 @@
               {
                 "label": "open",
                 "href": "/docs/cli/armor/open/",
-                "children": []
+                "children": [
+                  {
+                    "label": "armor open -f",
+                    "href": "/docs/cli/armor/open-f/",
+                    "children": []
+                  }
+                ]
               },
               {
                 "label": "pull",
                 "href": "/docs/cli/armor/pull/",
-                "children": []
+                "children": [
+                  {
+                    "label": "armor pull -f",
+                    "href": "/docs/cli/armor/pull-f/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor pull --team",
+                    "href": "/docs/cli/armor/pull-team/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor pull --token",
+                    "href": "/docs/cli/armor/pull-token/",
+                    "children": []
+                  }
+                ]
               },
               {
                 "label": "push",
@@ -679,7 +734,55 @@
               {
                 "label": "settings",
                 "href": "/docs/cli/armor/settings/",
-                "children": []
+                "children": [
+                  {
+                    "label": "armor settings username",
+                    "href": "/docs/cli/armor/settings-username/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor settings token",
+                    "href": "/docs/cli/armor/settings-token/",
+                    "children": [
+                      {
+                        "label": "armor settings token --unmask",
+                        "href": "/docs/cli/armor/settings-token-unmask/",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "armor settings device",
+                    "href": "/docs/cli/armor/settings-device/",
+                    "children": [
+                      {
+                        "label": "armor settings device --unmask",
+                        "href": "/docs/cli/armor/settings-device-unmask/",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "armor settings hostname",
+                    "href": "/docs/cli/armor/settings-hostname/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor settings path",
+                    "href": "/docs/cli/armor/settings-path/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor settings on",
+                    "href": "/docs/cli/armor/settings-on/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor settings off",
+                    "href": "/docs/cli/armor/settings-off/",
+                    "children": []
+                  }
+                ]
               },
               {
                 "label": "status",
@@ -689,7 +792,23 @@
               {
                 "label": "up",
                 "href": "/docs/cli/armor/up/",
-                "children": []
+                "children": [
+                  {
+                    "label": "armor up -f",
+                    "href": "/docs/cli/armor/up-f/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor up --team",
+                    "href": "/docs/cli/armor/up-team/",
+                    "children": []
+                  },
+                  {
+                    "label": "armor up --token",
+                    "href": "/docs/cli/armor/up-token/",
+                    "children": []
+                  }
+                ]
               }
             ]
           }
@@ -790,7 +909,7 @@
             "children": []
           },
           {
-            "label": "--validate",
+            "label": "run with an Envfile",
             "href": "/docs/cli/run-validate/",
             "children": []
           },
@@ -965,12 +1084,75 @@
             "label": "--ignore",
             "href": "/docs/cli/validate-ignore/",
             "children": []
+          },
+          {
+            "label": "validate -f",
+            "href": "/docs/cli/validate-f/",
+            "children": []
+          },
+          {
+            "label": "validate -fk",
+            "href": "/docs/cli/validate-fk/",
+            "children": []
+          },
+          {
+            "label": "validate --strict",
+            "href": "/docs/cli/validate-strict/",
+            "children": []
           }
         ]
       },
       {
         "label": "Version",
         "href": "/docs/cli/version/",
+        "children": []
+      },
+      {
+        "label": "primitives keypair",
+        "href": "/docs/cli/primitives/keypair/",
+        "children": [
+          {
+            "label": "primitives keypair <privateKey>",
+            "href": "/docs/cli/primitives/keypair-private-key/",
+            "children": []
+          },
+          {
+            "label": "primitives keypair --stdin",
+            "href": "/docs/cli/primitives/keypair-stdin/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "primitives derive",
+        "href": "/docs/cli/primitives/derive/",
+        "children": [
+          {
+            "label": "primitives derive --stdin",
+            "href": "/docs/cli/primitives/derive-stdin/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "define",
+        "href": "/docs/cli/define/",
+        "children": [
+          {
+            "label": "define -f",
+            "href": "/docs/cli/define-f/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "init",
+        "href": "/docs/cli/init/",
+        "children": []
+      },
+      {
+        "label": "run with Envfile file rules",
+        "href": "/docs/cli/run-envfile-file-rules/",
         "children": []
       }
     ]

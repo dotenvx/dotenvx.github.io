@@ -27,6 +27,10 @@ cli_commands:
   - /docs/cli/ls/
   - /docs/cli/gitignore/
   - /docs/cli/genexample/
+  - /docs/cli/primitives/keypair/
+  - /docs/cli/primitives/derive/
+  - /docs/cli/define/
+  - /docs/cli/init/
   - /docs/cli/validate/
   - /docs/cli/precommit/
   - /docs/cli/protect/

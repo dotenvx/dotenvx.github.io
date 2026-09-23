@@ -114,7 +114,7 @@ layout: radar
     <a class="design-link" href="/docs/cli/run-log-level">run --log-level</a>
   </li>
   <li>
-    <a class="design-link" href="/docs/cli/run-validate">run --validate</a>
+    <a class="design-link" href="/docs/cli/run-validate">run with an Envfile</a>
   </li>
   <li>
     <a class="design-link" href="/docs/cli/run-strict">run --strict</a>
@@ -397,6 +397,108 @@ layout: radar
   </li>
   <li>
     <a class="design-link" href="/docs/cli/armor/settings">armor settings</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/primitives/keypair/">primitives keypair</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/primitives/keypair-private-key/">primitives keypair &lt;privateKey&gt;</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/primitives/keypair-stdin/">primitives keypair --stdin</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/primitives/derive/">primitives derive</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/primitives/derive-stdin/">primitives derive --stdin</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/lock/up-f/">lock up -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/lock/up-fk/">lock up -fk</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/native/up-f/">native up -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/native/up-fk/">native up -fk</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/up-f/">armor up -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/up-team/">armor up --team</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/up-token/">armor up --token</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/pull-f/">armor pull -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/pull-team/">armor pull --team</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/pull-token/">armor pull --token</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/open-f/">armor open -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-username/">armor settings username</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-token/">armor settings token</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-token-unmask/">armor settings token --unmask</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-device/">armor settings device</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-device-unmask/">armor settings device --unmask</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-hostname/">armor settings hostname</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-path/">armor settings path</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-on/">armor settings on</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/armor/settings-off/">armor settings off</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/protect-docker/">protect --docker</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/protect-docker-directory/">protect --docker directory</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/define/">define</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/define-f/">define -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/init/">init</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/validate-f/">validate -f</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/validate-fk/">validate -fk</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/validate-strict/">validate --strict</a>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/cli/run-envfile-file-rules/">run with Envfile file rules</a>
   </li>
 {% endcapture %}
 

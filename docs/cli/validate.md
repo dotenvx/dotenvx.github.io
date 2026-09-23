@@ -1,7 +1,7 @@
 ---
 layout: docs-cli
-title: Validate
-description: Validate .env file(s) against .env.example.
+title: "validate"
+description: "Validate resolved .env values against an Envfile without running a command. An Envfile in the current directory is required; .env.example is not used for validation."
 permalink: /docs/cli/validate/
 redirect_from:
   - /docs/advanced/validate
@@ -17,31 +17,35 @@ options_title: Options
 options:
   - title: "validate --ignore"
     href: /docs/cli/validate-ignore/
+  - title: "validate -f"
+    href: /docs/cli/validate-f/
+  - title: "validate -fk"
+    href: /docs/cli/validate-fk/
+  - title: "validate --strict"
+    href: /docs/cli/validate-strict/
+command: "dotenvx validate"
 ---
-Use `.env.example` to declare required environment variables and validate `.env` file(s) before running your app.
+Validate resolved `.env` values against an `Envfile` without running a command. An `Envfile` in the current directory is required; `.env.example` is not used for validation.
 
 {% capture cli_code_0 %}
-# .env.example
-DATABASE_URL=
-API_KEY=
-SENTRY_DSN= # optional
+# Envfile
+env "DATABASE_URL", type: "url"
+env "PORT", type: "port"
+env "SENTRY_DSN", optional: true
 {% endcapture %}
-{% capture cli_code_0_copy %}# .env.example{% endcapture %}
+{% capture cli_code_0_copy %}# Envfile
+env "DATABASE_URL", type: "url"
+env "PORT", type: "port"
+env "SENTRY_DSN", optional: true{% endcapture %}
 {% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy %}
 
 {% capture cli_code_1 %}
 $ dotenvx validate
-[VALIDATION_FAILED] missing required (DATABASE_URL, API_KEY). fix: [https://github.com/dotenvx/dotenvx/issues/907]
+[INVALID_ENV] DATABASE_URL is required; PORT is required
 {% endcapture %}
 {% capture cli_code_1_copy %}dotenvx validate{% endcapture %}
 {% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy %}
 
-`dotenvx validate` does not run a command. It loads and decrypts the selected env files, checks them against `.env.example`, and exits with code 1 when validation fails. On success, it prints `▣ validated` and exits with code 0.
+The command enforces required values, types, enums, bounds, and encryption requirements. It exits with code `1` on validation or other loading errors. Missing env files are reported but do not fail validation when the resolved values satisfy Envfile. On success, it prints `▣ valid (.env)` (listing the loaded input files) and exits with code `0` on success. It does not change your shell's environment.
 
-{% capture cli_code_2 %}
-$ dotenvx validate -f .env.production -fk .env.keys
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx validate -f .env.production -fk .env.keys{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy %}
-
-Any inline comment containing the word `optional` marks that key as optional.
+A missing Envfile reports `ENVFILE_REQUIRED`; invalid syntax reports `MALFORMED_ENVFILE`.

@@ -18,9 +18,9 @@ body_class: home-page
 {% endcapture %}
 
 <div class="home-sections">
-<section class="design-hero home-hero2" aria-label="Legal">
+<section class="design-hero-section home-hero" aria-label="Legal">
   <div class="armor-shell">
-    {% include components/design-hero2.html
+    {% include components/design-hero.html
       compact=true
       secondary=true
       name="Legal"

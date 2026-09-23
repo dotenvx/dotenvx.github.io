@@ -1,46 +1,26 @@
-{% assign public_key = include.public_key | default: "025ba50c55b823bcb7841fe43643fe827ef74c183b2544040943aa5856c7c39646" %}
-{% assign keysee_render_mode = include.keysee_render_mode | default: "wire" %}
-{% assign shell_class = include.shell_class %}
-{% assign hero_class = include.class %}
-{% assign hide_visual = include.hide_visual %}
-{% assign bare = include.bare %}
-
-{% capture design_hero_grid %}
-    <div class="design-hero-grid{% if hide_visual %} design-hero-grid--copy-only{% endif %}">
-      <div class="design-hero-copy">
-        {% include components/design-hero-header.html
-          eyebrow=include.eyebrow
-          eyebrow_href=include.eyebrow_href
-          crumbs=include.crumbs
-          title=include.title
-          description=include.description
-          heading_tag=include.heading_tag
-          video=include.video
-          video_title=include.video_title
-        %}
-      </div>
-      {% unless hide_visual %}
-        <div class="design-hero-visual">
-          {% if include.visual and include.visual != "" %}
-            {{ include.visual }}
-          {% else %}
-            {% include components/keysee-viewer.html
-              public_key=public_key
-              render_mode=keysee_render_mode
-              class="design-hero-key relative h-full min-h-[inherit] w-full overflow-hidden bg-transparent"
-            %}
-          {% endif %}
-        </div>
-      {% endunless %}
-    </div>
-{% endcapture %}
-
-<section class="design-hero{% if hero_class %} {{ hero_class }}{% endif %}">
-  {% if bare %}
-    {{ design_hero_grid }}
-  {% else %}
-    <div class="armor-shell{% if shell_class %} {{ shell_class }}{% endif %}">
-      {{ design_hero_grid }}
+<div class="design-hero{% if include.compact %} design-hero--compact{% endif %}{% if include.secondary %} design-hero--secondary{% endif %}">
+  {% if include.title %}
+  <div class="design-hero-header home-design-hero">
+    {% if include.eyebrow %}
+      <p class="design-page-header-eyebrow justify-center !mb-3"><a href="{{ include.eyebrow_href }}">{{ include.eyebrow }}</a></p>
+    {% endif %}
+    <h1 class="design-page-title design-page-title--flush">{{ include.title }}</h1></div>
+  {% endif %}
+  {% if include.content and include.content != "" %}
+    <div class="design-hero-content">{{ include.content }}</div>
+  {% endif %}
+  {% if include.description or include.name %}
+    <div class="design-page-header-desc design-hero-description">
+      {% if include.compact %}
+        {% if include.eyebrow and include.title == nil %}
+          <p class="design-paragraph"><a class="design-link" href="{{ include.eyebrow_href }}">{{ include.eyebrow }}</a></p>
+        {% endif %}
+        {% if include.name_heading %}<h1 class="design-hero-name">{{ include.name }}</h1>{% else %}<strong>{{ include.name | default: "Dotenvx" }}</strong>{% endif %}
+      {% endif %}
+      {% if include.description %}<div>{{ include.description }}</div>{% endif %}
     </div>
   {% endif %}
-</section>
+  {% if include.actions %}
+    <div class="design-hero-actions">{{ include.actions }}</div>
+  {% endif %}
+</div>

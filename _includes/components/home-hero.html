@@ -1,16 +1,16 @@
-{% assign hero2_title = include.title | default: "Encrypt your secrets. <br class='hidden md:block'>Ship them with your code." %}
-{% assign hero2_custom_content = include.content %}
-{% assign hero2_hide_content = include.hide_content %}
+{% assign hero_title = include.title | default: "Encrypt your secrets. <br class='hidden md:block'>Ship them with your code." %}
+{% assign hero_custom_content = include.content %}
+{% assign hero_hide_content = include.hide_content %}
 
-<section class="design-hero home-hero2">
+<section class="design-hero-section home-hero">
   <div class="armor-shell">
-    {% if hero2_hide_content %}
-      {% assign hero2_content = nil %}
-    {% elsif hero2_custom_content and hero2_custom_content != "" %}
-      {% assign hero2_content = hero2_custom_content %}
+    {% if hero_hide_content %}
+      {% assign hero_content = nil %}
+    {% elsif hero_custom_content and hero_custom_content != "" %}
+      {% assign hero_content = hero_custom_content %}
     {% else %}
-      {% capture hero2_content %}
-      <svg class="design-hero2-container-stack" viewBox="60 -335.061526 973 1089" role="group" aria-label="Interactive container stack" data-container-stack>
+      {% capture hero_content %}
+      <svg class="design-hero-container-stack" viewBox="60 -335.061526 973 1089" role="group" aria-label="Interactive container stack" data-container-stack>
         
         <g transform="translate(207.8460969 -120)" aria-hidden="true">
           {% include components/shipping-container.html class="hero-container-base" color="#858b8e" %}
@@ -28,46 +28,46 @@
       </svg>
       {% endcapture %}
     {% endif %}
-    {% assign hero2_actions = nil %}
+    {% assign hero_actions = nil %}
     {% if include.compact %}
-      {% assign hero2_title = nil %}
-      {% capture hero2_description %}
+      {% assign hero_title = nil %}
+      {% capture hero_description %}
         A secure dotenv–from the creator of {% include components/design-link.html href="https://github.com/motdotla/dotenv" label="dotenv" %}.
       {% endcapture %}
-      {% capture hero2_actions %}
+      {% capture hero_actions %}
         {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Install button" %}
-        {% include components/design-btn.html label="Docs" href="/docs" data_umami_event="Homepage Docs button" %}
+        {% include components/design-btn.html label="Quickstart" href="/docs/quickstart/" data_umami_event="Homepage Quickstart button" %}
       {% endcapture %}
     {% elsif include.description %}
-      {% assign hero2_description = include.description %}
-    {% elsif hero2_hide_content or hero2_custom_content and hero2_custom_content != "" %}
-      {% assign hero2_description = nil %}
+      {% assign hero_description = include.description %}
+    {% elsif hero_hide_content or hero_custom_content and hero_custom_content != "" %}
+      {% assign hero_description = nil %}
     {% else %}
-      {% capture hero2_description %}
+      {% capture hero_description %}
         <span class="design-page-title design-page-title--flush design-page-title--bold">Dotenvx is docker for secrets</span>
         <span><a href="https://github.com/motdotla/dotenv">From the creator of dotenv <span aria-hidden="true">★</span> 20.5k</a></span>
         <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
           {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Install button" %}
-          {% include components/design-btn.html label="Docs" href="/docs" data_umami_event="Homepage Docs button" %}
+          {% include components/design-btn.html label="Quickstart" href="/docs/quickstart/" data_umami_event="Homepage Quickstart button" %}
         </div>
       {% endcapture %}
     {% endif %}
     {% if include.compact and include.description %}
-      {% assign hero2_description = include.description %}
+      {% assign hero_description = include.description %}
     {% endif %}
     {% if include.actions %}
-      {% assign hero2_actions = include.actions %}
+      {% assign hero_actions = include.actions %}
     {% endif %}
-    {% include components/design-hero2.html
+    {% include components/design-hero.html
       name=include.name
       compact=include.compact
-      actions=hero2_actions
-      title=hero2_title
-      content=hero2_content
-      description=hero2_description
+      actions=hero_actions
+      title=hero_title
+      content=hero_content
+      description=hero_description
     %}
   </div>
 </section>
-{% unless hero2_hide_content or hero2_custom_content and hero2_custom_content != "" %}
+{% unless hero_hide_content or hero_custom_content and hero_custom_content != "" %}
 <script src="{{ '/assets/js/container-stack.js' | relative_url }}" defer></script>
 {% endunless %}

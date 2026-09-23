@@ -68,7 +68,7 @@ layout: radar
 </style>
 
 {% capture armor_hero_container %}
-  <svg class="design-hero2-container-stack armor-forcefield" viewBox="60 -335.061526 973 1089" role="button" tabindex="0" aria-label="Launch a dart at the clicked point on the protective field" data-armor-forcefield>
+  <svg class="design-hero-container-stack armor-forcefield" viewBox="60 -335.061526 973 1089" role="button" tabindex="0" aria-label="Launch a dart at the clicked point on the protective field" data-armor-forcefield>
     <g transform="translate(106.5 -197.561526)">
     <g aria-hidden="true">
       {% include components/shipping-container.html color="#575B60" face_color="#111214" label=".ENV.PROD ⛨" %}
@@ -84,22 +84,22 @@ layout: radar
 
 <script src="{{ '/assets/js/armor-forcefield.js' | relative_url }}?v=4" defer></script>
 
-{% capture armor_hero2_description %}
+{% capture armor_hero_description %}
   {{ page.description }}
 {% endcapture %}
-{% capture armor_hero2_actions %}
+{% capture armor_hero_actions %}
   {% include components/design-btn.html label="Sign Up" href="/signup" data_umami_event="Armor Hero Signup button" %}
   {% include components/design-btn.html label="Pricing" href="/pricing" data_umami_event="Armor Hero Pricing button" %}
 {% endcapture %}
 
 <div class="armor-page">
   <div class="home-sections armor-intro">
-  {% include components/home-hero2.html
+  {% include components/home-hero.html
     compact=true
     name=page.title
-    actions=armor_hero2_actions
+    actions=armor_hero_actions
     content=armor_hero_container
-    description=armor_hero2_description
+    description=armor_hero_description
   %}
 
     {% include components/armor/logo-cloud.html %}

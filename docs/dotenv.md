@@ -18,13 +18,13 @@ og_image:
 </style>
 
 <div class="home-sections">
-  <section class="design-hero home-hero2" aria-label="Dotenv">
+  <section class="design-hero-section home-hero" aria-label="Dotenv">
     <div class="armor-shell">
       {% capture dotenv_actions %}
         {% include components/design-btn.html label="Get started" href="#quickstart" %}
         {% include components/design-btn.html label="View on GitHub" href="https://github.com/motdotla/dotenv" %}
       {% endcapture %}
-      {% include components/design-hero2.html compact=true secondary=true name="Dotenv" name_heading=true description="Load your .env and get to work. In your app, or before any command." actions=dotenv_actions %}
+      {% include components/design-hero.html compact=true secondary=true name="Dotenv" name_heading=true description="Load your .env and get to work. In your app, or before any command." actions=dotenv_actions %}
     </div>
   </section>
 

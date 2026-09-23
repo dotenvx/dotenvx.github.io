@@ -3,12 +3,12 @@ layout: radar
 body_class: home-page
 ---
 <article class="home-sections">
-  <header class="design-hero home-hero2">
+  <header class="design-hero-section home-hero">
     <div class="armor-shell">
       {% capture post_description %}
         {{ page.author | default: "Scott Motte" }} · <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>
       {% endcapture %}
-      {% include components/design-hero2.html
+      {% include components/design-hero.html
         compact=true
         secondary=true
         eyebrow="← back to blog"

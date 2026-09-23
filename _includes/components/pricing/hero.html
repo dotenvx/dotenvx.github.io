@@ -1,6 +1,6 @@
 <style>
-  .pricing-hero .design-hero2-content {
-    width: calc(var(--hero2-illustration-width) * 1904 / 973);
+  .pricing-hero .design-hero-content {
+    width: calc(var(--hero-illustration-width) * 1904 / 973);
     aspect-ratio: auto;
   }
   .pricing-container-group { overflow: visible; }
@@ -21,7 +21,7 @@
 </style>
 
 {% capture pricing_hero_visual %}
-  <svg class="design-hero2-container-stack pricing-container-group" viewBox="40 0 1904 790" role="group" aria-label="Secrets containers. Drag to swap or stack containers, or focus a container and use arrow keys." data-container-slots>
+  <svg class="design-hero-container-stack pricing-container-group" viewBox="40 0 1904 790" role="group" aria-label="Secrets containers. Drag to swap or stack containers, or focus a container and use arrow keys." data-container-slots>
     {% assign container_labels = '.ENV,.ENV.CI,.ENV.PROD' | split: ',' %}
     {% for label in container_labels reversed %}
       {% assign slot = 2 | minus: forloop.index0 %}
@@ -35,9 +35,9 @@
   </svg>
 {% endcapture %}
 
-<section class="design-hero home-hero2 pricing-hero">
+<section class="design-hero-section home-hero pricing-hero">
   <div class="armor-shell">
-    {% include components/design-hero2.html
+    {% include components/design-hero.html
       compact=true
       name="Pricing"
       description="Dotenvx is free and open source. But you can pay for Dotenvx Armor."

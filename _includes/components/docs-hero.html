@@ -32,9 +32,9 @@
     <a class="design-link" href="{{ docs_video_url }}" target="_blank" rel="noopener noreferrer">{{ include.video_title | default: "Watch demo" }} →</a>
 {% endcapture %}
 {% endif %}
-<section class="design-hero home-hero2 docs-hero2{% if include.visual %} docs-hero2--example{% endif %}">
+<section class="design-hero-section home-hero docs-hero{% if include.visual %} docs-hero--example{% endif %}">
   <div class="armor-shell">
-    {% include components/design-hero2.html
+    {% include components/design-hero.html
       compact=true
       secondary=true
       name_heading=true

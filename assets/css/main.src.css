@@ -457,12 +457,6 @@ body.radar-layout .contact-link:focus {
     transform: none;
     animation: none;
   }
-
-  .design-hero-visual {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
 }
 
 /* Prevent sticky hover state on touch for mobile nav icon buttons. */
@@ -4016,30 +4010,14 @@ html.dark .design-badge.design-badge--danger {
  * Sparse hero visual slot — shared so product (`/`, `/armor`) and company
  * (`/opensource`, `/changelog`, `/contact`) pages keep the same copy position.
  */
-.home-design-hero .design-hero-visual,
-.company-design-hero .design-hero-visual {
-  min-height: 8.5rem;
-}
 
 @media (max-width: 899px) {
   /* Keep the key visually light in the short mobile slot */
-  .home-design-hero .design-hero-visual .keysee-tile,
-  .company-design-hero .design-hero-visual .keysee-tile {
-    transform: scale(0.72);
-    transform-origin: center center;
-  }
 
   .company-design-hero .contact-hero-video {
     height: 8.5rem;
     max-width: 100%;
     width: auto;
-  }
-}
-
-@media (min-width: 900px) {
-  .home-design-hero .design-hero-visual,
-  .company-design-hero .design-hero-visual {
-    min-height: 17rem;
   }
 }
 
@@ -4088,116 +4066,15 @@ html.dark .design-badge.design-badge--danger {
   line-height: 1.4;
 }
 
-.design-hero {
+.design-hero-section {
   padding: 2.5rem 0 1.5rem;
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  .design-hero {
+  .design-hero-section {
     padding: 3.5rem 0 2rem;
   }
-}
-
-.design-hero-grid {
-  align-items: center;
-  display: grid;
-  gap: 2rem;
-  width: 100%;
-}
-
-.design-hero-grid--copy-only {
-  gap: 0;
-}
-
-.design-hero-copy {
-  min-width: 0;
-  text-align: center;
-}
-
-.design-hero-copy .design-page-header {
-  align-items: center;
-}
-
-.design-hero-copy .design-page-back,
-.design-hero-copy .design-page-crumbs {
-  justify-content: center;
-}
-
-.design-hero-grid--copy-only .design-hero-copy {
-  max-width: none;
-  width: 100%;
-}
-
-.design-hero-visual {
-  /* Desktop-right visual stacks first on mobile */
-  animation: design-hero-visual-enter 2400ms cubic-bezier(0.16, 1, 0.3, 1) 380ms forwards;
-  min-height: 17rem;
-  min-width: 0;
-  opacity: 0;
-  order: -1;
-  position: relative;
-  transform: translateY(16px) scale(0.985);
-  width: 100%;
-}
-
-@keyframes design-hero-visual-enter {
-  0% {
-    opacity: 0;
-    transform: translateY(16px) scale(0.985);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes design-hero-visual-enter-desktop {
-  0% {
-    opacity: 0;
-    transform: translateX(22px) scale(0.985);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@media (min-width: 900px) {
-  .design-hero-grid {
-    gap: 2.5rem;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  }
-
-  .design-hero-grid--copy-only {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .design-hero-copy {
-    text-align: left;
-  }
-
-  .design-hero-copy .design-page-header {
-    align-items: stretch;
-  }
-
-  .design-hero-copy .design-page-back,
-  .design-hero-copy .design-page-crumbs {
-    justify-content: flex-start;
-  }
-
-  .design-hero-visual {
-    animation-name: design-hero-visual-enter-desktop;
-    order: 0;
-    transform: translateX(22px) scale(0.985);
-  }
-}
-
-.design-hero-visual .design-hero-key,
-.design-hero-visual .keysee-tile {
-  height: 100%;
-  min-height: inherit;
-  width: 100%;
 }
 
 .radar-section {
@@ -5212,7 +5089,7 @@ html.dark .docs-hero-icon--invert-dark {
   }
 }
 
-.docs-page > .design-hero {
+.docs-page > .design-hero-section {
   padding-left: 0;
   padding-right: 0;
 }
@@ -5500,12 +5377,6 @@ html.dark .docs-hero-icon--invert-dark {
 /* 404 / error heroes — keep copy + action in one narrow column */
 .not-found-design-hero .armor-shell {
   max-width: 28rem;
-}
-
-.not-found-design-hero .design-hero-copy,
-.not-found-design-hero .design-hero-copy .design-page-header {
-  align-items: flex-start;
-  text-align: left;
 }
 
 .not-found-hero-action {
@@ -6608,8 +6479,8 @@ html.dark .spec-table-link a {
   }
 }
 
-/* Centered three-part hero, shared with Radar hero2. */
-  .design-hero2 {
+/* Centered three-part hero, shared with Radar hero. */
+  .design-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6617,14 +6488,14 @@ html.dark .spec-table-link a {
     text-align: center;
     width: 100%;
   }
-  .design-hero2-content {
+  .design-hero-content {
     display: flex;
     align-items: center;
     justify-content: center;
     width: min(100%, 48rem);
     min-width: 0;
   }
-  .design-hero2-image {
+  .design-hero-image {
     display: block;
     width: auto;
     height: auto;
@@ -6632,7 +6503,7 @@ html.dark .spec-table-link a {
     max-height: 32rem;
     object-fit: contain;
   }
-  .design-hero2-container-stack {
+  .design-hero-container-stack {
     display: block;
     width: min(50%, 18rem);
     height: auto;
@@ -6667,7 +6538,7 @@ html.dark .spec-table-link a {
       transition: none;
     }
   }
-  .design-hero2-description {
+  .design-hero-description {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -6695,12 +6566,12 @@ html.dark .spec-table-link a {
 .home-page { --home-section-gap: 4rem; --home-footer-gap: 2.5rem; }
 .home-sections { display: flex; flex-direction: column; gap: var(--home-section-gap); }
 .home-sections > :is(section, header, footer) { margin-block: 0; padding-block: 0; }
-.home-sections > .home-hero2 { padding-top: 2.5rem; }
-.home-sections .design-hero2--compact { padding-bottom: 0; }
+.home-sections > .home-hero { padding-top: 2.5rem; }
+.home-sections .design-hero--compact { padding-bottom: 0; }
 .home-page .footer { margin-top: 0; padding-top: var(--home-section-gap); }
 @media (min-width: 768px) {
   .home-page { --home-section-gap: 6rem; --home-footer-gap: 3rem; }
-  .home-sections > .home-hero2 { padding-top: 3.5rem; }
+  .home-sections > .home-hero { padding-top: 3.5rem; }
 }
 
 /* A personal walkthrough with room for readable video previews. */
@@ -6726,32 +6597,32 @@ html.dark .spec-table-link a {
 }
 
 
-.design-hero2--compact {
-  --hero2-illustration-width: clamp(7rem, 14vw, 10rem);
+.design-hero--compact {
+  --hero-illustration-width: clamp(7rem, 14vw, 10rem);
   padding-top: clamp(1.5rem, 4vw, 3rem);
   padding-bottom: clamp(3rem, 8vw, 6rem);
   gap: clamp(1.25rem, 3vw, 2rem);
 }
-.design-hero2--compact .design-hero2-content {
-  width: var(--hero2-illustration-width);
-  height: calc(var(--hero2-illustration-width) * 1.119218911);
+.design-hero--compact .design-hero-content {
+  width: var(--hero-illustration-width);
+  height: calc(var(--hero-illustration-width) * 1.119218911);
   aspect-ratio: 973 / 1089;
   flex: none;
 }
-.design-hero2--compact .design-hero2-container-stack {
+.design-hero--compact .design-hero-container-stack {
   width: 100%;
   max-height: 100%;
 }
 
-.design-hero2--compact .design-hero2-description {
+.design-hero--compact .design-hero-description {
   max-width: 36rem;
   font-size: 1em;
   line-height: 1.5;
   text-wrap: balance;
 }
-.design-hero2--secondary .design-hero2-content { height: auto; aspect-ratio: 4 / 3; }
+.design-hero--secondary .design-hero-content { height: auto; aspect-ratio: 4 / 3; }
 
-.design-hero2-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+.design-hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
 
 .design-content-width { width: 100%; max-width: 28rem; margin-inline: auto; min-width: 0; }
 .home-commands-plain .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -6799,19 +6670,19 @@ html.dark .hero-container-base { color: #34393d; }
 html.dark .hero-container-primary { color: #7b838a; }
 
 /* Docs use the compact secondary hero and shared readable content column. */
-.design-hero2-name { font: inherit; font-weight: 700; margin: 0; }
+.design-hero-name { font: inherit; font-weight: 700; margin: 0; }
 .docs-hero-navigation { display: flex; align-items: center; justify-content: flex-start; text-align: left; flex-wrap: wrap; gap: .5rem; font-size: var(--design-text-micro); }
-.docs-hero2 .design-hero2-actions { align-items: center; font-size: var(--design-text-compact); }
-.docs-hero2 .docs-hero-icon { width: clamp(3.5rem, 7vw, 5rem); height: clamp(3.5rem, 7vw, 5rem); }
-.docs-hero2 .docs-hero-icon--cli { width: auto; height: auto; }
-.docs-hero2 .docs-hero-ascii-art { font-size: var(--design-text-size); }
-.docs-hero2--example .design-hero2-content {
+.docs-hero .design-hero-actions { align-items: center; font-size: var(--design-text-compact); }
+.docs-hero .docs-hero-icon { width: clamp(3.5rem, 7vw, 5rem); height: clamp(3.5rem, 7vw, 5rem); }
+.docs-hero .docs-hero-icon--cli { width: auto; height: auto; }
+.docs-hero .docs-hero-ascii-art { font-size: var(--design-text-size); }
+.docs-hero--example .design-hero-content {
   width: min(28rem, 100%);
-  min-height: calc(var(--hero2-illustration-width) * .75);
+  min-height: calc(var(--hero-illustration-width) * .75);
   height: auto;
   aspect-ratio: auto;
 }
-.docs-hero2 .docs-cli-hero-command-copy .design-code { text-align: center; }
+.docs-hero .docs-cli-hero-command-copy .design-code { text-align: center; }
 .docs-site .design-content-width { overflow-wrap: anywhere; }
 .docs-site .design-content-width > * { min-width: 0; max-width: 100%; }
 .docs-site .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -6856,30 +6727,30 @@ html.dark .hero-container-primary { color: #7b838a; }
   }
 }
 
-.design-hero2--secondary .design-hero2-description {
+.design-hero--secondary .design-hero-description {
   width: 100%;
   max-width: 36rem;
 }
 
 /* Secondary pages lead with content rather than a large hero entrance. */
-.home-sections:has(> .home-hero2 .design-hero2--secondary) {
+.home-sections:has(> .home-hero .design-hero--secondary) {
   --home-section-gap: 3rem;
 }
-.home-sections > .home-hero2:has(.design-hero2--secondary) {
+.home-sections > .home-hero:has(.design-hero--secondary) {
   padding-top: 3.25rem;
 }
-.design-hero2.design-hero2--secondary {
-  --hero2-illustration-width: clamp(4rem, 7vw, 5.5rem);
+.design-hero.design-hero--secondary {
+  --hero-illustration-width: clamp(4rem, 7vw, 5.5rem);
   padding-top: .75rem;
   padding-bottom: 0;
   gap: .75rem;
 }
-.docs-hero2--example .design-hero2-content {
+.docs-hero--example .design-hero-content {
   min-height: 0;
 }
 
 /* Centered secondary headers share the page's readable content width. */
-.design-hero2.design-hero2--secondary {
+.design-hero.design-hero--secondary {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6888,25 +6759,25 @@ html.dark .hero-container-primary { color: #7b838a; }
   margin-inline: auto;
   text-align: center;
 }
-.design-hero2--secondary .design-hero2-description {
+.design-hero--secondary .design-hero-description {
   min-width: 0;
   text-wrap: balance;
 }
-.design-hero2--secondary .design-hero2-content {
+.design-hero--secondary .design-hero-content {
   width: clamp(4.5rem, 15vw, 6.75rem);
   min-height: 0;
 }
-.design-hero2--secondary .design-hero2-actions {
+.design-hero--secondary .design-hero-actions {
   justify-content: center;
 }
-.design-hero2--secondary .design-hero2-content:has(.design-codeblock, .docs-cli-hero-command-copy) {
+.design-hero--secondary .design-hero-content:has(.design-codeblock, .docs-cli-hero-command-copy) {
   width: 100%;
   aspect-ratio: auto;
   justify-content: center;
 }
 
 
-.design-hero2--secondary .design-hero2-content:not(:has(.design-codeblock, .docs-cli-hero-command-copy)) {
+.design-hero--secondary .design-hero-content:not(:has(.design-codeblock, .docs-cli-hero-command-copy)) {
   display: none;
 }
 
@@ -7025,7 +6896,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 @media (min-width: 64rem) {
   .docs-sidebar { padding-right: .5rem; }
   .docs-sidebar-scroll {
-    padding: 1.5rem 1rem 1rem 0;
+    padding: 1.5rem 1rem 6rem 0;
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 1.5rem, #000 calc(100% - 1rem), transparent);
     mask-image: linear-gradient(to bottom, transparent, #000 1.5rem, #000 calc(100% - 1rem), transparent);
   }

@@ -55,9 +55,9 @@ v1   v2   v3   v99</pre>
 {% endcapture %}
 
 <div class="changelog-page home-sections">
-  <section class="design-hero home-hero2" aria-label="Changelog">
+  <section class="design-hero-section home-hero" aria-label="Changelog">
     <div class="armor-shell">
-      {% include components/design-hero2.html
+      {% include components/design-hero.html
         compact=true
       secondary=true
         name="Changelog"

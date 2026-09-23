@@ -32,9 +32,9 @@ body_class: home-page contact-page
     ></video>
 {% endcapture %}
 <div class="home-sections">
-<section class="design-hero home-hero2" aria-label="Contact">
+<section class="design-hero-section home-hero" aria-label="Contact">
   <div class="armor-shell">
-    {% include components/design-hero2.html
+    {% include components/design-hero.html
       compact=true
       secondary=true
       name="Contact"

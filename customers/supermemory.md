@@ -11,12 +11,12 @@ body_class: home-page
 ---
 
 <div class="home-sections">
-<section class="design-hero home-hero2">
+<section class="design-hero-section home-hero">
   <div class="armor-shell">
-    <div class="design-hero2 design-hero2--compact design-hero2--secondary">
+    <div class="design-hero design-hero--compact design-hero--secondary">
       {% include logos/supermemory.html class="mx-auto max-w-full h-auto" %}
-      <div class="design-page-header-desc design-hero2-description">
-        <h1 class="design-hero2-name">One key, no chasing.</h1>
+      <div class="design-page-header-desc design-hero-description">
+        <h1 class="design-hero-name">One key, no chasing.</h1>
       </div>
     </div>
   </div>

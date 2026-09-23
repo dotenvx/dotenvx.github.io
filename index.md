@@ -93,7 +93,7 @@ body_class: home-page
 </style>
 
 <div class="home-sections">
-{% include components/home-hero2.html compact=true %}
+{% include components/home-hero.html compact=true %}
 
 {% include components/home-logo-cloud.html %}
 
@@ -214,7 +214,7 @@ $ dotenvx run -- claude
       <p class="design-paragraph text-center">Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It feels so good and unlocks so much.</p>
       {% endcapture %}
       {% include components/design-content-width.html content=closing_copy %}
-      {% include components/design-btn.html label="Install" href="/install" data_umami_event="Homepage Closing Install button" %}
+      {% include components/design-btn.html label="Quickstart" href="/docs/quickstart/" data_umami_event="Homepage Closing Quickstart button" %}
     </div>
   </div>
 </section>

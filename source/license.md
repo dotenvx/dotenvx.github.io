@@ -7,9 +7,9 @@ body_class: home-page
 ---
 
 <div class="home-sections">
-  <section class="design-hero home-hero2" aria-label="Armor Source License">
+  <section class="design-hero-section home-hero" aria-label="Armor Source License">
     <div class="armor-shell">
-      {% include components/design-hero2.html compact=true secondary=true name="Armor Source License" name_heading=true description="Run it yourself. Make it yours. Keep it private." %}
+      {% include components/design-hero.html compact=true secondary=true name="Armor Source License" name_heading=true description="Run it yourself. Make it yours. Keep it private." %}
     </div>
   </section>
   <section class="radar-section">

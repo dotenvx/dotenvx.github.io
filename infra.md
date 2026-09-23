@@ -13,7 +13,7 @@ body_class: home-page
   .infra-card { background: var(--design-panel); width: 100%; }
   .infra-closing { text-align: center; align-items: center; }
   .infra-content .design-btn { max-width: 100%; white-space: normal; }
-  .infra-hero .design-hero2-content {
+  .infra-hero .design-hero-content {
     width: min(100%, 22rem);
     height: auto;
     aspect-ratio: 2820 / 2720;
@@ -30,9 +30,9 @@ body_class: home-page
 {% endcapture %}
 
 <div class="home-sections">
-  <section class="design-hero home-hero2 infra-hero" aria-label="Dotenvx Agent Infrastructure">
+  <section class="design-hero-section home-hero infra-hero" aria-label="Dotenvx Agent Infrastructure">
     <div class="armor-shell">
-      {% include components/design-hero2.html
+      {% include components/design-hero.html
         compact=true
         name_heading=true
         name="Dotenvx Agent Infrastructure"

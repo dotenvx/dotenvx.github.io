@@ -75,8 +75,6 @@ options:
     href: /docs/cli/run-log-level/
   - title: "run with an Envfile"
     href: /docs/cli/run-validate/
-  - title: "run with Envfile file rules"
-    href: /docs/cli/run-envfile-file-rules/
   - title: "run --strict"
     href: /docs/cli/run-strict/
   - title: "run --convention=nextjs"

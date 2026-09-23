@@ -36,12 +36,7 @@ layout: radar
   <div class="design-content-width">
     <div class="docs-intro-lists">
       {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">CLI Commands</h2>
-        <ul class="advanced-cli-commands">
-          {% for command in site.data.advanced_cli %}
-            <li><a class="design-link" href="{{ command.href }}">{{ command.label | escape }}</a></li>
-          {% endfor %}
-        </ul>
+        {% include components/docs-cli-commands.html %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 

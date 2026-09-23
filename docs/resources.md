@@ -1,6 +1,6 @@
 ---
 title: Resources
-description: Guides and references for dotenvx files, install, platforms, and more.
+description: Files and references for dotenvx.
 permalink: /docs/resources/
 layout: radar
 ---
@@ -8,43 +8,14 @@ layout: radar
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="Resources"
-  description="Guides and references for dotenvx files, install, platforms, and more."
+  description="Files and references for dotenvx."
   mark="docs"
 %}
 
 {% capture resources_items %}
-  <li>
-    <a class="design-link" href="/docs/env-file">.env</a>
-    <span class="design-list-meta">separates secrets from code</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/env-keys-file">.env.keys</a>
-    <span class="design-list-meta">private decryption keys</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/install/">Installing</a>
-    <span class="design-list-meta">curl, npm, brew, more</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/platforms">Platforms</a>
-    <span class="design-list-meta">Vercel, Fly, Heroku, more</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/errors">Errors</a>
-    <span class="design-list-meta">Dotenvx and Armor error codes</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/events">Events</a>
-    <span class="design-list-meta">Armor activity event names</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/api">API</a>
-    <span class="design-list-meta">Armor API endpoints</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/stats">Stats</a>
-    <span class="design-list-meta">download stats</span>
-  </li>
+  {% for resource in site.data.docs_resources %}
+    <li><a class="design-link" href="{{ resource.href | relative_url }}"{% if resource.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ resource.label | escape }}</a></li>
+  {% endfor %}
 {% endcapture %}
 
 <section class="radar-section">

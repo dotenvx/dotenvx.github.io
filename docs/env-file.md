@@ -246,6 +246,7 @@ $ dotenvx run -- your-app-boot-command
 
     {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush" id="encryption">Encryption</h2>
+    <p class="design-paragraph">See the <a class="design-link" href="/docs/encrypted-env-file/">encrypted .env file guide →</a> for the format, key pairs, and how to use it.</p>
     <p class="design-paragraph"><code class="design-code">.env</code> files can be extended to support encryption. Preface each value with <code class="design-code">encrypted:</code> followed by a <a class="design-link" href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a> encrypted string.</p>
 
     {% capture env_encrypted %}

@@ -1,0 +1,35 @@
+[
+  {
+    "label": ".env",
+    "href": "/docs/env-file/"
+  },
+  {
+    "label": ".env (encrypted)",
+    "href": "/docs/encrypted-env-file/"
+  },
+  {
+    "label": ".env.keys",
+    "href": "/docs/env-keys-file/"
+  },
+  {
+    "label": "API",
+    "href": "/docs/api/"
+  },
+  {
+    "label": "Errors",
+    "href": "/docs/errors/"
+  },
+  {
+    "label": "Events",
+    "href": "/docs/events/"
+  },
+  {
+    "label": "Stats",
+    "href": "/docs/stats/"
+  },
+  {
+    "label": "Whitepaper ↗",
+    "href": "/dotenvx.pdf",
+    "new_tab": true
+  }
+]

@@ -1,0 +1,6 @@
+<h2 class="design-page-title design-page-title--flush">CLI Commands</h2>
+<ul class="advanced-cli-commands">
+  {% for command in site.data.advanced_cli %}
+    <li><a class="design-link" href="{{ command.href }}">{{ command.label | escape }}</a></li>
+  {% endfor %}
+</ul>

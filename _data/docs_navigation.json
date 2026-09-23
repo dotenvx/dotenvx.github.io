@@ -21,7 +21,7 @@
     "href": "/docs/introduction/"
   },
   {
-    "label": "CLI reference",
+    "label": "CLI",
     "children": [
       {
         "label": "Run",
@@ -34,7 +34,7 @@
         "children": []
       },
       {
-        "label": "more...",
+        "label": "All CLI →",
         "href": "/docs/cli/",
         "children": []
       }
@@ -54,7 +54,7 @@
         "children": []
       },
       {
-        "label": "more...",
+        "label": "All SDKs →",
         "href": "/docs/sdk/",
         "children": []
       }
@@ -64,123 +64,8 @@
     "label": "Guides",
     "children": [
       {
-        "label": ".NET",
-        "href": "/docs/dotnet/",
-        "children": []
-      },
-      {
-        "label": "1Password",
-        "href": "/docs/1password/",
-        "children": []
-      },
-      {
-        "label": "Astro",
-        "href": "/docs/astro/",
-        "children": []
-      },
-      {
-        "label": "Bash",
-        "href": "/docs/bash/",
-        "children": []
-      },
-      {
-        "label": "Bitwarden",
-        "href": "/docs/bitwarden/",
-        "children": []
-      },
-      {
-        "label": "Bun",
-        "href": "/docs/bun/",
-        "children": []
-      },
-      {
         "label": "Claude Code",
         "href": "/docs/claude/",
-        "children": []
-      },
-      {
-        "label": "CLI",
-        "href": "/docs/cli-quickstart/",
-        "children": []
-      },
-      {
-        "label": "Clojure",
-        "href": "/docs/clojure/",
-        "children": []
-      },
-      {
-        "label": "Codex",
-        "href": "/docs/codex/",
-        "children": []
-      },
-      {
-        "label": "Cron",
-        "href": "/docs/cron/",
-        "children": []
-      },
-      {
-        "label": "Cursor",
-        "href": "/docs/cursor/",
-        "children": []
-      },
-      {
-        "label": "Docker",
-        "href": "/docs/docker/",
-        "children": []
-      },
-      {
-        "label": "Docker Compose",
-        "href": "/docs/docker-compose/",
-        "children": []
-      },
-      {
-        "label": "Echo",
-        "href": "/docs/echo/",
-        "children": []
-      },
-      {
-        "label": "Expo",
-        "href": "/docs/expo/",
-        "children": []
-      },
-      {
-        "label": "Express",
-        "href": "/docs/express/",
-        "children": []
-      },
-      {
-        "label": "Fish",
-        "href": "/docs/fish/",
-        "children": []
-      },
-      {
-        "label": "Flask",
-        "href": "/docs/flask/",
-        "children": []
-      },
-      {
-        "label": "GitHub Actions",
-        "href": "/docs/github-actions/",
-        "children": []
-      },
-      {
-        "label": "Go",
-        "href": "/docs/go/",
-        "children": []
-      },
-      {
-        "label": "Java",
-        "href": "/docs/java/",
-        "children": []
-      },
-      {
-        "label": "Kotlin",
-        "href": "/docs/kotlin/",
-        "children": []
-      },
-      {
-        "label": "Monorepos",
-        "href": "/docs/monorepos/",
         "children": []
       },
       {
@@ -189,164 +74,29 @@
         "children": []
       },
       {
-        "label": "Node.js",
-        "href": "/docs/nodejs/",
+        "label": "Docker",
+        "href": "/docs/docker/",
         "children": []
       },
       {
-        "label": "Nx",
-        "href": "/docs/nx/",
+        "label": "GitHub Actions",
+        "href": "/docs/github-actions/",
         "children": []
       },
       {
-        "label": "PHP",
-        "href": "/docs/php/",
+        "label": "1Password",
+        "href": "/docs/1password/",
         "children": []
       },
       {
-        "label": "Python",
-        "href": "/docs/python/",
-        "children": []
-      },
-      {
-        "label": "Rails",
-        "href": "/docs/rails/",
-        "children": []
-      },
-      {
-        "label": "Remix",
-        "href": "/docs/remix/",
-        "children": []
-      },
-      {
-        "label": "Ruby",
-        "href": "/docs/ruby/",
-        "children": []
-      },
-      {
-        "label": "Rust",
-        "href": "/docs/rust/",
-        "children": []
-      },
-      {
-        "label": "Sinatra",
-        "href": "/docs/sinatra/",
-        "children": []
-      },
-      {
-        "label": "Turborepo",
-        "href": "/docs/turborepo/",
-        "children": []
-      },
-      {
-        "label": "uv",
-        "href": "/docs/uv/",
-        "children": []
-      },
-      {
-        "label": "Zsh",
-        "href": "/docs/zsh/",
+        "label": "All Guides →",
+        "href": "/docs/guides/",
         "children": []
       }
     ]
   },
   {
-    "label": "Guides & deployment",
-    "children": [
-      {
-        "label": "AWS Lambda",
-        "href": "/docs/platforms/aws-lambda/",
-        "children": []
-      },
-      {
-        "label": "Cloudflare",
-        "href": "/docs/platforms/cloudflare/",
-        "children": []
-      },
-      {
-        "label": "DigitalOcean",
-        "href": "/docs/platforms/digital-ocean/",
-        "children": []
-      },
-      {
-        "label": "Fly",
-        "href": "/docs/platforms/fly/",
-        "children": []
-      },
-      {
-        "label": "Heroku",
-        "href": "/docs/platforms/heroku/",
-        "children": []
-      },
-      {
-        "label": "Multiple Environments",
-        "href": "/docs/learn/encrypting/multiple-environments/",
-        "children": []
-      },
-      {
-        "label": "Netlify",
-        "href": "/docs/platforms/netlify/",
-        "children": []
-      },
-      {
-        "label": "npm",
-        "href": "/docs/package-managers/npm/",
-        "children": []
-      },
-      {
-        "label": "Platforms",
-        "href": "/docs/platforms/",
-        "children": []
-      },
-      {
-        "label": "PM2",
-        "href": "/docs/process-managers/pm2/",
-        "children": []
-      },
-      {
-        "label": "pnpm",
-        "href": "/docs/package-managers/pnpm/",
-        "children": []
-      },
-      {
-        "label": "Private Keys",
-        "href": "/docs/learn/encrypting/private-keys/",
-        "children": []
-      },
-      {
-        "label": "Production",
-        "href": "/docs/armor/production/",
-        "children": []
-      },
-      {
-        "label": "Railway",
-        "href": "/docs/platforms/railway/",
-        "children": []
-      },
-      {
-        "label": "Render",
-        "href": "/docs/platforms/render/",
-        "children": []
-      },
-      {
-        "label": "Runtime Decryption",
-        "href": "/docs/learn/encrypting/runtime-decryption/",
-        "children": []
-      },
-      {
-        "label": "Trigger.dev",
-        "href": "/docs/background-jobs/triggerdotdev/",
-        "children": []
-      },
-      {
-        "label": "Vercel",
-        "href": "/docs/platforms/vercel/",
-        "children": []
-      }
-    ]
-  },
-  {
-    "label": "Files & reference",
+    "label": "Resources",
     "children": [
       {
         "label": ".env",
@@ -354,38 +104,19 @@
         "children": []
       },
       {
-        "label": ".env.keys",
-        "href": "/docs/env-keys-file/",
+        "label": ".env (encrypted)",
+        "href": "/docs/encrypted-env-file/",
         "children": []
       },
       {
-        "label": "API",
-        "href": "/docs/api/",
-        "children": []
-      },
-      {
-        "label": "Errors",
-        "href": "/docs/errors/",
-        "children": []
-      },
-      {
-        "label": "Events",
-        "href": "/docs/events/",
-        "children": []
-      },
-      {
-        "label": "Resources",
-        "href": "/docs/resources/",
-        "children": []
-      },
-      {
-        "label": "Stats",
-        "href": "/docs/stats/",
-        "children": []
-      },
-      {
-        "label": "Whitepaper",
+        "label": "Whitepaper ↗",
         "href": "/dotenvx.pdf",
+        "children": [],
+        "new_tab": true
+      },
+      {
+        "label": "All Resources →",
+        "href": "/docs/resources/",
         "children": []
       }
     ]

@@ -256,15 +256,7 @@ layout: radar
 {% endcapture %}
 
 {% capture qs_encryption_items %}
-  <li><a class="design-link" href="/docs/learn/encrypting/introduction/">Encrypting</a></li>
-  <li><a class="design-link" href="/docs/learn/encrypting/encrypted-files/">Encrypted Files</a></li>
   <li><a class="design-link" href="/docs/learn/encrypting/multiple-environments/">Multiple Environments</a></li>
-  <li><a class="design-link" href="/docs/learn/encrypting/private-keys/">Private Keys</a></li>
-  <li><a class="design-link" href="/docs/learn/encrypting/runtime-decryption/">Runtime Decryption</a></li>
-{% endcapture %}
-
-{% capture qs_armor_items %}
-  <li><a class="design-link" href="/docs/armor/production/">Production</a></li>
 {% endcapture %}
 
 <section class="radar-section">
@@ -368,11 +360,6 @@ layout: radar
 
       {% capture step_content %}
         {% include components/design-list.html title="Encryption" items=qs_encryption_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Armor" items=qs_armor_items %}
       {% endcapture %}
       {% include components/design-step.html content=step_content %}
 

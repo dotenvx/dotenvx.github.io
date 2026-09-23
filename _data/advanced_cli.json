@@ -168,10 +168,6 @@
     "href": "/docs/cli/run-validate/"
   },
   {
-    "label": "run with Envfile file rules",
-    "href": "/docs/cli/run-envfile-file-rules/"
-  },
-  {
     "label": "get",
     "href": "/docs/cli/get/"
   },

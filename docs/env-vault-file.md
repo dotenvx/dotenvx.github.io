@@ -19,7 +19,7 @@ redirect_from:
   <div class="design-content-width">
   <section class="docs-quickstart-body">
     {% capture step_content %}
-    <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The <code class="design-code">.env.vault</code> file has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/quickstart/encryption">updated encryption instructions</a>.</p>
+    <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The <code class="design-code">.env.vault</code> file has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/quickstart">updated encryption instructions</a>.</p>
 
     <p class="design-paragraph"><code class="design-code">.env.vault</code> is an encrypted version of your .env file. Here is what it looks like.</p>
 
@@ -47,7 +47,7 @@ DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWt
 
     {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush">Generating</h2>
-    <p class="design-paragraph">It's generated with <a class="design-link" href="/docs/quickstart/encryption"><code class="design-code">dotenvx encrypt</code></a>. Create your <code class="design-code">.env</code> files like you usually do.</p>
+    <p class="design-paragraph">It's generated with <a class="design-link" href="/docs/quickstart"><code class="design-code">dotenvx encrypt</code></a>. Create your <code class="design-code">.env</code> files like you usually do.</p>
 
     {% capture vault_env %}
 # .env

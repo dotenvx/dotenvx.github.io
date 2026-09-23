@@ -4,8 +4,6 @@ description: Use dotenvx on your hosting platform.
 permalink: /docs/platforms/
 layout: radar
 redirect_from:
-  - /docs/guides/
-  - /docs/guides
 ---
 
 {% include components/docs-hero.html

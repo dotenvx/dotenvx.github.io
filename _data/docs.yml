@@ -1,6 +1,6 @@
 quickstart_crumbs:
-  - label: Quickstarts
-    href: /docs/quickstarts
+  - label: Guides
+    href: /docs/guides
 
 cli_crumbs:
   - label: Docs
@@ -37,7 +37,7 @@ cli_commands:
   - /docs/cli/native/
   - /docs/cli/armor/introduction/
 
-# Order matches /docs/quickstarts — used for prev/next pager
+# Order matches /docs/guides — used for prev/next pager
 quickstarts:
   - label: CLI
     href: /docs/cli-quickstart/

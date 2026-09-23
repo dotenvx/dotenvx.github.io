@@ -6815,6 +6815,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 .docs-site .design-content-width { overflow-wrap: anywhere; }
 .docs-site .design-content-width > * { min-width: 0; max-width: 100%; }
 .docs-site .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
+.docs-site .design-codeblock--nowrap { white-space: pre; overflow-wrap: normal; overflow-x: auto; }
 .docs-site .design-table-wrap { max-width: 100%; overflow-x: auto; }
 .docs-site .radar-section { padding-bottom: 0; }
 .docs-site .design-step { padding-bottom: var(--home-section-gap); }

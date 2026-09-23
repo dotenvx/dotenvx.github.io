@@ -1,6 +1,6 @@
 ---
-title: Quickstarts
-permalink: /docs/quickstarts/
+title: Guides
+permalink: /docs/guides/
 layout: radar
 ---
 
@@ -16,7 +16,7 @@ layout: radar
 
   eyebrow="Docs"
   eyebrow_href="/docs/introduction"
-  title="Quickstarts"
+  title="Guides"
   description="Use dotenvx with the tools and languages you already know and love. It works pretty much everywhere that we know of."
   visual=docs_hero_visual
 %}

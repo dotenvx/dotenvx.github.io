@@ -25,7 +25,7 @@ entries:
       - docs
       - documentation
       - getting started
-  /docs/quickstarts/:
+  /docs/guides/:
     boost: 55
     aliases:
       - quickstart
@@ -139,15 +139,11 @@ entries:
       - installation
       - curl
       - brew
-  /docs/quickstart/encryption/:
+  /docs/quickstart/:
     boost: 55
     aliases:
       - encrypt
       - encryption
-  /docs/quickstart/run/:
-    boost: 50
-    aliases:
-      - run
   /docs/armor/production/:
     boost: 45
     aliases:

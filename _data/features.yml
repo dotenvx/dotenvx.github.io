@@ -3,9 +3,9 @@ items:
   - label: Store private keys in your OS keychain
     href: /docs/cli/native
   - label: Use the same workflow on Mac, Linux, and Windows
-    href: /docs/quickstart/run
+    href: /docs/quickstart
   - label: Choose secrets for each environment
-    href: /docs/quickstart/environments
+    href: /docs/quickstart
   - label: Redact secrets from runtime output
     href: /docs/cli/run-redact
   - label: Catch missing keys before you run

@@ -127,7 +127,7 @@ $ dotenvx run -- node index.js
 ⟐ injected env (17) from .env
     {% endcapture %}
       {% include components/design-codeblock.html value=one_key_run copy_text="dotenvx run -- npm start" label="Example application startup with encrypted secrets" %}
-      <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/encryption/" label="Try it for yourself →" %}</p>
+      <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/" label="Try it for yourself →" %}</p>
     {% endcapture %}
     {% include components/design-content-width.html content=one_key_content %}
   </div>
@@ -144,7 +144,7 @@ $ dotenvx run -- node index.js
         {% include components/design-secrets-artifact-row.html secret=true key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
       </div>
       <div class="one-key-artifact">
-        {% include components/design-secrets-artifact-row.html secret=true key="DOTENV_PATH" value=".env.production" %}
+        {% include components/design-secrets-artifact-row.html secret=true key="DOTENV_FILE" value=".env.production" %}
       </div>
 
       {% capture production_run %}
@@ -157,7 +157,7 @@ $ dotenvx run -- npm start
 App listening on port 80
       {% endcapture %}
       {% include components/design-codeblock.html value=production_run copy_text="dotenvx run-- npm start" label="Example application startup with production secrets" %}
-      <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/encryption/" label="Deploy with dotenvx →" %}</p>
+      <p class="design-paragraph text-center one-key-action">{% include components/design-link.html href="/docs/quickstart/" label="Deploy with dotenvx →" %}</p>
     {% endcapture %}
     {% include components/design-content-width.html content=production_content %}
   </div>

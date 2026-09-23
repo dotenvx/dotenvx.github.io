@@ -2,7 +2,7 @@ title: Features
 items:
   - label: Make .env safe to commit
     meta: dotenvx encrypt
-    href: /docs/quickstart/encryption
+    href: /docs/quickstart
   - label: Password protect your .env file
     meta: dotenvx lock
     href: /docs/cli/lock
@@ -11,10 +11,10 @@ items:
     href: /docs/cli/native
   - label: Same on Mac, Linux, and Windows
     meta: dotenvx run
-    href: /docs/quickstart/run
+    href: /docs/quickstart
   - label: Ship the right secrets to each environment
     meta: dotenvx run -f .env.production
-    href: /docs/quickstart/environments
+    href: /docs/quickstart
   - label: Compose multiple .env files
     meta: dotenvx run -f
     href: /docs/cli/run-f

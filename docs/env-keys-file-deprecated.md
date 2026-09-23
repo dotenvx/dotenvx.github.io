@@ -41,7 +41,7 @@ DOTENV_KEY_PRODUCTION="dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021
 
     {% capture step_content %}
     <h2 class="design-page-title design-page-title--flush">Generating</h2>
-    <p class="design-paragraph">It's auto-generated when running <a class="design-link" href="/docs/quickstart/encryption"><code class="design-code">dotenvx encrypt</code></a>.</p>
+    <p class="design-paragraph">It's auto-generated when running <a class="design-link" href="/docs/quickstart"><code class="design-code">dotenvx encrypt</code></a>.</p>
 
     {% capture keys_deprecated_gen %}
 $ dotenvx encrypt

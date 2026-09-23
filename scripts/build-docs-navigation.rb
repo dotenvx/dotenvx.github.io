@@ -44,12 +44,12 @@ parents.keys.each do |url|
   end
 end
 parents.each { |url, parent| nodes[parent]['children'] << nodes[url] }
-groups = ['Start here', 'Quickstarts', 'CLI reference', 'SDKs', 'Guides & deployment', 'Files & reference'].to_h { |label| [label, []] }
+groups = ['Start here', 'Guides', 'CLI reference', 'SDKs', 'Guides & deployment', 'Files & reference'].to_h { |label| [label, []] }
 pages.each do |p|
   next if parents[p['url']]
   url = p['url']
-  group = if ['/docs/introduction/', '/docs/quickstarts/', '/docs/learn/installing/'].include?(url) then 'Start here'
-    elsif p['layout'] == 'docs-quickstart' then 'Quickstarts'
+  group = if ['/docs/introduction/', '/docs/quickstart/', '/docs/guides/', '/docs/learn/installing/'].include?(url) then 'Start here'
+    elsif p['layout'] == 'docs-quickstart' then 'Guides'
     elsif url.start_with?('/docs/cli/') then 'CLI reference'
     elsif url.start_with?('/docs/sdk/') then 'SDKs'
     elsif url.match?(%r{/docs/(learn|platforms|armor|quickstart|package-managers|process-managers|background-jobs)/}) then 'Guides & deployment'

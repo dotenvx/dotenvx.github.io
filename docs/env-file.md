@@ -108,7 +108,7 @@ $ dotenvx run -- your-app-boot-command
     {% endcapture %}
     {% include components/design-codeblock.html value=env_run copy_text="dotenvx run -- your-app-boot-command" %}
 
-    <p class="design-paragraph"><a class="design-link" href="/docs/quickstarts">Get started with dotenvx →</a></p>
+    <p class="design-paragraph"><a class="design-link" href="/docs/guides">Get started with dotenvx →</a></p>
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
 
@@ -137,7 +137,7 @@ $ dotenvx encrypt
 
     {% include components/design-btn.html
       label="Encryption quickstart"
-      href="/docs/quickstart/encryption"
+      href="/docs/quickstart"
     %}
     {% endcapture %}
     {% include components/design-step.html content=step_content %}
@@ -290,7 +290,7 @@ DATABASE_URL="postgres://$(whoami)@localhost/my_database"
         <a class="design-link" href="/docs/env-keys-file/">.env.keys</a>
       </li>
       <li>
-        <a class="design-link" href="/docs/quickstart/encryption/">Encryption quickstart</a>
+        <a class="design-link" href="/docs/quickstart/">Encryption quickstart</a>
       </li>
       <li>
         <a class="design-link" href="/docs/cli/run/">dotenvx run</a>

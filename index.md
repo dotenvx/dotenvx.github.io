@@ -182,6 +182,8 @@ App listening on port 80
   </div>
 </section>
 
+{% include components/home-ship-with-code.html %}
+
 {% comment %}
 Ready for Agents: restore this section when the proxy is ready to launch.
 <section class="radar-section home-agents" aria-labelledby="home-agents-title">
@@ -207,15 +209,25 @@ $ dotenvx run -- claude
 </section>
 {% endcomment %}
 
-<section class="radar-section home-ending" id="install" aria-label="Next step">
+<section class="radar-section home-open-source" id="install" aria-labelledby="home-open-source-title">
   <div class="armor-shell">
-    <div class="home-cta">
-      {% capture closing_copy %}
-      <p class="design-paragraph text-center">Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It feels so good and unlocks so much.</p>
-      {% endcapture %}
-      {% include components/design-content-width.html content=closing_copy %}
-      {% include components/design-btn.html label="Quickstart" href="/docs/quickstart/" data_umami_event="Homepage Closing Quickstart button" %}
-    </div>
+    {% include components/design-page-title.html title="For Everyone. Open Source." heading_tag="h2" title_class="text-center" id="home-open-source-title" %}
+    {% capture open_source_content %}
+      <div class="home-creator-note">
+        <p class="design-paragraph">Dotenvx is free and open source, for you to wield and keep your secrets safe. It’s a labor of love from me and a community of people who believe safer secrets should be within everyone’s reach.</p>
+        <div class="home-creator-portrait">
+          {% include components/practitioner-portrait.html name="Scott Motte" organization="Creator of Dotenv and Dotenvx" image="/assets/img/scott-motte.jpg" href="https://mot.la/" %}
+        </div>
+        <p class="design-paragraph">We’re building for the whole world of software: an elegant, open pattern for encrypting secrets that belongs to no single vendor. Your encrypted files travel with your code, without a secrets service in your application’s critical path. The goal is simple: make this pattern work wherever software runs, for everyone who builds it—human or agent.</p>
+        <p class="design-paragraph text-center">Consider Dotenvx for your secrets. I think you'll like it.</p>
+      </div>
+      <div class="home-cta home-closing-actions">
+        {% include components/design-btn.html label="Quickstart" href="/docs/quickstart/" data_umami_event="Homepage Closing Quickstart button" %}
+        {% capture source_button %}{% include logos/github.html class="home-source-icon" %}<span>Source</span>{% endcapture %}
+        {% include components/design-btn.html content=source_button href="https://github.com/dotenvx/dotenvx" class="home-source-button" data_umami_event="Homepage Source button" %}
+      </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=open_source_content %}
   </div>
 </section>
 </div>

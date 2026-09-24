@@ -7,7 +7,8 @@
   </head>
   {% assign body_class = page.body_class | default: layout.body_class %}
   {% assign route_prefix = page.url | slice: 0, 6 %}
-  <body class="radar-layout{% if body_class %} {{ body_class }}{% endif %}{% if route_prefix == '/docs/' %} home-page docs-site{% endif %}">
+  {% assign member_prefix = page.url | slice: 0, 9 %}
+  <body class="radar-layout{% if body_class %} {{ body_class }}{% endif %}{% if route_prefix == '/docs/' %} home-page docs-site{% endif %}{% if member_prefix == "/members/" %} member-story-page{% endif %}">
     {% include components/radar-nav.html %}
     {% if route_prefix == "/docs/" %}<div class="docs-layout">{% include components/docs-sidebar.html %}{% endif %}
     <main class="radar-main">
@@ -17,9 +18,8 @@
     </main>
     {% if route_prefix == "/docs/" %}</div>{% endif %}
     {% unless page.hide_footer %}{% include components/footer.html %}{% endunless %}
-    {% unless page.force_light %}{% include components/design-theme-control.html %}{% endunless %}
     {% include components/site-search.html %}
-    {% unless page.force_light %}<script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>{% endunless %}
+    {% unless page.force_light %}<script src="{{ '/assets/js/radar-theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endunless %}
     <script src="{{ '/assets/js/design-choice.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
     <script src="{{ '/assets/js/design-video.js' | relative_url }}"></script>
   </body>

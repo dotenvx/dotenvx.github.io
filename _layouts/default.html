@@ -30,9 +30,8 @@
     {% unless page.hide_footer %}
       {% include components/footer.html %}
     {% endunless %}
-    {% include components/design-theme-control.html %}
     {% include components/site-search.html %}
     <script src="{{ '/assets/js/terminal-tilt.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/radar-theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   </body>
 </html>

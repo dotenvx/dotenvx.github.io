@@ -1,0 +1,10 @@
+<details class="design-member{% if include.kind == 'executive' %} design-member--executive{% endif %}">
+  <summary class="design-member-face" aria-label="{{ include.name | escape }} — {{ include.type | escape }}">
+    {% if include.image %}<img src="{{ include.image | escape }}" alt="" />{% elsif include.content %}{{ include.content }}{% else %}<span class="design-member-placeholder" aria-hidden="true">○</span>{% endif %}
+  </summary>
+  <div class="design-member-info">
+    <span class="design-member-name">{{ include.name | escape }}</span>
+    <span class="design-member-type">{{ include.type | escape }}</span>
+    {% if include.quote %}<blockquote>{{ include.quote | escape }}</blockquote>{% endif %}
+  </div>
+</details>

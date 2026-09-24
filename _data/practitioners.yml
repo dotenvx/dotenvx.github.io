@@ -1,0 +1,17 @@
+# Add people by copying an entry and choosing a unique ID.
+# Select and order IDs in membership.md's practitioner_ids list.
+# href is optional. Keep draft: true until proposed wording is approved.
+dhravya:
+  name: Dhravya Shah
+  organization: CEO at Supermemory
+  image: /assets/img/dhravya-supermemory.jpg
+  quote: "Dotenvx is so underrated. I set one key and all my secrets just work."
+  href: /members/supermemory
+  draft: false
+
+john-zila:
+  name: John Zila
+  organization: Prior Head of Security at Zoom
+  image: /assets/img/john-zila.png
+  quote: "The only 'not in the critical path' secrets solution."
+  draft: false

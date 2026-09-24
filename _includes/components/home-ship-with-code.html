@@ -1,0 +1,31 @@
+<section class="radar-section home-shipping" aria-labelledby="home-shipping-title">
+  <div class="armor-shell">
+    {% include components/design-page-title.html title="Your Code. Your Secrets." heading_tag="h2" title_class="text-center" id="home-shipping-title" %}
+    {% capture shipping_content %}
+      <p class="design-paragraph">Encryption turns your .env into a shipping container for secrets. Commit it alongside your code and deliver both through the same repository, build, and release.</p>
+      <figure class="home-shipping-visual" aria-label="Git commit adding encrypted production secrets to the application repository, then deployed.">
+        <div class="shipping-commit">
+          <header class="shipping-commit-header">
+            <span class="shipping-commit-icon" aria-hidden="true"><img class="shipping-commit-dotenvx" src="/assets/img/logo-env.svg" alt="" width="24" height="24">{% include logos/git-symbol.html %}</span>
+            <div><strong>Add production secrets</strong><span class="shipping-commit-meta">1 file changed</span></div>
+            <code class="shipping-commit-sha">7a3f91c</code>
+          </header>
+          <div class="shipping-commit-file"><code>.env.production</code><span class="shipping-commit-encrypted">Encrypted</span></div>
+          <div class="shipping-commit-diff" aria-label="Added encrypted production credentials; ciphertext abbreviated">
+            <code><span aria-hidden="true">+</span> DATABASE_URL="encrypted:…"</code>
+            <code><span aria-hidden="true">+</span> REDIS_URL="encrypted:…"</code>
+            <code><span aria-hidden="true">+</span> STRIPE_SECRET_KEY="encrypted:…"</code>
+            <code><span aria-hidden="true">+</span> STRIPE_WEBHOOK_SECRET="encrypted:…"</code>
+            <code><span aria-hidden="true">+</span> RESEND_API_KEY="encrypted:…"</code>
+            <code><span aria-hidden="true">+</span> OPENAI_API_KEY="encrypted:…"</code>
+          </div>
+          <footer class="shipping-commit-footer"><code>7a3f91c <span aria-hidden="true">→</span> production</code></footer>
+        </div>
+      </figure>
+      <div class="home-shipping-closing">
+        <p class="design-paragraph">Once your secrets are in an encrypted git workflow, you'll wonder why you waited so long. It feels so good and unlocks so much.</p>
+      </div>
+    {% endcapture %}
+    {% include components/design-content-width.html content=shipping_content %}
+  </div>
+</section>

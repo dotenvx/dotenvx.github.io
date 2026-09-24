@@ -80,3 +80,5 @@
 "/agents/": "/ai"
 "/agentic": "/ai"
 "/agentic/": "/ai"
+"/customers/supermemory": "/members/supermemory"
+"/customers/supermemory/": "/members/supermemory"

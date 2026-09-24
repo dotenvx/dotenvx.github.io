@@ -12,7 +12,7 @@ test('generates PNGs, reuses unchanged cards, and changes URLs when content chan
       { key: '/blog/example.html', template: 'blog', title: 'Dotenv 18: CLI', author: 'Scott Motte', date: 'September 19, 2026' },
       { key: '/blog/long.html', template: 'blog', title: 'From dotenv to dotenvx: Next Generation Config Management' },
       { key: '/blog/symbol.html', template: 'blog', title: 'Rotate NPM Tokens with Dotenvx Armor ⛨. Automatically.' },
-      { key: '/customers/supermemory', template: 'logo', logo: '_includes/logos/supermemory.svg' },
+      { key: '/members/supermemory', template: 'logo', logo: '_includes/logos/supermemory.svg' },
     ]
     const first = await buildImages({ cacheDir, entries })
     assert.equal(new Set(first.map(image => image.url)).size, entries.length)

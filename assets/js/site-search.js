@@ -385,6 +385,10 @@
       setActive(Number(hit.getAttribute('data-site-search-hit')))
     })
 
+    document.querySelectorAll('[data-site-search-open]').forEach(function (button) {
+      button.addEventListener('click', open)
+    })
+
     overlay.addEventListener('click', function (event) {
       if (event.target === overlay) close()
     })

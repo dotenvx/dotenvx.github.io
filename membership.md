@@ -4,6 +4,9 @@ description: "For security professionals advancing secrets security—for humans
 permalink: /membership
 layout: radar
 body_class: home-page membership-page
+practitioner_ids:
+  - dhravya
+  - john-zila
 ---
 
 <style>
@@ -19,10 +22,15 @@ body_class: home-page membership-page
   .membership-comparison .design-table .membership-section-row th { color: var(--design-mid); font-family: var(--design-font-mono); font-size: var(--design-text-compact); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
   .membership-comparison .design-table thead th { width: 30%; text-align: center; white-space: normal; vertical-align: top; }
   .membership-comparison .design-table thead th:first-child { width: 40%; text-align: left; }
-  .membership-members .design-list-title { margin: 0 0 2rem; text-align: center; }
+  .membership-members { margin-top: 3rem; }
+  .membership-members .design-list-title { margin: 0 0 1.5rem; text-align: center; font-size: var(--design-text-compact); color: var(--design-mid); font-weight: 400; }
+  .membership-proof > .radar-section { margin-block: 0; padding-block: 0; }
   .membership-or { margin: 2rem 0; color: var(--design-mid); text-align: center; }
   .membership-other-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 44rem; margin: 0 auto; }
-  .membership-other-option { padding: 2rem; text-align: center; }
+  .membership-other-option { display: block; padding: 2rem; text-align: center; text-decoration: none; transition: background-color 140ms ease; }
+  .membership-other-option:hover, .membership-other-option:focus-visible { background-color: var(--design-hover); }
+  .membership-other-option:focus-visible { outline: 2px solid var(--design-mid); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .membership-other-option { transition: none; } }
   .membership-other-option + .membership-other-option { border-left: 1px solid var(--design-line); }
   .membership-other-option h2 { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 600; }
   .membership-other-option p { margin: 0; color: var(--design-mid); line-height: 1.6; }
@@ -31,10 +39,19 @@ body_class: home-page membership-page
     .membership-other-option { padding: 1.5rem 0; }
     .membership-other-option + .membership-other-option { border-left: 0; border-top: 1px solid var(--design-line); }
   }
+  .membership-page .design-hero--compact .design-hero-content { width: 100%; max-width: 21rem; height: auto; aspect-ratio: auto; margin-bottom: .5rem; }
 </style>
 
 {% capture membership_visual %}
   {% include_relative assets/img/dotenv-membership-card.svg %}
+{% endcapture %}
+
+{% capture membership_practitioner %}
+  {% include components/practitioner-portraits.html ids=page.practitioner_ids %}
+{% endcapture %}
+
+{% capture membership_slab %}
+  {% include components/env-slab.html %}
 {% endcapture %}
 
 {% capture membership_actions %}
@@ -44,7 +61,8 @@ body_class: home-page membership-page
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="Membership">
     <div class="armor-shell">
-      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=membership_visual actions=membership_actions %}
+      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=membership_slab actions=membership_actions %}
+
     </div>
   </section>
 
@@ -111,28 +129,30 @@ body_class: home-page membership-page
     </div>
   </section>
 
+  <div class="membership-proof">
   {% include components/membership-armor.html %}
 
-  <section class="radar-section membership-members" aria-labelledby="membership-members-title">
+  <section class="radar-section" aria-label="Members">
     <div class="armor-shell">
-      <h2 class="design-list-title" id="membership-members-title">Our members</h2>
-      {% include components/armor/logo-cloud.html %}
+      {% include components/practitioner-portraits.html ids=page.practitioner_ids show_all=true %}
     </div>
   </section>
+
+  </div>
 
   <section class="radar-section" aria-label="Get involved">
     <div class="armor-shell">
       <div class="home-cta">{{ membership_actions }}</div>
       <p class="membership-or">or</p>
       <div class="membership-other-options">
-        <div class="membership-other-option">
-          <h2>{% include components/design-link.html href="/sponsorship" label="Corporate Sponsorship →" %}</h2>
+        <a class="membership-other-option" href="/sponsorship">
+          <h2><span class="design-link">Corporate Sponsorship →</span></h2>
           <p>Steward the future of Dotenv – for humans and agents.</p>
-        </div>
-        <div class="membership-other-option">
-          <h2>{% include components/design-link.html href="/careers" label="Careers →" %}</h2>
+        </a>
+        <a class="membership-other-option" href="/careers">
+          <h2><span class="design-link">Careers →</span></h2>
           <p>Build the future of Dotenv - for humans and agents.</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>

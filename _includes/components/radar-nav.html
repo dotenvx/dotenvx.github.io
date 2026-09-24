@@ -22,7 +22,14 @@
     </nav>
 
     <div class="radar-topbar-right">
-      <a href="/login" class="radar-nav-link radar-nav-login" data-umami-event="Login link">Log in</a>
+      {% if docs_active %}
+        <button type="button" class="design-theme-control design-search-control" data-site-search-open aria-label="Search — / or Command K" aria-keyshortcuts="/ Meta+k Control+k" aria-haspopup="dialog">
+          <span class="design-theme-control-disc">{% include components/design-kbd.html key="/" class="design-theme-control-key" %}</span>
+          <span class="design-tooltip-tip" role="tooltip">Search — type ⌘K</span>
+        </button>
+      {% endif %}
+      {% unless page.force_light %}{% include components/design-theme-control.html %}{% endunless %}
+      {% include components/design-btn.html href="/login" label="Login" class="radar-nav-login" data_umami_event="Login link" %}
 
       <button type="button" class="radar-mobile-toggle" id="radar-mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
         <svg class="radar-mobile-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -41,7 +48,7 @@
   <div class="radar-mobile-sheet">
     <div class="radar-mobile-actions">
       {% include components/design-btn.html
-        label="Log in"
+        label="Login"
         href="/login"
         class="design-btn--block"
       %}

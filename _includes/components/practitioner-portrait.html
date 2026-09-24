@@ -1,0 +1,15 @@
+<figure class="practitioner-portrait">
+  {% if include.href %}<a class="practitioner-portrait-photo" href="{{ include.href | escape }}" aria-label="Read {{ include.name | escape }}’s story">{% else %}<div class="practitioner-portrait-photo">{% endif %}
+    <img src="{{ include.image | escape }}" alt="{{ include.name | escape }}" width="400" height="400" />
+  {% if include.href %}</a>{% else %}</div>{% endif %}
+  <div class="practitioner-portrait-copy">
+    {% unless include.draft %}
+      {% if include.quote %}<blockquote>“{{ include.quote | escape }}”</blockquote>{% endif %}
+    {% endunless %}
+
+  </div>
+    <figcaption>
+      {% if include.href %}<a href="{{ include.href | escape }}">{{ include.name | escape }}</a>{% else %}<strong>{{ include.name | escape }}</strong>{% endif %}
+      <span>{{ include.organization | escape }}</span>
+    </figcaption>
+</figure>

@@ -1,0 +1,31 @@
+{% comment %}Usage: include components/practitioner-portraits.html ids=page.practitioner_ids{% endcomment %}
+<div class="practitioner-portraits{% if include.show_all %} practitioner-portraits--grid{% endif %}" data-practitioner-portraits>
+  {% assign practitioner_shown = false %}
+  {% for practitioner_id in include.ids %}
+    {% assign practitioner = site.data.practitioners[practitioner_id] %}
+    {% if practitioner %}
+      <div data-practitioner-option{% if practitioner_shown and include.show_all != true %} hidden{% endif %}>
+      {% include components/practitioner-portrait.html
+        name=practitioner.name
+        organization=practitioner.organization
+        image=practitioner.image
+        quote=practitioner.quote
+        href=practitioner.href
+        draft=practitioner.draft
+      %}
+      </div>
+      {% assign practitioner_shown = true %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% unless include.show_all %}
+<script>
+(function () {
+  const group = document.currentScript.previousElementSibling;
+  const options = Array.from(group.querySelectorAll('[data-practitioner-option]'));
+  if (!options.length) return;
+  const selected = Math.floor(Math.random() * options.length);
+  options.forEach((option, index) => { option.hidden = index !== selected; });
+})();
+</script>
+{% endunless %}

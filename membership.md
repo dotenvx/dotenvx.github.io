@@ -19,8 +19,7 @@ body_class: home-page membership-page
   .membership-comparison .design-table .membership-section-row th { color: var(--design-mid); font-family: var(--design-font-mono); font-size: var(--design-text-compact); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
   .membership-comparison .design-table thead th { width: 30%; text-align: center; white-space: normal; vertical-align: top; }
   .membership-comparison .design-table thead th:first-child { width: 40%; text-align: left; }
-  .membership-content .design-prose { margin: 0; }
-  .membership-content .design-list-title { margin: 0 0 1.25rem; }
+  .membership-members .design-list-title { margin: 0 0 2rem; text-align: center; }
 </style>
 
 {% capture membership_visual %}
@@ -103,21 +102,12 @@ body_class: home-page membership-page
 
   {% include components/membership-armor.html %}
 
-  <section class="radar-section" aria-labelledby="membership-work">
+  <section class="radar-section membership-members" aria-labelledby="membership-members-title">
     <div class="armor-shell">
-      {% capture membership_purpose %}
-        <h2 class="design-list-title" id="membership-work">Show what you stand for.</h2>
-        <div class="design-prose">
-          <p>Your membership shows that you take secrets security seriously—and back the open-source work moving it forward.</p>
-          <p>Your membership helps sustain the work behind .env: maintenance, integrations, documentation, and safer ways for humans and agents to handle secrets.</p>
-          <p>If you’d like to put your name behind the work, the planned member directory will include your photo, GitHub profile, and a short note about why you joined. Recognition is optional.</p>
-          <p>{% include components/design-link.html href="/agents" label="The next chapter of .env →" %}</p>
-        </div>
-      {% endcapture %}
-      {% include components/design-content-width.html content=membership_purpose class="membership-content" %}
+      <h2 class="design-list-title" id="membership-members-title">Our members</h2>
+      {% include components/armor/logo-cloud.html %}
     </div>
   </section>
-
 
   <section class="radar-section" aria-label="Become a member">
     <div class="armor-shell">

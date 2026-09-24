@@ -1,7 +1,7 @@
 ---
-title: "Dotenvx Armor for Security Teams"
-social_title: "Dotenvx Armor for Security Teams"
-description: "Hardened Dotenvx for security teams with full access control of your secrets–govern every unlock and see every access."
+title: "Dotenvx Armor for Security Professionals"
+social_title: "Dotenvx Armor for Security Professionals"
+description: "Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent."
 image: "/assets/img/og-image-armor.png"
 layout: radar
 ---
@@ -14,8 +14,8 @@ layout: radar
   {{ page.description }}
 {% endcapture %}
 {% capture armor_hero_actions %}
-  {% include components/design-btn.html label="Sign Up" href="/signup" data_umami_event="Armor Hero Signup button" %}
-  {% include components/design-btn.html label="Pricing" href="/pricing" data_umami_event="Armor Hero Pricing button" %}
+  {% include components/design-btn.html label="Sign up" href="/signup" data_umami_event="Armor Hero Signup button" %}
+  {% include components/design-btn.html label="Membership" href="/membership" data_umami_event="Armor Hero Membership button" %}
 {% endcapture %}
 
 <div class="armor-page">

@@ -1396,6 +1396,16 @@ html {
   gap: 0.45rem;
 }
 
+.radar-topbar-left .radar-topbar-icons { gap: 0; }
+.radar-topbar-left .radar-topbar-icons .design-tooltip + .design-tooltip { margin-left: -0.25rem; }
+.radar-topbar-left .radar-topbar-icons .design-tooltip:hover,
+.radar-topbar-left .radar-topbar-icons .design-tooltip:focus-within { z-index: 1; }
+.radar-topbar-left .radar-nav-icon svg {
+  border-radius: 50%;
+  background: var(--design-bg);
+  box-shadow: 0 0 0 2px var(--design-bg);
+}
+
 .radar-topbar-icons .design-tooltip {
   display: none;
   font-size: 0;
@@ -1404,6 +1414,16 @@ html {
 
 .radar-topbar-icons .design-tooltip-tip {
   z-index: 80;
+}
+
+.radar-topbar-left .design-tooltip--bottom .design-tooltip-tip {
+  left: 0;
+  transform: none;
+}
+
+.radar-topbar-left .design-tooltip--bottom .design-tooltip-tip::before,
+.radar-topbar-left .design-tooltip--bottom .design-tooltip-tip::after {
+  left: 0.5rem;
 }
 
 .radar-topbar-icons .design-tooltip--bottom-end .design-tooltip-tip {
@@ -1427,6 +1447,11 @@ html {
   .radar-topbar-center {
     display: flex;
   }
+}
+
+html.dark .radar-layout img[src="/assets/img/logo-env.svg"] {
+  outline: 1px solid var(--design-line);
+  outline-offset: -1px;
 }
 
 .radar-brand {

@@ -36,7 +36,7 @@ body_class: home-page
     <span class="design-list-meta">docs &amp; site</span>
   </li>
   <li>
-    <a class="design-link" href="/opensource">Open Source</a>
+    <a class="design-link" href="/opensource/">Open Source</a>
     <span class="design-list-meta">projects &amp; talks</span>
   </li>
   <li>

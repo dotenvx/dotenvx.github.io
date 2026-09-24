@@ -1,0 +1,64 @@
+# GitHub stars are rounded public counts; npm downloads include repeat installs and CI.
+verified_on: "2026-09-23"
+period_label: "January 10, 2015–September 21, 2026"
+projects:
+  - name: dotenv
+    repo: https://github.com/motdotla/dotenv
+    logo: /assets/img/logo-env-yellow.svg
+    stars: 20500
+    downloads: 14584681342
+    downloads_source: /assets/data/ecosystem-downloads.json
+  - name: dotenvx
+    repo: https://github.com/dotenvx/dotenvx
+    logo: /assets/img/logo-env.svg
+    stars: 5800
+    downloads: 263322280
+    downloads_source: /assets/data/ecosystem-downloads.json
+  - name: dotenv-vscode
+    url: https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode
+    repo: https://github.com/dotenvx/dotenv-vscode
+    logo: /assets/img/logo-env-yellow.svg
+    secondary_logo: /assets/img/logo-env.svg
+    stars: 98
+    downloads: 299072
+    downloads_source: https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode
+  - name: dotenv-expand
+    repo: https://github.com/dotenvx/dotenv-expand
+    logo: /assets/img/logo-env-yellow.svg
+    stars: 1056
+    downloads: 4685491841
+    downloads_source: /assets/data/ecosystem-downloads.json
+  - name: react-native-dotenv
+    repo: https://github.com/dotenvx/react-native-dotenv
+    logo: /assets/img/logo-env-yellow.svg
+    stars: 858
+    downloads: 43350506
+    downloads_source: /assets/data/ecosystem-downloads.json
+  - name: python-dotenvx
+    repo: https://github.com/dotenvx/python-dotenvx
+    logo: /assets/img/logo-env.svg
+    stars: 8
+    downloads: 154109
+    downloads_source: https://pepy.tech/projects/python-dotenvx
+  - name: dotenvx-ruby
+    repo: https://github.com/dotenvx/dotenvx-ruby
+    logo: /assets/img/logo-env.svg
+    stars: 3
+    downloads: 6266
+    downloads_source: https://rubygems.org/gems/dotenvx
+  - name: phpdotenvx
+    repo: https://github.com/dotenvx/phpdotenvx
+    logo: /assets/img/logo-env.svg
+    stars: 0
+    downloads: 16
+    downloads_source: https://packagist.org/packages/dotenvx/phpdotenvx
+  - name: "@dotenvx/primitives"
+    url: https://www.npmjs.com/package/@dotenvx/primitives
+    logo: /assets/img/logo-env.svg
+    downloads: 41502547
+    downloads_source: /assets/data/ecosystem-downloads.json
+  - name: dotenvx-primitives (Rust)
+    url: https://crates.io/crates/dotenvx-primitives
+    logo: /assets/img/logo-env.svg
+    downloads: 382
+    downloads_source: https://crates.io/crates/dotenvx-primitives

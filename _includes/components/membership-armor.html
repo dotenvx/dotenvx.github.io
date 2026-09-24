@@ -1,0 +1,151 @@
+{% capture yes %}{% include components/design-check.html tone="success" size="sm" label="Included" %}{% endcapture %}
+{% assign no = "—" %}
+
+{% capture compare_access_body %}
+  <thead>
+    <tr>
+      <th scope="col">Dotenvx Armor <span aria-hidden="true">⛨</span></th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="membership-section-row">
+      <th colspan="3" scope="row">Access &amp; Identity</th>
+    </tr>
+    <tr>
+      <th scope="row">Seats included</th>
+      <td class="design-table-cell--center">2</td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" data-tooltip="Add seats in packs of 10 for $1,000/year per pack."><a class="design-link" href="#armor-additional-seats" aria-label="10 seats included. Add seats in packs of 10 for $1,000/year per pack.">10</a></span></td>
+    </tr>
+    <tr>
+      <th scope="row">Team Security</th>
+      <td class="design-table-cell--center">{{ yes }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Google &amp; GitHub Login</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Google &amp; GitHub Login. Sign in with your Google or GitHub account." data-tooltip="Sign in with your Google or GitHub account.">{{ yes }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Google &amp; GitHub Login. Sign in with your Google or GitHub account." data-tooltip="Sign in with your Google or GitHub account.">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Enterprise SSO</th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">{{ no }}</span></td>
+      <td class="design-table-cell--center">{% include components/design-link.html href="#armor-enterprise-sso" label="Add-on" %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Automation Tokens</th>
+      <td class="design-table-cell--center pricing-empty">{{ no }}</td>
+      <td class="design-table-cell--center">{{ yes }}</td>
+    </tr>
+    <tr class="membership-section-row">
+      <th colspan="3" scope="row">Security</th>
+    </tr>
+    <tr>
+      <th scope="row">Key Custody</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Key Custody. Private keys secured with controlled, audited access" data-tooltip="Private keys secured with controlled, audited access">Unlimited</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Key Custody. Private keys secured with controlled, audited access" data-tooltip="Private keys secured with controlled, audited access">Unlimited</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Human Approval</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Human Approval. Require human approval before a private key can be used" data-tooltip="Require human approval before a private key can be used">{{ yes }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Human Approval. Require human approval before a private key can be used" data-tooltip="Require human approval before a private key can be used">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Server-side Decryption</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Server-side Decryption. Decrypt secrets without sending the private key to the client" data-tooltip="Decrypt secrets without sending the private key to the client">{{ yes }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Server-side Decryption. Decrypt secrets without sending the private key to the client" data-tooltip="Decrypt secrets without sending the private key to the client">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Rotate Keys</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Rotate Keys. Rotate your armored private keys using a command. Coming soon." data-tooltip="Rotate your armored private keys using a command. Coming soon.">Command</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Rotate Keys. Rotate your armored private keys using a command. Coming soon." data-tooltip="Rotate your armored private keys using a command. Coming soon.">Command</span></td>
+    </tr>
+    <tr>
+      <th scope="row">RBAC</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="RBAC. Role-Based Access Control: Assign Owner, Admin, and Member roles" data-tooltip="Role-Based Access Control: Assign Owner, Admin, and Member roles">{{ yes }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="RBAC. Role-Based Access Control: Assign Owner, Admin, and Member roles" data-tooltip="Role-Based Access Control: Assign Owner, Admin, and Member roles">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">FGAC</th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">{{ no }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="FGAC. Fine-Grained Access Control: Limit access by individual armored key and secret" data-tooltip="Fine-Grained Access Control: Limit access by individual armored key and secret">{{ yes }}</span></td>
+    </tr>
+    <tr class="membership-section-row">
+      <th colspan="3" scope="row">Auditability</th>
+    </tr>
+    <tr>
+      <th scope="row">Audit Logs</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Audit Logs. Records who accessed a protected key and when." data-tooltip="Records who accessed a protected key and when.">{{ yes }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Audit Logs. Records who accessed a protected key and when." data-tooltip="Records who accessed a protected key and when.">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Included events</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Included events. Audit events included each month." data-tooltip="Audit events included each month.">250,000</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Included events. Audit events included each month." data-tooltip="Audit events included each month.">1,000,000</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Additional usage</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Additional usage. Price per 1,000 audit events beyond your monthly allowance." data-tooltip="Price per 1,000 audit events beyond your monthly allowance.">$0.10</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Additional usage. Price per 1,000 audit events beyond your monthly allowance." data-tooltip="Price per 1,000 audit events beyond your monthly allowance.">$0.025</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Audit Retention</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Audit Retention. Audit events remain available for a rolling 5 days." data-tooltip="Audit events remain available for a rolling 5 days.">5 days</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Audit Retention. Audit events remain available for a rolling 90 days." data-tooltip="Audit events remain available for a rolling 90 days.">90 days</span></td>
+    </tr>
+    <tr class="membership-section-row">
+      <th colspan="3" scope="row">Member Services</th>
+    </tr>
+    <tr>
+      <th scope="row">Billing</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Billing. Pay upfront for each year of membership." data-tooltip="Pay upfront for each year of membership.">Annually</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Billing. Pay upfront for each year of membership." data-tooltip="Pay upfront for each year of membership.">Annually</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Payment</th>
+      <td class="design-table-cell--center">Card</td>
+      <td class="design-table-cell--center">Card</td>
+    </tr>
+    <tr>
+      <th scope="row">Ticket Support</th>
+      <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Ticket Support. Email support@dotenvx.com for help." data-tooltip="Email support@dotenvx.com for help.">{{ yes }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Ticket Support. Email support@dotenvx.com for help." data-tooltip="Email support@dotenvx.com for help.">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Slack Support</th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">{{ no }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Slack Support. Connect your organization’s Slack workspace for direct support." data-tooltip="Connect your organization’s Slack workspace for direct support.">{{ yes }}</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Dotenvx Expertise</th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">{{ no }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Dotenvx Expertise. Guidance from the Dotenvx team on adopting and using Dotenvx in your organization." data-tooltip="Guidance from the Dotenvx team on adopting and using Dotenvx in your organization.">{{ yes }}</span></td>
+    </tr>
+    <tr class="membership-section-row" id="armor-add-ons">
+      <th colspan="3" scope="row">Add-ons</th>
+    </tr>
+    <tr id="armor-additional-seats" class="membership-addon-row" tabindex="-1">
+      <th scope="row">Additional seats</th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">{{ no }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Additional seats. Add seats in packs of 10 for $1,000/year per pack." data-tooltip="Add seats in packs of 10 for $1,000/year per pack.">$1,000/yr per 10</span></td>
+    </tr>
+    <tr id="armor-enterprise-sso" class="membership-addon-row" tabindex="-1">
+      <th scope="row">Enterprise SSO</th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">{{ no }}</span></td>
+      <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Enterprise SSO. Connect your organization’s identity provider for centrally managed sign-in." data-tooltip="Connect your organization’s identity provider for centrally managed sign-in.">Coming soon</span></td>
+    </tr>
+  </tbody>
+{% endcapture %}
+
+{% capture compare_access_table %}
+  {% include components/design-table.html class="design-table-wrap--fill" content=compare_access_body %}
+{% endcapture %}
+
+<section class="radar-section" aria-label="Armor comparison">
+  <div class="armor-shell">
+    <div class="membership-comparison">
+      {% include components/design-card.html class="pricing-summary-card" content=compare_access_table %}
+    </div>
+  </div>
+</section>

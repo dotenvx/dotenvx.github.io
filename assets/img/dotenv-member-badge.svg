@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Dotenv Member">
+  <rect x="1" y="1" width="238" height="62" fill="#111214" stroke="#858b8e" stroke-width="2"/>
+  <path d="M64 2v60" stroke="#858b8e"/>
+  <text x="9" y="48" fill="#ecd53f" font-family="Arial, sans-serif" font-size="21" font-weight="700">.ENV</text>
+  <text x="86" y="38" fill="#ecd53f" font-family="monospace" font-size="19" font-weight="700" letter-spacing="2">MEMBER</text>
+</svg>

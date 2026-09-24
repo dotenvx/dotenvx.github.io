@@ -150,10 +150,18 @@ entries:
       - production
   /changelog/:
     boost: 40
-  /opensource/:
+  /agents:
     boost: 35
     aliases:
+      - agents
+      - agentic
+      - humans and agents
+  /opensource/:
+    boost: 30
+    aliases:
       - open source
+      - projects
+      - talks
   /contact/:
     boost: 35
   /company/:

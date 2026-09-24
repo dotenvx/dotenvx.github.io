@@ -4,12 +4,14 @@ links:
     href: /
   - label: Armor
     href: /armor
+  - label: Membership
+    href: /membership
   - label: Pricing
     href: /pricing
   - label: Features
     href: /features
-  - label: Company
-    href: /company
+  - label: Agents
+    href: /agents
   - label: Open Source
     href: /opensource
   - label: Changelog
@@ -18,8 +20,6 @@ links:
     href: /blog
   - label: Careers
     href: /careers
-  - label: Security
-    href: /security
   - label: Trust Center
     href: https://trust.oneleet.com/dotenvx
     external: true

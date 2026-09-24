@@ -1,8 +1,4 @@
 {% assign radar_path = page.url | default: '' %}
-{% assign company_active = false %}
-{% if radar_path == '/company/' or radar_path == '/company' or radar_path == '/contact/' or radar_path == '/contact' or radar_path == '/opensource/' or radar_path == '/opensource' or radar_path == '/open-source/' or radar_path == '/open-source' or radar_path == '/changelog/' or radar_path == '/changelog' %}
-  {% assign company_active = true %}
-{% endif %}
 {% assign docs_active = false %}
 {% if radar_path == '/docs/' or radar_path == '/docs' or radar_path contains '/docs/' %}
   {% assign docs_active = true %}
@@ -12,40 +8,22 @@
   <div class="radar-topbar">
     <div class="radar-topbar-left">
       <a href="/" class="radar-brand" aria-label="dotenvx home">
-        <img src="/assets/img/logo-env.svg" alt="" aria-hidden="true" />
+        <img src="/assets/img/logo-env.svg" alt="" />
       </a>
     </div>
 
     <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
+      <a href="/agents" class="radar-nav-link{% if radar_path == '/agents' %} is-active{% endif %}">Agentic</a>
+
       <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Documentation</a>
 
-      <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing/' or radar_path == '/pricing' %} is-active{% endif %}">Pricing</a>
-
-      <div class="radar-nav-item" data-radar-nav-item data-nav-menu="company">
-        <button
-          type="button"
-          class="radar-nav-link radar-nav-trigger{% if company_active %} is-active{% endif %}"
-          aria-haspopup="true"
-          aria-expanded="false"
-          data-radar-nav-trigger
-        >
-          <span>Company</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="radar-nav-caret" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
-          </svg>
-        </button>
-      </div>
-
+      <a href="/membership" class="radar-nav-link{% if radar_path == '/membership' %} is-active{% endif %}">Membership</a>
 
     </nav>
 
     <div class="radar-topbar-right">
-      <a href="/login" class="radar-nav-link radar-nav-login" data-umami-event="Login link">Log In</a>
+      <a href="/login" class="radar-nav-link radar-nav-login" data-umami-event="Login link">Log in</a>
 
-      <div class="radar-topbar-icons">
-        {% capture nav_github_trigger %}<a href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer" class="radar-nav-icon" aria-label="Star on GitHub - 5.8k" data-umami-event="GitHub repository link"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>{% endcapture %}
-        {% include components/design-tooltip.html text="Star on GitHub - 5.8k" position="bottom-end" content=nav_github_trigger %}
-      </div>
       <button type="button" class="radar-mobile-toggle" id="radar-mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
         <svg class="radar-mobile-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
@@ -57,64 +35,23 @@
     </div>
   </div>
 
-  <div id="radar-desktop-flyout" class="radar-nav-flyout" aria-hidden="true">
-    <div class="radar-nav-flyout-frame">
-      <div class="radar-nav-panel" data-radar-nav-panel="company" hidden>
-        <div class="radar-nav-panel-links">
-          <a href="/opensource" class="radar-nav-panel-link{% if radar_path == '/opensource/' or radar_path == '/opensource' %} is-active{% endif %}">Open Source</a>
-          <a href="/changelog" class="radar-nav-panel-link{% if radar_path == '/changelog/' or radar_path == '/changelog' or radar_path == '/security/' or radar_path == '/security' %} is-active{% endif %}">Changelog</a>
-          <a href="/contact" class="radar-nav-panel-link{% if radar_path == '/contact/' or radar_path == '/contact' %} is-active{% endif %}">Contact</a>
-          <a href="https://trust.oneleet.com/dotenvx" target="_blank" rel="noopener noreferrer" class="radar-nav-panel-link">Trust</a>
-        </div>
-        <a href="/contact" class="radar-nav-office">
-          <img
-            src="/dotenvx-la-office-crt.png"
-            alt="dotenvx Los Angeles office"
-            class="radar-nav-office-image"
-            loading="lazy"
-          />
-          <span class="radar-nav-office-copy">
-            <span class="radar-nav-office-label">Office</span>
-            <span class="radar-nav-office-line">2450 Colorado Ave #100</span>
-            <span class="radar-nav-office-line radar-nav-office-line--dim">Santa Monica, CA 90404</span>
-          </span>
-        </a>
-      </div>
-
-    </div>
-  </div>
 </header>
 
 <div id="radar-mobile-overlay" class="radar-mobile-overlay" hidden>
   <div class="radar-mobile-sheet">
     <div class="radar-mobile-actions">
       {% include components/design-btn.html
-        label="Log In"
+        label="Log in"
         href="/login"
         class="design-btn--block"
       %}
     </div>
 
     <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
+      <a href="/agents" class="radar-mobile-link">Agentic</a>
       <a href="/docs" class="radar-mobile-link">Documentation</a>
-      <a href="/pricing" class="radar-mobile-link">Pricing <span aria-hidden="true">$</span></a>
-      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-open="company">
-        <span>Company</span>
-        <span aria-hidden="true">→</span>
-      </button>
+      <a href="/membership" class="radar-mobile-link">Membership</a>
     </nav>
-
-    <div data-radar-mobile-submenu="company" class="radar-mobile-list" hidden>
-      <button type="button" class="radar-mobile-link radar-mobile-subtrigger" data-radar-mobile-back>
-        <span><span aria-hidden="true">←</span> Company</span>
-      </button>
-      <a href="/opensource" class="radar-mobile-link">Open Source</a>
-      <a href="/changelog" class="radar-mobile-link">Changelog</a>
-      <a href="/contact" class="radar-mobile-link">Contact</a>
-      <a href="https://trust.oneleet.com/dotenvx" target="_blank" rel="noopener noreferrer" class="radar-mobile-link">Trust</a>
-    </div>
-
-
   </div>
 </div>
 
@@ -208,6 +145,15 @@
   items.forEach(function (item) {
     var name = item.getAttribute('data-nav-menu')
     if (!name) return
+    var trigger = item.querySelector('[data-radar-nav-trigger]')
+    trigger && trigger.addEventListener('click', function () { openMenu(name) })
+    trigger && trigger.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        openMenu(name)
+        flyout.querySelector('a')?.focus()
+      }
+    })
     item.addEventListener('pointerenter', function () { openMenu(name) })
     item.addEventListener('mouseenter', function () { openMenu(name) })
     item.addEventListener('focusin', function () { openMenu(name) })
@@ -306,7 +252,11 @@
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       setMobileOpen(false)
-      if (activeMenu) closeMenu()
+      if (activeMenu) {
+        var trigger = desktopNav.querySelector('[aria-expanded="true"]')
+        trigger && trigger.focus()
+        closeMenu()
+      }
     }
   })
 })()

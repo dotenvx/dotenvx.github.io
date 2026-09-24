@@ -1,0 +1,16 @@
+<svg class="membership-hero-card" role="img" aria-label="Black Dotenv membership card with the yellow .env logo and Your name" xmlns="http://www.w3.org/2000/svg" width="280" height="176" viewBox="0 0 280 176" fill="none">
+  <rect x="1" y="3" width="278" height="172" rx="9" fill="#09090B" stroke="var(--member-card-edge, #343438)" stroke-width="2"/>
+  <rect x="1" y="1" width="278" height="172" rx="9" fill="#111113" stroke="var(--member-card-outline, #515155)"/>
+  <rect x="6" y="6" width="268" height="162" rx="5" stroke="var(--member-card-inset, #242427)"/>
+  <svg x="23" y="20" width="56" height="56" viewBox="0 0 200 200" aria-hidden="true">
+  <rect width="200" height="200" rx="2" fill="#09090B"/>
+  <g transform="translate(29.906542 130.841121)" fill="#ECD53F">
+    <polygon points="0 31.7322624 14 31.7322624 14 45.7322624 0 45.7322624"/>
+    <path transform="translate(26 0)" d="M34.986,46.1422624 L34.986,38.3922624 L9.288,38.3922624 L9.288,25.8722624 L32.382,25.8722624 L32.382,18.1222624 L9.288,18.1222624 L9.288,7.92426238 L34.108,7.92426238 L34.108,0.142262383 L0,0.142262383 L0,46.1422624 L34.986,46.1422624 Z M51.585,46.1422624 L51.585,16.1452624 L70.13,46.1422624 L79.449,46.1422624 L79.449,0.142262383 L70.819,0.142262383 L70.819,30.8622624 L51.993,0.142262383 L42.956,0.142262383 L42.956,46.1422624 L51.585,46.1422624 Z M110.92,46.1422624 L127.394,0.142262383 L117.542,0.142262383 L106.277,34.1872624 L94.636,0.142262383 L84.563,0.142262383 L101.005,46.1422624 L110.92,46.1422624 Z"/>
+  </g>
+</svg>
+  <text x="256" y="41" text-anchor="end" fill="#ECD53F" font-family="monospace" font-size="11" letter-spacing="2">MEMBER</text>
+  <path d="M23 105H257" stroke="var(--member-card-divider, #303034)"/>
+  <text x="23" y="135" fill="#E5E3DB" font-family="monospace" font-size="15" letter-spacing=".7">YOUR NAME</text>
+  <text x="23" y="153" fill="#8E8E90" font-family="monospace" font-size="8" letter-spacing="1.6">DOTENV MEMBERSHIP</text>
+</svg>

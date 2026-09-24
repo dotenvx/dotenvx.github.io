@@ -1,0 +1,457 @@
+{
+  "start": "2015-01-10",
+  "end": "2026-09-21",
+  "note": "Cumulative recorded npm downloads. Available npm history begins January 10, 2015. Includes repeat downloads and automated builds.",
+  "projects": [
+    {
+      "package": "dotenv",
+      "downloads": 14584681342,
+      "periods": [
+        {
+          "downloads": 1870099,
+          "start": "2015-01-10",
+          "end": "2015-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2015-01-10:2015-12-31/dotenv"
+        },
+        {
+          "downloads": 5061691,
+          "start": "2016-01-01",
+          "end": "2016-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2016-01-01:2016-12-31/dotenv"
+        },
+        {
+          "downloads": 24918071,
+          "start": "2017-01-01",
+          "end": "2017-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2017-01-01:2017-12-31/dotenv"
+        },
+        {
+          "downloads": 98333619,
+          "start": "2018-01-01",
+          "end": "2018-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2018-01-01:2018-12-31/dotenv"
+        },
+        {
+          "downloads": 285777164,
+          "start": "2019-01-01",
+          "end": "2019-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2019-01-01:2019-12-31/dotenv"
+        },
+        {
+          "downloads": 557658519,
+          "start": "2020-01-01",
+          "end": "2020-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2020-01-01:2020-12-31/dotenv"
+        },
+        {
+          "downloads": 902244252,
+          "start": "2021-01-01",
+          "end": "2021-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2021-01-01:2021-12-31/dotenv"
+        },
+        {
+          "downloads": 1335471405,
+          "start": "2022-01-01",
+          "end": "2022-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2022-01-01:2022-12-31/dotenv"
+        },
+        {
+          "downloads": 1707825646,
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2023-01-01:2023-12-31/dotenv"
+        },
+        {
+          "downloads": 2006525079,
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2024-01-01:2024-12-31/dotenv"
+        },
+        {
+          "downloads": 2977199719,
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2025-01-01:2025-12-31/dotenv"
+        },
+        {
+          "downloads": 4681796078,
+          "start": "2026-01-01",
+          "end": "2026-09-21",
+          "package": "dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2026-01-01:2026-09-21/dotenv"
+        }
+      ]
+    },
+    {
+      "package": "@dotenvx/dotenvx",
+      "downloads": 263322280,
+      "periods": [
+        {
+          "downloads": 0,
+          "start": "2015-01-10",
+          "end": "2015-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2015-01-10:2015-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2016-01-01",
+          "end": "2016-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2016-01-01:2016-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2017-01-01",
+          "end": "2017-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2017-01-01:2017-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2018-01-01",
+          "end": "2018-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2018-01-01:2018-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2019-01-01",
+          "end": "2019-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2019-01-01:2019-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2020-01-01",
+          "end": "2020-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2020-01-01:2020-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2021-01-01",
+          "end": "2021-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2021-01-01:2021-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 0,
+          "start": "2022-01-01",
+          "end": "2022-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2022-01-01:2022-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 2006,
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2023-01-01:2023-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 4556091,
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2024-01-01:2024-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 32109844,
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2025-01-01:2025-12-31/@dotenvx/dotenvx"
+        },
+        {
+          "downloads": 226654339,
+          "start": "2026-01-01",
+          "end": "2026-09-21",
+          "package": "@dotenvx/dotenvx",
+          "source": "https://api.npmjs.org/downloads/point/2026-01-01:2026-09-21/@dotenvx/dotenvx"
+        }
+      ]
+    },
+    {
+      "package": "dotenv-expand",
+      "downloads": 4685491841,
+      "periods": [
+        {
+          "downloads": 0,
+          "start": "2015-01-10",
+          "end": "2015-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2015-01-10:2015-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 12977,
+          "start": "2016-01-01",
+          "end": "2016-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2016-01-01:2016-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 729459,
+          "start": "2017-01-01",
+          "end": "2017-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2017-01-01:2017-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 20288651,
+          "start": "2018-01-01",
+          "end": "2018-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2018-01-01:2018-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 96010863,
+          "start": "2019-01-01",
+          "end": "2019-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2019-01-01:2019-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 199628539,
+          "start": "2020-01-01",
+          "end": "2020-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2020-01-01:2020-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 305455590,
+          "start": "2021-01-01",
+          "end": "2021-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2021-01-01:2021-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 458920336,
+          "start": "2022-01-01",
+          "end": "2022-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2022-01-01:2022-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 629666058,
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2023-01-01:2023-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 781568559,
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2024-01-01:2024-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 991384695,
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2025-01-01:2025-12-31/dotenv-expand"
+        },
+        {
+          "downloads": 1201826114,
+          "start": "2026-01-01",
+          "end": "2026-09-21",
+          "package": "dotenv-expand",
+          "source": "https://api.npmjs.org/downloads/point/2026-01-01:2026-09-21/dotenv-expand"
+        }
+      ]
+    },
+    {
+      "package": "react-native-dotenv",
+      "downloads": 43350506,
+      "periods": [
+        {
+          "downloads": 0,
+          "start": "2015-01-10",
+          "end": "2015-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2015-01-10:2015-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 812,
+          "start": "2016-01-01",
+          "end": "2016-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2016-01-01:2016-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 61984,
+          "start": "2017-01-01",
+          "end": "2017-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2017-01-01:2017-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 305892,
+          "start": "2018-01-01",
+          "end": "2018-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2018-01-01:2018-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 820135,
+          "start": "2019-01-01",
+          "end": "2019-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2019-01-01:2019-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 1993485,
+          "start": "2020-01-01",
+          "end": "2020-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2020-01-01:2020-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 3061410,
+          "start": "2021-01-01",
+          "end": "2021-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2021-01-01:2021-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 4229302,
+          "start": "2022-01-01",
+          "end": "2022-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2022-01-01:2022-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 5995996,
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2023-01-01:2023-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 7019395,
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2024-01-01:2024-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 9349851,
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2025-01-01:2025-12-31/react-native-dotenv"
+        },
+        {
+          "downloads": 10512244,
+          "start": "2026-01-01",
+          "end": "2026-09-21",
+          "package": "react-native-dotenv",
+          "source": "https://api.npmjs.org/downloads/point/2026-01-01:2026-09-21/react-native-dotenv"
+        }
+      ]
+    },
+    {
+      "package": "@dotenvx/primitives",
+      "downloads": 41502547,
+      "periods": [
+        {
+          "downloads": 0,
+          "start": "2015-01-10",
+          "end": "2015-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2015-01-10:2015-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2016-01-01",
+          "end": "2016-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2016-01-01:2016-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2017-01-01",
+          "end": "2017-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2017-01-01:2017-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2018-01-01",
+          "end": "2018-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2018-01-01:2018-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2019-01-01",
+          "end": "2019-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2019-01-01:2019-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2020-01-01",
+          "end": "2020-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2020-01-01:2020-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2021-01-01",
+          "end": "2021-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2021-01-01:2021-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2022-01-01",
+          "end": "2022-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2022-01-01:2022-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2023-01-01:2023-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2024-01-01:2024-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 0,
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2025-01-01:2025-12-31/@dotenvx/primitives"
+        },
+        {
+          "downloads": 41502547,
+          "start": "2026-01-01",
+          "end": "2026-09-21",
+          "package": "@dotenvx/primitives",
+          "source": "https://api.npmjs.org/downloads/point/2026-01-01:2026-09-21/@dotenvx/primitives"
+        }
+      ]
+    }
+  ]
+}

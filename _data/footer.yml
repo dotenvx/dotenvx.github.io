@@ -1,25 +1,25 @@
-title: DOTENVX LLC
+title: DOTENVX
 links:
   - label: Dotenvx
     href: /
-  - label: Armor
-    href: /armor
+  - label: AI
+    href: /ai
+  - label: Docs
+    href: /docs
   - label: Membership
     href: /membership
-  - label: Pricing
-    href: /pricing
-  - label: Features
-    href: /features
-  - label: Agents
-    href: /agents
+  - label: Sponsorship
+    href: /sponsorship
+  - label: Careers
+    href: /careers
+  - label: Armor
+    href: /armor
   - label: Open Source
     href: /opensource
   - label: Changelog
     href: /changelog
   - label: Blog
     href: /blog
-  - label: Careers
-    href: /careers
   - label: Trust Center
     href: https://trust.oneleet.com/dotenvx
     external: true
@@ -37,8 +37,6 @@ links:
   - label: NPM
     href: https://www.npmjs.com/package/@dotenvx/dotenvx
     external: true
-  - label: Docs
-    href: /docs
   - label: Search
     href: /search
   - label: Legal

@@ -43,7 +43,7 @@ search: false
     {%- assign section = "Docs" -%}
   {%- elsif page_url contains "/blog" -%}
     {%- assign section = "Blog" -%}
-  {%- elsif page_url == "/pricing/" or page_url == "/armor/" or page_url == "/features/" or page_url == "/" -%}
+  {%- elsif page_url == "/pricing/" or page_url == "/armor/" or page_url == "/" -%}
     {%- assign section = "Product" -%}
   {%- else -%}
     {%- assign section = "Site" -%}

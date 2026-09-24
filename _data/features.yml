@@ -10,5 +10,5 @@ items:
     href: /docs/cli/run-redact
   - label: Catch missing keys before you run
     href: /docs/cli/validate
-  - label: Explore all features →
-    href: /features
+  - label: Explore the docs →
+    href: /docs

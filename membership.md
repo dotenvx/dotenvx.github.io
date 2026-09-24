@@ -20,6 +20,17 @@ body_class: home-page membership-page
   .membership-comparison .design-table thead th { width: 30%; text-align: center; white-space: normal; vertical-align: top; }
   .membership-comparison .design-table thead th:first-child { width: 40%; text-align: left; }
   .membership-members .design-list-title { margin: 0 0 2rem; text-align: center; }
+  .membership-or { margin: 2rem 0; color: var(--design-mid); text-align: center; }
+  .membership-other-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 44rem; margin: 0 auto; }
+  .membership-other-option { padding: 2rem; text-align: center; }
+  .membership-other-option + .membership-other-option { border-left: 1px solid var(--design-line); }
+  .membership-other-option h2 { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 600; }
+  .membership-other-option p { margin: 0; color: var(--design-mid); line-height: 1.6; }
+  @media (max-width: 640px) {
+    .membership-other-options { grid-template-columns: 1fr; }
+    .membership-other-option { padding: 1.5rem 0; }
+    .membership-other-option + .membership-other-option { border-left: 0; border-top: 1px solid var(--design-line); }
+  }
 </style>
 
 {% capture membership_visual %}
@@ -109,9 +120,20 @@ body_class: home-page membership-page
     </div>
   </section>
 
-  <section class="radar-section" aria-label="Become a member">
+  <section class="radar-section" aria-label="Get involved">
     <div class="armor-shell">
       <div class="home-cta">{{ membership_actions }}</div>
+      <p class="membership-or">or</p>
+      <div class="membership-other-options">
+        <div class="membership-other-option">
+          <h2>{% include components/design-link.html href="/sponsorship" label="Corporate Sponsorship →" %}</h2>
+          <p>Steward the future of Dotenv – for humans and agents.</p>
+        </div>
+        <div class="membership-other-option">
+          <h2>{% include components/design-link.html href="/careers" label="Careers →" %}</h2>
+          <p>Build the future of Dotenv - for humans and agents.</p>
+        </div>
+      </div>
     </div>
   </section>
 

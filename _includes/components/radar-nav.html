@@ -13,11 +13,11 @@
     </div>
 
     <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
-      <a href="/agents" class="radar-nav-link{% if radar_path == '/agents' %} is-active{% endif %}">Agentic</a>
+      <a href="/ai" class="radar-nav-link{% if radar_path == '/ai' %} is-active{% endif %}">AI</a>
 
-      <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Documentation</a>
+      <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Docs</a>
 
-      <a href="/membership" class="radar-nav-link{% if radar_path == '/membership' %} is-active{% endif %}">Membership</a>
+      <a href="/membership" class="radar-nav-link{% if radar_path contains '/membership' %} is-active{% endif %}">Membership</a>
 
     </nav>
 
@@ -48,10 +48,12 @@
     </div>
 
     <nav data-radar-mobile-root class="radar-mobile-list" aria-label="Primary mobile">
-      <a href="/agents" class="radar-mobile-link">Agentic</a>
-      <a href="/docs" class="radar-mobile-link">Documentation</a>
+      <a href="/ai" class="radar-mobile-link">AI</a>
+      <a href="/docs" class="radar-mobile-link">Docs</a>
       <a href="/membership" class="radar-mobile-link">Membership</a>
     </nav>
+
+
   </div>
 </div>
 

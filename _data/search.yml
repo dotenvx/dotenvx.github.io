@@ -1,6 +1,12 @@
 # Canonical search ranking hints (merged into /search.json at build time).
 # Higher boost = more likely to win when multiple pages match.
 entries:
+  /sponsorship:
+    boost: 60
+    aliases:
+      - corporate sponsorship
+      - sponsor
+      - fund open source
   /pricing/:
     boost: 80
     aliases:
@@ -12,8 +18,6 @@ entries:
     aliases:
       - dotenvx armor
       - ops
-  /features/:
-    boost: 55
   /:
     boost: 50
     aliases:
@@ -150,7 +154,7 @@ entries:
       - production
   /changelog/:
     boost: 40
-  /agents:
+  /ai:
     boost: 35
     aliases:
       - agents

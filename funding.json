@@ -3,7 +3,7 @@
   "entity": {
     "type": "organisation",
     "role": "maintainer",
-    "name": "DOTENVX LLC",
+    "name": "DOTENVX",
     "email": "mot@dotenvx.com",
     "description": "a secure dotenv–from the creator of `dotenv`",
     "webpageUrl": {

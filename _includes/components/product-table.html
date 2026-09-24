@@ -33,12 +33,12 @@
     {% capture ops %}
       {% include icons/check.html classes="text-green-600 h-5 w-5" %}
     {% endcapture %}
-    {% include components/product-table-row.html feature="Encryption"               oss=oss ops=ops href="/features/encryption" %}
-    {% include components/product-table-row.html feature="Run Anywhere"             oss=oss ops=ops href="/features/run-anywhere" %}
-    {% include components/product-table-row.html feature="Multiple Environments"    oss=oss ops=ops href="/features/multiple-environments" %}
-    {% include components/product-table-row.html feature="Precommit / Prebuild"     oss=oss ops=ops href="/features/precommit" %}
-    {% include components/product-table-row.html feature="Variable expansion"       oss=oss ops=ops href="/features/variable-expansion" %}
-    {% include components/product-table-row.html feature="Command substitution"     oss=oss ops=ops href="/features/command-substitution" %}
+    {% include components/product-table-row.html feature="Encryption"               oss=oss ops=ops href="/docs/quickstart/" %}
+    {% include components/product-table-row.html feature="Run Anywhere"             oss=oss ops=ops href="/docs/quickstart/" %}
+    {% include components/product-table-row.html feature="Multiple Environments"    oss=oss ops=ops href="/docs/quickstart/" %}
+    {% include components/product-table-row.html feature="Precommit / Prebuild"     oss=oss ops=ops href="/docs/cli/precommit/" %}
+    {% include components/product-table-row.html feature="Variable expansion"       oss=oss ops=ops href="/docs/cli/run-variable-expansion/" %}
+    {% include components/product-table-row.html feature="Command substitution"     oss=oss ops=ops href="/docs/cli/run-command-substitution/" %}
 
     {% capture oss %}
       {% include icons/dash-circle.html classes="text-red-600 dark:text-red-400 h-4 w-4" %}

@@ -7,32 +7,32 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
-    {% include components/feature-box.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/features/run-anywhere" %}
-    {% include components/feature-box.html feature="Multi-environment" description="Switch environments easily" href="/features/multiple-environments" %}
+    {% include components/feature-box.html feature="Run anywhere" description="Cross-platform–works everywhere" href="/docs/quickstart/" %}
+    {% include components/feature-box.html feature="Multi-environment" description="Switch environments easily" href="/docs/quickstart/" %}
 
-    {% include components/feature-box.html feature="Encrypted envs" description="Encrypt your envs at-rest" href="/features/encryption" %}
+    {% include components/feature-box.html feature="Encrypted envs" description="Encrypt your envs at-rest" href="/docs/quickstart/" %}
     <!--{% include components/feature-box.html feature="Secrets-as-code" description="Store and version secrets safely in code" href="/docs#monorepos" %}-->
     {% include components/feature-box.html feature="Monorepo" description="First-class monorepo support" href="/docs#monorepos" %}
 
-    {% include components/feature-box.html feature="Multiple .env files" description="Compose multiple .env files flexibly" href="/features/multiple-files" %}
+    {% include components/feature-box.html feature="Multiple .env files" description="Compose multiple .env files flexibly" href="/docs/cli/run-f/" %}
     {% include components/feature-box.html feature="Multi-line values" description="Add multi-line secrets like public keys" href="/docs/advanced/run-multiline" %}
 
-    {% include components/feature-box.html feature="Variable expansion" description="Add the value of another variable in your .env" href="/features/variable-expansion" %}
-    {% include components/feature-box.html feature="Command substitution" description="Add the output of a command in your .env" href="/features/command-substitution" %}
+    {% include components/feature-box.html feature="Variable expansion" description="Add the value of another variable in your .env" href="/docs/cli/run-variable-expansion/" %}
+    {% include components/feature-box.html feature="Command substitution" description="Add the output of a command in your .env" href="/docs/cli/run-command-substitution/" %}
 
-    {% include components/feature-box.html feature="Get/Set" description="Conveniently get/set single variables" href="/features/get-key" %}
-    {% include components/feature-box.html feature="Contextual help" description="Built-in next steps when something goes wrong" href="/features/contextual-help" %}
+    {% include components/feature-box.html feature="Get/Set" description="Conveniently get/set single variables" href="/docs/cli/get-key/" %}
+    {% include components/feature-box.html feature="Contextual help" description="Built-in next steps when something goes wrong" href="/docs/cli/run-contextual-help/" %}
 
     <!--
     {% include components/feature-box.html feature="Scan" description="Scan and protect for secrets" href="/docs/advanced/scan" %}
     {% include components/feature-box.html feature="Debug" description="Debug server and local envs with built-in debugging" href="/docs/advanced/run-debug" %}
     -->
 
-    {% include components/feature-box.html feature="Append .gitignore" description="Append to .gitignore in one command" href="/features/gitignore" %}
+    {% include components/feature-box.html feature="Append .gitignore" description="Append to .gitignore in one command" href="/docs/cli/gitignore/" %}
     {% include components/feature-box.html feature="Generate .env.example" description="Generate .env.example in one command" href="/docs/advanced/genexample" %}
 
-    {% include components/feature-box.html feature="Prebuild" description="Prevent building .env files into docker images" href="/features/prebuild" %}
-    {% include components/feature-box.html feature="Precommit" description="Prevent committing .env files to code" href="/features/precommit" %}
+    {% include components/feature-box.html feature="Prebuild" description="Prevent building .env files into docker images" href="/docs/cli/prebuild/" %}
+    {% include components/feature-box.html feature="Precommit" description="Prevent committing .env files to code" href="/docs/cli/precommit/" %}
 
     <!--
     {% include components/feature-box.html feature="CloakZero" description="Hide private keys – sharing access, not the keys" pro="true" %}

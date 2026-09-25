@@ -151,7 +151,7 @@ function initializeExecutiveDetails(tile,team,website){
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
   let steps=[];
   for(const owner of team.owners){
-    try {const url=new URL(owner.image);if(url.protocol==='https:')steps.push({kind:'photo',owner,url:url.href});}catch{}
+    try {const url=new URL(owner.image,location.href);if(url.protocol==='https:'||url.origin===location.origin)steps.push({kind:'photo',owner,url:url.href});}catch{}
     steps.push({kind:'name',owner});
   }
   if(website){
@@ -192,6 +192,13 @@ function initializeExecutiveDetails(tile,team,website){
   });
   render();
 }
+
+document.querySelectorAll('[data-executive-owner]').forEach(tile=>{
+  initializeExecutiveDetails(tile,{
+    name:tile.dataset.teamName,
+    owners:[{name:tile.dataset.executiveOwner,image:tile.dataset.ownerImage}]
+  },publicWebsite(tile.dataset.teamUrl));
+});
 
 function populateExecutives(executives){
   const grid=document.querySelector('[data-executive-members]');

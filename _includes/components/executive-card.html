@@ -1,12 +1,12 @@
 {% if include.details %}
-<div class="member-portrait-square member-company-preview member-company-interactive" data-revealed="false">
+<div class="member-portrait-square member-company-preview member-company-interactive" data-revealed="false"{% if include.owner_name %} data-executive-owner="{{ include.owner_name | escape }}" data-owner-image="{{ include.owner_image | escape }}" data-team-name="{{ include.name | escape }}" data-team-url="{{ include.href | escape }}"{% endif %}>
   <button class="member-company-toggle" type="button" aria-label="Show owner">
     <span class="member-portrait-turn">
       <span class="member-company-face member-company-front">
         <span class="member-company-identity">
-          <span class="member-company-initials"></span>
+          <span class="member-company-initials">{{ include.initials | escape }}</span>
           <span class="member-company-badge">
-          <img class="member-company-logo member-company-logo--image" alt="" width="160" height="160" loading="lazy">
+          <img class="member-company-logo member-company-logo--image"{% if include.image %} src="{{ include.image | relative_url }}"{% endif %} alt="{{ include.name | escape }}" width="160" height="160" loading="lazy">
             <span class="member-company-name" hidden></span>
           </span>
         </span>

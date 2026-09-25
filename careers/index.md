@@ -1,6 +1,6 @@
 ---
 title: Careers
-description: "Help build the next chapter of Dotenv."
+description: "Build the next chapter of .env."
 permalink: /careers/
 layout: radar
 body_class: home-page careers-page

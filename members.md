@@ -1,6 +1,6 @@
 ---
 title: Current Members
-description: Thank you for being part of the Dotenv story.
+description: Thank you for being part of the .env story.
 permalink: /members
 layout: radar
 body_class: home-page members-page

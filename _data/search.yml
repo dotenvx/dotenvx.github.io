@@ -8,7 +8,7 @@ entries:
       - public recognition
       - motdotla
       - Scott Motte
-  /corp:
+  /corporate:
     boost: 60
     aliases:
       - corporate support

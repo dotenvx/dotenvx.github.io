@@ -1,6 +1,6 @@
 ---
 title: Membership
-description: "Be part of the Dotenv story. Enjoy member perks."
+description: "Be part of the .env story."
 permalink: /membership
 layout: radar
 body_class: home-page membership-page
@@ -70,9 +70,9 @@ practitioner_ids:
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a class="design-link" href="/members">Seats</a></th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Seats. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Seats. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
+            <th scope="row"><a class="design-link" href="/members">Members</a></th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Members. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Members. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
           </tr>
           <tr>
             <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>
@@ -91,13 +91,13 @@ practitioner_ids:
           </tr>
           <tr>
             <th scope="row">Perks</th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs." data-tooltip="Discounts or credits from complementary tools, services, and APIs.">Coming soon</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs." data-tooltip="Discounts or credits from complementary tools, services, and APIs.">Coming soon</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Perks. Coming soon: Discounts or credits from complementary tools, services, and APIs." data-tooltip="Coming soon: Discounts or credits from complementary tools, services, and APIs.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Perks. Coming soon: Discounts or credits from complementary tools, services, and APIs." data-tooltip="Coming soon: Discounts or credits from complementary tools, services, and APIs.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
           </tr>
           <tr>
-            <th scope="row">Dotenvx Armor <span aria-hidden="true">⛨</span></th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Dotenvx Armor. Hardened Dotenvx for security professionals with full access control of your secrets." data-tooltip="Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Dotenvx Armor. Hardened Dotenvx for security professionals with full access control of your secrets." data-tooltip="Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
+            <th scope="row">Secrets Manager</th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Secrets Manager: Armor included. Hardened Dotenvx for security professionals with full access control of your secrets." data-tooltip="Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent.">Armor <span aria-hidden="true">⛨</span></span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Secrets Manager: Armor included. Hardened Dotenvx for security professionals with full access control of your secrets." data-tooltip="Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent.">Armor <span aria-hidden="true">⛨</span></span></td>
           </tr>
           <tr class="membership-plan-actions">
             <th scope="row"><span class="sr-only">Sign up</span></th>

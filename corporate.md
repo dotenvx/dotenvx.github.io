@@ -1,7 +1,7 @@
 ---
 title: Corporate Support
-description: "Be part of the next chapter of .env."
-permalink: /corp
+description: "Steward the next chapter of .env."
+permalink: /corporate
 layout: radar
 body_class: home-page corporate-page
 ---

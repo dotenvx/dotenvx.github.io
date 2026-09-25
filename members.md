@@ -1,6 +1,6 @@
 ---
 title: Current Members
-description: Thank you to our members–moving secrets security forward.
+description: Thank you for being part of the Dotenv story.
 permalink: /members
 layout: radar
 body_class: home-page members-page

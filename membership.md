@@ -1,6 +1,6 @@
 ---
 title: Membership
-description: "For security professionals advancing secrets security—for humans and agents."
+description: "Be part of the Dotenv story. Enjoy member perks."
 permalink: /membership
 layout: radar
 body_class: home-page membership-page
@@ -10,6 +10,7 @@ practitioner_ids:
 ---
 
 <style>
+  .membership-plan-price { display: block; margin-top: .5rem; font-family: var(--design-font-sans); font-size: var(--design-text-body, 1rem); font-weight: 400; letter-spacing: normal; text-transform: none; color: var(--design-body); }
   .membership-hero-card { display: block; width: calc(var(--hero-illustration-width) * 1.4); max-width: none; height: auto; flex: none; box-shadow: 0 5px 8px rgb(0 0 0 / .12); border-radius: 8px; }
   html.dark .membership-hero-card { --member-card-edge: var(--design-line); --member-card-outline: var(--design-mid); --member-card-inset: var(--design-line); --member-card-divider: var(--design-line); box-shadow: 0 2px 0 var(--design-line); }
   .membership-comparison .design-table-wrap { overflow: visible; }
@@ -63,20 +64,15 @@ practitioner_ids:
         <thead>
           <tr>
             <th scope="col">Membership</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional<span class="membership-plan-price">$100/yr</span></th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive<span class="membership-plan-price">$1,000/yr</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Price</th>
-            <td class="design-table-cell--center">$100/yr</td>
-            <td class="design-table-cell--center">$1,000/yr</td>
-          </tr>
-          <tr>
-            <th scope="row"><a class="design-link" href="/members">Seats Included</a></th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Seats Included. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Seats Included. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
+            <th scope="row"><a class="design-link" href="/members">Seats</a></th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Seats. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Seats. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
           </tr>
           <tr>
             <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>

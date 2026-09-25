@@ -67,6 +67,8 @@ practitioner_ids:
   </section>
 
 
+  {% include components/armor/logo-cloud.html %}
+
   <section class="radar-section" aria-label="Membership pricing">
     <div class="armor-shell">
       {% capture membership_pricing_rows %}

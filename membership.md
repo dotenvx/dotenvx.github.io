@@ -91,8 +91,8 @@ practitioner_ids:
           </tr>
           <tr>
             <th scope="row">Perks</th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Perks. Coming soon: Discounts or credits from complementary tools, services, and APIs." data-tooltip="Coming soon: Discounts or credits from complementary tools, services, and APIs.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Perks. Coming soon: Discounts or credits from complementary tools, services, and APIs." data-tooltip="Coming soon: Discounts or credits from complementary tools, services, and APIs.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs. Coming soon." data-tooltip="Discounts or credits from complementary tools, services, and APIs. Coming soon.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs. Coming soon." data-tooltip="Discounts or credits from complementary tools, services, and APIs. Coming soon.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
           </tr>
           <tr>
             <th scope="row">Secrets Manager</th>

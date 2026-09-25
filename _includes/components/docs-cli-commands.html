@@ -1,6 +1,11 @@
-<h2 class="design-page-title design-page-title--flush">CLI Commands</h2>
+<h2 class="design-page-title design-page-title--flush">{{ include.title | default: "CLI Commands" }}</h2>
 <ul class="advanced-cli-commands">
   {% for command in site.data.advanced_cli %}
+    {% assign command_root = command.label | split: " " | first %}
+    {% assign is_hidden_command = false %}
+    {% if site.data.hidden_cli_commands contains command_root %}{% assign is_hidden_command = true %}{% endif %}
+    {% if include.group == "hidden" and is_hidden_command == false %}{% continue %}{% endif %}
+    {% if include.group == "standard" and is_hidden_command %}{% continue %}{% endif %}
     <li><a class="design-link" href="{{ command.href }}">{{ command.label | escape }}</a></li>
   {% endfor %}
 </ul>

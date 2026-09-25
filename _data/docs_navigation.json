@@ -64,7 +64,7 @@
     "label": "Guides",
     "children": [
       {
-        "label": "Claude Code",
+        "label": "Claude",
         "href": "/docs/claude/",
         "children": []
       },

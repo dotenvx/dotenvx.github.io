@@ -1,9 +1,10 @@
 # Canonical search ranking hints (merged into /search.json at build time).
 # Higher boost = more likely to win when multiple pages match.
 entries:
-  /sponsorship:
+  /corp:
     boost: 60
     aliases:
+      - corporate support
       - corporate sponsorship
       - sponsor
       - fund open source

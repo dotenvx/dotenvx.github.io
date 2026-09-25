@@ -1,16 +1,24 @@
-// node scripts/build-membership-mesh.cjs /path/to/three
+// node scripts/build-membership-mesh.cjs /path/to/three [cube]
 // Exports ASCII STL, like Keysee. Coordinates are millimeters.
 // Generates the identical rounded engraving for the STL and browser preview.
 const fs = require('node:fs');
 const path = require('node:path');
 const THREE = require(process.argv[2] || 'three');
 const root = path.resolve(__dirname, '..');
-const design = require('./membership-token-design.json');
+const isCube = process.argv[3] === 'cube';
+const design = {...require('./membership-token-design.json')};
+if (isCube) {
+  design.scale = 50 / 41.6;
+  design.engravingDepthMm = 1.5;
+  design.engravingLipRadiusMm = 0.4;
+}
+const outputName = isCube ? 'corporate-plaque' : 'membership';
+const meshName = isCube ? 'corporate-plaque-mesh' : 'env-slab-mesh';
 const tokenScale = design.scale;
 if (!Number.isFinite(tokenScale) || tokenScale <= 0) throw new Error('Invalid token scale');
 const contours = design.logoContours.map(points => points.map(p => [...p]));
 contours.forEach(p => { if (JSON.stringify(p[0]) === JSON.stringify(p.at(-1))) p.pop(); });
-const radius = .8, thickness = 5.15;
+const radius = isCube ? 3 / tokenScale : .8, thickness = isCube ? 41.6 : 5.15;
 const floor = thickness - design.engravingDepthMm / tokenScale;
 const lipRadius = design.engravingLipRadiusMm / tokenScale;
 // Mitered offsets retain the original letter silhouettes; a quarter-circle
@@ -28,7 +36,16 @@ function offsetContour(points, amount) {
 }
 const openings = contours.map(p => offsetContour(p, lipRadius));
 function outline(offset = 0) {
-  const x = -20-offset, y=x, w=40+2*offset, r=2+offset;
+  const half = isCube ? thickness / 2 - radius : 20;
+  const x = -half-offset, y=x, w=2*half+2*offset, r=(isCube ? 0 : 2)+offset;
+  if (isCube) {
+    const p = new THREE.Shape();
+    p.moveTo(x+r,y); p.lineTo(x+w-r,y); p.absarc(x+w-r,y+r,r,-Math.PI/2,0,false);
+    p.lineTo(x+w,y+w-r); p.absarc(x+w-r,y+w-r,r,0,Math.PI/2,false);
+    p.lineTo(x+r,y+w); p.absarc(x+r,y+w-r,r,Math.PI/2,Math.PI,false);
+    p.lineTo(x,y+r); p.absarc(x+r,y+r,r,Math.PI,Math.PI*1.5,false);
+    return p;
+  }
   const p = new THREE.Shape();
   p.moveTo(x+r,y); p.lineTo(x+w-r,y); p.quadraticCurveTo(x+w,y,x+w,y+r);
   p.lineTo(x+w,y+w-r); p.quadraticCurveTo(x+w,y+w,x+w-r,y+w);
@@ -61,15 +78,37 @@ openings.forEach(points=>{
 });
 cap(face,thickness); cap(outline(),0,true);
 const rings=[];
-for(let i=0;i<=12;i++) { const a=i/12*Math.PI/2; rings.push([radius*Math.sin(a),thickness-radius+radius*Math.cos(a)]); }
-for(let i=0;i<=12;i++) { const a=i/12*Math.PI/2; rings.push([radius*Math.cos(a),radius-radius*Math.sin(a)]); }
+const edgeSegments = isCube ? 24 : 12;
+for(let i=0;i<=edgeSegments;i++) { const a=i/edgeSegments*Math.PI/2; rings.push([radius*Math.sin(a),thickness-radius+radius*Math.cos(a)]); }
+for(let i=0;i<=edgeSegments;i++) { const a=i/edgeSegments*Math.PI/2; rings.push([radius*Math.cos(a),radius-radius*Math.sin(a)]); }
 const ringPoints=rings.map(([offset,z])=>{
+  if (isCube) {
+    const half=thickness/2-radius, result=[];
+    [[half,-half,-Math.PI/2],[half,half,0],[-half,half,Math.PI/2],[-half,-half,Math.PI]].forEach(([cx,cy,start])=>{
+      for(let i=0;i<=edgeSegments;i++){const angle=start+i/edgeSegments*Math.PI/2;result.push([cx+offset*Math.cos(angle),cy+offset*Math.sin(angle),z]);}
+    });
+    return result;
+  }
   const p=outline(offset).getPoints(24); if(p[0].equals(p.at(-1))) p.pop();
   return p.map(v=>[v.x,v.y,z]);
 });
 for(let r=0;r<ringPoints.length-1;r++) {
   const a=ringPoints[r],b=ringPoints[r+1];
   for(let i=0;i<a.length;i++) { const j=(i+1)%a.length; triangle(a[i],b[i],a[j]); triangle(a[j],b[i],b[j]); }
+}
+const shellVertexCount = vertices.length / 3;
+if (isCube) {
+  const half = thickness / 2 - radius, edgeCoverage = new Set();
+  let maximumError = 0;
+  for(let id=0;id<shellVertexCount;id++) {
+    const p=[vertices[id*3],vertices[id*3+1],vertices[id*3+2]-thickness/2];
+    const distances=p.map(n=>Math.max(0,Math.abs(n)-half));
+    maximumError=Math.max(maximumError,Math.abs(Math.hypot(...distances)-radius)*tokenScale);
+    const axes=p.map((n,i)=>distances[i]>1e-5 ? `${i}${n>0?'+':'-'}` : '').filter(Boolean);
+    if(axes.length===2)edgeCoverage.add(axes.join(','));
+  }
+  if(maximumError>0.00001 || edgeCoverage.size!==12)throw new Error('Cube edges do not share a uniform radius');
+  console.log(`All 12 cube edges: ${(radius*tokenScale).toFixed(2)} mm radius, ${edgeSegments} segments per quarter-circle; maximum surface error ${maximumError.toFixed(7)} mm`);
 }
 contours.forEach(points => {
   const p = offsetContour(points, 0);
@@ -121,7 +160,7 @@ for(let i=0;i<indices.length;i+=3) for(let j=0;j<3;j++) {
 }
 const bad=[...edges.values()].filter(e=>e.count!==2 || e.direction!==0);
 if(bad.length) throw new Error(`${bad.length} non-manifold or inconsistently wound edges`);
-const lines = ['solid dotenv_membership'];
+const lines = [`solid dotenv_${outputName}`];
 const point = id => new THREE.Vector3(...vertices.slice(id * 3, id * 3 + 3)).multiplyScalar(tokenScale);
 const format = v => v.toArray().map(n => {
   if (!Number.isFinite(n)) throw new Error('Non-finite STL coordinate');
@@ -136,9 +175,9 @@ for (let i = 0; i < indices.length; i += 3) {
     ...[a, b, c].map(v => `      vertex ${format(v)}`),
     '    endloop', '  endfacet');
 }
-lines.push('endsolid dotenv_membership');
-fs.writeFileSync(path.join(root, 'membership.stl'), lines.join('\n') + '\n');
-console.log(`membership.stl: ${vertices.length/3} vertices, ${indices.length/3} triangles; closed manifold verified; ${(41.6 * tokenScale).toFixed(2)} × ${(41.6 * tokenScale).toFixed(2)} × ${(thickness * tokenScale).toFixed(4)} mm`);
+lines.push(`endsolid dotenv_${outputName}`);
+fs.writeFileSync(path.join(root, `${outputName}.stl`), lines.join('\n') + '\n');
+console.log(`${outputName}.stl: ${vertices.length/3} vertices, ${indices.length/3} triangles; closed manifold verified; ${(41.6 * tokenScale).toFixed(2)} × ${(41.6 * tokenScale).toFixed(2)} × ${(thickness * tokenScale).toFixed(4)} mm`);
 
 // Preserve sharp letter corners and floor edges while smoothing the rounded
 // outer rim and engraving lip. Geometry positions are identical to the STL.
@@ -165,13 +204,20 @@ for (let i = 0; i < indices.length; i += 3) {
     // Flat faces must stay optically flat rather than inherit the lip's slope
     // through the large triangles spanning the front of the token.
     const z = vertices[id * 3 + 2];
+    if (isCube && id < shellVertexCount) {
+      // Exact rounded-box normals keep the broad faces flat and all fillets smooth.
+      const half = thickness / 2 - radius;
+      const x = vertices[id * 3], y = vertices[id * 3 + 1], centeredZ = z - thickness / 2;
+      const clamp = value => Math.max(-half, Math.min(half, value));
+      smooth.set(x-clamp(x), y-clamp(y), centeredZ-clamp(centeredZ));
+    }
     if (Math.abs(z - thickness) < 1e-5) smooth.set(0, 0, 1);
     else if (Math.abs(z) < 1e-5) smooth.set(0, 0, -1);
     else if (isFloor) smooth.set(0, 0, 1);
     normals.push(...smooth.normalize().toArray().map(n => Number(n.toFixed(6))));
   }
 }
-fs.writeFileSync(path.join(root, 'assets/js/env-slab-mesh.js'),
+fs.writeFileSync(path.join(root, `assets/js/${meshName}.js`),
   '// Generated by scripts/build-membership-mesh.cjs; do not edit.\nexport default ' +
   JSON.stringify({thickness: thickness * tokenScale, positions, normals, groups}) + ';\n');
 console.log(`Engraving: ${design.engravingDepthMm} mm deep, ${design.engravingLipRadiusMm} mm rounded lip; preview mesh regenerated`);

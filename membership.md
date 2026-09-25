@@ -10,7 +10,6 @@ practitioner_ids:
 ---
 
 <style>
-  .membership-page .design-hero-content { display: flex; align-items: center; justify-content: center; }
   .membership-hero-card { display: block; width: calc(var(--hero-illustration-width) * 1.4); max-width: none; height: auto; flex: none; box-shadow: 0 5px 8px rgb(0 0 0 / .12); border-radius: 8px; }
   html.dark .membership-hero-card { --member-card-edge: var(--design-line); --member-card-outline: var(--design-mid); --member-card-inset: var(--design-line); --member-card-divider: var(--design-line); box-shadow: 0 2px 0 var(--design-line); }
   .membership-comparison .design-table-wrap { overflow: visible; }
@@ -39,7 +38,6 @@ practitioner_ids:
     .membership-other-option { padding: 1.5rem 0; }
     .membership-other-option + .membership-other-option { border-left: 0; border-top: 1px solid var(--design-line); }
   }
-  .membership-page .design-hero--compact .design-hero-content { width: 100%; max-width: 21rem; height: auto; aspect-ratio: auto; margin-bottom: .5rem; }
 </style>
 
 {% capture membership_visual %}
@@ -147,8 +145,8 @@ practitioner_ids:
       <div class="home-cta">{{ membership_actions }}</div>
       <p class="membership-or">or</p>
       <div class="membership-other-options">
-        <a class="membership-other-option" href="/sponsorship">
-          <h2><span class="design-link">Corporate Sponsorship →</span></h2>
+        <a class="membership-other-option" href="/corp">
+          <h2><span class="design-link">Corporate Support →</span></h2>
           <p>Steward the future of Dotenv – for humans and agents.</p>
         </a>
         <a class="membership-other-option" href="/careers">

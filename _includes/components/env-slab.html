@@ -1,5 +1,5 @@
-<figure class="env-slab" data-env-slab>
-  <div class="env-slab-stage" tabindex="0" role="img" aria-label="Silver Dotenv slab with recessed .ENV lettering. Drag or use arrow keys to rotate; Home resets the view.">
+<figure class="env-slab" data-env-slab="{% if include.plaque %}plaque{% endif %}">
+  <div class="env-slab-stage" tabindex="0" role="img" aria-label="{% if include.plaque %}Solid silver-finish desk cube with softened edges and recessed .ENV lettering low on its front face. Hover to lift it slightly.{% else %}Silver Dotenv slab with recessed .ENV lettering. Drag or use arrow keys to rotate; Home resets the view.{% endif %}">
   </div>
 </figure>
-<script type="module" src="/assets/js/env-slab.js"></script>
+<script type="module" src="/assets/js/env-slab.js?v={{ site.time | date: '%s' }}"></script>

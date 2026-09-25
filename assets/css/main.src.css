@@ -7011,10 +7011,10 @@ html.dark .hero-container-primary { color: #7b838a; }
 
 /* Interactive, pocket-sized Dotenv slab. */
 .env-slab { margin: 0; width: 100%; }
-.env-slab-stage { position: relative; height: 15rem; width: 100%; cursor: grab; touch-action: pan-y; }
-.env-slab-stage:active { cursor: grabbing; }
-.env-slab-stage:focus { outline: none; }
-.env-slab-stage:focus-visible:not([data-pointer-active]) { outline: 1px solid var(--design-mid); outline-offset: 4px; }
+.env-slab-stage { position: relative; height: 15rem; width: 100%; }
+.env-slab[data-env-slab=""] .env-slab-stage { cursor: grab; touch-action: pan-y; }
+.env-slab[data-env-slab=""] .env-slab-stage:active { cursor: grabbing; }
+.env-slab-stage:focus, .env-slab-stage:focus-visible { outline: none; }
 .env-slab-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
 .env-slab.is-rendered canvas { animation: design-visual-reveal 1100ms cubic-bezier(.16, 1, .3, 1) both; }
 @keyframes design-visual-reveal {
@@ -7113,3 +7113,15 @@ html.dark .hero-container-primary { color: #7b838a; }
   html.theme-bloom::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
   html.theme-bloom::view-transition-old(root) { z-index: 1; }
   html.theme-bloom::view-transition-new(root) { z-index: 2; clip-path: var(--theme-pixel-clip); }
+
+/* Reserve the same visual slot so the two 3D hero titles stay aligned. */
+:is(.membership-page, .corporate-page) .design-hero--compact .design-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 21rem;
+  height: 15rem;
+  aspect-ratio: auto;
+  margin-bottom: .5rem;
+}

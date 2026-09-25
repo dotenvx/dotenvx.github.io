@@ -7,7 +7,7 @@ body_class: home-page members-page
 ---
 
 {% capture members_actions %}
-  {% include components/design-btn.html href="/membership" label="Explore membership" %}
+  {% include components/design-btn.html href="/membership" label="Membership Benefits" %}
 {% endcapture %}
 
 <div class="home-sections">
@@ -41,7 +41,7 @@ body_class: home-page members-page
       </div>
     </div>
   </section>
-  {% include components/membership-join.html label="Explore membership" href="/membership" %}
+  {% include components/membership-join.html label="Membership Benefits" href="/membership" %}
 </div>
 
 <script src="/assets/js/member-portraits.js?v={{ site.time | date: '%s' }}" defer></script>

@@ -7291,3 +7291,25 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 
 .member-professional-badge { position: absolute; right: 0; bottom: 0; transform: translate(75%, 40%); width: .72em; aspect-ratio: 1; border: 2px solid var(--design-bg); border-radius: 20%; background: var(--design-bg); overflow: hidden; }
 .member-portrait-front .member-professional-badge img { position: static; display: block; width: 100%; height: 100%; border-radius: 0; object-fit: contain; }
+
+.docs-drawer-toggle, .docs-drawer-close { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: var(--design-body); cursor: pointer; }
+.docs-drawer-toggle:focus-visible, .docs-drawer-close:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 2px; }
+.docs-drawer { position: fixed; inset: 0 auto 0 0; margin: 0; padding: 0 1rem; width: 70vw; max-width: 70vw; height: 100dvh; max-height: 100dvh; border: 0; border-right: 1px solid var(--design-line); background: var(--design-bg); color: var(--design-body); }
+.docs-drawer[open] { display: flex; flex-direction: column; animation: docs-drawer-enter 180ms ease-out; }
+.docs-drawer::backdrop { background: rgb(0 0 0 / .25); }
+.docs-drawer-header { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; padding-top: env(safe-area-inset-top); font-size: var(--design-text-compact); }
+.docs-drawer-close { font-size: 1.5rem; }
+.docs-drawer .docs-sidebar-scroll { overflow-y: auto; min-height: 0; overscroll-behavior: contain; padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.docs-drawer-open { overflow: hidden; }
+@keyframes docs-drawer-enter { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@media (max-width: 63.999rem) {
+  .docs-landing .docs-sidebar { animation: none; }
+  .docs-layout { position: relative; }
+  .docs-sidebar { padding: 0; }
+  .docs-drawer-toggle { position: fixed; top: calc(var(--docs-nav-top, 5rem) + .5rem); left: 1rem; z-index: 10; border-radius: 8px; background: color-mix(in srgb, var(--design-bg) 75%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .docs-sidebar-disclosure { display: none; }
+}
+@media (min-width: 64rem) { .docs-drawer-toggle { display: none; } }
+@media (prefers-reduced-motion: reduce) { .docs-drawer[open] { animation: none; } }
+
+.docs-drawer-glyph { font-size: 24px; line-height: 1; }

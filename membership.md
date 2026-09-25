@@ -74,9 +74,9 @@ practitioner_ids:
             <td class="design-table-cell--center">$1,000/yr</td>
           </tr>
           <tr>
-            <th scope="row"><a class="design-link" href="/members">Seats</a></th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Seats. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Seats. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
+            <th scope="row"><a class="design-link" href="/members">Seats Included</a></th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Seats Included. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Seats Included. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
           </tr>
           <tr>
             <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>
@@ -84,9 +84,9 @@ practitioner_ids:
             <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Public Recognition. Show your company’s commitment to secrets security with an optional public company profile and logo." data-tooltip="Show your company’s commitment to secrets security with an optional public company profile and logo.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
           </tr>
           <tr>
-            <th scope="row">Agentic Readiness Pledge</th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Agentic Readiness Pledge. Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership." data-tooltip="Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Agentic Readiness Pledge. Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership." data-tooltip="Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
+            <th scope="row">Agentic Readiness</th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Agentic Readiness. Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership." data-tooltip="Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Agentic Readiness. Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership." data-tooltip="Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
           </tr>
           <tr>
             <th scope="row">Company Spotlight</th>
@@ -94,9 +94,9 @@ practitioner_ids:
             <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Company Spotlight. A feature highlighting how your team approaches secrets security." data-tooltip="A feature highlighting how your team approaches secrets security.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
           </tr>
           <tr>
-            <th scope="row">Partner Benefits</th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Partner Benefits. Discounts or credits from complementary tools, services, and APIs." data-tooltip="Discounts or credits from complementary tools, services, and APIs.">Coming soon</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Partner Benefits. Discounts or credits from complementary tools, services, and APIs." data-tooltip="Discounts or credits from complementary tools, services, and APIs.">Coming soon</span></td>
+            <th scope="row">Perks</th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs." data-tooltip="Discounts or credits from complementary tools, services, and APIs.">Coming soon</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs." data-tooltip="Discounts or credits from complementary tools, services, and APIs.">Coming soon</span></td>
           </tr>
           <tr>
             <th scope="row">Dotenvx Armor <span aria-hidden="true">⛨</span></th>

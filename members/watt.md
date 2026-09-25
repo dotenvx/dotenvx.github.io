@@ -32,7 +32,7 @@ body_class: home-page
         author=john.name
         author_image=john.image
         author_url="https://www.linkedin.com/in/jzila/"
-        organization="Cofounder and Chief Architect at Watt"
+        organization="Cofounder / Chief Architect at Watt"
         class="!mt-0 !mb-10"
       %}
 
@@ -42,7 +42,7 @@ body_class: home-page
       <p class="design-paragraph">For John, that's the win: <strong>securely versioned secrets, deployed with code, without taking on a new critical path dependency.</strong></p>
       <p class="design-paragraph">It just works.</p>
       <hr class="member-story-divider">
-      <p class="design-paragraph"><strong>John is Cofounder and Chief Architect at Watt and was previously Head of Security DevOps at Zoom.</strong></p>
+      <p class="design-paragraph"><strong>John is Cofounder / Chief Architect at Watt and was previously Head of Security DevOps at Zoom.</strong></p>
     {% endcapture %}
     {% include components/design-content-width.html content=story %}
   </div>

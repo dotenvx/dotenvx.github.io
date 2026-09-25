@@ -11,7 +11,7 @@ dhravya:
 
 john-zila:
   name: John Zila
-  organization: Cofounder and Chief Architect at Watt
+  organization: Cofounder / Chief Architect at Watt
   image: /assets/img/john-zila.png
   quote: "Dotenvx lets us securely version and deploy secrets along with code, without taking on a new critical path dependency. It just works."
   href: /members/watt

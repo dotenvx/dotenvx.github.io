@@ -5,6 +5,7 @@ scott-motte:
   published: true
   member_since: 2024-06-24
   name: Scott Motte
+  initials: SM
   image: /assets/img/scott-motte.jpg
   role: Creator of Dotenv and Dotenvx
   bio: Building simple, open-source tools to help people keep their secrets safe, wherever software runs.

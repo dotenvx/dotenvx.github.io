@@ -7086,14 +7086,10 @@ html.dark .hero-container-primary { color: #7b838a; }
 .home-shipping-closing { margin-top: 0; }
 
 .home-creator-note { display: flow-root; margin-bottom: 2rem; }
-.home-creator-portrait { float: right; width: 10rem; margin: .25rem 0 1rem 1.5rem; shape-outside: inset(0); shape-margin: .5rem; }
-.home-creator-portrait .practitioner-portrait { display: block; min-height: 8rem; }
-.home-creator-portrait .practitioner-portrait-photo { width: 6rem; margin: 0 auto; }
-.home-creator-portrait .practitioner-portrait-copy { display: none; }
-.home-creator-portrait .practitioner-portrait figcaption { top: 4.5rem; left: 3rem; width: 7rem; max-width: none; padding: .3rem .45rem; font-size: .7rem; }
+.home-creator-portrait { float: right; width: 8rem; margin: .25rem 0 1rem 1.5rem; shape-outside: inset(0); shape-margin: .5rem; }
+.home-creator-portrait .member-portrait-square { width: 100%; }
 @media (max-width: 480px) {
-  .home-creator-portrait { width: 8rem; margin-left: 1rem; }
-  .home-creator-portrait .practitioner-portrait figcaption { left: 1rem; }
+  .home-creator-portrait { width: 7rem; margin-left: 1rem; }
 }
 
 /* Reveal the next theme in a scattered pixel wave from its control. */
@@ -7116,12 +7112,153 @@ html.dark .hero-container-primary { color: #7b838a; }
 
 /* Public member directory. */
 .member-directory { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem)); justify-content: center; gap: 3rem; max-width: 56rem; margin-inline: auto; }
-.member-directory-join { margin: 3rem auto 0; text-align: center; }
+.member-directory-content { width: 100%; max-width: none; margin-inline: auto; text-align: left; }
+.member-directory-join { margin: 3rem 0 0; text-align: left; }
 .member-directory-join p { margin-bottom: .6rem; }
 
-/* Token grid experiment: four columns, eight rows, one shared WebGL canvas. */
-.member-token-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; width: 100%; max-width: 64rem; margin: 0 auto; }
-.member-token-slot { display: grid; place-items: center; aspect-ratio: 1; min-width: 0; padding: 0; border: 0; background: transparent; box-shadow: none; color: var(--design-mid); font: inherit; font-size: .65rem; cursor: pointer; touch-action: pan-y; }
-.member-token-slot:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 2px; }
-.member-token-grid-canvas { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
-@media (max-width: 640px) { .member-token-grid { gap: .35rem; } }
+/* Executive company tiles and a quieter directory of individual square portraits. */
+.member-directory-group + .member-directory-group { margin-top: 4rem; }
+.member-group-title { margin: 0 0 2rem; text-align: center; font-size: 1rem; font-weight: 600; }
+.member-company-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); justify-content: start; gap: 1rem; }
+.member-person-preview { position: relative; aspect-ratio: 1; min-width: 0; }
+.member-people-grid { --member-card-size: calc((28rem - 3 * .85rem) / 4); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--member-card-size)), var(--member-card-size))); justify-content: start; gap: .85rem; }
+.member-portrait-square { display: block; position: relative; aspect-ratio: 1; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; perspective: 500px; text-decoration: none; }
+.member-portrait-turn { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 650ms cubic-bezier(.22,.65,.25,1); }
+.member-portrait-square[data-revealed="true"] .member-portrait-turn { transform: rotateY(180deg); }
+.member-portrait-face { position: absolute; inset: 0; border-radius: var(--design-control-radius); border: 1px solid var(--design-line); background: var(--design-bg); backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: var(--design-etch); }
+.member-portrait-front { padding: 0; }
+.member-portrait-initials { position: absolute; top: 60%; left: 50%; width: max-content; transform: translateX(-50%); height: auto; font-size: 1.35rem; line-height: 1.1; font-weight: 600; text-align: center; white-space: nowrap; }
+.member-portrait-mark { position: absolute; left: 100%; top: 0; color: var(--design-secondary); opacity: .25; }
+.member-portrait-front img { position: absolute; right: 36%; bottom: 46%; display: block; width: 28%; height: 28%; object-fit: cover; border-radius: 50%; }
+.member-portrait-front::after { content: ""; position: absolute; right: 36%; bottom: 46%; width: 28%; height: 28%; border-radius: 50%; pointer-events: none; box-shadow: inset 0 2px 3px rgb(0 0 0 / .3), inset 0 0 1px rgb(0 0 0 / .2), 0 1px 0 rgb(255 255 255 / .35); }
+.member-portrait-back { display: flex; align-items: center; justify-content: center; padding: 12%; transform: rotateY(180deg); }
+.member-portrait-square:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .member-portrait-turn { transition: none; } }
+@media (max-width: 640px) { .member-company-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; } }
+
+/* Larger rounded company tiles have a restrained raised edge. */
+.member-company-face { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; border-radius: 12%; background: var(--design-bg); border: 1px solid var(--design-line); box-shadow: inset 0 1px 0 rgb(255 255 255 / .12), 0 2px 0 var(--design-line); color: inherit; }
+.member-company-logo { display: block; width: var(--member-logo-width, 54%); height: auto; max-height: 34%; }
+.member-company-logo path { fill: currentColor; }
+
+.member-portrait-link-icon { display: block; width: 1.5rem; height: 1.5rem; }
+
+.member-sample-note { margin: -1.25rem 0 1.5rem; color: var(--design-mid); font-size: .75rem; }
+
+/* Alternate Professional member design; the square card remains available. */
+.member-nameplate-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem; }
+.professional-nameplate { position: relative; display: grid; grid-template-columns: 2.5rem max-content max-content; align-items: center; gap: 0; width: 8.25rem; height: 2.5rem; padding: 0 .6rem 0 0; border: 1px solid var(--design-line); border-radius: 3px; overflow: hidden; background: var(--design-bg); color: var(--design-body); text-decoration: none; box-shadow: var(--design-etch); }
+.professional-nameplate-avatar { position: relative; display: block; width: 1.5rem; aspect-ratio: 1; margin-left: .5rem; border-radius: 50%; }
+.professional-nameplate-avatar img { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+.professional-nameplate-avatar::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 2px 3px rgb(0 0 0 / .3), inset 0 0 1px rgb(0 0 0 / .2), 0 1px 0 rgb(255 255 255 / .35); }
+.professional-nameplate-initials { color: var(--design-body); display: block; min-width: 0; font-size: 1rem; line-height: 1; font-weight: 600; text-shadow: none; }
+.professional-nameplate-mark { display: block; padding: 0; color: var(--design-secondary); opacity: .25; font-size: 1.05rem; font-weight: 600; line-height: 1; letter-spacing: .015em; text-shadow: none; }
+.professional-nameplate:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 4px; }
+
+/* Square counterpart to the preserved horizontal Professional nameplate. */
+.member-badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 7rem), 7rem)); gap: 1rem; }
+/* Same shallow inset treatment as the docs keys, resting pressed in. */
+.professional-badge { position: relative; display: block; aspect-ratio: 1; min-width: 0; border-radius: 3px; background: var(--design-line); color: var(--design-body); text-decoration: none; }
+.professional-badge-face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .7rem; border: 1px solid var(--design-line); border-radius: inherit; background: var(--design-bg); box-shadow: inset 0 3px 5px rgb(0 0 0 / .2), inset 0 -1px 0 rgb(255 255 255 / .08); transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms ease; }
+@media (hover: hover) {
+  .professional-badge:hover .professional-badge-face { transform: translateY(-1px); box-shadow: var(--design-etch); }
+}
+.professional-badge:focus-visible .professional-badge-face { transform: translateY(-1px); box-shadow: var(--design-etch); }
+.professional-badge:active .professional-badge-face { transform: translateY(0); box-shadow: inset 0 3px 5px rgb(0 0 0 / .2); transition-duration: 80ms; }
+@media (prefers-reduced-motion: reduce) { .professional-badge-face { transition: none; } }
+.professional-badge-avatar { position: relative; display: block; width: 2.5rem; aspect-ratio: 1; border-radius: 50%; }
+.professional-badge-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.professional-badge-avatar::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 2px 3px rgb(0 0 0 / .3), inset 0 0 1px rgb(0 0 0 / .2), 0 1px 0 rgb(255 255 255 / .35); }
+.professional-badge-label { display: flex; align-items: baseline; justify-content: center; font-size: 1rem; line-height: 1; font-weight: 600; white-space: nowrap; }
+.professional-badge-initials { color: var(--design-body); }
+.professional-badge-mark { color: var(--design-secondary); opacity: .25; }
+.professional-badge:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 4px; }
+
+.member-people-grid .member-portrait-initials { font-size: .9rem; }
+
+.member-portrait-square--static { cursor: default; }
+
+.member-portrait-square--photo-back .member-portrait-initials { top: 50%; transform: translate(-50%, -50%); font-size: var(--design-text-title); color: var(--design-secondary); }
+.member-portrait-square--photo-back .member-portrait-front::after { content: none; }
+.member-portrait-photo { position: relative; display: block; width: 54%; aspect-ratio: 1; border-radius: 50%; }
+.member-portrait-photo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.member-portrait-photo::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 2px 3px rgb(0 0 0 / .3), inset 0 0 1px rgb(0 0 0 / .2), 0 1px 0 rgb(255 255 255 / .35); }
+
+/* Two quiet layers on the reverse: a small press, then the new detail appears. */
+.member-portrait-square--photo-back .member-portrait-photo { transition: opacity 180ms ease, transform 280ms cubic-bezier(.22,.65,.25,1); }
+.member-portrait-name { position: absolute; inset: 12%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: var(--design-text-compact); font-weight: 500; line-height: 1.3; overflow-wrap: anywhere; color: var(--design-mid); opacity: 0; transform: scale(.86); transition: opacity 180ms ease, transform 280ms cubic-bezier(.22,.65,.25,1); }
+.member-portrait-square[data-detail="name"] .member-portrait-photo { opacity: 0; transform: scale(.82); }
+.member-portrait-square[data-detail="name"] .member-portrait-name { opacity: 1; transform: scale(1); transition-delay: 70ms; }
+.member-portrait-square[data-detail="photo"] .member-portrait-photo { transition-delay: 70ms; }
+@media (prefers-reduced-motion: reduce) {
+  .member-portrait-square--photo-back .member-portrait-photo, .member-portrait-name { transition: none; }
+}
+
+.member-company-preview .member-company-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.member-company-back { transform: rotateY(180deg); font-size: var(--design-text-compact); color: var(--design-mid); padding: 10%; overflow-wrap: anywhere; text-align: center; }
+
+/* Executive plaques share the token's tight corners and shallow solid edge. */
+.member-company-preview { perspective: 800px; }
+.member-company-preview .member-portrait-turn { inset: 3%; transform: rotateX(12deg); }
+.member-company-preview[data-revealed="true"] .member-portrait-turn { transform: rotateX(12deg) rotateY(180deg); }
+.member-company-preview .member-company-face {
+  border-radius: 4%;
+  border-color: var(--design-line);
+  background: linear-gradient(135deg, var(--design-bg), var(--design-bg-lift));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .65), inset 1px 0 0 rgb(255 255 255 / .3), inset 0 -1px 0 var(--design-line), 0 1px 0 var(--design-line), 0 3px 0 var(--design-line), 0 4px 0 var(--design-line), 0 6px 5px rgb(0 0 0 / .08);
+}
+html.dark .member-company-preview .member-company-face { box-shadow: inset 0 1px 0 rgb(255 255 255 / .12), inset 1px 0 0 rgb(255 255 255 / .05), inset 0 -1px 0 var(--design-line), 0 1px 0 var(--design-line), 0 3px 0 var(--design-line), 0 4px 0 var(--design-line), 0 6px 5px rgb(0 0 0 / .18); }
+
+/* Professional chips: the same perspective, with a wafer-thin edge. */
+.member-portrait-square--photo-back { perspective: 800px; }
+.member-portrait-square--photo-back .member-portrait-turn { transform: rotateX(12deg); }
+.member-portrait-square--photo-back[data-revealed="true"] .member-portrait-turn { transform: rotateX(12deg) rotateY(180deg); }
+.member-portrait-square--photo-back .member-portrait-face {
+  border-radius: var(--design-control-radius);
+  background: linear-gradient(135deg, var(--design-bg), var(--design-bg-lift));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .55), inset 0 -1px 0 var(--design-line), 0 1px 0 var(--design-line), 0 2px 3px rgb(0 0 0 / .07);
+}
+html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow: inset 0 1px 0 rgb(255 255 255 / .1), inset 0 -1px 0 var(--design-line), 0 1px 0 var(--design-line), 0 2px 3px rgb(0 0 0 / .16); }
+
+.member-directory-status { color: var(--design-secondary); font-size: var(--design-text-compact); }
+.member-portrait-photo[hidden] { display: none; }
+
+/* Shared closing membership invitation. */
+  .membership-or { margin: 2rem 0; color: var(--design-mid); text-align: center; }
+  .membership-other-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 44rem; margin: 0 auto; }
+  .membership-other-option { display: block; padding: 2rem; text-align: center; text-decoration: none; transition: background-color 140ms ease; }
+  .membership-other-option:hover, .membership-other-option:focus-visible { background-color: var(--design-hover); }
+  .membership-other-option:focus-visible { outline: 2px solid var(--design-mid); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .membership-other-option { transition: none; } }
+  .membership-other-option + .membership-other-option { border-left: 1px solid var(--design-line); }
+  .membership-other-option h2 { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 600; }
+  .membership-other-option p { margin: 0; color: var(--design-mid); line-height: 1.6; }
+  @media (max-width: 640px) {
+    .membership-other-options { grid-template-columns: 1fr; }
+    .membership-other-option { padding: 1.5rem 0; }
+    .membership-other-option + .membership-other-option { border-left: 0; border-top: 1px solid var(--design-line); }
+  }
+
+.design-btn--secondary { border-color: transparent; box-shadow: none; }
+
+/* A small pile of portraits, with varied sizes and no visible rows. */
+.member-hero-portraits { position: relative; isolation: isolate; width: 10.5rem; height: 10rem; margin: 0 auto .65rem; }
+.member-hero-portrait { padding: 0; cursor: pointer; position: absolute; width: var(--portrait-size); height: var(--portrait-size); max-width: none; border-radius: 50%; border: 2px solid var(--design-bg); object-fit: cover; background: var(--design-bg); transform: translate(-50%, -50%) rotate(var(--portrait-angle)); }
+.member-hero-portraits + .design-hero--compact { padding-top: 0; }
+
+.member-hero-portrait.is-loaded { animation: member-portrait-pop 360ms cubic-bezier(.2,.75,.25,1) var(--portrait-delay, 0ms) backwards; }
+@keyframes member-portrait-pop {
+  0% { opacity: 0; transform: translate(-50%, -50%) translate(var(--portrait-entry-x, 0px), 8px) rotate(var(--portrait-angle)) scale(.3); }
+  65% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--portrait-angle)) scale(1.08); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--portrait-angle)) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) { .member-hero-portrait.is-loaded { animation: none; } }
+
+.member-hero-portrait img { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+.member-hero-portrait:focus-visible { outline: 2px solid var(--design-mid); outline-offset: 3px; }
+.member-hero-portrait.is-leaving { animation: member-portrait-out 140ms ease-in forwards; }
+@keyframes member-portrait-out {
+  from { opacity: 1; transform: translate(-50%, -50%) rotate(var(--portrait-angle)) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -50%) rotate(var(--portrait-angle)) scale(.2); }
+}
+@media (prefers-reduced-motion: reduce) { .member-hero-portrait.is-leaving { animation: none; opacity: 0; } }

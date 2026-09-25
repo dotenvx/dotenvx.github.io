@@ -14,6 +14,7 @@ practitioner_ids:
   html.dark .membership-hero-card { --member-card-edge: var(--design-line); --member-card-outline: var(--design-mid); --member-card-inset: var(--design-line); --member-card-divider: var(--design-line); box-shadow: 0 2px 0 var(--design-line); }
   .membership-comparison .design-table-wrap { overflow: visible; }
   .membership-comparison .design-table { table-layout: fixed; }
+  .membership-comparison .design-table a.design-link { font-weight: inherit !important; }
   .membership-addon-row { scroll-margin-top: 6rem; }
   .membership-comparison .pricing-value-detail:focus-within::after { content: attr(data-tooltip); opacity: 1; visibility: visible; transform: translate(-50%, 0); }
   .membership-comparison .pricing-value-detail--right:focus-within::after { transform: translate(0, 0); }
@@ -26,20 +27,6 @@ practitioner_ids:
   .membership-members { margin-top: 3rem; }
   .membership-members .design-list-title { margin: 0 0 1.5rem; text-align: center; font-size: var(--design-text-compact); color: var(--design-mid); font-weight: 400; }
   .membership-proof > .radar-section { margin-block: 0; padding-block: 0; }
-  .membership-or { margin: 2rem 0; color: var(--design-mid); text-align: center; }
-  .membership-other-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 44rem; margin: 0 auto; }
-  .membership-other-option { display: block; padding: 2rem; text-align: center; text-decoration: none; transition: background-color 140ms ease; }
-  .membership-other-option:hover, .membership-other-option:focus-visible { background-color: var(--design-hover); }
-  .membership-other-option:focus-visible { outline: 2px solid var(--design-mid); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { .membership-other-option { transition: none; } }
-  .membership-other-option + .membership-other-option { border-left: 1px solid var(--design-line); }
-  .membership-other-option h2 { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 600; }
-  .membership-other-option p { margin: 0; color: var(--design-mid); line-height: 1.6; }
-  @media (max-width: 640px) {
-    .membership-other-options { grid-template-columns: 1fr; }
-    .membership-other-option { padding: 1.5rem 0; }
-    .membership-other-option + .membership-other-option { border-left: 0; border-top: 1px solid var(--design-line); }
-  }
 </style>
 
 {% capture membership_visual %}
@@ -56,6 +43,7 @@ practitioner_ids:
 
 {% capture membership_actions %}
   {% include components/design-btn.html href="/signup" label="Sign up" %}
+  {% include components/design-btn.html href="/members" label="Members" class="design-btn--secondary" %}
 {% endcapture %}
 
 <div class="home-sections">
@@ -75,8 +63,8 @@ practitioner_ids:
         <thead>
           <tr>
             <th scope="col">Membership</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professionals</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executives</th>
           </tr>
         </thead>
         <tbody>
@@ -86,9 +74,9 @@ practitioner_ids:
             <td class="design-table-cell--center">$1,000/yr</td>
           </tr>
           <tr>
-            <th scope="row">Members</th>
+            <th scope="row"><a class="design-link" href="/members">Members</a></th>
             <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Members. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Members. Executive covers the members of your team." data-tooltip="Executive covers the members of your team.">Your team</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Members. The Executives plan covers the members of your team." data-tooltip="The Executives plan covers the members of your team.">Your team</span></td>
           </tr>
           <tr>
             <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>
@@ -122,8 +110,8 @@ practitioner_ids:
           </tr>
           <tr class="membership-plan-actions">
             <th scope="row"><span class="sr-only">Sign up</span></th>
-            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for Professional membership">Sign up</a></td>
-            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for Executive membership">Sign up</a></td>
+            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Professionals plan">Sign up</a></td>
+            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Executives plan">Sign up</a></td>
           </tr>
         </tbody>
       {% endcapture %}
@@ -147,21 +135,6 @@ practitioner_ids:
 
   </div>
 
-  <section class="radar-section" aria-label="Get involved">
-    <div class="armor-shell">
-      <div class="home-cta">{{ membership_actions }}</div>
-      <p class="membership-or">or</p>
-      <div class="membership-other-options">
-        <a class="membership-other-option" href="/corp">
-          <h2><span class="design-link">Corporate Support →</span></h2>
-          <p>Steward the future of Dotenv – for humans and agents.</p>
-        </a>
-        <a class="membership-other-option" href="/careers">
-          <h2><span class="design-link">Careers →</span></h2>
-          <p>Build the future of Dotenv - for humans and agents.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  {% include components/membership-join.html %}
 
 </div>

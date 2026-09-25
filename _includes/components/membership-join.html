@@ -1,0 +1,18 @@
+{% assign join_label = include.label | default: "Sign up" %}
+{% assign join_href = include.href | default: "/signup" %}
+  <section class="radar-section" aria-label="Get involved">
+    <div class="armor-shell">
+      <div class="home-cta">{% include components/design-btn.html href=join_href label=join_label %}</div>
+      <p class="membership-or">or</p>
+      <div class="membership-other-options">
+        <a class="membership-other-option" href="/corp">
+          <h2><span class="design-link">Corporate Support →</span></h2>
+          <p>Steward the future of Dotenv – for humans and agents.</p>
+        </a>
+        <a class="membership-other-option" href="/careers">
+          <h2><span class="design-link">Careers →</span></h2>
+          <p>Build the future of Dotenv - for humans and agents.</p>
+        </a>
+      </div>
+    </div>
+  </section>

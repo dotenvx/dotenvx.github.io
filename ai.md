@@ -21,16 +21,22 @@ body_class: home-page about-page
   .about-manifesto .design-prose { margin: 0; }
   .about-marks { position: relative; width: var(--hero-illustration-width); height: var(--hero-illustration-width); flex: none; }
   .about-joined-slab { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .about-arcade-key { --press-depth: 6px; --press-brightness: .96; }
+  .about-arcade-key:has([aria-pressed="true"]) { --press-depth: 6px; --press-brightness: .96; }
   .about-arcade-face { transition: transform 180ms cubic-bezier(.2,.8,.2,1), filter 180ms ease; }
+  .about-arcade-key:has([aria-pressed="true"]) .about-arcade-face { transform: translateY(6px); filter: brightness(.96); }
   .about-joined-hit { pointer-events: fill; cursor: pointer; outline: none; }
+  .about-joined-hit[aria-disabled="true"] { cursor: default; }
   .about-joined-hit:focus-visible { stroke: var(--design-mid); stroke-width: 2; }
   @media (hover: hover) {
-    .about-arcade-key:has(.about-joined-hit:hover) .about-arcade-face { transform: translateY(1px); filter: brightness(1.04); }
+    .about-arcade-key:has(.about-joined-hit[aria-pressed="false"]:hover) .about-arcade-face { transform: translateY(1px); filter: brightness(1.04); }
   }
   .about-arcade-key.is-pressed .about-arcade-face,
-  .about-arcade-key.is-pressed:has(.about-joined-hit:hover) .about-arcade-face { transform: translateY(6px); filter: brightness(.96); transition-duration: 60ms; }
+  .about-arcade-key.is-pressed:has(.about-joined-hit:hover) .about-arcade-face { transform: translateY(var(--press-depth)); filter: brightness(var(--press-brightness)); transition-duration: 60ms; }
   @media (prefers-reduced-motion: reduce) {
-    .about-arcade-face { transition: none; }
+    .about-arcade-key { --press-depth: 6px; --press-brightness: .96; }
+  .about-arcade-key:has([aria-pressed="true"]) { --press-depth: 6px; --press-brightness: .96; }
+  .about-arcade-face { transition: none; }
   }
 </style>
 
@@ -125,14 +131,24 @@ body_class: home-page about-page
   if (!slab) return;
   slab.querySelectorAll('.about-joined-hit').forEach(hit => {
   const key = hit.closest('.about-arcade-key');
+  const syncSelected = () => {
+    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const selected = current === hit.dataset.themeMode;
+    hit.setAttribute('aria-pressed', String(selected));
+    hit.setAttribute('aria-disabled', String(selected));
+    hit.setAttribute('tabindex', selected ? '-1' : '0');
+  };
+  syncSelected();
+  window.addEventListener('radar:theme-change', syncSelected);
   const release = () => key.classList.remove('is-pressed');
   const changeTheme = () => {
+    if (hit.getAttribute('aria-disabled') === 'true') return;
     const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     if (current !== hit.dataset.themeMode) window.__radarToggleTheme?.(hit);
   };
   hit.addEventListener('click', changeTheme);
   hit.addEventListener('pointerdown', event => {
-    if (event.button !== 0) return;
+    if (event.button !== 0 || hit.getAttribute('aria-disabled') === 'true') return;
     key.classList.add('is-pressed');
     hit.setPointerCapture(event.pointerId);
   });
@@ -140,6 +156,7 @@ body_class: home-page about-page
   hit.addEventListener('keydown', event => {
     if (event.key !== ' ' && event.key !== 'Enter') return;
     event.preventDefault();
+    if (hit.getAttribute('aria-disabled') === 'true') return;
     key.classList.add('is-pressed');
   });
   hit.addEventListener('keyup', event => {

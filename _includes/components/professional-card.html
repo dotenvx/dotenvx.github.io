@@ -1,0 +1,26 @@
+{% if include.photo_back %}
+<button type="button" class="member-portrait-square member-portrait-square--photo-back" data-photo-flip data-detail="photo" data-revealed="false" aria-label="{{ include.name | escape }} — show full name" aria-pressed="false">
+{% elsif include.static %}
+<div class="member-portrait-square member-portrait-square--static" role="img" aria-label="{{ include.name | escape }}">
+{% else %}
+<a class="member-portrait-square" href="{{ include.href | escape }}" aria-label="Visit {{ include.name | escape }}’s website" data-revealed="false">
+{% endif %}
+  <span class="member-portrait-turn">
+    <span class="member-portrait-face member-portrait-front">
+      <span class="member-portrait-initials">{{ include.initials | escape }}{% unless include.photo_back %}<span class="member-portrait-mark">.ENV</span>{% endunless %}</span>
+      {% unless include.photo_back %}<img src="{{ include.image | escape }}" alt="" width="160" height="160" loading="lazy">{% endunless %}
+    </span>
+    {% unless include.static %}
+    <span class="member-portrait-face member-portrait-back" aria-hidden="true">
+      {% if include.photo_back %}
+      <span class="member-portrait-photo"><img src="{{ include.image | escape }}" alt="" width="160" height="160" loading="lazy"></span>
+      <span class="member-portrait-name">{{ include.name | escape }}</span>
+      {% else %}
+      <svg class="member-portrait-link-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>
+      {% endif %}
+    </span>
+    {% endunless %}
+  </span>
+{% if include.photo_back %}</button>{% elsif include.static %}</div>{% else %}</a>{% endif %}

@@ -1,0 +1,8 @@
+<a class="member-portrait-square member-company-preview" href="{{ include.href | escape }}" aria-label="Visit {{ include.name | escape }} — {{ include.domain | escape }}" data-revealed="false">
+  <span class="member-portrait-turn">
+    <span class="member-company-face member-company-front" style="--member-logo-width: {{ include.logo_width | default: '54%' }}">
+      {% include {{ include.logo }} class="member-company-logo" %}
+    </span>
+    <span class="member-company-face member-company-back" aria-hidden="true">{{ include.domain | escape }}</span>
+  </span>
+</a>

@@ -149,7 +149,7 @@ function initializeExecutiveDetails(tile,team,website){
   const name=tile.querySelector('.member-company-owner-name');
   const link=tile.querySelector('.member-company-website');
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-  let steps=[{kind:'organization'}];
+  let steps=[];
   for(const owner of team.owners){
     try {const url=new URL(owner.image);if(url.protocol==='https:')steps.push({kind:'photo',owner,url:url.href});}catch{}
     steps.push({kind:'name',owner});
@@ -165,14 +165,13 @@ function initializeExecutiveDetails(tile,team,website){
     if(!revealed)index=0;
     const step=steps[index];
     tile.dataset.revealed=String(revealed);tile.dataset.executiveDetail=step.kind;
-    photo.hidden=step.kind!=='photo';name.hidden=!['organization','name'].includes(step.kind);link.hidden=!revealed||step.kind!=='website';
+    photo.hidden=step.kind!=='photo';name.hidden=step.kind!=='name';link.hidden=!revealed||step.kind!=='website';
     if(step.kind==='photo'&&image.getAttribute('src')!==step.url)image.src=step.url;
-    if(step.kind==='organization')name.textContent=team.name;
     if(step.kind==='name')name.textContent=step.owner.name.trim();
     const next=steps[(index+1)%steps.length];
-    const detail=next.kind==='organization'?"organization name":next.kind==='photo'?"owner photo":next.kind==='name'?"owner name":"website";
-    const current=step.owner?step.owner.name.trim():step.kind==='organization'?team.name:website.hostname;
-    button.setAttribute('aria-label',revealed?`${team.name} — ${current}. Show ${detail}`:`${team.name} — show organization name`);
+    const detail=next.kind==='photo'?"owner photo":next.kind==='name'?"owner name":"website";
+    const current=step.owner?step.owner.name.trim():website.hostname;
+    button.setAttribute('aria-label',revealed?`${team.name} — ${current}. Show ${detail}`:`${team.name} — show owner details`);
   };
   image.addEventListener('error',()=>{
     if(steps[index]?.kind!=='photo')return;
@@ -216,13 +215,15 @@ function populateExecutives(executives){
   for(const team of teams.values()){
     const tile=template.content.firstElementChild.cloneNode(true);
     const website=publicWebsite(team.url);
-    const name=tile.querySelector('.member-company-name');name.textContent=team.name;
-    const image=tile.querySelector('img');
-    const fallback=()=>{image.hidden=true;name.hidden=false;};
+    tile.querySelector('.member-company-initials').textContent=team.owners[0].initials.trim();
+    const badge=tile.querySelector('.member-company-badge');
+    badge.setAttribute('aria-label',team.name);
+    const image=badge.querySelector('img');
+    const fallback=()=>badge.remove();
     image.addEventListener('error',fallback);
     try {
       const url=new URL(team.image);
-      if(url.protocol!=='https:') throw new Error('Invalid team image');
+      if(url.protocol!=='https:'||/(^|\.)ui-avatars\.com$/.test(url.hostname)) throw new Error('No uploaded team logo');
       image.src=url.href;
     } catch {fallback();}
     initializeExecutiveDetails(tile,team,website);fragment.append(tile);
@@ -259,6 +260,20 @@ document.querySelectorAll('[data-members-url]').forEach(async grid=>{
         img.src=url.href;
       } catch {
         img.dispatchEvent(new Event('error'));
+      }
+      if(member.team?.image){
+        try {
+          const url=new URL(member.team.image);
+          if(url.protocol==='https:'&&!/(^|\.)ui-avatars\.com$/.test(url.hostname)){
+            const badge=document.createElement('span');
+            badge.className='member-professional-badge';
+            const logo=document.createElement('img');
+            logo.alt=member.team.name||'';logo.loading='lazy';
+            logo.addEventListener('error',()=>badge.remove());
+            logo.src=url.href;badge.append(logo);
+            tile.querySelector('.member-portrait-initials').append(badge);
+          }
+        } catch {}
       }
       fragment.append(tile);
     }

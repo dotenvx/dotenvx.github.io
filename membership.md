@@ -74,19 +74,14 @@ practitioner_ids:
             <td class="design-table-cell--center">$1,000/yr</td>
           </tr>
           <tr>
-            <th scope="row"><a class="design-link" href="/members">Members</a></th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Members. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Members. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
+            <th scope="row"><a class="design-link" href="/members">Seats</a></th>
+            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Seats. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Seats. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
           </tr>
           <tr>
             <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>
             <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Public Recognition. Show your commitment to secrets security with an optional public member profile, including your photo and work." data-tooltip="Show your commitment to secrets security with an optional public member profile, including your photo and work.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
             <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Public Recognition. Show your company’s commitment to secrets security with an optional public company profile and logo." data-tooltip="Show your company’s commitment to secrets security with an optional public company profile and logo.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Practitioner Badge</th>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Practitioner Badge. Show that you practice the Dotenv and Dotenvx approach to secrets security. Share your badge on your website or GitHub README." data-tooltip="Show that you practice the Dotenv and Dotenvx approach to secrets security. Share your badge on your website or GitHub README.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Practitioner Badge. Show that your team practices the Dotenv and Dotenvx approach to secrets security. Share your badge on your company website or GitHub README." data-tooltip="Show that your team practices the Dotenv and Dotenvx approach to secrets security. Share your badge on your company website or GitHub README.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
           </tr>
           <tr>
             <th scope="row">Agentic Readiness Pledge</th>

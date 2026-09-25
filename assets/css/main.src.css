@@ -7281,3 +7281,13 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
   .member-people-grid .member-portrait-initials { font-size: clamp(1rem, 5vw, 1.75rem); }
   .member-people-grid .member-portrait-name { font-size: clamp(10px, 2.6vw, 13px); }
 }
+
+/* Organization badge sits against the owner initials. */
+.member-company-identity { position: relative; display: inline-flex; align-items: center; justify-content: center; }
+.member-company-initials { color: var(--design-secondary); font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1; }
+.member-company-badge { position: absolute; right: 0; bottom: 0; transform: translate(75%, 40%); width: clamp(1.7rem, 3.4vw, 2.3rem); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border: 3px solid var(--design-bg); border-radius: 20%; background: var(--design-bg); overflow: hidden; }
+.member-company-badge .member-company-logo { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+.member-company-badge .member-company-name { font-size: .65rem; max-width: 100%; }
+
+.member-professional-badge { position: absolute; right: 0; bottom: 0; transform: translate(75%, 40%); width: .72em; aspect-ratio: 1; border: 2px solid var(--design-bg); border-radius: 20%; background: var(--design-bg); overflow: hidden; }
+.member-portrait-front .member-professional-badge img { position: static; display: block; width: 100%; height: 100%; border-radius: 0; object-fit: contain; }

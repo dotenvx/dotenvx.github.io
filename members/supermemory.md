@@ -28,8 +28,9 @@ body_class: home-page
       {% include components/design-quote.html
         text='"Dotenvx is so underrated. I set one key and all my secrets just work."'
         author="Dhravya Shah"
+        author_image=site.data.practitioners.dhravya.image
         author_url="https://x.com/DhravyaShah"
-        organization="CEO"
+        organization="CEO at Supermemory"
         class="!mt-0 !mb-10"
       %}
 

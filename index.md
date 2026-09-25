@@ -99,6 +99,8 @@ body_class: home-page
 
 {% include components/home-commands-plain.html %}
 
+{% include components/home-member-stories.html %}
+
 <section class="radar-section home-foundations" aria-labelledby="home-foundations-title">
   <div class="armor-shell">
     {% include components/design-page-title.html title="Design" heading_tag="h2" title_class="text-center" id="home-foundations-title" %}
@@ -211,15 +213,11 @@ $ dotenvx run -- claude
 
 <section class="radar-section home-open-source" id="install" aria-labelledby="home-open-source-title">
   <div class="armor-shell">
-    {% include components/design-page-title.html title="For Everyone. Open Source." heading_tag="h2" title_class="text-center" id="home-open-source-title" %}
+    {% include components/design-page-title.html title="Open Source" heading_tag="h2" title_class="text-center" id="home-open-source-title" %}
     {% capture open_source_content %}
       <div class="home-creator-note">
         <p class="design-paragraph">Dotenvx is free and open source, for you to wield and keep your secrets safe. It’s a labor of love from me and a community of people who believe safer secrets should be within everyone’s reach.</p>
-        <div class="home-creator-portrait">
-          {% include components/executive-card.html details=true initials="SM" owner_name="Scott Motte" owner_image="/assets/img/scott-motte.jpg" name="Dotenvx" image="/assets/img/logo-env.svg" href="https://dotenvx.com" %}
-        </div>
         <p class="design-paragraph">We’re building for the whole world of software: an elegant, open pattern for encrypting secrets that belongs to no single vendor. Your encrypted files travel with your code, without a secrets service in your application’s critical path. The goal is simple: make this pattern work wherever software runs, for everyone who builds it—human or agent.</p>
-        <p class="design-paragraph text-center">Consider Dotenvx for your secrets. I think you'll like it.</p>
       </div>
       <div class="home-cta home-closing-actions">
         {% include components/design-btn.html label="Quickstart" href="/docs/quickstart/" data_umami_event="Homepage Closing Quickstart button" %}

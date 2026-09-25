@@ -30,8 +30,9 @@ body_class: home-page
       {% include components/design-quote.html
         text=john_quote
         author=john.name
+        author_image=john.image
         author_url="https://www.linkedin.com/in/jzila/"
-        organization="Cofounder and Chief Architect"
+        organization="Cofounder and Chief Architect at Watt"
         class="!mt-0 !mb-10"
       %}
 

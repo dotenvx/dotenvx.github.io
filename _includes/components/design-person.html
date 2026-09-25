@@ -1,0 +1,7 @@
+<div class="design-person">
+  {% if include.image %}<img class="design-person-portrait" src="{{ include.image | relative_url }}" alt="" width="40" height="40" loading="lazy">{% endif %}
+  <div class="design-person-copy">
+    <div class="design-person-name">{% if include.href %}<a class="design-link" href="{{ include.href | escape }}">{{ include.name | escape }}</a>{% else %}{{ include.name | escape }}{% endif %}</div>
+    {% if include.role %}<div class="design-person-role">{{ include.role | escape }}</div>{% endif %}
+  </div>
+</div>

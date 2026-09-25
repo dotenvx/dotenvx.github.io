@@ -1,0 +1,8 @@
+<a class="design-card home-member-story" href="{{ include.person.href }}">
+  <span class="home-member-story-label">Field Note <span aria-hidden="true">{{ include.number }}</span></span>
+  <h2 class="home-member-story-title">{{ include.headline | escape }}</h2>
+  <div class="home-member-story-identity">
+    {% include components/design-person.html name=include.person.name image=include.person.image role=include.role %}
+  </div>
+  <span class="home-member-story-link">Read the story <span aria-hidden="true">↗</span></span>
+</a>

@@ -6969,6 +6969,13 @@ html.dark .hero-container-primary { color: #7b838a; }
 .design-quote-attribution .design-link {
   font-size: inherit;
 }
+.design-quote-attribution--portrait { margin-top: 1.25rem; }
+.design-person { display: flex; align-items: center; gap: .75rem; color: var(--design-body, var(--design-ink)); font-family: var(--design-font-sans); font-size: .875rem; font-weight: 400; line-height: 1.5; }
+.design-person-portrait { width: 2.5rem; height: 2.5rem; flex: none; border-radius: 50%; object-fit: cover; }
+.design-person-copy { min-width: 0; }
+.design-person-name, .design-person-role { margin: 0; }
+.design-person-role { margin-top: .125rem; }
+.design-person .design-link { font-size: inherit; }
 
 .member-story-divider {
   margin: 2rem 0;
@@ -7090,10 +7097,25 @@ html.dark .hero-container-primary { color: #7b838a; }
 .home-shipping-closing { margin-top: 0; }
 
 .home-creator-note { display: flow-root; margin-bottom: 2rem; }
-.home-creator-portrait { float: right; width: 8rem; margin: .25rem 0 1rem 1.5rem; shape-outside: inset(0); shape-margin: .5rem; }
-.home-creator-portrait .member-portrait-square { width: 100%; }
-@media (max-width: 480px) {
-  .home-creator-portrait { width: 7rem; margin-left: 1rem; }
+/* Case study covers share the design-card border and etched edge. */
+.home-member-stories-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 0 auto; }
+.home-member-story { min-width: 0; min-height: 26rem; padding: 1.5rem; color: var(--design-ink); background: var(--design-bg); font-family: var(--design-font-sans); text-decoration: none; transition: border-color 150ms ease, transform 150ms ease; }
+body.radar-layout a.home-member-story { color: var(--design-ink); }
+.home-member-story-label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2rem; color: var(--design-mid); font-family: var(--design-font-mono); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; }
+.home-member-story-title { margin: 2rem 0 2.5rem; font-size: 1.625rem; font-weight: 600; line-height: 1.25; letter-spacing: -.035em; text-wrap: pretty; }
+.home-member-story-identity { margin-top: auto; }
+.home-member-story-link { display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--design-line); font-family: var(--design-font-mono); font-size: .6875rem; text-transform: uppercase; letter-spacing: .04em; }
+.home-member-story:focus-visible { outline: 2px solid var(--design-ink); outline-offset: 5px; }
+@media (hover: hover) {
+  .home-member-story:hover { border-color: var(--design-mid); transform: translateY(-3px); }
+}
+@media (max-width: 767px) {
+  .home-member-stories-grid { grid-template-columns: 1fr; max-width: 24rem; }
+  .home-member-story { min-height: 24rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-member-story { transition: none; }
+  .home-member-story:hover { transform: none; }
 }
 
 /* Reveal the next theme in a scattered pixel wave from its control. */

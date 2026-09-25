@@ -7121,7 +7121,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 .member-group-title { margin: 0 0 2rem; text-align: center; font-size: 1rem; font-weight: 600; }
 .member-company-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); justify-content: start; gap: 1rem; }
 .member-person-preview { position: relative; aspect-ratio: 1; min-width: 0; }
-.member-people-grid { --member-card-size: calc((28rem - 3 * .85rem) / 4); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--member-card-size)), var(--member-card-size))); justify-content: start; gap: .85rem; }
+.member-people-grid { --member-card-size: calc((28rem - 3 * .85rem) / 4); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--member-card-size)), var(--member-card-size))); justify-content: center; gap: .85rem; }
 .member-portrait-square { display: block; position: relative; aspect-ratio: 1; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; perspective: 500px; text-decoration: none; }
 .member-portrait-turn { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 650ms cubic-bezier(.22,.65,.25,1); }
 .member-portrait-square[data-revealed="true"] .member-portrait-turn { transform: rotateY(180deg); }
@@ -7275,3 +7275,9 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 .member-company-owner-name { max-width: 85%; overflow-wrap: anywhere; }
 .member-company-website { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 80%; overflow-wrap: anywhere; text-align: center; z-index: 1; }
 .member-company-owner-photo[hidden], .member-company-owner-name[hidden], .member-company-website[hidden] { display: none; }
+
+@media (max-width: 640px) {
+  .member-people-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
+  .member-people-grid .member-portrait-initials { font-size: clamp(1rem, 5vw, 1.75rem); }
+  .member-people-grid .member-portrait-name { font-size: clamp(10px, 2.6vw, 13px); }
+}

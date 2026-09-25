@@ -63,8 +63,8 @@ practitioner_ids:
         <thead>
           <tr>
             <th scope="col">Membership</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professionals</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executives</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive</th>
           </tr>
         </thead>
         <tbody>
@@ -76,7 +76,7 @@ practitioner_ids:
           <tr>
             <th scope="row"><a class="design-link" href="/members">Members</a></th>
             <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Members. Pro includes you and one invited collaborator." data-tooltip="Pro includes you and one invited collaborator.">You + one</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Members. The Executives plan covers the members of your team." data-tooltip="The Executives plan covers the members of your team.">Your team</span></td>
+            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Members. The Executive plan covers the members of your team." data-tooltip="The Executive plan covers the members of your team.">Your team</span></td>
           </tr>
           <tr>
             <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>
@@ -110,8 +110,8 @@ practitioner_ids:
           </tr>
           <tr class="membership-plan-actions">
             <th scope="row"><span class="sr-only">Sign up</span></th>
-            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Professionals plan">Sign up</a></td>
-            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Executives plan">Sign up</a></td>
+            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Professional plan">Sign up</a></td>
+            <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Executive plan">Sign up</a></td>
           </tr>
         </tbody>
       {% endcapture %}

@@ -228,7 +228,6 @@ function populateExecutives(executives){
     initializeExecutiveDetails(tile,team,website);fragment.append(tile);
   }
   grid.replaceChildren(fragment);
-  document.getElementById('member-companies-heading').textContent=`${teams.size.toLocaleString()} ${teams.size===1?'Executive':'Executives'}`;
   const status=document.querySelector('[data-executive-status]');
   status.textContent=teams.size?'':'No public teams yet.';status.hidden=teams.size>0;
 }
@@ -264,8 +263,6 @@ document.querySelectorAll('[data-members-url]').forEach(async grid=>{
       fragment.append(tile);
     }
     grid.replaceChildren(fragment);
-    const heading=document.getElementById('member-people-heading');
-    if(heading) heading.textContent=`${members.length.toLocaleString()} ${members.length===1?'Professional':'Professionals'}`;
     populateMemberHero(allMembers);
     populateExecutives(data.executive);
     status.textContent=members.length?'':'No public members yet.';

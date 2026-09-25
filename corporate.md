@@ -68,7 +68,7 @@ body_class: home-page corporate-page
     <div class="armor-shell">
       {% capture corporate_invitation %}
         <div class="design-prose">
-          <h2 class="design-list-title text-center">A shared future. An open foundation.</h2>
+          <h2 class="design-list-title text-center">A shared future.</h2>
           <p>Supporters get a meaningful voice in what comes next. Maintainers retain final technical decisions, and improvements developed through the program remain open for everyone to use.</p>
           <p>It starts with a conversation about what matters to your team and how we might work together.</p>
         </div>

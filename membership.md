@@ -4,9 +4,6 @@ description: "Be part of the .env story."
 permalink: /membership
 layout: radar
 body_class: home-page membership-page
-practitioner_ids:
-  - dhravya
-  - john-zila
 ---
 
 <style>
@@ -32,10 +29,6 @@ practitioner_ids:
 
 {% capture membership_visual %}
   {% include_relative assets/img/dotenv-membership-card.svg %}
-{% endcapture %}
-
-{% capture membership_practitioner %}
-  {% include components/practitioner-portraits.html ids=page.practitioner_ids %}
 {% endcapture %}
 
 {% capture membership_slab %}
@@ -117,13 +110,6 @@ practitioner_ids:
 
   <div class="membership-proof">
   {% include components/membership-armor.html %}
-
-  <section class="radar-section" aria-label="Members">
-    <div class="armor-shell">
-      {% include components/practitioner-portraits.html ids=page.practitioner_ids show_all=true %}
-    </div>
-  </section>
-
   </div>
 
   {% include components/membership-join.html %}

@@ -1,5 +1,4 @@
 # Add people by copying an entry and choosing a unique ID.
-# Select and order IDs in membership.md's practitioner_ids list.
 # href is optional. Keep draft: true until proposed wording is approved.
 dhravya:
   name: Dhravya Shah

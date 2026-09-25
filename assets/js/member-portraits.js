@@ -5,20 +5,25 @@ document.querySelectorAll('[data-shuffle-members]').forEach(grid=>{
   grid.append(...cards);
 });
 // Hover or focus reveals a member's website; touch reveals first, then follows.
-document.querySelectorAll('a.member-portrait-square').forEach(tile=>{
+function initializeWebsiteCard(tile){
   let hover=false,focus=false,touch=false,lastPointer='';
-  const update=()=>tile.dataset.revealed=String(hover||focus||touch);
+  const update=()=>{
+    tile.dataset.revealed=String(hover||focus||touch);
+    if(tile.tagName==='BUTTON') tile.setAttribute('aria-pressed',tile.dataset.revealed);
+  };
   tile.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch'){hover=true;update();}});
-  tile.addEventListener('pointerleave',()=>{hover=false;update();});
+  tile.addEventListener('pointerleave',()=>{hover=false;if(tile.tagName==='BUTTON')touch=false;update();});
   tile.addEventListener('pointerdown',e=>{lastPointer=e.pointerType;});
   tile.addEventListener('focus',()=>{focus=tile.matches(':focus-visible');update();});
   tile.addEventListener('blur',()=>{focus=false;touch=false;update();});
   tile.addEventListener('click',e=>{
+    if(tile.tagName==='BUTTON'){touch=!touch;update();return;}
     if((e.pointerType==='touch'||(e.detail>0&&lastPointer==='touch'))&&!touch){
       e.preventDefault();touch=true;update();
     }
   });
-});
+}
+document.querySelectorAll('a.member-portrait-square').forEach(initializeWebsiteCard);
 
 // Hover reveals the back; clicking swaps its portrait and full name.
 function initializePhotoCard(tile){
@@ -126,6 +131,108 @@ function populateMemberHero(members){
   }
 }
 
+function publicWebsite(value){
+  try {
+    const url=new URL(value);
+    if(!['https:','http:'].includes(url.protocol)||url.username||url.password) return null;
+    const host=url.hostname.toLowerCase().replace(/^www\./,'');
+    if(['example.com','example.org','example.net'].some(domain=>host===domain||host.endsWith('.'+domain))) return null;
+    return url;
+  } catch {return null;}
+}
+
+function initializeExecutiveDetails(tile,team,website){
+  const button=tile.querySelector('.member-company-toggle');
+  const back=tile.querySelector('.member-company-back');
+  const photo=tile.querySelector('.member-company-owner-photo');
+  const image=photo.querySelector('img');
+  const name=tile.querySelector('.member-company-owner-name');
+  const link=tile.querySelector('.member-company-website');
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let steps=[{kind:'organization'}];
+  for(const owner of team.owners){
+    try {const url=new URL(owner.image);if(url.protocol==='https:')steps.push({kind:'photo',owner,url:url.href});}catch{}
+    steps.push({kind:'name',owner});
+  }
+  if(website){
+    steps.push({kind:'website'});link.href=website.href;
+    link.textContent=website.hostname.replace(/^www\./,'');
+    link.setAttribute('aria-label',`Visit ${team.name}`);
+  }
+  let index=0,hover=false,focus=false,pinned=false,press;
+  const render=()=>{
+    const revealed=hover||focus||pinned;
+    if(!revealed)index=0;
+    const step=steps[index];
+    tile.dataset.revealed=String(revealed);tile.dataset.executiveDetail=step.kind;
+    photo.hidden=step.kind!=='photo';name.hidden=!['organization','name'].includes(step.kind);link.hidden=!revealed||step.kind!=='website';
+    if(step.kind==='photo'&&image.getAttribute('src')!==step.url)image.src=step.url;
+    if(step.kind==='organization')name.textContent=team.name;
+    if(step.kind==='name')name.textContent=step.owner.name.trim();
+    const next=steps[(index+1)%steps.length];
+    const detail=next.kind==='organization'?"organization name":next.kind==='photo'?"owner photo":next.kind==='name'?"owner name":"website";
+    const current=step.owner?step.owner.name.trim():step.kind==='organization'?team.name:website.hostname;
+    button.setAttribute('aria-label',revealed?`${team.name} — ${current}. Show ${detail}`:`${team.name} — show organization name`);
+  };
+  image.addEventListener('error',()=>{
+    if(steps[index]?.kind!=='photo')return;
+    steps.splice(index,1);index%=steps.length;render();
+  });
+  tile.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch'){hover=true;render();}});
+  tile.addEventListener('pointerleave',()=>{hover=false;pinned=false;render();});
+  tile.addEventListener('focusin',e=>{focus=e.target.matches(':focus-visible');render();});
+  tile.addEventListener('focusout',e=>{if(!tile.contains(e.relatedTarget)){focus=false;pinned=false;render();}});
+  button.addEventListener('click',()=>{
+    if(tile.dataset.revealed!=='true'){pinned=true;render();return;}
+    index=(index+1)%steps.length;render();press?.cancel();
+    if(!reducedMotion.matches){
+      press=back.animate([{transform:'rotateY(180deg) scale(1)'},{transform:'rotateY(180deg) scale(.96)',offset:.3},{transform:'rotateY(180deg) scale(1)'}],{duration:360,easing:'cubic-bezier(.22,.65,.25,1)'});
+      const content=steps[index].kind==='photo'?photo:steps[index].kind==='website'?link:name;
+      content.animate([{opacity:0,scale:'.86'},{opacity:1,scale:'1'}],{duration:260,easing:'cubic-bezier(.22,.65,.25,1)'});
+    }
+  });
+  render();
+}
+
+function populateExecutives(executives){
+  const grid=document.querySelector('[data-executive-members]');
+  if(!grid) return;
+  const template=document.getElementById('executive-member-template');
+  const teams=new Map();
+  for(const member of executives){
+    const team=member.team;
+    if(!team||typeof team.name!=='string'||!team.name.trim()) continue;
+    const name=team.name.trim();
+    const key=name.normalize('NFKC').toLowerCase().replace(/\s+/g,' ');
+    const existing=teams.get(key);
+    if(!existing) teams.set(key,{...team,name,owners:[member]});
+    else {
+      if(!existing.owners.some(owner=>owner.name===member.name&&owner.image===member.image)) existing.owners.push(member);
+      if(!publicWebsite(existing.url)&&publicWebsite(team.url)) existing.url=team.url;
+      if(!existing.image&&team.image) existing.image=team.image;
+    }
+  }
+  const fragment=document.createDocumentFragment();
+  for(const team of teams.values()){
+    const tile=template.content.firstElementChild.cloneNode(true);
+    const website=publicWebsite(team.url);
+    const name=tile.querySelector('.member-company-name');name.textContent=team.name;
+    const image=tile.querySelector('img');
+    const fallback=()=>{image.hidden=true;name.hidden=false;};
+    image.addEventListener('error',fallback);
+    try {
+      const url=new URL(team.image);
+      if(url.protocol!=='https:') throw new Error('Invalid team image');
+      image.src=url.href;
+    } catch {fallback();}
+    initializeExecutiveDetails(tile,team,website);fragment.append(tile);
+  }
+  grid.replaceChildren(fragment);
+  document.getElementById('member-companies-heading').textContent=`${teams.size.toLocaleString()} ${teams.size===1?'Executive':'Executives'}`;
+  const status=document.querySelector('[data-executive-status]');
+  status.textContent=teams.size?'':'No public teams yet.';status.hidden=teams.size>0;
+}
+
 // Use the same Liquid partial as the homepage; API values are assigned as text.
 document.querySelectorAll('[data-members-url]').forEach(async grid=>{
   const status=grid.parentElement.querySelector('.member-directory-status');
@@ -133,8 +240,11 @@ document.querySelectorAll('[data-members-url]').forEach(async grid=>{
   try {
     const response=await fetch(grid.dataset.membersUrl,{credentials:'omit',signal:AbortSignal.timeout(10000)});
     if(!response.ok) throw new Error('Members request failed');
-    const members=await response.json();
-    if(!Array.isArray(members)||members.some(member=>!member||typeof member.name!=='string'||!member.name.trim()||typeof member.initials!=='string'||!member.initials.trim())) throw new Error('Invalid members response');
+    const data=await response.json();
+    if(!data||!Array.isArray(data.professional)||!Array.isArray(data.executive)) throw new Error('Invalid members response');
+    const members=data.professional;
+    const allMembers=[...members,...data.executive];
+    if(allMembers.some(member=>!member||typeof member.name!=='string'||!member.name.trim()||typeof member.initials!=='string'||!member.initials.trim())) throw new Error('Invalid members response');
     const fragment=document.createDocumentFragment();
     for(const member of members){
       const tile=template.content.firstElementChild.cloneNode(true);
@@ -156,12 +266,16 @@ document.querySelectorAll('[data-members-url]').forEach(async grid=>{
     grid.replaceChildren(fragment);
     const heading=document.getElementById('member-people-heading');
     if(heading) heading.textContent=`${members.length.toLocaleString()} ${members.length===1?'Professional':'Professionals'}`;
-    populateMemberHero(members);
+    populateMemberHero(allMembers);
+    populateExecutives(data.executive);
     status.textContent=members.length?'':'No public members yet.';
     status.hidden=members.length>0;
   } catch {
     status.textContent='Members could not be loaded. Please refresh to try again.';
+    const executiveStatus=document.querySelector('[data-executive-status]');
+    if(executiveStatus) executiveStatus.textContent='Teams could not be loaded. Please refresh to try again.';
   } finally {
     grid.setAttribute('aria-busy','false');
+    document.querySelector('[data-executive-members]')?.setAttribute('aria-busy','false');
   }
 });

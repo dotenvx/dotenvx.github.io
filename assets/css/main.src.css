@@ -7262,3 +7262,16 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
   to { opacity: 0; transform: translate(-50%, -50%) rotate(var(--portrait-angle)) scale(.2); }
 }
 @media (prefers-reduced-motion: reduce) { .member-hero-portrait.is-leaving { animation: none; opacity: 0; } }
+
+.member-company-logo--image { object-fit: contain; }
+.member-company-name { max-width: 70%; color: var(--design-mid); font-size: var(--design-text-compact); overflow-wrap: anywhere; text-align: center; }
+.member-company-logo[hidden], .member-company-name[hidden] { display: none; }
+
+.member-company-toggle { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; border-radius: 4%; }
+.member-company-toggle:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 4px; }
+.member-company-owner-photo { position: relative; display: block; width: 45%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
+.member-company-owner-photo img { width: 100%; height: 100%; object-fit: cover; }
+.member-company-owner-photo::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 2px 3px rgb(0 0 0 / .2); pointer-events: none; }
+.member-company-owner-name { max-width: 85%; overflow-wrap: anywhere; }
+.member-company-website { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 80%; overflow-wrap: anywhere; text-align: center; z-index: 1; }
+.member-company-owner-photo[hidden], .member-company-owner-name[hidden], .member-company-website[hidden] { display: none; }

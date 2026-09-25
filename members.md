@@ -21,14 +21,12 @@ body_class: home-page members-page
     <div class="armor-shell">
       <div class="member-directory-content">
         <section class="member-directory-group" aria-labelledby="member-companies-heading">
-          <h2 id="member-companies-heading" class="member-group-title">5 Executives</h2>
-          <div class="member-company-grid">
-            {% include components/executive-card.html name="Watt" logo_width="50%" logo="logos/wattdata.html" href="https://wattdata.ai" domain="wattdata.ai" %}
-            {% include components/executive-card.html name="Comp AI" logo_width="56%" logo="logos/compai.html" href="https://trycomp.ai" domain="trycomp.ai" %}
-            {% include components/executive-card.html name="Kortix" logo_width="52%" logo="logos/kortix.html" href="https://kortix.ai" domain="kortix.ai" %}
-            {% include components/executive-card.html name="Loloi" logo_width="32%" logo="logos/loloi.html" href="https://www.loloirugs.com/" domain="loloirugs.com" %}
-            {% include components/executive-card.html name="Speak4" logo_width="58%" logo="logos/speak4.html" href="https://speak4.co/" domain="speak4.co" %}
-          </div>
+          <h2 id="member-companies-heading" class="member-group-title">Executives</h2>
+          <div class="member-company-grid" data-executive-members aria-busy="true"></div>
+          <p class="member-directory-status" data-executive-status role="status">Loading teams…</p>
+          <template id="executive-member-template">
+            {% include components/executive-card.html details=true name="" domain="" %}
+          </template>
         </section>
         <section class="member-directory-group" aria-labelledby="member-people-heading">
           <h2 id="member-people-heading" class="member-group-title">Professionals</h2>

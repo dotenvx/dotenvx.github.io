@@ -1,8 +1,35 @@
+{% if include.details %}
+<div class="member-portrait-square member-company-preview member-company-interactive" data-revealed="false">
+  <button class="member-company-toggle" type="button" aria-label="Show owner">
+    <span class="member-portrait-turn">
+      <span class="member-company-face member-company-front">
+        <img class="member-company-logo member-company-logo--image" alt="" width="160" height="160" loading="lazy">
+        <span class="member-company-name" hidden></span>
+      </span>
+      <span class="member-company-face member-company-back">
+        <span class="member-company-owner-photo"><img alt="" width="160" height="160"></span>
+        <span class="member-company-owner-name" hidden></span>
+      </span>
+    </span>
+  </button>
+  <a class="member-company-website design-link" hidden></a>
+</div>
+{% else %}
+{% if include.href %}
 <a class="member-portrait-square member-company-preview" href="{{ include.href | escape }}" aria-label="Visit {{ include.name | escape }} — {{ include.domain | escape }}" data-revealed="false">
+{% else %}
+<button type="button" class="member-portrait-square member-company-preview" aria-label="{{ include.name | escape }} — show team details" data-revealed="false">
+{% endif %}
   <span class="member-portrait-turn">
     <span class="member-company-face member-company-front" style="--member-logo-width: {{ include.logo_width | default: '54%' }}">
+      {% if include.logo %}
       {% include {{ include.logo }} class="member-company-logo" %}
+      {% else %}
+      <img class="member-company-logo member-company-logo--image" alt="" width="160" height="160" loading="lazy">
+      <span class="member-company-name" hidden>{{ include.name | escape }}</span>
+      {% endif %}
     </span>
     <span class="member-company-face member-company-back" aria-hidden="true">{{ include.domain | escape }}</span>
   </span>
-</a>
+{% if include.href %}</a>{% else %}</button>{% endif %}
+{% endif %}

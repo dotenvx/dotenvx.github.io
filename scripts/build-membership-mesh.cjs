@@ -12,8 +12,8 @@ if (isCube) {
   design.engravingDepthMm = 1.5;
   design.engravingLipRadiusMm = 0.4;
 }
-const outputName = isCube ? 'corporate-plaque' : 'membership';
-const meshName = isCube ? 'corporate-plaque-mesh' : 'env-slab-mesh';
+const outputName = isCube ? 'corporate-cube' : 'membership';
+const meshName = isCube ? 'corporate-cube-mesh' : 'env-slab-mesh';
 const tokenScale = design.scale;
 if (!Number.isFinite(tokenScale) || tokenScale <= 0) throw new Error('Invalid token scale');
 const contours = design.logoContours.map(points => points.map(p => [...p]));

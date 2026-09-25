@@ -1,4 +1,4 @@
-solid dotenv_corporate-plaque
+solid dotenv_corporate-cube
   facet normal 0.000000000 1.000000000 0.000000000
     outer loop
       vertex 13.68065865 -18.50562139 49.60000000
@@ -72827,4 +72827,4 @@ solid dotenv_corporate-plaque
       vertex 17.36692548 -7.047929087 49.99999760
     endloop
   endfacet
-endsolid dotenv_corporate-plaque
+endsolid dotenv_corporate-cube

@@ -6,8 +6,8 @@ const roots = document.querySelectorAll('[data-env-slab]');
 if (roots.length) {
   import('https://unpkg.com/three@0.167.1/build/three.module.js').then(THREE => {
     return Promise.all([...roots].map(async root => {
-      const isPlaque = root.dataset.envSlab === 'plaque';
-      const {default: tokenMesh} = await import((isPlaque ? './corporate-plaque-mesh.js' : './env-slab-mesh.js') + assetVersion);
+      const isCube = root.dataset.envSlab === 'cube';
+      const {default: tokenMesh} = await import((isCube ? './corporate-cube-mesh.js' : './env-slab-mesh.js') + assetVersion);
       if (root.dataset.mounted) return;
       const stage = root.querySelector('.env-slab-stage');
       let renderer;
@@ -22,8 +22,8 @@ if (roots.length) {
       stage.appendChild(renderer.domElement);
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 500);
-      camera.position.z = isPlaque ? 165 : 112;
-      if (isPlaque) camera.position.y = 4;
+      camera.position.z = isCube ? 165 : 112;
+      if (isCube) camera.position.y = 4;
       scene.add(new THREE.HemisphereLight(0xf1f4f7, 0x565b63, 2.4));
       [[-55, 65, 85, 0xffffff, 2.8], [55, 20, 45, 0xe9eff7, 1.4], [0, -35, -40, 0xffffff, 1.8]].forEach(([x,y,z,color,intensity]) => {
         const light = new THREE.DirectionalLight(color, intensity);
@@ -31,8 +31,8 @@ if (roots.length) {
       });
       // Generated from the same validated geometry as the corresponding STL.
       const group = new THREE.Group();
-      if (isPlaque) group.position.y = 3;
-      const resetRotation = () => group.rotation.set(isPlaque ? -.24 : -.60, 0, 0);
+      if (isCube) group.position.y = 3;
+      const resetRotation = () => group.rotation.set(isCube ? -.24 : -.60, 0, 0);
       resetRotation();
       scene.add(group);
       // Satin-gloss steel: clearer edge highlights, with softer recessed floors.
@@ -46,7 +46,7 @@ if (roots.length) {
       const plate = new THREE.Mesh(geometry, [metal, recessMetal]);
       group.add(plate);
       let updateShadow;
-      if (isPlaque) {
+      if (isCube) {
         const {createCubeShadow} = await import('./cube-shadow.js' + assetVersion);
         updateShadow = createCubeShadow(THREE, scene, geometry);
       }
@@ -56,7 +56,7 @@ if (roots.length) {
         if(!width||!height)return;
         // Extra transparent render space protects the shadow without moving the title
         // or shrinking the cube: expand the field of view by the same height ratio.
-        const padding=isPlaque?64:0, renderHeight=height+padding*2;
+        const padding=isCube?64:0, renderHeight=height+padding*2;
         const renderWidth=width;
         renderer.setSize(renderWidth,renderHeight,false);
         renderer.domElement.style.width=`${renderWidth}px`;
@@ -69,9 +69,9 @@ if (roots.length) {
         camera.updateProjectionMatrix();draw();
       };
       new ResizeObserver(resize).observe(stage);resize();
-      if(isPlaque)window.addEventListener('resize',resize);
+      if(isCube)window.addEventListener('resize',resize);
       root.classList.add('is-rendered');
-      if (isPlaque) {
+      if (isCube) {
         const {attachCubeHover} = await import('./cube-hover.js' + assetVersion);
         attachCubeHover(stage, group, draw, THREE, camera, renderer.domElement);
       } else {

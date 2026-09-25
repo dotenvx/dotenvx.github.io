@@ -7192,7 +7192,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 .member-company-preview .member-company-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .member-company-back { transform: rotateY(180deg); font-size: var(--design-text-compact); color: var(--design-mid); padding: 10%; overflow-wrap: anywhere; text-align: center; }
 
-/* Executive plaques share the token's tight corners and shallow solid edge. */
+/* Executive cards share the token's tight corners and shallow solid edge. */
 .member-company-preview { perspective: 800px; }
 .member-company-preview .member-portrait-turn { inset: 3%; transform: rotateX(12deg); }
 .member-company-preview[data-revealed="true"] .member-portrait-turn { transform: rotateX(12deg) rotateY(180deg); }
@@ -7229,9 +7229,8 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
   .membership-other-option h2 { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 600; }
   .membership-other-option p { margin: 0; color: var(--design-mid); line-height: 1.6; }
   @media (max-width: 640px) {
-    .membership-other-options { grid-template-columns: 1fr; }
-    .membership-other-option { padding: 1.5rem 0; }
-    .membership-other-option + .membership-other-option { border-left: 0; border-top: 1px solid var(--design-line); }
+    .membership-other-option { min-width: 0; padding: 1.5rem .5rem; overflow-wrap: anywhere; }
+    .membership-other-option h2 { font-size: 1rem; }
   }
 
 .design-btn--secondary { border-color: transparent; box-shadow: none; }

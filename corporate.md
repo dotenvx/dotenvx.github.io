@@ -10,7 +10,7 @@ body_class: home-page corporate-page
   <section class="design-hero-section home-hero" aria-label="Corporate Support">
     <div class="armor-shell">
       {% capture corporate_art %}
-        {% include components/env-slab.html plaque=true %}
+        {% include components/env-slab.html cube=true %}
       {% endcapture %}
       {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=corporate_art %}
     </div>
@@ -43,24 +43,24 @@ body_class: home-page corporate-page
         </thead>
         <tbody>
           <tr>
-            <th scope="row">{% include components/design-link.html href="mailto:support@dotenvx.com?subject=Supporter%20corporate%20support" label="Supporter →" %}</th>
+            <th scope="row">{% include components/design-link.html href="mailto:support@dotenvx.com?subject=Steward%20corporate%20support" label="Steward →" %}</th>
             <td>$10,000/yr</td>
-            <td>Conversations with maintainers and fellow supporters, previews of work in progress, and public recognition as a corporate supporter.</td>
+            <td><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Conversations with maintainers and fellow supporters, previews of work in progress, and public recognition as a corporate supporter." data-tooltip="Conversations with maintainers and fellow supporters, previews of work in progress, and public recognition as a corporate supporter.">Conversations with maintainers…</span></td>
           </tr>
           <tr>
             <th scope="row">{% include components/design-link.html href="mailto:support@dotenvx.com?subject=Partner%20corporate%20support" label="Partner →" %}</th>
             <td>$25,000/yr</td>
-            <td>Everything in Supporter, with prominent company recognition and opportunities to share your team’s perspective with the supporter community.</td>
+            <td><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Everything in Steward, with prominent company recognition and opportunities to share your team’s perspective with the supporter community." data-tooltip="Everything in Steward, with prominent company recognition and opportunities to share your team’s perspective with the supporter community.">Everything in Steward…</span></td>
           </tr>
           <tr>
             <th scope="row">{% include components/design-link.html href="mailto:support@dotenvx.com?subject=Lead%20Partner%20corporate%20support" label="Lead Partner →" %}</th>
             <td>$50,000/yr</td>
-            <td>Everything in Partner, with leading company recognition and a featured supporter story celebrating your commitment to the future of .env.</td>
+            <td><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Everything in Partner, with leading company recognition and a featured supporter story celebrating your commitment to the future of .env." data-tooltip="Everything in Partner, with leading company recognition and a featured supporter story celebrating your commitment to the future of .env.">Everything in Partner…</span></td>
           </tr>
           <tr>
             <th scope="row">{% include components/design-link.html href="mailto:support@dotenvx.com?subject=Principal%20corporate%20support" label="Principal →" %}</th>
             <td>$100,000/yr</td>
-            <td>Everything in Lead Partner, with top placement among corporate supporters and recognition as a principal backer of the next chapter of .env.</td>
+            <td><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Everything in Lead Partner, with top placement among corporate supporters and recognition as a principal backer of the next chapter of .env." data-tooltip="Everything in Lead Partner, with top placement among corporate supporters and recognition as a principal backer of the next chapter of .env.">Everything in Lead Partner…</span></td>
           </tr>
         </tbody>
       {% endcapture %}

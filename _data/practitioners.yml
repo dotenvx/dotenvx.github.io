@@ -11,7 +11,8 @@ dhravya:
 
 john-zila:
   name: John Zila
-  organization: Prior Head of Security at Zoom
+  organization: Cofounder and Chief Architect at Watt
   image: /assets/img/john-zila.png
-  quote: "The only 'not in the critical path' secrets solution."
+  quote: "Dotenvx lets us securely version and deploy secrets along with code, without taking on a new critical path dependency. It just works."
+  href: /members/watt
   draft: false

@@ -6966,6 +6966,15 @@ html.dark .hero-container-primary { color: #7b838a; }
   font-size: 0.875em;
   margin-top: 0.5rem;
 }
+.design-quote-attribution .design-link {
+  font-size: inherit;
+}
+
+.member-story-divider {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--design-line);
+}
 
 /* Member identities: circles for people, rounded squares for organizations. */
 .design-member-group { display: flex; align-items: center; justify-content: center; padding: 1rem; isolation: isolate; }

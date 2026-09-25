@@ -6631,14 +6631,9 @@ html.dark .spec-table-link a {
 .armor-customer-logo--kortix { max-width: 5.4rem; }
 .armor-customer-logo--comp { max-width: 6.5rem; }
 
-.armor-customer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.1fr; align-items: center; gap: clamp(.75rem, 2vw, 2rem); max-width: 38rem; margin-inline: auto; padding-inline: 1rem; }
+.armor-customer-grid { display: grid; grid-template-columns: 1fr 1.4fr 1fr; align-items: center; gap: clamp(.75rem, 2vw, 2rem); max-width: 38rem; margin-inline: auto; padding-inline: 1rem; }
 .armor-customer-slot { display: flex; align-items: center; justify-content: center; min-width: 0; height: 5rem; }
 .armor-customer-logo--supermemory { max-width: 10rem; }
-.armor-customer-slot--watt { display: none; }
-@media (min-width: 640px) {
-  .armor-customer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.1fr; }
-  .armor-customer-slot--watt { display: flex; }
-}
 
 html.dark .hero-container-base { color: #34393d; }
 html.dark .hero-container-primary { color: #7b838a; }

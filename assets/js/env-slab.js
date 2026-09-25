@@ -7,6 +7,7 @@ if (roots.length) {
   import('https://unpkg.com/three@0.167.1/build/three.module.js').then(THREE => {
     return Promise.all([...roots].map(async root => {
       const isCube = root.dataset.envSlab === 'cube';
+      const grounded = root.dataset.grounded === 'true';
       const {default: tokenMesh} = await import((isCube ? './corporate-cube-mesh.js' : './env-slab-mesh.js') + assetVersion);
       if (root.dataset.mounted) return;
       const stage = root.querySelector('.env-slab-stage');
@@ -32,7 +33,7 @@ if (roots.length) {
       // Generated from the same validated geometry as the corresponding STL.
       const group = new THREE.Group();
       if (isCube) group.position.y = 3;
-      const resetRotation = () => group.rotation.set(isCube ? -.24 : -.60, 0, 0);
+      const resetRotation = () => group.rotation.set(isCube ? (grounded ? .24 : (root.dataset.scale ? -.29 : -.24)) : -.60, Number(root.dataset.turn) || 0, 0);
       resetRotation();
       scene.add(group);
       // Satin-gloss steel: clearer edge highlights, with softer recessed floors.
@@ -45,10 +46,17 @@ if (roots.length) {
       geometry.translate(0, 0, -tokenMesh.thickness / 2);
       const plate = new THREE.Mesh(geometry, [metal, recessMetal]);
       group.add(plate);
+      if (root.dataset.scale) {
+        group.scale.setScalar(Number(root.dataset.scale) || 1);
+        group.updateMatrixWorld(true);
+        const bounds = new THREE.Box3().setFromObject(group);
+        // Tier cubes hover close to the ground; the hero keeps its own height.
+        group.position.y += (grounded ? -25 : -34) - bounds.min.y;
+      }
       let updateShadow;
       if (isCube) {
         const {createCubeShadow} = await import('./cube-shadow.js' + assetVersion);
-        updateShadow = createCubeShadow(THREE, scene, geometry);
+        updateShadow = createCubeShadow(THREE, scene, geometry, {grounded});
       }
       const draw=()=>{updateShadow?.(group);renderer.render(scene,camera);};
       const resize=()=>{
@@ -71,10 +79,10 @@ if (roots.length) {
       new ResizeObserver(resize).observe(stage);resize();
       if(isCube)window.addEventListener('resize',resize);
       root.classList.add('is-rendered');
-      if (isCube) {
+      if (isCube && !grounded) {
         const {attachCubeHover} = await import('./cube-hover.js' + assetVersion);
         attachCubeHover(stage, group, draw, THREE, camera, renderer.domElement);
-      } else {
+      } else if (!isCube) {
         const {attachSlabHover} = await import('./slab-hover.js' + assetVersion);
         attachSlabHover(stage, group, draw);
       }

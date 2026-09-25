@@ -7193,7 +7193,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 .member-company-back { transform: rotateY(180deg); font-size: var(--design-text-compact); color: var(--design-mid); padding: 10%; overflow-wrap: anywhere; text-align: center; }
 
 /* Executive cards share the token's tight corners and shallow solid edge. */
-.member-company-preview { perspective: 800px; }
+.member-company-preview { perspective: 800px; container-type: inline-size; }
 .member-company-preview .member-portrait-turn { inset: 3%; transform: rotateX(12deg); }
 .member-company-preview[data-revealed="true"] .member-portrait-turn { transform: rotateX(12deg) rotateY(180deg); }
 .member-company-preview .member-company-face {
@@ -7261,7 +7261,7 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 .member-company-name { max-width: 70%; color: var(--design-mid); font-size: var(--design-text-compact); overflow-wrap: anywhere; text-align: center; }
 .member-company-logo[hidden], .member-company-name[hidden] { display: none; }
 
-.member-company-toggle { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; border-radius: 4%; }
+.member-company-toggle { perspective: 800px; position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; border-radius: 4%; }
 .member-company-toggle:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 4px; }
 .member-company-owner-photo { position: relative; display: block; width: 45%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
 .member-company-owner-photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -7278,8 +7278,8 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 
 /* Organization badge sits against the owner initials. */
 .member-company-identity { position: relative; display: inline-flex; align-items: center; justify-content: center; }
-.member-company-initials { color: var(--design-secondary); font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1; }
-.member-company-badge { position: absolute; right: 0; bottom: 0; transform: translate(75%, 40%); width: clamp(1.7rem, 3.4vw, 2.3rem); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border: 3px solid var(--design-bg); border-radius: 20%; background: var(--design-bg); overflow: hidden; }
+.member-company-initials { color: var(--design-secondary); font-size: 28cqw; font-weight: 600; line-height: 1; }
+.member-company-badge { position: absolute; right: 0; bottom: 0; transform: translate(75%, 40%); width: 23cqw; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border: 1.8cqw solid var(--design-bg); border-radius: 20%; background: var(--design-bg); overflow: hidden; }
 .member-company-badge .member-company-logo { width: 100%; height: 100%; max-height: none; object-fit: contain; }
 .member-company-badge .member-company-name { font-size: .65rem; max-width: 100%; }
 
@@ -7307,3 +7307,26 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 @media (prefers-reduced-motion: reduce) { .docs-drawer[open] { animation: none; } }
 
 .docs-drawer-glyph { font-size: 24px; line-height: 1; }
+
+/* One shared ground plane and one detail card for the four sponsorship tiers. */
+.corporate-tiers { --tier-art-height: clamp(5rem, 18vw, 13rem); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; margin: 2rem 0 1.5rem; }
+.corporate-tier { min-width: 0; text-align: center; }
+.corporate-tier-art { position: relative; padding-bottom: 2.5rem; }
+.corporate-tier-art .env-slab-stage { height: var(--tier-art-height); }
+.corporate-tier-select { position: absolute; inset: 0; width: 100%; border: 0; padding: 0; background: transparent; color: var(--design-mid); cursor: pointer; font: inherit; font-size: var(--design-text-compact); }
+.corporate-tier-select span { position: absolute; bottom: 0; left: 0; right: 0; }
+.corporate-tier-select[aria-pressed="true"] { color: var(--design-body); font-weight: 600; }
+.corporate-tier-select[aria-pressed="true"] span { text-decoration: underline; text-underline-offset: .35rem; text-decoration-color: var(--design-line); }
+.corporate-tier-select:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 3px; }
+.corporate-tier-details { padding: 1.5rem; }
+.corporate-tier-details-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.corporate-tier-details-heading h3, .corporate-tier-details p { margin: 0; font-size: 1rem; }
+.corporate-tier-details-heading h3 { font-weight: 600; }
+.corporate-tier-details-heading p { white-space: nowrap; color: var(--design-mid); }
+.corporate-tier-details > p { line-height: 1.6; }
+@media (max-width: 640px) {
+  .corporate-tier-details { padding: 1rem; }
+  .corporate-tier-select { font-size: 11px; }
+}
+
+.corporate-tier-contact { margin-top: 1.5rem; }

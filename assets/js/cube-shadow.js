@@ -1,5 +1,5 @@
 // A soft ground projection of the cube, refreshed only when the view changes.
-export function createCubeShadow(THREE, scene, geometry) {
+export function createCubeShadow(THREE, scene, geometry, {grounded=false}={}) {
   geometry.computeBoundingBox();
   const {min,max}=geometry.boundingBox;
   const corners=[];
@@ -21,7 +21,7 @@ export function createCubeShadow(THREE, scene, geometry) {
   }
   let previousRotation='',lastProjection=-Infinity;
   return group=>{
-    const lift=Math.max(0,Math.min(1,(group.position.y-3)/4));
+    const lift=grounded?0:Math.max(0,Math.min(1,(group.position.y-3)/4));
     shadow.scale.set(1+lift*.06,1+lift*.1,1);
     material.opacity=.22-lift*.04;
     const rotation=[...group.rotation.toArray(),...group.position.toArray()].join(',');
@@ -30,6 +30,12 @@ export function createCubeShadow(THREE, scene, geometry) {
     if(rotation===previousRotation||now-lastProjection<80)return;
     lastProjection=now;previousRotation=rotation;
     group.updateMatrixWorld(true);
+    if(grounded){
+      const bounds=new THREE.Box3().setFromObject(group);
+      shadow.position.set(group.position.x,bounds.min.y+.5,0);
+      shadow.scale.y=.55;
+      material.opacity=.28;
+    }
     const projected=corners.map(c=>{
       const p=c.clone().applyMatrix4(group.matrixWorld);
       // A slightly angled overhead light projects the footprint onto the ground.
@@ -38,7 +44,7 @@ export function createCubeShadow(THREE, scene, geometry) {
     });
     const polygon=hull(projected);
     ctx.clearRect(0,0,1024,1024);
-    ctx.filter='blur(48px)';ctx.fillStyle='#000';ctx.beginPath();
+    ctx.filter=grounded?'blur(24px)':'blur(48px)';ctx.fillStyle='#000';ctx.beginPath();
     polygon.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));
     ctx.closePath();ctx.fill();ctx.filter='none';texture.needsUpdate=true;
   };

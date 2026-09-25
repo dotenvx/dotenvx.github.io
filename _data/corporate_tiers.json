@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Steward I",
+    "price": "$10,000/yr",
+    "scale": 0.44,
+    "preview": "Conversations with maintainers\u2026",
+    "description": "Conversations with maintainers and fellow supporters, previews of work in progress, and public recognition as a corporate supporter."
+  },
+  {
+    "name": "Steward II",
+    "price": "$25,000/yr",
+    "scale": 0.58,
+    "preview": "Everything in Steward I\u2026",
+    "description": "Everything in Steward I, with prominent company recognition and opportunities to share your team\u2019s perspective with the supporter community."
+  },
+  {
+    "name": "Steward III",
+    "price": "$50,000/yr",
+    "scale": 0.72,
+    "preview": "Everything in Steward II\u2026",
+    "description": "Everything in Steward II, with leading company recognition and a featured supporter story celebrating your commitment to the future of .env."
+  },
+  {
+    "name": "Steward IV",
+    "price": "$100,000/yr",
+    "scale": 0.86,
+    "preview": "Everything in Steward III\u2026",
+    "description": "Everything in Steward III, with top placement among corporate supporters and recognition as a leading steward of the next chapter of .env."
+  }
+]

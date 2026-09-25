@@ -10,6 +10,6 @@
   </div>
     <figcaption>
       {% if include.href %}<a href="{{ include.href | escape }}">{{ include.name | escape }}</a>{% else %}<strong>{{ include.name | escape }}</strong>{% endif %}
-      <span>{{ include.organization | escape }}</span>
+      {% if include.organization %}<span>{{ include.organization | escape }}</span>{% endif %}
     </figcaption>
 </figure>

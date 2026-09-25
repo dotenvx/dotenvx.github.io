@@ -1,0 +1,13 @@
+# Only list people who have opted into a public listing.
+# Set published: false to hide a member from the directory.
+# Add member_since as YYYY-MM-DD only when the membership date is confirmed.
+scott-motte:
+  published: true
+  member_since: 2024-06-24
+  name: Scott Motte
+  image: /assets/img/scott-motte.jpg
+  role: Creator of Dotenv and Dotenvx
+  bio: Building simple, open-source tools to help people keep their secrets safe, wherever software runs.
+  website: https://mot.la/
+  website_label: mot.la
+  github: https://github.com/motdotla

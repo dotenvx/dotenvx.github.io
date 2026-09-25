@@ -35,6 +35,15 @@ function offsetContour(points, amount) {
   });
 }
 const openings = contours.map(p => offsetContour(p, lipRadius));
+// Back coordinates are mirrored in X so initials read normally from behind.
+const initials = !isCube ? design.backInitials : null;
+const backContours = initials ? initials.contoursMm.map(p => p.map(([x,y]) => [-x/tokenScale,y/tokenScale])) : [];
+backContours.forEach(p => { if (JSON.stringify(p[0]) === JSON.stringify(p.at(-1))) p.pop(); });
+const backLip = initials ? initials.lipRadiusMm/tokenScale : 0;
+const backFloor = initials ? initials.depthMm/tokenScale : 0;
+const backOpenings = backContours.map(p => offsetContour(p, backLip));
+if (initials && (thickness*tokenScale-design.engravingDepthMm-initials.depthMm < 1)) throw new Error('Less than 1 mm material between engravings');
+
 function outline(offset = 0) {
   const half = isCube ? thickness / 2 - radius : 20;
   const x = -half-offset, y=x, w=2*half+2*offset, r=(isCube ? 0 : 2)+offset;
@@ -76,7 +85,9 @@ openings.forEach(points=>{
   const hole=new THREE.Path(points);
   hole.closePath(); face.holes.push(hole);
 });
-cap(face,thickness); cap(outline(),0,true);
+const backFace=outline();
+backOpenings.forEach(points=>{const hole=new THREE.Path(points);hole.closePath();backFace.holes.push(hole);});
+cap(face,thickness); cap(backFace,0,true);
 const rings=[];
 const edgeSegments = isCube ? 24 : 12;
 for(let i=0;i<=edgeSegments;i++) { const a=i/edgeSegments*Math.PI/2; rings.push([radius*Math.sin(a),thickness-radius+radius*Math.cos(a)]); }
@@ -110,29 +121,36 @@ if (isCube) {
   if(maximumError>0.00001 || edgeCoverage.size!==12)throw new Error('Cube edges do not share a uniform radius');
   console.log(`All 12 cube edges: ${(radius*tokenScale).toFixed(2)} mm radius, ${edgeSegments} segments per quarter-circle; maximum surface error ${maximumError.toFixed(7)} mm`);
 }
-contours.forEach(points => {
+function engrave(letterContours, depth, lip, back=false) {
+letterContours.forEach(points => {
   const p = offsetContour(points, 0);
-  cap(new THREE.Shape(p), floor);
+  const recessFloor=thickness-depth;
+  const mapZ=z=>back?thickness-z:z;
+  const recessTriangle=(...pts)=>triangle(...(back?pts.reverse():pts));
+  cap(new THREE.Shape(p), mapZ(recessFloor), back);
   const profiles = [];
   for (let i = 0; i <= 10; i++) {
     const angle = i / 10 * Math.PI / 2;
-    const offset = lipRadius * (1 - Math.sin(angle));
-    const z = thickness - lipRadius * (1 - Math.cos(angle));
+    const offset = lip * (1 - Math.sin(angle));
+    const z = mapZ(thickness - lip * (1 - Math.cos(angle)));
     profiles.push(offsetContour(points, offset).map(v => [v.x, v.y, z]));
   }
-  profiles.push(p.map(v => [v.x, v.y, floor]));
+  profiles.push(p.map(v => [v.x, v.y, mapZ(recessFloor)]));
   for (let r = 0; r < profiles.length - 1; r++) {
     const upper = profiles[r], lower = profiles[r + 1];
     for (let i = 0; i < p.length; i++) {
       const j = (i + 1) % p.length;
-      triangle(upper[i], lower[i], upper[j]);
-      triangle(upper[j], lower[i], lower[j]);
+      recessTriangle(upper[i], lower[i], upper[j]);
+      recessTriangle(upper[j], lower[i], lower[j]);
     }
   }
 });
+}
+engrave(contours, design.engravingDepthMm/tokenScale, lipRadius);
+if(initials)engrave(backContours, backFloor, backLip, true);
 // Earcut can bridge aligned letter edges across an existing vertex. Split
 // those collinear edges so the exported solid has no T-junctions.
-const candidates=openings.flat().map(({x,y})=>vertex([x,y,thickness]));
+const candidates=[...openings.flat().map(({x,y})=>vertex([x,y,thickness])),...backOpenings.flat().map(({x,y})=>vertex([x,y,0]))];
 const pending=[];
 for(let i=0;i<indices.length;i+=3) pending.push(indices.slice(i,i+3));
 indices.length=0;
@@ -140,10 +158,11 @@ while(pending.length) {
   const t=pending.pop(); let split=false;
   for(let e=0;e<3&&!split;e++) {
     const a=t[e],b=t[(e+1)%3],c=t[(e+2)%3];
-    if(Math.abs(vertices[a*3+2]-thickness)>1e-5 || Math.abs(vertices[b*3+2]-thickness)>1e-5) continue;
+    const z=vertices[a*3+2];
+    if(Math.abs(vertices[b*3+2]-z)>1e-5 || (Math.abs(z)>1e-5 && Math.abs(z-thickness)>1e-5)) continue;
     const ax=vertices[a*3],ay=vertices[a*3+1],dx=vertices[b*3]-ax,dy=vertices[b*3+1]-ay,length=dx*dx+dy*dy;
     for(const v of candidates) {
-      if(t.includes(v)) continue;
+      if(t.includes(v) || Math.abs(vertices[v*3+2]-z)>1e-5) continue;
       const vx=vertices[v*3]-ax,vy=vertices[v*3+1]-ay,u=(vx*dx+vy*dy)/length;
       if(u>1e-6&&u<1-1e-6&&Math.abs(vx*dy-vy*dx)<1e-5) {
         pending.push([a,v,c],[v,b,c]);split=true;break;
@@ -192,7 +211,8 @@ const positions = [], normals = [], groups = [];
 for (let i = 0; i < indices.length; i += 3) {
   const normal = faceNormals[i / 3];
   const ids = indices.slice(i, i + 3);
-  const isFloor = ids.every(id => Math.abs(vertices[id * 3 + 2] - floor) < 1e-5);
+  const isBackFloor = initials && ids.every(id => Math.abs(vertices[id * 3 + 2] - backFloor) < 1e-5);
+  const isFloor = isBackFloor || ids.every(id => Math.abs(vertices[id * 3 + 2] - floor) < 1e-5);
   const materialIndex = isFloor ? 1 : 0;
   const last = groups.at(-1);
   if (last && last.materialIndex === materialIndex) last.count += 3;
@@ -213,7 +233,7 @@ for (let i = 0; i < indices.length; i += 3) {
     }
     if (Math.abs(z - thickness) < 1e-5) smooth.set(0, 0, 1);
     else if (Math.abs(z) < 1e-5) smooth.set(0, 0, -1);
-    else if (isFloor) smooth.set(0, 0, 1);
+    else if (isFloor) smooth.set(0, 0, isBackFloor ? -1 : 1);
     normals.push(...smooth.normalize().toArray().map(n => Number(n.toFixed(6))));
   }
 }
@@ -221,3 +241,5 @@ fs.writeFileSync(path.join(root, `assets/js/${meshName}.js`),
   '// Generated by scripts/build-membership-mesh.cjs; do not edit.\nexport default ' +
   JSON.stringify({thickness: thickness * tokenScale, positions, normals, groups}) + ';\n');
 console.log(`Engraving: ${design.engravingDepthMm} mm deep, ${design.engravingLipRadiusMm} mm rounded lip; preview mesh regenerated`);
+
+if(initials)console.log(`Back initials ${initials.text}: ${initials.heightMm} mm high, ${initials.depthMm} mm deep, ${initials.lipRadiusMm} mm rounded lip; minimum face-to-face web ${(thickness*tokenScale-design.engravingDepthMm-initials.depthMm).toFixed(4)} mm`);

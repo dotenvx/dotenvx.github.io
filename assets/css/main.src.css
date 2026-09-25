@@ -7012,8 +7012,7 @@ html.dark .hero-container-primary { color: #7b838a; }
 /* Interactive, pocket-sized Dotenv slab. */
 .env-slab { margin: 0; width: 100%; }
 .env-slab-stage { position: relative; height: 15rem; width: 100%; }
-.env-slab[data-env-slab=""] .env-slab-stage { cursor: grab; touch-action: pan-y; }
-.env-slab[data-env-slab=""] .env-slab-stage:active { cursor: grabbing; }
+.env-slab[data-env-slab=""] .env-slab-stage { cursor: pointer; touch-action: pan-y; }
 .env-slab-stage:focus, .env-slab-stage:focus-visible { outline: none; }
 .env-slab-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
 .env-slab.is-rendered canvas { animation: design-visual-reveal 1100ms cubic-bezier(.16, 1, .3, 1) both; }
@@ -7087,24 +7086,13 @@ html.dark .hero-container-primary { color: #7b838a; }
 .home-shipping-closing { margin-top: 0; }
 
 .home-creator-note { display: flow-root; margin-bottom: 2rem; }
-.home-creator-portrait {
-  float: right;
-  width: 10rem;
-  margin: .25rem 0 1rem 1.5rem;
-  /* Follow the circular photo, then the left edge of its overlapping caption. */
-  shape-outside: polygon(5rem 0, 100% 0, 100% 100%, 3rem 100%, 3rem 4.5rem, 2.4rem 4.5rem, 2.1rem 3.8rem, 2rem 3rem, 2.1rem 2.2rem, 2.4rem 1.5rem, 3rem .76rem, 4rem .17rem) border-box;
-  shape-margin: .75rem;
-}
+.home-creator-portrait { float: right; width: 10rem; margin: .25rem 0 1rem 1.5rem; shape-outside: inset(0); shape-margin: .5rem; }
 .home-creator-portrait .practitioner-portrait { display: block; min-height: 8rem; }
 .home-creator-portrait .practitioner-portrait-photo { width: 6rem; margin: 0 auto; }
 .home-creator-portrait .practitioner-portrait-copy { display: none; }
 .home-creator-portrait .practitioner-portrait figcaption { top: 4.5rem; left: 3rem; width: 7rem; max-width: none; padding: .3rem .45rem; font-size: .7rem; }
 @media (max-width: 480px) {
-  .home-creator-portrait {
-    width: 8rem;
-    margin-left: 1rem;
-    shape-outside: polygon(4rem 0, 100% 0, 100% 100%, 1rem 100%, 1rem 4.5rem, 1.1rem 3.8rem, 1rem 3rem, 1.1rem 2.2rem, 1.4rem 1.5rem, 2rem .76rem, 3rem .17rem) border-box;
-  }
+  .home-creator-portrait { width: 8rem; margin-left: 1rem; }
   .home-creator-portrait .practitioner-portrait figcaption { left: 1rem; }
 }
 
@@ -7125,3 +7113,15 @@ html.dark .hero-container-primary { color: #7b838a; }
   aspect-ratio: auto;
   margin-bottom: .5rem;
 }
+
+/* Public member directory. */
+.member-directory { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem)); justify-content: center; gap: 3rem; max-width: 56rem; margin-inline: auto; }
+.member-directory-join { margin: 3rem auto 0; text-align: center; }
+.member-directory-join p { margin-bottom: .6rem; }
+
+/* Token grid experiment: four columns, eight rows, one shared WebGL canvas. */
+.member-token-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; width: 100%; max-width: 64rem; margin: 0 auto; }
+.member-token-slot { display: grid; place-items: center; aspect-ratio: 1; min-width: 0; padding: 0; border: 0; background: transparent; box-shadow: none; color: var(--design-mid); font: inherit; font-size: .65rem; cursor: pointer; touch-action: pan-y; }
+.member-token-slot:focus-visible { outline: 1px dashed var(--design-mid); outline-offset: 2px; }
+.member-token-grid-canvas { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
+@media (max-width: 640px) { .member-token-grid { gap: .35rem; } }

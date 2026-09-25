@@ -75,8 +75,8 @@ if (roots.length) {
         const {attachCubeHover} = await import('./cube-hover.js' + assetVersion);
         attachCubeHover(stage, group, draw, THREE, camera, renderer.domElement);
       } else {
-        const {attachSlabControls} = await import('./slab-controls.js' + assetVersion);
-        attachSlabControls(stage, group, draw, resetRotation);
+        const {attachSlabHover} = await import('./slab-hover.js' + assetVersion);
+        attachSlabHover(stage, group, draw);
       }
     }));
   }).catch(() => {});

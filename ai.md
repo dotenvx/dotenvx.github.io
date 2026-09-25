@@ -20,17 +20,17 @@ body_class: home-page about-page
   .ecosystem-note { margin-top: 1rem; }
   .about-manifesto .design-prose { margin: 0; }
   .about-marks { position: relative; width: var(--hero-illustration-width); height: var(--hero-illustration-width); flex: none; }
-  .about-marks { perspective: 700px; }
-  .about-joined-slab { display: block; width: 100%; height: 100%; pointer-events: none; transform-origin: 50% 60%; transition: transform 220ms cubic-bezier(.2, .8, .2, 1), filter 220ms ease; }
+  .about-joined-slab { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .about-arcade-face { transition: transform 180ms cubic-bezier(.2,.8,.2,1), filter 180ms ease; }
   .about-joined-hit { pointer-events: fill; cursor: pointer; outline: none; }
   .about-joined-hit:focus-visible { stroke: var(--design-mid); stroke-width: 2; }
   @media (hover: hover) {
-    .about-joined-slab:has(.about-joined-hit:hover) { transform: translateY(1px) translateZ(-4px) rotateX(1.5deg); filter: brightness(.98); }
+    .about-arcade-key:has(.about-joined-hit:hover) .about-arcade-face { transform: translateY(1px); filter: brightness(1.04); }
   }
-  .about-joined-slab.is-pressed, .about-joined-slab.is-pressed:has(.about-joined-hit:hover) { transform: translateY(3px) translateZ(-12px) rotateX(4deg); filter: brightness(.94); transition-duration: 80ms; }
+  .about-arcade-key.is-pressed .about-arcade-face,
+  .about-arcade-key.is-pressed:has(.about-joined-hit:hover) .about-arcade-face { transform: translateY(6px); filter: brightness(.96); transition-duration: 60ms; }
   @media (prefers-reduced-motion: reduce) {
-    .about-joined-slab { transition: none; }
-    .about-joined-slab:has(.about-joined-hit:hover), .about-joined-slab.is-pressed, .about-joined-slab.is-pressed:has(.about-joined-hit:hover) { transform: none; }
+    .about-arcade-face { transition: none; }
   }
 </style>
 
@@ -123,27 +123,32 @@ body_class: home-page about-page
 (() => {
   const slab = document.querySelector('[data-joined-slab]');
   if (!slab) return;
-  const hit = slab.querySelector('.about-joined-hit');
-  const release = () => slab.classList.remove('is-pressed');
-  const changeTheme = () => window.__radarToggleTheme?.(hit);
+  slab.querySelectorAll('.about-joined-hit').forEach(hit => {
+  const key = hit.closest('.about-arcade-key');
+  const release = () => key.classList.remove('is-pressed');
+  const changeTheme = () => {
+    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    if (current !== hit.dataset.themeMode) window.__radarToggleTheme?.(hit);
+  };
   hit.addEventListener('click', changeTheme);
   hit.addEventListener('pointerdown', event => {
     if (event.button !== 0) return;
-    slab.classList.add('is-pressed');
+    key.classList.add('is-pressed');
     hit.setPointerCapture(event.pointerId);
   });
   ['pointerup', 'pointercancel', 'lostpointercapture', 'blur'].forEach(type => hit.addEventListener(type, release));
   hit.addEventListener('keydown', event => {
     if (event.key !== ' ' && event.key !== 'Enter') return;
     event.preventDefault();
-    slab.classList.add('is-pressed');
+    key.classList.add('is-pressed');
   });
   hit.addEventListener('keyup', event => {
     if (event.key !== ' ' && event.key !== 'Enter') return;
     event.preventDefault();
-    if (slab.classList.contains('is-pressed')) changeTheme();
+    if (key.classList.contains('is-pressed')) changeTheme();
     release();
   });
   window.addEventListener('blur', release);
+  });
 })();
 </script>

@@ -19,14 +19,16 @@ export function createCubeShadow(THREE, scene, geometry) {
     for(const p of [...points].reverse()){while(upper.length>1&&cross(upper.at(-2),upper.at(-1),p)<=0)upper.pop();upper.push(p);}
     return [...lower.slice(0,-1),...upper.slice(0,-1)];
   }
-  let previousRotation='';
+  let previousRotation='',lastProjection=-Infinity;
   return group=>{
     const lift=Math.max(0,Math.min(1,(group.position.y-3)/4));
     shadow.scale.set(1+lift*.06,1+lift*.1,1);
     material.opacity=.22-lift*.04;
     const rotation=[...group.rotation.toArray(),...group.position.toArray()].join(',');
-    if(rotation===previousRotation)return;
-    previousRotation=rotation;
+    // The blurred footprint needs fewer updates than the gently moving mesh.
+    const now=performance.now();
+    if(rotation===previousRotation||now-lastProjection<80)return;
+    lastProjection=now;previousRotation=rotation;
     group.updateMatrixWorld(true);
     const projected=corners.map(c=>{
       const p=c.clone().applyMatrix4(group.matrixWorld);

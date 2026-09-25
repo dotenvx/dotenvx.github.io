@@ -21,7 +21,7 @@ body_class: home-page members-page
     <div class="armor-shell">
       <div class="member-directory-content">
         <section class="member-directory-group" aria-labelledby="member-companies-heading">
-          <h2 id="member-companies-heading" class="member-group-title">Executive Memberships</h2>
+          <h2 id="member-companies-heading" class="member-group-title">Executive Memberships – $1,000/yr</h2>
           <div class="member-company-grid" data-executive-members aria-busy="true"></div>
           <p class="member-directory-status" data-executive-status role="status">Loading teams…</p>
           <template id="executive-member-template">
@@ -29,7 +29,7 @@ body_class: home-page members-page
           </template>
         </section>
         <section class="member-directory-group" aria-labelledby="member-people-heading">
-          <h2 id="member-people-heading" class="member-group-title">Professional Memberships</h2>
+          <h2 id="member-people-heading" class="member-group-title">Professional Memberships – $100/yr</h2>
           <div class="member-people-grid" data-members-url="https://armor.dotenvx.com/public/members.json" aria-busy="true"></div>
           <p class="member-directory-status" role="status">Loading members…</p>
           <template id="professional-member-template">

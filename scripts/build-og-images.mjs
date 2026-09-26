@@ -56,6 +56,20 @@ async function blogSvg(entry) {
   throw new Error(`Title does not fit the OG template: ${entry.title}`)
 }
 
+function pngSize(png) {
+  if (png.subarray(12, 16).toString() !== 'IHDR') throw new Error('Mark image must be a PNG')
+  return { width: png.readUInt32BE(16), height: png.readUInt32BE(20) }
+}
+
+function markSvg(png) {
+  const size = pngSize(png)
+  const scale = Math.min(520 / size.width, 500 / size.height)
+  const markWidth = Math.round(size.width * scale)
+  const markHeight = Math.round(size.height * scale)
+  const href = `data:image/png;base64,${png.toString('base64')}`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="${width}" height="${height}" fill="${background}"/><image href="${href}" x="${(width - markWidth) / 2}" y="${(height - markHeight) / 2}" width="${markWidth}" height="${markHeight}"/></svg>`
+}
+
 function logoSvg(logo) {
   const viewBox = logo.match(/viewBox="([^"]+)"/)?.[1].trim().split(/[\s,]+/).map(Number)
   if (!viewBox || viewBox.length !== 4 || viewBox[2] <= 0 || viewBox[3] <= 0) throw new Error('Logo needs a valid SVG viewBox')
@@ -72,8 +86,9 @@ export async function buildImages({ entries, cacheDir }) {
   const results = []
   for (const entry of entries) {
     const logo = entry.template === 'logo' ? await readFile(resolve(root, entry.logo), 'utf8') : ''
-    if (!['blog', 'logo'].includes(entry.template)) throw new Error(`Unknown OG template: ${entry.template}`)
-    const digest = createHash('sha256').update(script).update(dependencies).update(JSON.stringify(entry)).update(logo)
+    const mark = entry.template === 'mark' ? await readFile(resolve(root, entry.image)) : Buffer.alloc(0)
+    if (!['blog', 'logo', 'mark'].includes(entry.template)) throw new Error(`Unknown OG template: ${entry.template}`)
+    const digest = createHash('sha256').update(script).update(dependencies).update(JSON.stringify(entry)).update(logo).update(mark)
     for (const font of fonts) digest.update(font.data)
     const hash = digest.digest('hex').slice(0, 16)
     const slug = entry.key.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')
@@ -82,7 +97,7 @@ export async function buildImages({ entries, cacheDir }) {
     let cached = true
     try { await access(path) } catch { cached = false }
     if (!cached) {
-      const svg = entry.template === 'logo' ? logoSvg(logo) : await blogSvg(entry)
+      const svg = entry.template === 'logo' ? logoSvg(logo) : entry.template === 'mark' ? markSvg(mark) : await blogSvg(entry)
       const png = new Resvg(svg, { font: { loadSystemFonts: false } }).render().asPng()
       await mkdir(dirname(path), { recursive: true })
       const temporary = `${path}.${process.pid}.tmp`

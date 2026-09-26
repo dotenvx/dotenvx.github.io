@@ -2,6 +2,10 @@
 title: Corporate Support
 description: "Steward the next chapter of .env."
 permalink: /corporate
+og_image:
+  template: mark
+  image: assets/img/corporate-cube.png
+  alt: Silver desk cube engraved with .ENV
 layout: radar
 body_class: home-page corporate-page
 ---

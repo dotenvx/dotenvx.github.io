@@ -21,7 +21,8 @@ class OgImages < Jekyll::Generator
         title: CGI.unescapeHTML(options.fetch("title", page.data["title"]).to_s.gsub(/<[^>]*>/, "")),
         author: page.data["author"] || "Scott Motte",
         date: page.respond_to?(:date) ? page.date.strftime("%B %-d, %Y") : nil,
-        logo: options["logo"]
+        logo: options["logo"],
+        image: options["image"]
       }
     end
     cache = File.join(site.source, ".jekyll-cache", "og-images")

@@ -36,13 +36,11 @@ body_class: home-page
         class="!mt-0 !mb-10"
       %}
 
-      <p class="design-paragraph">For John, managing secrets comes down to two requirements: keep them secure, and keep deployments independent of a new service in the critical path.</p>
-      <p class="design-paragraph">Dotenvx lets him and his team at Watt version and deploy secrets alongside code. Encrypted secrets can live in the repository, so the configuration their application needs travels with the code that uses it.</p>
-      <p class="design-paragraph">That keeps secrets in the workflow his team already uses to version and deploy the application. With the private key available in the deployment environment, Dotenvx decrypts those secrets at runtime without fetching them from a separate secrets service.</p>
-      <p class="design-paragraph">For John, that's the win: <strong>securely versioned secrets, deployed with code, without taking on a new critical path dependency.</strong></p>
-      <p class="design-paragraph">It just works.</p>
+      <p class="design-paragraph">For John, managing secrets comes down to two requirements: keep them secure, and keep deployments independent of a new service.</p>
+      <p class="design-paragraph">Dotenvx lets Watt store encrypted secrets in the repository, so configuration travels with the application. With the private key in the deployment environment, those secrets are decrypted at runtime without fetching them from a separate service.</p>
+      <p class="design-paragraph">Secrets stay in the workflow his team already uses. <strong>No new critical path.</strong></p>
       <hr class="member-story-divider">
-      <p class="design-paragraph"><strong>John is Cofounder / Chief Architect at Watt and was previously Head of Security DevOps at Zoom.</strong></p>
+      <p class="design-paragraph"><strong>John is Cofounder and Chief Architect at Watt and was previously Head of Security DevOps at Zoom.</strong></p>
     {% endcapture %}
     {% include components/design-content-width.html content=story %}
   </div>

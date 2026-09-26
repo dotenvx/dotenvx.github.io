@@ -80,7 +80,7 @@ body_class: home-page about-page
           <p>We want to build that future in the open, across languages, platforms, and tools. The more widely this foundation is shared, the more people can benefit from improving it.</p>
 
           <p>We’re building that next chapter in the open. Use Dotenvx and help shape what comes next.</p>
-          <p>Help your company advance this work through {% include components/design-link.html href="/corporate" label="corporate support" %}.</p>
+          <p>Help your company advance this work through {% include components/design-link.html href="/corporate" label="corporate involvement" %}.</p>
         </div>
       {% endcapture %}
       {% include components/design-content-width.html content=about_essay %}

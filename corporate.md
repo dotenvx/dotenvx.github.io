@@ -1,5 +1,5 @@
 ---
-title: Corporate Support
+title: Corporate Involvement
 description: "Steward the next chapter of .env."
 permalink: /corporate
 og_image:
@@ -11,7 +11,7 @@ body_class: home-page corporate-page
 ---
 
 <div class="home-sections">
-  <section class="design-hero-section home-hero" aria-label="Corporate Support">
+  <section class="design-hero-section home-hero" aria-label="Corporate Involvement">
     <div class="armor-shell">
       {% capture corporate_art %}
         {% include components/env-slab.html cube=true %}
@@ -34,11 +34,11 @@ body_class: home-page corporate-page
     </div>
   </section>
 
-  <section class="radar-section" aria-label="Corporate support tiers">
+  <section class="radar-section" aria-label="Corporate involvement tiers">
     <div class="armor-shell">
       {% include components/design-page-title.html title="Shape .env." heading_tag="h2" title_class="text-center" %}
       <div class="corporate-tier-picker">
-        <div class="corporate-tiers" aria-label="Choose a corporate support tier">
+        <div class="corporate-tiers" aria-label="Choose a corporate involvement tier">
           {% for tier in site.data.corporate_tiers %}
             <div class="corporate-tier" data-tier-name="{{ tier.name | escape }}" data-tier-price="{{ tier.price | escape }}" data-tier-description="{{ tier.description | escape }}">
               <div class="corporate-tier-art">

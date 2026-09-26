@@ -20,7 +20,7 @@ document.querySelectorAll('.corporate-tier-picker').forEach(picker => {
   const select = tier => {
     tiers.forEach(item => item.querySelector('button').setAttribute('aria-pressed', String(item === tier)));
     name.textContent = tier.dataset.tierName;
-    contact.href = `mailto:scott@dotenvx.com?subject=${encodeURIComponent(tier.dataset.tierName + ' corporate support')}`;
+    contact.href = `mailto:scott@dotenvx.com?subject=${encodeURIComponent(tier.dataset.tierName + ' corporate involvement')}`;
     price.textContent = tier.dataset.tierPrice;
     description.textContent = tier.dataset.tierDescription;
   };

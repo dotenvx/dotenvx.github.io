@@ -51,8 +51,8 @@ export function attachCubeHover(stage, group, draw, THREE, camera, canvas) {
   target.addEventListener('pointerleave',()=>{hovered=false;});
   target.addEventListener('pointerdown',e=>{
     focused=false;
-    // Touch has no hover. A tap spins the cube, and the button click still selects it.
-    if(e.pointerType==='touch'&&!motion.matches&&flip===1){flip=0;sync();}
+    // The hero only lifts. A tap spins a tier cube, and the button click still selects it.
+    if(selector&&e.pointerType==='touch'&&!motion.matches&&flip===1){flip=0;sync();}
   });
   target.addEventListener('focus',()=>{focused=target.matches(':focus-visible');});
   target.addEventListener('blur',()=>{focused=false;});

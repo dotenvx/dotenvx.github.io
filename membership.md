@@ -7,7 +7,7 @@ body_class: home-page membership-page
 ---
 
 <style>
-  .membership-plan-price { display: block; margin-top: .5rem; font-family: var(--design-font-mono); font-size: var(--design-text-body, 1rem); font-weight: 400; letter-spacing: normal; text-transform: none; color: var(--design-body); }
+  .membership-plan-price { display: block; margin-top: .5rem; font-family: var(--design-font-mono); font-size: var(--design-text-compact); font-weight: 400; letter-spacing: normal; text-transform: none; color: var(--design-body); }
   .membership-hero-card { display: block; width: calc(var(--hero-illustration-width) * 1.4); max-width: none; height: auto; flex: none; box-shadow: 0 5px 8px rgb(0 0 0 / .12); border-radius: 8px; }
   html.dark .membership-hero-card { --member-card-edge: var(--design-line); --member-card-outline: var(--design-mid); --member-card-inset: var(--design-line); --member-card-divider: var(--design-line); box-shadow: 0 2px 0 var(--design-line); }
   .membership-comparison .design-table-wrap { overflow: visible; }

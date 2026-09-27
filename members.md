@@ -10,11 +10,14 @@ body_class: home-page members-page
   {% include components/design-btn.html href="/membership" label="Membership Benefits" %}
 {% endcapture %}
 
+{% capture members_visual %}
+  <div class="member-hero-portraits" data-member-hero-portraits aria-label="Our members"></div>
+{% endcapture %}
+
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="Members">
     <div class="armor-shell">
-      <div class="member-hero-portraits" data-member-hero-portraits aria-label="Our members"></div>
-      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description actions=members_actions %}
+      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=members_visual actions=members_actions %}
     </div>
   </section>
   <section class="radar-section member-directory-section" aria-label="Member directory">

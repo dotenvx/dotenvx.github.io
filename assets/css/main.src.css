@@ -7128,7 +7128,7 @@ body.radar-layout a.home-member-story { color: var(--design-ink); }
   html.theme-bloom::view-transition-old(root) { z-index: 1; }
   html.theme-bloom::view-transition-new(root) { z-index: 2; clip-path: var(--theme-pixel-clip); }
 
-/* Reserve the same visual slot so the two 3D hero titles stay aligned. */
+/* Give the 3D artwork a wide canvas. */
 :is(.membership-page, .corporate-page, .careers-page) .design-hero--compact .design-hero-content {
   display: flex;
   align-items: center;
@@ -7138,6 +7138,12 @@ body.radar-layout a.home-member-story { color: var(--design-ink); }
   height: 15rem;
   aspect-ratio: auto;
   margin-bottom: .5rem;
+}
+
+/* Match the homepage's illustration slot without shrinking the 3D canvas. */
+:is(.membership-page, .corporate-page, .careers-page) .design-hero--compact .design-hero-content {
+  height: calc(var(--hero-illustration-width) * 1.119218911);
+  margin-bottom: 0;
 }
 
 /* Public member directory. */
@@ -7271,9 +7277,8 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 .design-btn--secondary { border-color: transparent; box-shadow: none; }
 
 /* A small pile of portraits, with varied sizes and no visible rows. */
-.member-hero-portraits { position: relative; isolation: isolate; width: 10.5rem; height: 10rem; margin: 0 auto .65rem; }
+.member-hero-portraits { position: relative; isolation: isolate; flex: none; width: 10.5rem; height: 10rem; margin: 0; }
 .member-hero-portrait { padding: 0; cursor: pointer; position: absolute; width: var(--portrait-size); height: var(--portrait-size); max-width: none; border-radius: 50%; border: 2px solid var(--design-bg); object-fit: cover; background: var(--design-bg); transform: translate(-50%, -50%) rotate(var(--portrait-angle)); }
-.member-hero-portraits + .design-hero--compact { padding-top: 0; }
 
 .member-hero-portrait.is-loaded { animation: member-portrait-pop 360ms cubic-bezier(.2,.75,.25,1) var(--portrait-delay, 0ms) backwards; }
 @keyframes member-portrait-pop {

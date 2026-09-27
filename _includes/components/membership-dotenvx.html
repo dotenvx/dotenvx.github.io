@@ -1,0 +1,149 @@
+{% capture dotenvx_yes %}{% include components/design-check.html tone="success" size="sm" label="Included" %}{% endcapture %}
+{% capture dotenvx_rows %}
+  <thead>
+    <tr>
+      <th scope="col" id="membership-dotenvx-title">Dotenvx</th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">User<span class="membership-plan-price">$0</span></th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional<span class="membership-plan-price">$100/yr</span></th>
+      <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive<span class="membership-plan-price">$1,000/yr</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="membership-section-row"><th colspan="4" scope="rowgroup">Dotenvx</th></tr>
+    <tr>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Encryption. Keep secrets encrypted alongside your code and decrypt them at runtime." data-tooltip="Keep secrets encrypted alongside your code and decrypt them at runtime." tabindex="0">Encryption</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="membership-feature-label"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Protection. Prevent plaintext secrets and private keys from being committed to code machine wide." data-tooltip="Prevent plaintext secrets and private keys from being committed to code machine wide." tabindex="0">Protection</span> {% include components/design-badge.html label="NEW" tone="info" badge_size="sm" %}</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="membership-feature-label"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Envfile Schema. Declare and check the configuration your application needs." data-tooltip="Declare and check the configuration your application needs." tabindex="0">Envfile Schema</span> {% include components/design-badge.html label="NEW" tone="info" badge_size="sm" %}</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="CLI. Manage and load environment variables from the command line." data-tooltip="Manage and load environment variables from the command line." tabindex="0">CLI</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="SDKs. Load environment variables directly in your application." data-tooltip="Load environment variables directly in your application." tabindex="0">SDKs</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">Node.js</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">Python</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">Ruby</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">Rust</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">PHP</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Primitives</th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">Node.js</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label">Rust</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Key Custody. Choose where to store your private keys, separately from your encrypted .env files." data-tooltip="Choose where to store your private keys, separately from your encrypted .env files." tabindex="0">Key Custody</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="1Password. Store private keys in your vault and resolve secret references at runtime." data-tooltip="Store private keys in your vault and resolve secret references at runtime." href="/docs/cli/1password/">1Password</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="Bitwarden. Store private keys in your vault and resolve secret references at runtime." data-tooltip="Store private keys in your vault and resolve secret references at runtime." href="/docs/cli/bitwarden/">Bitwarden</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="OS Secrets. Keep private keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service." data-tooltip="Keep private keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service." href="/docs/cli/native/">OS Secrets</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" href="/docs/env-keys-file/" aria-label="Local .env.keys. Store private keys in a local .env.keys file outside git." data-tooltip="Store private keys in a local .env.keys file outside git.">Local .env.keys</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" href="/armor" aria-label="Armor. Store private keys with controlled, audited access." data-tooltip="Store private keys with controlled, audited access.">Armor <span aria-hidden="true">⛨</span></a></span></th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    {% include components/membership-armor.html %}
+    {% include components/membership-addons.html %}
+    <tr class="membership-plan-actions">
+      <th scope="row"><span class="sr-only">Get started</span></th>
+      <td class="design-table-cell--center">
+        {% capture dotenvx_source_button %}{% include logos/github.html class="home-source-icon" %}<span>Source</span>{% endcapture %}
+        {% include components/design-btn.html content=dotenvx_source_button href="https://github.com/dotenvx/dotenvx" class="home-source-button" %}
+      </td>
+      <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Professional plan">Sign up</a></td>
+      <td class="design-table-cell--center"><a class="design-btn" href="/signup" aria-label="Sign up for the Executive plan">Sign up</a></td>
+    </tr>
+  </tbody>
+{% endcapture %}
+{% capture dotenvx_table %}
+  {% include components/design-table.html class="design-table-wrap--fill" content=dotenvx_rows %}
+{% endcapture %}
+<section class="radar-section membership-dotenvx" id="membership-dotenvx" aria-labelledby="membership-dotenvx-title">
+  <div class="armor-shell">
+    <div class="membership-comparison">
+      {% include components/design-card.html class="pricing-summary-card" content=dotenvx_table %}
+    </div>
+  </div>
+</section>

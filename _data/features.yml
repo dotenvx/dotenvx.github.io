@@ -9,6 +9,6 @@ items:
   - label: Redact secrets from runtime output
     href: /docs/cli/run-redact
   - label: Catch missing keys before you run
-    href: /docs/cli/validate
+    href: /docs/cli/check
   - label: Explore the docs →
     href: /docs

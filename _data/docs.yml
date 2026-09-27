@@ -29,9 +29,8 @@ cli_commands:
   - /docs/cli/genexample/
   - /docs/cli/primitives/keypair/
   - /docs/cli/primitives/derive/
-  - /docs/cli/define/
   - /docs/cli/init/
-  - /docs/cli/validate/
+  - /docs/cli/check/
   - /docs/cli/precommit/
   - /docs/cli/protect/
   - /docs/cli/prebuild/

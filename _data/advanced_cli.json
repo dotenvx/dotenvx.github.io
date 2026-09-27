@@ -764,14 +764,6 @@
     "href": "/docs/cli/curl-X/"
   },
   {
-    "label": "define",
-    "href": "/docs/cli/define/"
-  },
-  {
-    "label": "define -f",
-    "href": "/docs/cli/define-f/"
-  },
-  {
     "label": "doctor",
     "href": "/docs/cli/doctor/"
   },
@@ -980,56 +972,56 @@
     "href": "/docs/cli/update/"
   },
   {
-    "label": "validate",
-    "href": "/docs/cli/validate/"
+    "label": "check",
+    "href": "/docs/cli/check/"
   },
   {
-    "label": "validate --convention",
-    "href": "/docs/cli/validate-convention/"
+    "label": "check --convention",
+    "href": "/docs/cli/check-convention/"
   },
   {
-    "label": "validate --ignore",
-    "href": "/docs/cli/validate-ignore/"
+    "label": "check --ignore",
+    "href": "/docs/cli/check-ignore/"
   },
   {
-    "label": "validate --no-1password",
-    "href": "/docs/cli/validate-no-1password/"
+    "label": "check --no-1password",
+    "href": "/docs/cli/check-no-1password/"
   },
   {
-    "label": "validate --no-armor",
-    "href": "/docs/cli/validate-no-armor/"
+    "label": "check --no-armor",
+    "href": "/docs/cli/check-no-armor/"
   },
   {
-    "label": "validate --no-bitwarden",
-    "href": "/docs/cli/validate-no-bitwarden/"
+    "label": "check --no-bitwarden",
+    "href": "/docs/cli/check-no-bitwarden/"
   },
   {
-    "label": "validate --no-native",
-    "href": "/docs/cli/validate-no-native/"
+    "label": "check --no-native",
+    "href": "/docs/cli/check-no-native/"
   },
   {
-    "label": "validate --strict",
-    "href": "/docs/cli/validate-strict/"
+    "label": "check --strict",
+    "href": "/docs/cli/check-strict/"
   },
   {
-    "label": "validate --token",
-    "href": "/docs/cli/validate-token/"
+    "label": "check --token",
+    "href": "/docs/cli/check-token/"
   },
   {
-    "label": "validate -e",
-    "href": "/docs/cli/validate-e/"
+    "label": "check -e",
+    "href": "/docs/cli/check-e/"
   },
   {
-    "label": "validate -f",
-    "href": "/docs/cli/validate-f/"
+    "label": "check -f",
+    "href": "/docs/cli/check-f/"
   },
   {
-    "label": "validate -fk",
-    "href": "/docs/cli/validate-fk/"
+    "label": "check -fk",
+    "href": "/docs/cli/check-fk/"
   },
   {
-    "label": "validate -o",
-    "href": "/docs/cli/validate-o/"
+    "label": "check -o",
+    "href": "/docs/cli/check-o/"
   },
   {
     "label": "version",

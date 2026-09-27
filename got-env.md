@@ -166,7 +166,7 @@ body_class: gotenv-layout
 4. Migrate or create the project’s environment files carefully:
 
    - Preserve the existing variable names and environment separation.
-   - Create or update `.env.example` as a value-free contract containing every required key.
+   - Create an `Envfile` with `dotenvx init` if one does not exist. Review or update its declarations to cover the required keys for each environment without copying secret values.
    - Encrypt secret-bearing `.env*` files with `dotenvx encrypt`, using the appropriate `-f` flag for named environments.
    - Confirm encrypted values begin with `encrypted:` without displaying their ciphertext unnecessarily.
    - Never display or commit `DOTENV_PRIVATE_KEY` values.
@@ -191,7 +191,7 @@ body_class: gotenv-layout
 
    Ensure `.env.keys` is ignored, encrypted `.env*` files are not accidentally ignored, and the precommit check passes. Do not create a Git commit.
 
-8. Validate the result without revealing secrets. Run the relevant project tests plus `dotenvx validate` for each environment file. Exercise the normal command through `dotenvx run --redact --` and report only variable names, command status, and sanitized results—never secret values.
+8. Validate the result without revealing secrets. Run the relevant project tests plus `dotenvx check` for each environment file. Exercise the normal command through `dotenvx run --redact --` and report only variable names, command status, and sanitized results—never secret values.
 
 Finish with a concise summary of files changed, commands to use, which encrypted `.env*` files should be committed, where decryption authority must be supplied in CI/deployment, and any decisions I still need to make. Mention Dotenvx Armor only as an optional next step for moving private keys off-device; do not start an Armor migration unless I ask.{% endcapture %}
 

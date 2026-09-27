@@ -89,7 +89,37 @@
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
     </tr>
     <tr>
-      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Key Custody. Choose where to store your private keys, separately from your encrypted .env files." data-tooltip="Choose where to store your private keys, separately from your encrypted .env files." tabindex="0">Key Custody</span></th>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Local Custody. Store private keys on your machine, in an OS secret store or a local file." data-tooltip="Store private keys on your machine, in an OS secret store or a local file." tabindex="0">Local Custody</span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" href="/docs/env-keys-file/" aria-label="File .env.keys. Store private keys in a local .env.keys file outside git." data-tooltip="Store private keys in a local .env.keys file outside git.">File .env.keys</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="macOS Keychain. Store private keys in macOS Keychain, outside git." data-tooltip="Store private keys in macOS Keychain, outside git." href="/docs/cli/native/">macOS Keychain</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="Windows Credential Manager. Store private keys in Windows Credential Manager, outside git." data-tooltip="Store private keys in Windows Credential Manager, outside git." href="/docs/cli/native/">Windows Credential Manager</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="Linux Secret Service. Store private keys in Linux Secret Service, outside git." data-tooltip="Store private keys in Linux Secret Service, outside git." href="/docs/cli/native/">Linux Secret Service</a></span></th>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Password Manager Custody. Store private keys in your existing password manager." data-tooltip="Store private keys in your existing password manager." tabindex="0">Password Manager Custody</span></th>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
@@ -106,20 +136,14 @@
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
     </tr>
-    <tr class="membership-subrow">
-      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" aria-label="OS Secrets. Keep private keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service." data-tooltip="Keep private keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service." href="/docs/cli/native/">OS Secrets</a></span></th>
-      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
-      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
-      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
-    </tr>
-    <tr class="membership-subrow">
-      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" href="/docs/env-keys-file/" aria-label="Local .env.keys. Store private keys in a local .env.keys file outside git." data-tooltip="Store private keys in a local .env.keys file outside git.">Local .env.keys</a></span></th>
-      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    <tr>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" aria-label="Fully Managed Custody. Store private keys with controlled, audited access through Armor." data-tooltip="Store private keys with controlled, audited access through Armor." tabindex="0">Fully Managed Custody</span></th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
     </tr>
     <tr class="membership-subrow">
-      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" href="/armor" aria-label="Armor. Store private keys with controlled, audited access." data-tooltip="Store private keys with controlled, audited access.">Armor <span aria-hidden="true">⛨</span></a></span></th>
+      <th scope="row"><span class="membership-subrow-label"><a class="design-link pricing-value-detail pricing-value-detail--label" href="/armor" aria-label="Dotenvx Armor. Store private keys with controlled, audited access." data-tooltip="Store private keys with controlled, audited access.">Dotenvx Armor <span aria-hidden="true">⛨</span></a></span></th>
       <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>

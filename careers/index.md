@@ -11,12 +11,13 @@ body_class: home-page careers-page
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="Careers">
     <div class="armor-shell">
+      {% capture careers_art %}{% include components/env-keycap.html %}{% endcapture %}
       {% include components/design-hero.html
         compact=true
-        secondary=true
         name_heading=true
         name=page.title
         description=page.description
+        content=careers_art
       %}
     </div>
   </section>

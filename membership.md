@@ -29,11 +29,11 @@ body_class: home-page membership-page
   .membership-members .design-list-title { margin: 0 0 1.5rem; text-align: center; font-size: var(--design-text-compact); color: var(--design-mid); font-weight: 400; }
   .membership-dotenvx { scroll-margin-top: 6rem; }
   .membership-benefits-note { max-width: 36rem; margin: 2rem auto 0; text-align: center; }
-  .membership-corporate-content { display: grid; grid-template-columns: 12rem minmax(0, 1fr); align-items: center; gap: 2rem; }
-  .membership-corporate-content .env-slab-stage { height: 12rem; }
+  .membership-involvement-content { display: grid; grid-template-columns: 12rem minmax(0, 1fr); align-items: center; gap: 2rem; }
+  .membership-involvement-content :is(.env-slab-stage, .env-keycap-stage) { height: 12rem; }
   @media (max-width: 640px) {
-    .membership-corporate-content { grid-template-columns: 1fr; gap: 1rem; }
-    .membership-corporate-content .env-slab { max-width: 16rem; margin-inline: auto; }
+    .membership-involvement-content { grid-template-columns: 1fr; gap: 1rem; }
+    .membership-involvement-content :is(.env-slab, .env-keycap) { max-width: 16rem; margin-inline: auto; }
   }
 </style>
 
@@ -116,7 +116,7 @@ body_class: home-page membership-page
   <section class="radar-section" aria-labelledby="membership-corporate-title">
     <div class="armor-shell">
       {% include components/design-page-title.html title="Corporate Involvement" heading_tag="h2" title_class="text-center" id="membership-corporate-title" %}
-      <div class="membership-corporate-content">
+      <div class="membership-involvement-content">
         {% include components/env-slab.html cube=true %}
         <div>
           <p class="design-paragraph">If your company relies on .env, you can help shape what comes next. Corporate involvement brings your team closer to the maintainers, with a chance to see work in progress and share what matters to you.</p>
@@ -130,12 +130,14 @@ body_class: home-page membership-page
   <section class="radar-section" aria-labelledby="membership-careers-title">
     <div class="armor-shell">
       {% include components/design-page-title.html title="Careers" heading_tag="h2" title_class="text-center" id="membership-careers-title" %}
-      {% capture membership_careers_content %}
+      <div class="membership-involvement-content">
+        {% include components/env-keycap.html %}
+        <div>
         <p class="design-paragraph">Want to help build the next chapter of .env? Join us in making secrets safer for developers and the agents working alongside them.</p>
         <p class="design-paragraph">Whether you’re building the tools or bringing companies into the work, there’s a chance to make a lasting contribution to something people use every day.</p>
-        <p class="design-paragraph text-center">{% include components/design-link.html href="/careers/" label="Explore open roles →" %}</p>
-      {% endcapture %}
-      {% include components/design-content-width.html content=membership_careers_content %}
+        <p class="design-paragraph">{% include components/design-link.html href="/careers/" label="Explore open roles →" %}</p>
+        </div>
+      </div>
     </div>
   </section>
 

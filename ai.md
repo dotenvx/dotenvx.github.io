@@ -1,5 +1,5 @@
 ---
-title: AI Dotenv
+title: AI-Ready Dotenv
 description: "The next chapter of .env."
 permalink: /ai
 layout: radar

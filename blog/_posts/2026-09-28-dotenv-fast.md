@@ -29,7 +29,7 @@ Some guy from Sweden, [homanp](https://github.com/homanp). A character scanning 
 
 So what did I do? What any maintainer does for a package depended on by [tens of millions](https://github.com/motdotla/dotenv/network/dependents). I sat on it. lol.
 
-But we also got in touch with each other and had a chat. He and his cofounder ran a service called [Superagent.sh](https://superagent.sh) - securing PRs. They generously offered to secure Dotenvx's, and today they do that for all kinds of open source projects - even cURL!
+But we also got in touch with each other and had a chat. He and his cofounder ran a service called [Superagent.sh](https://superagent.sh) - securing PRs. They generously offered to secure Dotenvx's, and today they do that for all kinds of open source projects - even [Firecrawl](https://github.com/firecrawl/firecrawl).
 
 ## The Release
 

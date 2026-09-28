@@ -15,7 +15,7 @@ No, way.
 
 Yes. Yes, way.
 
-**Dotenv&#39;s fast mode now beats Node&#39;s native parser on all current LTS versions** - Node 22 and 24 - across Linux and Windows in our benchmarks. See below where Node native is still faster.
+Dotenv&#39;s fast mode now beats Node&#39;s native parser on all current LTS versions - Node 22 and 24 - across Linux and Windows in our benchmarks. See below where Node native is still faster.
 
 ## Background
 
@@ -25,7 +25,7 @@ This was a new parser, claiming 2x speedup.
 
 <img src="https://github.com/user-attachments/assets/572df7e0-a186-4beb-9aeb-93042cad0649" alt="Pull request introducing the faster dotenv parser" loading="lazy">
 
-Some guy from Sweden, [homanp](https://github.com/homanp). A character scanner approach. Pretty sick, tbh.
+Some guy from Sweden, [homanp](https://github.com/homanp). A character scanning approach. Pretty sick, tbh.
 
 So what did I do? What any maintainer does for a package depended on by [tens of millions](https://github.com/motdotla/dotenv/network/dependents). I sat on it. lol.
 

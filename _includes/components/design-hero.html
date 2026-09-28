@@ -14,6 +14,7 @@
       {% if include.compact %}
         {% if include.eyebrow and include.title == nil %}
           <p class="design-paragraph"><a class="design-link" href="{{ include.eyebrow_href }}">{{ include.eyebrow }}</a></p>
+          {% if include.eyebrow_divider %}<hr class="design-hero-divider">{% endif %}
         {% endif %}
         {% if include.name_heading %}<h1 class="design-hero-name">{{ include.name }}</h1>{% else %}<strong>{{ include.name | default: "Dotenvx" }}</strong>{% endif %}
       {% endif %}

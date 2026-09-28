@@ -2823,6 +2823,14 @@ html.dark .design-codeblock code,
   border-top: 1px solid var(--design-line);
   margin: 3rem 0;
 }
+.blog-post .design-hero-description { width: 100%; }
+.blog-post .design-hero-description > .design-paragraph { margin: 0; }
+.blog-post .design-hero-divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--design-line);
+  margin: 2.5rem 0;
+}
 
 .design-prose > .design-list-title,
 .design-prose > .design-page-title,

@@ -2,7 +2,7 @@
 layout: radar
 body_class: home-page
 ---
-<article class="home-sections">
+<article class="home-sections blog-post">
   <header class="design-hero-section home-hero">
     <div class="armor-shell">
       {% capture post_description %}
@@ -13,6 +13,7 @@ body_class: home-page
         secondary=true
         eyebrow="← back to blog"
         eyebrow_href="/blog"
+        eyebrow_divider=true
         name=page.title
         name_heading=true
         description=post_description

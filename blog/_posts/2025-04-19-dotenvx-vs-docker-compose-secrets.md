@@ -39,7 +39,7 @@ The takeaway here is that *how you handle the secret matters more than the mecha
 
 Dotenvx approaches secret management with a focus on minimal exposure. It injects your secrets at runtime only, via the command `dotenvx run`. How does this help?
 
-First, it means **you don't leave secret values sitting around in a container’s environment or filesystem** for longer than necessary. The dotenvx CLI loads the secrets from an encrypted `.env` file and injects them as environment variables only while launching your app, then your app uses them in-memory.
+First, it means **you don't leave secret values sitting around in a container's environment or filesystem** for longer than necessary. The dotenvx CLI loads the secrets from an encrypted `.env` file and injects them as environment variables only while launching your app, then your app uses them in-memory.
 
 There's no separate plaintext secret file hanging around permanently. In CI/CD, for example, dotenvx will decrypt your secrets and inject them "just in time" as the build or app starts.
 
@@ -47,7 +47,7 @@ There's no separate plaintext secret file hanging around permanently. In CI/CD, 
 
 **Crucially, dotenvx lets you encrypt your .env files.** With one command `dotenvx encrypt`, you transform your `.env` into an encrypted format.
 
-Even if someone finds that file, they can't read the secrets without the decryption key. It uses AES-256 encryption with ephemeral keys so that even if the encrypted .env file is exposed, its contents remain secure. <sup><a href="#footnote3">3</a></sup> You can commit the encrypted .env to your repo safely – it’s just gibberish to anyone without the key.
+Even if someone finds that file, they can't read the secrets without the decryption key. It uses AES-256 encryption with ephemeral keys so that even if the encrypted .env file is exposed, its contents remain secure. <sup><a href="#footnote3">3</a></sup> You can commit the encrypted .env to your repo safely – it's just gibberish to anyone without the key.
 
 Come runtime, you provide the key (often via an environment variable or a secret manager) and dotenvx seamlessly decrypts and injects the real values into your app. The end result: *no plaintext secrets sitting at rest on your disk or in your container. They exist only in memory when needed.*
 
@@ -83,7 +83,7 @@ It's that easy and no plaintext files sitting around! Great!
 
 ## Takeaway
 
-Docker Compose secrets *look* safer than env vars — but they aren’t encrypted, and they persist longer. Meanwhile, dotenvx focuses on **short-lived, encrypted, just-in-time secrets**.
+Docker Compose secrets *look* safer than env vars — but they aren't encrypted, and they persist longer. Meanwhile, dotenvx focuses on **short-lived, encrypted, just-in-time secrets**.
 
 If you care about reducing blast radius and limiting exposure, [dotenvx](https://github.com/dotenvx/dotenvx) is a solid and modern option to consider.
 

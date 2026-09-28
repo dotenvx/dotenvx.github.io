@@ -1529,6 +1529,14 @@ html.dark .radar-layout img[src="/assets/img/logo-env.svg"] {
   }
 }
 
+@media (max-width: 767px) {
+  .radar-topbar { grid-template-columns: auto 1fr auto; gap: .5rem; padding-inline: 1rem; }
+  .radar-topbar-center { display: flex; gap: .75rem; }
+  .radar-topbar-center .radar-nav-link { min-height: 44px; }
+  .radar-topbar-right .design-theme-control { display: none; }
+  .radar-topbar-right .radar-nav-login { display: inline-flex; padding: .6rem .65rem; font-size: var(--design-text-compact); }
+}
+
 .radar-nav-icon {
   align-items: center;
   color: var(--design-dim) !important;

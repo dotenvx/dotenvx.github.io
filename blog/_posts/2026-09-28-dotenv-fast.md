@@ -1,9 +1,5 @@
 ---
 layout: blog
-draft: true
-sitemap: false
-search: false
-noindex: true
 author: "Scott Motte"
 title: "Faster than Node's native parseEnv?"
 excerpt: "Dotenv's fast mode now beats Node's native parser on all current LTS versions - Node 22 and 24 - across Linux and Windows in our benchmarks."

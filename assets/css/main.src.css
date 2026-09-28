@@ -2832,6 +2832,19 @@ html.dark .design-codeblock code,
   margin: 2.5rem 0;
 }
 
+.blog-partner-thanks { display: flex; align-items: center; gap: 1.25rem; }
+.design-prose .blog-partner-thanks p { flex: 1; min-width: 0; margin: 0; }
+.design-prose .blog-partner-logo { display: inline-flex; align-items: center; gap: .5rem; flex: none; font-family: var(--design-font-mono); font-size: var(--design-text-compact); text-decoration: none !important; white-space: nowrap; }
+.design-prose .blog-partner-logo img { width: 24px; height: 24px; margin: 0; object-fit: contain; }
+.design-prose .blog-partner-logo-dark { display: none; }
+html.dark .blog-partner-logo-light { display: none; }
+html.dark .blog-partner-logo-dark { display: block; }
+@media (max-width: 480px) {
+  .blog-partner-thanks { flex-wrap: wrap; }
+  .design-prose .blog-partner-thanks p { flex-basis: 100%; }
+  .blog-partner-logo { margin-left: auto; }
+}
+
 .design-prose > .design-list-title,
 .design-prose > .design-page-title,
 .docs-guide-body > .design-page-title,

@@ -15,7 +15,7 @@ No, way.
 
 Yes. Yes, way.
 
-Dotenv&#39;s fast mode now beats Node&#39;s native parser on all current LTS versions - Node 22 and 24 - across Linux and Windows in our benchmarks. See below where Node native is still faster.
+[Dotenv&#39;s](https://github.com/motdotla/dotenv) fast mode now beats Node&#39;s native parser on all current LTS versions - Node 22 and 24 - across Linux and Windows in our benchmarks. See below where Node native is still faster.
 
 ## Background
 
@@ -59,10 +59,30 @@ It&#39;s fast.
 
 Since then the community is using it, have found edge cases, and those have been patched. It&#39;s cool to see, and I won&#39;t be surprised if it becomes adopted by other dotenv implementations.
 
+## Usage
+
+With dotenv 18 or later, enable fast mode in your app:
+
+{% capture fast_config_example %}
+require('dotenv').config({ fast: true })
+{% endcapture %}
+{% include components/design-codeblock.html value=fast_config_example language="javascript" %}
+
+Or use the new CLI:
+
+{% include components/design-codeblock.html value="$ npx dotenv run --fast -- node index.js" copy_text="npx dotenv run --fast -- node index.js" format="cli" %}
+
 ## The Future
 
 Software is changing, fast. With Dotenv we&#39;re committed to maintaining the past while still evolving .env. This --fast parser is an example of that.
 
 If you love .env and also want to see it evolve, please support us. Use [dotenv](https://github.com/motdotla/dotenv), use [dotenvx](https://github.com/dotenvx/dotenvx), and even snag a [dotenv membership](https://dotenvx.com/membership). Be part of the .env story. It&#39;s not all written yet.
 
-Lastly, a giant thank you to [Superagent.sh](https://superagent.sh) for bringing this to the dotenv community.
+<div class="blog-partner-thanks">
+  <p>Lastly, a giant thank you to <a href="https://superagent.sh">Superagent.sh</a> for bringing this to the dotenv community.</p>
+  <a class="blog-partner-logo" href="https://superagent.sh" aria-label="Visit Superagent.sh">
+    <img class="blog-partner-logo-light" src="https://www.superagent.sh/images/superagent-logo-square-flat-favicon.webp" alt="Superagent.sh" width="48" height="48" loading="lazy">
+    <img class="blog-partner-logo-dark" src="https://www.superagent.sh/images/superagent-logo-square-flat-favicon-dark.webp" alt="Superagent.sh" width="48" height="48" loading="lazy">
+    <span>superagent_</span>
+  </a>
+</div>

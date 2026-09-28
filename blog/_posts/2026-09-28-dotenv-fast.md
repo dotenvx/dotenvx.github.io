@@ -68,6 +68,10 @@ Or use the new CLI:
 
 {% include components/design-codeblock.html value="$ npx dotenv run --fast -- node index.js" copy_text="npx dotenv run --fast -- node index.js" format="cli" %}
 
+Dotenv fast mode in action.
+
+{% include components/design-video.html mp4="https://github.com/user-attachments/assets/8f69bf7a-e7f1-49b9-8650-c0dcb37809e6" hide_title=true %}
+
 ## The Future
 
 Software is changing, fast. With Dotenv we're committed to maintaining the past while still evolving .env. This --fast parser is an example of that.

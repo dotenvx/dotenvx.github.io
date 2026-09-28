@@ -23,8 +23,9 @@ body_class: home-page
   <section class="radar-section" aria-label="Article">
     <div class="armor-shell">
       {% include components/design-content-width.html content=content class="design-prose" %}
-      <footer class="mt-8">
+      <footer class="blog-post-footer">
       {% capture post_footer %}
+        <hr class="blog-post-footer-divider">
         <p class="design-paragraph text-center"><a class="design-link" href="/feed.xml">Subscribe via RSS</a> or follow <a class="design-link" href="https://x.com/dotenvx">@dotenvx 𝕏</a>.</p>
         <p class="design-paragraph text-center"><a class="design-link" href="/blog">← back to blog</a></p>
       {% endcapture %}

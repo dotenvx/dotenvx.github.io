@@ -55,6 +55,7 @@ exclude:
 markdown: kramdown
 kramdown:
   input: GFM
+  smart_quotes: [apos, apos, quot, quot]
   # Preserve literal hyphens in command-line flags and separators.
   typographic_symbols:
     ndash: "--"

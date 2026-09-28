@@ -2813,9 +2813,16 @@ html.dark .design-codeblock code,
 .design-prose :is(img, video) { display: block; height: auto; }
 .design-prose hr { border: 0; border-top: 1px solid var(--design-line); margin: 2.5rem 0; }
 .design-prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0; }
+.design-prose .design-table-wrap > .design-table { display: table; margin: 0; }
 .design-prose :is(th, td) { border-bottom: 1px solid var(--design-line); padding: .6rem; text-align: left; }
 .design-prose > :first-child { margin-top: 0; }
 .design-prose > :last-child { margin-bottom: 0; }
+
+.blog-post-footer-divider {
+  border: 0;
+  border-top: 1px solid var(--design-line);
+  margin: 3rem 0;
+}
 
 .design-prose > .design-list-title,
 .design-prose > .design-page-title,

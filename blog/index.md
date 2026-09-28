@@ -22,7 +22,8 @@ body_class: home-page
   <div class="armor-shell">
     {% capture blog_content %}
     <div class="blog-index-lists">
-      {% assign posts_by_year = site.categories.blog | group_by_exp: "post", "post.date | date: '%Y'" %}
+      {% assign listed_posts = site.categories.blog | where_exp: "post", "post.draft != true" %}
+      {% assign posts_by_year = listed_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
       {% for year_group in posts_by_year %}
         {% capture blog_year_items %}
           {% for post in year_group.items %}

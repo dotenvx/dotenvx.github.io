@@ -13,6 +13,7 @@ body_class: home-page membership-page
   .membership-comparison .design-table-wrap { overflow: visible; }
   .membership-comparison .design-table { table-layout: fixed; }
   .membership-comparison .design-table a.design-link { font-weight: inherit !important; }
+  html.dark .membership-comparison .design-table tbody th[scope="row"] { color: var(--design-body); }
   .membership-feature-label { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .375rem; }
   .membership-subrow-label { display: inline-block; padding-left: 1rem; }
   .membership-addon-row { scroll-margin-top: 6rem; }

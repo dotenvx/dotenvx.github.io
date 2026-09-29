@@ -7183,6 +7183,13 @@ body.radar-layout a.home-member-story { color: var(--design-ink); }
   margin-bottom: 0;
 }
 
+@media (max-width: 767px) {
+  /* Leave room for the cube's shadow above the mobile hero title. */
+  .corporate-page .design-hero--compact .design-hero-content {
+    margin-bottom: 2rem;
+  }
+}
+
 /* Public member directory. */
 .member-directory { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem)); justify-content: center; gap: 3rem; max-width: 56rem; margin-inline: auto; }
 .member-directory-content { width: 100%; max-width: none; margin-inline: auto; text-align: left; }

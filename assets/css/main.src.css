@@ -7414,3 +7414,8 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
 }
 
 .corporate-tier-contact { margin-top: 1.5rem; }
+
+/* Business directory cards display uploaded logos without a flip interaction. */
+.member-company-static { cursor: default; }
+.member-company-static .member-portrait-turn { transform: none; transition: none; }
+.member-company-static .member-company-logo { width: 54%; height: 54%; max-height: none; }

@@ -219,25 +219,32 @@ function populateExecutives(executives){
     }
   }
   const fragment=document.createDocumentFragment();
+  const status=document.querySelector('[data-executive-status]');
+  const updateStatus=()=>{
+    const hasBusinesses=grid.childElementCount>0;
+    status.textContent=hasBusinesses?'':'No public businesses yet.';
+    status.hidden=hasBusinesses;
+  };
   for(const team of teams.values()){
     const tile=template.content.firstElementChild.cloneNode(true);
-    const website=publicWebsite(team.url);
-    tile.querySelector('.member-company-initials').textContent=team.owners[0].initials.trim();
-    const badge=tile.querySelector('.member-company-badge');
-    badge.setAttribute('aria-label',team.name);
-    const image=badge.querySelector('img');
-    const fallback=()=>badge.remove();
+    const image=tile.querySelector('.member-company-logo');
+    const initials=tile.querySelector('.member-company-initials');
+    const words=team.name.match(/[\p{L}\p{N}]+/gu)||[];
+    initials.textContent=words.slice(0,2).map(word=>Array.from(word)[0]).join('').toUpperCase()||'?';
+    initials.setAttribute('role','img');
+    initials.setAttribute('aria-label',team.name);
+    const fallback=()=>{image.remove();initials.hidden=false;};
+    image.alt=`${team.name} logo`;
     image.addEventListener('error',fallback);
     try {
-      const url=new URL(team.image);
-      if(url.protocol!=='https:'||/(^|\.)ui-avatars\.com$/.test(url.hostname)) throw new Error('No uploaded team logo');
-      image.src=url.href;
+      const logo=new URL(team.image);
+      if(logo.protocol!=='https:'||/(^|\.)ui-avatars\.com$/.test(logo.hostname)) throw new Error('No uploaded team logo');
+      image.src=logo.href;
     } catch {fallback();}
-    initializeExecutiveDetails(tile,team,website);fragment.append(tile);
+    fragment.append(tile);
   }
   grid.replaceChildren(fragment);
-  const status=document.querySelector('[data-executive-status]');
-  status.textContent=teams.size?'':'No public teams yet.';status.hidden=teams.size>0;
+  updateStatus();
 }
 
 // Use the same Liquid partial as the homepage; API values are assigned as text.

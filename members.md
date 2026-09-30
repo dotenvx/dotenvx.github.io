@@ -28,7 +28,14 @@ body_class: home-page members-page
           <div class="member-company-grid" data-executive-members aria-busy="true"></div>
           <p class="member-directory-status" data-executive-status role="status">Loading teams…</p>
           <template id="executive-member-template">
-            {% include components/executive-card.html details=true name="" domain="" %}
+            <div class="member-portrait-square member-company-preview member-company-static">
+              <span class="member-portrait-turn">
+                <span class="member-company-face member-company-front">
+                  <img class="member-company-logo member-company-logo--image" alt="" width="160" height="160" loading="lazy">
+                  <span class="member-company-initials" hidden></span>
+                </span>
+              </span>
+            </div>
           </template>
         </section>
         <section class="member-directory-group" aria-labelledby="member-people-heading">

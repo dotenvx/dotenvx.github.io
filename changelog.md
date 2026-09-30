@@ -63,7 +63,7 @@ v1   v2   v3   v99</pre>
         name_heading=true
       secondary=true
         name="Changelog"
-        description="Check back often. We're working hard almost daily on Dotenvx and Armor."
+        description="Check back often. We almost never miss a day working on Dotenvx."
         content=changelog_hero_visual
       %}
     </div>

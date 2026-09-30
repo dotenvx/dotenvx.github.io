@@ -1,4 +1,5 @@
 ---
+description: "Read the Dotenvx terms of service covering accounts, payments, service use, and responsibilities."
 title: "Terms of Service"
 layout: radar
 body_class: home-page

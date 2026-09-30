@@ -1,4 +1,5 @@
 ---
+description: "Learn about Dotenvx, the team behind encrypted .env files, and our company, customers, careers, and open source work."
 title: Company
 permalink: /company/
 layout: radar
@@ -22,6 +23,7 @@ body_class: home-page
   <div class="armor-shell">
     {% include components/design-hero.html
       compact=true
+      name_heading=true
       secondary=true
       name="Company"
       description="Open source, changelog, trust, and how to reach us."

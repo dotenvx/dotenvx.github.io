@@ -1,4 +1,6 @@
 ---
+noindex: true
+sitemap: false
 title: Search
 description: Search Dotenvx docs, pricing, and the rest of the site.
 permalink: /search/
@@ -40,6 +42,7 @@ body_class: home-page
   <div class="armor-shell">
     {% include components/design-hero.html
       compact=true
+      name_heading=true
       secondary=true
       name="Search"
       description="Find docs, pricing, and product pages."

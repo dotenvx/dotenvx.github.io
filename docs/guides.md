@@ -1,4 +1,5 @@
 ---
+description: "Follow Dotenvx guides to encrypt .env files and load environment variables across languages, frameworks, deployment platforms, and AI coding tools."
 title: Guides
 permalink: /docs/guides/
 layout: radar

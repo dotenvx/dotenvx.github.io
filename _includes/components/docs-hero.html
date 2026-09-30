@@ -34,6 +34,7 @@
 {% endif %}
 <section class="design-hero-section home-hero docs-hero{% if include.visual %} docs-hero--example{% endif %}">
   <div class="armor-shell">
+    {% include components/docs-breadcrumbs.html %}
     {% include components/design-hero.html
       compact=true
       secondary=true

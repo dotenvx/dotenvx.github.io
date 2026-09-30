@@ -66,3 +66,29 @@ has a dedicated lexer for assignments, comments, multiline values, and interpola
 Run `bundle exec ruby scripts/test-design-syntax.rb`, then `npm run build:css` and
 `bundle exec jekyll build`. Preview `/docs/quickstart/`, `/docs/env-file/`, and
 `/docs/cloudflare/` in both themes. Radar's `/design/codeblock` is the specimen gallery.
+
+## Search engine metadata
+
+Every public HTML page needs a descriptive `title`, a page-specific `description`
+(or a blog `excerpt`), and one main `h1`. The shared head supplies canonical URLs,
+Open Graph and Twitter cards, JSON-LD, and RSS discovery. `seo_title` optionally
+sets the complete search title without changing the visible heading;
+`social_title` can separately customize sharing copy.
+
+Docs automatically receive contextual search titles and linked breadcrumbs from
+existing parent pages, `crumbs`, and `eyebrow_href`. Keep those links pointed at
+canonical pages. Use `noindex: true` for utility pages; the SEO generator also
+excludes these from the sitemap. Redirects should use `redirect_to` or
+`redirect_from`, with each old URL defined once and pointing to its final page.
+Do not add generated timestamps as `last_modified_at`; use actual content changes.
+
+Validate a production build (also enforced before deployment in CI):
+
+```sh
+JEKYLL_ENV=production bundle exec jekyll build
+bundle exec ruby scripts/test-seo.rb
+```
+
+The check covers every indexable page, title and canonical uniqueness, descriptions,
+headings, social metadata, valid JSON-LD, breadcrumb destinations, sitemap coverage,
+and robots rules. An optional first argument selects another build directory.

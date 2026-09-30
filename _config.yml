@@ -2,7 +2,8 @@ url: "https://dotenvx.com" # the base hostname & protocol for your site, e.g. ht
 baseurl: "/" # the subpath of your site, e.g. /blog
 title: "Dotenvx" # the name of your site, e.g. ACME Corp.
 title_separator: "· "
-logo: "https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg"
+logo: "/logo.png"
+lang: en-US
 description: "Encrypt your secrets. Ship them with your code."
 
 # Footer "Edit this page on GitHub" link text
@@ -14,13 +15,13 @@ github_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump in
 
 # For SEO Jekyll Plugin
 author:
-  name: dotenv
+  name: Dotenvx
   twitter: dotenvx
 twitter:
   username: dotenvx
   card: summary_large_image
 social:
-  name: dotenv
+  name: Dotenvx
   links:
     - https://twitter.com/dotenvx
     - https://github.com/dotenvx
@@ -42,6 +43,7 @@ favicon:
 exclude:
   - .DS_Store
   - README.md
+  - DEVELOPMENT.md
   - package.json
   - package-lock.json
   - yarn.lock

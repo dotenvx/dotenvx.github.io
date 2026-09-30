@@ -1,11 +1,12 @@
 <meta charset="utf-8">
-{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="max-image-preview:large">{% endif %}
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="keywords" content="dotenv, .env, dotenvx, dotenv-vault, environments, encrypt, vault, developer secrets, secret manager, share, secretops">
 
 {% assign social_base_title = page.title | default: site.title %}
 {% if page.social_title %}
 {% assign social_share_title = page.social_title %}
+{% elsif page.seo_title %}
+{% assign social_share_title = page.seo_title %}
 {% elsif page.url == "/" %}
 {% assign social_share_title = site.title | append: " · " | append: site.description %}
 {% elsif social_base_title == site.title %}
@@ -13,16 +14,20 @@
 {% else %}
 {% assign social_share_title = social_base_title | append: " · " | append: site.title %}
 {% endif %}
-<title>{{ social_share_title }}</title>
+{% assign search_title = page.seo_title | default: social_share_title %}
+<title>{{ search_title | escape }}</title>
 {% capture seo_metadata %}{% seo title=false %}{% endcapture %}
 {% assign seo_lines = seo_metadata | split: "
 " %}
 {% for seo_line in seo_lines %}
 {% unless seo_line contains 'property="og:title"' or seo_line contains 'twitter:title' %}{{ seo_line }}{% endunless %}
 {% endfor %}
-<meta property="og:title" content="{{ social_share_title }}">
-<meta name="twitter:title" content="{{ social_share_title }}">
-{% if page.description %}<meta name="twitter:description" content="{{ page.description | escape }}">{% endif %}
+<meta property="og:title" content="{{ social_share_title | escape }}">
+<meta name="twitter:title" content="{{ social_share_title | escape }}">
+{% assign social_description = page.description | default: page.excerpt | default: site.description %}
+<meta name="twitter:description" content="{{ social_description | markdownify | strip_html | normalize_whitespace | escape }}">
+{% include layouts/breadcrumb-schema.html %}
+{% feed_meta %}
 {% favicon %}
 
 <script src="https://unpkg.com/alpinejs" defer></script>

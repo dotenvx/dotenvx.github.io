@@ -1,4 +1,5 @@
 ---
+description: "Explore Dotenvx open source projects and the community building tools for environment variables and encrypted .env files."
 title: Open Source
 permalink: /opensource/
 layout: radar
@@ -27,6 +28,7 @@ body_class: home-page
   <div class="armor-shell">
     {% include components/design-hero.html
       compact=true
+      name_heading=true
       secondary=true
       name="Open Source"
       description="We're big into secrets, encryption, and agentic identity."

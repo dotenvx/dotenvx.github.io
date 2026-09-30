@@ -1,4 +1,5 @@
 ---
+description: "Compare Dotenvx Armor plans for secrets access control, audit history, and team security. Dotenvx is free and open source."
 title: "Pricing"
 image: "/assets/img/og-image-pricing.png"
 layout: radar

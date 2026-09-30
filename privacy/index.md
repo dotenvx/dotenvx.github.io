@@ -1,4 +1,5 @@
 ---
+description: "Learn how Dotenvx collects, uses, and protects account data, handles support access, and manages privacy and data retention."
 title: "Privacy Policy"
 layout: radar
 body_class: home-page

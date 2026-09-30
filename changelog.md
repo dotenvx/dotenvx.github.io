@@ -1,6 +1,7 @@
 ---
+description: "Follow Dotenvx releases, new features, and fixes for encrypted .env files, the CLI, SDKs, and secrets management."
 title: Changelog
-social_title: Changelog
+social_title: "Changelog · Dotenvx"
 image: "/assets/img/og-image-changelog.png"
 permalink: /changelog/
 layout: radar
@@ -59,6 +60,7 @@ v1   v2   v3   v99</pre>
     <div class="armor-shell">
       {% include components/design-hero.html
         compact=true
+        name_heading=true
       secondary=true
         name="Changelog"
         description="Check back often. We're working hard almost daily on Dotenvx and Armor."

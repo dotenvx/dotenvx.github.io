@@ -1,4 +1,5 @@
 ---
+description: "Read the Dotenvx blog for guides and updates on environment variables, encrypted .env files, developer secrets, and building Dotenvx."
 title: "Blog"
 layout: radar
 body_class: home-page

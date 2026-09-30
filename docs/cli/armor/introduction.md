@@ -4,6 +4,8 @@ title: Armor
 description: Dotenvx Armor keeps your private decryption keys armored off device.
 permalink: /docs/cli/armor/introduction/
 redirect_from:
+  - /docs/ref/cli/armor/
+  - /docs/ref/cli/armor
   - /docs/advanced/armor
   - /docs/advanced/armor/
   - /docs/cli/armor

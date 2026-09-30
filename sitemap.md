@@ -1,4 +1,5 @@
 ---
+description: "Browse the Dotenvx website, documentation, CLI and SDK references, guides, product pages, and blog posts in one sitemap."
 title: Sitemap
 permalink: /sitemap
 layout: radar
@@ -33,6 +34,7 @@ body_class: home-page
   <div class="armor-shell">
     {% include components/design-hero.html
       compact=true
+      name_heading=true
       secondary=true
       name="Sitemap"
       description="Every public page on dotenvx.com, in one place."

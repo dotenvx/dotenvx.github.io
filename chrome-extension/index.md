@@ -1,4 +1,5 @@
 ---
+description: "Decrypt encrypted .env files directly on GitHub with the Dotenvx Chrome extension. View your environment variables without leaving your browser."
 title: "Chrome Extension"
 layout: radar
 ---

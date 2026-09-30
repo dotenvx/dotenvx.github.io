@@ -6,7 +6,7 @@ og_image:
 layout: radar
 title: Node.js
 social_title: Encrypt a .env file in Node.js
-description: Use Dotenvx with Node.js.
+description: "Load and decrypt .env files in Node.js with Dotenvx. Get started with the Node.js SDK or inject environment variables using the CLI."
 permalink: /docs/nodejs/
 redirect_from:
   - /docs/languages/nodejs

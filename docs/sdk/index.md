@@ -1,4 +1,5 @@
 ---
+description: "Use Dotenvx SDKs to load and manage encrypted environment variables directly in your application. Browse language references and encryption primitives."
 title: SDKs
 permalink: /docs/sdk/
 redirect_from:

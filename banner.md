@@ -1,4 +1,6 @@
 ---
+noindex: true
+sitemap: false
 title: ""
 permalink: /banner
 hide_footer: true

@@ -1,7 +1,8 @@
 ---
+seo_title: "Dotenvx · Encrypt .env files and manage environment variables"
 title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 social_title: "Dotenvx · A secure dotenv–from the creator of dotenv"
-description: "A secure dotenv–from the creator of dotenv."
+description: "Encrypt .env files, commit them safely, and load environment variables in any language or framework with Dotenvx, from the creator of dotenv."
 layout: radar
 body_class: home-page
 ---

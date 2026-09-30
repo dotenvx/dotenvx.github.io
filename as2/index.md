@@ -1,4 +1,5 @@
 ---
+description: "Agentic Secret Storage (AS2) provides encrypted secrets for autonomous software and AI agents, with no console or human in the loop."
 title: "Agentic Secret Storage"
 layout: radar
 ---

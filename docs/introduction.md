@@ -1,4 +1,5 @@
 ---
+description: "Learn how to install Dotenvx, encrypt .env files, and load secrets at runtime. Explore quickstarts, CLI commands, SDKs, and deployment guides."
 title: Documentation
 permalink: /docs/introduction/
 redirect_from:

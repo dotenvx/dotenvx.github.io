@@ -20,6 +20,7 @@ og_image:
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="Dotenv">
     <div class="armor-shell">
+      {% include components/docs-breadcrumbs.html %}
       {% capture dotenv_actions %}
         {% include components/design-btn.html label="Get started" href="#quickstart" %}
         {% include components/design-btn.html label="View on GitHub" href="https://github.com/motdotla/dotenv" %}

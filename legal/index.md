@@ -1,4 +1,5 @@
 ---
+description: "Read the Dotenvx privacy policy and terms of service, including how we handle account data and provide our services."
 title: Legal
 permalink: /legal/
 layout: radar
@@ -22,6 +23,7 @@ body_class: home-page
   <div class="armor-shell">
     {% include components/design-hero.html
       compact=true
+      name_heading=true
       secondary=true
       name="Legal"
       description="Privacy, terms, and trust."

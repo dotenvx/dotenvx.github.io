@@ -1,4 +1,5 @@
 ---
+description: "Compare dotenv parsing behavior across libraries, languages, and frameworks with the Dotenv Spec and its environment variable compatibility table."
 title: "Spec"
 layout: radar
 ---

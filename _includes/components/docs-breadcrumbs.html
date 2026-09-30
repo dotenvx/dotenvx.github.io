@@ -1,0 +1,8 @@
+{% if page.seo_breadcrumbs.size > 1 %}
+<nav aria-label="Breadcrumb" class="design-paragraph design-content-width">
+  {% for crumb in page.seo_breadcrumbs %}
+    {% unless forloop.first %}<span aria-hidden="true"> / </span>{% endunless %}
+    {% if forloop.last %}<span aria-current="page">{{ crumb.name | escape }}</span>{% else %}<a class="design-link" href="{{ crumb.url | relative_url }}">{{ crumb.name | escape }}</a>{% endif %}
+  {% endfor %}
+</nav>
+{% endif %}

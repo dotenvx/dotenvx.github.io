@@ -6,7 +6,7 @@ og_image:
   alt: Next.js
 title: Next.js
 social_title: Encrypt a .env file in Next.js
-description: Use Dotenvx with Next.js.
+description: "Use Dotenvx with Next.js to load encrypted .env files and manage environment variables across local development and deployments."
 permalink: /docs/nextjs/
 redirect_from:
   - /docs/platforms/vercel

@@ -1,4 +1,5 @@
 ---
+description: "Contact the Dotenvx team for product questions, support, and help managing encrypted environment variables."
 title: "Contact"
 layout: radar
 body_class: home-page contact-page
@@ -36,6 +37,7 @@ body_class: home-page contact-page
   <div class="armor-shell">
     {% include components/design-hero.html
       compact=true
+      name_heading=true
       secondary=true
       name="Contact"
       description="We are based in LA and keep an office in SF–visiting often."

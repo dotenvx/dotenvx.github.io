@@ -1,7 +1,7 @@
 ---
-title: Membership
+title: Pricing
 description: "Be part of the .env story."
-permalink: /membership
+permalink: /pricing
 layout: radar
 body_class: home-page membership-page
 ---
@@ -52,7 +52,7 @@ body_class: home-page membership-page
 {% endcapture %}
 
 <div class="home-sections">
-  <section class="design-hero-section home-hero" aria-label="Membership">
+  <section class="design-hero-section home-hero" aria-label="Pricing">
     <div class="armor-shell">
       {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=membership_slab actions=membership_actions %}
 
@@ -72,8 +72,8 @@ body_class: home-page membership-page
           <tr>
             <th scope="col">Membership</th>
             <th scope="col" class="design-table-cell--center pricing-summary-plan">User</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Professional</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Executive</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Member</th>
+            <th scope="col" class="design-table-cell--center pricing-summary-plan">Business</th>
           </tr>
         </thead>
         <tbody>

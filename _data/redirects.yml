@@ -88,5 +88,8 @@
 
 "/corp": "/corporate"
 "/corp/": "/corporate"
-"/memb": "/membership"
-"/memb/": "/membership"
+"/memb": "/pricing"
+"/memb/": "/pricing"
+
+"/membership": "/pricing"
+"/membership/": "/pricing"

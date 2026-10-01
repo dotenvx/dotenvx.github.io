@@ -16,24 +16,22 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx run --ignore=MISSING_ENV_FILE -- yourcommand
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx run --ignore=MISSING_ENV_FILE -- yourcommand{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx run --ignore=MISSING_ENV_FILE -- yourcommand"}
 
 Ignore multiple error codes by separating them with spaces.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx run --ignore=MISSING_ENV_FILE MISSING_KEY -- yourcommand
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx run --ignore=MISSING_ENV_FILE MISSING_KEY -- yourcommand{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx run --ignore=MISSING_ENV_FILE MISSING_KEY -- yourcommand"}
 
 You can also set `DOTENV_CONFIG_IGNORE`. Its value is a comma-separated list.
 
-{% capture cli_code_2 %}
+```console
 $ DOTENV_CONFIG_IGNORE=MISSING_ENV_FILE,OTHER dotenvx run -- yourcommand
-{% endcapture %}
-{% capture cli_code_2_copy %}DOTENV_CONFIG_IGNORE=MISSING_ENV_FILE,OTHER dotenvx run -- yourcommand{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="DOTENV_CONFIG_IGNORE=MISSING_ENV_FILE,OTHER dotenvx run -- yourcommand"}

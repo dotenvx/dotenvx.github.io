@@ -14,31 +14,36 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Packages</h2>
-    <div class="design-list">
-      <ul class="design-list-items">
-        <li>
-          <a class="design-link" href="/docs/sdk/rust/primitives/">dotenvx-primitives</a>
-          <span class="design-list-meta">crates.io</span>
-        </li>
-      </ul>
-    </div>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Install</h2>
-    {% capture sdk_rust_install %}
+## Packages
+
+<div class="design-list">
+<ul class="design-list-items">
+<li>
+<a class="design-link" href="/docs/sdk/rust/primitives/">dotenvx-primitives</a>
+<span class="design-list-meta">crates.io</span>
+</li>
+</ul>
+</div>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Install
+
+```console
 $ cargo add dotenvx-primitives
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_rust_install copy_text="cargo add dotenvx-primitives" format="cli" %}
+```
+{: copy="cargo add dotenvx-primitives"}
 
-    <p class="design-paragraph">See <a class="design-link" href="/docs/sdk/rust/primitives/">Rust primitives</a> for details, or the <a class="design-link" href="/docs/rust/">Rust quickstart</a> for the CLI.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+See [Rust primitives](/docs/sdk/rust/primitives/) for details, or the [Rust quickstart](/docs/rust/) for the CLI.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

@@ -8,10 +8,7 @@ eyebrow: "dotenvx native push"
 eyebrow_href: "/docs/cli/native/push/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx native push -f .env.production
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx native push -f .env.production
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx native push -f .env.production"}

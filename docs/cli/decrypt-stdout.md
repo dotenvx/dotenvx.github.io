@@ -18,7 +18,8 @@ crumbs:
   - label: Decrypt
     href: /docs/cli/decrypt/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx decrypt --stdout
 #/-------------------[DOTENV_PUBLIC_KEY]--------------------/
 #/            public-key encryption for .env files          /
@@ -27,14 +28,12 @@ $ dotenvx decrypt --stdout
 DOTENV_PUBLIC_KEY="034af93e93708b994c10f236c96ef88e47291066946cce2e8d98c9e02c741ced45"
 # .env
 HELLO="World"
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx decrypt --stdout{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx decrypt --stdout"}
 
 or send to a file:
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx decrypt --stdout > somefile.txt
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx decrypt --stdout > somefile.txt{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx decrypt --stdout > somefile.txt"}

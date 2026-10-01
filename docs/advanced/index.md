@@ -32,45 +32,53 @@ layout: radar
 {% endcapture %}
 
 <section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-intro-lists">
-      {% capture step_content %}
-        {% include components/docs-cli-commands.html group="standard" %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-intro-lists">
+{% capture step_content %}
+{% include components/docs-cli-commands.html group="standard" %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-      {% capture step_content %}
-        {% include components/docs-cli-commands.html group="hidden" title="Hidden Commands" %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
+{% capture step_content %}
+{% include components/docs-cli-commands.html group="hidden" title="Hidden Commands" %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-      {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">SDK – Node.js</h2>
-        <ul class="advanced-cli-commands">{{ advanced_sdk_items }}</ul>
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-      {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">SDK – Ruby</h2>
-        <ul class="advanced-cli-commands">
-          <li><a class="design-link" href="/docs/sdk/ruby/">Ruby SDK</a></li>
-        </ul>
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-      {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">SDK – Python</h2>
-        <ul class="advanced-cli-commands">
-          <li><a class="design-link" href="/docs/sdk/python/">Python SDK</a></li>
-        </ul>
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-      {% capture step_content %}
-        <h2 class="design-page-title design-page-title--flush">Primitives</h2>
-        <ul class="advanced-cli-commands">{{ advanced_rust_items }}</ul>
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-    </div>
+{% capture step_content %}
 
-  </div>
+## SDK – Node.js
+
+<ul class="advanced-cli-commands">{{ advanced_sdk_items }}</ul>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+{% capture step_content %}
+
+## SDK – Ruby
+
+<ul class="advanced-cli-commands">
+<li><a class="design-link" href="/docs/sdk/ruby/">Ruby SDK</a></li>
+</ul>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+{% capture step_content %}
+
+## SDK – Python
+
+<ul class="advanced-cli-commands">
+<li><a class="design-link" href="/docs/sdk/python/">Python SDK</a></li>
+</ul>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+{% capture step_content %}
+
+## Primitives
+
+<ul class="advanced-cli-commands">{{ advanced_rust_items }}</ul>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</div>
+
+</div>
 </div>
 </section>

@@ -18,24 +18,22 @@ crumbs:
   - label: Armor
     href: /docs/cli/armor/introduction/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx armor down
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx armor down{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx armor down"}
 
 Use a specific env file.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx armor down -f .env.production
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx armor down -f .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx armor down -f .env.production"}
 
 Use a token or team.
 
-{% capture cli_code_2 %}
+```console
 $ dotenvx armor down --token token --team team
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx armor down --token token --team team{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="dotenvx armor down --token token --team team"}

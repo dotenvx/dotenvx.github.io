@@ -22,22 +22,23 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-<p class="design-paragraph">Set a convention when using <code class="design-code">dotenvx.config()</code>. This allows you to use the same file loading order as the CLI without needing to specify each file individually.</p>
 
-<p class="design-paragraph">To load a convention from another directory, see <a class="design-link" href="/docs/sdk/nodejs/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>
 
-<h2 class="design-page-title">Next.js convention</h2>
+Set a convention when using `dotenvx.config()`. This allows you to use the same file loading order as the CLI without needing to specify each file individually.
 
-<p class="design-paragraph">Load environment files using the Next.js convention:</p>
+To load a convention from another directory, see [`config(path: directory, convention: 'nextjs')`](/docs/sdk/nodejs/config-path-directory-convention).
 
-{% capture sdk_code_0 %}
+## Next.js convention
+
+Load environment files using the Next.js convention:
+
+```console
 # Setup environment files
 $ echo "HELLO=development local" > .env.development.local
 $ echo "HELLO=local" > .env.local
 $ echo "HELLO=development" > .env.development
 $ echo "HELLO=env" > .env
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 format="cli" %}
+```
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -49,39 +50,35 @@ console.log(`Hello ${process.env.HELLO}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
-{% capture sdk_code_2 %}
+```console
 $ NODE_ENV=development node index.js
 ⟐ injected env (1) from .env.development.local, .env.local, .env.development, .env
 Hello development local
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
+```
 
-<p class="design-paragraph">This is equivalent to using <code class="design-code">--convention=nextjs</code> with the CLI:</p>
+This is equivalent to using `--convention=nextjs` with the CLI:
 
-{% capture sdk_code_3 %}
+```console
 $ dotenvx run --convention=nextjs -- node index.js
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_3 format="cli" %}
+```
 
-<p class="design-paragraph">You can also set <code class="design-code">DOTENV_CONFIG_CONVENTION=nextjs</code>.</p>
+You can also set `DOTENV_CONFIG_CONVENTION=nextjs`.
 
-{% capture sdk_code_4 %}
+```console
 $ DOTENV_CONFIG_CONVENTION=nextjs node index.js
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_4 format="cli" %}
+```
 
-<h2 class="design-page-title">Flow convention</h2>
+## Flow convention
 
-<p class="design-paragraph">Load environment files using the dotenv-flow convention:</p>
+Load environment files using the dotenv-flow convention:
 
-{% capture sdk_code_5 %}
+```console
 # Setup environment files
 $ echo "HELLO=development local" > .env.development.local
 $ echo "HELLO=development" > .env.development
 $ echo "HELLO=local" > .env.local
 $ echo "HELLO=env" > .env
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_5 format="cli" %}
+```
 
 {% capture sdk_code_6 %}
 {% raw %}
@@ -93,16 +90,14 @@ console.log(`Hello ${process.env.HELLO}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_6 language="javascript" %}
 
-{% capture sdk_code_7 %}
+```console
 $ NODE_ENV=development node index.js
 ⟐ injected env (1) from .env.development.local, .env.development, .env.local, .env
 Hello development local
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_7 format="cli" %}
+```
 
-<p class="design-paragraph">You can also set <code class="design-code">DOTENV_CONFIG_CONVENTION=flow</code>.</p>
+You can also set `DOTENV_CONFIG_CONVENTION=flow`.
 
-{% capture sdk_code_8 %}
+```console
 $ NODE_ENV=development DOTENV_CONFIG_CONVENTION=flow node index.js
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_8 format="cli" %}
+```

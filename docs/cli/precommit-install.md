@@ -18,9 +18,9 @@ crumbs:
   - label: Precommit
     href: /docs/cli/precommit/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx precommit --install
 ▣ dotenvx precommit installed [.git/hooks/pre-commit]
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx precommit --install{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx precommit --install"}

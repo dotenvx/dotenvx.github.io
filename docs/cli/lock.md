@@ -20,11 +20,11 @@ options:
   - title: "lock down"
     href: /docs/cli/lock/down/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx lock
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx lock{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx lock"}
 
 ## Security note
 

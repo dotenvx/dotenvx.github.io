@@ -18,13 +18,13 @@ crumbs:
   - label: Keypair
     href: /docs/cli/keypair/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ mkdir -p apps/app1
 echo "HELLO=World" > apps/app1/.env
 dotenvx encrypt -fk .env.keys -f apps/app1/.env
 
 dotenvx keypair -fk .env.keys -f apps/app1/.env
 {"DOTENV_PUBLIC_KEY":"<publicKey>","DOTENV_PRIVATE_KEY":"<privateKey>"}
-{% endcapture %}
-{% capture cli_code_0_copy %}mkdir -p apps/app1{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="mkdir -p apps/app1"}

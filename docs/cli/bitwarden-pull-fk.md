@@ -8,10 +8,7 @@ eyebrow: "dotenvx bitwarden pull"
 eyebrow_href: "/docs/cli/bitwarden-pull/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx bitwarden pull -fk .env.production.keys
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx bitwarden pull -fk .env.production.keys
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx bitwarden pull -fk .env.production.keys"}

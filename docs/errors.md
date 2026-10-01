@@ -13,13 +13,15 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-guide-body design-prose">
-      <p class="design-paragraph">Errors are written to stderr in the form <code>[ERROR_CODE] message</code>. Use the code to identify the failure independently of its contextual message.</p>
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-guide-body design-prose" markdown="block">
 
-      <h2 class="design-page-title">Dotenvx</h2>
-      {% capture dotenvx_errors %}
+Errors are written to stderr in the form `[ERROR_CODE] message`. Use the code to identify the failure independently of its contextual message.
+
+## Dotenvx
+
+{% capture dotenvx_errors %}
         <thead>
           <tr><th scope="col">Error</th><th scope="col">Description</th></tr>
         </thead>
@@ -55,11 +57,12 @@ layout: radar
           <tr><td><code>VALIDATION_FAILED</code></td><td>Environment validation failed.</td></tr>
           <tr><td><code>WRONG_PRIVATE_KEY</code></td><td>The available private key cannot decrypt the value.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=dotenvx_errors %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill" content=dotenvx_errors %}
 
-      <h2 class="design-page-title">Armor</h2>
-      {% capture armor_errors %}
+## Armor
+
+{% capture armor_errors %}
         <thead>
           <tr><th scope="col">Error</th><th scope="col">Description</th></tr>
         </thead>
@@ -81,9 +84,9 @@ layout: radar
           <tr><td><code>DOTENVX_TEAM_REQUIRED</code></td><td>The request must identify a team.</td></tr>
           <tr><td><code>UNAUTHORIZED</code></td><td>The request is not authenticated.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=armor_errors %}
-    </div>
-  </div>
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill" content=armor_errors %}
+</div>
+</div>
 </div>
 </section>

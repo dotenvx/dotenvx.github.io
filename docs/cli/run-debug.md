@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=production" > .env.production
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
@@ -33,8 +34,7 @@ HELLO set to production
 executing process command [node index.js]
 expanding process command to [/opt/homebrew/bin/node index.js]
 Hello production
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=production" > .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=production\" > .env.production"}
 
 [log levels](https://github.com/winstonjs/winston?tab=readme-ov-file#logging)

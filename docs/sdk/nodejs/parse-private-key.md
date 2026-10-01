@@ -33,8 +33,7 @@ console.log(`Hello ${parsed.HELLO}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
-{% capture sdk_code_1 %}
+```console
 $ node index.js
 Hello World
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 format="cli" %}
+```

@@ -28,8 +28,7 @@ options:
 ---
 Lock a private key in `.env.keys` with a local passphrase.
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx lock up
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx lock up{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx lock up"}

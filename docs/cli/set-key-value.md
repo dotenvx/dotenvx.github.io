@@ -19,13 +19,13 @@ crumbs:
     href: /docs/cli/set/
 video: cli-set-key-value
 ---
-{% capture cli_code_0 %}
+
+```console
 $ touch .env
 
 dotenvx set HELLO World
 ◈ encrypted HELLO (.env)
-{% endcapture %}
-{% capture cli_code_0_copy %}touch .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="touch .env"}
 
 * encryption defaults to on

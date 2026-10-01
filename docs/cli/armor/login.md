@@ -20,11 +20,11 @@ crumbs:
   - label: Armor
     href: /docs/cli/armor/introduction/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx armor login
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx armor login{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx armor login"}
 
 After authentication, dotenvx first attempts to store your access token in your operating system's native secret store: macOS Keychain, Windows Credential Manager, or Linux Secret Service.
 

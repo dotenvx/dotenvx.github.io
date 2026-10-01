@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```dotenv
 # .env
 MULTILINE_PEM="-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u
@@ -27,18 +28,16 @@ bTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/
 kKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V
 u4QuUoobAgMBAAE=
 -----END PUBLIC KEY-----"
-{% endcapture %}
-{% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
+```
+{: copy="# .env"}
 
-{% capture cli_code_1 %}
+```javascript
 // index.js
 console.log('MULTILINE_PEM', process.env.MULTILINE_PEM)
-{% endcapture %}
-{% capture cli_code_1_copy %}// index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="javascript" %}
+```
+{: copy="// index.js"}
 
-{% capture cli_code_2 %}
+```console
 $ dotenvx run -- node index.js
 MULTILINE_PEM -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnNl1tL3QjKp3DZWM0T3u
@@ -47,6 +46,5 @@ bTdfHN8CmQr2iDJC0C6zY8YV93oZB3x0zC/LPbRYpF8f6OqX1lZj5vo2zJZy4fI/
 kKcI5jHYc8VJq+KCuRZrvn+3V+KuL9tF9v8ZgjF2PZbU+LsCy5Yqg1M8f5Jp5f6V
 u4QuUoobAgMBAAE=
 -----END PUBLIC KEY-----
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="dotenvx run -- node index.js"}

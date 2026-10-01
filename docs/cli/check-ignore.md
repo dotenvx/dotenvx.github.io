@@ -21,14 +21,15 @@ redirect_from:
 ---
 Ignore specific loading or value-validation errors:
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx check --ignore=MISSING_ENV_FILE
 $ dotenvx check --ignore=MISSING_ENV_FILE INVALID_ENV
 $ DOTENV_IGNORE=MISSING_ENV_FILE dotenvx check
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx check --ignore=MISSING_ENV_FILE
+```
+{: copy="dotenvx check --ignore=MISSING_ENV_FILE
 dotenvx check --ignore=MISSING_ENV_FILE INVALID_ENV
-DOTENV_IGNORE=MISSING_ENV_FILE dotenvx check{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+DOTENV_IGNORE=MISSING_ENV_FILE dotenvx check"}
+
+
 
 An Envfile is still required, even when errors are ignored.

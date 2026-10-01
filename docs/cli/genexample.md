@@ -20,17 +20,17 @@ options:
   - title: "genexample directory"
     href: /docs/cli/genexample-directory/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=World" > .env
 
 dotenvx genexample
 ▣ generated (.env.example)
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\" > .env"}
 
-{% capture cli_fix_9041501 %}
+```dotenv
 # .env.example
 HELLO=""
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_fix_9041501 copy=false language="dotenv" %}
+```
+{: copy="false"}

@@ -22,14 +22,13 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-{% capture sdk_code_0 %}
+
+```dotenv
 # .env
 HELLO="World"
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
+```
 
-{% capture sdk_code_1 %}
+```javascript
 // index.js
 require('@dotenvx/dotenvx').config({path: ['.env'], envKeysFile: '../../.env.keys'})
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
+```

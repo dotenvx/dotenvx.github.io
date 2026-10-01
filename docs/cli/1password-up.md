@@ -8,10 +8,7 @@ eyebrow: "dotenvx 1password"
 eyebrow_href: "/docs/cli/1password/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx 1password up
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx 1password up
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx 1password up"}

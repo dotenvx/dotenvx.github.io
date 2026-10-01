@@ -22,29 +22,28 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-<p class="design-paragraph">By default, up to the first six characters are visible.</p>
 
-{% capture sdk_code_0 %}
+
+By default, up to the first six characters are visible.
+
+```dotenv
 # .env
 SECRET="abcdefghijkl"
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
+```
 
-{% capture sdk_code_1 %}
+```javascript
 // index.js
 const dotenvx = require('@dotenvx/dotenvx')
 const result = dotenvx.config({ mask: true, quiet: true })
 
 console.log(process.env.SECRET)
 console.log(result.parsed.SECRET)
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
+```
 
-{% capture sdk_code_2 %}
+```console
 $ node index.js
 abcdef******
 abcdef******
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
+```
 
-<p class="design-paragraph">Set <code class="design-code">mask: 0</code> to fully mask values.</p>
+Set `mask: 0` to fully mask values.

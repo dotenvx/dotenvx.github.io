@@ -36,9 +36,9 @@ options:
   - title: 'set KEY -- "- + * ÷"'
     href: /docs/cli/set-key-value-with-leading-dash/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx set HELLO World
 ◈ encrypted HELLO (.env)
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx set HELLO World{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx set HELLO World"}

@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ touch .env.ci
 dotenvx set HELLO "ci encrypted" -f .env.production
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
@@ -27,9 +28,8 @@ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 DOTENV_PRIVATE_KEY_CI="122...0b8" dotenvx run -- node index.js
 ⟐ injected env (2) from .env.ci
 Hello ci encrypted
-{% endcapture %}
-{% capture cli_code_0_copy %}touch .env.ci{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="touch .env.ci"}
 
 Alternatively, this can be already set on your server or ci runner.
 

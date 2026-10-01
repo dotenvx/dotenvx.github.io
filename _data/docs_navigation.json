@@ -10,7 +10,13 @@
       {
         "label": "Quickstart",
         "href": "/docs/quickstart/",
-        "children": []
+        "children": [
+          {
+            "label": "Envfile",
+            "href": "/docs/quickstart/envfile/",
+            "children": []
+          }
+        ]
       },
       {
         "label": "Advanced",
@@ -34,7 +40,7 @@
         "children": []
       },
       {
-        "label": "All CLI →",
+        "label": "All CLI \u2192",
         "href": "/docs/cli/",
         "children": []
       }
@@ -54,7 +60,7 @@
         "children": []
       },
       {
-        "label": "All SDKs →",
+        "label": "All SDKs \u2192",
         "href": "/docs/sdk/",
         "children": []
       }
@@ -89,7 +95,7 @@
         "children": []
       },
       {
-        "label": "All Guides →",
+        "label": "All Guides \u2192",
         "href": "/docs/guides/",
         "children": []
       }
@@ -109,13 +115,18 @@
         "children": []
       },
       {
-        "label": "Whitepaper ↗",
+        "label": "Envfile Spec",
+        "href": "/docs/envfile-spec/",
+        "children": []
+      },
+      {
+        "label": "Whitepaper \u2197",
         "href": "/dotenvx.pdf",
         "children": [],
         "new_tab": true
       },
       {
-        "label": "All Resources →",
+        "label": "All Resources \u2192",
         "href": "/docs/resources/",
         "children": []
       }

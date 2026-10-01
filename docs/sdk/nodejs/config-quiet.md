@@ -22,11 +22,11 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-{% capture sdk_code_0 %}
+
+```dotenv
 # .env
 HELLO="World"
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
+```
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -38,18 +38,16 @@ console.log(`Hello ${process.env.HELLO}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
-{% capture sdk_code_2 %}
+```console
 $ node index.js
 Error: [MISSING_ENV_FILE] missing .env.missing file (/path/to/.env.missing)
 Hello World
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
+```
 
-<p class="design-paragraph">You can also set <code class="design-code">DOTENV_CONFIG_QUIET=true</code>.</p>
+You can also set `DOTENV_CONFIG_QUIET=true`.
 
-{% capture sdk_code_3 %}
+```console
 $ DOTENV_CONFIG_QUIET=true node index.js
 Error: [MISSING_ENV_FILE] missing .env.missing file (/path/to/.env.missing)
 Hello World
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_3 format="cli" %}
+```

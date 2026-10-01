@@ -13,25 +13,28 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/docker">code examples for this guide</a> on GitHub.</p>
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    <p class="design-paragraph">DigitalOcean has multiple deploy paths—<a class="design-link" href="https://docs.digitalocean.com/products/droplets/getting-started/quickstart/">droplets</a>, <a class="design-link" href="https://docs.digitalocean.com/products/kubernetes/getting-started/quickstart/">Kubernetes</a>, and <a class="design-link" href="https://docs.digitalocean.com/products/app-platform/getting-started/quickstart/">App Platform</a>. This guide assumes Docker (the most common path).</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/docker) on GitHub.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Dockerfile</h2>
+DigitalOcean has multiple deploy paths—[droplets](https://docs.digitalocean.com/products/droplets/getting-started/quickstart/), [Kubernetes](https://docs.digitalocean.com/products/kubernetes/getting-started/quickstart/), and [App Platform](https://docs.digitalocean.com/products/app-platform/getting-started/quickstart/). This guide assumes Docker (the most common path).
 
-    {% capture do_dockerignore %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Dockerfile
+
+```text
 # .dockerignore
 .env.keys
-    {% endcapture %}
-    {% include components/design-codeblock.html value=do_dockerignore copy=false %}
+```
+{: copy="false"}
 
-    {% capture do_dockerfile %}
+```docker
 # Dockerfile
 FROM node:20
 WORKDIR /app
@@ -44,34 +47,40 @@ COPY . .
 EXPOSE 3000
 
 CMD ["dotenvx", "run", "--", "node", "index.js"]
-    {% endcapture %}
-    {% include components/design-codeblock.html value=do_dockerfile copy=false language="docker" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture do_env_prod %}
+{% capture step_content %}
+
+## Encrypt production
+
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=do_env_prod copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture do_encrypt %}
+```console
 $ dotenvx encrypt -f .env.production
-    {% endcapture %}
-    {% include components/design-codeblock.html value=do_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
+```
+{: copy="dotenvx encrypt -f .env.production"}
 
-    <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Commit `.env.production`. Do not commit `.env.keys`.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
-    <p class="design-paragraph">Set <code class="design-code">DOTENV_PRIVATE_KEY_PRODUCTION</code> in DigitalOcean's environment variable manager (or pass it into <code class="design-code">docker run -e</code>), then redeploy. Your app injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Set decryption key
+
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` in DigitalOcean's environment variable manager (or pass it into `docker run -e`), then redeploy. Your app injects env from the encrypted `.env.production` file.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

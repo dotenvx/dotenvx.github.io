@@ -16,8 +16,8 @@ crumbs:
   - label: Encrypt
     href: /docs/cli/encrypt/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx encrypt -f .env.production --no-create
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx encrypt -f .env.production --no-create{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx encrypt -f .env.production --no-create"}

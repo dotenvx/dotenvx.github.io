@@ -13,30 +13,37 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-guide-body design-prose">
-      <h2 class="design-page-title">Dotenvx</h2>
-      <p class="design-paragraph">Dotenvx does not have an API of its own. Its core encrypt, decrypt, get, set, and run workflows stay local—simple, private, and independent of a hosted service.</p>
-      <p class="design-paragraph">When you want more—off-device private keys, team access, Guard approvals, Enclave decryption, audit logs, and an API your agents can control—that is what Armor adds. Every endpoint below belongs to Armor, and Dotenvx becomes its secure command-line client when Armor is enabled.</p>
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-guide-body design-prose" markdown="block">
 
-      <h2 class="design-page-title">Armor</h2>
-      <p class="design-paragraph">The Armor API is served from <code>https://armor.dotenvx.com</code>. Authenticate with <code>Authorization: Bearer TOKEN</code>, or use <code>dotenvx curl</code> after running <code>dotenvx login</code> to supply your Armor credentials automatically.</p>
-      <p class="design-paragraph">Requests and responses use JSON unless an endpoint returns a plain value. List endpoints accept <code>page</code> and <code>per</code>; <code>per</code> must be between 1 and 100.</p>
+## Dotenvx
 
-      <h3 class="design-page-title">Account</h3>
-      {% capture account_api %}
+Dotenvx does not have an API of its own. Its core encrypt, decrypt, get, set, and run workflows stay local—simple, private, and independent of a hosted service.
+
+When you want more—off-device private keys, team access, Guard approvals, Enclave decryption, audit logs, and an API your agents can control—that is what Armor adds. Every endpoint below belongs to Armor, and Dotenvx becomes its secure command-line client when Armor is enabled.
+
+## Armor
+
+The Armor API is served from `https://armor.dotenvx.com`. Authenticate with `Authorization: Bearer TOKEN`, or use `dotenvx curl` after running `dotenvx login` to supply your Armor credentials automatically.
+
+Requests and responses use JSON unless an endpoint returns a plain value. List endpoints accept `page` and `per`; `per` must be between 1 and 100.
+
+### Account
+
+{% capture account_api %}
         <thead>
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
         <tbody>
           <tr><td><code>GET</code></td><td><code>/api/account</code></td><td>Return the authenticated Armor account.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=account_api %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill design-api-table" content=account_api %}
 
-      <h3 class="design-page-title">Armored keys</h3>
-      {% capture keypair_api %}
+### Armored keys
+
+{% capture keypair_api %}
         <thead>
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
@@ -49,11 +56,12 @@ layout: radar
           <tr><td><code>POST</code></td><td><code>/api/armor/keypairs/:public_key/settings/guard</code></td><td>Turn Guard on or off for an armored key.</td></tr>
           <tr><td><code>POST</code></td><td><code>/api/armor/keypairs/:public_key/settings/enclave</code></td><td>Turn Enclave on or off for an armored key.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=keypair_api %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill design-api-table" content=keypair_api %}
 
-      <h3 class="design-page-title">Teams</h3>
-      {% capture team_api %}
+### Teams
+
+{% capture team_api %}
         <thead>
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
@@ -71,11 +79,12 @@ layout: radar
           <tr><td><code>POST</code></td><td><code>/api/teams/:team/join_requests/:id/decline</code></td><td>Decline a join request.</td></tr>
           <tr><td><code>POST</code></td><td><code>/api/armor/:team/settings/join_requests</code></td><td>Turn join requests on or off for a team.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=team_api %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill design-api-table" content=team_api %}
 
-      <h3 class="design-page-title">Your join requests</h3>
-      {% capture join_request_api %}
+### Your join requests
+
+{% capture join_request_api %}
         <thead>
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
@@ -84,23 +93,26 @@ layout: radar
           <tr><td><code>POST</code></td><td><code>/api/join_requests</code></td><td>Request to join a team.</td></tr>
           <tr><td><code>POST</code></td><td><code>/api/join_requests/:id/cancel</code></td><td>Cancel one of your pending join requests.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=join_request_api %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill design-api-table" content=join_request_api %}
 
-      <h3 class="design-page-title">Logs</h3>
-      {% capture logs_api %}
+### Logs
+
+{% capture logs_api %}
         <thead>
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
         <tbody>
           <tr><td><code>GET</code></td><td><code>/api/logs?team=:team</code></td><td>List team activity logs. Account events such as <code>user/create</code>, <code>device/create</code>, and <code>oauth_token/*</code> are omitted. Filter with <code>events</code>, <code>user</code>, <code>keypair</code>, <code>page</code>, and <code>per</code>. <code>user</code> accepts usernames, <code>missing</code>, <code>none</code>, or a comma list. <code>keypair</code> accepts keypair ids, public keys, <code>missing</code> (no keypair), <code>none</code>, or a comma list.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=logs_api %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill design-api-table" content=logs_api %}
 
-      <h3 class="design-page-title">Dotenvx command protocol</h3>
-      <p class="design-paragraph">Dotenvx uses these Armor endpoints to implement Armor-backed commands. Prefer the corresponding Dotenvx command unless you are building an Armor client.</p>
-      {% capture protocol_api %}
+### Dotenvx command protocol
+
+Dotenvx uses these Armor endpoints to implement Armor-backed commands. Prefer the corresponding Dotenvx command unless you are building an Armor client.
+
+{% capture protocol_api %}
         <thead>
           <tr><th scope="col">Method</th><th scope="col">Endpoint</th><th scope="col">Description</th></tr>
         </thead>
@@ -123,11 +135,12 @@ layout: radar
           <tr><td><code>GET</code> / <code>POST</code> / <code>DELETE</code></td><td><code>/api/logout</code></td><td>Revoke the current Armor token.</td></tr>
           <tr><td><code>GET</code> / <code>POST</code></td><td><code>/api/observe</code></td><td>Deprecated observation endpoint; retained as a no-op for older clients.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill design-api-table" content=protocol_api %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill design-api-table" content=protocol_api %}
 
-      <h3 class="design-page-title">Example</h3>
-      {% capture api_examples %}
+### Example
+
+```bash
 dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs"
 
 dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=name_asc"
@@ -136,11 +149,12 @@ dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=public_key_desc"
 
 dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
   --data '{"name":"Production"}'
-      {% endcapture %}
-      {% include components/design-codeblock.html value=api_examples copy=false language="bash" %}
+```
+{: copy="false"}
 
-      <p class="design-paragraph">See <a class="design-link" href="/docs/errors">Errors</a> for Armor error codes and <a class="design-link" href="/docs/events">Events</a> for activity names recorded by these operations.</p>
-    </div>
-  </div>
+See [Errors](/docs/errors) for Armor error codes and [Events](/docs/events) for activity names recorded by these operations.
+
+</div>
+</div>
 </div>
 </section>

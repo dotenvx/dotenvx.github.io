@@ -71,7 +71,7 @@ run: |
 
 For a local check, let Compose read the private key from your ignored `.env.keys` file.
 
-{% capture compose_up %}
+```console
 $ docker compose --env-file .env.keys up --build
-{% endcapture %}
-{% include components/design-codeblock.html value=compose_up copy_text="docker compose --env-file .env.keys up --build" format="cli" %}
+```
+{: copy="docker compose --env-file .env.keys up --build"}

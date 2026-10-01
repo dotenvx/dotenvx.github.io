@@ -21,19 +21,17 @@ video: cli-contextual-help
 ---
 For example, when missing a custom .env file:
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx run -f .env.missing -- sh -c 'echo $HELLO'
 [MISSING_ENV_FILE] missing file (/Users/scottmotte/Code/dotenvx/playground/apr-16/.env.missing). fix: [echo "HELLO=World" > .env.missing]
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx run -f .env.missing -- sh -c 'echo $HELLO'{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx run -f .env.missing -- sh -c 'echo $HELLO'"}
 
 or when missing a KEY:
 
-{% capture cli_code_1 %}
+```console
 $ echo "HELLO=World" > .env
 dotenvx get GOODBYE
 [MISSING_KEY] missing key (GOODBYE)
-{% endcapture %}
-{% capture cli_code_1_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\" > .env"}

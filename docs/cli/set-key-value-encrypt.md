@@ -18,11 +18,11 @@ crumbs:
   - label: Set
     href: /docs/cli/set/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ touch .env
 
 dotenvx set HELLO World --encrypt
 ◈ encrypted HELLO (.env)
-{% endcapture %}
-{% capture cli_code_0_copy %}touch .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="touch .env"}

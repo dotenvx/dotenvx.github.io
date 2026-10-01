@@ -18,7 +18,8 @@ crumbs:
   - label: Get
     href: /docs/cli/get/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=development local" > .env.development.local
 echo "HELLO=local" > .env.local
 echo "HELLO=development" > .env.development
@@ -27,15 +28,13 @@ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
 dotenvx get HELLO --convention=nextjs
 development local
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=development local" > .env.development.local{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=development local\" > .env.development.local"}
 
 You can also set `DOTENV_CONFIG_CONVENTION=nextjs`.
 
-{% capture cli_code_1 %}
+```console
 $ DOTENV_CONFIG_CONVENTION=nextjs dotenvx get HELLO
 development local
-{% endcapture %}
-{% capture cli_code_1_copy %}DOTENV_CONFIG_CONVENTION=nextjs dotenvx get HELLO{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="DOTENV_CONFIG_CONVENTION=nextjs dotenvx get HELLO"}

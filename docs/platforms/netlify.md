@@ -13,90 +13,96 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/netlify">code examples for this guide</a> on GitHub (Next.js and Astro).</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/netlify) on GitHub (Next.js and Astro).
 
-    {% capture netlify_create %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Initial setup
+
+```bash
 npx create-next-app@latest --example hello-world .
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_create copy_text="npx create-next-app@latest --example hello-world ." language="bash" %}
+```
 
-    {% capture netlify_toml %}
+```toml
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build]
   command = "npm run build"
   publish = ".next"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_toml copy=false language="toml" %}
+```
+{: copy="false"}
 
-    {% capture netlify_deploy %}
+```bash
 npx netlify-cli@latest deploy --build --prod
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_deploy copy_text="npx netlify-cli@latest deploy --build --prod" language="bash" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture netlify_install %}
+{% capture step_content %}
+
+## Run dotenvx
+
+```bash
 npm install @dotenvx/dotenvx --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_install copy_text="npm install @dotenvx/dotenvx --save" language="bash" %}
+```
 
-    <p class="design-paragraph">Preload scripts with dotenvx so environment variables inject ahead of build, start, or dev.</p>
+Preload scripts with dotenvx so environment variables inject ahead of build, start, or dev.
 
-    {% capture netlify_scripts %}
+```json
 "scripts": {
   "dotenvx": "dotenvx",
   "dev": "dotenvx run -- next dev --turbo",
   "build": "dotenvx run -- next build",
   "start": "dotenvx run -- next start"
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_scripts copy=false language="json" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture netlify_env_prod %}
+{% capture step_content %}
+
+## Encrypt production
+
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_env_prod copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture netlify_encrypt %}
+```bash
 npm run dotenvx -- set HELLO production -f .env.production
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_encrypt copy_text="npm run dotenvx -- set HELLO production -f .env.production" language="bash" %}
+```
 
-    <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Commit `.env.production`. Do not commit `.env.keys`.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture netlify_env_set %}
+{% capture step_content %}
+
+## Set decryption key
+
+```bash
 npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY_PRODUCTION "your-private-key"
 npx netlify-cli@latest deploy --build --prod
-    {% endcapture %}
-    {% include components/design-codeblock.html value=netlify_env_set copy=false language="bash" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Your build injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+Your build injects env from the encrypted `.env.production` file.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

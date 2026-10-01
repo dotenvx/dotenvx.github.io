@@ -21,7 +21,7 @@ video: cli-prebuild
 ---
 Deprecated. Use [`dotenvx protect --docker`](/docs/cli/protect/#docker-build-check) instead. The build check is unchanged; `prebuild` remains available with a deprecation warning.
 
-{% capture cli_code_0 %}
+```docker
 # Dockerfile
 RUN curl -fsS https://dotenvx.sh | sh
 
@@ -29,6 +29,5 @@ RUN curl -fsS https://dotenvx.sh | sh
 
 RUN dotenvx protect --docker
 CMD ["dotenvx", "run", "--", "node", "index.js"]
-{% endcapture %}
-{% capture cli_code_0_copy %}# Dockerfile{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="docker" %}
+```
+{: copy="# Dockerfile"}

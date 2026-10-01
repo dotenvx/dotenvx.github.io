@@ -16,11 +16,11 @@ crumbs:
   - label: Del
     href: /docs/cli/del/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=World" > .env
 
 dotenvx del HELLO
 ◇ removed HELLO (.env)
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\" > .env"}

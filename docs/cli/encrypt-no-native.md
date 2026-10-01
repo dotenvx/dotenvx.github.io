@@ -16,8 +16,8 @@ crumbs:
   - label: Encrypt
     href: /docs/cli/encrypt/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx encrypt --no-native
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx encrypt --no-native{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx encrypt --no-native"}

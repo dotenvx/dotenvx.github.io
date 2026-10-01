@@ -12,9 +12,8 @@ description: "Restore a key pair from a private key."
 ---
 Restore a key pair from a private key.
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx primitives keypair <privateKey>
 {"publicKey":"<publicKey>","privateKey":"<privateKey>"}
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx primitives keypair <privateKey>{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx primitives keypair <privateKey>"}

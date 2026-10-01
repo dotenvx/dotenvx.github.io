@@ -8,10 +8,7 @@ eyebrow: "dotenvx lock down"
 eyebrow_href: "/docs/cli/lock/down/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx lock down -fk .env.production.keys
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx lock down -fk .env.production.keys
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx lock down -fk .env.production.keys"}

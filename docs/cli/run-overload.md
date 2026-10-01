@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=local" > .env.local
 echo "HELLO=World" > .env
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
@@ -26,8 +27,7 @@ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 dotenvx run -f .env.local,.env --overload -- node index.js
 ⟐ injected env (1) from .env.local, .env
 Hello World
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=local" > .env.local{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=local\" > .env.local"}
 
 Note that with `--overload` subsequent files DO override pre-existing variables defined in previous files.

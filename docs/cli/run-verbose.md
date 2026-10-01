@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=production" > .env.production
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
@@ -27,8 +28,7 @@ loading env from .env.production (/path/to/.env.production)
 HELLO set
 ⟐ injected env (1) from .env.production
 Hello production
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=production" > .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=production\" > .env.production"}
 
 [log levels](https://github.com/winstonjs/winston?tab=readme-ov-file#logging)

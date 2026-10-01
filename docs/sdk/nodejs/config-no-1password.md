@@ -22,20 +22,20 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-<p class="design-paragraph">By default, <code class="design-code">config()</code> resolves <code class="design-code">op://</code> values through the installed <a class="design-link" href="https://developer.1password.com/docs/cli/get-started/">1Password CLI</a>.</p>
 
-{% capture sdk_code_0 %}
+
+By default, `config()` resolves `op://` values through the installed [1Password CLI](https://developer.1password.com/docs/cli/get-started/).
+
+```dotenv
 # .env
 API_KEY=op://Personal/my_api_key/password
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
+```
 
-<p class="design-paragraph">Set <code class="design-code">no1Password</code> to leave the reference unresolved:</p>
+Set `no1Password` to leave the reference unresolved:
 
-{% capture sdk_code_1 %}
+```javascript
 // index.js
 require('@dotenvx/dotenvx').config({no1Password: true})
 
 console.log(process.env.API_KEY)
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
+```

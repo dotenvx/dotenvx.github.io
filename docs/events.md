@@ -13,16 +13,19 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-guide-body design-prose">
-      <p class="design-paragraph">Events appear in Armor logs as <code>name</code> plus metadata. The event name identifies what happened; metadata adds context such as who performed the action, which team it affected, and where it occurred.</p>
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-guide-body design-prose" markdown="block">
 
-      <h2 class="design-page-title">Dotenvx</h2>
-      <p class="design-paragraph">No events are recorded without Armor. Local encrypt, decrypt, and run do not write an audit log.</p>
+Events appear in Armor logs as `name` plus metadata. The event name identifies what happened; metadata adds context such as who performed the action, which team it affected, and where it occurred.
 
-      <h2 class="design-page-title">Armor</h2>
-      {% capture armor_events %}
+## Dotenvx
+
+No events are recorded without Armor. Local encrypt, decrypt, and run do not write an audit log.
+
+## Armor
+
+{% capture armor_events %}
         <thead>
           <tr><th scope="col">Event</th><th scope="col">Description</th></tr>
         </thead>
@@ -107,15 +110,20 @@ layout: radar
           <tr><td><code>settings_tokens/view</code></td><td>Automation tokens were opened.</td></tr>
           <tr><td><code>user/create</code></td><td>A user signed up.</td></tr>
         </tbody>
-      {% endcapture %}
-      {% include components/design-table.html class="design-table-wrap--fill" content=armor_events %}
+{% endcapture %}
+{% include components/design-table.html class="design-table-wrap--fill" content=armor_events %}
 
-      <h2 class="design-page-title">Infra and secret events</h2>
-      <p class="design-paragraph">Adding or editing a managed secret saves it in Dotenvx; it does not write to the provider until sync. Starting management uses <code>secret/create</code>, just like Add secret. Linked keypairs use the same events with <code>source: keypair</code>.</p>
-      <p class="design-paragraph">Each sync records <code>secret/sync</code> for the secrets whose writes were attempted, plus one <code>destination/sync</code> summary. This also applies when syncing a single secret. Check <code>outcome</code> for <code>success</code> or <code>unsuccessful</code>; a failed summary can include earlier successful secret writes.</p>
-      <p class="design-paragraph">Secret event metadata identifies the destination, secret, endpoint, and actor. It never includes secret values or private keys. These audit entries use the existing activity log; they are separate from the stored secret records.</p>
-      <p class="design-paragraph">Validation failures on create or update, and failures fetching remote secrets, do not currently produce dedicated audit events. Opening or cancelling an editor does not create a secret event. Existing historical events retain their original names.</p>
-    </div>
-  </div>
+## Infra and secret events
+
+Adding or editing a managed secret saves it in Dotenvx; it does not write to the provider until sync. Starting management uses `secret/create`, just like Add secret. Linked keypairs use the same events with `source: keypair`.
+
+Each sync records `secret/sync` for the secrets whose writes were attempted, plus one `destination/sync` summary. This also applies when syncing a single secret. Check `outcome` for `success` or `unsuccessful`; a failed summary can include earlier successful secret writes.
+
+Secret event metadata identifies the destination, secret, endpoint, and actor. It never includes secret values or private keys. These audit entries use the existing activity log; they are separate from the stored secret records.
+
+Validation failures on create or update, and failures fetching remote secrets, do not currently produce dedicated audit events. Opening or cancelling an editor does not create a secret event. Existing historical events retain their original names.
+
+</div>
+</div>
 </div>
 </section>

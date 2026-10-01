@@ -13,37 +13,40 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/process-managers/pm2">code examples for this guide</a> on GitHub.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
-    <p class="design-paragraph">Generate an <code class="design-code">ecosystem.config.js</code> file.</p>
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/process-managers/pm2) on GitHub.
 
-    {% capture pm2_init %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Initial setup
+
+Generate an `ecosystem.config.js` file.
+
+```bash
 pm2 init
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_init copy_text="pm2 init" language="bash" %}
+```
 
-    <p class="design-paragraph">Modify it to your needs. Something like this.</p>
+Modify it to your needs. Something like this.
 
-    {% capture pm2_ecosystem %}
+```javascript
 module.exports = {
   apps : [{
     script: 'index.js',
     watch: '.'
   }]
 };
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_ecosystem copy=false language="javascript" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Your <code class="design-code">index.js</code> file should look something like this.</p>
+Your `index.js` file should look something like this.
 
-    {% capture pm2_index %}
+```javascript
 // index.js
 const PORT = process.env.PORT || 3000
 const http = require('http')
@@ -56,24 +59,27 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`Server running on port:${PORT}/`);
 });
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_index copy=false language="javascript" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
-    <p class="design-paragraph">Add <code class="design-code">@dotenvx/dotenvx</code> and <code class="design-code">pm2</code> as dependencies.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture pm2_install %}
+{% capture step_content %}
+
+## Run dotenvx
+
+Add `@dotenvx/dotenvx` and `pm2` as dependencies.
+
+```bash
 npm install @dotenvx/dotenvx --save
 npm install pm2 --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_install copy=false language="bash" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Then, in your <code class="design-code">package.json</code>, modify your start script.</p>
+Then, in your `package.json`, modify your start script.
 
-    {% capture pm2_pkg %}
+```json
 {
   "scripts": {
     "start": "dotenvx run -- pm2-runtime start ecosystem.config.js --env production"
@@ -83,53 +89,56 @@ npm install pm2 --save
     "pm2": "^5.3.0"
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_pkg copy=false language="json" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Create a <code class="design-code">.env</code> file in the root of your project.</p>
+Create a `.env` file in the root of your project.
 
-    {% capture pm2_env %}
+```dotenv
 # .env
 HELLO="World"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_env copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Inject your env using your start script — which is using dotenvx and pm2.</p>
+Inject your env using your start script — which is using dotenvx and pm2.
 
-    {% capture pm2_start %}
+```bash
 npm start
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_start copy_text="npm start" language="bash" %}
+```
 
-    <p class="design-paragraph">Your app will say <code class="design-code">Hello World</code>. That covers local development. Let's solve for production next.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Your app will say `Hello World`. That covers local development. Let's solve for production next.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Add production environment</h2>
-    <p class="design-paragraph">Create a <code class="design-code">.env.production</code> file in the root of your project.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture pm2_env_prod %}
+{% capture step_content %}
+
+## Add production environment
+
+Create a `.env.production` file in the root of your project.
+
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_env_prod copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Modify your start script to load your <code class="design-code">.env.production</code> file.</p>
+Modify your start script to load your `.env.production` file.
 
-    {% capture pm2_pkg_prod %}
+```json
 {
   "scripts": {
     "start": "dotenvx run -f .env.production -- pm2-runtime start ecosystem.config.js --env production"
   },
   ...
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=pm2_pkg_prod copy=false language="json" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Your app will say <code class="design-code">Hello production</code>, simulating production.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+Your app will say `Hello production`, simulating production.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

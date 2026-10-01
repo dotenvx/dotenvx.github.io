@@ -26,19 +26,20 @@ related:
 ---
 `--redact` is runtime leak protection and log redaction for your secrets. Your process still gets the real environment variables, but matching values are stripped from stdout and stderr before they can leak into terminals, CI logs, or agent transcripts. Keys ending in `_PLAIN` are left visible.
 
-{% capture cli_code_0 %}
+```console
 $ echo "SECRET=super-secret-value" > .env
 $ echo "VISIBLE_PLAIN=visible-value" >> .env
 $ echo "console.log(process.env.SECRET, process.env.VISIBLE_PLAIN)" > index.js
 
 $ dotenvx run --redact --quiet -- node index.js
 [REDACTED] visible-value
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "SECRET=super-secret-value" > .env
-echo "VISIBLE_PLAIN=visible-value" >> .env
-echo "console.log(process.env.SECRET, process.env.VISIBLE_PLAIN)" > index.js
-dotenvx run --redact --quiet -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"SECRET=super-secret-value\" > .env
+echo \"VISIBLE_PLAIN=visible-value\" >> .env
+echo \"console.log(process.env.SECRET, process.env.VISIBLE_PLAIN)\" > index.js
+dotenvx run --redact --quiet -- node index.js"}
+
+
 
 Redaction is off by default. It applies to every key declared in `.env` files and `--env` flags unless the key ends in `_PLAIN`. If an existing environment variable takes precedence, its effective value is redacted too. Matching is exact, so transformed or derived values are not redacted.
 

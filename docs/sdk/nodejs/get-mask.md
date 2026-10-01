@@ -22,9 +22,11 @@ crumbs:
   - label: get
     href: /docs/sdk/nodejs/config-get-key/
 ---
-<p class="design-paragraph">By default, up to the first six characters are visible.</p>
 
-{% capture sdk_code_0 %}
+
+By default, up to the first six characters are visible.
+
+```javascript
 // index.js
 const dotenvx = require('@dotenvx/dotenvx')
 
@@ -35,13 +37,11 @@ async function main() {
 }
 
 main()
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
+```
 
-{% capture sdk_code_1 %}
+```console
 $ node index.js
 abcdef******
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 format="cli" %}
+```
 
-<p class="design-paragraph">Set <code class="design-code">mask: 0</code> to fully mask values.</p>
+Set `mask: 0` to fully mask values.

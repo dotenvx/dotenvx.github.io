@@ -16,9 +16,9 @@ crumbs:
   - label: Set
     href: /docs/cli/set/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx set HELLO World -f apps/app1/.env -fk .env.keys
 ◈ encrypted HELLO (apps/app1/.env)
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx set HELLO World -f apps/app1/.env -fk .env.keys{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx set HELLO World -f apps/app1/.env -fk .env.keys"}

@@ -16,14 +16,15 @@ redirect_from:
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph"><a class="design-link" href="/docs/deprecated">Deprecated</a> — The <code class="design-code">.env.vault</code> file has been DEPRECATED since May 2024. Please see <a class="design-link" href="/docs/quickstart">updated encryption instructions</a>.</p>
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    <p class="design-paragraph"><code class="design-code">.env.vault</code> is an encrypted version of your .env file. Here is what it looks like.</p>
+[Deprecated](/docs/deprecated) — The `.env.vault` file has been DEPRECATED since May 2024. Please see [updated encryption instructions](/docs/quickstart).
 
-    {% capture vault_example %}
+`.env.vault` is an encrypted version of your .env file. Here is what it looks like.
+
+```dotenv
 #/-------------------.env.vault---------------------/
 #/         cloud-agnostic vaulting standard         /
 #/  [how it works](https://dotenvx.com/env-vault)   /
@@ -32,43 +33,46 @@ redirect_from:
 DOTENV_VAULT_DEVELOPMENT="V4NYVn0Pow6Uf2ez2mbHEzTrYURloHL6VDAFRLqnQBppA/OmHI5x5AXoxCMVor7wOg=="
 # production
 DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWtIYyhiW/vHhFbqbsvo5+P9b27OC6ZC7qU="
-    {% endcapture %}
-    {% include components/design-codeblock.html value=vault_example copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Some quick takeaways:</p>
-    <ul class="design-bullets">
-      <li>It uses the <a class="design-link" href="/docs/env-file">.env</a> format</li>
-      <li>It uses <a class="design-link" href="https://www.reddit.com/r/cryptography/comments/13kl9ds/how_much_longer_do_you_think_aes_will_last/">AES-256-GCM</a> encryption</li>
-      <li><code class="design-code">DOTENV_VAULT_DEVELOPMENT</code> contains encrypted contents of <code class="design-code">.env</code></li>
-      <li><code class="design-code">DOTENV_VAULT_PRODUCTION</code> contains encrypted contents of <code class="design-code">.env.production</code></li>
-    </ul>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Some quick takeaways:
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Generating</h2>
-    <p class="design-paragraph">It's generated with <a class="design-link" href="/docs/quickstart"><code class="design-code">dotenvx encrypt</code></a>. Create your <code class="design-code">.env</code> files like you usually do.</p>
+<ul class="design-bullets">
+<li>It uses the <a class="design-link" href="/docs/env-file">.env</a> format</li>
+<li>It uses <a class="design-link" href="https://www.reddit.com/r/cryptography/comments/13kl9ds/how_much_longer_do_you_think_aes_will_last/">AES-256-GCM</a> encryption</li>
+<li><code class="design-code">DOTENV_VAULT_DEVELOPMENT</code> contains encrypted contents of <code class="design-code">.env</code></li>
+<li><code class="design-code">DOTENV_VAULT_PRODUCTION</code> contains encrypted contents of <code class="design-code">.env.production</code></li>
+</ul>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture vault_env %}
+{% capture step_content %}
+
+## Generating
+
+It's generated with [`dotenvx encrypt`](/docs/quickstart). Create your `.env` files like you usually do.
+
+```dotenv
 # .env
 HELLO="World"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=vault_env copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture vault_env_prod %}
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=vault_env_prod copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">and then run <code class="design-code">dotenvx encrypt</code>.</p>
+and then run `dotenvx encrypt`.
 
-    {% capture vault_encrypt %}
+```console
 $ dotenvx encrypt
-    {% endcapture %}
-    {% include components/design-codeblock.html value=vault_encrypt copy_text="dotenvx encrypt" format="cli" %}
+```
+{: copy="dotenvx encrypt"}
 
-    {% capture vault_result %}
+```dotenv
 #/-------------------.env.vault---------------------/
 #/         cloud-agnostic vaulting standard         /
 #/  [how it works](https://dotenvx.com/env-vault)   /
@@ -77,16 +81,20 @@ $ dotenvx encrypt
 DOTENV_VAULT_DEVELOPMENT="V4NYVn0Pow6Uf2ez2mbHEzTrYURloHL6VDAFRLqnQBppA/OmHI5x5AXoxCMVor7wOg=="
 # production
 DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWtIYyhiW/vHhFbqbsvo5+P9b27OC6ZC7qU="
-    {% endcapture %}
-    {% include components/design-codeblock.html value=vault_result copy=false language="dotenv" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">History</h2>
-    <p class="design-paragraph">The <code class="design-code">.env.vault</code> came out of development work on <a class="design-link" href="https://github.com/dotenv-org/dotenv-vault">dotenv-vault</a> – around early 2023.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## History
+
+The `.env.vault` came out of development work on [dotenv-vault](https://github.com/dotenv-org/dotenv-vault) – around early 2023.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

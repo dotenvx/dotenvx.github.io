@@ -12,8 +12,7 @@ description: "Print the settings file path."
 ---
 Print the settings file path.
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx armor settings path
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx armor settings path{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx armor settings path"}

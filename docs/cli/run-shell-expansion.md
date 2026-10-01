@@ -18,21 +18,20 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx run --env="HELLO=World" -- sh -c 'echo Hello $HELLO'
 Hello World
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx run --env="HELLO=World" -- sh -c 'echo Hello $HELLO'{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx run --env=\"HELLO=World\" -- sh -c 'echo Hello $HELLO'"}
 
 ## Background
 
 Given your `.env` file looks like this,
 
-{% capture cli_env %}
+```dotenv
 HELLO=World
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_env copy_text="HELLO=World" language="dotenv" %}
+```
 
 You might assume running `dotenvx run -- echo "Hello $HELLO"` would print `Hello World`. But, that's not what happens.
 
@@ -47,11 +46,10 @@ There are two solutions to this:
 
 As detailed above, use a subshell.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx run -- bash -c 'echo Hello $HELLO'
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx run -- bash -c 'echo Hello $HELLO'{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx run -- bash -c 'echo Hello $HELLO'"}
 
 Make sure to use single quotes `'` so values are NOT interpreted.
 
@@ -59,19 +57,18 @@ Make sure to use single quotes `'` so values are NOT interpreted.
 
 Or you can encapsulate in a script. Here's an example using [npm scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts).
 
-{% capture cli_code_2 %}
+```json
 {
   "scripts": {
     "_echo": "echo Hello $HELLO",
     "hello": "dotenvx run -- npm run _echo"
   }
 }
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 label="package.json" copy_text=cli_code_2 language="json" %}
+```
+{: label="package.json"}
 
-{% capture cli_code_3 %}
+```console
 $ npm run hello
 Hello World
-{% endcapture %}
-{% capture cli_code_3_copy %}npm run hello{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_3 copy_text=cli_code_3_copy format="cli" %}
+```
+{: copy="npm run hello"}

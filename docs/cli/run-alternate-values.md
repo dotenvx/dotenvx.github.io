@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```dotenv
 # .env
 NODE_ENV=production
 
@@ -28,27 +29,24 @@ LOG_LEVEL=${NODE_ENV:+error}
 
 # Alternative syntax (no colon): use alternate if set, otherwise empty
 CACHE_ENABLED=${NODE_ENV+true}
-{% endcapture %}
-{% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
+```
+{: copy="# .env"}
 
-{% capture cli_code_1 %}
+```javascript
 // index.js
 console.log('NODE_ENV', process.env.NODE_ENV)
 console.log('DEBUG_MODE', process.env.DEBUG_MODE)
 console.log('LOG_LEVEL', process.env.LOG_LEVEL)
 console.log('CACHE_ENABLED', process.env.CACHE_ENABLED)
-{% endcapture %}
-{% capture cli_code_1_copy %}// index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="javascript" %}
+```
+{: copy="// index.js"}
 
-{% capture cli_code_2 %}
+```console
 $ dotenvx run --debug -- node index.js
 ⟐ injected env (4) from .env
 NODE_ENV production
 DEBUG_MODE false
 LOG_LEVEL error
 CACHE_ENABLED true
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx run --debug -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="dotenvx run --debug -- node index.js"}

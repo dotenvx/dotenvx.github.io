@@ -19,8 +19,8 @@ crumbs:
     href: /docs/cli/lock/
 video: cli-lock
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx lock down
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx lock down{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx lock down"}

@@ -14,54 +14,64 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Packages</h2>
-    <div class="design-list">
-      <ul class="design-list-items">
-        <li>
-          <a class="design-link" href="https://rubygems.org/gems/dotenvx" target="_blank" rel="noopener noreferrer">dotenvx</a>
-          <span class="design-list-meta">RubyGems</span>
-        </li>
-        <li>
-          <a class="design-link" href="https://rubygems.org/gems/dotenvx-rails" target="_blank" rel="noopener noreferrer">dotenvx-rails</a>
-          <span class="design-list-meta">Rails</span>
-        </li>
-      </ul>
-    </div>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Install</h2>
-    <p class="design-paragraph">Ruby:</p>
-    {% capture sdk_ruby_install %}
+## Packages
+
+<div class="design-list">
+<ul class="design-list-items">
+<li>
+<a class="design-link" href="https://rubygems.org/gems/dotenvx" target="_blank" rel="noopener noreferrer">dotenvx</a>
+<span class="design-list-meta">RubyGems</span>
+</li>
+<li>
+<a class="design-link" href="https://rubygems.org/gems/dotenvx-rails" target="_blank" rel="noopener noreferrer">dotenvx-rails</a>
+<span class="design-list-meta">Rails</span>
+</li>
+</ul>
+</div>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Install
+
+Ruby:
+
+```console
 $ gem install dotenvx
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_ruby_install copy_text="gem install dotenvx" format="cli" %}
+```
+{: copy="gem install dotenvx"}
 
-    <p class="design-paragraph">Rails:</p>
-    {% capture sdk_rails_install %}
+Rails:
+
+```ruby
 # Gemfile
 gem "dotenvx-rails"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_rails_install copy=false language="ruby" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Usage</h2>
-    {% capture sdk_ruby_usage %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Usage
+
+```ruby
 require "dotenvx"
 Dotenvx.load
 # or: require "dotenvx/load"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_ruby_usage copy=false language="ruby" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">See the <a class="design-link" href="/docs/ruby/">Ruby</a>, <a class="design-link" href="/docs/rails/">Rails</a>, or <a class="design-link" href="/docs/sinatra/">Sinatra</a> quickstart for a full walkthrough.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+See the [Ruby](/docs/ruby/), [Rails](/docs/rails/), or [Sinatra](/docs/sinatra/) quickstart for a full walkthrough.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

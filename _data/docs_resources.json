@@ -12,6 +12,10 @@
     "href": "/docs/env-keys-file/"
   },
   {
+    "label": "Envfile Spec",
+    "href": "/docs/envfile-spec/"
+  },
+  {
     "label": "API",
     "href": "/docs/api/"
   },
@@ -28,7 +32,7 @@
     "href": "/docs/stats/"
   },
   {
-    "label": "Whitepaper ↗",
+    "label": "Whitepaper \u2197",
     "href": "/dotenvx.pdf",
     "new_tab": true
   }

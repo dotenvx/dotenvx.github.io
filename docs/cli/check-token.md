@@ -11,10 +11,7 @@ redirect_from:
   - /docs/cli/validate-token
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx check --token "$DOTENVX_TOKEN"
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx check --token "$DOTENVX_TOKEN"
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx check --token \"$DOTENVX_TOKEN\""}

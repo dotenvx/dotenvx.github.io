@@ -14,42 +14,50 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Packages</h2>
-    <div class="design-list">
-      <ul class="design-list-items">
-        <li>
-          <a class="design-link" href="https://pypi.org/project/python-dotenvx/" target="_blank" rel="noopener noreferrer">python-dotenvx</a>
-          <span class="design-list-meta">PyPI</span>
-        </li>
-      </ul>
-    </div>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Install</h2>
-    {% capture sdk_python_install %}
+## Packages
+
+<div class="design-list">
+<ul class="design-list-items">
+<li>
+<a class="design-link" href="https://pypi.org/project/python-dotenvx/" target="_blank" rel="noopener noreferrer">python-dotenvx</a>
+<span class="design-list-meta">PyPI</span>
+</li>
+</ul>
+</div>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Install
+
+```console
 $ pip install python-dotenvx
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_python_install copy_text="pip install python-dotenvx" format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="pip install python-dotenvx"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Usage</h2>
-    {% capture sdk_python_usage %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Usage
+
+```python
 from dotenvx import load_dotenv
 
 load_dotenv()
-    {% endcapture %}
-    {% include components/design-codeblock.html value=sdk_python_usage copy=false language="python" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">See the <a class="design-link" href="/docs/python/">Python</a>, <a class="design-link" href="/docs/flask/">Flask</a>, or <a class="design-link" href="/docs/uv/">uv</a> quickstart for a full walkthrough.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+See the [Python](/docs/python/), [Flask](/docs/flask/), or [uv](/docs/uv/) quickstart for a full walkthrough.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

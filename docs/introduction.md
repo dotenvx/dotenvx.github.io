@@ -111,7 +111,7 @@ body_class: docs-landing
       <p class="design-list-title">Resources</p>
       <div class="design-settings-grid">
         {% include components/design-key.html href="/docs/env-file" label=".env" glyph=".env" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-key.html href="/docs/env-keys-file" label=".env.keys" glyph="key" glyph_class="design-settings-tile-glyph--soft" %}
+        {% include components/design-key.html href="/docs/quickstart/envfile/" label="Envfile" glyph="Envfile" glyph_class="design-settings-tile-glyph--soft design-settings-tile-glyph--filename" %}
         {% include components/design-key.html href="/docs/resources" label="More Resources" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>
     </div>

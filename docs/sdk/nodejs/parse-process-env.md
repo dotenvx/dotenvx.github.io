@@ -22,7 +22,9 @@ crumbs:
   - label: parse
     href: /docs/sdk/nodejs/parse/
 ---
-<p class="design-paragraph">Sometimes, you want to run <code class="design-code">parse</code> without it accessing <code class="design-code">process.env</code>. (You can pass a fake <code class="design-code">processEnv</code> this way as well - sometimes useful.)</p>
+
+
+Sometimes, you want to run `parse` without it accessing `process.env`. (You can pass a fake `processEnv` this way as well - sometimes useful.)
 
 {% capture sdk_code_0 %}
 {% raw %}
@@ -35,8 +37,7 @@ console.log(`Hello ${parsed.USER}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
 
-{% capture sdk_code_1 %}
+```console
 $ node index.js
 Hello Me
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 format="cli" %}
+```

@@ -13,34 +13,36 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-guide-body design-prose">
-    <p class="design-paragraph">Use the same encryption workflow for each environment. Create a <code class="design-code">.env.ENVIRONMENT</code> file, encrypt it, and decrypt it at runtime with <code class="design-code">-f</code>.</p>
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-guide-body design-prose" markdown="block">
 
-    {% capture multi_env %}
+Use the same encryption workflow for each environment. Create a `.env.ENVIRONMENT` file, encrypt it, and decrypt it at runtime with `-f`.
+
+```dotenv
 # .env.production
 HELLO="Production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=multi_env copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture multi_encrypt %}
+```console
 $ dotenvx encrypt -f .env.production
 ◈ encrypted (.env.production)
-    {% endcapture %}
-    {% include components/design-codeblock.html value=multi_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
+```
+{: copy="dotenvx encrypt -f .env.production"}
 
-    <p class="design-paragraph">Run with the same file.</p>
+Run with the same file.
 
-    {% capture multi_run %}
+```console
 $ dotenvx run -f .env.production -- node index.js
 ⟐ injected env (2) from .env.production
 Hello Production
-    {% endcapture %}
-    {% include components/design-codeblock.html value=multi_run copy_text="dotenvx run -f .env.production -- node index.js" format="cli" %}
+```
+{: copy="dotenvx run -f .env.production -- node index.js"}
 
-    <p class="design-paragraph">This keeps each environment's values separate while preserving the same encrypted-file workflow.</p>
-    </div>
-  </div>
+This keeps each environment's values separate while preserving the same encrypted-file workflow.
+
+</div>
+</div>
 </div>
 </section>

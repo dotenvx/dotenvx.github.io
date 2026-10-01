@@ -8,10 +8,7 @@ eyebrow: "dotenvx armor logout"
 eyebrow_href: "/docs/cli/armor/logout/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx armor logout --hostname https://armor.dotenvx.com
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx armor logout --hostname https://armor.dotenvx.com
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx armor logout --hostname https://armor.dotenvx.com"}

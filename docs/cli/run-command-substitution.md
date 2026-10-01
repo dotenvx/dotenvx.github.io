@@ -19,24 +19,22 @@ crumbs:
     href: /docs/cli/run/
 video: cli-command-substitution
 ---
-{% capture cli_code_0 %}
+
+```dotenv
 # .env
 DATABASE_URL="postgres://$(whoami)@localhost/my_database"
-{% endcapture %}
-{% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
+```
+{: copy="# .env"}
 
-{% capture cli_code_1 %}
+```javascript
 // index.js
 console.log('DATABASE_URL', process.env.DATABASE_URL)
-{% endcapture %}
-{% capture cli_code_1_copy %}// index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="javascript" %}
+```
+{: copy="// index.js"}
 
-{% capture cli_code_2 %}
+```console
 $ dotenvx run --debug -- node index.js
 ⟐ injected env (1) from .env
 DATABASE_URL postgres://yourusername@localhost/my_database
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx run --debug -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="dotenvx run --debug -- node index.js"}

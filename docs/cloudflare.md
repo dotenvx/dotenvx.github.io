@@ -20,113 +20,135 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Install</h2>
-    <p class="design-paragraph">Install wrangler and dotenvx.</p>
-    {% capture cf_install %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
+
+## Install
+
+Install wrangler and dotenvx.
+
+```console
 $ npm install --save-dev wrangler@latest
 $ npm install --save-dev @dotenvx/dotenvx
-    {% endcapture %}
-    {% capture cf_install_copy %}
-npm install --save-dev wrangler@latest
-npm install --save-dev @dotenvx/dotenvx
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_install copy_text=cf_install_copy format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="npm install --save-dev wrangler@latest
+npm install --save-dev @dotenvx/dotenvx"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Encrypt</h2>
-    <p class="design-paragraph">Create .env.production:</p>
-    {% capture cf_env %}
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Encrypt
+
+Create .env.production:
+
+```dotenv
 # .env.production
 HELLO="Production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_env language="dotenv" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Deploy</h2>
-    <p class="design-paragraph">Deploy it with the dotenvx --secrets-file.</p>
-    {% capture cf_deploy_command %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Deploy
+
+Deploy it with the dotenvx --secrets-file.
+
+```console
 $ npx wrangler deploy --secrets-file <(npx dotenvx get -f .env.production --strict)
-    {% endcapture %}
-    {% capture cf_deploy_command_copy %}
-npx wrangler deploy --secrets-file <(npx dotenvx get -f .env.production --strict)
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_deploy_command copy_text=cf_deploy_command_copy class="design-codeblock--nowrap" format="cli" %}
-    <p class="design-paragraph">That's it. Your Worker reads env.HELLO just like any other Cloudflare secret.</p>
-    {% capture cf_worker %}
+```
+{: copy="npx wrangler deploy --secrets-file <(npx dotenvx get -f .env.production --strict)" class="design-codeblock--nowrap"}
+
+That's it. Your Worker reads env.HELLO just like any other Cloudflare secret.
+
+```javascript
 // src/index.js
 export default {
   async fetch(request, env) {
     return new Response(`Hello ${env.HELLO}`)
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_worker language="javascript" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Scripts</h2>
-    <p class="design-paragraph">Add to your scripts for convenience.</p>
-    {% capture cf_package %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Scripts
+
+Add to your scripts for convenience.
+
+```json
 {
   "scripts": {
     "deploy": "bash -c 'wrangler deploy --secrets-file <(dotenvx get -f .env.production --strict)'",
     "preview": "bash -c 'wrangler preview --secrets-file <(dotenvx get -f .env.preview --strict)'"
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_package class="design-codeblock--nowrap" language="json" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: class="design-codeblock--nowrap"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Pages</h2>
-    <p class="design-paragraph">Using pages? It is similar to workers.</p>
-    {% capture cf_pages %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Pages
+
+Using pages? It is similar to workers.
+
+```console
 $ npx wrangler pages secret bulk <(npx dotenvx get -f .env.production --strict) --project-name my-site
 $ npx wrangler pages deploy dist --project-name my-site
-    {% endcapture %}
-    {% capture cf_pages_copy %}
-npx wrangler pages secret bulk <(npx dotenvx get -f .env.production --strict) --project-name my-site
-npx wrangler pages deploy dist --project-name my-site
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_pages copy_text=cf_pages_copy class="design-codeblock--nowrap" format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-    {% include components/design-separator.html %}
+```
+{: copy="npx wrangler pages secret bulk <(npx dotenvx get -f .env.production --strict) --project-name my-site
+npx wrangler pages deploy dist --project-name my-site" class="design-codeblock--nowrap"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Advanced</h2>
-    <p class="design-paragraph">The above set up is typical for Cloudflare but if you want to get full secrets separation in the spirit of dotenvx you can ship an encrypted .env.txt file to decrypt at runtime.</p>
-    <p class="design-paragraph">Install dotenvx.</p>
-    {% capture cf_advanced_install %}
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+{% include components/design-separator.html %}
+
+{% capture step_content %}
+
+## Advanced
+
+The above set up is typical for Cloudflare but if you want to get full secrets separation in the spirit of dotenvx you can ship an encrypted .env.txt file to decrypt at runtime.
+
+Install dotenvx.
+
+```console
 $ npm install @dotenvx/dotenvx
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_advanced_install copy_text="npm install @dotenvx/dotenvx" format="cli" %}
-    <p class="design-paragraph">Encrypt a .env.production.txt file. The .txt extension allows it to be included in the worker as an artifact.</p>
-    {% capture cf_advanced_encrypt %}
+```
+{: copy="npm install @dotenvx/dotenvx"}
+
+Encrypt a .env.production.txt file. The .txt extension allows it to be included in the worker as an artifact.
+
+```console
 $ npx dotenvx encrypt -f .env.production.txt
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_advanced_encrypt copy_text="npx dotenvx encrypt -f .env.production.txt" format="cli" %}
-    <p class="design-paragraph">Commit to code.</p>
-    {% capture cf_advanced_commit %}
+```
+{: copy="npx dotenvx encrypt -f .env.production.txt"}
+
+Commit to code.
+
+```console
 $ git add .env.production.txt
 $ git commit -m "encrypt .env.production.txt"
-    {% endcapture %}
-    {% capture cf_advanced_commit_copy %}
-git add .env.production.txt
-git commit -m "encrypt .env.production.txt"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_advanced_commit copy_text=cf_advanced_commit_copy format="cli" %}
-    <p class="design-paragraph">Then inject your encrypted secrets at runtime.</p>
-    {% capture cf_advanced_runtime %}
+```
+{: copy="git add .env.production.txt
+git commit -m \"encrypt .env.production.txt\""}
+
+
+
+Then inject your encrypted secrets at runtime.
+
+```javascript
 import envSrc from '../.env.production.txt'
 import dotenvx from '@dotenvx/dotenvx'
 
@@ -138,22 +160,24 @@ export default {
     return new Response(`Hello ${envx.HELLO}`)
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_advanced_runtime language="javascript" %}
-    <p class="design-paragraph">Adjust your deploy script to set your production keypair on Cloudflare.</p>
-    {% capture cf_advanced_scripts %}
+```
+
+Adjust your deploy script to set your production keypair on Cloudflare.
+
+```json
 {
   "scripts": {
     "deploy": "bash -c 'wrangler deploy --secrets-file <(dotenvx keypair -f .env.production.txt)'"
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=cf_advanced_scripts class="design-codeblock--nowrap" language="json" %}
-    <p class="design-paragraph">That's it! This gives you advanced protection.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: class="design-codeblock--nowrap"}
 
+That's it! This gives you advanced protection.
 
-  </section>
-  </div>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+</section>
+</div>
 </div>

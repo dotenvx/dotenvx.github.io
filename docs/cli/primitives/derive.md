@@ -16,9 +16,8 @@ options:
 ---
 Derive a public key without reading or writing env files.
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx primitives derive <privateKey>
 <publicKey>
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx primitives derive <privateKey>{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx primitives derive <privateKey>"}

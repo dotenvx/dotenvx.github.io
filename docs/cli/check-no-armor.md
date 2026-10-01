@@ -11,10 +11,7 @@ redirect_from:
   - /docs/cli/validate-no-armor
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx check --no-armor
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx check --no-armor
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx check --no-armor"}

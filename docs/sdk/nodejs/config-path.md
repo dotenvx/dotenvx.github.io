@@ -22,17 +22,16 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-{% capture sdk_code_0 %}
+
+```dotenv
 # .env.local
 HELLO="Me"
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
+```
 
-{% capture sdk_code_1 %}
+```dotenv
 # .env
 HELLO="World"
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 language="dotenv" %}
+```
 
 {% capture sdk_code_2 %}
 {% raw %}
@@ -44,13 +43,12 @@ console.log(`Hello ${process.env.HELLO}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_2 language="javascript" %}
 
-{% capture sdk_code_3 %}
+```console
 $ node index.js
 ⟐ injected env (1) from .env.local, .env
 Hello Me
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_3 format="cli" %}
+```
 
-<p class="design-paragraph">This is the equivalent of using <code class="design-code">-f</code> from the command line.</p>
+This is the equivalent of using `-f` from the command line.
 
-<p class="design-paragraph">To use a directory as the base for convention files, see <a class="design-link" href="/docs/sdk/nodejs/config-path-directory-convention"><code class="design-code">config(path: directory, convention: 'nextjs')</code></a>.</p>
+To use a directory as the base for convention files, see [`config(path: directory, convention: 'nextjs')`](/docs/sdk/nodejs/config-path-directory-convention).

@@ -20,14 +20,13 @@ crumbs:
 ---
 For example, to supress warnings (risky), set log level to `error`.
 
-{% capture cli_code_0 %}
+```console
 $ echo "HELLO=production" > .env.production
 echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
 dotenvx run -f .env.production --log-level=error -- node index.js
 Hello production
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=production" > .env.production{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=production\" > .env.production"}
 
 Available log levels are `error, warn, info, verbose, debug, silly` ([source](https://github.com/winstonjs/winston?tab=readme-ov-file#logging))

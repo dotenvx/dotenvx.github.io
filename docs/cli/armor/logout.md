@@ -20,8 +20,8 @@ crumbs:
   - label: Armor
     href: /docs/cli/armor/introduction/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx armor logout
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx armor logout{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx armor logout"}

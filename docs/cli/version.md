@@ -12,18 +12,17 @@ crumbs:
   - label: CLI
     href: /docs/cli
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx --version
 X.X.X
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx --version{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx --version"}
 
 The short `-V` flag is equivalent:
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx -V
 X.X.X
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx -V{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx -V"}

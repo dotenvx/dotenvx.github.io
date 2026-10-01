@@ -1,4 +1,4 @@
 {% assign step_class = include.class %}
 <div class="design-step{% if step_class %} {{ step_class }}{% endif %}">
-  {% if include.content %}{{ include.content }}{% endif %}
+  {% if include.content %}{% if include.markdown %}{{ include.content | markdownify }}{% else %}{{ include.content }}{% endif %}{% endif %}
 </div>

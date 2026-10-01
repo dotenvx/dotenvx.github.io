@@ -8,10 +8,7 @@ eyebrow: "dotenvx 1password pull"
 eyebrow_href: "/docs/cli/1password-pull/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx 1password pull -fk .env.production.keys
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx 1password pull -fk .env.production.keys
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx 1password pull -fk .env.production.keys"}

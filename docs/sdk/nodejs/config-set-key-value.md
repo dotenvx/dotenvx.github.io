@@ -31,7 +31,8 @@ options:
   - title: "set(KEY, value, {plain: true})"
     href: /docs/sdk/nodejs/config-set-key-value-plain/
 ---
-{% capture sdk_code_0 %}
+
+```javascript
 // index.js
 const dotenvx = require('@dotenvx/dotenvx')
 
@@ -40,5 +41,4 @@ async function main() {
 }
 
 main()
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
+```

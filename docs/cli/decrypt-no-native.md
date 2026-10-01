@@ -16,8 +16,8 @@ crumbs:
   - label: Decrypt
     href: /docs/cli/decrypt/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx decrypt --no-native
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx decrypt --no-native{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx decrypt --no-native"}

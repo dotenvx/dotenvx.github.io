@@ -31,7 +31,8 @@ options:
   - title: "get(KEY, {mask: true})"
     href: /docs/sdk/nodejs/get-mask/
 ---
-{% capture sdk_code_0 %}
+
+```javascript
 // index.js
 const dotenvx = require('@dotenvx/dotenvx')
 
@@ -42,7 +43,6 @@ async function main() {
 }
 
 main()
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
+```
 
-<p class="design-paragraph">This is known as <em>Decryption at Access</em> and is written about in <a class="design-link" href="https://dotenvx.com/dotenvx.pdf">the whitepaper</a>.</p>
+This is known as *Decryption at Access* and is written about in [the whitepaper](https://dotenvx.com/dotenvx.pdf).

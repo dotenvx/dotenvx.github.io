@@ -6,10 +6,7 @@ permalink: "/docs/cli/bitwarden/"
 command: "dotenvx bitwarden"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx bitwarden --help
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx bitwarden --help
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx bitwarden --help"}

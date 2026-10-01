@@ -11,10 +11,7 @@ redirect_from:
   - /docs/cli/validate-no-native
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx check --no-native
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx check --no-native
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx check --no-native"}

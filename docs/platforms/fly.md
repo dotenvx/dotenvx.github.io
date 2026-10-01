@@ -13,18 +13,22 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/fly">code examples for this guide</a> on GitHub.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
-    <p class="design-paragraph">Create a Hello World app, a <code class="design-code">Dockerfile</code>, and <code class="design-code">fly.toml</code>, then deploy.</p>
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/fly) on GitHub.
 
-    {% capture fly_dockerfile %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Initial setup
+
+Create a Hello World app, a `Dockerfile`, and `fly.toml`, then deploy.
+
+```docker
 # Dockerfile
 FROM node:20
 WORKDIR /app
@@ -33,34 +37,37 @@ RUN npm install
 COPY . .
 EXPOSE 3000
 CMD ["node", "index.js"]
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_dockerfile copy=false language="docker" %}
+```
+{: copy="false"}
 
-    {% capture fly_dockerignore %}
+```text
 # .dockerignore
 .env.keys
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_dockerignore copy=false %}
+```
+{: copy="false"}
 
-    {% capture fly_toml %}
+```toml
 [http_service]
   internal_port = 3000
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_toml copy=false language="toml" %}
+```
+{: copy="false"}
 
-    {% capture fly_deploy %}
+```bash
 flyctl launch
 flyctl deploy
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_deploy copy=false language="bash" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
-    <p class="design-paragraph">Install dotenvx in your <code class="design-code">Dockerfile</code> and prepend your app command with <code class="design-code">dotenvx run --</code>.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture fly_dockerfile_dx %}
+{% capture step_content %}
+
+## Run dotenvx
+
+Install dotenvx in your `Dockerfile` and prepend your app command with `dotenvx run --`.
+
+```docker
 # Dockerfile
 FROM node:20
 WORKDIR /app
@@ -75,43 +82,48 @@ EXPOSE 3000
 
 # Prepend dotenvx run
 CMD ["dotenvx", "run", "--", "node", "index.js"]
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_dockerfile_dx copy=false language="docker" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/install/#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+If you prefer, [install from GitHub Releases](/docs/install/#github) or view the [install.sh](https://dotenvx.sh/install.sh) file before executing.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture fly_env_prod %}
+{% capture step_content %}
+
+## Encrypt production
+
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_env_prod copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture fly_encrypt %}
+```console
 $ dotenvx encrypt -f .env.production
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
+```
+{: copy="dotenvx encrypt -f .env.production"}
 
-    <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Commit `.env.production`. Do not commit `.env.keys`.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture fly_secrets %}
+{% capture step_content %}
+
+## Set decryption key
+
+```bash
 flyctl secrets set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key'
 flyctl deploy
-    {% endcapture %}
-    {% include components/design-codeblock.html value=fly_secrets copy=false language="bash" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Your app restarts and env is injected from the encrypted <code class="design-code">.env.production</code> file.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+Your app restarts and env is injected from the encrypted `.env.production` file.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

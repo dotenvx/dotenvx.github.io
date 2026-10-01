@@ -8,10 +8,7 @@ eyebrow: "dotenvx feedback"
 eyebrow_href: "/docs/cli/feedback/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx feedback "The quickstart worked well." --hostname https://armor.dotenvx.com
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx feedback "The quickstart worked well." --hostname https://armor.dotenvx.com
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx feedback \"The quickstart worked well.\" --hostname https://armor.dotenvx.com"}

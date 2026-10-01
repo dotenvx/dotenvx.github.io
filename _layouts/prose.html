@@ -1,0 +1,28 @@
+---
+layout: radar
+body_class: home-page
+---
+<div class="home-sections">
+  <header class="design-hero-section home-hero">
+    <div class="armor-shell">
+      {% assign hero_visual = "" %}
+      {% if page.hero_visual %}
+        {% capture hero_visual %}{% include {{ page.hero_visual }} %}{% endcapture %}
+      {% endif %}
+      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=hero_visual %}
+    </div>
+  </header>
+
+  {% if page.hero_followup %}
+    {% include {{ page.hero_followup }} %}
+  {% endif %}
+
+  {% assign prose_content = content | strip %}
+  {% if prose_content != "" %}
+    <section class="radar-section{% if page.wide_codeblocks %} prose-wide-code{% endif %}" aria-label="Content">
+      <div class="armor-shell">
+        {% include components/design-content-width.html content=content class="design-prose" %}
+      </div>
+    </section>
+  {% endif %}
+</div>

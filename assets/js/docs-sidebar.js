@@ -33,7 +33,7 @@
   try { preferredWidth = Number(localStorage.getItem('docs-sidebar-width-v2')) || 0; } catch (_) {}
   const bounds = () => {
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    return { min: 10 * rem, max: Math.max(10 * rem, Math.min(32 * rem, innerWidth / 2 - 17 * rem)), initial: 17 * rem };
+    return { min: 10 * rem, max: Math.max(13 * rem, Math.min(32 * rem, innerWidth / 2 - 20 * rem)), initial: 17 * rem };
   };
   const resize = () => {
     const { min, max, initial } = bounds();

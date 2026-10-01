@@ -16,9 +16,9 @@ crumbs:
   - label: Keypair
     href: /docs/cli/keypair/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx keypair --format json
 {"DOTENV_PUBLIC_KEY":"<publicKey>","DOTENV_PRIVATE_KEY":"<privateKey>"}
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx keypair --format json{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx keypair --format json"}

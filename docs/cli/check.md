@@ -29,24 +29,18 @@ redirect_from:
 ---
 Validate resolved `.env` values against an `Envfile` without running a command. An `Envfile` in the current directory is required; `.env.example` is not used for validation.
 
-{% capture cli_code_0 %}
+```ruby
 # Envfile
 env "DATABASE_URL", type: "url"
 env "PORT", type: "port"
 env "SENTRY_DSN", optional: true
-{% endcapture %}
-{% capture cli_code_0_copy %}# Envfile
-env "DATABASE_URL", type: "url"
-env "PORT", type: "port"
-env "SENTRY_DSN", optional: true{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="ruby" %}
+```
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx check
 [INVALID_ENV] DATABASE_URL is required; PORT is required
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx check{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx check"}
 
 The command enforces required values, types, enums, bounds, and encryption requirements. It exits with code `1` on validation or other loading errors. Missing env files are reported but do not fail validation when the resolved values satisfy Envfile. On success, it prints `▣ valid (.env)` (listing the loaded input files) and exits with code `0` on success. It does not change your shell's environment.
 

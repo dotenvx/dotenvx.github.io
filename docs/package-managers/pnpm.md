@@ -13,11 +13,13 @@ layout: radar
 %}
 
 <section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-guide-body design-prose">
-    <p class="design-paragraph"><a class="design-link" href="https://pnpm.io">pnpm</a> works largely like npm. Follow the <a class="design-link" href="/docs/package-managers/npm">npm guides</a> and replace the npm commands with pnpm commands.</p>
-    </div>
-  </div>
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-guide-body design-prose" markdown="block">
+
+[pnpm](https://pnpm.io) works largely like npm. Follow the [npm guides](/docs/package-managers/npm) and replace the npm commands with pnpm commands.
+
+</div>
+</div>
 </div>
 </section>

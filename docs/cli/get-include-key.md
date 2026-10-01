@@ -18,12 +18,11 @@ crumbs:
 ---
 Pass `--include-key`, or its `-ik` alias. Glob patterns are supported.
 
-{% capture cli_code_0 %}
+```console
 $ echo "HELLO=World\nHOLA=Mundo\nGOODBYE=World" > .env
 
 $ dotenvx get -ik "H*"
 {"HELLO":"World","HOLA":"Mundo"}
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=World\nHOLA=Mundo\nGOODBYE=World" > .env
-dotenvx get -ik "H*"{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\nHOLA=Mundo\nGOODBYE=World\" > .env
+dotenvx get -ik \"H*\""}

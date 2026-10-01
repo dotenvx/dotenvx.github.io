@@ -14,16 +14,15 @@ crumbs:
   - label: CLI
     href: /docs/cli
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx doctor
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx doctor{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx doctor"}
 
 Scan the current directory for existing dotenv loaders.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx doctor apps/backend
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx doctor apps/backend{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx doctor apps/backend"}

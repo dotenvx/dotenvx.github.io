@@ -19,12 +19,11 @@ video: ai-redaction
 ---
 Runtime leak protection for Claude print mode: Claude receives the real environment variables, but log redaction replaces any matching values it prints with `[REDACTED]`.
 
-{% capture cli_code_0 %}
+```console
 $ echo "SECRET=super-secret-value" > .env
 
 $ dotenvx run --redact --quiet -- claude -p 'Print the value of $SECRET'
 [REDACTED]
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "SECRET=super-secret-value" > .env
-dotenvx run --redact --quiet -- claude -p 'Print the value of $SECRET'{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"SECRET=super-secret-value\" > .env
+dotenvx run --redact --quiet -- claude -p 'Print the value of $SECRET'"}

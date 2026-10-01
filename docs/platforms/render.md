@@ -13,25 +13,28 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/docker">code examples for this guide</a> on GitHub.</p>
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    <p class="design-paragraph">Deploying to <a class="design-link" href="https://render.com">Render</a> takes more steps than we document here. Follow their <a class="design-link" href="https://docs.render.com/docker#docker-builds-on-render">Docker guide</a> (Render recognizes your <code class="design-code">Dockerfile</code> automatically). This guide shows the dotenvx pieces in a Docker context.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/docker) on GitHub.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Dockerfile</h2>
+Deploying to [Render](https://render.com) takes more steps than we document here. Follow their [Docker guide](https://docs.render.com/docker#docker-builds-on-render) (Render recognizes your `Dockerfile` automatically). This guide shows the dotenvx pieces in a Docker context.
 
-    {% capture render_dockerignore %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Dockerfile
+
+```text
 # .dockerignore
 .env.keys
-    {% endcapture %}
-    {% include components/design-codeblock.html value=render_dockerignore copy=false %}
+```
+{: copy="false"}
 
-    {% capture render_dockerfile %}
+```docker
 # Dockerfile
 FROM node:20
 WORKDIR /app
@@ -44,36 +47,42 @@ COPY . .
 EXPOSE 3000
 
 CMD ["dotenvx", "run", "--", "node", "index.js"]
-    {% endcapture %}
-    {% include components/design-codeblock.html value=render_dockerfile copy=false language="docker" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">If you prefer, <a class="design-link" href="/docs/install/#github">install from GitHub Releases</a> or view the <a class="design-link" href="https://dotenvx.sh/install.sh">install.sh</a> file before executing.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+If you prefer, [install from GitHub Releases](/docs/install/#github) or view the [install.sh](https://dotenvx.sh/install.sh) file before executing.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture render_env_prod %}
+{% capture step_content %}
+
+## Encrypt production
+
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=render_env_prod copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture render_encrypt %}
+```console
 $ dotenvx encrypt -f .env.production
-    {% endcapture %}
-    {% include components/design-codeblock.html value=render_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
+```
+{: copy="dotenvx encrypt -f .env.production"}
 
-    <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Commit `.env.production`. Do not commit `.env.keys`.
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
-    <p class="design-paragraph">Set <code class="design-code">DOTENV_PRIVATE_KEY_PRODUCTION</code> in Render's environment variable manager, then redeploy. Your app injects env from the encrypted <code class="design-code">.env.production</code> file.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Set decryption key
+
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` in Render's environment variable manager, then redeploy. Your app injects env from the encrypted `.env.production` file.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

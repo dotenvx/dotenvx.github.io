@@ -18,12 +18,12 @@ crumbs:
   - label: Encrypt
     href: /docs/cli/encrypt/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=World" > .env
 echo "HELLO=Production" > .env.production
 
 dotenvx encrypt -f .env.production
 ◈ encrypted (.env.production)
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\" > .env"}

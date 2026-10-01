@@ -18,9 +18,8 @@ options:
 ---
 Generate a key pair without reading or writing env files.
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx primitives keypair
 {"publicKey":"<publicKey>","privateKey":"<privateKey>"}
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx primitives keypair{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx primitives keypair"}

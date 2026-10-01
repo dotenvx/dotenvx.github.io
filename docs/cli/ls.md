@@ -23,44 +23,41 @@ crumbs:
     href: /docs/cli
 video: cli-ls
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx ls
 ├─ .env.production
 ├─ .env
 └─ apps
    └─ backend
       └─ .env
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx ls{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx ls"}
 
 Pass a directory to list `.env` files under that path.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx ls apps/backend
 └─ .env
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx ls apps/backend{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx ls apps/backend"}
 
 ## JSON output
 
 Use `--json` to print matching `.env` files as a JSON array of absolute filepaths.
 
-{% capture cli_code_2 %}
+```console
 $ dotenvx ls --json
 [
   "/path/to/project/.env",
   "/path/to/project/apps/backend/.env"
 ]
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx ls --json{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="dotenvx ls --json"}
 
 Progress and summary details are written to stderr, so stdout can be safely piped to another command or file.
 
-{% capture cli_code_3 %}
+```console
 $ dotenvx ls --json > dotenv-files.json
-{% endcapture %}
-{% capture cli_code_3_copy %}dotenvx ls --json > dotenv-files.json{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_3 copy_text=cli_code_3_copy format="cli" %}
+```
+{: copy="dotenvx ls --json > dotenv-files.json"}

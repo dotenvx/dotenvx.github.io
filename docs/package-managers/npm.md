@@ -13,33 +13,36 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/package-managers/npm">code examples on GitHub</a> for these framework guides.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Astro</h2>
-    <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/withastro/astro">astro.js</a>.</p>
-    <p class="design-paragraph">Create an Astro application.</p>
+Find [code examples on GitHub](https://github.com/dotenvx/examples/tree/main/package-managers/npm) for these framework guides.
 
-    {% capture npm_astro_create %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Astro
+
+Use dotenvx (as an npm module) with [astro.js](https://github.com/withastro/astro).
+
+Create an Astro application.
+
+```bash
 npm create astro@latest
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_create copy_text="npm create astro@latest" language="bash" %}
+```
 
-    <p class="design-paragraph">Install <code class="design-code">dotenvx</code> as an npm module.</p>
+Install `dotenvx` as an npm module.
 
-    {% capture npm_astro_install %}
+```bash
 npm install @dotenvx/dotenvx --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_install copy_text="npm install @dotenvx/dotenvx --save" language="bash" %}
+```
 
-    <p class="design-paragraph">Edit <code class="design-code">src/pages/index.astro</code> to include <code class="design-code">process.env.HELLO</code>.</p>
+Edit `src/pages/index.astro` to include `process.env.HELLO`.
 
-    {% capture npm_astro_page %}
+```html
 ---
 ---
 
@@ -55,12 +58,12 @@ npm install @dotenvx/dotenvx --save
         <h1>Hello {import.meta.env.HELLO}</h1>
     </body>
 </html>
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_page copy=false language="html" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Preload Astro scripts with dotenvx. This injects environment variables ahead of Astro.</p>
+Preload Astro scripts with dotenvx. This injects environment variables ahead of Astro.
 
-    {% capture npm_astro_scripts %}
+```json
 ...
 "scripts": {
   "dev": "dotenvx run -- astro dev",
@@ -69,12 +72,12 @@ npm install @dotenvx/dotenvx --save
   "preview": "dotenvx run -- astro preview",
   "astro": "astro"
 },
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_scripts copy=false language="json" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Run it.</p>
+Run it.
 
-    {% capture npm_astro_run %}
+```console
 $ npm run dev
 
 > dev
@@ -82,23 +85,25 @@ $ npm run dev
 
 ⟐ injected env (1) from .env
 ┃ Local    http://localhost:4321/
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_astro_run copy_text="npm run dev" format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="npm run dev"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Express</h2>
-    <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/expressjs/express">express.js</a>.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture npm_express_install %}
+{% capture step_content %}
+
+## Express
+
+Use dotenvx (as an npm module) with [express.js](https://github.com/expressjs/express).
+
+```bash
 npm install express @dotenvx/dotenvx --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_install copy_text="npm install express @dotenvx/dotenvx --save" language="bash" %}
+```
 
-    <p class="design-paragraph">Create a simple Hello World application.</p>
+Create a simple Hello World application.
 
-    {% capture npm_express_index %}
+```javascript
 // index.js
 const express = require('express')
 const app = express()
@@ -111,12 +116,12 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port:${PORT}`)
 })
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_index copy=false language="javascript" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Add <code class="design-code">dotenvx run --</code> to your start script.</p>
+Add `dotenvx run --` to your start script.
 
-    {% capture npm_express_pkg %}
+```json
 {
   "dependencies": {
     "@dotenvx/dotenvx": "^1.48.4",
@@ -126,12 +131,12 @@ app.listen(PORT, () => {
     "start": "dotenvx run -- node index.js"
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_pkg copy=false language="json" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Run it.</p>
+Run it.
 
-    {% capture npm_express_run %}
+```console
 $ npm start
 
 > start
@@ -139,34 +144,38 @@ $ npm start
 
 ⟐ injected env (1) from .env
 Server running on port:3000
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_express_run copy_text="npm start" format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="npm start"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Next.js</h2>
-    <p class="design-paragraph">Follow the <a class="design-link" href="/docs/nextjs/">canonical Next.js guide</a> to use <code class="design-code">@dotenvx/next-env</code> with an npm override for <code class="design-code">@next/env</code>. This setup works locally and for Next.js apps on Vercel.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Remix</h2>
-    <p class="design-paragraph">Use dotenvx (as an npm module) with <a class="design-link" href="https://github.com/remix-run/remix">remix.js</a>.</p>
+{% capture step_content %}
 
-    {% capture npm_remix_create %}
+## Next.js
+
+Follow the [canonical Next.js guide](/docs/nextjs/) to use `@dotenvx/next-env` with an npm override for `@next/env`. This setup works locally and for Next.js apps on Vercel.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Remix
+
+Use dotenvx (as an npm module) with [remix.js](https://github.com/remix-run/remix).
+
+```bash
 npx create-remix@latest
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_create copy_text="npx create-remix@latest" language="bash" %}
+```
 
-    {% capture npm_remix_install %}
+```bash
 npm install @dotenvx/dotenvx --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_install copy_text="npm install @dotenvx/dotenvx --save" language="bash" %}
+```
 
-    <p class="design-paragraph">Edit <code class="design-code">app/routes/_index.tsx</code> to include <code class="design-code">process.env.HELLO</code> using a Remix loader.</p>
+Edit `app/routes/_index.tsx` to include `process.env.HELLO` using a Remix loader.
 
-    {% capture npm_remix_page %}
+```tsx
 import type { V2_MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
@@ -195,12 +204,12 @@ export default function Index() {
     </div>
   );
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_page copy=false language="tsx" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Preload Remix scripts with dotenvx.</p>
+Preload Remix scripts with dotenvx.
 
-    {% capture npm_remix_scripts %}
+```json
 ...
 "scripts": {
   "build": "dotenvx run -- remix build",
@@ -209,12 +218,12 @@ export default function Index() {
   "start": "dotenvx run -- remix-serve ./build/index.js",
   "typecheck": "tsc"
 },
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_scripts copy=false language="json" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Run it.</p>
+Run it.
 
-    {% capture npm_remix_run %}
+```console
 $ npm run dev
 
 > dev
@@ -222,10 +231,11 @@ $ npm run dev
 
 ⟐ injected env (1) from .env
 [remix-serve] http://localhost:3000
-    {% endcapture %}
-    {% include components/design-codeblock.html value=npm_remix_run copy_text="npm run dev" format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+```
+{: copy="npm run dev"}
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

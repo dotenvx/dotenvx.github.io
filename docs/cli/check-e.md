@@ -11,10 +11,7 @@ redirect_from:
   - /docs/cli/validate-e
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx check -e "HELLO=World"
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx check -e "HELLO=World"
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx check -e \"HELLO=World\""}

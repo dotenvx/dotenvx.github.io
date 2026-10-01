@@ -19,29 +19,28 @@ crumbs:
     href: /docs/cli/run/
 video: cli-variable-expansion
 ---
-{% capture cli_code_0 %}
+
+```dotenv
 # .env
 USERNAME="username"
 DATABASE_URL="postgres://${USERNAME}@localhost/my_database"
-{% endcapture %}
-{% capture cli_code_0_copy %}# .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy language="dotenv" %}
+```
+{: copy="# .env"}
 
-{% capture cli_code_1 %}
+```javascript
 // index.js
 console.log('DATABASE_URL', process.env.DATABASE_URL)
-{% endcapture %}
-{% capture cli_code_1_copy %}// index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy language="javascript" %}
+```
+{: copy="// index.js"}
 
-{% capture cli_code_2 %}
+```console
 $ dotenvx run --debug -- node index.js
 ⟐ injected env (2) from .env
 DATABASE_URL postgres://username@localhost/my_database
-{% endcapture %}
-{% capture cli_code_2_copy %}dotenvx run --debug -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="dotenvx run --debug -- node index.js"}
 
-<h2 class="design-page-title design-page-title--flush" id="disabling">Disabling</h2>
+## Disabling
+{: #disabling}
 
 To disable variable expansion use single quotes like `PASSWORD='pa$$word@'` to get the result 'pa$$word@'.

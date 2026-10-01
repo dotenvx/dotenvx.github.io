@@ -16,10 +16,10 @@ crumbs:
   - label: Get
     href: /docs/cli/get/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=World" > .env
 dotenvx get --format colon
 HELLO: World
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\" > .env"}

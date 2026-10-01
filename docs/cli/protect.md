@@ -25,12 +25,11 @@ options:
 ---
 Run once to protect existing and future repositories on this machine:
 
-{% capture protect_setup %}
+```console
 $ dotenvx protect
 ⛉ protection: full (.env*, .env.keys*)
-{% endcapture %}
-{% capture protect_setup_copy %}dotenvx protect{% endcapture %}
-{% include components/design-codeblock.html value=protect_setup copy_text=protect_setup_copy format="cli" %}
+```
+{: copy="dotenvx protect"}
 
 That's it! Attempts to add unencrypted .env secrets to a commit by you (or your coding agent) will be blocked. It even works if your coding agent attempts git add -f.
 

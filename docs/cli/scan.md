@@ -14,12 +14,12 @@ crumbs:
   - label: CLI
     href: /docs/cli
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx ext scan
 100 commits scanned.
 no leaks found
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx ext scan{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx ext scan"}
 
 Uses [gitleaks](https://gitleaks.io) under the hood.

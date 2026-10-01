@@ -22,32 +22,31 @@ crumbs:
   - label: config
     href: /docs/sdk/nodejs/config/
 ---
-<p class="design-paragraph">This is useful when loading a workspace's env files from a monorepo root.</p>
 
-{% capture sdk_code_0 %}
+
+This is useful when loading a workspace's env files from a monorepo root.
+
+```javascript
 // index.js
 require('@dotenvx/dotenvx').config({
   path: 'apps/web',
   convention: 'nextjs'
 })
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="javascript" %}
+```
 
-<p class="design-paragraph">The directory becomes the base for every file in the convention:</p>
+The directory becomes the base for every file in the convention:
 
-{% capture sdk_code_1 %}
+```text
 apps/web/.env.development.local
 apps/web/.env.local
 apps/web/.env.development
 apps/web/.env
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_1 %}
+```
 
-<p class="design-paragraph">Without a convention, a directory path loads the <code class="design-code">.env</code> inside it:</p>
+Without a convention, a directory path loads the `.env` inside it:
 
-{% capture sdk_code_2 %}
+```javascript
 require('@dotenvx/dotenvx').config({
   path: 'apps/web'
 })
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 language="javascript" %}
+```

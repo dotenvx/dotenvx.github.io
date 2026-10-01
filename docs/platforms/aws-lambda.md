@@ -13,17 +13,20 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/aws-lambda">code examples for this guide</a> on GitHub.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/aws-lambda) on GitHub.
 
-    {% capture lambda_handler %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Initial setup
+
+```javascript
 // index.js
 exports.handler = async (event) => {
   return {
@@ -31,20 +34,22 @@ exports.handler = async (event) => {
     body: 'Hello World'
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_handler copy=false language="javascript" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Add dotenvx</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture lambda_install %}
+{% capture step_content %}
+
+## Add dotenvx
+
+```console
 $ npm install @dotenvx/dotenvx --save
-    {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_install copy_text="npm install @dotenvx/dotenvx --save" format="cli" %}
+```
+{: copy="npm install @dotenvx/dotenvx --save"}
 
-    {% capture lambda_handler_dx %}
+```javascript
 // index.js
 require('@dotenvx/dotenvx').config()
 
@@ -54,53 +59,64 @@ exports.handler = async (event) => {
     body: `Hello ${process.env.HELLO}`
   }
 }
-    {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_handler_dx copy=false language="javascript" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Add .env file</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture lambda_env %}
+{% capture step_content %}
+
+## Add .env file
+
+```dotenv
 # .env
 HELLO="World"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_env copy=false language="dotenv" %}
+```
+{: copy="false"}
 
-    {% capture lambda_encrypt %}
+```console
 $ dotenvx encrypt
-    {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_encrypt copy_text="dotenvx encrypt" format="cli" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="dotenvx encrypt"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Zip it up</h2>
-    <p class="design-paragraph">Zip everything—making sure to ignore <code class="design-code">.env.keys</code>.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture lambda_zip %}
+{% capture step_content %}
+
+## Zip it up
+
+Zip everything—making sure to ignore `.env.keys`.
+
+```bash
 zip -r function.zip . -x ".env.keys"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=lambda_zip copy_text='zip -r function.zip . -x ".env.keys"' language="bash" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Upload to AWS Lambda</h2>
-    <p class="design-paragraph"><a class="design-link" href="https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/create/function">Create a function</a>, select your runtime and <code class="design-code">x86_64</code>, then upload <code class="design-code">function.zip</code>.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    <p class="design-paragraph">Click <strong>Test</strong> and you will see encrypted ciphertext in the body until the private key is set.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Set DOTENV_PRIVATE_KEY</h2>
-    <p class="design-paragraph">Add an environment variable <code class="design-code">DOTENV_PRIVATE_KEY</code> with the value from your <code class="design-code">.env.keys</code> file. Test again—you should see <code class="design-code">Hello World</code>.</p>
+## Upload to AWS Lambda
 
-    <p class="design-paragraph">Distributing your lambdas is now safer—they only contain encrypted values.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+[Create a function](https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/create/function), select your runtime and `x86_64`, then upload `function.zip`.
+
+Click **Test** and you will see encrypted ciphertext in the body until the private key is set.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Set DOTENV_PRIVATE_KEY
+
+Add an environment variable `DOTENV_PRIVATE_KEY` with the value from your `.env.keys` file. Test again—you should see `Hello World`.
+
+Distributing your lambdas is now safer—they only contain encrypted values.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

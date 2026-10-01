@@ -16,12 +16,11 @@ options:
 ---
 Create an `Envfile` from your `.env` files and source code. In an interactive terminal, select the files to include and whether to scan code for environment variable references.
 
-{% capture cli_code_0 %}
+```console
 $ dotenvx init
 ◈ created (Envfile)
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx init{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx init"}
 
 Outside an interactive terminal, the command reads `.env.example` and `.env` when present. Use `-f` to select a single file. It records variable declarations without copying secret values and leaves an existing `Envfile` unchanged.
 

@@ -18,7 +18,8 @@ crumbs:
   - label: Run
     href: /docs/cli/run/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=development local" > .env.development.local
 echo "HELLO=development" > .env.development
 echo "HELLO=local" > .env.local
@@ -28,28 +29,25 @@ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 NODE_ENV=development dotenvx run --convention=flow -- node index.js 
 ⟐ injected env (1) from .env.development.local, .env.development, .env.local, .env
 Hello development local
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=development local" > .env.development.local{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=development local\" > .env.development.local"}
 
 You can also set `DOTENV_CONFIG_CONVENTION=flow`.
 
-{% capture cli_code_1 %}
+```console
 $ NODE_ENV=development DOTENV_CONFIG_CONVENTION=flow dotenvx run -- node index.js
 ⟐ injected env (1) from .env.development.local, .env.development, .env.local, .env
 Hello development local
-{% endcapture %}
-{% capture cli_code_1_copy %}NODE_ENV=development DOTENV_CONFIG_CONVENTION=flow dotenvx run -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="NODE_ENV=development DOTENV_CONFIG_CONVENTION=flow dotenvx run -- node index.js"}
 
 [dotenv-flow env load order](https://www.npmjs.com/package/dotenv-flow)
 
 Further, we recommend using `DOTENV_ENV` over `NODE_ENV` – as dotenvx works everywhere, not just node.
 
-{% capture cli_code_2 %}
+```console
 $ DOTENV_ENV=development dotenvx run --convention=flow -- node index.js
 ⟐ injected env (1) from .env.development.local, .env.development, .env.local, .env
 Hello development local
-{% endcapture %}
-{% capture cli_code_2_copy %}DOTENV_ENV=development dotenvx run --convention=flow -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_2 copy_text=cli_code_2_copy format="cli" %}
+```
+{: copy="DOTENV_ENV=development dotenvx run --convention=flow -- node index.js"}

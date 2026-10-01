@@ -18,23 +18,23 @@ crumbs:
 ---
 By default, up to the first six characters are visible.
 
-{% capture cli_code_0 %}
+```console
 $ echo "SECRET=abcdefghijkl" > .env
 $ echo "console.log(process.env.SECRET)" > index.js
 
 $ dotenvx run --mask --quiet -- node index.js
 abcdef******
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "SECRET=abcdefghijkl" > .env
-echo "console.log(process.env.SECRET)" > index.js
-dotenvx run --mask --quiet -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"SECRET=abcdefghijkl\" > .env
+echo \"console.log(process.env.SECRET)\" > index.js
+dotenvx run --mask --quiet -- node index.js"}
+
+
 
 Pass a number to control how many characters are visible.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx run --mask 0 --quiet -- node index.js
 ************
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx run --mask 0 --quiet -- node index.js{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx run --mask 0 --quiet -- node index.js"}

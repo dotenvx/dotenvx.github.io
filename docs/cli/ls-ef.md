@@ -8,10 +8,7 @@ eyebrow: "dotenvx ls"
 eyebrow_href: "/docs/cli/ls/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx ls -ef '.env.local'
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx ls -ef '.env.local'
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx ls -ef '.env.local'"}

@@ -20,14 +20,13 @@ crumbs:
 ---
 From a workspace, point `-f` at the monorepo root to load its `.env`:
 
-{% capture cli_code_0 %}
+```console
 $ cd apps/web
 
 dotenvx run -f ../.. -- node index.js
 ⟐ injected env (1) from ../../.env
 Hello World
-{% endcapture %}
-{% capture cli_code_0_copy %}cd apps/web{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="cd apps/web"}
 
 When `.env.keys` sits beside the resolved `.env`, encrypted values are decrypted automatically.

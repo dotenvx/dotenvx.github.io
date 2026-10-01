@@ -18,21 +18,21 @@ crumbs:
 ---
 By default, up to the first six characters are visible.
 
-{% capture cli_code_0 %}
+```console
 $ echo "SECRET=abcdefghijkl" > .env
 
 $ dotenvx get SECRET --mask
 abcdef******
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "SECRET=abcdefghijkl" > .env
-dotenvx get SECRET --mask{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"SECRET=abcdefghijkl\" > .env
+dotenvx get SECRET --mask"}
+
+
 
 Pass a number to control how many characters are visible.
 
-{% capture cli_code_1 %}
+```console
 $ dotenvx get SECRET --mask 0
 ************
-{% endcapture %}
-{% capture cli_code_1_copy %}dotenvx get SECRET --mask 0{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_1 copy_text=cli_code_1_copy format="cli" %}
+```
+{: copy="dotenvx get SECRET --mask 0"}

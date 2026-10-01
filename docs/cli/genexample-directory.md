@@ -18,19 +18,19 @@ crumbs:
   - label: Genexample
     href: /docs/cli/genexample/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ echo "HELLO=World" > .env
 mkdir -p apps/backend
 echo "HELLO=Backend" > apps/backend/.env
 
 dotenvx genexample apps/backend
 ▣ generated (.env.example)
-{% endcapture %}
-{% capture cli_code_0_copy %}echo "HELLO=World" > .env{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="echo \"HELLO=World\" > .env"}
 
-{% capture cli_file_0 %}
+```dotenv
 # apps/backend/.env.example
 HELLO=""
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_file_0 copy=false language="dotenv" %}
+```
+{: copy="false"}

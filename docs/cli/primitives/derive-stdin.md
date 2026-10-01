@@ -12,9 +12,8 @@ description: "Derive a public key from a private key on stdin."
 ---
 Derive a public key from a private key on stdin.
 
-{% capture cli_code_0 %}
+```console
 $ printf '%s\n' "$PRIVATE_KEY" | dotenvx primitives derive --stdin
 <publicKey>
-{% endcapture %}
-{% capture cli_code_0_copy %}printf '%s\n' "$PRIVATE_KEY" | dotenvx primitives derive --stdin{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="printf '%s\n' \"$PRIVATE_KEY\" | dotenvx primitives derive --stdin"}

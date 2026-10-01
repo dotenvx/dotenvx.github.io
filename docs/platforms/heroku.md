@@ -13,24 +13,28 @@ layout: radar
 %}
 
 <div class="armor-shell">
-  <div class="design-content-width">
-  <section class="docs-quickstart-body">
-    {% capture step_content %}
-    <p class="design-paragraph">Find <a class="design-link" href="https://github.com/dotenvx/examples/tree/main/platforms/heroku">code examples for this guide</a> on GitHub.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+<div class="design-content-width">
+<section class="docs-quickstart-body" markdown="block">
+{% capture step_content %}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Initial setup</h2>
-    <p class="design-paragraph">Add a <code class="design-code">Procfile</code> and a simple Hello World app, then push to Heroku.</p>
+Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/heroku) on GitHub.
 
-    {% capture heroku_procfile %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+
+## Initial setup
+
+Add a `Procfile` and a simple Hello World app, then push to Heroku.
+
+```yaml
 # Procfile
 web: node index.js
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_procfile copy=false language="yaml" %}
+```
+{: copy="false"}
 
-    {% capture heroku_app %}
+```javascript
 // index.js
 const express = require('express')
 const app = express()
@@ -43,66 +47,76 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port:${PORT}`)
 })
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_app copy=false language="javascript" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Run dotenvx</h2>
-    <p class="design-paragraph">Install dotenvx via the <a class="design-link" href="https://github.com/dotenvx/heroku-buildpack-dotenvx">dotenvx buildpack</a>.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture heroku_buildpack %}
+{% capture step_content %}
+
+## Run dotenvx
+
+Install dotenvx via the [dotenvx buildpack](https://github.com/dotenvx/heroku-buildpack-dotenvx).
+
+```bash
 heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_buildpack copy_text="heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx" language="bash" %}
+```
 
-    <p class="design-paragraph">Update your <code class="design-code">Procfile</code> to use <code class="design-code">dotenvx</code>.</p>
+Update your `Procfile` to use `dotenvx`.
 
-    {% capture heroku_procfile_dx %}
+```yaml
 # Procfile
 web: dotenvx run -- node index.js
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_procfile_dx copy=false language="yaml" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Add production environment</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture heroku_env_prod %}
+{% capture step_content %}
+
+## Add production environment
+
+```dotenv
 # .env.production
 HELLO="production"
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_env_prod copy=false language="dotenv" %}
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+```
+{: copy="false"}
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Encrypt production</h2>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture heroku_encrypt %}
+{% capture step_content %}
+
+## Encrypt production
+
+```console
 $ dotenvx encrypt -f .env.production
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_encrypt copy_text="dotenvx encrypt -f .env.production" format="cli" %}
+```
+{: copy="dotenvx encrypt -f .env.production"}
 
-    <p class="design-paragraph">Commit <code class="design-code">.env.production</code>. Do not commit <code class="design-code">.env.keys</code>. Keep private keys somewhere safe like 1Password or <a class="design-link" href="https://dotenvx.com/armor">Armor ⛨</a>.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
+Commit `.env.production`. Do not commit `.env.keys`. Keep private keys somewhere safe like 1Password or [Armor ⛨](https://dotenvx.com/armor).
 
-    {% capture step_content %}
-    <h2 class="design-page-title design-page-title--flush">Set decryption key</h2>
-    <p class="design-paragraph">Set <code class="design-code">DOTENV_PRIVATE_KEY_PRODUCTION</code> on Heroku from your <code class="design-code">.env.keys</code> file.</p>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
 
-    {% capture heroku_config %}
+{% capture step_content %}
+
+## Set decryption key
+
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` on Heroku from your `.env.keys` file.
+
+```bash
 heroku config:set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key'
 git push heroku
-    {% endcapture %}
-    {% include components/design-codeblock.html value=heroku_config copy=false language="bash" %}
+```
+{: copy="false"}
 
-    <p class="design-paragraph">Your app restarts and env is injected from the encrypted <code class="design-code">.env.production</code> file.</p>
-    {% endcapture %}
-    {% include components/design-step.html content=step_content %}
-  </section>
+Your app restarts and env is injected from the encrypted `.env.production` file.
+
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+</section>
 </div>
 </div>

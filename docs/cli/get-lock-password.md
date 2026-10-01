@@ -8,10 +8,7 @@ eyebrow: "dotenvx get"
 eyebrow_href: "/docs/cli/get/"
 ---
 
-{% capture cli_example %}
+```console
 $ dotenvx get HELLO --lock-password "$DOTENVX_LOCK_PASSWORD"
-{% endcapture %}
-{% capture cli_example_copy %}
-dotenvx get HELLO --lock-password "$DOTENVX_LOCK_PASSWORD"
-{% endcapture %}
-{% include components/design-codeblock.html value=cli_example copy_text=cli_example_copy format="cli" %}
+```
+{: copy="dotenvx get HELLO --lock-password \"$DOTENVX_LOCK_PASSWORD\""}

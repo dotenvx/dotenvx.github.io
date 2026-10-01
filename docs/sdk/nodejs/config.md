@@ -47,11 +47,11 @@ options:
   - title: "config(noBitwarden: true)"
     href: /docs/sdk/nodejs/config-no-bitwarden/
 ---
-{% capture sdk_code_0 %}
+
+```dotenv
 # .env
 HELLO="World"
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_0 language="dotenv" %}
+```
 
 {% capture sdk_code_1 %}
 {% raw %}
@@ -64,11 +64,10 @@ console.log(`Hello ${process.env.HELLO}`)
 {% endcapture %}
 {% include components/design-codeblock.html value=sdk_code_1 language="javascript" %}
 
-{% capture sdk_code_2 %}
+```console
 $ node index.js
 ⟐ injected env (1) from .env
 Hello World
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 format="cli" %}
+```
 
-<p class="design-paragraph">It defaults to looking for a <code class="design-code">.env</code> file.</p>
+It defaults to looking for a `.env` file.

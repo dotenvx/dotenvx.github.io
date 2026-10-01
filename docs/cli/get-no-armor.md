@@ -16,9 +16,9 @@ crumbs:
   - label: Get
     href: /docs/cli/get/
 ---
-{% capture cli_code_0 %}
+
+```console
 $ dotenvx get HELLO --no-armor
 World
-{% endcapture %}
-{% capture cli_code_0_copy %}dotenvx get HELLO --no-armor{% endcapture %}
-{% include components/design-codeblock.html value=cli_code_0 copy_text=cli_code_0_copy format="cli" %}
+```
+{: copy="dotenvx get HELLO --no-armor"}

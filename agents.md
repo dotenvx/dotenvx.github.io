@@ -87,10 +87,80 @@ $ echo $?
 ```
 {: .envfile-example label="Missing secret stops the command"}
 
+## Encryption
+{: .design-page-title .text-center}
+
+Secrets must be encrypted by default. If plaintext slips into your .env file, Envfile stops your app from starting.
+
+```ruby
+# Envfile
+strict true
+
+env "API_KEY"
+```
+{: .envfile-example label="Require encrypted secrets"}
+
+```shell
+$ dotenvx run -- node index.js
+☠ [INVALID_ENV] API_KEY is not encrypted
+```
+{: .envfile-example label="Plaintext secret blocks startup"}
+
+## Types
+{: .design-page-title .text-center}
+
+Catch bad configuration before your app does. Validate ports, URLs, emails, and more.
+
+```ruby
+# Envfile
+strict true
+
+env "PORT", type: "port", encrypted: false
+```
+{: .envfile-example label="Validate a port"}
+
+```shell
+$ dotenvx run -- node index.js
+☠ [INVALID_ENV] PORT must be at most 65535
+```
+{: .envfile-example label="Invalid port blocks startup"}
+
+## Protect
+{: .design-page-title .text-center}
+
+Keep plaintext secrets out of commits. `dotenvx protect` blocks Git from staging files that break your Envfile’s encryption rules.
+
+```ruby
+# Envfile
+strict true
+
+env "API_KEY"
+```
+{: .envfile-example label="Require encryption before committing"}
+
+```console
+$ dotenvx protect
+⛉ protection: full (.env*, .env.keys*)
+$ echo 'API_KEY=example-only' > .env
+$ git add .env
+☠ [PLAINTEXT_ENV] API_KEY not encrypted (".env"). fix: run [dotenvx encrypt -f .env]
+fatal: .env: clean filter 'dotenvx.protect' failed
+```
+{: .envfile-example label="Block plaintext secrets from commits"}
+
+## Fine-Tune
+{: .design-page-title .text-center}
+
+Choose the rules for each variable. Allow plaintext for a port. Show public values in logs. Keep secrets locked down.
+
+```ruby
+env "PORT", type: "port", encrypted: false, redacted: false
+```
+{: .envfile-example label="Allow plaintext and visible output for a port"}
+
 <!-- ## Spec -->
 <!-- ## Check -->
 <!-- ## Encrypt -->
-<!-- ## Protect -->
 <!-- ## Proxy -->
 
 [Quickstart](/docs/quickstart/envfile/){: .design-btn} [Spec](/docs/envfile-spec/){: .design-btn}

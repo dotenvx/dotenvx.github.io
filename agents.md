@@ -47,7 +47,7 @@ env "STRIPE_SECRET_KEY", proxy: { domain: "api.stripe.com" }
 - Keys and instructions, not keys and values.
 - Dotenvx enforces the rules.
 
-## Redact Secrets
+## Redaction
 {: .design-page-title .text-center}
 
 Envfile keeps secrets out of terminal output automatically. Your app gets the real values; logs show `[REDACTED]`.
@@ -61,15 +61,15 @@ env "DATABASE_URL"
 {: .envfile-example label="Redact secrets with Envfile"}
 
 ```shell
-$ dotenvx run --quiet -- printenv DATABASE_URL
+$ dotenvx run -- printenv DATABASE_URL
 [REDACTED]
 ```
 {: .envfile-example label="Redacted terminal output"}
 
-## Strict and Safe
+## Strictness
 {: .design-page-title .text-center}
 
-If your environment breaks the rules, your command never starts. `strict true` returns an error so your coding agent or process stops.
+With `strict true`, invalid configuration stops your command before it starts. Your coding agent or process gets an error instead.
 
 ```ruby
 # Envfile
@@ -80,7 +80,7 @@ env "API_KEY"
 {: .envfile-example label="Require a secret before running"}
 
 ```shell
-$ dotenvx run --quiet -- node index.js
+$ dotenvx run -- node index.js
 ☠ [INVALID_ENV] API_KEY is required
 $ echo $?
 1

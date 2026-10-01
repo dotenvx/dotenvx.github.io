@@ -34,7 +34,7 @@ $ dotenvx spec
 ```
 {: copy="dotenvx spec"}
 
-Select `.env` if prompted. Dotenvx records the variable names without copying their values.
+Select `.env` if prompted. Dotenvx records the variable names without copying their values and adds `strict true` at the top so validation failures stop your command.
 
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}
@@ -43,7 +43,7 @@ Select `.env` if prompted. Dotenvx records the variable names without copying th
 
 ## Define
 
-Edit the generated Envfile:
+Keep the generated `strict true` setting and edit the variable rules:
 
 ```ruby
 # Envfile

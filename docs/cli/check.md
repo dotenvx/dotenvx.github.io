@@ -31,6 +31,8 @@ Validate resolved `.env` values against an `Envfile` without running a command. 
 
 ```ruby
 # Envfile
+strict true
+
 env "DATABASE_URL", type: "url"
 env "PORT", type: "port"
 env "SENTRY_DSN", optional: true

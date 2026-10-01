@@ -21,6 +21,8 @@ When an `Envfile` is present, `run` automatically validates the resolved environ
 
 ```ruby
 # Envfile
+strict true
+
 env "DATABASE_URL", type: "url"
 env "API_KEY"
 env "SENTRY_DSN", optional: true
@@ -32,4 +34,4 @@ $ dotenvx run -- node index.js
 ```
 {: copy="dotenvx run -- node index.js"}
 
-Envfile validation failures stop the command. Other loading errors require `--strict` to stop execution.
+`dotenvx spec` generates `strict true`, so validation failures stop the command. Files that omit `strict` or set `strict false` warn instead. Other loading errors require `--strict` to stop execution.

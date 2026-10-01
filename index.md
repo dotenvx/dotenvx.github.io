@@ -197,6 +197,8 @@ Ready for Agents: restore this section when the proxy is ready to launch.
       <p class="design-paragraph">Define where each secret can be used in an Envfile. When your agent makes an API call, the proxy replaces its placeholder in supported authentication headers—only for the domain you allow. Your encrypted .env still travels with your code.</p>
       {% capture agents_envfile %}
 # Envfile
+strict true
+
 env "STRIPE_SECRET_KEY", proxy: { domain: "api.stripe.com" }
 env "OPENAI_API_KEY", proxy: { domain: "api.openai.com" }
       {% endcapture %}

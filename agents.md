@@ -27,6 +27,7 @@ Introducing Envfile.
 
 ```ruby
 # Envfile
+strict true
 
 # Check the port.
 env "PORT", type: "port", encrypted: false, redacted: false
@@ -45,6 +46,46 @@ env "STRIPE_SECRET_KEY", proxy: { domain: "api.stripe.com" }
 - Safe to commit.
 - Keys and instructions, not keys and values.
 - Dotenvx enforces the rules.
+
+## Redact Secrets
+{: .design-page-title .text-center}
+
+Envfile keeps secrets out of terminal output automatically. Your app gets the real values; logs show `[REDACTED]`.
+
+```ruby
+# Envfile
+strict true
+
+env "DATABASE_URL"
+```
+{: .envfile-example label="Redact secrets with Envfile"}
+
+```shell
+$ dotenvx run --quiet -- printenv DATABASE_URL
+[REDACTED]
+```
+{: .envfile-example label="Redacted terminal output"}
+
+## Strict and Safe
+{: .design-page-title .text-center}
+
+If your environment breaks the rules, your command never starts. `strict true` returns an error so your coding agent or process stops.
+
+```ruby
+# Envfile
+strict true
+
+env "API_KEY"
+```
+{: .envfile-example label="Require a secret before running"}
+
+```shell
+$ dotenvx run --quiet -- node index.js
+☠ [INVALID_ENV] API_KEY is required
+$ echo $?
+1
+```
+{: .envfile-example label="Missing secret stops the command"}
 
 <!-- ## Spec -->
 <!-- ## Check -->

@@ -27,6 +27,9 @@ Declare an environment variable by name:
 ```ruby
 # Envfile (safe to commit)
 # ------------------------
+
+strict true
+
 env "KEY"
 ```
 
@@ -35,6 +38,9 @@ Add options after a comma to change how the variable is handled:
 ```ruby
 # Envfile (safe to commit)
 # ------------------------
+
+strict true
+
 env "KEY", encrypted: false
 ```
 
@@ -66,6 +72,8 @@ Variable names are case-sensitive and must match `[A-Za-z_][A-Za-z0-9_]*`. Use s
 
 ```ruby
 # Envfile
+strict true
+
 env "DATABASE_URL", type: "url"
 env 'SENTRY_DSN', optional: true
 ```
@@ -158,7 +166,7 @@ When multiple selected files have rules, each active policy must hold. Conflicti
 
 ## Strictness
 
-`strict true` / `strict false` control whether validation failures stop startup or warn (the default). Set strictness once at the root or per file block. They are not `env` options. Encryption and redaction are per-variable options only; there is no root or file-level `encrypted false` or `redacted false` setting.
+`dotenvx spec` generates `strict true` at the top of each Envfile. This stops startup when validation fails. Set `strict false` to warn instead. Existing files that omit `strict` continue to warn. Set strictness once at the root or per file block. `strict` is the only root-level setting; it is not an `env` option. Encryption and redaction are per-variable options only; there is no root or file-level `encrypted false` or `redacted false` setting.
 
 ```ruby
 strict true
@@ -183,7 +191,7 @@ dotenvx encrypt
 dotenvx run -- node index.js
 ```
 
-`dotenvx spec` creates an Envfile from variable names without copying secret values. In a terminal, it lets you select env files and scan code for references. Use `-f .env.production` to select one file, `--stdout` to preview the result, or `--overwrite` to replace an existing Envfile and its custom rules.
+`dotenvx spec` creates an Envfile with `strict true` and variable declarations, without copying secret values. In a terminal, it lets you select env files and scan code for references. Use `-f .env.production` to select one file, `--stdout` to preview the result, or `--overwrite` to replace an existing Envfile and its custom rules.
 
 Use `dotenvx check -f .env.production` to validate a specific file and its overrides. See the [quickstart](/docs/quickstart/envfile/) for a complete example.
 

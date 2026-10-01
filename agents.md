@@ -163,5 +163,15 @@ env "PORT", type: "port", encrypted: false, redacted: false
 <!-- ## Encrypt -->
 <!-- ## Proxy -->
 
+## Generate
+{: .design-page-title .text-center}
+
+Start with the .env files you already have. Generate your Envfile in one command.
+
+```shell
+dotenvx spec
+```
+{: .envfile-example label="Generate your Envfile"}
+
 [Quickstart](/docs/quickstart/envfile/){: .design-btn} [Spec](/docs/envfile-spec/){: .design-btn}
 {: .agents-cta}

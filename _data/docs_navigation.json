@@ -10,13 +10,7 @@
       {
         "label": "Quickstart",
         "href": "/docs/quickstart/",
-        "children": [
-          {
-            "label": "Envfile",
-            "href": "/docs/quickstart/envfile/",
-            "children": []
-          }
-        ]
+        "children": []
       },
       {
         "label": "Advanced",
@@ -62,6 +56,46 @@
       {
         "label": "All SDKs \u2192",
         "href": "/docs/sdk/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Custody",
+    "children": [
+      {
+        "label": "Local",
+        "href": "/docs/custody/local/",
+        "children": []
+      },
+      {
+        "label": "Armor \u26e8",
+        "href": "/docs/custody/armor/",
+        "children": []
+      },
+      {
+        "label": "All Custody \u2192",
+        "href": "/docs/custody/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Envfile",
+    "children": [
+      {
+        "label": "Strictness",
+        "href": "/docs/envfile/strict/",
+        "children": []
+      },
+      {
+        "label": "Encryption",
+        "href": "/docs/envfile/encrypted/",
+        "children": []
+      },
+      {
+        "label": "All Envfile \u2192",
+        "href": "/docs/envfile/",
         "children": []
       }
     ]

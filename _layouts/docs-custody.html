@@ -1,0 +1,48 @@
+---
+layout: radar
+---
+
+{% include components/docs-hero.html
+  eyebrow=page.eyebrow
+  eyebrow_href=page.eyebrow_href
+  title=page.title
+  description=page.description
+  mark=page.mark
+%}
+
+<section class="radar-section">
+  <div class="armor-shell">
+    <div class="design-content-width docs-guide-body">
+      {% assign custody_content = content | strip %}
+      {% unless custody_content == empty %}
+        {% capture step_content %}{{ content }}{% endcapture %}
+        {% include components/design-step.html content=step_content %}
+      {% endunless %}
+      {% if page.options %}
+        {% if page.options_style == "cards" %}
+          {% capture step_content %}
+            <div class="docs-cli-cards">
+              <p class="design-list-title">Custody options</p>
+              <div class="design-settings-grid docs-custody-grid">
+                {% for option in page.options %}
+                  {% include components/design-settings-tile.html href=option.href label=option.title icon=option.icon glyph=option.glyph title=option.description %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endcapture %}
+          {% include components/design-step.html content=step_content %}
+        {% else %}
+        {% capture custody_items %}
+          {% for option in page.options %}
+            <li><a class="design-link" href="{{ option.href }}">{{ option.title }}</a></li>
+          {% endfor %}
+        {% endcapture %}
+        {% capture step_content %}
+          {% include components/design-list.html title="Custody options" items=custody_items %}
+        {% endcapture %}
+        {% include components/design-step.html content=step_content %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>

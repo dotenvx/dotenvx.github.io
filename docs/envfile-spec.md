@@ -17,7 +17,7 @@ layout: radar
 <section class="docs-quickstart-body" markdown="block">
 {% capture step_content %}
 
-Start with the [Envfile quickstart](/docs/quickstart/envfile/), or use this page as the language reference.
+Start with the [Envfile quickstart](/docs/quickstart/envfile/), browse [individual settings](/docs/envfile/), or use this page as the complete language reference.
 
 ## Syntax and options
 {: #reference}

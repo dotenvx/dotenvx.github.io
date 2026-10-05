@@ -36,6 +36,31 @@ layout: radar
 <div class="design-content-width">
 <div class="docs-intro-lists">
 {% capture step_content %}
+
+## Envfile
+
+<ul class="advanced-cli-commands">
+<li><a class="design-link" href="/docs/quickstart/envfile/">Envfile Quickstart</a></li>
+<li><a class="design-link" href="/docs/envfile/env/">Declarations</a></li>
+<li><a class="design-link" href="/docs/envfile/strict/">Strictness</a></li>
+<li><a class="design-link" href="/docs/envfile/required/">Required</a></li>
+<li><a class="design-link" href="/docs/envfile/optional/">Optional</a></li>
+<li><a class="design-link" href="/docs/envfile/type/">Types</a></li>
+<li><a class="design-link" href="/docs/envfile/enum/">Choices</a></li>
+<li><a class="design-link" href="/docs/envfile/min/">Minimum</a></li>
+<li><a class="design-link" href="/docs/envfile/max/">Maximum</a></li>
+<li><a class="design-link" href="/docs/envfile/encrypted/">Encryption</a></li>
+<li><a class="design-link" href="/docs/envfile/redacted/">Redaction</a></li>
+<li><a class="design-link" href="/docs/envfile/proxy/">Proxy</a></li>
+<li><a class="design-link" href="/docs/envfile/file/">File overrides</a></li>
+<li><a class="design-link" href="/docs/envfile/syntax/">Syntax</a></li>
+<li><a class="design-link" href="/docs/envfile/commands/">Commands</a></li>
+<li><a class="design-link" href="/docs/envfile/">All Envfile →</a></li>
+</ul>
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
 {% include components/docs-cli-commands.html group="standard" %}
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}

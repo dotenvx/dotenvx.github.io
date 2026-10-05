@@ -29,7 +29,6 @@ body_class: home-page membership-page
   .membership-members { margin-top: 3rem; }
   .membership-members .design-list-title { margin: 0 0 1.5rem; text-align: center; font-size: var(--design-text-compact); color: var(--design-mid); font-weight: 400; }
   .membership-dotenvx { scroll-margin-top: 6rem; }
-  .membership-benefits-note { max-width: 36rem; margin: 2rem auto 0; text-align: center; }
   .membership-involvement-content { display: grid; grid-template-columns: 12rem minmax(0, 1fr); align-items: center; gap: 2rem; }
   .membership-involvement-content :is(.env-slab-stage, .env-keycap-stage) { height: 12rem; }
   @media (max-width: 640px) {
@@ -64,54 +63,7 @@ body_class: home-page membership-page
 
   {% include components/membership-dotenvx.html %}
 
-  <section class="radar-section" aria-label="Membership pricing">
-    <div class="armor-shell">
-      {% include components/design-page-title.html title="Additional Benefits" heading_tag="h2" title_class="text-center" %}
-      {% capture membership_pricing_rows %}
-        <thead>
-          <tr>
-            <th scope="col">Membership</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">User</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Member</th>
-            <th scope="col" class="design-table-cell--center pricing-summary-plan">Business</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"><a class="design-link" href="/members">Public Recognition</a></th>
-            <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Public Recognition. Show your commitment to secrets security with an optional public member profile, including your photo and work." data-tooltip="Show your commitment to secrets security with an optional public member profile, including your photo and work.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Public Recognition. Show your company’s commitment to secrets security with an optional public company profile and logo." data-tooltip="Show your company’s commitment to secrets security with an optional public company profile and logo.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Agentic Readiness</th>
-            <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Agentic Readiness. Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership." data-tooltip="Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Agentic Readiness. Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership." data-tooltip="Make your commitment to safer secrets handling for AI agents public, alongside your Dotenv membership.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Company Spotlight</th>
-            <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
-            <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Company Spotlight. A feature highlighting how your team approaches secrets security." data-tooltip="A feature highlighting how your team approaches secrets security.">{% include components/design-check.html tone="success" size="sm" label="Included" %}</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Perks</th>
-            <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs. Coming soon." data-tooltip="Discounts or credits from complementary tools, services, and APIs. Coming soon.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
-            <td class="design-table-cell--center"><span class="pricing-value-detail pricing-value-detail--right" tabindex="0" aria-label="Perks. Discounts or credits from complementary tools, services, and APIs. Coming soon." data-tooltip="Discounts or credits from complementary tools, services, and APIs. Coming soon.">{% include components/design-check.html tone="success" size="sm" label="Coming soon" %}</span></td>
-          </tr>
-        </tbody>
-      {% endcapture %}
-      {% capture membership_pricing_table %}
-        {% include components/design-table.html class="design-table-wrap--fill" content=membership_pricing_rows %}
-      {% endcapture %}
-      <div class="membership-comparison">
-        {% include components/design-card.html class="pricing-summary-card" content=membership_pricing_table %}
-      </div>
-      <p class="design-paragraph membership-benefits-note">Your membership helps fund the ongoing development of Dotenvx. By becoming a member, you’re backing what we’re building next and giving us the support to keep going. It makes a real difference. We thank you.</p>
-    </div>
-  </section>
+
 
 
   <section class="radar-section" aria-labelledby="membership-corporate-title">

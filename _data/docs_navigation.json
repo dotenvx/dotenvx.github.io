@@ -41,26 +41,6 @@
     ]
   },
   {
-    "label": "SDKs",
-    "children": [
-      {
-        "label": "Node.js",
-        "href": "/docs/sdk/nodejs/",
-        "children": []
-      },
-      {
-        "label": "Python",
-        "href": "/docs/sdk/python/",
-        "children": []
-      },
-      {
-        "label": "All SDKs \u2192",
-        "href": "/docs/sdk/",
-        "children": []
-      }
-    ]
-  },
-  {
     "label": "Custody",
     "children": [
       {
@@ -76,6 +56,26 @@
       {
         "label": "All Custody \u2192",
         "href": "/docs/custody/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "SDKs",
+    "children": [
+      {
+        "label": "Node.js",
+        "href": "/docs/sdk/nodejs/",
+        "children": []
+      },
+      {
+        "label": "Python",
+        "href": "/docs/sdk/python/",
+        "children": []
+      },
+      {
+        "label": "All SDKs \u2192",
+        "href": "/docs/sdk/",
         "children": []
       }
     ]

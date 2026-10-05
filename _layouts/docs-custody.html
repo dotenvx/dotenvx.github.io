@@ -21,11 +21,11 @@ layout: radar
       {% if page.options %}
         {% if page.options_style == "cards" %}
           {% capture step_content %}
-            <div class="docs-cli-cards">
+            <div class="docs-intro-cards">
               <p class="design-list-title">Custody options</p>
-              <div class="design-settings-grid docs-custody-grid">
+              <div class="design-settings-grid">
                 {% for option in page.options %}
-                  {% include components/design-settings-tile.html href=option.href label=option.title icon=option.icon glyph=option.glyph title=option.description %}
+                  {% include components/design-key.html href=option.href label=option.title icon=option.icon glyph=option.glyph title=option.description %}
                 {% endfor %}
               </div>
             </div>

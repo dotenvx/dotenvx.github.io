@@ -11,25 +11,7 @@ layout: radar
 body_class: docs-landing
 ---
 
-<style>
-  .docs-intro-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-    width: 100%;
-  }
 
-  .docs-intro-cards .design-settings-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (min-width: 640px) {
-    .docs-intro-cards .design-settings-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
-</style>
 
 {% capture docs_hero_visual %}
   <div class="docs-hero-ascii" aria-hidden="true">

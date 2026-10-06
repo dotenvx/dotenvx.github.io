@@ -28,6 +28,8 @@ module Jekyll
             end
           elsif page.url.start_with?("/docs/sdk/")
             ([title] + parents.reverse.reject { |p| ["/docs/introduction", "/docs/sdk"].include?(normalize(p.url)) }.map { |p| p.data["title"] } + ["SDK"]).uniq.join(" · ")
+          elsif page.url.start_with?("/docs/custody/") && normalize(page.url) != "/docs/custody"
+            "#{title} · Key custody"
           else
             title
           end

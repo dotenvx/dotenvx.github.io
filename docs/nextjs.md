@@ -136,10 +136,13 @@ Run your app:
 
 ```console
 $ npx next dev
+⟐ injected env (2) from .env
 ```
 {: copy="npx next dev"}
 
-Visit [/api/hello](http://localhost:3000/api/hello) to see Hello Secret. Next.js loads and decrypts .env before your server code reads process.env.
+Visit [/api/hello](http://localhost:3000/api/hello) to see Hello Secret.
+
+Next.js loads and decrypts .env before your server code reads process.env.
 
 {% capture override_help %}
 

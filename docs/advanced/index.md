@@ -36,6 +36,16 @@ layout: radar
 <div class="design-content-width">
 <div class="docs-intro-lists">
 {% capture step_content %}
+{% include components/docs-cli-commands.html group="standard" %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+{% include components/docs-cli-commands.html group="hidden" title="Hidden Commands" %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
 
 ## Envfile
 
@@ -57,16 +67,6 @@ layout: radar
 <li><a class="design-link" href="/docs/envfile/commands/">Commands</a></li>
 <li><a class="design-link" href="/docs/envfile/">All Envfile →</a></li>
 </ul>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-{% include components/docs-cli-commands.html group="standard" %}
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-{% include components/docs-cli-commands.html group="hidden" title="Hidden Commands" %}
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}
 

@@ -176,7 +176,7 @@ $ npx next dev
 Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated package-lock.json before committing, since reinstalling can update dependency versions.
 
 {% endcapture %}
-{% include components/design-warning.html title="Seeing encrypted text instead of Hello Secret?" content=override_help markdown=true %}
+{% include components/design-warning.html title="Seeing encrypted text instead of Hello Secret?" content=override_help markdown=true open=true %}
 
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}

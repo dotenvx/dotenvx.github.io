@@ -245,9 +245,9 @@ git commit -m \"encrypt .env.production\""}
 
 
 
-Find the matching private key with npx dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY_PRODUCTION in your hosting platform's environment variables for both build and runtime.
+Find the matching private key with npx dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production in your hosting platform's environment variables for both build and runtime.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
 
 Build and run it:
 
@@ -255,7 +255,7 @@ Build and run it:
 
 Next.js automatically loads .env.production for next build and next start. Visit /api/hello to see Hello Production. Same code, production secrets.
 
-Next.js also loads .env as a fallback. If it contains encrypted values, keep its DOTENV_PRIVATE_KEY available alongside DOTENV_PRIVATE_KEY_PRODUCTION.
+Next.js also loads .env as a fallback. If it uses a different encryption key, supply that key as DOTENV_PRIVATE_KEY_2.
 
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}

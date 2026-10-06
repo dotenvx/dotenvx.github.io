@@ -94,7 +94,8 @@ Commit `.env.production`. Do not commit `.env.keys`.
 ## Set decryption key
 
 ```bash
-npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY_PRODUCTION "your-private-key"
+npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY "your-private-key"
+npx netlify-cli@latest env:set DOTENV_FILE ".env.production"
 npx netlify-cli@latest deploy --build --prod
 ```
 {: copy="false"}

@@ -105,10 +105,10 @@ Commit `.env.production`. Do not commit `.env.keys`. Keep private keys somewhere
 
 ## Set decryption key
 
-Set `DOTENV_PRIVATE_KEY_PRODUCTION` on Heroku from your `.env.keys` file.
+Set `DOTENV_PRIVATE_KEY` on Heroku to the production key from `.env.keys`, and set `DOTENV_FILE` to `.env.production`.
 
 ```bash
-heroku config:set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key'
+heroku config:set DOTENV_PRIVATE_KEY='your-private-key' DOTENV_FILE='.env.production'
 git push heroku
 ```
 {: copy="false"}

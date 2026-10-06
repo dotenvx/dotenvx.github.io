@@ -108,7 +108,7 @@ Commit `.env.production`. Do not commit `.env.keys`.
 
 ## Set decryption key
 
-Set `DOTENV_PRIVATE_KEY_PRODUCTION` in the Railway environment variable manager (apply the change), then redeploy.
+Set `DOTENV_PRIVATE_KEY` to your production private key and `DOTENV_FILE` to `.env.production` in the Railway environment variable manager (apply the change), then redeploy.
 
 ```bash
 npx @railway/cli@latest up

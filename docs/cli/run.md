@@ -59,11 +59,11 @@ options:
     href: /docs/cli/run-environment-variable-precedence/
   - title: "DOTENV_PRIVATE_KEY=key run"
     href: /docs/cli/run-dotenv-private-key/
-  - title: "DOTENV_PRIVATE_KEY_PRODUCTION=key run"
+  - title: "DOTENV_FILE=.env.production run"
     href: /docs/cli/run-dotenv-private-key-production/
-  - title: "DOTENV_PRIVATE_KEY_CI=key run"
+  - title: "DOTENV_FILE=.env.ci run"
     href: /docs/cli/run-dotenv-private-key-ci/
-  - title: "DOTENV_PRIVATE_KEY=key DOTENV_PRIVATE_KEY_PRODUCTION=key run - Combine Multiple"
+  - title: "DOTENV_FILE=.env.production,.env run - Combine Multiple"
     href: /docs/cli/run-dotenv-private-key-multiple/
   - title: "run --verbose"
     href: /docs/cli/run-verbose/

@@ -190,9 +190,9 @@ git commit -m \"encrypt .env.production\""}
 
 
 
-Find the matching private key with dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY_PRODUCTION on your server.
+Find the matching private key with dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production on your server.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
 
 Tell the Ruby gem to load .env.production:
 
@@ -214,7 +214,7 @@ Hello Production
 ```
 {: copy="ruby app.rb"}
 
-Dotenvx loads .env.production and uses DOTENV_PRIVATE_KEY_PRODUCTION to unlock it. Your app reads its production secrets through ENV.
+Dotenvx loads .env.production and uses DOTENV_PRIVATE_KEY to unlock it. Your app reads its production secrets through ENV.
 
 You can also load multiple files with Dotenvx.load(".env.production", ".env"). The first value wins. Make each file's matching private key available.
 

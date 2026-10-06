@@ -115,7 +115,7 @@ Commit `.env.production`. Do not commit `.env.keys`.
 ## Set decryption key
 
 ```bash
-flyctl secrets set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key'
+flyctl secrets set DOTENV_PRIVATE_KEY='your-private-key' DOTENV_FILE='.env.production'
 flyctl deploy
 ```
 {: copy="false"}

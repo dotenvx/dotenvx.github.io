@@ -189,9 +189,9 @@ git commit -m \"encrypt .env.production\""}
 
 
 
-Find the matching private key with dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY_PRODUCTION on your server.
+Find the matching private key with dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production on your server.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
 
 Run the same script in production:
 
@@ -202,9 +202,9 @@ Hello Production
 ```
 {: copy="RAILS_ENV=production bin/rails runner script/hello.rb"}
 
-With RAILS_ENV=production, dotenvx-rails automatically loads .env.production and uses DOTENV_PRIVATE_KEY_PRODUCTION to unlock it. Same code, production secrets.
+With RAILS_ENV=production, dotenvx-rails automatically loads .env.production and uses DOTENV_PRIVATE_KEY to unlock it. Same code, production secrets.
 
-Rails also loads .env as a fallback. If it contains encrypted values, keep its DOTENV_PRIVATE_KEY available alongside DOTENV_PRIVATE_KEY_PRODUCTION.
+Rails also loads .env as a fallback. If it uses a different encryption key, supply that key as DOTENV_PRIVATE_KEY_2.
 
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}

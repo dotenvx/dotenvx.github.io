@@ -136,11 +136,11 @@
     "href": "/docs/cli/run-dotenv-private-key/"
   },
   {
-    "label": "run DOTENV_PRIVATE_KEY_CI",
+    "label": "run DOTENV_FILE=.env.ci",
     "href": "/docs/cli/run-dotenv-private-key-ci/"
   },
   {
-    "label": "run DOTENV_PRIVATE_KEY_PRODUCTION",
+    "label": "run DOTENV_FILE=.env.production",
     "href": "/docs/cli/run-dotenv-private-key-production/"
   },
   {

@@ -18,7 +18,7 @@ encrypt: |
   $ dotenvx encrypt -f .env.ci
 encrypt_after_lede: "Commit the encrypted `.env.ci` file, but never commit `.env.keys`."
 inject_title: "Add the private key to GitHub"
-inject_lede: "Copy `DOTENV_PRIVATE_KEY_CI` from `.env.keys`. In your GitHub repository, open **Settings → Secrets and variables → Actions**, create a repository secret, and name it `DOTENV_PRIVATE_KEY_CI`.\n\nThe encrypted values stay in `.env.ci`. GitHub stores only the private key needed to decrypt them during the workflow."
+inject_lede: "Copy the private key for `.env.ci` from `.env.keys`. In your GitHub repository, open **Settings → Secrets and variables → Actions**, create a repository secret, and name it `DOTENV_PRIVATE_KEY`.\n\nThe encrypted values stay in `.env.ci`. GitHub stores only the private key needed to decrypt them during the workflow."
 run_title: "Run"
 run_lede: "Install dotenvx, pass the GitHub secret to the step, and run your command through `dotenvx run`."
 run_copy: |
@@ -37,9 +37,10 @@ run_copy: |
             cache: npm
         - run: npm ci
         - run: curl -sfS https://dotenvx.sh | sh
-        - run: dotenvx run -f .env.ci -- npm test
+        - run: dotenvx run -- npm test
           env:
-            DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+            DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
+            DOTENV_FILE: .env.ci
 run_language: yaml
 run: |
   name: CI
@@ -57,7 +58,8 @@ run: |
             cache: npm
         - run: npm ci
         - run: curl -sfS https://dotenvx.sh | sh
-        - run: dotenvx run -f .env.ci -- npm test
+        - run: dotenvx run -- npm test
           env:
-            DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+            DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
+            DOTENV_FILE: .env.ci
 ---

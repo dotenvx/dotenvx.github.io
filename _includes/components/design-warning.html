@@ -4,5 +4,7 @@
 {% endcomment %}
 <details class="design-warning"{% if include.open %} open{% endif %}>
   <summary class="design-paragraph"><span aria-hidden="true">⚠</span> {{ include.title | escape }}</summary>
-  {% if include.markdown %}{{ include.content | markdownify }}{% else %}{{ include.content }}{% endif %}
+  <div class="design-warning-body">
+    {% if include.markdown %}{{ include.content | markdownify }}{% else %}{{ include.content }}{% endif %}
+  </div>
 </details>

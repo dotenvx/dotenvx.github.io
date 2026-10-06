@@ -3739,8 +3739,17 @@ html.dark .design-badge.design-badge--beta {
   margin: 0;
 }
 
-.design-warning[open] > summary { margin-bottom: 1rem; }
-.design-warning > :last-child { margin-bottom: 0; }
+.design-warning-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.design-warning-body > * {
+  margin-block: 0;
+  min-width: 0;
+}
 html.dark .design-warning { background: #2a2416; }
 html.dark .design-warning > summary.design-paragraph { color: #d4bd84; }
 

@@ -33,7 +33,7 @@ redirect_from:
 
 ## Install
 
-In your Next.js project, install Dotenvx and @dotenvx/next-env.
+In your Next.js project, install Dotenvx and [@dotenvx/next-env](https://www.npmjs.com/package/@dotenvx/next-env).
 
 ```console
 $ npm install @dotenvx/dotenvx
@@ -120,10 +120,10 @@ git commit -m \"encrypt .env\""}
 
 ## Ship
 
-Read your secrets through process.env. Create app/api/hello/route.js (or src/app/api/hello/route.js if you use src):
+Read your secrets through process.env. Create src/app/api/hello/route.js (or app/api/hello/route.js if your project does not use src/):
 
 ```javascript
-// app/api/hello/route.js
+// src/app/api/hello/route.js
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 

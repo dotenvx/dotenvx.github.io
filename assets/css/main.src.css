@@ -3724,6 +3724,26 @@ html.dark .design-badge.design-badge--beta {
   color: #7fd4c8;
 }
 
+.design-warning {
+  background: #ebe6da;
+  border: 1px solid #8a7a4a;
+  border-left-width: 4px;
+  border-radius: var(--design-control-radius);
+  padding: 1rem;
+}
+
+.design-warning > summary.design-paragraph {
+  color: #6d5c32;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0;
+}
+
+.design-warning[open] > summary { margin-bottom: 1rem; }
+.design-warning > :last-child { margin-bottom: 0; }
+html.dark .design-warning { background: #2a2416; }
+html.dark .design-warning > summary.design-paragraph { color: #d4bd84; }
+
 .design-badge.design-badge--warn {
   background: #ebe6da;
   border-color: #8a7a4a;

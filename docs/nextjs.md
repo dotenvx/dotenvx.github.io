@@ -63,12 +63,6 @@ $ npm install
 
 Next.js now loads encrypted secrets automatically through @dotenvx/next-env.
 
-<details markdown="block">
-<summary class="design-paragraph">Override not taking effect?</summary>
-
-Check npm ls @next/env to confirm Next.js resolves to @dotenvx/next-env. If npm still uses the original package, remove node_modules and package-lock.json, then run npm install again. Review the regenerated lockfile before committing it.
-
-</details>
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}
 
@@ -145,7 +139,41 @@ $ npx next dev
 ```
 {: copy="npx next dev"}
 
-Visit /api/hello to see Hello Secret. Next.js loads and decrypts .env before your server code reads process.env.
+Visit [/api/hello](http://localhost:3000/api/hello) to see Hello Secret. Next.js loads and decrypts .env before your server code reads process.env.
+
+{% capture override_help %}
+
+Next.js may still be using the original @next/env package, even after adding the override. Check which package is installed:
+
+```console
+$ npm ls @next/env
+```
+{: copy="npm ls @next/env"}
+
+The output should show @next/env as an alias of @dotenvx/next-env. An original Next.js version followed by “overridden” does not mean the replacement was installed.
+
+If the original package is still installed, stop the dev server with Ctrl+C. From your project directory, rebuild the dependency installation:
+
+```console
+$ rm -rf node_modules package-lock.json
+$ npm install
+$ npm ls @next/env
+```
+{: copy="rm -rf node_modules package-lock.json
+npm install
+npm ls @next/env"}
+
+Confirm the alias now points to @dotenvx/next-env, then restart:
+
+```console
+$ npx next dev
+```
+{: copy="npx next dev"}
+
+Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated package-lock.json before committing, since reinstalling can update dependency versions.
+
+{% endcapture %}
+{% include components/design-warning.html title="Seeing encrypted text instead of Hello Secret?" content=override_help markdown=true %}
 
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}

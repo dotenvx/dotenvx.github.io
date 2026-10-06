@@ -1,0 +1,8 @@
+{% comment %}
+  Expandable warning. Pass title and captured content.
+  Set markdown=true for Markdown content; open=true to expand initially.
+{% endcomment %}
+<details class="design-warning"{% if include.open %} open{% endif %}>
+  <summary class="design-paragraph"><span aria-hidden="true">⚠</span> {{ include.title | escape }}</summary>
+  {% if include.markdown %}{{ include.content | markdownify }}{% else %}{{ include.content }}{% endif %}
+</details>

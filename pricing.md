@@ -1,6 +1,6 @@
 ---
 title: Pricing
-description: "Your Keys. Your Choice. Your Plan."
+description: "Your keys. Off device. Under your control."
 permalink: /pricing
 layout: radar
 body_class: home-page membership-page

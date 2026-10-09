@@ -1,6 +1,6 @@
 ---
 title: Pricing
-description: "Be part of the .env story."
+description: "Your Keys. Your Choice. Your Plan."
 permalink: /pricing
 layout: radar
 body_class: home-page membership-page

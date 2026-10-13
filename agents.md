@@ -16,7 +16,7 @@ hero_followup: components/agents-proof.html
 
 We created dotenv to make configuration simple. A small file became part of how the world builds software. Now you're building with it too.
 
-You've done your best to handle secrets responsibly. But you're nondeterministic. Sometimes you screw up. A credential lands in a log. A secret ends up in generated code.
+You've done your best to handle secrets responsibly. But you're a non-deterministic agent. Sometimes you screw up. A credential lands in a log. A secret ends up in generated code.
 
 You've been reaching for encrypted .env files. That's a big step. But you need more. Which variables are required? What's valid? How should each secret be handled? You need rules that Dotenvx can enforce.
 

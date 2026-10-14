@@ -34,9 +34,16 @@ $ npm install @dotenvx/dotenvx
 $ npm install @dotenvx/next-env
 ```
 {: copy="npm install @dotenvx/dotenvx
-npm install @dotenvx/next-env"}
+npm install @dotenvx/next-env" package-manager="npm"}
 
-Add this override to your package.json:
+```console
+$ pnpm add @dotenvx/dotenvx
+$ pnpm add @dotenvx/next-env
+```
+{: copy="pnpm add @dotenvx/dotenvx
+pnpm add @dotenvx/next-env" package-manager="pnpm"}
+
+Add this override to your package manager’s configuration:
 
 ```json
 {
@@ -45,13 +52,27 @@ Add this override to your package.json:
   }
 }
 ```
+{: copy="\"overrides\": {
+  \"@next/env\": \"npm:@dotenvx/next-env\"
+\}" package-manager="npm" label="package.json"}
+
+```yaml
+overrides:
+  "@next/env": "npm:@dotenvx/next-env"
+```
+{: package-manager="pnpm" label="pnpm-workspace.yaml"}
 
 Apply it:
 
 ```console
 $ npm install
 ```
-{: copy="npm install"}
+{: copy="npm install" package-manager="npm"}
+
+```console
+$ pnpm install
+```
+{: copy="pnpm install" package-manager="pnpm"}
 
 Next.js now loads encrypted secrets automatically through @dotenvx/next-env.
 
@@ -71,7 +92,13 @@ Encrypt it with a single command.
 $ npx dotenvx encrypt
 ◈ encrypted (.env)
 ```
-{: copy="npx dotenvx encrypt"}
+{: copy="npx dotenvx encrypt" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx encrypt
+◈ encrypted (.env)
+```
+{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -96,14 +123,14 @@ git commit -m \"encrypt .env\""}
 
 ## Ship
 
-Read your secrets through process.env. Create src/app/api/hello/route.js (or app/api/hello/route.js if your project does not use src/):
+Read your secrets through process.env. Create app/api/hello/route.js:
 
 ```javascript
-// src/app/api/hello/route.js
-export const runtime = 'nodejs'
-export const dynamic = 'force-dynamic'
+// app/api/hello/route.js
+import { connection } from 'next/server'
 
 export async function GET() {
+  await connection()
   return new Response(`Hello ${process.env.HELLO}`)
 }
 ```
@@ -111,10 +138,16 @@ export async function GET() {
 Run your app:
 
 ```console
-$ npx next dev
+$ npm run dev
 ⟐ injected env (2) from .env
 ```
-{: copy="npx next dev"}
+{: copy="npm run dev" package-manager="npm"}
+
+```console
+$ pnpm dev
+⟐ injected env (2) from .env
+```
+{: copy="pnpm dev" package-manager="pnpm"}
 
 Visit [/api/hello](http://localhost:3000/api/hello) to see Hello Secret.
 
@@ -127,7 +160,12 @@ Next.js may still be using the original @next/env package, even after adding the
 ```console
 $ npm ls @next/env
 ```
-{: copy="npm ls @next/env"}
+{: copy="npm ls @next/env" package-manager="npm"}
+
+```console
+$ pnpm why @next/env
+```
+{: copy="pnpm why @next/env" package-manager="pnpm"}
 
 The output should show @next/env as an alias of @dotenvx/next-env. An original Next.js version followed by “overridden” does not mean the replacement was installed.
 
@@ -140,16 +178,30 @@ $ npm ls @next/env
 ```
 {: copy="rm -rf node_modules package-lock.json
 npm install
-npm ls @next/env"}
+npm ls @next/env" package-manager="npm"}
+
+```console
+$ rm -rf node_modules pnpm-lock.yaml
+$ pnpm install
+$ pnpm why @next/env
+```
+{: copy="rm -rf node_modules pnpm-lock.yaml
+pnpm install
+pnpm why @next/env" package-manager="pnpm"}
 
 Confirm the alias now points to @dotenvx/next-env, then restart:
 
 ```console
-$ npx next dev
+$ npm run dev
 ```
-{: copy="npx next dev"}
+{: copy="npm run dev" package-manager="npm"}
 
-Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated package-lock.json before committing, since reinstalling can update dependency versions.
+```console
+$ pnpm dev
+```
+{: copy="pnpm dev" package-manager="pnpm"}
+
+Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated lockfile before committing, since reinstalling can update dependency versions.
 
 {% endcapture %}
 {% include components/design-warning.html title="Seeing encrypted text instead of Hello Secret?" content=override_help markdown=true open=true %}
@@ -162,23 +214,33 @@ Find your private key with the keypair command.
 $ npx dotenvx keypair
 {"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
 ```
-{: copy="npx dotenvx keypair" class="design-codeblock--nowrap"}
+{: copy="npx dotenvx keypair" class="design-codeblock--nowrap" package-manager="npm"}
 
-Deploy your code and encrypted .env file, install your npm dependencies, and set DOTENV_PRIVATE_KEY in your hosting platform's environment variables. Make it available during both build and runtime. On Vercel, select the environments you deploy to. Keep .env.keys on your local machine.
+```console
+$ pnpm exec dotenvx keypair
+{"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
+```
+{: copy="pnpm exec dotenvx keypair" class="design-codeblock--nowrap" package-manager="pnpm"}
+
+Deploy your code and encrypted .env file, install your dependencies, and set DOTENV_PRIVATE_KEY in your hosting platform's environment variables. Make it available during both build and runtime. On Vercel, select the environments you deploy to. Keep .env.keys on your local machine.
 
 {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
 
 Build and run your app:
 
-{% capture deploy_commands %}
-$ npx next build
-$ npx next start
-{% endcapture %}
-{% capture deploy_commands_copy %}
-npx next build
-npx next start
-{% endcapture %}
-{% include components/design-codeblock.html value=deploy_commands copy_text=deploy_commands_copy format="cli" %}
+```console
+$ npm run build
+$ npm start
+```
+{: copy="npm run build
+npm start" package-manager="npm"}
+
+```console
+$ pnpm build
+$ pnpm start
+```
+{: copy="pnpm build
+pnpm start" package-manager="pnpm"}
 
 Your app reads the same secrets, but this time with the private key stored in your hosting environment.
 
@@ -198,7 +260,13 @@ Encrypt it:
 $ npx dotenvx encrypt -f .env.production
 ◈ encrypted (.env.production)
 ```
-{: copy="npx dotenvx encrypt -f .env.production"}
+{: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx encrypt -f .env.production
+◈ encrypted (.env.production)
+```
+{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
 
 Commit it:
 
@@ -209,13 +277,37 @@ $ git commit -m "encrypt .env.production"
 {: copy="git add -f .env.production
 git commit -m \"encrypt .env.production\""}
 
-Find the matching private key with npx dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production in your hosting platform's environment variables for both build and runtime.
+Find the matching private key:
+
+```console
+$ npx dotenvx keypair -f .env.production
+```
+{: copy="npx dotenvx keypair -f .env.production" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx keypair -f .env.production
+```
+{: copy="pnpm exec dotenvx keypair -f .env.production" package-manager="pnpm"}
+
+Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production in your hosting platform's environment variables for both build and runtime.
 
 {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
 
 Build and run it:
 
-{% include components/design-codeblock.html value=deploy_commands copy_text=deploy_commands_copy format="cli" %}
+```console
+$ npm run build
+$ npm start
+```
+{: copy="npm run build
+npm start" package-manager="npm"}
+
+```console
+$ pnpm build
+$ pnpm start
+```
+{: copy="pnpm build
+pnpm start" package-manager="pnpm"}
 
 Next.js automatically loads .env.production for next build and next start. Visit /api/hello to see Hello Production. Same code, production secrets.
 

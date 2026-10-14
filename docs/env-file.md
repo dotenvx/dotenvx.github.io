@@ -2,7 +2,7 @@
 title: ".env"
 description: "The .env file separates your secrets from code."
 permalink: /docs/env-file/
-layout: radar
+layout: docs-markdown
 lang_examples:
   - id: node
     language: javascript
@@ -18,23 +18,11 @@ lang_examples:
     copy_text: |
       import os
       print("Hello " + os.getenv("HELLO", ""))
+hero_image: "/assets/img/logo-env-yellow.svg"
+hero_class: "docs-dotenvx-logo"
+hero_alt: "dotenv"
+guide_class: "docs-env-file-body"
 ---
-
-{% capture env_hero_visual %}
-  <img class="docs-dotenvx-logo" src="{{ '/assets/img/logo-env-yellow.svg' | relative_url }}" alt="dotenv" width="56" height="56">
-{% endcapture %}
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title=".env"
-  description="The .env file separates your secrets from code."
-  visual=env_hero_visual
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body docs-env-file-body" markdown="block">
-{% capture step_content %}
 
 ## Format
 {: #format}
@@ -71,11 +59,6 @@ Load values in your app with `process.env` (or your language’s equivalent).
 
 It's a convenient and widely adopted format for separating your secrets and config from your code.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Keys
 {: #keys}
 
@@ -97,11 +80,6 @@ NO-WORK       # <-- invalid !!!
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Values
 {: #values}
 
@@ -115,11 +93,6 @@ MULTILINE = `long text here,
 e.g. a private SSH key`
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Syntax
 {: #syntax}
@@ -189,10 +162,6 @@ Cheat sheet — what you write, and what you get:
       </tbody>
 {% endcapture %}
 {% include components/design-table.html class="design-table-wrap--fill docs-env-syntax-table" content=env_syntax_table %}
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Comments
 {: #comments}
@@ -206,11 +175,6 @@ SECRET_HASH="something-with-a-hash-#-this-is-not-a-comment"
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Interpolation
 {: #interpolation}
 
@@ -221,10 +185,6 @@ Interpolation (also known as variable expansion) is supported in environment fil
 <li>Default value: <code class="design-code">${VAR:-default}</code> → value of <code class="design-code">VAR</code> if set and non-empty, otherwise <code class="design-code">default</code></li>
 <li>Alternative value: <code class="design-code">${VAR:+alternate}</code> → value of <code class="design-code">alternate</code> if <code class="design-code">VAR</code> is set and non-empty, otherwise empty</li>
 </ul>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Command Substitution
 {: #command-substitution}
@@ -235,11 +195,6 @@ Add the output of a command to one of your variables in your .env file. Command 
 DATABASE_URL="postgres://$(whoami)@localhost/my_database"
 ```
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Encryption
 {: #encryption}
 
@@ -247,20 +202,9 @@ More recently, dotenvx pioneered encryption support for .env files. Built by the
 
 [Learn more about the encrypted .env format →](/docs/encrypted-env-file/)
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## History
 {: #history}
 
 The `.env` file format was [introduced by Heroku in 2012](https://12factor.net/config) and popularized by the [dotenv node](https://www.npmjs.com/package/dotenv) and [dotenv ruby](https://github.com/bkeepers/dotenv) libraries in 2013. Encryption support landed in [May 2024](https://github.com/dotenvx/dotenvx/issues/189).
 
 A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials. — [The Twelve-Factor App](https://12factor.net/config)
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

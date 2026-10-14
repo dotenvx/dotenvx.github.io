@@ -2,23 +2,13 @@
 title: ".env.vault (DEPRECATED)"
 description: "(DEPRECATED) The .env.vault file is an encrypted version of your .env file."
 permalink: /docs/env-vault-file/
-layout: radar
+layout: docs-markdown
 redirect_from:
   - /docs/env-vault
   - /docs/env-vault/
+hero_description: "The .env.vault file is an encrypted version of your .env file."
+mark: ".env.vault"
 ---
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title=".env.vault (DEPRECATED)"
-  description="The .env.vault file is an encrypted version of your .env file."
-  mark=".env.vault"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 [Deprecated](/docs/deprecated) — The `.env.vault` file has been DEPRECATED since May 2024. Please see [updated encryption instructions](/docs/quickstart).
 
@@ -44,10 +34,6 @@ Some quick takeaways:
 <li><code class="design-code">DOTENV_VAULT_DEVELOPMENT</code> contains encrypted contents of <code class="design-code">.env</code></li>
 <li><code class="design-code">DOTENV_VAULT_PRODUCTION</code> contains encrypted contents of <code class="design-code">.env.production</code></li>
 </ul>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Generating
 
@@ -84,17 +70,6 @@ DOTENV_VAULT_PRODUCTION="YZkhtbh1IlzBgIamAAsG5nzGPfH6p8Zbuj9egXoziviVu/eYIyNjJWt
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## History
 
 The `.env.vault` came out of development work on [dotenv-vault](https://github.com/dotenv-org/dotenv-vault) – around early 2023.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

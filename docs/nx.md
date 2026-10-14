@@ -1,5 +1,5 @@
 ---
-layout: docs-quickstart
+layout: docs-markdown
 title: "Nx"
 social_title: "Encrypt a .env file in Nx"
 description: "Upgrade Nx's dotenv-expand dependency to decrypt encrypted environment files when Nx loads them."
@@ -10,47 +10,66 @@ redirect_from:
   - /docs/monorepos/nx/
   - /docs/secrets-in-nx
   - /docs/secrets-in-nx/
-prerequisite_lede: "An Nx workspace using npm and the [dotenvx CLI](/docs/install). This setup was tested with Nx 23.2.1 and dotenv-expand 1000.0.0. See the precedence limitation below before using shared root values."
-install_title: "Update dotenv-expand"
-install_lede: "Merge this override into the workspace root `package.json`. It updates the dependency Nx uses to expand and decrypt environment values. Installing dotenv-expand as a separate top-level dependency is not enough."
-install_language: json
-install: |
-  {
-    "overrides": {
-      "nx": {
-        "dotenv-expand": "1000.0.0"
-      }
+quickstart_pager: true
+---
+
+## Prerequisites
+
+An Nx workspace using npm and the [dotenvx CLI](/docs/install). This setup was tested with Nx 23.2.1 and dotenv-expand 1000.0.0. See the precedence limitation below before using shared root values.
+
+## Update dotenv-expand
+
+Merge this override into the workspace root `package.json`. It updates the dependency Nx uses to expand and decrypt environment values. Installing dotenv-expand as a separate top-level dependency is not enough.
+
+```json
+{
+  "overrides": {
+    "nx": {
+      "dotenv-expand": "1000.0.0"
     }
   }
-install_after_lede: "Apply the override and confirm that Nx resolves dotenv-expand 1000.0.0:"
-install_after_format: cli
-install_after_copy: |
-  npm install
-  npm ls nx dotenv-expand
-install_after: |
-  $ npm install
-  $ npm ls nx dotenv-expand
-encrypt_title: "Encrypt"
-encrypt_lede: "Keep the environment file beside the Nx application and encrypt it. Replace `app` with your project's name and directory."
-encrypt_copy: "dotenvx encrypt -f apps/app/.env"
-encrypt_format: cli
-encrypt: |
-  $ dotenvx encrypt -f apps/app/.env
-encrypt_after_lede: "Commit `apps/app/.env` and the updated package files, but never commit `apps/app/.env.keys`."
-inject_title: "Set the private key"
-inject_lede: "Copy the generated `DOTENV_PRIVATE_KEY` value from `apps/app/.env.keys` into your shell or CI secret configuration before starting Nx. Nx does not automatically read `.env.keys`. For a local Unix shell:"
-inject_copy: "export DOTENV_PRIVATE_KEY='<your private key>'"
-inject_format: cli
-inject: |
-  $ export DOTENV_PRIVATE_KEY='<your private key>'
-inject_after_lede: "Supply the key that matches the encrypted file. This integration does not automatically select environment-specific private key names."
-run_title: "Run Nx"
-run_lede: "Run your usual Nx target. Nx selects the environment files and dotenv-expand decrypts their values using the supplied key. Read them normally through `process.env`."
-run_copy: "npx nx serve app"
-run_format: cli
-run: |
-  $ npx nx serve app
----
+}
+```
+
+Apply the override and confirm that Nx resolves dotenv-expand 1000.0.0:
+
+```console
+$ npm install
+$ npm ls nx dotenv-expand
+```
+{: copy="npm install
+npm ls nx dotenv-expand"}
+
+## Encrypt
+
+Keep the environment file beside the Nx application and encrypt it. Replace `app` with your project's name and directory.
+
+```console
+$ dotenvx encrypt -f apps/app/.env
+```
+{: copy="dotenvx encrypt -f apps/app/.env"}
+
+Commit `apps/app/.env` and the updated package files, but never commit `apps/app/.env.keys`.
+
+## Set the private key
+
+Copy the generated `DOTENV_PRIVATE_KEY` value from `apps/app/.env.keys` into your shell or CI secret configuration before starting Nx. Nx does not automatically read `.env.keys`. For a local Unix shell:
+
+```console
+$ export DOTENV_PRIVATE_KEY='<your private key>'
+```
+{: copy="export DOTENV_PRIVATE_KEY='<your private key>'"}
+
+Supply the key that matches the encrypted file. This integration does not automatically select environment-specific private key names.
+
+## Run Nx
+
+Run your usual Nx target. Nx selects the environment files and dotenv-expand decrypts their values using the supplied key. Read them normally through `process.env`.
+
+```console
+$ npx nx serve app
+```
+{: copy="npx nx serve app"}
 
 ### File selection and precedence
 

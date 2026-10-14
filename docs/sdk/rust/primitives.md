@@ -2,21 +2,11 @@
 title: Primitives
 description: Low-level encryption primitives for Rust.
 permalink: /docs/sdk/rust/primitives/
-layout: radar
+layout: docs-markdown
+eyebrow: "Rust"
+eyebrow_href: "/docs/sdk/rust"
+icon: "rust"
 ---
-
-{% include components/docs-hero.html
-  eyebrow="Rust"
-  eyebrow_href="/docs/sdk/rust"
-  title="Primitives"
-  description="Low-level encryption primitives for Rust."
-  icon="rust"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body">
-{% capture step_content %}
 
 ## Package
 
@@ -28,10 +18,6 @@ layout: radar
 </li>
 </ul>
 </div>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Install
 
@@ -39,9 +25,3 @@ layout: radar
 $ cargo add dotenvx-primitives
 ```
 {: copy="cargo add dotenvx-primitives"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

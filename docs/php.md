@@ -1,5 +1,5 @@
 ---
-layout: docs-quickstart
+layout: docs-markdown
 title: "PHP"
 social_title: "Encrypt a .env file in PHP"
 description: "Encrypt a .env file in PHP with dotenvx, commit it safely, and inject its secrets at runtime."
@@ -10,29 +10,39 @@ redirect_from:
   - /docs/languages/php/
   - /docs/secrets-in-php/
   - /docs/secrets-in-php
-install_copy: "curl -sfS https://dotenvx.sh | sh"
-encrypt_copy: "dotenvx encrypt"
-install_format: cli
-install: |
-  $ curl -sfS https://dotenvx.sh | sh
-encrypt_format: cli
-encrypt: |
-  $ dotenvx encrypt
-inject_lede: |
-  Then inject your encrypted secrets at runtime with `dotenvx run`.
-inject_copy: |
-  <?php
-
-  echo "Hello {$_SERVER['HELLO']}\n";
-inject_language: php
-inject: |
-  <?php
-
-  echo "Hello {$_SERVER['HELLO']}\n";
-inject_after_copy: |
-  dotenvx run -- php index.php
-inject_after_format: cli
-inject_after: |
-  $ dotenvx run -- php index.php
+quickstart_pager: true
 ---
 
+## Install
+
+Get the Dotenvx CLI.
+
+```console
+$ curl -sfS https://dotenvx.sh | sh
+```
+{: copy="curl -sfS https://dotenvx.sh | sh"}
+
+## Encrypt
+
+Encrypt your .env file.
+
+```console
+$ dotenvx encrypt
+```
+{: copy="dotenvx encrypt"}
+
+## Inject
+
+Then inject your encrypted secrets at runtime with `dotenvx run`.
+
+
+```php
+<?php
+
+echo "Hello {$_SERVER['HELLO']}\n";
+```
+
+```console
+$ dotenvx run -- php index.php
+```
+{: copy="dotenvx run -- php index.php"}

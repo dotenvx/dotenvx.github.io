@@ -2,24 +2,11 @@
 title: ".env (encrypted)"
 description: "The .env file you can commit."
 permalink: /docs/encrypted-env-file/
-layout: radar
+layout: docs-markdown
+hero_include: "components/logo.html"
+hero_class: "docs-dotenvx-logo"
+guide_class: "docs-env-file-body"
 ---
-
-{% capture encrypted_env_visual %}
-  {% include components/logo.html class="docs-dotenvx-logo" %}
-{% endcapture %}
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title=".env (encrypted)"
-  description="The .env file you can commit."
-  visual=encrypted_env_visual
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body docs-env-file-body" markdown="block">
-{% capture step_content %}
 
 ## Format
 {: #format}
@@ -36,20 +23,10 @@ HELLO="encrypted:BDcJe0ksryTFcP9vEGH/DRgvxIFCFym1MoPwA5MhnTPKhSxinnRAQYAUMalR83m
 
 The filename stays `.env`. The `encrypted:` prefix tells dotenvx which values need decryption. This example shows the format; encrypt your own file to generate its matching key pair.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Keys
 {: #keys}
 
 Environment variable names follow the same rules as a [plain .env file](/docs/env-file/#keys). Encryption does not hide names such as `DATABASE_URL` or `API_KEY`.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Values
 {: #values}
@@ -63,11 +40,6 @@ HELLO="encrypted:BDcJe0ksryTFcP9vEGH/DRgvxIFCFym1MoPwA5MhnTPKhSxinnRAQYAUMalR83m
 
 A file can contain both encrypted and plaintext values. Any value left in plaintext remains readable.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Public and private keys
 {: #public-and-private-keys}
 
@@ -76,11 +48,6 @@ Dotenvx uses public-key encryption with a secp256k1 key pair.
 `DOTENV_PUBLIC_KEY` belongs in the encrypted .env file. It encrypts new values, but cannot decrypt them.
 
 `DOTENV_PRIVATE_KEY` decrypts the values. Keep it separate from the encrypted file. For local file-based storage, dotenvx saves it in [.env.keys](/docs/env-keys-file/). Do not commit that file.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Comments
 {: #comments}
@@ -92,11 +59,6 @@ Comments and blank lines still work. Comments are not encrypted, so keep secrets
 HELLO="encrypted:BDcJe0ksryTFcP9vEGH/DRgvxIFCFym1MoPwA5MhnTPKhSxinnRAQYAUMalR83my7uyj5LGksmTL2pjOBwWWdZ5utqA6c5CPrs84AF+Kq4imBk1CjzAjN/cnYqMBStbpc+18SPQlJg=="
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Encrypt
 {: #encrypt}
@@ -116,11 +78,6 @@ dotenvx encrypt
 
 Dotenvx replaces the values with ciphertext and adds the public key.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Update
 {: #update}
 
@@ -131,11 +88,6 @@ dotenvx set HELLO "Updated secret"
 ```
 
 Dotenvx encrypts the new value using the file's public key.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Commit
 {: #commit}
@@ -148,11 +100,6 @@ git commit -m "encrypt .env"
 ```
 
 Keep `.env.keys` in `.gitignore`. Share the private key separately with the people or systems that need to run the app.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Run
 {: #run}
@@ -171,11 +118,6 @@ With the matching private key available, the app prints `Secret`. Decryption hap
 
 Locally, dotenvx can read the private key from `.env.keys`. In deployment, supply `DOTENV_PRIVATE_KEY` through your platform's secret settings.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Multiple environments
 {: #multiple-environments}
 
@@ -190,10 +132,3 @@ dotenvx encrypt -f .env.production
 ```bash
 dotenvx run -f .env.production -- node index.js
 ```
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-</section>
-</div>
-</div>

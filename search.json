@@ -26,7 +26,7 @@ search: false
     {%- assign boost = page.search_boost -%}
   {%- elsif hint.boost -%}
     {%- assign boost = hint.boost -%}
-  {%- elsif page.layout == "docs-quickstart" -%}
+  {%- elsif page.layout == "docs-quickstart" or page.quickstart_pager -%}
     {%- assign boost = 35 -%}
   {%- elsif page.layout == "docs-cli" -%}
     {%- assign boost = 8 -%}

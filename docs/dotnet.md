@@ -1,5 +1,5 @@
 ---
-layout: docs-quickstart
+layout: docs-markdown
 title: ".NET"
 social_title: "Encrypt a .env file in .NET"
 description: "Encrypt a .env file in .NET with dotenvx, commit it safely, and inject its secrets at runtime."
@@ -10,27 +10,38 @@ redirect_from:
   - /docs/languages/dotnet/
   - /docs/secrets-in-dotnet/
   - /docs/secrets-in-dotnet
-install_copy: "curl -sfS https://dotenvx.sh | sh"
-encrypt_copy: "dotenvx encrypt"
-install_format: cli
-install: |
-  $ curl -sfS https://dotenvx.sh | sh
-encrypt_format: cli
-encrypt: |
-  $ dotenvx encrypt
-inject_lede: |
-  Then inject your encrypted secrets at runtime with `dotenvx run`.
-inject_copy: |
-  var hello = Environment.GetEnvironmentVariable("HELLO");
-  Console.WriteLine($"Hello {hello}");
-inject_language: csharp
-inject: |
-  var hello = Environment.GetEnvironmentVariable("HELLO");
-  Console.WriteLine($"Hello {hello}");
-inject_after_copy: |
-  dotenvx run -- dotnet run
-inject_after_format: cli
-inject_after: |
-  $ dotenvx run -- dotnet run
+quickstart_pager: true
 ---
 
+## Install
+
+Get the Dotenvx CLI.
+
+```console
+$ curl -sfS https://dotenvx.sh | sh
+```
+{: copy="curl -sfS https://dotenvx.sh | sh"}
+
+## Encrypt
+
+Encrypt your .env file.
+
+```console
+$ dotenvx encrypt
+```
+{: copy="dotenvx encrypt"}
+
+## Inject
+
+Then inject your encrypted secrets at runtime with `dotenvx run`.
+
+
+```csharp
+var hello = Environment.GetEnvironmentVariable("HELLO");
+Console.WriteLine($"Hello {hello}");
+```
+
+```console
+$ dotenvx run -- dotnet run
+```
+{: copy="dotenvx run -- dotnet run"}

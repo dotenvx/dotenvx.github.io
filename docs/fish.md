@@ -1,5 +1,5 @@
 ---
-layout: docs-quickstart
+layout: docs-markdown
 title: "Fish"
 social_title: "Encrypt a .env file in Fish"
 description: "Encrypt a .env file in Fish with dotenvx, commit it safely, and inject its secrets at runtime."
@@ -8,18 +8,32 @@ permalink: /docs/fish/
 redirect_from:
   - /docs/secrets-in-fish/
   - /docs/secrets-in-fish
-inject_lede: "Then inject your encrypted secrets at runtime with dotenvx run."
-install_copy: "curl -sfS https://dotenvx.sh | sh"
-encrypt_copy: "dotenvx encrypt"
-inject_copy: "dotenvx run --quiet -- sh -c 'echo Hello $HELLO'"
-install_format: cli
-install: |
-  $ curl -sfS https://dotenvx.sh | sh
-encrypt_format: cli
-encrypt: |
-  $ dotenvx encrypt
-inject_format: cli
-inject: |
-  $ dotenvx run --quiet -- sh -c 'echo Hello $HELLO'
+quickstart_pager: true
 ---
 
+## Install
+
+Get the Dotenvx CLI.
+
+```console
+$ curl -sfS https://dotenvx.sh | sh
+```
+{: copy="curl -sfS https://dotenvx.sh | sh"}
+
+## Encrypt
+
+Encrypt your .env file.
+
+```console
+$ dotenvx encrypt
+```
+{: copy="dotenvx encrypt"}
+
+## Inject
+
+Then inject your encrypted secrets at runtime with dotenvx run.
+
+```console
+$ dotenvx run --quiet -- sh -c 'echo Hello $HELLO'
+```
+{: copy="dotenvx run --quiet -- sh -c 'echo Hello $HELLO'"}

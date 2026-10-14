@@ -2,23 +2,12 @@
 title: "DOTENV_KEY (deprecated)"
 description: "DOTENV_KEY is used to decrypt an environment inside your .env.vault file."
 permalink: /docs/dotenv-key/
-layout: radar
+layout: docs-markdown
 redirect_from:
   - /docs/dotenv_key
   - /docs/dotenv_key/
+mark: "DOTENV_KEY"
 ---
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="DOTENV_KEY (deprecated)"
-  description="DOTENV_KEY is used to decrypt an environment inside your .env.vault file."
-  mark="DOTENV_KEY"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 [Deprecated](/docs/deprecated) — The `DOTENV_KEY` has been DEPRECATED since May 2024. Please see [updated encryption instructions](/docs/quickstart).
 
@@ -32,11 +21,6 @@ For example:
 DOTENV_KEY=dotenv://:key_10283719af6a30ef49050048617f4fea10c23a38021fbebeb9fd858caa01852e@dotenvx.com/vault/.env.vault?environment=production dotenv run -- yourcommand
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Spec
 
@@ -77,8 +61,3 @@ Optional/Not-in-use:
 <li><strong>username</strong>: (not in use at this time)</li>
 <li><strong>pathname</strong>: <code class="design-code">/vault/.env.vault</code> (can be anything at this time. in the future, might be used to combine multiple vaults)</li>
 </ul>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

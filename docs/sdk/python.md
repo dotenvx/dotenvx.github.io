@@ -2,21 +2,11 @@
 title: Python
 description: Load and manage encrypted env from Python.
 permalink: /docs/sdk/python/
-layout: radar
+layout: docs-markdown
+eyebrow: "SDKs"
+eyebrow_href: "/docs/sdk"
+icon: "python"
 ---
-
-{% include components/docs-hero.html
-  eyebrow="SDKs"
-  eyebrow_href="/docs/sdk"
-  title="Python"
-  description="Load and manage encrypted env from Python."
-  icon="python"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 ## Packages
 
@@ -28,10 +18,6 @@ layout: radar
 </li>
 </ul>
 </div>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Install
 
@@ -39,11 +25,6 @@ layout: radar
 $ pip install python-dotenvx
 ```
 {: copy="pip install python-dotenvx"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Usage
 
@@ -55,9 +36,3 @@ load_dotenv()
 {: copy="false"}
 
 See the [Python](/docs/python/), [Flask](/docs/flask/), or [uv](/docs/uv/) quickstart for a full walkthrough.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

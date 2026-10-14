@@ -2,27 +2,11 @@
 title: Trigger.dev
 description: Use dotenvx with Trigger.dev.
 permalink: /docs/background-jobs/triggerdotdev/
-layout: radar
+layout: docs-markdown
+mark: "trigger"
 ---
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Trigger.dev"
-  description="Use dotenvx with Trigger.dev."
-  mark="trigger"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
-
 Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/background-jobs/triggerdotdev) on GitHub.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Initial setup
 
@@ -46,11 +30,6 @@ export const helloWorldTask = task({
 });
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Install dotenvx
 
@@ -85,11 +64,6 @@ export const helloWorldTask = task({
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Add production environment
 
 Create `.env.production` in the root of your project.
@@ -99,11 +73,6 @@ Create `.env.production` in the root of your project.
 HELLO="production"
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Encrypt production
 
@@ -138,19 +107,8 @@ DOTENV_PRIVATE_KEY_PRODUCTION="424d0ea072eb17c6bee9b4b42ff6333513cf128ea3d5d60cc
 
 You SHOULD commit `.env.production` to code. It is now encrypted, safe, and recommended to do so. But DO NOT commit `.env.keys` to code. Keep them somewhere safe like 1Password or [Armor](https://dotenvx.com/armor).
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Run your task
 
 Run your task in Trigger's UI. Your env is successfully injected using the encrypted contents of `.env.production`.
 
 Visit the dashboard and it says `Hello production`.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

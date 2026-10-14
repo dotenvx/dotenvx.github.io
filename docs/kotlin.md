@@ -1,5 +1,5 @@
 ---
-layout: docs-quickstart
+layout: docs-markdown
 title: "Kotlin"
 social_title: "Encrypt a .env file in Kotlin"
 description: "Encrypt a .env file in Kotlin with dotenvx, commit it safely, and inject its secrets at runtime."
@@ -8,32 +8,42 @@ permalink: /docs/kotlin/
 redirect_from:
   - /docs/secrets-in-kotlin/
   - /docs/secrets-in-kotlin
-install_copy: "curl -sfS https://dotenvx.sh | sh"
-install_format: cli
-install: |
-  $ curl -sfS https://dotenvx.sh | sh
-encrypt_copy: "dotenvx encrypt"
-encrypt_format: cli
-encrypt: |
-  $ dotenvx encrypt
-inject_lede: "Then inject your encrypted secrets at runtime with `dotenvx run`."
-inject_copy: |
-  fun main() {
-    val hello = System.getenv("HELLO") ?: ""
-    println("Hello $hello")
-  }
-inject_language: kotlin
-inject: |
-  fun main() {
-    val hello = System.getenv("HELLO") ?: ""
-    println("Hello $hello")
-  }
-inject_after_copy: |
-  kotlinc index.kt -include-runtime -d index.jar
-  dotenvx run -- java -jar index.jar
-inject_after_format: cli
-inject_after: |
-  $ kotlinc index.kt -include-runtime -d index.jar
-
-  $ dotenvx run -- java -jar index.jar
+quickstart_pager: true
 ---
+
+## Install
+
+Get the Dotenvx CLI.
+
+```console
+$ curl -sfS https://dotenvx.sh | sh
+```
+{: copy="curl -sfS https://dotenvx.sh | sh"}
+
+## Encrypt
+
+Encrypt your .env file.
+
+```console
+$ dotenvx encrypt
+```
+{: copy="dotenvx encrypt"}
+
+## Inject
+
+Then inject your encrypted secrets at runtime with `dotenvx run`.
+
+```kotlin
+fun main() {
+  val hello = System.getenv("HELLO") ?: ""
+  println("Hello $hello")
+}
+```
+
+```console
+$ kotlinc index.kt -include-runtime -d index.jar
+
+$ dotenvx run -- java -jar index.jar
+```
+{: copy="kotlinc index.kt -include-runtime -d index.jar
+dotenvx run -- java -jar index.jar"}

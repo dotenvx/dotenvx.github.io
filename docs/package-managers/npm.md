@@ -2,27 +2,11 @@
 title: npm
 description: Use dotenvx with npm.
 permalink: /docs/package-managers/npm/
-layout: radar
+layout: docs-markdown
+mark: "npm"
 ---
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="npm"
-  description="Use dotenvx with npm."
-  mark="npm"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
-
 Find [code examples on GitHub](https://github.com/dotenvx/examples/tree/main/package-managers/npm) for these framework guides.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Astro
 
@@ -88,11 +72,6 @@ $ npm run dev
 ```
 {: copy="npm run dev"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Express
 
 Use dotenvx (as an npm module) with [express.js](https://github.com/expressjs/express).
@@ -147,19 +126,9 @@ Server running on port:3000
 ```
 {: copy="npm start"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Next.js
 
 Follow the [canonical Next.js guide](/docs/nextjs/) to use `@dotenvx/next-env` with an npm override for `@next/env`. This setup works locally and for Next.js apps on Vercel.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Remix
 
@@ -233,9 +202,3 @@ $ npm run dev
 [remix-serve] http://localhost:3000
 ```
 {: copy="npm run dev"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

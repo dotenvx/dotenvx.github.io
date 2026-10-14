@@ -2,21 +2,11 @@
 title: Node.js
 description: Load and manage encrypted env from Node.js.
 permalink: /docs/sdk/nodejs/
-layout: radar
+layout: docs-markdown
+eyebrow: "SDKs"
+eyebrow_href: "/docs/sdk"
+icon: "nodejs"
 ---
-
-{% include components/docs-hero.html
-  eyebrow="SDKs"
-  eyebrow_href="/docs/sdk"
-  title="Node.js"
-  description="Load and manage encrypted env from Node.js."
-  icon="nodejs"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 ## Packages
 
@@ -36,10 +26,6 @@ layout: radar
 </li>
 </ul>
 </div>
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Install
 
@@ -47,11 +33,6 @@ layout: radar
 $ npm install @dotenvx/dotenvx
 ```
 {: copy="npm install @dotenvx/dotenvx"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Usage
 
@@ -61,10 +42,6 @@ require('@dotenvx/dotenvx').config()
 
 See the [Node.js quickstart](/docs/nodejs/) or [Next.js quickstart](/docs/nextjs/) for a full walkthrough.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 {% capture sdk_methods_items %}
       <li><a class="design-link" href="/docs/sdk/nodejs/config/">config</a></li>
       <li><a class="design-link" href="/docs/sdk/nodejs/parse/">parse</a></li>
@@ -75,8 +52,3 @@ See the [Node.js quickstart](/docs/nodejs/) or [Next.js quickstart](/docs/nextjs
       title="Methods"
       items=sdk_methods_items
     %}
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

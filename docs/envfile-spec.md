@@ -2,20 +2,9 @@
 title: "Envfile Spec"
 description: "Define the rules for your environment variables."
 permalink: /docs/envfile-spec/
-layout: radar
+layout: docs-markdown
+mark: "Envfile"
 ---
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Envfile Spec"
-  description="Define the rules for your environment variables."
-  mark="Envfile"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 Start with the [Envfile quickstart](/docs/quickstart/envfile/), browse [individual settings](/docs/envfile/), or use this page as the complete language reference.
 
@@ -194,9 +183,3 @@ dotenvx run -- node index.js
 `dotenvx spec` creates an Envfile with `strict true` and variable declarations, without copying secret values. In a terminal, it lets you select env files and scan code for references. Use `-f .env.production` to select one file, `--stdout` to preview the result, or `--overwrite` to replace an existing Envfile and its custom rules.
 
 Use `dotenvx check -f .env.production` to validate a specific file and its overrides. See the [quickstart](/docs/quickstart/envfile/) for a complete example.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

@@ -6,23 +6,10 @@ og_image:
 title: Cloudflare
 description: Use Dotenvx with Cloudflare.
 permalink: /docs/cloudflare/
-layout: radar
+layout: docs-markdown
+hero_include: "icons/cloudflare.html"
+hero_class: "docs-cloudflare-logo"
 ---
-
-{% capture cloudflare_visual %}
-  {% include icons/cloudflare.html class="docs-cloudflare-logo" %}
-{% endcapture %}
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Cloudflare"
-  description="Use Dotenvx with Cloudflare."
-  visual=cloudflare_visual
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 ## Install
 
@@ -35,12 +22,6 @@ $ npm install --save-dev @dotenvx/dotenvx
 {: copy="npm install --save-dev wrangler@latest
 npm install --save-dev @dotenvx/dotenvx"}
 
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Encrypt
 
 Create .env.production:
@@ -49,11 +30,6 @@ Create .env.production:
 # .env.production
 HELLO="Production"
 ```
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Deploy
 
@@ -75,11 +51,6 @@ export default {
 }
 ```
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Scripts
 
 Add to your scripts for convenience.
@@ -94,11 +65,6 @@ Add to your scripts for convenience.
 ```
 {: class="design-codeblock--nowrap"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Pages
 
 Using pages? It is similar to workers.
@@ -110,12 +76,7 @@ $ npx wrangler pages deploy dist --project-name my-site
 {: copy="npx wrangler pages secret bulk <(npx dotenvx get -f .env.production --strict) --project-name my-site
 npx wrangler pages deploy dist --project-name my-site" class="design-codeblock--nowrap"}
 
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
 {% include components/design-separator.html %}
-
-{% capture step_content %}
 
 ## Advanced
 
@@ -143,8 +104,6 @@ $ git commit -m "encrypt .env.production.txt"
 ```
 {: copy="git add .env.production.txt
 git commit -m \"encrypt .env.production.txt\""}
-
-
 
 Then inject your encrypted secrets at runtime.
 
@@ -174,10 +133,3 @@ Adjust your deploy script to set your production keypair on Cloudflare.
 {: class="design-codeblock--nowrap"}
 
 That's it! This gives you advanced protection.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-</section>
-</div>
-</div>

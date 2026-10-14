@@ -1,10 +1,14 @@
 ---
-layout: radar
+layout: docs-markdown
 og_image:
   template: logo
   logo: _includes/icons/docs/nextjs.html
   alt: Next.js
 title: Next.js
+hero_description: "Use Dotenvx with Next.js."
+icon: nextjs
+show_icon: true
+secrets_artifact: true
 social_title: Encrypt a .env file in Next.js
 description: "Use Dotenvx with Next.js to load encrypted .env files and manage environment variables across local development and deployments."
 permalink: /docs/nextjs/
@@ -17,19 +21,9 @@ redirect_from:
   - /docs/secrets-in-nextjs/
 ---
 
+## Prerequisites
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Next.js"
-  description="Use Dotenvx with Next.js."
-  icon="nextjs"
-  show_icon=true
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
+Create a [Next.js app](https://nextjs.org/docs/app/getting-started/installation).
 
 ## Install
 
@@ -41,8 +35,6 @@ $ npm install @dotenvx/next-env
 ```
 {: copy="npm install @dotenvx/dotenvx
 npm install @dotenvx/next-env"}
-
-
 
 Add this override to your package.json:
 
@@ -62,11 +54,6 @@ $ npm install
 {: copy="npm install"}
 
 Next.js now loads encrypted secrets automatically through @dotenvx/next-env.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Encrypt
 
@@ -96,11 +83,6 @@ HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTO
 ```
 {: class="design-codeblock--nowrap"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Commit
 
 Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git. Keep .env.keys out of git. The -f flag adds the encrypted file even if your Next.js project ignores .env files.
@@ -111,12 +93,6 @@ $ git commit -m "encrypt .env"
 ```
 {: copy="git add -f .env
 git commit -m \"encrypt .env\""}
-
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Ship
 
@@ -178,11 +154,6 @@ Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated pa
 {% endcapture %}
 {% include components/design-warning.html title="Seeing encrypted text instead of Hello Secret?" content=override_help markdown=true open=true %}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Deploy
 
 Find your private key with the keypair command.
@@ -211,11 +182,6 @@ npx next start
 
 Your app reads the same secrets, but this time with the private key stored in your hosting environment.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Production
 
 Give production its own secrets by creating a .env.production file:
@@ -243,8 +209,6 @@ $ git commit -m "encrypt .env.production"
 {: copy="git add -f .env.production
 git commit -m \"encrypt .env.production\""}
 
-
-
 Find the matching private key with npx dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production in your hosting platform's environment variables for both build and runtime.
 
 {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
@@ -257,21 +221,8 @@ Next.js automatically loads .env.production for next build and next start. Visit
 
 Next.js also loads .env as a fallback. If it uses a different encryption key, supply that key as DOTENV_PRIVATE_KEY_2.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Conclusion
 
 You've encrypted a .env file, committed it to git, and loaded its secrets through Next.js with @dotenvx/next-env. You've also learned how to set a private key on your server and load different secrets for production without changing your code.
 
 Your encrypted secrets now travel with your code. Set the matching keys in your hosting environment, and Next.js handles loading them.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-</section>
-</div>
-</div>
-<script src="{{ '/assets/js/secrets-artifact.js' | relative_url }}" defer></script>

@@ -2,27 +2,11 @@
 title: Fly
 description: Use dotenvx with Fly.
 permalink: /docs/platforms/fly/
-layout: radar
+layout: docs-markdown
+mark: "fly"
 ---
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Fly"
-  description="Use dotenvx with Fly."
-  mark="fly"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
-
 Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/fly) on GitHub.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Initial setup
 
@@ -58,11 +42,6 @@ flyctl deploy
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Run dotenvx
 
 Install dotenvx in your `Dockerfile` and prepend your app command with `dotenvx run --`.
@@ -87,11 +66,6 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 
 If you prefer, [install from GitHub Releases](/docs/install/#github) or view the [install.sh](https://dotenvx.sh/install.sh) file before executing.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Encrypt production
 
 ```dotenv
@@ -107,11 +81,6 @@ $ dotenvx encrypt -f .env.production
 
 Commit `.env.production`. Do not commit `.env.keys`.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Set decryption key
 
 ```bash
@@ -121,9 +90,3 @@ flyctl deploy
 {: copy="false"}
 
 Your app restarts and env is injected from the encrypted `.env.production` file.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

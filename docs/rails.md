@@ -1,5 +1,5 @@
 ---
-layout: radar
+layout: docs-markdown
 title: Rails
 social_title: Encrypt a .env file in Rails
 description: Use Dotenvx with Rails.
@@ -9,21 +9,10 @@ redirect_from:
   - /docs/frameworks/rails/
   - /docs/secrets-in-rails/
   - /docs/secrets-in-rails
+icon: "rails"
+show_icon: true
+secrets_artifact: true
 ---
-
-
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Rails"
-  description="Use Dotenvx with Rails."
-  icon="rails"
-  show_icon=true
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
 
 ## Install
 
@@ -48,11 +37,6 @@ And get the CLI to encrypt files:
 $ curl -sfS https://dotenvx.sh | sh
 ```
 {: copy="curl -sfS https://dotenvx.sh | sh"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Encrypt
 
@@ -82,11 +66,6 @@ HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTO
 ```
 {: class="design-codeblock--nowrap"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Commit
 
 Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
@@ -97,12 +76,6 @@ $ git commit -m "encrypt .env"
 ```
 {: copy="git add .env
 git commit -m \"encrypt .env\""}
-
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Ship
 
@@ -124,11 +97,6 @@ Hello Secret
 {: copy="bin/rails runner script/hello.rb"}
 
 The dotenvx-rails gem loads your secrets before Rails configures your application. Read them through ENV in your controllers, jobs, and other server code.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Deploy
 
@@ -154,11 +122,6 @@ Hello Secret
 {: copy="RAILS_ENV=production bin/rails runner script/hello.rb"}
 
 Dotenvx uses your private key to decrypt and inject your secrets just-in-time, but this time with the private key stored on your server.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Production
 
@@ -187,8 +150,6 @@ $ git commit -m "encrypt .env.production"
 {: copy="git add .env.production
 git commit -m \"encrypt .env.production\""}
 
-
-
 Find the matching private key with dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production on your server.
 
 {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
@@ -206,21 +167,8 @@ With RAILS_ENV=production, dotenvx-rails automatically loads .env.production and
 
 Rails also loads .env as a fallback. If it uses a different encryption key, supply that key as DOTENV_PRIVATE_KEY_2.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Conclusion
 
 You've encrypted a .env file, committed it to git, and loaded its secrets automatically with dotenvx-rails. You've also learned how to set a private key on your server and use a separate encrypted file for production without changing your application code.
 
 Your encrypted secrets now travel with your code. Set the matching keys in your hosting environment, and Rails handles loading them.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-</section>
-</div>
-</div>
-<script src="{{ '/assets/js/secrets-artifact.js' | relative_url }}" defer></script>

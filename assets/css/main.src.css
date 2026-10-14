@@ -6964,6 +6964,29 @@ html.dark .hero-container-primary { color: #7b838a; }
   margin-top: .75rem;
 }
 
+/* Markdown guides get their spacing from document structure, without step wrappers. */
+.docs-site .docs-markdown-body > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.docs-site .docs-markdown-body > :is(h2, h3, h4, h5, h6) {
+  margin-bottom: calc(.25rem - 1em);
+}
+.docs-site .docs-markdown-body > :is(h2, h3, h4, h5, h6):not(:first-child) {
+  margin-top: .75rem;
+}
+.docs-markdown-body ul:not([class]),
+.docs-markdown-body ol:not([class]) {
+  padding-left: 1.5em;
+}
+.docs-markdown-body ul:not([class]) { list-style: disc; }
+.docs-markdown-body ol:not([class]) { list-style: decimal; }
+.docs-markdown-body li + li { margin-top: .25em; }
+.docs-markdown-body blockquote {
+  border-left: 2px solid var(--design-line);
+  padding-left: 1em;
+}
+
 /* Docs-only navigation beside the reading column. */
 .docs-site .radar-chrome { border-bottom: 1px solid var(--design-line); }
 .docs-layout { width: 100%; min-width: 0; }

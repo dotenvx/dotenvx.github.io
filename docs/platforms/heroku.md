@@ -2,27 +2,11 @@
 title: Heroku
 description: Use dotenvx with Heroku.
 permalink: /docs/platforms/heroku/
-layout: radar
+layout: docs-markdown
+icon: "heroku"
 ---
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Heroku"
-  description="Use dotenvx with Heroku."
-  icon="heroku"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
-
 Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/platforms/heroku) on GitHub.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Initial setup
 
@@ -50,11 +34,6 @@ app.listen(PORT, () => {
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Run dotenvx
 
 Install dotenvx via the [dotenvx buildpack](https://github.com/dotenvx/heroku-buildpack-dotenvx).
@@ -71,11 +50,6 @@ web: dotenvx run -- node index.js
 ```
 {: copy="false"}
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Add production environment
 
 ```dotenv
@@ -83,11 +57,6 @@ web: dotenvx run -- node index.js
 HELLO="production"
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Encrypt production
 
@@ -97,11 +66,6 @@ $ dotenvx encrypt -f .env.production
 {: copy="dotenvx encrypt -f .env.production"}
 
 Commit `.env.production`. Do not commit `.env.keys`. Keep private keys somewhere safe like 1Password or [Armor ⛨](https://dotenvx.com/armor).
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Set decryption key
 
@@ -114,9 +78,3 @@ git push heroku
 {: copy="false"}
 
 Your app restarts and env is injected from the encrypted `.env.production` file.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

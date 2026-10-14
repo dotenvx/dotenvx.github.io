@@ -2,27 +2,11 @@
 title: PM2
 description: Use dotenvx with PM2.
 permalink: /docs/process-managers/pm2/
-layout: radar
+layout: docs-markdown
+mark: "pm2"
 ---
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="PM2"
-  description="Use dotenvx with PM2."
-  mark="pm2"
-%}
-
-<div class="armor-shell">
-<div class="design-content-width">
-<section class="docs-quickstart-body" markdown="block">
-{% capture step_content %}
-
 Find [code examples for this guide](https://github.com/dotenvx/examples/tree/main/process-managers/pm2) on GitHub.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Initial setup
 
@@ -61,11 +45,6 @@ server.listen(PORT, () => {
 });
 ```
 {: copy="false"}
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
 
 ## Run dotenvx
 
@@ -108,11 +87,6 @@ npm start
 
 Your app will say `Hello World`. That covers local development. Let's solve for production next.
 
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-
-{% capture step_content %}
-
 ## Add production environment
 
 Create a `.env.production` file in the root of your project.
@@ -136,9 +110,3 @@ Modify your start script to load your `.env.production` file.
 {: copy="false"}
 
 Your app will say `Hello production`, simulating production.
-
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true %}
-</section>
-</div>
-</div>

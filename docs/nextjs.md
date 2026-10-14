@@ -210,7 +210,73 @@ $ pnpm dev
 Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated lockfile before committing, since reinstalling can update dependency versions.
 
 {% endcapture %}
-{% include components/design-warning.html title="Seeing Hello encrypted:ciphertext instead of Hello Secret?" content=override_help markdown=true open=true %}
+{% include components/design-warning.html title="Seeing Hello encrypted:ciphertext instead of Hello Secret?" content=override_help markdown=true %}
+
+## Share
+
+Have teammates? Share access with Dotenvx Armor. 
+
+Log in to Dotenvx.
+
+```console
+$ npx dotenvx login
+◉ logged in (username)
+```
+{: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx login
+◉ logged in (username)
+```
+{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
+
+Armor the private key.
+
+```console
+$ npx dotenvx armor up
+⛨ armored .env (022 0D8)
+```
+{: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx armor up
+⛨ armored .env (022 0D8)
+```
+{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
+
+Invite your teammate.
+
+```console
+$ npx dotenvx armor invite
+⛨ invited person@example.com to team
+```
+{: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx armor up
+⛨ invited person@example.com to team
+```
+{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
+
+They can now pull (git), decrypt, and run.
+
+```console
+$ npm run dev
+⟐ injected env (2) from .env (022 0D8) via Armor ⛨
+▲ Next.js 16.4.1 (Turbopack)
+- Local:         http://localhost:3000
+```
+{: copy="npm run dev" package-manager="npm"}
+
+```console
+$ pnpm dev
+⟐ injected env (2) from .env (022 0D8) via Armor ⛨
+▲ Next.js 16.4.1 (Turbopack)
+- Local:         http://localhost:3000
+```
+{: copy="pnpm dev" package-manager="pnpm"}
+
+> **Note:** Alternatively, share the private key over Slack if your team's security model allows each recipient to retain a permanent copy outside your access controls.
 
 ## Deploy
 

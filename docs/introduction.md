@@ -36,6 +36,7 @@ body_class: docs-landing
       <p class="design-list-title">Quickstarts</p>
       <div class="design-settings-grid">
         {% include components/design-key.html href="/docs/cli-quickstart" label="CLI" icon="dotenvx" %}
+        {% include components/design-key.html href="/docs/nextjs/" label="Vercel" icon="vercel" %}
         {% include components/design-key.html href="/docs/claude" label="Claude" icon="claude" %}
         {% include components/design-key.html href="/docs/codex" label="Codex" icon="codex" %}
         {% include components/design-key.html href="/docs/cursor" label="Cursor" icon="cursor" %}

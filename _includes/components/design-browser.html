@@ -1,0 +1,9 @@
+<div class="design-browser-wrapper" markdown="0">
+<a class="design-browser design-card" href="{{ include.url | escape }}" aria-label="Open {{ include.url | escape }}">
+  <div class="design-browser-toolbar">
+    <span class="design-browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="design-browser-address">{{ include.url | escape }}</span>
+  </div>
+  <div class="design-browser-content">{% if include.html %}{{ include.html }}{% else %}{{ include.text | escape }}{% endif %}</div>
+</a>
+</div>

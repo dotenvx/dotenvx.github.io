@@ -139,19 +139,25 @@ Run your app:
 
 ```console
 $ npm run dev
-⟐ injected env (2) from .env
+⟐ injected env (2) from .env (022 0D8) via .env.keys
+▲ Next.js 16.4.1 (Turbopack)
+- Local:         http://localhost:3000
 ```
 {: copy="npm run dev" package-manager="npm"}
 
 ```console
 $ pnpm dev
-⟐ injected env (2) from .env
+⟐ injected env (2) from .env (022 0D8) via .env.keys
+▲ Next.js 16.4.1 (Turbopack)
+- Local:         http://localhost:3000
 ```
 {: copy="pnpm dev" package-manager="pnpm"}
 
-Visit [/api/hello](http://localhost:3000/api/hello) to see Hello Secret.
-
 Next.js loads and decrypts .env before your server code reads process.env.
+
+Visit [http://localhost:3000/api/hello](http://localhost:3000/api/hello) to see Hello Secret.
+
+{% include components/design-browser.html url="http://localhost:3000/api/hello" text="Hello Secret" %}
 
 {% capture override_help %}
 
@@ -204,7 +210,7 @@ $ pnpm dev
 Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated lockfile before committing, since reinstalling can update dependency versions.
 
 {% endcapture %}
-{% include components/design-warning.html title="Seeing encrypted text instead of Hello Secret?" content=override_help markdown=true open=true %}
+{% include components/design-warning.html title="Seeing Hello encrypted:ciphertext instead of Hello Secret?" content=override_help markdown=true open=true %}
 
 ## Deploy
 

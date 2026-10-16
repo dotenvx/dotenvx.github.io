@@ -87,6 +87,8 @@
   }
 
   function bindCodeblock(wrap) {
+    if (wrap.dataset.copyBound) return
+    wrap.dataset.copyBound = 'true'
     var button = wrap.querySelector('[data-design-codeblock-copy]')
     var label = wrap.querySelector('[data-design-codeblock-label]')
     if (!button || !label) return
@@ -106,6 +108,11 @@
       }).catch(function () {})
     })
   }
+
+  document.addEventListener('docs:content-added', function (event) {
+    event.detail.querySelectorAll('[data-design-codeblock]').forEach(bindCodeblock)
+    event.detail.querySelectorAll('[data-design-choice]').forEach(bindChoice)
+  })
 
   ready(function () {
     document.querySelectorAll('[data-design-choice]').forEach(bindChoice)

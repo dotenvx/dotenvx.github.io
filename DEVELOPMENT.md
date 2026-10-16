@@ -192,3 +192,28 @@ bundle exec ruby scripts/test-seo.rb
 The check covers every indexable page, title and canonical uniqueness, descriptions,
 headings, social metadata, valid JSON-LD, breadcrumb destinations, sitemap coverage,
 and robots rules. An optional first argument selects another build directory.
+
+## Side paths
+
+Side paths are optional Markdown pages that open in a right-hand drawer from a
+guide. Each also has a normal URL and works without JavaScript. Create a page with
+`layout: docs-side-path`, `title`, `description`, `permalink`, `parent_url`,
+`parent_title`, and `side_path_kind` (`Alternative` or `Troubleshooting`) in its
+front matter. Write its body as ordinary Markdown, including existing codeblock
+attributes for copy text and package managers.
+
+Link to it from a `docs-markdown` guide:
+
+```markdown
+[**Not using Armor?** Alternative →](/docs/nextjs/share-private-key/){: .side-path}
+
+[**Seeing encrypted text?** Troubleshoot →](/docs/nextjs/encrypted-text/){: .side-path .side-path--troubleshooting}
+```
+
+Use “Alternative →” for alternative paths and “Troubleshoot →” for fixes.
+
+Keep the attribute on the same line as the link so it applies to the link, not
+the surrounding paragraph. Use `{: .side-path-inline}` for a link inside prose.
+The shared drawer supports Escape, backdrop dismissal, focus restoration, reduced
+motion, and full-width mobile reading. Package-manager choices stay synchronized
+with the parent guide. “Open page” provides a bookmarkable standalone view.

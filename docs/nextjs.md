@@ -90,13 +90,13 @@ Encrypt it with a single command.
 
 ```console
 $ npx dotenvx encrypt
-◈ encrypted (.env)
+◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
 
 ```console
 $ pnpm exec dotenvx encrypt
-◈ encrypted (.env)
+◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
@@ -159,62 +159,11 @@ Visit [http://localhost:3000/api/hello](http://localhost:3000/api/hello) to see 
 
 {% include components/design-browser.html url="http://localhost:3000/api/hello" text="Hello Secret" %}
 
-{% capture override_help %}
-
-Next.js may still be using the original @next/env package, even after adding the override. Check which package is installed:
-
-```console
-$ npm ls @next/env
-```
-{: copy="npm ls @next/env" package-manager="npm"}
-
-```console
-$ pnpm why @next/env
-```
-{: copy="pnpm why @next/env" package-manager="pnpm"}
-
-The output should show @next/env as an alias of @dotenvx/next-env. An original Next.js version followed by “overridden” does not mean the replacement was installed.
-
-If the original package is still installed, stop the dev server with Ctrl+C. From your project directory, rebuild the dependency installation:
-
-```console
-$ rm -rf node_modules package-lock.json
-$ npm install
-$ npm ls @next/env
-```
-{: copy="rm -rf node_modules package-lock.json
-npm install
-npm ls @next/env" package-manager="npm"}
-
-```console
-$ rm -rf node_modules pnpm-lock.yaml
-$ pnpm install
-$ pnpm why @next/env
-```
-{: copy="rm -rf node_modules pnpm-lock.yaml
-pnpm install
-pnpm why @next/env" package-manager="pnpm"}
-
-Confirm the alias now points to @dotenvx/next-env, then restart:
-
-```console
-$ npm run dev
-```
-{: copy="npm run dev" package-manager="npm"}
-
-```console
-$ pnpm dev
-```
-{: copy="pnpm dev" package-manager="pnpm"}
-
-Refresh [/api/hello](http://localhost:3000/api/hello). Review the regenerated lockfile before committing, since reinstalling can update dependency versions.
-
-{% endcapture %}
-{% include components/design-warning.html title="Seeing Hello encrypted:ciphertext instead of Hello Secret?" content=override_help markdown=true %}
+[**Seeing encrypted:ciphertext only?** Troubleshoot →](/docs/nextjs/encrypted-text/){: .side-path .side-path--troubleshooting}
 
 ## Share
 
-Have teammates? Share access with Dotenvx Armor. 
+Have teammates? Share access with Dotenvx Armor ⛨
 
 Log in to Dotenvx.
 
@@ -230,7 +179,7 @@ $ pnpm exec dotenvx login
 ```
 {: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
 
-Armor the private key.
+Create the Armored Key ⛨
 
 ```console
 $ npx dotenvx armor up
@@ -253,7 +202,7 @@ $ npx dotenvx armor invite
 {: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
 
 ```console
-$ pnpm exec dotenvx armor up
+$ pnpm exec dotenvx armor invite
 ⛨ invited person@example.com to team
 ```
 {: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
@@ -276,45 +225,72 @@ $ pnpm dev
 ```
 {: copy="pnpm dev" package-manager="pnpm"}
 
-> **Note:** Alternatively, share the private key over Slack if your team's security model allows each recipient to retain a permanent copy outside your access controls.
+{% include components/design-browser.html url="http://localhost:3000/api/hello" text="Hello Secret" %}
 
-## Deploy
+[**Not using Armor?** Alternative →](/docs/nextjs/share-private-key/){: .side-path}
 
-Find your private key with the keypair command.
+## Production
+
+Create a .env.production file.
+
+```dotenv
+# .env.production
+HELLO="Production"
+```
+{: copy="HELLO=\"Production\""}
+
+Encrypt it with an Enclaved Key ◊
 
 ```console
-$ npx dotenvx keypair
-{"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
+$ npx dotenvx encrypt -f .env.production
+◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
 ```
-{: copy="npx dotenvx keypair" class="design-codeblock--nowrap" package-manager="npm"}
+{: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
 ```console
-$ pnpm exec dotenvx keypair
-{"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
+$ pnpm exec dotenvx encrypt -f .env.production
+◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
+
+# 1. ⛨ Choose key type …
+# ❯ ◊ Enclaved
+# 2. ◊ Select service …
+# ❯ Vercel
+# 3. ◊ Select connection …
+# 4. ◊ Select resource/project …
+# 5. ? Private key name › DOTENV_PRIVATE_KEY_PRODUCTION
 ```
-{: copy="pnpm exec dotenvx keypair" class="design-codeblock--nowrap" package-manager="pnpm"}
+{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
 
-Deploy your code and encrypted .env file, install your dependencies, and set DOTENV_PRIVATE_KEY in your hosting platform's environment variables. Make it available during both build and runtime. On Vercel, select the environments you deploy to. Keep .env.keys on your local machine.
-
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
-
-Build and run your app:
+Commit .env.production.
 
 ```console
-$ npm run build
-$ npm start
+$ git add -f .env.production
+$ git commit -m "encrypt .env.production"
 ```
-{: copy="npm run build
-npm start" package-manager="npm"}
+{: copy="git add -f .env.production
+git commit -m \"encrypt .env.production\""}
+
+Deploy to Vercel.
 
 ```console
-$ pnpm build
-$ pnpm start
+$ npm install vercel --save-dev
+$ npx vercel --prod
 ```
-{: copy="pnpm build
-pnpm start" package-manager="pnpm"}
+{: copy="npm install vercel --save-dev
+npx vercel --prod" package-manager="npm"}
 
-Your app reads the same secrets, but this time with the private key stored in your hosting environment.
+```console
+$ pnpm add -D vercel
+$ pnpm exec vercel --prod
+```
+{: copy="pnpm add -D vercel
+pnpm exec vercel --prod" package-manager="pnpm"}
+
+Vercel loads and decrypts .env.production with your Enclaved Key ◊
+
+Visit [https://your-app.vercel.app/api/hello](https://your-app.vercel.app/api/hello) to see Hello Production.
+
+{% include components/design-browser.html url="https://your-app.vercel.app/api/hello" text="Hello Production" %}
 
 ## Production
 

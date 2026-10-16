@@ -37,14 +37,14 @@ body_class: docs-landing
       <div class="design-settings-grid">
         {% include components/design-key.html href="/docs/cli-quickstart" label="CLI" icon="dotenvx" %}
         {% include components/design-key.html href="/docs/nextjs/" label="Vercel" icon="vercel" %}
+        {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" %}
+        {% include components/design-key.html href="/docs/nodejs" label="Node.js" icon="nodejs" %}
         {% include components/design-key.html href="/docs/claude" label="Claude" icon="claude" %}
         {% include components/design-key.html href="/docs/codex" label="Codex" icon="codex" %}
         {% include components/design-key.html href="/docs/cursor" label="Cursor" icon="cursor" %}
         {% include components/design-key.html href="/docs/github-actions" label="GitHub Actions" icon="github-actions" %}
-        {% include components/design-key.html href="/docs/nodejs" label="Node.js" icon="nodejs" %}
         {% include components/design-key.html href="/docs/1password" label="1Password" icon="1password" %}
         {% include components/design-key.html href="/docs/bitwarden" label="Bitwarden" icon="bitwarden" %}
-        {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" %}
         {% include components/design-key.html href="/docs/guides" label="30+ Guides" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>
     </div>

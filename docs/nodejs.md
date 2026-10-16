@@ -8,6 +8,8 @@ title: Node.js
 social_title: Encrypt a .env file in Node.js
 description: "Load and decrypt .env files in Node.js with Dotenvx. Get started with the Node.js SDK or inject environment variables using the CLI."
 permalink: /docs/nodejs/
+markdown_url: /docs/nodejs.md
+agent_prompt: Set up Dotenvx with Node.js for me.
 redirect_from:
   - /docs/languages/nodejs
   - /docs/languages/nodejs/
@@ -21,16 +23,21 @@ secrets_artifact: true
 
 ## Install
 
-Get the Dotenvx Node.js SDK.
+In your Node.js project, install Dotenvx.
 
 ```console
 $ npm install @dotenvx/dotenvx
 ```
-{: copy="npm install @dotenvx/dotenvx"}
+{: copy="npm install @dotenvx/dotenvx" package-manager="npm"}
+
+```console
+$ pnpm add @dotenvx/dotenvx
+```
+{: copy="pnpm add @dotenvx/dotenvx" package-manager="pnpm"}
 
 ## Encrypt
 
-Start with a secret value in your .env file, like:
+Start with a secret value in the .env file at your project root, like:
 
 ```dotenv
 # .env
@@ -42,9 +49,15 @@ Encrypt it with a single command.
 
 ```console
 $ npx dotenvx encrypt
-◈ encrypted (.env)
+◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
-{: copy="npx dotenvx encrypt"}
+{: copy="npx dotenvx encrypt" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx encrypt
+◈ encrypted .env (022 0D8) via .env.keys ⛉
+```
+{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -58,18 +71,18 @@ HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTO
 
 ## Commit
 
-Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
+Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git. Keep .env.keys out of git. The -f flag adds the encrypted file even if your project ignores .env files.
 
 ```console
-$ git add .env
+$ git add -f .env
 $ git commit -m "encrypt .env"
 ```
-{: copy="git add .env
+{: copy="git add -f .env
 git commit -m \"encrypt .env\""}
 
 ## Ship
 
-Load your secrets before your app uses them. Create an index.js file:
+Load your secrets and read them through process.env. Create index.js:
 
 ```javascript
 // index.js
@@ -77,44 +90,78 @@ require('@dotenvx/dotenvx').config()
 
 console.log(`Hello ${process.env.HELLO}`)
 ```
-{: copy="require('@dotenvx/dotenvx').config()
-
-console.log(`Hello ${process.env.HELLO\}`)"}
 
 Run your app:
 
-{% capture run_commands %}
+```console
 $ node index.js
-⟐ injected env (2) from .env
+⟐ injected env (2) from .env (022 0D8) via .env.keys
 Hello Secret
-{% endcapture %}
-{% include components/design-codeblock.html value=run_commands copy_text="node index.js" format="cli" %}
+```
+{: copy="node index.js"}
 
-Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
+Dotenvx loads and decrypts .env before your code reads process.env.
 
-## Deploy
+## Share
 
-Find your private key with the keypair command.
+Have teammates? Share access with Dotenvx Armor ⛨
+
+Log in to Dotenvx.
 
 ```console
-$ npx dotenvx keypair
-{"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
+$ npx dotenvx login
+◉ logged in (username)
 ```
-{: copy="npx dotenvx keypair" class="design-codeblock--nowrap"}
+{: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
 
-Deploy your code and encrypted .env file, install your npm dependencies, and set DOTENV_PRIVATE_KEY on your production environment. Keep .env.keys on your local machine.
+```console
+$ pnpm exec dotenvx login
+◉ logged in (username)
+```
+{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
+Create the Armored Key ⛨
 
-And run your app:
+```console
+$ npx dotenvx armor up
+⛨ armored .env (022 0D8)
+```
+{: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
 
-{% include components/design-codeblock.html value=run_commands copy_text="node index.js" format="cli" %}
+```console
+$ pnpm exec dotenvx armor up
+⛨ armored .env (022 0D8)
+```
+{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
 
-Dotenvx uses your private key to decrypt and inject your secrets just-in-time, but this time with the private key stored on your server.
+Invite your teammate.
+
+```console
+$ npx dotenvx armor invite
+⛨ invited person@example.com to team
+```
+{: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
+
+```console
+$ pnpm exec dotenvx armor invite
+⛨ invited person@example.com to team
+```
+{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
+
+Your teammate accepts the invitation, pulls the repository, installs dependencies, and logs in with dotenvx login. They can then run the app:
+
+```console
+$ node index.js
+⟐ injected env (2) from .env (022 0D8) via Armor ⛨
+Hello Secret
+```
+{: copy="node index.js"}
+
+[**Not using Armor?** Alternative →](/docs/nodejs/share-private-key/){: .side-path}
 
 ## Production
 
-Give production its own secrets by creating a .env.production file:
+Create a .env.production file.
 
 ```dotenv
 # .env.production
@@ -122,42 +169,58 @@ HELLO="Production"
 ```
 {: copy="HELLO=\"Production\""}
 
-Encrypt it:
+Encrypt it with an Enclaved Key ◊
 
 ```console
 $ npx dotenvx encrypt -f .env.production
-◈ encrypted (.env.production)
+◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
 ```
-{: copy="npx dotenvx encrypt -f .env.production"}
-
-Commit it:
+{: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
 ```console
-$ git add .env.production
+$ pnpm exec dotenvx encrypt -f .env.production
+◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
+```
+{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
+
+When prompted, choose **Enclaved**, select your deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
+
+Commit .env.production.
+
+```console
+$ git add -f .env.production
 $ git commit -m "encrypt .env.production"
 ```
-{: copy="git add .env.production
+{: copy="git add -f .env.production
 git commit -m \"encrypt .env.production\""}
 
-Find the matching private key with npx dotenvx keypair -f .env.production. This time set DOTENV_PRIVATE_KEY and DOTENV_FILE on your server.
+Deploy your code and encrypted .env.production file to the selected resource. Install your dependencies there:
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" path=".env.production" %}
+```console
+$ npm install
+```
+{: copy="npm install" package-manager="npm"}
 
-Run it:
+```console
+$ pnpm install
+```
+{: copy="pnpm install" package-manager="pnpm"}
+
+Set DOTENV_FILE to .env.production in your deployment environment so Dotenvx knows which file to load. Keep .env.keys on your local machine.
+
+Run your app:
 
 ```console
 $ node index.js
-⟐ injected env (2) from .env.production
+⟐ injected env (2) from .env.production (022 0D8) via Armor Enclave ◊
 Hello Production
 ```
 {: copy="node index.js"}
 
-Dotenvx needs DOTENV_FILE so it knows to load .env.production. Same code, but this time, production secrets.
+Dotenvx loads and decrypts .env.production with your Enclaved Key ◊
 
-You can even compose multiple environments like this with DOTENV_FILE=.env.production,.env for example. Comma separate them.
+[**Not using Armor Enclaves?** Alternative →](/docs/nodejs/deploy-private-key/){: .side-path}
 
 ## Conclusion
 
-You've encrypted a .env file, committed it to git, and loaded its secrets with the Node.js SDK. You've also learned how to set a private key on your server and load different secrets for production without changing your code.
-
-Your secrets now travel with your code, and each environment needs just one private key to use them.
+You've encrypted your secrets, shared access with Armor, and loaded production secrets with Armor Enclaves.

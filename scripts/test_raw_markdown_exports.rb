@@ -26,7 +26,8 @@ class RawMarkdownExportsTest < Minitest::Test
       title = source[/^title: (.*)$/, 1]
       assert result.start_with?("# #{title}\n\n")
       refute_match(/\{%|\{:|layout:|permalink:/, result)
-      assert_match(%r{https://dotenvx.com/docs/nextjs\.md#(production|share|ship)}, result)
+      parent_url = source[/^parent_url: (.*)$/, 1].sub('/#', '.md#')
+      assert_includes result, "(https://dotenvx.com#{parent_url})"
       source.to_enum(:scan, RawMarkdownExports::FENCE).each do
         assert_includes result, Regexp.last_match[0].strip
       end

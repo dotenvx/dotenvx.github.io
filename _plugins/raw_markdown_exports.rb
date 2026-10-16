@@ -3,6 +3,13 @@ require 'yaml'
 
 module RawMarkdownExports
   EXPORTS = {
+    'docs/cloudflare.md' => '/docs/cloudflare.md',
+    'docs/side-paths/cloudflare-pages.md' => '/docs/cloudflare/pages.md',
+    'docs/side-paths/cloudflare-runtime-decryption.md' => '/docs/cloudflare/runtime-decryption.md',
+    'docs/side-paths/cloudflare-share-private-key.md' => '/docs/cloudflare/share-private-key.md',
+    'docs/nodejs.md' => '/docs/nodejs.md',
+    'docs/side-paths/nodejs-share-private-key.md' => '/docs/nodejs/share-private-key.md',
+    'docs/side-paths/nodejs-deploy-private-key.md' => '/docs/nodejs/deploy-private-key.md',
     'docs/nextjs.md' => '/docs/nextjs.md',
     'docs/side-paths/nextjs-encrypted-text.md' => '/docs/nextjs/encrypted-text.md',
     'docs/side-paths/nextjs-share-private-key.md' => '/docs/nextjs/share-private-key.md',

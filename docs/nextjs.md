@@ -292,74 +292,7 @@ Visit [https://your-app.vercel.app/api/hello](https://your-app.vercel.app/api/he
 
 {% include components/design-browser.html url="https://your-app.vercel.app/api/hello" text="Hello Production" %}
 
-## Production
-
-Give production its own secrets by creating a .env.production file:
-
-```dotenv
-# .env.production
-HELLO="Production"
-```
-{: copy="HELLO=\"Production\""}
-
-Encrypt it:
-
-```console
-$ npx dotenvx encrypt -f .env.production
-◈ encrypted (.env.production)
-```
-{: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-◈ encrypted (.env.production)
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
-Commit it:
-
-```console
-$ git add -f .env.production
-$ git commit -m "encrypt .env.production"
-```
-{: copy="git add -f .env.production
-git commit -m \"encrypt .env.production\""}
-
-Find the matching private key:
-
-```console
-$ npx dotenvx keypair -f .env.production
-```
-{: copy="npx dotenvx keypair -f .env.production" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx keypair -f .env.production
-```
-{: copy="pnpm exec dotenvx keypair -f .env.production" package-manager="pnpm"}
-
-Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production in your hosting platform's environment variables for both build and runtime.
-
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
-
-Build and run it:
-
-```console
-$ npm run build
-$ npm start
-```
-{: copy="npm run build
-npm start" package-manager="npm"}
-
-```console
-$ pnpm build
-$ pnpm start
-```
-{: copy="pnpm build
-pnpm start" package-manager="pnpm"}
-
-Next.js automatically loads .env.production for next build and next start. Visit /api/hello to see Hello Production. Same code, production secrets.
-
-Next.js also loads .env as a fallback. If it uses a different encryption key, supply that key as DOTENV_PRIVATE_KEY_2.
+[**Not using Armor Enclaves?** Alternative →](/docs/nextjs/deploy-private-key/){: .side-path}
 
 ## Conclusion
 

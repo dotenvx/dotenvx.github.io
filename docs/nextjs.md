@@ -239,8 +239,6 @@ HELLO="Production"
 ```
 {: copy="HELLO=\"Production\""}
 
-[**Not using Armor Enclaves?** Alternative →](/docs/nextjs/deploy-private-key/){: .side-path}
-
 Encrypt it with an Enclaved Key ◊
 
 ```console
@@ -294,8 +292,8 @@ Visit [https://your-app.vercel.app/api/hello](https://your-app.vercel.app/api/he
 
 {% include components/design-browser.html url="https://your-app.vercel.app/api/hello" text="Hello Production" %}
 
+[**Not using Armor Enclaves?** Alternative →](/docs/nextjs/deploy-private-key/){: .side-path}
+
 ## Conclusion
 
-You've encrypted a .env file, committed it to git, and loaded its secrets through Next.js with @dotenvx/next-env. You've also learned how to set a private key on your server and load different secrets for production without changing your code.
-
-Your encrypted secrets now travel with your code. Set the matching keys in your hosting environment, and Next.js handles loading them.
+You've encrypted your secrets, shared access with Armor, and deployed to Vercel with Armor Enclaves.

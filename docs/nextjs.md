@@ -239,6 +239,8 @@ HELLO="Production"
 ```
 {: copy="HELLO=\"Production\""}
 
+[**Not using Armor Enclaves?** Alternative →](/docs/nextjs/deploy-private-key/){: .side-path}
+
 Encrypt it with an Enclaved Key ◊
 
 ```console
@@ -291,8 +293,6 @@ Vercel loads and decrypts .env.production with your Enclaved Key ◊
 Visit [https://your-app.vercel.app/api/hello](https://your-app.vercel.app/api/hello) to see Hello Production.
 
 {% include components/design-browser.html url="https://your-app.vercel.app/api/hello" text="Hello Production" %}
-
-[**Not using Armor Enclaves?** Alternative →](/docs/nextjs/deploy-private-key/){: .side-path}
 
 ## Conclusion
 

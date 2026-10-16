@@ -3,6 +3,21 @@ require 'jekyll'
 require_relative '../_plugins/raw_markdown_exports'
 
 class RawMarkdownExportsTest < Minitest::Test
+  def test_github_actions_export_preserves_workflows_and_labels
+    source = File.read(File.expand_path('../docs/github-actions.md', __dir__))
+    result = RawMarkdownExports.nextjs(source, 'https://dotenvx.com')
+    assert result.start_with?("# GitHub Actions\n\n")
+    refute_match(/\{%|\{:|layout:|permalink:/, result)
+    assert_includes result, '**npm — .github/workflows/ci.yml**'
+    assert_includes result, '**pnpm — .github/workflows/ci.yml**'
+    assert_includes result, '${{ secrets.DOTENV_PRIVATE_KEY_CI }}'
+    original_blocks = source.scan(RawMarkdownExports::FENCE).size
+    assert_equal original_blocks, result.scan(RawMarkdownExports::FENCE).size
+    source.to_enum(:scan, RawMarkdownExports::FENCE).each do
+      assert_includes result, Regexp.last_match[0].strip
+    end
+  end
+
   def test_nextjs_export_keeps_examples_and_removes_template_syntax
     source = File.read(File.expand_path('../docs/nextjs.md', __dir__))
     result = RawMarkdownExports.nextjs(source, 'https://dotenvx.com')
@@ -38,7 +53,7 @@ class RawMarkdownExportsTest < Minitest::Test
   end
 
   def test_template_like_text_inside_code_is_untouched
-    code = "```text\n{: .example}\n{% literal %}\n[example](/path/)\n```\n"
+    code = "```text\n{: .example}\n{% literal %}\n{% raw %}\n{% endraw %}\n[example](/path/)\n```\n"
     assert_includes RawMarkdownExports.nextjs(code, 'https://dotenvx.com'), code
   end
 end

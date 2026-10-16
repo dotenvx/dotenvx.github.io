@@ -3,6 +3,7 @@ require 'yaml'
 
 module RawMarkdownExports
   EXPORTS = {
+    'docs/github-actions.md' => '/docs/github-actions.md',
     'docs/cloudflare.md' => '/docs/cloudflare.md',
     'docs/side-paths/cloudflare-pages.md' => '/docs/cloudflare/pages.md',
     'docs/side-paths/cloudflare-runtime-decryption.md' => '/docs/cloudflare/runtime-decryption.md',
@@ -39,6 +40,7 @@ module RawMarkdownExports
       output << prose(body[0...match.begin(0)], site_url)
       code = match[0]
       body = body[match.end(0)..]
+      body = body.sub(/\A\{%\s*endraw\s*%\}[ \t]*(?:\n|\z)/, '')
       attributes = /\A#{ATTRIBUTES}[ \t]*(?:\n|\z)/m.match(body)
       if attributes
         labels = %w[package-manager label].filter_map do |key|
@@ -54,6 +56,7 @@ module RawMarkdownExports
 
   def self.prose(text, site_url)
     text.gsub(ATTRIBUTES, '')
+      .gsub(/\{%\s*(?:raw|endraw)\s*%\}[ \t]*(?:\n|\z)/, '')
       .gsub(/\{%\s*include components\/design-browser\.html\s+url="([^"]*)"\s+text="([^"]*)"\s*%\}/) do
         "Browser response at [#{$1}](#{$1}):\n\n```text\n#{$2}\n```"
       end

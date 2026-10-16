@@ -25,11 +25,18 @@
 {% endif %}
 
 {% assign docs_hero_actions = nil %}
-{% if include.video and include.video != "" %}
+{% if include.video or page.markdown_url %}
 {% capture docs_hero_actions %}
+  {% if include.video and include.video != "" %}
     {% assign docs_video_entry = site.data.videos[include.video] %}
     {% assign docs_video_url = docs_video_entry.url | default: include.video %}
     <a class="design-link" href="{{ docs_video_url }}" target="_blank" rel="noopener noreferrer">{{ include.video_title | default: "Watch demo" }} →</a>
+  {% endif %}
+  {% if page.agent_prompt and page.markdown_url %}
+    {% include components/docs-agent-button.html prompt=page.agent_prompt markdown_url=page.markdown_url %}
+  {% elsif page.markdown_url %}
+    <a class="design-link" href="{{ page.markdown_url | relative_url }}" type="text/markdown">View as Markdown</a>
+  {% endif %}
 {% endcapture %}
 {% endif %}
 <section class="design-hero-section home-hero docs-hero{% if include.visual %} docs-hero--example{% endif %}">

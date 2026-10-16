@@ -1,0 +1,10 @@
+{% capture agent_prompt %}{{ include.prompt }} Fetch {{ include.markdown_url | absolute_url }} and follow it.{% endcapture %}
+<button type="button" class="docs-agent-button" data-agent-prompt="{{ agent_prompt | strip | escape }}" aria-label="Onboard your coding agent — copy instructions">
+  <span class="docs-agent-icons" aria-hidden="true">
+    <span>{% include icons/docs/claude-code.html %}</span>
+    <span>{% include icons/docs/openai.html %}</span>
+    <span>{% include icons/docs/cursor.html %}</span>
+  </span>
+  <span data-agent-copy-label aria-live="polite">Onboard your coding agent</span>
+  <svg class="docs-agent-copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+</button>

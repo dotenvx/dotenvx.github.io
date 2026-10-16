@@ -3,6 +3,7 @@ layout: docs-side-path
 title: Share a private key
 description: Give a teammate access without Armor.
 permalink: /docs/nextjs/share-private-key/
+markdown_url: /docs/nextjs/share-private-key.md
 parent_url: /docs/nextjs/#share
 parent_title: Next.js
 side_path_kind: Alternative

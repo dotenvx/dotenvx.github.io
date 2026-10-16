@@ -12,6 +12,8 @@ secrets_artifact: true
 social_title: Encrypt a .env file in Next.js
 description: "Use Dotenvx with Next.js to load encrypted .env files and manage environment variables across local development and deployments."
 permalink: /docs/nextjs/
+markdown_url: /docs/nextjs.md
+agent_prompt: Set up Dotenvx with Next.js for me.
 redirect_from:
   - /docs/platforms/vercel
   - /docs/platforms/vercel/

@@ -3,6 +3,7 @@ layout: docs-side-path
 title: Deploy with a private key
 description: Keep your production key locally and add it to Vercel yourself.
 permalink: /docs/nextjs/deploy-private-key/
+markdown_url: /docs/nextjs/deploy-private-key.md
 parent_url: /docs/nextjs/#production
 parent_title: Next.js
 side_path_kind: Alternative

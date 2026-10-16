@@ -7613,3 +7613,38 @@ html.side-path-open { overflow: hidden; }
   .side-path-drawer-toolbar { padding-inline: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .side-path-drawer[open] { animation: none; } }
+
+/* Copyable setup prompt for a coding agent. */
+.docs-agent-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  max-width: 100%;
+  padding: .6rem 1rem;
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: 999px;
+  background: var(--design-bg);
+  color: var(--design-ink);
+  font-family: var(--design-font-sans);
+  font-size: var(--design-text-compact);
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.docs-agent-button:hover { background: var(--design-hover); }
+.docs-agent-button:focus-visible { outline: 2px solid var(--design-ink); outline-offset: 3px; }
+.docs-agent-icons { display: inline-flex; flex-shrink: 0; padding-left: .4rem; }
+.docs-agent-icons > span {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-left: -.4rem;
+  border: 1px solid var(--design-line, var(--design-mid));
+  border-radius: 50%;
+  background: var(--design-bg);
+}
+.docs-agent-icons svg { width: 1.1rem; height: 1.1rem; }
+.docs-agent-icons > span:first-child { color: #d97757; }
+.docs-agent-copy-icon { width: 1rem; height: 1rem; flex-shrink: 0; opacity: .65; }

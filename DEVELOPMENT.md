@@ -217,3 +217,11 @@ the surrounding paragraph. Use `{: .side-path-inline}` for a link inside prose.
 The shared drawer supports Escape, backdrop dismissal, focus restoration, reduced
 motion, and full-width mobile reading. Package-manager choices stay synchronized
 with the parent guide. “Open page” provides a bookmarkable standalone view.
+
+### Next.js Markdown export
+
+The Jekyll build exports `docs/nextjs.md` to `/docs/nextjs.md` alongside the HTML guide. `_plugins/raw_markdown_exports.rb` removes front matter and styling attributes, labels package-manager examples, converts browser previews to text, and makes internal links absolute. Code examples are preserved. The three Next.js side paths are also exported under `/docs/nextjs/*.md`. Links between these four pages point to their Markdown exports, preserving section anchors. Other internal links stay on HTML pages. Deployment-variable components become dotenv examples.
+
+Run `bundle exec ruby scripts/test_raw_markdown_exports.rb` to check the export.
+
+The reusable `components/docs-agent-button.html` takes `prompt` and `markdown_url` parameters and uses the consistent label “Onboard your coding agent.” On docs pages, set `agent_prompt` and `markdown_url` in front matter to show it in the hero. The button copies the prompt followed by “Fetch <absolute Markdown URL> and follow it.” Currently enabled only for Next.js.

@@ -2,6 +2,8 @@
 title: Quickstart
 description: Encrypt your first .env file.
 permalink: /docs/quickstart/
+markdown_url: /docs/quickstart.md
+agent_prompt: Set up Dotenvx in my project for me.
 layout: docs-markdown
 redirect_from:
   - /docs/quickstarts
@@ -25,16 +27,18 @@ secrets_artifact: true
 
 ## Install
 
-Get the Dotenvx CLI.
+Install the Dotenvx CLI:
 
 ```console
 $ curl -sfS https://dotenvx.sh | sh
 ```
 {: copy="curl -sfS https://dotenvx.sh | sh"}
 
+[**More installation options** Alternative →](/docs/quickstart/install-alternatives/){: .side-path}
+
 ## Encrypt
 
-Start with a secret value in your .env file, like:
+Start with a secret value in the .env file at your project root, like:
 
 ```dotenv
 # .env
@@ -46,7 +50,7 @@ Encrypt it with a single command.
 
 ```console
 $ dotenvx encrypt
-◈ encrypted (.env)
+◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="dotenvx encrypt"}
 
@@ -60,6 +64,8 @@ HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTO
 ```
 {: class="design-codeblock--nowrap"}
 
+[**CI & Production** Alternative →](/docs/quickstart/env-files/){: .side-path}
+
 ## Commit
 
 Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
@@ -71,6 +77,8 @@ $ git commit -m "encrypt .env"
 {: copy="git add .env
 git commit -m \"encrypt .env\""}
 
+[**Protect your commits** Extra protection →](/docs/quickstart/protect/){: .side-path}
+
 ## Ship
 
 Use your secret in an app. Here's a Node.js example, but dotenvx works with any language.
@@ -79,85 +87,22 @@ Use your secret in an app. Here's a Node.js example, but dotenvx works with any 
 // index.js
 console.log(`Hello ${process.env.HELLO}`)
 ```
-{: copy="console.log(`Hello ${process.env.HELLO\}`)"}
 
 Run it with dotenvx:
 
-{% capture run_commands %}
+```console
 $ dotenvx run -- node index.js
-⟐ injected env (2) from .env
+⟐ injected env (2) from .env (022 0D8) via .env.keys
 Hello Secret
-{% endcapture %}
-{% include components/design-codeblock.html value=run_commands copy_text="dotenvx run -- node index.js" format="cli" %}
-
-Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
-
-## Deploy
-
-Find your private key with the keypair command.
-
-```console
-$ dotenvx keypair
-{"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
-```
-{: copy="dotenvx keypair" class="design-codeblock--nowrap"}
-
-Set it as DOTENV_PRIVATE_KEY on your production environment.
-
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
-
-And run your app:
-
-{% include components/design-codeblock.html value=run_commands copy_text="dotenvx run -- node index.js" format="cli" %}
-
-Dotenvx uses your private key to decrypt and inject your secrets just-in-time, but this time with the private key stored on your server.
-
-## Production
-
-Give production its own secrets by creating a .env.production file:
-
-```dotenv
-# .env.production
-HELLO="Production"
-```
-{: copy="HELLO=\"Production\""}
-
-Encrypt it:
-
-```console
-$ dotenvx encrypt -f .env.production
-◈ encrypted (.env.production)
-```
-{: copy="dotenvx encrypt -f .env.production"}
-
-Commit it:
-
-```console
-$ git add .env.production
-$ git commit -m "encrypt .env.production"
-```
-{: copy="git add .env.production
-git commit -m \"encrypt .env.production\""}
-
-This time set DOTENV_PRIVATE_KEY and DOTENV_FILE on your server.
-
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" path=".env.production" %}
-
-Run it:
-
-```console
-$ dotenvx run -- node index.js
-⟐ injected env (2) from .env.production
-Hello Production
 ```
 {: copy="dotenvx run -- node index.js"}
 
-Dotenvx needs DOTENV_FILE so it knows to load .env.production. Same code, but this time, production secrets.
+Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
 
-You can even compose multiple environments like this with DOTENV_FILE=.env.production,.env for example. Comma separate them.
+[**Without Node.js** Alternative →](/docs/quickstart/without-nodejs/){: .side-path}
 
-## Conclusion
+## Next steps
 
-You've encrypted a .env file, committed it to git, and used its secrets in an app. You've also learned how to set a private key on your server and load different secrets for production without changing your code.
+Your secrets now travel with your code. Follow a [guide for your stack](/docs/guides/), or continue below.
 
-Your secrets now travel with your code, and each environment needs just one private key to use them.
+[**Deploy with a private key** Deploy →](/docs/quickstart/deploy/){: .side-path}

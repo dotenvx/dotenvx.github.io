@@ -3,6 +3,12 @@ require 'yaml'
 
 module RawMarkdownExports
   EXPORTS = {
+    'docs/quickstart.md' => '/docs/quickstart.md',
+    'docs/side-paths/quickstart-without-nodejs.md' => '/docs/quickstart/without-nodejs.md',
+    'docs/side-paths/quickstart-protect.md' => '/docs/quickstart/protect.md',
+    'docs/side-paths/quickstart-env-files.md' => '/docs/quickstart/env-files.md',
+    'docs/side-paths/quickstart-install-alternatives.md' => '/docs/quickstart/install-alternatives.md',
+    'docs/side-paths/quickstart-deploy.md' => '/docs/quickstart/deploy.md',
     'docs/github-actions.md' => '/docs/github-actions.md',
     'docs/cloudflare.md' => '/docs/cloudflare.md',
     'docs/side-paths/cloudflare-pages.md' => '/docs/cloudflare/pages.md',

@@ -69,6 +69,14 @@ layout: radar
     <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/fastify/">Fastify</a>
+    <span class="design-list-meta">dotenvx run -- node server.mjs</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/hono/">Hono</a>
+    <span class="design-list-meta">dotenvx run -- node server.mjs</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/nestjs/">NestJS</a>
     <span class="design-list-meta">dotenvx run -- nest start</span>
   </li>

@@ -58,6 +58,10 @@ quickstarts:
     href: /docs/nextjs/
   - label: Express
     href: /docs/express/
+  - label: Fastify
+    href: /docs/fastify/
+  - label: Hono
+    href: /docs/hono/
   - label: NestJS
     href: /docs/nestjs/
   - label: Astro

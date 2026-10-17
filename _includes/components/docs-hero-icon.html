@@ -57,6 +57,12 @@
     {% assign icon_invert = true %}
   {% when "vercel" %}
     {% assign icon_file = "vercel.html" %}
+  {% when "hono" %}
+    {% assign icon_file = "hono.html" %}
+    {% assign icon_color = "#E36002" %}
+  {% when "fastify" %}
+    {% assign icon_file = "fastify.html" %}
+    {% assign icon_invert = true %}
   {% when "express" %}
     {% assign icon_file = "express.html" %}
     {% assign icon_invert = true %}

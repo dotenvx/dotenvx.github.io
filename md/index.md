@@ -7,7 +7,7 @@ From the creator of dotenv.
 ## Actions
 
 - [Quickstart](https://dotenvx.com/docs/cli-quickstart)
-- [Documentation](https://dotenvx.com/docs)
+- [Docs](https://dotenvx.com/docs)
 
 ## Open Source, Trusted Across Leading Developer Stacks
 
@@ -55,7 +55,7 @@ dotenvx encrypt
 
 Encrypted `.env` files can be committed to git. Private decryption keys stay separate.
 
-Documentation: [Encryption](https://dotenvx.com/docs/quickstart#add-encryption)
+Docs: [Encryption](https://dotenvx.com/docs/quickstart#add-encryption)
 
 ## Built On Public-Key Cryptography
 
@@ -83,7 +83,7 @@ dotenvx encrypt
 dotenvx run -- your-command
 ```
 
-Documentation: [Run Anywhere](https://dotenvx.com/docs/quickstart#run-anywhere)
+Docs: [Run Anywhere](https://dotenvx.com/docs/quickstart#run-anywhere)
 
 ### Scope
 
@@ -91,7 +91,7 @@ Documentation: [Run Anywhere](https://dotenvx.com/docs/quickstart#run-anywhere)
 dotenvx run -f .env.production -- your-command
 ```
 
-Documentation: [Multiple Environments](https://dotenvx.com/docs/quickstart#multiple-environments)
+Docs: [Multiple Environments](https://dotenvx.com/docs/quickstart#multiple-environments)
 
 ### Audit
 
@@ -141,7 +141,7 @@ Developers are installing dotenvx 6.5 million times a week on npm to secure loca
 ## Links
 
 - Website: [dotenvx.com](https://dotenvx.com)
-- Documentation: [dotenvx.com/docs](https://dotenvx.com/docs)
+- Docs: [dotenvx.com/docs](https://dotenvx.com/docs)
 - Armor: [dotenvx.com/armor](https://dotenvx.com/armor)
 - Pricing: [dotenvx.com/pricing](https://dotenvx.com/pricing)
 - Changelog: [dotenvx.com/changelog](https://dotenvx.com/changelog)

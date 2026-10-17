@@ -22,381 +22,302 @@ layout: radar
   visual=docs_hero_visual
 %}
 
-{% capture qs_cli_items %}
-  <li>
-    <a class="design-link" href="/docs/quickstart/">Quickstart</a>
-    <span class="design-list-meta">dotenvx encrypt</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_agents_items %}
-  <li>
-    <a class="design-link" href="/docs/claude/">Claude</a>
-    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/codex/">Codex</a>
-    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cursor/">Cursor</a>
-    <span class="design-list-meta">runtime leak protection &amp; log redaction</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_password_managers_items %}
-  <li>
-    <a class="design-link" href="/docs/1password/">1Password</a>
-    <span class="design-list-meta">op://</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/bitwarden/">Bitwarden</a>
-    <span class="design-list-meta">bw://</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_nodejs_items %}
-  <li>
-    <a class="design-link" href="/docs/nodejs/">Node.js</a>
-    <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/nextjs/">Next.js</a>
-    <span class="design-list-meta">npm install @dotenvx/next-env</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/express/">Express</a>
-    <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/fastify/">Fastify</a>
-    <span class="design-list-meta">dotenvx run -- node server.mjs</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/hono/">Hono</a>
-    <span class="design-list-meta">dotenvx run -- node server.mjs</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/nestjs/">NestJS</a>
-    <span class="design-list-meta">dotenvx run -- nest start</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/vite/">Vite</a>
-    <span class="design-list-meta">dotenvx run -- vite</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/tanstack-start/">TanStack Start</a>
-    <span class="design-list-meta">dotenvx run -- vite</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/astro/">Astro</a>
-    <span class="design-list-meta">dotenvx run -- astro</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/react-router/">React Router</a>
-    <span class="design-list-meta">dotenvx run -- react-router dev</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/remix/">Remix</a>
-    <span class="design-list-meta">dotenvx run -- remix</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/nuxt/">Nuxt</a>
-    <span class="design-list-meta">dotenvx run -- nuxt</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/sveltekit/">SvelteKit</a>
-    <span class="design-list-meta">dotenvx run -- vite dev</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/expo/">Expo</a>
-    <span class="design-list-meta">dotenvx run -- expo</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/bun/">Bun</a>
-    <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_python_items %}
-  <li>
-    <a class="design-link" href="/docs/python/">Python</a>
-    <span class="design-list-meta">pip install python-dotenvx</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/flask/">Flask</a>
-    <span class="design-list-meta">pip install python-dotenvx</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/uv/">uv</a>
-    <span class="design-list-meta">uv add python-dotenvx</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_php_items %}
-  <li>
-    <a class="design-link" href="/docs/php/">PHP</a>
-    <span class="design-list-meta">dotenvx run -- php index.php</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_ruby_items %}
-  <li>
-    <a class="design-link" href="/docs/ruby/">Ruby</a>
-    <span class="design-list-meta">gem install dotenvx</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/rails/">Rails</a>
-    <span class="design-list-meta">gem "dotenvx-rails"</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/sinatra/">Sinatra</a>
-    <span class="design-list-meta">gem install dotenvx</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_go_items %}
-  <li>
-    <a class="design-link" href="/docs/go/">Go</a>
-    <span class="design-list-meta">dotenvx run -- go run</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/echo/">Echo</a>
-    <span class="design-list-meta">dotenvx run -- go run</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_rust_items %}
-  <li>
-    <a class="design-link" href="/docs/rust/">Rust</a>
-    <span class="design-list-meta">dotenvx run -- cargo run</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/rocket/">Rocket</a>
-    <span class="design-list-meta">platforms</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_java_items %}
-  <li>
-    <a class="design-link" href="/docs/java/">Java</a>
-    <span class="design-list-meta">dotenvx run -- java</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/kotlin/">Kotlin</a>
-    <span class="design-list-meta">dotenvx run -- kotlin</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/clojure/">Clojure</a>
-    <span class="design-list-meta">dotenvx run -- clj</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_dotnet_items %}
-  <li>
-    <a class="design-link" href="/docs/dotnet/">.NET</a>
-    <span class="design-list-meta">dotenvx run -- dotnet run</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_docker_items %}
-  <li>
-    <a class="design-link" href="/docs/docker/">Docker</a>
-    <span class="design-list-meta">Dockerfile</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/docker-compose/">Docker Compose</a>
-    <span class="design-list-meta">compose.yml</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_ci_items %}
-  <li>
-    <a class="design-link" href="/docs/github-actions/">GitHub Actions</a>
-    <span class="design-list-meta">.github/workflows</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_package_managers_items %}
-  <li>
-    <a class="design-link" href="/docs/package-managers/npm/">npm</a>
-    <span class="design-list-meta">dotenvx run --</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/package-managers/pnpm/">pnpm</a>
-    <span class="design-list-meta">like npm</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_process_managers_items %}
-  <li>
-    <a class="design-link" href="/docs/process-managers/pm2/">PM2</a>
-    <span class="design-list-meta">pm2-runtime</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_background_jobs_items %}
-  <li>
-    <a class="design-link" href="/docs/background-jobs/triggerdotdev/">Trigger.dev</a>
-    <span class="design-list-meta">dotenv.config</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_monorepos_items %}
-  <li>
-    <a class="design-link" href="/docs/monorepos/">Monorepos</a>
-    <span class="design-list-meta">dotenvx run -f</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/nx/">Nx</a>
-    <span class="design-list-meta">dotenvx run -- nx</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/turborepo/">Turborepo</a>
-    <span class="design-list-meta">dotenvx run -- turbo</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_other_items %}
-  <li>
-    <a class="design-link" href="/docs/bash/">Bash</a>
-    <span class="design-list-meta">dotenvx run -- bash</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/fish/">Fish</a>
-    <span class="design-list-meta">dotenvx run -- fish</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/zsh/">Zsh</a>
-    <span class="design-list-meta">dotenvx run -- zsh</span>
-  </li>
-  <li>
-    <a class="design-link" href="/docs/cron/">Cron</a>
-    <span class="design-list-meta">crontab</span>
-  </li>
-{% endcapture %}
-
-{% capture qs_platforms_items %}
-  <li><a class="design-link" href="/docs/platforms/aws-lambda/">AWS Lambda</a></li>
-  <li><a class="design-link" href="/docs/cloudflare/">Cloudflare</a></li>
-  <li><a class="design-link" href="/docs/platforms/digital-ocean/">DigitalOcean</a></li>
-  <li><a class="design-link" href="/docs/platforms/fly/">Fly</a></li>
-  <li><a class="design-link" href="/docs/platforms/heroku/">Heroku</a></li>
-  <li><a class="design-link" href="/docs/platforms/netlify/">Netlify</a></li>
-  <li><a class="design-link" href="/docs/platforms/railway/">Railway</a></li>
-  <li><a class="design-link" href="/docs/platforms/render/">Render</a></li>
-  <li><a class="design-link" href="/docs/nextjs/">Vercel (Next.js)</a></li>
-{% endcapture %}
-
-{% capture qs_encryption_items %}
-  <li><a class="design-link" href="/docs/learn/encrypting/multiple-environments/">Multiple Environments</a></li>
-{% endcapture %}
-
-<section class="radar-section">
+<section class="radar-section" aria-label="CLI">
   <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-quickstarts-lists">
-      {% capture step_content %}
-        {% include components/design-list.html title="CLI" items=qs_cli_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Coding Agents" items=qs_agents_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Password Managers" items=qs_password_managers_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Node.js" items=qs_nodejs_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Python" items=qs_python_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="PHP" items=qs_php_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Ruby" items=qs_ruby_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Go" items=qs_go_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Rust" items=qs_rust_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Java" items=qs_java_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title=".NET" items=qs_dotnet_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Platforms" items=qs_platforms_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Docker" items=qs_docker_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="CI" items=qs_ci_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Package Managers" items=qs_package_managers_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Process Managers" items=qs_process_managers_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Background Jobs" items=qs_background_jobs_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Monorepos" items=qs_monorepos_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Shells & Scheduling" items=qs_other_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
-      {% capture step_content %}
-        {% include components/design-list.html title="Encryption" items=qs_encryption_items %}
-      {% endcapture %}
-      {% include components/design-step.html content=step_content %}
-
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">CLI</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/quickstart/" label="Quickstart" icon="dotenvx" title="Quickstart" %}
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="radar-section" aria-label="Coding Agents">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Coding Agents</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/claude/" label="Claude" icon="claude" title="Claude" %}
+          {% include components/design-key.html href="/docs/codex/" label="Codex" icon="codex" title="Codex" %}
+          {% include components/design-key.html href="/docs/cursor/" label="Cursor" icon="cursor" title="Cursor" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Password Managers">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Password Managers</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/1password/" label="1Password" icon="1password" title="1Password" %}
+          {% include components/design-key.html href="/docs/bitwarden/" label="Bitwarden" icon="bitwarden" title="Bitwarden" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Node.js">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Node.js</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/nodejs/" label="Node.js" icon="nodejs" title="Node.js" %}
+          {% include components/design-key.html href="/docs/nextjs/" label="Next.js" icon="nextjs" title="Next.js" %}
+          {% include components/design-key.html href="/docs/express/" label="Express" icon="express" title="Express" %}
+          {% include components/design-key.html href="/docs/fastify/" label="Fastify" icon="fastify" title="Fastify" %}
+          {% include components/design-key.html href="/docs/hono/" label="Hono" icon="hono" title="Hono" %}
+          {% include components/design-key.html href="/docs/nestjs/" label="NestJS" icon="nestjs" title="NestJS" %}
+          {% include components/design-key.html href="/docs/vite/" label="Vite" icon="vite" title="Vite" %}
+          {% include components/design-key.html href="/docs/tanstack-start/" label="TanStack Start" icon="tanstack-start" title="TanStack Start" %}
+          {% include components/design-key.html href="/docs/astro/" label="Astro" icon="astro" title="Astro" %}
+          {% include components/design-key.html href="/docs/react-router/" label="React Router" icon="react-router" title="React Router" %}
+          {% include components/design-key.html href="/docs/remix/" label="Remix" icon="remix" title="Remix" %}
+          {% include components/design-key.html href="/docs/nuxt/" label="Nuxt" icon="nuxt" title="Nuxt" %}
+          {% include components/design-key.html href="/docs/sveltekit/" label="SvelteKit" icon="sveltekit" title="SvelteKit" %}
+          {% include components/design-key.html href="/docs/expo/" label="Expo" icon="expo" title="Expo" %}
+          {% include components/design-key.html href="/docs/bun/" label="Bun" icon="bun" title="Bun" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Python">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Python</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/python/" label="Python" icon="python" title="Python" %}
+          {% include components/design-key.html href="/docs/flask/" label="Flask" icon="flask" title="Flask" %}
+          {% include components/design-key.html href="/docs/uv/" label="uv" icon="uv" title="uv" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="PHP">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">PHP</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/php/" label="PHP" icon="php" title="PHP" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Ruby">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Ruby</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/ruby/" label="Ruby" icon="ruby" title="Ruby" %}
+          {% include components/design-key.html href="/docs/rails/" label="Rails" icon="rails" title="Rails" %}
+          {% include components/design-key.html href="/docs/sinatra/" label="Sinatra" icon="sinatra" title="Sinatra" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Go">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Go</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/go/" label="Go" icon="go" title="Go" %}
+          {% include components/design-key.html href="/docs/echo/" label="Echo" icon="go" title="Echo" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Rust">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Rust</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/rust/" label="Rust" icon="rust" title="Rust" %}
+          {% include components/design-key.html href="/docs/rocket/" label="Rocket" icon="rocket" title="Rocket" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Java">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Java</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/java/" label="Java" icon="java" title="Java" %}
+          {% include components/design-key.html href="/docs/kotlin/" label="Kotlin" icon="kotlin" title="Kotlin" %}
+          {% include components/design-key.html href="/docs/clojure/" label="Clojure" icon="clojure" title="Clojure" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label=".NET">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">.NET</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/dotnet/" label=".NET" icon="dotnet" title=".NET" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Platforms">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Platforms</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/platforms/aws-lambda/" label="AWS Lambda" icon="aws" title="AWS Lambda" %}
+          {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" title="Cloudflare" %}
+          {% include components/design-key.html href="/docs/platforms/digital-ocean/" label="DigitalOcean" icon="digitalocean" title="DigitalOcean" %}
+          {% include components/design-key.html href="/docs/platforms/fly/" label="Fly" icon="fly" title="Fly" %}
+          {% include components/design-key.html href="/docs/platforms/heroku/" label="Heroku" icon="heroku" title="Heroku" %}
+          {% include components/design-key.html href="/docs/platforms/netlify/" label="Netlify" icon="netlify" title="Netlify" %}
+          {% include components/design-key.html href="/docs/platforms/railway/" label="Railway" icon="railway" title="Railway" %}
+          {% include components/design-key.html href="/docs/platforms/render/" label="Render" icon="render" title="Render" %}
+          {% include components/design-key.html href="/docs/nextjs/" label="Vercel (Next.js)" icon="vercel" title="Vercel (Next.js)" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Docker">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Docker</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/docker/" label="Docker" icon="docker" title="Docker" %}
+          {% include components/design-key.html href="/docs/docker-compose/" label="Docker Compose" icon="docker-compose" title="Docker Compose" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="CI">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">CI</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/github-actions/" label="GitHub Actions" icon="github-actions" title="GitHub Actions" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Package Managers">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Package Managers</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/package-managers/npm/" label="npm" icon="npm" title="npm" %}
+          {% include components/design-key.html href="/docs/package-managers/pnpm/" label="pnpm" icon="package" title="pnpm" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Process Managers">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Process Managers</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/process-managers/pm2/" label="PM2" icon="cli" title="PM2" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Background Jobs">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Background Jobs</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/background-jobs/triggerdotdev/" label="Trigger.dev" icon="bolt" title="Trigger.dev" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Monorepos">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Monorepos</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/monorepos/" label="Monorepos" icon="monorepos" title="Monorepos" %}
+          {% include components/design-key.html href="/docs/nx/" label="Nx" icon="nx" title="Nx" %}
+          {% include components/design-key.html href="/docs/turborepo/" label="Turborepo" icon="turborepo" title="Turborepo" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Shells & Scheduling">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Shells & Scheduling</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/bash/" label="Bash" icon="bash" title="Bash" %}
+          {% include components/design-key.html href="/docs/fish/" label="Fish" icon="fish" title="Fish" %}
+          {% include components/design-key.html href="/docs/zsh/" label="Zsh" icon="zsh" title="Zsh" %}
+          {% include components/design-key.html href="/docs/cron/" label="Cron" icon="cron" title="Cron" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Encryption">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Encryption</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/learn/encrypting/multiple-environments/" label="Multiple Environments" icon="dotenvx" title="Multiple Environments" %}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

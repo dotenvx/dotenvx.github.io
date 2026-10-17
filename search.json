@@ -55,10 +55,37 @@ search: false
   {%- endfor -%}
   {%- if page_url == "/" -%}{%- assign slug = "home" -%}{%- endif -%}
   {%- assign desc = page.description | default: page.social_title | default: "" -%}
+  {%- assign search_title = page.title -%}
+  {%- if page.layout == "docs-side-path" and page.parent_title -%}
+    {%- assign search_title = page.parent_title | append: " — " | append: page.title -%}
+  {%- elsif page.layout == "docs-custody" -%}
+    {%- assign search_title = "Custody — " | append: page.title -%}
+  {%- elsif page.layout == "docs-cli" -%}
+    {%- if page.eyebrow -%}
+      {%- assign command_prefix = page.eyebrow | remove_first: "dotenvx " -%}
+      {%- assign prefix_length = command_prefix | size -%}
+      {%- assign title_prefix = page.title | slice: 0, prefix_length -%}
+      {%- if title_prefix == command_prefix -%}
+        {%- assign search_title = "dotenvx " | append: page.title -%}
+      {%- else -%}
+        {%- assign search_title = page.eyebrow | append: " " | append: page.title -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign search_title = "CLI — " | append: page.title -%}
+    {%- endif -%}
+  {%- elsif page_url contains "/docs/sdk/" -%}
+    {%- if page.eyebrow == "SDKs" -%}
+      {%- assign search_title = page.title | append: " SDK" -%}
+    {%- elsif page.eyebrow -%}
+      {%- assign sdk_language = page.eyebrow -%}
+      {%- if sdk_language == "Node" -%}{%- assign sdk_language = "Node.js" -%}{%- endif -%}
+      {%- assign search_title = sdk_language | append: " SDK — " | append: page.title -%}
+    {%- endif -%}
+  {%- endif -%}
   {%- if emitted -%},{%- endif -%}
   {%- assign emitted = true -%}
   {
-    "title": {{ page.title | jsonify }},
+    "title": {{ search_title | jsonify }},
     "url": {{ page_url | jsonify }},
     "description": {{ desc | jsonify }},
     "section": {{ section | jsonify }},

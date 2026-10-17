@@ -3,6 +3,7 @@ require 'yaml'
 
 module RawMarkdownExports
   EXPORTS = {
+    'docs/install.md' => '/docs/install.md',
     'docs/quickstart.md' => '/docs/quickstart.md',
     'docs/side-paths/quickstart-without-nodejs.md' => '/docs/quickstart/without-nodejs.md',
     'docs/side-paths/quickstart-protect.md' => '/docs/quickstart/protect.md',
@@ -48,6 +49,9 @@ module RawMarkdownExports
     'docs/side-paths/react-router-share-private-key.md' => '/docs/react-router/share-private-key.md',
     'docs/side-paths/react-router-deploy-private-key.md' => '/docs/react-router/deploy-private-key.md',
     'docs/remix.md' => '/docs/remix.md',
+    'docs/rust.md' => '/docs/rust.md',
+    'docs/side-paths/rust-cli.md' => '/docs/rust/cli.md',
+    'docs/side-paths/rust-env-files.md' => '/docs/rust/env-files.md',
     'docs/bun.md' => '/docs/bun.md',
     'docs/expo.md' => '/docs/expo.md',
     'docs/side-paths/expo-build-secrets.md' => '/docs/expo/build-secrets.md',
@@ -87,6 +91,22 @@ module RawMarkdownExports
   # Attribute values can span lines and contain escaped quotes and braces.
   ATTRIBUTES = /\{:(?:[^"'}]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')*\}/m
   FENCE = /^(`{3,}|~{3,})[^\n]*\n.*?^\1[ \t]*(?:\n|\z)/m
+
+  def self.install(source, data, site_url)
+    body = +"Use dotenvx from the command line or directly in your code. Choose the installation method that fits your project and operating system.\n\n"
+    %w[install_methods install_sdks install_other_methods].each do |group|
+      data.fetch(group).each do |method|
+        title = method.fetch('name')
+        title += ' SDK' if group == 'install_sdks'
+        body << "## #{title}\n\n```shell\n#{method.fetch('command')}\n```\n\n"
+        body << "#{method['description']}\n\n" if method['description']
+        body << "[#{title} documentation](#{method['href']})\n\n" if method['href']
+        body << "#{method.fetch('prompt')}\n\n"
+      end
+    end
+    body << "For usage, follow the [Node.js guide](/docs/nodejs/). Deploying on Heroku? See the [Heroku guide](/docs/platforms/heroku/).\n"
+    nextjs(source.sub('{% include components/install-page.html %}', body), site_url)
+  end
 
   def self.nextjs(source, site_url)
     front_matter = source[/\A---\s*\n(.*?)^---\s*\n/m, 1]
@@ -149,6 +169,11 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
     destination = File.join(site.dest, url.delete_prefix('/'))
     FileUtils.mkdir_p(File.dirname(destination))
-    File.write(destination, RawMarkdownExports.nextjs(File.read(source), site.config.fetch('url')))
+    content = if source_path == 'docs/install.md'
+      RawMarkdownExports.install(File.read(source), site.data, site.config.fetch('url'))
+    else
+      RawMarkdownExports.nextjs(File.read(source), site.config.fetch('url'))
+    end
+    File.write(destination, content)
   end
 end

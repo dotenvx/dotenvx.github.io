@@ -26,4 +26,4 @@ $ cargo add dotenvx-primitives
 ```
 {: copy="cargo add dotenvx-primitives"}
 
-See [Rust primitives](/docs/sdk/rust/primitives/) for details, or the [Rust quickstart](/docs/rust/) for the CLI.
+See [Rust primitives](/docs/sdk/rust/primitives/) for details, or the [Rust quickstart](/docs/rust/) for a full walkthrough.

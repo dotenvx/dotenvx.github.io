@@ -21,6 +21,41 @@
     "href": "/docs/introduction/"
   },
   {
+    "label": "Guides",
+    "children": [
+      {
+        "label": "Claude",
+        "href": "/docs/claude/",
+        "children": []
+      },
+      {
+        "label": "Next.js",
+        "href": "/docs/nextjs/",
+        "children": []
+      },
+      {
+        "label": "Docker",
+        "href": "/docs/docker/",
+        "children": []
+      },
+      {
+        "label": "GitHub Actions",
+        "href": "/docs/github-actions/",
+        "children": []
+      },
+      {
+        "label": "1Password",
+        "href": "/docs/1password/",
+        "children": []
+      },
+      {
+        "label": "All Guides \u2192",
+        "href": "/docs/guides/",
+        "children": []
+      }
+    ]
+  },
+  {
     "label": "CLI",
     "children": [
       {
@@ -96,41 +131,6 @@
       {
         "label": "All Envfile \u2192",
         "href": "/docs/envfile/",
-        "children": []
-      }
-    ]
-  },
-  {
-    "label": "Guides",
-    "children": [
-      {
-        "label": "Claude",
-        "href": "/docs/claude/",
-        "children": []
-      },
-      {
-        "label": "Next.js",
-        "href": "/docs/nextjs/",
-        "children": []
-      },
-      {
-        "label": "Docker",
-        "href": "/docs/docker/",
-        "children": []
-      },
-      {
-        "label": "GitHub Actions",
-        "href": "/docs/github-actions/",
-        "children": []
-      },
-      {
-        "label": "1Password",
-        "href": "/docs/1password/",
-        "children": []
-      },
-      {
-        "label": "All Guides \u2192",
-        "href": "/docs/guides/",
         "children": []
       }
     ]

@@ -3,6 +3,21 @@ require 'jekyll'
 require_relative '../_plugins/raw_markdown_exports'
 
 class RawMarkdownExportsTest < Minitest::Test
+  def test_install_export_uses_shared_installation_data
+    source = File.read(File.expand_path('../docs/install.md', __dir__))
+    data = %w[install_methods install_sdks install_other_methods].to_h do |group|
+      [group, YAML.safe_load(File.read(File.expand_path("../_data/#{group}.yml", __dir__)))]
+    end
+    result = RawMarkdownExports.install(source, data, 'https://dotenvx.com')
+    assert result.start_with?("# Install\n\n")
+    refute_match(/\{%|\{:|layout:|permalink:/, result)
+    data.values.flatten.each do |method|
+      assert_includes result, "```shell\n#{method.fetch('command')}\n```"
+      assert_includes result, method.fetch('prompt')
+      assert_includes result, "https://dotenvx.com#{method['href']}" if method['href']
+    end
+  end
+
   def test_github_actions_export_preserves_workflows_and_labels
     source = File.read(File.expand_path('../docs/github-actions.md', __dir__))
     result = RawMarkdownExports.nextjs(source, 'https://dotenvx.com')

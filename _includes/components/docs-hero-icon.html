@@ -11,6 +11,29 @@
 {% case icon_key %}
   {% when "dotenvx" %}
     {% assign icon_file = "dotenvx.html" %}
+  {% when "aws" %}
+    {% assign icon_file = "aws.html" %}
+    {% assign icon_color = "#FF9900" %}
+  {% when "digitalocean" %}
+    {% assign icon_file = "digitalocean.html" %}
+    {% assign icon_color = "#0080FF" %}
+  {% when "fly" %}
+    {% assign icon_file = "fly.html" %}
+    {% assign icon_color = "#8B5CF6" %}
+  {% when "netlify" %}
+    {% assign icon_file = "netlify.html" %}
+    {% assign icon_color = "#00C7B7" %}
+  {% when "railway" %}
+    {% assign icon_file = "railway.html" %}
+  {% when "render" %}
+    {% assign icon_file = "render.html" %}
+  {% when "npm" %}
+    {% assign icon_file = "npm.html" %}
+    {% assign icon_color = "#CB3837" %}
+  {% when "bolt" %}
+    {% assign icon_file = "bolt.html" %}
+  {% when "package" %}
+    {% assign icon_file = "package.html" %}
   {% when "windows" %}
     {% assign icon_file = "windows.html" %}
   {% when "linux" %}

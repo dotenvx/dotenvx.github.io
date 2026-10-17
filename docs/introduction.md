@@ -1,6 +1,6 @@
 ---
 description: "Learn how to install Dotenvx, encrypt .env files, and load secrets at runtime. Explore quickstarts, CLI commands, SDKs, and deployment guides."
-title: Documentation
+title: Docs
 permalink: /docs/introduction/
 redirect_from:
   - /docs/package-managers
@@ -23,19 +23,19 @@ body_class: docs-landing
 
   eyebrow="Dotenvx"
   eyebrow_href="/"
-  title="Documentation"
+  title="Docs"
   description="Get started with dotenvx—encrypt, commit, and ship. Guides for languages, infra, coding agents, and more."
   visual=docs_hero_visual
 %}
 
 
-<section class="radar-section" aria-label="Quickstarts">
+<section class="radar-section" aria-label="Guides">
   <div class="armor-shell">
   <div class="design-content-width">
     <div id="languages" class="docs-intro-cards">
-      <p class="design-list-title">Quickstarts</p>
+      <p class="design-list-title">Guides</p>
       <div class="design-settings-grid">
-        {% include components/design-key.html href="/docs/cli-quickstart" label="CLI" icon="dotenvx" %}
+        {% include components/design-key.html href="/docs/cli-quickstart" label="Quickstart" icon="dotenvx" %}
         {% include components/design-key.html href="/docs/nextjs/" label="Vercel" icon="vercel" %}
         {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" %}
         {% include components/design-key.html href="/docs/github-actions" label="GitHub Actions" icon="github-actions" %}

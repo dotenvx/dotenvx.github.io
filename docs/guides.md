@@ -81,8 +81,20 @@ layout: radar
     <span class="design-list-meta">dotenvx run -- nest start</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/vite/">Vite</a>
+    <span class="design-list-meta">dotenvx run -- vite</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/tanstack-start/">TanStack Start</a>
+    <span class="design-list-meta">dotenvx run -- vite</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/astro/">Astro</a>
     <span class="design-list-meta">dotenvx run -- astro</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/react-router/">React Router</a>
+    <span class="design-list-meta">dotenvx run -- react-router dev</span>
   </li>
   <li>
     <a class="design-link" href="/docs/remix/">Remix</a>

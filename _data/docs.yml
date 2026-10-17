@@ -64,8 +64,14 @@ quickstarts:
     href: /docs/hono/
   - label: NestJS
     href: /docs/nestjs/
+  - label: Vite
+    href: /docs/vite/
+  - label: TanStack Start
+    href: /docs/tanstack-start/
   - label: Astro
     href: /docs/astro/
+  - label: React Router
+    href: /docs/react-router/
   - label: Remix
     href: /docs/remix/
   - label: Nuxt

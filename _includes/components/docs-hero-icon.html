@@ -63,9 +63,16 @@
   {% when "fastify" %}
     {% assign icon_file = "fastify.html" %}
     {% assign icon_invert = true %}
+  {% when "nestjs" %}
+    {% assign icon_file = "nestjs.html" %}
+    {% assign icon_color = "#E0234E" %}
   {% when "express" %}
     {% assign icon_file = "express.html" %}
     {% assign icon_invert = true %}
+  {% when "tanstack-start" %}
+    {% assign icon_file = "tanstack.html" %}
+  {% when "vite" %}
+    {% assign icon_file = "vite.html" %}
   {% when "astro" %}
     {% assign icon_file = "astro.html" %}
   {% when "nuxt" %}
@@ -74,6 +81,9 @@
   {% when "sveltekit" %}
     {% assign icon_file = "svelte.html" %}
     {% assign icon_color = "#FF3E00" %}
+  {% when "react-router" %}
+    {% assign icon_file = "react-router.html" %}
+    {% assign icon_color = "#F44250" %}
   {% when "remix" %}
     {% assign icon_file = "remix.html" %}
     {% assign icon_invert = true %}

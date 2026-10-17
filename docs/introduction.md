@@ -24,7 +24,7 @@ body_class: docs-landing
   eyebrow="Dotenvx"
   eyebrow_href="/"
   title="Documentation"
-  description="Get started with dotenvx—install, encrypt, and run. Guides for languages, infra, coding agents, and more."
+  description="Get started with dotenvx—encrypt, commit, and ship. Guides for languages, infra, coding agents, and more."
   visual=docs_hero_visual
 %}
 
@@ -40,9 +40,20 @@ body_class: docs-landing
         {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" %}
         {% include components/design-key.html href="/docs/github-actions" label="GitHub Actions" icon="github-actions" %}
         {% include components/design-key.html href="/docs/nodejs" label="Node.js" icon="nodejs" %}
-        {% include components/design-key.html href="/docs/claude" label="Claude" icon="claude" %}
-        {% include components/design-key.html href="/docs/codex" label="Codex" icon="codex" %}
-        {% include components/design-key.html href="/docs/cursor" label="Cursor" icon="cursor" %}
+        {% include components/design-key.html href="/docs/nextjs/" label="Next.js" icon="nextjs" %}
+        {% include components/design-key.html href="/docs/vite/" label="Vite" icon="vite" %}
+        {% include components/design-key.html href="/docs/tanstack-start/" label="TanStack Start" icon="tanstack-start" %}
+        {% include components/design-key.html href="/docs/react-router/" label="React Router" icon="react-router" %}
+        {% include components/design-key.html href="/docs/astro/" label="Astro" icon="astro" %}
+        {% include components/design-key.html href="/docs/nuxt/" label="Nuxt" icon="nuxt" %}
+        {% include components/design-key.html href="/docs/sveltekit/" label="SvelteKit" icon="sveltekit" %}
+        {% include components/design-key.html href="/docs/remix/" label="Remix" icon="remix" %}
+        {% include components/design-key.html href="/docs/express/" label="Express" icon="express" %}
+        {% include components/design-key.html href="/docs/fastify/" label="Fastify" icon="fastify" %}
+        {% include components/design-key.html href="/docs/hono/" label="Hono" icon="hono" %}
+        {% include components/design-key.html href="/docs/nestjs/" label="NestJS" icon="nestjs" %}
+        {% include components/design-key.html href="/docs/bun/" label="Bun" icon="bun" %}
+        {% include components/design-key.html href="/docs/expo/" label="Expo" icon="expo" %}
         {% include components/design-key.html href="/docs/1password" label="1Password" icon="1password" %}
         {% include components/design-key.html href="/docs/bitwarden" label="Bitwarden" icon="bitwarden" %}
         {% include components/design-key.html href="/docs/guides" label="30+ Guides" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}

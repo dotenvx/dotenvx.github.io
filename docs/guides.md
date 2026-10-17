@@ -69,6 +69,10 @@ layout: radar
     <span class="design-list-meta">require('@dotenvx/dotenvx').config()</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/nestjs/">NestJS</a>
+    <span class="design-list-meta">dotenvx run -- nest start</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/astro/">Astro</a>
     <span class="design-list-meta">dotenvx run -- astro</span>
   </li>

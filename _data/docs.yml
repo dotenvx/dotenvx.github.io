@@ -58,6 +58,8 @@ quickstarts:
     href: /docs/nextjs/
   - label: Express
     href: /docs/express/
+  - label: NestJS
+    href: /docs/nestjs/
   - label: Astro
     href: /docs/astro/
   - label: Remix

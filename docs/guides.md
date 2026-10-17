@@ -5,8 +5,6 @@ permalink: /docs/guides/
 layout: radar
 ---
 
-
-
 {% capture docs_hero_visual %}
   <div class="docs-hero-ascii" aria-hidden="true">
     <pre class="docs-hero-ascii-art">0 ──&gt; 1</pre>
@@ -29,6 +27,81 @@ layout: radar
         <p class="design-list-title" role="heading" aria-level="2">CLI</p>
         <div class="design-settings-grid">
           {% include components/design-key.html href="/docs/quickstart/" label="Quickstart" icon="dotenvx" title="Quickstart" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Node.js">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Node.js</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/nodejs/" label="Node.js" icon="nodejs" title="Node.js" %}
+          {% include components/design-key.html href="/docs/nextjs/" label="Next.js" icon="nextjs" title="Next.js" %}
+          {% include components/design-key.html href="/docs/express/" label="Express" icon="express" title="Express" %}
+          {% include components/design-key.html href="/docs/fastify/" label="Fastify" icon="fastify" title="Fastify" %}
+          {% include components/design-key.html href="/docs/hono/" label="Hono" icon="hono" title="Hono" %}
+          {% include components/design-key.html href="/docs/nestjs/" label="NestJS" icon="nestjs" title="NestJS" %}
+          {% include components/design-key.html href="/docs/vite/" label="Vite" icon="vite" title="Vite" %}
+          {% include components/design-key.html href="/docs/tanstack-start/" label="TanStack Start" icon="tanstack-start" title="TanStack Start" %}
+          {% include components/design-key.html href="/docs/astro/" label="Astro" icon="astro" title="Astro" %}
+          {% include components/design-key.html href="/docs/react-router/" label="React Router" icon="react-router" title="React Router" %}
+          {% include components/design-key.html href="/docs/remix/" label="Remix" icon="remix" title="Remix" %}
+          {% include components/design-key.html href="/docs/nuxt/" label="Nuxt" icon="nuxt" title="Nuxt" %}
+          {% include components/design-key.html href="/docs/sveltekit/" label="SvelteKit" icon="sveltekit" title="SvelteKit" %}
+          {% include components/design-key.html href="/docs/expo/" label="Expo" icon="expo" title="Expo" %}
+          {% include components/design-key.html href="/docs/bun/" label="Bun" icon="bun" title="Bun" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Platforms">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Platforms</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/platforms/aws-lambda/" label="AWS Lambda" icon="aws" title="AWS Lambda" %}
+          {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" title="Cloudflare" %}
+          {% include components/design-key.html href="/docs/platforms/digital-ocean/" label="DigitalOcean" icon="digitalocean" title="DigitalOcean" %}
+          {% include components/design-key.html href="/docs/platforms/fly/" label="Fly" icon="fly" title="Fly" %}
+          {% include components/design-key.html href="/docs/platforms/heroku/" label="Heroku" icon="heroku" title="Heroku" %}
+          {% include components/design-key.html href="/docs/platforms/netlify/" label="Netlify" icon="netlify" title="Netlify" %}
+          {% include components/design-key.html href="/docs/platforms/railway/" label="Railway" icon="railway" title="Railway" %}
+          {% include components/design-key.html href="/docs/platforms/render/" label="Render" icon="render" title="Render" %}
+          {% include components/design-key.html href="/docs/nextjs/" label="Vercel (Next.js)" icon="vercel" title="Vercel (Next.js)" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="Docker">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Docker</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/docker/" label="Docker" icon="docker" title="Docker" %}
+          {% include components/design-key.html href="/docs/docker-compose/" label="Docker Compose" icon="docker-compose" title="Docker Compose" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="radar-section" aria-label="CI">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">CI</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/github-actions/" label="GitHub Actions" icon="github-actions" title="GitHub Actions" %}
         </div>
       </div>
     </div>
@@ -58,33 +131,6 @@ layout: radar
         <div class="design-settings-grid">
           {% include components/design-key.html href="/docs/1password/" label="1Password" icon="1password" title="1Password" %}
           {% include components/design-key.html href="/docs/bitwarden/" label="Bitwarden" icon="bitwarden" title="Bitwarden" %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="radar-section" aria-label="Node.js">
-  <div class="armor-shell">
-    <div class="design-content-width">
-      <div class="docs-intro-cards">
-        <p class="design-list-title" role="heading" aria-level="2">Node.js</p>
-        <div class="design-settings-grid">
-          {% include components/design-key.html href="/docs/nodejs/" label="Node.js" icon="nodejs" title="Node.js" %}
-          {% include components/design-key.html href="/docs/nextjs/" label="Next.js" icon="nextjs" title="Next.js" %}
-          {% include components/design-key.html href="/docs/express/" label="Express" icon="express" title="Express" %}
-          {% include components/design-key.html href="/docs/fastify/" label="Fastify" icon="fastify" title="Fastify" %}
-          {% include components/design-key.html href="/docs/hono/" label="Hono" icon="hono" title="Hono" %}
-          {% include components/design-key.html href="/docs/nestjs/" label="NestJS" icon="nestjs" title="NestJS" %}
-          {% include components/design-key.html href="/docs/vite/" label="Vite" icon="vite" title="Vite" %}
-          {% include components/design-key.html href="/docs/tanstack-start/" label="TanStack Start" icon="tanstack-start" title="TanStack Start" %}
-          {% include components/design-key.html href="/docs/astro/" label="Astro" icon="astro" title="Astro" %}
-          {% include components/design-key.html href="/docs/react-router/" label="React Router" icon="react-router" title="React Router" %}
-          {% include components/design-key.html href="/docs/remix/" label="Remix" icon="remix" title="Remix" %}
-          {% include components/design-key.html href="/docs/nuxt/" label="Nuxt" icon="nuxt" title="Nuxt" %}
-          {% include components/design-key.html href="/docs/sveltekit/" label="SvelteKit" icon="sveltekit" title="SvelteKit" %}
-          {% include components/design-key.html href="/docs/expo/" label="Expo" icon="expo" title="Expo" %}
-          {% include components/design-key.html href="/docs/bun/" label="Bun" icon="bun" title="Bun" %}
         </div>
       </div>
     </div>
@@ -190,54 +236,6 @@ layout: radar
   </div>
 </section>
 
-<section class="radar-section" aria-label="Platforms">
-  <div class="armor-shell">
-    <div class="design-content-width">
-      <div class="docs-intro-cards">
-        <p class="design-list-title" role="heading" aria-level="2">Platforms</p>
-        <div class="design-settings-grid">
-          {% include components/design-key.html href="/docs/platforms/aws-lambda/" label="AWS Lambda" icon="aws" title="AWS Lambda" %}
-          {% include components/design-key.html href="/docs/cloudflare/" label="Cloudflare" icon="cloudflare" title="Cloudflare" %}
-          {% include components/design-key.html href="/docs/platforms/digital-ocean/" label="DigitalOcean" icon="digitalocean" title="DigitalOcean" %}
-          {% include components/design-key.html href="/docs/platforms/fly/" label="Fly" icon="fly" title="Fly" %}
-          {% include components/design-key.html href="/docs/platforms/heroku/" label="Heroku" icon="heroku" title="Heroku" %}
-          {% include components/design-key.html href="/docs/platforms/netlify/" label="Netlify" icon="netlify" title="Netlify" %}
-          {% include components/design-key.html href="/docs/platforms/railway/" label="Railway" icon="railway" title="Railway" %}
-          {% include components/design-key.html href="/docs/platforms/render/" label="Render" icon="render" title="Render" %}
-          {% include components/design-key.html href="/docs/nextjs/" label="Vercel (Next.js)" icon="vercel" title="Vercel (Next.js)" %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="radar-section" aria-label="Docker">
-  <div class="armor-shell">
-    <div class="design-content-width">
-      <div class="docs-intro-cards">
-        <p class="design-list-title" role="heading" aria-level="2">Docker</p>
-        <div class="design-settings-grid">
-          {% include components/design-key.html href="/docs/docker/" label="Docker" icon="docker" title="Docker" %}
-          {% include components/design-key.html href="/docs/docker-compose/" label="Docker Compose" icon="docker-compose" title="Docker Compose" %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="radar-section" aria-label="CI">
-  <div class="armor-shell">
-    <div class="design-content-width">
-      <div class="docs-intro-cards">
-        <p class="design-list-title" role="heading" aria-level="2">CI</p>
-        <div class="design-settings-grid">
-          {% include components/design-key.html href="/docs/github-actions/" label="GitHub Actions" icon="github-actions" title="GitHub Actions" %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="radar-section" aria-label="Package Managers">
   <div class="armor-shell">
     <div class="design-content-width">
@@ -315,7 +313,7 @@ layout: radar
       <div class="docs-intro-cards">
         <p class="design-list-title" role="heading" aria-level="2">Encryption</p>
         <div class="design-settings-grid">
-          {% include components/design-key.html href="/docs/learn/encrypting/multiple-environments/" label="Multiple Environments" icon="dotenvx" title="Multiple Environments" %}
+          {% include components/design-key.html href="/docs/quickstart/env-files/" label="Multiple Environments" icon="dotenvx" title="Multiple Environments" %}
         </div>
       </div>
     </div>

@@ -24,23 +24,13 @@
     "label": "Guides",
     "children": [
       {
+        "label": "Node.js",
+        "href": "/docs/nodejs/",
+        "children": []
+      },
+      {
         "label": "Claude",
         "href": "/docs/claude/",
-        "children": []
-      },
-      {
-        "label": "Next.js",
-        "href": "/docs/nextjs/",
-        "children": []
-      },
-      {
-        "label": "Docker",
-        "href": "/docs/docker/",
-        "children": []
-      },
-      {
-        "label": "GitHub Actions",
-        "href": "/docs/github-actions/",
         "children": []
       },
       {
@@ -51,26 +41,6 @@
       {
         "label": "All Guides \u2192",
         "href": "/docs/guides/",
-        "children": []
-      }
-    ]
-  },
-  {
-    "label": "CLI",
-    "children": [
-      {
-        "label": "Run",
-        "href": "/docs/cli/run/",
-        "children": []
-      },
-      {
-        "label": "Encrypt",
-        "href": "/docs/cli/encrypt/",
-        "children": []
-      },
-      {
-        "label": "All CLI \u2192",
-        "href": "/docs/cli/",
         "children": []
       }
     ]
@@ -91,6 +61,26 @@
       {
         "label": "All Custody \u2192",
         "href": "/docs/custody/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "CLI",
+    "children": [
+      {
+        "label": "Run",
+        "href": "/docs/cli/run/",
+        "children": []
+      },
+      {
+        "label": "Encrypt",
+        "href": "/docs/cli/encrypt/",
+        "children": []
+      },
+      {
+        "label": "All CLI \u2192",
+        "href": "/docs/cli/",
         "children": []
       }
     ]

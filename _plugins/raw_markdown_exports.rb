@@ -3,6 +3,19 @@ require 'yaml'
 
 module RawMarkdownExports
   EXPORTS = {
+    'docs/docker-compose.md' => '/docs/docker-compose.md',
+    'docs/side-paths/docker-compose-mount-files.md' => '/docs/docker-compose/mount-files.md',
+    'docs/side-paths/docker-compose-runtime-secrets.md' => '/docs/docker-compose/runtime-secrets.md',
+    'docs/side-paths/docker-compose-multiple-services.md' => '/docs/docker-compose/multiple-services.md',
+    'docs/side-paths/docker-compose-share-private-key.md' => '/docs/docker-compose/share-private-key.md',
+    'docs/side-paths/docker-compose-deploy-private-key.md' => '/docs/docker-compose/deploy-private-key.md',
+    'docs/side-paths/docker-compose-build-secrets.md' => '/docs/docker-compose/build-secrets.md',
+    'docs/docker.md' => '/docs/docker.md',
+    'docs/side-paths/docker-mount-files.md' => '/docs/docker/mount-files.md',
+    'docs/side-paths/docker-copy-binary.md' => '/docs/docker/copy-binary.md',
+    'docs/side-paths/docker-share-private-key.md' => '/docs/docker/share-private-key.md',
+    'docs/side-paths/docker-deploy-private-key.md' => '/docs/docker/deploy-private-key.md',
+    'docs/side-paths/docker-build-secrets.md' => '/docs/docker/build-secrets.md',
     'docs/install.md' => '/docs/install.md',
     'docs/quickstart.md' => '/docs/quickstart.md',
     'docs/side-paths/quickstart-without-nodejs.md' => '/docs/quickstart/without-nodejs.md',

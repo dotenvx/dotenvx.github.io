@@ -150,15 +150,14 @@ $ dotenvx armor invite
 dotenvx armor up
 dotenvx armor invite"}
 
-Your teammate accepts the invitation, pulls the repository, installs Dotenvx, and logs in on their machine. They build the image, then retrieve the development key into their shell and pass it to Docker:
+Your teammate accepts the invitation, pulls the repository, installs Dotenvx, and logs in on their machine. They build the image, then let Dotenvx retrieve the app’s key on the host before Docker starts:
 
 ```shell
-export DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)"
-docker run --rm --env DOTENV_PRIVATE_KEY hello-docker
-unset DOTENV_PRIVATE_KEY
+DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
+  docker run --rm --env DOTENV_PRIVATE_KEY hello-docker
 ```
 
-Docker passes the key to the container; Dotenvx decrypts there. This retrieves a usable private key on the teammate's machine. A host login is not automatically available inside a container.
+Armor authentication stays on the host. Only the app’s private key is passed to the container, where Dotenvx decrypts .env. The assignment lasts for this command; no export or cleanup is needed. This syntax uses Bash or Zsh.
 
 [**Share a private key** Alternative →](/docs/docker/share-private-key/){: .side-path}
 

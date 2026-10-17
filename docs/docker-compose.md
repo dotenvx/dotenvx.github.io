@@ -164,16 +164,21 @@ $ dotenvx armor invite
 dotenvx armor up
 dotenvx armor invite"}
 
-Your teammate accepts the invitation, pulls the repository, installs Dotenvx, and logs in on their machine. They retrieve the development key into their shell and run Compose:
+Your teammate accepts the invitation, pulls the repository, installs Dotenvx, and logs in on their machine. They let Dotenvx retrieve the app’s key on the host before Compose starts:
 
 ```shell
-export DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)"
-docker compose up --build
-docker compose down
-unset DOTENV_PRIVATE_KEY
+DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
+  docker compose up --build
 ```
 
-These shell commands use Bash or Zsh. Compose reads the key from the shell, and Dotenvx decrypts inside the container. This retrieves a usable key on the teammate's machine; their host login is not automatically available in the container.
+Armor authentication stays on the host. The compose.yaml environment mapping passes only the app’s private key into the container, where Dotenvx decrypts .env. The assignment lasts for this command; no export or cleanup is needed. This syntax uses Bash or Zsh.
+
+Use the same handoff when removing the stopped container and network:
+
+```shell
+DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
+  docker compose down
+```
 
 [**Share a private key** Alternative →](/docs/docker-compose/share-private-key/){: .side-path}
 

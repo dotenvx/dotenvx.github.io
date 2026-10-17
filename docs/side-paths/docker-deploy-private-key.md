@@ -26,9 +26,8 @@ Set DOTENV_PRIVATE_KEY_PRODUCTION to the returned value in your container platfo
 For a local production check, after rebuilding the main image with .env.production included:
 
 ```shell
-export DOTENV_PRIVATE_KEY_PRODUCTION="$(dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production)"
-docker run --rm --env DOTENV_FILE=.env.production --env DOTENV_PRIVATE_KEY_PRODUCTION hello-docker
-unset DOTENV_PRIVATE_KEY_PRODUCTION
+DOTENV_PRIVATE_KEY_PRODUCTION="$(dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production)" \
+  docker run --rm --env DOTENV_FILE=.env.production --env DOTENV_PRIVATE_KEY_PRODUCTION hello-docker
 ```
 
 Keep the key out of Dockerfile ARG and ENV instructions, image layers, and git. Return to [Production](/docs/docker/#production) for the image changes.

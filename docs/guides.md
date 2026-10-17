@@ -81,6 +81,14 @@ layout: radar
     <span class="design-list-meta">dotenvx run -- remix</span>
   </li>
   <li>
+    <a class="design-link" href="/docs/nuxt/">Nuxt</a>
+    <span class="design-list-meta">dotenvx run -- nuxt</span>
+  </li>
+  <li>
+    <a class="design-link" href="/docs/sveltekit/">SvelteKit</a>
+    <span class="design-list-meta">dotenvx run -- vite dev</span>
+  </li>
+  <li>
     <a class="design-link" href="/docs/expo/">Expo</a>
     <span class="design-list-meta">dotenvx run -- expo</span>
   </li>

@@ -64,6 +64,10 @@ quickstarts:
     href: /docs/astro/
   - label: Remix
     href: /docs/remix/
+  - label: Nuxt
+    href: /docs/nuxt/
+  - label: SvelteKit
+    href: /docs/sveltekit/
   - label: Expo
     href: /docs/expo/
   - label: Bun

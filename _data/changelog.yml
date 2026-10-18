@@ -1,3 +1,49 @@
+- date: 2026-10-15
+  summary: "Keep private keys on your infrastructure with Armor Enclaved Keys."
+  milestone: true
+  url: "https://github.com/dotenvx/dotenvx/pull/1026"
+- date: 2026-10-17
+  summary: "New framework guides and tested Docker and Docker Compose workflows."
+  url: "/docs/guides/"
+- date: 2026-10-16
+  summary: "Read values synchronously with dotenvx.getSync()."
+  url: "https://github.com/dotenvx/dotenvx/pull/1029"
+- date: 2026-10-16
+  summary: "Non-interactive encryption defaults to file-based key storage."
+  url: "https://github.com/dotenvx/dotenvx/pull/1028"
+- date: 2026-10-15
+  summary: "Clearer provider errors when Armor is unreachable."
+- date: 2026-10-14
+  summary: "Invite teammates from your terminal with dotenvx armor invite."
+  url: "https://github.com/dotenvx/dotenvx/pull/1025"
+- date: 2026-10-13
+  summary: "Encrypt with a public key using dotenvx encrypt --with."
+  url: "https://github.com/dotenvx/dotenvx/pull/1022"
+- date: 2026-10-13
+  summary: "See key custody, access details, and infrastructure destinations together in Armor."
+- date: 2026-10-13
+  summary: "Safer file writes, symlink protection, and encryption cancellation."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2350-2026-10-13"
+- date: 2026-10-08
+  summary: "Consistent private-key discovery across the CLI and Next.js with @dotenvx/providers."
+  url: "/docs/custody/"
+- date: 2026-10-08
+  summary: "Dotenvx 2.34 removes the lock and unlock workflow."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2340-2026-10-08"
+- date: 2026-10-06
+  summary: "Next.js loads keys from Armor, OS secret stores, 1Password, and Bitwarden."
+  url: "/docs/nextjs/"
+- date: 2026-10-05
+  summary: "Next.js gains Envfile validation and secret redaction with @dotenvx/next-env."
+  url: "/docs/nextjs/"
+- date: 2026-10-05
+  summary: "Select environment combinations with Envfile profiles."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2330-2026-10-05"
+- date: 2026-10-05
+  summary: "Automatically redact application output from config() with an Envfile."
+  url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2330-2026-10-05"
+- date: 2026-10-04
+  summary: "Create and revoke organization tokens in Armor, with token audit logs."
 - date: 2026-09-30
   summary: "Dotenv hits 175M weekly npm installs."
   milestone: true

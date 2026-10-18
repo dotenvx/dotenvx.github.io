@@ -13,11 +13,12 @@
     </div>
 
     <nav class="radar-topbar-center" id="radar-desktop-nav" aria-label="Primary">
-      <a href="/agents" class="radar-nav-link{% if radar_path == '/agents' or radar_path == '/agents/' %} is-active{% endif %}">Agents</a>
-
       <a href="/docs" class="radar-nav-link{% if docs_active %} is-active{% endif %}">Docs</a>
 
+      {% include components/company-nav.html %}
       <a href="/pricing" class="radar-nav-link{% if radar_path == '/pricing' or radar_path == '/pricing/' %} is-active{% endif %}">Pricing</a>
+      <span class="radar-nav-divider" aria-hidden="true"></span>
+      <a href="/agents" class="radar-nav-link{% if radar_path == '/agents' or radar_path == '/agents/' %} is-active{% endif %}">Agents</a>
 
     </nav>
 
@@ -30,9 +31,16 @@
       {% endif %}
       {% unless page.force_light %}{% include components/design-theme-control.html %}{% endunless %}
       {% include components/design-btn.html href="/login" label="Login" class="radar-nav-login" data_umami_event="Login link" %}
+      <button type="button" class="radar-mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="radar-mobile-overlay" data-mobile-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path class="mobile-nav-open-icon" d="M4 7h16M4 12h16M4 17h16"/><path class="mobile-nav-close-icon" d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
 
 
     </div>
   </div>
 
 </header>
+
+{% include components/mobile-nav.html %}
+<script src="{{ "/assets/js/mobile-nav.js" | relative_url }}" defer></script>
+<script src="{{ "/assets/js/company-nav.js" | relative_url }}" defer></script>

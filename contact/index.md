@@ -6,42 +6,23 @@ body_class: home-page contact-page
 ---
 
 <style>
-  .contact-lists {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .contact-hero-video {
-    aspect-ratio: 4 / 3;
-    background: #000;
-    display: block;
-    width: 100%;
-    object-fit: cover;
-  }
+  .contact-page .design-hero-content { width: min(100%, 12rem); height: auto; aspect-ratio: 4 / 3; }
+  .contact-hero-video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .contact-lists { display: flex; flex-direction: column; gap: 2.5rem; }
 </style>
 
-{% capture contact_hero_visual %}
-    <video
-      class="contact-hero-video"
-      src="{{ site.data.videos['la-office-evening'].url }}"
-      autoplay
-      muted
-      loop
-      playsinline
-      aria-label="dotenvx Los Angeles office"
-    ></video>
-{% endcapture %}
 <div class="home-sections">
 <section class="design-hero-section home-hero" aria-label="Contact">
   <div class="armor-shell">
+    {% capture contact_art %}
+      <video class="contact-hero-video" src="{{ site.data.videos['la-office-evening'].url | relative_url }}" poster="/dotenvx-la-office-crt.png" autoplay muted loop playsinline aria-label="Dotenvx Los Angeles office"></video>
+    {% endcapture %}
     {% include components/design-hero.html
       compact=true
       name_heading=true
-      secondary=true
-      name="Contact"
+      name=page.title
       description="We are based in LA and keep an office in SF–visiting often."
-      content=contact_hero_visual
+      content=contact_art
     %}
   </div>
 </section>

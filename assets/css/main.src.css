@@ -1533,7 +1533,8 @@ html.dark .radar-layout img[src="/assets/img/logo-env.svg"] {
   .radar-topbar { grid-template-columns: auto 1fr auto; gap: .5rem; padding-inline: 1rem; }
   .radar-topbar-center { display: flex; gap: .75rem; }
   .radar-topbar-center .radar-nav-link { min-height: 44px; }
-  .radar-topbar-right .design-theme-control { display: none; }
+  .radar-topbar-right .design-search-control { display: none; }
+  .radar-topbar-right [data-radar-theme-toggle] { display: inline-flex; min-width: 44px; min-height: 44px; }
   .radar-topbar-right .radar-nav-login { display: inline-flex; padding: .6rem .65rem; font-size: var(--design-text-compact); }
 }
 
@@ -6942,6 +6943,26 @@ html.dark .hero-container-primary { color: #7b838a; }
   font-size: inherit;
 }
 
+.docs-breadcrumb-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.docs-markdown-link {
+  flex-shrink: 0;
+  color: var(--design-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.docs-markdown-link:hover,
+.docs-markdown-link:focus-visible {
+  color: var(--design-body);
+  text-decoration: underline;
+}
+
 /* All docs section headings use the same quiet, paragraph-sized hierarchy. */
 .docs-site .design-content-width :is(h2, h3, h4, h5, h6),
 .docs-site .side-path-content :is(h2, h3, h4, h5, h6) {
@@ -7648,3 +7669,51 @@ html.side-path-open { overflow: hidden; }
 .docs-agent-icons svg { width: 1.1rem; height: 1.1rem; }
 .docs-agent-icons > span:first-child { color: #d97757; }
 .docs-agent-copy-icon { width: 1rem; height: 1rem; flex-shrink: 0; opacity: .65; }
+
+/* Company reuses the original framed flyout and office treatment. */
+.company-nav { position: relative; }
+.company-nav > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .35rem; }
+.company-nav > summary::-webkit-details-marker { display: none; }
+.company-nav-caret { width: .85rem; height: .85rem; transition: transform .15s; }
+.company-nav[open] .company-nav-caret { transform: rotate(180deg); }
+.company-nav-panel {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(26rem, calc(100vw - 2.5rem));
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: .7rem;
+  padding: .7rem;
+  background: var(--design-menu-bg, var(--design-bg));
+  border: 1px solid var(--design-line);
+  border-radius: 0;
+  box-shadow: var(--design-etch);
+  z-index: 90;
+  text-align: left;
+}
+.company-nav-panel::before { content: ''; position: absolute; height: 1.05rem; bottom: 100%; left: 0; right: 0; }
+.company-nav:not([open]) > .company-nav-panel { display: none; }
+@media (prefers-reduced-motion: reduce) { .company-nav-caret { transition: none; } }
+
+/* Compact mobile header; full navigation lives in the overlay. */
+.mobile-nav-close-icon { display: none; }
+.radar-mobile-toggle[aria-expanded="true"] .mobile-nav-open-icon { display: none; }
+.radar-mobile-toggle[aria-expanded="true"] .mobile-nav-close-icon { display: block; }
+.mobile-nav-login { margin-top: 2rem; }
+@media (max-width: 767px) {
+  .radar-topbar { grid-template-columns: 1fr auto; }
+  .radar-topbar-center { display: none; }
+  .radar-topbar-right .radar-nav-login { display: none; }
+}
+
+/* Separate the agents direction from product and company navigation. */
+.radar-nav-divider {
+  width: 1px;
+  height: .65rem;
+  flex-shrink: 0;
+  background: var(--design-line);
+  opacity: .55;
+  margin-inline: .35rem;
+}

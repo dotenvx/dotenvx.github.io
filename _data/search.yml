@@ -177,8 +177,9 @@ entries:
       - talks
   /contact/:
     boost: 35
-  /company/:
-    boost: 30
+    aliases:
+      - company
+      - offices
   /legal/:
     boost: 20
   /privacy/:

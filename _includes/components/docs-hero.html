@@ -34,8 +34,6 @@
   {% endif %}
   {% if page.agent_prompt and page.markdown_url %}
     {% include components/docs-agent-button.html prompt=page.agent_prompt markdown_url=page.markdown_url %}
-  {% elsif page.markdown_url %}
-    <a class="design-link" href="{{ page.markdown_url | relative_url }}" type="text/markdown">View as Markdown</a>
   {% endif %}
 {% endcapture %}
 {% endif %}

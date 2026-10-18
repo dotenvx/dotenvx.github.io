@@ -1,0 +1,20 @@
+<div id="radar-mobile-overlay" class="radar-mobile-overlay" hidden>
+  <div class="radar-mobile-sheet">
+    <nav class="radar-mobile-list" aria-label="Mobile navigation" data-mobile-nav-root>
+      <a href="/docs" class="radar-mobile-link">Docs</a>
+      <button type="button" class="radar-mobile-link" data-mobile-company-open aria-expanded="false" aria-controls="mobile-company-links">Company <span aria-hidden="true">→</span></button>
+      <a href="/pricing" class="radar-mobile-link">Pricing</a>
+      <a href="/agents" class="radar-mobile-link">Agents</a>
+    </nav>
+    <nav id="mobile-company-links" class="radar-mobile-list" aria-label="Company navigation" hidden>
+      <button type="button" class="radar-mobile-link" data-mobile-company-back><span>← Back</span></button>
+      <a href="/about/" class="radar-mobile-link">About</a>
+      <a href="/changelog" class="radar-mobile-link">Changelog</a>
+      <a href="/contact" class="radar-mobile-link">Contact</a>
+      <a href="https://trust.oneleet.com/dotenvx" class="radar-mobile-link" target="_blank" rel="noopener noreferrer">Trust</a>
+    </nav>
+    <div class="radar-mobile-actions mobile-nav-login">
+      {% include components/design-btn.html href="/login" label="Login" %}
+    </div>
+  </div>
+</div>

@@ -1,8 +1,13 @@
 {% if page.seo_breadcrumbs.size > 1 %}
-<nav aria-label="Breadcrumb" class="design-paragraph design-content-width">
+<div class="docs-breadcrumb-row design-paragraph design-content-width">
+<nav aria-label="Breadcrumb">
   {% for crumb in page.seo_breadcrumbs %}
     {% unless forloop.first %}<span aria-hidden="true"> / </span>{% endunless %}
     {% if forloop.last %}<span aria-current="page">{{ crumb.name | escape }}</span>{% else %}<a class="design-link" href="{{ crumb.url | relative_url }}">{{ crumb.name | escape }}</a>{% endif %}
   {% endfor %}
 </nav>
+{% if page.markdown_url %}
+  <a class="docs-markdown-link" href="{{ page.markdown_url | relative_url }}" type="text/markdown" target="_blank" rel="noopener" aria-label="View this page as Markdown (opens in a new tab)">.md <span aria-hidden="true">↗</span></a>
+{% endif %}
+</div>
 {% endif %}

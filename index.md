@@ -143,12 +143,7 @@ $ dotenvx run -- node index.js
     {% capture production_content %}
       <p class="design-paragraph">Set DOTENV_PRIVATE_KEY where your app runs. That one key unlocks the secrets in its encrypted .env file—so you provision a single key for each environment instead of copying every secret into every deployment.</p>
       <p class="design-paragraph">Add it to your hosting platform's environment variables or CI secrets. Your encrypted .env travels with your code. The private key stays in your deployment settings, outside git.</p>
-      <div class="one-key-artifact">
-        {% include components/design-secrets-artifact-row.html secret=true key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
-      </div>
-      <div class="one-key-artifact">
-        {% include components/design-secrets-artifact-row.html secret=true key="DOTENV_FILE" value=".env.production" %}
-      </div>
+      {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
 
       {% capture production_run %}
 $ dotenvx run -- npm start

@@ -15,7 +15,7 @@ body_class: home-page contact-page
 <section class="design-hero-section home-hero" aria-label="Contact">
   <div class="armor-shell">
 
-    {% include components/office-hero.html description="We are based in LA and keep an office in SF–visiting often." %}
+    {% include components/office-hero.html description="We are based in LA and keep an office in SF–visiting often" %}
   </div>
 </section>
 

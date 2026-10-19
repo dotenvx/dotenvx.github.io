@@ -32,7 +32,7 @@ body_class: home-page
 <div class="changelog-page home-sections">
   <section class="design-hero-section home-hero" aria-label="Changelog">
     <div class="armor-shell">
-      {% include components/office-hero.html description="What we’re working on in LA & SF." %}
+      {% include components/office-hero.html description="What we’re working on in LA & SF" %}
     </div>
   </section>
 

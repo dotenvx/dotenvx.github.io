@@ -1,0 +1,10 @@
+<style>
+  .office-hero .design-hero-content { width: min(100%, 12rem); height: auto; aspect-ratio: 4 / 3; }
+  .office-hero-video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+</style>
+<div class="office-hero">
+  {% capture office_visual %}
+    <video class="office-hero-video" src="{{ site.data.videos['la-office-evening'].url | relative_url }}" poster="/dotenvx-la-office-crt.png" autoplay muted loop playsinline aria-label="Dotenvx Los Angeles office"></video>
+  {% endcapture %}
+  {% include components/design-hero.html compact=true name_heading=true name=page.title description=include.description content=office_visual %}
+</div>

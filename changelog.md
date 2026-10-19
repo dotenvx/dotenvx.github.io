@@ -24,48 +24,15 @@ body_class: home-page
     line-height: 1.45;
   }
 
-  .changelog-hero-ascii {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    min-height: inherit;
-    width: 100%;
-  }
-
-  .changelog-hero-ascii-art {
-    color: var(--design-ink);
-    font-family: var(--design-font-mono);
-    font-size: var(--design-text-size);
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
-    user-select: none;
-    white-space: pre;
-  }
 
 </style>
 
-{% capture changelog_hero_visual %}
-  <div class="changelog-hero-ascii" aria-hidden="true">
-    <pre class="changelog-hero-ascii-art">●────●────●────●
-v1   v2   v3   v99</pre>
-  </div>
-{% endcapture %}
+
 
 <div class="changelog-page home-sections">
   <section class="design-hero-section home-hero" aria-label="Changelog">
     <div class="armor-shell">
-      {% include components/design-hero.html
-        compact=true
-        name_heading=true
-      secondary=true
-        name="Changelog"
-        description="Check back often. We almost never miss a day working on Dotenvx."
-        content=changelog_hero_visual
-      %}
+      {% include components/office-hero.html description="What we’re working on in LA & SF." %}
     </div>
   </section>
 

@@ -1,0 +1,514 @@
+{
+  "control_groups": [
+    {
+      "title": "Access Control and Authorization",
+      "controls": [
+        {
+          "title": "Access management policy established",
+          "description": "Systematic controls are established in the access management policy for managing user access rights, ensuring appropriate, authorized access to systems and data.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Account inventory maintained",
+          "description": "An inventory of user accounts on critical and high-risk vendors that have access to in-scope systems and services is maintained, including essential details such as account owners, access privileges, associated roles, and vendor relationships where applicable. The inventory is reviewed and updated at least annually.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Dormant accounts disabled",
+          "description": "Monitor for dormant user accounts and disable or remove accounts that have been inactive for an extended period.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Employee access regularly reviewed",
+          "description": "Employee access is reviewed at least annually to ensure that access privileges are appropriate and that former employees or users do not retain unauthorized access.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "MFA required for critical services",
+          "description": "Multi-factor authentication (MFA) is required for accessing critical services and infrastructure unless a documented exception is in place where MFA is not supported.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Password management policy enforced",
+          "description": "Strictly enforce the organization\u2019s password management policy to guarantee compliance with security standards. Enforcing this policy includes implementing technical controls, monitoring adherence, and responding to non-compliance.",
+          "frameworks": [
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Password management policy established",
+          "description": "Enforce a password management policy that mandates strong and complex passwords, and prohibits the reuse of previously used passwords. This policy helps protect user accounts from unauthorized access due to weak or compromised passwords.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Management and Protection",
+      "controls": [
+        {
+          "title": "Data encrypted at rest",
+          "description": "All sensitive data is encrypted when stored on systems or devices.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Data encrypted in-transit",
+          "description": "All data is encrypted when transmitted over networks, both within the organization's internal network and external connections.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Data inventory maintained",
+          "description": "Establish and maintain an accurate, detailed, and up-to-date inventory of all data assets. This can include data stored in databases, file shares, and cloud storage.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Data management and retention policy established",
+          "description": "A data management and retention policy is established, outlining guidelines for how long data should be retained and how it should be managed throughout its lifecycle.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Privacy policy created and maintained",
+          "description": "A privacy policy is developed, regularly updated, and made accessible to all relevant parties. The goal is to enable transparent communication of data handling practices and to protect individuals' privacy rights.",
+          "frameworks": [
+            "GDPR"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Disaster Recovery",
+      "controls": [
+        {
+          "title": "Automated backups enabled",
+          "description": "Automated backups are enabled for all high-risk data and critical systems.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Business continuity and disaster recovery policy established",
+          "description": "A comprehensive business continuity and disaster recovery policy is established, outlining the organization's strategies for responding to disruptive incidents and supporting business continuity.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Data recovery process established",
+          "description": "Establish a data recovery process that defines procedures for recovering data in case of data loss, corruption, or system failures. A robust data recovery process helps minimize downtime and data loss in critical situations.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Email Security",
+      "controls": [
+        {
+          "title": "DMARC policy and verification used",
+          "description": "DMARC (Domain-based Message Authentication, Reporting, and Conformance) policy and verification mechanisms are implemented to prevent email spoofing and phishing attacks.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Email settings block malicious content",
+          "description": "Email settings are configured to block malicious content, including malicious attachments, links, and scripts.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Endpoint Security",
+      "controls": [
+        {
+          "title": "Anti-malware deployed on end-user devices",
+          "description": "Anti-malware or antivirus solutions are deployed on end-user devices, such as laptops and workstations.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Data encrypted on end-user devices",
+          "description": "Data stored on end-user devices (e.g., laptops, mobile devices) is encrypted to protect it in case of device loss or theft.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Firewall maintained on end-user devices",
+          "description": "Firewalls are installed and properly maintained on end-user devices, such as laptops and workstations.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Infrastructure Security",
+      "controls": [
+        {
+          "title": "Active discovery tools used",
+          "description": "An active discovery tool is used to identify assets connected to the enterprise's network, configured to execute daily or more frequently.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Automated security scanning performed on infrastructure",
+          "description": "Automated security scanning software is deployed on all infrastructure components including servers and network devices.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Buckets not exposed publicly",
+          "description": "Cloud storage buckets are not exposed to the public internet unless a documented business justification is in place.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Cloud infrastructure used",
+          "description": "Cloud infrastructure is hosted with providers that maintain independent certifications (e.g., SOC 2) for physical and environmental security controls, rather than managed on-premises.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Firewall restricts public access to infrastructure",
+          "description": "Firewalls are configured to restrict public access to the organization's infrastructure components.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Pull requests used",
+          "description": "Pull requests are used for code changes to ensure all modifications are reviewed before merging to production branches.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Monitoring and Incident Response",
+      "controls": [
+        {
+          "title": "Audit log management process maintained",
+          "description": "Maintain a robust and up-to-date audit log management process. This process should include guidelines for capturing, storing, and monitoring audit logs, ensuring the availability and integrity of essential security event data.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Breach notification process established",
+          "description": "Establish a breach notification process that outlines the organization's procedures for detecting, assessing, and reporting security breaches. This process helps ensure timely and effective incident response.",
+          "frameworks": [
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Incident response policy established",
+          "description": "An incident response policy is established that outlines the organization's approach and procedures for detecting, responding to, and recovering from cybersecurity incidents.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Infrastructure performance monitored",
+          "description": "The performance of the organization's infrastructure components is monitored to detect potential issues or anomalies that may impact security or reliability.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Log management used",
+          "description": "Implement a centralized log management solution to collect, store, and analyze logs from various systems and applications. Centralized log management simplifies log review, correlation, and monitoring for potential security incidents.",
+          "frameworks": [
+            "GDPR"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Organizational Security",
+      "controls": [
+        {
+          "title": "Acceptable use policy established",
+          "description": "Establish and maintain an acceptable use policy that outlines permissible activities, systems, and data access for all users, contractors, and third parties interacting with the organization's information assets and technologies.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Asset management policy established",
+          "description": "Establish an asset management policy that outlines the guidelines for managing the organization's assets throughout their lifecycle.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Change management policy established",
+          "description": "Establish a change management policy that defines procedures for controlling and documenting changes to systems, applications, and infrastructure.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Code of conduct established",
+          "description": "A code of conduct is established that outlines the expected behavior and ethical standards for all employees.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Company security commitments externally communicated",
+          "description": "Key company security commitments and policies are externally communicated, including the Master Service Agreement (MSA), Security Information page, or Terms of Service.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Data-flow diagrams maintained",
+          "description": "Up-to-date data-flow diagram(s) are maintained that show all account data flows across systems and networks, updated as needed when changes occur in the environment.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Offboarding process established",
+          "description": "An offboarding process is established for departing employees to ensure that they are removed from relevant systems and accounts.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Onboarding process established",
+          "description": "An onboarding process is established to ensure new employees are properly granted appropriate access privileges necessary to perform their job responsibilities.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Password manager used",
+          "description": "A company-wide password manager is deployed to securely store and share credentials across the organization. All shared accounts and secrets are shared through the password manager using a principle of least privilege.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Physical access restricted",
+          "description": "Physical access to the organization's facilities, equipment, and systems is restricted to authorized personnel only.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Policies signed by relevant personnel",
+          "description": "Security policies are formally acknowledged and signed by all relevant personnel, establishing accountability for security responsibilities.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Reference checks performed for employees",
+          "description": "Reference checks are conducted when hiring new employees to verify their qualifications, experience, and suitability for the role.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Security awareness training conducted",
+          "description": "Security awareness training is conducted annually for all employees, covering cybersecurity threats, social engineering, authentication best practices, and handling of sensitive data.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Service description communicated",
+          "description": "Clear and detailed service descriptions are communicated to customers or users, outlining the scope, features, and limitations of the services provided.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Software development lifecycle established",
+          "description": "A well-defined and documented development lifecycle is implemented for software and applications.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Third-party security oversight conducted",
+          "description": "Third-party security oversight and governance of the organization's security controls is conducted by a qualified provider, ensuring independent verification of control effectiveness and compliance posture.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Risk Management",
+      "controls": [
+        {
+          "title": "Data Protection Impact Assessment (DPIA) completed",
+          "description": "Identify processing activities involving personal data that may pose high risks to individuals' privacy rights. To determine whether you need to complete a full DPIA, complete the below questionnaire in the 'recommended templates' section. If you answer \"Yes\" to any of the questions, you need to fill out a DPIA. You can find a template for the DPIA here: https://gdpr.eu/data-protection-impact-assessment-template/",
+          "frameworks": [
+            "GDPR"
+          ]
+        },
+        {
+          "title": "GDPR compliance policy established",
+          "description": "Establish and maintain a comprehensive compliance policy that defines how the organization identifies, monitors, and fulfills its regulatory, legal, and contractual obligations.",
+          "frameworks": [
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Risk assessments performed",
+          "description": "Risk assessments are conducted at least annually to identify and evaluate potential threats and vulnerabilities that could impact the organization's assets.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Risk management policy established",
+          "description": "A risk management policy is established that outlines the organization's approach to identifying, assessing, and mitigating information security risks.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Software supply chain risks monitored",
+          "description": "Software supply chain risks are monitored by assessing the security of third-party libraries and open-source components used in the organization's software development lifecycle.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Vendor inventory maintained",
+          "description": "An accurate and up-to-date inventory of all vendors is maintained, including details such as the services provided, contract terms, and the scope of access they have.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Vendor management program established",
+          "description": "A vendor management policy is established to assess, monitor, and manage the risks associated with third-party vendors, ensuring that external partners meet security and compliance standards.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Vulnerability Management",
+      "controls": [
+        {
+          "title": "Penetration testing findings remediated",
+          "description": "Vulnerabilities identified during penetration testing are promptly remediated.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Penetration testing performed within the last 12 months",
+          "description": "Penetration testing is conducted at least every 12 months to identify potential vulnerabilities in the organization's systems, applications, and infrastructure.",
+          "frameworks": [
+            "SOC 2"
+          ]
+        },
+        {
+          "title": "Vulnerabilities remediated",
+          "description": "Detected vulnerabilities are promptly remediated to minimize the risk of exploitation. This includes establishing clear protocols for prioritizing vulnerabilities based on severity and ensuring timely resolution of critical security issues.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Vulnerabilities scanned",
+          "description": "Regular vulnerability scans are conducted on systems and applications to identify potential security flaws. This includes automated scanning tools that systematically examine infrastructure, applications, and code repositories for known vulnerabilities.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        },
+        {
+          "title": "Vulnerability management policy established",
+          "description": "A vulnerability management policy is established that outlines the procedures for identifying, assessing, and remediating vulnerabilities in the organization's systems and applications.",
+          "frameworks": [
+            "SOC 2",
+            "GDPR"
+          ]
+        }
+      ]
+    }
+  ],
+  "subprocessors": [
+    {
+      "name": "Cloudflare",
+      "purpose": "DNS, traffic proxying, CDN, and network security."
+    },
+    {
+      "name": "GitHub",
+      "purpose": "Authentication, account identity, and repository metadata."
+    },
+    {
+      "name": "Google Workspace",
+      "purpose": "Business email, internal documentation, and security communications."
+    },
+    {
+      "name": "Hatchbox",
+      "purpose": "Production deployment orchestration and infrastructure management."
+    },
+    {
+      "name": "Hetzner",
+      "purpose": "Application hosting and infrastructure."
+    },
+    {
+      "name": "Honeybadger",
+      "purpose": "Error monitoring and operational diagnostics."
+    },
+    {
+      "name": "Postmark",
+      "purpose": "Transactional email delivery and related message metadata."
+    },
+    {
+      "name": "Stripe",
+      "purpose": "Billing, checkout, payment processing, and customer billing records."
+    }
+  ]
+}

@@ -1,17 +1,12 @@
 ---
 title: About
-description: "A small file. A lasting commitment to keeping secrets safe."
+description: "Working out of LA & SF, on a small important file."
 permalink: /about/
-redirect_from:
-  - /company
-  - /company/
 layout: radar
 body_class: home-page about-page
 ---
 
 <style>
-  .about-company { margin-bottom: 2.5rem; }
-  .about-company-label { font-family: var(--design-font-mono); color: var(--design-mid); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .75rem; }
   .about-story { margin: 2.5rem 0; }
   .about-chapter { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.5rem; }
   .about-chapter + .about-chapter { border-top: 1px solid var(--design-line); }
@@ -19,26 +14,15 @@ body_class: home-page about-page
   .about-chapter h2 { font-size: 1em; font-weight: 600; margin: 0 0 .65rem; }
   .about-chapter p { margin: 0; }
   .about-chapter a { display: inline-block; margin-top: .8rem; }
-  .about-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-  .about-link-card { padding: 1.5rem; gap: .6rem; color: var(--design-ink); text-decoration: none; }
-  .about-link-card strong { font-weight: 600; }
-  .about-link-card span { color: var(--design-body); font-size: .9em; line-height: 1.5; }
-  .about-link-card:hover, .about-link-card:focus-visible { background: var(--design-hover); }
-  @media (max-width: 600px) { .about-links { grid-template-columns: 1fr; } }
   @media (max-width: 600px) { .about-chapter { grid-template-columns: 1.5rem 1fr; gap: .75rem; padding: 1.25rem; } }
+  .about-links { display: flex; justify-content: center; text-align: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
 </style>
 
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="About">
     <div class="armor-shell">
-      {% capture about_visual %}{% include components/joined-slab-hero.html %}{% endcapture %}
-      {% include components/design-hero.html
-        compact=true
-        name_heading=true
-        name=page.title
-        description=page.description
-        content=about_visual
-      %}
+
+      {% include components/office-hero.html description=page.description %}
     </div>
   </section>
 
@@ -80,12 +64,11 @@ body_class: home-page about-page
         </section>
       </div>
 
-      <p class="design-paragraph">We keep coming back to that small file. Developers understand it. Projects can carry it. Our job is to make it safer as the way we build software changes.</p>
       <nav class="about-links" aria-label="More about Dotenvx">
-        <a class="design-card about-link-card" href="/opensource/"><strong>Open Source →</strong><span>Explore our projects, talks, and published work.</span></a>
-        <a class="design-card about-link-card" href="https://trust.oneleet.com/dotenvx" target="_blank" rel="noopener noreferrer"><strong>Trust Center ↗</strong><span>Learn about our security and compliance.</span></a>
-        <a class="design-card about-link-card" href="/careers/"><strong>Careers →</strong><span>Help build the next chapter of .env.</span></a>
-        <a class="design-card about-link-card" href="/changelog"><strong>Changelog →</strong><span>See what we're shipping.</span></a>
+        <a class="design-link" href="/contact/">Contact</a>
+        <a class="design-link" href="/changelog">Changelog</a>
+        <a class="design-link" href="/trust/">Trust Center</a>
+        <a class="design-link" href="/careers/">Careers</a>
       </nav>
       {% endcapture %}
       {% include components/design-content-width.html content=about_content %}

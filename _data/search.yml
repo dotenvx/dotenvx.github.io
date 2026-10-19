@@ -175,11 +175,16 @@ entries:
       - open source
       - projects
       - talks
-  /contact/:
+  /about/:
     boost: 35
     aliases:
       - company
+  /contact/:
+    boost: 35
+    aliases:
       - offices
+      - email
+      - support
   /legal/:
     boost: 20
   /privacy/:

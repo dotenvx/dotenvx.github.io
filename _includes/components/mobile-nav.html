@@ -9,9 +9,15 @@
     <nav id="mobile-company-links" class="radar-mobile-list" aria-label="Company navigation" hidden>
       <button type="button" class="radar-mobile-link" data-mobile-company-back><span>← Back</span></button>
       <a href="/about/" class="radar-mobile-link">About</a>
-      <a href="/changelog" class="radar-mobile-link">Changelog</a>
       <a href="/contact" class="radar-mobile-link">Contact</a>
-      <a href="https://trust.oneleet.com/dotenvx" class="radar-mobile-link" target="_blank" rel="noopener noreferrer">Trust</a>
+      <a href="/changelog" class="radar-mobile-link">Changelog</a>
+      <a class="radar-mobile-link flex items-center gap-3" href="/trust/">
+        <span>Trust</span>
+        <span class="inline-flex items-center -space-x-1.5" aria-hidden="true">
+          {% include logos/framework-soc2.html uid="mobile-company-nav-soc2" class="h-5 w-5 z-10" %}
+          {% include logos/framework-gdpr.html class="h-5 w-5" %}
+        </span>
+      </a>
     </nav>
     <div class="radar-mobile-actions mobile-nav-login">
       {% include components/design-btn.html href="/login" label="Login" %}

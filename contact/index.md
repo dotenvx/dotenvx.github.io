@@ -1,29 +1,21 @@
 ---
 description: "Contact the Dotenvx team for product questions, support, and help managing encrypted environment variables."
 title: "Contact"
+permalink: /contact/
 layout: radar
 body_class: home-page contact-page
 ---
 
 <style>
-  .contact-page .design-hero-content { width: min(100%, 12rem); height: auto; aspect-ratio: 4 / 3; }
-  .contact-hero-video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .contact-lists > .design-list + .design-list { margin-top: 0; }
   .contact-lists { display: flex; flex-direction: column; gap: 2.5rem; }
 </style>
 
 <div class="home-sections">
 <section class="design-hero-section home-hero" aria-label="Contact">
   <div class="armor-shell">
-    {% capture contact_art %}
-      <video class="contact-hero-video" src="{{ site.data.videos['la-office-evening'].url | relative_url }}" poster="/dotenvx-la-office-crt.png" autoplay muted loop playsinline aria-label="Dotenvx Los Angeles office"></video>
-    {% endcapture %}
-    {% include components/design-hero.html
-      compact=true
-      name_heading=true
-      name=page.title
-      description="We are based in LA and keep an office in SF–visiting often."
-      content=contact_art
-    %}
+
+    {% include components/office-hero.html description="We are based in LA and keep an office in SF–visiting often." %}
   </div>
 </section>
 

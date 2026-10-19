@@ -4,8 +4,8 @@ links:
     href: /
   - label: Documentation
     href: /docs
-  - label: Company
-    href: /contact/
+  - label: About
+    href: /about/
   - label: Pricing
     href: /pricing
   - label: Agents
@@ -23,8 +23,7 @@ links:
   - label: Blog
     href: /blog
   - label: Trust Center
-    href: https://trust.oneleet.com/dotenvx
-    external: true
+    href: /trust/
   - label: Status
     href: https://status.dotenvx.com
     external: true

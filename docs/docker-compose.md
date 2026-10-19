@@ -149,6 +149,8 @@ $ docker compose --env-file .env.keys down
 
 [**Multiple services** Alternative →](/docs/docker-compose/multiple-services/){: .side-path}
 
+[**Existing images / no Dockerfile** Alternative →](/docs/docker-compose/existing-images/){: .side-path}
+
 ## Share
 
 Share access with Dotenvx Armor ⛨

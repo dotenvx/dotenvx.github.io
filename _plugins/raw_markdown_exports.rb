@@ -7,6 +7,7 @@ module RawMarkdownExports
     'docs/side-paths/docker-compose-mount-files.md' => '/docs/docker-compose/mount-files.md',
     'docs/side-paths/docker-compose-runtime-secrets.md' => '/docs/docker-compose/runtime-secrets.md',
     'docs/side-paths/docker-compose-multiple-services.md' => '/docs/docker-compose/multiple-services.md',
+    'docs/side-paths/docker-compose-existing-images.md' => '/docs/docker-compose/existing-images.md',
     'docs/side-paths/docker-compose-share-private-key.md' => '/docs/docker-compose/share-private-key.md',
     'docs/side-paths/docker-compose-deploy-private-key.md' => '/docs/docker-compose/deploy-private-key.md',
     'docs/side-paths/docker-compose-build-secrets.md' => '/docs/docker-compose/build-secrets.md',

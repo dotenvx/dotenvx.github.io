@@ -1,6 +1,6 @@
 ---
 title: Pricing
-description: "Your keys. Off device. Under your control."
+description: "Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent."
 permalink: /pricing
 layout: radar
 body_class: home-page membership-page
@@ -47,7 +47,6 @@ body_class: home-page membership-page
 
 {% capture membership_actions %}
   {% include components/design-btn.html href="/signup" label="Sign up" %}
-  {% include components/design-btn.html href="/members" label="Members" class="design-btn--secondary" %}
 {% endcapture %}
 
 <div class="home-sections">
@@ -66,33 +65,19 @@ body_class: home-page membership-page
 
 
 
-  <section class="radar-section" aria-labelledby="membership-corporate-title">
-    <div class="armor-shell">
-      {% include components/design-page-title.html title="Corporate Involvement" heading_tag="h2" title_class="text-center" id="membership-corporate-title" %}
-      <div class="membership-involvement-content">
-        {% include components/env-slab.html cube=true %}
-        <div>
-          <p class="design-paragraph">If your company relies on .env, you can help shape what comes next. Corporate involvement brings your team closer to the maintainers, with a chance to see work in progress and share what matters to you.</p>
-          <p class="design-paragraph">Your support gives us more room to maintain the foundation and build new tools that stay open for everyone. We’d love to hear what we could build together.</p>
-          <p class="design-paragraph">{% include components/design-link.html href="/corporate" label="Explore corporate involvement →" %}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+{% capture involvement_copy %}
+<p class="design-paragraph">If your company relies on .env, you can help shape what comes next. Corporate involvement brings your team closer to the maintainers, with a chance to see work in progress and share what matters to you.</p>
+<p class="design-paragraph">Your support gives us more room to maintain the foundation and build new tools that stay open for everyone. We’d love to hear what we could build together.</p>
+<p class="design-paragraph">{% include components/design-link.html href="/corporate" label="Explore corporate involvement →" %}</p>
+{% endcapture %}
+  {% include components/membership-involvement.html id="membership-corporate-title" title="Corporate Involvement" visual="cube" content=involvement_copy %}
 
-  <section class="radar-section" aria-labelledby="membership-careers-title">
-    <div class="armor-shell">
-      {% include components/design-page-title.html title="Careers" heading_tag="h2" title_class="text-center" id="membership-careers-title" %}
-      <div class="membership-involvement-content">
-        {% include components/env-keycap.html %}
-        <div>
-        <p class="design-paragraph">Want to help build the next chapter of .env? Join us in making secrets safer for developers and the agents working alongside them.</p>
-        <p class="design-paragraph">Whether you’re building the tools or bringing companies into the work, there’s a chance to make a lasting contribution to something people use every day.</p>
-        <p class="design-paragraph">{% include components/design-link.html href="/careers/" label="Explore open roles →" %}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+{% capture involvement_copy %}
+<p class="design-paragraph">Want to help build the next chapter of .env? Join us in making secrets safer for developers and the agents working alongside them.</p>
+<p class="design-paragraph">Whether you’re building the tools or bringing companies into the work, there’s a chance to make a lasting contribution to something people use every day.</p>
+<p class="design-paragraph">{% include components/design-link.html href="/careers/" label="Explore open roles →" %}</p>
+{% endcapture %}
+  {% include components/membership-involvement.html id="membership-careers-title" title="Careers" visual="keycap" content=involvement_copy %}
 
   <section class="radar-section" aria-labelledby="membership-join-title">
     <div class="armor-shell">

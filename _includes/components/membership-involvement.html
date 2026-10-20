@@ -1,0 +1,15 @@
+<section class="radar-section" aria-labelledby="{{ include.id }}">
+  <div class="armor-shell">
+    <div class="membership-involvement-content">
+      {% if include.visual == "cube" %}
+        {% include components/env-slab.html cube=true %}
+      {% else %}
+        {% include components/env-keycap.html %}
+      {% endif %}
+      <div>
+        {% include components/design-page-title.html title=include.title heading_tag="h2" id=include.id %}
+        {{ include.content }}
+      </div>
+    </div>
+  </div>
+</section>

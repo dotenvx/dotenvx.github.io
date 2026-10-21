@@ -15,7 +15,7 @@ layout: radar
 {% endcapture %}
 {% capture armor_hero_actions %}
   {% include components/design-btn.html label="Sign up" href="/signup" data_umami_event="Armor Hero Signup button" %}
-  {% include components/design-btn.html label="Membership" href="/membership" data_umami_event="Armor Hero Membership button" %}
+  {% include components/design-btn.html label="Pricing" href="/pricing" data_umami_event="Armor Hero Pricing button" %}
 {% endcapture %}
 
 <div class="armor-page">

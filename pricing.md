@@ -1,6 +1,6 @@
 ---
 title: Pricing
-description: "Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent."
+description: "Your keys. Off device. Under your control."
 permalink: /pricing
 layout: radar
 body_class: home-page membership-page

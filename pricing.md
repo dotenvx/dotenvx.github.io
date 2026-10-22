@@ -31,6 +31,14 @@ body_class: home-page membership-page
   .membership-dotenvx { scroll-margin-top: 6rem; }
   .membership-involvement-content { display: grid; grid-template-columns: 12rem minmax(0, 1fr); align-items: center; gap: 2rem; }
   .membership-involvement-content :is(.env-slab-stage, .env-keycap-stage) { height: 12rem; }
+  .membership-comparison .membership-section-mobile { display: none; }
+  @media (max-width: 767px) {
+    .membership-comparison .design-table tr:not(.membership-section-row) > :nth-child(2),
+    .membership-comparison .design-table .membership-section-desktop { display: none; }
+    .membership-comparison .design-table .membership-section-mobile { display: table-cell; }
+    .membership-comparison .design-table thead th { width: 25%; }
+    .membership-comparison .design-table thead th:first-child { width: 50%; }
+  }
   @media (max-width: 640px) {
     .membership-involvement-content { grid-template-columns: 1fr; gap: 1rem; }
     .membership-involvement-content :is(.env-slab, .env-keycap) { max-width: 16rem; margin-inline: auto; }

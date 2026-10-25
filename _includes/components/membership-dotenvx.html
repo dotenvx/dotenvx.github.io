@@ -150,6 +150,18 @@
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
       <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
     </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Armored Keys. Private keys stored in Armor with controlled, audited access for your authorized devices." data-tooltip="Private keys stored in Armor with controlled, audited access for your authorized devices.">Armored Keys</span></span></th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
+    <tr class="membership-subrow">
+      <th scope="row"><span class="membership-subrow-label"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Enclaved Keys. Private keys stored only in your selected deployment service. Armor keeps the public key, not the private key." data-tooltip="Private keys stored only in your selected deployment service. Armor keeps the public key, not the private key.">Enclaved Keys</span></span></th>
+      <td class="design-table-cell--center pricing-empty"><span aria-label="Not included">—</span></td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+      <td class="design-table-cell--center">{{ dotenvx_yes }}</td>
+    </tr>
     {% include components/membership-armor.html %}
     {% include components/membership-addons.html %}
     <tr class="membership-plan-actions">

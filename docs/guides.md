@@ -137,6 +137,19 @@ layout: radar
   </div>
 </section>
 
+<section class="radar-section" aria-label="Databases">
+  <div class="armor-shell">
+    <div class="design-content-width">
+      <div class="docs-intro-cards">
+        <p class="design-list-title" role="heading" aria-level="2">Databases</p>
+        <div class="design-settings-grid">
+          {% include components/design-key.html href="/docs/neon/" label="Neon" icon="neon" title="Neon" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="radar-section" aria-label="Python">
   <div class="armor-shell">
     <div class="design-content-width">

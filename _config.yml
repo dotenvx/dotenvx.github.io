@@ -16,16 +16,10 @@ github_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump in
 # For SEO Jekyll Plugin
 author:
   name: Dotenvx
-  twitter: dotenvx
-twitter:
-  username: dotenvx
-  card: summary_large_image
 social:
   name: Dotenvx
   links:
-    - https://twitter.com/dotenvx
     - https://github.com/dotenvx
-    - https://linkedin.com/company/dotenvx
     - https://www.youtube.com/@dotenvx
 
 defaults:

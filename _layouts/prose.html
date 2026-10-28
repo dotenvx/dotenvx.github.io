@@ -9,7 +9,7 @@ body_class: home-page
       {% if page.hero_visual %}
         {% capture hero_visual %}{% include {{ page.hero_visual }} %}{% endcapture %}
       {% endif %}
-      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=hero_visual %}
+      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=hero_visual badge=page.hero_badge %}
     </div>
   </header>
 

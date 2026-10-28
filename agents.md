@@ -9,6 +9,7 @@ layout: prose
 wide_codeblocks: true
 hero_visual: components/joined-slab-hero.html
 hero_followup: components/agents-proof.html
+hero_badge: "Coming soon · Dotenvx 3.0.0"
 ---
 
 ## The Problem

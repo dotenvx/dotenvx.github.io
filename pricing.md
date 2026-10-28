@@ -89,7 +89,7 @@ body_class: home-page membership-page
 
   <section class="radar-section" aria-labelledby="membership-join-title">
     <div class="armor-shell">
-      {% include components/design-page-title.html title="Be part of the .env story." heading_tag="h2" title_class="text-center" id="membership-join-title" %}
+      {% include components/design-page-title.html title="Your secrets. Under your control." heading_tag="h2" title_class="text-center" id="membership-join-title" %}
       <div class="design-hero-actions">{% include components/design-btn.html href="/signup" label="Sign up" %}</div>
     </div>
   </section>

@@ -7721,15 +7721,19 @@ html.side-path-open { overflow: hidden; }
 }
 
 /* Shared newsletter signup on the blog index and articles. */
-.newsletter-signup { margin: 0 0 3rem; text-align: left; }
-.newsletter-signup .design-paragraph { margin: .75rem 0 1rem; }
-.newsletter-signup form { display: flex; align-items: flex-end; gap: .75rem; flex-wrap: wrap; }
-.newsletter-email-label { display: flex; flex: 1 1 14rem; flex-direction: column; gap: .5rem; font-size: var(--design-text-compact); }
-.newsletter-email-label input { width: 100%; min-height: 2.75rem; padding: .65rem .8rem; border: 1px solid var(--design-dim); border-radius: var(--design-control-radius); background: var(--design-bg); color: var(--design-ink); font: inherit; font-size: var(--design-text-size); }
+.newsletter-signup { position: relative; isolation: isolate; max-width: 28rem; margin: 0 auto 2rem; padding: 1.5rem; border-radius: 6px; text-align: center; }
+/* Keep the decorative card below the form and browser autofill overlays. */
+.newsletter-signup::before { content: ""; position: absolute; inset: 0; z-index: -1; border: 1px solid var(--design-line); border-radius: inherit; background: var(--design-bg-lift); pointer-events: none; }
+.newsletter-signup .design-list-title { margin: 0; color: var(--design-ink); font-size: var(--design-text-size); font-weight: 600; }
+.newsletter-signup .design-paragraph { margin: .5rem 0 1rem; font-size: var(--design-text-compact); line-height: 1.6; }
+.newsletter-signup form { position: relative; z-index: 1; display: flex; align-items: stretch; justify-content: center; gap: .5rem; flex-wrap: wrap; }
+.newsletter-email-label { display: flex; flex: 1 1 10rem; min-width: 0; }
+.newsletter-email-label input { width: 100%; min-width: 0; min-height: 2.25rem; padding: .5rem .65rem; border: 1px solid var(--design-line); border-radius: var(--design-control-radius); background: var(--design-bg); color: var(--design-ink); font: inherit; font-size: var(--design-text-compact); }
 .newsletter-email-label input:focus-visible { outline: 2px solid var(--design-ink); outline-offset: 2px; }
-.newsletter-signup button { min-height: 2.75rem; }
+.newsletter-signup button { min-height: 2.25rem; padding: .5rem .75rem; font-size: var(--design-text-compact); }
 .newsletter-signup button:disabled { opacity: .65; cursor: default; }
-.newsletter-signup .newsletter-status { flex-basis: 100%; margin: 0; }
+.newsletter-signup .newsletter-status { flex-basis: 100%; margin: .25rem 0 0; }
+.newsletter-signup .newsletter-note { margin: .75rem 0 0; color: var(--design-dim); font-size: var(--design-text-micro); }
 .newsletter-status:empty { display: none; }
-.newsletter-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-@media (max-width: 480px) { .newsletter-signup button { width: 100%; } }
+.newsletter-honeypot, .newsletter-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 480px) { .newsletter-signup { padding: 1.25rem; } .newsletter-signup button { width: 100%; } }

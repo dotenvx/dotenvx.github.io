@@ -22,7 +22,11 @@ body_class: home-page about-page
   <section class="design-hero-section home-hero" aria-label="About">
     <div class="armor-shell">
 
-      {% include components/office-hero.html description=page.description %}
+      {% capture about_actions %}
+        {% include components/design-btn.html label="Contact us" href="/contact" %}
+        {% include components/design-btn.html label="Careers" href="/careers/" class="design-btn--secondary" %}
+      {% endcapture %}
+      {% include components/office-hero.html description=page.description actions=about_actions %}
     </div>
   </section>
 
@@ -30,7 +34,7 @@ body_class: home-page about-page
     <div class="armor-shell">
       {% capture about_content %}
       <div class="about-company">
-        <p class="design-paragraph">DOTENVX LLC keeps secrets safe without making software harder to ship. We're the company behind Dotenv, Dotenvx, and the next chapter of .env.</p>
+        <p class="design-paragraph">Dotenvx keeps secrets safe without making software harder to ship. We're the team behind Dotenv, Dotenvx, and the next chapter of .env.</p>
         <p class="design-paragraph">We started with a problem every developer recognizes: an app needs credentials, but those credentials don't belong in its source code. Dotenv gave them a home in a small, readable file. No dashboard to learn. No service to depend on. Just a file and the code you were already writing.</p>
         <p class="design-paragraph">That simplicity mattered. But the secrets on one developer's laptop also had to reach teammates, build servers, and production. Keeping the file out of Git meant finding another way to move it around. We wanted secrets to follow the same path as the software they configure, without exposing their values.</p>
         <p class="design-paragraph">That's why we built Dotenvx. Encryption lets the file travel with your code while its private key stays separate. The familiar .env becomes something you can version, review, and share through Git.</p>

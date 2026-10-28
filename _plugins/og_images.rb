@@ -1,15 +1,40 @@
 require "json"
 require "open3"
 require "cgi"
+require "nokogiri"
+require "uri"
 
 # Runs for both `jekyll build` and `jekyll serve`. Images are cached outside
 # the watched source and registered as static files before Jekyll writes them.
 class OgImages < Jekyll::Generator
   priority :low
 
+  # Parse rendered Markdown so HTML, Markdown and reference images share the
+  # same ordering, and image examples inside code fences are ignored.
+  def first_post_image(site, page)
+    html = site.find_converter_instance(Jekyll::Converters::Markdown).convert(page.content)
+    node = Nokogiri::HTML.fragment(html).css("img[src]").find do |image|
+      image["src"].to_s.strip.match?(%r{\A(?:https?://|/|[^:]+\z)})
+    end
+    return unless node
+
+    path = node["src"].strip
+    path = URI.join("https://dotenvx.com#{page.url}", path).request_uri unless path.match?(%r{\Ahttps?://|\A/})
+    { "path" => path, "alt" => node["alt"].to_s.empty? ? page.data["title"] : node["alt"] }
+  end
+
   def generate(site)
     pages = (site.posts.docs + site.pages).select do |page|
       page.data["og_image"] != false && (page.data["layout"] == "blog" || page.data["og_image"].is_a?(Hash))
+    end
+    pages = pages.reject do |page|
+      next false unless page.data["layout"] == "blog"
+
+      image = first_post_image(site, page)
+      next false unless image
+
+      page.data["image"] = image
+      true
     end
     return if pages.empty?
 

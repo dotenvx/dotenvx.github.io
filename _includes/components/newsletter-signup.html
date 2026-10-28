@@ -1,10 +1,11 @@
 <section class="newsletter-signup" aria-label="Dotenvx newsletter">
-  <h2 class="design-list-title">Keep up with Dotenvx.</h2>
-  <p class="design-paragraph">Product updates and practical guides, occasionally. Unsubscribe anytime.</p>
+  {% assign newsletter_heading = include.heading | default: "h2" %}
+  <{{ newsletter_heading }} class="design-list-title">Making .env</{{ newsletter_heading }}>
+  <p class="design-paragraph">Notes from source. For the file you rely on, .env.</p>
   <form action="https://armor.dotenvx.com/public/newsletter/subscribe" method="post" data-newsletter-form>
     <input type="hidden" name="source" value="{{ include.source | default: 'blog' }}">
     <label class="newsletter-email-label">
-      <span>Email address</span>
+      <span class="newsletter-visually-hidden">Email address</span>
       <input type="email" name="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
     </label>
     <div class="newsletter-honeypot" aria-hidden="true">
@@ -14,5 +15,6 @@
     <p class="newsletter-status design-paragraph" role="status" aria-live="polite" data-newsletter-status></p>
     <noscript><p class="design-paragraph">Submitting opens Armor to request your confirmation email.</p></noscript>
   </form>
+  <p class="newsletter-note">Unsubscribe anytime.</p>
 </section>
 <script src="{{ '/assets/js/newsletter-signup.js' | relative_url }}" defer></script>

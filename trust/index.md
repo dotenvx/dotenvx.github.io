@@ -8,8 +8,12 @@ body_class: home-page trust-page
 
 <style>
   .trust-content { max-width: 80rem; padding-top: 2.5rem; }
-  .trust-header { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
-  .trust-header > :is(h1, p) { margin: 0; }
+  .trust-header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; text-align: left; }
+  .trust-header-copy { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+  .trust-header-copy > :is(h1, p) { margin: 0; }
+  .trust-office { display: block; flex: 0 0 12rem; width: 12rem; background: #000; }
+  .trust-office video { display: block; width: 100%; height: auto; margin: 0; aspect-ratio: 4 / 3; object-fit: cover; }
+  @media (max-width: 600px) { .trust-header { flex-direction: column; align-items: flex-start; } .trust-office { flex-basis: auto; } }
   .trust-description { max-width: 40rem; text-wrap: pretty; }
   .trust-header h1 { font: inherit; font-weight: 700; }
   @media (min-width: 768px) { .trust-content { padding-top: 3.5rem; } }
@@ -32,9 +36,14 @@ body_class: home-page trust-page
 
 <div class="armor-shell design-prose trust-content">
 <header class="trust-header">
+  <div class="trust-header-copy">
   <h1>{{ page.title | escape }}</h1>
   <p class="trust-description">{{ page.description | escape }}</p>
   <p><a class="design-link" href="mailto:security@dotenvx.com">security@dotenvx.com</a></p>
+  </div>
+  <a class="trust-office" href="/about/" aria-label="About Dotenvx">
+    {% include components/office-video.html %}
+  </a>
 </header>
 
 <nav class="trust-nav" aria-label="Trust center sections">

@@ -228,9 +228,9 @@ The reusable `components/docs-agent-button.html` takes `prompt` and `markdown_ur
 
 ### Newsletter signup
 
-The blog index and article footer share `_includes/components/newsletter-signup.html`.
+The newsletter page, blog index, and article footer share `_includes/components/newsletter-signup.html`.
 The form posts to `https://armor.dotenvx.com/public/newsletter/subscribe` with
-`email`, `source` (`blog` or `blog-post`), and an empty `website` honeypot.
+`email`, `source` (`newsletter`, `blog`, or `blog-post`), and an empty `website` honeypot.
 Armor sends a confirmation email; subscribers enter the newsletter list only
 when they confirm. The source is stored on the confirmed subscriber.
 

@@ -7717,3 +7717,17 @@ html.side-path-open { overflow: hidden; }
   opacity: .55;
   margin-inline: .35rem;
 }
+
+/* Shared newsletter signup on the blog index and articles. */
+.newsletter-signup { margin: 0 0 3rem; text-align: left; }
+.newsletter-signup .design-paragraph { margin: .75rem 0 1rem; }
+.newsletter-signup form { display: flex; align-items: flex-end; gap: .75rem; flex-wrap: wrap; }
+.newsletter-email-label { display: flex; flex: 1 1 14rem; flex-direction: column; gap: .5rem; font-size: var(--design-text-compact); }
+.newsletter-email-label input { width: 100%; min-height: 2.75rem; padding: .65rem .8rem; border: 1px solid var(--design-dim); border-radius: var(--design-control-radius); background: var(--design-bg); color: var(--design-ink); font: inherit; font-size: var(--design-text-size); }
+.newsletter-email-label input:focus-visible { outline: 2px solid var(--design-ink); outline-offset: 2px; }
+.newsletter-signup button { min-height: 2.75rem; }
+.newsletter-signup button:disabled { opacity: .65; cursor: default; }
+.newsletter-signup .newsletter-status { flex-basis: 100%; margin: 0; }
+.newsletter-status:empty { display: none; }
+.newsletter-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 480px) { .newsletter-signup button { width: 100%; } }

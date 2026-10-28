@@ -27,6 +27,7 @@ body_class: home-page
       <footer class="blog-post-footer">
       {% capture post_footer %}
         <hr class="blog-post-footer-divider">
+        {% include components/newsletter-signup.html source="blog-post" %}
         <p class="design-paragraph text-center"><a class="design-link" href="/feed.xml">Subscribe via RSS</a>.</p>
         <p class="design-paragraph text-center"><a class="design-link" href="/blog">← back to blog</a></p>
       {% endcapture %}

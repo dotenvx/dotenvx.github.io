@@ -22,6 +22,7 @@ body_class: home-page
 <section class="radar-section">
   <div class="armor-shell">
     {% capture blog_content %}
+    {% include components/newsletter-signup.html source="blog" %}
     <div class="blog-index-lists">
       {% assign listed_posts = site.categories.blog | where_exp: "post", "post.draft != true" %}
       {% assign posts_by_year = listed_posts | group_by_exp: "post", "post.date | date: '%Y'" %}

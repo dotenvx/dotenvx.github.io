@@ -225,3 +225,16 @@ The Jekyll build exports `docs/nextjs.md` to `/docs/nextjs.md` alongside the HTM
 Run `bundle exec ruby scripts/test_raw_markdown_exports.rb` to check the export.
 
 The reusable `components/docs-agent-button.html` takes `prompt` and `markdown_url` parameters and uses the consistent label “Onboard your coding agent.” On docs pages, set `agent_prompt` and `markdown_url` in front matter to show it in the hero. The button copies the prompt followed by “Fetch <absolute Markdown URL> and follow it.” Currently enabled only for Next.js.
+
+### Newsletter signup
+
+The blog index and article footer share `_includes/components/newsletter-signup.html`.
+The form posts to `https://armor.dotenvx.com/public/newsletter/subscribe` with
+`email`, `source` (`blog` or `blog-post`), and an empty `website` honeypot.
+Armor sends a confirmation email; subscribers enter the newsletter list only
+when they confirm. The source is stored on the confirmed subscriber.
+
+Deploy the matching `radar` backend changes before deploying these forms.
+The endpoint must allow POST requests from `https://dotenvx.com` and
+`https://www.dotenvx.com`. Local signup submissions still target production;
+use the Armor request specs to test without sending real emails.

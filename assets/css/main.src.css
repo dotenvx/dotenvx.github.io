@@ -7601,7 +7601,7 @@ html.dark .member-portrait-square--photo-back .member-portrait-face { box-shadow
   box-shadow: var(--design-etch);
 }
 .docs-site a.side-path::before { grid-row: span 2; font-size: 1.25em; }
-.docs-site a.side-path:not(.side-path--troubleshooting)::before { content: '↪'; }
+.docs-site a.side-path:not(.side-path--troubleshooting)::before { content: '↳'; }
 .docs-site a.side-path strong { display: block; color: var(--design-ink); font-weight: 600; }
 .docs-site a.side-path:hover { background: var(--design-hover); border-color: var(--design-mid); }
 .docs-site a.side-path--troubleshooting { background: #ebe6da; border-color: #8a7a4a; color: #6d5c32; }

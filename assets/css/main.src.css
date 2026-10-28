@@ -6913,17 +6913,19 @@ html.dark .hero-container-primary { color: #7b838a; }
   color: #f48120;
 }
 
-/* Inline docs references blend into prose; full code examples keep their styling. */
+/* Inline docs references get a light tint and mono type; full code examples keep their styling. */
 .docs-site main code:not(pre code):not(.design-codeblock code):not(.docs-cli-hero-command-copy code) {
   display: inline;
-  background: transparent !important;
+  background: var(--design-code-bg) !important;
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  color: inherit !important;
+  color: var(--design-ink) !important;
   font: inherit !important;
+  font-family: var(--design-font-mono) !important;
+  font-size: .9em !important;
   letter-spacing: inherit;
-  padding: 0 !important;
+  padding: .1em .3em !important;
   white-space: normal;
 }
 

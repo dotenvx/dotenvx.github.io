@@ -98,7 +98,8 @@ module RawMarkdownExports
     'docs/nextjs.md' => '/docs/nextjs.md',
     'docs/side-paths/nextjs-encrypted-text.md' => '/docs/nextjs/encrypted-text.md',
     'docs/side-paths/nextjs-share-private-key.md' => '/docs/nextjs/share-private-key.md',
-    'docs/side-paths/nextjs-deploy-private-key.md' => '/docs/nextjs/deploy-private-key.md'
+    'docs/side-paths/nextjs-deploy-private-key.md' => '/docs/nextjs/deploy-private-key.md',
+    'docs/neon.md' => '/docs/neon.md'
   }.freeze
   MARKDOWN_URLS = EXPORTS.values.to_h { |url| [url.sub(/\.md\z/, '/'), url] }.freeze
 

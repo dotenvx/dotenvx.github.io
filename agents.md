@@ -47,7 +47,7 @@ env "DATABASE_URL", type: "url", required: true, storage: "encrypted", redacted:
 ## Redaction
 {: .design-page-title .text-center}
 
-Use `--redact` to keep injected values out of terminal output. Your app gets the real values; matching output shows `[REDACTED]`. The flag currently redacts all injected values except public keys; it does not select values using Dotenvxfile’s `redacted` rules.
+Mark secrets with `redacted: true` to keep them out of terminal output automatically. Your app gets the real values; matching output shows `[REDACTED]`.
 
 ```ruby
 # Dotenvxfile
@@ -58,7 +58,7 @@ env "DATABASE_URL", required: true, redacted: true
 {: .envfile-example label="Redact secrets with Dotenvxfile"}
 
 ```shell
-$ dotenvx run --redact -- printenv DATABASE_URL
+$ dotenvx run -- printenv DATABASE_URL
 [REDACTED]
 ```
 {: .envfile-example label="Redacted terminal output"}
@@ -142,7 +142,7 @@ fatal: .env: clean filter 'dotenvx.protect' failed
 ## Fine-Tune
 {: .design-page-title .text-center}
 
-Choose the rules for each variable. Allow plaintext for a port. Use `redacted` to describe output rules; use `--redact` when running your app to redact injected values.
+Choose the rules for each variable. Allow plaintext for a port. Use `redacted: true` to hide secrets in output and `redacted: false` for public values.
 
 ```ruby
 env "PORT", type: "port", storage: "plaintext", redacted: false
@@ -167,9 +167,9 @@ Encrypt your .env file, then run your app with output redaction:
 
 ```shell
 dotenvx encrypt
-dotenvx run --redact -- node index.js
+dotenvx run -- node index.js
 ```
 {: .envfile-example label="Encrypt and run"}
 
-[Quickstart](/docs/quickstart/envfile/){: .design-btn} [Spec](/docs/envfile-spec/){: .design-btn}
+[Quickstart](/docs/quickstart/dotenvxfile/){: .design-btn} [Spec](/docs/dotenvxfile-spec/){: .design-btn}
 {: .agents-cta}

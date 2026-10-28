@@ -1,24 +1,8 @@
 ---
-layout: docs-cli
-title: "check"
-description: "Validate resolved .env values against an Envfile without running a command. An Envfile in the current directory is required; .env.example is not used for validation."
+layout: docs-markdown
+title: Dotenvxfile
 permalink: /docs/cli/check/
-crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-options_title: Options
-options:
-  - title: "check --ignore"
-    href: /docs/cli/check-ignore/
-  - title: "check -f"
-    href: /docs/cli/check-f/
-  - title: "check -fk"
-    href: /docs/cli/check-fk/
-  - title: "check --strict"
-    href: /docs/cli/check-strict/
-command: "dotenvx check"
+redirect_to: /docs/dotenvxfile/commands/
 redirect_from:
   - /docs/advanced/validate
   - /docs/advanced/validate/
@@ -27,23 +11,3 @@ redirect_from:
   - /docs/cli/validate/
   - /docs/cli/validate
 ---
-Validate resolved `.env` values against an `Envfile` without running a command. An `Envfile` in the current directory is required; `.env.example` is not used for validation.
-
-```ruby
-# Envfile
-strict true
-
-env "DATABASE_URL", type: "url"
-env "PORT", type: "port"
-env "SENTRY_DSN", optional: true
-```
-
-```console
-$ dotenvx check
-[INVALID_ENV] DATABASE_URL is required; PORT is required
-```
-{: copy="dotenvx check"}
-
-The command enforces required values, types, enums, bounds, and encryption requirements. It exits with code `1` on validation or other loading errors. Missing env files are reported but do not fail validation when the resolved values satisfy Envfile. On success, it prints `▣ valid (.env)` (listing the loaded input files) and exits with code `0` on success. It does not change your shell's environment.
-
-A missing Envfile reports `ENVFILE_REQUIRED`; invalid syntax reports `MALFORMED_ENVFILE`.

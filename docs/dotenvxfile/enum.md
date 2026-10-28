@@ -2,16 +2,19 @@
 layout: docs-cli
 title: Choices
 description: Restrict values to a list of allowed choices.
-permalink: "/docs/envfile/enum/"
-eyebrow: Envfile
-eyebrow_href: "/docs/envfile/"
+permalink: "/docs/dotenvxfile/enum/"
+redirect_from:
+  - /docs/envfile/enum
+  - /docs/envfile/enum/
+eyebrow: Dotenvxfile
+eyebrow_href: "/docs/dotenvxfile/"
 command: 'env "NODE_ENV", enum: ["development", "test", "production"]'
 command_prompt: false
 related:
-- title: Envfile Quickstart
-  href: "/docs/quickstart/envfile/"
-- title: Full Envfile Spec
-  href: "/docs/envfile-spec/"
+- title: Dotenvxfile Quickstart
+  href: "/docs/quickstart/dotenvxfile/"
+- title: Full Dotenvxfile Spec
+  href: "/docs/dotenvxfile-spec/"
 ---
 `enum` is a nonempty array of quoted strings or integers. Values must match one of the choices. With an integer or port type, choices compare numerically; other choices compare exactly. When combined with a type, every choice must satisfy that type.
 

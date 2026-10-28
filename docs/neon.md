@@ -50,30 +50,33 @@ $ neon env pull --branch main --file .env.production
 ```
 {: copy="neon env pull --branch main --file .env.production"}
 
-The Neon CLI pulls variables for every service enabled on the branch. Only some of them are secrets. Add an [Envfile](/docs/envfile/) to tell Dotenvx which ones to encrypt. Remove the lines for services you don't use.
+The Neon CLI pulls variables for every service enabled on the branch. Only some of them are secrets. Add a [Dotenvxfile](/docs/dotenvxfile/) to tell Dotenvx which ones to encrypt. Remove the lines for services you don't use.
 
 ```ruby
-# Envfile
+# Dotenvxfile
 strict true
+required true
+storage "encrypted"
+redacted true
 
 # Postgres
 env "DATABASE_URL", type: "url"
 env "DATABASE_URL_UNPOOLED", type: "url"
-env "NEON_BRANCH", encrypted: false, redacted: false
+env "NEON_BRANCH", storage: "plaintext", redacted: false
 
 # Neon Auth
-env "NEON_AUTH_BASE_URL", type: "url", encrypted: false, redacted: false
-env "NEON_AUTH_JWKS_URL", type: "url", encrypted: false, redacted: false
+env "NEON_AUTH_BASE_URL", type: "url", storage: "plaintext", redacted: false
+env "NEON_AUTH_JWKS_URL", type: "url", storage: "plaintext", redacted: false
 
 # Object Storage
 env "AWS_ACCESS_KEY_ID"
 env "AWS_SECRET_ACCESS_KEY"
-env "AWS_ENDPOINT_URL_S3", type: "url", encrypted: false, redacted: false
-env "AWS_REGION", encrypted: false, redacted: false
+env "AWS_ENDPOINT_URL_S3", type: "url", storage: "plaintext", redacted: false
+env "AWS_REGION", storage: "plaintext", redacted: false
 
 # AI Gateway
 env "NEON_AI_GATEWAY_TOKEN"
-env "NEON_AI_GATEWAY_BASE_URL", type: "url", encrypted: false, redacted: false
+env "NEON_AI_GATEWAY_BASE_URL", type: "url", storage: "plaintext", redacted: false
 ```
 {: .design-codeblock--nowrap copy="false"}
 
@@ -110,7 +113,7 @@ NEON_AI_GATEWAY_BASE_URL=https://br-bold-rain-b45zwi29-api.ai.c-6.us-east-2.aws.
 
 ## Encrypt a preview branch
 
-Every Neon branch has its own connection strings, Auth URLs and storage keys. Create a preview branch and give it its own encrypted file. The same Envfile applies.
+Every Neon branch has its own connection strings, Auth URLs and storage keys. Create a preview branch and give it its own encrypted file. The same Dotenvxfile applies.
 
 ```console
 $ neon branches create --name preview
@@ -160,16 +163,16 @@ Hello main at 2026-10-26T20:48:11.968Z
 
 ## Commit
 
-Commit both encrypted files and the Envfile. Keep `.env.keys` out of git. The `-f` flag adds the encrypted files even though `neon env pull` listed them in `.gitignore`.
+Commit both encrypted files and the Dotenvxfile. Keep `.env.keys` out of git. The `-f` flag adds the encrypted files even though `neon env pull` listed them in `.gitignore`.
 
 ```console
 $ echo ".env.keys" >> .gitignore
-$ git add .gitignore Envfile
+$ git add .gitignore Dotenvxfile
 $ git add -f .env.production .env.preview
 $ git commit -m "encrypt neon branch env"
 ```
 {: copy="echo \".env.keys\" >> .gitignore
-git add .gitignore Envfile
+git add .gitignore Dotenvxfile
 git add -f .env.production .env.preview
 git commit -m \"encrypt neon branch env\""}
 

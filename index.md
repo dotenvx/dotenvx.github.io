@@ -182,32 +182,7 @@ App listening on port 80
 
 {% include components/home-ship-with-code.html %}
 
-{% comment %}
-Ready for Agents: restore this section when the proxy is ready to launch.
-<section class="radar-section home-agents" aria-labelledby="home-agents-title">
-  <div class="armor-shell">
-    {% include components/design-page-title.html title="Ready for Agents" heading_tag="h2" title_class="text-center" id="home-agents-title" %}
-    {% capture agents_content %}
-      <p class="design-paragraph">Let agents use your APIs without handing them your API keys. Dotenvx gives your agent and its tools placeholders for the secrets you proxy. The real credentials stay outside the agent’s environment.</p>
-      <p class="design-paragraph">Define where each secret can be used in an Envfile. When your agent makes an API call, the proxy replaces its placeholder in supported authentication headers—only for the domain you allow. Your encrypted .env still travels with your code.</p>
-      {% capture agents_envfile %}
-# Envfile
-strict true
 
-env "STRIPE_SECRET_KEY", proxy: { domain: "api.stripe.com" }
-env "OPENAI_API_KEY", proxy: { domain: "api.openai.com" }
-      {% endcapture %}
-      {% include components/design-codeblock.html value=agents_envfile label="Envfile rules for proxied API credentials" language="ruby" %}
-      <p class="design-paragraph">Start your agent with dotenvx run. It can call the APIs it needs while the proxy handles the credentials.</p>
-      {% capture agents_run %}
-$ dotenvx run -- claude
-      {% endcapture %}
-      {% include components/design-codeblock.html value=agents_run copy_text="dotenvx run -- claude" label="Run an agent with proxied API credentials" format="cli" %}
-    {% endcapture %}
-    {% include components/design-content-width.html content=agents_content %}
-  </div>
-</section>
-{% endcomment %}
 
 <section class="radar-section home-open-source" id="install" aria-labelledby="home-open-source-title">
   <div class="armor-shell">

@@ -47,25 +47,24 @@ layout: radar
 
 {% capture step_content %}
 
-## Envfile
+## Dotenvxfile
 
 <ul class="advanced-cli-commands">
-<li><a class="design-link" href="/docs/quickstart/envfile/">Envfile Quickstart</a></li>
-<li><a class="design-link" href="/docs/envfile/env/">Declarations</a></li>
-<li><a class="design-link" href="/docs/envfile/strict/">Strictness</a></li>
-<li><a class="design-link" href="/docs/envfile/required/">Required</a></li>
-<li><a class="design-link" href="/docs/envfile/optional/">Optional</a></li>
-<li><a class="design-link" href="/docs/envfile/type/">Types</a></li>
-<li><a class="design-link" href="/docs/envfile/enum/">Choices</a></li>
-<li><a class="design-link" href="/docs/envfile/min/">Minimum</a></li>
-<li><a class="design-link" href="/docs/envfile/max/">Maximum</a></li>
-<li><a class="design-link" href="/docs/envfile/encrypted/">Encryption</a></li>
-<li><a class="design-link" href="/docs/envfile/redacted/">Redaction</a></li>
-<li><a class="design-link" href="/docs/envfile/proxy/">Proxy</a></li>
-<li><a class="design-link" href="/docs/envfile/file/">File overrides</a></li>
-<li><a class="design-link" href="/docs/envfile/syntax/">Syntax</a></li>
-<li><a class="design-link" href="/docs/envfile/commands/">Commands</a></li>
-<li><a class="design-link" href="/docs/envfile/">All Envfile →</a></li>
+<li><a class="design-link" href="/docs/quickstart/dotenvxfile/">Dotenvxfile Quickstart</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/env/">Declarations</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/strict/">Strictness</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/required/">Required</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/optional/">Optional</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/type/">Types</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/enum/">Choices</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/min/">Minimum</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/max/">Maximum</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/encrypted/">Encryption</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/redacted/">Redaction</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/file/">File overrides</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/syntax/">Syntax</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/commands/">Commands</a></li>
+<li><a class="design-link" href="/docs/dotenvxfile/">All Dotenvxfile →</a></li>
 </ul>
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true %}

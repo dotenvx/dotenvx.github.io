@@ -106,21 +106,21 @@
     ]
   },
   {
-    "label": "Envfile",
+    "label": "Dotenvxfile",
     "children": [
       {
         "label": "Strictness",
-        "href": "/docs/envfile/strict/",
+        "href": "/docs/dotenvxfile/strict/",
         "children": []
       },
       {
         "label": "Encryption",
-        "href": "/docs/envfile/encrypted/",
+        "href": "/docs/dotenvxfile/encrypted/",
         "children": []
       },
       {
-        "label": "All Envfile \u2192",
-        "href": "/docs/envfile/",
+        "label": "All Dotenvxfile \u2192",
+        "href": "/docs/dotenvxfile/",
         "children": []
       }
     ]
@@ -139,8 +139,8 @@
         "children": []
       },
       {
-        "label": "Envfile Spec",
-        "href": "/docs/envfile-spec/",
+        "label": "Dotenvxfile Spec",
+        "href": "/docs/dotenvxfile-spec/",
         "children": []
       },
       {

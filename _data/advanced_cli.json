@@ -164,7 +164,7 @@
     "href": "/docs/cli/run-variable-expansion/"
   },
   {
-    "label": "run with an Envfile",
+    "label": "run with an Dotenvxfile",
     "href": "/docs/cli/run-validate/"
   },
   {
@@ -804,14 +804,6 @@
     "href": "/docs/cli/hidden/"
   },
   {
-    "label": "init",
-    "href": "/docs/cli/init/"
-  },
-  {
-    "label": "init -f",
-    "href": "/docs/cli/init-f/"
-  },
-  {
     "label": "lock",
     "href": "/docs/cli/lock/"
   },
@@ -970,58 +962,6 @@
   {
     "label": "update",
     "href": "/docs/cli/update/"
-  },
-  {
-    "label": "check",
-    "href": "/docs/cli/check/"
-  },
-  {
-    "label": "check --convention",
-    "href": "/docs/cli/check-convention/"
-  },
-  {
-    "label": "check --ignore",
-    "href": "/docs/cli/check-ignore/"
-  },
-  {
-    "label": "check --no-1password",
-    "href": "/docs/cli/check-no-1password/"
-  },
-  {
-    "label": "check --no-armor",
-    "href": "/docs/cli/check-no-armor/"
-  },
-  {
-    "label": "check --no-bitwarden",
-    "href": "/docs/cli/check-no-bitwarden/"
-  },
-  {
-    "label": "check --no-native",
-    "href": "/docs/cli/check-no-native/"
-  },
-  {
-    "label": "check --strict",
-    "href": "/docs/cli/check-strict/"
-  },
-  {
-    "label": "check --token",
-    "href": "/docs/cli/check-token/"
-  },
-  {
-    "label": "check -e",
-    "href": "/docs/cli/check-e/"
-  },
-  {
-    "label": "check -f",
-    "href": "/docs/cli/check-f/"
-  },
-  {
-    "label": "check -fk",
-    "href": "/docs/cli/check-fk/"
-  },
-  {
-    "label": "check -o",
-    "href": "/docs/cli/check-o/"
   },
   {
     "label": "version",

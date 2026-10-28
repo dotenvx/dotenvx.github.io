@@ -34,13 +34,13 @@
   summary: "Next.js loads keys from Armor, OS secret stores, 1Password, and Bitwarden."
   url: "/docs/nextjs/"
 - date: 2026-10-05
-  summary: "Next.js gains Envfile validation and secret redaction with @dotenvx/next-env."
+  summary: "Next.js gains Dotenvxfile validation and secret redaction with @dotenvx/next-env."
   url: "/docs/nextjs/"
 - date: 2026-10-05
-  summary: "Select environment combinations with Envfile profiles."
+  summary: "Select environment combinations with Dotenvxfile profiles."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2330-2026-10-05"
 - date: 2026-10-05
-  summary: "Automatically redact application output from config() with an Envfile."
+  summary: "Automatically redact application output from config() with an Dotenvxfile."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#2330-2026-10-05"
 - date: 2026-10-04
   summary: "Create and revoke organization tokens in Armor, with token audit logs."

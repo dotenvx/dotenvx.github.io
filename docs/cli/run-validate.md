@@ -1,9 +1,9 @@
 ---
 layout: docs-cli
-title: "run with an Envfile"
+title: "run with a Dotenvxfile"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/
-description: "When an Envfile is present, run automatically validates the resolved environment before starting your command. No validation flag is needed."
+description: "When a Dotenvxfile is present, run automatically validates the resolved environment before starting your command. No validation flag is needed."
 permalink: /docs/cli/run-validate/
 redirect_from:
   - /docs/ref/cli/run-validate/
@@ -17,21 +17,20 @@ crumbs:
     href: /docs/cli/run/
 command: "dotenvx run -- node index.js"
 ---
-When an `Envfile` is present, `run` automatically validates the resolved environment before starting your command. No validation flag is needed.
+When a `Dotenvxfile` is present, `run` validates resolved values before starting your command. No validation flag is needed.
 
 ```ruby
-# Envfile
+# Dotenvxfile
 strict true
 
-env "DATABASE_URL", type: "url"
-env "API_KEY"
+env "DATABASE_URL", type: "url", required: true, redacted: true
+env "API_KEY", required: true, redacted: true
 env "SENTRY_DSN", optional: true
 ```
 
 ```console
 $ dotenvx run -- node index.js
-[INVALID_ENV] DATABASE_URL is required; API_KEY is required
 ```
 {: copy="dotenvx run -- node index.js"}
 
-`dotenvx spec` generates `strict true`, so validation failures stop the command. Files that omit `strict` or set `strict false` warn instead. Other loading errors require `--strict` to stop execution.
+Missing required values report `INVALID_ENV`. With `strict true`, validation failures stop the command. Files that omit `strict` or set `strict false` warn instead. CLI `--strict` also stops on loading errors.

@@ -19,7 +19,7 @@ body_class: home-page
 <div class="home-sections">
 {% include components/blog/hero.html
   title="Blog"
-  description="Notes on secrets, .env files, and building dotenvx."
+  description="Notes from the team in LA & SF."
 %}
 
 <section class="radar-section">

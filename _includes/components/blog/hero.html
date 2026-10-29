@@ -1,43 +1,5 @@
-<style>
-  .blog-hero-ascii {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    min-height: inherit;
-    width: 100%;
-  }
-
-  .blog-hero-ascii-art {
-    color: var(--design-ink);
-    font-family: var(--design-font-mono);
-    font-size: var(--design-text-title);
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    line-height: 1;
-    margin: 0;
-    text-align: center;
-    user-select: none;
-    white-space: pre;
-  }
-
-</style>
-
-{% capture blog_hero_visual %}
-  <div class="blog-hero-ascii" aria-hidden="true">
-    <pre class="blog-hero-ascii-art">##</pre>
-  </div>
-{% endcapture %}
-
 <section class="design-hero-section home-hero" aria-label="{{ include.title }}">
   <div class="armor-shell">
-    {% include components/design-hero.html
-      compact=true
-      name_heading=true
-      secondary=true
-      name=include.title
-      description=include.description
-      content=blog_hero_visual
-    %}
+    {% include components/office-hero.html description=include.description %}
   </div>
 </section>

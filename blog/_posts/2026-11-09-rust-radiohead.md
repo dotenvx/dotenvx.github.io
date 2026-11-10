@@ -26,7 +26,7 @@ I want Dotenvx 3.0 to feel like a blade again. I also want to keep the features 
 
 So how do we do that? **Custom builds.**
 
-We can ship the core Dotenvx binary with the defaults (`run`, `get`, `encrypt`, and `decrypt`) plus a new `dotenvx install` command. Ask it for Armor, 1Password, audit logs, proxy support, or whatever else your project needs, and it installs a Dotenvx built with those pieces.
+We can ship the core Dotenvx binary with the defaults (run, get, encrypt, and decrypt) plus a new dotenvx install command. Ask it for Armor, 1Password, audit logs, proxy support, or whatever else your project needs, and it installs a Dotenvx built with those pieces.
 
 Rust enables this through Cargo feature flags. They let us decide what gets compiled into the binary. For instance, leave Armor or 1Password out and their code and optional dependencies stay out of the build. Tight. I think that's how we get the blade back.
 

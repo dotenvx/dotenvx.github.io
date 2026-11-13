@@ -29,21 +29,24 @@ Create a [Next.js app](https://nextjs.org/docs/app/getting-started/installation)
 
 ## Install
 
-In your Next.js project, install Dotenvx and [@dotenvx/next-env](https://www.npmjs.com/package/@dotenvx/next-env).
+Install the standalone Dotenvx CLI and make sure `dotenvx` is on your `PATH`.
 
 ```console
-$ npm install @dotenvx/dotenvx
+$ curl -sfS https://dotenvx.sh | sh
+```
+{: copy="curl -sfS https://dotenvx.sh | sh"}
+
+In your Next.js project, install [@dotenvx/next-env](https://www.npmjs.com/package/@dotenvx/next-env).
+
+```console
 $ npm install @dotenvx/next-env
 ```
-{: copy="npm install @dotenvx/dotenvx
-npm install @dotenvx/next-env" package-manager="npm"}
+{: copy="npm install @dotenvx/next-env" package-manager="npm"}
 
 ```console
-$ pnpm add @dotenvx/dotenvx
 $ pnpm add @dotenvx/next-env
 ```
-{: copy="pnpm add @dotenvx/dotenvx
-pnpm add @dotenvx/next-env" package-manager="pnpm"}
+{: copy="pnpm add @dotenvx/next-env" package-manager="pnpm"}
 
 Add this override to your package manager’s configuration:
 
@@ -91,16 +94,10 @@ HELLO="Secret"
 Encrypt it with a single command.
 
 ```console
-$ npx dotenvx encrypt
+$ dotenvx encrypt
 ◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
-{: copy="npx dotenvx encrypt" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
-```
-{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
+{: copy="dotenvx encrypt"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -170,44 +167,26 @@ Have teammates? Share access with Dotenvx Armor ⛨
 Log in to Dotenvx.
 
 ```console
-$ npx dotenvx login
+$ dotenvx login
 ◉ logged in (username)
 ```
-{: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx login
-◉ logged in (username)
-```
-{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
+{: copy="dotenvx login" class="design-codeblock--nowrap"}
 
 Create the Armored Key ⛨
 
 ```console
-$ npx dotenvx armor up
+$ dotenvx armor up
 ⛨ armored .env (022 0D8)
 ```
-{: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor up
-⛨ armored .env (022 0D8)
-```
-{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
+{: copy="dotenvx armor up" class="design-codeblock--nowrap"}
 
 Invite your teammate.
 
 ```console
-$ npx dotenvx armor invite
+$ dotenvx armor invite
 ⛨ invited person@example.com to team
 ```
-{: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor invite
-⛨ invited person@example.com to team
-```
-{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
+{: copy="dotenvx armor invite" class="design-codeblock--nowrap"}
 
 They can now pull (git), decrypt, and run.
 
@@ -244,13 +223,7 @@ HELLO="Production"
 Encrypt it with an Enclaved Key ◊
 
 ```console
-$ npx dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
-```
-{: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
+$ dotenvx encrypt -f .env.production
 ◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
 
 # 1. ⛨ Choose key type …
@@ -261,7 +234,7 @@ $ pnpm exec dotenvx encrypt -f .env.production
 # 4. ◊ Select resource/project …
 # 5. ? Private key name › DOTENV_PRIVATE_KEY_PRODUCTION
 ```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
+{: copy="dotenvx encrypt -f .env.production"}
 
 Commit .env.production.
 

@@ -1,5 +1,5 @@
 ---
-title: "Agents, meet Dotenvxfile."
+title: "Agents, meet Dotenvx.toml."
 description: "You know the file. Now know the rules."
 permalink: /agents
 redirect_from:
@@ -21,42 +21,52 @@ You've done your best to handle secrets responsibly. But you're a non-determinis
 
 You've been reaching for encrypted .env files. That's a big step. But you need more. Which variables are required? What's valid? How should each secret be handled? You need rules that Dotenvx can enforce.
 
-Introducing Dotenvxfile.
+Introducing Dotenvx.toml.
 
-## Dotenvxfile
+## Dotenvx.toml
 {: .design-page-title .text-center}
 
-```ruby
-# Dotenvxfile
-strict true
+```toml
+# Dotenvx.toml
+strict = true
 
 # Check the port.
-env "PORT", type: "port", storage: "plaintext", redacted: false
+[env.PORT]
+type = "port"
+storage = "plaintext"
+redacted = false
 
 # Limit the environment to known values.
-env "NODE_ENV", enum: ["development", "test", "production"]
+[env.NODE_ENV]
+enum = ["development", "test", "production"]
 
 # Keep secrets encrypted and out of output.
-env "DATABASE_URL", type: "url", required: true, storage: "encrypted", redacted: true
+[env.DATABASE_URL]
+type = "url"
+required = true
+storage = "encrypted"
+redacted = true
 ```
-{: .envfile-example label="Dotenvxfile example"}
+{: .envfile-example label="Dotenvx.toml example"}
 
 - Safe to commit.
-- Keys and instructions, not keys and values.
+- Declare variable names and rules. Keep secret values in your .env files.
 - Dotenvx enforces the rules.
 
 ## Redaction
 {: .design-page-title .text-center}
 
-Mark secrets with `redacted: true` to keep them out of terminal output automatically. Your app gets the real values; matching output shows `[REDACTED]`.
+Mark secrets with `redacted = true` to keep them out of terminal output automatically. Your app gets the real values. Matching output shows `[REDACTED]`.
 
-```ruby
-# Dotenvxfile
-strict true
+```toml
+# Dotenvx.toml
+strict = true
 
-env "DATABASE_URL", required: true, redacted: true
+[env.DATABASE_URL]
+required = true
+redacted = true
 ```
-{: .envfile-example label="Redact secrets with Dotenvxfile"}
+{: .envfile-example label="Redact secrets with Dotenvx.toml"}
 
 ```shell
 $ dotenvx run -- printenv DATABASE_URL
@@ -67,19 +77,20 @@ $ dotenvx run -- printenv DATABASE_URL
 ## Strictness
 {: .design-page-title .text-center}
 
-With `strict true`, failures of your configured validation rules stop your command before it starts. Add `required: true` to require a value; variables are optional by default.
+With `strict = true`, failures of your configured validation rules stop your command before it starts. Add `required = true` to require a value. Variables are optional by default.
 
-```ruby
-# Dotenvxfile
-strict true
+```toml
+# Dotenvx.toml
+strict = true
 
-env "API_KEY", required: true
+[env.API_KEY]
+required = true
 ```
 {: .envfile-example label="Require a secret before running"}
 
 ```shell
 $ dotenvx run -- node index.js
-☠ [INVALID_ENV] API_KEY is required per Dotenvxfile
+☠ [INVALID_ENV] API_KEY is required per Dotenvx.toml
 $ echo $?
 1
 ```
@@ -88,14 +99,19 @@ $ echo $?
 ## Encryption
 {: .design-page-title .text-center}
 
-Choose how each value is stored. Use `storage: "encrypted"` for secrets and `storage: "plaintext"` for public configuration. The default storage policy is `"any"`; encryption is not required automatically.
+Choose how each value is stored. Use `storage = "encrypted"` for secrets and `storage = "plaintext"` for public configuration. The default storage policy is `"any"`, which allows plaintext or encrypted values.
 
-```ruby
-# Dotenvxfile
-strict true
+```toml
+# Dotenvx.toml
+strict = true
 
-env "API_KEY", required: true, storage: "encrypted", redacted: true
-env "PORT", type: "port", storage: "plaintext"
+[env.API_KEY]
+required = true
+storage = "encrypted"
+redacted = true
+[env.PORT]
+type = "port"
+storage = "plaintext"
 ```
 {: .envfile-example label="Choose encrypted and plaintext storage"}
 
@@ -104,38 +120,40 @@ $ dotenvx encrypt
 ```
 {: .envfile-example label="Encrypt secret values"}
 
-`dotenvx encrypt` respects the storage rules: `API_KEY` is encrypted and `PORT` stays readable. Declaring a storage rule does not rewrite your .env file or make `dotenvx run` reject plaintext at startup. Keep your private key separate from Git.
+`dotenvx encrypt` encrypts `API_KEY` and leaves `PORT` readable. Declaring a storage rule does not rewrite your .env file or make `dotenvx run` reject plaintext at startup. Keep your private key separate from Git.
 
 ## Types
 {: .design-page-title .text-center}
 
 Catch bad configuration before your app does. Validate ports, URLs, emails, and more.
 
-```ruby
-# Dotenvxfile
-strict true
+```toml
+# Dotenvx.toml
+strict = true
 
-env "PORT", type: "port", storage: "plaintext"
+[env.PORT]
+type = "port"
+storage = "plaintext"
 ```
 {: .envfile-example label="Validate a port"}
 
 ```shell
 $ dotenvx run -- node index.js
-☠ [INVALID_ENV] PORT must be at most 65535 per Dotenvxfile
+☠ [INVALID_ENV] PORT must be at most 65535 per Dotenvx.toml
 ```
 {: .envfile-example label="Invalid port blocks startup"}
 
 ## Protect
 {: .design-page-title .text-center}
 
-Keep plaintext secrets out of commits. `dotenvx protect` installs Git protection for .env files and private keys. It currently checks .env files independently of Dotenvxfile’s storage rules, so a plaintext value such as `PORT` can still block staging.
+Keep plaintext secrets out of commits. `dotenvx protect` installs Git protection for .env files and private keys. The Git filter honors Dotenvx.toml storage rules. An explicit `storage = "plaintext"` rule lets a value such as `PORT` stay readable. Use a custom Dotenvx build with `command-protect` for this example.
 
 ```console
 $ dotenvx protect
 ⛉ protection: full (.env*, .env.keys*)
 $ echo 'API_KEY=example-only' > .env
 $ git add .env
-☠ [PLAINTEXT_ENV] API_KEY not encrypted (".env"). fix: run [dotenvx encrypt -f .env]
+☠ [PLAINTEXT_ENV] ".env" contains plaintext secrets. fix: run [dotenvx encrypt -f .env]
 fatal: .env: clean filter 'dotenvx.protect' failed
 ```
 {: .envfile-example label="Block plaintext secrets from commits"}
@@ -143,26 +161,36 @@ fatal: .env: clean filter 'dotenvx.protect' failed
 ## Fine-Tune
 {: .design-page-title .text-center}
 
-Choose the rules for each variable. Allow plaintext for a port. Use `redacted: true` to hide secrets in output and `redacted: false` for public values.
+Choose the rules for each variable. Allow plaintext for a port. Use `redacted = true` to hide secrets in output and `redacted = false` for public values.
 
-```ruby
-env "PORT", type: "port", storage: "plaintext", redacted: false
+```toml
+[env.PORT]
+type = "port"
+storage = "plaintext"
+redacted = false
 ```
 {: .envfile-example label="Declare plaintext storage and an output rule for a port"}
 
 ## Get Started
 {: .design-page-title .text-center}
 
-Create a file named `Dotenvxfile` in your project root. Add explicit rules for the variables your app needs:
+Create a file named `Dotenvx.toml` in your project root. Add explicit rules for the variables your app needs:
 
-```ruby
-# Dotenvxfile
-strict true
+```toml
+# Dotenvx.toml
+strict = true
 
-env "PORT", type: "port", required: true, storage: "plaintext"
-env "DATABASE_URL", type: "url", required: true, storage: "encrypted", redacted: true
+[env.PORT]
+type = "port"
+required = true
+storage = "plaintext"
+[env.DATABASE_URL]
+type = "url"
+required = true
+storage = "encrypted"
+redacted = true
 ```
-{: .envfile-example label="Create your Dotenvxfile"}
+{: .envfile-example label="Create your Dotenvx.toml"}
 
 Encrypt your .env file, then run your app with output redaction:
 
@@ -171,6 +199,3 @@ dotenvx encrypt
 dotenvx run -- node index.js
 ```
 {: .envfile-example label="Encrypt and run"}
-
-[Quickstart](/docs/quickstart/dotenvxfile/){: .design-btn} [Spec](/docs/dotenvxfile-spec/){: .design-btn}
-{: .agents-cta}

@@ -23,7 +23,7 @@ Run your tool through Dotenvx so it receives the decrypted environment:
 ```json
 {
   "scripts": {
-    "upload:sourcemaps": "dotenvx run -f .env.production --strict -- node scripts/upload-sourcemaps.cjs"
+    "upload:sourcemaps": "dotenvx run -f .env.production -- node scripts/upload-sourcemaps.cjs"
   }
 }
 ```

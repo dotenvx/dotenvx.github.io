@@ -32,7 +32,7 @@ Commit the encrypted .env.staging file and add this script:
 ```json
 {
   "scripts": {
-    "build:staging": "dotenvx run -f .env.staging --strict -- vite build --mode staging"
+    "build:staging": "dotenvx run -f .env.staging -- vite build --mode staging"
   }
 }
 ```

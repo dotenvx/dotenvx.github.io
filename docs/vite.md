@@ -80,10 +80,13 @@ git commit -m \"encrypt .env\""}
 
 ## Ship
 
-Display the value in your project's index.html:
+In your project's `index.html`, place the greeting above `#app` so your app's rendering doesn't replace it.
 
 ```html
+...
 <h1>Hello %VITE_HELLO%</h1>
+<div id="app"></div>
+...
 ```
 
 In JavaScript or a component, read the same value with import.meta.env.VITE_HELLO.
@@ -93,8 +96,8 @@ Update these scripts in package.json, keeping your other scripts and any existin
 ```json
 {
   "scripts": {
-    "dev": "dotenvx run --strict -- vite",
-    "build": "dotenvx run -f .env.production --strict -- vite build",
+    "dev": "dotenvx run -- vite",
+    "build": "dotenvx run -f .env.production -- vite build",
     "preview": "vite preview"
   }
 }

@@ -3,6 +3,21 @@ require 'jekyll'
 require_relative '../_plugins/raw_markdown_exports'
 
 class RawMarkdownExportsTest < Minitest::Test
+  def test_homepage_export_uses_current_homepage_copy
+    root = File.expand_path('..', __dir__)
+    site = Jekyll::Site.new(Jekyll.configuration('source' => root, 'url' => 'https://dotenvx.com'))
+    site.data['practitioners'] = YAML.safe_load(File.read(File.join(root, '_data/practitioners.yml')))
+    source = File.read(File.join(root, 'index.md')).sub('title="Ready for Production"', 'title="Deploy to Production"')
+    result = RawMarkdownExports.homepage(source, site)
+
+    assert result.start_with?("# Dotenvx\n\n")
+    assert_includes result, '[HTML homepage](https://dotenvx.com/)'
+    assert_includes result, '[Install](https://dotenvx.com/docs/install.md)'
+    assert_includes result, '## Deploy to Production'
+    assert_includes result, '$ dotenvx run -- npm start'
+    refute_match(/\{%|\{:|<section|<figure|One-Line Upgrade/, result)
+  end
+
   def test_install_export_uses_shared_installation_data
     source = File.read(File.expand_path('../docs/install.md', __dir__))
     data = %w[install_methods install_sdks install_other_methods].to_h do |group|

@@ -1,0 +1,97 @@
+---
+layout: radar
+---
+
+<style>
+  @media (min-width: 640px) {
+    /* Balance the wider Ericsson mark against Google at the opposite end. */
+    .home-page .home-company-cloud > div { transform: translateX(-0.25rem); }
+  }
+
+  /* Centered install choice — same arresting layout as /armor */
+  .home-install-choice {
+    width: 100%;
+  }
+
+  .home-install-choice .design-choice-current {
+    min-height: 6.5rem;
+    padding: 1.25rem 1.35rem;
+  }
+
+  .home-install-choice .design-btn[hidden],
+  .home-install-choice [hidden] {
+    display: none !important;
+  }
+
+  .home-install-you {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .home-install-code-copy {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .home-install-code-copy:hover .design-code,
+  .home-install-code-copy:focus-visible .design-code {
+    color: var(--design-ink) !important;
+    outline: none;
+  }
+
+  .home-install-code-copy:focus-visible {
+    outline: none;
+  }
+
+  .home-production-providers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+  .home-production-provider {
+    display: inline-flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--design-line, #d4d4d4);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fff;
+    background: #000;
+  }
+  .home-production-provider + .home-production-provider { margin-left: -0.5rem; }
+  .home-production-provider--cloudflare { background: #f38020; }
+  .home-production-provider--aws { background: #232f3e; }
+  .home-production-provider-icon { width: 72%; height: 72%; margin: auto; }
+  .home-custody .design-settings-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-custody div.design-settings-tile:hover { background: transparent; }
+  .home-custody .design-settings-tile .docs-hero-icon {
+    color: var(--design-ink) !important;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .home-custody .home-custody-1password .docs-hero-icon {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+  .home-agents .design-codeblock { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .home-agents .design-codeblock-wrap { margin-bottom: 1.25rem; }
+</style>
+
+<div class="home-sections">
+  {{ content }}
+</div>
+
+<script src="{{ "/assets/js/secrets-artifact.js" | relative_url }}" defer></script>
+
+<script src="/assets/js/member-portraits.js?v={{ site.time | date: '%s' }}" defer></script>

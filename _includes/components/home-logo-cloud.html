@@ -1,3 +1,6 @@
+{% if homepage_markdown %}
+Used by Google, NASA, AWS, and Ericsson.
+{% else %}
 <section class="home-company-cloud w-full mx-auto" aria-label="Projects using Dotenvx">
   <div class="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-6">
     <div role="img" aria-label="Google" class="flex items-center justify-center h-20 px-3 w-28 sm:w-32 opacity-75">
@@ -14,3 +17,4 @@
     </div>
   </div>
 </section>
+{% endif %}

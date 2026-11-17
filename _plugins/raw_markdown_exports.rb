@@ -107,6 +107,21 @@ module RawMarkdownExports
   ATTRIBUTES = /\{:(?:[^"'}]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')*\}/m
   FENCE = /^(`{3,}|~{3,})[^\n]*\n.*?^\1[ \t]*(?:\n|\z)/m
 
+  def self.write(path, content)
+    # Browsers can detect UTF-8 even when the static host omits the charset.
+    File.write(path, "\uFEFF#{content}", encoding: 'UTF-8')
+  end
+
+  def self.homepage(source, site)
+    body = source.sub(/\A---\s*\n.*?^---\s*\n/m, '')
+    template = site.liquid_renderer.file('index.md (Markdown export)').parse(body)
+    markdown = template.render!(
+      { 'homepage_markdown' => true, 'site' => site.site_payload['site'] },
+      registers: { site: site }
+    )
+    nextjs("---\ntitle: Dotenvx\n---\n#{markdown}", site.config.fetch('url'))
+  end
+
   def self.install(source, data, site_url)
     body = +"Use dotenvx from the command line or directly in your code. Choose the installation method that fits your project and operating system.\n\n"
     %w[install_methods install_sdks install_other_methods].each do |group|
@@ -175,8 +190,8 @@ module RawMarkdownExports
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  source = File.join(site.source, 'md/index.md')
-  FileUtils.cp(source, File.join(site.dest, 'index.md')) if File.file?(source)
+  homepage = RawMarkdownExports.homepage(File.read(site.in_source_dir('index.md')), site)
+  RawMarkdownExports.write(File.join(site.dest, 'index.md'), homepage)
 
   RawMarkdownExports::EXPORTS.each do |source_path, url|
     source = File.join(site.source, source_path)
@@ -189,6 +204,6 @@ Jekyll::Hooks.register :site, :post_write do |site|
     else
       RawMarkdownExports.nextjs(File.read(source), site.config.fetch('url'))
     end
-    File.write(destination, content)
+    RawMarkdownExports.write(destination, content)
   end
 end

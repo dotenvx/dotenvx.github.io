@@ -1,3 +1,6 @@
+{% if homepage_markdown %}
+- [{{ include.person.name }} · {{ include.role }}]({{ include.person.href }})
+{% else %}
 <a class="design-card home-member-story" href="{{ include.person.href }}">
   <span class="home-member-story-label">Field Note <span aria-hidden="true">{{ include.number }}</span></span>
   <h2 class="home-member-story-title">{{ include.headline | escape }}</h2>
@@ -6,3 +9,4 @@
   </div>
   <span class="home-member-story-link">Read the story <span aria-hidden="true">↗</span></span>
 </a>
+{% endif %}

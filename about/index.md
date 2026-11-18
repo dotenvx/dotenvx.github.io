@@ -1,17 +1,18 @@
 ---
 title: About
-description: "Working out of LA & SF–on a small important file"
+description: "Working out of LA–on a small important file"
 permalink: /about/
 layout: radar
 body_class: home-page about-page
 ---
 
 {% if writer_preview %}
-{{ page.description }}
+> {{ page.description }}
 
 <p><img class="writer-image writer-office-image" src="{{ '/dotenvx-la-office-crt.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="600" height="449"></p>
 
-[Contact us]({{ '/v2/contact/' | relative_url }}) · [Careers]({{ '/v2/careers/' | relative_url }})
+[support@dotenvx.com](mailto:support@dotenvx.com)
+
 {% else %}
 <style>
   .about-story { margin: 2.5rem 0; }

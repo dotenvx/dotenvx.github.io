@@ -71,7 +71,9 @@ module WriterMarkdownExport
     when 'span'
       return " #{children(node)}" if node['class'].to_s.split.include?('membership-plan-price')
       node['class'].to_s.split.include?('design-check') ? '✓' : children(node)
-    when 'p', 'section', 'div', 'blockquote', 'figure'
+    when 'blockquote'
+      "\n\n" + children(node).strip.split("\n", -1).map { |line| line.empty? ? '>' : "> #{line}" }.join("\n") + "\n\n"
+    when 'p', 'section', 'div', 'figure'
       "\n\n#{children(node)}\n\n"
     else children(node)
     end

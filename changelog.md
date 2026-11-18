@@ -105,7 +105,7 @@ body_class: home-page
       {% if writer_preview %}</div>{% else %}</nav>{% endif %}
       {% endcapture %}
 {% if writer_preview %}
-What we’re working on in LA & SF.
+What we’re working on in LA.
 
 <div>
 {{ changelog_content | strip }}

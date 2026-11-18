@@ -7,71 +7,9 @@ layout: home
 body_class: home-page
 ---
 
-{% capture home_intro %}
-A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/dotenv){: .design-link}
-{% endcapture %}
-{% if homepage_markdown %}
-{{ home_intro | strip }}
-
-[Install](/docs/install/) · [Quickstart](/docs/quickstart/){% unless writer_preview %} · [HTML homepage](/){% endunless %}
-{% else %}
-{% assign home_intro_html = home_intro | markdownify %}
-{% include components/home-hero.html compact=true description=home_intro_html %}
-{% endif %}
-
-{% include components/home-logo-cloud.html %}
-
-{% capture home_section_content %}
-### **Encrypt**
-{: .home-command-label}
-
-```cli
-$ dotenvx encrypt
-◈ encrypted (.env)
-```
-{: label="Encrypt your .env file" copy="dotenvx encrypt"}
-
-Encrypt your secrets in .env files. The values become ciphertext and only your private key can unlock them.
+{% capture home_design_content %}
+Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
 {: .design-paragraph}
-
-### **Commit**
-{: .home-command-label}
-
-```cli
-$ git add .env
-$ git commit -m "encrypt .env"
-```
-{: label="Commit your encrypted .env file" copy='git add .env
-git commit -m "encrypt .env"'}
-
-Commit your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
-{: .design-paragraph}
-
-### **Ship**
-{: .home-command-label}
-
-```cli
-$ dotenvx run -- node index.js
-⟐ injected env (2) from .env
-```
-{: label="Run your deployed app" copy="dotenvx run -- node index.js"}
-
-Ship your code and secrets together. Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
-{: .design-paragraph}
-{% endcapture %}
-{% include components/home-section.html title="Usage" id="home-commands-plain-title" content=home_section_content class="home-commands-plain" %}
-
-{% unless writer_preview %}
-{% include components/home-member-stories.html %}
-{% endunless %}
-
-{% capture home_section_content %}
-Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.{% if writer_preview %} Read about it in the [whitepaper](/whitepaper.pdf).{% endif %}
-{: .design-paragraph}
-
-{% if writer_preview %}
-<p><a href="{{ '/whitepaper.pdf' | relative_url }}"><img class="writer-image writer-whitepaper-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Dotenvx whitepaper, Reducing Secrets Risk with Cryptographic Separation" width="1914" height="1948"></a></p>
-{% endif %}
 
 We chose git because it is the best way to deliver digital goods. It is the container ship of the digital world. All code travels on its ships. Why not secrets? Why invent an inferior secrets delivery mechanism when the world class one is right there at your fingertips.
 {: .design-paragraph}
@@ -93,7 +31,114 @@ The result is a system built entirely from primitives, developers already unders
 {: .design-paragraph .text-center}
 {% endunless %}
 {% endcapture %}
-{% include components/home-section.html title="Design" id="home-foundations-title" content=home_section_content class="home-foundations" copy_class="home-design-copy" %}
+
+{% capture home_intro %}
+A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/dotenv){: .design-link}
+{% endcapture %}
+{% if homepage_markdown %}
+{% if writer_preview %}> {% endif %}{{ home_intro | strip }}
+
+{% unless writer_preview %}
+[Install](/docs/install/) · [Quickstart](/docs/quickstart/) · [HTML homepage](/)
+{% endunless %}
+
+{% if writer_preview %}
+<p><a href="{{ '/whitepaper.pdf' | relative_url }}"><img class="writer-image writer-whitepaper-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Dotenvx whitepaper, Reducing Secrets Risk with Cryptographic Separation" width="1914" height="1948"></a></p>
+
+[Quickstart](/docs/quickstart/)
+
+{{ home_design_content | strip }}
+{% endif %}
+{% else %}
+{% assign home_intro_html = home_intro | markdownify %}
+{% include components/home-hero.html compact=true description=home_intro_html %}
+{% endif %}
+
+{% unless writer_preview %}
+{% include components/home-logo-cloud.html %}
+{% endunless %}
+
+{% capture home_usage_section %}
+{% capture home_section_content %}
+{% unless writer_preview %}
+### **Encrypt**
+{: .home-command-label}
+{% endunless %}
+
+{% capture home_usage_paragraph %}
+{% if writer_preview %}**Encrypt**{% else %}Encrypt{% endif %} your secrets in .env files. The values become ciphertext and only your private key can unlock them.
+{: .design-paragraph}
+{% endcapture %}
+{% if writer_preview %}
+{{ home_usage_paragraph | strip }}
+{% endif %}
+
+```cli
+$ dotenvx encrypt
+◈ encrypted (.env)
+```
+{: label="Encrypt your .env file" copy="dotenvx encrypt"}
+
+{% unless writer_preview %}
+{{ home_usage_paragraph | strip }}
+{% endunless %}
+
+{% unless writer_preview %}
+### **Commit**
+{: .home-command-label}
+{% endunless %}
+
+{% capture home_usage_paragraph %}
+{% if writer_preview %}**Commit**{% else %}Commit{% endif %} your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
+{: .design-paragraph}
+{% endcapture %}
+{% if writer_preview %}
+{{ home_usage_paragraph | strip }}
+{% endif %}
+
+```cli
+$ git add .env
+$ git commit -m "encrypt .env"
+```
+{: label="Commit your encrypted .env file" copy='git add .env
+git commit -m "encrypt .env"'}
+
+{% unless writer_preview %}
+{{ home_usage_paragraph | strip }}
+{% endunless %}
+
+{% unless writer_preview %}
+### **Ship**
+{: .home-command-label}
+{% endunless %}
+
+{% capture home_usage_paragraph %}
+{% if writer_preview %}**Ship**{% else %}Ship{% endif %} your code and secrets together. Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
+{: .design-paragraph}
+{% endcapture %}
+{% if writer_preview %}
+{{ home_usage_paragraph | strip }}
+{% endif %}
+
+```cli
+$ dotenvx run -- node index.js
+⟐ injected env (2) from .env
+```
+{: label="Run your deployed app" copy="dotenvx run -- node index.js"}
+
+{% unless writer_preview %}
+{{ home_usage_paragraph | strip }}
+{% endunless %}
+{% endcapture %}
+{% include components/home-section.html title="Usage" id="home-commands-plain-title" content=home_section_content class="home-commands-plain" %}
+
+{% unless writer_preview %}
+{% include components/home-member-stories.html %}
+{% endunless %}
+
+{% unless writer_preview %}
+{% include components/home-section.html title="Design" id="home-foundations-title" content=home_design_content class="home-foundations" copy_class="home-design-copy" %}
+{% endunless %}
 
 {% capture home_key_visual %}
 {% unless homepage_markdown %}
@@ -113,7 +158,7 @@ One private key unlocks all the secrets in an encrypted .env file. For developme
 {: .design-paragraph}
 {% endunless %}
 
-Launch your app with dotenvx run to decrypt its secrets just in time and inject them into your development environment.{% unless writer_preview %} The private key stays in your OS secret store, outside git.{% endunless %}
+{% if writer_preview %}In development, launch{% else %}Launch{% endif %} your app with dotenvx run to decrypt its secrets just in time and inject them into your development environment.{% unless writer_preview %} The private key stays in your OS secret store, outside git.{% endunless %}
 {: .design-paragraph}
 
 ```cli
@@ -122,15 +167,16 @@ $ dotenvx run -- node index.js
 ```
 {: label="Example application startup with encrypted secrets" copy="dotenvx run -- node index.js"}
 
-[{% if writer_preview %}Quickstart{% else %}Try it for yourself →{% endif %}](/docs/quickstart/){: .design-link}
+{% unless writer_preview %}
+[Try it for yourself →](/docs/quickstart/){: .design-link}
 {: .design-paragraph .text-center .one-key-action}
+{% endunless %}
 {% endcapture %}
 {% if writer_preview %}
-{% assign home_key_title = "Development" %}
+{{ home_section_content | strip }}
 {% else %}
-{% assign home_key_title = "One Private Key" %}
+{% include components/home-section.html title="One Private Key" id="home-one-key-title" content=home_section_content visual=home_key_visual %}
 {% endif %}
-{% include components/home-section.html title=home_key_title id="home-one-key-title" content=home_section_content visual=home_key_visual %}
 
 {% capture home_provider_visual %}
 {% unless homepage_markdown %}
@@ -139,11 +185,16 @@ $ dotenvx run -- node index.js
 {% endcapture %}
 
 {% capture home_section_content %}
+{% if writer_preview %}
+In production, set DOTENV_PRIVATE_KEY in your hosting platform's environment variables or CI secrets. One key unlocks each environment's secrets. Your encrypted .env travels with your code; the private key stays in your deployment settings, outside git.
+{: .design-paragraph}
+{% else %}
 Set DOTENV_PRIVATE_KEY where your app runs. That one key unlocks the secrets in its encrypted .env file—so you provision a single key for each environment instead of copying every secret into every deployment.
 {: .design-paragraph}
 
 Add it to your hosting platform's environment variables or CI secrets. Your encrypted .env travels with your code. The private key stays in your deployment settings, outside git.
 {: .design-paragraph}
+{% endif %}
 
 {% unless homepage_markdown %}
 {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
@@ -160,15 +211,21 @@ App listening on port 80
 ```
 {: label="Example application startup with production secrets" copy="dotenvx run -- npm start"}
 
-[Deploy with dotenvx{% unless writer_preview %} →{% endunless %}](/docs/quickstart/){: .design-link}
+{% unless writer_preview %}
+[Deploy with dotenvx →](/docs/quickstart/){: .design-link}
 {: .design-paragraph .text-center .one-key-action}
+{% endunless %}
 {% endcapture %}
 {% if writer_preview %}
-{% assign home_production_title = "Production" %}
+{{ home_section_content | strip }}
 {% else %}
-{% assign home_production_title = "Ready for Production" %}
+{% include components/home-section.html title="Ready for Production" id="home-production-title" content=home_section_content class="home-production" visual=home_provider_visual %}
 {% endif %}
-{% include components/home-section.html title=home_production_title id="home-production-title" content=home_section_content class="home-production" visual=home_provider_visual %}
+
+{% endcapture %}
+{% unless writer_preview %}
+{{ home_usage_section | strip }}
+{% endunless %}
 
 {% unless writer_preview %}
 {% capture home_section_content %}
@@ -224,6 +281,7 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 {% endunless %}
 
 {% capture home_closing_actions %}
+{% unless writer_preview %}
 {% if homepage_markdown %}
 [Quickstart](/docs/quickstart/) · [Source](https://github.com/dotenvx/dotenvx)
 {% else %}
@@ -233,17 +291,25 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
         {% include components/design-btn.html content=source_button href="https://github.com/dotenvx/dotenvx" class="home-source-button" data_umami_event="Homepage Source button" %}
       </div>
 {% endif %}
+{% endunless %}
 {% endcapture %}
 
 {% capture home_section_content %}
-Dotenvx is free and open source, for you to wield and keep your secrets safe. It’s a labor of love from me and a community of people who believe safer secrets should be within everyone’s reach.
+Dotenvx is {% if writer_preview %}[free and open source](https://github.com/dotenvx/dotenvx){% else %}free and open source{% endif %}, for you to wield and keep your secrets safe. It’s a labor of love from me and a community of people who believe safer secrets should be within everyone’s reach.
 {: .design-paragraph}
 
 We’re building for the whole world of software: an elegant, open pattern for encrypting secrets that belongs to no single vendor. Your encrypted files travel with your code, without a secrets service in your application’s critical path. The goal is simple: make this pattern work wherever software runs, for everyone who builds it—human or agent.
 {: .design-paragraph}
+
+{% if writer_preview %}
+The [former Head of Security DevOps at Zoom](/v2/members/watt/) deploys secrets with code *without taking on a new critical path dependency.* The [CEO of Supermemory](/v2/members/supermemory/) says: *I set one key and all my secrets just work.* Major organizations have adopted it for its security guarantees, too.
+{: .design-paragraph}
+{% endif %}
 {% endcapture %}
 {% include components/home-section.html title="Open Source" id="home-open-source-title" content=home_section_content class="home-open-source" anchor="install" copy_class="home-creator-note" after=home_closing_actions %}
 
 {% if writer_preview %}
-{% include components/home-member-stories.html %}
+{% include components/home-logo-cloud.html %}
+
+{{ home_usage_section | strip }}
 {% endif %}

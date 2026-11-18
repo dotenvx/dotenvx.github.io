@@ -7,7 +7,7 @@ body_class: home-page contact-page
 ---
 
 {% if writer_preview %}
-We are based in LA and keep an office in SF–visiting often.
+We are based in LA.
 
 <p><img class="writer-image writer-office-image" src="{{ '/dotenvx-la-office-crt.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="600" height="449"></p>
 {% else %}
@@ -51,6 +51,7 @@ We are based in LA and keep an office in SF–visiting often.
             >Los Angeles</a>
             <p class="design-paragraph">2450 Colorado Ave #100, Santa Monica, CA 90404</p>
           </li>
+          {% unless writer_preview %}
           <li>
             <a
               class="design-link"
@@ -60,6 +61,7 @@ We are based in LA and keep an office in SF–visiting often.
             >San Francisco</a>
             <p class="design-paragraph">1160 Battery Street East #100, San Francisco, CA 94111</p>
           </li>
+          {% endunless %}
         </ul>
       </div>
 

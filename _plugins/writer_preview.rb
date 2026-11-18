@@ -57,7 +57,13 @@ class WriterPreview < Jekyll::Generator
 
     agents = site.pages.find { |page| page.url == '/agents' }
     title = agents.data.fetch('title')
-    add_preview(site, '/v2/agents/', title, "# #{title}\n\n#{agents.content}", agents.data.fetch('writer_layout', 'auto'))
+    agents_intro = site.liquid_renderer.file('v2 agents hero').parse(
+      "{{ description }}\n\n{% include components/agents-proof.html %}"
+    ).render!(
+      { 'description' => agents.data.fetch('description'), 'writer_preview' => true, 'site' => site.site_payload['site'] },
+      registers: { site: site }
+    )
+    add_preview(site, '/v2/agents/', title, "# #{title}\n\n#{agents_intro}\n\n#{agents.content}", agents.data.fetch('writer_layout', 'auto'))
     pricing = File.read(site.in_source_dir('_includes/writer-pricing.md'))
     pricing = site.liquid_renderer.file('_includes/writer-pricing.md').parse(pricing).render!(
       { 'writer_preview' => true, 'site' => site.site_payload['site'] }, registers: { site: site }
@@ -65,7 +71,7 @@ class WriterPreview < Jekyll::Generator
     pricing_page = site.pages.find { |page| page.url.delete_suffix('/') == '/pricing' }
     add_preview(site, '/v2/pricing/', 'Pricing', pricing, pricing_page.data.fetch('writer_layout', 'wide'))
 
-    %w[about corporate legal privacy terms changelog contact careers careers/agent-engineer careers/corporate-sponsorships].each do |slug|
+    %w[about corporate legal privacy terms changelog contact careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory].each do |slug|
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == "/#{slug}" }
       title = page.data.fetch('title')
       template = site.liquid_renderer.file(page.path).parse(page.content)
@@ -109,4 +115,5 @@ class WriterPreview < Jekyll::Generator
     )
     site.pages << preview
   end
+
 end

@@ -137,6 +137,9 @@ body {
     --writer-column-gap: 72px;
     --writer-gutter: 32px;
     max-width: calc(var(--writer-columns) * var(--writer-column-width) + (var(--writer-columns) - 1) * var(--writer-column-gap) + 2 * var(--writer-gutter));
+  }
+
+  .writer-column-content {
     column-count: var(--writer-columns);
     column-gap: var(--writer-column-gap);
     column-rule: 1px solid var(--line);
@@ -145,8 +148,10 @@ body {
   .writer > h1 { column-span: all; }
   .writer :is(h2, h3) { break-after: avoid-column; }
   .writer :is(pre, .design-codeblock-wrap, table, .writer-image, .writer-company-logos) { break-inside: avoid-column; }
-  .writer p { orphans: 3; widows: 3; }
+  .writer p { orphans: 3; widows: 3; break-inside: avoid-column; }
 }
+
+.writer-column-content[data-short-last-column] { column-fill: auto; }
 
 @media screen and (min-width: 1480px) {
   .writer--columns { --writer-columns: 3; }
@@ -182,7 +187,27 @@ body {
 .writer h2 { margin: 32px 0 20px; font-size: 16px; line-height: 24px; }
 .writer h3 { margin: 20px 0 12px; font-size: inherit; font-weight: 700; }
 .writer h3 strong { font-weight: inherit; }
+.writer hr {
+  margin: 32px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
 .writer :is(p, ul, ol, dl, blockquote, table, .design-codeblock-wrap) { margin-block: 0 20px; }
+.writer blockquote {
+  margin: 0 0 20px;
+  padding: 0 0 0 16px;
+  border-left: 2px solid light-dark(#dddddd, #363636);
+  font-size: 14px;
+  line-height: 24px;
+  font-style: normal;
+}
+.writer blockquote > p { margin: 0; }
+.writer blockquote > p + p { margin-top: 20px; }
+.writer .writer-quote { margin: 0 0 20px; break-inside: avoid-column; }
+.writer .writer-quote blockquote { margin-bottom: 12px; }
+.writer .writer-quote figcaption p { margin: 0; }
+.writer-member-logo { margin-bottom: 20px; color: var(--ink); }
+.writer-member-logo svg { display: block; width: min(100%, 144px); height: auto; }
 
 .writer .writer-image {
   display: block;
@@ -244,6 +269,26 @@ body {
 .writer-company-nasa { width: 51px; height: auto; }
 .writer-company-aws { width: 36px; height: 36px; }
 .writer-company-ericsson { width: 78px; height: auto; }
+
+.writer-agent-logos {
+  margin-block: 0 20px;
+  color: light-dark(#1f282c, #e8e0d2);
+  opacity: 0.75;
+}
+.writer-agent-logos .agents-proof-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+.writer .writer-agent-logos a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.writer-agent-logos svg { display: block; width: 24px; height: 24px; }
+.writer .writer-agent-logos a:hover { text-decoration: underline; }
 
 .writer-markdown-syntax {
   color: var(--syntax);

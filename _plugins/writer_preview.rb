@@ -64,6 +64,8 @@ class WriterPreview < Jekyll::Generator
     agents = site.pages.find { |page| page.url == '/agents' }
     title = agents.data.fetch('title')
     add_preview(site, '/v2/agents/', title, "# #{title}\n\n#{agents.content}")
+    pricing = File.read(site.in_source_dir('_includes/writer-pricing.md'))
+    add_preview(site, '/v2/pricing/', 'Pricing', pricing)
   end
 
   private

@@ -163,6 +163,25 @@ body {
 
 .writer ul { padding-inline-start: 2ch; list-style: none; }
 
+.writer table {
+  width: 100%;
+  margin-block-end: 1.25rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.writer :is(th, td) {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 600px) {
+  .writer table { display: block; overflow-x: auto; }
+}
+
 .writer .design-codeblock-wrap {
   position: relative;
   margin-bottom: 1.25rem;

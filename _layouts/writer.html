@@ -17,7 +17,7 @@
     <nav class="writer-nav-links" aria-label="Primary">
       <a href="{{ '/v2/' | relative_url }}"{% if page.url == '/v2/' %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/docs' | relative_url }}">Docs</a>
-      <a href="{{ '/pricing' | relative_url }}">Pricing</a>
+      <a href="{{ '/v2/pricing/' | relative_url }}"{% if page.url == '/v2/pricing/' %} aria-current="page"{% endif %}>Pricing</a>
       <a href="{{ '/v2/agents/' | relative_url }}"{% if page.url == '/v2/agents/' %} aria-current="page"{% endif %}>Agents</a>
     </nav>
     <div class="writer-nav-actions">
@@ -37,7 +37,7 @@
             {% if link.theme_toggle %}
               <button type="button" data-writer-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
             {% else %}
-              <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/agents' %}{{ '/v2/agents/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+              <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/agents' or link.href == '/pricing' %}{{ link.href | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
             {% endif %}
           </li>
         {% endfor %}

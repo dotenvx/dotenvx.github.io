@@ -2,26 +2,16 @@
 
 Your keys. Off device. Under your control.
 
-## Dotenvx
+Encrypt your `.env` files, prevent plaintext secrets from being committed, and load configuration with the CLI or SDKs. Member and Business include [Armor](/armor) for controlled, audited access to private keys.
 
-Encrypt your `.env` files, prevent plaintext secrets from being committed, and load configuration with the [CLI](/docs/cli/) or SDKs. All plans support [local key storage](/docs/env-keys-file/), [native secret stores](/docs/cli/native/), [1Password](/docs/cli/1password/), and [Bitwarden](/docs/cli/bitwarden/).
+<div class="writer-pricing-comparison">
+{% include components/membership-dotenvx.html %}
+</div>
 
-| Plan | Price | Get started |
-| --- | --- | --- |
-| User | $0 | [Install](/docs/install/) |
-| Member | $5/mo | [Start a 5-day trial](/signup) |
-| Business | $90/mo | [Sign up](/signup) |
+## Usage and billing
 
-## Dotenvx Armor
+Additional usage is priced per 10,000 audit events: $1 prepaid for Member, or $0.25 billed monthly for Business. Member access pauses when available usage runs out. Business access continues beyond the included allowance.
 
-Member and Business include [Armor](/armor) for controlled, audited access to private keys.
+Member includes a [5-day trial](/signup). Additional seats cost $15/month per seat for Member, or $90/month per 10 seats for Business.
 
-| | Member | Business |
-| --- | --- | --- |
-| Seats included | 1 | 10 |
-| Audit log retention | 5 days | 90 days |
-| Monthly audit events included | 250,000 | 1,000,000 |
-| Extra usage per 10,000 events | $1 prepaid | $0.25 billed monthly |
-| Additional seats | $15/mo per seat | $90/mo per 10 seats |
-
-Member access pauses when available usage runs out. Business access continues and additional usage is billed monthly. See the [full plan comparison](/pricing) for features and add-ons.
+Key rotation by command and Enterprise SSO are coming soon.

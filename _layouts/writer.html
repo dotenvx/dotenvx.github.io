@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex">
   <title>{{ page.title | escape }}</title>
   <script src="{{ '/assets/js/writer-mode.js' | relative_url }}"></script>
-  <link rel="stylesheet" href="{{ '/assets/css/writer.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/writer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
   <header class="writer-nav">
@@ -24,22 +24,29 @@
       <a class="writer-nav-login" href="{{ '/login' | relative_url }}">Login</a>
     </div>
   </header>
-  <main class="writer">
+  <main class="writer writer--{{ page.writer_layout | default: 'single' }}">
+    <div class="writer-page-heading">
+      {{ page.writer_heading }}
+    </div>
     {{ content }}
   </main>
+  <p class="writer-markdown-action"><a class="writer-markdown-link writer-meta" href="{{ page.writer_markdown_url | relative_url }}">markdown</a></p>
   <footer class="writer-footer">
     <div class="writer-footer-contact">
       <p class="writer-footer-name">{{ site.data.footer.title }}</p>
       <p><a href="mailto:support@dotenvx.com">support@dotenvx.com</a></p>
     </div>
     <nav aria-label="Footer">
-      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms' | split: ',' %}
+      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms,/changelog,/contact,/careers' | split: ',' %}
       <p class="writer-footer-links">
         {% for link in site.data.footer.links -%}
           {%- if link.theme_toggle -%}
             <button type="button" data-writer-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
           {%- else -%}
-            <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/about/' %}{{ '/v2/about/' | relative_url }}{% elsif writer_footer_paths contains link.href %}{{ link.href | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{% if link.href == '/' %}Home{% else %}{{ link.label }}{% endif %}</a>
+            {% assign writer_footer_path = link.href %}
+            {% assign writer_footer_last = link.href | slice: -1 %}
+            {% if writer_footer_last == '/' %}{% assign writer_footer_path = link.href | remove_last: '/' %}{% endif %}
+            <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/about/' %}{{ '/v2/about/' | relative_url }}{% elsif writer_footer_paths contains writer_footer_path %}{{ writer_footer_path | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{% if link.href == '/' %}Home{% else %}{{ link.label }}{% endif %}</a>
           {%- endif -%}
         {% endfor %}
       </p>

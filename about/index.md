@@ -11,7 +11,7 @@ body_class: home-page about-page
 
 <p><img class="writer-image writer-office-image" src="{{ '/dotenvx-la-office-crt.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="600" height="449"></p>
 
-[Contact us]({{ '/contact/' | relative_url }}) · [Careers]({{ '/careers/' | relative_url }})
+[Contact us]({{ '/v2/contact/' | relative_url }}) · [Careers]({{ '/v2/careers/' | relative_url }})
 {% else %}
 <style>
   .about-story { margin: 2.5rem 0; }
@@ -49,6 +49,13 @@ body_class: home-page about-page
         <p class="design-paragraph">Now we're asking the next question: how can an agent work on your app without being handed its secrets? Dotenvxfile carries our approach forward, making the rules for secrets explicit so software can enforce them.</p>
       </div>
 
+      {% if writer_preview %}
+      <ol class="writer-numbered-list">
+        <li><strong>Secrets separate from code.</strong> We created Dotenv to separate secrets from code. One small file made configuration safe. <a href="https://www.npmjs.com/package/dotenv">Dotenv</a></li>
+        <li><strong>Secrets encrypted alongside code.</strong> We created Dotenvx to make that same file safe to commit and share through Git. Secrets stay encrypted alongside your code and decrypt in memory at runtime. <a href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx</a></li>
+        <li><strong>Secrets separate from agents.</strong> We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules. <a href="{{ '/v2/agents/' | relative_url }}">Dotenvx.toml</a></li>
+      </ol>
+      {% else %}
       <div class="design-card about-story">
         <section class="about-chapter" aria-labelledby="about-dotenv">
           {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">01</span>{% endunless %}
@@ -76,12 +83,15 @@ body_class: home-page about-page
         </section>
       </div>
 
+      {% endif %}
+      {% unless writer_preview %}
       <nav class="about-links" aria-label="More about Dotenvx">
         <a class="design-link" href="/contact/">Contact</a>
         <a class="design-link" href="/changelog">Changelog</a>
         <a class="design-link" href="/trust/">Trust Center</a>
         <a class="design-link" href="/careers/">Careers</a>
       </nav>
+      {% endunless %}
       {% endcapture %}
 {% if writer_preview %}
 

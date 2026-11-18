@@ -50,7 +50,16 @@ body_class: home-page corporate-page
   <section class="radar-section" aria-label="Corporate involvement tiers">
     <div class="armor-shell">
 {% endif %}
-{% if writer_preview %}<div>{% endif %}
+{% if writer_preview %}
+{% for tier in site.data.corporate_tiers %}
+<section class="writer-corporate-tier">
+  <h2>{{ tier.name }}</h2>
+  <p>{{ tier.price }}</p>
+  <p>{{ tier.description }}</p>
+  <p><a href="mailto:scott@dotenvx.com?subject={{ tier.name | url_encode }}%20corporate%20support">Start the Conversation</a></p>
+</section>
+{% endfor %}
+{% else %}
       {% if writer_preview %}<h2>Shape .env.</h2>{% else %}{% include components/design-page-title.html title="Shape .env." heading_tag="h2" title_class="text-center" %}{% endif %}
       <div class="corporate-tier-picker">
         <div class="corporate-tiers" aria-label="Choose a corporate involvement tier">
@@ -80,7 +89,7 @@ body_class: home-page corporate-page
         {% if writer_preview %}<div class="corporate-tier-details-card">{{ tier_details }}</div>{% else %}{% include components/design-card.html class="corporate-tier-details-card" content=tier_details %}{% endif %}
       </div>
       <script src="/assets/js/corporate-tiers.js?v={{ site.time | date: '%s' }}" defer></script>
-{% if writer_preview %}</div>{% endif %}
+{% endif %}
 {% unless writer_preview %}
     </div>
   </section>

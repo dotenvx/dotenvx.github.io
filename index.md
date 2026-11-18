@@ -66,8 +66,12 @@ Ship your code and secrets together. Dotenvx uses your private key to decrypt an
 {% endunless %}
 
 {% capture home_section_content %}
-Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
+Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.{% if writer_preview %} Read about it in the [whitepaper](/whitepaper.pdf).{% endif %}
 {: .design-paragraph}
+
+{% if writer_preview %}
+<p><a href="{{ '/whitepaper.pdf' | relative_url }}"><img class="writer-image writer-whitepaper-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Dotenvx whitepaper, Reducing Secrets Risk with Cryptographic Separation" width="1914" height="1948"></a></p>
+{% endif %}
 
 We chose git because it is the best way to deliver digital goods. It is the container ship of the digital world. All code travels on its ships. Why not secrets? Why invent an inferior secrets delivery mechanism when the world class one is right there at your fingertips.
 {: .design-paragraph}
@@ -84,12 +88,10 @@ It was important that we choose a proven, simple, asymmetric standard with small
 The result is a system built entirely from primitives, developers already understand, and infrastructure they already use. Secrets can travel with code without becoming part of the code. Git distributes them, .env defines how apps consume them, and secp256k1 keeps their values unreadable. The kicker, all this works by setting a single private key on your infrastructure - no more risky async coordination of secrets, no more centralized downtime risk. Your secrets are always just there with your code, ready to be unlocked at runtime.
 {: .design-paragraph}
 
-{% if writer_preview %}
-<p><a href="{{ '/whitepaper.pdf' | relative_url }}"><img class="writer-image writer-whitepaper-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Dotenvx whitepaper, Reducing Secrets Risk with Cryptographic Separation" width="1914" height="1948"></a></p>
-{% endif %}
-
-[Read the whitepaper{% unless writer_preview %} →{% endunless %}]({% if writer_preview %}/whitepaper.pdf{% else %}/dotenvx.pdf{% endif %}){: .design-link}
+{% unless writer_preview %}
+[Read the whitepaper →](/dotenvx.pdf){: .design-link}
 {: .design-paragraph .text-center}
+{% endunless %}
 {% endcapture %}
 {% include components/home-section.html title="Design" id="home-foundations-title" content=home_section_content class="home-foundations" copy_class="home-design-copy" %}
 

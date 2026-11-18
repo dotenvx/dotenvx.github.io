@@ -13,7 +13,7 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 {% if homepage_markdown %}
 {{ home_intro | strip }}
 
-[Install](/docs/install/) · [Quickstart](/docs/quickstart/) · [HTML homepage](/)
+[Install](/docs/install/) · [Quickstart](/docs/quickstart/){% unless writer_preview %} · [HTML homepage](/){% endunless %}
 {% else %}
 {% assign home_intro_html = home_intro | markdownify %}
 {% include components/home-hero.html compact=true description=home_intro_html %}

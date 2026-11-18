@@ -9,38 +9,42 @@
   <link rel="stylesheet" href="{{ '/assets/css/writer.css' | relative_url }}">
 </head>
 <body>
-  {% capture writer_links %}
-    <a href="{{ '/preview/writer/' | relative_url }}"{% if page.url == '/preview/writer/' or page.url == '/preview/writer/index.html' %} aria-current="page"{% endif %}>Home</a>
-    <a href="{{ '/docs' | relative_url }}">Docs</a>
-    <a href="{{ '/pricing' | relative_url }}">Pricing</a>
-    <a href="{{ '/agents' | relative_url }}">Agents</a>
-  {% endcapture %}
   <header class="writer-nav">
-    <div class="writer-nav-brand">
-      <a class="writer-nav-home" href="{{ '/' | relative_url }}">
-        <img src="{{ '/assets/img/logo-env.svg' | relative_url }}" alt="" width="22" height="22">
-        Dotenvx
-      </a>
-      <button type="button" class="writer-sidebar-toggle" data-writer-sidebar-toggle aria-label="Sidebar" aria-controls="writer-sidebar" aria-expanded="true" title="Hide sidebar">[-]</button>
-    </div>
+    <a class="writer-nav-home" href="{{ '/v2/' | relative_url }}">
+      <img src="{{ '/assets/img/logo-env.svg' | relative_url }}" alt="" width="22" height="22">
+      Dotenvx
+    </a>
+    <nav class="writer-nav-links" aria-label="Primary">
+      <a href="{{ '/v2/' | relative_url }}"{% if page.url == '/v2/' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/docs' | relative_url }}">Docs</a>
+      <a href="{{ '/pricing' | relative_url }}">Pricing</a>
+      <a href="{{ '/v2/agents/' | relative_url }}"{% if page.url == '/v2/agents/' %} aria-current="page"{% endif %}>Agents</a>
+    </nav>
     <div class="writer-nav-actions">
       <button type="button" class="writer-nav-mode" data-writer-mode-toggle aria-label="Dark mode" aria-keyshortcuts="M" aria-pressed="false" title="Toggle light or dark mode (M)">[m]</button>
       <a class="writer-nav-login" href="{{ '/login' | relative_url }}">Login</a>
     </div>
   </header>
-  <div class="writer-frame">
-    <nav id="writer-sidebar" class="writer-sidebar" aria-label="Primary">
-      {{ writer_links }}
+  <main class="writer">
+    {{ content }}
+  </main>
+  <footer class="writer-footer">
+    <p>{{ site.data.footer.title }}</p>
+    <nav aria-label="Footer">
+      <ul>
+        {% for link in site.data.footer.links %}
+          <li>
+            {% if link.theme_toggle %}
+              <button type="button" data-writer-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
+            {% else %}
+              <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/agents' %}{{ '/v2/agents/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
     </nav>
-    <details class="writer-mobile-menu">
-      <summary>Menu</summary>
-      <nav aria-label="Primary">{{ writer_links }}</nav>
-    </details>
-    <main class="writer">
-      {{ content }}
-    </main>
-  </div>
+  </footer>
   <script src="{{ '/assets/js/design-choice.js' | relative_url }}" defer></script>
-  <script src="{{ '/assets/js/writer-copy.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/writer-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

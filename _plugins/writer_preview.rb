@@ -58,13 +58,24 @@ end
 class WriterPreview < Jekyll::Generator
   def generate(site)
     source = File.read(site.in_source_dir('index.md'))
-    preview = Jekyll::PageWithoutAFile.new(site, site.source, 'preview/writer', 'index.html')
-    markdown = "# Dotenvx\n\n#{RawMarkdownExports.homepage_markdown(source, site)}"
+    markdown = "# Dotenvx\n\n#{RawMarkdownExports.homepage_markdown(source, site, writer_preview: true)}"
+    add_preview(site, '/v2/', 'Dotenvx · v2 preview', markdown)
+
+    agents = site.pages.find { |page| page.url == '/agents' }
+    title = agents.data.fetch('title')
+    add_preview(site, '/v2/agents/', title, "# #{title}\n\n#{agents.content}")
+  end
+
+  private
+
+  def add_preview(site, permalink, title, markdown)
+    preview = Jekyll::PageWithoutAFile.new(site, site.source, permalink.delete_prefix('/').delete_suffix('/'), 'index.html')
     document = Kramdown::Document.new(markdown, site.config.fetch('kramdown'))
     preview.content, = WriterMarkdown.convert(document.root, document.options)
     preview.data.merge!(
       'layout' => 'writer',
-      'title' => 'Dotenvx · Writer preview',
+      'title' => title,
+      'permalink' => permalink,
       'render_with_liquid' => false,
       'sitemap' => false
     )

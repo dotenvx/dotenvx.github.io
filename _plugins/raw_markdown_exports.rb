@@ -112,11 +112,11 @@ module RawMarkdownExports
     File.write(path, "\uFEFF#{content}", encoding: 'UTF-8')
   end
 
-  def self.homepage_markdown(source, site)
+  def self.homepage_markdown(source, site, writer_preview: false)
     body = source.sub(/\A---\s*\n.*?^---\s*\n/m, '')
     template = site.liquid_renderer.file('index.md (Markdown export)').parse(body)
     template.render!(
-      { 'homepage_markdown' => true, 'site' => site.site_payload['site'] },
+      { 'homepage_markdown' => true, 'writer_preview' => writer_preview, 'site' => site.site_payload['site'] },
       registers: { site: site }
     )
   end

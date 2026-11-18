@@ -2,12 +2,33 @@
   var writer = document.querySelector('main.writer')
   if (!writer) return
 
+  function codeFence(text) {
+    var runs = text.match(/^[\t ]*`+/gm) || []
+    var length = runs.reduce(function (longest, run) {
+      return Math.max(longest, run.trimStart().length + 1)
+    }, 3)
+    return '`'.repeat(length)
+  }
+
+  writer.querySelectorAll('[data-design-codeblock]').forEach(function (block) {
+    var pre = block.querySelector('pre')
+    if (!pre) return
+
+    var text = pre.textContent.trimEnd()
+    if (!pre.querySelector(':scope > .writer-markdown-syntax')) {
+      var fence = codeFence(text)
+      text = fence + '\n' + text + '\n' + fence
+    }
+    block.setAttribute('data-copy', text)
+  })
+
   function includeCompleteMarkup(range, edge) {
     var boundary = range[edge + 'Container']
     var element = boundary.nodeType === Node.ELEMENT_NODE ? boundary : boundary.parentElement
 
-    for (var markup = element.closest('a, strong, em, code, h3, h4, h5, h6'); markup && writer.contains(markup);
-      markup = markup.parentElement.closest('a, strong, em, code, h3, h4, h5, h6')) {
+    var markdownElements = 'a, strong, em, code, pre, h3, h4, h5, h6'
+    for (var markup = element.closest(markdownElements); markup && writer.contains(markup);
+      markup = markup.parentElement.closest(markdownElements)) {
       var walker = document.createTreeWalker(markup, NodeFilter.SHOW_TEXT, {
         acceptNode: function (text) {
           return text.data.trim() && !text.parentElement.closest('.writer-markdown-detail, .writer-markdown-syntax')
@@ -21,8 +42,11 @@
       for (var next = walker.nextNode(); next; next = walker.nextNode()) last = next
       if (range.comparePoint(first, 0) !== 0 || range.comparePoint(last, last.length) !== 0) continue
 
-      if (edge === 'start' && range.comparePoint(markup, 0) < 0) range.setStartBefore(markup)
-      if (edge === 'end' && range.comparePoint(markup, markup.childNodes.length) > 0) range.setEndAfter(markup)
+      if (edge === 'start' && (range.comparePoint(markup, 0) < 0 ||
+        (range.startContainer === markup && range.startOffset === 0))) range.setStartBefore(markup)
+      var end = markup.childNodes.length
+      if (edge === 'end' && (range.comparePoint(markup, end) > 0 ||
+        (range.endContainer === markup && range.endOffset === end))) range.setEndAfter(markup)
     }
   }
 
@@ -43,8 +67,9 @@
       emphasis.append(marker)
     })
     buffer.querySelectorAll('pre').forEach(function (code) {
-      code.prepend('```\n')
-      code.append('\n```')
+      var fence = codeFence(code.textContent)
+      code.prepend(fence + '\n')
+      code.append('\n' + fence)
     })
   }
 

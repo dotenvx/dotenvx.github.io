@@ -10,12 +10,11 @@
 </head>
 <body>
   <header class="writer-nav">
-    <a class="writer-nav-home" href="{{ '/v2/' | relative_url }}">
+    <a class="writer-nav-home" href="{{ '/v2/' | relative_url }}"{% if page.url == '/v2/' %} aria-current="page"{% endif %}>
       <img src="{{ '/assets/img/logo-env.svg' | relative_url }}" alt="" width="22" height="22">
       Dotenvx
     </a>
     <nav class="writer-nav-links" aria-label="Primary">
-      <a href="{{ '/v2/' | relative_url }}"{% if page.url == '/v2/' %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/docs' | relative_url }}">Docs</a>
       <a href="{{ '/v2/pricing/' | relative_url }}"{% if page.url == '/v2/pricing/' %} aria-current="page"{% endif %}>Pricing</a>
       <a href="{{ '/v2/agents/' | relative_url }}"{% if page.url == '/v2/agents/' %} aria-current="page"{% endif %}>Agents</a>
@@ -29,19 +28,21 @@
     {{ content }}
   </main>
   <footer class="writer-footer">
-    <p>{{ site.data.footer.title }}</p>
+    <div class="writer-footer-contact">
+      <p class="writer-footer-name">{{ site.data.footer.title }}</p>
+      <p><a href="mailto:support@dotenvx.com">support@dotenvx.com</a></p>
+    </div>
     <nav aria-label="Footer">
-      <ul>
-        {% for link in site.data.footer.links %}
-          <li>
-            {% if link.theme_toggle %}
-              <button type="button" data-writer-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
-            {% else %}
-              <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/agents' or link.href == '/pricing' %}{{ link.href | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-            {% endif %}
-          </li>
+      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms' | split: ',' %}
+      <p class="writer-footer-links">
+        {% for link in site.data.footer.links -%}
+          {%- if link.theme_toggle -%}
+            <button type="button" data-writer-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
+          {%- else -%}
+            <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/about/' %}{{ '/v2/about/' | relative_url }}{% elsif writer_footer_paths contains link.href %}{{ link.href | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{% if link.href == '/' %}Home{% else %}{{ link.label }}{% endif %}</a>
+          {%- endif -%}
         {% endfor %}
-      </ul>
+      </p>
     </nav>
   </footer>
   <script src="{{ '/assets/js/design-choice.js' | relative_url }}" defer></script>

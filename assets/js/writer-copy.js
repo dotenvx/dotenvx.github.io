@@ -10,18 +10,6 @@
     return '`'.repeat(length)
   }
 
-  writer.querySelectorAll('[data-design-codeblock]').forEach(function (block) {
-    var pre = block.querySelector('pre')
-    if (!pre) return
-
-    var text = pre.textContent.trimEnd()
-    if (!pre.querySelector(':scope > .writer-markdown-syntax')) {
-      var fence = codeFence(text)
-      text = fence + '\n' + text + '\n' + fence
-    }
-    block.setAttribute('data-copy', text)
-  })
-
   function includeCompleteMarkup(range, edge) {
     var boundary = range[edge + 'Container']
     var element = boundary.nodeType === Node.ELEMENT_NODE ? boundary : boundary.parentElement

@@ -48,9 +48,7 @@ class WriterMarkdown < Kramdown::Converter::Html
 
     language = element.options[:lang] || extract_code_language(element.attr)
     fence = '`' * [3, element.value.scan(/^`+/).map(&:length).max.to_i + 1].max
-    copy = html_attributes('data-copy' => element.value.strip)
-    html.sub(/data-design-codeblock(?=>)/) { |attribute| attribute + copy }
-      .sub('<code>', "#{marker(fence)}#{marker(language.to_s, 'writer-markdown-detail')}\n<code>")
+    html.sub('<code>', "#{marker(fence)}#{marker(language.to_s, 'writer-markdown-detail')}\n<code>")
       .sub('</code>', "</code>\n#{marker(fence)}")
   end
 end
@@ -66,6 +64,14 @@ class WriterPreview < Jekyll::Generator
     add_preview(site, '/v2/agents/', title, "# #{title}\n\n#{agents.content}")
     pricing = File.read(site.in_source_dir('_includes/writer-pricing.md'))
     add_preview(site, '/v2/pricing/', 'Pricing', pricing)
+
+    %w[about corporate legal privacy terms].each do |slug|
+      page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == "/#{slug}" }
+      title = page.data.fetch('title')
+      template = site.liquid_renderer.file(page.path).parse(page.content)
+      content = template.render!({ 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] }, registers: { site: site })
+      add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}")
+    end
   end
 
   private

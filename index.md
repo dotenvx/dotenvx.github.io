@@ -61,7 +61,9 @@ Ship your code and secrets together. Dotenvx uses your private key to decrypt an
 {% endcapture %}
 {% include components/home-section.html title="Usage" id="home-commands-plain-title" content=home_section_content class="home-commands-plain" %}
 
+{% unless writer_preview %}
 {% include components/home-member-stories.html %}
+{% endunless %}
 
 {% capture home_section_content %}
 Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
@@ -82,7 +84,11 @@ It was important that we choose a proven, simple, asymmetric standard with small
 The result is a system built entirely from primitives, developers already understand, and infrastructure they already use. Secrets can travel with code without becoming part of the code. Git distributes them, .env defines how apps consume them, and secp256k1 keeps their values unreadable. The kicker, all this works by setting a single private key on your infrastructure - no more risky async coordination of secrets, no more centralized downtime risk. Your secrets are always just there with your code, ready to be unlocked at runtime.
 {: .design-paragraph}
 
-[Read the whitepaper →](/dotenvx.pdf){: .design-link}
+{% if writer_preview %}
+<p><a href="{{ '/whitepaper.pdf' | relative_url }}"><img class="writer-image writer-whitepaper-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Dotenvx whitepaper, Reducing Secrets Risk with Cryptographic Separation" width="1914" height="1948"></a></p>
+{% endif %}
+
+[Read the whitepaper{% unless writer_preview %} →{% endunless %}]({% if writer_preview %}/whitepaper.pdf{% else %}/dotenvx.pdf{% endif %}){: .design-link}
 {: .design-paragraph .text-center}
 {% endcapture %}
 {% include components/home-section.html title="Design" id="home-foundations-title" content=home_section_content class="home-foundations" copy_class="home-design-copy" %}
@@ -100,10 +106,12 @@ The result is a system built entirely from primitives, developers already unders
 {% endcapture %}
 
 {% capture home_section_content %}
+{% unless writer_preview %}
 One private key unlocks all the secrets in an encrypted .env file. For development, it's default stored in your operating system's secret store, like macOS Keychain, Windows Credential Manager, and Linux Secret Service.
 {: .design-paragraph}
+{% endunless %}
 
-Launch your app with dotenvx run to decrypt its secrets just in time and inject them into your development environment. The private key stays in your OS secret store, outside git.
+Launch your app with dotenvx run to decrypt its secrets just in time and inject them into your development environment.{% unless writer_preview %} The private key stays in your OS secret store, outside git.{% endunless %}
 {: .design-paragraph}
 
 ```cli
@@ -112,10 +120,15 @@ $ dotenvx run -- node index.js
 ```
 {: label="Example application startup with encrypted secrets" copy="dotenvx run -- node index.js"}
 
-[Try it for yourself →](/docs/quickstart/){: .design-link}
+[{% if writer_preview %}Quickstart{% else %}Try it for yourself →{% endif %}](/docs/quickstart/){: .design-link}
 {: .design-paragraph .text-center .one-key-action}
 {% endcapture %}
-{% include components/home-section.html title="One Private Key" id="home-one-key-title" content=home_section_content visual=home_key_visual %}
+{% if writer_preview %}
+{% assign home_key_title = "Development" %}
+{% else %}
+{% assign home_key_title = "One Private Key" %}
+{% endif %}
+{% include components/home-section.html title=home_key_title id="home-one-key-title" content=home_section_content visual=home_key_visual %}
 
 {% capture home_provider_visual %}
 {% unless homepage_markdown %}
@@ -145,11 +158,17 @@ App listening on port 80
 ```
 {: label="Example application startup with production secrets" copy="dotenvx run -- npm start"}
 
-[Deploy with dotenvx →](/docs/quickstart/){: .design-link}
+[Deploy with dotenvx{% unless writer_preview %} →{% endunless %}](/docs/quickstart/){: .design-link}
 {: .design-paragraph .text-center .one-key-action}
 {% endcapture %}
-{% include components/home-section.html title="Ready for Production" id="home-production-title" content=home_section_content class="home-production" visual=home_provider_visual %}
+{% if writer_preview %}
+{% assign home_production_title = "Production" %}
+{% else %}
+{% assign home_production_title = "Ready for Production" %}
+{% endif %}
+{% include components/home-section.html title=home_production_title id="home-production-title" content=home_section_content class="home-production" visual=home_provider_visual %}
 
+{% unless writer_preview %}
 {% capture home_section_content %}
 Your private keys unlock your secrets. Keep them safe, outside git, in a place you trust. Use your operating system's secret store, a password manager you already rely on, or Armor ⛨.
 {: .design-paragraph}
@@ -200,6 +219,7 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 {: .design-paragraph .home-shipping-closing}
 {% endcapture %}
 {% include components/home-section.html title="Your Code. Your Secrets." id="home-shipping-title" content=home_section_content class="home-shipping" %}
+{% endunless %}
 
 {% capture home_closing_actions %}
 {% if homepage_markdown %}
@@ -221,3 +241,7 @@ We’re building for the whole world of software: an elegant, open pattern for e
 {: .design-paragraph}
 {% endcapture %}
 {% include components/home-section.html title="Open Source" id="home-open-source-title" content=home_section_content class="home-open-source" anchor="install" copy_class="home-creator-note" after=home_closing_actions %}
+
+{% if writer_preview %}
+{% include components/home-member-stories.html %}
+{% endif %}

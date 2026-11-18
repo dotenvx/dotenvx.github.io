@@ -6,6 +6,15 @@ layout: radar
 body_class: home-page
 ---
 
+{% if writer_preview %}
+Privacy, terms, and trust.
+
+## Pages
+
+- [Privacy Policy]({{ '/v2/privacy/' | relative_url }})
+- [Terms of Service]({{ '/v2/terms/' | relative_url }})
+- [Trust Center]({{ '/trust/' | relative_url }})
+{% else %}
 <style>
   .legal-hero-key { aspect-ratio: 4 / 3; width: 100%; }
 </style>
@@ -57,3 +66,4 @@ body_class: home-page
 </section>
 
 </div>
+{% endif %}

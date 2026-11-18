@@ -1,4 +1,13 @@
-{% if homepage_markdown %}
+{% if writer_preview %}
+<div class="writer-company-logos" role="group" aria-label="Projects using Dotenvx">
+  {% capture google_logo %}{% include logos/google2.html class="writer-company-google" %}{% endcapture %}
+  {{ google_logo | split: '?>' | last | replace: 'viewBox="0 0 272 92"', 'viewBox="35.6 12.3 199.6 65.7"' }}
+  {% capture nasa_logo %}{% include logos/nasa.html class="writer-company-nasa" %}{% endcapture %}
+  {{ nasa_logo | replace: 'viewBox="0 0 24 24"', 'viewBox="0 8.65 24 6.7"' }}
+  {% include logos/aws.html class="writer-company-aws" %}
+  <span role="img" aria-label="Ericsson">{% include logos/ericsson.html class="writer-company-ericsson" %}</span>
+</div>
+{% elsif homepage_markdown %}
 Used by Google, NASA, AWS, and Ericsson.
 {% else %}
 <section class="home-company-cloud w-full mx-auto" aria-label="Projects using Dotenvx">

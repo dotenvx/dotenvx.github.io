@@ -25,11 +25,3 @@ Member and Business include [Armor](/armor) for controlled, audited access to pr
 | Additional seats | $15/mo per seat | $90/mo per 10 seats |
 
 Member access pauses when available usage runs out. Business access continues and additional usage is billed monthly. See the [full plan comparison](/pricing) for features and add-ons.
-
-## Corporate involvement
-
-Help shape what comes next for .env and work with the maintainers. [Explore corporate involvement](/corporate).
-
-## Careers
-
-Want to help build the next chapter of .env? [Explore open roles](/careers/).

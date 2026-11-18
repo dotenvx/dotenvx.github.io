@@ -6,6 +6,13 @@ layout: radar
 body_class: home-page about-page
 ---
 
+{% if writer_preview %}
+{{ page.description }}
+
+<p><img class="writer-image writer-office-image" src="{{ '/dotenvx-la-office-crt.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="600" height="449"></p>
+
+[Contact us]({{ '/contact/' | relative_url }}) · [Careers]({{ '/careers/' | relative_url }})
+{% else %}
 <style>
   .about-story { margin: 2.5rem 0; }
   .about-chapter { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.5rem; }
@@ -32,6 +39,7 @@ body_class: home-page about-page
 
   <section class="radar-section">
     <div class="armor-shell">
+{% endif %}
       {% capture about_content %}
       <div class="about-company">
         <p class="design-paragraph">Dotenvx keeps secrets safe without making software harder to ship. We're the team behind Dotenv, Dotenvx, and the next chapter of .env.</p>
@@ -43,27 +51,27 @@ body_class: home-page about-page
 
       <div class="design-card about-story">
         <section class="about-chapter" aria-labelledby="about-dotenv">
-          <span class="about-chapter-number" aria-hidden="true">01</span>
+          {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">01</span>{% endunless %}
           <div>
             <h2 id="about-dotenv">Secrets separate from code</h2>
             <p class="design-paragraph">We created Dotenv to separate secrets from code. One small file made configuration safe.</p>
-            <a class="design-link" href="https://www.npmjs.com/package/dotenv">Dotenv →</a>
+            <a class="design-link" href="https://www.npmjs.com/package/dotenv">Dotenv{% unless writer_preview %} →{% endunless %}</a>
           </div>
         </section>
         <section class="about-chapter" aria-labelledby="about-dotenvx">
-          <span class="about-chapter-number" aria-hidden="true">02</span>
+          {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">02</span>{% endunless %}
           <div>
             <h2 id="about-dotenvx">Secrets encrypted alongside code</h2>
             <p class="design-paragraph">We created Dotenvx to make that same file safe to commit and share through Git. Secrets stay encrypted alongside your code and decrypt in memory at runtime.</p>
-            <a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx →</a>
+            <a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx{% unless writer_preview %} →{% endunless %}</a>
           </div>
         </section>
         <section class="about-chapter" aria-labelledby="about-agents">
-          <span class="about-chapter-number" aria-hidden="true">03</span>
+          {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">03</span>{% endunless %}
           <div>
             <h2 id="about-agents">Secrets separate from agents</h2>
             <p class="design-paragraph">We're building Dotenvxfile to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.</p>
-            <a class="design-link" href="/agents">Dotenvxfile →</a>
+            <a class="design-link" href="{% if writer_preview %}{{ '/v2/agents/' | relative_url }}{% else %}/agents{% endif %}">Dotenvxfile{% unless writer_preview %} →{% endunless %}</a>
           </div>
         </section>
       </div>
@@ -75,7 +83,14 @@ body_class: home-page about-page
         <a class="design-link" href="/careers/">Careers</a>
       </nav>
       {% endcapture %}
+{% if writer_preview %}
+
+<div>
+{{ about_content | strip }}
+</div>
+{% else %}
       {% include components/design-content-width.html content=about_content %}
     </div>
   </section>
 </div>
+{% endif %}

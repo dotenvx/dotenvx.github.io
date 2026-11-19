@@ -1,12 +1,18 @@
 {% for node in include.nodes %}
   <li>
     {% if node.href %}
-      <a class="{% if node.children != empty %}docs-sidebar-group{% else %}design-link{% endif %}" href="{{ node.href | relative_url }}"{% if node.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}{% if node.href == page.url %} aria-current="page"{% endif %}>{{ node.label | escape }}</a>
+      {% assign docs_href = node.href %}
+      {% if include.writer_urls %}
+        {% assign candidate = node.href | prepend: '/v2' %}
+        {% if node.href == '/docs/introduction/' %}{% assign candidate = '/v2/docs/' %}{% endif %}
+        {% if include.writer_urls contains candidate %}{% assign docs_href = candidate %}{% endif %}
+      {% endif %}
+      <a class="{% if node.children != empty %}docs-sidebar-group{% else %}design-link{% endif %}" href="{{ docs_href | relative_url }}"{% if node.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}{% if docs_href == page.url %} aria-current="page"{% endif %}>{{ node.label | escape }}</a>
     {% else %}
       <span class="docs-sidebar-group">{{ node.label | escape }}</span>
     {% endif %}
     {% if node.children != empty %}
-      <ul>{% include components/docs-sidebar-tree.html nodes=node.children %}</ul>
+      <ul>{% include components/docs-sidebar-tree.html nodes=node.children writer_urls=include.writer_urls %}</ul>
     {% endif %}
   </li>
 {% endfor %}

@@ -1,6 +1,6 @@
 - name: CLI
   id: curl
-  command: curl -sfS https://dotenvx.sh | sh
+  command: curl -sfS 'https://dotenvx.sh' | sh
   prompt: Install the Dotenvx CLI using the official shell installer at https://dotenvx.sh. Check that this method suits my operating system, run the installer, and verify with dotenvx --version. Do not change my .env files.
 - name: NPM
   command: npm install @dotenvx/dotenvx

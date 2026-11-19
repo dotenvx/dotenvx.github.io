@@ -5,6 +5,7 @@ social_title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 description: "Encrypt .env files, commit them safely, and load environment variables in any language or framework with Dotenvx, from the creator of dotenv."
 layout: home
 body_class: home-page
+writer_layout: columns
 ---
 
 {% capture home_design_content %}
@@ -61,6 +62,10 @@ Source: [Whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=13), p. 13.
 A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/dotenv){: .design-link}
 {% endcapture %}
 {% if homepage_markdown %}
+{% if writer_preview %}
+<div markdown="block">
+
+{% endif %}
 {% if writer_preview %}> {% endif %}{{ home_intro | strip }}
 
 {% unless writer_preview %}
@@ -68,11 +73,13 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 {% endunless %}
 
 {% if writer_preview %}
-<p><a href="{{ '/whitepaper.pdf' | relative_url }}"><img class="writer-image writer-whitepaper-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Dotenvx whitepaper, Reducing Secrets Risk with Cryptographic Separation" width="1914" height="1948"></a></p>
+<p><img class="writer-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
 
-[Quickstart](/docs/quickstart/)
+[Quickstart]({{ '/v2/docs/quickstart/' | relative_url }})
 
 {{ home_design_content | strip }}
+
+</div>
 {% endif %}
 {% else %}
 {% assign home_intro_html = home_intro | markdownify %}
@@ -85,10 +92,18 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 
 {% capture home_usage_section %}
 {% capture home_section_content %}
-{% unless writer_preview %}
+{% if writer_preview %}
+**Install** the Dotenvx CLI.
+
+{% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
+```bash
+{{ cli.command }}
+```
+
+{% else %}
 ### **Encrypt**
 {: .home-command-label}
-{% endunless %}
+{% endif %}
 
 {% capture home_usage_paragraph %}
 {% if writer_preview %}**Encrypt**{% else %}Encrypt{% endif %} your secrets in .env files. The values become ciphertext and only your private key can unlock them.
@@ -302,6 +317,8 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 {% endunless %}
 
 {% if writer_preview %}
+<div markdown="block">
+
 {{ home_usage_section | strip }}
 
 ## Adoption
@@ -310,6 +327,8 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
 - [John Zila](/v2/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
 - [Dhravya Shah](/v2/members/supermemory/) (CEO of Supermemory): *set one key and all our secrets just work*
+
+</div>
 {% else %}
 {% capture home_closing_actions %}
 {% if homepage_markdown %}

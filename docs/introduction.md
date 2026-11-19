@@ -9,10 +9,25 @@ redirect_from:
   - /docs/process-managers/
 layout: radar
 body_class: docs-landing
+writer_layout: columns
 ---
 
+{% if writer_preview %}
+> Install Dotenvx, encrypt .env files
 
+<p><img class="writer-image" src="{{ '/docs.png' | relative_url }}" alt="A cyclist silhouetted against a sunset and palm trees" width="768" height="307"></p>
 
+{% for section in site.data.docs_navigation %}
+{% unless forloop.first %}## {{ section.label }}{% endunless %}
+
+{% for link in section.children -%}
+{% assign href = preview_links[link.href] | default: link.href -%}
+- [{{ link.label | remove: ' →' | remove: ' ↗' }}]({{ href | relative_url }})
+{% endfor -%}
+{: .writer-docs-list}
+
+{% endfor %}
+{% else %}
 {% capture docs_hero_visual %}
   <div class="docs-hero-ascii" aria-hidden="true">
     <pre class="docs-hero-ascii-art">&lt;docs/&gt;</pre>
@@ -160,3 +175,4 @@ body_class: docs-landing
   });
 })();
 </script>
+{% endif %}

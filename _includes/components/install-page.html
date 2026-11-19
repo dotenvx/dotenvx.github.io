@@ -1,3 +1,24 @@
+{% if writer_preview %}
+> Install dotenvx
+
+<p><img class="writer-image" src="{{ '/install.png' | relative_url }}" alt="Terminal showing a successful Dotenvx CLI installation" width="768" height="307"></p>
+
+[install.sh](https://dotenvx.sh/install.sh)
+
+{% assign cli_methods = site.data.install_methods | where: 'name', 'CLI' %}
+{% include components/install-writer-methods.md methods=cli_methods %}
+
+## SDKs
+
+{% assign v2_install_sdks = site.data.install_sdks | concat: site.data.install_sdks_v2 %}
+{% assign javascript_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name == 'Node.js' or sdk.name == 'Next.js'" %}
+{% assign remaining_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name != 'Node.js' and sdk.name != 'Next.js'" %}
+{% assign v2_install_sdks = javascript_sdks | concat: remaining_sdks %}
+{% include components/install-writer-methods.md methods=v2_install_sdks paragraph_labels=true %}
+
+{% assign windows_methods = site.data.install_methods | where: 'name', 'Windows' %}
+{% include components/install-writer-methods.md methods=windows_methods %}
+{% else %}
 {% comment %}
   Install page — installation commands and agent prompts.
   Kept out of install.md so Kramdown cannot break nested HTML.
@@ -32,3 +53,4 @@
     </div>
   </section>
 </div>
+{% endif %}

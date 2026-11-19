@@ -5,10 +5,17 @@ description: "Subscribe to Making .env. Notes from source. For the file you rely
 permalink: /newsletter
 body_class: home-page
 ---
+{% assign newsletter_intro = "Get an email from us once, twice, or thrice a month" %}
+
+{% if writer_preview %}
+> {{ newsletter_intro }}
+
+{% include components/newsletter-signup.html source="newsletter" %}
+{% else %}
 <div class="home-sections">
   <header class="design-hero-section home-hero">
     <div class="armor-shell">
-      {% include components/office-hero.html description="Get an email from us once, twice, or thrice a month" %}
+      {% include components/office-hero.html description=newsletter_intro %}
     </div>
   </header>
   <section class="radar-section" aria-label="Newsletter signup">
@@ -17,3 +24,4 @@ body_class: home-page
     </div>
   </section>
 </div>
+{% endif %}

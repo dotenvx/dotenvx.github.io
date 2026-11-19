@@ -1,0 +1,14 @@
+- name: Go
+  package_url: https://pkg.go.dev/github.com/dotenvx/dotenvx-go
+  command: go get github.com/dotenvx/dotenvx-go
+- name: Rust
+  package_url: https://crates.io/crates/dotenvx-official
+  command: cargo add dotenvx-official
+- name: PHP
+  package_url: https://packagist.org/packages/dotenvx/phpdotenvx
+  command: |-
+    pie install dotenvx/phpdotenvx-ext
+    composer require dotenvx/phpdotenvx
+- name: Next.js
+  package_url: https://www.npmjs.com/package/@dotenvx/next-env
+  command: npm install @dotenvx/next-env

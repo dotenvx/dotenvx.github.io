@@ -75,12 +75,15 @@ class WriterPreview < Jekyll::Generator
 
     add_blog_posts(site)
 
-    %w[about corporate legal privacy terms changelog blog careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory sitemap].each do |slug|
-      page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == "/#{slug}" }
+    %w[about corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory sitemap].each do |slug|
+      source_url = slug == 'docs' ? '/docs/introduction' : "/#{slug}"
+      page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == source_url }
       title = page.data.fetch('title')
-      template = site.liquid_renderer.file(page.path).parse(page.content)
+      writer_include = page.data['writer_include']
+      template_source = writer_include ? "{% include #{writer_include} %}" : page.content
+      template = site.liquid_renderer.file(page.path).parse(template_source)
       context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] }
-      context['sitemap_links'] = sitemap_links(site.pages) if slug == 'sitemap'
+      context['preview_links'] = preview_links(site.pages) if %w[docs sitemap].include?(slug)
       content = template.render!(context, registers: { site: site })
       add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}", page.data.fetch('writer_layout', 'auto'))
     end
@@ -101,7 +104,7 @@ class WriterPreview < Jekyll::Generator
       context['post_content'] = template.render!(context, registers: registers)
       title = post.data.fetch('title')
       body = frame.render!(context, registers: registers)
-      add_preview(site, links.fetch(post.url), title, "# #{title}\n\n#{body.strip}", 'single', blog_links: links)
+      add_preview(site, links.fetch(post.url), title, "# #{title}\n\n#{body.strip}", 'columns', blog_links: links)
     end
   end
 
@@ -120,7 +123,7 @@ class WriterPreview < Jekyll::Generator
     document.to_html
   end
 
-  def sitemap_links(pages)
+  def preview_links(pages)
     pages.each_with_object({}) do |page, links|
       url = page.url
       next unless url.start_with?('/v2/')

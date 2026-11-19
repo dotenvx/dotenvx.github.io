@@ -3,7 +3,7 @@
   if (!sidebar) return;
   const details = sidebar.querySelector('details');
   const scroller = sidebar.querySelector('nav');
-  const desktop = matchMedia('(min-width: 64rem)');
+  const desktop = matchMedia(sidebar.classList.contains('writer-docs-sidebar') ? '(min-width: 48rem)' : '(min-width: 64rem)');
   const drawer = sidebar.querySelector('.docs-drawer');
   const toggle = sidebar.querySelector('.docs-drawer-toggle');
   const close = sidebar.querySelector('.docs-drawer-close');
@@ -29,57 +29,59 @@
   update();
   desktop.addEventListener('change', update);
   const resizer = sidebar.querySelector('.docs-sidebar-resizer');
-  let preferredWidth = 0;
-  try { preferredWidth = Number(localStorage.getItem('docs-sidebar-width-v2')) || 0; } catch (_) {}
-  const bounds = () => {
-    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    return { min: 10 * rem, max: Math.max(13 * rem, Math.min(32 * rem, innerWidth / 2 - 20 * rem)), initial: 17 * rem };
-  };
-  const resize = () => {
-    const { min, max, initial } = bounds();
-    const width = Math.min(max, Math.max(min, preferredWidth || initial));
-    sidebar.style.setProperty('--docs-sidebar-width', `${width}px`);
-    resizer.setAttribute('aria-valuemin', Math.round(min));
-    resizer.setAttribute('aria-valuemax', Math.round(max));
-    resizer.setAttribute('aria-valuenow', Math.round(width));
-  };
-  const saveWidth = () => {
-    try { localStorage.setItem('docs-sidebar-width-v2', String(preferredWidth)); } catch (_) {}
-  };
-  resize();
-  window.addEventListener('resize', resize);
-  resizer.addEventListener('pointerdown', event => {
-    if (!desktop.matches || event.button !== 0) return;
-    event.preventDefault();
-    resizer.setPointerCapture(event.pointerId);
-    document.documentElement.classList.add('docs-sidebar-resizing');
-  });
-  resizer.addEventListener('pointermove', event => {
-    if (!resizer.hasPointerCapture(event.pointerId)) return;
-    const { min, max } = bounds();
-    preferredWidth = Math.min(max, Math.max(min, event.clientX - sidebar.getBoundingClientRect().left));
+  if (resizer) {
+    let preferredWidth = 0;
+    try { preferredWidth = Number(localStorage.getItem('docs-sidebar-width-v2')) || 0; } catch (_) {}
+    const bounds = () => {
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      return { min: 10 * rem, max: Math.max(13 * rem, Math.min(32 * rem, innerWidth / 2 - 20 * rem)), initial: 17 * rem };
+    };
+    const resize = () => {
+      const { min, max, initial } = bounds();
+      const width = Math.min(max, Math.max(min, preferredWidth || initial));
+      sidebar.style.setProperty('--docs-sidebar-width', `${width}px`);
+      resizer.setAttribute('aria-valuemin', Math.round(min));
+      resizer.setAttribute('aria-valuemax', Math.round(max));
+      resizer.setAttribute('aria-valuenow', Math.round(width));
+    };
+    const saveWidth = () => {
+      try { localStorage.setItem('docs-sidebar-width-v2', String(preferredWidth)); } catch (_) {}
+    };
     resize();
-  });
-  const endResize = event => {
-    if (resizer.hasPointerCapture(event.pointerId)) resizer.releasePointerCapture(event.pointerId);
-    document.documentElement.classList.remove('docs-sidebar-resizing');
-    saveWidth();
-  };
-  resizer.addEventListener('pointerup', endResize);
-  resizer.addEventListener('pointercancel', endResize);
-  resizer.addEventListener('lostpointercapture', endResize);
-  resizer.addEventListener('dblclick', () => { preferredWidth = 0; resize(); saveWidth(); });
-  resizer.addEventListener('keydown', event => {
-    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-    event.preventDefault();
-    const { min, max } = bounds();
-    const width = sidebar.getBoundingClientRect().width;
-    preferredWidth = event.key === 'Home' ? min : event.key === 'End' ? max :
-      Math.min(max, Math.max(min, width + (event.key === 'ArrowRight' ? 16 : -16)));
-    resize();
-    saveWidth();
-  });
-  const chrome = document.querySelector('.radar-chrome');
+    window.addEventListener('resize', resize);
+    resizer.addEventListener('pointerdown', event => {
+      if (!desktop.matches || event.button !== 0) return;
+      event.preventDefault();
+      resizer.setPointerCapture(event.pointerId);
+      document.documentElement.classList.add('docs-sidebar-resizing');
+    });
+    resizer.addEventListener('pointermove', event => {
+      if (!resizer.hasPointerCapture(event.pointerId)) return;
+      const { min, max } = bounds();
+      preferredWidth = Math.min(max, Math.max(min, event.clientX - sidebar.getBoundingClientRect().left));
+      resize();
+    });
+    const endResize = event => {
+      if (resizer.hasPointerCapture(event.pointerId)) resizer.releasePointerCapture(event.pointerId);
+      document.documentElement.classList.remove('docs-sidebar-resizing');
+      saveWidth();
+    };
+    resizer.addEventListener('pointerup', endResize);
+    resizer.addEventListener('pointercancel', endResize);
+    resizer.addEventListener('lostpointercapture', endResize);
+    resizer.addEventListener('dblclick', () => { preferredWidth = 0; resize(); saveWidth(); });
+    resizer.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const { min, max } = bounds();
+      const width = sidebar.getBoundingClientRect().width;
+      preferredWidth = event.key === 'Home' ? min : event.key === 'End' ? max :
+        Math.min(max, Math.max(min, width + (event.key === 'ArrowRight' ? 16 : -16)));
+      resize();
+      saveWidth();
+    });
+  }
+  const chrome = document.querySelector('.radar-chrome, .writer-header');
   if (chrome) new ResizeObserver(() => {
     document.documentElement.style.setProperty('--docs-nav-top', `${chrome.getBoundingClientRect().height}px`);
   }).observe(chrome);
@@ -94,4 +96,5 @@
   scroller.addEventListener('scroll', () => {
     try { sessionStorage.setItem('docs-sidebar-scroll', String(scroller.scrollTop)); } catch (_) {}
   }, { passive: true });
+  sidebar.dataset.docsSidebarReady = '';
 })();

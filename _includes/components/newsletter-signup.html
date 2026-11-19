@@ -6,7 +6,7 @@
     <input type="hidden" name="source" value="{{ include.source | default: 'blog' }}">
     <label class="newsletter-email-label">
       <span class="newsletter-visually-hidden">Email address</span>
-      <input type="email" name="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+      <input type="email" name="email" autocomplete="email" placeholder="{% if writer_preview %}Email address{% else %}you@example.com{% endif %}" maxlength="254" required>
     </label>
     <div class="newsletter-honeypot" aria-hidden="true">
       <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>

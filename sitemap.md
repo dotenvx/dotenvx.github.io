@@ -14,14 +14,14 @@ writer_layout: single
 
 <ul class="writer-sitemap-tree">
   <li><a href="{{ '/v2/' | relative_url }}">Home</a></li>
-  {% include components/design-list-tree.html nodes=sitemap_pages links=sitemap_links %}
+  {% include components/design-list-tree.html nodes=sitemap_pages links=preview_links %}
 </ul>
 
 {% if sitemap_docs %}
-## {% if sitemap_docs.href %}[Docs]({{ sitemap_docs.href | relative_url }}){% else %}Docs{% endif %}
+## [Docs]({{ preview_links['/docs'] | relative_url }})
 
 <ul class="writer-sitemap-tree">
-  {% include components/design-list-tree.html nodes=sitemap_docs.children links=sitemap_links %}
+  {% include components/design-list-tree.html nodes=sitemap_docs.children links=preview_links %}
 </ul>
 {% endif %}
 {% else %}

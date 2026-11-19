@@ -3,7 +3,7 @@ description: "Read the Dotenvx blog for guides and updates on environment variab
 title: "Blog"
 layout: radar
 body_class: home-page
-writer_layout: single
+writer_layout: columns
 ---
 
 {% assign blog_description = "Reflections on building Dotenvx" %}
@@ -28,7 +28,6 @@ writer_layout: single
 </ul>
 
 {% endfor %}
-{% include components/newsletter-signup.html source="blog" %}
 {% else %}
 <style>
   .blog-index-lists {

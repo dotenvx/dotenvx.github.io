@@ -1,4 +1,10 @@
-<h2 class="design-page-title design-page-title--flush">{{ include.title | default: "CLI Commands" }}</h2>
+{% assign cli_commands_title = include.title | default: "CLI Commands" %}
+{% if include.writer %}
+## {{ cli_commands_title }}
+
+{% else %}
+<h2 class="design-page-title design-page-title--flush">{{ cli_commands_title }}</h2>
+{% endif %}
 <ul class="advanced-cli-commands">
   {% for command in site.data.advanced_cli %}
     {% assign command_root = command.label | split: " " | first %}

@@ -1,6 +1,10 @@
-<aside class="docs-sidebar" aria-label="Docs navigation">
-  <button class="docs-drawer-toggle" type="button" aria-label="Open documentation navigation" aria-controls="docs-drawer" aria-expanded="false">
+{% if include.writer %}
+  {% assign writer_docs_urls = site.pages | where_exp: 'entry', "entry.url contains '/v2/docs/'" | map: 'url' %}
+{% endif %}
+<aside class="docs-sidebar{% if include.writer %} writer-docs-sidebar{% endif %}" aria-label="Docs navigation">
+  <button class="docs-drawer-toggle" type="button" aria-label="{% if include.writer %}Open docs navigation{% else %}Open documentation navigation{% endif %}" aria-controls="docs-drawer" aria-expanded="false">
     <span class="docs-drawer-glyph" aria-hidden="true">◨</span>
+    {% if include.writer %}<span>Docs navigation</span>{% endif %}
   </button>
   <dialog id="docs-drawer" class="docs-drawer" aria-label="Docs navigation">
     <div class="docs-drawer-header"><span>Docs</span><button class="docs-drawer-close" type="button" aria-label="Close docs navigation">×</button></div>
@@ -8,9 +12,11 @@
   <details class="docs-sidebar-disclosure" open>
     <summary>Docs navigation</summary>
     <nav class="docs-sidebar-scroll" aria-label="All docs">
-      <ul>{% include components/docs-sidebar-tree.html nodes=site.data.docs_navigation %}</ul>
+      <ul>{% include components/docs-sidebar-tree.html nodes=site.data.docs_navigation writer_urls=writer_docs_urls %}</ul>
     </nav>
   </details>
-  <div class="docs-sidebar-resizer" role="separator" aria-label="Resize documentation sidebar" aria-orientation="vertical" tabindex="0" title="Drag to resize. Double-click to reset."></div>
+  {% unless include.writer %}
+    <div class="docs-sidebar-resizer" role="separator" aria-label="Resize documentation sidebar" aria-orientation="vertical" tabindex="0" title="Drag to resize. Double-click to reset."></div>
+  {% endunless %}
 </aside>
 <script src="{{ '/assets/js/docs-sidebar.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

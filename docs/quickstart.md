@@ -5,6 +5,7 @@ permalink: /docs/quickstart/
 markdown_url: /docs/quickstart.md
 agent_prompt: Set up Dotenvx in my project for me.
 layout: docs-markdown
+writer_include: writer-quickstart.md
 redirect_from:
   - /docs/quickstarts
   - /docs/quickstarts/

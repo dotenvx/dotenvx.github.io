@@ -15,6 +15,8 @@
       Dotenvx
     </a>
     <nav class="writer-nav-links" aria-label="Primary">
+      <a href="{{ '/v2/about/' | relative_url }}"{% if page.url == '/v2/about/' %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/v2/changelog/' | relative_url }}"{% if page.url == '/v2/changelog/' %} aria-current="page"{% endif %}>Changelog</a>
       <a href="{{ '/docs' | relative_url }}">Docs</a>
       <a href="{{ '/v2/pricing/' | relative_url }}"{% if page.url == '/v2/pricing/' %} aria-current="page"{% endif %}>Pricing</a>
       <a href="{{ '/v2/agents/' | relative_url }}"{% if page.url == '/v2/agents/' %} aria-current="page"{% endif %}>Agents</a>
@@ -42,8 +44,9 @@
       {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms,/changelog,/contact,/careers' | split: ',' %}
       {% assign writer_footer_home = site.data.footer.links | where: 'href', '/' %}
       {% assign writer_footer_about = site.data.footer.links | where: 'href', '/about/' %}
-      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/corporate'" %}
-      {% assign writer_footer_links = writer_footer_home | concat: writer_footer_about | concat: writer_footer_remaining %}
+      {% assign writer_footer_changelog = site.data.footer.links | where: 'href', '/changelog' %}
+      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/opensource' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub'" %}
+      {% assign writer_footer_links = writer_footer_home | concat: writer_footer_about | concat: writer_footer_changelog | concat: writer_footer_remaining %}
       <p class="writer-footer-links">
         {% for link in writer_footer_links -%}
           {%- if link.theme_toggle -%}
@@ -52,7 +55,7 @@
             {% assign writer_footer_path = link.href %}
             {% assign writer_footer_last = link.href | slice: -1 %}
             {% if writer_footer_last == '/' %}{% assign writer_footer_path = link.href | remove_last: '/' %}{% endif %}
-            <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/about/' %}{{ '/v2/about/' | relative_url }}{% elsif writer_footer_paths contains writer_footer_path %}{{ writer_footer_path | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{% if link.href == '/' %}Home{% else %}{{ link.label }}{% endif %}</a>
+            <a href="{% if link.href == '/' %}{{ '/v2/' | relative_url }}{% elsif link.href == '/about/' %}{{ '/v2/about/' | relative_url }}{% elsif writer_footer_paths contains writer_footer_path %}{{ writer_footer_path | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{% if link.href == '/' %}Home{% elsif link.label == 'Documentation' %}Docs{% else %}{{ link.label }}{% endif %}</a>
           {%- endif -%}
         {% endfor %}
       </p>

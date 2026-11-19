@@ -70,7 +70,7 @@ We are based in LA.
     {% endcapture %}
 {% if writer_preview %}
 <div>
-{{ contact_lists | strip }}
+{% include writer-contact-details.html %}
 </div>
 {% else %}
     {% include components/design-content-width.html content=contact_lists class="contact-content" %}

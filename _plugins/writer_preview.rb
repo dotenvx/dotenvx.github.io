@@ -71,7 +71,7 @@ class WriterPreview < Jekyll::Generator
     pricing_page = site.pages.find { |page| page.url.delete_suffix('/') == '/pricing' }
     add_preview(site, '/v2/pricing/', 'Pricing', pricing, pricing_page.data.fetch('writer_layout', 'wide'))
 
-    %w[about corporate legal privacy terms changelog contact careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory].each do |slug|
+    %w[about corporate legal privacy terms changelog careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory].each do |slug|
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == "/#{slug}" }
       title = page.data.fetch('title')
       template = site.liquid_renderer.file(page.path).parse(page.content)

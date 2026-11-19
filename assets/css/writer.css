@@ -215,13 +215,6 @@ body {
   height: auto;
 }
 
-.writer .writer-office-image {
-  width: min(100%, 192px);
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: #000;
-}
-
 .writer-corporate-hero { width: min(100%, 192px); margin-block: 24px 32px; }
 .writer .env-slab { margin: 0; width: 100%; }
 .writer .env-slab-stage { position: relative; width: 100%; height: 180px; }
@@ -357,6 +350,19 @@ body {
 @media (max-width: 600px) {
   .writer table { display: block; overflow-x: auto; }
 }
+
+.writer table.writer-data-table {
+  display: table;
+  margin-bottom: 8px;
+  border: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+  line-height: 20px;
+  break-after: avoid-column;
+}
+
+.writer-data-table :is(th, td) { padding: 6px 8px; border: 1px solid var(--line); }
+.writer-data-table thead th { font-weight: 600; }
+.writer .writer-table-note { color: var(--syntax); font-size: 12px; line-height: 20px; }
 
 .writer-pricing-comparison {
   column-span: all;

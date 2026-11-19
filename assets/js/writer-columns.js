@@ -1,5 +1,11 @@
 /* Keep native document order and column fragmentation; only adjust column height. */
 (() => {
+  function preferredBudget(viewportBudget, totalHeight, columns) {
+    // Aim for a final column about 75% as tall as the earlier columns on long pages.
+    const proportionalBudget = totalHeight * 0.75 / (columns - 1 + 0.75);
+    return Math.max(viewportBudget, Math.ceil(proportionalBudget));
+  }
+
   function chooseHeight({ columns, budget, initialHeight, totalHeight, measure }) {
     const fits = result => result.columns <= columns && result.lastHeight <= budget;
     const initial = measure(initialHeight);
@@ -21,12 +27,14 @@
         high = height;
       }
     }
+    // Preserve balanced CSS if whole blocks would leave a disproportionately short tail.
+    if (best !== null && measure(best).lastHeight < best * 0.65) return null;
     // A tall final indivisible block may have no solution. Preserve balanced CSS.
     return best;
   }
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { chooseHeight };
+    module.exports = { chooseHeight, preferredBudget };
     return;
   }
 
@@ -53,14 +61,15 @@
     const gap = Number.parseFloat(style.columnGap) || 0;
     const columnWidth = (width - gap * (columns - 1)) / columns;
     const top = content.getBoundingClientRect().top + window.scrollY;
-    const budget = Math.floor(window.innerHeight - top - 32);
-    if (budget < 160) return;
+    const viewportBudget = Math.floor(window.innerHeight - top - 32);
+    if (viewportBudget < 160) return;
     const initialHeight = Math.ceil(content.getBoundingClientRect().height);
 
     // Measure the full flow at the actual text-column width, never the page width.
     content.style.width = `${columnWidth}px`;
     content.style.columnCount = '1';
     const totalHeight = Math.ceil(content.getBoundingClientRect().height);
+    const budget = preferredBudget(viewportBudget, totalHeight, columns);
     content.style.removeProperty('width');
     content.style.removeProperty('column-count');
 

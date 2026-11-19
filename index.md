@@ -26,10 +26,35 @@ It was important that we choose a proven, simple, asymmetric standard with small
 The result is a system built entirely from primitives, developers already understand, and infrastructure they already use. Secrets can travel with code without becoming part of the code. Git distributes them, .env defines how apps consume them, and secp256k1 keeps their values unreadable. The kicker, all this works by setting a single private key on your infrastructure - no more risky async coordination of secrets, no more centralized downtime risk. Your secrets are always just there with your code, ready to be unlocked at runtime.
 {: .design-paragraph}
 
-{% unless writer_preview %}
+{% if writer_preview %}
+Most importantly, an attacker has to get hold of both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. Keeping them separate sharply reduces the risk of exposure.
+{: .design-paragraph}
+
+<table class="writer-data-table" aria-labelledby="secret-exposure-table-title">
+  <thead>
+    <tr class="writer-table-title">
+      <th id="secret-exposure-table-title" colspan="3">Probability of Full Secret Exposure</th>
+    </tr>
+    <tr>
+      <th scope="col">Years</th>
+      <th scope="col">Conventional</th>
+      <th scope="col">Dotenvx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>1.00%</td><td>0.005%</td></tr>
+    <tr><td>5</td><td>4.90%</td><td>0.025%</td></tr>
+    <tr><td>10</td><td>9.56%</td><td>0.049%</td></tr>
+    <tr><td>20</td><td>18.21%</td><td>0.098%</td></tr>
+  </tbody>
+</table>
+
+Source: [Whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=13)
+{: .writer-table-note}
+{% else %}
 [Read the whitepaper →](/dotenvx.pdf){: .design-link}
 {: .design-paragraph .text-center}
-{% endunless %}
+{% endif %}
 {% endcapture %}
 
 {% capture home_intro %}
@@ -172,11 +197,9 @@ $ dotenvx run -- node index.js
 {: .design-paragraph .text-center .one-key-action}
 {% endunless %}
 {% endcapture %}
-{% if writer_preview %}
-{{ home_section_content | strip }}
-{% else %}
+{% unless writer_preview %}
 {% include components/home-section.html title="One Private Key" id="home-one-key-title" content=home_section_content visual=home_key_visual %}
-{% endif %}
+{% endunless %}
 
 {% capture home_provider_visual %}
 {% unless homepage_markdown %}
@@ -216,11 +239,9 @@ App listening on port 80
 {: .design-paragraph .text-center .one-key-action}
 {% endunless %}
 {% endcapture %}
-{% if writer_preview %}
-{{ home_section_content | strip }}
-{% else %}
+{% unless writer_preview %}
 {% include components/home-section.html title="Ready for Production" id="home-production-title" content=home_section_content class="home-production" visual=home_provider_visual %}
-{% endif %}
+{% endunless %}
 
 {% endcapture %}
 {% unless writer_preview %}
@@ -280,8 +301,17 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 {% include components/home-section.html title="Your Code. Your Secrets." id="home-shipping-title" content=home_section_content class="home-shipping" %}
 {% endunless %}
 
+{% if writer_preview %}
+{{ home_usage_section | strip }}
+
+## Adoption
+
+- 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
+- [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
+- [John Zila](/v2/members/watt/) (former Head of Security DevOps at Zoom): securely version and deploy secrets, without a new critical path dependency
+- [Dhravya Shah](/v2/members/supermemory/) (CEO of Supermemory): *set one key and all our secrets just work*
+{% else %}
 {% capture home_closing_actions %}
-{% unless writer_preview %}
 {% if homepage_markdown %}
 [Quickstart](/docs/quickstart/) · [Source](https://github.com/dotenvx/dotenvx)
 {% else %}
@@ -291,25 +321,14 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
         {% include components/design-btn.html content=source_button href="https://github.com/dotenvx/dotenvx" class="home-source-button" data_umami_event="Homepage Source button" %}
       </div>
 {% endif %}
-{% endunless %}
 {% endcapture %}
 
 {% capture home_section_content %}
-Dotenvx is {% if writer_preview %}[free and open source](https://github.com/dotenvx/dotenvx){% else %}free and open source{% endif %}, for you to wield and keep your secrets safe. It’s a labor of love from me and a community of people who believe safer secrets should be within everyone’s reach.
+Dotenvx is free and open source, for you to wield and keep your secrets safe. It’s a labor of love from me and a community of people who believe safer secrets should be within everyone’s reach.
 {: .design-paragraph}
 
 We’re building for the whole world of software: an elegant, open pattern for encrypting secrets that belongs to no single vendor. Your encrypted files travel with your code, without a secrets service in your application’s critical path. The goal is simple: make this pattern work wherever software runs, for everyone who builds it—human or agent.
 {: .design-paragraph}
-
-{% if writer_preview %}
-The [former Head of Security DevOps at Zoom](/v2/members/watt/) deploys secrets with code *without taking on a new critical path dependency.* The [CEO of Supermemory](/v2/members/supermemory/) says: *I set one key and all my secrets just work.* Major organizations have adopted it for its security guarantees, too.
-{: .design-paragraph}
-{% endif %}
 {% endcapture %}
 {% include components/home-section.html title="Open Source" id="home-open-source-title" content=home_section_content class="home-open-source" anchor="install" copy_class="home-creator-note" after=home_closing_actions %}
-
-{% if writer_preview %}
-{% include components/home-logo-cloud.html %}
-
-{{ home_usage_section | strip }}
 {% endif %}

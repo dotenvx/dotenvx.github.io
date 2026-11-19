@@ -59,6 +59,9 @@ module WriterMarkdownExport
       items = node.element_children.select { |child| child.name == 'li' }
       "\n\n" + items.each_with_index.map { |item, i| "#{node.name == 'ol' ? "#{i + 1}." : '-'} #{children(item).strip}\n" }.join + "\n"
     when 'table'
+      title_row = node.at_css('thead > tr.writer-table-title')
+      title = "**#{inline(title_row)}**\n\n" if title_row
+      title_row&.remove
       rows = node.css('tr').map do |row|
         row.element_children.select { |cell| %w[th td].include?(cell.name) }.map { |cell| inline(cell).gsub('|', '\\|') }
       end
@@ -66,7 +69,7 @@ module WriterMarkdownExport
       return '' if width.zero?
       rows.each { |row| row.fill('', row.length...width) }
       rows.insert(1, Array.new(width, '---'))
-      "\n\n" + rows.map { |row| "| #{row.join(' | ')} |" }.join("\n") + "\n\n"
+      "\n\n#{title}" + rows.map { |row| "| #{row.join(' | ')} |" }.join("\n") + "\n\n"
     when 'svg' then ''
     when 'span'
       return " #{children(node)}" if node['class'].to_s.split.include?('membership-plan-price')

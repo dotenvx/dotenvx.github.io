@@ -10,6 +10,11 @@ og_image:
 body_class: home-page
 ---
 
+{% if writer_preview %}
+{{ page.description }}
+
+<div class="writer-member-logo">{% include logos/wattdata.html %}</div>
+{% else %}
 <div class="home-sections">
 <section class="design-hero-section home-hero">
   <div class="armor-shell">
@@ -24,6 +29,7 @@ body_class: home-page
 
 <section class="radar-section">
   <div class="armor-shell">
+    {% endif %}
     {% assign john = site.data.practitioners.john-zila %}
     {% capture john_quote %}"{{ john.quote }}"{% endcapture %}
     {% capture story %}
@@ -42,7 +48,14 @@ body_class: home-page
       <hr class="member-story-divider">
       <p class="design-paragraph"><strong>John is Cofounder and Chief Architect at Watt and was previously Head of Security DevOps at Zoom.</strong></p>
     {% endcapture %}
+    {% if writer_preview %}
+<div>
+{{ story | strip }}
+</div>
+{% else %}
     {% include components/design-content-width.html content=story %}
   </div>
 </section>
 </div>
+
+{% endif %}

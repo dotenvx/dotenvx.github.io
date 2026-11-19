@@ -1,5 +1,5 @@
 {% if homepage_markdown %}
-## {{ include.title }}
+{{ include.markdown_heading | default: '##' }} {{ include.title }}
 
 {{ include.content | strip }}
 {% if include.after %}

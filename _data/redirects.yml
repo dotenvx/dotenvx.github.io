@@ -51,6 +51,7 @@
 "/signup.html": "https://armor.dotenvx.com/signup"
 "/soc2/": "https://trust.oneleet.com/dotenvx"
 "/support/": "/contact/"
+"/v2/contact/": "/v2/about/"
 "/vlt/": "/armor/"
 "/vscode": "https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode"
 "/vscode-extension/": "https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode"

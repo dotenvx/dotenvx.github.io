@@ -8,6 +8,14 @@ body_class: home-page careers-page
 
 
 
+{% if writer_preview %}
+{{ page.description }}
+
+## Openings
+
+- [Agent Engineer]({{ '/v2/careers/agent-engineer/' | relative_url }})
+- [Corporate Sponsorships]({{ '/v2/careers/corporate-sponsorships/' | relative_url }})
+{% else %}
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="Careers">
     <div class="armor-shell">
@@ -43,3 +51,5 @@ body_class: home-page careers-page
     </div>
   </section>
 </div>
+
+{% endif %}

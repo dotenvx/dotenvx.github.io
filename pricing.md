@@ -3,6 +3,7 @@ title: Pricing
 description: "Your keys. Off device. Under your control."
 permalink: /pricing
 layout: radar
+writer_layout: wide
 body_class: home-page membership-page
 ---
 

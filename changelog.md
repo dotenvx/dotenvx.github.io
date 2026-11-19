@@ -8,6 +8,7 @@ layout: radar
 body_class: home-page
 ---
 
+{% unless writer_preview %}
 <style>
   .changelog-index {
     display: flex;
@@ -38,8 +39,9 @@ body_class: home-page
 
   <section class="radar-section">
     <div class="armor-shell">
+{% endunless %}
       {% capture changelog_content %}
-      <nav class="changelog-index" aria-label="Changelog">
+      {% if writer_preview %}<div>{% else %}<nav class="changelog-index" aria-label="Changelog">{% endif %}
         {% comment %}
           Busy months (3+ entries) stay monthly. Sparse months (1–2) roll into quarters.
         {% endcomment %}
@@ -79,8 +81,8 @@ body_class: home-page
             {% endunless %}
             {% assign current_period = entry_period %}
             <div class="design-list">
-              <p class="design-list-title">{{ entry_period_label }}</p>
-              <ul class="design-list-items">
+              {% if writer_preview %}<h2>{{ entry_period_label }}</h2>{% else %}<p class="design-list-title">{{ entry_period_label }}</p>{% endif %}
+              <ul class="{% if writer_preview %}writer-prose-list{% else %}design-list-items{% endif %}">
           {% endif %}
                 <li>
                   {% if entry.url and entry.url != "" %}
@@ -100,8 +102,17 @@ body_class: home-page
               </ul>
             </div>
         {% endunless %}
-      </nav>
+      {% if writer_preview %}</div>{% else %}</nav>{% endif %}
       {% endcapture %}
+{% if writer_preview %}
+> What we're working on, into the night
+
+<p><img class="writer-image" src="{{ '/changelog.png' | relative_url }}" alt="Dotenvx changelog" width="768" height="307"></p>
+
+<div>
+{{ changelog_content | strip }}
+</div>
+{% else %}
       {% include components/design-content-width.html content=changelog_content %}
     </div>
   </section>
@@ -118,3 +129,4 @@ body_class: home-page
     </div>
   </section>
 </div>
+{% endif %}

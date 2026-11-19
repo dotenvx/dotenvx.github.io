@@ -12,6 +12,10 @@ That starts Jekyll (`--livereload --verbose --incremental`) and a PostCSS watche
 
 `assets/css/main.src.css` is the source. `npm run build:css` / `npm run watch:css` write `assets/css/main.css` (gitignored). We do **not** use `jekyll-postcss` — it passes the whole stylesheet on the CLI and fails with `Argument list too long` once the file is large.
 
+#### `/v2` design rules
+
+Follow the [v2 design rules](_design/v2.md) when editing the shared writer layout or its pages.
+
 #### Production build
 
 CI and deploy use production env (Umami on, CSS minified):

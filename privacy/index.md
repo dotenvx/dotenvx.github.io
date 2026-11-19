@@ -5,6 +5,7 @@ layout: radar
 body_class: home-page
 ---
 
+{% unless writer_preview %}
 <div class="home-sections">
 {% include components/legal/hero.html
   title="Privacy Policy"
@@ -13,6 +14,7 @@ body_class: home-page
 
 <section class="radar-section">
   <div class="armor-shell">
+{% endunless %}
     {% capture legal_content %}
     <div class="design-prose">
     <p class="design-paragraph">The privacy of your data is paramount to us. It's our entire business. We'll only ever access your account to help you with a problem or squash a software bug. We'll never access the content of an encryption key and/or secret unless you ask us to. We log all access to all accounts by IP address, so we can verify that no unauthorized access has happened for as long as the logs are kept.</p>
@@ -46,7 +48,13 @@ body_class: home-page
     <p class="design-paragraph">Questions about this privacy policy? Please <a class="design-link" href="mailto:support@dotenvx.com">get in touch</a> and we'll be happy to answer them.</p>
     </div>
     {% endcapture %}
+{% if writer_preview %}
+How Dotenvx handles your data.
+
+{{ legal_content | strip }}
+{% else %}
     {% include components/design-content-width.html content=legal_content %}
   </div>
 </section>
 </div>
+{% endif %}

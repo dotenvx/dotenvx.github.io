@@ -2,7 +2,7 @@
   {% assign newsletter_heading = include.heading | default: "h2" %}
   <{{ newsletter_heading }} class="design-list-title">Making .env</{{ newsletter_heading }}>
   <p class="design-paragraph">Notes from source. For the file you rely on, .env.</p>
-  <form action="https://armor.dotenvx.com/public/newsletter/subscribe" method="post" data-newsletter-form>
+  <form action="https://armor.dotenvx.com/public/newsletter/subscribe" method="post" data-newsletter-form{% if writer_preview %} data-markdown-href="{{ '/newsletter' | relative_url }}"{% endif %}>
     <input type="hidden" name="source" value="{{ include.source | default: 'blog' }}">
     <label class="newsletter-email-label">
       <span class="newsletter-visually-hidden">Email address</span>

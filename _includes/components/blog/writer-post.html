@@ -1,0 +1,14 @@
+<p class="writer-post-byline">
+  {{ page.author | default: "Scott Motte" | escape }} ·
+  <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+</p>
+
+{{ post_content }}
+
+<footer class="writer-post-footer">
+  {% include components/newsletter-signup.html source="blog-post" %}
+  <p class="writer-post-links">
+    <a href="{{ '/v2/blog/' | relative_url }}">Back to blog</a>
+    <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
+  </p>
+</footer>

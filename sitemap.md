@@ -4,8 +4,27 @@ title: Sitemap
 permalink: /sitemap
 layout: radar
 body_class: home-page
+writer_layout: single
 ---
 
+{% if writer_preview %}
+{% assign sitemap_docs = site.data.sitemap_tree | where: "label", "Docs" | first %}
+{% assign sitemap_pages = site.data.sitemap_tree | where_exp: "node", "node.label != 'Docs'" %}
+## Pages
+
+<ul class="writer-sitemap-tree">
+  <li><a href="{{ '/v2/' | relative_url }}">Home</a></li>
+  {% include components/design-list-tree.html nodes=sitemap_pages links=sitemap_links %}
+</ul>
+
+{% if sitemap_docs %}
+## {% if sitemap_docs.href %}[Docs]({{ sitemap_docs.href | relative_url }}){% else %}Docs{% endif %}
+
+<ul class="writer-sitemap-tree">
+  {% include components/design-list-tree.html nodes=sitemap_docs.children links=sitemap_links %}
+</ul>
+{% endif %}
+{% else %}
 <style>
   .sitemap-hero-ascii {
     align-items: center;
@@ -58,3 +77,4 @@ body_class: home-page
 </section>
 
 </div>
+{% endif %}

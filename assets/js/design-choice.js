@@ -60,7 +60,12 @@
   }
 
   function copyFrom(wrap) {
-    var text = (wrap.getAttribute('data-copy') || (wrap.querySelector('code, pre') || {}).textContent || '').trim()
+    var source = wrap.querySelector('code, pre')
+    if (source && source.querySelector('.writer-markdown-detail, .writer-markdown-syntax')) {
+      source = source.cloneNode(true)
+      source.querySelectorAll('.writer-markdown-detail, .writer-markdown-syntax').forEach(function (marker) { marker.remove() })
+    }
+    var text = (wrap.getAttribute('data-copy') || (source || {}).textContent || '').trim()
     if (!text) return Promise.reject()
 
     if (navigator.clipboard && window.isSecureContext) {

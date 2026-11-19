@@ -27,7 +27,7 @@ The result is a system built entirely from primitives, developers already unders
 {: .design-paragraph}
 
 {% if writer_preview %}
-Most importantly, an attacker has to get hold of both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. Keeping them separate sharply reduces the risk of exposure.
+Best of all, attackers hate this. They have to gain access to both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure.
 {: .design-paragraph}
 
 <table class="writer-data-table" aria-labelledby="secret-exposure-table-title">
@@ -49,7 +49,7 @@ Most importantly, an attacker has to get hold of both the encrypted `.env` file 
   </tbody>
 </table>
 
-Source: [Whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=13)
+Source: [Whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=13), p. 13.
 {: .writer-table-note}
 {% else %}
 [Read the whitepaper →](/dotenvx.pdf){: .design-link}
@@ -308,7 +308,7 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 
 - 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
-- [John Zila](/v2/members/watt/) (former Head of Security DevOps at Zoom): securely version and deploy secrets, without a new critical path dependency
+- [John Zila](/v2/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
 - [Dhravya Shah](/v2/members/supermemory/) (CEO of Supermemory): *set one key and all our secrets just work*
 {% else %}
 {% capture home_closing_actions %}

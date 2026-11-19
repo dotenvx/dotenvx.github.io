@@ -3,8 +3,33 @@ description: "Read the Dotenvx blog for guides and updates on environment variab
 title: "Blog"
 layout: radar
 body_class: home-page
+writer_layout: single
 ---
 
+{% assign blog_description = "A place to think out loud about building Dotenvx" %}
+{% assign listed_posts = site.categories.blog | where_exp: "post", "post.draft != true" %}
+{% assign posts_by_year = listed_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+{% if writer_preview %}
+> {{ blog_description }}
+
+<p><img class="writer-image" src="{{ '/blog.png' | relative_url }}" alt="Outdoor swimming pool with a diving board" width="768" height="307"></p>
+
+{% for year_group in posts_by_year %}
+## {{ year_group.name }}
+
+<ul class="writer-blog-posts" role="list">
+  {% for post in year_group.items %}
+  <li>
+    <a href="{{ post.url | prepend: '/v2' | relative_url }}">{{ post.title | escape }}</a>
+    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %-d' }}</time>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endfor %}
+{% include components/newsletter-signup.html source="blog" %}
+{% else %}
 <style>
   .blog-index-lists {
     display: flex;
@@ -19,15 +44,13 @@ body_class: home-page
 <div class="home-sections">
 {% include components/blog/hero.html
   title="Blog"
-  description="Notes from the team in LA & SF"
+  description=blog_description
 %}
 
 <section class="radar-section">
   <div class="armor-shell">
     {% capture blog_content %}
     <div class="blog-index-lists">
-      {% assign listed_posts = site.categories.blog | where_exp: "post", "post.draft != true" %}
-      {% assign posts_by_year = listed_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
       {% for year_group in posts_by_year %}
         {% capture blog_year_items %}
           {% for post in year_group.items %}
@@ -53,3 +76,4 @@ body_class: home-page
   </div>
 </section>
 </div>
+{% endif %}

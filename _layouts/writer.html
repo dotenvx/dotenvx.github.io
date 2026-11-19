@@ -7,6 +7,7 @@
   <title>{{ page.title | escape }}</title>
   <script src="{{ '/assets/js/writer-mode.js' | relative_url }}"></script>
   <link rel="stylesheet" href="{{ '/assets/css/writer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  {% if page.url == '/v2/blog/' or page.writer_blog_post %}<link rel="stylesheet" href="{{ '/assets/css/newsletter-signup.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
 </head>
 <body>
   <header class="writer-nav">
@@ -26,7 +27,7 @@
       <a class="writer-nav-login" href="{{ '/login' | relative_url }}">Login</a>
     </div>
   </header>
-  <main class="writer writer--{{ page.writer_layout | default: 'single' }}">
+  <main class="writer writer--{{ page.writer_layout | default: 'single' }}{% if page.writer_blog_post %} writer--post{% endif %}">
     <div class="writer-page-heading">
       {{ page.writer_heading }}
     </div>
@@ -41,12 +42,13 @@
       <p><a href="mailto:support@dotenvx.com">support@dotenvx.com</a></p>
     </div>
     <nav aria-label="Footer">
-      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms,/changelog,/contact,/careers' | split: ',' %}
+      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms,/changelog,/contact,/careers,/blog,/sitemap' | split: ',' %}
       {% assign writer_footer_home = site.data.footer.links | where: 'href', '/' %}
       {% assign writer_footer_about = site.data.footer.links | where: 'href', '/about/' %}
       {% assign writer_footer_changelog = site.data.footer.links | where: 'href', '/changelog' %}
-      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/opensource' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub'" %}
-      {% assign writer_footer_links = writer_footer_home | concat: writer_footer_about | concat: writer_footer_changelog | concat: writer_footer_remaining %}
+      {% assign writer_footer_blog = site.data.footer.links | where: 'href', '/blog' %}
+      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/blog' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/opensource' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub'" %}
+      {% assign writer_footer_links = writer_footer_home | concat: writer_footer_about | concat: writer_footer_changelog | concat: writer_footer_blog | concat: writer_footer_remaining %}
       <p class="writer-footer-links">
         {% for link in writer_footer_links -%}
           {%- if link.theme_toggle -%}

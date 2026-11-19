@@ -31,7 +31,12 @@ module WriterMarkdownExport
   end
 
   def self.render(node)
-    return node.text.gsub(/\s+/, ' ') if node.text?
+    if node.text?
+      text = node.text.gsub(/\s+/, ' ')
+      return text.gsub('<', '&lt;') if text.include?('<') && node.ancestors('a').any?
+
+      return text
+    end
     return '' if node.comment?
 
     case node.name
@@ -51,6 +56,9 @@ module WriterMarkdownExport
       label.empty? ? '' : "[#{label}](#{node['href']})"
     when 'img'
       "![#{node['alt']}](#{node['src']})"
+    when 'iframe'
+      href = node['src']
+      href.to_s.empty? ? '' : "\n\n[View embedded document](#{href})\n\n"
     when 'strong', 'b' then "**#{inline(node)}**"
     when 'em', 'i' then "*#{inline(node)}*"
     when 'br'
@@ -60,7 +68,7 @@ module WriterMarkdownExport
       items = node.element_children.select { |child| child.name == 'li' }
       lines = items.each_with_index.map do |item, index|
         marker = node.name == 'ol' ? "#{index + 1}. " : '- '
-        text = children(item).strip.gsub(/<br>\n */, "<br>\n#{' ' * marker.length}")
+        text = children(item).strip.gsub(/<br>\n */, "<br>\n").gsub("\n", "\n#{' ' * marker.length}")
         "#{marker}#{text}\n"
       end
       "\n\n#{lines.join}\n"
@@ -82,6 +90,9 @@ module WriterMarkdownExport
       node['class'].to_s.split.include?('design-check') ? '✓' : children(node)
     when 'blockquote'
       "\n\n" + children(node).strip.split("\n", -1).map { |line| line.empty? ? '>' : "> #{line}" }.join("\n") + "\n\n"
+    when 'form'
+      href = node['data-markdown-href']
+      href ? "\n\n[Subscribe](#{href})\n\n" : children(node)
     when 'p', 'section', 'div', 'figure'
       "\n\n#{children(node)}\n\n"
     else children(node)
@@ -92,7 +103,11 @@ end
 Jekyll::Hooks.register :site, :post_write do |site|
   site.pages.select { |page| page.data['writer_markdown'] }.each do |page|
     slug = page.url.delete_suffix('/').delete_prefix('/')
-    destinations = ["#{slug}.md", "#{slug}/index.md"]
+    destinations = if page.url.end_with?('/')
+      ["#{slug}.md", "#{slug}/index.md"]
+    else
+      [page.data.fetch('writer_markdown_url').delete_prefix('/')]
+    end
     destinations.each do |relative_path|
       path = File.join(site.dest, relative_path)
       FileUtils.mkdir_p(File.dirname(path))

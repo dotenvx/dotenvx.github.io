@@ -15,6 +15,7 @@ module DesignCodeblock
     code = source.to_s.strip
     classes = ["design-codeblock", class_name].compact.reject(&:empty?).join(" ")
     attrs = attributes.merge("class" => classes)
+    attrs["data-export-language"] = language || format if language || format
     attrs["aria-label"] = label if label
     serialized = attrs.map { |name, value| %( #{name}="#{CGI.escapeHTML(value.to_s)}") }.join
     pre = "<pre#{serialized}><code>#{DesignSyntax.highlight(code, language, format)}</code></pre>"

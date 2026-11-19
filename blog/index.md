@@ -6,7 +6,7 @@ body_class: home-page
 writer_layout: single
 ---
 
-{% assign blog_description = "A place to think out loud about building Dotenvx" %}
+{% assign blog_description = "Reflections on building Dotenvx" %}
 {% assign listed_posts = site.categories.blog | where_exp: "post", "post.draft != true" %}
 {% assign posts_by_year = listed_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 

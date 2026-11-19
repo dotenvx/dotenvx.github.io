@@ -17,6 +17,7 @@
     var next = root.querySelector('[data-docs-quickstart-next]')
 
     document.addEventListener('keydown', function (event) {
+      if (event.defaultPrevented) return
       if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return
       if (isTextEntry(event.target)) return
       if (event.key === 'ArrowLeft' && prev) {

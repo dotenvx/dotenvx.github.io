@@ -3,7 +3,7 @@
   _plugins/cli_nav.rb → site.data.cli_nav (same order as Options lists).
 {% endcomment %}
 {% if page.url contains "/docs/cli/" %}
-  {% assign items = site.data.cli_nav %}
+  {% assign items = include.items | default: site.data.cli_nav %}
   {% assign current_href = page.url | append: "/" | replace: "//", "/" %}
   {% assign current_index = nil %}
 

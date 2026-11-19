@@ -10,6 +10,11 @@ redirect_from:
 layout: radar
 ---
 
+{% if writer_preview %}
+> {{ page.description }}
+
+{% include components/docs-cli-commands.html writer=true %}
+{% else %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="CLI"
@@ -27,3 +32,4 @@ layout: radar
     </div>
   </div>
 </section>
+{% endif %}

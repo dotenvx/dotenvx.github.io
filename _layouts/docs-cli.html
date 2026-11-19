@@ -39,36 +39,7 @@
         {% assign cli_show_prompt = true %}
       {% endif %}
 
-      {% if page.command and page.command != "" %}
-        {% assign cli_command = page.command %}
-      {% elsif cli_is_sdk %}
-        {% assign cli_command = page.title | prepend: "dotenvx." %}
-      {% elsif cli_eyebrow contains "dotenvx" %}
-        {% assign cli_title = page.title | strip %}
-        {% assign cli_title_down = cli_title | downcase %}
-        {% assign cli_title_first = cli_title | slice: 0 %}
-        {% assign cli_is_flag = false %}
-        {% if cli_title_first == "-" %}
-          {% assign cli_is_flag = true %}
-        {% endif %}
-        {% if cli_title contains "KEY" or cli_title contains "DOTENV_" or cli_title contains "_PLAIN" %}
-          {% assign cli_is_flag = true %}
-        {% endif %}
-        {% assign cli_subcommands = "up|down|push|pull|login|logout|move|open|status|settings|directory" | split: "|" %}
-        {% for sub in cli_subcommands %}
-          {% if cli_title_down == sub %}
-            {% assign cli_is_flag = true %}
-            {% assign cli_title = sub %}
-          {% endif %}
-        {% endfor %}
-        {% if cli_is_flag %}
-          {% assign cli_command = cli_eyebrow | append: " " | append: cli_title %}
-        {% else %}
-          {% assign cli_command = cli_eyebrow %}
-        {% endif %}
-      {% else %}
-        {% assign cli_command = page.title | downcase | prepend: "dotenvx " %}
-      {% endif %}
+      {% capture cli_command %}{% include components/docs-cli-command.html eyebrow=cli_eyebrow sdk=cli_is_sdk %}{% endcapture %}
 
       {% capture cli_hero_visual %}
         {% if cli_show_prompt %}

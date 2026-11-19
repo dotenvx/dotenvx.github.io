@@ -8,8 +8,26 @@ redirect_from:
   - /docs/sdk/introduction
   - /docs/sdk/introduction/
 layout: radar
+sdk_languages:
+  - label: Node.js
+    slug: nodejs
+  - label: Python
+    slug: python
+  - label: Ruby
+    slug: ruby
+  - label: Rust
+    slug: rust
 ---
 
+{% if writer_preview %}
+> Load and manage encrypted env from your language.
+
+## Languages
+
+{% for sdk in page.sdk_languages -%}
+- [{{ sdk.label }}]({{ sdk.slug | prepend: '/docs/sdk/' | append: '/' | relative_url }})
+{% endfor %}
+{% else %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="SDKs"
@@ -25,10 +43,10 @@ layout: radar
         <div class="docs-cli-cards">
           <p class="design-list-title">Languages</p>
           <div class="design-settings-grid">
-            {% include components/design-settings-tile.html href="/docs/sdk/nodejs" label="Node.js" icon="nodejs" %}
-            {% include components/design-settings-tile.html href="/docs/sdk/python" label="Python" icon="python" %}
-            {% include components/design-settings-tile.html href="/docs/sdk/ruby" label="Ruby" icon="ruby" %}
-            {% include components/design-settings-tile.html href="/docs/sdk/rust" label="Rust" icon="rust" %}
+            {% for sdk in page.sdk_languages %}
+              {% assign sdk_path = sdk.slug | prepend: '/docs/sdk/' %}
+              {% include components/design-settings-tile.html href=sdk_path label=sdk.label icon=sdk.slug %}
+            {% endfor %}
           </div>
         </div>
       {% endcapture %}
@@ -37,3 +55,4 @@ layout: radar
   </div>
 </div>
 </section>
+{% endif %}

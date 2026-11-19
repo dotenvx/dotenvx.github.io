@@ -3,6 +3,8 @@ require_relative 'design_codeblock'
 require 'kramdown-parser-gfm'
 require 'nokogiri'
 require_relative 'writer_markdown_export'
+require_relative 'cli_nav'
+require 'cgi'
 
 class WriterMarkdown < Kramdown::Converter::Html
   private
@@ -75,7 +77,13 @@ class WriterPreview < Jekyll::Generator
 
     add_blog_posts(site)
 
-    %w[about corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory sitemap].each do |slug|
+    cli_pages = site.pages.select do |page|
+      page.url.start_with?('/docs/cli/') && page.url != '/docs/cli/' &&
+        page.output_ext == '.html' && page.data['layout'] != 'redirect' && !page.data['redirect_to']
+    end
+    cli_links = cli_reference_links(site, cli_pages)
+
+    %w[about corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory sitemap].each do |slug|
       source_url = slug == 'docs' ? '/docs/introduction' : "/#{slug}"
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == source_url }
       title = page.data.fetch('title')
@@ -83,13 +91,48 @@ class WriterPreview < Jekyll::Generator
       template_source = writer_include ? "{% include #{writer_include} %}" : page.content
       template = site.liquid_renderer.file(page.path).parse(template_source)
       context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] }
-      context['preview_links'] = preview_links(site.pages) if %w[docs sitemap].include?(slug)
+      context['preview_links'] = preview_links(site.pages).merge(cli_links) if %w[docs docs/guides sitemap].include?(slug)
       content = template.render!(context, registers: { site: site })
-      add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}", page.data.fetch('writer_layout', 'auto'))
+      link_map = %w[docs/advanced docs/cli].include?(slug) ? cli_links : nil
+      add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}", page.data.fetch('writer_layout', 'auto'), links: link_map)
     end
+
+    links = preview_links(site.pages).merge(cli_links)
+    links.merge!('/docs/introduction' => '/v2/docs/', '/docs/introduction/' => '/v2/docs/')
+    add_cli_reference(site, cli_pages, links)
   end
 
   private
+
+  def cli_reference_links(site, pages)
+    links = pages.to_h { |page| [page.url.delete_suffix('/'), "/v2#{page.url}"] }
+    links['/docs/cli'] = '/v2/docs/cli/'
+    site_url = site.config.fetch('url').delete_suffix('/')
+    site.pages.each do |page|
+      next unless (target = page.data.dig('redirect', 'to'))
+
+      destination = links[target.delete_prefix(site_url).delete_suffix('/')]
+      links[page.url.delete_suffix('/')] = destination if destination
+    end
+    links.each_with_object({}) do |(source, target), variants|
+      variants[source] = variants["#{source}/"] = target
+    end
+  end
+
+  def add_cli_reference(site, pages, links)
+    nav = DocsCliNav.build(site)
+    frame = site.liquid_renderer.file('v2 CLI reference').parse('{% include writer-cli-reference.md %}')
+    pages.each do |page|
+      context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'], 'cli_nav' => nav }
+      registers = { site: site, page: context['page'] }
+      template = site.liquid_renderer.file(page.path).parse(page.content)
+      context['cli_body'] = template.render!(context, registers: registers)
+      content = frame.render!(context, registers: registers)
+      title = page.data.fetch('title')
+      add_preview(site, "/v2#{page.url}", title, "# #{CGI.escapeHTML(title)}\n\n#{content.strip}", 'columns',
+                  links: links, translate_dotenvxfile: false)
+    end
+  end
 
   def add_blog_posts(site)
     posts = site.categories.fetch('blog', []).reject { |post| post.data['draft'] == true }
@@ -104,11 +147,11 @@ class WriterPreview < Jekyll::Generator
       context['post_content'] = template.render!(context, registers: registers)
       title = post.data.fetch('title')
       body = frame.render!(context, registers: registers)
-      add_preview(site, links.fetch(post.url), title, "# #{title}\n\n#{body.strip}", 'columns', blog_links: links)
+      add_preview(site, links.fetch(post.url), title, "# #{title}\n\n#{body.strip}", 'columns', links: links, blog_post: true)
     end
   end
 
-  def remap_blog_links(html, links, site_url)
+  def remap_links(html, links, site_url)
     document = Nokogiri::HTML.fragment(html)
     document.css('a[href]').each do |link|
       path, suffix = link['href'].delete_prefix(site_url).split(/(?=[?#])/, 2)
@@ -134,8 +177,8 @@ class WriterPreview < Jekyll::Generator
     end
   end
 
-  def add_preview(site, permalink, title, markdown, writer_layout = 'auto', blog_links: nil)
-    unless blog_links
+  def add_preview(site, permalink, title, markdown, writer_layout = 'auto', links: nil, blog_post: false, translate_dotenvxfile: true)
+    if translate_dotenvxfile && !blog_post
       markdown = markdown.gsub('Dotenvxfile', 'Dotenvx.toml')
       title = title.gsub('Dotenvxfile', 'Dotenvx.toml')
     end
@@ -143,17 +186,17 @@ class WriterPreview < Jekyll::Generator
     directory, filename = path.end_with?('/') ? [path.delete_suffix('/'), 'index.html'] : File.split(path)
     preview = Jekyll::PageWithoutAFile.new(site, site.source, directory, filename)
     document = Kramdown::Document.new(markdown, site.config.fetch('kramdown'))
-    if blog_links
+    if blog_post
       document.root.children.drop(1).each do |element|
         element.options[:level] = element.options[:level].clamp(2, 3) if element.type == :header
       end
     end
     export_html, = WriterMarkdownExport::Html.convert(document.root, document.options)
     preview.content, = WriterMarkdown.convert(document.root, document.options)
-    if blog_links
+    if links
       site_url = site.config.fetch('url').delete_suffix('/')
-      export_html = remap_blog_links(export_html, blog_links, site_url)
-      preview.content = remap_blog_links(preview.content, blog_links, site_url)
+      export_html = remap_links(export_html, links, site_url)
+      preview.content = remap_links(preview.content, links, site_url)
     end
     raw_markdown = WriterMarkdownExport.convert(export_html)
     heading = preview.content[/\A\s*<h1\b.*?<\/h1>/m]
@@ -174,7 +217,7 @@ class WriterPreview < Jekyll::Generator
       'writer_markdown' => raw_markdown,
       'writer_heading' => heading,
       'writer_markdown_url' => markdown_url,
-      'writer_blog_post' => !blog_links.nil?,
+      'writer_blog_post' => blog_post,
       'title' => title,
       'permalink' => permalink,
       'render_with_liquid' => false,

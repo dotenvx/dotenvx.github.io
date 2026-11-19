@@ -1,6 +1,7 @@
 <!doctype html>
 {% assign writer_path_prefix = page.url | slice: 0, 9 %}
 {% if writer_path_prefix == '/v2/docs/' %}{% assign writer_docs_section = true %}{% endif %}
+{% assign writer_cli_prefix = page.url | slice: 0, 13 %}
 {% assign writer_layout = page.writer_layout | default: 'single' %}
 {% if writer_docs_section %}{% assign writer_layout = 'columns' %}{% endif %}
 {% if page.url == '/v2/blog/' or page.writer_blog_post %}{% assign writer_blog_section = true %}{% endif %}
@@ -47,10 +48,10 @@
       <a href="{{ '/v2/docs/install/' | relative_url }}"{% if page.url == '/v2/docs/install/' %} aria-current="page"{% endif %}>Install</a>
       <a href="{{ '/v2/docs/quickstart/' | relative_url }}"{% if page.url == '/v2/docs/quickstart/' %} aria-current="page"{% endif %}>Quickstart</a>
       <a href="{{ '/v2/docs/advanced/' | relative_url }}"{% if page.url == '/v2/docs/advanced/' %} aria-current="page"{% endif %}>Advanced</a>
-      <a href="{{ '/docs/guides/' | relative_url }}">Guides</a>
+      <a href="{{ '/v2/docs/guides/' | relative_url }}"{% if page.url == '/v2/docs/guides/' %} aria-current="page"{% endif %}>Guides</a>
       <a href="{{ '/docs/custody/' | relative_url }}">Custody</a>
-      <a href="{{ '/docs/cli/' | relative_url }}">CLI</a>
-      <a href="{{ '/docs/sdk/' | relative_url }}">SDKs</a>
+      <a href="{{ '/v2/docs/cli/' | relative_url }}"{% if page.url == '/v2/docs/cli/' %} aria-current="page"{% elsif writer_cli_prefix == '/v2/docs/cli/' %} aria-current="location"{% endif %}>CLI</a>
+      <a href="{{ '/v2/docs/sdk/' | relative_url }}"{% if page.url == '/v2/docs/sdk/' %} aria-current="page"{% endif %}>SDKs</a>
       <a href="{{ '/docs/dotenvxfile/' | relative_url }}">Dotenvx.toml</a>
     </nav>
     {% endif %}
@@ -106,6 +107,7 @@
     </nav>
   </footer>
   <script src="{{ '/assets/js/design-choice.js' | relative_url }}" defer></script>
+  {% if writer_cli_prefix == '/v2/docs/cli/' and page.url != '/v2/docs/cli/' %}<script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}" defer></script>{% endif %}
   <script src="{{ '/assets/js/writer-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   {% if writer_layout == 'columns' and page.url != '/v2/' %}<script src="{{ '/assets/js/writer-columns.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
 </body>

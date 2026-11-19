@@ -73,7 +73,8 @@ class WriterPreview < Jekyll::Generator
       { 'writer_preview' => true, 'site' => site.site_payload['site'] }, registers: { site: site }
     )
     pricing_page = site.pages.find { |page| page.url.delete_suffix('/') == '/pricing' }
-    add_preview(site, '/v2/pricing/', 'Pricing', pricing, pricing_page.data.fetch('writer_layout', 'wide'))
+    add_preview(site, '/v2/pricing/', 'Pricing', pricing, pricing_page.data.fetch('writer_layout', 'wide'),
+                links: { '/armor' => '/v2/armor/', '/armor/' => '/v2/armor/' })
 
     add_blog_posts(site)
 
@@ -93,10 +94,10 @@ class WriterPreview < Jekyll::Generator
     end
     reference_links = docs_reference_links(site, reference_pages + resource_pages)
 
-    %w[about opensource corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap].each do |slug|
+    %w[about armor opensource corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap].each do |slug|
       source_url = slug == 'docs' ? '/docs/introduction' : "/#{slug}"
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == source_url }
-      title = page.data.fetch('title')
+      title = page.data['writer_title'] || page.data.fetch('title')
       writer_include = page.data['writer_include']
       template_source = writer_include ? "{% include #{writer_include} %}" : page.content
       template = site.liquid_renderer.file(page.path).parse(template_source)

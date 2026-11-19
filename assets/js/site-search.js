@@ -1,8 +1,8 @@
 (function () {
   var INDEX_URL = '/search.json'
 
-  function indexUrl(overlay) {
-    return (overlay && overlay.getAttribute('data-site-search-index')) || INDEX_URL
+  function indexUrl(surface) {
+    return surface.getAttribute('data-site-search-index') || INDEX_URL
   }
   var PAGE_MAX_RESULTS = 24
   var MODAL_MAX_RESULTS = 10
@@ -86,10 +86,6 @@
       .map(function (row) { return row.entry })
   }
 
-  function isSearchPage() {
-    return window.location.pathname.replace(/\/+$/, '') === '/search'
-  }
-
   function readQuery() {
     try {
       return new URLSearchParams(window.location.search).get('q') || ''
@@ -99,7 +95,6 @@
   }
 
   function writeQuery(query) {
-    if (!isSearchPage()) return
     try {
       var url = new URL(window.location.href)
       if (query) url.searchParams.set('q', query)
@@ -150,20 +145,21 @@
     } catch (_) {}
   }
 
-  function renderHits(root, items, query, emptyClass) {
+  function renderHits(root, items, query, preferPreview) {
     if (!query) {
-      root.innerHTML = '<p class="' + emptyClass + '">Type to search docs, pricing, and the rest of the site.</p>'
+      root.innerHTML = preferPreview ? '' : '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
       return
     }
     if (!items.length) {
-      root.innerHTML = '<p class="' + emptyClass + '">No results for <span class="design-code">' + escapeHtml(query) + '</span>.</p>'
+      root.innerHTML = '<p class="site-search-empty">No results for <span class="design-code">' + escapeHtml(query) + '</span>.</p>'
       return
     }
 
     var html = '<ul class="site-search-hits">'
     items.forEach(function (item, i) {
+      var url = (preferPreview && item.preview_url) || item.url
       html += '<li>'
-      html += '<a class="site-search-hit' + (i === 0 ? ' is-active' : '') + '" href="' + escapeHtml(item.url) + '" data-site-search-hit="' + i + '">'
+      html += '<a class="site-search-hit' + (i === 0 ? ' is-active' : '') + '" href="' + escapeHtml(url) + '" data-site-search-hit="' + i + '">'
       html += '<span class="site-search-hit-title">' + escapeHtml(item.title) + '</span>'
       if (item.section) {
         html += '<span class="site-search-hit-meta">' + escapeHtml(item.section) + '</span>'
@@ -178,18 +174,19 @@
     var overlay = document.querySelector('[data-site-search-overlay]')
     var modalForm = overlay && overlay.querySelector('[data-site-search]')
     var pageForm = document.querySelector('[data-site-search-page]')
-    if (!overlay || !modalForm) return
+    var modalInput = modalForm && modalForm.querySelector('[data-site-search-input]')
+    var modalResults = modalForm && modalForm.querySelector('[data-site-search-results]')
+    var hasModal = modalInput && modalResults
+    var pageInput = pageForm && pageForm.querySelector('[data-site-search-input]')
+    var pageResults = pageForm && pageForm.querySelector('[data-site-search-results]')
+    var hasPage = pageInput && pageResults
+    if (!hasModal && !hasPage) return
 
-    if (overlay.parentElement !== document.body) {
+    if (hasModal && overlay.parentElement !== document.body) {
       document.body.appendChild(overlay)
     }
 
-    var modalInput = modalForm.querySelector('[data-site-search-input]')
-    var modalResults = modalForm.querySelector('[data-site-search-results]')
-    if (!modalInput || !modalResults) return
-
-    var pageInput = pageForm && pageForm.querySelector('[data-site-search-input]')
-    var pageResults = pageForm && pageForm.querySelector('[data-site-search-results]')
+    var preferPreview = hasPage && pageForm.hasAttribute('data-site-search-v2')
 
     var index = null
     var pageTimer = null
@@ -220,18 +217,18 @@
     }
 
     function isOpen() {
-      return overlay.classList.contains('is-open')
+      return hasModal && overlay.classList.contains('is-open')
     }
 
     function runPage(query) {
       if (!index || !pageResults) return
-      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, 'site-search-empty')
+      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, preferPreview)
       activeIndex = query && pageResults.querySelector('[data-site-search-hit]') ? 0 : -1
     }
 
     function runModal(query) {
       if (!index) return
-      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, 'site-search-empty')
+      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, false)
       activeIndex = query && modalResults.querySelector('[data-site-search-hit]') ? 0 : -1
     }
 
@@ -291,37 +288,35 @@
       }
     }
 
-    fetch(indexUrl(overlay), { credentials: 'same-origin' })
+    var initial = readQuery()
+    if (hasPage && initial) pageInput.value = initial
+    else if (hasModal && initial) modalInput.value = initial
+
+    fetch(indexUrl(hasModal ? overlay : pageForm), { credentials: 'same-origin' })
       .then(function (res) {
         if (!res.ok) throw new Error('search index failed')
         return res.json()
       })
       .then(function (data) {
         index = Array.isArray(data) ? data : []
-        var initial = readQuery()
-        if (pageInput) {
-          if (initial) pageInput.value = initial
+        if (hasPage) {
           runPage(pageInput.value)
-          pageInput.focus()
           if (initial) commitSearch(initial, 'page', PAGE_MAX_RESULTS)
-        } else if (initial) {
-          modalInput.value = initial
         }
         if (isOpen()) runModal(modalInput.value)
       })
       .catch(function () {
         var message = '<p class="site-search-empty">Search is unavailable right now.</p>'
-        modalResults.innerHTML = message
-        if (pageResults) {
-          pageResults.innerHTML = '<p class="design-paragraph">Search is unavailable right now.</p>'
-        }
+        if (hasModal) modalResults.innerHTML = message
+        if (hasPage) pageResults.innerHTML = message
       })
 
-    if (pageInput) {
+    if (hasPage) {
       pageInput.addEventListener('input', function () {
         var query = pageInput.value
         window.clearTimeout(pageTimer)
         pageTimer = window.setTimeout(function () {
+          pageTimer = null
           writeQuery(query)
           runPage(query)
         }, 80)
@@ -331,6 +326,12 @@
       pageForm.addEventListener('submit', function (event) {
         event.preventDefault()
         window.clearTimeout(pageTrackTimer)
+        if (pageTimer !== null) {
+          window.clearTimeout(pageTimer)
+          pageTimer = null
+          writeQuery(pageInput.value)
+          runPage(pageInput.value)
+        }
         commitSearch(pageInput.value, 'page', PAGE_MAX_RESULTS)
         var active = pageResults.querySelector('.site-search-hit.is-active')
         if (active && active.href) {
@@ -354,44 +355,51 @@
       })
     }
 
-    modalInput.addEventListener('input', function () {
-      var query = modalInput.value
-      window.clearTimeout(modalTimer)
-      modalTimer = window.setTimeout(function () { runModal(query) }, 80)
-      scheduleTrack(query, 'modal', MODAL_MAX_RESULTS, 'modal')
-    })
+    if (hasModal) {
+      modalInput.addEventListener('input', function () {
+        var query = modalInput.value
+        window.clearTimeout(modalTimer)
+        modalTimer = window.setTimeout(function () { runModal(query) }, 80)
+        scheduleTrack(query, 'modal', MODAL_MAX_RESULTS, 'modal')
+      })
 
-    modalForm.addEventListener('submit', function (event) {
-      event.preventDefault()
-      window.clearTimeout(modalTrackTimer)
-      commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
-      var active = modalResults.querySelector('.site-search-hit.is-active')
-      if (active && active.href) {
-        window.location.href = active.href
-        return
-      }
-      runModal(modalInput.value)
-    })
+      modalForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+        window.clearTimeout(modalTrackTimer)
+        commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
+        var active = modalResults.querySelector('.site-search-hit.is-active')
+        if (active && active.href) {
+          window.location.href = active.href
+          return
+        }
+        runModal(modalInput.value)
+      })
 
-    modalResults.addEventListener('click', function (event) {
-      if (!event.target.closest('[data-site-search-hit]')) return
-      window.clearTimeout(modalTrackTimer)
-      commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
-    })
+      modalResults.addEventListener('click', function (event) {
+        if (!event.target.closest('[data-site-search-hit]')) return
+        window.clearTimeout(modalTrackTimer)
+        commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
+      })
 
-    modalResults.addEventListener('mousemove', function (event) {
-      var hit = event.target.closest('[data-site-search-hit]')
-      if (!hit) return
-      setActive(Number(hit.getAttribute('data-site-search-hit')))
-    })
+      modalResults.addEventListener('mousemove', function (event) {
+        var hit = event.target.closest('[data-site-search-hit]')
+        if (!hit) return
+        setActive(Number(hit.getAttribute('data-site-search-hit')))
+      })
 
-    document.querySelectorAll('[data-site-search-open]').forEach(function (button) {
-      button.addEventListener('click', open)
-    })
+      document.querySelectorAll('[data-site-search-open]').forEach(function (button) {
+        button.addEventListener('click', open)
+      })
 
-    overlay.addEventListener('click', function (event) {
-      if (event.target === overlay) close()
-    })
+      overlay.addEventListener('click', function (event) {
+        if (event.target === overlay) close()
+      })
+
+      modalInput.addEventListener('keypress', function (event) {
+        if (!isSlashKey(event) || modalInput.value) return
+        event.preventDefault()
+      })
+    }
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && isOpen()) {
@@ -403,21 +411,18 @@
       if ((isUnmodifiedSlash(event) || isCommandK(event)) && !isOpen()) {
         if (isUnmodifiedSlash(event) && isTypingTarget(event.target)) return
         event.preventDefault()
-        open()
+        if (hasModal) open()
+        else pageInput.focus()
         return
       }
 
       if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        if (!isOpen() && (!hasPage || !pageForm.contains(event.target))) return
         var root = hitRoot()
         if (!root || !root.querySelector('[data-site-search-hit]')) return
         event.preventDefault()
         setActive(activeIndex + (event.key === 'ArrowDown' ? 1 : -1))
       }
     }, true)
-
-    modalInput.addEventListener('keypress', function (event) {
-      if (!isSlashKey(event) || modalInput.value) return
-      event.preventDefault()
-    })
   })
 })()

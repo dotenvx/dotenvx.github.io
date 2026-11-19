@@ -5553,201 +5553,6 @@ html:not(.dark) body.radar-layout [class*="ecd53f"]:not(svg):not(path):not(circl
   color: #3f5c2a !important;
 }
 
-/* AS2 */
-.as2-shell {
-  max-width: 42rem;
-}
-
-.as2-hero-grid {
-  align-items: center;
-  display: grid;
-  gap: 1.75rem;
-}
-
-@media (min-width: 768px) {
-  .as2-hero-grid {
-    gap: 2rem 2.5rem;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  }
-}
-
-.as2-visual {
-  justify-self: center;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .as2-visual {
-    justify-self: end;
-  }
-}
-
-.as2-image {
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  display: block;
-  height: auto;
-  width: 100%;
-}
-
-.as2-prose {
-  color: var(--design-mid);
-  font-size: var(--design-text-size);
-  line-height: 1.7;
-}
-
-.as2-prose > *:first-child {
-  margin-top: 0;
-}
-
-.as2-prose p {
-  margin: 1rem 0;
-}
-
-.as2-prose a,
-.as2-prose a:link,
-.as2-prose a:visited {
-  color: #2f5f8a !important;
-  font-weight: 500 !important;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 0.2em;
-}
-
-.as2-prose a:hover {
-  color: #1a3f63 !important;
-}
-
-html.dark .as2-prose a,
-html.dark .as2-prose a:link,
-html.dark .as2-prose a:visited {
-  color: #ecd53f !important;
-}
-
-html.dark .as2-prose a:hover {
-  color: var(--design-ink) !important;
-}
-
-.as2-signoff {
-  color: var(--design-dim);
-  font-style: italic;
-}
-
-.as2-prose code {
-  color: var(--design-ink);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-size);
-}
-
-.as2-prose pre {
-  background: color-mix(in srgb, var(--design-panel) 80%, #000 20%);
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  color: var(--design-ink);
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  line-height: 1.5;
-  margin: 1rem 0;
-  overflow-x: auto;
-  padding: 1rem 1.1rem;
-}
-
-.as2-prose pre code {
-  font-size: inherit;
-}
-
-.as2-shell .radar-section-title {
-  margin-bottom: 1rem;
-}
-
-/* Chrome / VS Code extension pages */
-.ext-shell {
-  max-width: 44rem;
-}
-
-.ext-badge {
-  margin: 1.5rem 0 0;
-}
-
-.ext-badge a {
-  display: inline-block;
-  line-height: 0;
-  text-decoration: none !important;
-}
-
-.ext-store-badge {
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  display: block;
-  height: auto;
-  width: 15rem;
-}
-
-.ext-media {
-  border: 1px solid transparent;
-  border-radius: 0.35rem;
-  box-shadow: var(--design-etch);
-  display: block;
-  height: auto;
-  margin: 1.1rem 0;
-  max-width: 100%;
-  width: 100%;
-}
-
-.ext-prose {
-  color: var(--design-mid);
-  font-size: var(--design-text-size);
-  line-height: 1.7;
-}
-
-.ext-prose > *:first-child {
-  margin-top: 0;
-}
-
-.ext-prose .radar-section-title {
-  margin-bottom: 1rem;
-}
-
-.ext-prose p {
-  margin: 1rem 0;
-}
-
-.ext-prose strong {
-  color: var(--design-ink);
-  font-weight: 600;
-}
-
-.ext-prose a,
-.ext-prose a:link,
-.ext-prose a:visited {
-  color: #2f5f8a !important;
-  font-weight: 500 !important;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 0.2em;
-}
-
-.ext-prose a:hover {
-  color: #1a3f63 !important;
-}
-
-html.dark .ext-prose a,
-html.dark .ext-prose a:link,
-html.dark .ext-prose a:visited {
-  color: #ecd53f !important;
-}
-
-html.dark .ext-prose a:hover {
-  color: var(--design-ink) !important;
-}
-
-.ext-cta {
-  margin-top: 2rem;
-  text-align: center;
-}
-
 /* Armor page */
 .armor-lightning {
   height: min(92vh, 980px);
@@ -6158,26 +5963,6 @@ html:not(.dark) .armor-lightning {
 }
 
 /* Spec */
-.spec-shell {
-  max-width: 48rem;
-  text-align: center;
-}
-
-.spec-shell .radar-kicker,
-.spec-shell .radar-title,
-.spec-shell .radar-lede {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.spec-shell-wide {
-  max-width: 72rem;
-}
-
-.spec-table-hero {
-  padding-bottom: 1.25rem;
-}
-
 .spec-table-wrap {
   background: var(--design-panel);
   border: 1px solid transparent;
@@ -6189,25 +5974,6 @@ html:not(.dark) .armor-lightning {
 
 .spec-table-wrap--full {
   max-height: none;
-}
-
-.spec-table-link {
-  margin: 1.5rem 0 0;
-  text-align: center;
-}
-
-.spec-table-link a {
-  color: #2f5f8a !important;
-  font-family: var(--design-font-mono);
-  font-size: var(--design-text-compact);
-  font-weight: 500 !important;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 0.2em;
-}
-
-html.dark .spec-table-link a {
-  color: #ecd53f !important;
 }
 
 .spec-table {
@@ -6241,7 +6007,7 @@ html.dark .spec-table-link a {
   z-index: 3;
 }
 
-.spec-table-pass td {
+.spec-table-pass :is(th, td) {
   background: color-mix(in srgb, var(--design-hover) 70%, transparent);
   color: var(--design-ink);
   font-weight: 600;

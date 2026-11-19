@@ -55,7 +55,7 @@ Important: Do not overwrite, modify, encrypt, or display any existing `.env`, `.
 
    dotenvx run -- node -e "console.log(process.env.HELLO)"
 
-   First create a `Dotenvxfile` containing `env "HELLO", redacted: true`. Explain that Dotenvx applies its output rules automatically.
+   First create a `Dotenvx.toml` with a `[env.HELLO]` table containing `redacted = true`. Explain that Dotenvx applies its output rules automatically.
 
 8. Create and wield multiple encrypted environments:
 
@@ -99,7 +99,7 @@ Important: Do not overwrite, modify, encrypt, or display any existing `.env`, `.
     dotenvx run -f .env.development -- node -e "console.log('configuration valid')"
     dotenvx run -f .env.production -- node -e "console.log('configuration valid')"
 
-    Create a `Dotenvxfile` with explicit required, type, storage, and redaction rules and `strict true`. Review its declarations and confirm every encrypted environment satisfies it. Explain that `Dotenvxfile` is the shared environment contract; `.env.example` alone is not used for validation, and that validation should be the final check after humans or agents add, remove, or change environment variables.
+    Create a `Dotenvx.toml` with explicit required, type, storage, and redaction rules and `strict = true`. Review its declarations and confirm every encrypted environment satisfies it. Explain that `Dotenvx.toml` is the shared environment contract; `.env.example` alone is not used for validation, and that validation should be the final check after humans or agents add, remove, or change environment variables.
 
 Finish with a concise command map for `dotenvx set`, `dotenvx get`, `dotenvx run`, `dotenvx encrypt`, `dotenvx gitignore`, and `dotenvx precommit`.
 

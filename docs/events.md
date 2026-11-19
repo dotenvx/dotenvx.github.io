@@ -5,6 +5,7 @@ permalink: /docs/events/
 layout: radar
 ---
 
+{% unless writer_preview %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="Events"
@@ -16,6 +17,7 @@ layout: radar
 <div class="armor-shell">
 <div class="design-content-width">
 <div class="docs-guide-body design-prose" markdown="block">
+{% endunless %}
 
 Events appear in Armor logs as `name` plus metadata. The event name identifies what happened; metadata adds context such as who performed the action, which team it affected, and where it occurred.
 
@@ -123,7 +125,9 @@ Secret event metadata identifies the destination, secret, endpoint, and actor. I
 
 Validation failures on create or update, and failures fetching remote secrets, do not currently produce dedicated audit events. Opening or cancelling an editor does not create a secret event. Existing historical events retain their original names.
 
+{% unless writer_preview %}
 </div>
 </div>
 </div>
 </section>
+{% endunless %}

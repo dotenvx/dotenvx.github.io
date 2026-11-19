@@ -77,13 +77,23 @@ class WriterPreview < Jekyll::Generator
 
     add_blog_posts(site)
 
-    cli_pages = site.pages.select do |page|
-      page.url.start_with?('/docs/cli/') && page.url != '/docs/cli/' &&
-        page.output_ext == '.html' && page.data['layout'] != 'redirect' && !page.data['redirect_to']
+    docs_pages = site.pages.select do |page|
+      page.url.start_with?('/docs/') && page.output_ext == '.html' &&
+        page.data['layout'] != 'redirect' && !page.data['redirect_to']
     end
-    cli_links = cli_reference_links(site, cli_pages)
+    cli_pages = docs_pages.select { |page| page.url.start_with?('/docs/cli/') && page.url != '/docs/cli/' }
+    sdk_pages = docs_pages.select { |page| page.url.start_with?('/docs/sdk/') && page.url != '/docs/sdk/' }
+    custody_pages = docs_pages.select { |page| page.url.start_with?('/docs/custody/') }
+    toml_pages = docs_pages.select { |page| page.url.start_with?('/docs/dotenvxtoml/') }
+    guide_pages = guide_reference_pages(docs_pages)
+    reference_pages = cli_pages + sdk_pages + custody_pages + toml_pages + guide_pages
+    resource_urls = site.data.fetch('docs_resources').map { |resource| resource.fetch('href') }
+    resource_pages = (docs_pages - reference_pages).select do |page|
+      page.url == '/docs/resources/' || resource_urls.include?(page.url)
+    end
+    reference_links = docs_reference_links(site, reference_pages + resource_pages)
 
-    %w[about corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory sitemap].each do |slug|
+    %w[about opensource corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap].each do |slug|
       source_url = slug == 'docs' ? '/docs/introduction' : "/#{slug}"
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == source_url }
       title = page.data.fetch('title')
@@ -91,22 +101,48 @@ class WriterPreview < Jekyll::Generator
       template_source = writer_include ? "{% include #{writer_include} %}" : page.content
       template = site.liquid_renderer.file(page.path).parse(template_source)
       context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] }
-      context['preview_links'] = preview_links(site.pages).merge(cli_links) if %w[docs docs/guides sitemap].include?(slug)
+      context['preview_links'] = preview_links(site.pages).merge(reference_links) if %w[docs docs/guides docs/sdk sitemap].include?(slug)
       content = template.render!(context, registers: { site: site })
-      link_map = %w[docs/advanced docs/cli].include?(slug) ? cli_links : nil
+      link_map = case slug
+                 when 'docs/advanced', 'docs/cli'
+                   reference_links
+                 when 'changelog'
+                   reference_links.select { |_, target| target.start_with?('/v2/docs/custody/') }
+                 end
       add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}", page.data.fetch('writer_layout', 'auto'), links: link_map)
     end
 
-    links = preview_links(site.pages).merge(cli_links)
+    links = preview_links(site.pages).merge(reference_links)
     links.merge!('/docs/introduction' => '/v2/docs/', '/docs/introduction/' => '/v2/docs/')
-    add_cli_reference(site, cli_pages, links)
+    add_docs_previews(site, cli_pages, links, 'writer-cli-reference.md', frame_context: { 'cli_nav' => DocsCliNav.build(site) })
+    add_docs_previews(site, sdk_pages, links, 'writer-cli-reference.md', frame_context: { 'sdk_reference' => true })
+    add_docs_previews(site, custody_pages, links, 'writer-custody.md')
+    add_docs_previews(site, toml_pages, links, 'writer-cli-reference.md', frame_context: { 'toml_reference' => true })
+    add_docs_previews(site, guide_pages, links, 'writer-guide.md', metadata: { 'writer_guide' => true })
+    add_docs_previews(site, resource_pages, links, 'writer-guide.md', metadata: { 'writer_resource' => true })
+
+    site.data['writer_search_urls'] = preview_links(site.pages).merge('/docs/introduction/' => '/v2/docs/')
   end
 
   private
 
-  def cli_reference_links(site, pages)
+  def guide_reference_pages(docs_pages)
+    index = docs_pages.find { |page| page.url == '/docs/guides/' }
+    roots = index.data.fetch('guide_sections').flat_map do |section|
+      section.fetch('links').map { |link| link.fetch('href').delete_suffix('/') }
+    end.uniq
+    roots.delete('/docs/quickstart') # The Guides list already points to the custom v2 Quickstart.
+    docs_pages.select do |page|
+      parent = page.data['parent_url'].to_s.split(/(?=[?#])/, 2).first&.delete_suffix('/')
+      url = page.url.delete_suffix('/')
+      roots.include?(parent) || roots.any? { |root| url == root || url.start_with?("#{root}/") }
+    end
+  end
+
+  def docs_reference_links(site, pages)
     links = pages.to_h { |page| [page.url.delete_suffix('/'), "/v2#{page.url}"] }
     links['/docs/cli'] = '/v2/docs/cli/'
+    links['/docs/sdk'] = '/v2/docs/sdk/'
     site_url = site.config.fetch('url').delete_suffix('/')
     site.pages.each do |page|
       next unless (target = page.data.dig('redirect', 'to'))
@@ -119,18 +155,18 @@ class WriterPreview < Jekyll::Generator
     end
   end
 
-  def add_cli_reference(site, pages, links)
-    nav = DocsCliNav.build(site)
-    frame = site.liquid_renderer.file('v2 CLI reference').parse('{% include writer-cli-reference.md %}')
+  def add_docs_previews(site, pages, links, frame_file, frame_context: {}, metadata: {})
+    frame = site.liquid_renderer.file(frame_file).parse("{% include #{frame_file} %}")
+    shared_context = { 'writer_preview' => true, 'site' => site.site_payload['site'] }.merge(frame_context)
     pages.each do |page|
-      context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'], 'cli_nav' => nav }
+      context = shared_context.merge('page' => page.to_liquid)
       registers = { site: site, page: context['page'] }
       template = site.liquid_renderer.file(page.path).parse(page.content)
-      context['cli_body'] = template.render!(context, registers: registers)
+      context['docs_body'] = template.render!(context, registers: registers)
       content = frame.render!(context, registers: registers)
       title = page.data.fetch('title')
-      add_preview(site, "/v2#{page.url}", title, "# #{CGI.escapeHTML(title)}\n\n#{content.strip}", 'columns',
-                  links: links, translate_dotenvxfile: false)
+      preview = add_preview(site, "/v2#{page.url}", title, "# #{CGI.escapeHTML(title)}\n\n#{content.strip}", 'columns', links: links)
+      preview.data.merge!(metadata)
     end
   end
 
@@ -177,11 +213,7 @@ class WriterPreview < Jekyll::Generator
     end
   end
 
-  def add_preview(site, permalink, title, markdown, writer_layout = 'auto', links: nil, blog_post: false, translate_dotenvxfile: true)
-    if translate_dotenvxfile && !blog_post
-      markdown = markdown.gsub('Dotenvxfile', 'Dotenvx.toml')
-      title = title.gsub('Dotenvxfile', 'Dotenvx.toml')
-    end
+  def add_preview(site, permalink, title, markdown, writer_layout = 'auto', links: nil, blog_post: false)
     path = permalink.delete_prefix('/')
     directory, filename = path.end_with?('/') ? [path.delete_suffix('/'), 'index.html'] : File.split(path)
     preview = Jekyll::PageWithoutAFile.new(site, site.source, directory, filename)
@@ -224,6 +256,7 @@ class WriterPreview < Jekyll::Generator
       'sitemap' => false
     )
     site.pages << preview
+    preview
   end
 
 end

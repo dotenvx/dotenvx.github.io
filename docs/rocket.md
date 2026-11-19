@@ -8,13 +8,6 @@ redirect_from:
   - /docs/frameworks/rocket/
 ---
 
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Rocket"
-  description="Use dotenvx with Rocket."
-  icon="rocket"
-%}
-
 {% capture rocket_platforms_items %}
   <li>
     <a class="design-link" href="/docs/docker">Docker</a>
@@ -26,6 +19,18 @@ redirect_from:
   </li>
 {% endcapture %}
 
+{% if writer_preview %}
+## Platforms
+
+<ul>{{ rocket_platforms_items }}</ul>
+{% else %}
+{% include components/docs-hero.html
+  eyebrow="Docs"
+  title="Rocket"
+  description="Use dotenvx with Rocket."
+  icon="rocket"
+%}
+
 <section class="radar-section">
   <div class="armor-shell">
   <div class="design-content-width">
@@ -36,3 +41,4 @@ redirect_from:
   </div>
 </div>
 </section>
+{% endif %}

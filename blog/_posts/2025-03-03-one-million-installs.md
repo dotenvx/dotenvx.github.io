@@ -38,7 +38,7 @@ This kind of community involvement makes dotenvx better. The feedback loop betwe
 Dotenvx isn't just a CLI—it's extending into the tools developers use every day.
 
 * **VS Code Extension.** Decrypt your encrypted .env files in VS Code with the [Dotenvx VS Code Extension](https://dotenvx.com/vscode-extension/).
-* **Chrome Extension.** Decrypt your encrypted .env files directly on GitHub with the [Dotenvx Chrome Extension](https://dotenvx.com/chrome-extension).
+* **Chrome Extension.** Decrypt your encrypted .env files directly on GitHub with the Dotenvx Chrome Extension.
 * **Buildpacks.** Install dotenvx to Heroku (or any platform that supports buildpacks) with the [Dotenvx Buildpack](https://github.com/dotenvx/heroku-buildpack-dotenvx).
 
 This growing ecosystem ensures that no matter where developers work—local editors, browsers, or cloud platforms—dotenvx is increasingly there to seamlessly handle secrets.

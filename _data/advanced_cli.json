@@ -164,7 +164,7 @@
     "href": "/docs/cli/run-variable-expansion/"
   },
   {
-    "label": "run with an Dotenvxfile",
+    "label": "run with a Dotenvx.toml",
     "href": "/docs/cli/run-validate/"
   },
   {

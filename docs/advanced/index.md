@@ -55,24 +55,24 @@ layout: radar
 
 {% capture step_content %}
 
-## Dotenvxfile
+## Dotenvx.toml
 
 <ul class="advanced-cli-commands">
-<li><a class="design-link" href="/docs/quickstart/dotenvxfile/">Dotenvxfile Quickstart</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/env/">Declarations</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/strict/">Strictness</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/required/">Required</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/optional/">Optional</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/type/">Types</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/enum/">Choices</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/min/">Minimum</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/max/">Maximum</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/encrypted/">Encryption</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/redacted/">Redaction</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/file/">File overrides</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/syntax/">Syntax</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/commands/">Commands</a></li>
-<li><a class="design-link" href="/docs/dotenvxfile/">All Dotenvxfile →</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/quickstart/">Dotenvx.toml Quickstart</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/env/">Declarations</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/strict/">Strictness</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/required/">Required</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/optional/">Optional</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/type/">Types</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/enum/">Choices</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/min/">Minimum</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/max/">Maximum</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/encrypted/">Encryption</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/redacted/">Redaction</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/file/">File overrides</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/syntax/">Syntax</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/commands/">Commands</a></li>
+<li><a class="design-link" href="/docs/dotenvxtoml/">All Dotenvx.toml →</a></li>
 </ul>
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true writer=writer_preview %}

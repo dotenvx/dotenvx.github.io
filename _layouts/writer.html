@@ -1,7 +1,12 @@
 <!doctype html>
 {% assign writer_path_prefix = page.url | slice: 0, 9 %}
 {% if writer_path_prefix == '/v2/docs/' %}{% assign writer_docs_section = true %}{% endif %}
-{% assign writer_cli_prefix = page.url | slice: 0, 13 %}
+{% assign writer_reference_prefix = page.url | slice: 0, 13 %}
+{% assign writer_custody_prefix = page.url | slice: 0, 17 %}
+{% assign writer_toml_prefix = page.url | slice: 0, 21 %}
+{% if writer_reference_prefix == '/v2/docs/sdk/' %}{% assign writer_sdk_section = true %}{% endif %}
+{% assign writer_guides_url = '/v2/docs/guides/' %}
+{% if page.url == writer_guides_url or page.writer_guide %}{% assign writer_guides_section = true %}{% endif %}
 {% assign writer_layout = page.writer_layout | default: 'single' %}
 {% if writer_docs_section %}{% assign writer_layout = 'columns' %}{% endif %}
 {% if page.url == '/v2/blog/' or page.writer_blog_post %}{% assign writer_blog_section = true %}{% endif %}
@@ -17,7 +22,7 @@
   {% if writer_docs_section %}<link rel="stylesheet" href="{{ '/assets/css/writer-docs.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
   {% if page.writer_blog_post or page.url == '/v2/newsletter/' %}<link rel="stylesheet" href="{{ '/assets/css/newsletter-signup.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
 </head>
-<body{% if writer_about_section or writer_docs_section %} class="writer-has-subnav"{% endif %}>
+<body{% if writer_about_section or writer_docs_section %} class="writer-has-subnav{% if writer_sdk_section or writer_guides_section %} writer-has-third-nav{% endif %}"{% endif %}>
   <header class="writer-header">
     <div class="writer-nav">
       <a class="writer-nav-home" href="{{ '/v2/' | relative_url }}"{% if page.url == '/v2/' %} aria-current="page"{% endif %}>
@@ -48,12 +53,33 @@
       <a href="{{ '/v2/docs/install/' | relative_url }}"{% if page.url == '/v2/docs/install/' %} aria-current="page"{% endif %}>Install</a>
       <a href="{{ '/v2/docs/quickstart/' | relative_url }}"{% if page.url == '/v2/docs/quickstart/' %} aria-current="page"{% endif %}>Quickstart</a>
       <a href="{{ '/v2/docs/advanced/' | relative_url }}"{% if page.url == '/v2/docs/advanced/' %} aria-current="page"{% endif %}>Advanced</a>
-      <a href="{{ '/v2/docs/guides/' | relative_url }}"{% if page.url == '/v2/docs/guides/' %} aria-current="page"{% endif %}>Guides</a>
-      <a href="{{ '/docs/custody/' | relative_url }}">Custody</a>
-      <a href="{{ '/v2/docs/cli/' | relative_url }}"{% if page.url == '/v2/docs/cli/' %} aria-current="page"{% elsif writer_cli_prefix == '/v2/docs/cli/' %} aria-current="location"{% endif %}>CLI</a>
-      <a href="{{ '/v2/docs/sdk/' | relative_url }}"{% if page.url == '/v2/docs/sdk/' %} aria-current="page"{% endif %}>SDKs</a>
-      <a href="{{ '/docs/dotenvxfile/' | relative_url }}">Dotenvx.toml</a>
+      <a href="{{ writer_guides_url | relative_url }}"{% if page.url == writer_guides_url %} aria-current="page"{% elsif writer_guides_section %} aria-current="location"{% endif %}>Guides</a>
+      <a href="{{ '/v2/docs/custody/' | relative_url }}"{% if page.url == '/v2/docs/custody/' %} aria-current="page"{% elsif writer_custody_prefix == '/v2/docs/custody/' %} aria-current="location"{% endif %}>Custody</a>
+      <a href="{{ '/v2/docs/cli/' | relative_url }}"{% if page.url == '/v2/docs/cli/' %} aria-current="page"{% elsif writer_reference_prefix == '/v2/docs/cli/' %} aria-current="location"{% endif %}>CLI</a>
+      <a href="{{ '/v2/docs/sdk/' | relative_url }}"{% if page.url == '/v2/docs/sdk/' %} aria-current="page"{% elsif writer_sdk_section %} aria-current="location"{% endif %}>SDKs</a>
+      <a href="{{ '/v2/docs/dotenvxtoml/' | relative_url }}"{% if page.url == '/v2/docs/dotenvxtoml/' %} aria-current="page"{% elsif writer_toml_prefix == '/v2/docs/dotenvxtoml/' %} aria-current="location"{% endif %}>Dotenvx.toml</a>
+      <a href="{{ '/v2/docs/resources/' | relative_url }}"{% if page.url == '/v2/docs/resources/' %} aria-current="page"{% elsif page.writer_resource %} aria-current="location"{% endif %}>Resources</a>
     </nav>
+    {% if writer_sdk_section %}
+    {% assign sdk_index = site.pages | where: 'url', '/docs/sdk/' | first %}
+    {% assign sdk_language = page.url | remove_first: '/v2/docs/sdk/' | split: '/' | first %}
+    <nav class="writer-subnav writer-subnav--third" aria-label="SDK languages">
+      {% for sdk in sdk_index.sdk_languages %}
+        {% assign sdk_url = sdk.slug | prepend: '/v2/docs/sdk/' | append: '/' %}
+        <a href="{{ sdk_url | relative_url }}"{% if page.url == sdk_url %} aria-current="page"{% elsif sdk_language == sdk.slug %} aria-current="location"{% endif %}>{{ sdk.label | escape }}</a>
+      {% endfor %}
+    </nav>
+    {% elsif writer_guides_section %}
+    {% assign guide_group = site.data.docs_navigation | where: 'label', 'Guides' | first %}
+    {% assign guide_shortcuts = guide_group.children | where_exp: 'guide', "guide.href != '/docs/guides/'" %}
+    <nav class="writer-subnav writer-subnav--third" aria-label="Guide shortcuts">
+      {% for guide in guide_shortcuts limit: 3 %}
+        {% assign guide_url = guide.href | prepend: '/v2' %}
+        <a href="{{ guide_url | relative_url }}"{% if page.url == guide_url %} aria-current="page"{% endif %}>{{ guide.label | escape }}</a>
+      {% endfor %}
+      <a href="{{ writer_guides_url | relative_url }}" aria-label="More guides"{% if page.url == writer_guides_url %} aria-current="page"{% endif %}>More</a>
+    </nav>
+    {% endif %}
     {% endif %}
   </header>
   {% if writer_docs_section %}
@@ -61,12 +87,12 @@
     {% include components/docs-sidebar.html writer=true %}
     <div class="writer-docs-content">
   {% endif %}
-  <main class="writer writer--{{ writer_layout }}{% if page.writer_blog_post %} writer--post{% endif %}">
+  <main class="writer writer--{{ writer_layout }}{% if page.writer_blog_post %} writer--post{% endif %}{% if page.writer_resource %} writer--resource{% endif %}">
     <div class="writer-page-heading">
       {{ page.writer_heading }}
     </div>
     {% if writer_layout == 'columns' %}
-      {% if page.url == '/v2/' %}<div class="writer-home-columns">{% else %}<div class="writer-column-content" data-writer-columns>{% endif %}
+      {% if page.url == '/v2/' %}<div class="writer-home-columns">{% else %}<div class="writer-column-content{% if page.writer_guide %} docs-markdown-body{% endif %}" data-writer-columns>{% endif %}
     {% endif %}
       {{ content }}
     {% if writer_layout == 'columns' %}</div>{% endif %}
@@ -82,12 +108,12 @@
       <p><a href="mailto:support@dotenvx.com">support@dotenvx.com</a></p>
     </div>
     <nav aria-label="Footer">
-      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms,/changelog,/contact,/careers,/blog,/docs,/sitemap' | split: ',' %}
+      {% assign writer_footer_paths = '/agents,/pricing,/corporate,/legal,/privacy,/terms,/changelog,/contact,/careers,/blog,/docs,/opensource,/search,/sitemap' | split: ',' %}
       {% assign writer_footer_home = site.data.footer.links | where: 'href', '/' %}
       {% assign writer_footer_about = site.data.footer.links | where: 'href', '/about/' %}
       {% assign writer_footer_changelog = site.data.footer.links | where: 'href', '/changelog' %}
       {% assign writer_footer_blog = site.data.footer.links | where: 'href', '/blog' %}
-      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/blog' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/opensource' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub'" %}
+      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/blog' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub'" %}
       {% assign writer_footer_links = writer_footer_home | concat: writer_footer_about | concat: writer_footer_changelog | concat: writer_footer_blog | concat: writer_footer_remaining %}
       <p class="writer-footer-links">
         {% for link in writer_footer_links -%}
@@ -107,7 +133,14 @@
     </nav>
   </footer>
   <script src="{{ '/assets/js/design-choice.js' | relative_url }}" defer></script>
-  {% if writer_cli_prefix == '/v2/docs/cli/' and page.url != '/v2/docs/cli/' %}<script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}" defer></script>{% endif %}
+  {% if page.url == '/v2/search/' %}<script src="{{ '/assets/js/site-search.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
+  {% if page.writer_guide %}
+  <script src="{{ '/assets/js/docs-package-manager.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/secrets-artifact.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}" defer></script>
+  {% elsif writer_reference_prefix == '/v2/docs/cli/' and page.url != '/v2/docs/cli/' %}
+  <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}" defer></script>
+  {% endif %}
   <script src="{{ '/assets/js/writer-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   {% if writer_layout == 'columns' and page.url != '/v2/' %}<script src="{{ '/assets/js/writer-columns.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
 </body>

@@ -11,7 +11,7 @@ module WriterMarkdownExport
 
   def self.convert(html)
     document = Nokogiri::HTML.fragment(html)
-    document.css('script, style, button, .membership-section-mobile, .sr-only, [data-env-slab]').remove
+    document.css('script, style, button, .membership-section-mobile, .sr-only, .spec-tip-panel, [data-env-slab]').remove
     blocks = document.css('pre').map.with_index do |node, index|
       block = render(node)
       node.replace("<p>WRITER_CODE_BLOCK_#{index}</p>")
@@ -93,7 +93,18 @@ module WriterMarkdownExport
     when 'form'
       href = node['data-markdown-href']
       href ? "\n\n[Subscribe](#{href})\n\n" : children(node)
-    when 'p', 'section', 'div', 'figure'
+    when 'section'
+      if node.matches?('.design-secrets-artifact')
+        fields = node.css('.design-secret-pair').map do |row|
+          name = row.at_css('.design-secret-key')['value']
+          value = row.at_css('.design-secret-value')['value']
+          "#{name}=#{value.inspect}"
+        end
+        "\n\n```dotenv\n#{fields.join("\n")}\n```\n\n"
+      else
+        "\n\n#{children(node)}\n\n"
+      end
+    when 'p', 'div', 'figure'
       "\n\n#{children(node)}\n\n"
     else children(node)
     end

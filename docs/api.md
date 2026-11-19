@@ -5,6 +5,7 @@ permalink: /docs/api/
 layout: radar
 ---
 
+{% unless writer_preview %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="API"
@@ -16,6 +17,7 @@ layout: radar
 <div class="armor-shell">
 <div class="design-content-width">
 <div class="docs-guide-body design-prose" markdown="block">
+{% endunless %}
 
 ## Dotenvx
 
@@ -154,7 +156,9 @@ dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
 
 See [Errors](/docs/errors) for Armor error codes and [Events](/docs/events) for activity names recorded by these operations.
 
+{% unless writer_preview %}
 </div>
 </div>
 </div>
 </section>
+{% endunless %}

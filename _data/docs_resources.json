@@ -1,5 +1,9 @@
 [
   {
+    "label": "Dotenv",
+    "href": "/docs/dotenv/"
+  },
+  {
     "label": ".env",
     "href": "/docs/env-file/"
   },
@@ -12,8 +16,16 @@
     "href": "/docs/env-keys-file/"
   },
   {
-    "label": "Dotenvxfile Spec",
-    "href": "/docs/dotenvxfile-spec/"
+    "label": "Dotenvx.toml Spec",
+    "href": "/docs/dotenvxtoml/spec/"
+  },
+  {
+    "label": "Dotenv Spec",
+    "href": "/docs/spec/"
+  },
+  {
+    "label": "Dotenv Spec Table",
+    "href": "/docs/spec/table.html"
   },
   {
     "label": "API",

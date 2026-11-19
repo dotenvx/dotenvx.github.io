@@ -110,11 +110,6 @@ cli-ls:
   url: https://github.com/user-attachments/assets/e4be662b-7102-41ec-857a-c5d82f965885
   source: github
 
-chrome-extension:
-  title: Chrome extension demo
-  url: https://github.com/user-attachments/assets/c5401116-9192-4340-be59-e691f2fe3b4e
-  source: github
-
 vscode-extension:
   title: VS Code extension demo
   url: https://github.com/user-attachments/assets/b2d1f448-4706-4a56-8e00-1a41328db3e0

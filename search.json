@@ -9,6 +9,7 @@ search: false
   {%- assign page_url = page.url -%}
   {%- assign include_page = true -%}
   {%- if page.search == false -%}{%- assign include_page = false -%}{%- endif -%}
+  {%- if page.layout == "writer" -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page.title == nil or page.title == "" -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page.redirect_to -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page_url == "/search.json" -%}{%- assign include_page = false -%}{%- endif -%}
@@ -87,6 +88,9 @@ search: false
   {
     "title": {{ search_title | jsonify }},
     "url": {{ page_url | jsonify }},
+    {%- if site.data.writer_search_urls[page_url] %}
+    "preview_url": {{ site.data.writer_search_urls[page_url] | jsonify }},
+    {%- endif %}
     "description": {{ desc | jsonify }},
     "section": {{ section | jsonify }},
     "slug": {{ slug | jsonify }},
@@ -166,6 +170,9 @@ search: false
   {
     "title": {{ post.title | jsonify }},
     "url": {{ page_url | jsonify }},
+    {%- if site.data.writer_search_urls[page_url] %}
+    "preview_url": {{ site.data.writer_search_urls[page_url] | jsonify }},
+    {%- endif %}
     "description": {{ desc | jsonify }},
     "section": "Blog",
     "slug": {{ slug | jsonify }},

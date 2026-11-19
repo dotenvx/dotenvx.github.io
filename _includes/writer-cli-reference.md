@@ -1,15 +1,27 @@
 > {{ page.description }}
 
-{% assign cli_parent = page.eyebrow | default: 'CLI' %}
-{% assign cli_parent_href = page.eyebrow_href | default: '/docs/cli/' %}
-[{{ cli_parent }}]({{ cli_parent_href }})
+{% if toml_reference %}
+{% assign reference_parent = page.eyebrow | default: 'Dotenvx.toml' %}
+{% assign reference_parent_href = page.eyebrow_href | default: '/docs/dotenvxtoml/' %}
+{% elsif sdk_reference %}
+{% assign reference_parent = page.eyebrow | default: 'SDKs' %}
+{% assign reference_parent_href = page.eyebrow_href | default: '/docs/sdk/' %}
+{% else %}
+{% assign reference_parent = page.eyebrow | default: 'CLI' %}
+{% assign reference_parent_href = page.eyebrow_href | default: '/docs/cli/' %}
+{% endif %}
+[{{ reference_parent }}]({{ reference_parent_href }})
 
-{% if page.layout == 'docs-cli' %}
-{% capture command %}{% include components/docs-cli-command.html eyebrow=cli_parent %}{% endcapture %}
+{% if page.layout == 'docs-cli' and toml_reference != true %}
+{% capture command %}{% include components/docs-cli-command.html eyebrow=reference_parent sdk=sdk_reference %}{% endcapture %}
 {% assign command = command | strip %}
+{% if sdk_reference and page.command_prompt != true %}
+{% include components/design-codeblock.html value=command language='javascript' copy_text=command %}
+{% else %}
 {% assign command_display = command %}
 {% unless page.command_prompt == false %}{% assign command_display = command | prepend: '$ ' %}{% endunless %}
 {% include components/design-codeblock.html value=command_display format='cli' copy_text=command %}
+{% endif %}
 {% endif %}
 
 {% if page.video %}
@@ -17,10 +29,12 @@
 [{{ page.video_title | default: 'Watch demo' }}]({{ video }})
 {% endif %}
 
-{% if cli_body != blank %}
+{% if docs_body != blank %}
+{% if page.layout == 'docs-cli' and toml_reference != true %}
 ## {{ page.usage_title | default: 'Usage' }}
+{% endif %}
 
-{{ cli_body | strip }}
+{{ docs_body | strip }}
 {% endif %}
 
 {% if page.options.size > 0 %}

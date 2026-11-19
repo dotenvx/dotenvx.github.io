@@ -11,12 +11,21 @@ layout: radar
 sdk_languages:
   - label: Node.js
     slug: nodejs
+  - label: Next.js
+    slug: nextjs
+    writer_only: true
   - label: Python
     slug: python
   - label: Ruby
     slug: ruby
+  - label: Go
+    slug: go
+    writer_only: true
   - label: Rust
     slug: rust
+  - label: PHP
+    slug: php
+    writer_only: true
 ---
 
 {% if writer_preview %}
@@ -25,7 +34,9 @@ sdk_languages:
 ## Languages
 
 {% for sdk in page.sdk_languages -%}
-- [{{ sdk.label }}]({{ sdk.slug | prepend: '/docs/sdk/' | append: '/' | relative_url }})
+{% assign sdk_path = sdk.slug | prepend: '/docs/sdk/' | append: '/' -%}
+{% assign sdk_href = preview_links[sdk_path] | default: sdk_path -%}
+- [{{ sdk.label }}]({{ sdk_href | relative_url }})
 {% endfor %}
 {% else %}
 {% include components/docs-hero.html
@@ -44,8 +55,10 @@ sdk_languages:
           <p class="design-list-title">Languages</p>
           <div class="design-settings-grid">
             {% for sdk in page.sdk_languages %}
-              {% assign sdk_path = sdk.slug | prepend: '/docs/sdk/' %}
-              {% include components/design-settings-tile.html href=sdk_path label=sdk.label icon=sdk.slug %}
+              {% unless sdk.writer_only %}
+                {% assign sdk_path = sdk.slug | prepend: '/docs/sdk/' %}
+                {% include components/design-settings-tile.html href=sdk_path label=sdk.label icon=sdk.slug %}
+              {% endunless %}
             {% endfor %}
           </div>
         </div>

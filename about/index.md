@@ -47,7 +47,7 @@ body_class: home-page about-page
         <p class="design-paragraph">We started with a problem every developer recognizes: an app needs credentials, but those credentials don't belong in its source code. Dotenv gave them a home in a small, readable file. No dashboard to learn. No service to depend on. Just a file and the code you were already writing.</p>
         <p class="design-paragraph">That simplicity mattered. But the secrets on one developer's laptop also had to reach teammates, build servers, and production. Keeping the file out of Git meant finding another way to move it around. We wanted secrets to follow the same path as the software they configure, without exposing their values.</p>
         <p class="design-paragraph">That's why we built Dotenvx. Encryption lets the file travel with your code while its private key stays separate. The familiar .env becomes something you can version, review, and share through Git.</p>
-        <p class="design-paragraph">Now we're asking the next question: how can an agent work on your app without being handed its secrets? Dotenvxfile carries our approach forward, making the rules for secrets explicit so software can enforce them.</p>
+        <p class="design-paragraph">Now we're asking the next question: how can an agent work on your app without being handed its secrets? Dotenvx.toml carries our approach forward, making the rules for secrets explicit so software can enforce them.</p>
       </div>
 
       {% if writer_preview %}
@@ -84,8 +84,8 @@ body_class: home-page about-page
           {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">03</span>{% endunless %}
           <div>
             <h2 id="about-agents">Secrets separate from agents</h2>
-            <p class="design-paragraph">We're building Dotenvxfile to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.</p>
-            <a class="design-link" href="{% if writer_preview %}{{ '/v2/agents/' | relative_url }}{% else %}/agents{% endif %}">Dotenvxfile{% unless writer_preview %} →{% endunless %}</a>
+            <p class="design-paragraph">We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.</p>
+            <a class="design-link" href="{% if writer_preview %}{{ '/v2/agents/' | relative_url }}{% else %}/agents{% endif %}">Dotenvx.toml{% unless writer_preview %} →{% endunless %}</a>
           </div>
         </section>
       </div>

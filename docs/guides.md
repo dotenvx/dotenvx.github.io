@@ -261,7 +261,7 @@ guide_sections:
 %}
 
 {% for section in page.guide_sections %}
-<section class="radar-section" aria-label="{{ section.title | escape }}">
+<section id="{{ section.title | slugify }}" class="radar-section" aria-label="{{ section.title | escape }}">
   <div class="armor-shell">
     <div class="design-content-width">
       <div class="docs-intro-cards">

@@ -120,7 +120,7 @@ writer_layout: columns
       <p class="design-list-title">Resources</p>
       <div class="design-settings-grid">
         {% include components/design-key.html href="/docs/env-file" label=".env" glyph=".env" glyph_class="design-settings-tile-glyph--soft" %}
-        {% include components/design-key.html href="/docs/dotenvxfile-spec/" label="Dotenvxfile" glyph="Dotenvxfile" glyph_class="design-settings-tile-glyph--soft design-settings-tile-glyph--filename" %}
+        {% include components/design-key.html href="/docs/dotenvxtoml/spec/" label="Dotenvx.toml" glyph="Dotenvx.toml" glyph_class="design-settings-tile-glyph--soft design-settings-tile-glyph--filename" %}
         {% include components/design-key.html href="/docs/resources" label="More Resources" glyph="…" glyph_class="design-settings-tile-glyph--soft" %}
       </div>
     </div>

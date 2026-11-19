@@ -8,6 +8,38 @@ layout: radar
 body_class: home-page
 ---
 
+{% assign search_path = '/search/' %}
+{% if writer_preview %}{% assign search_path = '/v2/search/' %}{% endif %}
+{% capture search_content %}
+<form class="site-search-page" data-site-search-page{% if writer_preview %} data-site-search-v2{% endif %} data-site-search-index="{{ '/search.json' | relative_url }}" action="{{ search_path | relative_url }}" method="get" role="search">
+  <div class="site-search-page-field">
+    <input
+      type="text"
+      class="design-input site-search-input"
+      name="q"
+      aria-label="Search Dotenvx"
+      id="site-search-page-input"
+      data-site-search-input
+      placeholder="{% if writer_preview %}Search docs, blog, and more…{% else %}Search for Claude, pricing, encrypt…{% endif %}"
+      inputmode="search"
+      enterkeyhint="search"
+      autocomplete="off"
+      autofocus
+      data-1p-ignore="true"
+      data-lpignore="true"
+      data-bwignore="true"
+      data-form-type="other"
+    >
+  </div>
+  <div class="site-search-page-results" data-site-search-results aria-live="polite">
+    {% unless writer_preview %}<p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>{% endunless %}
+  </div>
+</form>
+{% endcapture %}
+
+{% if writer_preview %}
+{{ search_content }}
+{% else %}
 <style>
   .search-hero-ascii {
     align-items: center;
@@ -53,33 +85,9 @@ body_class: home-page
 
 <section class="radar-section">
   <div class="armor-shell">
-    {% capture search_content %}
-    <form class="site-search-page" data-site-search-page action="/search/" method="get" role="search">
-      <div class="site-search-page-field">
-        <input
-          type="text"
-          class="design-input site-search-input"
-          name="q"
-          id="site-search-page-input"
-          data-site-search-input
-          placeholder="Search for Claude, pricing, encrypt…"
-          inputmode="search"
-          enterkeyhint="search"
-          autocomplete="off"
-          autofocus
-          data-1p-ignore="true"
-          data-lpignore="true"
-          data-bwignore="true"
-          data-form-type="other"
-        >
-      </div>
-      <div class="site-search-page-results" data-site-search-results aria-live="polite">
-        <p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>
-      </div>
-    </form>
-    {% endcapture %}
     {% include components/design-content-width.html content=search_content %}
   </div>
 </section>
 
 </div>
+{% endif %}

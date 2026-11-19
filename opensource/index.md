@@ -4,8 +4,107 @@ title: Open Source
 permalink: /opensource/
 layout: radar
 body_class: home-page
+writer_layout: columns
+projects:
+  - name: dotenv
+    href: https://github.com/motdotla/dotenv
+    summary: loads .env files into Node.js applications.
+    stars: "20,539"
+  - name: dotenvx
+    href: https://github.com/dotenvx/dotenvx
+    summary: encrypts .env files so secrets can ship with code.
+    stars: "5,799"
+  - name: dotenv-expand
+    href: https://github.com/dotenvx/dotenv-expand
+    summary: expands variable references in .env files.
+    stars: "1,056"
+  - name: react-native-dotenv
+    href: https://github.com/dotenvx/react-native-dotenv
+    summary: loads environment variables in React Native.
+    stars: "858"
+  - name: vestauth
+    href: https://github.com/vestauth/vestauth
+    summary: authenticates agents with signed requests.
+    stars: "169"
+  - name: llmstxt
+    href: https://github.com/dotenvx/llmstxt
+    summary: generates llms.txt from a sitemap.
+    stars: "149"
+  - name: python-dotenvx
+    href: https://github.com/dotenvx/python-dotenvx
+    summary: loads encrypted .env files in Python.
+    stars: "8"
+  - name: dotenvx-ruby
+    href: https://github.com/dotenvx/dotenvx-ruby
+    summary: loads encrypted .env files in Ruby.
+    stars: "3"
+  - name: "@dotenvx/primitives"
+    href: https://www.npmjs.com/package/@dotenvx/primitives
+    summary: provides Dotenvx primitives for JavaScript.
+  - name: dotenvx-primitives (Rust)
+    href: https://crates.io/crates/dotenvx-primitives
+    summary: provides Dotenvx primitives for Rust.
+  - name: KEYSEE⎔
+    href: https://keysee.io
+    summary: turns public keys into deterministic visuals.
+papers:
+  - name: "Dotenvx: Reducing Secrets Risk with Cryptographic Separation"
+    href: https://dotenvx.com/whitepaper.pdf
+  - name: "KEYSEE⎔: Deterministic Visual Identity for Public Keys"
+    href: https://keysee.io/whitepaper.pdf
+talks:
+  - name: How HTTP Message Signatures Remove the Need for API Keys
+    href: https://www.youtube.com/watch?v=CDXFEbqLsB0
+    event: AAuth Night
+  - name: The Dark Ages of App Configuration
+    href: https://www.youtube.com/watch?v=BCKGvKTk3cU&t=3205s
+    event: SF Ruby
+sponsorships:
+  - name: yao-pkg/pkg
+    href: https://github.com/yao-pkg/pkg
+    annual: "$1,200"
+  - name: ecies/js
+    href: https://github.com/ecies/js
+    annual: "$384"
+  - name: abetomo
+    href: https://github.com/abetomo
+    annual: "$240"
 ---
 
+{% if writer_preview %}
+> Tools for environment variables, encryption, and agent identity
+
+[Dotenvx on GitHub](https://github.com/dotenvx)
+
+## Projects
+
+{% for project in page.projects -%}
+- [{{ project.name }}]({{ project.href }}) {{ project.summary }}
+{% endfor -%}
+{: .writer-docs-list}
+
+## Papers
+
+{% for paper in page.papers -%}
+- [{{ paper.name }}]({{ paper.href }}) (PDF)
+{% endfor -%}
+{: .writer-docs-list}
+
+## Talks
+
+{% for talk in page.talks -%}
+- [{{ talk.name }}]({{ talk.href }}) at {{ talk.event }}
+{% endfor -%}
+{: .writer-docs-list}
+
+## Sponsorship
+
+{% for sponsor in page.sponsorships -%}
+- [{{ sponsor.name }}]({{ sponsor.href }}) · {{ sponsor.annual }} per year
+{% endfor -%}
+{: .writer-docs-list}
+
+{% else %}
 <style>
   .open-source-lists {
     display: flex;
@@ -46,17 +145,9 @@ body_class: home-page
         {% capture projects_table %}
           <thead><tr><th scope="col">Name</th><th scope="col" class="design-table-cell--right">Stars</th></tr></thead>
           <tbody>
-            <tr><td><a class="design-link" href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer">dotenv</a></td><td class="design-table-cell--right">20,539</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">dotenvx</a></td><td class="design-table-cell--right">5,799</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/dotenvx/dotenv-expand" target="_blank" rel="noopener noreferrer">dotenv-expand</a></td><td class="design-table-cell--right">1,056</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/dotenvx/react-native-dotenv" target="_blank" rel="noopener noreferrer">react-native-dotenv</a></td><td class="design-table-cell--right">858</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/vestauth/vestauth" target="_blank" rel="noopener noreferrer">vestauth</a></td><td class="design-table-cell--right">169</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/dotenvx/llmstxt" target="_blank" rel="noopener noreferrer">llmstxt</a></td><td class="design-table-cell--right">149</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/dotenvx/python-dotenvx" target="_blank" rel="noopener noreferrer">python-dotenvx</a></td><td class="design-table-cell--right">8</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/dotenvx/dotenvx-ruby" target="_blank" rel="noopener noreferrer">dotenvx-ruby</a></td><td class="design-table-cell--right">3</td></tr>
-            <tr><td><a class="design-link" href="https://www.npmjs.com/package/@dotenvx/primitives" target="_blank" rel="noopener noreferrer">@dotenvx/primitives</a></td><td class="design-table-cell--right">—</td></tr>
-            <tr><td><a class="design-link" href="https://crates.io/crates/dotenvx-primitives" target="_blank" rel="noopener noreferrer">dotenvx-primitives (Rust)</a></td><td class="design-table-cell--right">—</td></tr>
-            <tr><td><a class="design-link" href="https://keysee.io" target="_blank" rel="noopener noreferrer">KEYSEE⎔</a></td><td class="design-table-cell--right">—</td></tr>
+            {% for project in page.projects %}
+            <tr><td><a class="design-link" href="{{ project.href | escape }}" target="_blank" rel="noopener noreferrer">{{ project.name | escape }}</a></td><td class="design-table-cell--right">{{ project.stars | default: '—' }}</td></tr>
+            {% endfor %}
           </tbody>
         {% endcapture %}
         {% include components/design-table.html content=projects_table class="design-table-wrap--fill" %}
@@ -67,8 +158,9 @@ body_class: home-page
         {% capture published_work_table %}
           <thead><tr><th scope="col">Name</th><th scope="col" class="design-table-cell--right">Format</th></tr></thead>
           <tbody>
-            <tr><td><a class="design-link" href="https://dotenvx.com/whitepaper.pdf" target="_blank" rel="noopener noreferrer">Dotenvx: Reducing Secrets Risk with Cryptographic Separation</a></td><td class="design-table-cell--right">PDF</td></tr>
-            <tr><td><a class="design-link" href="https://keysee.io/whitepaper.pdf" target="_blank" rel="noopener noreferrer">KEYSEE⎔: Deterministic Visual Identity for Public Keys</a></td><td class="design-table-cell--right">PDF</td></tr>
+            {% for paper in page.papers %}
+            <tr><td><a class="design-link" href="{{ paper.href | escape }}" target="_blank" rel="noopener noreferrer">{{ paper.name | escape }}</a></td><td class="design-table-cell--right">PDF</td></tr>
+            {% endfor %}
           </tbody>
         {% endcapture %}
         {% include components/design-table.html content=published_work_table class="design-table-wrap--fill" %}
@@ -79,8 +171,9 @@ body_class: home-page
         {% capture talks_table %}
           <thead><tr><th scope="col">Name</th><th scope="col" class="design-table-cell--right">Event</th></tr></thead>
           <tbody>
-            <tr><td><a class="design-link" href="https://www.youtube.com/watch?v=CDXFEbqLsB0" target="_blank" rel="noopener noreferrer">How HTTP Message Signatures Remove the Need for API Keys</a></td><td class="design-table-cell--right">AAuth Night</td></tr>
-            <tr><td><a class="design-link" href="https://www.youtube.com/watch?v=BCKGvKTk3cU&t=3205s" target="_blank" rel="noopener noreferrer">The Dark Ages of App Configuration</a></td><td class="design-table-cell--right">SF Ruby</td></tr>
+            {% for talk in page.talks %}
+            <tr><td><a class="design-link" href="{{ talk.href | escape }}" target="_blank" rel="noopener noreferrer">{{ talk.name | escape }}</a></td><td class="design-table-cell--right">{{ talk.event | escape }}</td></tr>
+            {% endfor %}
           </tbody>
         {% endcapture %}
         {% include components/design-table.html content=talks_table class="design-table-wrap--fill" %}
@@ -91,9 +184,9 @@ body_class: home-page
         {% capture sponsorship_table %}
           <thead><tr><th scope="col">Name</th><th scope="col" class="design-table-cell--right">Annual contribution</th></tr></thead>
           <tbody>
-            <tr><td><a class="design-link" href="https://github.com/yao-pkg/pkg" target="_blank" rel="noopener noreferrer">yao-pkg/pkg</a></td><td class="design-table-cell--right">$1,200</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/ecies/js" target="_blank" rel="noopener noreferrer">ecies/js</a></td><td class="design-table-cell--right">$384</td></tr>
-            <tr><td><a class="design-link" href="https://github.com/abetomo" target="_blank" rel="noopener noreferrer">abetomo</a></td><td class="design-table-cell--right">$240</td></tr>
+            {% for sponsor in page.sponsorships %}
+            <tr><td><a class="design-link" href="{{ sponsor.href | escape }}" target="_blank" rel="noopener noreferrer">{{ sponsor.name | escape }}</a></td><td class="design-table-cell--right">{{ sponsor.annual | escape }}</td></tr>
+            {% endfor %}
           </tbody>
         {% endcapture %}
         {% include components/design-table.html content=sponsorship_table class="design-table-wrap--fill" %}
@@ -116,3 +209,4 @@ body_class: home-page
 </section>
 
 </div>
+{% endif %}

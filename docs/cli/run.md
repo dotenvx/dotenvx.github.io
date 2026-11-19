@@ -73,7 +73,7 @@ options:
     href: /docs/cli/run-quiet/
   - title: "run --log-level"
     href: /docs/cli/run-log-level/
-  - title: "run with a Dotenvxfile"
+  - title: "run with a Dotenvx.toml"
     href: /docs/cli/run-validate/
   - title: "run --strict"
     href: /docs/cli/run-strict/

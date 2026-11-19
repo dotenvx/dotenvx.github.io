@@ -5,12 +5,14 @@ permalink: /docs/resources/
 layout: radar
 ---
 
+{% unless writer_preview %}
 {% include components/docs-hero.html
   eyebrow="Docs"
   title="Resources"
   description="Files and references for dotenvx."
   mark="docs"
 %}
+{% endunless %}
 
 {% capture resources_items %}
   {% for resource in site.data.docs_resources %}
@@ -18,6 +20,9 @@ layout: radar
   {% endfor %}
 {% endcapture %}
 
+{% if writer_preview %}
+<ul>{{ resources_items }}</ul>
+{% else %}
 <section class="radar-section">
   <div class="armor-shell">
   <div class="design-content-width">
@@ -30,3 +35,4 @@ layout: radar
   </div>
 </div>
 </section>
+{% endif %}

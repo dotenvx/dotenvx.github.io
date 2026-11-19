@@ -1,13 +1,17 @@
 ---
 layout: radar
 body_class: home-page dotenv-page
-title: "Dotenv · Load your .env and get to work"
+title: Dotenv
 description: "The official dotenv quickstart, SDK, and CLI reference. Load environment variables from .env files in your application or before any command."
-permalink: /docs/dotenv
+hero_description: Load your .env and get to work
+permalink: /docs/dotenv/
+redirect_from:
+  - /docs/dotenv
 og_image:
   title: "Dotenv. Load your .env and get to work."
 ---
 
+{% unless writer_preview %}
 <style>
   .dotenv-page .dotenv-jump-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 1.5rem; margin-bottom: 1.5rem; }
   .dotenv-page .dotenv-section { scroll-margin-top: 6rem; }
@@ -31,6 +35,7 @@ og_image:
 
 <section class="radar-section">
 <div class="armor-shell">
+{% endunless %}
 {% capture dotenv_content %}
 <nav class="dotenv-jump-links" aria-label="On this page">
 <a class="design-link" href="#quickstart">Quickstart</a>
@@ -42,10 +47,10 @@ og_image:
 
 <p>Dotenv is a zero-dependency module that loads variables from a .env file into process.env. Keep configuration separate from code, following <a href="https://12factor.net/config">The Twelve-Factor App</a>.</p>
 
-<section id="quickstart" class="dotenv-section" aria-labelledby="quickstart-title" markdown="block">
+{% unless writer_preview %}<section id="quickstart" class="dotenv-section" aria-labelledby="quickstart-title" markdown="block">{% endunless %}
 
 ## Quickstart
-{: #quickstart-title}
+{: #quickstart{% unless writer_preview %}-title{% endunless %}}
 
 <p>Install dotenv in your project.</p>
 
@@ -88,16 +93,16 @@ Hello Dotenv
 npx dotenv run -- node index.js
 ```
 
-</section>
+{% unless writer_preview %}</section>{% endunless %}
 
 <div id="demo" class="dotenv-demo dotenv-section">
 {% include components/design-video.html mp4="https://github.com/user-attachments/assets/79395e92-5ce0-430d-b8b5-31631aac25bb" title="Watch the 30 second demo" %}
 </div>
 
-<section id="sdk" class="dotenv-section" aria-labelledby="sdk-title" markdown="block">
+{% unless writer_preview %}<section id="sdk" class="dotenv-section" aria-labelledby="sdk-title" markdown="block">{% endunless %}
 
 ## SDK
-{: #sdk-title}
+{: #sdk{% unless writer_preview %}-title{% endunless %}}
 
 <p>Three functions for loading, parsing, and populating environment variables.</p>
 
@@ -150,12 +155,12 @@ dotenv.populate(target, { HELLO: 'Dotenv' }, { override: true })
 console.log(target.HELLO) // Dotenv
 ```
 
-</section>
+{% unless writer_preview %}</section>{% endunless %}
 
-<section id="cli" class="dotenv-section" aria-labelledby="cli-title" markdown="block">
+{% unless writer_preview %}<section id="cli" class="dotenv-section" aria-labelledby="cli-title" markdown="block">{% endunless %}
 
 ## CLI
-{: #cli-title}
+{: #cli{% unless writer_preview %}-title{% endunless %}}
 
 <p>Run scripts, tests, or any executable with variables from your .env file. Use npx dotenv, or dotenv directly in npm scripts.</p>
 
@@ -204,12 +209,12 @@ npx dotenv run -f .env.local -f .env -- npm test
         {% endcapture %}
 {% include components/design-table.html content=env_options class="design-table-wrap--fill" %}
 <p>The legacy DOTENV_CONFIG_* names remain fallbacks when the corresponding DOTENV_* variable is unset. For boolean settings, false, 0, no, off, and an empty value disable the setting.</p>
-</section>
+{% unless writer_preview %}</section>{% endunless %}
 
-<section id="common-questions" class="dotenv-section" aria-labelledby="questions-title" markdown="block">
+{% unless writer_preview %}<section id="common-questions" class="dotenv-section" aria-labelledby="questions-title" markdown="block">{% endunless %}
 
 ## A few common questions
-{: #questions-title}
+{: {% if writer_preview %}#common-questions{% else %}#questions-title{% endif %}}
 
 ### Should I commit my .env file?
 
@@ -227,10 +232,14 @@ import 'dotenv/config'
 
 <p>Use <a href="https://github.com/dotenvx/dotenv-expand">dotenv-expand</a> for variable expansion, or <a href="/">dotenvx</a> for expansion, command substitution, and encrypted .env files.</p>
 <p>For parsing rules, framework examples, and more answers, see the <a href="https://github.com/motdotla/dotenv#readme">full README</a>.</p>
-</section>
+{% unless writer_preview %}</section>{% endunless %}
 <p class="text-center"><a href="https://github.com/motdotla/dotenv/blob/master/CHANGELOG.md">Changelog</a> · <a href="https://www.npmjs.com/package/dotenv">npm</a> · <a href="https://github.com/motdotla/dotenv">GitHub</a></p>
 {% endcapture %}
+{% if writer_preview %}
+{{ dotenv_content }}
+{% else %}
 {% include components/design-content-width.html content=dotenv_content class="design-prose" %}
 </div>
 </section>
 </div>
+{% endif %}

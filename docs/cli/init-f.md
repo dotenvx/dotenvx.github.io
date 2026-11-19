@@ -1,6 +1,6 @@
 ---
 layout: docs-markdown
-title: Dotenvxfile
+title: Dotenvx.toml
 permalink: /docs/cli/init-f/
-redirect_to: /docs/quickstart/dotenvxfile/
+redirect_to: /docs/dotenvxtoml/quickstart/
 ---

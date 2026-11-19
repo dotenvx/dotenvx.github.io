@@ -1,16 +1,17 @@
+<div class="spec-table-wrap{% if include.full %} spec-table-wrap--full{% endif %}" tabindex="0" role="region" aria-label="Dotenv compatibility table">
 <table class="spec-table">
   <thead>
     <tr>
-      <th></th>
+      <th scope="col">Scenario</th>
       {% assign langs = site.data.report.scenarios[0].results %}
       {% for lang in langs %}
-        <th>{{ lang[0] }}</th>
+        <th scope="col">{{ lang[0] | escape }}</th>
       {% endfor %}
     </tr>
   </thead>
   <tbody>
     <tr class="spec-table-pass">
-      <td class="spec-table-label">Pass Rate</td>
+      <th scope="row" class="spec-table-label">Pass Rate</th>
       {% for lang in langs %}
         {% assign lang_key = lang[0] %}
         {% assign percent = site.data.report.percent_pass[lang_key] %}
@@ -30,14 +31,14 @@
     </tr>
     {% for row in site.data.report.scenarios %}
       <tr>
-        <td class="spec-table-scenario">
+        <th scope="row" class="spec-table-scenario">
           <span class="spec-tip">
-            <span class="spec-tip-label">{{ row.scenario }}</span>
+            <span class="spec-tip-label">{{ row.scenario | escape }}</span>
             <span class="spec-tip-panel">
               <pre>{{ row.env | escape }}</pre>
             </span>
           </span>
-        </td>
+        </th>
         {% for lang in row.results %}
         <td>
           {% assign result = lang[1] %}
@@ -57,3 +58,4 @@
     {% endfor %}
   </tbody>
 </table>
+</div>

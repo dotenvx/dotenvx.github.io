@@ -60,7 +60,7 @@ Let Armor manage access to the key. Sign in with dotenvx login, then choose:
 
 [Armor custody →](/docs/custody/armor/)
 
-## Password Managers
+## {% if writer_preview %}[Password Managers](/docs/custody/password-managers/){% else %}Password Managers{% endif %}
 
 Keep the decryption key in your existing vault:
 

@@ -222,6 +222,38 @@ body:not(.writer-has-subnav) > .writer-header {
 }
 .writer-markdown-link { text-decoration: underline; }
 
+.writer .site-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.writer .site-search-input::placeholder { color: var(--syntax); }
+.writer .site-search-input:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
+.writer .site-search-page-results { margin-block-start: 16px; }
+.writer .site-search-empty { color: var(--syntax); }
+.writer .site-search-hits { padding: 0; list-style: none; }
+.writer .site-search-hits li { margin: 0; }
+.writer .site-search-hit {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-block-end: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.writer .site-search-hit:is(.is-active, :hover, :focus-visible) { background: light-dark(#f0f0f0, #191919); }
+.writer .site-search-hit-title { text-decoration: underline; }
+.writer .site-search-hit-meta { flex: none; color: var(--syntax); font-size: 12px; }
+
 .writer :is(h1, h2, h3) {
   color: var(--heading);
   scroll-margin-top: calc(var(--writer-header-height) + 1rem);
@@ -490,9 +522,9 @@ body:not(.writer-has-subnav) > .writer-header {
   break-after: avoid-column;
 }
 
-.writer-data-table :is(th, td) { padding: 6px 8px; border: 1px solid var(--line); }
-.writer-data-table thead th { font-weight: 600; }
-.writer-data-table tbody tr:nth-child(odd) { background-color: light-dark(#f4f4f5, #141414); }
+:is(.writer-data-table, .writer--resource .design-table) :is(th, td) { padding: 6px 8px; border: 1px solid var(--line); }
+:is(.writer-data-table, .writer--resource .design-table) thead th { font-weight: 600; }
+:is(.writer-data-table, .writer--resource .design-table) tbody tr:nth-child(odd) { background-color: light-dark(#f4f4f5, #141414); }
 .writer .writer-table-note { color: var(--syntax); font-size: 12px; line-height: 20px; }
 
 .writer-pricing-comparison {

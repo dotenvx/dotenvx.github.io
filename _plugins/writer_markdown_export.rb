@@ -53,11 +53,17 @@ module WriterMarkdownExport
       "![#{node['alt']}](#{node['src']})"
     when 'strong', 'b' then "**#{inline(node)}**"
     when 'em', 'i' then "*#{inline(node)}*"
-    when 'br' then "\n"
+    when 'br'
+      node.ancestors('li').empty? ? "\n" : "<br>\n"
     when 'hr' then "\n\n---\n\n"
     when 'ul', 'ol'
       items = node.element_children.select { |child| child.name == 'li' }
-      "\n\n" + items.each_with_index.map { |item, i| "#{node.name == 'ol' ? "#{i + 1}." : '-'} #{children(item).strip}\n" }.join + "\n"
+      lines = items.each_with_index.map do |item, index|
+        marker = node.name == 'ol' ? "#{index + 1}. " : '- '
+        text = children(item).strip.gsub(/<br>\n */, "<br>\n#{' ' * marker.length}")
+        "#{marker}#{text}\n"
+      end
+      "\n\n#{lines.join}\n"
     when 'table'
       title_row = node.at_css('thead > tr.writer-table-title')
       title = "**#{inline(title_row)}**\n\n" if title_row

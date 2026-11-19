@@ -52,9 +52,15 @@ body_class: home-page about-page
 
       {% if writer_preview %}
       <ol class="writer-numbered-list">
-        <li><strong>Secrets separate from code.</strong> We created Dotenv to separate secrets from code. One small file made configuration safe. <a href="https://www.npmjs.com/package/dotenv">Dotenv</a></li>
-        <li><strong>Secrets encrypted alongside code.</strong> We created Dotenvx to make that same file safe to commit and share through Git. Secrets stay encrypted alongside your code and decrypt in memory at runtime. <a href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx</a></li>
-        <li><strong>Secrets separate from agents.</strong> We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules. <a href="{{ '/v2/agents/' | relative_url }}">Dotenvx.toml</a></li>
+        <li><strong>Secrets separate from code.</strong> We created Dotenv to separate secrets from code. One small file made configuration safe.<br>
+          <a href="https://www.npmjs.com/package/dotenv">Dotenv</a>
+        </li>
+        <li><strong>Secrets encrypted alongside code.</strong> We created Dotenvx to make that same file safe to commit and share through Git. Secrets stay encrypted alongside your code and decrypt in memory at runtime.<br>
+          <a href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx</a>
+        </li>
+        <li><strong>Secrets separate from agents.</strong> We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.<br>
+          <a href="{{ '/v2/agents/' | relative_url }}">Dotenvx.toml</a>
+        </li>
       </ol>
       {% else %}
       <div class="design-card about-story">

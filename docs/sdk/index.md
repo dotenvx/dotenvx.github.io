@@ -35,11 +35,7 @@ sdk_languages:
 
 ## Languages
 
-{% for sdk in page.sdk_languages -%}
-{% assign sdk_path = sdk.slug | prepend: '/docs/sdk/' | append: '/' -%}
-{% assign sdk_href = preview_links[sdk_path] | default: sdk_path -%}
-- [{{ sdk.label }}]({{ sdk_href | relative_url }})
-{% endfor %}
+{% include writer-sdk-list.md languages=page.sdk_languages %}
 {% else %}
 {% include components/docs-hero.html
   eyebrow="Docs"

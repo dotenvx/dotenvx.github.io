@@ -8,7 +8,6 @@
 {% assign writer_guides_url = '/v2/docs/guides/' %}
 {% assign writer_whitepaper_url = '/whitepaper.pdf' | relative_url %}
 {% assign writer_github_url = 'https://github.com/dotenvx' %}
-{% if page.url == writer_guides_url or page.writer_guide %}{% assign writer_guides_section = true %}{% endif %}
 {% assign writer_layout = page.writer_layout | default: 'single' %}
 {% if writer_docs_section and writer_layout != 'wide' %}{% assign writer_layout = 'columns' %}{% endif %}
 {% if page.url == '/v2/docs/install/' or page.url == '/v2/docs/quickstart/' %}{% assign writer_docs_two_columns = true %}{% endif %}
@@ -25,7 +24,7 @@
   {% if writer_docs_section %}<link rel="stylesheet" href="{{ '/assets/css/writer-docs.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
   {% if page.writer_blog_post or page.url == '/v2/newsletter/' %}<link rel="stylesheet" href="{{ '/assets/css/newsletter-signup.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
 </head>
-<body{% if writer_about_section or writer_docs_section %} class="writer-has-subnav{% if writer_sdk_section or writer_guides_section %} writer-has-third-nav{% endif %}"{% endif %}>
+<body{% if writer_about_section or writer_docs_section %} class="writer-has-subnav{% if writer_sdk_section %} writer-has-third-nav{% endif %}"{% endif %}>
   <header class="writer-header">
     <div class="writer-nav">
       <a class="writer-nav-home" href="{{ '/v2/' | relative_url }}"{% if page.url == '/v2/' %} aria-current="page"{% endif %}>
@@ -54,7 +53,7 @@
       <a href="{{ '/v2/docs/install/' | relative_url }}"{% if page.url == '/v2/docs/install/' %} aria-current="page"{% endif %}>Install</a>
       <a href="{{ '/v2/docs/quickstart/' | relative_url }}"{% if page.url == '/v2/docs/quickstart/' %} aria-current="page"{% endif %}>Quickstart</a>
       <a href="{{ '/v2/docs/advanced/' | relative_url }}"{% if page.url == '/v2/docs/advanced/' %} aria-current="page"{% endif %}>Advanced</a>
-      <a href="{{ writer_guides_url | relative_url }}"{% if page.url == writer_guides_url %} aria-current="page"{% elsif writer_guides_section %} aria-current="location"{% endif %}>Guides</a>
+      <a href="{{ writer_guides_url | relative_url }}"{% if page.url == writer_guides_url %} aria-current="page"{% elsif page.writer_guide %} aria-current="location"{% endif %}>Guides</a>
       <a href="{{ '/v2/docs/custody/' | relative_url }}"{% if page.url == '/v2/docs/custody/' %} aria-current="page"{% elsif writer_custody_prefix == '/v2/docs/custody/' %} aria-current="location"{% endif %}>Custody</a>
       <a href="{{ '/v2/docs/cli/' | relative_url }}"{% if page.url == '/v2/docs/cli/' %} aria-current="page"{% elsif writer_reference_prefix == '/v2/docs/cli/' %} aria-current="location"{% endif %}>CLI</a>
       <a href="{{ '/v2/docs/sdk/' | relative_url }}"{% if page.url == '/v2/docs/sdk/' %} aria-current="page"{% elsif writer_sdk_section %} aria-current="location"{% endif %}>SDKs</a>
@@ -69,16 +68,6 @@
         {% assign sdk_url = sdk.slug | prepend: '/v2/docs/sdk/' | append: '/' %}
         <a href="{{ sdk_url | relative_url }}"{% if page.url == sdk_url %} aria-current="page"{% elsif sdk_language == sdk.slug %} aria-current="location"{% endif %}>{{ sdk.label | escape }}</a>
       {% endfor %}
-    </nav>
-    {% elsif writer_guides_section %}
-    {% assign guide_group = site.data.docs_navigation | where: 'label', 'Guides' | first %}
-    {% assign guide_shortcuts = guide_group.children | where_exp: 'guide', "guide.href != '/docs/guides/'" %}
-    <nav class="writer-subnav writer-subnav--third" aria-label="Guide shortcuts">
-      {% for guide in guide_shortcuts limit: 3 %}
-        {% assign guide_url = guide.href | prepend: '/v2' %}
-        <a href="{{ guide_url | relative_url }}"{% if page.url == guide_url %} aria-current="page"{% endif %}>{{ guide.label | escape }}</a>
-      {% endfor %}
-      <a href="{{ writer_guides_url | relative_url }}" aria-label="More guides"{% if page.url == writer_guides_url %} aria-current="page"{% endif %}>More</a>
     </nav>
     {% endif %}
     {% endif %}

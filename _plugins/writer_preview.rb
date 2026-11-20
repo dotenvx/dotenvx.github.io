@@ -93,7 +93,7 @@ class WriterPreview < Jekyll::Generator
       template_source = writer_include ? "{% include #{writer_include} %}" : page.content
       template = site.liquid_renderer.file(page.path).parse(template_source)
       context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] }
-      context['preview_links'] = preview_links(site.pages).merge(reference_links) if %w[docs docs/guides docs/sdk sitemap].include?(slug)
+      context['preview_links'] = preview_links(site.pages).merge(reference_links) if %w[docs docs/advanced docs/guides docs/sdk sitemap].include?(slug)
       content = template.render!(context, registers: { site: site })
       link_map = case slug
                  when 'docs/advanced', 'docs/cli'

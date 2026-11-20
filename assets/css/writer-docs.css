@@ -46,7 +46,8 @@
   margin-block-end: 20px;
   break-inside: avoid-column;
 }
-.writer .dotenv-section { scroll-margin-top: calc(var(--writer-header-height) + 1rem); }
+.writer .dotenv-section,
+.writer-guide-list > li[id] { scroll-margin-top: calc(var(--writer-header-height) + 1rem); }
 
 .writer--resource .design-table-wrap { margin-bottom: 20px; }
 .writer--resource .design-table {

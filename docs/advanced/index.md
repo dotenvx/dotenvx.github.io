@@ -18,25 +18,6 @@ layout: radar
 %}
 {% endif %}
 
-{% capture advanced_sdk_items %}
-  {% for option in site.data.advanced_sdk %}
-    {% if option.href contains "/docs/sdk/nodejs/" %}
-      {% unless option.href == "/docs/sdk/nodejs/primitives/" %}
-      <li><a class="design-link" href="{{ option.href }}">{{ option.label | remove_first: "Node.js " | escape }}</a></li>
-      {% endunless %}
-    {% endif %}
-  {% endfor %}
-{% endcapture %}
-
-{% capture advanced_rust_items %}
-  <li><a class="design-link" href="/docs/sdk/nodejs/primitives/">Node.js – @dotenvx/primitives</a></li>
-  {% for option in site.data.advanced_sdk %}
-    {% if option.href contains "/docs/sdk/rust/" %}
-      <li><a class="design-link" href="{{ option.href }}">Rust – dotenvx-primitives</a></li>
-    {% endif %}
-  {% endfor %}
-{% endcapture %}
-
 {% unless writer_preview %}
 <section class="radar-section">
 <div class="armor-shell">
@@ -77,6 +58,44 @@ layout: radar
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true writer=writer_preview %}
 
+{% if writer_preview %}
+
+## SDKs
+
+{% assign sdk_page = site.pages | where: 'url', '/docs/sdk/' | first %}
+{% include writer-sdk-list.md languages=sdk_page.sdk_languages %}
+
+## Custody
+
+{% assign custody_page = site.pages | where: 'url', '/docs/custody/' | first %}
+{% for option in custody_page.options -%}
+- [{{ option.title }}]({{ option.href }})
+{% endfor %}
+
+## Guides
+
+{% assign guides_page = site.pages | where: 'url', '/docs/guides/' | first %}
+{% include writer-guide-list.md sections=guides_page.guide_sections %}
+{% else %}
+{% capture advanced_sdk_items %}
+  {% for option in site.data.advanced_sdk %}
+    {% if option.href contains "/docs/sdk/nodejs/" %}
+      {% unless option.href == "/docs/sdk/nodejs/primitives/" %}
+      <li><a class="design-link" href="{{ option.href }}">{{ option.label | remove_first: "Node.js " | escape }}</a></li>
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% capture advanced_rust_items %}
+  <li><a class="design-link" href="/docs/sdk/nodejs/primitives/">Node.js – @dotenvx/primitives</a></li>
+  {% for option in site.data.advanced_sdk %}
+    {% if option.href contains "/docs/sdk/rust/" %}
+      <li><a class="design-link" href="{{ option.href }}">Rust – dotenvx-primitives</a></li>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
 {% capture step_content %}
 
 ## SDK – Node.js
@@ -109,10 +128,9 @@ layout: radar
 <ul class="advanced-cli-commands">{{ advanced_rust_items }}</ul>
 {% endcapture %}
 {% include components/design-step.html content=step_content markdown=true writer=writer_preview %}
-{% unless writer_preview %}
 </div>
 
 </div>
 </div>
 </section>
-{% endunless %}
+{% endif %}

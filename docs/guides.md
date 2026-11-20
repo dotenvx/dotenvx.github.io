@@ -234,16 +234,7 @@ guide_sections:
 {% if writer_preview %}
 > Use Dotenvx with the tools and languages you already know and love
 
-{% for section in page.guide_sections %}
-## {{ section.title }}
-
-{% for guide in section.links -%}
-{% assign guide_href = preview_links[guide.href] | default: guide.href -%}
-- [{{ guide.label }}]({{ guide_href | relative_url }})
-{% endfor -%}
-{: .writer-docs-list}
-
-{% endfor %}
+{% include writer-guide-list.md sections=page.guide_sections %}
 {% else %}
 {% capture docs_hero_visual %}
   <div class="docs-hero-ascii" aria-hidden="true">

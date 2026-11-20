@@ -4,6 +4,7 @@ description: "Working out of LA–on a small important file"
 permalink: /about/
 layout: radar
 body_class: home-page about-page
+writer_layout: two-columns
 ---
 
 {% if writer_preview %}

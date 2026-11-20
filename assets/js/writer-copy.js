@@ -14,7 +14,7 @@
     var boundary = range[edge + 'Container']
     var element = boundary.nodeType === Node.ELEMENT_NODE ? boundary : boundary.parentElement
 
-    var markdownElements = 'a, strong, em, code, pre, h3, h4, h5, h6'
+    var markdownElements = 'a, strong, em, code, pre, h2, h3, h4, h5, h6'
     for (var markup = element.closest(markdownElements); markup && writer.contains(markup);
       markup = markup.parentElement.closest(markdownElements)) {
       var walker = document.createTreeWalker(markup, NodeFilter.SHOW_TEXT, {

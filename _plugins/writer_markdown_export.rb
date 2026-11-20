@@ -11,7 +11,7 @@ module WriterMarkdownExport
 
   def self.convert(html)
     document = Nokogiri::HTML.fragment(html)
-    document.css('script, style, button, .membership-section-mobile, .sr-only, .spec-tip-panel, [data-env-slab]').remove
+    document.css('script, style, button, .membership-section-mobile, .pricing-plan-label-short, .sr-only, .spec-tip-panel, [data-env-slab]').remove
     blocks = document.css('pre').map.with_index do |node, index|
       block = render(node)
       node.replace("<p>WRITER_CODE_BLOCK_#{index}</p>")

@@ -57,7 +57,7 @@ class WriterPreview < Jekyll::Generator
     source = File.read(site.in_source_dir('index.md'))
     markdown = "# Dotenvx\n\n#{RawMarkdownExports.homepage_markdown(source, site, writer_preview: true)}"
     home = site.pages.find { |page| page.path == 'index.md' }
-    add_preview(site, '/v2/', 'Dotenvx · v2 preview', markdown, home&.data&.fetch('writer_layout', 'auto'))
+    add_preview(site, '/v2/', 'Dotenvx · v2 preview', markdown, home.data.fetch('writer_layout', 'columns'))
 
     pricing = File.read(site.in_source_dir('_includes/writer-pricing.md'))
     pricing = site.liquid_renderer.file('_includes/writer-pricing.md').parse(pricing).render!(
@@ -85,7 +85,7 @@ class WriterPreview < Jekyll::Generator
     end
     reference_links = docs_reference_links(site, reference_pages + resource_pages)
 
-    %w[about armor opensource corporate legal privacy terms changelog blog newsletter docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap].each do |slug|
+    %w[about armor opensource corporate legal privacy terms changelog blog newsletter pricing-old docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap].each do |slug|
       source_url = slug == 'docs' ? '/docs/introduction' : "/#{slug}"
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == source_url }
       title = page.data['writer_title'] || page.data.fetch('title')
@@ -93,7 +93,7 @@ class WriterPreview < Jekyll::Generator
       template_source = writer_include ? "{% include #{writer_include} %}" : page.content
       template = site.liquid_renderer.file(page.path).parse(template_source)
       context = { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] }
-      context['preview_links'] = preview_links(site.pages).merge(reference_links) if %w[docs docs/advanced docs/guides docs/sdk sitemap].include?(slug)
+      context['preview_links'] = preview_links(site.pages).merge(reference_links) if %w[docs/advanced docs/guides docs/sdk sitemap].include?(slug)
       content = template.render!(context, registers: { site: site })
       link_map = case slug
                  when 'docs/advanced', 'docs/cli'
@@ -101,7 +101,7 @@ class WriterPreview < Jekyll::Generator
                  when 'changelog'
                    reference_links.select { |_, target| target.start_with?('/v2/docs/custody/') }
                  end
-      add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}", page.data.fetch('writer_layout', 'auto'), links: link_map)
+      add_preview(site, "/v2/#{slug}/", title, "# #{title}\n\n#{content.strip}", page.data.fetch('writer_layout', 'columns'), links: link_map)
     end
 
     links = preview_links(site.pages).merge(reference_links)
@@ -176,7 +176,7 @@ class WriterPreview < Jekyll::Generator
       context['post_content'] = template.render!(context, registers: registers)
       title = post.data.fetch('title')
       body = frame.render!(context, registers: registers)
-      add_preview(site, links.fetch(post.url), title, "# #{title}\n\n#{body.strip}", 'columns', links: links, blog_post: true)
+      add_preview(site, links.fetch(post.url), title, "# #{title}\n\n#{body.strip}", 'single', links: links, blog_post: true)
     end
   end
 
@@ -206,27 +206,18 @@ class WriterPreview < Jekyll::Generator
     end
   end
 
-  def doc_column_limit(content)
-    return if content.at_css('video, iframe, canvas, table')
+  def strip_description_period(document)
+    description = document.root.children.drop(1).find { |element| element.type != :blank }
+    description = description.children.last if description&.type == :blockquote
+    return unless description&.type == :p
 
-    # Estimate the height of each image in 36px blocks at the standard reading width.
-    image_blocks = content.css('img').sum do |image|
-      width = image['width'].to_i
-      height = image['height'].to_i
-      next 4 unless width.positive? && height.positive?
+    text = description.children.last
+    return unless text&.type == :text
 
-      (height * [width, 336].min.fdiv(width) / 36).ceil
-    end
-    blocks = content.css('p, li, pre, blockquote, h2, h3, h4').size + image_blocks
-    code_lines = content.css('pre').sum { |block| block.text.strip.lines.size }
-    words = content.text.split.size
-
-    (1..2).find do |columns|
-      blocks <= 16 * columns && code_lines <= 8 * columns && words < 150 * columns
-    end
+    text.value = text.value.sub(/(?<!\.)\.\z/, '')
   end
 
-  def add_preview(site, permalink, title, markdown, writer_layout = 'auto', links: nil, blog_post: false)
+  def add_preview(site, permalink, title, markdown, writer_layout, links: nil, blog_post: false)
     path = permalink.delete_prefix('/')
     directory, filename = path.end_with?('/') ? [path.delete_suffix('/'), 'index.html'] : File.split(path)
     preview = Jekyll::PageWithoutAFile.new(site, site.source, directory, filename)
@@ -235,6 +226,8 @@ class WriterPreview < Jekyll::Generator
       document.root.children.drop(1).each do |element|
         element.options[:level] = element.options[:level].clamp(2, 3) if element.type == :header
       end
+    else
+      strip_description_period(document)
     end
     export_html, = WriterMarkdownExport::Html.convert(document.root, document.options)
     preview.content, = WriterMarkdown.convert(document.root, document.options)
@@ -247,19 +240,12 @@ class WriterPreview < Jekyll::Generator
     heading = preview.content[/\A\s*<h1\b.*?<\/h1>/m]
     preview.content = preview.content.delete_prefix(heading) if heading
     markdown_url = permalink == '/v2/' ? '/v2/index.md' : "#{permalink.delete_suffix('/').delete_suffix('.html')}.md"
-    unless %w[auto single columns wide].include?(writer_layout)
+    unless %w[single two-columns columns wide].include?(writer_layout)
       raise ArgumentError, "Unknown writer_layout #{writer_layout.inspect} for #{permalink}"
-    end
-    docs_columns = permalink.start_with?('/v2/docs/') && writer_layout != 'wide'
-    if writer_layout == 'auto' || docs_columns
-      content = Nokogiri::HTML.fragment(preview.content)
-      content.css('script, style, .writer-markdown-syntax, .writer-markdown-detail').remove
-      writer_layout = content.text.split.length < 250 ? 'single' : 'columns' if writer_layout == 'auto'
     end
     preview.data.merge!(
       'layout' => 'writer',
       'writer_layout' => writer_layout,
-      'writer_doc_column_limit' => docs_columns ? doc_column_limit(content) : nil,
       'writer_markdown' => raw_markdown,
       'writer_heading' => heading,
       'writer_markdown_url' => markdown_url,

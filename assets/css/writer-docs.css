@@ -8,22 +8,6 @@
   .writer--docs.writer--columns {
     --writer-column-width: 336px;
     --writer-column-gap: 64px;
-    --writer-docs-track-width: calc((100% - (var(--writer-columns) - 1) * var(--writer-column-gap)) / var(--writer-columns));
-  }
-
-  .writer--docs.writer--columns:not(.writer--docs-two-columns) {
-    /* Keep the same outer frame as the number of columns changes. */
-    max-width: calc(3 * var(--writer-column-width) + 2 * var(--writer-column-gap) + 2 * var(--writer-gutter));
-  }
-
-  .writer-column-content[data-writer-column-limit="1"] {
-    column-count: 1;
-    max-width: var(--writer-docs-track-width);
-  }
-
-  .writer-column-content[data-writer-column-limit="2"] {
-    column-count: 2;
-    max-width: calc(2 * var(--writer-docs-track-width) + var(--writer-column-gap));
   }
 
   .writer--resource .writer-column-content:has(> :is(.docs-stats-table, .spec-table-wrap)) {
@@ -33,10 +17,6 @@
   .writer--resource .writer-column-content:has(> :is(.docs-stats-table, .spec-table-wrap)) > :is(blockquote, p:not(.docs-stats-note)) {
     max-width: var(--writer-column-width);
   }
-}
-
-@media screen and (min-width: 1200px) {
-  .writer--docs.writer--columns:not(.writer--docs-two-columns) { --writer-columns: 3; }
 }
 
 .writer .dotenv-jump-links {

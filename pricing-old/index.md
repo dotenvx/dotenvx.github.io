@@ -3,14 +3,25 @@ description: "Compare Dotenvx Armor plans for secrets access control, audit hist
 title: "Pricing (Legacy)"
 image: "/assets/img/og-image-pricing.png"
 layout: radar
+writer_layout: wide
 ---
 
-<div class="pricing-page">
-  {% include components/pricing/hero.html %}
+{% if writer_preview %}
+> Compare legacy Dotenvx Armor plans
+
+[See current pricing]({{ '/v2/pricing/' | relative_url }})
+
+{% endif %}
+<div class="{% if writer_preview %}writer-pricing-comparison{% else %}pricing-page{% endif %}">
+  {% unless writer_preview %}{% include components/pricing/hero.html %}{% endunless %}
   {% include components/pricing/plans.html %}
   {% include components/pricing/compare-access.html %}
   {% include components/pricing/compare-audit.html %}
   {% include components/pricing/compare-auditability.html %}
   {% include components/pricing/compare-support.html %}
-  {% include components/faq-yes.html source=true %}
+  {% if writer_preview %}
+    {% include components/faq-yes.html %}
+  {% else %}
+    {% include components/faq-yes.html source=true %}
+  {% endif %}
 </div>

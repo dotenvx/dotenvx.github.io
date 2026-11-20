@@ -9,7 +9,7 @@ body_class: home-page
 {% if writer_preview %}
 - [Privacy Policy]({{ '/v2/privacy/' | relative_url }})
 - [Terms of Service]({{ '/v2/terms/' | relative_url }})
-- [Trust Center]({{ '/trust/' | relative_url }})
+- [Trust Center]({{ '/v2/trust/' | relative_url }})
 {% else %}
 <style>
   .legal-hero-key { aspect-ratio: 4 / 3; width: 100%; }

@@ -5,36 +5,7 @@ permalink: /docs/advanced/
 layout: radar
 ---
 
-{% if writer_preview %}
-> {{ page.description }}
-
-<p><img class="writer-image" src="{{ '/advanced.png' | relative_url }}" alt="Desk with a computer and a vase of sunflowers" width="768" height="307"></p>
-{% else %}
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Advanced"
-  description="Become a power user of dotenvx."
-  mark="advanced"
-%}
-{% endif %}
-
-{% unless writer_preview %}
-<section class="radar-section">
-<div class="armor-shell">
-<div class="design-content-width">
-<div class="docs-intro-lists">
-{% endunless %}
-{% capture step_content %}
-{% include components/docs-cli-commands.html group="standard" writer=writer_preview %}
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true writer=writer_preview %}
-
-{% capture step_content %}
-{% include components/docs-cli-commands.html group="hidden" title="Hidden Commands" writer=writer_preview %}
-{% endcapture %}
-{% include components/design-step.html content=step_content markdown=true writer=writer_preview %}
-
-{% capture step_content %}
+{% capture advanced_toml_content %}
 
 ## Dotenvx.toml
 
@@ -56,9 +27,9 @@ layout: radar
 <li><a class="design-link" href="/docs/dotenvxtoml/">All Dotenvx.toml →</a></li>
 </ul>
 {% endcapture %}
-{% include components/design-step.html content=step_content markdown=true writer=writer_preview %}
 
 {% if writer_preview %}
+> {{ page.description }}
 
 ## SDKs
 
@@ -76,7 +47,40 @@ layout: radar
 
 {% assign guides_page = site.pages | where: 'url', '/docs/guides/' | first %}
 {% include writer-guide-list.md sections=guides_page.guide_sections %}
+
+{{ advanced_toml_content }}
+
+{% include components/docs-cli-commands.html writer=true %}
+
+## Resources
+
+<ul>
+{% include components/docs-resource-items.html %}
+</ul>
 {% else %}
+{% include components/docs-hero.html
+  eyebrow="Docs"
+  title="Advanced"
+  description="Become a power user of dotenvx."
+  mark="advanced"
+%}
+
+<section class="radar-section">
+<div class="armor-shell">
+<div class="design-content-width">
+<div class="docs-intro-lists">
+{% capture step_content %}
+{% include components/docs-cli-commands.html group="standard" %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% capture step_content %}
+{% include components/docs-cli-commands.html group="hidden" title="Hidden Commands" %}
+{% endcapture %}
+{% include components/design-step.html content=step_content markdown=true %}
+
+{% include components/design-step.html content=advanced_toml_content markdown=true %}
+
 {% capture advanced_sdk_items %}
   {% for option in site.data.advanced_sdk %}
     {% if option.href contains "/docs/sdk/nodejs/" %}

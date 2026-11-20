@@ -27,7 +27,7 @@
       {% endfor %}
     </tr>
     <tr>
-      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Additional usage. Price per 1,000 audit events beyond your monthly allowance." data-tooltip="Price per 1,000 audit events beyond your monthly allowance">Additional usage</span></th>
+      <th scope="row"><span class="pricing-value-detail pricing-value-detail--label" tabindex="0" aria-label="Additional usage. Price per 1,000 audit events beyond your monthly allowance." data-tooltip="Price per 1,000 audit events beyond your monthly allowance">Additional usage{% if writer_preview %} per 1,000 events{% endif %}</span></th>
       <td class="design-table-cell--center">$0.20</td>
       <td class="design-table-cell--center">$0.10</td>
       <td class="design-table-cell--center">$0.025</td>

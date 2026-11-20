@@ -67,6 +67,12 @@
   {% endif %}
 {% endcapture %}
 
+{% if writer_preview %}
+  <h2>FAQ</h2>
+  <ul>
+    {{ faq_yes_items }}
+  </ul>
+{% else %}
 <section class="radar-section" aria-label="FAQ">
   <div class="armor-shell">
     {% include components/design-list.html
@@ -76,3 +82,4 @@
     %}
   </div>
 </section>
+{% endif %}

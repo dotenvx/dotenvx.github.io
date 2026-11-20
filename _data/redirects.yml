@@ -57,6 +57,7 @@
 "/v2/agents": "/v2/docs/dotenvxtoml/"
 "/v2/agents/": "/v2/docs/dotenvxtoml/"
 "/v2/contact/": "/v2/about/"
+"/v2/trust/": "https://trust.oneleet.com/dotenvx"
 "/vlt/": "/armor/"
 "/vscode": "https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode"
 "/vscode-extension/": "https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode"

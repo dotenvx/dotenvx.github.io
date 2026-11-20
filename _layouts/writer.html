@@ -2,15 +2,11 @@
 {% assign writer_path_prefix = page.url | slice: 0, 9 %}
 {% if writer_path_prefix == '/v2/docs/' %}{% assign writer_docs_section = true %}{% endif %}
 {% assign writer_reference_prefix = page.url | slice: 0, 13 %}
-{% assign writer_custody_prefix = page.url | slice: 0, 17 %}
-{% assign writer_toml_prefix = page.url | slice: 0, 21 %}
 {% if writer_reference_prefix == '/v2/docs/sdk/' %}{% assign writer_sdk_section = true %}{% endif %}
-{% assign writer_guides_url = '/v2/docs/guides/' %}
 {% assign writer_whitepaper_url = '/whitepaper.pdf' | relative_url %}
 {% assign writer_github_url = 'https://github.com/dotenvx' %}
-{% assign writer_layout = page.writer_layout | default: 'single' %}
-{% if writer_docs_section and writer_layout != 'wide' %}{% assign writer_layout = 'columns' %}{% endif %}
-{% if page.url == '/v2/docs/install/' or page.url == '/v2/docs/quickstart/' %}{% assign writer_docs_two_columns = true %}{% endif %}
+{% assign writer_layout = page.writer_layout | default: 'columns' %}
+{% if writer_layout == 'columns' or writer_layout == 'two-columns' %}{% assign writer_multicolumn = true %}{% endif %}
 {% if page.url == '/v2/blog/' or page.writer_blog_post %}{% assign writer_blog_section = true %}{% endif %}
 {% if page.url == '/v2/about/' or page.url == '/v2/changelog/' or page.url == '/v2/newsletter/' or writer_blog_section %}{% assign writer_about_section = true %}{% endif %}
 <html lang="en">
@@ -37,6 +33,7 @@
       </nav>
       <div class="writer-nav-actions">
         <button type="button" class="writer-nav-mode" data-writer-mode-toggle aria-label="Dark mode" aria-keyshortcuts="M" aria-pressed="false" title="Toggle light or dark mode (M)">[m]</button>
+        <button type="button" class="writer-nav-search" data-site-search-open aria-label="Search" aria-keyshortcuts="/ Meta+K Control+K" aria-haspopup="dialog" title="Search (Command+K or /)">[cmd+k]</button>
         <a class="writer-nav-login" href="{{ '/login' | relative_url }}">Login</a>
       </div>
     </div>
@@ -44,7 +41,6 @@
     <nav class="writer-subnav" aria-label="About">
       <a href="{{ '/v2/changelog/' | relative_url }}"{% if page.url == '/v2/changelog/' %} aria-current="page"{% endif %}>Changelog</a>
       <a href="{{ '/v2/blog/' | relative_url }}"{% if page.url == '/v2/blog/' %} aria-current="page"{% elsif page.writer_blog_post %} aria-current="location"{% endif %}>Blog</a>
-      <a href="{{ '/v2/newsletter/' | relative_url }}"{% if page.url == '/v2/newsletter/' %} aria-current="page"{% endif %}>Newsletter</a>
       <a href="{{ writer_whitepaper_url }}">Whitepaper</a>
       <a href="{{ writer_github_url }}">GitHub</a>
     </nav>
@@ -53,12 +49,6 @@
       <a href="{{ '/v2/docs/install/' | relative_url }}"{% if page.url == '/v2/docs/install/' %} aria-current="page"{% endif %}>Install</a>
       <a href="{{ '/v2/docs/quickstart/' | relative_url }}"{% if page.url == '/v2/docs/quickstart/' %} aria-current="page"{% endif %}>Quickstart</a>
       <a href="{{ '/v2/docs/advanced/' | relative_url }}"{% if page.url == '/v2/docs/advanced/' %} aria-current="page"{% endif %}>Advanced</a>
-      <a href="{{ writer_guides_url | relative_url }}"{% if page.url == writer_guides_url %} aria-current="page"{% elsif page.writer_guide %} aria-current="location"{% endif %}>Guides</a>
-      <a href="{{ '/v2/docs/custody/' | relative_url }}"{% if page.url == '/v2/docs/custody/' %} aria-current="page"{% elsif writer_custody_prefix == '/v2/docs/custody/' %} aria-current="location"{% endif %}>Custody</a>
-      <a href="{{ '/v2/docs/cli/' | relative_url }}"{% if page.url == '/v2/docs/cli/' %} aria-current="page"{% elsif writer_reference_prefix == '/v2/docs/cli/' %} aria-current="location"{% endif %}>CLI</a>
-      <a href="{{ '/v2/docs/sdk/' | relative_url }}"{% if page.url == '/v2/docs/sdk/' %} aria-current="page"{% elsif writer_sdk_section %} aria-current="location"{% endif %}>SDKs</a>
-      <a href="{{ '/v2/docs/dotenvxtoml/' | relative_url }}"{% if page.url == '/v2/docs/dotenvxtoml/' %} aria-current="page"{% elsif writer_toml_prefix == '/v2/docs/dotenvxtoml/' %} aria-current="location"{% endif %}>Dotenvx.toml</a>
-      <a href="{{ '/v2/docs/resources/' | relative_url }}"{% if page.url == '/v2/docs/resources/' %} aria-current="page"{% elsif page.writer_resource %} aria-current="location"{% endif %}>Resources</a>
     </nav>
     {% if writer_sdk_section %}
     {% assign sdk_index = site.pages | where: 'url', '/docs/sdk/' | first %}
@@ -72,19 +62,19 @@
     {% endif %}
     {% endif %}
   </header>
-  <main class="writer writer--{{ writer_layout }}{% if writer_docs_section %} writer--docs{% endif %}{% if writer_docs_two_columns %} writer--docs-two-columns{% endif %}{% if page.writer_blog_post %} writer--post{% endif %}{% if page.writer_resource %} writer--resource{% endif %}">
+  <main class="writer writer--{{ writer_layout }}{% if writer_layout == 'two-columns' %} writer--columns{% endif %}{% if writer_docs_section %} writer--docs{% endif %}{% if page.writer_blog_post %} writer--post{% endif %}{% if page.writer_resource %} writer--resource{% endif %}">
     <div class="writer-page-heading">
       {{ page.writer_heading }}
     </div>
-    {% if writer_layout == 'columns' %}
+    {% if writer_multicolumn %}
       {% if page.url == '/v2/' %}
       <div class="writer-home-columns">
       {% else %}
-      <div class="writer-column-content{% if page.writer_guide %} docs-markdown-body{% endif %}"{% if page.writer_doc_column_limit %} data-writer-column-limit="{{ page.writer_doc_column_limit }}"{% endif %}>
+      <div class="writer-column-content{% if page.writer_guide %} docs-markdown-body{% endif %}">
       {% endif %}
     {% endif %}
       {{ content }}
-    {% if writer_layout == 'columns' %}</div>{% endif %}
+    {% if writer_multicolumn %}</div>{% endif %}
   </main>
   <p class="writer-markdown-action"><a class="writer-markdown-link writer-meta" href="{{ page.writer_markdown_url | relative_url }}">markdown</a></p>
   <footer class="writer-footer">
@@ -93,7 +83,7 @@
       <p><a href="mailto:support@dotenvx.com">support@dotenvx.com</a></p>
     </div>
     <nav aria-label="Footer">
-      {% assign writer_footer_paths = '/armor,/privacy,/terms,/opensource,/search,/sitemap' | split: ',' %}
+      {% assign writer_footer_paths = '/armor,/privacy,/terms,/opensource,/search,/sitemap,/trust' | split: ',' %}
       {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/blog' and link.href != '/docs' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub' and link.label != 'Agents' and link.label != 'Pricing'" %}
       <p class="writer-footer-links">
         <a href="{{ '/v2/' | relative_url }}">Home</a>
@@ -110,7 +100,10 @@
           {%- else -%}
             {% assign writer_footer_path = link.href %}
             {% assign writer_footer_last = link.href | slice: -1 %}
-            {% if writer_footer_last == '/' %}{% assign writer_footer_path = link.href | remove_last: '/' %}{% endif %}
+            {% if writer_footer_last == '/' %}
+              {% assign writer_footer_length = link.href.size | minus: 1 %}
+              {% assign writer_footer_path = link.href | slice: 0, writer_footer_length %}
+            {% endif %}
             <a href="{% if writer_footer_paths contains writer_footer_path %}{{ writer_footer_path | prepend: '/v2' | append: '/' | relative_url }}{% elsif link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
           {%- endif -%}
         {% endfor %}

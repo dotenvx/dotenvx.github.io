@@ -5,7 +5,7 @@ social_title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 description: "Encrypt .env files, commit them safely, and load environment variables in any language or framework with Dotenvx, from the creator of dotenv."
 layout: home
 body_class: home-page
-writer_layout: columns
+writer_layout: two-columns
 ---
 
 {% capture home_design_content %}
@@ -28,30 +28,10 @@ The result is a system built entirely from primitives, developers already unders
 {: .design-paragraph}
 
 {% if writer_preview %}
-Best of all, attackers hate this. They have to gain access to both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure.
+Best of all, attackers hate this. They have to gain access to both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure as documented in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
 {: .design-paragraph}
 
-<table class="writer-data-table" aria-labelledby="secret-exposure-table-title">
-  <thead>
-    <tr class="writer-table-title">
-      <th id="secret-exposure-table-title" colspan="3">Probability of Full Secret Exposure</th>
-    </tr>
-    <tr>
-      <th scope="col">Years</th>
-      <th scope="col">Conventional</th>
-      <th scope="col">Dotenvx</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>1.00%</td><td>0.005%</td></tr>
-    <tr><td>5</td><td>4.90%</td><td>0.025%</td></tr>
-    <tr><td>10</td><td>9.56%</td><td>0.049%</td></tr>
-    <tr><td>20</td><td>18.21%</td><td>0.098%</td></tr>
-  </tbody>
-</table>
-
-Source: [Whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=13), p. 13.
-{: .writer-table-note}
+<p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="writer-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
 {% else %}
 [Read the whitepaper →](/dotenvx.pdf){: .design-link}
 {: .design-paragraph .text-center}
@@ -326,7 +306,7 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 - 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
 - [John Zila](/v2/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
-- [Dhravya Shah](/v2/members/supermemory/) (CEO of Supermemory): *set one key and all our secrets just work*
+- [Dhravya Shah](/v2/members/supermemory/) (CEO of Supermemory): *set one key and all your secrets just work*
 
 </div>
 {% else %}

@@ -9,24 +9,26 @@ redirect_from:
   - /docs/process-managers/
 layout: radar
 body_class: docs-landing
-writer_layout: columns
+writer_layout: single
 ---
 
 {% if writer_preview %}
-> Install Dotenvx, encrypt .env files
+[Install]({{ '/v2/docs/install/' | relative_url }})<br>
+Get the Dotenvx CLI
 
-<p><img class="writer-image" src="{{ '/docs.png' | relative_url }}" alt="A cyclist silhouetted against a sunset and palm trees" width="768" height="307"></p>
+**[Quickstart]({{ '/v2/docs/quickstart/' | relative_url }})**<br>
+Encrypt your first `.env` file and run your app
 
-{% for section in site.data.docs_navigation %}
-{% unless forloop.first %}## {{ section.label }}{% endunless %}
+[Advanced]({{ '/v2/docs/advanced/' | relative_url }})<br>
+Find guides, CLI commands, and `Dotenvx.toml` options
 
-{% for link in section.children -%}
-{% assign href = preview_links[link.href] | default: link.href -%}
-- [{{ link.label | remove: ' →' | remove: ' ↗' }}]({{ href | relative_url }})
-{% endfor -%}
-{: .writer-docs-list}
+## Integrations and key storage
 
-{% endfor %}
+[SDKs]({{ '/v2/docs/sdk/' | relative_url }})<br>
+Load encrypted `.env` files directly in your app
+
+[Custody]({{ '/v2/docs/custody/' | relative_url }})<br>
+Choose where to keep your private keys
 {% else %}
 {% capture docs_hero_visual %}
   <div class="docs-hero-ascii" aria-hidden="true">

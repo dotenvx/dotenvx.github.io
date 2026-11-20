@@ -3,7 +3,7 @@ description: "Read the Dotenvx blog for guides and updates on environment variab
 title: "Blog"
 layout: radar
 body_class: home-page
-writer_layout: columns
+writer_layout: single
 ---
 
 {% assign blog_description = "Reflections on building Dotenvx" %}
@@ -12,8 +12,6 @@ writer_layout: columns
 
 {% if writer_preview %}
 > {{ blog_description }}
-
-<p><img class="writer-image" src="{{ '/blog.png' | relative_url }}" alt="Outdoor swimming pool with a diving board" width="768" height="307"></p>
 
 {% for year_group in posts_by_year %}
 ## {{ year_group.name }}

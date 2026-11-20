@@ -1,7 +1,5 @@
 > {{ page.description }}
 
-<p><img class="writer-image" src="{{ '/quickstart.png' | relative_url }}" alt="Dotenvx asking where to store the private key for .env.production" width="768" height="307"></p>
-
 ## Install
 
 {% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}

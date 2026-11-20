@@ -3,7 +3,7 @@
   if (!sidebar) return;
   const details = sidebar.querySelector('details');
   const scroller = sidebar.querySelector('nav');
-  const desktop = matchMedia(sidebar.classList.contains('writer-docs-sidebar') ? '(min-width: 48rem)' : '(min-width: 64rem)');
+  const desktop = matchMedia('(min-width: 64rem)');
   const drawer = sidebar.querySelector('.docs-drawer');
   const toggle = sidebar.querySelector('.docs-drawer-toggle');
   const close = sidebar.querySelector('.docs-drawer-close');
@@ -81,7 +81,7 @@
       saveWidth();
     });
   }
-  const chrome = document.querySelector('.radar-chrome, .writer-header');
+  const chrome = document.querySelector('.radar-chrome');
   if (chrome) new ResizeObserver(() => {
     document.documentElement.style.setProperty('--docs-nav-top', `${chrome.getBoundingClientRect().height}px`);
   }).observe(chrome);

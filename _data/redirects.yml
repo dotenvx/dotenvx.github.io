@@ -54,6 +54,8 @@
 "/spec/": "/v2/docs/spec/"
 "/spec/table.html": "/v2/docs/spec/table.html"
 "/support/": "/contact/"
+"/v2/agents": "/v2/docs/dotenvxtoml/"
+"/v2/agents/": "/v2/docs/dotenvxtoml/"
 "/v2/contact/": "/v2/about/"
 "/vlt/": "/armor/"
 "/vscode": "https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode"

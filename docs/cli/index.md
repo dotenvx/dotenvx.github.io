@@ -13,6 +13,8 @@ layout: radar
 {% if writer_preview %}
 > {{ page.description }}
 
+<p><img class="writer-image" src="{{ '/cli.png' | relative_url }}" alt="Sunglasses beside a laptop keyboard" width="768" height="307"></p>
+
 {% include components/docs-cli-commands.html writer=true %}
 {% else %}
 {% include components/docs-hero.html

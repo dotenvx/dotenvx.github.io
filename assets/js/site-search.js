@@ -186,14 +186,15 @@
       document.body.appendChild(overlay)
     }
 
-    var preferPreview = hasPage && pageForm.hasAttribute('data-site-search-v2')
+    var pagePrefersPreview = hasPage && pageForm.hasAttribute('data-site-search-v2')
+    var modalPrefersPreview = hasModal && modalForm.hasAttribute('data-site-search-v2')
 
     var index = null
+    var indexRequest = null
     var pageTimer = null
     var modalTimer = null
     var pageTrackTimer = null
     var modalTrackTimer = null
-    var activeIndex = -1
     var lastFocus = null
     var lastTracked = { page: '', modal: '' }
 
@@ -222,14 +223,12 @@
 
     function runPage(query) {
       if (!index || !pageResults) return
-      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, preferPreview)
-      activeIndex = query && pageResults.querySelector('[data-site-search-hit]') ? 0 : -1
+      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, pagePrefersPreview)
     }
 
     function runModal(query) {
       if (!index) return
-      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, false)
-      activeIndex = query && modalResults.querySelector('[data-site-search-hit]') ? 0 : -1
+      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, modalPrefersPreview)
     }
 
     function hitRoot() {
@@ -239,22 +238,15 @@
 
     function setActive(next) {
       var root = hitRoot()
-      if (!root) {
-        activeIndex = -1
-        return
-      }
+      if (!root) return
       var nodes = root.querySelectorAll('[data-site-search-hit]')
-      if (!nodes.length) {
-        activeIndex = -1
-        return
-      }
+      if (!nodes.length) return
       if (next < 0) next = nodes.length - 1
       if (next >= nodes.length) next = 0
-      activeIndex = next
       nodes.forEach(function (node, i) {
-        node.classList.toggle('is-active', i === activeIndex)
+        node.classList.toggle('is-active', i === next)
       })
-      nodes[activeIndex].scrollIntoView({ block: 'nearest' })
+      nodes[next].scrollIntoView({ block: 'nearest' })
     }
 
     function focusModalInput() {
@@ -269,10 +261,12 @@
       overlay.hidden = false
       overlay.classList.add('is-open')
       overlay.setAttribute('aria-hidden', 'false')
+      if (overlay.showModal) overlay.showModal()
       document.body.classList.add('overflow-hidden')
       focusModalInput()
       window.requestAnimationFrame(focusModalInput)
-      if (index && modalInput.value) runModal(modalInput.value)
+      if (!index) loadIndex()
+      else if (modalInput.value) runModal(modalInput.value)
     }
 
     function close() {
@@ -280,6 +274,7 @@
       window.clearTimeout(modalTrackTimer)
       commitSearch(modalInput.value, 'modal', MODAL_MAX_RESULTS)
       overlay.classList.remove('is-open')
+      if (overlay.close) overlay.close()
       overlay.hidden = true
       overlay.setAttribute('aria-hidden', 'true')
       document.body.classList.remove('overflow-hidden')
@@ -292,24 +287,30 @@
     if (hasPage && initial) pageInput.value = initial
     else if (hasModal && initial) modalInput.value = initial
 
-    fetch(indexUrl(hasModal ? overlay : pageForm), { credentials: 'same-origin' })
-      .then(function (res) {
-        if (!res.ok) throw new Error('search index failed')
-        return res.json()
-      })
-      .then(function (data) {
-        index = Array.isArray(data) ? data : []
-        if (hasPage) {
-          runPage(pageInput.value)
-          if (initial) commitSearch(initial, 'page', PAGE_MAX_RESULTS)
-        }
-        if (isOpen()) runModal(modalInput.value)
-      })
-      .catch(function () {
-        var message = '<p class="site-search-empty">Search is unavailable right now.</p>'
-        if (hasModal) modalResults.innerHTML = message
-        if (hasPage) pageResults.innerHTML = message
-      })
+    function loadIndex() {
+      if (indexRequest) return
+      indexRequest = fetch(indexUrl(hasModal ? overlay : pageForm), { credentials: 'same-origin' })
+        .then(function (res) {
+          if (!res.ok) throw new Error('search index failed')
+          return res.json()
+        })
+        .then(function (data) {
+          index = Array.isArray(data) ? data : []
+          if (hasPage) {
+            runPage(pageInput.value)
+            if (initial) commitSearch(initial, 'page', PAGE_MAX_RESULTS)
+          }
+          if (isOpen()) runModal(modalInput.value)
+        })
+        .catch(function () {
+          indexRequest = null
+          var message = '<p class="site-search-empty">Search is unavailable right now.</p>'
+          if (hasModal) modalResults.innerHTML = message
+          if (hasPage) pageResults.innerHTML = message
+        })
+    }
+
+    if (hasPage || !modalPrefersPreview) loadIndex()
 
     if (hasPage) {
       pageInput.addEventListener('input', function () {
@@ -420,6 +421,8 @@
         if (!isOpen() && (!hasPage || !pageForm.contains(event.target))) return
         var root = hitRoot()
         if (!root || !root.querySelector('[data-site-search-hit]')) return
+        var active = root.querySelector('.site-search-hit.is-active')
+        var activeIndex = active ? Number(active.getAttribute('data-site-search-hit')) : -1
         event.preventDefault()
         setActive(activeIndex + (event.key === 'ArrowDown' ? 1 : -1))
       }

@@ -1,6 +1,12 @@
-<div class="site-search-overlay" data-site-search-overlay data-site-search-index="{{ '/search.json' | relative_url | append: cacheBust }}" hidden aria-hidden="true">
-  <div class="site-search-dialog design-card" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
-    <form class="site-search" data-site-search action="/search/" method="get" role="search">
+{% assign search_overlay_tag = 'div' %}
+{% assign search_path = '/search/' %}
+{% if include.v2 %}
+  {% assign search_overlay_tag = 'dialog' %}
+  {% assign search_path = '/v2/search/' %}
+{% endif %}
+<{{ search_overlay_tag }} class="site-search-overlay" data-site-search-overlay data-site-search-index="{{ '/search.json' | relative_url | append: cacheBust }}"{% if include.v2 %} aria-labelledby="site-search-title"{% endif %} hidden aria-hidden="true">
+  <div class="site-search-dialog design-card"{% unless include.v2 %} role="dialog" aria-modal="true" aria-labelledby="site-search-title"{% endunless %}>
+    <form class="site-search" data-site-search{% if include.v2 %} data-site-search-v2{% endif %} action="{{ search_path | relative_url }}" method="get" role="search">
       <div class="site-search-bar">
         <label class="site-search-label" for="site-search-modal-input" id="site-search-title">Search</label>
         <input
@@ -23,5 +29,5 @@
       <div class="site-search-results" data-site-search-results aria-live="polite"></div>
     </form>
   </div>
-</div>
-<script src="{{ '/assets/js/site-search.js' | relative_url | append: cacheBust }}"></script>
+</{{ search_overlay_tag }}>
+<script src="{{ '/assets/js/site-search.js' | relative_url | append: cacheBust }}"{% if include.v2 %} defer{% endif %}></script>

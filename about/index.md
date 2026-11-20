@@ -59,7 +59,7 @@ body_class: home-page about-page
           <a href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx</a>
         </li>
         <li><strong>Secrets separate from agents.</strong> We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.<br>
-          <a href="{{ '/v2/agents/' | relative_url }}">Dotenvx.toml</a>
+          <a href="{{ site.data.redirects['/v2/agents/'] | relative_url }}">Dotenvx.toml</a>
         </li>
       </ol>
       {% else %}
@@ -85,7 +85,7 @@ body_class: home-page about-page
           <div>
             <h2 id="about-agents">Secrets separate from agents</h2>
             <p class="design-paragraph">We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.</p>
-            <a class="design-link" href="{% if writer_preview %}{{ '/v2/agents/' | relative_url }}{% else %}/agents{% endif %}">Dotenvx.toml{% unless writer_preview %} →{% endunless %}</a>
+            <a class="design-link" href="/agents">Dotenvx.toml →</a>
           </div>
         </section>
       </div>

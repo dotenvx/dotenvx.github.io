@@ -32,7 +32,7 @@ body_class: home-page careers-page
           <h2>The work</h2>
           <p>Build integrations that help agents use secrets safely. Improve the CLI and SDKs, develop workflows for controlled access and human approval, and make secret redaction reliable across agent tools.</p>
           <p>Work through real developer workflows from setup to production. Reproduce failures, write tests for security boundaries, and ship improvements that are easy to understand and adopt. Use agents in your own engineering work and bring what you learn back into the product.</p>
-          <p><a href="{% if writer_preview %}/v2/agents/{% else %}/ai{% endif %}">Read about the next chapter of .env{% unless writer_preview %} →{% endunless %}</a></p>
+          <p>{% if writer_preview %}<a href="{{ site.data.redirects['/v2/agents/'] | relative_url }}">Read the Dotenvx.toml docs</a>{% else %}<a href="/ai">Read about the next chapter of .env →</a>{% endif %}</p>
 
           <h2>What you bring</h2>
           <p>You build and ship developer tools, care about security, and can explain the tradeoffs in your code. You're comfortable working with command-line tools, APIs, and agent integrations, and you test what happens when things go wrong.</p>

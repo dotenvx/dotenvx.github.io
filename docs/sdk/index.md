@@ -31,6 +31,8 @@ sdk_languages:
 {% if writer_preview %}
 > Load and manage encrypted env from your language.
 
+<p><img class="writer-image" src="{{ '/sdks.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
+
 ## Languages
 
 {% for sdk in page.sdk_languages -%}

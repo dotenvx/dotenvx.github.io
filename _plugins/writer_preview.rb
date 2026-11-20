@@ -59,15 +59,6 @@ class WriterPreview < Jekyll::Generator
     home = site.pages.find { |page| page.path == 'index.md' }
     add_preview(site, '/v2/', 'Dotenvx · v2 preview', markdown, home&.data&.fetch('writer_layout', 'auto'))
 
-    agents = site.pages.find { |page| page.url == '/agents' }
-    title = agents.data.fetch('title')
-    agents_intro = site.liquid_renderer.file('v2 agents hero').parse(
-      "{{ description }}\n\n{% include components/agents-proof.html %}"
-    ).render!(
-      { 'description' => agents.data.fetch('description'), 'writer_preview' => true, 'site' => site.site_payload['site'] },
-      registers: { site: site }
-    )
-    add_preview(site, '/v2/agents/', title, "# #{title}\n\n#{agents_intro}\n\n#{agents.content}", agents.data.fetch('writer_layout', 'auto'))
     pricing = File.read(site.in_source_dir('_includes/writer-pricing.md'))
     pricing = site.liquid_renderer.file('_includes/writer-pricing.md').parse(pricing).render!(
       { 'writer_preview' => true, 'site' => site.site_payload['site'] }, registers: { site: site }
@@ -166,7 +157,8 @@ class WriterPreview < Jekyll::Generator
       context['docs_body'] = template.render!(context, registers: registers)
       content = frame.render!(context, registers: registers)
       title = page.data.fetch('title')
-      preview = add_preview(site, "/v2#{page.url}", title, "# #{CGI.escapeHTML(title)}\n\n#{content.strip}", 'columns', links: links)
+      preview = add_preview(site, "/v2#{page.url}", title, "# #{CGI.escapeHTML(title)}\n\n#{content.strip}",
+                            page.data.fetch('writer_layout', 'columns'), links: links)
       preview.data.merge!(metadata)
     end
   end
@@ -214,6 +206,26 @@ class WriterPreview < Jekyll::Generator
     end
   end
 
+  def doc_column_limit(content)
+    return if content.at_css('video, iframe, canvas, table')
+
+    # Estimate the height of each image in 36px blocks at the standard reading width.
+    image_blocks = content.css('img').sum do |image|
+      width = image['width'].to_i
+      height = image['height'].to_i
+      next 4 unless width.positive? && height.positive?
+
+      (height * [width, 336].min.fdiv(width) / 36).ceil
+    end
+    blocks = content.css('p, li, pre, blockquote, h2, h3, h4').size + image_blocks
+    code_lines = content.css('pre').sum { |block| block.text.strip.lines.size }
+    words = content.text.split.size
+
+    (1..2).find do |columns|
+      blocks <= 16 * columns && code_lines <= 8 * columns && words < 150 * columns
+    end
+  end
+
   def add_preview(site, permalink, title, markdown, writer_layout = 'auto', links: nil, blog_post: false)
     path = permalink.delete_prefix('/')
     directory, filename = path.end_with?('/') ? [path.delete_suffix('/'), 'index.html'] : File.split(path)
@@ -238,15 +250,16 @@ class WriterPreview < Jekyll::Generator
     unless %w[auto single columns wide].include?(writer_layout)
       raise ArgumentError, "Unknown writer_layout #{writer_layout.inspect} for #{permalink}"
     end
-    if writer_layout == 'auto'
+    docs_columns = permalink.start_with?('/v2/docs/') && writer_layout != 'wide'
+    if writer_layout == 'auto' || docs_columns
       content = Nokogiri::HTML.fragment(preview.content)
       content.css('script, style, .writer-markdown-syntax, .writer-markdown-detail').remove
-      words = content.text.split.length
-      writer_layout = words < 250 ? 'single' : 'columns'
+      writer_layout = content.text.split.length < 250 ? 'single' : 'columns' if writer_layout == 'auto'
     end
     preview.data.merge!(
       'layout' => 'writer',
       'writer_layout' => writer_layout,
+      'writer_doc_column_limit' => docs_columns ? doc_column_limit(content) : nil,
       'writer_markdown' => raw_markdown,
       'writer_heading' => heading,
       'writer_markdown_url' => markdown_url,

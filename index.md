@@ -26,7 +26,7 @@ The result is a system built entirely from primitives, developers already unders
 {: .design-paragraph}
 
 
-Best of all, attackers hate this. They have to gain access to both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure as documented in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
+Best of all, attackers hate this. They have to gain access to both the encrypted .env file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure as documented in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
 {: .design-paragraph}
 
 <p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
@@ -48,9 +48,7 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 
 <p><img class="main-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
 
-[Quickstart]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
-
-{{ home_design_content | strip }}
+[Encrypt your first .env →]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
 
 </div>
 
@@ -61,23 +59,13 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 {% capture home_usage_section %}
 {% capture home_section_content %}
 
-**Install** the Dotenvx CLI.
-{: #install}
+### Encrypt
+{: #encrypt}
 
 {% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
 ```bash
 {{ cli.command }}
 ```
-
-
-
-{% capture home_usage_paragraph %}
-**Encrypt** your secrets in .env files. The values become ciphertext and only your private key can unlock them.
-{: #encrypt .design-paragraph}
-{% endcapture %}
-
-{{ home_usage_paragraph | strip }}
-
 
 ```cli
 $ dotenvx encrypt
@@ -85,17 +73,11 @@ $ dotenvx encrypt
 ```
 {: label="Encrypt your .env file" copy="dotenvx encrypt"}
 
+Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
+{: .design-paragraph}
 
-
-
-
-{% capture home_usage_paragraph %}
-**Commit** your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
-{: #commit .design-paragraph}
-{% endcapture %}
-
-{{ home_usage_paragraph | strip }}
-
+### Commit
+{: #commit}
 
 ```cli
 $ git add .env
@@ -104,23 +86,20 @@ $ git commit -m "encrypt .env"
 {: label="Commit your encrypted .env file" copy='git add .env
 git commit -m "encrypt .env"'}
 
+Your encrypted .env travels with your code. Keep .env.keys out of git. The secrets and the key that unlocks them stay separate.
+{: .design-paragraph}
 
-
-
-
-{% capture home_usage_paragraph %}
-**Ship** your code and secrets together. Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
-{: #ship .design-paragraph}
-{% endcapture %}
-
-{{ home_usage_paragraph | strip }}
-
+### Ship
+{: #ship}
 
 ```cli
 $ dotenvx run -- node index.js
 ⟐ injected env (2) from .env
 ```
 {: label="Run your deployed app" copy="dotenvx run -- node index.js"}
+
+Locally, the key is read from .env.keys. In production, set DOTENV_PRIVATE_KEY in your deployment environment using that same key. Dotenvx decrypts your secrets and injects them into your app at runtime.
+{: .design-paragraph}
 
 
 {% endcapture %}
@@ -187,11 +166,27 @@ App listening on port 80
 
 {{ home_usage_section | strip }}
 
-## Adoption
+## Who holds the key?
+
+By default, you do. Keep the private key on your machine for development and in your deployment environment for production.
+{: .design-paragraph}
+
+When you need to manage access across a team, [Armor]({{ '/armor/' | relative_url }}) adds managed key custody, approvals, and auditing.
+{: .design-paragraph}
+
+[Explore key custody →]({{ '/docs/custody/' | relative_url }})
+
+## Who’s using dotenvx?
 
 - 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
 - [Dhravya Shah](/members/supermemory/) (CEO of Supermemory): *set one key and all your secrets just work*
 - [John Zila](/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
+
+## Why this design?
+
+{{ home_design_content | strip }}
+
+[Encrypt your first .env →]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
 
 </div>

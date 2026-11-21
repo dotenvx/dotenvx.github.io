@@ -85,7 +85,9 @@ class MainSite < Jekyll::Generator
 
     publish_docs(site, cli_pages, links, 'main-cli-reference.md', metadata: { 'main_layout' => 'single' })
     publish_docs(site, sdk_pages, links, 'main-cli-reference.md', frame_context: { 'sdk_reference' => true }, metadata: { 'main_layout' => 'single' })
-    publish_docs(site, custody_pages, links, 'main-custody.md')
+    custody_indexes, custody_references = custody_pages.partition { |page| page.url == '/docs/custody/' }
+    publish_docs(site, custody_indexes, links, 'main-custody.md')
+    publish_docs(site, custody_references, links, 'main-custody.md', metadata: { 'main_layout' => 'single' })
     toml_indexes, toml_references = toml_pages.partition { |page| page.url == '/docs/dotenvxtoml/' }
     publish_docs(site, toml_indexes, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true })
     publish_docs(site, toml_references, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true }, metadata: { 'main_layout' => 'single' })

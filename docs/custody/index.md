@@ -14,68 +14,36 @@ options:
   href: "/docs/custody/password-managers/"
 ---
 
-Your encrypted .env stays in your project. **Custody is where you keep the private key that unlocks it.**
+Your encrypted .env stays with your code. Custody is where you keep the private key that unlocks it.
 
-When you first encrypt a file in an interactive terminal, choose from three custody options:
-
-```console
-$ dotenvx encrypt
-? Choose private key custody
-❯ ⛉ Local
-  ⛨ Dotenvx Armor
-  ⛊ Password Managers
-```
-{: copy="dotenvx encrypt"}
-
-The menus below show the choices after setup. The CLI marks options that need a sign-in or CLI installation.
+Choose who holds the key and how your app gets access to it.
 
 ## Local
 
-Keep the key in .env.keys or your operating system's secret store:
+Keep the key in .env.keys or your operating system’s secret store. Dotenvx reads it locally when your app starts.
 
-```text
-⛉ Choose local custody
-❯ File .env.keys
-  macOS Keychain
-  ← back
-```
+You manage access, backups, and distribution to other machines. Keep .env.keys out of git.
 
-On Windows, the second option is Windows Credential Manager; on Linux, it is Linux Secret Service. Keep .env.keys out of git.
+[Local setup](/docs/custody/local/)
 
-[Local custody →](/docs/custody/local/)
+## Armor
 
-## Dotenvx Armor
+Let Armor manage access to the key. Dotenvx contacts Armor before starting your app, and access can require approval.
 
-Let Armor manage access to the key. Sign in with dotenvx login, then choose:
+Choose this when you need shared access, approvals, and auditing. Plan for authentication and Armor availability wherever your app runs.
 
-```text
-⛨ Choose key type
-❯ ⛨ Armored
-  ◊ Enclaved
-  ← back
-```
+[Armor setup](/docs/custody/armor/)
 
-**Armored** keys are available to authorized team members. **Enclaved** keys are provisioned to a supported deployment resource; the CLI walks you through team, service, connection, and resource selection.
+## Password Managers
 
-[Armor custody →](/docs/custody/armor/)
+Keep the key in your existing 1Password or Bitwarden vault. Dotenvx retrieves it through the password manager’s CLI when your app starts.
 
-## [Password Managers](/docs/custody/password-managers/)
+Access follows your vault permissions. Each machine needs the CLI installed and authenticated.
 
-Keep the decryption key in your existing vault:
+[1Password setup](/docs/custody/1password/) · [Bitwarden setup](/docs/custody/bitwarden/)
 
-```text
-⛊ Choose password manager
-❯ 1Password
-  Bitwarden
-  ← back
-```
+## Change custody
 
-Dotenvx retrieves the key through the password manager's CLI when you run your app. Your app's values stay encrypted in .env.
+You can move an existing key between custody options. Your encrypted .env and app command stay the same.
 
-[1Password key custody →](/docs/custody/1password/) · [Bitwarden key custody →](/docs/custody/bitwarden/)
-
-## Secret references
-
-**Key custody stores the decryption key. Secret references store individual app secrets in the vault.** References such as op:// or bw:// in .env tell Dotenvx where to fetch those values.
-
-[1Password references →](/docs/1password/) · [Bitwarden references →](/docs/bitwarden/)
+Moving a key doesn’t invalidate copies already held elsewhere. If a key has been exposed, changing where you store it is only part of the response.

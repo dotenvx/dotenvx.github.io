@@ -75,7 +75,7 @@ permalink: /changelog/
 
 > What we're working on, into the night
 
-<p><img class="main-image" src="{{ '/changelog.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
+<p><img class="main-image" src="{{ '/changelog.png' | relative_url }}" alt="Dotenvx Los Angeles office at dusk" width="768" height="307"></p>
 
 <div>
 {{ changelog_content | strip }}

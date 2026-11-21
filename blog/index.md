@@ -1,7 +1,7 @@
 ---
 description: "Read the Dotenvx blog for guides and updates on environment variables, encrypted .env files, developer secrets, and building Dotenvx."
 title: "Blog"
-writer_layout: single
+main_layout: single
 ---
 
 {% assign blog_description = "Reflections on building Dotenvx" %}
@@ -11,12 +11,12 @@ writer_layout: single
 
 > {{ blog_description }}
 
-<p><img class="writer-image" src="{{ '/blog.png' | relative_url }}" alt="Bronze statue of a seated figure resting his chin on his hand" width="768" height="307"></p>
+<p><img class="main-image" src="{{ '/blog.png' | relative_url }}" alt="Bronze statue of a seated figure resting his chin on his hand" width="768" height="307"></p>
 
 {% for year_group in posts_by_year %}
 ## {{ year_group.name }}
 
-<ul class="writer-blog-posts" role="list">
+<ul class="main-blog-posts" role="list">
   {% for post in year_group.items %}
   <li>
     <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>

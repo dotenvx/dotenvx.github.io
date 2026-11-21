@@ -233,4 +233,4 @@ guide_sections:
 
 > Use Dotenvx with the tools and languages you already know and love
 
-{% include writer-guide-list.md sections=page.guide_sections %}
+{% include main-guide-list.md sections=page.guide_sections %}

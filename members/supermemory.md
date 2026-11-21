@@ -12,7 +12,7 @@ og_image:
 
 {{ page.description }}
 
-<div class="writer-member-logo">{% include logos/supermemory.html %}</div>
+<div class="main-member-logo">{% include logos/supermemory.html %}</div>
 
     {% capture story %}
       {% include components/design-quote.html

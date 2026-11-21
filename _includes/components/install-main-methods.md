@@ -1,6 +1,6 @@
 {% for method in include.methods %}
 {% assign method_id = method.name | slugify %}
-<section class="writer-install-method"{% if include.code_only %} id="{{ method.id | default: method_id }}"{% endif %} markdown="block">
+<section class="main-install-method"{% if include.code_only %} id="{{ method.id | default: method_id }}"{% endif %} markdown="block">
 
 {% unless include.code_only %}
 ## {% if method.package_url %}[{{ method.name }}]({{ method.package_url }}){% else %}{{ method.name }}{% endif %}
@@ -9,8 +9,8 @@
 
 ```bash
 {{ method.command }}
-{% if method.writer_extra_command -%}
-{{ method.writer_extra_command }}
+{% if method.main_extra_command -%}
+{{ method.main_extra_command }}
 {% endif -%}
 ```
 

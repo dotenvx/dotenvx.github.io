@@ -34,7 +34,7 @@ permalink: /docs/advanced/
 ## SDKs
 
 {% assign sdk_page = site.pages | where: 'url', '/docs/sdk/' | first %}
-{% include writer-sdk-list.md languages=sdk_page.sdk_languages %}
+{% include main-sdk-list.md languages=sdk_page.sdk_languages %}
 
 ## Custody
 
@@ -46,11 +46,11 @@ permalink: /docs/advanced/
 ## Guides
 
 {% assign guides_page = site.pages | where: 'url', '/docs/guides/' | first %}
-{% include writer-guide-list.md sections=guides_page.guide_sections %}
+{% include main-guide-list.md sections=guides_page.guide_sections %}
 
 {{ advanced_toml_content }}
 
-{% include components/docs-cli-commands.html writer=true %}
+{% include components/docs-cli-commands.html main=true %}
 
 ## Resources
 

@@ -50,7 +50,7 @@ permalink: /changelog/
             {% assign current_period = entry_period %}
             <div class="design-list">
               <h2>{{ entry_period_label }}</h2>
-              <ul class="writer-prose-list">
+              <ul class="main-prose-list">
           {% endif %}
                 <li>
                   {% if entry.url and entry.url != "" %}
@@ -75,7 +75,7 @@ permalink: /changelog/
 
 > What we're working on, into the night
 
-<p><img class="writer-image" src="{{ '/changelog.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
+<p><img class="main-image" src="{{ '/changelog.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
 
 <div>
 {{ changelog_content | strip }}

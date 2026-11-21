@@ -29,10 +29,7 @@ files.each do |file|
     next
   end
   errors << "#{path}: expected a redirect at the former preview URL" if path.start_with?("/v2/")
-  errors << "#{path}: expected the public writer layout" unless html.at_css("main.writer")
-  if html.css('link[rel="stylesheet"]').any? { |link| link['href'].to_s.split('?').first.end_with?('/assets/css/main.css') }
-    errors << "#{path}: loads the retired stylesheet"
-  end
+  errors << "#{path}: expected the public main layout" unless html.at_css("main.main")
   if html.at_css('meta[name="robots"]')&.[]("content").to_s.include?("noindex")
     noindex_urls << canonical
     next
@@ -102,7 +99,7 @@ end
 feed = Nokogiri::XML(File.read(File.join(root, "feed.xml"))) { |options| options.strict }
 feed.xpath("//*[local-name()='entry']/*[local-name()='content']").each do |entry|
   body = Nokogiri::HTML.fragment(entry.text)
-  if body.at_css(".writer-post-footer, .writer-markdown-syntax, form[data-newsletter-form]")
+  if body.at_css(".main-post-footer, .main-markdown-syntax, form[data-newsletter-form]")
     errors << "Blog feed includes page layout markup"
   end
 end

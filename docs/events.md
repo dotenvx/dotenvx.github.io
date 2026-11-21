@@ -2,7 +2,7 @@
 title: Events
 description: Activity events recorded by Armor.
 permalink: /docs/events/
-writer_layout: wide
+main_layout: wide
 ---
 
 

@@ -10,13 +10,13 @@ bin/dev
 
 That starts Jekyll with live reload.
 
-The writer design is the default for every public page. `_layouts/default.html`
-contains the shared shell; `assets/css/writer.css` contains the base styles and
-`assets/css/writer-docs.css` adds docs styles. Edit these files directly: there is
+The main design is the default for every public page. `_layouts/default.html`
+contains the shared shell; `assets/css/main.css` contains the base styles and
+`assets/css/main-docs.css` adds docs styles. Edit these files directly: there is
 no CSS compilation or Tailwind dependency. Newsletter forms also use
 `assets/css/newsletter-signup.css`.
 
-`_plugins/writer_site.rb` prepares Markdown content, page headings, docs frames,
+`_plugins/main_site.rb` prepares Markdown content, page headings, docs frames,
 blog posts, and Markdown exports. `/v2/` URLs remain redirects to the public pages.
 Shared content components are still used by docs, pricing, and Markdown exports.
 
@@ -66,7 +66,7 @@ This is paragraph 2 with **emphasis** and a [link](/docs/).
 - Another item
 ```
 
-Optional `writer_layout` values are `single`, `two-columns`, `columns` (the
+Optional `main_layout` values are `single`, `two-columns`, `columns` (the
 default), and `wide`. Docs use `doc_type: cli`, `custody`, or `side-path` when
 specialized command, custody, or parent-page metadata is needed. These are content
 types, not separate layouts.
@@ -162,7 +162,7 @@ between fences and includes, including fences rendered through `markdownify` in 
 Restart Jekyll after changing this plugin, and clear its Markdown cache with
 `bundle exec jekyll clean` when updating renderers (or build with `--disable-disk-cache`).
 
-The renderer in `_plugins/design_syntax.rb` and token styling in `assets/css/writer.css`
+The renderer in `_plugins/design_syntax.rb` and token styling in `assets/css/main.css`
 are mirrored in Radar (`lib/design_syntax.rb` and the syntax section at the end of
 `app/assets/stylesheets/application.tailwind.css`). Keep both copies aligned. Dotenv
 has a dedicated lexer for assignments, comments, multiline values, and interpolation.
@@ -218,7 +218,7 @@ Use “Alternative →” for alternative paths and “Troubleshoot →” for f
 
 Keep the attribute on the same line as the link so it applies to the link, not
 the surrounding paragraph. Use `{: .side-path-inline}` for a link inside prose.
-Side paths are ordinary linked pages in the writer layout. Package-manager choices
+Side paths are ordinary linked pages in the main layout. Package-manager choices
 stay synchronized across docs pages.
 
 ### Next.js Markdown export

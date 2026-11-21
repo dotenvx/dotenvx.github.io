@@ -1,7 +1,7 @@
 # Open Graph images
 
-Share previews use the first lead image on writer pages (an `img` with the
-`writer-image` class) or the first image in a blog post. A page without one
+Share previews use the first lead image on main pages (an `img` with the
+`main-image` class) or the first image in a blog post. A page without one
 can specify its own `image` or generated `og_image` card. Otherwise, Jekyll
 omits the Open Graph and Twitter image tags.
 

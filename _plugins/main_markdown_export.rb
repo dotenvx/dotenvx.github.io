@@ -1,7 +1,7 @@
 require 'nokogiri'
 
 # Convert the resolved page content, including shared HTML components, to Markdown.
-module WriterMarkdownExport
+module MainMarkdownExport
   RETIRED_QUICKSTART_PAGES = %w[deploy install-alternatives protect without-nodejs].freeze
 
   def self.paths_for(url)
@@ -25,11 +25,11 @@ module WriterMarkdownExport
     document.css('script, style, button, .membership-section-mobile, .pricing-plan-label-short, .sr-only, .spec-tip-panel, [data-env-slab]').remove
     blocks = document.css('pre').map.with_index do |node, index|
       block = render(node)
-      node.replace("<p>WRITER_CODE_BLOCK_#{index}</p>")
+      node.replace("<p>MAIN_CODE_BLOCK_#{index}</p>")
       block.strip
     end
     output = render(document).gsub(/[ \t]+\n/, "\n").gsub(/\n{3,}/, "\n\n").strip
-    blocks.each_with_index { |block, index| output = output.sub("WRITER_CODE_BLOCK_#{index}", block) }
+    blocks.each_with_index { |block, index| output = output.sub("MAIN_CODE_BLOCK_#{index}", block) }
     output + "\n"
   end
 
@@ -84,7 +84,7 @@ module WriterMarkdownExport
       end
       "\n\n#{lines.join}\n"
     when 'table'
-      title_row = node.at_css('thead > tr.writer-table-title')
+      title_row = node.at_css('thead > tr.main-table-title')
       title = "**#{inline(title_row)}**\n\n" if title_row
       title_row&.remove
       rows = node.css('tr').map do |row|
@@ -126,19 +126,19 @@ Jekyll::Hooks.register :site, :post_write do |site|
   by_url = {}
   files = {}
   (site.pages + site.docs_to_write).each do |page|
-    next unless (markdown = page.data['writer_markdown'])
+    next unless (markdown = page.data['main_markdown'])
 
     by_url[page.url] = markdown
-    [page.url, page.data['writer_previous_url']].compact.each do |url|
-      WriterMarkdownExport.paths_for(url).each { |path| files[path] = markdown }
+    [page.url, page.data['main_previous_url']].compact.each do |url|
+      MainMarkdownExport.paths_for(url).each { |path| files[path] = markdown }
     end
   end
 
   redirects = site.data.fetch('redirects', {})
-  WriterMarkdownExport::RETIRED_QUICKSTART_PAGES.each do |slug|
+  MainMarkdownExport::RETIRED_QUICKSTART_PAGES.each do |slug|
     url = "/docs/quickstart/#{slug}/"
     destination = redirects[url]&.split('#', 2)&.first
-    files[WriterMarkdownExport.paths_for(url).first] = by_url[destination] if by_url.key?(destination)
+    files[MainMarkdownExport.paths_for(url).first] = by_url[destination] if by_url.key?(destination)
   end
 
   files.each do |relative_path, markdown|

@@ -119,10 +119,10 @@ module RawMarkdownExports
 
   def self.homepage(source, site)
     markdown = homepage_markdown(source, site)
-    require_relative 'writer_markdown_export'
+    require_relative 'main_markdown_export'
     document = Kramdown::Document.new("# Dotenvx\n\n#{markdown}", site.config.fetch('kramdown'))
-    html, = WriterMarkdownExport::Html.convert(document.root, document.options)
-    WriterMarkdownExport.convert(html)
+    html, = MainMarkdownExport::Html.convert(document.root, document.options)
+    MainMarkdownExport.convert(html)
   end
 
   def self.install(source, data, site_url)
@@ -193,14 +193,14 @@ module RawMarkdownExports
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  writer_urls = site.pages.filter_map { |page| page.data['writer_markdown_url'] }
-  unless writer_urls.include?('/index.md')
+  main_urls = site.pages.filter_map { |page| page.data['main_markdown_url'] }
+  unless main_urls.include?('/index.md')
     homepage = RawMarkdownExports.homepage(File.read(site.in_source_dir('index.md')), site)
     RawMarkdownExports.write(File.join(site.dest, 'index.md'), homepage)
   end
 
   RawMarkdownExports::EXPORTS.each do |source_path, url|
-    next if writer_urls.include?(url)
+    next if main_urls.include?(url)
 
     source = File.join(site.source, source_path)
     next unless File.file?(source)

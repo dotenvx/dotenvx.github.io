@@ -3,8 +3,8 @@ title: "Dotenvx Armor for Security Professionals"
 social_title: "Dotenvx Armor for Security Professionals"
 description: "Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent."
 image: "/assets/img/og-image-armor.png"
-writer_title: Armor
-writer_layout: columns
+main_title: Armor
+main_layout: columns
 ---
 
 
@@ -22,7 +22,7 @@ Kortix, [Supermemory]({{ '/members/supermemory/' | relative_url }}), and Comp AI
 - **Access.** Grant and revoke access to individual keys for teammates and agents.
 - **Approvals.** Require human approval for key access with Guard.
 - **Audit.** See who accessed each key and when. Read audit logs through the [Armor API]({{ '/docs/api/' | relative_url }}).
-{: .writer-docs-list}
+{: .main-docs-list}
 
 ## Usage
 

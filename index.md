@@ -3,7 +3,7 @@ seo_title: "Dotenvx · Encrypt your .env files"
 title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 social_title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 description: "Encrypt .env files, commit them safely, and load environment variables in any language or framework with Dotenvx, from the creator of dotenv."
-writer_layout: two-columns
+main_layout: two-columns
 ---
 
 {% capture home_design_content %}
@@ -29,7 +29,7 @@ The result is a system built entirely from primitives, developers already unders
 Best of all, attackers hate this. They have to gain access to both the encrypted `.env` file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure as documented in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
 {: .design-paragraph}
 
-<p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="writer-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
+<p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
 
 {% endcapture %}
 
@@ -46,7 +46,7 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 
 
 
-<p><img class="writer-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
+<p><img class="main-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
 
 [Quickstart]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
 

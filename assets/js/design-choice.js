@@ -61,9 +61,9 @@
 
   function copyFrom(wrap) {
     var source = wrap.querySelector('code, pre')
-    if (source && source.querySelector('.writer-markdown-detail, .writer-markdown-syntax')) {
+    if (source && source.querySelector('.main-markdown-detail, .main-markdown-syntax')) {
       source = source.cloneNode(true)
-      source.querySelectorAll('.writer-markdown-detail, .writer-markdown-syntax').forEach(function (marker) { marker.remove() })
+      source.querySelectorAll('.main-markdown-detail, .main-markdown-syntax').forEach(function (marker) { marker.remove() })
     }
     var text = (wrap.getAttribute('data-copy') || (source || {}).textContent || '').trim()
     if (!text) return Promise.reject()

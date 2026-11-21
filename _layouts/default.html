@@ -1,88 +1,88 @@
 <!doctype html>
-{% assign writer_path_prefix = page.url | slice: 0, 6 %}
-{% if writer_path_prefix == '/docs/' %}{% assign writer_docs_section = true %}{% endif %}
-{% assign writer_whitepaper_url = '/whitepaper.pdf' | relative_url %}
-{% assign writer_github_url = 'https://github.com/dotenvx' %}
-{% assign writer_layout = page.writer_layout | default: 'columns' %}
-{% if writer_layout == 'columns' or writer_layout == 'two-columns' %}{% assign writer_multicolumn = true %}{% endif %}
-{% if page.url == '/blog/' or page.writer_blog_post %}{% assign writer_blog_section = true %}{% endif %}
-{% if page.url == '/about/' or page.url == '/changelog/' or page.url == '/newsletter/' or writer_blog_section %}{% assign writer_about_section = true %}{% endif %}
+{% assign main_path_prefix = page.url | slice: 0, 6 %}
+{% if main_path_prefix == '/docs/' %}{% assign main_docs_section = true %}{% endif %}
+{% assign main_whitepaper_url = '/whitepaper.pdf' | relative_url %}
+{% assign main_github_url = 'https://github.com/dotenvx' %}
+{% assign main_layout = page.main_layout | default: 'columns' %}
+{% if main_layout == 'columns' or main_layout == 'two-columns' %}{% assign main_multicolumn = true %}{% endif %}
+{% if page.url == '/blog/' or page.main_blog_post %}{% assign main_blog_section = true %}{% endif %}
+{% if page.url == '/about/' or page.url == '/changelog/' or page.url == '/newsletter/' or main_blog_section %}{% assign main_about_section = true %}{% endif %}
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
   {% include layouts/meta.html %}
   {% include layouts/analytics.html %}
-  <link rel="stylesheet" data-writer-styles href="{{ '/assets/css/writer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  {% if writer_docs_section %}<link rel="stylesheet" data-writer-styles href="{{ '/assets/css/writer-docs.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
-  {% if page.writer_blog_post or page.url == '/newsletter/' %}<link rel="stylesheet" data-writer-styles href="{{ '/assets/css/newsletter-signup.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
-  <link rel="stylesheet" data-writer-plain-styles media="not all" href="{{ '/assets/css/plain.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  <script src="{{ '/assets/js/writer-mode.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <link rel="stylesheet" data-main-styles href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  {% if main_docs_section %}<link rel="stylesheet" data-main-styles href="{{ '/assets/css/main-docs.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
+  {% if page.main_blog_post or page.url == '/newsletter/' %}<link rel="stylesheet" data-main-styles href="{{ '/assets/css/newsletter-signup.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
+  <link rel="stylesheet" data-main-plain-styles media="not all" href="{{ '/assets/css/plain.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script src="{{ '/assets/js/main-mode.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>
-<body{% if writer_about_section or writer_docs_section %} class="writer-has-subnav"{% endif %}>
-  <header class="writer-header">
-    <div class="writer-nav">
-      <a class="writer-nav-home" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>
+<body{% if main_about_section or main_docs_section %} class="main-has-subnav"{% endif %}>
+  <header class="main-header">
+    <div class="main-nav">
+      <a class="main-nav-home" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>
         <img src="{{ '/assets/img/logo-env.svg' | relative_url }}" alt="" width="22" height="22">
         Dotenvx
       </a>
-      <nav class="writer-nav-links" aria-label="Primary">
-        <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% elsif writer_about_section %} aria-current="location"{% endif %}>About</a>
-        <a href="{{ '/docs/' | relative_url }}"{% if page.url == '/docs/' %} aria-current="page"{% elsif writer_docs_section %} aria-current="location"{% endif %}>Docs</a>
+      <nav class="main-nav-links" aria-label="Primary">
+        <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% elsif main_about_section %} aria-current="location"{% endif %}>About</a>
+        <a href="{{ '/docs/' | relative_url }}"{% if page.url == '/docs/' %} aria-current="page"{% elsif main_docs_section %} aria-current="location"{% endif %}>Docs</a>
       </nav>
-      <div class="writer-nav-actions">
-        <button type="button" class="writer-nav-mode" data-writer-mode-toggle aria-label="Dark mode" aria-keyshortcuts="M" aria-pressed="false" title="Toggle light or dark mode (M)">[m]</button>
-        <button type="button" class="writer-nav-search" data-site-search-open aria-label="Search" aria-keyshortcuts="/ Meta+K Control+K" aria-haspopup="dialog" title="Search (Command+K or /)">[cmd+k]</button>
-        <a class="writer-nav-login" href="{{ '/login' | relative_url }}" data-umami-event="Login link">Login</a>
+      <div class="main-nav-actions">
+        <button type="button" class="main-nav-mode" data-main-mode-toggle aria-label="Dark mode" aria-keyshortcuts="M" aria-pressed="false" title="Toggle light or dark mode (M)">[m]</button>
+        <button type="button" class="main-nav-search" data-site-search-open aria-label="Search" aria-keyshortcuts="/ Meta+K Control+K" aria-haspopup="dialog" title="Search (Command+K or /)">[cmd+k]</button>
+        <a class="main-nav-login" href="{{ '/login' | relative_url }}" data-umami-event="Login link">Login</a>
       </div>
     </div>
-    {% if writer_about_section %}
-    <nav class="writer-subnav" aria-label="About">
+    {% if main_about_section %}
+    <nav class="main-subnav" aria-label="About">
       <a href="{{ '/changelog/' | relative_url }}"{% if page.url == '/changelog/' %} aria-current="page"{% endif %}>Changelog</a>
-      <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} aria-current="page"{% elsif page.writer_blog_post %} aria-current="location"{% endif %}>Blog</a>
+      <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} aria-current="page"{% elsif page.main_blog_post %} aria-current="location"{% endif %}>Blog</a>
       <a href="{{ '/newsletter/' | relative_url }}"{% if page.url == '/newsletter/' %} aria-current="page"{% endif %}>Newsletter</a>
     </nav>
-    {% elsif writer_docs_section %}
-    <nav class="writer-subnav" aria-label="Docs sections">
+    {% elsif main_docs_section %}
+    <nav class="main-subnav" aria-label="Docs sections">
       <a href="{{ '/docs/install/' | relative_url }}"{% if page.url == '/docs/install/' %} aria-current="page"{% endif %}>Install</a>
       <a href="{{ '/docs/quickstart/' | relative_url }}"{% if page.url == '/docs/quickstart/' %} aria-current="page"{% endif %}>Quickstart</a>
       <a href="{{ '/docs/advanced/' | relative_url }}"{% if page.url == '/docs/advanced/' %} aria-current="page"{% endif %}>Advanced</a>
     </nav>
     {% endif %}
   </header>
-  <main class="writer writer--{{ writer_layout }}{% if writer_layout == 'two-columns' %} writer--columns{% endif %}{% if writer_docs_section %} writer--docs{% endif %}{% if page.writer_blog_post %} writer--post{% endif %}{% if page.writer_resource %} writer--resource{% endif %}">
-    <div class="writer-page-heading">
-      {{ page.writer_heading }}
+  <main class="main main--{{ main_layout }}{% if main_layout == 'two-columns' %} main--columns{% endif %}{% if main_docs_section %} main--docs{% endif %}{% if page.main_blog_post %} main--post{% endif %}{% if page.main_resource %} main--resource{% endif %}">
+    <div class="main-page-heading">
+      {{ page.main_heading }}
     </div>
-    {% if writer_multicolumn %}
+    {% if main_multicolumn %}
       {% if page.url == '/' %}
-      <div class="writer-home-columns">
+      <div class="main-home-columns">
       {% else %}
-      <div class="writer-column-content{% if page.writer_guide %} docs-markdown-body{% endif %}">
+      <div class="main-column-content{% if page.main_guide %} docs-markdown-body{% endif %}">
       {% endif %}
     {% endif %}
-      {{ page.writer_page_content | default: content }}
-    {% if writer_multicolumn %}</div>{% endif %}
+      {{ page.main_page_content | default: content }}
+    {% if main_multicolumn %}</div>{% endif %}
   </main>
-  <p class="writer-markdown-action"><a class="writer-markdown-link writer-meta" href="{{ page.writer_markdown_url | relative_url }}">markdown</a></p>
-  <footer class="writer-footer">
-    <div class="writer-footer-contact">
-      <p class="writer-footer-name">{{ site.data.footer.title }}</p>
+  <p class="main-markdown-action"><a class="main-markdown-link main-meta" href="{{ page.main_markdown_url | relative_url }}">markdown</a></p>
+  <footer class="main-footer">
+    <div class="main-footer-contact">
+      <p class="main-footer-name">{{ site.data.footer.title }}</p>
       <p><a href="mailto:support@dotenvx.com">support@dotenvx.com</a></p>
     </div>
     <nav aria-label="Footer">
-      {% assign writer_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/blog' and link.href != '/docs' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub' and link.label != 'Agents' and link.label != 'Pricing'" %}
-      <p class="writer-footer-links">
+      {% assign main_footer_remaining = site.data.footer.links | where_exp: 'link', "link.href != '/' and link.href != '/about/' and link.href != '/changelog' and link.href != '/blog' and link.href != '/docs' and link.href != '/corporate' and link.href != '/careers' and link.href != '/careers/' and link.href != '/contact' and link.href != '/contact/' and link.href != '/legal' and link.label != 'NPM' and link.label != 'Whitepaper' and link.label != 'GitHub' and link.label != 'Agents' and link.label != 'Pricing'" %}
+      <p class="main-footer-links">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
         <a href="{{ '/changelog/' | relative_url }}">Changelog</a>
         <a href="{{ '/blog/' | relative_url }}">Blog</a>
         <a href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
-        <a href="{{ writer_whitepaper_url }}">Whitepaper</a>
-        <a href="{{ writer_github_url }}">GitHub</a>
+        <a href="{{ main_whitepaper_url }}">Whitepaper</a>
+        <a href="{{ main_github_url }}">GitHub</a>
         <a href="{{ '/docs/' | relative_url }}">Docs</a>
         <a href="{{ '/docs/install/' | relative_url }}">Install</a>
-        {% for link in writer_footer_remaining -%}
+        {% for link in main_footer_remaining -%}
           {%- if link.theme_toggle -%}
-            <button type="button" data-writer-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
+            <button type="button" data-main-mode-toggle aria-label="Dark mode" aria-pressed="false">{{ link.label }}</button>
           {%- else -%}
             <a href="{% if link.href contains '://' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
           {%- endif -%}
@@ -92,12 +92,12 @@
   </footer>
   {% assign cacheBust = site.time | date: '?v=%s' %}
   {% include components/site-search.html %}
-  <script src="{{ '/assets/js/writer-header.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  <script src="{{ '/assets/js/main-header.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   <script src="{{ '/assets/js/design-choice.js' | relative_url }}" defer></script>
-  {% if page.writer_guide %}
+  {% if page.main_guide %}
   <script src="{{ '/assets/js/docs-package-manager.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/secrets-artifact.js' | relative_url }}" defer></script>
   {% endif %}
-  <script src="{{ '/assets/js/writer-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  <script src="{{ '/assets/js/main-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

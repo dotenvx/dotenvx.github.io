@@ -1,6 +1,7 @@
 ---
 description: "Read the Dotenvx terms of service covering accounts, payments, service use, and responsibilities."
 title: "Terms of Service"
+main_layout: single
 
 ---
 

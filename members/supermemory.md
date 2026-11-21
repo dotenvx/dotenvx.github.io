@@ -1,5 +1,6 @@
 ---
 title: "Supermemory: One key. No chasing."
+main_layout: single
 description: How Dhravya Shah uses one private key to unlock his team's secrets at Supermemory with Dotenvx.
 permalink: /members/supermemory
 og_image:

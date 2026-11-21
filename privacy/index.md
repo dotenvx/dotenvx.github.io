@@ -1,6 +1,7 @@
 ---
 description: "Learn how Dotenvx collects, uses, and protects account data, handles support access, and manages privacy and data retention."
 title: "Privacy Policy"
+main_layout: single
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Watt: Secrets with code. No new critical path."
+main_layout: single
 description: How John Zila uses Dotenvx at Watt to securely version and deploy secrets with code, without a new critical path dependency.
 permalink: /members/watt
 og_image:

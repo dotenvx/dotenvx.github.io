@@ -87,7 +87,7 @@ class MainSite < Jekyll::Generator
     publish_docs(site, sdk_pages, links, 'main-cli-reference.md', frame_context: { 'sdk_reference' => true }, metadata: { 'main_layout' => 'single' })
     publish_docs(site, custody_pages, links, 'main-custody.md')
     publish_docs(site, toml_pages, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true })
-    publish_docs(site, guide_pages, links, 'main-guide.md', metadata: { 'main_guide' => true })
+    publish_docs(site, guide_pages, links, 'main-guide.md', metadata: { 'main_guide' => true, 'main_layout' => 'single' })
     publish_docs(site, resource_pages, links, 'main-guide.md', metadata: { 'main_resource' => true })
 
     publish_blog_posts(site, links)

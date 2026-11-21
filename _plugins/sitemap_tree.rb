@@ -10,7 +10,7 @@ module Jekyll
       documents.each do |document|
         next if document.data["redirect_to"]
         next if document.data["sitemap"] == false
-        next if ["/", "/404.html", "/sitemap"].include?(document.url)
+        next if ["/", "/404.html", "/sitemap/"].include?(document.url)
 
         segments = document.url.split("/").reject(&:empty?)
         blog_post = document.respond_to?(:collection) && document.collection.label == "posts"

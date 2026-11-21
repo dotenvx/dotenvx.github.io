@@ -107,7 +107,7 @@ body_class: home-page
 {% if writer_preview %}
 > What we're working on, into the night
 
-<p><img class="writer-image" src="{{ '/changelog.png' | relative_url }}" alt="Dotenvx changelog" width="768" height="307"></p>
+<p><img class="writer-image" src="{{ '/changelog.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
 
 <div>
 {{ changelog_content | strip }}

@@ -2,6 +2,17 @@ require 'nokogiri'
 
 # Convert the resolved page content, including shared HTML components, to Markdown.
 module WriterMarkdownExport
+  RETIRED_QUICKSTART_PAGES = %w[deploy install-alternatives protect without-nodejs].freeze
+
+  def self.paths_for(url)
+    return ['index.md'] if url == '/'
+
+    path = url.delete_prefix('/')
+    destinations = ["#{path.delete_suffix('/').delete_suffix('.html')}.md"]
+    destinations << "#{path}index.md" if path.end_with?('/')
+    destinations
+  end
+
   class Html < Kramdown::Converter::Html
     def convert_codeblock(element, indent)
       language = element.options[:lang] || extract_code_language(element.attr)
@@ -112,17 +123,27 @@ module WriterMarkdownExport
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  site.pages.select { |page| page.data['writer_markdown'] }.each do |page|
-    slug = page.url.delete_suffix('/').delete_prefix('/')
-    destinations = if page.url.end_with?('/')
-      ["#{slug}.md", "#{slug}/index.md"]
-    else
-      [page.data.fetch('writer_markdown_url').delete_prefix('/')]
+  by_url = {}
+  files = {}
+  (site.pages + site.docs_to_write).each do |page|
+    next unless (markdown = page.data['writer_markdown'])
+
+    by_url[page.url] = markdown
+    [page.url, page.data['writer_previous_url']].compact.each do |url|
+      WriterMarkdownExport.paths_for(url).each { |path| files[path] = markdown }
     end
-    destinations.each do |relative_path|
-      path = File.join(site.dest, relative_path)
-      FileUtils.mkdir_p(File.dirname(path))
-      RawMarkdownExports.write(path, page.data.fetch('writer_markdown'))
-    end
+  end
+
+  redirects = site.data.fetch('redirects', {})
+  WriterMarkdownExport::RETIRED_QUICKSTART_PAGES.each do |slug|
+    url = "/docs/quickstart/#{slug}/"
+    destination = redirects[url]&.split('#', 2)&.first
+    files[WriterMarkdownExport.paths_for(url).first] = by_url[destination] if by_url.key?(destination)
+  end
+
+  files.each do |relative_path, markdown|
+    path = File.join(site.dest, relative_path)
+    FileUtils.mkdir_p(File.dirname(path))
+    RawMarkdownExports.write(path, markdown)
   end
 end

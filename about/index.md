@@ -60,7 +60,7 @@ writer_layout: two-columns
           <a href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx</a>
         </li>
         <li><strong>Secrets separate from agents.</strong> We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.<br>
-          <a href="{{ site.data.redirects['/v2/agents/'] | relative_url }}">Dotenvx.toml</a>
+          <a href="{{ site.data.redirects['/agents/'] | relative_url }}">Dotenvx.toml</a>
         </li>
       </ol>
       {% else %}

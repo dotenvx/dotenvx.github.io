@@ -55,7 +55,7 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 {% if writer_preview %}
 <p><img class="writer-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
 
-[Quickstart]({{ '/v2/docs/quickstart/' | relative_url }})
+[Quickstart]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
 
 {{ home_design_content | strip }}
 
@@ -74,6 +74,7 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 {% capture home_section_content %}
 {% if writer_preview %}
 **Install** the Dotenvx CLI.
+{: #install}
 
 {% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
 ```bash
@@ -87,7 +88,7 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 
 {% capture home_usage_paragraph %}
 {% if writer_preview %}**Encrypt**{% else %}Encrypt{% endif %} your secrets in .env files. The values become ciphertext and only your private key can unlock them.
-{: .design-paragraph}
+{: {% if writer_preview %}#encrypt {% endif %}.design-paragraph}
 {% endcapture %}
 {% if writer_preview %}
 {{ home_usage_paragraph | strip }}
@@ -110,7 +111,7 @@ $ dotenvx encrypt
 
 {% capture home_usage_paragraph %}
 {% if writer_preview %}**Commit**{% else %}Commit{% endif %} your encrypted .env files with your code. It's safe. Now you can securely share secrets through git.
-{: .design-paragraph}
+{: {% if writer_preview %}#commit {% endif %}.design-paragraph}
 {% endcapture %}
 {% if writer_preview %}
 {{ home_usage_paragraph | strip }}
@@ -134,7 +135,7 @@ git commit -m "encrypt .env"'}
 
 {% capture home_usage_paragraph %}
 {% if writer_preview %}**Ship**{% else %}Ship{% endif %} your code and secrets together. Dotenvx uses your private key to decrypt and inject your secrets just-in-time to your code.
-{: .design-paragraph}
+{: {% if writer_preview %}#ship {% endif %}.design-paragraph}
 {% endcapture %}
 {% if writer_preview %}
 {{ home_usage_paragraph | strip }}
@@ -305,8 +306,8 @@ Once your secrets are in an encrypted git workflow, you'll wonder why you waited
 
 - 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
-- [John Zila](/v2/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
-- [Dhravya Shah](/v2/members/supermemory/) (CEO of Supermemory): *set one key and all your secrets just work*
+- [John Zila](/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
+- [Dhravya Shah](/members/supermemory/) (CEO of Supermemory): *set one key and all your secrets just work*
 
 </div>
 {% else %}

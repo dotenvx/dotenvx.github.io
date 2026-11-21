@@ -1,7 +1,7 @@
 ---
 description: "Browse the Dotenvx website, documentation, CLI and SDK references, guides, product pages, and blog posts in one sitemap."
 title: Sitemap
-permalink: /sitemap
+permalink: /sitemap/
 layout: radar
 body_class: home-page
 writer_layout: single
@@ -13,15 +13,15 @@ writer_layout: single
 ## Pages
 
 <ul class="writer-sitemap-tree">
-  <li><a href="{{ '/v2/' | relative_url }}">Home</a></li>
-  {% include components/design-list-tree.html nodes=sitemap_pages links=preview_links %}
+  <li><a href="{{ '/' | relative_url }}">Home</a></li>
+  {% include components/design-list-tree.html nodes=sitemap_pages %}
 </ul>
 
 {% if sitemap_docs %}
-## [Docs]({{ preview_links['/docs'] | relative_url }})
+## [Docs]({{ '/docs/' | relative_url }})
 
 <ul class="writer-sitemap-tree">
-  {% include components/design-list-tree.html nodes=sitemap_docs.children links=preview_links %}
+  {% include components/design-list-tree.html nodes=sitemap_docs.children %}
 </ul>
 {% endif %}
 {% else %}

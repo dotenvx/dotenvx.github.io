@@ -1,17 +1,21 @@
 require "bundler/setup"
 require "jekyll"
 require "minitest/autorun"
-require_relative "../_plugins/og_images"
+require_relative "../_plugins/writer_site"
 
-class BlogOgImagesTest < Minitest::Test
-  Page = Struct.new(:content, :url, :data)
+class ShareImagesTest < Minitest::Test
+  Page = Struct.new(:url, :data)
+  Site = Struct.new(:config)
 
   def setup
-    @site = Jekyll::Site.new(Jekyll.configuration("source" => File.expand_path("..", __dir__)))
+    @site = Site.new({ "url" => "https://dotenvx.com", "baseurl" => "/" })
   end
 
-  def image(content)
-    OgImages.new.first_post_image(@site, Page.new(content, "/blog/2026/post.html", { "title" => "Post title" }))
+  def image(content, data = {})
+    page = Page.new("/blog/2026/post.html", { "title" => "Post title", "writer_blog_post" => true }.merge(data))
+    document = Kramdown::Document.new(content, input: "GFM")
+    html, = WriterMarkdown.convert(document.root, document.options)
+    WriterSite.new.send(:lead_share_image, @site, page, html)
   end
 
   def test_first_image_in_document_order
@@ -34,7 +38,28 @@ class BlogOgImagesTest < Minitest::Test
     assert_nil image("```html\n<img src=\"/example.jpg\">\n```")
   end
 
-  def test_no_images_keeps_fallback
+  def test_text_only_post_has_no_share_image
     assert_nil image("Just text.")
+  end
+
+  def test_writer_page_uses_first_lead_image_at_any_size
+    @site.config["baseurl"] = "/preview"
+    content = <<~HTML
+      <img src="/badge.svg">
+      <img class="writer-image" src="/preview/newsletter.png" width="840" height="360" alt="Mug &amp; laptop">
+      <img class="writer-image" src="/preview/second.png" width="768" height="307">
+    HTML
+    assert_equal(
+      { "path" => "/newsletter.png", "width" => 840, "height" => 360, "alt" => "Mug &amp; laptop" },
+      image(content, "writer_blog_post" => false)
+    )
+  end
+
+  def test_writer_page_without_a_lead_image
+    assert_nil image('<img src="/badge.svg">', "writer_blog_post" => false)
+  end
+
+  def test_image_selection_can_be_disabled
+    assert_nil image("![First](/first.jpg)", "og_image" => false)
   end
 end

@@ -13,8 +13,8 @@ body_class: home-page careers-page
 
 ## Openings
 
-- [Agent Engineer]({{ '/v2/careers/agent-engineer/' | relative_url }})
-- [Corporate Sponsorships]({{ '/v2/careers/corporate-sponsorships/' | relative_url }})
+- [Agent Engineer]({{ '/careers/agent-engineer/' | relative_url }})
+- [Corporate Sponsorships]({{ '/careers/corporate-sponsorships/' | relative_url }})
 {% else %}
 <div class="home-sections">
   <section class="design-hero-section home-hero" aria-label="Careers">

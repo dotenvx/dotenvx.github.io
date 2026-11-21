@@ -18,7 +18,7 @@ crumbs:
   - label: Prebuild
     href: /docs/cli/prebuild/
 ---
-Deprecated. Use [`dotenvx protect --docker apps/backend`](/docs/cli/protect/#docker-build-check) in your Dockerfile instead. The build check is unchanged.
+Deprecated. Use [`dotenvx protect --docker apps/backend`](/docs/cli/protect-docker-directory/) in your Dockerfile instead. The build check is unchanged.
 
 ```docker
 # Dockerfile

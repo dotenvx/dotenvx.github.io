@@ -36,7 +36,12 @@ Dir.mktmpdir("central-redirects-test-") do |root|
   generated = JSON.parse(File.read(File.join(destination, "redirects.json")))
   raise "Central redirects absent from redirects.json" unless routes.keys.all? { |path| generated.key?(path) }
 
-  [ {"/new/" => "/elsewhere/"}, {"/loop/" => "/loop/"}, {"/a/" => "/b/", "/b/" => "/new/"} ].each do |invalid|
+  [
+    {"/new/" => "/elsewhere/"},
+    {"/loop/" => "/loop/"},
+    {"/a/" => "/b/", "/b/" => "/new/"},
+    {"/pricing/" => "/pricing"},
+  ].each do |invalid|
     site.reset
     site.read
     site.data["redirects"] = invalid

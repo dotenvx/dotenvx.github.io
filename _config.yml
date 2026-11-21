@@ -26,7 +26,6 @@ defaults:
   - scope:
       path: ""
     values:
-      image: "/og-image.png"
       layout: "default"
 
 # For Favicon Plugin

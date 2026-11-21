@@ -9,9 +9,8 @@ body_class: home-page
 ---
 
 {% assign search_path = '/search/' %}
-{% if writer_preview %}{% assign search_path = '/v2/search/' %}{% endif %}
 {% capture search_content %}
-<form class="site-search-page" data-site-search-page{% if writer_preview %} data-site-search-v2{% endif %} data-site-search-index="{{ '/search.json' | relative_url }}" action="{{ search_path | relative_url }}" method="get" role="search">
+<form class="site-search-page" data-site-search-page{% if writer_preview %} data-site-search-writer{% endif %} data-site-search-index="{{ '/search.json' | relative_url }}" action="{{ search_path | relative_url }}" method="get" role="search">
   <div class="site-search-page-field">
     <input
       type="text"

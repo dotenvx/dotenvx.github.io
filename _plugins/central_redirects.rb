@@ -17,6 +17,9 @@ class CentralRedirects < Jekyll::Generator
       if occupied.include?(from)
         raise Jekyll::Errors::FatalException, "Redirect would replace an existing page: #{from}"
       end
+      if from.end_with?("/") && to.split(/[?#]/, 2).first == from.delete_suffix("/")
+        raise Jekyll::Errors::FatalException, "Redirect would loop with the directory URL: #{from} => #{to}"
+      end
       if redirects.key?(to) || from == to
         raise Jekyll::Errors::FatalException, "Redirect must point to its final destination: #{from} => #{to}"
       end

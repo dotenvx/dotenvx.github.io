@@ -9,7 +9,7 @@ writer_layout: wide
 {% if writer_preview %}
 > Compare legacy Dotenvx Armor plans
 
-[See current pricing]({{ '/v2/pricing/' | relative_url }})
+[See current pricing]({{ '/pricing' | relative_url }})
 
 {% endif %}
 <div class="{% if writer_preview %}writer-pricing-comparison{% else %}pricing-page{% endif %}">

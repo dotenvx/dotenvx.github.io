@@ -1,11 +1,16 @@
 # Open Graph images
 
-`bundle exec jekyll build` and `bin/dev` automatically generate 1200 × 630 PNGs
-for posts using `layout: blog`. Run `npm ci` first. Restart an existing dev
-server once after adding or changing the Ruby generator plugin.
+Share previews use the first lead image on writer pages (an `img` with the
+`writer-image` class) or the first image in a blog post. A page without one
+can specify its own `image` or generated `og_image` card. Otherwise, Jekyll
+omits the Open Graph and Twitter image tags.
+
+`bundle exec jekyll build` and `bin/dev` generate 1200 × 630 PNGs for pages
+that explicitly configure an `og_image` card. Run `npm ci` first. Restart an
+existing dev server once after adding or changing the Ruby generator plugin.
 
 The template uses the site's dark colors and bundled Inter/Symbols fonts.
-It reads the post's title, author, and date; no image front matter is needed.
+The default card template reads the post's title, author, and date.
 Long titles shrink to fit, and a build fails rather than silently clipping a title.
 
 Images are cached under `.jekyll-cache/og-images/` and copied into
@@ -21,7 +26,7 @@ og_image: false
 image: /assets/img/my-custom-card.png
 ```
 
-To override only the card's title:
+To generate a card with a custom title for a text-only post:
 
 ```yaml
 og_image:

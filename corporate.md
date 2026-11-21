@@ -1,7 +1,7 @@
 ---
 title: Corporate Involvement
 description: "Steward the next chapter of .env."
-permalink: /corporate
+permalink: /corporate/
 og_image:
   template: mark
   image: assets/img/corporate-cube.png
@@ -35,7 +35,7 @@ body_class: home-page corporate-page
           <p>We’re looking for companies that care about the future of .env and want to help steward it.</p>
           <p>Meet with the maintainers, see work in progress, and share perspectives with other companies backing the future of Dotenv and Dotenvx—for humans and agents.</p>
           <p>Your contribution sustains the open-source work: maintaining the foundation, exploring new ideas, and developing patterns the whole software community can use.</p>
-          <p class="text-center">{% if writer_preview %}<a href="{{ site.data.redirects['/v2/agents/'] | relative_url }}">Explore Dotenvx.toml</a>{% else %}{% include components/design-link.html href="/ai" label="Explore the next chapter of .env →" %}{% endif %}</p>
+          <p class="text-center">{% if writer_preview %}<a href="{{ site.data.redirects['/agents/'] | relative_url }}">Explore Dotenvx.toml</a>{% else %}{% include components/design-link.html href="/ai" label="Explore the next chapter of .env →" %}{% endif %}</p>
         </div>
       {% endcapture %}
 {% if writer_preview %}

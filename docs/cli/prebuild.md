@@ -19,7 +19,7 @@ options:
     href: /docs/cli/prebuild-directory/
 video: cli-prebuild
 ---
-Deprecated. Use [`dotenvx protect --docker`](/docs/cli/protect/#docker-build-check) instead. The build check is unchanged; `prebuild` remains available with a deprecation warning.
+Deprecated. Use [`dotenvx protect --docker`](/docs/cli/protect-docker/) instead. The build check is unchanged; `prebuild` remains available with a deprecation warning.
 
 ```docker
 # Dockerfile

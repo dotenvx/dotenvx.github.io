@@ -1,8 +1,10 @@
 ---
 description: "Learn how to install Dotenvx, encrypt .env files, and load secrets at runtime. Explore quickstarts, CLI commands, SDKs, and deployment guides."
 title: Docs
-permalink: /docs/introduction/
+permalink: /docs/
 redirect_from:
+  - /docs/introduction
+  - /docs/introduction/
   - /docs/package-managers
   - /docs/package-managers/
   - /docs/process-managers
@@ -13,22 +15,14 @@ writer_layout: single
 ---
 
 {% if writer_preview %}
-[Install]({{ '/v2/docs/install/' | relative_url }})<br>
-Get the Dotenvx CLI
+- [Install]({{ '/docs/install/' | relative_url }})
+- [Quickstart]({{ '/docs/quickstart/' | relative_url }})
+- [Advanced]({{ '/docs/advanced/' | relative_url }})
 
-**[Quickstart]({{ '/v2/docs/quickstart/' | relative_url }})**<br>
-Encrypt your first `.env` file and run your app
+<!-- -->
 
-[Advanced]({{ '/v2/docs/advanced/' | relative_url }})<br>
-Find guides, CLI commands, and `Dotenvx.toml` options
-
-## Integrations and key storage
-
-[SDKs]({{ '/v2/docs/sdk/' | relative_url }})<br>
-Load encrypted `.env` files directly in your app
-
-[Custody]({{ '/v2/docs/custody/' | relative_url }})<br>
-Choose where to keep your private keys
+- [SDKs]({{ '/docs/sdk/' | relative_url }})
+- [Custody]({{ '/docs/custody/' | relative_url }})
 {% else %}
 {% capture docs_hero_visual %}
   <div class="docs-hero-ascii" aria-hidden="true">

@@ -13,28 +13,28 @@ writer_layout: columns
 
 Keep encrypted `.env` files with your code. Armor manages who can use the private keys to decrypt them.
 
-[Sign up](https://armor.dotenvx.com/signup) · [Pricing]({{ '/v2/pricing/' | relative_url }})
+[Sign up](https://armor.dotenvx.com/signup){: data-umami-event="Armor Hero Signup button"} · [Pricing]({{ '/pricing' | relative_url }}){: data-umami-event="Armor Hero Pricing button"}
 
-Kortix, [Supermemory]({{ '/v2/members/supermemory/' | relative_url }}), and Comp AI use Armor.
+Kortix, [Supermemory]({{ '/members/supermemory/' | relative_url }}), and Comp AI use Armor.
 
 ## Controls
 
 - **Custody.** Move private keys off developer devices. Use Enclaved Keys to keep them on your infrastructure.
 - **Access.** Grant and revoke access to individual keys for teammates and agents.
 - **Approvals.** Require human approval for key access with Guard.
-- **Audit.** See who accessed each key and when. Read audit logs through the [Armor API]({{ '/v2/docs/api/' | relative_url }}).
+- **Audit.** See who accessed each key and when. Read audit logs through the [Armor API]({{ '/docs/api/' | relative_url }}).
 {: .writer-docs-list}
 
 ## Usage
 
-Start with an [encrypted .env file]({{ '/v2/docs/quickstart/' | relative_url }}#encrypt). Sign in from your project directory and move the private key into Armor.
+Start with an [encrypted .env file]({{ '/docs/quickstart/' | relative_url }}#encrypt). Sign in from your project directory and move the private key into Armor.
 
 ```console
 $ dotenvx armor login
 $ dotenvx armor up
 ```
 
-Dotenvx requests the key from Armor when you run your app. The [Armor custody guide]({{ '/v2/docs/custody/armor/' | relative_url }}) covers approvals and moving keys back to `.env.keys`.
+Dotenvx requests the key from Armor when you run your app. The [Armor custody guide]({{ '/docs/custody/armor/' | relative_url }}) covers approvals and moving keys back to `.env.keys`.
 
 {% else %}
 {% capture armor_hero_container %}

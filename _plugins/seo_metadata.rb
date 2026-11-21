@@ -29,7 +29,7 @@ module Jekyll
               "dotenvx #{title.downcase}"
             end
           elsif page.url.start_with?("/docs/sdk/")
-            ([title] + parents.reverse.reject { |p| ["/docs/introduction", "/docs/sdk"].include?(normalize(p.url)) }.map { |p| p.data["title"] } + ["SDK"]).uniq.join(" · ")
+            ([title] + parents.reverse.reject { |p| ["/docs", "/docs/sdk"].include?(normalize(p.url)) }.map { |p| p.data["title"] } + ["SDK"]).uniq.join(" · ")
           elsif page.url.start_with?("/docs/custody/") && normalize(page.url) != "/docs/custody"
             "#{title} · Key custody"
           else
@@ -50,7 +50,7 @@ module Jekyll
     end
 
     def parents_for(page, by_url)
-      paths = ["/docs/introduction/"]
+      paths = ["/docs/"]
       segments = page.url.split("/").reject(&:empty?)
       (2...segments.length).each { |length| paths << "/#{segments.first(length).join('/')}" }
       Array(page.data["crumbs"]).each { |crumb| paths << crumb["href"] }

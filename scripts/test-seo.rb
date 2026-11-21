@@ -28,17 +28,18 @@ files.each do |file|
     errors << "#{path}: redirect canonical must be absolute" unless canonical.to_s.match?(%r{\Ahttps?://})
     next
   end
+  errors << "#{path}: expected a redirect at the former preview URL" if path.start_with?("/v2/")
   if html.at_css('meta[name="robots"]')&.[]("content").to_s.include?("noindex")
     noindex_urls << canonical
     next
   end
   indexable << path
+  errors << "#{path}: expected the public writer layout" unless html.at_css("main.writer")
   {
     "head > title" => "text",
     'meta[name="description"]' => "content",
     'meta[property="og:title"]' => "content",
     'meta[property="og:description"]' => "content",
-    'meta[property="og:image"]' => "content",
     'meta[name="twitter:title"]' => "content",
     'meta[name="twitter:description"]' => "content",
     'link[rel="canonical"]' => "href"
@@ -47,6 +48,12 @@ files.each do |file|
     value = attribute == "text" ? nodes.first&.text : nodes.first&.[](attribute)
     errors << "#{path}: expected one nonempty #{selector}" unless nodes.size == 1 && !value.to_s.strip.empty?
   end
+  og_images = html.css('meta[property="og:image"]').map { |node| node["content"] }
+  twitter_images = html.css('meta[property="twitter:image"], meta[name="twitter:image"]').map { |node| node["content"] }
+  if og_images != twitter_images || og_images.size > 1 || og_images.any? { |url| !url.to_s.match?(%r{\Ahttps?://}) }
+    errors << "#{path}: expected matching absolute Open Graph and Twitter images, or neither"
+  end
+  errors << "#{path}: uses the retired default share image" if og_images.include?("#{origin}/og-image.png")
   title = html.at_css("head > title")&.text.to_s
   titles[title] << path
   errors << "#{path}: expected one H1" unless html.css("h1").size == 1
@@ -64,9 +71,6 @@ files.each do |file|
   end
   errors << "#{path}: missing structured data" if schemas.empty?
   breadcrumb = schemas.find { |schema| schema["@type"] == "BreadcrumbList" }
-  if path.start_with?("/docs/") && path != "/docs/introduction/index.html"
-    errors << "#{path}: missing breadcrumb schema" unless breadcrumb
-  end
   if breadcrumb
     errors << "#{path}: missing visible breadcrumb navigation" unless html.at_css('nav[aria-label="Breadcrumb"]')
     items = breadcrumb.fetch("itemListElement")
@@ -91,6 +95,13 @@ errors << "robots.txt blocks entire site" if robots.match?(%r{^Disallow:\s*/\s*$
 %w[/404.html /search/index.html /banner.html].each do |path|
   html = Nokogiri::HTML(File.read(File.join(root, path)))
   errors << "#{path}: expected noindex" unless html.at_css('meta[name="robots"]')&.[]("content").to_s.include?("noindex")
+end
+feed = Nokogiri::XML(File.read(File.join(root, "feed.xml"))) { |options| options.strict }
+feed.xpath("//*[local-name()='entry']/*[local-name()='content']").each do |entry|
+  body = Nokogiri::HTML.fragment(entry.text)
+  if body.at_css(".writer-post-footer, .writer-markdown-syntax, form[data-newsletter-form]")
+    errors << "Blog feed includes page layout markup"
+  end
 end
 abort errors.join("\n") unless errors.empty?
 puts "SEO passed: #{indexable.size} indexable pages; unique titles and canonicals, descriptions, H1s, social metadata, structured data, sitemap, robots, and noindex rules."

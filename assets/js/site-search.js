@@ -145,9 +145,9 @@
     } catch (_) {}
   }
 
-  function renderHits(root, items, query, preferPreview) {
+  function renderHits(root, items, query, writerLayout) {
     if (!query) {
-      root.innerHTML = preferPreview ? '' : '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
+      root.innerHTML = writerLayout ? '' : '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
       return
     }
     if (!items.length) {
@@ -157,9 +157,8 @@
 
     var html = '<ul class="site-search-hits">'
     items.forEach(function (item, i) {
-      var url = (preferPreview && item.preview_url) || item.url
       html += '<li>'
-      html += '<a class="site-search-hit' + (i === 0 ? ' is-active' : '') + '" href="' + escapeHtml(url) + '" data-site-search-hit="' + i + '">'
+      html += '<a class="site-search-hit' + (i === 0 ? ' is-active' : '') + '" href="' + escapeHtml(item.url) + '" data-site-search-hit="' + i + '">'
       html += '<span class="site-search-hit-title">' + escapeHtml(item.title) + '</span>'
       if (item.section) {
         html += '<span class="site-search-hit-meta">' + escapeHtml(item.section) + '</span>'
@@ -186,8 +185,8 @@
       document.body.appendChild(overlay)
     }
 
-    var pagePrefersPreview = hasPage && pageForm.hasAttribute('data-site-search-v2')
-    var modalPrefersPreview = hasModal && modalForm.hasAttribute('data-site-search-v2')
+    var pageUsesWriter = hasPage && pageForm.hasAttribute('data-site-search-writer')
+    var modalUsesWriter = hasModal && modalForm.hasAttribute('data-site-search-writer')
 
     var index = null
     var indexRequest = null
@@ -223,12 +222,12 @@
 
     function runPage(query) {
       if (!index || !pageResults) return
-      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, pagePrefersPreview)
+      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, pageUsesWriter)
     }
 
     function runModal(query) {
       if (!index) return
-      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, modalPrefersPreview)
+      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, modalUsesWriter)
     }
 
     function hitRoot() {
@@ -310,7 +309,7 @@
         })
     }
 
-    if (hasPage || !modalPrefersPreview) loadIndex()
+    if (hasPage || !modalUsesWriter) loadIndex()
 
     if (hasPage) {
       pageInput.addEventListener('input', function () {

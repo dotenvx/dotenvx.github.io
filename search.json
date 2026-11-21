@@ -7,9 +7,9 @@ search: false
 {%- assign emitted = false -%}
 {%- for page in site.pages -%}
   {%- assign page_url = page.url -%}
+  {%- assign source_layout = page.writer_source_layout | default: page.layout -%}
   {%- assign include_page = true -%}
   {%- if page.search == false -%}{%- assign include_page = false -%}{%- endif -%}
-  {%- if page.layout == "writer" -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page.title == nil or page.title == "" -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page.redirect_to -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page_url == "/search.json" -%}{%- assign include_page = false -%}{%- endif -%}
@@ -27,9 +27,9 @@ search: false
     {%- assign boost = page.search_boost -%}
   {%- elsif hint.boost -%}
     {%- assign boost = hint.boost -%}
-  {%- elsif page.layout == "docs-quickstart" or page.quickstart_pager -%}
+  {%- elsif source_layout == "docs-quickstart" or page.quickstart_pager -%}
     {%- assign boost = 35 -%}
-  {%- elsif page.layout == "docs-cli" -%}
+  {%- elsif source_layout == "docs-cli" -%}
     {%- assign boost = 8 -%}
   {%- elsif page_url == "/" -%}
     {%- assign boost = 50 -%}
@@ -57,11 +57,11 @@ search: false
   {%- if page_url == "/" -%}{%- assign slug = "home" -%}{%- endif -%}
   {%- assign desc = page.description | default: page.social_title | default: "" -%}
   {%- assign search_title = page.title -%}
-  {%- if page.layout == "docs-side-path" and page.parent_title -%}
+  {%- if source_layout == "docs-side-path" and page.parent_title -%}
     {%- assign search_title = page.parent_title | append: " — " | append: page.title -%}
-  {%- elsif page.layout == "docs-custody" -%}
+  {%- elsif source_layout == "docs-custody" -%}
     {%- assign search_title = "Custody — " | append: page.title -%}
-  {%- elsif page.layout == "docs-cli" -%}
+  {%- elsif source_layout == "docs-cli" -%}
     {%- if page.eyebrow -%}
       {%- assign command_prefix = page.eyebrow | remove_first: "dotenvx " -%}
       {%- assign prefix_length = command_prefix | size -%}
@@ -88,9 +88,6 @@ search: false
   {
     "title": {{ search_title | jsonify }},
     "url": {{ page_url | jsonify }},
-    {%- if site.data.writer_search_urls[page_url] %}
-    "preview_url": {{ site.data.writer_search_urls[page_url] | jsonify }},
-    {%- endif %}
     "description": {{ desc | jsonify }},
     "section": {{ section | jsonify }},
     "slug": {{ slug | jsonify }},
@@ -170,9 +167,6 @@ search: false
   {
     "title": {{ post.title | jsonify }},
     "url": {{ page_url | jsonify }},
-    {%- if site.data.writer_search_urls[page_url] %}
-    "preview_url": {{ site.data.writer_search_urls[page_url] | jsonify }},
-    {%- endif %}
     "description": {{ desc | jsonify }},
     "section": "Blog",
     "slug": {{ slug | jsonify }},

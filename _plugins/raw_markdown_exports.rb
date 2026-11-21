@@ -19,11 +19,7 @@ module RawMarkdownExports
     'docs/side-paths/docker-build-secrets.md' => '/docs/docker/build-secrets.md',
     'docs/install.md' => '/docs/install.md',
     'docs/quickstart.md' => '/docs/quickstart.md',
-    'docs/side-paths/quickstart-without-nodejs.md' => '/docs/quickstart/without-nodejs.md',
-    'docs/side-paths/quickstart-protect.md' => '/docs/quickstart/protect.md',
     'docs/side-paths/quickstart-env-files.md' => '/docs/quickstart/env-files.md',
-    'docs/side-paths/quickstart-install-alternatives.md' => '/docs/quickstart/install-alternatives.md',
-    'docs/side-paths/quickstart-deploy.md' => '/docs/quickstart/deploy.md',
     'docs/github-actions.md' => '/docs/github-actions.md',
     'docs/hono.md' => '/docs/hono.md',
     'docs/side-paths/hono-bun.md' => '/docs/hono/bun.md',
@@ -194,10 +190,15 @@ module RawMarkdownExports
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  homepage = RawMarkdownExports.homepage(File.read(site.in_source_dir('index.md')), site)
-  RawMarkdownExports.write(File.join(site.dest, 'index.md'), homepage)
+  writer_urls = site.pages.filter_map { |page| page.data['writer_markdown_url'] }
+  unless writer_urls.include?('/index.md')
+    homepage = RawMarkdownExports.homepage(File.read(site.in_source_dir('index.md')), site)
+    RawMarkdownExports.write(File.join(site.dest, 'index.md'), homepage)
+  end
 
   RawMarkdownExports::EXPORTS.each do |source_path, url|
+    next if writer_urls.include?(url)
+
     source = File.join(site.source, source_path)
     next unless File.file?(source)
 

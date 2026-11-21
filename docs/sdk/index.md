@@ -8,6 +8,7 @@ redirect_from:
   - /docs/sdk/introduction
   - /docs/sdk/introduction/
 layout: radar
+writer_layout: single
 sdk_languages:
   - label: Node.js
     slug: nodejs
@@ -31,7 +32,7 @@ sdk_languages:
 {% if writer_preview %}
 > Load and manage encrypted env from your language.
 
-<p><img class="writer-image" src="{{ '/sdks.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
+<p><img class="writer-image" src="{{ '/sdk.png' | relative_url }}" alt="Power lines silhouetted against a sunset" width="768" height="307"></p>
 
 ## Languages
 

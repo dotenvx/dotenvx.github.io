@@ -327,6 +327,7 @@ body.overflow-hidden { overflow: hidden; }
   color: var(--heading);
   scroll-margin-top: calc(var(--writer-header-height) + 1rem);
 }
+.writer p[id] { scroll-margin-top: calc(var(--writer-header-height) + 1rem); }
 
 .writer :is(h1, h2) { font-weight: 500; }
 

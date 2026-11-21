@@ -31,8 +31,6 @@ sdk_languages:
 
 > Load and manage encrypted env from your language.
 
-<p><img class="writer-image" src="{{ '/sdk.png' | relative_url }}" alt="Power lines silhouetted against a sunset" width="768" height="307"></p>
-
 ## Languages
 
 {% include writer-sdk-list.md languages=page.sdk_languages %}

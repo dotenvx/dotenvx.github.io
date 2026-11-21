@@ -9,7 +9,6 @@ redirect_from:
   - /docs/frameworks/flask/
   - /docs/secrets-in-flask/
   - /docs/secrets-in-flask
-quickstart_pager: true
 ---
 
 ## Install

@@ -11,7 +11,7 @@ redirect_from:
   - /docs/secrets-in-express
   - /docs/frameworks/express
   - /docs/frameworks/express/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

@@ -9,7 +9,7 @@ redirect_from:
   - /docs/monorepos/turborepo/
   - /docs/secrets-in-turborepo
   - /docs/secrets-in-turborepo/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Encrypt

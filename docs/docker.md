@@ -9,7 +9,6 @@ redirect_from:
   - /docs/platforms/docker/
   - /docs/secrets-in-docker
   - /docs/secrets-in-docker/
-quickstart_pager: true
 markdown_url: /docs/docker.md
 agent_prompt: Set up Dotenvx with Docker for me.
 ---

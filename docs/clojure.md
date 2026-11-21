@@ -7,7 +7,7 @@ permalink: /docs/clojure/
 redirect_from:
   - /docs/secrets-in-clojure/
   - /docs/secrets-in-clojure
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Install

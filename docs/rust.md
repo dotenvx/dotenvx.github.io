@@ -9,7 +9,6 @@ redirect_from:
   - /docs/languages/rust/
   - /docs/secrets-in-rust/
   - /docs/secrets-in-rust
-quickstart_pager: true
 markdown_url: /docs/rust.md
 agent_prompt: Set up Dotenvx with the Rust dotenvx-primitives crate for me.
 ---

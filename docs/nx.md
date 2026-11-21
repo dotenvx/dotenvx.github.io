@@ -9,7 +9,7 @@ redirect_from:
   - /docs/monorepos/nx/
   - /docs/secrets-in-nx
   - /docs/secrets-in-nx/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

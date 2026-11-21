@@ -13,7 +13,6 @@ redirect_from:
   - /docs/secrets-in-cursor/
   - /docs/secrets-in-cursor
 video: ai-redaction
-quickstart_pager: true
 ---
 
 ## Prerequisites

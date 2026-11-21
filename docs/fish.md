@@ -7,7 +7,7 @@ permalink: /docs/fish/
 redirect_from:
   - /docs/secrets-in-fish/
   - /docs/secrets-in-fish
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Install

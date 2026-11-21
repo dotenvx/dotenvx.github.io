@@ -9,7 +9,6 @@ redirect_from:
   - /docs/frameworks/echo/
   - /docs/secrets-in-echo/
   - /docs/secrets-in-echo
-quickstart_pager: true
 ---
 
 ## Install

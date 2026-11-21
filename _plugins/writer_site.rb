@@ -3,7 +3,6 @@ require_relative 'design_codeblock'
 require 'kramdown-parser-gfm'
 require 'nokogiri'
 require_relative 'writer_markdown_export'
-require_relative 'cli_nav'
 require 'addressable/uri'
 require 'cgi'
 require 'json'
@@ -84,7 +83,7 @@ class WriterSite < Jekyll::Generator
       page.url == '/docs/resources/' || resource_urls.include?(page.url)
     end
 
-    publish_docs(site, cli_pages, links, 'writer-cli-reference.md', frame_context: { 'cli_nav' => DocsCliNav.build(site) })
+    publish_docs(site, cli_pages, links, 'writer-cli-reference.md')
     publish_docs(site, sdk_pages, links, 'writer-cli-reference.md', frame_context: { 'sdk_reference' => true }, metadata: { 'writer_layout' => 'single' })
     publish_docs(site, custody_pages, links, 'writer-custody.md')
     publish_docs(site, toml_pages, links, 'writer-cli-reference.md', frame_context: { 'toml_reference' => true })

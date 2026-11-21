@@ -7,7 +7,7 @@ permalink: /docs/kotlin/
 redirect_from:
   - /docs/secrets-in-kotlin/
   - /docs/secrets-in-kotlin
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Install

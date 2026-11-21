@@ -509,44 +509,6 @@ body.overflow-hidden { overflow: hidden; }
 .writer .writer-sitemap-tree ul { list-style-type: circle; }
 .writer .writer-sitemap-tree ul ul { list-style-type: square; }
 
-.writer .newsletter-signup {
-  --design-bg: light-dark(#fff, var(--paper));
-  --design-bg-lift: light-dark(#f4f4f5, #12110e);
-  --design-line: light-dark(#ddd, var(--line));
-  --design-ink: light-dark(#292824, var(--heading));
-  --design-dim: light-dark(#797973, var(--syntax));
-  --design-control-radius: 0;
-  --design-text-size: 16px;
-  --design-text-compact: 13px;
-  --design-text-micro: 12px;
-  margin-block: 2.5rem 0;
-  padding: 24px;
-  border-radius: 0;
-  color: var(--design-ink);
-  break-inside: avoid-column;
-}
-.writer .newsletter-signup > .design-paragraph { margin: 8px 0 16px; font-size: 14px; line-height: 24px; }
-.writer .newsletter-signup form { display: grid; grid-template-columns: minmax(0, 200px) auto; }
-.writer .newsletter-signup :is(.newsletter-status, noscript) { grid-column: 1 / -1; }
-.writer .newsletter-signup input[type="email"] { padding: 10px; line-height: 1.2; }
-.writer .newsletter-signup button {
-  padding: 10px 14px;
-  background: transparent;
-  border: 1px solid light-dark(rgba(48, 59, 63, 0.16), rgba(212, 189, 132, 0.22));
-  border-radius: var(--design-control-radius);
-  color: light-dark(#1f282c, #e8e0d2);
-  cursor: pointer;
-  font-family: var(--writer-mono);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-.writer .newsletter-signup button:enabled:is(:hover, :focus-visible) {
-  background: light-dark(rgba(48, 59, 63, 0.06), rgba(212, 189, 132, 0.08));
-}
-.writer .newsletter-signup .newsletter-note { margin-top: 12px; line-height: 20px; }
-
 .writer--post {
   --design-text-micro: 12px;
   --design-mid: var(--syntax);

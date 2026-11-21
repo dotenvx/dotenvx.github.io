@@ -7,7 +7,7 @@ permalink: /docs/monorepos/
 redirect_from:
   - /docs/secrets-in-monorepos/
   - /docs/secrets-in-monorepos
-quickstart_pager: true
+search_boost: 35
 ---
 
 Point `-f` at a directory and dotenvx loads the `.env` inside it. This makes a shared root `.env` available from any workspace.

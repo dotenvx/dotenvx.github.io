@@ -5,7 +5,7 @@ description: "Encrypt a .env file in NestJS with Dotenvx, commit it safely, and 
 permalink: /docs/nestjs/
 markdown_url: /docs/nestjs.md
 agent_prompt: Set up Dotenvx with NestJS for me.
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

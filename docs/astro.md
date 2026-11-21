@@ -11,7 +11,7 @@ redirect_from:
   - /docs/secrets-in-astro
   - /docs/frameworks/astro
   - /docs/frameworks/astro/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

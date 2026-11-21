@@ -10,7 +10,6 @@ redirect_from:
   - /docs/secrets-in-bitwarden
   - /docs/secrets-in-bitwarden/
 video: bitwarden
-quickstart_pager: true
 ---
 
 ## Prerequisites

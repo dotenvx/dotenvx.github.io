@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Hono for me.
 redirect_from:
   - /docs/frameworks/hono
   - /docs/frameworks/hono/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

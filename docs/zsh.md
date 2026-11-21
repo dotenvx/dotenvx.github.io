@@ -4,7 +4,7 @@ social_title: "Encrypt a .env file in Zsh"
 description: "Encrypt a .env file in Zsh with dotenvx, commit it safely, and inject its secrets at runtime."
 icon: zsh
 permalink: /docs/zsh/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Install

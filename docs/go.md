@@ -9,7 +9,6 @@ redirect_from:
   - /docs/languages/go/
   - /docs/secrets-in-go/
   - /docs/secrets-in-go
-quickstart_pager: true
 ---
 
 ## Install

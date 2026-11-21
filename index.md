@@ -191,7 +191,7 @@ App listening on port 80
 
 - 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
-- [John Zila](/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
 - [Dhravya Shah](/members/supermemory/) (CEO of Supermemory): *set one key and all your secrets just work*
+- [John Zila](/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
 
 </div>

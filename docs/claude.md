@@ -13,7 +13,6 @@ redirect_from:
   - /docs/secrets-in-claude/
   - /docs/secrets-in-claude
 video: ai-redaction
-quickstart_pager: true
 ---
 
 ## Prerequisites

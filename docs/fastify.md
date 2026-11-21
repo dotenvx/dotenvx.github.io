@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Fastify for me.
 redirect_from:
   - /docs/frameworks/fastify
   - /docs/frameworks/fastify/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

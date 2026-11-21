@@ -113,17 +113,6 @@
   white-space: pre-wrap;
 }
 
-.writer .docs-quickstart-pager {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 16px;
-  margin-block: 24px 20px;
-  break-inside: avoid-column;
-}
-
-.writer .docs-quickstart-pager--next-only { justify-content: flex-end; }
-
 .writer :is(.design-choice--code, .design-video, .docs-package-manager-example, .design-browser-wrapper, .design-secrets-artifact) {
   margin: 0 0 20px;
   break-inside: avoid-column;

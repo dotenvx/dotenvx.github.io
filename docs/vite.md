@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Vite for me.
 redirect_from:
   - /docs/secrets-in-vite/
   - /docs/secrets-in-vite
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Remix v2 for me.
 redirect_from:
   - /docs/frameworks/remix
   - /docs/frameworks/remix/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

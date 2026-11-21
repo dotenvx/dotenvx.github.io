@@ -9,7 +9,7 @@ redirect_from:
   - /docs/platforms/docker-compose/
   - /docs/secrets-in-docker-compose
   - /docs/secrets-in-docker-compose/
-quickstart_pager: true
+search_boost: 35
 markdown_url: /docs/docker-compose.md
 agent_prompt: Set up Dotenvx with Docker Compose for me.
 ---

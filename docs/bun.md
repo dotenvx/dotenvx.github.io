@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Bun for me.
 redirect_from:
   - /docs/secrets-in-bun/
   - /docs/secrets-in-bun
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

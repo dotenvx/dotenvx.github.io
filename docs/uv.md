@@ -7,7 +7,7 @@ permalink: /docs/uv/
 redirect_from:
   - /docs/secrets-in-uv/
   - /docs/secrets-in-uv
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

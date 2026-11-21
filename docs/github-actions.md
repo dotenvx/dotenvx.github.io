@@ -11,7 +11,6 @@ redirect_from:
   - /docs/cis/github-actions/
   - /docs/secrets-in-github-actions
   - /docs/secrets-in-github-actions/
-quickstart_pager: true
 ---
 
 ## Prerequisites

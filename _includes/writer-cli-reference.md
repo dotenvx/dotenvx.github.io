@@ -52,6 +52,3 @@
 - <a href="{{ item.href | escape }}">{{ item.title | escape }}</a>
 {% endfor %}
 {% endif %}
-
-{% capture pager %}{% include components/docs-cli-pager.html items=cli_nav %}{% endcapture %}
-{{ pager | strip }}

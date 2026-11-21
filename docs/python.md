@@ -9,7 +9,6 @@ redirect_from:
   - /docs/languages/python/
   - /docs/secrets-in-python/
   - /docs/secrets-in-python
-quickstart_pager: true
 ---
 
 ## Install

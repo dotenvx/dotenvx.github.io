@@ -1,7 +1,6 @@
 <!doctype html>
 {% assign writer_path_prefix = page.url | slice: 0, 6 %}
 {% if writer_path_prefix == '/docs/' %}{% assign writer_docs_section = true %}{% endif %}
-{% assign writer_reference_prefix = page.url | slice: 0, 10 %}
 {% assign writer_whitepaper_url = '/whitepaper.pdf' | relative_url %}
 {% assign writer_github_url = 'https://github.com/dotenvx' %}
 {% assign writer_layout = page.writer_layout | default: 'columns' %}
@@ -98,9 +97,6 @@
   {% if page.writer_guide %}
   <script src="{{ '/assets/js/docs-package-manager.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/secrets-artifact.js' | relative_url }}" defer></script>
-  <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}" defer></script>
-  {% elsif writer_reference_prefix == '/docs/cli/' and page.url != '/docs/cli/' %}
-  <script src="{{ '/assets/js/docs-quickstart-pager.js' | relative_url }}" defer></script>
   {% endif %}
   <script src="{{ '/assets/js/writer-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>

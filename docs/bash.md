@@ -7,7 +7,7 @@ permalink: /docs/bash/
 redirect_from:
   - /docs/secrets-in-bash/
   - /docs/secrets-in-bash
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Install

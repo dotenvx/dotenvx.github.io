@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with TanStack Start for me.
 redirect_from:
   - /docs/frameworks/tanstack-start
   - /docs/frameworks/tanstack-start/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

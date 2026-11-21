@@ -7,7 +7,7 @@ permalink: /docs/cron/
 redirect_from:
   - /docs/secrets-in-cron/
   - /docs/secrets-in-cron
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Install

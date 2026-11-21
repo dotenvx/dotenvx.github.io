@@ -9,7 +9,6 @@ redirect_from:
   - /docs/languages/dotnet/
   - /docs/secrets-in-dotnet/
   - /docs/secrets-in-dotnet
-quickstart_pager: true
 ---
 
 ## Install

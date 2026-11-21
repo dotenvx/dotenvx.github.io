@@ -10,7 +10,6 @@ redirect_from:
   - /docs/secrets-in-1password
   - /docs/secrets-in-1password/
 video: one-password
-quickstart_pager: true
 ---
 
 ## Prerequisites

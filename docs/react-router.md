@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with React Router Framework Mode for me.
 redirect_from:
   - /docs/frameworks/react-router
   - /docs/frameworks/react-router/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

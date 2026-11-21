@@ -9,7 +9,6 @@ redirect_from:
   - /docs/frameworks/sinatra/
   - /docs/secrets-in-sinatra/
   - /docs/secrets-in-sinatra
-quickstart_pager: true
 ---
 
 ## Install

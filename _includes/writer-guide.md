@@ -13,8 +13,3 @@
 {% endif %}
 
 {{ docs_body | strip }}
-
-{% if page.quickstart_pager %}
-{% capture pager %}{% include components/docs-quickstart-pager.html %}{% endcapture %}
-{{ pager | strip }}
-{% endif %}

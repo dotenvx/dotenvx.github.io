@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Nuxt 4 for me.
 redirect_from:
   - /docs/frameworks/nuxt
   - /docs/frameworks/nuxt/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

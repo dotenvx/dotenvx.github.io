@@ -9,7 +9,6 @@ redirect_from:
   - /docs/languages/php/
   - /docs/secrets-in-php/
   - /docs/secrets-in-php
-quickstart_pager: true
 ---
 
 ## Install

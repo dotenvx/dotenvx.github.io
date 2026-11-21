@@ -13,7 +13,6 @@ redirect_from:
   - /docs/secrets-in-codex/
   - /docs/secrets-in-codex
 video: ai-redaction
-quickstart_pager: true
 ---
 
 ## Prerequisites

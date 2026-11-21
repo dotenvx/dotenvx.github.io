@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with SvelteKit 3 for me.
 redirect_from:
   - /docs/frameworks/sveltekit
   - /docs/frameworks/sveltekit/
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

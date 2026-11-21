@@ -9,7 +9,6 @@ redirect_from:
   - /docs/languages/java/
   - /docs/secrets-in-java/
   - /docs/secrets-in-java
-quickstart_pager: true
 ---
 
 ## Install

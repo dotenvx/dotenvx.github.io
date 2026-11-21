@@ -9,7 +9,7 @@ agent_prompt: Set up Dotenvx with Expo for me.
 redirect_from:
   - /docs/secrets-in-expo/
   - /docs/secrets-in-expo
-quickstart_pager: true
+search_boost: 35
 ---
 
 ## Prerequisites

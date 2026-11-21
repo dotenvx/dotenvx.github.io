@@ -2,32 +2,32 @@ require_relative 'raw_markdown_exports'
 require_relative 'design_codeblock'
 require 'kramdown-parser-gfm'
 require 'nokogiri'
-require_relative 'writer_markdown_export'
+require_relative 'main_markdown_export'
 require 'addressable/uri'
 require 'cgi'
 require 'json'
 
-class WriterMarkdown < Kramdown::Converter::Html
+class MainMarkdown < Kramdown::Converter::Html
   private
 
-  def marker(text, class_name = 'writer-markdown-syntax')
+  def marker(text, class_name = 'main-markdown-syntax')
     %(<span class="#{class_name}" aria-hidden="true">#{escape_html(text)}</span>)
   end
 
   def convert_header(element, indent)
     level = element.options.fetch(:level)
-    class_name = level <= 2 ? 'writer-markdown-syntax' : 'writer-markdown-detail'
+    class_name = level <= 2 ? 'main-markdown-syntax' : 'main-markdown-detail'
     super.sub(/<h[1-6]\b[^>]*>/) { |tag| tag + marker('#' * level + ' ', class_name) }
   end
 
   def convert_a(element, indent)
-    label = marker('[') + %(<span class="writer-link-label">#{inner(element, indent)}</span>) + marker(']')
+    label = marker('[') + %(<span class="main-link-label">#{inner(element, indent)}</span>) + marker(']')
     destination = element.attr.fetch('href').gsub(/[\\()]/) { |character| "\\#{character}" }
-    format_as_span_html('a', element.attr, label + marker("(#{destination})", 'writer-markdown-detail'))
+    format_as_span_html('a', element.attr, label + marker("(#{destination})", 'main-markdown-detail'))
   end
 
   def convert_em(element, indent)
-    syntax = marker(element.type == :strong ? '**' : '*', 'writer-markdown-detail')
+    syntax = marker(element.type == :strong ? '**' : '*', 'main-markdown-detail')
     format_as_span_html(element.type, element.attr, syntax + inner(element, indent) + syntax)
   end
   alias convert_strong convert_em
@@ -46,12 +46,12 @@ class WriterMarkdown < Kramdown::Converter::Html
 
     language = element.options[:lang] || extract_code_language(element.attr)
     fence = '`' * [3, element.value.scan(/^`+/).map(&:length).max.to_i + 1].max
-    html.sub('<code>', "#{marker(fence)}#{marker(language.to_s, 'writer-markdown-detail')}\n<code>")
+    html.sub('<code>', "#{marker(fence)}#{marker(language.to_s, 'main-markdown-detail')}\n<code>")
       .sub('</code>', "</code>\n#{marker(fence)}")
   end
 end
 
-class WriterSite < Jekyll::Generator
+class MainSite < Jekyll::Generator
   priority :lowest # Use the canonical URLs, aliases, and metadata prepared by the other generators.
 
   def generate(site)
@@ -69,7 +69,7 @@ class WriterSite < Jekyll::Generator
 
     docs_pages = site.pages.select do |page|
       page.url.start_with?('/docs/') && page.output_ext == '.html' &&
-        page.data['layout'] != 'redirect' && !page.data['writer_markdown'] && !page.data['redirect_to']
+        page.data['layout'] != 'redirect' && !page.data['main_markdown'] && !page.data['redirect_to']
     end
     cli_pages = docs_pages.select { |page| page.url.start_with?('/docs/cli/') }
     sdk_pages = docs_pages.select { |page| page.url.start_with?('/docs/sdk/') }
@@ -83,16 +83,20 @@ class WriterSite < Jekyll::Generator
       page.url == '/docs/resources/' || resource_urls.include?(page.url)
     end
 
-    publish_docs(site, cli_pages, links, 'writer-cli-reference.md')
-    publish_docs(site, sdk_pages, links, 'writer-cli-reference.md', frame_context: { 'sdk_reference' => true }, metadata: { 'writer_layout' => 'single' })
-    publish_docs(site, custody_pages, links, 'writer-custody.md')
-    publish_docs(site, toml_pages, links, 'writer-cli-reference.md', frame_context: { 'toml_reference' => true })
-    publish_docs(site, guide_pages, links, 'writer-guide.md', metadata: { 'writer_guide' => true })
-    publish_docs(site, resource_pages, links, 'writer-guide.md', metadata: { 'writer_resource' => true })
+    publish_docs(site, cli_pages, links, 'main-cli-reference.md', metadata: { 'main_layout' => 'single' })
+    publish_docs(site, sdk_pages, links, 'main-cli-reference.md', frame_context: { 'sdk_reference' => true }, metadata: { 'main_layout' => 'single' })
+    custody_indexes, custody_references = custody_pages.partition { |page| page.url == '/docs/custody/' }
+    publish_docs(site, custody_indexes, links, 'main-custody.md')
+    publish_docs(site, custody_references, links, 'main-custody.md', metadata: { 'main_layout' => 'single' })
+    toml_indexes, toml_references = toml_pages.partition { |page| page.url == '/docs/dotenvxtoml/' }
+    publish_docs(site, toml_indexes, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true })
+    publish_docs(site, toml_references, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true }, metadata: { 'main_layout' => 'single' })
+    publish_docs(site, guide_pages, links, 'main-guide.md', metadata: { 'main_guide' => true, 'main_layout' => 'single' })
+    publish_docs(site, resource_pages, links, 'main-guide.md', metadata: { 'main_resource' => true })
 
     publish_blog_posts(site, links)
     (site.pages + site.docs_to_write).dup.each do |page|
-      next unless page.output_ext == '.html' && !page.data['writer_markdown']
+      next unless page.output_ext == '.html' && !page.data['main_markdown']
       next if page.data['layout'] == 'redirect' || page.data['redirect_to']
 
       content = render_source(site, page, page.content)
@@ -111,7 +115,7 @@ class WriterSite < Jekyll::Generator
   end
 
   def titled_markdown(page, content)
-    title = page.data['writer_title'] || page.data.fetch('title')
+    title = page.data['main_title'] || page.data.fetch('title')
     "# #{CGI.escapeHTML(title)}\n\n#{content.strip}"
   end
 
@@ -119,7 +123,7 @@ class WriterSite < Jekyll::Generator
     roots = index.data.fetch('guide_sections').flat_map do |section|
       section.fetch('links').map { |link| link.fetch('href').delete_suffix('/') }
     end.uniq
-    roots.delete('/docs/quickstart') # Quickstart has its own writer content.
+    roots.delete('/docs/quickstart') # Quickstart has its own main content.
     docs_pages.select do |page|
       parent = page.data['parent_url'].to_s.split(/(?=[?#])/, 2).first&.delete_suffix('/')
       url = page.url.delete_suffix('/')
@@ -163,14 +167,14 @@ class WriterSite < Jekyll::Generator
   end
 
   def publish_blog_posts(site, links)
-    frame = site.liquid_renderer.file('writer blog post').parse('{% include components/blog/writer-post.html %}')
+    frame = site.liquid_renderer.file('main blog post').parse('{% include components/blog/main-post.html %}')
     site.categories.fetch('blog', []).reject { |post| post.data['draft'] == true }.each do |post|
       context = {
         'page' => post.to_liquid, 'site' => site.site_payload['site'],
         'post_content' => render_source(site, post, post.content)
       }
       content = frame.render!(context, registers: { site: site, page: context['page'] })
-      publish(site, post, titled_markdown(post, content), links, metadata: { 'writer_blog_post' => true, 'writer_layout' => 'single' })
+      publish(site, post, titled_markdown(post, content), links, metadata: { 'main_blog_post' => true, 'main_layout' => 'single' })
     end
   end
 
@@ -189,18 +193,18 @@ class WriterSite < Jekyll::Generator
       href = "#{base}#{dest_path}#{suffix || dest_suffix}"
       link['href'] = href
       marker = link.element_children.last
-      marker.content = "(#{href.gsub(/[\\()]/) { |character| "\\#{character}" }})" if marker&.[]('class') == 'writer-markdown-detail'
+      marker.content = "(#{href.gsub(/[\\()]/) { |character| "\\#{character}" }})" if marker&.[]('class') == 'main-markdown-detail'
     end
     document.to_html
   end
 
   def redirect_preview_urls(site)
-    pages = (site.pages + site.docs_to_write).select { |page| page.data['writer_markdown'] && page.url != '/404.html' }
+    pages = (site.pages + site.docs_to_write).select { |page| page.data['main_markdown'] && page.url != '/404.html' }
     redirects = pages.map do |page|
       path = page.url
       path = "#{path}/" if !path.end_with?('/') && File.extname(path).empty?
-      page.data['writer_previous_url'] = "/v2#{path}"
-      JekyllRedirectFrom::RedirectPage.from_paths(site, page.data.fetch('writer_previous_url'), page.url)
+      page.data['main_previous_url'] = "/v2#{path}"
+      JekyllRedirectFrom::RedirectPage.from_paths(site, page.data.fetch('main_previous_url'), page.url)
     end
     site.pages.concat(redirects)
     index = site.pages.find { |page| page.url == '/redirects.json' }
@@ -224,7 +228,7 @@ class WriterSite < Jekyll::Generator
   def lead_share_image(site, page, html)
     return if page.data['og_image'] == false || !html.match?(/<img\b/i)
 
-    selector = page.data['writer_blog_post'] ? 'img[src]' : 'img.writer-image[src]'
+    selector = page.data['main_blog_post'] ? 'img[src]' : 'img.main-image[src]'
     image = Nokogiri::HTML.fragment(html).css(selector).find do |node|
       node['src'].strip.match?(%r{\A(?:https?://[^/?#\s]|[^:?#]+(?:[/?#]|\z))}i)
     end
@@ -246,7 +250,7 @@ class WriterSite < Jekyll::Generator
       metadata[dimension] = value.to_i if value.match?(/\A[1-9]\d*\z/)
     end
     alt = image['alt'].to_s.strip
-    alt = page.data['title'].to_s if alt.empty? && page.data['writer_blog_post']
+    alt = page.data['title'].to_s if alt.empty? && page.data['main_blog_post']
     metadata['alt'] = CGI.escapeHTML(alt) unless alt.empty?
     metadata
   end
@@ -254,28 +258,28 @@ class WriterSite < Jekyll::Generator
   def publish(site, source, markdown, links, metadata: {})
     permalink = source.url
     document = Kramdown::Document.new(markdown, site.config.fetch('kramdown'))
-    if metadata['writer_blog_post']
+    if metadata['main_blog_post']
       document.root.children.drop(1).each do |element|
         element.options[:level] = element.options[:level].clamp(2, 3) if element.type == :header
       end
     else
       strip_description_period(document)
     end
-    export_html, = WriterMarkdownExport::Html.convert(document.root, document.options)
-    html, = WriterMarkdown.convert(document.root, document.options)
+    export_html, = MainMarkdownExport::Html.convert(document.root, document.options)
+    html, = MainMarkdown.convert(document.root, document.options)
     html = remap_links(html, links, site)
     heading = html[/\A\s*<h1\b.*?<\/h1>/m]
     html = html.delete_prefix(heading) if heading
-    markdown_url = "/#{WriterMarkdownExport.paths_for(permalink).first}"
-    writer_layout = metadata['writer_layout'] || source.data.fetch('writer_layout', 'columns')
-    unless %w[single two-columns columns wide].include?(writer_layout)
-      raise ArgumentError, "Unknown writer_layout #{writer_layout.inspect} for #{permalink}"
+    markdown_url = "/#{MainMarkdownExport.paths_for(permalink).first}"
+    main_layout = metadata['main_layout'] || source.data.fetch('main_layout', 'columns')
+    unless %w[single two-columns columns wide].include?(main_layout)
+      raise ArgumentError, "Unknown main_layout #{main_layout.inspect} for #{permalink}"
     end
 
     if source.is_a?(Jekyll::Document)
       page = source
       # Leave the original post body available to Jekyll Feed.
-      page.data['writer_page_content'] = html
+      page.data['main_page_content'] = html
     else
       path = permalink.delete_prefix('/')
       directory, filename = permalink.end_with?('/') ? [path.delete_suffix('/'), 'index.html'] : File.split(path)
@@ -289,10 +293,10 @@ class WriterSite < Jekyll::Generator
 
     page.data.merge!(
       'layout' => 'default',
-      'writer_layout' => writer_layout,
-      'writer_markdown' => WriterMarkdownExport.convert(remap_links(export_html, links, site)),
-      'writer_heading' => heading,
-      'writer_markdown_url' => markdown_url,
+      'main_layout' => main_layout,
+      'main_markdown' => MainMarkdownExport.convert(remap_links(export_html, links, site)),
+      'main_heading' => heading,
+      'main_markdown_url' => markdown_url,
       'permalink' => permalink
     ).merge!(metadata)
     share_image = lead_share_image(site, page, html)

@@ -1,5 +1,6 @@
 ---
 title: "Watt: Secrets with code. No new critical path."
+main_layout: single
 description: How John Zila uses Dotenvx at Watt to securely version and deploy secrets with code, without a new critical path dependency.
 permalink: /members/watt
 og_image:
@@ -12,7 +13,7 @@ og_image:
 
 {{ page.description }}
 
-<div class="writer-member-logo">{% include logos/wattdata.html %}</div>
+<div class="main-member-logo">{% include logos/wattdata.html %}</div>
 
     {% assign john = site.data.practitioners.john-zila %}
     {% capture john_quote %}"{{ john.quote }}"{% endcapture %}

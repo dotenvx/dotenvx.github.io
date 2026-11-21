@@ -2,7 +2,7 @@
 description: "Compare Dotenvx Armor plans for secrets access control, audit history, and team security. Dotenvx is free and open source."
 title: "Pricing (Legacy)"
 image: "/assets/img/og-image-pricing.png"
-writer_layout: wide
+main_layout: wide
 ---
 
 
@@ -11,7 +11,7 @@ writer_layout: wide
 [See current pricing]({{ '/pricing' | relative_url }})
 
 
-<div class="writer-pricing-comparison">
+<div class="main-pricing-comparison">
 
   {% include components/pricing/plans.html %}
   {% include components/pricing/compare-access.html %}

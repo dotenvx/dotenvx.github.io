@@ -2,7 +2,7 @@
 title: Pricing
 description: "Your keys. Off device. Under your control."
 permalink: /pricing/
-writer_layout: wide
+main_layout: wide
 
 ---
 
@@ -10,7 +10,7 @@ Your keys. Off device. Under your control.
 
 Encrypt your `.env` files, prevent plaintext secrets from being committed, and load configuration with the CLI or SDKs. Member and Business include [Armor](/armor) for controlled, audited access to private keys.
 
-<div class="writer-pricing-comparison">
+<div class="main-pricing-comparison">
 {% include components/membership-dotenvx.html %}
 </div>
 

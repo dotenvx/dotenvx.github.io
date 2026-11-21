@@ -7,25 +7,25 @@ redirect_from:
   - /docs/ref/sdk/
   - /docs/sdk/introduction
   - /docs/sdk/introduction/
-writer_layout: single
+main_layout: single
 sdk_languages:
   - label: Node.js
     slug: nodejs
   - label: Next.js
     slug: nextjs
-    writer_only: true
+    main_only: true
   - label: Python
     slug: python
   - label: Ruby
     slug: ruby
   - label: Go
     slug: go
-    writer_only: true
+    main_only: true
   - label: Rust
     slug: rust
   - label: PHP
     slug: php
-    writer_only: true
+    main_only: true
 ---
 
 
@@ -33,4 +33,4 @@ sdk_languages:
 
 ## Languages
 
-{% include writer-sdk-list.md languages=page.sdk_languages %}
+{% include main-sdk-list.md languages=page.sdk_languages %}

@@ -2,7 +2,7 @@
 title: API
 description: API endpoints available through Dotenvx Armor.
 permalink: /docs/api/
-writer_layout: wide
+main_layout: wide
 ---
 
 

@@ -1,7 +1,7 @@
 
-<figure class="writer-quote">
+<figure class="main-quote">
   <blockquote><p>{{ include.text | escape }}</p></blockquote>
   {% if include.author %}
-  <figcaption><p class="writer-meta">{% if include.author_url %}<a href="{{ include.author_url | escape }}">{{ include.author | escape }}</a>{% else %}{{ include.author | escape }}{% endif %}{% if include.organization %}, {{ include.organization | escape }}{% endif %}</p></figcaption>
+  <figcaption><p class="main-meta">{% if include.author_url %}<a href="{{ include.author_url | escape }}">{{ include.author | escape }}</a>{% else %}{{ include.author | escape }}{% endif %}{% if include.organization %}, {{ include.organization | escape }}{% endif %}</p></figcaption>
   {% endif %}
 </figure>

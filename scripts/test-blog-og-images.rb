@@ -1,7 +1,7 @@
 require "bundler/setup"
 require "jekyll"
 require "minitest/autorun"
-require_relative "../_plugins/writer_site"
+require_relative "../_plugins/main_site"
 
 class ShareImagesTest < Minitest::Test
   Page = Struct.new(:url, :data)
@@ -12,10 +12,10 @@ class ShareImagesTest < Minitest::Test
   end
 
   def image(content, data = {})
-    page = Page.new("/blog/2026/post.html", { "title" => "Post title", "writer_blog_post" => true }.merge(data))
+    page = Page.new("/blog/2026/post.html", { "title" => "Post title", "main_blog_post" => true }.merge(data))
     document = Kramdown::Document.new(content, input: "GFM")
-    html, = WriterMarkdown.convert(document.root, document.options)
-    WriterSite.new.send(:lead_share_image, @site, page, html)
+    html, = MainMarkdown.convert(document.root, document.options)
+    MainSite.new.send(:lead_share_image, @site, page, html)
   end
 
   def test_first_image_in_document_order
@@ -42,21 +42,21 @@ class ShareImagesTest < Minitest::Test
     assert_nil image("Just text.")
   end
 
-  def test_writer_page_uses_first_lead_image_at_any_size
+  def test_main_page_uses_first_lead_image_at_any_size
     @site.config["baseurl"] = "/preview"
     content = <<~HTML
       <img src="/badge.svg">
-      <img class="writer-image" src="/preview/newsletter.png" width="840" height="360" alt="Mug &amp; laptop">
-      <img class="writer-image" src="/preview/second.png" width="768" height="307">
+      <img class="main-image" src="/preview/newsletter.png" width="840" height="360" alt="Mug &amp; laptop">
+      <img class="main-image" src="/preview/second.png" width="768" height="307">
     HTML
     assert_equal(
       { "path" => "/newsletter.png", "width" => 840, "height" => 360, "alt" => "Mug &amp; laptop" },
-      image(content, "writer_blog_post" => false)
+      image(content, "main_blog_post" => false)
     )
   end
 
-  def test_writer_page_without_a_lead_image
-    assert_nil image('<img src="/badge.svg">', "writer_blog_post" => false)
+  def test_main_page_without_a_lead_image
+    assert_nil image('<img src="/badge.svg">', "main_blog_post" => false)
   end
 
   def test_image_selection_can_be_disabled

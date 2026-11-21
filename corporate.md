@@ -12,7 +12,7 @@ og_image:
 
 {{ page.description }}
 
-<div class="writer-corporate-hero">
+<div class="main-corporate-hero">
 {% include components/env-slab.html cube=true %}
 </div>
 
@@ -31,7 +31,7 @@ og_image:
 
 
 {% for tier in site.data.corporate_tiers %}
-<section class="writer-corporate-tier">
+<section class="main-corporate-tier">
   <h2>{{ tier.name }}</h2>
   <p>{{ tier.price }}</p>
   <p>{{ tier.description }}</p>

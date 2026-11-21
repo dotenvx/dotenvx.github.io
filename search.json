@@ -7,7 +7,7 @@ search: false
 {%- assign emitted = false -%}
 {%- for page in site.pages -%}
   {%- assign page_url = page.url -%}
-  {%- assign source_layout = page.writer_source_layout | default: page.layout -%}
+  {%- assign source_layout = page.main_source_layout | default: page.layout -%}
   {%- assign include_page = true -%}
   {%- if page.search == false -%}{%- assign include_page = false -%}{%- endif -%}
   {%- if page.title == nil or page.title == "" -%}{%- assign include_page = false -%}{%- endif -%}

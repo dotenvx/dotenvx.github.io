@@ -1,7 +1,7 @@
 {% assign search_path = '/search/' %}
 <dialog class="site-search-overlay" data-site-search-overlay data-site-search-index="{{ '/search.json' | relative_url | append: cacheBust }}" aria-labelledby="site-search-title" hidden aria-hidden="true">
   <div class="site-search-dialog design-card">
-    <form class="site-search" data-site-search data-site-search-writer action="{{ search_path | relative_url }}" method="get" role="search">
+    <form class="site-search" data-site-search data-site-search-main action="{{ search_path | relative_url }}" method="get" role="search">
       <div class="site-search-bar">
         <label class="site-search-label" for="site-search-modal-input" id="site-search-title">Search</label>
         <input

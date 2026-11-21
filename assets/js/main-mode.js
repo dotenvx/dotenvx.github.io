@@ -1,33 +1,38 @@
 (function () {
   var root = document.documentElement
   var systemMode = window.matchMedia('(prefers-color-scheme: dark)')
-  var storageKey = 'dotenvx-writer-mode'
+  var storageKey = 'dotenvx-main-mode'
   var modes = ['light', 'dark', 'plain']
 
   function currentMode() {
-    return root.dataset.writerMode || (systemMode.matches ? 'dark' : 'light')
+    return root.dataset.mainMode || (systemMode.matches ? 'dark' : 'light')
   }
 
   function updateStyles() {
     var plain = currentMode() === 'plain'
-    document.querySelectorAll('[data-writer-styles]').forEach(function (sheet) {
+    document.querySelectorAll('[data-main-styles]').forEach(function (sheet) {
       sheet.media = plain ? 'not all' : 'all'
     })
-    document.querySelectorAll('[data-writer-plain-styles]').forEach(function (sheet) {
+    document.querySelectorAll('[data-main-plain-styles]').forEach(function (sheet) {
       sheet.media = plain ? 'all' : 'not all'
     })
   }
 
   try {
     var storedMode = window.localStorage.getItem(storageKey)
-    if (modes.includes(storedMode)) root.dataset.writerMode = storedMode
+    // Preserve the theme selected before the main naming change.
+    if (!modes.includes(storedMode)) storedMode = window.localStorage.getItem('dotenvx-writer-mode')
+    if (modes.includes(storedMode)) {
+      root.dataset.mainMode = storedMode
+      window.localStorage.setItem(storageKey, storedMode)
+    }
   } catch {}
 
   // Run in the head after the stylesheet links, before the page is painted.
   updateStyles()
 
   document.addEventListener('DOMContentLoaded', function () {
-    var toggles = document.querySelectorAll('[data-writer-mode-toggle]')
+    var toggles = document.querySelectorAll('[data-main-mode-toggle]')
 
     function updateToggle() {
       var mode = currentMode()
@@ -41,9 +46,9 @@
     }
 
     function switchMode() {
-      root.dataset.writerMode = modes[(modes.indexOf(currentMode()) + 1) % modes.length]
+      root.dataset.mainMode = modes[(modes.indexOf(currentMode()) + 1) % modes.length]
       try {
-        window.localStorage.setItem(storageKey, root.dataset.writerMode)
+        window.localStorage.setItem(storageKey, root.dataset.mainMode)
       } catch {}
       updateStyles()
       updateToggle()

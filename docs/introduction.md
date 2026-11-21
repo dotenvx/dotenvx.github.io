@@ -9,7 +9,7 @@ redirect_from:
   - /docs/package-managers/
   - /docs/process-managers
   - /docs/process-managers/
-writer_layout: single
+main_layout: single
 ---
 
 

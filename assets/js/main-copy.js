@@ -1,6 +1,6 @@
 (function () {
-  var writer = document.querySelector('main.writer')
-  if (!writer) return
+  var main = document.querySelector('main.main')
+  if (!main) return
 
   function codeFence(text) {
     var runs = text.match(/^[\t ]*`+/gm) || []
@@ -15,11 +15,11 @@
     var element = boundary.nodeType === Node.ELEMENT_NODE ? boundary : boundary.parentElement
 
     var markdownElements = 'a, strong, em, code, pre, h2, h3, h4, h5, h6'
-    for (var markup = element.closest(markdownElements); markup && writer.contains(markup);
+    for (var markup = element.closest(markdownElements); markup && main.contains(markup);
       markup = markup.parentElement.closest(markdownElements)) {
       var walker = document.createTreeWalker(markup, NodeFilter.SHOW_TEXT, {
         acceptNode: function (text) {
-          return text.data.trim() && !text.parentElement.closest('.writer-markdown-detail, .writer-markdown-syntax')
+          return text.data.trim() && !text.parentElement.closest('.main-markdown-detail, .main-markdown-syntax')
             ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
         }
       })
@@ -40,7 +40,7 @@
 
   function restoreMarkdown(buffer) {
     // A running Jekyll watcher can render the preview with its previously loaded converter.
-    if (writer.querySelector('.writer-markdown-syntax')) return
+    if (main.querySelector('.main-markdown-syntax')) return
     buffer.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function (heading) {
       heading.prepend('#'.repeat(Number(heading.tagName[1])) + ' ')
     })
@@ -66,17 +66,17 @@
     if (!event.clipboardData || !selection || selection.isCollapsed || !selection.rangeCount) return
 
     var range = selection.getRangeAt(0).cloneRange()
-    if (!range.intersectsNode(writer)) return
-    if (range.comparePoint(writer, 0) > 0 || range.comparePoint(writer, writer.childNodes.length) < 0) return
-    if (range.comparePoint(writer, 0) === 0) range.setStart(writer, 0)
-    if (range.comparePoint(writer, writer.childNodes.length) === 0) range.setEnd(writer, writer.childNodes.length)
+    if (!range.intersectsNode(main)) return
+    if (range.comparePoint(main, 0) > 0 || range.comparePoint(main, main.childNodes.length) < 0) return
+    if (range.comparePoint(main, 0) === 0) range.setStart(main, 0)
+    if (range.comparePoint(main, main.childNodes.length) === 0) range.setEnd(main, main.childNodes.length)
     if (range.collapsed) return
 
     includeCompleteMarkup(range, 'start')
     includeCompleteMarkup(range, 'end')
 
     var buffer = document.createElement('div')
-    buffer.className = 'writer-copy-buffer'
+    buffer.className = 'main-copy-buffer'
     buffer.setAttribute('aria-hidden', 'true')
     buffer.append(range.cloneContents())
     buffer.querySelectorAll('button').forEach(function (button) { button.remove() })

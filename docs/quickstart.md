@@ -4,7 +4,7 @@ description: Encrypt your first .env file
 permalink: /docs/quickstart/
 markdown_url: /docs/quickstart.md
 agent_prompt: Set up Dotenvx in my project for me.
-writer_layout: single
+main_layout: single
 redirect_from:
   - /docs/quickstarts
   - /docs/quickstarts/

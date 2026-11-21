@@ -4,7 +4,7 @@
 [install.sh](https://dotenvx.sh/install.sh)
 
 {% assign cli_methods = site.data.install_methods | where: 'name', 'CLI' %}
-{% include components/install-writer-methods.md methods=cli_methods %}
+{% include components/install-main-methods.md methods=cli_methods %}
 
 ## SDKs
 
@@ -12,11 +12,11 @@
 {% assign javascript_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name == 'Node.js' or sdk.name == 'Next.js'" %}
 {% assign remaining_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name != 'Node.js' and sdk.name != 'Next.js'" %}
 {% assign v2_install_sdks = javascript_sdks | concat: remaining_sdks %}
-{% include components/install-writer-methods.md methods=v2_install_sdks code_only=true %}
+{% include components/install-main-methods.md methods=v2_install_sdks code_only=true %}
 
 {% for sdk in v2_install_sdks -%}
 - [{{ sdk.name }}]({{ sdk.package_url | default: sdk.href }})
 {% endfor %}
 
 {% assign windows_methods = site.data.install_methods | where: 'name', 'Windows' %}
-{% include components/install-writer-methods.md methods=windows_methods %}
+{% include components/install-main-methods.md methods=windows_methods %}

@@ -145,9 +145,9 @@
     } catch (_) {}
   }
 
-  function renderHits(root, items, query, writerLayout) {
+  function renderHits(root, items, query, mainLayout) {
     if (!query) {
-      root.innerHTML = writerLayout ? '' : '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
+      root.innerHTML = mainLayout ? '' : '<p class="site-search-empty">Type to search docs, pricing, and the rest of the site.</p>'
       return
     }
     if (!items.length) {
@@ -185,8 +185,8 @@
       document.body.appendChild(overlay)
     }
 
-    var pageUsesWriter = hasPage && pageForm.hasAttribute('data-site-search-writer')
-    var modalUsesWriter = hasModal && modalForm.hasAttribute('data-site-search-writer')
+    var pageUsesMain = hasPage && pageForm.hasAttribute('data-site-search-main')
+    var modalUsesMain = hasModal && modalForm.hasAttribute('data-site-search-main')
 
     var index = null
     var indexRequest = null
@@ -222,12 +222,12 @@
 
     function runPage(query) {
       if (!index || !pageResults) return
-      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, pageUsesWriter)
+      renderHits(pageResults, search(index, query, PAGE_MAX_RESULTS), query, pageUsesMain)
     }
 
     function runModal(query) {
       if (!index) return
-      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, modalUsesWriter)
+      renderHits(modalResults, search(index, query, MODAL_MAX_RESULTS), query, modalUsesMain)
     }
 
     function hitRoot() {
@@ -309,7 +309,7 @@
         })
     }
 
-    if (hasPage || !modalUsesWriter) loadIndex()
+    if (hasPage || !modalUsesMain) loadIndex()
 
     if (hasPage) {
       pageInput.addEventListener('input', function () {

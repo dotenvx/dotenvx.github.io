@@ -2,13 +2,13 @@
 title: About
 description: "Working out of LA–on a small important file"
 permalink: /about/
-writer_layout: two-columns
+main_layout: two-columns
 ---
 
 
 > {{ page.description }}
 
-<p><a href="https://www.google.com/maps/search/?api=1&amp;query=2450%20Colorado%20Ave%20%23100%2C%20Santa%20Monica%2C%20CA%2090404" aria-label="View the Dotenvx office at 2450 Colorado Ave #100, Santa Monica, CA 90404 on Google Maps"><img class="writer-image" src="{{ '/about.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="768" height="307"></a></p>
+<p><a href="https://www.google.com/maps/search/?api=1&amp;query=2450%20Colorado%20Ave%20%23100%2C%20Santa%20Monica%2C%20CA%2090404" aria-label="View the Dotenvx office at 2450 Colorado Ave #100, Santa Monica, CA 90404 on Google Maps"><img class="main-image" src="{{ '/about.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="768" height="307"></a></p>
 
 [2450 Colorado Ave #100, Santa Monica, CA 90404](https://www.google.com/maps/search/?api=1&query=2450%20Colorado%20Ave%20%23100%2C%20Santa%20Monica%2C%20CA%2090404)
 
@@ -23,7 +23,7 @@ writer_layout: two-columns
       </div>
 
 
-      <ol class="writer-numbered-list">
+      <ol class="main-numbered-list">
         <li><strong>Secrets separate from code.</strong> We created Dotenv to separate secrets from code. One small file made configuration safe.<br>
           <a href="https://www.npmjs.com/package/dotenv">Dotenv</a>
         </li>

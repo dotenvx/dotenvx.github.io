@@ -4,4 +4,4 @@
 - {% if forloop.first %}{: #{{ section_anchor }} } {% endif %}[{{ guide.label }}]({{ guide.href | relative_url }})
 {% endfor -%}
 {% endfor -%}
-{: .writer-guide-list}
+{: .main-guide-list}

@@ -2,7 +2,7 @@
 description: "Explore Dotenvx open source projects and the community building tools for environment variables and encrypted .env files."
 title: Open Source
 permalink: /opensource/
-writer_layout: columns
+main_layout: columns
 projects:
   - name: dotenv
     href: https://github.com/motdotla/dotenv
@@ -79,25 +79,25 @@ sponsorships:
 {% for project in page.projects -%}
 - [{{ project.name }}]({{ project.href }}) {{ project.summary }}
 {% endfor -%}
-{: .writer-docs-list}
+{: .main-docs-list}
 
 ## Papers
 
 {% for paper in page.papers -%}
 - [{{ paper.name }}]({{ paper.href }}) (PDF)
 {% endfor -%}
-{: .writer-docs-list}
+{: .main-docs-list}
 
 ## Talks
 
 {% for talk in page.talks -%}
 - [{{ talk.name }}]({{ talk.href }}) at {{ talk.event }}
 {% endfor -%}
-{: .writer-docs-list}
+{: .main-docs-list}
 
 ## Sponsorship
 
 {% for sponsor in page.sponsorships -%}
 - [{{ sponsor.name }}]({{ sponsor.href }}) · {{ sponsor.annual }} per year
 {% endfor -%}
-{: .writer-docs-list}
+{: .main-docs-list}

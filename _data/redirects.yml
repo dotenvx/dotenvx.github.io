@@ -64,7 +64,7 @@
 "/standard/": "/docs/dotenvxtoml/"
 "/company/opensource/": "/opensource/"
 
-# Pages retired when the writer layout became the public site.
+# Pages retired when the main layout became the public site.
 "/agents": "/docs/dotenvxtoml/"
 "/agents/": "/docs/dotenvxtoml/"
 "/ai": "/docs/dotenvxtoml/"

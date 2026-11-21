@@ -53,11 +53,7 @@
       {{ page.main_heading }}
     </div>
     {% if main_multicolumn %}
-      {% if page.url == '/' %}
-      <div class="main-home-columns">
-      {% else %}
       <div class="main-column-content{% if page.main_guide %} docs-markdown-body{% endif %}">
-      {% endif %}
     {% endif %}
       {{ page.main_page_content | default: content }}
     {% if main_multicolumn %}</div>{% endif %}

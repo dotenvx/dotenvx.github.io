@@ -205,23 +205,6 @@ body:not(.main-has-subnav) > .main-header {
     column-rule: 1px solid var(--line);
   }
 
-  .main-home-columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--main-column-gap);
-  }
-
-  .main-home-columns > div + div { position: relative; }
-  .main-home-columns > div + div::before {
-    content: "";
-    position: absolute;
-    inset-block: 0;
-    inset-inline-start: calc(var(--main-column-gap) / -2);
-    border-inline-start: 1px solid var(--line);
-  }
-
-  .main-home-columns > div > h2:first-child { margin-top: 0; }
-
   .main > h1 { column-span: all; }
   .main :is(h2, h3) { break-after: avoid-column; }
   .main :is(pre, .design-codeblock-wrap, table, .main-image, .main-company-logos) { break-inside: avoid-column; }

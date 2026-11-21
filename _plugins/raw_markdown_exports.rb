@@ -108,18 +108,21 @@ module RawMarkdownExports
     File.write(path, "\uFEFF#{content}", encoding: 'UTF-8')
   end
 
-  def self.homepage_markdown(source, site, writer_preview: false)
+  def self.homepage_markdown(source, site)
     body = source.sub(/\A---\s*\n.*?^---\s*\n/m, '')
     template = site.liquid_renderer.file('index.md (Markdown export)').parse(body)
     template.render!(
-      { 'homepage_markdown' => true, 'writer_preview' => writer_preview, 'site' => site.site_payload['site'] },
+      { 'site' => site.site_payload['site'] },
       registers: { site: site }
     )
   end
 
   def self.homepage(source, site)
     markdown = homepage_markdown(source, site)
-    nextjs("---\ntitle: Dotenvx\n---\n#{markdown}", site.config.fetch('url'))
+    require_relative 'writer_markdown_export'
+    document = Kramdown::Document.new("# Dotenvx\n\n#{markdown}", site.config.fetch('kramdown'))
+    html, = WriterMarkdownExport::Html.convert(document.root, document.options)
+    WriterMarkdownExport.convert(html)
   end
 
   def self.install(source, data, site_url)

@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "ls --json"
 description: "Output a JSON array of absolute filepaths."
 permalink: "/docs/cli/ls-json/"

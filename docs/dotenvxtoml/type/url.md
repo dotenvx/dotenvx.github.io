@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: url
 description: Validate url values.
 permalink: "/docs/dotenvxtoml/type/url/"

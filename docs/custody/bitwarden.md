@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Bitwarden
 description: Keep your private keys in Bitwarden.
 permalink: "/docs/custody/bitwarden/"

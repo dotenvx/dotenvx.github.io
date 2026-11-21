@@ -2,7 +2,6 @@
 title: Heroku
 description: Use dotenvx with Heroku.
 permalink: /docs/platforms/heroku/
-layout: docs-markdown
 icon: "heroku"
 ---
 

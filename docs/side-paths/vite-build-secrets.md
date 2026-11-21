@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Build-only secrets
 description: Use credentials in build tooling without putting them in your Vite app.
 permalink: /docs/vite/build-secrets/

@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "1password up -fk"
 description: "Path to your .env.keys file."
 permalink: "/docs/cli/1password-up-fk/"

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Use the CLI
 description: Load secrets before Bun starts your application.
 permalink: /docs/bun/cli/

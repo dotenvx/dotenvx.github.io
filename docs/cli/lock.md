@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Lock
 description: Lock private keys with a local passphrase to keep them protected inside .env.keys.
 permalink: /docs/cli/lock/

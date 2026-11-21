@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Python"
 social_title: "Encrypt a .env file in Python"
 description: "Encrypt a .env file in Python with the Dotenvx SDK, commit it safely, and load its secrets at runtime."

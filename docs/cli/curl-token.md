@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "curl --token"
 description: "Set token."
 permalink: "/docs/cli/curl-token/"

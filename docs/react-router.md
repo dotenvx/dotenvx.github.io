@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "React Router"
 social_title: "Encrypt a .env file in React Router"
 description: "Encrypt a .env file in React Router with Dotenvx, commit it safely, and load its secrets at runtime."

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: EAS Update
 description: Publish a bundle exported with your encrypted production configuration.
 permalink: /docs/expo/eas-update/

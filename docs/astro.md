@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Astro"
 social_title: "Encrypt a .env file in Astro"
 description: "Encrypt a .env file in Astro with Dotenvx, commit it safely, and load its secrets at runtime."

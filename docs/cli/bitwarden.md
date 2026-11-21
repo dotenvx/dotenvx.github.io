@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "bitwarden"
 description: "Move private keys in/out of Bitwarden."
 permalink: "/docs/cli/bitwarden/"

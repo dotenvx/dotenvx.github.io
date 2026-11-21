@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 og_image:
   template: logo
   logo: _includes/icons/docs/ruby.html

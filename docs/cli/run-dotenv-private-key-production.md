@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "DOTENV_FILE=.env.production"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/

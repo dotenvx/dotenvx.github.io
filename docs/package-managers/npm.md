@@ -2,7 +2,6 @@
 title: npm
 description: Use dotenvx with npm.
 permalink: /docs/package-managers/npm/
-layout: docs-markdown
 mark: "npm"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Syntax
 description: Understand valid declarations and syntax errors.
 permalink: "/docs/dotenvxtoml/syntax/"

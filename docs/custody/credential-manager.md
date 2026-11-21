@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Credential Manager
 description: Keep your private keys in Windows Credential Manager.
 permalink: /docs/custody/credential-manager/

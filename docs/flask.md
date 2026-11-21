@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Flask"
 social_title: "Encrypt a .env file in Flask"
 description: "Encrypt a .env file in Flask with the Dotenvx SDK, commit it safely, and load its secrets at runtime."

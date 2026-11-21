@@ -2,7 +2,6 @@
 title: Primitives
 description: Low-level encryption primitives for Node.js.
 permalink: /docs/sdk/nodejs/primitives/
-layout: docs-markdown
 eyebrow: "Node"
 eyebrow_href: "/docs/sdk/nodejs"
 icon: "nodejs"

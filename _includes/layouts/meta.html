@@ -26,12 +26,5 @@
 <meta name="twitter:title" content="{{ social_share_title | escape }}">
 {% assign social_description = page.description | default: page.excerpt | default: site.description %}
 <meta name="twitter:description" content="{{ social_description | markdownify | strip_html | normalize_whitespace | escape }}">
-{% unless include.writer %}{% include layouts/breadcrumb-schema.html %}{% endunless %}
 {% feed_meta %}
 {% favicon %}
-
-{% unless include.writer %}
-<script src="https://unpkg.com/alpinejs" defer></script>
-{% assign cacheBust = site.time | date:'?v=%s' | append: '-r24' %}
-<link rel="stylesheet" media="all" href="{{ "/assets/css/main.css" | relative_url | append: cacheBust }}">
-{% endunless %}

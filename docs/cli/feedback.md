@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "feedback"
 description: "Send feedback to dotenvx."
 permalink: "/docs/cli/feedback/"

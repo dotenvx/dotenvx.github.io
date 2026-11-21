@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Build with a private key
 description: Keep your production key locally and add it to your build service yourself.
 permalink: /docs/vite/build-private-key/

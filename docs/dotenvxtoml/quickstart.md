@@ -2,7 +2,6 @@
 title: Dotenvx.toml Quickstart
 description: Create your first Dotenvx.toml.
 permalink: "/docs/dotenvxtoml/quickstart/"
-layout: docs-markdown
 hero_title: "Dotenvx.toml"
 eyebrow: "Dotenvx.toml"
 eyebrow_href: /docs/dotenvxtoml/

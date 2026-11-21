@@ -7,14 +7,15 @@ class RawMarkdownExportsTest < Minitest::Test
     root = File.expand_path('..', __dir__)
     site = Jekyll::Site.new(Jekyll.configuration('source' => root, 'url' => 'https://dotenvx.com'))
     site.data['practitioners'] = YAML.safe_load(File.read(File.join(root, '_data/practitioners.yml')))
-    source = File.read(File.join(root, 'index.md')).sub('title="Ready for Production"', 'title="Deploy to Production"')
+    site.data['install_methods'] = YAML.safe_load(File.read(File.join(root, '_data/install_methods.yml')))
+    source = File.read(File.join(root, 'index.md')).sub('title="Usage"', 'title="Deploy to Production"')
     result = RawMarkdownExports.homepage(source, site)
 
     assert result.start_with?("# Dotenvx\n\n")
-    assert_includes result, '[HTML homepage](https://dotenvx.com/)'
-    assert_includes result, '[Install](https://dotenvx.com/docs/install.md)'
+    assert_includes result, '[Quickstart](/docs/quickstart/)'
+    assert_includes result, '> A secure dotenv'
     assert_includes result, '## Deploy to Production'
-    assert_includes result, '$ dotenvx run -- npm start'
+    assert_includes result, '$ dotenvx run -- node index.js'
     refute_match(/\{%|\{:|<section|<figure|One-Line Upgrade/, result)
   end
 

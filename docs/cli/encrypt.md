@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Encrypt
 description: Convert any .env file to an encrypted .env file.
 permalink: /docs/cli/encrypt/

@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "curl --data"
 description: "JSON request body."
 permalink: "/docs/cli/curl-data/"

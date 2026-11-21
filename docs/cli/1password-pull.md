@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "1password pull"
 description: "Copy key from 1Password into .env.keys."
 permalink: "/docs/cli/1password-pull/"

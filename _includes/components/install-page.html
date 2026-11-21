@@ -1,4 +1,4 @@
-{% if writer_preview %}
+
 > Install dotenvx
 
 [install.sh](https://dotenvx.sh/install.sh)
@@ -12,43 +12,11 @@
 {% assign javascript_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name == 'Node.js' or sdk.name == 'Next.js'" %}
 {% assign remaining_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name != 'Node.js' and sdk.name != 'Next.js'" %}
 {% assign v2_install_sdks = javascript_sdks | concat: remaining_sdks %}
-{% include components/install-writer-methods.md methods=v2_install_sdks paragraph_labels=true %}
+{% include components/install-writer-methods.md methods=v2_install_sdks code_only=true %}
+
+{% for sdk in v2_install_sdks -%}
+- [{{ sdk.name }}]({{ sdk.package_url | default: sdk.href }})
+{% endfor %}
 
 {% assign windows_methods = site.data.install_methods | where: 'name', 'Windows' %}
 {% include components/install-writer-methods.md methods=windows_methods %}
-{% else %}
-{% comment %}
-  Install page — installation commands and agent prompts.
-  Kept out of install.md so Kramdown cannot break nested HTML.
-{% endcomment %}
-<div class="install-page home-sections">
-{% capture installing_visual %}
-  <div class="docs-install-icons" role="img" aria-label="npm, Windows, and Docker">
-    <span class="docs-install-icon docs-install-icon--npm" aria-hidden="true">{% include icons/npm.html %}</span>
-    <span class="docs-install-icon docs-install-icon--windows" aria-hidden="true">{% include icons/docs/windows.html %}</span>
-    <span class="docs-install-icon docs-install-icon--docker" aria-hidden="true">{% include icons/docs/docker.html %}</span>
-  </div>
-{% endcapture %}
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Install"
-  description="Use dotenvx from the command line or directly in your code."
-  visual=installing_visual
-%}
-
-
-  <section class="radar-section" aria-label="Installation methods">
-    <div class="armor-shell">
-      <div class="design-content-width">
-      {% include components/install-methods.html methods=site.data.install_methods %}
-      {% include components/install-methods.html methods=site.data.install_sdks label="SDK" %}
-      <details class="install-other-methods">
-        <summary class="design-paragraph">Other methods</summary>
-        {% include components/install-methods.html methods=site.data.install_other_methods %}
-      </details>
-      <p class="design-paragraph install-other-methods">For usage, follow the <a class="design-link" href="/docs/nodejs/">Node.js guide</a>. Deploying on Heroku? See the <a class="design-link" href="/docs/platforms/heroku/">Heroku guide</a>.</p>
-      </div>
-    </div>
-  </section>
-</div>
-{% endif %}

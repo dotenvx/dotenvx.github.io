@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "get --format"
 description: "Format of the output (json, shell, colon, eval, eval-export)."
 permalink: "/docs/cli/get-format/"

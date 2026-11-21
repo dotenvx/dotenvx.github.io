@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Multiple environment files
 description: Select an encrypted file or merge configuration explicitly.
 permalink: /docs/rust/env-files/

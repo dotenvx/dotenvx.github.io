@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "NestJS"
 social_title: "Encrypt a .env file in NestJS"
 description: "Encrypt a .env file in NestJS with Dotenvx, commit it safely, and load its secrets at runtime."

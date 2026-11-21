@@ -2,17 +2,10 @@
 title: Stats
 description: Download stats for Dotenvx packages and platform installers.
 permalink: /docs/stats/
-layout: radar
+
 ---
 
-{% unless writer_preview %}
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Stats"
-  description="Download stats for Dotenvx packages and platform installers."
-  mark="190,000,000+"
-%}
-{% endunless %}
+
 
 {% capture docs_stats_table_body %}
   <thead>
@@ -122,19 +115,7 @@ layout: radar
   {% include components/design-table.html class="design-table-wrap--fill docs-stats-table" content=docs_stats_table_body %}
 {% endcapture %}
 
-{% if writer_preview %}
+
 {{ docs_stats_table }}
-{% else %}
-<section class="radar-section">
-  <div class="armor-shell">
-  <div class="design-content-width">
-    <div class="docs-stats-shell">
-      {% include components/design-card.html class="docs-stats-card" content=docs_stats_table %}
-{% endif %}
+
 <p class="design-paragraph docs-stats-note">Platform totals compare npm package downloads with GitHub release downloads for each OS-architecture archive.</p>
-{% unless writer_preview %}
-    </div>
-  </div>
-</div>
-</section>
-{% endunless %}

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: KEY
 eyebrow: "dotenvx del"
 eyebrow_href: /docs/cli/del/

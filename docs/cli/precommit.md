@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Precommit
 description: Prevent .env files from being committed to code.
 permalink: /docs/cli/precommit/

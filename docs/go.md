@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Go"
 social_title: "Encrypt a .env file in Go"
 description: "Encrypt a .env file in Go with dotenvx, commit it safely, and inject its secrets at runtime."

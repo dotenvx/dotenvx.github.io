@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 permalink: /docs/cli/armor/up-team/
 crumbs:
   - label: Docs

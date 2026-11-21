@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: Dotenvx.toml
 permalink: "/docs/cli/check-no-bitwarden/"
 redirect_to: /docs/dotenvxtoml/commands/

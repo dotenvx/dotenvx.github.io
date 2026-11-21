@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "1password"
 description: "Move private keys in/out of 1Password."
 permalink: "/docs/cli/1password/"

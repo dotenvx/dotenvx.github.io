@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "Values with leading dash"
 eyebrow: "dotenvx set"
 eyebrow_href: /docs/cli/set/

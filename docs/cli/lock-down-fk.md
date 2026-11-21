@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "lock down -fk"
 description: "Path to your .env.keys file."
 permalink: "/docs/cli/lock-down-fk/"

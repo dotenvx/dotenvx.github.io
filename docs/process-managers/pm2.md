@@ -2,7 +2,6 @@
 title: PM2
 description: Use dotenvx with PM2.
 permalink: /docs/process-managers/pm2/
-layout: docs-markdown
 mark: "pm2"
 ---
 

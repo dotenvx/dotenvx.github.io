@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Express"
 social_title: "Encrypt a .env file in Express"
 description: "Encrypt a .env file in Express with the Dotenvx Node.js SDK, commit it safely, and load its secrets at runtime."

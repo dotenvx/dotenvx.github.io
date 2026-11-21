@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "ls -ef"
 description: "Path to exclude from your env file(s) (default: none)."
 permalink: "/docs/cli/ls-ef/"

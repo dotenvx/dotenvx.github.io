@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Java"
 social_title: "Encrypt a .env file in Java"
 description: "Encrypt a .env file in Java with dotenvx, commit it safely, and inject its secrets at runtime."

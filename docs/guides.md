@@ -2,7 +2,6 @@
 description: "Follow Dotenvx guides to encrypt .env files and load environment variables across languages, frameworks, deployment platforms, and AI coding tools."
 title: Guides
 permalink: /docs/guides/
-layout: radar
 guide_sections:
   - title: CLI
     links:
@@ -231,40 +230,7 @@ guide_sections:
         icon: dotenvx
 ---
 
-{% if writer_preview %}
+
 > Use Dotenvx with the tools and languages you already know and love
 
 {% include writer-guide-list.md sections=page.guide_sections %}
-{% else %}
-{% capture docs_hero_visual %}
-  <div class="docs-hero-ascii" aria-hidden="true">
-    <pre class="docs-hero-ascii-art">0 ──&gt; 1</pre>
-  </div>
-{% endcapture %}
-
-{% include components/docs-hero.html
-
-  eyebrow="Docs"
-  eyebrow_href="/docs/introduction/"
-  title="Guides"
-  description="Use dotenvx with the tools and languages you already know and love. It works pretty much everywhere that we know of."
-  visual=docs_hero_visual
-%}
-
-{% for section in page.guide_sections %}
-<section id="{{ section.title | slugify }}" class="radar-section" aria-label="{{ section.title | escape }}">
-  <div class="armor-shell">
-    <div class="design-content-width">
-      <div class="docs-intro-cards">
-        <p class="design-list-title" role="heading" aria-level="2">{{ section.title | escape }}</p>
-        <div class="design-settings-grid">
-          {% for guide in section.links %}
-            {% include components/design-key.html href=guide.href label=guide.label icon=guide.icon title=guide.label %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{% endfor %}
-{% endif %}

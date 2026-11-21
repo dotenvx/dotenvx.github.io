@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 permalink: /docs/cli/primitives/derive-stdin/
 crumbs:
   - label: Docs

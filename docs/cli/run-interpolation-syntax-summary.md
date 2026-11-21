@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "Interpolation Syntax Summary"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "native up"
 eyebrow: "dotenvx native"
 eyebrow_href: /docs/cli/native/

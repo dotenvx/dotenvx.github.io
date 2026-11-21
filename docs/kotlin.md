@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Kotlin"
 social_title: "Encrypt a .env file in Kotlin"
 description: "Encrypt a .env file in Kotlin with dotenvx, commit it safely, and inject its secrets at runtime."

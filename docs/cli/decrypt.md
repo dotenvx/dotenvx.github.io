@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Decrypt
 description: Convert encrypted .env file to plain .env file.
 permalink: /docs/cli/decrypt/

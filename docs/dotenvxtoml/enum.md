@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Choices
 description: Restrict values to a list of allowed choices.
 permalink: "/docs/dotenvxtoml/enum/"

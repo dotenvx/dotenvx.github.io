@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "armor move -f"
 description: "Path to your env file."
 permalink: "/docs/cli/armor-move-f/"

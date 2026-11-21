@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Set
 description: Encrypt a single environment variable.
 permalink: /docs/cli/set/

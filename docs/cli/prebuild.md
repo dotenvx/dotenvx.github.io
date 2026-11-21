@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Prebuild
 description: Prevent .env files from being built into your docker containers.
 permalink: /docs/cli/prebuild/

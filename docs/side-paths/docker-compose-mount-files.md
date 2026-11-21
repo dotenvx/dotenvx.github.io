@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Mount your files
 description: Mount your files with Docker Compose and Dotenvx.
 permalink: /docs/docker-compose/mount-files/

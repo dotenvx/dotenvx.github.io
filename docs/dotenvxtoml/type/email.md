@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: email
 description: Validate email values.
 permalink: "/docs/dotenvxtoml/type/email/"

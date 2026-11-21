@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Public browser variables
 description: Expose public configuration to browser code with Astro.
 permalink: /docs/astro/public-variables/

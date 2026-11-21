@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "-f directory"
 eyebrow: "dotenvx get"
 eyebrow_href: /docs/cli/get/

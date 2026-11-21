@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: CI & Production
 description: Encrypt .env.ci, .env.production, or another environment file.
 permalink: /docs/quickstart/env-files/

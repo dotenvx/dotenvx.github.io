@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Echo"
 social_title: "Encrypt a .env file in Echo"
 description: "Encrypt a .env file in Echo with dotenvx, commit it safely, and inject its secrets at runtime."

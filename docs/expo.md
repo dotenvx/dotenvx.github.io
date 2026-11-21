@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Expo"
 social_title: "Encrypt a .env file in Expo"
 description: "Encrypt a .env file in Expo with Dotenvx, share access with your team, and load configuration before bundling."

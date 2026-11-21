@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Bun
 description: Run Hono with Bun and encrypted environment files.
 permalink: /docs/hono/bun/

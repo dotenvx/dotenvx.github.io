@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: directory
 eyebrow: "dotenvx genexample"
 eyebrow_href: /docs/cli/genexample/

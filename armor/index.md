@@ -3,12 +3,11 @@ title: "Dotenvx Armor for Security Professionals"
 social_title: "Dotenvx Armor for Security Professionals"
 description: "Hardened Dotenvx for security professionals with full access control of your secrets. Govern every unlock and see every access–human or agent."
 image: "/assets/img/og-image-armor.png"
-layout: radar
 writer_title: Armor
 writer_layout: columns
 ---
 
-{% if writer_preview %}
+
 > Control who can decrypt your .env files
 
 Keep encrypted `.env` files with your code. Armor manages who can use the private keys to decrypt them.
@@ -35,55 +34,3 @@ $ dotenvx armor up
 ```
 
 Dotenvx requests the key from Armor when you run your app. The [Armor custody guide]({{ '/docs/custody/armor/' | relative_url }}) covers approvals and moving keys back to `.env.keys`.
-
-{% else %}
-{% capture armor_hero_container %}
-  {% include components/armor/hero-container.html %}
-{% endcapture %}
-
-{% capture armor_hero_description %}
-  {{ page.description }}
-{% endcapture %}
-{% capture armor_hero_actions %}
-  {% include components/design-btn.html label="Sign up" href="/signup" data_umami_event="Armor Hero Signup button" %}
-  {% include components/design-btn.html label="Pricing" href="/pricing" data_umami_event="Armor Hero Pricing button" %}
-{% endcapture %}
-
-<div class="armor-page">
-  <div class="home-sections armor-intro">
-  {% include components/home-hero.html
-    compact=true
-    name=page.title
-    actions=armor_hero_actions
-    content=armor_hero_container
-    description=armor_hero_description
-  %}
-
-    {% include components/armor/logo-cloud.html %}
-  </div>
-
-  {% include components/faq-yes.html %}
-
-  <section class="radar-section" aria-label="Next step">
-    <div class="armor-shell">
-      <div class="home-cta">
-        {% include components/design-cta-message.html
-          text="Once the private key isn't on the machine, encrypted .env finally feels finished. That's Armor."
-        %}
-        {% include components/design-btn.html
-          label="Sign Up Free ›"
-          href="https://armor.dotenvx.com/signup"
-        %}
-      </div>
-    </div>
-  </section>
-
-  {% comment %}
-  {% include components/armor/lightning.html %}
-  {% include components/armor/hero.html %}
-  {% include components/armor/keys.html %}
-  {% include components/armor/grant.html %}
-  {% include components/armor/cta.html %}
-  {% endcomment %}
-</div>
-{% endif %}

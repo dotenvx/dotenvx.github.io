@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Ls
 description: Print all .env files in a tree structure.
 permalink: /docs/cli/ls/

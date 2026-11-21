@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Public browser variables
 description: Return selected public values from a Remix loader.
 permalink: /docs/remix/public-variables/

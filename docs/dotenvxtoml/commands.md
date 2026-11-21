@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Commands
 description: Encrypt and validate with Dotenvx.toml.
 permalink: "/docs/dotenvxtoml/commands/"

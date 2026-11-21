@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Run
 description: Inject env at runtime. Use --redact for runtime leak protection and log redaction.
 permalink: /docs/cli/run/

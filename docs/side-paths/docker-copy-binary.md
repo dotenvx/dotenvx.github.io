@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Copy the binary
 description: Copy the binary with Docker and Dotenvx.
 permalink: /docs/docker/copy-binary/

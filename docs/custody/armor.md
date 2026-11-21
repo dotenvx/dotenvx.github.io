@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Armor
 description: Manage private-key custody with Dotenvx Armor.
 permalink: "/docs/custody/armor/"

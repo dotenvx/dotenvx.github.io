@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Turborepo"
 social_title: "Encrypt a .env file in Turborepo"
 description: "Encrypt a Turborepo workspace .env file and inject its secrets when Turbo runs the application."

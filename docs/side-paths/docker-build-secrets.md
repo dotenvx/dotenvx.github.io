@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Build-time secrets
 description: Build-time secrets with Docker and Dotenvx.
 permalink: /docs/docker/build-secrets/

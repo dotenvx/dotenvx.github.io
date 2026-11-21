@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "curl"
 description: "Dotenvx Armor API."
 permalink: "/docs/cli/curl/"

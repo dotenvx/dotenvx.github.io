@@ -2,7 +2,6 @@
 title: ".env.keys"
 description: ".env.keys holds your private decryption keys."
 permalink: /docs/env-keys-file/
-layout: docs-markdown
 mark: ".env.keys"
 ---
 

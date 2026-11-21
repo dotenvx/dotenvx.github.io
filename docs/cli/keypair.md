@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Keypair
 description: Print public/private keys for .env file.
 permalink: /docs/cli/keypair/

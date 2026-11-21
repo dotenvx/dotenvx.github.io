@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: Custody
 description: Choose where your private keys live.
 permalink: "/docs/custody/"
@@ -60,7 +59,7 @@ Let Armor manage access to the key. Sign in with dotenvx login, then choose:
 
 [Armor custody →](/docs/custody/armor/)
 
-## {% if writer_preview %}[Password Managers](/docs/custody/password-managers/){% else %}Password Managers{% endif %}
+## [Password Managers](/docs/custody/password-managers/)
 
 Keep the decryption key in your existing vault:
 

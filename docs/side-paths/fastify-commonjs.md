@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: CommonJS
 description: Use require in your Fastify server.
 permalink: /docs/fastify/commonjs/

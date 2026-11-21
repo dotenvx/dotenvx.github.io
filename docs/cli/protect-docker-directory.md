@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 permalink: /docs/cli/protect-docker-directory/
 crumbs:
   - label: Docs

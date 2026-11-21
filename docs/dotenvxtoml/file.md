@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: File overrides
 description: Apply different rules to specific environment files.
 permalink: "/docs/dotenvxtoml/file/"

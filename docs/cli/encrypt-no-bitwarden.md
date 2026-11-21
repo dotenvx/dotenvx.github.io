@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "encrypt --no-bitwarden"
 description: "Disable Bitwarden features."
 permalink: "/docs/cli/encrypt-no-bitwarden/"

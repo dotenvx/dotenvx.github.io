@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "get --no-1password"
 description: "Disable 1Password secret reference resolution."
 permalink: "/docs/cli/get-no-1password/"

@@ -2,7 +2,6 @@
 title: Netlify
 description: Use dotenvx with Netlify.
 permalink: /docs/platforms/netlify/
-layout: docs-markdown
 mark: "netlify"
 ---
 

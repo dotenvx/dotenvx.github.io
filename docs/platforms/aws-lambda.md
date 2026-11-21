@@ -2,7 +2,6 @@
 title: AWS Lambda
 description: Use dotenvx with AWS Lambda.
 permalink: /docs/platforms/aws-lambda/
-layout: docs-markdown
 mark: "λ"
 ---
 

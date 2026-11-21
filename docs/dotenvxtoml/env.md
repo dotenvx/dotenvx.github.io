@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Declarations
 description: Declare variable names and the rules they must follow.
 permalink: "/docs/dotenvxtoml/env/"

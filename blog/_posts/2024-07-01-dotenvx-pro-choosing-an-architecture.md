@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Choosing an Architecture for Pro"
 excerpt: "Which architecture do we go with for pro - zero-knowledge or managed-encryption."

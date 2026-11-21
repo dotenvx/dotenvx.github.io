@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Docker"
 social_title: "Encrypt a .env file for Docker"
 description: "Encrypt a .env file for Docker, include it safely in your image, and inject its secrets when the container starts."

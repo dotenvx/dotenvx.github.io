@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Dotenv VS Code: 1.0 and beyond"
 excerpt: "The official dotenv extension is back, with a 1.0 release focused on keeping secrets out of sight while you edit your .env files."

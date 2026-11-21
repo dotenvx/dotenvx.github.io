@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Build-time configuration
 description: Decrypt before building public variables or prerendered pages.
 permalink: /docs/react-router/build-time/

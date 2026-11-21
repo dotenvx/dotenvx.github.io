@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "PHP"
 social_title: "Encrypt a .env file in PHP"
 description: "Encrypt a .env file in PHP with dotenvx, commit it safely, and inject its secrets at runtime."

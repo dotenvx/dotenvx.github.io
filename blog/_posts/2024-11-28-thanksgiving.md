@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "It adds up"
 excerpt: "It's tough carving out an hour here, 30 minutes there, to pursue a dream. But it adds up."

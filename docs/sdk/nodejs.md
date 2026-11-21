@@ -2,7 +2,6 @@
 title: Node.js
 description: Load and manage encrypted env from Node.js.
 permalink: /docs/sdk/nodejs/
-layout: docs-markdown
 eyebrow: "SDKs"
 eyebrow_href: "/docs/sdk"
 icon: "nodejs"

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "run with a Dotenvx.toml"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/

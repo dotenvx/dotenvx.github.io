@@ -2,7 +2,7 @@
 title: Dotenv Spec
 description: Compare dotenv parsing behavior across libraries, languages, and frameworks.
 permalink: /docs/spec/
-layout: docs-markdown
+
 ---
 
 [View the full compatibility table](/docs/spec/table.html)

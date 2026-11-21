@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Seeing encrypted:ciphertext only?
 description: Check that Next.js is using the encrypted environment loader.
 permalink: /docs/nextjs/encrypted-text/

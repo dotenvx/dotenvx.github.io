@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Types
 description: Validate values before your app starts.
 permalink: "/docs/dotenvxtoml/type/"

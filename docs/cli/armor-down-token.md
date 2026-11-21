@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "armor down --token"
 description: "Set token."
 permalink: "/docs/cli/armor-down-token/"

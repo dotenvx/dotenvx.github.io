@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Bun"
 social_title: "Encrypt a .env file in Bun"
 description: "Encrypt a .env file in Bun with the Dotenvx Node.js SDK, commit it safely, and load its secrets at runtime."

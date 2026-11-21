@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Redaction
 description: Keep secret values out of terminal output.
 permalink: "/docs/dotenvxtoml/redacted/"

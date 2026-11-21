@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Cron"
 social_title: "Encrypt .env secrets for cron jobs"
 description: "Encrypt .env secrets for cron jobs with dotenvx and inject them securely at runtime."

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Dotenvx.toml
 description: Define the rules for your environment variables.
 permalink: "/docs/dotenvxtoml/"

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Encryption
 description: Require encrypted values in your environment sources.
 permalink: "/docs/dotenvxtoml/encrypted/"

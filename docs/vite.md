@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Vite"
 social_title: "Encrypt a .env file in Vite"
 description: "Encrypt a .env file in Vite with Dotenvx, share access with your team, and load configuration before bundling."

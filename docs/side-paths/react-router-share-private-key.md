@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Share a private key
 description: Give a teammate access without Armor.
 permalink: /docs/react-router/share-private-key/

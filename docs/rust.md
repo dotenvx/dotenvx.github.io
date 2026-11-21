@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Rust"
 social_title: "Encrypt a .env file in Rust"
 description: "Encrypt a .env file in Rust with dotenvx, commit it safely, and decrypt its secrets with dotenvx-primitives."

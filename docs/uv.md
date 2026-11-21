@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "uv"
 social_title: "Encrypt a .env file in uv"
 description: "Encrypt a .env file in a Python uv project with the Dotenvx SDK, commit it safely, and load its secrets at runtime."

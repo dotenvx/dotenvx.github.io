@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "armor settings"
 eyebrow: "dotenvx armor"
 eyebrow_href: /docs/cli/armor/introduction/

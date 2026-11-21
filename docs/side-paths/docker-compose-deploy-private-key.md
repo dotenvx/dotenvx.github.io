@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Deploy with a private key
 description: Deploy with a private key with Docker Compose and Dotenvx.
 permalink: /docs/docker-compose/deploy-private-key/

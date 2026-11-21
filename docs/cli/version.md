@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Version
 description: Print the installed dotenvx version.
 permalink: /docs/cli/version/

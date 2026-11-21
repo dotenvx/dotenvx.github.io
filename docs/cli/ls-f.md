@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "ls -f"
 description: "Path to your env file(s)."
 permalink: "/docs/cli/ls-f/"

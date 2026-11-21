@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "1Password"
 social_title: "Use 1Password secrets in .env files"
 description: "Use 1Password secret references in .env files and resolve them securely at runtime with dotenvx."

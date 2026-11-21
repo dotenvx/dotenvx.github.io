@@ -3,7 +3,6 @@ og_image:
   template: logo
   logo: _includes/icons/docs/nodejs.html
   alt: Node.js
-layout: docs-markdown
 title: Node.js
 social_title: Encrypt a .env file in Node.js
 description: "Load and decrypt .env files in Node.js with Dotenvx. Get started with the Node.js SDK or inject environment variables using the CLI."

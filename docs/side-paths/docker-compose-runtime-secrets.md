@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Use Compose secrets
 description: Use Compose secrets with Docker Compose and Dotenvx.
 permalink: /docs/docker-compose/runtime-secrets/

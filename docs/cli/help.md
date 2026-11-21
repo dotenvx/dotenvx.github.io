@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Help
 description: Display help for dotenvx or a specific command.
 permalink: /docs/cli/help/

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 eyebrow: Node
 eyebrow_href: /docs/sdk/nodejs/
 title: "config(no1Password: true)"

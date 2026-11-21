@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Staging and other modes
 description: Match the encrypted file to Vite's build mode.
 permalink: /docs/vite/modes/

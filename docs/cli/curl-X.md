@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "curl -X"
 description: "HTTP request method."
 permalink: "/docs/cli/curl-X/"

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Deploy with a private key
 description: Keep your production key locally and add it to your server yourself.
 permalink: /docs/fastify/deploy-private-key/

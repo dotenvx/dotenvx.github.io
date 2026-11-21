@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "bitwarden pull"
 description: "Copy key from Bitwarden into .env.keys."
 permalink: "/docs/cli/bitwarden-pull/"

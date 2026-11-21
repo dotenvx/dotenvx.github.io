@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: ".NET"
 social_title: "Encrypt a .env file in .NET"
 description: "Encrypt a .env file in .NET with dotenvx, commit it safely, and inject its secrets at runtime."

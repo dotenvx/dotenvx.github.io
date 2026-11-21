@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Fastify"
 social_title: "Encrypt a .env file in Fastify"
 description: "Encrypt a .env file in Fastify with Dotenvx, commit it safely, and load its secrets at runtime."

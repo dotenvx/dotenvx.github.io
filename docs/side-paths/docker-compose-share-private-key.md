@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Share a private key
 description: Share a private key with Docker Compose and Dotenvx.
 permalink: /docs/docker-compose/share-private-key/

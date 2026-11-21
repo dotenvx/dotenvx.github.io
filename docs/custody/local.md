@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Local
 description: Keep your private keys on your machine.
 permalink: /docs/custody/local/

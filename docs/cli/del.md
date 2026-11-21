@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Del
 description: Delete a single environment variable.
 permalink: /docs/cli/del/

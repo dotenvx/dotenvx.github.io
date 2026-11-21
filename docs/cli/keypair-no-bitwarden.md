@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "keypair --no-bitwarden"
 description: "Disable Bitwarden features."
 permalink: "/docs/cli/keypair-no-bitwarden/"

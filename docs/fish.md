@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Fish"
 social_title: "Encrypt a .env file in Fish"
 description: "Encrypt a .env file in Fish with dotenvx, commit it safely, and inject its secrets at runtime."

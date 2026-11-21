@@ -2,46 +2,17 @@
 title: About
 description: "Working out of LA–on a small important file"
 permalink: /about/
-layout: radar
-body_class: home-page about-page
 writer_layout: two-columns
 ---
 
-{% if writer_preview %}
+
 > {{ page.description }}
 
 <p><a href="https://www.google.com/maps/search/?api=1&amp;query=2450%20Colorado%20Ave%20%23100%2C%20Santa%20Monica%2C%20CA%2090404" aria-label="View the Dotenvx office at 2450 Colorado Ave #100, Santa Monica, CA 90404 on Google Maps"><img class="writer-image" src="{{ '/about.png' | relative_url }}" alt="Dotenvx Los Angeles office" width="768" height="307"></a></p>
 
 [2450 Colorado Ave #100, Santa Monica, CA 90404](https://www.google.com/maps/search/?api=1&query=2450%20Colorado%20Ave%20%23100%2C%20Santa%20Monica%2C%20CA%2090404)
 
-{% else %}
-<style>
-  .about-story { margin: 2.5rem 0; }
-  .about-chapter { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.5rem; }
-  .about-chapter + .about-chapter { border-top: 1px solid var(--design-line); }
-  .about-chapter-number { font-family: var(--design-font-mono); color: var(--design-mid); padding-top: .15rem; }
-  .about-chapter h2 { font-size: 1em; font-weight: 600; margin: 0 0 .65rem; }
-  .about-chapter p { margin: 0; }
-  .about-chapter a { display: inline-block; margin-top: .8rem; }
-  @media (max-width: 600px) { .about-chapter { grid-template-columns: 1.5rem 1fr; gap: .75rem; padding: 1.25rem; } }
-  .about-links { display: flex; justify-content: center; text-align: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
-</style>
 
-<div class="home-sections">
-  <section class="design-hero-section home-hero" aria-label="About">
-    <div class="armor-shell">
-
-      {% capture about_actions %}
-        {% include components/design-btn.html label="Contact us" href="/contact" %}
-        {% include components/design-btn.html label="Careers" href="/careers/" class="design-btn--secondary" %}
-      {% endcapture %}
-      {% include components/office-hero.html description=page.description actions=about_actions %}
-    </div>
-  </section>
-
-  <section class="radar-section">
-    <div class="armor-shell">
-{% endif %}
       {% capture about_content %}
       <div class="about-company">
         <p class="design-paragraph">Dotenvx keeps secrets safe without making software harder to ship. We're the team behind Dotenv, Dotenvx, and the next chapter of .env.</p>
@@ -51,7 +22,7 @@ writer_layout: two-columns
         <p class="design-paragraph">Now we're asking the next question: how can an agent work on your app without being handed its secrets? Dotenvx.toml carries our approach forward, making the rules for secrets explicit so software can enforce them.</p>
       </div>
 
-      {% if writer_preview %}
+
       <ol class="writer-numbered-list">
         <li><strong>Secrets separate from code.</strong> We created Dotenv to separate secrets from code. One small file made configuration safe.<br>
           <a href="https://www.npmjs.com/package/dotenv">Dotenv</a>
@@ -63,52 +34,11 @@ writer_layout: two-columns
           <a href="{{ site.data.redirects['/agents/'] | relative_url }}">Dotenvx.toml</a>
         </li>
       </ol>
-      {% else %}
-      <div class="design-card about-story">
-        <section class="about-chapter" aria-labelledby="about-dotenv">
-          {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">01</span>{% endunless %}
-          <div>
-            <h2 id="about-dotenv">Secrets separate from code</h2>
-            <p class="design-paragraph">We created Dotenv to separate secrets from code. One small file made configuration safe.</p>
-            <a class="design-link" href="https://www.npmjs.com/package/dotenv">Dotenv{% unless writer_preview %} →{% endunless %}</a>
-          </div>
-        </section>
-        <section class="about-chapter" aria-labelledby="about-dotenvx">
-          {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">02</span>{% endunless %}
-          <div>
-            <h2 id="about-dotenvx">Secrets encrypted alongside code</h2>
-            <p class="design-paragraph">We created Dotenvx to make that same file safe to commit and share through Git. Secrets stay encrypted alongside your code and decrypt in memory at runtime.</p>
-            <a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx">Dotenvx{% unless writer_preview %} →{% endunless %}</a>
-          </div>
-        </section>
-        <section class="about-chapter" aria-labelledby="about-agents">
-          {% unless writer_preview %}<span class="about-chapter-number" aria-hidden="true">03</span>{% endunless %}
-          <div>
-            <h2 id="about-agents">Secrets separate from agents</h2>
-            <p class="design-paragraph">We're building Dotenvx.toml to keep secrets out of agents' reach. Your app gets secrets; your agents get rules.</p>
-            <a class="design-link" href="/agents">Dotenvx.toml →</a>
-          </div>
-        </section>
-      </div>
 
-      {% endif %}
-      {% unless writer_preview %}
-      <nav class="about-links" aria-label="More about Dotenvx">
-        <a class="design-link" href="/contact/">Contact</a>
-        <a class="design-link" href="/changelog">Changelog</a>
-        <a class="design-link" href="/trust/">Trust Center</a>
-        <a class="design-link" href="/careers/">Careers</a>
-      </nav>
-      {% endunless %}
+
       {% endcapture %}
-{% if writer_preview %}
+
 
 <div>
 {{ about_content | strip }}
 </div>
-{% else %}
-      {% include components/design-content-width.html content=about_content %}
-    </div>
-  </section>
-</div>
-{% endif %}

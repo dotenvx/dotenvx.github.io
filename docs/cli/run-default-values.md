@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "Default Values"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: boolean
 description: Validate boolean values.
 permalink: "/docs/dotenvxtoml/type/boolean/"

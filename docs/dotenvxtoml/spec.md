@@ -2,7 +2,6 @@
 title: "Dotenvx.toml Spec"
 description: "Define the rules for your environment variables."
 permalink: "/docs/dotenvxtoml/spec/"
-layout: docs-markdown
 mark: "Dotenvx.toml"
 ---
 Start with the [Dotenvx.toml quickstart](/docs/dotenvxtoml/quickstart/), or browse [individual settings](/docs/dotenvxtoml/).

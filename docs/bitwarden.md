@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Bitwarden"
 social_title: "Use Bitwarden secrets in .env files"
 description: "Use Bitwarden secret references in .env files and resolve them securely at runtime with dotenvx."

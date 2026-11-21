@@ -76,7 +76,8 @@ body:not(.writer-has-subnav) > .writer-header {
   gap: 0.55rem;
 }
 .writer-nav-home[aria-current="page"] { font-weight: 600; }
-.writer-nav-home img { display: block; }
+/* Enlarge the artwork without changing the brand's layout dimensions. */
+.writer-nav-home img { display: block; transform: scale(1.3); }
 .writer-nav-home { justify-self: start; }
 .writer-nav-actions { justify-self: end; }
 .writer-nav-links, .writer-nav-actions {
@@ -147,9 +148,17 @@ body:not(.writer-has-subnav) > .writer-header {
 }
 
 @media (max-width: 600px) {
-  :root { --writer-nav-height: 5.25rem; }
-  .writer-nav { display: flex; justify-content: space-between; flex-wrap: wrap; row-gap: 0.35rem; }
-  .writer-nav-links { order: 1; width: 100%; flex-wrap: wrap; gap: 0.25rem clamp(0.375rem, 2.5vw, 0.75rem); }
+  :root { --writer-nav-height: calc(88px + 1.6rem + 1px); }
+  .writer-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    font-size: 16px;
+  }
+  .writer-nav :is(a, button) { display: inline-flex; align-items: center; min-height: 44px; }
+  .writer-nav-actions { gap: 0.75rem; }
+  .writer-nav-links { order: 1; width: 100%; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
   .writer-subnav {
     justify-content: flex-start;
     column-gap: clamp(0.25rem, 1.5vw, 0.75rem);

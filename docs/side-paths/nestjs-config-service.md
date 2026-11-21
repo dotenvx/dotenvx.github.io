@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Use ConfigService
 description: Read decrypted secrets through NestJS ConfigService.
 permalink: /docs/nestjs/config-service/

@@ -2,7 +2,6 @@
 title: PHP
 description: Load encrypted .env files in PHP.
 permalink: /docs/sdk/php/
-layout: docs-markdown
 eyebrow: SDKs
 eyebrow_href: /docs/sdk/
 icon: php

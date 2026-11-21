@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Clojure"
 social_title: "Encrypt a .env file in Clojure"
 description: "Encrypt a .env file in Clojure with dotenvx, commit it safely, and inject its secrets at runtime."

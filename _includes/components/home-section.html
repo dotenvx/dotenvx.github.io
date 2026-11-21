@@ -1,23 +1,8 @@
-{% if homepage_markdown %}
+
 {{ include.markdown_heading | default: '##' }} {{ include.title }}
 
 {{ include.content | strip }}
 {% if include.after %}
 
 {{ include.after | strip }}
-{% endif %}
-{% else %}
-<section class="radar-section{% if include.class %} {{ include.class }}{% endif %}"{% if include.anchor %} id="{{ include.anchor }}"{% endif %} aria-labelledby="{{ include.id }}">
-  <div class="armor-shell">
-    {{ include.visual }}
-    {% include components/design-page-title.html title=include.title heading_tag="h2" title_class="text-center" id=include.id %}
-    {% capture home_section_html %}
-      {% if include.copy_class %}<div class="{{ include.copy_class }}">{% endif %}
-      {{ include.content | markdownify }}
-      {% if include.copy_class %}</div>{% endif %}
-      {{ include.after }}
-    {% endcapture %}
-    {% include components/design-content-width.html content=home_section_html %}
-  </div>
-</section>
 {% endif %}

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Cloudflare Workers
 description: Read decrypted configuration through Worker bindings.
 permalink: /docs/hono/cloudflare-workers/

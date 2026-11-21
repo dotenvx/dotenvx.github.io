@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "lock up"
 eyebrow: "dotenvx lock"
 eyebrow_href: /docs/cli/lock/

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Public browser variables
 description: Expose configuration intended for the browser.
 permalink: /docs/react-router/public-variables/

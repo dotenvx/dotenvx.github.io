@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Decrypt secrets at runtime
 description: Bundle an encrypted environment file and decrypt it inside your Worker.
 permalink: /docs/cloudflare/runtime-decryption/

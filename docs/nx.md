@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Nx"
 social_title: "Encrypt a .env file in Nx"
 description: "Upgrade Nx's dotenv-expand dependency to decrypt encrypted environment files when Nx loads them."

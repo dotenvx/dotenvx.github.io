@@ -2,7 +2,6 @@
 title: Render
 description: Use dotenvx with Render.
 permalink: /docs/platforms/render/
-layout: docs-markdown
 mark: "render"
 ---
 
@@ -35,7 +34,7 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 {: copy="false"}
 
 {% assign github_install = '/docs/install/#github' %}
-{% if writer_preview %}{% assign github_install = 'https://github.com/dotenvx/dotenvx/releases' %}{% endif %}
+{% assign github_install = 'https://github.com/dotenvx/dotenvx/releases' %}
 If you prefer, [install from GitHub Releases]({{ github_install }}) or view the [install.sh](https://dotenvx.sh/install.sh) file before executing.
 
 ## Encrypt production

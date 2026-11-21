@@ -12,7 +12,7 @@
 {% endif %}
 [{{ reference_parent }}]({{ reference_parent_href }})
 
-{% if page.layout == 'docs-cli' and toml_reference != true %}
+{% if page.doc_type == 'cli' and toml_reference != true %}
 {% capture command %}{% include components/docs-cli-command.html eyebrow=reference_parent sdk=sdk_reference %}{% endcapture %}
 {% assign command = command | strip %}
 {% if sdk_reference and page.command_prompt != true %}
@@ -30,7 +30,7 @@
 {% endif %}
 
 {% if docs_body != blank %}
-{% if page.layout == 'docs-cli' and toml_reference != true %}
+{% if page.doc_type == 'cli' and toml_reference != true %}
 ## {{ page.usage_title | default: 'Usage' }}
 {% endif %}
 

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Existing images / no Dockerfile
 description: Decrypt configuration on the host for existing Docker images, including services with overlapping variable names.
 permalink: /docs/docker-compose/existing-images/

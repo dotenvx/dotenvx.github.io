@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Multiple services
 description: Multiple services with Docker Compose and Dotenvx.
 permalink: /docs/docker-compose/multiple-services/

@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Other server setups
 description: Use Dotenvx with a custom Node server or a Cloudflare deployment.
 permalink: /docs/remix/server-setups/

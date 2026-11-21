@@ -1,6 +1,4 @@
 ---
-layout: radar
-body_class: home-page dotenv-page
 title: Dotenv
 description: "The official dotenv quickstart, SDK, and CLI reference. Load environment variables from .env files in your application or before any command."
 hero_description: Load your .env and get to work
@@ -11,31 +9,7 @@ og_image:
   title: "Dotenv. Load your .env and get to work."
 ---
 
-{% unless writer_preview %}
-<style>
-  .dotenv-page .dotenv-jump-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 1.5rem; margin-bottom: 1.5rem; }
-  .dotenv-page .dotenv-section { scroll-margin-top: 6rem; }
-  .dotenv-page .dotenv-demo { max-width: 30rem; margin: 2rem auto; }
-  .dotenv-page .design-table-wrap { margin-block: 1.5rem; }
-  .dotenv-page .design-table td { vertical-align: top; }
-  .dotenv-page .design-prose { overflow-wrap: anywhere; }
-</style>
 
-<div class="home-sections">
-<section class="design-hero-section home-hero" aria-label="Dotenv">
-<div class="armor-shell">
-{% include components/docs-breadcrumbs.html %}
-{% capture dotenv_actions %}
-        {% include components/design-btn.html label="Get started" href="#quickstart" %}
-        {% include components/design-btn.html label="View on GitHub" href="https://github.com/motdotla/dotenv" %}
-      {% endcapture %}
-{% include components/design-hero.html compact=true secondary=true name="Dotenv" name_heading=true description="Load your .env and get to work. In your app, or before any command." actions=dotenv_actions %}
-</div>
-</section>
-
-<section class="radar-section">
-<div class="armor-shell">
-{% endunless %}
 {% capture dotenv_content %}
 <nav class="dotenv-jump-links" aria-label="On this page">
 <a class="design-link" href="#quickstart">Quickstart</a>
@@ -47,10 +21,10 @@ og_image:
 
 <p>Dotenv is a zero-dependency module that loads variables from a .env file into process.env. Keep configuration separate from code, following <a href="https://12factor.net/config">The Twelve-Factor App</a>.</p>
 
-{% unless writer_preview %}<section id="quickstart" class="dotenv-section" aria-labelledby="quickstart-title" markdown="block">{% endunless %}
+
 
 ## Quickstart
-{: #quickstart{% unless writer_preview %}-title{% endunless %}}
+{: #quickstart}
 
 <p>Install dotenv in your project.</p>
 
@@ -93,16 +67,16 @@ Hello Dotenv
 npx dotenv run -- node index.js
 ```
 
-{% unless writer_preview %}</section>{% endunless %}
+
 
 <div id="demo" class="dotenv-demo dotenv-section">
 {% include components/design-video.html mp4="https://github.com/user-attachments/assets/79395e92-5ce0-430d-b8b5-31631aac25bb" title="Watch the 30 second demo" %}
 </div>
 
-{% unless writer_preview %}<section id="sdk" class="dotenv-section" aria-labelledby="sdk-title" markdown="block">{% endunless %}
+
 
 ## SDK
-{: #sdk{% unless writer_preview %}-title{% endunless %}}
+{: #sdk}
 
 <p>Three functions for loading, parsing, and populating environment variables.</p>
 
@@ -155,12 +129,12 @@ dotenv.populate(target, { HELLO: 'Dotenv' }, { override: true })
 console.log(target.HELLO) // Dotenv
 ```
 
-{% unless writer_preview %}</section>{% endunless %}
 
-{% unless writer_preview %}<section id="cli" class="dotenv-section" aria-labelledby="cli-title" markdown="block">{% endunless %}
+
+
 
 ## CLI
-{: #cli{% unless writer_preview %}-title{% endunless %}}
+{: #cli}
 
 <p>Run scripts, tests, or any executable with variables from your .env file. Use npx dotenv, or dotenv directly in npm scripts.</p>
 
@@ -209,12 +183,12 @@ npx dotenv run -f .env.local -f .env -- npm test
         {% endcapture %}
 {% include components/design-table.html content=env_options class="design-table-wrap--fill" %}
 <p>The legacy DOTENV_CONFIG_* names remain fallbacks when the corresponding DOTENV_* variable is unset. For boolean settings, false, 0, no, off, and an empty value disable the setting.</p>
-{% unless writer_preview %}</section>{% endunless %}
 
-{% unless writer_preview %}<section id="common-questions" class="dotenv-section" aria-labelledby="questions-title" markdown="block">{% endunless %}
+
+
 
 ## A few common questions
-{: {% if writer_preview %}#common-questions{% else %}#questions-title{% endif %}}
+{: #common-questions}
 
 ### Should I commit my .env file?
 
@@ -232,14 +206,8 @@ import 'dotenv/config'
 
 <p>Use <a href="https://github.com/dotenvx/dotenv-expand">dotenv-expand</a> for variable expansion, or <a href="/">dotenvx</a> for expansion, command substitution, and encrypted .env files.</p>
 <p>For parsing rules, framework examples, and more answers, see the <a href="https://github.com/motdotla/dotenv#readme">full README</a>.</p>
-{% unless writer_preview %}</section>{% endunless %}
+
 <p class="text-center"><a href="https://github.com/motdotla/dotenv/blob/master/CHANGELOG.md">Changelog</a> · <a href="https://www.npmjs.com/package/dotenv">npm</a> · <a href="https://github.com/motdotla/dotenv">GitHub</a></p>
 {% endcapture %}
-{% if writer_preview %}
+
 {{ dotenv_content }}
-{% else %}
-{% include components/design-content-width.html content=dotenv_content class="design-prose" %}
-</div>
-</section>
-</div>
-{% endif %}

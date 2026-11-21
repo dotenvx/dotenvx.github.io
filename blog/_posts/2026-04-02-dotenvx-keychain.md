@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Ustun Ozgur"
 title: "Harden .env.local: dotenvx + OS Keychain"
 excerpt: "A defense layer against increasing supply chain attacks that read your .env files"

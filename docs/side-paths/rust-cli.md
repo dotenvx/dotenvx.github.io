@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Use the CLI
 description: Load configuration before starting your Rust app.
 permalink: /docs/rust/cli/

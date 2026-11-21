@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: ".env.keys"
 description: Keep your private keys in a local .env.keys file.
 permalink: "/docs/custody/env-keys/"

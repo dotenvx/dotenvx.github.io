@@ -2,34 +2,18 @@
 title: "Supermemory: One key. No chasing."
 description: How Dhravya Shah uses one private key to unlock his team's secrets at Supermemory with Dotenvx.
 permalink: /members/supermemory
-layout: radar
 og_image:
   template: logo
   logo: _includes/logos/supermemory.svg
   alt: Supermemory
-body_class: home-page
+
 ---
 
-{% if writer_preview %}
+
 {{ page.description }}
 
 <div class="writer-member-logo">{% include logos/supermemory.html %}</div>
-{% else %}
-<div class="home-sections">
-<section class="design-hero-section home-hero">
-  <div class="armor-shell">
-    <div class="design-hero design-hero--compact design-hero--secondary">
-      {% include logos/supermemory.html class="mx-auto max-w-full w-72 h-auto" %}
-      <div class="design-page-header-desc design-hero-description">
-        <h1 class="design-hero-name">One key, no chasing.</h1>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="radar-section">
-  <div class="armor-shell">
-    {% endif %}
     {% capture story %}
       {% include components/design-quote.html
         text='"Dotenvx is so underrated. I set one key and all my secrets just work."'
@@ -51,14 +35,7 @@ body_class: home-page
       <hr class="member-story-divider">
       <p class="design-paragraph"><strong>Dhravya is CEO of Supermemory and previously worked at Cloudflare.</strong></p>
     {% endcapture %}
-    {% if writer_preview %}
+
 <div>
 {{ story | strip }}
 </div>
-{% else %}
-    {% include components/design-content-width.html content=story %}
-  </div>
-</section>
-</div>
-
-{% endif %}

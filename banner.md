@@ -3,8 +3,7 @@ noindex: true
 sitemap: false
 title: ""
 permalink: /banner
-hide_footer: true
-hide_nav: true
+
 ---
 
 <section class="hero-top-adaptive hero-no-select relative w-full max-w-7xl mx-auto px-6 md:pr-0 mt-6">

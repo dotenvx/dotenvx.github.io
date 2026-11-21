@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "armor push --team"
 description: "Team to push armored private key for."
 permalink: "/docs/cli/armor-push-team/"

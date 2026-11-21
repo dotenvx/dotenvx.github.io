@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: integer
 description: Validate integer values.
 permalink: "/docs/dotenvxtoml/type/integer/"

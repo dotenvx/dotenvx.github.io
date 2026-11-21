@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: port
 description: Validate port values.
 permalink: "/docs/dotenvxtoml/type/port/"

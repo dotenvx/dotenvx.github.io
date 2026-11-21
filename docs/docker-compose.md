@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Docker Compose"
 social_title: "Encrypt a .env file for Docker Compose"
 description: "Encrypt a .env file for Docker Compose and inject its secrets when your service starts."

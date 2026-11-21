@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "native pull -f"
 description: "Path to your env file."
 permalink: "/docs/cli/native-pull-f/"

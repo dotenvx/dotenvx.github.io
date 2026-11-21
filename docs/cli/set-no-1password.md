@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "set --no-1password"
 description: "Disable 1Password features."
 permalink: "/docs/cli/set-no-1password/"

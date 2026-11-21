@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Static builds
 description: Load secrets while building a static Astro site.
 permalink: /docs/astro/static-builds/

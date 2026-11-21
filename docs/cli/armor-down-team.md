@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "armor down --team"
 description: "Team to dearmor private key from."
 permalink: "/docs/cli/armor-down-team/"

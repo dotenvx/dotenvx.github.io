@@ -4,44 +4,12 @@ title: Changelog
 social_title: "Changelog · Dotenvx"
 image: "/assets/img/og-image-changelog.png"
 permalink: /changelog/
-layout: radar
-body_class: home-page
+
 ---
 
-{% unless writer_preview %}
-<style>
-  .changelog-index {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
 
-  .changelog-index .design-list-items li {
-    color: var(--design-body, var(--design-ink));
-    font-family: var(--design-font-sans);
-    font-size: var(--design-text-size);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    line-height: 1.45;
-  }
-
-
-</style>
-
-
-
-<div class="changelog-page home-sections">
-  <section class="design-hero-section home-hero" aria-label="Changelog">
-    <div class="armor-shell">
-      {% include components/office-hero.html description="What we’re working on in LA & SF" %}
-    </div>
-  </section>
-
-  <section class="radar-section">
-    <div class="armor-shell">
-{% endunless %}
       {% capture changelog_content %}
-      {% if writer_preview %}<div>{% else %}<nav class="changelog-index" aria-label="Changelog">{% endif %}
+      <div>
         {% comment %}
           Busy months (3+ entries) stay monthly. Sparse months (1–2) roll into quarters.
         {% endcomment %}
@@ -81,8 +49,8 @@ body_class: home-page
             {% endunless %}
             {% assign current_period = entry_period %}
             <div class="design-list">
-              {% if writer_preview %}<h2>{{ entry_period_label }}</h2>{% else %}<p class="design-list-title">{{ entry_period_label }}</p>{% endif %}
-              <ul class="{% if writer_preview %}writer-prose-list{% else %}design-list-items{% endif %}">
+              <h2>{{ entry_period_label }}</h2>
+              <ul class="writer-prose-list">
           {% endif %}
                 <li>
                   {% if entry.url and entry.url != "" %}
@@ -102,9 +70,9 @@ body_class: home-page
               </ul>
             </div>
         {% endunless %}
-      {% if writer_preview %}</div>{% else %}</nav>{% endif %}
+      </div>
       {% endcapture %}
-{% if writer_preview %}
+
 > What we're working on, into the night
 
 <p><img class="writer-image" src="{{ '/changelog.png' | relative_url }}" alt="A person working on a laptop at an office desk" width="768" height="307"></p>
@@ -112,21 +80,3 @@ body_class: home-page
 <div>
 {{ changelog_content | strip }}
 </div>
-{% else %}
-      {% include components/design-content-width.html content=changelog_content %}
-    </div>
-  </section>
-
-  <section class="radar-section" aria-label="Install dotenvx">
-    <div class="armor-shell">
-      <div class="home-cta">
-      {% capture changelog_closing %}
-        <p class="design-paragraph text-center">From here, the fastest next step is installing dotenvx.</p>
-      {% endcapture %}
-      {% include components/design-content-width.html content=changelog_closing %}
-      {% include components/design-btn.html label="Install" href="/docs/install/" data_umami_event="Changelog Closing Install button" %}
-      </div>
-    </div>
-  </section>
-</div>
-{% endif %}

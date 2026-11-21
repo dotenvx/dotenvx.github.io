@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 permalink: /docs/cli/primitives/keypair-private-key/
 crumbs:
   - label: Docs

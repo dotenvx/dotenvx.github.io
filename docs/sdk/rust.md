@@ -2,7 +2,6 @@
 title: Rust
 description: Load encrypted .env files in Rust.
 permalink: /docs/sdk/rust/
-layout: docs-markdown
 eyebrow: "SDKs"
 eyebrow_href: "/docs/sdk"
 icon: "rust"

@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Making .env: The Combine"
 excerpt: "There’s never been more opportunity, there’s never been more uncertainty."

@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Dotenvx is Feature Complete"
 excerpt: "With decrypt now supported, dotenvx is feature complete."

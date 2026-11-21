@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "run --lock-password"
 description: "Password to unlock private keys (defaults to DOTENVX_LOCK_PASSWORD)."
 permalink: "/docs/cli/run-lock-password/"

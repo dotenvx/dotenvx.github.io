@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "Command Substitution"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/

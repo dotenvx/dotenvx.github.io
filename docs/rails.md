@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: Rails
 social_title: Encrypt a .env file in Rails
 description: Use Dotenvx with Rails.

@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Password Managers
 description: Keep your private keys in your password manager.
 permalink: /docs/custody/password-managers/

@@ -2,7 +2,6 @@
 title: Railway
 description: Use dotenvx with Railway.
 permalink: /docs/platforms/railway/
-layout: docs-markdown
 mark: "railway"
 ---
 

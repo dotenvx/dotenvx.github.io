@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Hono"
 social_title: "Encrypt a .env file in Hono"
 description: "Encrypt a .env file in Hono with Dotenvx, commit it safely, and load its secrets at runtime."

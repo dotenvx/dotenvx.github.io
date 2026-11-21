@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Zsh"
 social_title: "Encrypt a .env file in Zsh"
 description: "Encrypt a .env file in Zsh with dotenvx, commit it safely, and inject its secrets at runtime."

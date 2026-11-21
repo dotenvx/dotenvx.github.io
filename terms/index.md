@@ -1,20 +1,10 @@
 ---
 description: "Read the Dotenvx terms of service covering accounts, payments, service use, and responsibilities."
 title: "Terms of Service"
-layout: radar
-body_class: home-page
+
 ---
 
-{% unless writer_preview %}
-<div class="home-sections">
-{% include components/legal/hero.html
-  title="Terms of Service"
-  description="Terms of use for the dotenvx service."
-%}
 
-<section class="radar-section">
-  <div class="armor-shell">
-{% endunless %}
     {% capture legal_content %}
     <div class="design-prose">
     <p class="design-paragraph">By using Dotenvx ("Service"), you are agreeing to be bound by the following terms and conditions ("Terms of Service").</p>
@@ -123,13 +113,7 @@ body_class: home-page
     <p class="design-paragraph">Questions about this privacy policy? Please <a class="design-link" href="mailto:support@dotenvx.com">get in touch</a> and we'll be happy to answer them.</p>
     </div>
     {% endcapture %}
-{% if writer_preview %}
-Terms of use for the dotenvx service.
+
+> Terms of use for the dotenvx service.
 
 {{ legal_content | strip }}
-{% else %}
-    {% include components/design-content-width.html content=legal_content %}
-  </div>
-</section>
-</div>
-{% endif %}

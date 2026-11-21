@@ -2,7 +2,6 @@
 title: Next.js
 description: Load encrypted .env files with the Next.js environment loader.
 permalink: /docs/sdk/nextjs/
-layout: docs-markdown
 eyebrow: SDKs
 eyebrow_href: /docs/sdk/
 icon: nextjs

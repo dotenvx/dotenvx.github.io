@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "feedback --hostname"
 description: "Send feedback to a specific Armor API host."
 permalink: "/docs/cli/feedback-hostname/"

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "-ek"
 eyebrow: "dotenvx decrypt"
 eyebrow_href: /docs/cli/decrypt/

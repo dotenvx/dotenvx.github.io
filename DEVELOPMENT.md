@@ -8,22 +8,26 @@ bundle install
 bin/dev
 ```
 
-That starts Jekyll (`--livereload --verbose --incremental`) and a PostCSS watcher from `Procfile.dev`.
+That starts Jekyll with live reload.
 
-`assets/css/main.src.css` is the source. `npm run build:css` / `npm run watch:css` write `assets/css/main.css` (gitignored). We do **not** use `jekyll-postcss` — it passes the whole stylesheet on the CLI and fails with `Argument list too long` once the file is large.
+The writer design is the default for every public page. `_layouts/default.html`
+contains the shared shell; `assets/css/writer.css` contains the base styles and
+`assets/css/writer-docs.css` adds docs styles. Edit these files directly: there is
+no CSS compilation or Tailwind dependency. Newsletter forms also use
+`assets/css/newsletter-signup.css`.
 
-#### `/v2` design rules
-
-Follow the [v2 design rules](_design/v2.md) when editing the shared writer layout or its pages.
+`_plugins/writer_site.rb` prepares Markdown content, page headings, docs frames,
+blog posts, and Markdown exports. `/v2/` URLs remain redirects to the public pages.
+Shared content components are still used by docs, pricing, and Markdown exports.
 
 #### Production build
 
-CI and deploy use production env (Umami on, CSS minified):
+CI and deploy use production env (Umami on):
 
 ```
 npm ci
-JEKYLL_ENV=production npm run build:css
 JEKYLL_ENV=production bundle exec jekyll build
+bundle exec ruby scripts/test-seo.rb
 ```
 
 #### Pricing plans
@@ -41,24 +45,20 @@ Plans are priced by **users**, **audit retention**, and included monthly audited
 
 #### Writing Markdown pages
 
-Use `layout: prose` for pages with a title, description, and ordinary Markdown body.
-The layout renders the hero and wraps the body in `design-content-width design-prose`,
-so paragraphs inherit the same typography as `design-paragraph`. Headings, links,
-lists, and code use the existing prose styles. No paragraph includes or HTML wrappers
-are needed. An empty body renders only the hero.
+Ordinary Markdown pages inherit the default layout; no `layout` front matter is
+needed. Supply a title and description. The renderer generates the main heading
+from the title, so start body sections at `##`.
 
 ```markdown
 ---
-layout: prose
 title: Agentic Dotenv
 description: "The dotenv you love–now ready for agents."
-permalink: /agents
-hero_visual: components/joined-slab-hero.html
+permalink: /agents/
 ---
 
 This is paragraph 1.
 
-This is paragraph 2 with **emphasis** and a [link](/docs).
+This is paragraph 2 with **emphasis** and a [link](/docs/).
 
 ## A heading
 
@@ -66,15 +66,16 @@ This is paragraph 2 with **emphasis** and a [link](/docs).
 - Another item
 ```
 
-`hero_visual` is optional; it names an include for the illustration above the title.
-Keep illustration markup and behavior in that include, leaving the page for writing.
-See `agents.md` for a minimal example.
+Optional `writer_layout` values are `single`, `two-columns`, `columns` (the
+default), and `wide`. Docs use `doc_type: cli`, `custody`, or `side-path` when
+specialized command, custody, or parent-page metadata is needed. These are content
+types, not separate layouts.
 
 #### Markdown in docs
 
 All docs content columns style ordinary Markdown paragraphs like `design-paragraph`,
 including the existing spacing inside steps. Use plain paragraphs, backticks,
-`**bold**`, and `[links](/docs)` in `docs-cli` and `docs-quickstart` page bodies.
+`**bold**`, and `[links](/docs)` in docs page bodies.
 Use `## Heading` and `### Subheading` for section headings; they inherit the docs
 heading styles. To preserve a specific link target, put `{: #reference}` on the
 line immediately below the heading. Otherwise, an anchor is generated from its text.
@@ -161,14 +162,13 @@ between fences and includes, including fences rendered through `markdownify` in 
 Restart Jekyll after changing this plugin, and clear its Markdown cache with
 `bundle exec jekyll clean` when updating renderers (or build with `--disable-disk-cache`).
 
-The renderer in `_plugins/design_syntax.rb` and palette in `assets/css/design-syntax.css`
+The renderer in `_plugins/design_syntax.rb` and token styling in `assets/css/writer.css`
 are mirrored in Radar (`lib/design_syntax.rb` and the syntax section at the end of
 `app/assets/stylesheets/application.tailwind.css`). Keep both copies aligned. Dotenv
 has a dedicated lexer for assignments, comments, multiline values, and interpolation.
 
 Run `bundle exec ruby scripts/test-design-syntax.rb` and
-`bundle exec ruby scripts/test-design-codeblocks.rb`, then `npm run build:css` and
-`bundle exec jekyll build`. Preview `/docs/quickstart/`, `/docs/env-file/`, and
+`bundle exec ruby scripts/test-design-codeblocks.rb`, then `bundle exec jekyll build`. Preview `/docs/quickstart/`, `/docs/env-file/`, and
 `/docs/cloudflare/` in both themes. Radar's `/design/codeblock` is the specimen gallery.
 
 ## Search engine metadata
@@ -199,14 +199,14 @@ and robots rules. An optional first argument selects another build directory.
 
 ## Side paths
 
-Side paths are optional Markdown pages that open in a right-hand drawer from a
-guide. Each also has a normal URL and works without JavaScript. Create a page with
-`layout: docs-side-path`, `title`, `description`, `permalink`, `parent_url`,
+Side paths are optional Markdown pages linked from a guide. Each has a normal
+URL and works without JavaScript. Create a page with
+`doc_type: side-path`, `title`, `description`, `permalink`, `parent_url`,
 `parent_title`, and `side_path_kind` (`Alternative` or `Troubleshooting`) in its
 front matter. Write its body as ordinary Markdown, including existing codeblock
 attributes for copy text and package managers.
 
-Link to it from a `docs-markdown` guide:
+Link to it from a guide:
 
 ```markdown
 [**Not using Armor?** Alternative →](/docs/nextjs/share-private-key/){: .side-path}
@@ -218,9 +218,8 @@ Use “Alternative →” for alternative paths and “Troubleshoot →” for f
 
 Keep the attribute on the same line as the link so it applies to the link, not
 the surrounding paragraph. Use `{: .side-path-inline}` for a link inside prose.
-The shared drawer supports Escape, backdrop dismissal, focus restoration, reduced
-motion, and full-width mobile reading. Package-manager choices stay synchronized
-with the parent guide. “Open page” provides a bookmarkable standalone view.
+Side paths are ordinary linked pages in the writer layout. Package-manager choices
+stay synchronized across docs pages.
 
 ### Next.js Markdown export
 

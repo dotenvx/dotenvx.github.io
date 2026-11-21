@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Deploy to Cloudflare Pages
 description: Upload production secrets and deploy a Cloudflare Pages project.
 permalink: /docs/cloudflare/pages/

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "protect"
 description: "Install a required Git clean filter for all existing and future repositories for your user. Run this once, even outside a Git repository:"
 permalink: /docs/cli/protect/

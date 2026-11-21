@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "Values with spaces"
 eyebrow: "dotenvx set"
 eyebrow_href: /docs/cli/set/

@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "KEY value -fk"
 eyebrow: "dotenvx set"
 eyebrow_href: /docs/cli/set/

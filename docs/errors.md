@@ -2,23 +2,10 @@
 title: Errors
 description: Error codes surfaced by Dotenvx and Armor.
 permalink: /docs/errors/
-layout: radar
 writer_layout: wide
 ---
 
-{% unless writer_preview %}
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Errors"
-  description="Error codes surfaced by Dotenvx and Armor."
-  mark="[!]"
-%}
 
-<section class="radar-section">
-<div class="armor-shell">
-<div class="design-content-width">
-<div class="docs-guide-body design-prose" markdown="block">
-{% endunless %}
 
 Errors are written to stderr in the form `[ERROR_CODE] message`. Use the code to identify the failure independently of its contextual message.
 
@@ -89,9 +76,3 @@ Errors are written to stderr in the form `[ERROR_CODE] message`. Use the code to
         </tbody>
 {% endcapture %}
 {% include components/design-table.html class="design-table-wrap--fill" content=armor_errors %}
-{% unless writer_preview %}
-</div>
-</div>
-</div>
-</section>
-{% endunless %}

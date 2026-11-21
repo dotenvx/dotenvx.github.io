@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "run --no-bitwarden"
 description: "Disable Bitwarden secret reference resolution."
 permalink: "/docs/cli/run-no-bitwarden/"

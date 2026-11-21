@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Sinatra"
 social_title: "Encrypt a .env file in Sinatra"
 description: "Encrypt a .env file in Sinatra with the Dotenvx gem, commit it safely, and load its secrets at runtime."

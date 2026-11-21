@@ -1,0 +1,25 @@
+/* Plain mode uses browser defaults with a readable measure and working controls. */
+:root { color-scheme: light; }
+body { max-width: 42rem; margin: 40px auto; padding: 0 16px; font-size: 18px; line-height: 1.6; }
+header, footer { margin-block: 2em; }
+nav a, .writer-nav-actions > *, .writer-footer-links > * { margin-inline-end: 0.75em; }
+img, video { max-width: 100%; height: auto; }
+pre, .design-table-wrap { overflow-x: auto; }
+iframe { max-width: 100%; }
+dialog { max-width: min(42rem, 85vw); }
+
+/* Generated Markdown decoration and duplicate presentation labels are not content. */
+.writer :is(.writer-markdown-syntax, .writer-markdown-detail),
+.newsletter-honeypot, .membership-section-mobile, .pricing-plan-label-short,
+.design-codeblock-copy svg { display: none; }
+
+.sr-only, .newsletter-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Copy-as-Markdown still needs its offscreen text, including syntax markers. */
+.writer-copy-buffer { position: fixed; inset: 0 auto auto -100000px; width: max-content; }

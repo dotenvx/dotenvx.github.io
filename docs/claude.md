@@ -3,7 +3,6 @@ og_image:
   template: logo
   logo: _includes/icons/docs/claude-code.html
   alt: Claude Code
-layout: docs-markdown
 title: "Claude Code"
 social_title: "Runtime leak protection for Claude coding agents"
 description: "Runtime leak protection and log redaction for Claude Code. Give Claude real secrets while redacting them from output, terminals, and agent transcripts."

@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "TanStack Start"
 social_title: "Encrypt a .env file in TanStack Start"
 description: "Encrypt a .env file in TanStack Start with Dotenvx, commit it safely, and load its secrets at runtime."

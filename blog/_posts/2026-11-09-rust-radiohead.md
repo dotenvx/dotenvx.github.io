@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Making .env: Rust & Radiohead"
 excerpt: "I spent the weekend rewriting Dotenvx in Rust while listening to Radiohead in album order. Here's what custom builds could make possible for Dotenvx 3.0."

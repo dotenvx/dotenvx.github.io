@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Genexample
 description: Generate a .env.example file from your current .env file contents.
 permalink: /docs/cli/genexample/

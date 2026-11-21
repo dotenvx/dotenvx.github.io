@@ -17,7 +17,7 @@ module Jekyll
         title = page.data["title"].to_s
         parents = parents_for(page, by_url)
         unless page.data["seo_title"]
-          context = if page.data["layout"] == "docs-side-path"
+          context = if page.data["doc_type"] == "side-path"
             [title, page.data["parent_title"]].compact.uniq.join(" · ")
           elsif page.url.start_with?("/docs/cli/")
             eyebrow = page.data["eyebrow"].to_s

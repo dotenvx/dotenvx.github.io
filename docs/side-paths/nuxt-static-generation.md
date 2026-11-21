@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Static generation
 description: Decrypt during generation and deploy static files.
 permalink: /docs/nuxt/static-generation/

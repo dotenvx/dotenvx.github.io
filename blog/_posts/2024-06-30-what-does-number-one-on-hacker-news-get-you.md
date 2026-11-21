@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "What Does #1 on Hacker News Get You"
 excerpt: "When your project hits #1 on Hacker News someday, here's what you can expect in terms of visits, stars, and more."

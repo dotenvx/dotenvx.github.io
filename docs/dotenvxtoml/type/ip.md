@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: ip
 description: Validate ip values.
 permalink: "/docs/dotenvxtoml/type/ip/"

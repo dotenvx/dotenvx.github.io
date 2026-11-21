@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Minimum
 description: Set an inclusive lower bound for numeric values.
 permalink: "/docs/dotenvxtoml/min/"

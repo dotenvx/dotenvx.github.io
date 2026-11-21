@@ -2,7 +2,6 @@
 title: Python
 description: Load and manage encrypted env from Python.
 permalink: /docs/sdk/python/
-layout: docs-markdown
 eyebrow: "SDKs"
 eyebrow_href: "/docs/sdk"
 icon: "python"

@@ -2,7 +2,7 @@
 title: Dotenv Spec Table
 description: Compare how dotenv libraries parse each .env scenario.
 permalink: /docs/spec/table.html
-layout: docs-markdown
+
 ---
 
 [Back to the Dotenv Spec](/docs/spec/)

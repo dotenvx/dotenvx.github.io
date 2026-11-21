@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Armor
 description: Dotenvx Armor keeps your private decryption keys armored off device.
 permalink: /docs/cli/armor/introduction/

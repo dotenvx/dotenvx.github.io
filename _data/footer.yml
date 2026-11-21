@@ -16,17 +16,12 @@ links:
     href: /careers
   - label: Armor
     href: /armor
-  - label: Open Source
-    href: /opensource
   - label: Changelog
     href: /changelog
   - label: Blog
     href: /blog
   - label: Trust Center
     href: /trust/
-  - label: Status
-    href: https://status.dotenvx.com
-    external: true
   - label: Contact
     href: /contact
   - label: Whitepaper
@@ -38,8 +33,6 @@ links:
   - label: NPM
     href: https://www.npmjs.com/package/@dotenvx/dotenvx
     external: true
-  - label: Search
-    href: /search
   - label: Legal
     href: /legal
   - label: Privacy
@@ -48,7 +41,12 @@ links:
     href: /terms
   - label: Sitemap
     href: /sitemap/
+  - label: Status
+    href: https://status.dotenvx.com
+    external: true
   - label: Theme
     theme_toggle: true
+  - label: Search
+    href: /search
   - label: Log In
     href: /login

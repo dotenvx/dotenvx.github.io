@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Monorepos"
 social_title: "Encrypt .env files in a monorepo"
 description: "Load shared or workspace-specific encrypted .env files across a monorepo with dotenvx."

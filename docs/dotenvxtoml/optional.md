@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Optional
 description: Allow a variable to be missing or blank.
 permalink: "/docs/dotenvxtoml/optional/"

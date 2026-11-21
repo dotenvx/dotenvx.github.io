@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "--redact -- codex exec"
 eyebrow: "dotenvx run"
 eyebrow_href: /docs/cli/run/

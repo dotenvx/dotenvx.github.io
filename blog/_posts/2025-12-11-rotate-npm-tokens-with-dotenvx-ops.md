@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Rotate NPM Tokens with Dotenvx Armor ⛨. Automatically."
 excerpt: "NPM's new short-lived tokens strengthen security, but they make rotation painful."

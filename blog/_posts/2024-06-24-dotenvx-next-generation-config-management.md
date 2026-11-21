@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "From dotenv to dotenvx: Next Generation Config Management"
 excerpt: "A leap forward in configuration management for dotenv"

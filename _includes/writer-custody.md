@@ -6,7 +6,7 @@
 {% endunless %}
 {{ docs_body | strip }}
 
-{% if page.layout == 'docs-custody' and page.options.size > 0 %}
+{% if page.doc_type == 'custody' and page.options.size > 0 %}
 ## Custody options
 
 {% for option in page.options -%}

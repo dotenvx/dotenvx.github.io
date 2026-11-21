@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: 1Password
 description: Keep your private keys in 1Password.
 permalink: "/docs/custody/1password/"

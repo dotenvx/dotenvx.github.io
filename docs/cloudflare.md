@@ -8,7 +8,6 @@ description: Use Dotenvx with Cloudflare.
 permalink: /docs/cloudflare/
 markdown_url: /docs/cloudflare.md
 agent_prompt: Set up Dotenvx with Cloudflare Workers and Wrangler for me.
-layout: docs-markdown
 hero_include: "icons/cloudflare.html"
 hero_class: "docs-cloudflare-logo"
 ---

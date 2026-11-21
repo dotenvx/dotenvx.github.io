@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Keychain
 description: Keep your private keys in macOS Keychain.
 permalink: "/docs/custody/keychain/"

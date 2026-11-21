@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "GitHub Actions"
 social_title: "Encrypt a .env file for GitHub Actions"
 description: "Encrypt a .env file for GitHub Actions and inject its secrets into your workflow at runtime."

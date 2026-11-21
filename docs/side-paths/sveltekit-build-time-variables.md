@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Build-time variables
 description: Decrypt before building when your app needs values during the build.
 permalink: /docs/sveltekit/build-time-variables/

@@ -2,7 +2,6 @@
 title: Primitives
 description: Low-level encryption primitives for Rust.
 permalink: /docs/sdk/rust/primitives/
-layout: docs-markdown
 eyebrow: "Rust"
 eyebrow_href: "/docs/sdk/rust"
 icon: "rust"

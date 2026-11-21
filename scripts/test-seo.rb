@@ -29,12 +29,15 @@ files.each do |file|
     next
   end
   errors << "#{path}: expected a redirect at the former preview URL" if path.start_with?("/v2/")
+  errors << "#{path}: expected the public writer layout" unless html.at_css("main.writer")
+  if html.css('link[rel="stylesheet"]').any? { |link| link['href'].to_s.split('?').first.end_with?('/assets/css/main.css') }
+    errors << "#{path}: loads the retired stylesheet"
+  end
   if html.at_css('meta[name="robots"]')&.[]("content").to_s.include?("noindex")
     noindex_urls << canonical
     next
   end
   indexable << path
-  errors << "#{path}: expected the public writer layout" unless html.at_css("main.writer")
   {
     "head > title" => "text",
     'meta[name="description"]' => "content",

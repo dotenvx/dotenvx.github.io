@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Nuxt"
 social_title: "Encrypt a .env file in Nuxt"
 description: "Encrypt a .env file in Nuxt with Dotenvx, commit it safely, and load its secrets at runtime."

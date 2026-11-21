@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Maximum
 description: Set an inclusive upper bound for numeric values.
 permalink: "/docs/dotenvxtoml/max/"

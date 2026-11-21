@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Doctor
 description: Scan for dotenv loaders.
 permalink: /docs/cli/doctor/

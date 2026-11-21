@@ -2,7 +2,6 @@
 title: ".env"
 description: "The .env file separates your secrets from code."
 permalink: /docs/env-file/
-layout: docs-markdown
 lang_examples:
   - id: node
     language: javascript

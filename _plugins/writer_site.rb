@@ -59,22 +59,18 @@ class WriterSite < Jekyll::Generator
     links = canonical_links(site)
     home = site.pages.find { |page| page.url == '/' }
     source = File.read(site.in_source_dir('index.md'))
-    markdown = RawMarkdownExports.homepage_markdown(source, site, writer_preview: true)
+    markdown = RawMarkdownExports.homepage_markdown(source, site)
     publish(site, home, "# Dotenvx\n\n#{markdown}", links)
 
-    pricing = site.pages.find { |page| page.url == '/pricing/' }
-    publish(site, pricing, render_source(site, pricing, '{% include writer-pricing.md %}'), links)
-
-    %w[about armor opensource corporate legal privacy terms changelog blog newsletter pricing-old docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap 404.html].each do |slug|
+    %w[pricing about armor opensource corporate legal privacy terms changelog blog newsletter pricing-old docs/install docs/quickstart docs/advanced docs/cli docs/sdk docs/guides docs careers careers/agent-engineer careers/corporate-sponsorships members/watt members/supermemory search sitemap 404.html].each do |slug|
       page = site.pages.find { |candidate| candidate.url.delete_suffix('/') == "/#{slug}" && candidate.data['layout'] != 'redirect' }
-      template = page.data['writer_include'] ? "{% include #{page.data['writer_include']} %}" : page.content
-      content = render_source(site, page, template)
+      content = render_source(site, page, page.content)
       publish(site, page, titled_markdown(page, content), links)
     end
 
     docs_pages = site.pages.select do |page|
       page.url.start_with?('/docs/') && page.output_ext == '.html' &&
-        !%w[redirect writer].include?(page.data['layout']) && !page.data['redirect_to']
+        page.data['layout'] != 'redirect' && !page.data['writer_markdown'] && !page.data['redirect_to']
     end
     cli_pages = docs_pages.select { |page| page.url.start_with?('/docs/cli/') }
     sdk_pages = docs_pages.select { |page| page.url.start_with?('/docs/sdk/') }
@@ -89,13 +85,20 @@ class WriterSite < Jekyll::Generator
     end
 
     publish_docs(site, cli_pages, links, 'writer-cli-reference.md', frame_context: { 'cli_nav' => DocsCliNav.build(site) })
-    publish_docs(site, sdk_pages, links, 'writer-cli-reference.md', frame_context: { 'sdk_reference' => true })
+    publish_docs(site, sdk_pages, links, 'writer-cli-reference.md', frame_context: { 'sdk_reference' => true }, metadata: { 'writer_layout' => 'single' })
     publish_docs(site, custody_pages, links, 'writer-custody.md')
     publish_docs(site, toml_pages, links, 'writer-cli-reference.md', frame_context: { 'toml_reference' => true })
     publish_docs(site, guide_pages, links, 'writer-guide.md', metadata: { 'writer_guide' => true })
     publish_docs(site, resource_pages, links, 'writer-guide.md', metadata: { 'writer_resource' => true })
 
     publish_blog_posts(site, links)
+    (site.pages + site.docs_to_write).dup.each do |page|
+      next unless page.output_ext == '.html' && !page.data['writer_markdown']
+      next if page.data['layout'] == 'redirect' || page.data['redirect_to']
+
+      content = render_source(site, page, page.content)
+      publish(site, page, titled_markdown(page, content), links)
+    end
     redirect_preview_urls(site)
   end
 
@@ -103,7 +106,7 @@ class WriterSite < Jekyll::Generator
 
   def render_source(site, page, source)
     site.liquid_renderer.file(page.path).parse(source).render!(
-      { 'writer_preview' => true, 'page' => page.to_liquid, 'site' => site.site_payload['site'] },
+      { 'page' => page.to_liquid, 'site' => site.site_payload['site'] },
       registers: { site: site, page: page.to_liquid }
     )
   end
@@ -152,7 +155,7 @@ class WriterSite < Jekyll::Generator
 
   def publish_docs(site, pages, links, frame_file, frame_context: {}, metadata: {})
     frame = site.liquid_renderer.file(frame_file).parse("{% include #{frame_file} %}")
-    shared_context = { 'writer_preview' => true, 'site' => site.site_payload['site'] }.merge(frame_context)
+    shared_context = { 'site' => site.site_payload['site'] }.merge(frame_context)
     pages.each do |page|
       context = shared_context.merge('page' => page.to_liquid, 'docs_body' => render_source(site, page, page.content))
       content = frame.render!(context, registers: { site: site, page: context['page'] })
@@ -164,7 +167,7 @@ class WriterSite < Jekyll::Generator
     frame = site.liquid_renderer.file('writer blog post').parse('{% include components/blog/writer-post.html %}')
     site.categories.fetch('blog', []).reject { |post| post.data['draft'] == true }.each do |post|
       context = {
-        'writer_preview' => true, 'page' => post.to_liquid, 'site' => site.site_payload['site'],
+        'page' => post.to_liquid, 'site' => site.site_payload['site'],
         'post_content' => render_source(site, post, post.content)
       }
       content = frame.render!(context, registers: { site: site, page: context['page'] })
@@ -193,7 +196,7 @@ class WriterSite < Jekyll::Generator
   end
 
   def redirect_preview_urls(site)
-    pages = (site.pages + site.docs_to_write).select { |page| page.data['layout'] == 'writer' && page.url != '/404.html' }
+    pages = (site.pages + site.docs_to_write).select { |page| page.data['writer_markdown'] && page.url != '/404.html' }
     redirects = pages.map do |page|
       path = page.url
       path = "#{path}/" if !path.end_with?('/') && File.extname(path).empty?
@@ -286,8 +289,7 @@ class WriterSite < Jekyll::Generator
     end
 
     page.data.merge!(
-      'writer_source_layout' => source.data['layout'],
-      'layout' => 'writer',
+      'layout' => 'default',
       'writer_layout' => writer_layout,
       'writer_markdown' => WriterMarkdownExport.convert(remap_links(export_html, links, site)),
       'writer_heading' => heading,

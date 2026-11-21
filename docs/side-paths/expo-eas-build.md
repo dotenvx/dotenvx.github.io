@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: EAS Build
 description: Decrypt your production configuration on an EAS Build worker.
 permalink: /docs/expo/eas-build/

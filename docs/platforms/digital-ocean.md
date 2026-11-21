@@ -2,7 +2,6 @@
 title: DigitalOcean
 description: Use dotenvx with DigitalOcean.
 permalink: /docs/platforms/digital-ocean/
-layout: docs-markdown
 mark: "do"
 ---
 

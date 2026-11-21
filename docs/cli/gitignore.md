@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Gitignore
 description: Gitignore your .env files.
 permalink: /docs/cli/gitignore/

@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "hidden"
 description: "Hidden features."
 permalink: "/docs/cli/hidden/"

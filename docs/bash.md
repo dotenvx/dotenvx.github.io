@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Bash"
 social_title: "Encrypt a .env file in Bash"
 description: "Encrypt a .env file in Bash with dotenvx, commit it safely, and inject its secrets at runtime."

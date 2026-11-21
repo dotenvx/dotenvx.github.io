@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "Remix"
 social_title: "Encrypt a .env file in Remix"
 description: "Encrypt a .env file in Remix with Dotenvx, commit it safely, and load its secrets at runtime."

@@ -1,5 +1,5 @@
 ---
-layout: docs-custody
+doc_type: custody
 title: Secret Service
 description: Keep your private keys in Linux Secret Service.
 permalink: /docs/custody/secret-service/

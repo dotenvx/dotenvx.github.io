@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "armor logout --hostname"
 description: "Set Armor \u26e8 hostname."
 permalink: "/docs/cli/armor-logout-hostname/"

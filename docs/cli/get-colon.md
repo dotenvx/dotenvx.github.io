@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: "--format colon"
 eyebrow: "dotenvx get"
 eyebrow_href: /docs/cli/get/

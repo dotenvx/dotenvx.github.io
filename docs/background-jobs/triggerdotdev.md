@@ -2,7 +2,6 @@
 title: Trigger.dev
 description: Use dotenvx with Trigger.dev.
 permalink: /docs/background-jobs/triggerdotdev/
-layout: docs-markdown
 mark: "trigger"
 ---
 

@@ -2,7 +2,6 @@
 title: Go
 description: Load encrypted .env files in Go.
 permalink: /docs/sdk/go/
-layout: docs-markdown
 eyebrow: SDKs
 eyebrow_href: /docs/sdk/
 icon: go

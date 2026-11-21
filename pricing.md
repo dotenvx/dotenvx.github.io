@@ -2,97 +2,22 @@
 title: Pricing
 description: "Your keys. Off device. Under your control."
 permalink: /pricing/
-layout: radar
 writer_layout: wide
-body_class: home-page membership-page
+
 ---
 
-<style>
-  .membership-plan-price { display: block; margin-top: .5rem; font-family: var(--design-font-mono); font-size: var(--design-text-compact); font-weight: 400; letter-spacing: normal; text-transform: none; color: var(--design-body); }
-  .membership-hero-card { display: block; width: calc(var(--hero-illustration-width) * 1.4); max-width: none; height: auto; flex: none; box-shadow: 0 5px 8px rgb(0 0 0 / .12); border-radius: 8px; }
-  html.dark .membership-hero-card { --member-card-edge: var(--design-line); --member-card-outline: var(--design-mid); --member-card-inset: var(--design-line); --member-card-divider: var(--design-line); box-shadow: 0 2px 0 var(--design-line); }
-  .membership-comparison .design-table-wrap { overflow: visible; }
-  .membership-comparison .design-table { table-layout: fixed; }
-  .membership-comparison .design-table a.design-link { font-weight: inherit !important; }
-  html.dark .membership-comparison .design-table tbody th[scope="row"] { color: var(--design-body); }
-  .membership-feature-label { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .375rem; }
-  .membership-subrow-label { display: inline-block; padding-left: 1rem; }
-  .membership-addon-row { scroll-margin-top: 6rem; }
-  .membership-comparison .pricing-value-detail:focus-within::after { content: attr(data-tooltip); opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-  .membership-comparison .pricing-value-detail--label:focus-within::after,
-  .membership-comparison .pricing-value-detail--right:focus-within::after { transform: translate(0, 0); }
-  .membership-comparison .design-table .membership-section-row { background-color: var(--design-bg); }
-  .membership-comparison .design-table .membership-section-row th { color: var(--design-mid); font-family: var(--design-font-mono); font-size: var(--design-text-compact); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-  .membership-comparison .design-table thead th { width: 20%; text-align: center; white-space: normal; overflow-wrap: anywhere; vertical-align: top; }
-  .membership-comparison .design-table thead th:first-child { width: 40%; text-align: left; }
-  .membership-plan-actions .design-btn { font-size: .875rem; padding: .55rem .75rem; white-space: nowrap; }
-  .membership-comparison .membership-plan-actions td { padding-inline: .25rem; }
-  .membership-members { margin-top: 3rem; }
-  .membership-members .design-list-title { margin: 0 0 1.5rem; text-align: center; font-size: var(--design-text-compact); color: var(--design-mid); font-weight: 400; }
-  .membership-dotenvx { scroll-margin-top: 6rem; }
-  .membership-involvement-content { display: grid; grid-template-columns: 12rem minmax(0, 1fr); align-items: center; gap: 2rem; }
-  .membership-involvement-content :is(.env-slab-stage, .env-keycap-stage) { height: 12rem; }
-  .membership-comparison .membership-section-mobile { display: none; }
-  @media (max-width: 767px) {
-    .membership-comparison .design-table tr:not(.membership-section-row) > :nth-child(2),
-    .membership-comparison .design-table .membership-section-desktop { display: none; }
-    .membership-comparison .design-table .membership-section-mobile { display: table-cell; }
-    .membership-comparison .design-table thead th { width: 25%; }
-    .membership-comparison .design-table thead th:first-child { width: 50%; }
-  }
-  @media (max-width: 640px) {
-    .membership-involvement-content { grid-template-columns: 1fr; gap: 1rem; }
-    .membership-involvement-content :is(.env-slab, .env-keycap) { max-width: 16rem; margin-inline: auto; }
-  }
-</style>
+Your keys. Off device. Under your control.
 
-{% capture membership_visual %}
-  {% include_relative assets/img/dotenv-membership-card.svg %}
-{% endcapture %}
+Encrypt your `.env` files, prevent plaintext secrets from being committed, and load configuration with the CLI or SDKs. Member and Business include [Armor](/armor) for controlled, audited access to private keys.
 
-{% capture membership_slab %}
-  {% include components/env-slab.html %}
-{% endcapture %}
-
-{% capture membership_actions %}
-  {% include components/design-btn.html href="/signup" label="Sign up" %}
-{% endcapture %}
-
-<div class="home-sections">
-  <section class="design-hero-section home-hero" aria-label="Pricing">
-    <div class="armor-shell">
-      {% include components/design-hero.html compact=true name_heading=true name=page.title description=page.description content=membership_slab actions=membership_actions %}
-
-    </div>
-  </section>
-
-
-  {% include components/armor/logo-cloud.html %}
-
-  {% include components/membership-dotenvx.html %}
-
-
-
-
-{% capture involvement_copy %}
-<p class="design-paragraph">If your company relies on .env, you can help shape what comes next. Corporate involvement brings your team closer to the maintainers, with a chance to see work in progress and share what matters to you.</p>
-<p class="design-paragraph">Your support gives us more room to maintain the foundation and build new tools that stay open for everyone. We’d love to hear what we could build together.</p>
-<p class="design-paragraph">{% include components/design-link.html href="/corporate" label="Explore corporate involvement →" %}</p>
-{% endcapture %}
-  {% include components/membership-involvement.html id="membership-corporate-title" title="Corporate Involvement" visual="cube" content=involvement_copy %}
-
-{% capture involvement_copy %}
-<p class="design-paragraph">Want to help build the next chapter of .env? Join us in making secrets safer for developers and the agents working alongside them.</p>
-<p class="design-paragraph">Whether you’re building the tools or bringing companies into the work, there’s a chance to make a lasting contribution to something people use every day.</p>
-<p class="design-paragraph">{% include components/design-link.html href="/careers/" label="Explore open roles →" %}</p>
-{% endcapture %}
-  {% include components/membership-involvement.html id="membership-careers-title" title="Careers" visual="keycap" content=involvement_copy %}
-
-  <section class="radar-section" aria-labelledby="membership-join-title">
-    <div class="armor-shell">
-      {% include components/design-page-title.html title="Your secrets. Under your control." heading_tag="h2" title_class="text-center" id="membership-join-title" %}
-      <div class="design-hero-actions">{% include components/design-btn.html href="/signup" label="Sign up" %}</div>
-    </div>
-  </section>
-
+<div class="writer-pricing-comparison">
+{% include components/membership-dotenvx.html %}
 </div>
+
+## Usage and billing
+
+Additional usage is priced per 10,000 audit events: $1 prepaid for Member, or $0.25 billed monthly for Business. Member access pauses when available usage runs out. Business access continues beyond the included allowance.
+
+Member includes a [5-day trial](/signup). Additional seats cost $15/month per seat for Member, or $90/month per 10 seats for Business.
+
+Key rotation by command and Enterprise SSO are coming soon.

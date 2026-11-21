@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "1password push -f"
 description: "Path to your env file."
 permalink: "/docs/cli/1password-push-f/"

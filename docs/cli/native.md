@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Native
 description: Move private keys into your OS secret store.
 permalink: /docs/cli/native/

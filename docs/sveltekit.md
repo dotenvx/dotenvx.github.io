@@ -1,5 +1,4 @@
 ---
-layout: docs-markdown
 title: "SvelteKit"
 social_title: "Encrypt a .env file in SvelteKit"
 description: "Encrypt a .env file in SvelteKit with Dotenvx, commit it safely, and load its secrets at runtime."

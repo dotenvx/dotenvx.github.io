@@ -1,5 +1,5 @@
 ---
-layout: docs-side-path
+doc_type: side-path
 title: Public browser variables
 description: Expose values intended for the browser.
 permalink: /docs/sveltekit/public-variables/

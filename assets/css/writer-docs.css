@@ -1,9 +1,3 @@
-.writer-has-third-nav {
-  --writer-header-height: calc(var(--writer-nav-height) + 2 * var(--writer-subnav-height));
-}
-
-.writer-subnav--third a:not([aria-current], :hover) { color: var(--syntax); }
-
 @media screen and (min-width: 1000px) {
   .writer--docs.writer--columns {
     --writer-column-width: 336px;

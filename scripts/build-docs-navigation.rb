@@ -26,7 +26,7 @@ end
 pages.each do |p|
   next if parents[p['url']]
   explicit = p['eyebrow_href'].to_s.sub(%r{/$}, '') + '/'
-  if by_url[explicit] && explicit != p['url'] && p['layout'] == 'docs-cli'
+  if by_url[explicit] && explicit != p['url'] && p['doc_type'] == 'cli'
     parents[p['url']] = explicit
   elsif p['url'].start_with?('/docs/cli/', '/docs/sdk/')
     ancestor = by_url.keys.select { |url| url != p['url'] && p['url'].start_with?(url) }.max_by(&:length)
@@ -49,7 +49,7 @@ pages.each do |p|
   next if parents[p['url']]
   url = p['url']
   group = if ['/docs/introduction/', '/docs/quickstart/', '/docs/guides/', '/docs/learn/installing/'].include?(url) then 'Start here'
-    elsif p['layout'] == 'docs-quickstart' then 'Guides'
+    elsif p['doc_type'] == 'quickstart' then 'Guides'
     elsif url.start_with?('/docs/cli/') then 'CLI reference'
     elsif url.start_with?('/docs/sdk/') then 'SDKs'
     elsif url.match?(%r{/docs/(learn|platforms|armor|quickstart|package-managers|process-managers|background-jobs)/}) then 'Guides & deployment'

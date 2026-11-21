@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Required
 description: Require a value that is present and not blank.
 permalink: "/docs/dotenvxtoml/required/"

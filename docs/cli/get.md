@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Get
 description: Return a single environment variable.
 permalink: /docs/cli/get/

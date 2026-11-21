@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: directory
 eyebrow: "dotenvx prebuild"
 eyebrow_href: /docs/cli/prebuild/

@@ -2,7 +2,6 @@
 title: ".env (encrypted)"
 description: "The .env file you can commit."
 permalink: /docs/encrypted-env-file/
-layout: docs-markdown
 hero_include: "components/logo.html"
 hero_class: "docs-dotenvx-logo"
 guide_class: "docs-env-file-body"

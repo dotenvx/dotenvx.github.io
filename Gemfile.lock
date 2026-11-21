@@ -8,17 +8,12 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.2)
       public_suffix (>= 2.0.2, < 6.0)
-    brotli (0.2.3)
     colorator (1.1.0)
-    commonmarker (0.17.13)
-      ruby-enum (~> 0.5)
     concurrent-ruby (1.2.2)
-    cssminify2 (2.0.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    execjs (2.8.1)
     ffi (1.15.5)
     foreman (0.90.0)
       thor (~> 1.4)
@@ -28,7 +23,6 @@ GEM
     html-pipeline (2.14.3)
       activesupport (>= 2)
       nokogiri (>= 1.4)
-    htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -48,12 +42,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-brotli (2.3.0)
-      brotli (~> 0.2.0)
-      jekyll (>= 3.0, < 5.0)
-    jekyll-commonmark (1.3.1)
-      commonmarker (~> 0.14)
-      jekyll (>= 3.7, < 5.0)
     jekyll-favicon (1.1.0)
       jekyll (>= 3.0, < 5.0)
       mini_magick (~> 4.11)
@@ -65,46 +53,29 @@ GEM
     jekyll-loading-lazy (0.1.1)
       jekyll (>= 3.0, < 5.0)
       nokogiri (>= 1.10, < 2.0)
-    jekyll-minifier (0.1.10)
-      cssminify2 (~> 2.0)
-      htmlcompressor (~> 0.4)
-      jekyll (>= 3.5)
-      json-minify (~> 0.0.3)
-      uglifier (~> 4.1)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
-    jekyll-responsive-image (1.6.0)
-      jekyll (>= 2.0, < 5.0)
-      rmagick (>= 2.0, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-seo-tag (2.8.0)
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-timeago (0.15.0)
-      mini_i18n (>= 0.8.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.13.0)
       gemoji (>= 3, < 5)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    json (2.6.3)
-    json-minify (0.0.3)
-      json (> 0)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.4)
-    liquid_pluralize (1.0.3)
-      liquid (>= 2.6, < 5.0)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    mini_i18n (0.9.0)
     mini_magick (4.12.0)
     mini_portile2 (2.8.1)
     minitest (5.18.0)
@@ -120,10 +91,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
-    rmagick (4.3.0)
     rouge (4.1.0)
-    ruby-enum (0.9.0)
-      i18n
     safe_yaml (1.0.5)
     sass-embedded (1.60.0)
       google-protobuf (~> 3.21)
@@ -133,8 +101,6 @@ GEM
     thor (1.5.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     unicode-display_width (2.4.2)
     webrick (1.8.1)
 
@@ -144,20 +110,14 @@ PLATFORMS
 DEPENDENCIES
   foreman
   jekyll
-  jekyll-brotli
-  jekyll-commonmark
   jekyll-favicon
   jekyll-feed
   jekyll-gzip
   jekyll-loading-lazy
-  jekyll-minifier
   jekyll-redirect-from
-  jekyll-responsive-image
   jekyll-seo-tag
   jekyll-sitemap
-  jekyll-timeago
   jemoji
-  liquid_pluralize
   webrick
 
 BUNDLED WITH

@@ -4,13 +4,12 @@ sitemap: false
 title: Search
 description: Search Dotenvx docs, pricing, and the rest of the site.
 permalink: /search/
-layout: radar
-body_class: home-page
+
 ---
 
 {% assign search_path = '/search/' %}
 {% capture search_content %}
-<form class="site-search-page" data-site-search-page{% if writer_preview %} data-site-search-writer{% endif %} data-site-search-index="{{ '/search.json' | relative_url }}" action="{{ search_path | relative_url }}" method="get" role="search">
+<form class="site-search-page" data-site-search-page data-site-search-writer data-site-search-index="{{ '/search.json' | relative_url }}" action="{{ search_path | relative_url }}" method="get" role="search">
   <div class="site-search-page-field">
     <input
       type="text"
@@ -19,7 +18,7 @@ body_class: home-page
       aria-label="Search Dotenvx"
       id="site-search-page-input"
       data-site-search-input
-      placeholder="{% if writer_preview %}Search docs, blog, and more…{% else %}Search for Claude, pricing, encrypt…{% endif %}"
+      placeholder="Search docs, blog, and more…"
       inputmode="search"
       enterkeyhint="search"
       autocomplete="off"
@@ -31,62 +30,10 @@ body_class: home-page
     >
   </div>
   <div class="site-search-page-results" data-site-search-results aria-live="polite">
-    {% unless writer_preview %}<p class="design-paragraph">Type to search docs, pricing, and the rest of the site.</p>{% endunless %}
+
   </div>
 </form>
 {% endcapture %}
 
-{% if writer_preview %}
+
 {{ search_content }}
-{% else %}
-<style>
-  .search-hero-ascii {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    min-height: inherit;
-    width: 100%;
-  }
-
-  .search-hero-ascii-art {
-    color: var(--design-ink);
-    font-family: var(--design-font-mono);
-    font-size: 4.5rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1;
-    margin: 0;
-    user-select: none;
-  }
-
-</style>
-
-{% capture search_hero_visual %}
-  <div class="search-hero-ascii" aria-hidden="true">
-    <span class="search-hero-ascii-art">/</span>
-  </div>
-{% endcapture %}
-
-<div class="home-sections">
-<section class="design-hero-section home-hero" aria-label="Search">
-  <div class="armor-shell">
-    {% include components/design-hero.html
-      compact=true
-      name_heading=true
-      secondary=true
-      name="Search"
-      description="Find docs, pricing, and product pages."
-      content=search_hero_visual
-    %}
-  </div>
-</section>
-
-<section class="radar-section">
-  <div class="armor-shell">
-    {% include components/design-content-width.html content=search_content %}
-  </div>
-</section>
-
-</div>
-{% endif %}

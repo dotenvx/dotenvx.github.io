@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Strictness
 description: Stop your command when configuration breaks your rules.
 permalink: "/docs/dotenvxtoml/strict/"

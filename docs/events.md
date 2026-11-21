@@ -2,23 +2,10 @@
 title: Events
 description: Activity events recorded by Armor.
 permalink: /docs/events/
-layout: radar
 writer_layout: wide
 ---
 
-{% unless writer_preview %}
-{% include components/docs-hero.html
-  eyebrow="Docs"
-  title="Events"
-  description="Activity events recorded by Armor."
-  mark=":::"
-%}
 
-<section class="radar-section">
-<div class="armor-shell">
-<div class="design-content-width">
-<div class="docs-guide-body design-prose" markdown="block">
-{% endunless %}
 
 Events appear in Armor logs as `name` plus metadata. The event name identifies what happened; metadata adds context such as who performed the action, which team it affected, and where it occurred.
 
@@ -125,10 +112,3 @@ Each sync records `secret/sync` for the secrets whose writes were attempted, plu
 Secret event metadata identifies the destination, secret, endpoint, and actor. It never includes secret values or private keys. These audit entries use the existing activity log; they are separate from the stored secret records.
 
 Validation failures on create or update, and failures fetching remote secrets, do not currently produce dedicated audit events. Opening or cancelling an editor does not create a secret event. Existing historical events retain their original names.
-
-{% unless writer_preview %}
-</div>
-</div>
-</div>
-</section>
-{% endunless %}

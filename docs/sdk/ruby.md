@@ -2,7 +2,6 @@
 title: Ruby
 description: Load and manage encrypted env from Ruby and Rails.
 permalink: /docs/sdk/ruby/
-layout: docs-markdown
 eyebrow: "SDKs"
 eyebrow_href: "/docs/sdk"
 icon: "ruby"

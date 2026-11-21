@@ -1,5 +1,5 @@
 ---
-layout: docs-cli
+doc_type: cli
 title: Scan
 description: Scan for leaked secrets.
 permalink: /docs/cli/scan/

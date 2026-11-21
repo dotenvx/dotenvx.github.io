@@ -1,5 +1,4 @@
 ---
-layout: blog
 author: "Scott Motte"
 title: "Claude MCP + Dotenvx"
 excerpt: "Add Dotenvx as a Claude MCP Server."

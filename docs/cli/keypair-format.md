@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+doc_type: cli
 title: "keypair --format"
 description: "Format of the output (json, shell, colon)."
 permalink: "/docs/cli/keypair-format/"

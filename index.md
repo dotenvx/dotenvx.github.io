@@ -3,7 +3,7 @@ seo_title: "Dotenvx · Encrypt your .env files"
 title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 social_title: "Dotenvx · A secure dotenv–from the creator of dotenv"
 description: "Encrypt .env files, commit them safely, and load environment variables in any language or framework with Dotenvx, from the creator of dotenv."
-main_layout: two-columns
+main_layout: columns
 ---
 
 {% capture home_design_content %}
@@ -150,8 +150,9 @@ App listening on port 80
 
 
 
-<div markdown="block">
+<div class="main-home-sections" markdown="block">
 
+<div markdown="block">
 
 > {{ home_intro | strip }}
 
@@ -160,9 +161,21 @@ App listening on port 80
 
 <p><img class="main-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
 
-[Encrypt your first .env →]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
+[Quickstart]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
 
 {{ home_usage_section | strip }}
+
+</div>
+
+<div markdown="block">
+
+## Why this design?
+
+{{ home_design_content | strip }}
+
+</div>
+
+<div markdown="block">
 
 ## Who holds the key?
 
@@ -172,18 +185,14 @@ By default, you do. Keep the private key on your machine for development and in 
 When you need to manage access across a team, [Armor]({{ '/armor/' | relative_url }}) adds managed key custody, approvals, and auditing.
 {: .design-paragraph}
 
-[Explore key custody →]({{ '/docs/custody/' | relative_url }})
+[Custody]({{ '/docs/custody/' | relative_url }})
 
 ## Who’s using dotenvx?
 
 - 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
-- [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code) use Dotenvx
-- [John Zila](/members/watt/) (former Head of Security DevOps at Zoom): *securely version and deploy secrets, without a new critical path dependency*
+- [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code)
+- Prior Head of Security DevOps at Zoom–[John Zila](/members/watt/)
 
-## Why this design?
-
-{{ home_design_content | strip }}
-
-[Encrypt your first .env →]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
+</div>
 
 </div>

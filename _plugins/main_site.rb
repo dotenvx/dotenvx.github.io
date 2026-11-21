@@ -92,7 +92,9 @@ class MainSite < Jekyll::Generator
     publish_docs(site, toml_indexes, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true })
     publish_docs(site, toml_references, links, 'main-cli-reference.md', frame_context: { 'toml_reference' => true }, metadata: { 'main_layout' => 'single' })
     publish_docs(site, guide_pages, links, 'main-guide.md', metadata: { 'main_guide' => true, 'main_layout' => 'single' })
-    publish_docs(site, resource_pages, links, 'main-guide.md', metadata: { 'main_resource' => true })
+    resource_indexes, resource_references = resource_pages.partition { |page| page.url == '/docs/resources/' }
+    publish_docs(site, resource_indexes, links, 'main-guide.md', metadata: { 'main_resource' => true })
+    publish_docs(site, resource_references, links, 'main-guide.md', metadata: { 'main_resource' => true, 'main_layout' => 'single' })
 
     publish_blog_posts(site, links)
     (site.pages + site.docs_to_write).dup.each do |page|

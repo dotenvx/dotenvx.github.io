@@ -16,8 +16,8 @@
     "href": "/docs/env-keys-file/"
   },
   {
-    "label": "Dotenvx.toml Spec",
-    "href": "/docs/dotenvxtoml/spec/"
+    "label": "Dotenv.toml Spec",
+    "href": "/docs/dotenvtoml/spec/"
   },
   {
     "label": "Dotenv Spec",

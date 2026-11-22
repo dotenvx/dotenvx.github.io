@@ -1,18 +1,20 @@
 ---
-title: "Dotenvx.toml Spec"
+title: "Dotenv.toml Spec"
 description: "Define the rules for your environment variables."
-permalink: "/docs/dotenvxtoml/spec/"
-mark: "Dotenvx.toml"
+permalink: "/docs/dotenvtoml/spec/"
+mark: "Dotenv.toml"
 ---
-Start with the [Dotenvx.toml quickstart](/docs/dotenvxtoml/quickstart/), or browse [individual settings](/docs/dotenvxtoml/).
+Start with the [Dotenv.toml quickstart](/docs/dotenvtoml/quickstart/), or browse [individual settings](/docs/dotenvtoml/).
 
 ## Syntax and defaults
 {: #reference}
 
-Save `Dotenvx.toml` in your project root. It contains names and rules and is safe to commit. Keep values in your environment sources. Dotenvx also accepts `dotenvx.toml` and prefers `Dotenvx.toml` if both exist.
+Save `Dotenv.toml` in your project root. It contains names and rules and is safe to commit. Keep values in your environment sources.
+
+Dotenvx loads the first existing policy file in this order: `Dotenv.toml`, `dotenv.toml`, `Dotenvx.toml`, then `dotenvx.toml`. The previous names remain supported as fallbacks. Policies are not merged.
 
 ```toml
-# Dotenvx.toml
+# Dotenv.toml
 strict = true
 
 [env.DATABASE_URL]
@@ -150,4 +152,4 @@ $ dotenvx run -f .env.production -- node index.js
 dotenvx run -- node index.js
 dotenvx run -f .env.production -- node index.js"}
 
-[See commands that use Dotenvx.toml](/docs/dotenvxtoml/commands/)
+[See commands that use Dotenv.toml](/docs/dotenvtoml/commands/)

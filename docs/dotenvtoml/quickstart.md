@@ -1,11 +1,11 @@
 ---
-title: Dotenvx.toml Quickstart
-description: Create your first Dotenvx.toml.
-permalink: "/docs/dotenvxtoml/quickstart/"
-hero_title: "Dotenvx.toml"
-eyebrow: "Dotenvx.toml"
-eyebrow_href: /docs/dotenvxtoml/
-mark: "Dotenvx.toml"
+title: Dotenv.toml Quickstart
+description: Create your first Dotenv.toml.
+permalink: "/docs/dotenvtoml/quickstart/"
+hero_title: "Dotenv.toml"
+eyebrow: "Dotenv.toml"
+eyebrow_href: /docs/dotenvtoml/
+mark: "Dotenv.toml"
 ---
 ## Create
 
@@ -17,10 +17,10 @@ PORT=3000
 DATABASE_URL="postgres://localhost/myapp"
 ```
 
-Create a file named `Dotenvx.toml` in your project root.
+Create a file named `Dotenv.toml` in your project root.
 
 ```toml
-# Dotenvx.toml
+# Dotenv.toml
 strict = true
 
 [env.PORT]
@@ -57,6 +57,6 @@ $ dotenvx run -- node index.js
 
 Replace `node index.js` with your app's command. Try `PORT=not-a-port` in `.env` to see strict validation stop startup. Change it back to `3000`.
 
-The app receives the real database URL. Dotenvx redacts it in matching terminal output. Commit `Dotenvx.toml` alongside the encrypted `.env` file.
+The app receives the real database URL. Dotenvx redacts it in matching terminal output. Commit `Dotenv.toml` alongside the encrypted `.env` file.
 
-[Read the full Dotenvx.toml spec →](/docs/dotenvxtoml/spec/)
+[Read the full Dotenv.toml spec →](/docs/dotenvtoml/spec/)

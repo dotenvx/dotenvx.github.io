@@ -74,7 +74,7 @@ class MainSite < Jekyll::Generator
     cli_pages = docs_pages.select { |page| page.url.start_with?('/docs/cli/') }
     sdk_pages = docs_pages.select { |page| page.url.start_with?('/docs/sdk/') }
     custody_pages = docs_pages.select { |page| page.url.start_with?('/docs/custody/') }
-    toml_pages = docs_pages.select { |page| page.url.start_with?('/docs/dotenvxtoml/') }
+    toml_pages = docs_pages.select { |page| page.url.start_with?('/docs/dotenvtoml/') }
     guide_index = site.pages.find { |page| page.url == '/docs/guides/' }
     guide_pages = guide_reference_pages(guide_index, docs_pages)
     reference_pages = cli_pages + sdk_pages + custody_pages + toml_pages + guide_pages

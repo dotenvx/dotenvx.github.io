@@ -16,7 +16,7 @@ eyebrow: Node.js
 eyebrow_href: "/docs/sdk/nodejs/"
 ---
 
-Parse, expand, and decrypt a string or Buffer without reading files, applying Dotenvx.toml, or looking up custody. Returns a values object. The supplied processEnv is used for resolution but is not mutated.
+Parse, expand, and decrypt a string or Buffer without reading files, applying Dotenv.toml, or looking up custody. Returns a values object. The supplied processEnv is used for resolution but is not mutated.
 
 ```javascript
 const dotenvx = require('@dotenvx/dotenvx')

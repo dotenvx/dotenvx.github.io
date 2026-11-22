@@ -2,16 +2,16 @@
 doc_type: cli
 title: ip
 description: Validate ip values.
-permalink: "/docs/dotenvxtoml/type/ip/"
+permalink: "/docs/dotenvtoml/type/ip/"
 eyebrow: Types
-eyebrow_href: "/docs/dotenvxtoml/type/"
+eyebrow_href: "/docs/dotenvtoml/type/"
 command: '[env.HOST_IP]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 An IPv4 or IPv6 address.
 

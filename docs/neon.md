@@ -49,10 +49,10 @@ $ neon env pull --branch main --file .env.production
 ```
 {: copy="neon env pull --branch main --file .env.production"}
 
-The Neon CLI pulls variables for every service enabled on the branch. Only some of them are secrets. Add a [Dotenvx.toml](/docs/dotenvxtoml/) to tell Dotenvx which ones to encrypt. Remove the tables for services you don't use.
+The Neon CLI pulls variables for every service enabled on the branch. Only some of them are secrets. Add a [Dotenv.toml](/docs/dotenvtoml/) to tell Dotenvx which ones to encrypt. Remove the tables for services you don't use.
 
 ```toml
-# Dotenvx.toml
+# Dotenv.toml
 strict = true
 required = true
 storage = "encrypted"
@@ -141,7 +141,7 @@ NEON_AI_GATEWAY_BASE_URL=https://br-bold-rain-b45zwi29-api.ai.c-6.us-east-2.aws.
 
 ## Encrypt a preview branch
 
-Every Neon branch has its own connection strings, Auth URLs and storage keys. Create a preview branch and give it its own encrypted file. The same Dotenvx.toml applies.
+Every Neon branch has its own connection strings, Auth URLs and storage keys. Create a preview branch and give it its own encrypted file. The same Dotenv.toml applies.
 
 ```console
 $ neon branches create --name preview
@@ -190,16 +190,16 @@ dotenvx run -f .env.production -- node index.js"}
 
 ## Commit
 
-Commit both encrypted files and the Dotenvx.toml. Keep `.env.keys` out of git. The `-f` flag adds the encrypted files even though `neon env pull` listed them in `.gitignore`.
+Commit both encrypted files and the Dotenv.toml. Keep `.env.keys` out of git. The `-f` flag adds the encrypted files even though `neon env pull` listed them in `.gitignore`.
 
 ```console
 $ echo ".env.keys" >> .gitignore
-$ git add .gitignore Dotenvx.toml
+$ git add .gitignore Dotenv.toml
 $ git add -f .env.production .env.preview
 $ git commit -m "encrypt neon branch env"
 ```
 {: copy="echo \".env.keys\" >> .gitignore
-git add .gitignore Dotenvx.toml
+git add .gitignore Dotenv.toml
 git add -f .env.production .env.preview
 git commit -m \"encrypt neon branch env\""}
 

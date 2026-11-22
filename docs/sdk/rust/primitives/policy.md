@@ -1,7 +1,7 @@
 ---
 doc_type: sdk
 title: policy
-description: Compile validation and redaction rules from Dotenvx.toml.
+description: Compile validation and redaction rules from Dotenv.toml.
 permalink: "/docs/sdk/rust/primitives/policy/"
 command: dotenvx_primitives::policy
 command_language: rust

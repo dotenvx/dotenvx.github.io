@@ -2,16 +2,16 @@
 doc_type: cli
 title: Strictness
 description: Stop your command when configuration breaks your rules.
-permalink: "/docs/dotenvxtoml/strict/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+permalink: "/docs/dotenvtoml/strict/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: strict = true
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 Use `strict = true` to stop your command when a configured value-validation rule fails. The default is `strict = false`, which reports warnings.
 

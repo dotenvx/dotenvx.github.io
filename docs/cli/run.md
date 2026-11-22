@@ -60,7 +60,7 @@ options:
   href: "/docs/cli/run-dotenv-private-key-ci/"
 - title: DOTENV_FILE=.env.production,.env run - Combine Multiple
   href: "/docs/cli/run-dotenv-private-key-multiple/"
-- title: run with a Dotenvx.toml
+- title: run with a Dotenv.toml
   href: "/docs/cli/run-validate/"
 - title: run --convention=nextjs
   href: "/docs/cli/run-convention-nextjs/"
@@ -94,4 +94,4 @@ $ dotenvx run -- node index.js
 
 This works cross-platform across plaintext and encrypted .env files.
 
-Configure validation, storage, and redaction rules with [Dotenvx.toml](/docs/dotenvxtoml/).
+Configure validation, storage, and redaction rules with [Dotenv.toml](/docs/dotenvtoml/).

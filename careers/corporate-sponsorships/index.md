@@ -16,7 +16,7 @@ permalink: /careers/corporate-sponsorships/
           <p>Find prospective sponsors, reach the right people, and turn those conversations into paid partnerships. Work directly with us to shape the sponsorship offer and bring companies on board.</p>
           <p>Connect with developer-tool companies, cloud platforms, security teams, and builders of agents. Show how their support can fund maintenance, compatibility testing, and integrations their users can benefit from. Sponsorship gives them a way to contribute experience and be recognized for backing the ecosystem.</p>
 
-          <p><a href="{{ site.data.redirects['/agents/'] | relative_url }}">Read the Dotenvx.toml docs</a> and explore the <a href="/corporate/">corporate involvement page</a>.</p>
+          <p><a href="{{ site.data.redirects['/agents/'] | relative_url }}">Read the Dotenv.toml docs</a> and explore the <a href="/corporate/">corporate involvement page</a>.</p>
 
           <h2>What you bring</h2>
           <p>You know how to start a conversation and see it through to an agreement. You're comfortable speaking with leaders at developer tools and security companies, and explaining why supporting shared infrastructure matters.</p>

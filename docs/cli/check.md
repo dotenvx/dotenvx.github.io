@@ -1,7 +1,7 @@
 ---
-title: Dotenvx.toml
+title: Dotenv.toml
 permalink: /docs/cli/check/
-redirect_to: /docs/dotenvxtoml/commands/
+redirect_to: /docs/dotenvtoml/commands/
 redirect_from:
   - /docs/advanced/validate
   - /docs/advanced/validate/

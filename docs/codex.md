@@ -46,9 +46,9 @@ $ echo "HELLO=World" > .env
 
 ## Run Codex with redaction
 
-Mark HELLO for output redaction in Dotenvx.toml. Codex receives the real value; matching terminal output shows [REDACTED].
+Mark HELLO for output redaction in Dotenv.toml. Codex receives the real value; matching terminal output shows [REDACTED].
 
-Create Dotenvx.toml with a redaction rule:
+Create Dotenv.toml with a redaction rule:
 
 ```toml
 [env.HELLO]

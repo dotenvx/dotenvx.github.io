@@ -2,16 +2,16 @@
 doc_type: cli
 title: Encryption
 description: Require encrypted values in your environment sources.
-permalink: "/docs/dotenvxtoml/encrypted/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+permalink: "/docs/dotenvtoml/encrypted/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: '[env.API_KEY]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 Use `storage = "encrypted"` for secret values and `storage = "plaintext"` for values that should stay readable. The default is `"any"`.
 

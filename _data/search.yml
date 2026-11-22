@@ -80,7 +80,7 @@ entries:
       - secrets in codex
       - runtime leak protection
       - log redaction
-  /docs/dotenvxtoml/redacted/:
+  /docs/dotenvtoml/redacted/:
     boost: 80
     aliases:
       - redact

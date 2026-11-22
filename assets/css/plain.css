@@ -1,12 +1,4 @@
-/* Plain mode uses browser defaults with a readable measure and working controls. */
-:root { color-scheme: light; }
-body { max-width: 42rem; margin: 40px auto; padding: 0 16px; font-size: 18px; line-height: 1.6; }
-header, footer { margin-block: 2em; }
-nav a, .main-nav-actions > *, .main-footer-links > * { margin-inline-end: 0.75em; }
-img, video { max-width: 100%; height: auto; }
-pre, .design-table-wrap { overflow-x: auto; }
-iframe { max-width: 100%; }
-dialog { max-width: min(42rem, 85vw); }
+/* Plain mode uses browser defaults. Only functional hiding rules remain. */
 
 /* Generated Markdown decoration and duplicate presentation labels are not content. */
 .main :is(.main-markdown-syntax, .main-markdown-detail),

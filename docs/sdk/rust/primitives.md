@@ -7,7 +7,7 @@ eyebrow_href: "/docs/sdk/rust"
 icon: rust
 ---
 
-Low-level synchronous primitives for dotenv text, encryption, Dotenvx.toml policies, and source editing. For application loading, use [dotenvx_official::load](/docs/sdk/rust/load/).
+Low-level synchronous primitives for dotenv text, encryption, Dotenv.toml policies, and source editing. For application loading, use [dotenvx_official::load](/docs/sdk/rust/load/).
 
 ## Install
 
@@ -22,8 +22,8 @@ $ cargo add dotenvx-primitives
 | --- | --- |
 | [injectsummary](/docs/sdk/rust/primitives/injectsummary/) | Format an injection summary without logging it. |
 | [check](/docs/sdk/rust/primitives/check/) | Validate resolved environment values against a policy. |
-| [parsedotenvxfile](/docs/sdk/rust/primitives/parsedotenvxfile/) | List keys declared in Dotenvx.toml. |
-| [policy](/docs/sdk/rust/primitives/policy/) | Compile validation and redaction rules from Dotenvx.toml. |
+| [parsedotenvxfile](/docs/sdk/rust/primitives/parsedotenvxfile/) | List keys declared in Dotenv.toml. |
+| [policy](/docs/sdk/rust/primitives/policy/) | Compile validation and redaction rules from Dotenv.toml. |
 | [storagepolicy](/docs/sdk/rust/primitives/storagepolicy/) | Compile storage rules for a selected env file. |
 | [storagecheck](/docs/sdk/rust/primitives/storagecheck/) | Validate original stored values against storage rules. |
 | [profile](/docs/sdk/rust/primitives/profile/) | Select env filenames from TOML profiles and explicit options. |

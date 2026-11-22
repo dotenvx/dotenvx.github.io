@@ -76,15 +76,15 @@ Evaluating the security model? Read the [whitepaper]({{ '/whitepaper.pdf' | rela
 {% endfor %}
 </ul>
 
-## Dotenvx.toml
+## Dotenv.toml
 
 <ul>
-<li><a href="{{ '/docs/dotenvxtoml/quickstart/' | relative_url }}">Quickstart</a></li>
-{% assign toml_page = site.pages | where: 'url', '/docs/dotenvxtoml/' | first %}
+<li><a href="{{ '/docs/dotenvtoml/quickstart/' | relative_url }}">Quickstart</a></li>
+{% assign toml_page = site.pages | where: 'url', '/docs/dotenvtoml/' | first %}
 {% for option in toml_page.options %}
 <li><a href="{{ option.href | relative_url }}">{{ option.title }}</a></li>
 {% endfor %}
-<li><a href="{{ '/docs/dotenvxtoml/spec/' | relative_url }}">Full specification</a></li>
+<li><a href="{{ '/docs/dotenvtoml/spec/' | relative_url }}">Full specification</a></li>
 </ul>
 
 ## Resources

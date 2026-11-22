@@ -1,19 +1,19 @@
 ---
 doc_type: cli
 title: Commands
-description: Encrypt and validate with Dotenvx.toml.
-permalink: "/docs/dotenvxtoml/commands/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+description: Encrypt and validate with Dotenv.toml.
+permalink: "/docs/dotenvtoml/commands/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: dotenvx run -- node index.js
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
-Create `Dotenvx.toml` in your project root, then encrypt and run your app.
+Create `Dotenv.toml` in your project root, then encrypt and run your app.
 
 ```console
 $ dotenvx encrypt
@@ -22,7 +22,7 @@ $ dotenvx run -- node index.js
 {: copy="dotenvx encrypt
 dotenvx run -- node index.js"}
 
-Use `-f` to select a specific environment file and apply its [file overrides](/docs/dotenvxtoml/file/).
+Use `-f` to select a specific environment file and apply its [file overrides](/docs/dotenvtoml/file/).
 
 ```console
 $ dotenvx encrypt -f .env.production
@@ -33,4 +33,4 @@ dotenvx run -f .env.production -- node index.js"}
 
 Dotenvx validates resolved values before starting the command. With `strict = true`, validation failures stop startup.
 
-See the [quickstart](/docs/dotenvxtoml/quickstart/) for a complete example.
+See the [quickstart](/docs/dotenvtoml/quickstart/) for a complete example.

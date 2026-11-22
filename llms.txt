@@ -26,8 +26,8 @@ Follow the current Quickstart before changing a project's environment files. It 
 - [Local custody](https://dotenvx.com/docs/custody/local.md): .env.keys and operating-system secret stores.
 - [Armor custody](https://dotenvx.com/docs/custody/armor.md): Managed access to private keys.
 - [Password managers](https://dotenvx.com/docs/custody/password-managers.md): 1Password and Bitwarden key custody.
-- [Dotenvx.toml](https://dotenvx.com/docs/dotenvxtoml.md): Environment-variable declarations, validation, encryption, and redaction rules.
-- [Dotenvx.toml Quickstart](https://dotenvx.com/docs/dotenvxtoml/quickstart.md): Set up your first rules file.
+- [Dotenv.toml](https://dotenvx.com/docs/dotenvtoml.md): Environment-variable declarations, validation, encryption, and redaction rules.
+- [Dotenv.toml Quickstart](https://dotenvx.com/docs/dotenvtoml/quickstart.md): Set up your first rules file.
 
 ## Product and security context
 

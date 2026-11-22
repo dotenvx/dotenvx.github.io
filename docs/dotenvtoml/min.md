@@ -2,16 +2,16 @@
 doc_type: cli
 title: Minimum
 description: Set an inclusive lower bound for numeric values.
-permalink: "/docs/dotenvxtoml/min/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+permalink: "/docs/dotenvtoml/min/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: '[env.WORKERS]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 `min` and `max` are inclusive numeric bounds for `type = "integer"` or `type = "port"`, and length bounds for `type = "string"`. The minimum cannot exceed the maximum. Port bounds are clamped to `0`–`65535`.
 

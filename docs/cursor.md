@@ -48,7 +48,7 @@ $ echo "HELLO=World" > .env
 
 Runtime leak protection: Cursor gets real secrets, while log redaction strips them from its output.
 
-Create Dotenvx.toml with a redaction rule:
+Create Dotenv.toml with a redaction rule:
 
 ```toml
 [env.HELLO]

@@ -2,41 +2,41 @@
 doc_type: cli
 title: Declarations
 description: Declare variable names and the rules they must follow.
-permalink: "/docs/dotenvxtoml/env/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+permalink: "/docs/dotenvtoml/env/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: '[env.DATABASE_URL]'
 command_prompt: false
 options_title: Settings
 options:
 - title: Required
-  href: "/docs/dotenvxtoml/required/"
+  href: "/docs/dotenvtoml/required/"
 - title: Optional
-  href: "/docs/dotenvxtoml/optional/"
+  href: "/docs/dotenvtoml/optional/"
 - title: Types
-  href: "/docs/dotenvxtoml/type/"
+  href: "/docs/dotenvtoml/type/"
 - title: Choices
-  href: "/docs/dotenvxtoml/enum/"
+  href: "/docs/dotenvtoml/enum/"
 - title: Minimum
-  href: "/docs/dotenvxtoml/min/"
+  href: "/docs/dotenvtoml/min/"
 - title: Maximum
-  href: "/docs/dotenvxtoml/max/"
+  href: "/docs/dotenvtoml/max/"
 - title: Encryption
-  href: "/docs/dotenvxtoml/encrypted/"
+  href: "/docs/dotenvtoml/encrypted/"
 - title: Redaction
-  href: "/docs/dotenvxtoml/redacted/"
+  href: "/docs/dotenvtoml/redacted/"
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
-Save the file as `Dotenvx.toml` in your project directory. It contains names and rules. Values stay in `.env` or your other environment sources.
+Save the file as `Dotenv.toml` in your project directory. It contains names and rules. Values stay in `.env` or your other environment sources.
 
 Declare each variable as a table such as `[env.DATABASE_URL]`. Variable names are case-sensitive and must match `[A-Za-z_][A-Za-z0-9_]*`. Comments begin with `#`.
 
 ```toml
-# Dotenvx.toml
+# Dotenv.toml
 strict = true
 
 [env.DATABASE_URL]

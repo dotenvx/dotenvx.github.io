@@ -2,16 +2,16 @@
 doc_type: cli
 title: port
 description: Validate port values.
-permalink: "/docs/dotenvxtoml/type/port/"
+permalink: "/docs/dotenvtoml/type/port/"
 eyebrow: Types
-eyebrow_href: "/docs/dotenvxtoml/type/"
+eyebrow_href: "/docs/dotenvtoml/type/"
 command: '[env.PORT]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 An integer from `0` through `65535`.
 
@@ -22,4 +22,4 @@ type = "port"
 
 Validation leaves the value as a string. Storage defaults to `"any"` and redaction is off. Set `storage = "encrypted"` and `redacted = true` for secrets.
 
-Use [`min`](/docs/dotenvxtoml/min/) and [`max`](/docs/dotenvxtoml/max/) to narrow the allowed range.
+Use [`min`](/docs/dotenvtoml/min/) and [`max`](/docs/dotenvtoml/max/) to narrow the allowed range.

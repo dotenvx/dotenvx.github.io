@@ -2,16 +2,16 @@
 doc_type: cli
 title: url
 description: Validate url values.
-permalink: "/docs/dotenvxtoml/type/url/"
+permalink: "/docs/dotenvtoml/type/url/"
 eyebrow: Types
-eyebrow_href: "/docs/dotenvxtoml/type/"
+eyebrow_href: "/docs/dotenvtoml/type/"
 command: '[env.DATABASE_URL]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 A URL with a scheme, including database URLs such as `postgres://localhost/app`.
 

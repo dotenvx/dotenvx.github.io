@@ -1,7 +1,7 @@
 ---
 doc_type: sdk
 title: parsedotenvxfile
-description: List keys declared in Dotenvx.toml.
+description: List keys declared in Dotenv.toml.
 permalink: "/docs/sdk/rust/primitives/parsedotenvxfile/"
 command: dotenvx_primitives::parsedotenvxfile
 command_language: rust

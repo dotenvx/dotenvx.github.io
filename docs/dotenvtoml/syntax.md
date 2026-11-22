@@ -2,16 +2,16 @@
 doc_type: cli
 title: Syntax
 description: Understand valid declarations and syntax errors.
-permalink: "/docs/dotenvxtoml/syntax/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+permalink: "/docs/dotenvtoml/syntax/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: '[env.KEY]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 Use ordinary TOML tables and assignments for rules. Put global settings before the first table, then declare variable rules in `[env.NAME]` tables.
 

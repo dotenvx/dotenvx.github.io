@@ -112,21 +112,21 @@
     ]
   },
   {
-    "label": "Dotenvx.toml",
+    "label": "Dotenv.toml",
     "children": [
       {
         "label": "Strictness",
-        "href": "/docs/dotenvxtoml/strict/",
+        "href": "/docs/dotenvtoml/strict/",
         "children": []
       },
       {
         "label": "Encryption",
-        "href": "/docs/dotenvxtoml/encrypted/",
+        "href": "/docs/dotenvtoml/encrypted/",
         "children": []
       },
       {
-        "label": "All Dotenvx.toml \u2192",
-        "href": "/docs/dotenvxtoml/",
+        "label": "All Dotenv.toml \u2192",
+        "href": "/docs/dotenvtoml/",
         "children": []
       }
     ]
@@ -145,8 +145,8 @@
         "children": []
       },
       {
-        "label": "Dotenvx.toml Spec",
-        "href": "/docs/dotenvxtoml/spec/",
+        "label": "Dotenv.toml Spec",
+        "href": "/docs/dotenvtoml/spec/",
         "children": []
       },
       {

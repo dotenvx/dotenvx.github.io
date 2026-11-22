@@ -7,24 +7,24 @@ permalink: /docs/advanced/
 
 {% capture advanced_toml_content %}
 
-## Dotenvx.toml
+## Dotenv.toml
 
 <ul class="advanced-cli-commands">
-<li><a class="design-link" href="/docs/dotenvxtoml/quickstart/">Dotenvx.toml Quickstart</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/env/">Declarations</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/strict/">Strictness</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/required/">Required</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/optional/">Optional</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/type/">Types</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/enum/">Choices</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/min/">Minimum</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/max/">Maximum</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/encrypted/">Encryption</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/redacted/">Redaction</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/file/">File overrides</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/syntax/">Syntax</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/commands/">Commands</a></li>
-<li><a class="design-link" href="/docs/dotenvxtoml/">All Dotenvx.toml →</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/quickstart/">Dotenv.toml Quickstart</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/env/">Declarations</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/strict/">Strictness</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/required/">Required</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/optional/">Optional</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/type/">Types</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/enum/">Choices</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/min/">Minimum</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/max/">Maximum</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/encrypted/">Encryption</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/redacted/">Redaction</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/file/">File overrides</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/syntax/">Syntax</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/commands/">Commands</a></li>
+<li><a class="design-link" href="/docs/dotenvtoml/">All Dotenv.toml →</a></li>
 </ul>
 {% endcapture %}
 

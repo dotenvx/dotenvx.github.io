@@ -2,16 +2,16 @@
 doc_type: cli
 title: boolean
 description: Validate boolean values.
-permalink: "/docs/dotenvxtoml/type/boolean/"
+permalink: "/docs/dotenvtoml/type/boolean/"
 eyebrow: Types
-eyebrow_href: "/docs/dotenvxtoml/type/"
+eyebrow_href: "/docs/dotenvtoml/type/"
 command: '[env.FEATURE_ENABLED]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 Exactly `true`, `false`, `1`, or `0`.
 

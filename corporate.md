@@ -21,7 +21,7 @@ og_image:
           <p>We’re looking for companies that care about the future of .env and want to help steward it.</p>
           <p>Meet with the maintainers, see work in progress, and share perspectives with other companies backing the future of Dotenv and Dotenvx—for humans and agents.</p>
           <p>Your contribution sustains the open-source work: maintaining the foundation, exploring new ideas, and developing patterns the whole software community can use.</p>
-          <p class="text-center"><a href="{{ site.data.redirects['/agents/'] | relative_url }}">Explore Dotenvx.toml</a></p>
+          <p class="text-center"><a href="{{ site.data.redirects['/agents/'] | relative_url }}">Explore Dotenv.toml</a></p>
         </div>
       {% endcapture %}
 

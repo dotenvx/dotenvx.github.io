@@ -1,8 +1,8 @@
 > {{ page.description }}
 
 {% if toml_reference %}
-{% assign reference_parent = page.eyebrow | default: 'Dotenvx.toml' %}
-{% assign reference_parent_href = page.eyebrow_href | default: '/docs/dotenvxtoml/' %}
+{% assign reference_parent = page.eyebrow | default: 'Dotenv.toml' %}
+{% assign reference_parent_href = page.eyebrow_href | default: '/docs/dotenvtoml/' %}
 {% elsif sdk_reference %}
 {% assign reference_parent = page.eyebrow | default: 'SDKs' %}
 {% assign reference_parent_href = page.eyebrow_href | default: '/docs/sdk/' %}

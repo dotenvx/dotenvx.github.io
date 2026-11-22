@@ -2,16 +2,16 @@
 doc_type: cli
 title: File overrides
 description: Apply different rules to specific environment files.
-permalink: "/docs/dotenvxtoml/file/"
-eyebrow: Dotenvx.toml
-eyebrow_href: "/docs/dotenvxtoml/"
+permalink: "/docs/dotenvtoml/file/"
+eyebrow: Dotenv.toml
+eyebrow_href: "/docs/dotenvtoml/"
 command: '[files.".env.production"]'
 command_prompt: false
 related:
-- title: Dotenvx.toml Quickstart
-  href: "/docs/dotenvxtoml/quickstart/"
-- title: Full Dotenvx.toml Spec
-  href: "/docs/dotenvxtoml/spec/"
+- title: Dotenv.toml Quickstart
+  href: "/docs/dotenvtoml/quickstart/"
+- title: Full Dotenv.toml Spec
+  href: "/docs/dotenvtoml/spec/"
 ---
 Use `[files.".env.production"]` for file-wide settings and `[files.".env.production".env.NAME]` for individual variables. These settings inherit root rules and apply when that file is selected.
 

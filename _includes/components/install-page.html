@@ -1,22 +1,51 @@
 
 > Install dotenvx
 
+## Command line
+
+Run dotenvx with any language or framework.
+
+{% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
+```bash
+{{ cli.command }}
+```
+
 [install.sh](https://dotenvx.sh/install.sh)
 
-{% assign cli_methods = site.data.install_methods | where: 'name', 'CLI' %}
-{% include components/install-main-methods.md methods=cli_methods %}
+### Windows
 
-## SDKs
+{% assign windows = site.data.install_methods | where: 'name', 'Windows' | first %}
+```bash
+{{ windows.command }}
+```
+
+Check your installation:
+
+```bash
+dotenvx --version
+```
+
+[Quickstart](/docs/quickstart/)
+
+## In your code
+{: .install-sdks}
+
+Load encrypted environment variables directly from your app.
 
 {% assign v2_install_sdks = site.data.install_sdks | concat: site.data.install_sdks_v2 %}
 {% assign javascript_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name == 'Node.js' or sdk.name == 'Next.js'" %}
 {% assign remaining_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name != 'Node.js' and sdk.name != 'Next.js'" %}
 {% assign v2_install_sdks = javascript_sdks | concat: remaining_sdks %}
-{% include components/install-main-methods.md methods=v2_install_sdks code_only=true %}
+{% for sdk in v2_install_sdks %}
+{% assign sdk_slug = sdk.name | downcase | remove: '.' %}
+{% assign sdk_path = sdk_slug | prepend: '/docs/sdk/' | append: '/' %}
+### [{{ sdk.name }}]({{ sdk_path | relative_url }})
 
-{% for sdk in v2_install_sdks -%}
-- [{{ sdk.name }}]({{ sdk.package_url | default: sdk.href }})
+```bash
+{{ sdk.command }}
+{% if sdk.main_extra_command -%}
+{{ sdk.main_extra_command }}
+{% endif -%}
+```
+
 {% endfor %}
-
-{% assign windows_methods = site.data.install_methods | where: 'name', 'Windows' %}
-{% include components/install-main-methods.md methods=windows_methods %}

@@ -12,8 +12,6 @@ main_layout: columns
 
 Keep encrypted `.env` files with your code. Armor manages who can use the private keys to decrypt them.
 
-[Sign up](https://armor.dotenvx.com/signup){: data-umami-event="Armor Hero Signup button"} · [Pricing]({{ '/pricing' | relative_url }}){: data-umami-event="Armor Hero Pricing button"}
-
 Kortix, [Supermemory]({{ '/members/supermemory/' | relative_url }}), and Comp AI use Armor.
 
 ## Controls

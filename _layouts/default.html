@@ -1,6 +1,7 @@
 <!doctype html>
 {% assign main_path_prefix = page.url | slice: 0, 6 %}
 {% if main_path_prefix == '/docs/' %}{% assign main_docs_section = true %}{% endif %}
+{% if page.url == '/armor/' or page.url == '/pricing/' %}{% assign main_armor_section = true %}{% endif %}
 {% assign main_whitepaper_url = '/whitepaper.pdf' | relative_url %}
 {% assign main_github_url = 'https://github.com/dotenvx' %}
 {% assign main_layout = page.main_layout | default: 'columns' %}
@@ -17,7 +18,7 @@
   <link rel="stylesheet" data-main-plain-styles media="not all" href="{{ '/assets/css/plain.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script src="{{ '/assets/js/main-mode.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>
-<body{% if main_about_section or main_docs_section %} class="main-has-subnav"{% endif %}>
+<body{% if main_about_section or main_docs_section or main_armor_section %} class="main-has-subnav"{% endif %}>
   <header class="main-header">
     <div class="main-nav">
       <a class="main-nav-home" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>
@@ -27,6 +28,7 @@
       <nav class="main-nav-links" aria-label="Primary">
         <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% elsif main_about_section %} aria-current="location"{% endif %}>About</a>
         <a href="{{ '/docs/' | relative_url }}"{% if page.url == '/docs/' %} aria-current="page"{% elsif main_docs_section %} aria-current="location"{% endif %}>Docs</a>
+        <a href="{{ '/armor/' | relative_url }}"{% if page.url == '/armor/' %} aria-current="page"{% elsif main_armor_section %} aria-current="location"{% endif %}>Armor</a>
       </nav>
       <div class="main-nav-actions">
         <button type="button" class="main-nav-mode" data-main-mode-toggle aria-label="Dark mode" aria-keyshortcuts="M" aria-pressed="false" title="Toggle light or dark mode (M)">[m]</button>
@@ -39,6 +41,12 @@
       <a href="{{ '/changelog/' | relative_url }}"{% if page.url == '/changelog/' %} aria-current="page"{% endif %}>Changelog</a>
       <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} aria-current="page"{% elsif page.main_blog_post %} aria-current="location"{% endif %}>Blog</a>
       <a href="{{ '/newsletter/' | relative_url }}"{% if page.url == '/newsletter/' %} aria-current="page"{% endif %}>Newsletter</a>
+    </nav>
+    {% elsif main_armor_section %}
+    <nav class="main-subnav" aria-label="Armor">
+      <a href="{{ '/armor/' | relative_url }}"{% if page.url == '/armor/' %} aria-current="page"{% endif %}>Overview</a>
+      <a href="https://armor.dotenvx.com/signup" data-umami-event="Armor Subnav Signup link">Sign up</a>
+      <a href="{{ '/pricing' | relative_url }}"{% if page.url == '/pricing/' %} aria-current="page"{% endif %} data-umami-event="Armor Subnav Pricing link">Pricing</a>
     </nav>
     {% elsif main_docs_section %}
     <nav class="main-subnav" aria-label="Docs sections">

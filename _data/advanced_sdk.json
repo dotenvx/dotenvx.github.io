@@ -72,10 +72,6 @@
     "href": "/docs/sdk/nodejs/parse-process-env/"
   },
   {
-    "label": "Node.js Primitives",
-    "href": "/docs/sdk/nodejs/primitives/"
-  },
-  {
     "label": "Node.js set",
     "href": "/docs/sdk/nodejs/config-set-key-value/"
   },

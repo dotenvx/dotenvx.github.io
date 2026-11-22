@@ -57,11 +57,6 @@ $ npm run dev
 ```
 {: copy="npm run dev" package-manager="npm"}
 
-```console
-$ pnpm dev
-```
-{: copy="pnpm dev" package-manager="pnpm"}
-
 Dotenvx decrypts .env before Wrangler starts. Wrangler loads HELLO from the process environment and exposes it as c.env.HELLO. Visit [http://localhost:8787](http://localhost:8787) to see Hello Secret.
 
 Use [Share](/docs/hono/#share) for team access. For deployment, follow the [Cloudflare Production flow](/docs/cloudflare/#production), including its production key setup and deploy script. That script decrypts .env.production on the deployment machine and sends the values to Cloudflare as Worker secrets.

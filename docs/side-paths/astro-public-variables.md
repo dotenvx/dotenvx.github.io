@@ -20,11 +20,6 @@ $ npx dotenvx set PUBLIC_SITE_NAME "My site"
 ```
 {: copy="npx dotenvx set PUBLIC_SITE_NAME \"My site\"" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx set PUBLIC_SITE_NAME "My site"
-```
-{: copy="pnpm exec dotenvx set PUBLIC_SITE_NAME \"My site\"" package-manager="pnpm"}
-
 Read it in an Astro page's browser script:
 
 ```html
@@ -33,7 +28,7 @@ Read it in an Astro page's browser script:
 </script>
 ```
 
-Restart npm run dev or pnpm dev after changing your environment file.
+Restart npm run dev after changing your environment file.
 
 ## Build for production
 
@@ -50,7 +45,7 @@ Public variables are included at build time. Update your build script:
 ```
 {: label="package.json"}
 
-Give your build environment access to the production key. With an Enclaved Key, select the resource that runs the build when encrypting. Then run npm run build or pnpm build there.
+Give your build environment access to the production key. With an Enclaved Key, select the resource that runs the build when encrypting. Then run npm run build there.
 
 Changing a public value requires a new build. The main guide's start script continues to load server secrets at runtime.
 

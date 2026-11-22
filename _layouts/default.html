@@ -45,8 +45,9 @@
     {% elsif main_armor_section %}
     <nav class="main-subnav" aria-label="Armor">
       <a href="{{ '/armor/' | relative_url }}"{% if page.url == '/armor/' %} aria-current="page"{% endif %}>Overview</a>
-      <a href="https://armor.dotenvx.com/signup" data-umami-event="Armor Subnav Signup link">Sign up</a>
       <a href="{{ '/pricing' | relative_url }}"{% if page.url == '/pricing/' %} aria-current="page"{% endif %} data-umami-event="Armor Subnav Pricing link">Pricing</a>
+      <a href="{{ '/trust/' | relative_url }}" data-umami-event="Armor Subnav Trust Center link">Trust Center</a>
+      <a href="https://armor.dotenvx.com/signup" data-umami-event="Armor Subnav Signup link">Sign up</a>
     </nav>
     {% elsif main_docs_section %}
     <nav class="main-subnav" aria-label="Docs sections">

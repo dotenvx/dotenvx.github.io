@@ -33,7 +33,7 @@ Keep the same $app/env/private import. Update the build script to decrypt .env.p
 
 Make DOTENV_PRIVATE_KEY_PRODUCTION available in your build environment as well as any runtime that needs it. An Enclaved Key assigned only to your server does not automatically give a separate build job access.
 
-Run npm run build or pnpm build. Static values become part of the server build; changing them requires rebuilding. Keep build artifacts private.
+Run npm run build. Static values become part of the server build; changing them requires rebuilding. Keep build artifacts private.
 
 Prerendered pages also run during the build. If a prerendered page needs HELLO, use this static declaration and build wrapper. Anything returned into generated HTML is public. See [SvelteKit environment variables](https://svelte.dev/docs/kit/environment-variables) for static and public options.
 

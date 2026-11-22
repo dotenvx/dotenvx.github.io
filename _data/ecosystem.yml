@@ -52,11 +52,6 @@ projects:
     stars: 0
     downloads: 16
     downloads_source: https://packagist.org/packages/dotenvx/phpdotenvx
-  - name: "@dotenvx/primitives"
-    url: https://www.npmjs.com/package/@dotenvx/primitives
-    logo: /assets/img/logo-env.svg
-    downloads: 41502547
-    downloads_source: /assets/data/ecosystem-downloads.json
   - name: dotenvx-primitives (Rust)
     url: https://crates.io/crates/dotenvx-primitives
     logo: /assets/img/logo-env.svg

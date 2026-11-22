@@ -27,11 +27,6 @@ $ npm run generate
 ```
 {: copy="npm run generate" package-manager="npm"}
 
-```console
-$ pnpm generate
-```
-{: copy="pnpm generate" package-manager="pnpm"}
-
 Deploy .output/public to your static host. There is no Node server or npm start step, and the static host does not need your private key.
 
 The example's Hello Production response is captured during generation. Server routes are unavailable on the deployed static site, so later API calls need a separate backend.

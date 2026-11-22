@@ -91,6 +91,8 @@ Dotenvx reads the key from .env.keys, decrypts your values, and injects them int
 ## What about production?
 {: #production .quickstart-production}
 
+<span id="what-about-production"></span>
+
 The same workflow works in production. Use a separate encrypted file and key for each environment.
 
 Create a separate .env.production:

@@ -27,13 +27,6 @@ $ npm install --save-dev wrangler@latest
 {: copy="npm install --save-dev @dotenvx/dotenvx
 npm install --save-dev wrangler@latest" package-manager="npm"}
 
-```console
-$ pnpm add -D @dotenvx/dotenvx
-$ pnpm add -D wrangler@latest
-```
-{: copy="pnpm add -D @dotenvx/dotenvx
-pnpm add -D wrangler@latest" package-manager="pnpm"}
-
 ## Encrypt
 
 Start with a secret value in the .env file at your project root, like:
@@ -51,12 +44,6 @@ $ npx dotenvx encrypt
 ◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
-```
-{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -123,11 +110,6 @@ $ npm run dev
 ```
 {: copy="npm run dev" package-manager="npm"}
 
-```console
-$ pnpm dev
-```
-{: copy="pnpm dev" package-manager="pnpm"}
-
 Dotenvx decrypts .env into the process environment. Wrangler gives those values precedence over the encrypted file and makes HELLO available to your Worker as env.HELLO. See [Wrangler's local environment handling](https://developers.cloudflare.com/workers/local-development/environment-variables/).
 
 Visit [http://localhost:8787](http://localhost:8787) to see Hello Secret.
@@ -146,12 +128,6 @@ $ npx dotenvx login
 ```
 {: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx login
-◉ logged in (username)
-```
-{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Create the Armored Key ⛨
 
 ```console
@@ -159,12 +135,6 @@ $ npx dotenvx armor up
 ⛨ armored .env (022 0D8)
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor up
-⛨ armored .env (022 0D8)
-```
-{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
 
 Invite your teammate.
 
@@ -174,23 +144,12 @@ $ npx dotenvx armor invite
 ```
 {: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx armor invite
-⛨ invited person@example.com to team
-```
-{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Your teammate accepts the invitation, pulls the repository, installs dependencies, and logs in with dotenvx login. With the Wrangler configuration and dev script from [Ship](#ship), they can then run the Worker:
 
 ```console
 $ npm run dev
 ```
 {: copy="npm run dev" package-manager="npm"}
-
-```console
-$ pnpm dev
-```
-{: copy="pnpm dev" package-manager="pnpm"}
 
 Dotenvx decrypts .env through Armor and passes the values to Wrangler.
 
@@ -217,22 +176,12 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 Store the production key in Armor so authorized teammates can deploy:
 
 ```console
 $ npx dotenvx armor up -f .env.production
 ```
 {: copy="npx dotenvx armor up -f .env.production" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor up -f .env.production
-```
-{: copy="pnpm exec dotenvx armor up -f .env.production" package-manager="pnpm"}
 
 Commit .env.production. Keep .env.keys out of git.
 
@@ -249,11 +198,6 @@ Log in to Cloudflare:
 $ npx wrangler login
 ```
 {: copy="npx wrangler login" package-manager="npm"}
-
-```console
-$ pnpm exec wrangler login
-```
-{: copy="pnpm exec wrangler login" package-manager="pnpm"}
 
 Add the deploy script to your existing package.json, keeping the dev script from Ship:
 
@@ -273,11 +217,6 @@ The deploy script requires Bash. Deploy your Worker:
 $ npm run deploy
 ```
 {: copy="npm run deploy" package-manager="npm"}
-
-```console
-$ pnpm deploy
-```
-{: copy="pnpm deploy" package-manager="pnpm"}
 
 Dotenvx decrypts .env.production through Armor. The && runs Wrangler only if decryption succeeds, and process substitution passes the JSON without saving a plaintext secrets file.
 

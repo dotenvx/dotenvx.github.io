@@ -75,7 +75,7 @@ Dotenv fast mode in action.
 
 Software is changing, fast. With Dotenv we're committed to maintaining the past while still evolving .env. This --fast parser is an example of that.
 
-If you love .env and also want to see it evolve, please support us. Use [dotenv](https://github.com/motdotla/dotenv), use [dotenvx](https://github.com/dotenvx/dotenvx), and even snag a [dotenv membership](https://dotenvx.com/membership). Be part of the .env story. It's not all written yet.
+If you love .env and also want to see it evolve, please support us. Use [dotenv](https://github.com/motdotla/dotenv), use [dotenvx](https://github.com/dotenvx/dotenvx), and even snag a [dotenv membership](/membership). Be part of the .env story. It's not all written yet.
 
 <div class="blog-partner-thanks">
   <p>Lastly, a giant thank you to <a href="https://superagent.sh">Superagent.sh</a> for bringing this to the dotenv community.</p>

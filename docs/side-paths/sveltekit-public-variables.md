@@ -28,11 +28,6 @@ $ npx dotenvx set SITE_NAME "My app"
 ```
 {: copy="npx dotenvx set SITE_NAME \"My app\"" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx set SITE_NAME "My app"
-```
-{: copy="pnpm exec dotenvx set SITE_NAME \"My app\"" package-manager="pnpm"}
-
 Read it in a component:
 
 ```svelte
@@ -43,7 +38,7 @@ Read it in a component:
 <h1>{SITE_NAME}</h1>
 ```
 
-Restart npm run dev or pnpm dev. For production, set SITE_NAME in .env.production too, using the same command with -f .env.production.
+Restart npm run dev. For production, set SITE_NAME in .env.production too, using the same command with -f .env.production.
 
 Encryption protects the committed file. Values declared public are sent to browsers, so only use this for public configuration.
 

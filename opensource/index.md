@@ -36,9 +36,6 @@ projects:
     href: https://github.com/dotenvx/dotenvx-ruby
     summary: loads encrypted .env files in Ruby.
     stars: "3"
-  - name: "@dotenvx/primitives"
-    href: https://www.npmjs.com/package/@dotenvx/primitives
-    summary: provides Dotenvx primitives for JavaScript.
   - name: dotenvx-primitives (Rust)
     href: https://crates.io/crates/dotenvx-primitives
     summary: provides Dotenvx primitives for Rust.
@@ -47,7 +44,7 @@ projects:
     summary: turns public keys into deterministic visuals.
 papers:
   - name: "Dotenvx: Reducing Secrets Risk with Cryptographic Separation"
-    href: https://dotenvx.com/whitepaper.pdf
+    href: /whitepaper.pdf
   - name: "KEYSEE⎔: Deterministic Visual Identity for Public Keys"
     href: https://keysee.io/whitepaper.pdf
 talks:

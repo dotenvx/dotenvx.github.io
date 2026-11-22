@@ -28,4 +28,4 @@ crumbs:
 require('@dotenvx/dotenvx').config({noArmor: true})
 ```
 
-Use `noArmor` when you do not want `config()` to communicate with [Dotenvx Armor](https://dotenvx.com/armor).
+Use `noArmor` when you do not want `config()` to communicate with [Dotenvx Armor](/armor).

@@ -20,11 +20,6 @@ $ npx dotenvx set SITE_NAME "My site"
 ```
 {: copy="npx dotenvx set SITE_NAME \"My site\"" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx set SITE_NAME "My site"
-```
-{: copy="pnpm exec dotenvx set SITE_NAME \"My site\"" package-manager="pnpm"}
-
 ## Return it from a loader
 
 Replace the demonstration route with an explicit selection of public values:
@@ -44,7 +39,7 @@ export default function Index() {
 }
 ```
 
-Restart npm run dev or pnpm dev to load the updated .env file. The page displays My site.
+Restart npm run dev to load the updated .env file. The page displays My site.
 
 For production, add SITE_NAME with the same set command and -f .env.production, then commit and deploy the encrypted file. Restart the server to load changes; this loader reads the value at runtime.
 

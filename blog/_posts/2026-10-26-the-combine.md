@@ -17,7 +17,7 @@ Maybe you feel like me - excited but also unsettled, like the whole engineering 
 
 **There’s never been more opportunity, there’s never been more uncertainty.**
 
-I don’t know what software engineering looks like in 10 years, but I know what we’re going to keep working on. We started with one simple idea, separate secrets from code. Then we made it possible for secrets to travel encrypted alongside code with [Dotenvx](https://dotenvx.com). And now we’re working to keep secrets separate from agents.
+I don’t know what software engineering looks like in 10 years, but I know what we’re going to keep working on. We started with one simple idea, separate secrets from code. Then we made it possible for secrets to travel encrypted alongside code with [Dotenvx](/). And now we’re working to keep secrets separate from agents.
 
 So much is changing, but some things are worth carrying with us. I want .env to be one of them. Something old but somehow new. Still the file you know, with a future ahead of it.
 
@@ -31,15 +31,15 @@ Dotenv now has an opt-in fast parser and its own CLI. Enable fast mode in your a
 
 {% include components/design-codeblock.html value="$ npx dotenv run --fast -- node index.js" copy_text="npx dotenv run --fast -- node index.js" format="cli" %}
 
-<a href="https://dotenvx.com/blog/2026/09/28/dotenv-fast.html#usage"><img src="https://github.com/user-attachments/assets/ef7aceb7-e19f-4012-a06e-59bd13688de1" alt="Watch Scott demo Dotenv fast mode in 1 minute 10 seconds"></a>
+<a href="/blog/2026/09/28/dotenv-fast.html#usage"><img src="https://github.com/user-attachments/assets/ef7aceb7-e19f-4012-a06e-59bd13688de1" alt="Watch Scott demo Dotenv fast mode in 1 minute 10 seconds"></a>
 
-[Watch the demo · 1:10](https://dotenvx.com/blog/2026/09/28/dotenv-fast.html#usage)
+[Watch the demo · 1:10](/blog/2026/09/28/dotenv-fast.html#usage)
 
-[Read about Dotenv 18](https://dotenvx.com/blog/2026/09/28/dotenv-fast.html)
+[Read about Dotenv 18](/blog/2026/09/28/dotenv-fast.html)
 
 **New: Dotenvx Armor ⛨**
 
 Out of private beta for 3 months now, Armor lets security teams control who can decrypt encrypted .env files, share access without sharing private keys, and audit who accessed what and when. Dotenvx remains free and open source. Dotenvx Armor gives security teams the controls they need.
 
-[See Pricing](https://dotenvx.com/pricing)
+[See Pricing](/pricing)
 

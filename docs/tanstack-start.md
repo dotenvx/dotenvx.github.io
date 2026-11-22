@@ -25,11 +25,6 @@ $ npm install @dotenvx/dotenvx
 ```
 {: copy="npm install @dotenvx/dotenvx" package-manager="npm"}
 
-```console
-$ pnpm add @dotenvx/dotenvx
-```
-{: copy="pnpm add @dotenvx/dotenvx" package-manager="pnpm"}
-
 ## Encrypt
 
 Start with a secret value in the .env file at your project root, like:
@@ -47,12 +42,6 @@ $ npx dotenvx encrypt
 ◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
-```
-{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -124,12 +113,6 @@ $ npm run dev
 ```
 {: copy="npm run dev" package-manager="npm"}
 
-```console
-$ pnpm dev
-⟐ injected env (2) from .env (022 0D8) via .env.keys
-```
-{: copy="pnpm dev" package-manager="pnpm"}
-
 Dotenvx loads and decrypts .env before TanStack Start starts. Your server function reads process.env when it handles a request.
 
 Visit [http://localhost:3000](http://localhost:3000) to see Hello Secret.
@@ -150,12 +133,6 @@ $ npx dotenvx login
 ```
 {: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx login
-◉ logged in (username)
-```
-{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Create the Armored Key ⛨
 
 ```console
@@ -163,12 +140,6 @@ $ npx dotenvx armor up
 ⛨ armored .env (022 0D8)
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor up
-⛨ armored .env (022 0D8)
-```
-{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
 
 Invite your teammate.
 
@@ -178,12 +149,6 @@ $ npx dotenvx armor invite
 ```
 {: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx armor invite
-⛨ invited person@example.com to team
-```
-{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Your teammate accepts the invitation, pulls the repository, installs dependencies, and logs in with dotenvx login. They can then run the app:
 
 ```console
@@ -191,12 +156,6 @@ $ npm run dev
 ⟐ injected env (2) from .env (022 0D8) via Armor ⛨
 ```
 {: copy="npm run dev" package-manager="npm"}
-
-```console
-$ pnpm dev
-⟐ injected env (2) from .env (022 0D8) via Armor ⛨
-```
-{: copy="pnpm dev" package-manager="pnpm"}
 
 Visit [http://localhost:3000](http://localhost:3000) to see Hello Secret.
 
@@ -212,11 +171,6 @@ Install [Nitro](https://tanstack.com/start/latest/docs/framework/react/guide/hos
 $ npm install -D nitro
 ```
 {: copy="npm install -D nitro" package-manager="npm"}
-
-```console
-$ pnpm add -D nitro
-```
-{: copy="pnpm add -D nitro" package-manager="pnpm"}
 
 Add Nitro to your existing Vite configuration, keeping your other plugins and options:
 
@@ -252,12 +206,6 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 When prompted, choose **Enclaved**, select your deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
 
 Commit .env.production.
@@ -278,13 +226,6 @@ $ npm run build
 {: copy="npm install
 npm run build" package-manager="npm"}
 
-```console
-$ pnpm install
-$ pnpm build
-```
-{: copy="pnpm install
-pnpm build" package-manager="pnpm"}
-
 This server-rendered example only needs its secret at runtime, so the build script does not decrypt it.
 
 Deploy .output, package.json, the dependencies needed to run Dotenvx, and the encrypted .env.production file to the selected resource. Keep .env.production at the project root and .env.keys on your local machine.
@@ -295,11 +236,6 @@ Set NODE_ENV to production and PORT to the port your host expects (3000 by defau
 $ npm start
 ```
 {: copy="npm start" package-manager="npm"}
-
-```console
-$ pnpm start
-```
-{: copy="pnpm start" package-manager="pnpm"}
 
 Dotenvx loads and decrypts .env.production with your Enclaved Key ◊
 

@@ -34,4 +34,4 @@ Run `npm install` again to apply the override.
 
 Start Next.js with `npm run dev`. Next.js loads `.env` through `@dotenvx/next-env` and makes the values available to server-side code through `process.env`.
 
-See the [Next.js quickstart](/docs/nextjs/) for pnpm setup and deployment.
+See the [Next.js quickstart](/docs/nextjs/) for setup and deployment.

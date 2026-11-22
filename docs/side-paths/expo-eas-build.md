@@ -22,11 +22,6 @@ $ npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production
 ```
 {: copy="npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production
-```
-{: copy="pnpm exec dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="pnpm"}
-
 In your Expo project's Environment Variables settings, create DOTENV_PRIVATE_KEY_PRODUCTION in the production environment with **Secret** visibility. Set its value to your key. Keep it out of eas.json and your app config.
 
 ## Configure the worker
@@ -81,11 +76,6 @@ If creating .easignore, start with your .gitignore rules. Avoid defining the sam
 $ npx eas-cli@latest build --profile production
 ```
 {: copy="npx eas-cli@latest build --profile production" package-manager="npm"}
-
-```console
-$ pnpm dlx eas-cli@latest build --profile production
-```
-{: copy="pnpm dlx eas-cli@latest build --profile production" package-manager="pnpm"}
 
 The worker decrypts the file before Metro bundles the app. EXPO_PUBLIC_HELLO becomes a public app value; the private key stays in the build environment.
 

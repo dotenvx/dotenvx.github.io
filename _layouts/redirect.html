@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{% assign redirect_target = page.redirect.to %}
+{% assign internal_prefix = site.url | append: '/' %}
+{% assign target_prefix = redirect_target | slice: 0, internal_prefix.size %}
+{% if target_prefix == internal_prefix %}
+  {% assign redirect_target = redirect_target | remove_first: site.url %}
+{% elsif redirect_target == site.url %}
+  {% assign redirect_target = '/' %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <meta charset="utf-8">
+  <title>Redirecting&hellip;</title>
+  <link rel="canonical" href="{{ page.redirect.to | escape }}">
+  <script>location={{ redirect_target | jsonify }}</script>
+  <meta http-equiv="refresh" content="0; url={{ redirect_target | escape }}">
+  <meta name="robots" content="noindex">
+  <h1>Redirecting&hellip;</h1>
+  <a href="{{ redirect_target | escape }}">Click here if you are not redirected.</a>
+</html>

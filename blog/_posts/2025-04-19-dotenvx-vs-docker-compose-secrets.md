@@ -86,7 +86,7 @@ Docker Compose secrets *look* safer than env vars — but they aren't encrypted,
 
 If you care about reducing blast radius and limiting exposure, [dotenvx](https://github.com/dotenvx/dotenvx) is a solid and modern option to consider.
 
-To learn more, [read the whitepaper](https://dotenvx.com/dotenvx.pdf).
+To learn more, [read the whitepaper](/dotenvx.pdf).
 
 ---
 

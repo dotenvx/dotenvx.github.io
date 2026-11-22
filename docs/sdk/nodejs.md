@@ -19,10 +19,6 @@ icon: "nodejs"
 <a class="design-link" href="https://www.npmjs.com/package/@dotenvx/next-env" target="_blank" rel="noopener noreferrer">@dotenvx/next-env</a>
 <span class="design-list-meta">Next.js</span>
 </li>
-<li>
-<a class="design-link" href="/docs/sdk/nodejs/primitives/">@dotenvx/primitives</a>
-<span class="design-list-meta">primitives</span>
-</li>
 </ul>
 </div>
 

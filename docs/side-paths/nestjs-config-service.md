@@ -16,11 +16,6 @@ $ npm install @nestjs/config
 ```
 {: copy="npm install @nestjs/config" package-manager="npm"}
 
-```console
-$ pnpm add @nestjs/config
-```
-{: copy="pnpm add @nestjs/config" package-manager="pnpm"}
-
 In your AppModule, import ConfigModule and add this to the module's imports array:
 
 ```typescript
@@ -52,4 +47,4 @@ export class AppService {
 }
 ```
 
-Run npm start or pnpm start and visit [http://localhost:3000](http://localhost:3000) to see Hello Secret. The same setup works with the production script.
+Run npm start and visit [http://localhost:3000](http://localhost:3000) to see Hello Secret. The same setup works with the production script.

@@ -1,3 +1,4 @@
+require_relative 'llms_exports'
 require 'nokogiri'
 
 # Convert the resolved page content, including shared HTML components, to Markdown.
@@ -146,4 +147,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
     FileUtils.mkdir_p(File.dirname(path))
     RawMarkdownExports.write(path, markdown)
   end
+
+  index = File.read(site.in_source_dir('llms.txt'))
+  full = LlmsExports.render(by_url, site.config.fetch('url'), index)
+  RawMarkdownExports.write(File.join(site.dest, 'llms-full.txt'), full)
 end

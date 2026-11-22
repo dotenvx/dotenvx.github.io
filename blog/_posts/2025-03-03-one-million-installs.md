@@ -10,7 +10,7 @@ Eight months ago, dotenvx introduced a new way to think about [config management
 
 That growth didn't happen by accident—dotenvx development has been heavy with [88 releases in 8 months](https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1383). That's a new release every 2.75 days!
 
-Today, it is a world-class tool–handling [.env parsing](https://dotenvx.com/docs/quickstart), [variable expansion](https://dotenvx.com/docs/advanced/run-variable-expansion), [command substitution](https://dotenvx.com/docs/advanced/run-command-substitution), [encrypted .env files](https://dotenvx.com/docs/env-file#encryption), and [more](https://dotenvx.com/docs/advanced) better than anything else can. Each day, hundreds of software engineers newly learn of, and begin using, dotenvx.
+Today, it is a world-class tool–handling [.env parsing](/docs/quickstart), [variable expansion](/docs/advanced/run-variable-expansion), [command substitution](/docs/advanced/run-command-substitution), [encrypted .env files](/docs/env-file#encryption), and [more](/docs/advanced) better than anything else can. Each day, hundreds of software engineers newly learn of, and begin using, dotenvx.
 
 <img src="https://github.com/user-attachments/assets/1297f2d5-579d-4894-8bc2-91f0f90e4f91" />
 
@@ -36,7 +36,7 @@ This kind of community involvement makes dotenvx better. The feedback loop betwe
 
 Dotenvx isn't just a CLI—it's extending into the tools developers use every day.
 
-* **VS Code Extension.** Decrypt your encrypted .env files in VS Code with the [Dotenvx VS Code Extension](https://dotenvx.com/vscode-extension/).
+* **VS Code Extension.** Decrypt your encrypted .env files in VS Code with the [Dotenvx VS Code Extension](/vscode-extension/).
 * **Chrome Extension.** Decrypt your encrypted .env files directly on GitHub with the Dotenvx Chrome Extension.
 * **Buildpacks.** Install dotenvx to Heroku (or any platform that supports buildpacks) with the [Dotenvx Buildpack](https://github.com/dotenvx/heroku-buildpack-dotenvx).
 
@@ -46,7 +46,7 @@ This growing ecosystem ensures that no matter where developers work—local edit
 
 Dotenvx isn't just widely used—it's built on a foundation that makes it the right way to handle secrets.
 
-From the [whitepaper](https://dotenvx.com/dotenvx.pdf):
+From the [whitepaper](/dotenvx.pdf):
 
 > **Dotenvx: Reducing Secrets Risk with Cryptographic Separation**
 > 

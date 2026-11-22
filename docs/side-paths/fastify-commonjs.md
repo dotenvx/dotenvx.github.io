@@ -40,4 +40,4 @@ Update the filenames in your scripts:
 ```
 {: label="package.json"}
 
-Run npm run dev or pnpm dev. Dotenvx decrypts .env before Node loads your server. The sharing and production steps stay the same.
+Run npm run dev. Dotenvx decrypts .env before Node loads your server. The sharing and production steps stay the same.

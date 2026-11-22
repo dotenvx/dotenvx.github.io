@@ -10,15 +10,21 @@ mark: Armor
 
 Keep your encrypted `.env` in your project. Let Armor manage access to its private key.
 
+## Production deployment
+
+[**Deploy Armor on Heroku →**](/docs/custody/armor/heroku/) Build and release an image, authenticate the running workload, and verify its key-access audit event. The guide also covers cold starts, Armor outages, and the Enclaved Key alternative.
+
 ## Store
 
 Start with an [encrypted .env](/docs/custody/env-keys/). Sign in, then move its private key into Armor:
 
 ```console
+$ dotenvx install --add armor
 $ dotenvx armor login
 $ dotenvx armor up
 ```
-{: copy="dotenvx armor login
+{: copy="dotenvx install --add armor
+dotenvx armor login
 dotenvx armor up"}
 
 Dotenvx removes the local key after Armor accepts it. Your `.env` stays encrypted.

@@ -3,12 +3,15 @@ require "jekyll"
 require "json"
 require "tmpdir"
 require "fileutils"
+require "nokogiri"
 require_relative "../_plugins/central_redirects"
 
 Dir.mktmpdir("central-redirects-test-") do |root|
   source = File.join(root, "source")
   destination = File.join(root, "output")
   FileUtils.mkdir_p(File.join(source, "_data"))
+  FileUtils.mkdir_p(File.join(source, "_layouts"))
+  FileUtils.cp(File.expand_path("../_layouts/redirect.html", __dir__), File.join(source, "_layouts/redirect.html"))
   File.write(File.join(source, "new.md"), "---\npermalink: /new/\nredirect_from: /existing-alias/\n---\nNew page\n")
   routes = {
     "/old/" => "/new/",
@@ -32,6 +35,12 @@ Dir.mktmpdir("central-redirects-test-") do |root|
     html = File.read(File.join(destination, file))
     raise "Missing redirect target in #{file}" unless html.include?(target)
     raise "Missing refresh in #{file}" unless html.include?('http-equiv="refresh"')
+    document = Nokogiri::HTML(html)
+    navigation_target = target.delete_prefix("https://test.example")
+    raise "Incorrect redirect link in #{file}" unless document.at_css("a")['href'] == navigation_target
+    raise "Incorrect refresh target in #{file}" unless document.at_css('meta[http-equiv="refresh"]')['content'] == "0; url=#{navigation_target}"
+    raise "Incorrect script target in #{file}" unless document.at_css("script").text == "location=#{navigation_target.to_json}"
+    raise "Canonical changed in #{file}" unless document.at_css('link[rel="canonical"]')['href'] == target
   end
   generated = JSON.parse(File.read(File.join(destination, "redirects.json")))
   raise "Central redirects absent from redirects.json" unless routes.keys.all? { |path| generated.key?(path) }

@@ -42,12 +42,7 @@ $ npm install @dotenvx/next-env
 ```
 {: copy="npm install @dotenvx/next-env" package-manager="npm"}
 
-```console
-$ pnpm add @dotenvx/next-env
-```
-{: copy="pnpm add @dotenvx/next-env" package-manager="pnpm"}
-
-Add this override to your package manager’s configuration:
+Add this override to package.json:
 
 ```json
 {
@@ -60,23 +55,12 @@ Add this override to your package manager’s configuration:
   \"@next/env\": \"npm:@dotenvx/next-env\"
 \}" package-manager="npm" label="package.json"}
 
-```yaml
-overrides:
-  "@next/env": "npm:@dotenvx/next-env"
-```
-{: package-manager="pnpm" label="pnpm-workspace.yaml"}
-
 Apply it:
 
 ```console
 $ npm install
 ```
 {: copy="npm install" package-manager="npm"}
-
-```console
-$ pnpm install
-```
-{: copy="pnpm install" package-manager="pnpm"}
 
 Next.js now loads encrypted secrets automatically through @dotenvx/next-env.
 
@@ -143,14 +127,6 @@ $ npm run dev
 ```
 {: copy="npm run dev" package-manager="npm"}
 
-```console
-$ pnpm dev
-⟐ injected env (2) from .env (022 0D8) via .env.keys
-▲ Next.js 16.4.1 (Turbopack)
-- Local:         http://localhost:3000
-```
-{: copy="pnpm dev" package-manager="pnpm"}
-
 Next.js loads and decrypts .env before your server code reads process.env.
 
 Visit [http://localhost:3000/api/hello](http://localhost:3000/api/hello) to see Hello Secret.
@@ -196,14 +172,6 @@ $ npm run dev
 - Local:         http://localhost:3000
 ```
 {: copy="npm run dev" package-manager="npm"}
-
-```console
-$ pnpm dev
-⟐ injected env (2) from .env (022 0D8) via Armor ⛨
-▲ Next.js 16.4.1 (Turbopack)
-- Local:         http://localhost:3000
-```
-{: copy="pnpm dev" package-manager="pnpm"}
 
 {% include components/design-browser.html url="http://localhost:3000/api/hello" text="Hello Secret" %}
 
@@ -252,13 +220,6 @@ $ npx vercel --prod
 ```
 {: copy="npm install vercel --save-dev
 npx vercel --prod" package-manager="npm"}
-
-```console
-$ pnpm add -D vercel
-$ pnpm exec vercel --prod
-```
-{: copy="pnpm add -D vercel
-pnpm exec vercel --prod" package-manager="pnpm"}
 
 Vercel loads and decrypts .env.production with your Enclaved Key ◊
 

@@ -16,11 +16,6 @@ $ npx dotenvx set VITE_SITE_NAME "My app"
 ```
 {: copy='npx dotenvx set VITE_SITE_NAME "My app"' package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx set VITE_SITE_NAME "My app"
-```
-{: copy='pnpm exec dotenvx set VITE_SITE_NAME "My app"' package-manager="pnpm"}
-
 Read it in a component:
 
 ```tsx
@@ -29,7 +24,7 @@ export function SiteName() {
 }
 ```
 
-Restart npm run dev or pnpm dev after changing .env.
+Restart npm run dev after changing .env.
 
 For production, add VITE_SITE_NAME to .env.production using the same command with -f .env.production. Follow [Build-time configuration](/docs/tanstack-start/build-time/) to decrypt it before Vite builds.
 

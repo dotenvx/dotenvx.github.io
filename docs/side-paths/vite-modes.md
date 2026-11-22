@@ -22,11 +22,6 @@ $ npx dotenvx encrypt -f .env.staging
 ```
 {: copy="npx dotenvx encrypt -f .env.staging" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.staging
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.staging" package-manager="pnpm"}
-
 Commit the encrypted .env.staging file and add this script:
 
 ```json
@@ -38,7 +33,7 @@ Commit the encrypted .env.staging file and add this script:
 ```
 {: label="package.json"}
 
-Run npm run build:staging or pnpm build:staging, then deploy dist.
+Run npm run build:staging, then deploy dist.
 
 The -f flag chooses the file Dotenvx decrypts; --mode chooses Vite's mode. Keep each selected file complete: Vite also reads .env and mode-specific files, but cannot decrypt extra files itself.
 

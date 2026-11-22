@@ -50,11 +50,6 @@ $ npm run build
 ```
 {: copy="npm run build" package-manager="npm"}
 
-```console
-$ pnpm build
-```
-{: copy="pnpm build" package-manager="pnpm"}
-
 For a local build, use the [private key alternative](/docs/astro/deploy-private-key/) and provide DOTENV_PRIVATE_KEY_PRODUCTION to your local build environment.
 
 ## Deploy

@@ -21,11 +21,6 @@ $ npm install @dotenvx/dotenvx
 ```
 {: copy="npm install @dotenvx/dotenvx" package-manager="npm"}
 
-```console
-$ pnpm add @dotenvx/dotenvx
-```
-{: copy="pnpm add @dotenvx/dotenvx" package-manager="pnpm"}
-
 ## Encrypt
 
 Start with a secret value in the .env file at your project root, like:
@@ -43,12 +38,6 @@ $ npx dotenvx encrypt
 ◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
-```
-{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -109,13 +98,7 @@ $ npm start
 ```
 {: copy="npm start" package-manager="npm"}
 
-```console
-$ pnpm start
-⟐ injected env (2) from .env (022 0D8) via .env.keys
-```
-{: copy="pnpm start" package-manager="pnpm"}
-
-Dotenvx loads and decrypts .env before NestJS initializes your modules. Use npm run start:dev or pnpm start:dev to watch for code changes.
+Dotenvx loads and decrypts .env before NestJS initializes your modules. Use npm run start:dev to watch for code changes.
 
 Visit [http://localhost:3000](http://localhost:3000) to see Hello Secret.
 
@@ -135,12 +118,6 @@ $ npx dotenvx login
 ```
 {: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx login
-◉ logged in (username)
-```
-{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Create the Armored Key ⛨
 
 ```console
@@ -148,12 +125,6 @@ $ npx dotenvx armor up
 ⛨ armored .env (022 0D8)
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor up
-⛨ armored .env (022 0D8)
-```
-{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
 
 Invite your teammate.
 
@@ -163,12 +134,6 @@ $ npx dotenvx armor invite
 ```
 {: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx armor invite
-⛨ invited person@example.com to team
-```
-{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Your teammate accepts the invitation, pulls the repository, installs dependencies, and logs in with dotenvx login. They can then run the app:
 
 ```console
@@ -176,12 +141,6 @@ $ npm start
 ⟐ injected env (2) from .env (022 0D8) via Armor ⛨
 ```
 {: copy="npm start" package-manager="npm"}
-
-```console
-$ pnpm start
-⟐ injected env (2) from .env (022 0D8) via Armor ⛨
-```
-{: copy="pnpm start" package-manager="pnpm"}
 
 Visit [http://localhost:3000](http://localhost:3000) to see Hello Secret.
 
@@ -207,12 +166,6 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 When prompted, choose **Enclaved**, select your deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
 
 Commit .env.production.
@@ -233,13 +186,6 @@ $ npm run build
 {: copy="npm install
 npm run build" package-manager="npm"}
 
-```console
-$ pnpm install
-$ pnpm build
-```
-{: copy="pnpm install
-pnpm build" package-manager="pnpm"}
-
 Deploy the compiled dist directory, package.json, runtime dependencies, and encrypted .env.production file to the selected resource. Keep .env.production at the project root and .env.keys on your local machine.
 
 Set NODE_ENV to production in your deployment environment. From the project root, run:
@@ -248,11 +194,6 @@ Set NODE_ENV to production in your deployment environment. From the project root
 $ npm run start:prod
 ```
 {: copy="npm run start:prod" package-manager="npm"}
-
-```console
-$ pnpm start:prod
-```
-{: copy="pnpm start:prod" package-manager="pnpm"}
 
 Dotenvx loads and decrypts .env.production with your Enclaved Key ◊
 

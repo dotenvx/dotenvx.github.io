@@ -45,4 +45,4 @@ async function main() {
 main()
 ```
 
-This is known as *Decryption at Access* and is written about in [the whitepaper](https://dotenvx.com/dotenvx.pdf).
+This is known as *Decryption at Access* and is written about in [the whitepaper](/dotenvx.pdf).

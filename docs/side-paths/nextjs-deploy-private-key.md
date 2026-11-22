@@ -23,11 +23,6 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 ## Get the private key
 
 Use keypair to retrieve your production private key:
@@ -37,12 +32,6 @@ $ npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production
 c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
 ```
 {: copy="npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production
-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
-```
-{: copy="pnpm exec dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="pnpm"}
 
 ## Add it to Vercel
 

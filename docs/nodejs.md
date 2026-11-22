@@ -29,11 +29,6 @@ $ npm install @dotenvx/dotenvx
 ```
 {: copy="npm install @dotenvx/dotenvx" package-manager="npm"}
 
-```console
-$ pnpm add @dotenvx/dotenvx
-```
-{: copy="pnpm add @dotenvx/dotenvx" package-manager="pnpm"}
-
 ## Encrypt
 
 Start with a secret value in the .env file at your project root, like:
@@ -51,12 +46,6 @@ $ npx dotenvx encrypt
 ◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
-```
-{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -113,12 +102,6 @@ $ npx dotenvx login
 ```
 {: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx login
-◉ logged in (username)
-```
-{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Create the Armored Key ⛨
 
 ```console
@@ -127,12 +110,6 @@ $ npx dotenvx armor up
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx armor up
-⛨ armored .env (022 0D8)
-```
-{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Invite your teammate.
 
 ```console
@@ -140,12 +117,6 @@ $ npx dotenvx armor invite
 ⛨ invited person@example.com to team
 ```
 {: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor invite
-⛨ invited person@example.com to team
-```
-{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
 
 Your teammate accepts the invitation, pulls the repository, installs dependencies, and logs in with dotenvx login. They can then run the app:
 
@@ -176,12 +147,6 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 When prompted, choose **Enclaved**, select your deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
 
 Commit .env.production.
@@ -199,11 +164,6 @@ Deploy your code and encrypted .env.production file to the selected resource. In
 $ npm install
 ```
 {: copy="npm install" package-manager="npm"}
-
-```console
-$ pnpm install
-```
-{: copy="pnpm install" package-manager="pnpm"}
 
 Set DOTENV_FILE to .env.production in your deployment environment so Dotenvx knows which file to load. Keep .env.keys on your local machine.
 

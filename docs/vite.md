@@ -27,11 +27,6 @@ $ npm install @dotenvx/dotenvx
 ```
 {: copy="npm install @dotenvx/dotenvx" package-manager="npm"}
 
-```console
-$ pnpm add @dotenvx/dotenvx
-```
-{: copy="pnpm add @dotenvx/dotenvx" package-manager="pnpm"}
-
 ## Encrypt
 
 Start with a demonstration value in the .env file at your project root:
@@ -49,12 +44,6 @@ $ npx dotenvx encrypt
 ◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
-```
-{: copy="pnpm exec dotenvx encrypt" package-manager="pnpm"}
 
 The values become ciphertext and only your private key can unlock them.
 
@@ -113,12 +102,6 @@ $ npm run dev
 ```
 {: copy="npm run dev" package-manager="npm"}
 
-```console
-$ pnpm run dev
-⟐ injected env (2) from .env (022 0D8) via .env.keys
-```
-{: copy="pnpm run dev" package-manager="pnpm"}
-
 Visit [http://localhost:5173](http://localhost:5173) to see Hello Secret. Restart the command after changing .env.
 
 {% include components/design-browser.html url="http://localhost:5173" text="Hello Secret" %}
@@ -137,12 +120,6 @@ $ npx dotenvx login
 ```
 {: copy="npx dotenvx login" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx login
-◉ logged in (username)
-```
-{: copy="pnpm exec dotenvx login" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Create the Armored Key ⛨
 
 ```console
@@ -150,12 +127,6 @@ $ npx dotenvx armor up
 ⛨ armored .env (022 0D8)
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
-
-```console
-$ pnpm exec dotenvx armor up
-⛨ armored .env (022 0D8)
-```
-{: copy="pnpm exec dotenvx armor up" class="design-codeblock--nowrap" package-manager="pnpm"}
 
 Invite your teammate.
 
@@ -165,12 +136,6 @@ $ npx dotenvx armor invite
 ```
 {: copy="npx dotenvx armor invite" class="design-codeblock--nowrap" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx armor invite
-⛨ invited person@example.com to team
-```
-{: copy="pnpm exec dotenvx armor invite" class="design-codeblock--nowrap" package-manager="pnpm"}
-
 Your teammate accepts the invitation, pulls the repository, installs dependencies, and logs in with dotenvx login. They can then run the app:
 
 ```console
@@ -178,12 +143,6 @@ $ npm run dev
 ⟐ injected env (2) from .env (022 0D8) via Armor ⛨
 ```
 {: copy="npm run dev" package-manager="npm"}
-
-```console
-$ pnpm run dev
-⟐ injected env (2) from .env (022 0D8) via Armor ⛨
-```
-{: copy="pnpm run dev" package-manager="pnpm"}
 
 Open the app to see Hello Secret.
 
@@ -207,12 +166,6 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 When prompted, choose **Enclaved**, select your build service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name. The key must be available to the build job.
 
 Commit the encrypted file:
@@ -233,13 +186,6 @@ $ npm run build
 {: copy="npm install
 npm run build" package-manager="npm"}
 
-```console
-$ pnpm install
-$ pnpm build
-```
-{: copy="pnpm install
-pnpm build" package-manager="pnpm"}
-
 Dotenvx decrypts .env.production before Vite builds. Deploy dist to your static host; keep .env.keys off the build service and out of git.
 
 Open your deployed URL to see Hello Production.
@@ -248,7 +194,7 @@ Open your deployed URL to see Hello Production.
 
 Public values are baked into the output. Changing them requires rebuilding. Your static host and visitors do not need Dotenvx or a private key. Keep encrypted .env files outside public so Vite does not copy them into dist.
 
-Use npm run preview or pnpm preview to inspect an existing build locally; vite preview is not a production server.
+Use npm run preview to inspect an existing build locally; vite preview is not a production server.
 
 [**Build with a private key** Alternative →](/docs/vite/build-private-key/){: .side-path}
 

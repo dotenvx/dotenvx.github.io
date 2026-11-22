@@ -64,7 +64,7 @@ $ dotenvx encrypt -f .env.production
 ```
 {: copy="dotenvx encrypt -f .env.production"}
 
-Commit `.env.production`. Do not commit `.env.keys`. Keep private keys somewhere safe like 1Password or [Armor ⛨](https://dotenvx.com/armor).
+Commit `.env.production`. Do not commit `.env.keys`. Keep private keys somewhere safe like 1Password or [Armor ⛨](/armor).
 
 ## Set decryption key
 

@@ -23,7 +23,7 @@ The main guide reads HELLO at request time. If your app needs values during the 
 
 Make DOTENV_PRIVATE_KEY_PRODUCTION available to both the build job and the server. An Enclaved Key assigned to one resource does not automatically grant access to another.
 
-Run npm run build or pnpm build. Public variables and prerendered data are fixed in the output; changing them requires rebuilding.
+Run npm run build. Public variables and prerendered data are fixed in the output; changing them requires rebuilding.
 
 Keep real secrets inside server loaders or actions or build tooling. Anything returned into generated HTML or browser payloads is public. Do not put secrets in Vite's define option or give them a VITE_ prefix.
 

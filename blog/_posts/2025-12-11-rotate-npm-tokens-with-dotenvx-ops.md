@@ -10,11 +10,11 @@ excerpt: "NPM's new short-lived tokens strengthen security, but they make rotati
 
 This was a real problem for us. We publish <a href="https://www.npmjs.com/org/dotenvx">64 npm packages</a>, and rotating tokens across all of them by hand was not going to be sustainable. Every expiration meant touching dozens of pipelines and praying the next publish didn't fail.
 
-So we built a solution. Introducing <a href="https://dotenvx.com/docs/armor/rotate">Dotenvx Rotate</a> - part of Dotenvx Armor ⛨.
+So we built a solution. Introducing <a href="/docs/armor/rotate">Dotenvx Rotate</a> - part of Dotenvx Armor ⛨.
 
 ## How It Works
 
-Install [dotenvx-armor](https://dotenvx.com/armor).
+Install [dotenvx-armor](/armor).
 
 ```sh
 $ curl -sfS https://dotenvx.com/armor | sh
@@ -152,7 +152,7 @@ npm:
 
 Then we added a step to:
 
-- <a href="https://dotenvx.com/docs/armor/install">Install dotenvx-armor</a>
+- <a href="/docs/armor/install">Install dotenvx-armor</a>
 - Run `dotenvx-armor get` to echo its value to `NODE_AUTH_TOKEN`
 
 {% raw %}
@@ -195,7 +195,7 @@ Publishing now works indefinitely with rotating NPM tokens, powered by a new rot
 - *Employee left who knew the old token?* Rotate it - all your operations still work.
 - *NPM token should be rotated every N days for compliance?* Put it on a schedule - all your operations still work. 
 
-This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="https://dotenvx.com/armor">Dotenvx Armor ⛨</a>.
+This has worked really well for us. If it sounds useful, you can use it too. Sign up for <a href="/armor">Dotenvx Armor ⛨</a>.
 
 > P.S. If you're running this at enterprise scale with compliance requirements, scheduled rotation, or broader CI/CD concerns, please <a href="mailto:scott@dotenvx.com">get in touch</a>. We'd like to help.
 

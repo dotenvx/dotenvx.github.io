@@ -189,7 +189,7 @@
   summary: "Choose local or armored key storage on first create."
 - date: 2026-05-13
   summary: "New guide for encrypting secrets with Python uv."
-  url: "https://dotenvx.com/docs/uv"
+  url: "/docs/uv"
 - date: 2026-05-12
   summary: "Trust Center launches for security and compliance."
   milestone: true
@@ -242,7 +242,7 @@
   milestone: true
 - date: 2025-02-20
   summary: "Dotenvx whitepaper draft is published."
-  url: "https://dotenvx.com/dotenvx.pdf"
+  url: "/dotenvx.pdf"
 - date: 2025-02-07
   summary: "Decryption-at-access via main.get and main.set."
   url: "https://github.com/dotenvx/dotenvx/blob/main/CHANGELOG.md#1350-2025-02-07"

@@ -241,3 +241,17 @@ Deploy the matching `radar` backend changes before deploying these forms.
 The endpoint must allow POST requests from `https://dotenvx.com` and
 `https://www.dotenvx.com`. Local signup submissions still target production;
 use the Armor request specs to test without sending real emails.
+
+### Agent documentation indexes
+
+`llms.txt` is the curated, curl-first index of current documentation. Keep its
+links and first install command aligned with the current site.
+
+`/llms-full.txt` is generated during the build by `_plugins/llms_exports.rb`,
+called from the main Markdown export hook. It combines the index, current
+product pages, and current docs from their resolved Markdown exports. Historical
+blog posts and changelog entries remain linked separately. Edit the source pages
+rather than the generated file in `_site`.
+
+Run `bundle exec ruby scripts/test_llms_exports.rb` and `bundle exec jekyll build`
+to verify the indexes.

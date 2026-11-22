@@ -604,6 +604,15 @@ body.overflow-hidden { overflow: hidden; }
 :is(.main-data-table, .main--resource .design-table) tbody tr:nth-child(odd) { background-color: light-dark(#f4f4f5, #141414); }
 .main .main-table-note { color: var(--syntax); font-size: 12px; line-height: 20px; }
 
+.main-pricing-plans { display: grid; gap: 32px; margin-block: 32px; }
+.main-pricing-plans > section { min-width: 0; border-top: 1px solid var(--line); padding-top: 16px; }
+.main-pricing-plans > section > h2:first-child { margin-top: 0; }
+.main-pricing-plans > section > :last-child { margin-bottom: 0; }
+
+@media screen and (min-width: 800px) {
+  .main-pricing-plans { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 .main-pricing-comparison {
   column-span: all;
   max-width: 960px;

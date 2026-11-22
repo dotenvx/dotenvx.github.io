@@ -56,7 +56,13 @@
       {
         "label": "Armor \u26e8",
         "href": "/docs/custody/armor/",
-        "children": []
+        "children": [
+          {
+            "label": "Deploy Armor on Heroku",
+            "href": "/docs/custody/armor/heroku/",
+            "children": []
+          }
+        ]
       },
       {
         "label": "All Custody \u2192",

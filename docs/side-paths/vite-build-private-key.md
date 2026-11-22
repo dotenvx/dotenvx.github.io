@@ -23,11 +23,6 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx encrypt -f .env.production
-```
-{: copy="pnpm exec dotenvx encrypt -f .env.production" package-manager="pnpm"}
-
 ## Get the private key
 
 Use keypair to retrieve your production private key:
@@ -38,16 +33,10 @@ c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
 ```
 {: copy="npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="npm"}
 
-```console
-$ pnpm exec dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production
-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
-```
-{: copy="pnpm exec dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="pnpm"}
-
 ## Configure your build
 
 In your build environment, set DOTENV_PRIVATE_KEY_PRODUCTION to the value printed by your command. The build script selects .env.production.
 
 {% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
 
-Keep .env.keys out of git and off your build service. For a local build, keep the key in .env.keys and run npm run build or pnpm build. For CI, inject the key into the build environment. Return to [Production](/docs/vite/#production) to commit the encrypted file and deploy dist.
+Keep .env.keys out of git and off your build service. For a local build, keep the key in .env.keys and run npm run build. For CI, inject the key into the build environment. Return to [Production](/docs/vite/#production) to commit the encrypted file and deploy dist.

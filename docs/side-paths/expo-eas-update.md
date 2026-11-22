@@ -20,11 +20,6 @@ $ npm run export
 ```
 {: copy="npm run export" package-manager="npm"}
 
-```console
-$ pnpm export
-```
-{: copy="pnpm export" package-manager="pnpm"}
-
 This decrypts .env.production before Expo bundles the public variables into dist. EAS variables with Secret visibility cannot be downloaded to your local machine; use your local .env.keys or provision DOTENV_PRIVATE_KEY_PRODUCTION in your CI secret store.
 
 ## Publish the exported bundle
@@ -35,11 +30,6 @@ Use --skip-bundler to publish the export you just created:
 $ npx eas-cli@latest update --channel production --environment production --skip-bundler --input-dir dist --message "Update production"
 ```
 {: copy="npx eas-cli@latest update --channel production --environment production --skip-bundler --input-dir dist --message \"Update production\"" package-manager="npm"}
-
-```console
-$ pnpm dlx eas-cli@latest update --channel production --environment production --skip-bundler --input-dir dist --message "Update production"
-```
-{: copy="pnpm dlx eas-cli@latest update --channel production --environment production --skip-bundler --input-dir dist --message \"Update production\"" package-manager="pnpm"}
 
 The environment flag selects the EAS environment; it does not replace values already embedded in this exported bundle. Keep the export's app configuration consistent with the installed build.
 

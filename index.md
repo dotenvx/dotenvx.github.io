@@ -86,7 +86,10 @@ $ dotenvx run -- node index.js
 ```
 {: label="Run your deployed app" copy="dotenvx run -- node index.js"}
 
-Locally, the key is read from .env.keys. In production, set DOTENV_PRIVATE_KEY in your deployment environment using that same key. Dotenvx decrypts your secrets and injects them into your app at runtime.
+Locally, the key is read from .env.keys. Dotenvx decrypts your secrets and injects them into your app at runtime.
+{: .design-paragraph}
+
+For production, use a separate encrypted file and key. See the [production quickstart]({{ '/docs/quickstart/' | relative_url }}#what-about-production).
 {: .design-paragraph}
 
 

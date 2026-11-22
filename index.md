@@ -189,7 +189,7 @@ When you need to manage access across a team, [Armor]({{ '/armor/' | relative_ur
 
 ## Who’s using dotenvx?
 
-- 20 million weekly [npm installs](https://www.npmjs.com/package/@dotenvx/dotenvx)
+- [22 million](https://www.npmjs.com/package/@dotenvx/dotenvx) weekly npm installs
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code)
 - Prior Head of Security DevOps at Zoom–[John Zila](/members/watt/)
 

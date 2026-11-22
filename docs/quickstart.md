@@ -4,7 +4,7 @@ description: Encrypt your first .env file
 permalink: /docs/quickstart/
 markdown_url: /docs/quickstart.md
 agent_prompt: Set up Dotenvx in my project for me.
-main_layout: single
+main_layout: two-columns
 redirect_from:
   - /docs/quickstarts
   - /docs/quickstarts/
@@ -36,71 +36,88 @@ secrets_artifact: true
 
 ## Encrypt
 
-Create a `.env` file in your project root.
+Create a .env file in your project root with a test value:
 
 ```dotenv
 HELLO="Secret"
 ```
 
-Encrypt the values in it.
-
-```cli
-$ dotenvx encrypt
-◈ encrypted (.env)
-```
-{: copy="dotenvx encrypt"}
-
-### CI / Production
-
-For ci or production create a `.env.{environment}` and encrypt it.
-
-```dotenv
-# .env.production
-HELLO="Production"
+```bash
+dotenvx encrypt
 ```
 
-```cli
-$ dotenvx encrypt -f .env.production
-```
-{: copy="dotenvx encrypt -f .env.production"}
+When prompted, choose **Local**, then **File .env.keys**. Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
+
+Other places to keep your key: [Custody](/docs/custody/).
 
 ## Commit
 
-Commit the encrypted `.env` with your code. Keep the private key out of Git.
+Add this line to your .gitignore:
 
-```cli
-$ git add .env
-$ git commit -m "encrypt .env"
+```gitignore
+.env.keys
 ```
-{: copy='git add .env
-git commit -m "encrypt .env"'}
+
+Then commit the encrypted .env with your code. The -f flag includes it even if your project ignores .env files.
+
+```bash
+git add -f .env
+git add .gitignore
+git commit -m "encrypt .env"
+```
+
+Keep .env.keys private and backed up. It holds the key you need to decrypt your file.
 
 ## Ship
 
-Create `index.js`.
+Create index.js:
 
 ```javascript
 console.log(`Hello ${process.env.HELLO}`)
 ```
 
-Run it with Dotenvx to load the secret.
+Run your app with Dotenvx:
 
-```cli
-$ dotenvx run -- node index.js
-⟐ injected env (2) from .env
+```bash
+dotenvx run -- node index.js
+```
+
+```text
 Hello Secret
 ```
-{: copy="dotenvx run -- node index.js"}
 
-### CI / Production
+Dotenvx reads the key from .env.keys, decrypts your values, and injects them into your app at runtime. Replace node index.js with your own app’s command.
 
-Set `DOTENV_PRIVATE_KEY_{environment}` on your server and run your app in ci or production.
+## What about production?
+{: #production .quickstart-production}
 
-```cli
-$ dotenvx run -f .env.production -- node index.js
-⟐ injected env (2) from .env.production
-Hello Production
+The same workflow works in production. Use a separate encrypted file and key for each environment.
+
+Create a separate .env.production:
+
+```dotenv
+HELLO="Production"
 ```
-{: copy="dotenvx run -f .env.production -- node index.js"}
 
-Dotenvx uses the private key from your deployment environment to decrypt and load your secrets at runtime.
+```bash
+dotenvx encrypt -f .env.production
+```
+
+Choose **Local**, then **File .env.keys** again. Dotenvx adds a separate production key to .env.keys.
+
+Copy the value named DOTENV_PRIVATE_KEY_PRODUCTION into an environment variable with that same name in your deployment settings.
+
+Commit the encrypted production file:
+
+```bash
+git add -f .env.production
+git commit -m "encrypt .env.production"
+```
+
+Run your deployed app with:
+
+```bash
+dotenvx run -f .env.production -- node index.js
+```
+
+Your encrypted file travels with your code. The production key stays in your deployment environment.

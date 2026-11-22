@@ -207,6 +207,7 @@ body:not(.main-has-subnav) > .main-header {
 
   .main > h1 { column-span: all; }
   .main :is(h2, h3) { break-after: avoid-column; }
+  .main .quickstart-production { break-before: column; margin-top: 0; }
   .main :is(pre, .design-codeblock-wrap, table, .main-image, .main-company-logos) { break-inside: avoid-column; }
   .main-docs-list { break-inside: avoid-column; }
   .main p { orphans: 3; widows: 3; break-inside: avoid-column; }

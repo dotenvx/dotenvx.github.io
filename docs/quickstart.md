@@ -27,13 +27,6 @@ secrets_artifact: true
 
 > {{ page.description }}
 
-## Install
-
-{% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
-```bash
-{{ cli.command }}
-```
-
 ## Encrypt
 
 Create a .env file in your project root with a test value:

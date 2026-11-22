@@ -11,9 +11,9 @@ bin/dev
 That starts Jekyll with live reload.
 
 The main design is the default for every public page. `_layouts/default.html`
-contains the shared shell; `assets/css/main.css` contains the base styles and
-`assets/css/main-docs.css` adds docs styles. Edit these files directly: there is
-no CSS compilation or Tailwind dependency. Newsletter forms also use
+contains the shared shell; `assets/css/main.css` contains the shared styles,
+including docs components. Edit these files directly: there is no CSS compilation
+or Tailwind dependency. Newsletter forms also use
 `assets/css/newsletter-signup.css`.
 
 `_plugins/main_site.rb` prepares Markdown content, page headings, docs frames,

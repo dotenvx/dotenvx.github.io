@@ -13,7 +13,6 @@
   {% include layouts/meta.html %}
   {% include layouts/analytics.html %}
   <link rel="stylesheet" data-main-styles href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  {% if main_docs_section %}<link rel="stylesheet" data-main-styles href="{{ '/assets/css/main-docs.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
   {% if page.main_blog_post or page.url == '/newsletter/' %}<link rel="stylesheet" data-main-styles href="{{ '/assets/css/newsletter-signup.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
   <link rel="stylesheet" data-main-plain-styles media="not all" href="{{ '/assets/css/plain.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script src="{{ '/assets/js/main-mode.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
@@ -57,7 +56,7 @@
     </nav>
     {% endif %}
   </header>
-  <main class="main main--{{ main_layout }}{% if main_layout == 'two-columns' %} main--columns{% endif %}{% if main_docs_section %} main--docs{% endif %}{% if page.main_blog_post %} main--post{% endif %}{% if page.main_resource %} main--resource{% endif %}">
+  <main class="main main--{{ main_layout }}{% if main_layout == 'two-columns' %} main--columns{% endif %}{% if page.main_blog_post %} main--post{% endif %}{% if page.main_resource %} main--resource{% endif %}">
     <div class="main-page-heading">
       {{ page.main_heading }}
     </div>

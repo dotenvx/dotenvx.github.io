@@ -49,7 +49,7 @@ $ neon env pull --branch main --file .env.production
 ```
 {: copy="neon env pull --branch main --file .env.production"}
 
-The Neon CLI pulls variables for every service enabled on the branch. Only some of them are secrets. Add a [Dotenv.toml](/docs/dotenvtoml/) to tell Dotenvx which ones to encrypt. Remove the tables for services you don't use.
+The Neon CLI pulls variables for every service enabled on the branch. Only some of them are secrets. Add a [Dotenv.toml](/docs/dotenv-toml/) to tell Dotenvx which ones to encrypt. Remove the tables for services you don't use.
 
 ```toml
 # Dotenv.toml

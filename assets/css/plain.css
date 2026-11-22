@@ -1,4 +1,18 @@
-/* Plain mode uses browser defaults. Only functional hiding rules remain. */
+/* Plain mode uses browser defaults with a few readability rules. */
+img, video {
+  max-width: min(100%, 400px);
+  height: auto;
+}
+
+blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 2px solid #aaa;
+}
+
+pre {
+  overflow-x: auto;
+}
 
 /* Generated Markdown decoration and duplicate presentation labels are not content. */
 .main :is(.main-markdown-syntax, .main-markdown-detail),

@@ -1,10 +1,10 @@
 ---
 title: "Dotenv.toml Spec"
 description: "Define the rules for your environment variables."
-permalink: "/docs/dotenvtoml/spec/"
+permalink: "/docs/dotenv-toml/spec/"
 mark: "Dotenv.toml"
 ---
-Start with the [Dotenv.toml quickstart](/docs/dotenvtoml/quickstart/), or browse [individual settings](/docs/dotenvtoml/).
+Start with the [Dotenv.toml quickstart](/docs/dotenv-toml/quickstart/), or browse [individual settings](/docs/dotenv-toml/).
 
 ## Syntax and defaults
 {: #reference}
@@ -152,4 +152,4 @@ $ dotenvx run -f .env.production -- node index.js
 dotenvx run -- node index.js
 dotenvx run -f .env.production -- node index.js"}
 
-[See commands that use Dotenv.toml](/docs/dotenvtoml/commands/)
+[See commands that use Dotenv.toml](/docs/dotenv-toml/commands/)

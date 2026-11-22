@@ -10,21 +10,21 @@ permalink: /docs/advanced/
 ## Dotenv.toml
 
 <ul class="advanced-cli-commands">
-<li><a class="design-link" href="/docs/dotenvtoml/quickstart/">Dotenv.toml Quickstart</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/env/">Declarations</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/strict/">Strictness</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/required/">Required</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/optional/">Optional</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/type/">Types</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/enum/">Choices</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/min/">Minimum</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/max/">Maximum</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/encrypted/">Encryption</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/redacted/">Redaction</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/file/">File overrides</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/syntax/">Syntax</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/commands/">Commands</a></li>
-<li><a class="design-link" href="/docs/dotenvtoml/">All Dotenv.toml →</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/quickstart/">Dotenv.toml Quickstart</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/env/">Declarations</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/strict/">Strictness</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/required/">Required</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/optional/">Optional</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/type/">Types</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/enum/">Choices</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/min/">Minimum</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/max/">Maximum</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/encrypted/">Encryption</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/redacted/">Redaction</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/file/">File overrides</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/syntax/">Syntax</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/commands/">Commands</a></li>
+<li><a class="design-link" href="/docs/dotenv-toml/">All Dotenv.toml →</a></li>
 </ul>
 {% endcapture %}
 

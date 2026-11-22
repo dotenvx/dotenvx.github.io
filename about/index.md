@@ -17,7 +17,7 @@ That simplicity mattered. But the file still had to reach teammates, build serve
 
 So we built [dotenvx](https://github.com/dotenvx/dotenvx). Encryption lets .env travel with your code while its private key stays separate. The same file becomes something you can version, review, and share through Git.
 
-Now we’re working on the next question: how can an agent work on your app without being handed its secrets? [Dotenv.toml](/docs/dotenvtoml/) makes the rules for secrets explicit so software can enforce them. Your app gets secrets. Your agents get rules.
+Now we’re working on the next question: how can an agent work on your app without being handed its secrets? [Dotenv.toml](/docs/dotenv-toml/) makes the rules for secrets explicit so software can enforce them. Your app gets secrets. Your agents get rules.
 
 Through each step, the aim stays the same: keep secrets safe without making software harder to ship.
 

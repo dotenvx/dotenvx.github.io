@@ -2,7 +2,7 @@
 doc_type: cli
 title: Dotenv.toml
 description: Define the rules for your environment variables.
-permalink: "/docs/dotenvtoml/"
+permalink: "/docs/dotenv-toml/"
 eyebrow: Advanced
 eyebrow_href: "/docs/advanced/"
 command: Dotenv.toml
@@ -10,40 +10,40 @@ command_prompt: false
 options_title: Reference
 options:
 - title: Declarations
-  href: "/docs/dotenvtoml/env/"
+  href: "/docs/dotenv-toml/env/"
 - title: Strictness
-  href: "/docs/dotenvtoml/strict/"
+  href: "/docs/dotenv-toml/strict/"
 - title: Required
-  href: "/docs/dotenvtoml/required/"
+  href: "/docs/dotenv-toml/required/"
 - title: Optional
-  href: "/docs/dotenvtoml/optional/"
+  href: "/docs/dotenv-toml/optional/"
 - title: Types
-  href: "/docs/dotenvtoml/type/"
+  href: "/docs/dotenv-toml/type/"
 - title: Choices
-  href: "/docs/dotenvtoml/enum/"
+  href: "/docs/dotenv-toml/enum/"
 - title: Minimum
-  href: "/docs/dotenvtoml/min/"
+  href: "/docs/dotenv-toml/min/"
 - title: Maximum
-  href: "/docs/dotenvtoml/max/"
+  href: "/docs/dotenv-toml/max/"
 - title: Encryption
-  href: "/docs/dotenvtoml/encrypted/"
+  href: "/docs/dotenv-toml/encrypted/"
 - title: Redaction
-  href: "/docs/dotenvtoml/redacted/"
+  href: "/docs/dotenv-toml/redacted/"
 - title: File overrides
-  href: "/docs/dotenvtoml/file/"
+  href: "/docs/dotenv-toml/file/"
 - title: Syntax
-  href: "/docs/dotenvtoml/syntax/"
+  href: "/docs/dotenv-toml/syntax/"
 - title: Commands
-  href: "/docs/dotenvtoml/commands/"
+  href: "/docs/dotenv-toml/commands/"
 related:
 - title: Dotenv.toml Quickstart
-  href: "/docs/dotenvtoml/quickstart/"
+  href: "/docs/dotenv-toml/quickstart/"
 - title: Full Dotenv.toml Spec
-  href: "/docs/dotenvtoml/spec/"
+  href: "/docs/dotenv-toml/spec/"
 ---
 A Dotenv.toml contains variable names and rules. Values stay in your `.env` files or other environment sources. It is safe to commit.
 
-Start with the [Dotenv.toml quickstart](/docs/dotenvtoml/quickstart/), then explore each declaration and setting below.
+Start with the [Dotenv.toml quickstart](/docs/dotenv-toml/quickstart/), then explore each declaration and setting below.
 
 ```toml
 strict = true

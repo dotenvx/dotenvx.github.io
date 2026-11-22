@@ -48,4 +48,4 @@ fn main() -> std::io::Result<()> {
 
 - [load](/docs/sdk/rust/load/)
 
-For process-output redaction, run your application through [dotenvx run](/docs/cli/run/) with [Dotenv.toml redaction rules](/docs/dotenvtoml/redacted/).
+For process-output redaction, run your application through [dotenvx run](/docs/cli/run/) with [Dotenv.toml redaction rules](/docs/dotenv-toml/redacted/).

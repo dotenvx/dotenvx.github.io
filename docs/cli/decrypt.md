@@ -33,4 +33,4 @@ $ dotenvx decrypt
 ```
 {: copy="dotenvx decrypt"}
 
-Use [Dotenv.toml storage rules](/docs/dotenvtoml/) to select which values remain encrypted or plaintext.
+Use [Dotenv.toml storage rules](/docs/dotenv-toml/) to select which values remain encrypted or plaintext.

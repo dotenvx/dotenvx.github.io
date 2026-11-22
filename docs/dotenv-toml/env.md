@@ -2,34 +2,34 @@
 doc_type: cli
 title: Declarations
 description: Declare variable names and the rules they must follow.
-permalink: "/docs/dotenvtoml/env/"
+permalink: "/docs/dotenv-toml/env/"
 eyebrow: Dotenv.toml
-eyebrow_href: "/docs/dotenvtoml/"
+eyebrow_href: "/docs/dotenv-toml/"
 command: '[env.DATABASE_URL]'
 command_prompt: false
 options_title: Settings
 options:
 - title: Required
-  href: "/docs/dotenvtoml/required/"
+  href: "/docs/dotenv-toml/required/"
 - title: Optional
-  href: "/docs/dotenvtoml/optional/"
+  href: "/docs/dotenv-toml/optional/"
 - title: Types
-  href: "/docs/dotenvtoml/type/"
+  href: "/docs/dotenv-toml/type/"
 - title: Choices
-  href: "/docs/dotenvtoml/enum/"
+  href: "/docs/dotenv-toml/enum/"
 - title: Minimum
-  href: "/docs/dotenvtoml/min/"
+  href: "/docs/dotenv-toml/min/"
 - title: Maximum
-  href: "/docs/dotenvtoml/max/"
+  href: "/docs/dotenv-toml/max/"
 - title: Encryption
-  href: "/docs/dotenvtoml/encrypted/"
+  href: "/docs/dotenv-toml/encrypted/"
 - title: Redaction
-  href: "/docs/dotenvtoml/redacted/"
+  href: "/docs/dotenv-toml/redacted/"
 related:
 - title: Dotenv.toml Quickstart
-  href: "/docs/dotenvtoml/quickstart/"
+  href: "/docs/dotenv-toml/quickstart/"
 - title: Full Dotenv.toml Spec
-  href: "/docs/dotenvtoml/spec/"
+  href: "/docs/dotenv-toml/spec/"
 ---
 Save the file as `Dotenv.toml` in your project directory. It contains names and rules. Values stay in `.env` or your other environment sources.
 

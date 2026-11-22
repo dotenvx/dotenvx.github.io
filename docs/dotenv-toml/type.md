@@ -2,30 +2,30 @@
 doc_type: cli
 title: Types
 description: Validate values before your app starts.
-permalink: "/docs/dotenvtoml/type/"
+permalink: "/docs/dotenv-toml/type/"
 eyebrow: Dotenv.toml
-eyebrow_href: "/docs/dotenvtoml/"
+eyebrow_href: "/docs/dotenv-toml/"
 command: '[env.PORT]'
 command_prompt: false
 options_title: Types
 options:
 - title: integer
-  href: "/docs/dotenvtoml/type/integer/"
+  href: "/docs/dotenv-toml/type/integer/"
 - title: boolean
-  href: "/docs/dotenvtoml/type/boolean/"
+  href: "/docs/dotenv-toml/type/boolean/"
 - title: port
-  href: "/docs/dotenvtoml/type/port/"
+  href: "/docs/dotenv-toml/type/port/"
 - title: url
-  href: "/docs/dotenvtoml/type/url/"
+  href: "/docs/dotenv-toml/type/url/"
 - title: email
-  href: "/docs/dotenvtoml/type/email/"
+  href: "/docs/dotenv-toml/type/email/"
 - title: ip
-  href: "/docs/dotenvtoml/type/ip/"
+  href: "/docs/dotenv-toml/type/ip/"
 related:
 - title: Dotenv.toml Quickstart
-  href: "/docs/dotenvtoml/quickstart/"
+  href: "/docs/dotenv-toml/quickstart/"
 - title: Full Dotenv.toml Spec
-  href: "/docs/dotenvtoml/spec/"
+  href: "/docs/dotenv-toml/spec/"
 ---
 Types validate environment values, which remain strings. The default type is `"string"`.
 
@@ -38,4 +38,4 @@ storage = "plaintext"
 type = "url"
 ```
 
-Choose a type below. Numeric types also support inclusive [`min`](/docs/dotenvtoml/min/) and [`max`](/docs/dotenvtoml/max/) bounds.
+Choose a type below. Numeric types also support inclusive [`min`](/docs/dotenv-toml/min/) and [`max`](/docs/dotenv-toml/max/) bounds.

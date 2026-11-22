@@ -1,10 +1,10 @@
 ---
 title: Dotenv.toml Quickstart
 description: Create your first Dotenv.toml.
-permalink: "/docs/dotenvtoml/quickstart/"
+permalink: "/docs/dotenv-toml/quickstart/"
 hero_title: "Dotenv.toml"
 eyebrow: "Dotenv.toml"
-eyebrow_href: /docs/dotenvtoml/
+eyebrow_href: /docs/dotenv-toml/
 mark: "Dotenv.toml"
 ---
 ## Create
@@ -59,4 +59,4 @@ Replace `node index.js` with your app's command. Try `PORT=not-a-port` in `.env`
 
 The app receives the real database URL. Dotenvx redacts it in matching terminal output. Commit `Dotenv.toml` alongside the encrypted `.env` file.
 
-[Read the full Dotenv.toml spec →](/docs/dotenvtoml/spec/)
+[Read the full Dotenv.toml spec →](/docs/dotenv-toml/spec/)

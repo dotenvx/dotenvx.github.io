@@ -2,16 +2,16 @@
 doc_type: cli
 title: Optional
 description: Allow a variable to be missing or blank.
-permalink: "/docs/dotenvtoml/optional/"
+permalink: "/docs/dotenv-toml/optional/"
 eyebrow: Dotenv.toml
-eyebrow_href: "/docs/dotenvtoml/"
+eyebrow_href: "/docs/dotenv-toml/"
 command: '[env.SENTRY_DSN]'
 command_prompt: false
 related:
 - title: Dotenv.toml Quickstart
-  href: "/docs/dotenvtoml/quickstart/"
+  href: "/docs/dotenv-toml/quickstart/"
 - title: Full Dotenv.toml Spec
-  href: "/docs/dotenvtoml/spec/"
+  href: "/docs/dotenv-toml/spec/"
 ---
 `required = true` requires a value that is present and not blank. `optional = true` allows missing or blank values. When an optional value is supplied, its other rules still apply.
 

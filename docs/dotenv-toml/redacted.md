@@ -2,16 +2,16 @@
 doc_type: cli
 title: Redaction
 description: Keep secret values out of terminal output.
-permalink: "/docs/dotenvtoml/redacted/"
+permalink: "/docs/dotenv-toml/redacted/"
 eyebrow: Dotenv.toml
-eyebrow_href: "/docs/dotenvtoml/"
+eyebrow_href: "/docs/dotenv-toml/"
 command: '[env.API_KEY]'
 command_prompt: false
 related:
 - title: Dotenv.toml Quickstart
-  href: "/docs/dotenvtoml/quickstart/"
+  href: "/docs/dotenv-toml/quickstart/"
 - title: Full Dotenv.toml Spec
-  href: "/docs/dotenvtoml/spec/"
+  href: "/docs/dotenv-toml/spec/"
 ---
 `redacted = true` marks a value for output redaction. Your app receives the real value while matching terminal output shows `[REDACTED]`. Redaction is off by default. `redact` is an alias.
 

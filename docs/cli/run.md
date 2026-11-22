@@ -94,4 +94,4 @@ $ dotenvx run -- node index.js
 
 This works cross-platform across plaintext and encrypted .env files.
 
-Configure validation, storage, and redaction rules with [Dotenv.toml](/docs/dotenvtoml/).
+Configure validation, storage, and redaction rules with [Dotenv.toml](/docs/dotenv-toml/).

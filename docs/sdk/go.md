@@ -50,4 +50,4 @@ See the [Go quickstart](/docs/go/) for the full encryption workflow.
 - [Overload](/docs/sdk/go/overload/)
 - [Read](/docs/sdk/go/read/)
 
-For process-output redaction, run your application through [dotenvx run](/docs/cli/run/) with [Dotenv.toml redaction rules](/docs/dotenvtoml/redacted/).
+For process-output redaction, run your application through [dotenvx run](/docs/cli/run/) with [Dotenv.toml redaction rules](/docs/dotenv-toml/redacted/).

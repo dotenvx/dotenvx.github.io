@@ -1,22 +1,9 @@
 
-> Install dotenvx
-
-## Command line
-
-Run dotenvx with any language or framework.
+> Run dotenvx with any language or framework.
 
 {% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
 ```bash
 {{ cli.command }}
-```
-
-[install.sh](https://dotenvx.sh/install.sh)
-
-### Windows
-
-{% assign windows = site.data.install_methods | where: 'name', 'Windows' | first %}
-```bash
-{{ windows.command }}
 ```
 
 Check your installation:
@@ -25,27 +12,20 @@ Check your installation:
 dotenvx --version
 ```
 
-[Quickstart](/docs/quickstart/)
+Then follow the [Quickstart]({{ '/docs/quickstart/' | relative_url }}) to encrypt your first .env.
 
-## In your code
-{: .install-sdks}
+## Other ways to install
 
-Load encrypted environment variables directly from your app.
+### Windows
 
-{% assign v2_install_sdks = site.data.install_sdks | concat: site.data.install_sdks_v2 %}
-{% assign javascript_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name == 'Node.js' or sdk.name == 'Next.js'" %}
-{% assign remaining_sdks = v2_install_sdks | where_exp: 'sdk', "sdk.name != 'Node.js' and sdk.name != 'Next.js'" %}
-{% assign v2_install_sdks = javascript_sdks | concat: remaining_sdks %}
-{% for sdk in v2_install_sdks %}
-{% assign sdk_slug = sdk.name | downcase | remove: '.' %}
-{% assign sdk_path = sdk_slug | prepend: '/docs/sdk/' | append: '/' %}
-### [{{ sdk.name }}]({{ sdk_path | relative_url }})
-
+{% assign windows = site.data.install_methods | where: 'name', 'Windows' | first %}
 ```bash
-{{ sdk.command }}
-{% if sdk.main_extra_command -%}
-{{ sdk.main_extra_command }}
-{% endif -%}
+{{ windows.command }}
 ```
 
-{% endfor %}
+### SDKs
+
+To load encrypted environment variables directly from your app, choose your language:
+
+{% assign sdk_page = site.pages | where: 'url', '/docs/sdk/' | first %}
+{% include main-sdk-list.md languages=sdk_page.sdk_languages %}

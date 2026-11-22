@@ -207,7 +207,7 @@ body:not(.main-has-subnav) > .main-header {
 
   .main > h1 { column-span: all; }
   .main :is(h2, h3) { break-after: avoid-column; }
-  .main :is(.quickstart-production, .install-sdks) { break-before: column; margin-top: 0; }
+  .main .quickstart-production { break-before: column; margin-top: 0; }
   .main :is(pre, .design-codeblock-wrap, table, .main-image, .main-company-logos) { break-inside: avoid-column; }
   .main-docs-list { break-inside: avoid-column; }
   .main p { orphans: 3; widows: 3; break-inside: avoid-column; }
@@ -217,24 +217,24 @@ body:not(.main-has-subnav) > .main-header {
   .main--columns { --main-columns: var(--main-max-columns); }
 }
 
-/* Keep the homepage's three reading paths together; use the shared wide-screen breakpoint. */
-.main-home-sections { display: grid; gap: 32px; }
-.main-home-sections > div > :first-child { margin-top: 0; }
-.main-home-sections > div > :last-child { margin-bottom: 0; }
-.main-column-content:has(> .main-home-sections) { column-count: auto; }
+/* Keep related prose and indexes together using the shared column breakpoints. */
+.main-section-columns { display: grid; gap: 32px; }
+.main-section-columns > div > :first-child { margin-top: 0; }
+.main-section-columns > div > :last-child { margin-bottom: 0; }
+.main-column-content:has(> .main-section-columns) { column-count: auto; }
 
 @media screen and (min-width: 1000px) {
-  .main-home-sections {
+  .main-section-columns {
     grid-template-columns: repeat(var(--main-columns), minmax(0, 1fr));
     grid-template-areas: "usage design" "custody design";
     grid-template-rows: min-content 1fr;
     column-gap: var(--main-column-gap);
   }
-  .main-home-sections > div:nth-child(1) { grid-area: usage; }
-  .main-home-sections > div:nth-child(2) { grid-area: design; }
-  .main-home-sections > div:nth-child(3) { grid-area: custody; }
-  .main-home-sections > div { position: relative; }
-  .main-home-sections > div:nth-child(even)::before {
+  .main-section-columns > div:nth-child(1) { grid-area: usage; }
+  .main-section-columns > div:nth-child(2) { grid-area: design; }
+  .main-section-columns > div:nth-child(3) { grid-area: custody; }
+  .main-section-columns > div { position: relative; }
+  .main-section-columns > div:nth-child(even)::before {
     content: "";
     position: absolute;
     inset-block: 0;
@@ -244,11 +244,11 @@ body:not(.main-has-subnav) > .main-header {
 }
 
 @media screen and (min-width: 1536px) {
-  .main-home-sections {
+  .main-section-columns {
     grid-template-areas: "usage design custody";
     grid-template-rows: auto;
   }
-  .main-home-sections > div + div::before {
+  .main-section-columns > div + div::before {
     content: "";
     position: absolute;
     inset-block: 0;

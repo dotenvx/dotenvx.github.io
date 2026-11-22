@@ -150,7 +150,7 @@ App listening on port 80
 
 
 
-<div class="main-home-sections" markdown="block">
+<div class="main-section-columns" markdown="block">
 
 <div markdown="block">
 

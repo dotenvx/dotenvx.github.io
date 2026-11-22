@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "native push -fk"
-description: "Path to your .env.keys file."
+title: native push -fk
+description: Path to your .env.keys file.
 permalink: "/docs/cli/native-push-fk/"
-command: "dotenvx native push -fk"
-eyebrow: "dotenvx native push"
+command: dotenvx native push -fk
+eyebrow: dotenvx native push
 eyebrow_href: "/docs/cli/native/push/"
 ---
 

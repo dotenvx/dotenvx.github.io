@@ -1,34 +1,38 @@
 ---
 doc_type: cli
 title: "-f"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
-description: "Compose multiple .env files for environment variables loading, as you need."
-permalink: /docs/cli/run-f/
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
+description: Compose multiple .env files for environment variables loading, as you
+  need.
+permalink: "/docs/cli/run-f/"
 redirect_from:
-  - /docs/advanced/run-f
-  - /docs/advanced/run-f/
-  - /docs/ref/cli/run-f
-  - /docs/ref/cli/run-f/
+- "/docs/advanced/run-f"
+- "/docs/advanced/run-f/"
+- "/docs/ref/cli/run-f"
+- "/docs/ref/cli/run-f/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 video: cli-run-files-comma-separated
 ---
 
 ```console
 $ echo "HELLO=local" > .env.local
-echo "HELLO=World" > .env
-echo "console.log('Hello ' + process.env.HELLO)" > index.js
+$ echo "HELLO=World" > .env
+$ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-dotenvx run -f .env.local,.env -- node index.js
+$ dotenvx run -f .env.local,.env -- node index.js
 ⟐ injected env (1) from .env.local, .env
 Hello local
 ```
-{: copy="echo \"HELLO=local\" > .env.local"}
+{: copy="echo \"HELLO=local\" > .env.local
+echo \"HELLO=World\" > .env
+echo \"console.log('Hello ' + process.env.HELLO)\" > index.js
+dotenvx run -f .env.local,.env -- node index.js"}
 
 Comma-separate multiple files after a single `-f`. The order matters: subsequent files do NOT override pre-existing variables defined in previous files or env. This follows historic principle. For example, above local wins – from the first file.

@@ -1,10 +1,8 @@
 ---
 title: Python
-description: Load and manage encrypted env from Python.
-permalink: /docs/sdk/python/
-eyebrow: "SDKs"
-eyebrow_href: "/docs/sdk"
-icon: "python"
+description: Load encrypted environment values with the Python SDK.
+permalink: "/docs/sdk/python/"
+icon: python
 ---
 
 ## Packages
@@ -35,3 +33,11 @@ load_dotenv()
 {: copy="false"}
 
 See the [Python](/docs/python/), [Flask](/docs/flask/), or [uv](/docs/uv/) quickstart for a full walkthrough.
+## Reference
+
+- [load_dotenv](/docs/sdk/python/load-dotenv/)
+- [load_dotenvx](/docs/sdk/python/load-dotenvx/)
+- [dotenv_values](/docs/sdk/python/dotenv-values/)
+- [find_dotenv](/docs/sdk/python/find-dotenv/)
+
+Stored-key custody uses a compatible Dotenvx CLI with sdk and the required provider feature on PATH. Matching environment keys and local .env.keys do not require remote custody.

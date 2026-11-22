@@ -1,28 +1,30 @@
 ---
 doc_type: cli
-title: "protect"
-description: "Install a required Git clean filter for all existing and future repositories for your user. Run this once, even outside a Git repository:"
-permalink: /docs/cli/protect/
+title: protect
+description: Protect secrets from code commits.
+permalink: "/docs/cli/protect/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
 related:
-  - title: Encrypt
-    href: /docs/cli/encrypt/
-  - title: Private-key files
-    href: /docs/env-keys-file/
-  - title: Precommit
-    href: /docs/cli/precommit/
-command: "dotenvx protect"
+- title: Encrypt
+  href: "/docs/cli/encrypt/"
+- title: Private-key files
+  href: "/docs/env-keys-file/"
+- title: Precommit
+  href: "/docs/cli/precommit/"
+command: dotenvx protect
 options_title: Options
 options:
-  - title: "protect --docker"
-    href: /docs/cli/protect-docker/
-  - title: "protect --docker directory"
-    href: /docs/cli/protect-docker-directory/
+- title: protect --docker
+  href: "/docs/cli/protect-docker-directory/"
+- title: protect --docker
+  href: "/docs/cli/protect-docker/"
+global_options: true
 ---
+
 Run once to protect existing and future repositories on this machine:
 
 ```console
@@ -60,3 +62,5 @@ Under the hood, this uses a Git filter to check env files before they're staged,
   </li>
 {% endcapture %}
 {% include components/design-list.html title="FAQ" items=protect_faq_items %}
+
+Requires the protect build feature. Add it with [dotenvx install --add](/docs/cli/install-add/).

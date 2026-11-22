@@ -1,26 +1,28 @@
 ---
 doc_type: cli
 title: login
-eyebrow: "dotenvx armor"
-eyebrow_href: /docs/cli/armor/introduction/
+eyebrow: dotenvx armor
+eyebrow_href: "/docs/cli/armor/introduction/"
 description: Log in to Dotenvx Armor.
-permalink: /docs/cli/armor/login/
+permalink: "/docs/cli/armor/login/"
 redirect_from:
-  - /docs/advanced/armor-login
-  - /docs/advanced/armor-login/
-  - /docs/cli/login
-  - /docs/cli/login/
-  - /docs/ref/cli/armor/login
-  - /docs/ref/cli/armor/login/
+- "/docs/advanced/armor-login"
+- "/docs/advanced/armor-login/"
+- "/docs/ref/cli/armor/login"
+- "/docs/ref/cli/armor/login/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Armor
-    href: /docs/cli/armor/introduction/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Armor
+  href: "/docs/cli/armor/introduction/"
+command: dotenvx armor login
+global_options: true
+options:
+- title: armor login --hostname
+  href: "/docs/cli/armor-login-hostname/"
 ---
-
 ```console
 $ dotenvx armor login
 ```
@@ -29,3 +31,5 @@ $ dotenvx armor login
 After authentication, dotenvx first attempts to store your access token in your operating system's native secret store: macOS Keychain, Windows Credential Manager, or Linux Secret Service.
 
 If native secure storage is unavailable, dotenvx falls back to its [settings file](/docs/cli/armor/settings). This follows a common CLI credential-storage pattern: prefer protected OS storage when available while remaining usable in headless or minimal environments.
+
+Requires the armor build feature. Add it with [dotenvx install --add](/docs/cli/install-add/).

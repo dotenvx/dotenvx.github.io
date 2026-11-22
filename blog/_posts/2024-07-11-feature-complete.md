@@ -26,7 +26,7 @@ Additionally, you can pipe `encrypt` and `decrypt` to any file using the `--stdo
 
 Here's a basic example:
 
-```sh
+```console
 $ echo "HELLO=World" > .env
 $ dotenvx encrypt --stdout > secrets.txt
 $ dotenvx decrypt -f secrets.txt --stdout
@@ -39,6 +39,9 @@ DOTENV_PUBLIC_KEY="0240666d1348173ef2713433a6125e0a27f2352415f5e6d96c68028521bad
 # .env
 HELLO="World"
 ```
+{: copy="echo \"HELLO=World\" > .env
+dotenvx encrypt --stdout > secrets.txt
+dotenvx decrypt -f secrets.txt --stdout"}
 
 I think this will be particularly useful to custom docker workflows.
 

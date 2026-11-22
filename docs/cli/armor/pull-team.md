@@ -1,15 +1,16 @@
 ---
 doc_type: cli
-permalink: /docs/cli/armor/pull-team/
+permalink: "/docs/cli/armor/pull-team/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-title: "armor pull --team"
-command: "dotenvx armor pull --team"
-description: "Select an Armor team."
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+title: armor pull --team
+command: dotenvx armor pull --team
+description: Select an Armor team.
 ---
+
 Select an Armor team.
 
 ```console

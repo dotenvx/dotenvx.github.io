@@ -1,10 +1,8 @@
 ---
 title: Ruby
-description: Load and manage encrypted env from Ruby and Rails.
-permalink: /docs/sdk/ruby/
-eyebrow: "SDKs"
-eyebrow_href: "/docs/sdk"
-icon: "ruby"
+description: Load encrypted environment values with the Ruby SDK.
+permalink: "/docs/sdk/ruby/"
+icon: ruby
 ---
 
 ## Packages
@@ -49,3 +47,17 @@ Dotenvx.load
 {: copy="false"}
 
 See the [Ruby](/docs/ruby/), [Rails](/docs/rails/), or [Sinatra](/docs/sinatra/) quickstart for a full walkthrough.
+## Reference
+
+- [load](/docs/sdk/ruby/load/)
+- [load!](/docs/sdk/ruby/load-bang/)
+- [overwrite](/docs/sdk/ruby/overwrite/)
+- [overwrite!](/docs/sdk/ruby/overwrite-bang/)
+- [parse](/docs/sdk/ruby/parse/)
+- [update](/docs/sdk/ruby/update/)
+- [preload](/docs/sdk/ruby/preload/)
+- [Rails](/docs/sdk/ruby/rails/)
+- [overload](/docs/sdk/ruby/overwrite/)
+- [overload!](/docs/sdk/ruby/overwrite-bang/)
+
+Stored-key custody uses a compatible Dotenvx CLI with sdk and the required provider feature on PATH. Matching environment keys and local .env.keys do not require remote custody.

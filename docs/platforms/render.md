@@ -22,7 +22,7 @@ Deploying to [Render](https://render.com) takes more steps than we document here
 FROM node:20
 WORKDIR /app
 
-RUN curl -sfS https://dotenvx.sh/install.sh | sh
+RUN curl -sfS https://dotenvx.sh | sh
 
 COPY package*.json ./
 RUN npm install
@@ -34,8 +34,7 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 {: copy="false"}
 
 {% assign github_install = '/docs/install/#github' %}
-{% assign github_install = 'https://github.com/dotenvx/dotenvx/releases' %}
-If you prefer, [install from GitHub Releases]({{ github_install }}) or view the [install.sh](https://dotenvx.sh/install.sh) file before executing.
+For custom builds and installation options, see [dotenvx install](/docs/cli/install/).
 
 ## Encrypt production
 
@@ -54,4 +53,4 @@ Commit `.env.production`. Do not commit `.env.keys`.
 
 ## Set decryption key
 
-Set `DOTENV_PRIVATE_KEY` to your production private key and `DOTENV_FILE` to `.env.production` in Render's environment variable manager, then redeploy. Your app injects env from the encrypted `.env.production` file.
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` to your production private key and `DOTENV_FILE` to `.env.production` in Render's environment variable manager, then redeploy. Your app injects env from the encrypted `.env.production` file.

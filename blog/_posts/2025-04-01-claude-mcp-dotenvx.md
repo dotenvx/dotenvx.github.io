@@ -14,7 +14,7 @@ Dotenvx works with [Claude MCP](https://www.anthropic.com/news/model-context-pro
 
 Type `claude mcp add`.
 
-```
+```console
 $ claude mcp add
 Add MCP Server
 
@@ -23,6 +23,7 @@ Choose a unique name for this server:
 > dotenvx
 
 ```
+{: copy="claude mcp add"}
 
 ## Step 2
 

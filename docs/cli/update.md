@@ -1,9 +1,13 @@
 ---
 doc_type: cli
-title: "update"
-description: "Update dotenvx."
+title: update
+description: Update Dotenvx while preserving the installed build features.
 permalink: "/docs/cli/update/"
-command: "dotenvx update"
+command: dotenvx update
+global_options: true
+options:
+- title: update --hostname
+  href: "/docs/cli/update-hostname/"
 ---
 
 ```console

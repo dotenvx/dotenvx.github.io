@@ -8,9 +8,9 @@
   package_url: https://rubygems.org/gems/dotenvx
   command: gem install dotenvx
   main_extra_command: gem install dotenvx-rails
-  prompt: Install the Dotenvx Ruby SDK in this project. Inspect its Ruby and Bundler setup first, add the dotenvx gem using the project's dependency workflow, and verify that require "dotenvx" succeeds. See https://github.com/dotenvx/dotenvx-ruby for usage. Do not change my .env files or application code.
+  prompt: Install the Dotenvx Ruby SDK in this project. Inspect its Ruby and Bundler setup first, add the dotenvx gem using the project's dependency workflow, and verify that require "dotenvx" succeeds. See https://dotenvx.com/docs/sdk/ruby/ for usage. Do not change my .env files or application code.
 - name: Python
   href: /docs/sdk/python/
   package_url: https://pypi.org/project/python-dotenvx/
   command: pip install python-dotenvx
-  prompt: Install the Dotenvx Python SDK in this project using pip install python-dotenvx. Inspect its Python environment and dependency workflow first, add the dependency in the appropriate environment, and verify that import dotenvx succeeds. See https://github.com/dotenvx/python-dotenvx for usage. Do not change my .env files or application code.
+  prompt: Install the Dotenvx Python SDK in this project using pip install python-dotenvx. Inspect its Python environment and dependency workflow first, add the dependency in the appropriate environment, and verify that import dotenvx succeeds. See https://dotenvx.com/docs/sdk/python/ for usage. Do not change my .env files or application code.

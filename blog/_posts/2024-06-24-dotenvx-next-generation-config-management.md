@@ -46,7 +46,7 @@ Let's dig into each. I'll do my best to show rather than tell.
 
 [dotenvx](https://github.com/dotenvx/dotenvx) works the same across every language, framework, and platform – inject your env at runtime with `dotenvx run -- your-cmd`.
 
-```
+```console
 $ echo "HELLO=World" > .env
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
@@ -57,6 +57,10 @@ $ dotenvx run -- node index.js
 Hello World # with dotenvx
 > :-D
 ```
+{: copy="echo \"HELLO=World\" > .env
+echo \"console.log('Hello ' + process.env.HELLO)\" > index.js
+node index.js
+dotenvx run -- node index.js"}
 
 The [.env parsing engine](https://github.com/dotenvx/dotenvx/blob/6f5a91370437716c93ead3e4400d1ee46e2b77ef/src/lib/helpers/parseDecryptEvalExpand.js#L6), [variable expansion](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), [command substitution](https://github.com/dotenvx/dotenvx?tab=readme-ov-file#run-anywhere), and more work exactly the same. Install dotenvx via [npm](https://www.npmjs.com/package/@dotenvx/dotenvx), [brew](https://github.com/dotenvx/homebrew-brew), [curl](/docs/install/#curl), [docker](/docs/docker/), [windows](/docs/install/#windows), and [more](/docs/install/).
 
@@ -68,7 +72,7 @@ This solves the problem of *inconsistency across platforms*. ✅ You'll get the 
 
 Create a `.env.production` file and use `-f` to load it. It's straightforward, yet flexible.
 
-```sh
+```console
 $ echo "HELLO=production" > .env.production
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
@@ -77,12 +81,15 @@ $ dotenvx run -f .env.production -- node index.js
 Hello production
 > ^^
 ```
+{: copy="echo \"HELLO=production\" > .env.production
+echo \"console.log('Hello ' + process.env.HELLO)\" > index.js
+dotenvx run -f .env.production -- node index.js"}
 
 While everything in [dotenvx](https://github.com/dotenvx/dotenvx) is inspired by community suggestions, this multi-environment feature particularly is. There were suggestions many times for something similar before I came to understand its usefulness. I'm convinvced now it cleanly solves the problem of *juggling multiple environments* when built into the command line. ✅
 
 You can even compose multiple environments together with multiple `-f` flags.
 
-```sh
+```console
 $ echo "HELLO=local" > .env.local
 $ echo "HELLO=World" > .env
 $ echo "console.log('Hello ' + process.env.HELLO)" > index.js
@@ -91,6 +98,10 @@ $ dotenvx run -f .env.local -f .env -- node index.js
 [dotenvx] injecting env (1) from .env.local, .env
 Hello local
 ```
+{: copy="echo \"HELLO=local\" > .env.local
+echo \"HELLO=World\" > .env
+echo \"console.log('Hello ' + process.env.HELLO)\" > index.js
+dotenvx run -f .env.local -f .env -- node index.js"}
 
 <a href="https://github.com/dotenvx/dotenvx?tab=readme-ov-file#multiple-environments"><img src="https://github.com/dotenvx/dotenvx/assets/3848/8983a359-32f9-459a-861c-66bfdf4e87a1" /></a>
 
@@ -100,10 +111,11 @@ Handy! But it's the next feature, **encryption**, that is the real game changer 
 
 Add encryption to your .env files with a single command. Run `dotenvx encrypt`.
 
-```sh
+```console
 $ dotenvx encrypt
 ✔ encrypted (.env)
 ```
+{: copy="dotenvx encrypt"}
 
 ```
 #/-------------------[DOTENV_PUBLIC_KEY]--------------------/

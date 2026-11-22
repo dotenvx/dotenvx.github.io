@@ -48,8 +48,15 @@ $ echo "HELLO=World" > .env
 
 Runtime leak protection: Claude gets real secrets, while log redaction strips them from its output.
 
+Create Dotenvx.toml with a redaction rule:
+
+```toml
+[env.HELLO]
+redacted = true
+```
+
 ```console
-$ dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions
+$ dotenvx run -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions
 Hello [REDACTED]
 ```
-{: copy="dotenvx run --redact -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions"}
+{: copy="dotenvx run -- claude -p 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --dangerously-skip-permissions"}

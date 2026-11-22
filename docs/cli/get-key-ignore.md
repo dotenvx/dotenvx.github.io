@@ -1,20 +1,20 @@
 ---
 doc_type: cli
-title: "KEY --ignore"
-eyebrow: "dotenvx get"
-eyebrow_href: /docs/cli/get/
+title: KEY --ignore
+eyebrow: dotenvx get
+eyebrow_href: "/docs/cli/get/"
 description: Ignore specific error codes.
-permalink: /docs/cli/get-key-ignore/
+permalink: "/docs/cli/get-key-ignore/"
 redirect_from:
-  - /docs/ref/cli/get-key-ignore/
-  - /docs/ref/cli/get-key-ignore
+- "/docs/ref/cli/get-key-ignore/"
+- "/docs/ref/cli/get-key-ignore"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Get
-    href: /docs/cli/get/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Get
+  href: "/docs/cli/get/"
 ---
 
 ```console

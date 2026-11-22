@@ -51,9 +51,10 @@ A secure dotenv–from the creator of [dotenv](https://github.com/motdotla/doten
 {: #encrypt}
 
 {% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
-```bash
-{{ cli.command }}
+```console
+$ {{ cli.command }}
 ```
+{: copy="{{ cli.command }}"}
 
 ```cli
 $ dotenvx encrypt
@@ -164,7 +165,7 @@ App listening on port 80
 
 <p><img class="main-image" src="{{ '/home.png' | relative_url }}" alt="A man holding a drink served in a pineapple" width="768" height="307"></p>
 
-[Quickstart]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
+[Install]({{ '/docs/install/' | relative_url }}){: data-umami-event="Homepage Install button"} • [Quickstart]({{ '/docs/quickstart/' | relative_url }}){: data-umami-event="Homepage Quickstart button"}
 
 {{ home_usage_section | strip }}
 
@@ -194,7 +195,7 @@ When you need to manage access across a team, [Armor]({{ '/armor/' | relative_ur
 
 - [22 million](https://www.npmjs.com/package/@dotenvx/dotenvx) weekly npm installs
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code)
-- Prior Head of Security DevOps at Zoom–[John Zila](/members/watt/)
+- The previous [Head of DevSecOps at Zoom](/members/watt/)
 
 </div>
 

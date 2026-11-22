@@ -9,38 +9,20 @@ parent_title: Rust
 side_path_kind: Alternative
 ---
 
-The main example accepts a filename. For example:
+The SDK reads DOTENV_FILE to select a file. Create and encrypt .env.ci first, then supply its key through .env.keys or DOTENV_PRIVATE_KEY_CI:
 
 ```console
-$ cargo run -- .env.ci
+$ DOTENV_FILE=.env.ci cargo run
 ```
-{: copy="cargo run -- .env.ci"}
+{: copy="DOTENV_FILE=.env.ci cargo run"}
 
-Create and encrypt .env.ci first, and supply its key through .env.keys or DOTENV_PRIVATE_KEY_CI. The example finds .env.keys beside the selected file.
+Use a comma-separated list to load multiple files:
 
-parse handles one source string at a time. To combine files, parse each separately and pass the accumulated values through process_env:
-
-```rust
-use dotenvx_primitives::{parse, ParseOptions};
-use std::{collections::HashMap, error::Error, fs};
-
-fn load_files(files: &[&str]) -> Result<HashMap<String, String>, Box<dyn Error>> {
-    let mut values = ParseOptions::default().process_env;
-    for file in files {
-        let source = fs::read_to_string(file)?;
-        let result = parse(&source, &ParseOptions {
-            process_env: values.clone(),
-            ..Default::default()
-        });
-        if let Some(error) = result.errors.into_iter().next() {
-            return Err(error.into());
-        }
-        values.extend(result.parsed);
-    }
-    Ok(values)
-}
+```console
+$ DOTENV_FILE=.env.production,.env cargo run
 ```
+{: copy="DOTENV_FILE=.env.production,.env cargo run"}
 
-For files at the project root, call load_files(&[".env.production", ".env"]). Existing process variables win, followed by the first file, then the second. Each file is decrypted using its own public-key metadata and the available keyring.
+Existing process variables win, followed by the first file, then the second. Each file is decrypted using its public-key metadata and available private keys. Loading is strict, so every selected file must exist and decrypt successfully.
 
-This function returns the merged map, including existing process values. Pass individual values to your application; do not print the map.
+[load](/docs/sdk/rust/load/) returns the resolved environment as a map, including existing process values. Pass individual values to your application; do not print the map.

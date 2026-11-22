@@ -11,7 +11,7 @@ side_path_kind: Alternative
 
 Most apps only need secrets when the container starts. If your build itself needs them, use a [BuildKit secret mount](https://docs.docker.com/build/building/secrets/).
 
-For a local example, create and encrypt .env.build with a demonstration BUILD_TOKEN value. Choose **Local** and store its key in .env.keys:
+For a local example, create and encrypt .env.build with a demonstration BUILD_TOKEN value. Choose **Classic (.env.keys)** and store its key in .env.keys:
 
 ```dotenv
 # .env.build

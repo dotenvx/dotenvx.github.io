@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "ls -f"
-description: "Path to your env file(s)."
+title: ls -f
+description: Path to your env file(s).
 permalink: "/docs/cli/ls-f/"
-command: "dotenvx ls -f"
-eyebrow: "dotenvx ls"
+command: dotenvx ls -f
+eyebrow: dotenvx ls
 eyebrow_href: "/docs/cli/ls/"
 ---
 

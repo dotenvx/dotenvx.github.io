@@ -47,7 +47,6 @@ Encrypt it with a single command.
 
 ```console
 $ dotenvx encrypt
-◈ encrypted (.env)
 ```
 {: copy="dotenvx encrypt"}
 
@@ -55,9 +54,9 @@ The values become ciphertext and only your private key can unlock them.
 
 ```dotenv
 # .env
-DOTENV_PUBLIC_KEY="0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
+DOTENV_PUBLIC_KEY="DOTENV-PUBLIC-KEY-3-SECP256K1-0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
 
-HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTOT3Ci8IKrdIg2TMZFoq1mDR6yb06QCRvqHXtpkZkAHYCEHfeWqqC8tMFovcYq5JS2uZSrC/qUGDA=="
+HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0220d83035-BP8FZxI4vhmRmfTAmvZGnzBd6AoJG0ZSjKDLRbE4XpxaWBDD7PpxLMkB/2I0glwVkHXeIcpJwY13qtdhjySs+a9NT9myy5uzErUYb2Uc/1LDY886yF8SxslAxfiJzhZ5NV3qQDQ6Tg=="
 ```
 {: class="design-codeblock--nowrap"}
 
@@ -94,7 +93,6 @@ Run your app:
 
 {% capture run_commands %}
 $ ruby app.rb
-⟐ injected env (2) from .env
 Hello Secret
 {% endcapture %}
 {% include components/design-codeblock.html value=run_commands copy_text="ruby app.rb" format="cli" %}
@@ -107,13 +105,13 @@ Find your private key with the keypair command.
 
 ```console
 $ dotenvx keypair
-{"DOTENV_PUBLIC_KEY":"0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
+{"DOTENV_PUBLIC_KEY":"DOTENV-PUBLIC-KEY-3-SECP256K1-0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990","DOTENV_PRIVATE_KEY":"DOTENV-PRIVATE-KEY-3-SECP256K1-b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf"}
 ```
 {: copy="dotenvx keypair" class="design-codeblock--nowrap"}
 
 Deploy your code and encrypted .env file, install your gems, and set DOTENV_PRIVATE_KEY on your production environment. Keep .env.keys on your local machine.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" value="DOTENV-PRIVATE-KEY-3-SECP256K1-b37dbad0e00206f31486c4f44f8cc7abf2f1be96d5ba352eb791122b5e131bbf" %}
 
 And run your app:
 
@@ -135,7 +133,6 @@ Encrypt it:
 
 ```console
 $ dotenvx encrypt -f .env.production
-◈ encrypted (.env.production)
 ```
 {: copy="dotenvx encrypt -f .env.production"}
 
@@ -148,9 +145,9 @@ $ git commit -m "encrypt .env.production"
 {: copy="git add .env.production
 git commit -m \"encrypt .env.production\""}
 
-Find the matching private key with dotenvx keypair -f .env.production. Set it as DOTENV_PRIVATE_KEY and set DOTENV_FILE to .env.production on your server.
+Find the matching private key with dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production. Set it as DOTENV_PRIVATE_KEY_PRODUCTION on your server.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY" path=".env.production" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" path=".env.production" value="DOTENV-PRIVATE-KEY-3-SECP256K1-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
 
 Tell the Ruby gem to load .env.production:
 
@@ -167,12 +164,11 @@ Run it:
 
 ```console
 $ ruby app.rb
-⟐ injected env (2) from .env.production
 Hello Production
 ```
 {: copy="ruby app.rb"}
 
-Dotenvx loads .env.production and uses DOTENV_PRIVATE_KEY to unlock it. Your app reads its production secrets through ENV.
+Dotenvx loads .env.production and uses DOTENV_PRIVATE_KEY_PRODUCTION to unlock it. Your app reads its production secrets through ENV.
 
 You can also load multiple files with Dotenvx.load(".env.production", ".env"). The first value wins. Make each file's matching private key available.
 

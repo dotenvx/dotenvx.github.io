@@ -1,20 +1,20 @@
 ---
 doc_type: cli
 title: "--ignore"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Ignore specific error codes.
-permalink: /docs/cli/run-ignore/
+permalink: "/docs/cli/run-ignore/"
 redirect_from:
-  - /docs/ref/cli/run-ignore/
-  - /docs/ref/cli/run-ignore
+- "/docs/ref/cli/run-ignore/"
+- "/docs/ref/cli/run-ignore"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```console

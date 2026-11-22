@@ -29,17 +29,18 @@ secrets_artifact: true
 
 ## Encrypt
 
-Create a .env file in your project root with a test value:
+Create a .env file in your project root.
 
 ```dotenv
 HELLO="Secret"
 ```
 
-```bash
-dotenvx encrypt
+```console
+$ dotenvx encrypt
 ```
+{: copy="dotenvx encrypt"}
 
-When prompted, choose **Local**, then **File .env.keys**. Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
+When prompted, choose **Classic (.env.keys)**. Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
 
 Other places to keep your key: [Custody](/docs/custody/).
 
@@ -53,11 +54,14 @@ Add this line to your .gitignore:
 
 Then commit the encrypted .env with your code. The -f flag includes it even if your project ignores .env files.
 
-```bash
-git add -f .env
-git add .gitignore
-git commit -m "encrypt .env"
+```console
+$ git add -f .env
+$ git add .gitignore
+$ git commit -m "encrypt .env"
 ```
+{: copy="git add -f .env
+git add .gitignore
+git commit -m \"encrypt .env\""}
 
 Keep .env.keys private and backed up. It holds the key you need to decrypt your file.
 
@@ -71,9 +75,10 @@ console.log(`Hello ${process.env.HELLO}`)
 
 Run your app with Dotenvx:
 
-```bash
-dotenvx run -- node index.js
+```console
+$ dotenvx run -- node index.js
 ```
+{: copy="dotenvx run -- node index.js"}
 
 ```text
 Hello Secret
@@ -94,25 +99,29 @@ Create a separate .env.production:
 HELLO="Production"
 ```
 
-```bash
-dotenvx encrypt -f .env.production
+```console
+$ dotenvx encrypt -f .env.production
 ```
+{: copy="dotenvx encrypt -f .env.production"}
 
-Choose **Local**, then **File .env.keys** again. Dotenvx adds a separate production key to .env.keys.
+Choose **Classic (.env.keys)** again. Dotenvx adds a separate production key to .env.keys.
 
 Copy the value named DOTENV_PRIVATE_KEY_PRODUCTION into an environment variable with that same name in your deployment settings.
 
 Commit the encrypted production file:
 
-```bash
-git add -f .env.production
-git commit -m "encrypt .env.production"
+```console
+$ git add -f .env.production
+$ git commit -m "encrypt .env.production"
 ```
+{: copy="git add -f .env.production
+git commit -m \"encrypt .env.production\""}
 
 Run your deployed app with:
 
-```bash
-dotenvx run -f .env.production -- node index.js
+```console
+$ dotenvx run -f .env.production -- node index.js
 ```
+{: copy="dotenvx run -f .env.production -- node index.js"}
 
 Your encrypted file travels with your code. The production key stays in your deployment environment.

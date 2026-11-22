@@ -1,22 +1,24 @@
 ---
 doc_type: cli
-title: "run with a Dotenvx.toml"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
-description: "When a Dotenvx.toml is present, run automatically validates the resolved environment before starting your command. No validation flag is needed."
-permalink: /docs/cli/run-validate/
+title: run with a Dotenvx.toml
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
+description: When a Dotenvx.toml is present, run automatically validates the resolved
+  environment before starting your command. No validation flag is needed.
+permalink: "/docs/cli/run-validate/"
 redirect_from:
-  - /docs/ref/cli/run-validate/
-  - /docs/ref/cli/run-validate
+- "/docs/ref/cli/run-validate/"
+- "/docs/ref/cli/run-validate"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
-command: "dotenvx run -- node index.js"
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
+command: dotenvx run -- node index.js
 ---
+
 When a `Dotenvx.toml` is present, `run` validates resolved values before starting your command. No validation flag is needed.
 
 ```toml

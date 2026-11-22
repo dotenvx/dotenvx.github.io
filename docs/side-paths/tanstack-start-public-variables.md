@@ -14,7 +14,7 @@ Use Vite's VITE_ prefix for public configuration. Add a value to your encrypted 
 ```console
 $ npx dotenvx set VITE_SITE_NAME "My app"
 ```
-{: copy='npx dotenvx set VITE_SITE_NAME "My app"' package-manager="npm"}
+{: copy="npx dotenvx set VITE_SITE_NAME \"My app\"" package-manager="npm"}
 
 Read it in a component:
 

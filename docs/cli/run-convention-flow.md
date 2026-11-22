@@ -1,36 +1,41 @@
 ---
 doc_type: cli
 title: "--convention=flow"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Load envs using the dotenv-flow convention.
-permalink: /docs/cli/run-convention-flow/
+permalink: "/docs/cli/run-convention-flow/"
 redirect_from:
-  - /docs/advanced/run-convention-flow
-  - /docs/advanced/run-convention-flow/
-  - /docs/ref/cli/run-convention-flow
-  - /docs/ref/cli/run-convention-flow/
+- "/docs/advanced/run-convention-flow"
+- "/docs/advanced/run-convention-flow/"
+- "/docs/ref/cli/run-convention-flow"
+- "/docs/ref/cli/run-convention-flow/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```console
 $ echo "HELLO=development local" > .env.development.local
-echo "HELLO=development" > .env.development
-echo "HELLO=local" > .env.local
-echo "HELLO=env" > .env
-echo "console.log('Hello ' + process.env.HELLO)" > index.js
+$ echo "HELLO=development" > .env.development
+$ echo "HELLO=local" > .env.local
+$ echo "HELLO=env" > .env
+$ echo "console.log('Hello ' + process.env.HELLO)" > index.js
 
-NODE_ENV=development dotenvx run --convention=flow -- node index.js 
+$ NODE_ENV=development dotenvx run --convention=flow -- node index.js
 ⟐ injected env (1) from .env.development.local, .env.development, .env.local, .env
 Hello development local
 ```
-{: copy="echo \"HELLO=development local\" > .env.development.local"}
+{: copy="echo \"HELLO=development local\" > .env.development.local
+echo \"HELLO=development\" > .env.development
+echo \"HELLO=local\" > .env.local
+echo \"HELLO=env\" > .env
+echo \"console.log('Hello ' + process.env.HELLO)\" > index.js
+NODE_ENV=development dotenvx run --convention=flow -- node index.js"}
 
 You can also set `DOTENV_CONFIG_CONVENTION=flow`.
 

@@ -19,6 +19,20 @@ or Tailwind dependency. Newsletter forms also use
 `_plugins/main_site.rb` prepares Markdown content, page headings, docs frames,
 blog posts, and Markdown exports. `/v2/` URLs remain redirects to the public pages.
 Shared content components are still used by docs, pricing, and Markdown exports.
+Docs inherit the homepage’s responsive column layout; quickstart explicitly uses
+`main_layout: two-columns`. Table styles belong to their component classes rather
+than a docs-specific page wrapper.
+
+CLI references target the Rust implementation for Dotenvx 3.0 in
+`../forge/dotenvx-cli/src/cli.rs` and `../forge/dotenvx-cli/src/commands/`.
+Check those command definitions and their build features when documenting options.
+Do not restore commands or flags from the older JavaScript CLI.
+
+SDK references also target the implementations in `../forge/`: `dotenvx-nodejs`,
+`next-env`, `dotenvx-ruby`, `python-dotenvx`, `dotenvx-go`, `dotenvx-rust`, and
+`phpdotenvx`. Use adapter source and TypeScript declarations to check exported
+methods, options, return values, and environment mutation. README examples can
+lag the implementation. Rust primitives live in `../forge/dotenvx-primitives`.
 
 #### Production build
 
@@ -114,8 +128,10 @@ env "KEY"
 ```
 ````
 
-By default, Copy copies the displayed code. For a transcript whose output should
-not be copied, add a Kramdown attribute line immediately after the closing fence:
+Show interactive shell commands in `console` fences with a `$ ` prompt on each
+command, across all pages and blog posts. Keep continuation lines unprompted.
+By default, Copy copies the displayed code, so always supply command-only copy
+text without prompts or output immediately after the closing fence:
 
 ````markdown
 ```console

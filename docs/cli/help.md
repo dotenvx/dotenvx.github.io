@@ -2,48 +2,28 @@
 doc_type: cli
 title: Help
 description: Display help for dotenvx or a specific command.
-permalink: /docs/cli/help/
+permalink: "/docs/cli/help/"
 redirect_from:
-  - /docs/ref/cli/help/
-  - /docs/ref/cli/help
+- "/docs/ref/cli/help/"
+- "/docs/ref/cli/help"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+command: dotenvx --help
 ---
-Display the top-level command list and options:
+
+Display the available commands for your build:
 
 ```console
-$ dotenvx help
-Usage: dotenvx run -- yourcommand
-
-a secure dotenv–from the creator of `dotenv`
-
-Options:
-  -V, --version  output the version number
-  -h, --help     display help for command
-
-Commands:
-  run
-  get [KEY]
-  set <KEY> <value>
-  encrypt
-  decrypt
-  keypair [KEY]
-  ls [directory]
-  gitignore
-  genexample [directory]
-  validate
-  precommit [directory]
-  prebuild [directory]
+$ dotenvx --help
 ```
-{: copy="dotenvx help"}
+{: copy="dotenvx --help"}
 
-Pass a command name for detailed help:
+Display help for a specific command:
 
 ```console
-$ dotenvx help run
-Usage: dotenvx run [options] -- yourcommand
+$ dotenvx run --help
 ```
-{: copy="dotenvx help run"}
+{: copy="dotenvx run --help"}

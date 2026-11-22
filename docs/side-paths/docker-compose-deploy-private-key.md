@@ -10,7 +10,7 @@ side_path_kind: Alternative
 secrets_artifact: true
 ---
 
-For a self-managed Compose host, encrypt .env.production and choose **Local**, storing the key in .env.keys:
+For a self-managed Compose host, encrypt .env.production and choose **Classic (.env.keys)**, storing the key in .env.keys:
 
 ```console
 $ dotenvx encrypt -f .env.production
@@ -21,7 +21,7 @@ dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production"}
 
 Set DOTENV_PRIVATE_KEY_PRODUCTION to the returned value in the environment running Compose. The production Compose file passes it to the container and selects .env.production.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" path=".env.production" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="DOTENV-PRIVATE-KEY-3-SECP256K1-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" path=".env.production" %}
 
 For a local check, after following [Production](/docs/docker-compose/#production) to build hello-compose:production:
 

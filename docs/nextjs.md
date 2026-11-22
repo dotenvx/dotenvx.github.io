@@ -78,7 +78,6 @@ Encrypt it with a single command.
 
 ```console
 $ dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="dotenvx encrypt"}
 
@@ -86,9 +85,9 @@ The values become ciphertext and only your private key can unlock them.
 
 ```dotenv
 # .env
-DOTENV_PUBLIC_KEY="0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
+DOTENV_PUBLIC_KEY="DOTENV-PUBLIC-KEY-3-SECP256K1-0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
 
-HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTOT3Ci8IKrdIg2TMZFoq1mDR6yb06QCRvqHXtpkZkAHYCEHfeWqqC8tMFovcYq5JS2uZSrC/qUGDA=="
+HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0220d83035-BP8FZxI4vhmRmfTAmvZGnzBd6AoJG0ZSjKDLRbE4XpxaWBDD7PpxLMkB/2I0glwVkHXeIcpJwY13qtdhjySs+a9NT9myy5uzErUYb2Uc/1LDY886yF8SxslAxfiJzhZ5NV3qQDQ6Tg=="
 ```
 {: class="design-codeblock--nowrap"}
 
@@ -121,7 +120,6 @@ Run your app:
 
 ```console
 $ npm run dev
-⟐ injected env (2) from .env (022 0D8) via .env.keys
 ▲ Next.js 16.4.1 (Turbopack)
 - Local:         http://localhost:3000
 ```
@@ -133,11 +131,18 @@ Visit [http://localhost:3000/api/hello](http://localhost:3000/api/hello) to see 
 
 {% include components/design-browser.html url="http://localhost:3000/api/hello" text="Hello Secret" %}
 
-[**Seeing encrypted:ciphertext only?** Troubleshoot →](/docs/nextjs/encrypted-text/){: .side-path .side-path--troubleshooting}
+[**Seeing ciphertext only?** Troubleshoot →](/docs/nextjs/encrypted-text/){: .side-path .side-path--troubleshooting}
 
 ## Share
 
 Have teammates? Share access with Dotenvx Armor ⛨
+
+Install the [Armor feature](/docs/cli/install-add/) before using Armor commands:
+
+```console
+$ dotenvx install --add armor
+```
+{: copy="dotenvx install --add armor"}
 
 Log in to Dotenvx.
 
@@ -151,7 +156,6 @@ Create the Armored Key ⛨
 
 ```console
 $ dotenvx armor up
-⛨ armored .env (022 0D8)
 ```
 {: copy="dotenvx armor up" class="design-codeblock--nowrap"}
 
@@ -167,7 +171,6 @@ They can now pull (git), decrypt, and run.
 
 ```console
 $ npm run dev
-⟐ injected env (2) from .env (022 0D8) via Armor ⛨
 ▲ Next.js 16.4.1 (Turbopack)
 - Local:         http://localhost:3000
 ```
@@ -191,17 +194,10 @@ Encrypt it with an Enclaved Key ◊
 
 ```console
 $ dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
-
-# 1. ⛨ Choose key type …
-# ❯ ◊ Enclaved
-# 2. ◊ Select service …
-# ❯ Vercel
-# 3. ◊ Select connection …
-# 4. ◊ Select resource/project …
-# 5. ? Private key name › DOTENV_PRIVATE_KEY_PRODUCTION
 ```
 {: copy="dotenvx encrypt -f .env.production"}
+
+When prompted, choose **Armor**, then **Enclaved**. Select **Vercel**, your connection and project, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
 
 Commit .env.production.
 

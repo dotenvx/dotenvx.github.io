@@ -1,30 +1,34 @@
 ---
 doc_type: cli
 title: directory
-eyebrow: "dotenvx precommit"
-eyebrow_href: /docs/cli/precommit/
-description: Prevent .env files from being committed to code for a specified directory. Useful for monorepos.
-permalink: /docs/cli/precommit-directory/
+eyebrow: dotenvx precommit
+eyebrow_href: "/docs/cli/precommit/"
+description: Prevent .env files from being committed to code for a specified directory.
+  Useful for monorepos.
+permalink: "/docs/cli/precommit-directory/"
 redirect_from:
-  - /docs/advanced/precommit-directory
-  - /docs/advanced/precommit-directory/
-  - /docs/ref/cli/precommit-directory
-  - /docs/ref/cli/precommit-directory/
+- "/docs/advanced/precommit-directory"
+- "/docs/advanced/precommit-directory/"
+- "/docs/ref/cli/precommit-directory"
+- "/docs/ref/cli/precommit-directory/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Precommit
-    href: /docs/cli/precommit/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Precommit
+  href: "/docs/cli/precommit/"
 ---
 
 ```console
 $ echo "HELLO=World" > .env
-mkdir -p apps/backend
-echo "HELLO=Backend" > apps/backend/.env
+$ mkdir -p apps/backend
+$ echo "HELLO=Backend" > apps/backend/.env
 
-dotenvx precommit apps/backend
+$ dotenvx precommit apps/backend
 ☠ apps/backend/.env not encrypted/gitignored
 ```
-{: copy="echo \"HELLO=World\" > .env"}
+{: copy="echo \"HELLO=World\" > .env
+mkdir -p apps/backend
+echo \"HELLO=Backend\" > apps/backend/.env
+dotenvx precommit apps/backend"}

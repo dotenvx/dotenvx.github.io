@@ -1,9 +1,7 @@
 ---
 title: Go
-description: Load encrypted .env files in Go.
-permalink: /docs/sdk/go/
-eyebrow: SDKs
-eyebrow_href: /docs/sdk/
+description: Load encrypted environment values with the Go SDK.
+permalink: "/docs/sdk/go/"
 icon: go
 ---
 
@@ -16,9 +14,10 @@ icon: go
 
 Use Go 1.22 or later and a C compiler with cgo enabled. The package includes native builds for macOS and glibc Linux on amd64 and arm64.
 
-```bash
-{{ sdk.command }}
-```
+{% assign install_commands = sdk.command | newline_to_br | split: '<br />' %}
+{% capture install_display %}{% for command in install_commands %}$ {{ command | strip }}
+{% endfor %}{% endcapture %}
+{% include components/design-codeblock.html value=install_display format='cli' copy_text=sdk.command %}
 
 ## Usage
 
@@ -45,3 +44,10 @@ func main() {
 ```
 
 See the [Go quickstart](/docs/go/) for the full encryption workflow.
+## Reference
+
+- [Load](/docs/sdk/go/load/)
+- [Overload](/docs/sdk/go/overload/)
+- [Read](/docs/sdk/go/read/)
+
+For process-output redaction, run your application through [dotenvx run](/docs/cli/run/) with [Dotenvx.toml redaction rules](/docs/dotenvxtoml/redacted/).

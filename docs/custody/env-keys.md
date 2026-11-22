@@ -19,7 +19,7 @@ $ dotenvx encrypt
 ```
 {: copy="dotenvx encrypt"}
 
-Choose **Local**, then **File .env.keys**. Dotenvx saves the private key alongside your encrypted `.env`.
+Choose **Classic (.env.keys)**. Dotenvx saves the private key alongside your encrypted `.env`.
 
 Add `.env.keys` to `.gitignore`. Commit `.env`, but keep `.env.keys` private and backed up.
 

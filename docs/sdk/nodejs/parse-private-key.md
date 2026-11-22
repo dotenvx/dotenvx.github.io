@@ -1,33 +1,27 @@
 ---
-doc_type: cli
-eyebrow: Node
-eyebrow_href: /docs/sdk/nodejs/
-title: "parse(src, {privateKey:})"
-description: Decrypt an encrypted .env string with privateKey.
-permalink: /docs/sdk/nodejs/parse-private-key/
+title: parse privateKey
+description: Decrypt source text using an explicit private key.
+permalink: "/docs/sdk/nodejs/parse-private-key/"
 redirect_from:
-  - /docs/sdk/parse-private-key
-  - /docs/sdk/parse-private-key/
-  - /docs/advanced/parse-private-key
-  - /docs/advanced/parse-private-key/
-  - /docs/ref/sdk/parse-private-key
-  - /docs/ref/sdk/parse-private-key/
-crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: SDKs
-    href: /docs/sdk
-  - label: Node
-    href: /docs/sdk/nodejs
-  - label: parse
-    href: /docs/sdk/nodejs/parse/
+- "/docs/sdk/parse-private-key"
+- "/docs/sdk/parse-private-key/"
+- "/docs/advanced/parse-private-key"
+- "/docs/advanced/parse-private-key/"
+- "/docs/ref/sdk/parse-private-key"
+- "/docs/ref/sdk/parse-private-key/"
+doc_type: sdk
+command: dotenvx.parse(source, { privateKey })
+command_language: javascript
+eyebrow: Node.js parse
+eyebrow_href: "/docs/sdk/nodejs/parse/"
 ---
+
 {% capture sdk_code_0 %}
 {% raw %}
 // index.js
 const dotenvx = require('@dotenvx/dotenvx')
-const src = 'HELLO="encrypted:BE9Y7LKANx77X1pv1HnEoil93fPa5c9rpL/1ps48uaRT9zM8VR6mHx9yM+HktKdsPGIZELuZ7rr2mn1gScsmWitppAgE/1lVprNYBCqiYeaTcKXjDUXU5LfsEsflnAsDhT/kWG1l"'
-const parsed = dotenvx.parse(src, { privateKey: 'a4547dcd9d3429615a3649bb79e87edb62ee6a74b007075e9141ae44f5fb412c' })
+const src = 'HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0321274c06-BCVESe5IG0eL8auTdgPHh8TOJUziz4y2pKLyYnFdxzfRiDr/L83zu4/DSYMn0V/t4RXN0LVe4JMq5ih36nyb3Lx3CVRmxjXc0zfj+XUVuHJbX4OL/g/aFEnBr6GqgRt7Vj4snUzN"'
+const parsed = dotenvx.parse(src, { privateKey: 'DOTENV-PRIVATE-KEY-3-SECP256K1-63219facdc0e448b4958348de7973508dcf386bb6391ef74a583e030dea12ca7' })
 console.log(`Hello ${parsed.HELLO}`)
 {% endraw %}
 {% endcapture %}
@@ -37,3 +31,4 @@ console.log(`Hello ${parsed.HELLO}`)
 $ node index.js
 Hello World
 ```
+{: copy="node index.js"}

@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "armor down --token"
-description: "Set token."
+title: armor down --token
+description: Set token.
 permalink: "/docs/cli/armor-down-token/"
-command: "dotenvx armor down --token"
-eyebrow: "dotenvx armor down"
+command: dotenvx armor down --token
+eyebrow: dotenvx armor down
 eyebrow_href: "/docs/cli/armor/down/"
 ---
 

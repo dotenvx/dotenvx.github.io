@@ -1,31 +1,35 @@
 ---
 doc_type: cli
 title: "-f"
-eyebrow: "dotenvx decrypt"
-eyebrow_href: /docs/cli/decrypt/
-description: Decrypt the contents of a specified encrypted .env file to an unencrypted .env file.
-permalink: /docs/cli/decrypt-f/
+eyebrow: dotenvx decrypt
+eyebrow_href: "/docs/cli/decrypt/"
+description: Decrypt the contents of a specified encrypted .env file to an unencrypted
+  .env file.
+permalink: "/docs/cli/decrypt-f/"
 redirect_from:
-  - /docs/advanced/decrypt-f
-  - /docs/advanced/decrypt-f/
-  - /docs/ref/cli/decrypt-f
-  - /docs/ref/cli/decrypt-f/
+- "/docs/advanced/decrypt-f"
+- "/docs/advanced/decrypt-f/"
+- "/docs/ref/cli/decrypt-f"
+- "/docs/ref/cli/decrypt-f/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Decrypt
-    href: /docs/cli/decrypt/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Decrypt
+  href: "/docs/cli/decrypt/"
 ---
 
 ```console
 $ echo "HELLO=World" > .env
-echo "HELLO=Production" > .env.production
+$ echo "HELLO=Production" > .env.production
 
-dotenvx encrypt -f .env.production
+$ dotenvx encrypt -f .env.production
 ◈ encrypted (.env.production)
-dotenvx decrypt -f .env.production
+$ dotenvx decrypt -f .env.production
 ◇ decrypted (.env.production)
 ```
-{: copy="echo \"HELLO=World\" > .env"}
+{: copy="echo \"HELLO=World\" > .env
+echo \"HELLO=Production\" > .env.production
+dotenvx encrypt -f .env.production
+dotenvx decrypt -f .env.production"}

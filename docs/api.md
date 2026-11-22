@@ -2,7 +2,6 @@
 title: API
 description: API endpoints available through Dotenvx Armor.
 permalink: /docs/api/
-main_layout: wide
 ---
 
 
@@ -15,7 +14,7 @@ When you want more—off-device private keys, team access, Guard approvals, Encl
 
 ## Armor
 
-The Armor API is served from `https://armor.dotenvx.com`. Authenticate with `Authorization: Bearer TOKEN`, or use `dotenvx curl` after running `dotenvx login` to supply your Armor credentials automatically.
+The Armor API is served from `https://armor.dotenvx.com`. Authenticate with `Authorization: Bearer TOKEN`. After logging in with `dotenvx login`, use `dotenvx token --unmask` to retrieve your access token.
 
 Requests and responses use JSON unless an endpoint returns a plain value. List endpoints accept `page` and `per`; `per` must be between 1 and 100.
 
@@ -130,14 +129,16 @@ Dotenvx uses these Armor endpoints to implement Armor-backed commands. Prefer th
 
 ### Example
 
-```bash
-dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs"
+Set DOTENVX_ARMOR_TOKEN to an access token with permission for these requests.
 
-dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=name_asc"
+```console
+$ curl -H "Authorization: Bearer $DOTENVX_ARMOR_TOKEN" "https://armor.dotenvx.com/api/armor/keypairs"
 
-dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs?sort=public_key_desc"
+$ curl -H "Authorization: Bearer $DOTENVX_ARMOR_TOKEN" "https://armor.dotenvx.com/api/armor/keypairs?sort=name_asc"
 
-dotenvx curl "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
+$ curl -H "Authorization: Bearer $DOTENVX_ARMOR_TOKEN" "https://armor.dotenvx.com/api/armor/keypairs?sort=public_key_desc"
+
+$ curl -H "Authorization: Bearer $DOTENVX_ARMOR_TOKEN" "https://armor.dotenvx.com/api/armor/keypairs/PUBLIC_KEY/name" \
   --data '{"name":"Production"}'
 ```
 {: copy="false"}

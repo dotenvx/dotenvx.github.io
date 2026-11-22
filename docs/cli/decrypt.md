@@ -1,36 +1,30 @@
 ---
 doc_type: cli
 title: Decrypt
-description: Convert encrypted .env file to plain .env file.
-permalink: /docs/cli/decrypt/
+description: Decrypt env files.
+permalink: "/docs/cli/decrypt/"
 redirect_from:
-  - /docs/advanced/decrypt
-  - /docs/advanced/decrypt/
-  - /docs/ref/cli/decrypt
-  - /docs/ref/cli/decrypt/
+- "/docs/advanced/decrypt"
+- "/docs/advanced/decrypt/"
+- "/docs/ref/cli/decrypt"
+- "/docs/ref/cli/decrypt/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
 options_title: Options
 options:
-  - title: "decrypt -f"
-    href: /docs/cli/decrypt-f/
-  - title: "decrypt -fk"
-    href: /docs/cli/decrypt-fk/
-  - title: "decrypt -k"
-    href: /docs/cli/decrypt-k/
-  - title: "decrypt -ek"
-    href: /docs/cli/decrypt-ek/
-  - title: "decrypt --stdout"
-    href: /docs/cli/decrypt-stdout/
-  - title: "decrypt --stdout --mask"
-    href: /docs/cli/decrypt-stdout-mask/
-  - title: "decrypt --no-armor"
-    href: /docs/cli/decrypt-no-armor/
-  - title: "decrypt --no-native"
-    href: /docs/cli/decrypt-no-native/
+- title: decrypt --file
+  href: "/docs/cli/decrypt-f/"
+- title: decrypt --keys-file
+  href: "/docs/cli/decrypt-fk/"
+- title: decrypt --token
+  href: "/docs/cli/decrypt-token/"
+- title: decrypt --stdout
+  href: "/docs/cli/decrypt-stdout/"
+command: dotenvx decrypt
+global_options: true
 ---
 
 ```console
@@ -38,3 +32,5 @@ $ dotenvx decrypt
 ◇ decrypted (.env)
 ```
 {: copy="dotenvx decrypt"}
+
+Use [Dotenvx.toml storage rules](/docs/dotenvxtoml/) to select which values remain encrypted or plaintext.

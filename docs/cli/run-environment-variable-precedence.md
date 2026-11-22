@@ -1,22 +1,25 @@
 ---
 doc_type: cli
-title: "Environment Variable Precedence"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
-description: "When deploying applications in containers or cloud environments, you often need to override specific environment variables at runtime without modifying committed .env files. By default, dotenvx follows the historic dotenv principle: environment variables already present take precedence over .env files."
-permalink: /docs/cli/run-environment-variable-precedence/
+title: Environment Variable Precedence
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
+description: 'When deploying applications in containers or cloud environments, you
+  often need to override specific environment variables at runtime without modifying
+  committed .env files. By default, dotenvx follows the historic dotenv principle:
+  environment variables already present take precedence over .env files.'
+permalink: "/docs/cli/run-environment-variable-precedence/"
 redirect_from:
-  - /docs/advanced/run-environment-variable-precedence
-  - /docs/advanced/run-environment-variable-precedence/
-  - /docs/ref/cli/run-environment-variable-precedence
-  - /docs/ref/cli/run-environment-variable-precedence/
+- "/docs/advanced/run-environment-variable-precedence"
+- "/docs/advanced/run-environment-variable-precedence/"
+- "/docs/ref/cli/run-environment-variable-precedence"
+- "/docs/ref/cli/run-environment-variable-precedence/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```console
@@ -36,8 +39,7 @@ MODEL_REGISTRY: registry.azure.com/models/v2
 $ MODEL_REGISTRY=registry.azure.com/models/v2 dotenvx run -f .env.prod --overload -- node app.js
 MODEL_REGISTRY: registry.company.com/models/v1
 ```
-{: copy="# .env.prod contains: MODEL_REGISTRY=registry.company.com/models/v1
-echo \"MODEL_REGISTRY=registry.company.com/models/v1\" > .env.prod
+{: copy="echo \"MODEL_REGISTRY=registry.company.com/models/v1\" > .env.prod
 echo \"console.log('MODEL_REGISTRY:', process.env.MODEL_REGISTRY)\" > app.js
 dotenvx run -f .env.prod -- node app.js
 MODEL_REGISTRY=registry.azure.com/models/v2 dotenvx run -f .env.prod -- node app.js

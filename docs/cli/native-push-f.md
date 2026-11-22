@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "native push -f"
-description: "Path to your env file."
+title: native push -f
+description: Path to your env file.
 permalink: "/docs/cli/native-push-f/"
-command: "dotenvx native push -f"
-eyebrow: "dotenvx native push"
+command: dotenvx native push -f
+eyebrow: dotenvx native push
 eyebrow_href: "/docs/cli/native/push/"
 ---
 

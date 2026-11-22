@@ -34,4 +34,4 @@ Hello Production
 ```
 {: copy="dotenvx run -f .env.production --strict -- ./hello-rust"}
 
-This uses the CLI's key resolution. The Rust code only reads the resulting environment; it does not call dotenvx-primitives. See [CLI run](/docs/cli/run/) for its options.
+This uses the CLI's key resolution. The Rust code only reads the resulting environment; it does not call dotenvx_official::load. See [CLI run](/docs/cli/run/) for its options.

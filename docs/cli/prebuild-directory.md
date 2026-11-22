@@ -1,23 +1,25 @@
 ---
 doc_type: cli
 title: directory
-eyebrow: "dotenvx prebuild"
-eyebrow_href: /docs/cli/prebuild/
-description: Prevent .env files from being built into your docker containers for a specified directory. Useful for monorepos.
-permalink: /docs/cli/prebuild-directory/
+eyebrow: dotenvx prebuild
+eyebrow_href: "/docs/cli/prebuild/"
+description: Prevent .env files from being built into your docker containers for a
+  specified directory. Useful for monorepos.
+permalink: "/docs/cli/prebuild-directory/"
 redirect_from:
-  - /docs/advanced/prebuild-directory
-  - /docs/advanced/prebuild-directory/
-  - /docs/ref/cli/prebuild-directory
-  - /docs/ref/cli/prebuild-directory/
+- "/docs/advanced/prebuild-directory"
+- "/docs/advanced/prebuild-directory/"
+- "/docs/ref/cli/prebuild-directory"
+- "/docs/ref/cli/prebuild-directory/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Prebuild
-    href: /docs/cli/prebuild/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Prebuild
+  href: "/docs/cli/prebuild/"
 ---
+
 Deprecated. Use [`dotenvx protect --docker apps/backend`](/docs/cli/protect-docker-directory/) in your Dockerfile instead. The build check is unchanged.
 
 ```docker

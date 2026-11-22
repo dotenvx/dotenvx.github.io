@@ -1,22 +1,22 @@
 ---
 doc_type: cli
-title: "Default Values"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+title: Default Values
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Use default values when environment variables are unset or empty.
-permalink: /docs/cli/run-default-values/
+permalink: "/docs/cli/run-default-values/"
 redirect_from:
-  - /docs/advanced/run-default-values
-  - /docs/advanced/run-default-values/
-  - /docs/ref/cli/run-default-values
-  - /docs/ref/cli/run-default-values/
+- "/docs/advanced/run-default-values"
+- "/docs/advanced/run-default-values/"
+- "/docs/ref/cli/run-default-values"
+- "/docs/ref/cli/run-default-values/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```dotenv

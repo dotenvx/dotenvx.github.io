@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "bitwarden down -fk"
-description: "Path to your .env.keys file."
+title: bitwarden down -fk
+description: Path to your .env.keys file.
 permalink: "/docs/cli/bitwarden-down-fk/"
-command: "dotenvx bitwarden down -fk"
-eyebrow: "dotenvx bitwarden down"
+command: dotenvx bitwarden down -fk
+eyebrow: dotenvx bitwarden down
 eyebrow_href: "/docs/cli/bitwarden-down/"
 ---
 

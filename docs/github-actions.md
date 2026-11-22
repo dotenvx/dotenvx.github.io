@@ -40,7 +40,12 @@ HELLO="CI"
 ```
 {: copy="HELLO=\"CI\""}
 
-Log in to Dotenvx.
+Install the [Armor feature](/docs/cli/install-add/), then log in to Dotenvx.
+
+```console
+$ npx dotenvx install --add armor
+```
+{: copy="npx dotenvx install --add armor"}
 
 ```console
 $ npx dotenvx login
@@ -54,7 +59,7 @@ $ npx dotenvx encrypt -f .env.ci
 ```
 {: copy="npx dotenvx encrypt -f .env.ci" package-manager="npm"}
 
-When prompted, choose **Enclaved**, select **GitHub Actions**, and choose the connection and repository for your workflow. Use DOTENV_PRIVATE_KEY_CI as the private key name.
+When prompted, choose **Armor**, then **Enclaved**, select **GitHub Actions**, and choose the connection and repository for your workflow. Use DOTENV_PRIVATE_KEY_CI as the private key name.
 
 Your .env.ci values are now encrypted. The Enclaved Key is configured for GitHub Actions so the remote runner can decrypt them.
 

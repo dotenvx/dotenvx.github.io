@@ -48,8 +48,15 @@ $ echo "HELLO=World" > .env
 
 Runtime leak protection: Cursor gets real secrets, while log redaction strips them from its output.
 
+Create Dotenvx.toml with a redaction rule:
+
+```toml
+[env.HELLO]
+redacted = true
+```
+
 ```console
-$ dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text
+$ dotenvx run -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text
 Hello [REDACTED]
 ```
-{: copy="dotenvx run --redact -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text"}
+{: copy="dotenvx run -- agent -p --force 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --output-format text"}

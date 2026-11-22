@@ -1,29 +1,30 @@
 ---
 doc_type: cli
 title: KEY
-eyebrow: "dotenvx get"
-eyebrow_href: /docs/cli/get/
-description: "Return a single environment variable's value."
-permalink: /docs/cli/get-key/
+eyebrow: dotenvx get
+eyebrow_href: "/docs/cli/get/"
+description: Return a single environment variable's value.
+permalink: "/docs/cli/get-key/"
 redirect_from:
-  - /docs/advanced/get-key
-  - /docs/advanced/get-key/
-  - /docs/ref/cli/get-key
-  - /docs/ref/cli/get-key/
+- "/docs/advanced/get-key"
+- "/docs/advanced/get-key/"
+- "/docs/ref/cli/get-key"
+- "/docs/ref/cli/get-key/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Get
-    href: /docs/cli/get/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Get
+  href: "/docs/cli/get/"
 video: cli-get-key
 ---
 
 ```console
 $ echo "HELLO=World" > .env
 
-dotenvx get HELLO
+$ dotenvx get HELLO
 World
 ```
-{: copy="echo \"HELLO=World\" > .env"}
+{: copy="echo \"HELLO=World\" > .env
+dotenvx get HELLO"}

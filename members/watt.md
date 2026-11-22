@@ -31,7 +31,7 @@ og_image:
       <p class="design-paragraph">Dotenvx lets Watt store encrypted secrets in the repository, so configuration travels with the application. With the private key in the deployment environment, those secrets are decrypted at runtime without fetching them from a separate service.</p>
       <p class="design-paragraph">Secrets stay in the workflow his team already uses. <strong>No new critical path.</strong></p>
       <hr class="member-story-divider">
-      <p class="design-paragraph"><strong>John is Cofounder and Chief Architect at Watt and was previously Head of Security DevOps at Zoom.</strong></p>
+      <p class="design-paragraph"><strong>John is Cofounder and Chief Architect at Watt and was previously Head of DevSecOps at Zoom.</strong></p>
     {% endcapture %}
 
 <div>

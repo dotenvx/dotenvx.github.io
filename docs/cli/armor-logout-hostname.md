@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "armor logout --hostname"
-description: "Set Armor \u26e8 hostname."
+title: armor logout --hostname
+description: Set Armor ⛨ hostname.
 permalink: "/docs/cli/armor-logout-hostname/"
-command: "dotenvx armor logout --hostname"
-eyebrow: "dotenvx armor logout"
+command: dotenvx armor logout --hostname
+eyebrow: dotenvx armor logout
 eyebrow_href: "/docs/cli/armor/logout/"
 ---
 

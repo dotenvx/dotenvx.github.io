@@ -1,86 +1,362 @@
 [
   {
+    "label": "Node.js config path",
+    "href": "/docs/sdk/nodejs/config-path/"
+  },
+  {
+    "label": "Node.js config envs",
+    "href": "/docs/sdk/nodejs/config-envs/"
+  },
+  {
+    "label": "Node.js config cwd",
+    "href": "/docs/sdk/nodejs/config-cwd/"
+  },
+  {
+    "label": "Node.js config processEnv",
+    "href": "/docs/sdk/nodejs/config-process-env/"
+  },
+  {
+    "label": "Node.js config overload",
+    "href": "/docs/sdk/nodejs/config-overload/"
+  },
+  {
+    "label": "Node.js config override",
+    "href": "/docs/sdk/nodejs/config-override/"
+  },
+  {
+    "label": "Node.js config strict",
+    "href": "/docs/sdk/nodejs/config-strict/"
+  },
+  {
+    "label": "Node.js config ignore",
+    "href": "/docs/sdk/nodejs/config-ignore/"
+  },
+  {
+    "label": "Node.js config envKeysFile",
+    "href": "/docs/sdk/nodejs/config-env-keys-file/"
+  },
+  {
+    "label": "Node.js config keyFiles",
+    "href": "/docs/sdk/nodejs/config-key-files/"
+  },
+  {
+    "label": "Node.js config convention",
+    "href": "/docs/sdk/nodejs/config-convention/"
+  },
+  {
+    "label": "Node.js config environment",
+    "href": "/docs/sdk/nodejs/config-environment/"
+  },
+  {
+    "label": "Node.js config encoding",
+    "href": "/docs/sdk/nodejs/config-encoding/"
+  },
+  {
+    "label": "Node.js config quiet",
+    "href": "/docs/sdk/nodejs/config-quiet/"
+  },
+  {
+    "label": "Node.js config logLevel",
+    "href": "/docs/sdk/nodejs/config-log-level/"
+  },
+  {
+    "label": "Node.js config resolveReferences",
+    "href": "/docs/sdk/nodejs/config-resolve-references/"
+  },
+  {
+    "label": "Node.js config no1Password",
+    "href": "/docs/sdk/nodejs/config-no-1password/"
+  },
+  {
+    "label": "Node.js config noBitwarden",
+    "href": "/docs/sdk/nodejs/config-no-bitwarden/"
+  },
+  {
+    "label": "Node.js config noArmor",
+    "href": "/docs/sdk/nodejs/config-no-armor/"
+  },
+  {
+    "label": "Node.js config noNative",
+    "href": "/docs/sdk/nodejs/config-no-native/"
+  },
+  {
+    "label": "Node.js config token",
+    "href": "/docs/sdk/nodejs/config-token/"
+  },
+  {
+    "label": "Node.js config directory convention",
+    "href": "/docs/sdk/nodejs/config-path-directory-convention/"
+  },
+  {
     "label": "Node.js config",
     "href": "/docs/sdk/nodejs/config/"
   },
   {
-    "label": "Node.js config(convention: 'nextjs')",
-    "href": "/docs/sdk/nodejs/config-convention/"
+    "label": "Node.js get-all",
+    "href": "/docs/sdk/nodejs/get-all/"
   },
   {
-    "label": "Node.js config(envKeysFile: '../../.env.keys')",
-    "href": "/docs/sdk/nodejs/config-env-keys-file/"
-  },
-  {
-    "label": "Node.js config(ignore: ['.env.missing', '.env'])",
-    "href": "/docs/sdk/nodejs/config-ignore/"
-  },
-  {
-    "label": "Node.js config(mask: true)",
-    "href": "/docs/sdk/nodejs/config-mask/"
-  },
-  {
-    "label": "Node.js config(no1Password: true)",
-    "href": "/docs/sdk/nodejs/config-no-1password/"
-  },
-  {
-    "label": "Node.js config(noArmor: true)",
-    "href": "/docs/sdk/nodejs/config-no-armor/"
-  },
-  {
-    "label": "Node.js config(noBitwarden: true)",
-    "href": "/docs/sdk/nodejs/config-no-bitwarden/"
-  },
-  {
-    "label": "Node.js config(overload: true)",
-    "href": "/docs/sdk/nodejs/config-overload/"
-  },
-  {
-    "label": "Node.js config(path: ['.env.local', '.env'])",
-    "href": "/docs/sdk/nodejs/config-path/"
-  },
-  {
-    "label": "Node.js config(path: directory, convention: 'nextjs')",
-    "href": "/docs/sdk/nodejs/config-path-directory-convention/"
-  },
-  {
-    "label": "Node.js config(quiet: true)",
-    "href": "/docs/sdk/nodejs/config-quiet/"
-  },
-  {
-    "label": "Node.js config(strict: true)",
-    "href": "/docs/sdk/nodejs/config-strict/"
+    "label": "Node.js get-format",
+    "href": "/docs/sdk/nodejs/get-format/"
   },
   {
     "label": "Node.js get",
-    "href": "/docs/sdk/nodejs/config-get-key/"
+    "href": "/docs/sdk/nodejs/get/"
   },
   {
-    "label": "Node.js get(KEY, {mask: true})",
-    "href": "/docs/sdk/nodejs/get-mask/"
+    "label": "Node.js getSync",
+    "href": "/docs/sdk/nodejs/get-sync/"
   },
   {
     "label": "Node.js parse",
     "href": "/docs/sdk/nodejs/parse/"
   },
   {
-    "label": "Node.js parse(src, {privateKey:})",
-    "href": "/docs/sdk/nodejs/parse-private-key/"
-  },
-  {
-    "label": "Node.js parse(src, {processEnv:})",
+    "label": "Node.js parse processEnv",
     "href": "/docs/sdk/nodejs/parse-process-env/"
   },
   {
-    "label": "Node.js set",
-    "href": "/docs/sdk/nodejs/config-set-key-value/"
+    "label": "Node.js parse privateKey",
+    "href": "/docs/sdk/nodejs/parse-private-key/"
   },
   {
-    "label": "Node.js set(KEY, value, {plain: true})",
-    "href": "/docs/sdk/nodejs/config-set-key-value-plain/"
+    "label": "Node.js preload",
+    "href": "/docs/sdk/nodejs/preload/"
   },
   {
-    "label": "Rust Primitives",
+    "label": "Go Load",
+    "href": "/docs/sdk/go/load/"
+  },
+  {
+    "label": "Go Overload",
+    "href": "/docs/sdk/go/overload/"
+  },
+  {
+    "label": "Go Read",
+    "href": "/docs/sdk/go/read/"
+  },
+  {
+    "label": "Python load_dotenv",
+    "href": "/docs/sdk/python/load-dotenv/"
+  },
+  {
+    "label": "Python load_dotenvx",
+    "href": "/docs/sdk/python/load-dotenvx/"
+  },
+  {
+    "label": "Python dotenv_values",
+    "href": "/docs/sdk/python/dotenv-values/"
+  },
+  {
+    "label": "Python find_dotenv",
+    "href": "/docs/sdk/python/find-dotenv/"
+  },
+  {
+    "label": "Ruby load",
+    "href": "/docs/sdk/ruby/load/"
+  },
+  {
+    "label": "Ruby load!",
+    "href": "/docs/sdk/ruby/load-bang/"
+  },
+  {
+    "label": "Ruby overwrite",
+    "href": "/docs/sdk/ruby/overwrite/"
+  },
+  {
+    "label": "Ruby overwrite!",
+    "href": "/docs/sdk/ruby/overwrite-bang/"
+  },
+  {
+    "label": "Ruby parse",
+    "href": "/docs/sdk/ruby/parse/"
+  },
+  {
+    "label": "Ruby update",
+    "href": "/docs/sdk/ruby/update/"
+  },
+  {
+    "label": "Ruby preload",
+    "href": "/docs/sdk/ruby/preload/"
+  },
+  {
+    "label": "Ruby Rails",
+    "href": "/docs/sdk/ruby/rails/"
+  },
+  {
+    "label": "PHP createImmutable",
+    "href": "/docs/sdk/php/create-immutable/"
+  },
+  {
+    "label": "PHP createMutable",
+    "href": "/docs/sdk/php/create-mutable/"
+  },
+  {
+    "label": "PHP load",
+    "href": "/docs/sdk/php/load/"
+  },
+  {
+    "label": "PHP safeLoad",
+    "href": "/docs/sdk/php/safe-load/"
+  },
+  {
+    "label": "Rust load",
+    "href": "/docs/sdk/rust/load/"
+  },
+  {
+    "label": "Next.js loadEnvConfig",
+    "href": "/docs/sdk/nextjs/load-env-config/"
+  },
+  {
+    "label": "Next.js processEnv",
+    "href": "/docs/sdk/nextjs/process-env/"
+  },
+  {
+    "label": "Next.js resetEnv",
+    "href": "/docs/sdk/nextjs/reset-env/"
+  },
+  {
+    "label": "Next.js updateInitialEnv",
+    "href": "/docs/sdk/nextjs/update-initial-env/"
+  },
+  {
+    "label": "Next.js initialEnv",
+    "href": "/docs/sdk/nextjs/initial-env/"
+  },
+  {
+    "label": "Rust primitives injectsummary",
+    "href": "/docs/sdk/rust/primitives/injectsummary/"
+  },
+  {
+    "label": "Rust primitives check",
+    "href": "/docs/sdk/rust/primitives/check/"
+  },
+  {
+    "label": "Rust primitives parsedotenvxfile",
+    "href": "/docs/sdk/rust/primitives/parsedotenvxfile/"
+  },
+  {
+    "label": "Rust primitives policy",
+    "href": "/docs/sdk/rust/primitives/policy/"
+  },
+  {
+    "label": "Rust primitives storagepolicy",
+    "href": "/docs/sdk/rust/primitives/storagepolicy/"
+  },
+  {
+    "label": "Rust primitives storagecheck",
+    "href": "/docs/sdk/rust/primitives/storagecheck/"
+  },
+  {
+    "label": "Rust primitives profile",
+    "href": "/docs/sdk/rust/primitives/profile/"
+  },
+  {
+    "label": "Rust primitives redact",
+    "href": "/docs/sdk/rust/primitives/redact/"
+  },
+  {
+    "label": "Rust primitives decrypt",
+    "href": "/docs/sdk/rust/primitives/decrypt/"
+  },
+  {
+    "label": "Rust primitives derive",
+    "href": "/docs/sdk/rust/primitives/derive/"
+  },
+  {
+    "label": "Rust primitives encrypt",
+    "href": "/docs/sdk/rust/primitives/encrypt/"
+  },
+  {
+    "label": "Rust primitives encrypted",
+    "href": "/docs/sdk/rust/primitives/encrypted/"
+  },
+  {
+    "label": "Rust primitives evaluate",
+    "href": "/docs/sdk/rust/primitives/evaluate/"
+  },
+  {
+    "label": "Rust primitives expand",
+    "href": "/docs/sdk/rust/primitives/expand/"
+  },
+  {
+    "label": "Rust primitives keypair",
+    "href": "/docs/sdk/rust/primitives/keypair/"
+  },
+  {
+    "label": "Rust primitives keyring",
+    "href": "/docs/sdk/rust/primitives/keyring/"
+  },
+  {
+    "label": "Rust primitives match",
+    "href": "/docs/sdk/rust/primitives/match/"
+  },
+  {
+    "label": "Rust primitives matches",
+    "href": "/docs/sdk/rust/primitives/matches/"
+  },
+  {
+    "label": "Rust primitives parse",
+    "href": "/docs/sdk/rust/primitives/parse/"
+  },
+  {
+    "label": "Rust primitives parsearrays",
+    "href": "/docs/sdk/rust/primitives/parsearrays/"
+  },
+  {
+    "label": "Rust primitives publickeys",
+    "href": "/docs/sdk/rust/primitives/publickeys/"
+  },
+  {
+    "label": "Rust primitives scan",
+    "href": "/docs/sdk/rust/primitives/scan/"
+  },
+  {
+    "label": "Rust primitives sealed",
+    "href": "/docs/sdk/rust/primitives/sealed/"
+  },
+  {
+    "label": "Rust primitives remove",
+    "href": "/docs/sdk/rust/primitives/remove/"
+  },
+  {
+    "label": "Rust primitives upsert",
+    "href": "/docs/sdk/rust/primitives/upsert/"
+  },
+  {
+    "label": "Rust primitives",
     "href": "/docs/sdk/rust/primitives/"
+  },
+  {
+    "label": "Rust primitives private_key_hex",
+    "href": "/docs/sdk/rust/primitives/private_key_hex/"
+  },
+  {
+    "label": "Rust primitives public_key_hex",
+    "href": "/docs/sdk/rust/primitives/public_key_hex/"
+  },
+  {
+    "label": "Rust primitives public_key_metadata",
+    "href": "/docs/sdk/rust/primitives/public_key_metadata/"
+  },
+  {
+    "label": "Rust primitives public_key_display",
+    "href": "/docs/sdk/rust/primitives/public_key_display/"
+  },
+  {
+    "label": "Rust primitives injectsummary_sources",
+    "href": "/docs/sdk/rust/primitives/injectsummary_sources/"
+  },
+  {
+    "label": "Rust primitives injectsummary_with_metadata",
+    "href": "/docs/sdk/rust/primitives/injectsummary_with_metadata/"
+  },
+  {
+    "label": "Rust primitives decrypted_replacements",
+    "href": "/docs/sdk/rust/primitives/decrypted_replacements/"
+  },
+  {
+    "label": "Rust primitives parse_decrypted_source",
+    "href": "/docs/sdk/rust/primitives/parse_decrypted_source/"
   }
 ]

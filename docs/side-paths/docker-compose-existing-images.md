@@ -38,7 +38,7 @@ HELLO="Trek"
 HELLO="Scrutiny"
 ```
 
-Encrypt each file. Choose **Local** and store the keys in .env.keys:
+Encrypt each file. Choose **Classic (.env.keys)** and store the keys in .env.keys:
 
 ```console
 $ dotenvx encrypt -f .env.keeper

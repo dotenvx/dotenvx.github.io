@@ -12,6 +12,13 @@ Store the private key in Bitwarden. Your encrypted `.env` stays in your project.
 
 ## Store
 
+Install the [bitwarden feature](/docs/cli/install-add/):
+
+```console
+$ dotenvx install --add bitwarden
+```
+{: copy="dotenvx install --add bitwarden"}
+
 Install the Bitwarden CLI (`bw`) and sign in:
 
 ```console

@@ -1,25 +1,26 @@
 ---
 doc_type: cli
 title: "--format colon"
-eyebrow: "dotenvx get"
-eyebrow_href: /docs/cli/get/
+eyebrow: dotenvx get
+eyebrow_href: "/docs/cli/get/"
 description: Return a colon formatted response.
-permalink: /docs/cli/get-colon/
+permalink: "/docs/cli/get-colon/"
 redirect_from:
-  - /docs/ref/cli/get-colon/
-  - /docs/ref/cli/get-colon
+- "/docs/ref/cli/get-colon/"
+- "/docs/ref/cli/get-colon"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Get
-    href: /docs/cli/get/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Get
+  href: "/docs/cli/get/"
 ---
 
 ```console
 $ echo "HELLO=World" > .env
-dotenvx get --format colon
+$ dotenvx get --format colon
 HELLO: World
 ```
-{: copy="echo \"HELLO=World\" > .env"}
+{: copy="echo \"HELLO=World\" > .env
+dotenvx get --format colon"}

@@ -12,6 +12,13 @@ Keep the private key in macOS Keychain, under your user account.
 
 ## Store
 
+Install the [native feature](/docs/cli/install-add/):
+
+```console
+$ dotenvx install --add native
+```
+{: copy="dotenvx install --add native"}
+
 Start with an [encrypted .env and .env.keys](/docs/custody/env-keys/), then move the key:
 
 ```console

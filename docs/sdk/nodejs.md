@@ -1,26 +1,9 @@
 ---
 title: Node.js
-description: Load and manage encrypted env from Node.js.
-permalink: /docs/sdk/nodejs/
-eyebrow: "SDKs"
-eyebrow_href: "/docs/sdk"
-icon: "nodejs"
+description: Load encrypted environment values with the Node.js SDK.
+permalink: "/docs/sdk/nodejs/"
+icon: nodejs
 ---
-
-## Packages
-
-<div class="design-list">
-<ul class="design-list-items">
-<li>
-<a class="design-link" href="https://www.npmjs.com/package/@dotenvx/dotenvx" target="_blank" rel="noopener noreferrer">@dotenvx/dotenvx</a>
-<span class="design-list-meta">npm</span>
-</li>
-<li>
-<a class="design-link" href="https://www.npmjs.com/package/@dotenvx/next-env" target="_blank" rel="noopener noreferrer">@dotenvx/next-env</a>
-<span class="design-list-meta">Next.js</span>
-</li>
-</ul>
-</div>
 
 ## Install
 
@@ -32,18 +15,29 @@ $ npm install @dotenvx/dotenvx
 ## Usage
 
 ```javascript
-require('@dotenvx/dotenvx').config()
+const dotenvx = require('@dotenvx/dotenvx')
+const result = dotenvx.config()
+console.log(process.env.HELLO)
 ```
 
-See the [Node.js quickstart](/docs/nodejs/) or [Next.js quickstart](/docs/nextjs/) for a full walkthrough.
+ES modules support named and default imports:
 
-{% capture sdk_methods_items %}
-      <li><a class="design-link" href="/docs/sdk/nodejs/config/">config</a></li>
-      <li><a class="design-link" href="/docs/sdk/nodejs/parse/">parse</a></li>
-      <li><a class="design-link" href="/docs/sdk/nodejs/config-set-key-value/">set</a></li>
-      <li><a class="design-link" href="/docs/sdk/nodejs/config-get-key/">get</a></li>
-{% endcapture %}
-{% include components/design-list.html
-      title="Methods"
-      items=sdk_methods_items
-    %}
+```javascript
+import dotenvx, { config, parse, get, getSync } from '@dotenvx/dotenvx'
+config()
+```
+
+## Methods
+
+- [config](/docs/sdk/nodejs/config/)
+- [parse](/docs/sdk/nodejs/parse/)
+- [get](/docs/sdk/nodejs/get/)
+- [getSync](/docs/sdk/nodejs/get-sync/)
+
+[Preload](/docs/sdk/nodejs/preload/) loads before application modules execute.
+
+The package includes the native SDK and a matching default Rust CLI through platform dependencies. Keep optional dependencies enabled. The CLI launcher prefers an installed native Dotenvx binary on PATH, then uses the packaged CLI. DOTENVX_CLI can select an explicit executable.
+
+Local key files and matching environment private keys work directly. Stored-key custody delegates to a compatible CLI with sdk and the required provider feature. SDK loading does not automatically send Armor activity events.
+
+Use [dotenvx set](/docs/cli/set/) to update env files. See the [Node.js quickstart](/docs/nodejs/) for a full walkthrough.

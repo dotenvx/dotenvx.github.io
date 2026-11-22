@@ -32,7 +32,7 @@ $ dotenvx encrypt
 
 Then inject your encrypted secrets in cron jobs with `dotenvx run`.
 
-```shell
+```crontab
 # run every day at 8am
 0 8 * * * dotenvx run -- /path/to/myscript.sh
 ```

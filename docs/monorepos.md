@@ -27,7 +27,6 @@ From `apps/web`, point `-f` two directories up.
 
 ```console
 $ dotenvx run -f ../.. -- node index.js
-⟐ injected env (1) from ../../.env
 Hello World
 ```
 {: copy="dotenvx run -f ../.. -- node index.js"}
@@ -40,7 +39,6 @@ With a convention, the directory becomes the base for every convention file.
 
 ```console
 $ dotenvx run -f ../.. --convention=nextjs -- node index.js
-⟐ injected env (1) from ../../.env.development.local, ../../.env.local, ../../.env.development, ../../.env
 Hello development local
 ```
 {: copy="dotenvx run -f ../.. --convention=nextjs -- node index.js"}

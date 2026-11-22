@@ -1,22 +1,22 @@
 ---
 doc_type: cli
-title: "Alternate Values"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+title: Alternate Values
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Use alternate values when environment variables are set and non-empty.
-permalink: /docs/cli/run-alternate-values/
+permalink: "/docs/cli/run-alternate-values/"
 redirect_from:
-  - /docs/advanced/run-alternate-values
-  - /docs/advanced/run-alternate-values/
-  - /docs/ref/cli/run-alternate-values
-  - /docs/ref/cli/run-alternate-values/
+- "/docs/advanced/run-alternate-values"
+- "/docs/advanced/run-alternate-values/"
+- "/docs/ref/cli/run-alternate-values"
+- "/docs/ref/cli/run-alternate-values/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```dotenv

@@ -1,10 +1,8 @@
 ---
 title: Rust
-description: Load encrypted .env files in Rust.
-permalink: /docs/sdk/rust/
-eyebrow: "SDKs"
-eyebrow_href: "/docs/sdk"
-icon: "rust"
+description: Load encrypted environment values with the Rust SDK.
+permalink: "/docs/sdk/rust/"
+icon: rust
 ---
 
 {% assign sdk = site.data.install_sdks_v2 | where: 'name', 'Rust' | first %}
@@ -25,9 +23,10 @@ icon: "rust"
 
 ## Install
 
-```bash
-{{ sdk.command }}
-```
+{% assign install_commands = sdk.command | newline_to_br | split: '<br />' %}
+{% capture install_display %}{% for command in install_commands %}$ {{ command | strip }}
+{% endfor %}{% endcapture %}
+{% include components/design-codeblock.html value=install_display format='cli' copy_text=sdk.command %}
 
 ## Usage
 
@@ -43,9 +42,10 @@ fn main() -> std::io::Result<()> {
 
 ## Primitives
 
-```console
-$ cargo add dotenvx-primitives
-```
-{: copy="cargo add dotenvx-primitives"}
+[Low-level Rust primitives](/docs/sdk/rust/primitives/) provide parsing, encryption, policies, and source editing.
 
-See [Rust primitives](/docs/sdk/rust/primitives/) for details, or the [Rust quickstart](/docs/rust/) for a full walkthrough.
+## Reference
+
+- [load](/docs/sdk/rust/load/)
+
+For process-output redaction, run your application through [dotenvx run](/docs/cli/run/) with [Dotenvx.toml redaction rules](/docs/dotenvxtoml/redacted/).

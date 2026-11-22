@@ -35,11 +35,12 @@ Otherwise, foreman will load your `.env` file first – without decrypting it pr
 
 Lastly, run `bin/dev` – [dotenvx](https://github.com/dotenvx/dotenvx) will inject your environment variables, and Rails will boot up.
 
-```
+```console
 $ bin/dev
 11:10:20 web.1  | [dotenvx@1.6.2] injecting env (6) from .env
 11:10:21 web.1  | => Booting Puma
 11:10:21 web.1  | => Rails 7.1.3.4 application starting in development
 ```
+{: copy="bin/dev"}
 
 Great! Enjoy development with encrypted .env files and Rails. 🎉

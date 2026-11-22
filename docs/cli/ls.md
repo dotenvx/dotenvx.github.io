@@ -1,27 +1,36 @@
 ---
 doc_type: cli
 title: Ls
-description: Print all .env files in a tree structure.
-permalink: /docs/cli/ls/
+description: List matching env files.
+permalink: "/docs/cli/ls/"
 redirect_from:
-  - /docs/cli/ext
-  - /docs/cli/ext-ls
-  - /docs/cli/ext-ls-directory
-  - /docs/cli/ext-ls-directory/
-  - /docs/cli/ext-ls-ef
-  - /docs/cli/ext-ls-ef/
-  - /docs/cli/ext-ls-f
-  - /docs/cli/ext-ls-f/
-  - /docs/cli/ext-ls/
-  - /docs/cli/ext/
-  - /docs/ref/cli/ls
-  - /docs/ref/cli/ls/
+- "/docs/cli/ext"
+- "/docs/cli/ext-ls"
+- "/docs/cli/ext-ls-directory"
+- "/docs/cli/ext-ls-directory/"
+- "/docs/cli/ext-ls-ef"
+- "/docs/cli/ext-ls-ef/"
+- "/docs/cli/ext-ls-f"
+- "/docs/cli/ext-ls-f/"
+- "/docs/cli/ext-ls/"
+- "/docs/cli/ext/"
+- "/docs/ref/cli/ls"
+- "/docs/ref/cli/ls/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
 video: cli-ls
+command: dotenvx ls
+global_options: true
+options:
+- title: ls --file
+  href: "/docs/cli/ls-f/"
+- title: ls --exclude-file
+  href: "/docs/cli/ls-ef/"
+- title: ls --json
+  href: "/docs/cli/ls-json/"
 ---
 
 ```console
@@ -61,3 +70,5 @@ Progress and summary details are written to stderr, so stdout can be safely pipe
 $ dotenvx ls --json > dotenv-files.json
 ```
 {: copy="dotenvx ls --json > dotenv-files.json"}
+
+Requires the ls build feature. Add it with [dotenvx install --add](/docs/cli/install-add/).

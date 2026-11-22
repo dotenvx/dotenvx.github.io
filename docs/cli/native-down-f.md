@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "native down -f"
-description: "Path to your env file."
+title: native down -f
+description: Path to your env file.
 permalink: "/docs/cli/native-down-f/"
-command: "dotenvx native down -f"
-eyebrow: "dotenvx native down"
+command: dotenvx native down -f
+eyebrow: dotenvx native down
 eyebrow_href: "/docs/cli/native/down/"
 ---
 

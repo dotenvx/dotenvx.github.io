@@ -1,22 +1,22 @@
 ---
 doc_type: cli
-title: "Interpolation Syntax Summary"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+title: Interpolation Syntax Summary
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Complete reference for variable interpolation patterns supported by dotenvx.
-permalink: /docs/cli/run-interpolation-syntax-summary/
+permalink: "/docs/cli/run-interpolation-syntax-summary/"
 redirect_from:
-  - /docs/advanced/run-interpolation-syntax-summary
-  - /docs/advanced/run-interpolation-syntax-summary/
-  - /docs/ref/cli/run-interpolation-syntax-summary
-  - /docs/ref/cli/run-interpolation-syntax-summary/
+- "/docs/advanced/run-interpolation-syntax-summary"
+- "/docs/advanced/run-interpolation-syntax-summary/"
+- "/docs/ref/cli/run-interpolation-syntax-summary"
+- "/docs/ref/cli/run-interpolation-syntax-summary/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```dotenv

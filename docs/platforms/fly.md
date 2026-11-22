@@ -35,9 +35,9 @@ CMD ["node", "index.js"]
 ```
 {: copy="false"}
 
-```bash
-flyctl launch
-flyctl deploy
+```console
+$ flyctl launch
+$ flyctl deploy
 ```
 {: copy="false"}
 
@@ -51,7 +51,7 @@ FROM node:20
 WORKDIR /app
 
 # Install dotenvx
-RUN curl -sfS https://dotenvx.sh/install.sh | sh
+RUN curl -sfS https://dotenvx.sh | sh
 
 COPY package*.json ./
 RUN npm install
@@ -64,8 +64,7 @@ CMD ["dotenvx", "run", "--", "node", "index.js"]
 {: copy="false"}
 
 {% assign github_install = '/docs/install/#github' %}
-{% assign github_install = 'https://github.com/dotenvx/dotenvx/releases' %}
-If you prefer, [install from GitHub Releases]({{ github_install }}) or view the [install.sh](https://dotenvx.sh/install.sh) file before executing.
+For custom builds and installation options, see [dotenvx install](/docs/cli/install/).
 
 ## Encrypt production
 
@@ -84,9 +83,9 @@ Commit `.env.production`. Do not commit `.env.keys`.
 
 ## Set decryption key
 
-```bash
-flyctl secrets set DOTENV_PRIVATE_KEY='your-private-key' DOTENV_FILE='.env.production'
-flyctl deploy
+```console
+$ flyctl secrets set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key' DOTENV_FILE='.env.production'
+$ flyctl deploy
 ```
 {: copy="false"}
 

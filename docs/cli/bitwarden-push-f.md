@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "bitwarden push -f"
-description: "Path to your env file."
+title: bitwarden push -f
+description: Path to your env file.
 permalink: "/docs/cli/bitwarden-push-f/"
-command: "dotenvx bitwarden push -f"
-eyebrow: "dotenvx bitwarden push"
+command: dotenvx bitwarden push -f
+eyebrow: dotenvx bitwarden push
 eyebrow_href: "/docs/cli/bitwarden-push/"
 ---
 

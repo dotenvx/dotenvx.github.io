@@ -2,7 +2,6 @@
 title: Errors
 description: Error codes surfaced by Dotenvx and Armor.
 permalink: /docs/errors/
-main_layout: wide
 ---
 
 

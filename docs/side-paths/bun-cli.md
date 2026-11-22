@@ -30,7 +30,6 @@ The --bun flag runs the Dotenvx CLI with Bun. Dotenvx then starts your app with 
 
 ```console
 $ bun run start
-⟐ injected env (2) from .env (022 0D8) via .env.keys
 Server running on http://localhost:3000/
 ```
 {: copy="bun run start"}

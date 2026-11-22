@@ -1,31 +1,34 @@
 ---
 doc_type: cli
 title: "-fk"
-eyebrow: "dotenvx decrypt"
-eyebrow_href: /docs/cli/decrypt/
+eyebrow: dotenvx decrypt
+eyebrow_href: "/docs/cli/decrypt/"
 description: Specify path to .env.keys. This is useful with monorepos.
-permalink: /docs/cli/decrypt-fk/
+permalink: "/docs/cli/decrypt-fk/"
 redirect_from:
-  - /docs/advanced/decrypt-fk
-  - /docs/advanced/decrypt-fk/
-  - /docs/ref/cli/decrypt-fk
-  - /docs/ref/cli/decrypt-fk/
+- "/docs/advanced/decrypt-fk"
+- "/docs/advanced/decrypt-fk/"
+- "/docs/ref/cli/decrypt-fk"
+- "/docs/ref/cli/decrypt-fk/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Decrypt
-    href: /docs/cli/decrypt/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Decrypt
+  href: "/docs/cli/decrypt/"
 ---
 
 ```console
 $ mkdir -p apps/app1
-echo "HELLO=World" > apps/app1/.env
+$ echo "HELLO=World" > apps/app1/.env
 
-dotenvx encrypt -fk .env.keys -f apps/app1/.env
+$ dotenvx encrypt -fk .env.keys -f apps/app1/.env
 ◈ encrypted (apps/app1/.env)
-dotenvx decrypt -fk .env.keys -f apps/app1/.env
+$ dotenvx decrypt -fk .env.keys -f apps/app1/.env
 ◇ decrypted (apps/app1/.env)
 ```
-{: copy="mkdir -p apps/app1"}
+{: copy="mkdir -p apps/app1
+echo \"HELLO=World\" > apps/app1/.env
+dotenvx encrypt -fk .env.keys -f apps/app1/.env
+dotenvx decrypt -fk .env.keys -f apps/app1/.env"}

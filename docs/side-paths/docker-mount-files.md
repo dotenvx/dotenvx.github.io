@@ -17,13 +17,18 @@ COPY index.js ./
 
 Build it, then mount the encrypted file and local key file read-only:
 
-```shell
-docker build -t hello-docker-mounted .
-docker run --rm \
+```console
+$ docker build -t hello-docker-mounted .
+$ docker run --rm \
   --mount "type=bind,source=$(pwd)/.env,target=/app/.env,readonly" \
   --mount "type=bind,source=$(pwd)/.env.keys,target=/app/.env.keys,readonly" \
   hello-docker-mounted
 ```
+{: copy="docker build -t hello-docker-mounted .
+docker run --rm \
+  --mount \"type=bind,source=$(pwd)/.env,target=/app/.env,readonly\" \
+  --mount \"type=bind,source=$(pwd)/.env.keys,target=/app/.env.keys,readonly\" \
+  hello-docker-mounted"}
 
 The files must exist on the Docker host. These paths assume a POSIX shell and a local Docker runtime. Match the container's /app paths to its WORKDIR.
 

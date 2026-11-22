@@ -1,5 +1,5 @@
 ---
-description: "Use Dotenvx SDKs to load and manage encrypted environment variables directly in your application. Browse language references and encryption primitives."
+description: "Load encrypted environment values with the Dotenvx 3.0 SDKs. Browse language APIs and Rust primitives."
 title: SDKs
 permalink: /docs/sdk/
 redirect_from:
@@ -7,7 +7,6 @@ redirect_from:
   - /docs/ref/sdk/
   - /docs/sdk/introduction
   - /docs/sdk/introduction/
-main_layout: single
 sdk_languages:
   - label: Node.js
     slug: nodejs
@@ -29,8 +28,16 @@ sdk_languages:
 ---
 
 
-> Load and manage encrypted env from your language.
+> Load encrypted environment values from your language.
+
+These references describe the Dotenvx 3.0 implementations. SDKs resolve and load configuration; use the [CLI](/docs/cli/) to edit env files.
 
 ## Languages
 
 {% include main-sdk-list.md languages=page.sdk_languages %}
+
+## API reference
+
+{% for reference in site.data.advanced_sdk -%}
+- [{{ reference.label }}]({{ reference.href }})
+{% endfor %}

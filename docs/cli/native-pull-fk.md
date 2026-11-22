@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "native pull -fk"
-description: "Path to your .env.keys file."
+title: native pull -fk
+description: Path to your .env.keys file.
 permalink: "/docs/cli/native-pull-fk/"
-command: "dotenvx native pull -fk"
-eyebrow: "dotenvx native pull"
+command: dotenvx native pull -fk
+eyebrow: dotenvx native pull
 eyebrow_href: "/docs/cli/native/pull/"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Rust"
 social_title: "Encrypt a .env file in Rust"
-description: "Encrypt a .env file in Rust with dotenvx, commit it safely, and decrypt its secrets with dotenvx-primitives."
+description: "Encrypt a .env file in Rust with dotenvx, commit it safely, and decrypt its secrets with dotenvx-official."
 icon: rust
 permalink: /docs/rust/
 redirect_from:
@@ -10,7 +10,7 @@ redirect_from:
   - /docs/secrets-in-rust/
   - /docs/secrets-in-rust
 markdown_url: /docs/rust.md
-agent_prompt: Set up Dotenvx with the Rust dotenvx-primitives crate for me.
+agent_prompt: Set up Dotenvx with the Rust dotenvx-official crate for me.
 ---
 
 ## Prerequisites
@@ -29,9 +29,9 @@ cd hello-rust"}
 Add the Rust SDK:
 
 ```console
-$ cargo add dotenvx-primitives
+$ cargo add dotenvx-official
 ```
-{: copy="cargo add dotenvx-primitives"}
+{: copy="cargo add dotenvx-official"}
 
 Install the Dotenvx CLI to encrypt files and manage keys:
 
@@ -40,7 +40,7 @@ $ curl -sfS https://dotenvx.sh | sh
 ```
 {: copy="curl -sfS https://dotenvx.sh | sh"}
 
-The compiled app decrypts through the Rust crate; it does not need the CLI. The crate currently resolves keys from an explicit keyring, key files, and process environment variables. Provider callbacks are not supported yet.
+The compiled app loads configuration through [dotenvx_official::load](/docs/sdk/rust/load/); it does not need the CLI for file-based private keys.
 
 ## Encrypt
 
@@ -59,15 +59,15 @@ $ dotenvx encrypt
 ```
 {: copy="dotenvx encrypt"}
 
-When prompted, choose **Local** and store the key in .env.keys. The Rust SDK will read that file.
+When prompted, choose **Classic (.env.keys)** and store the key in .env.keys. The Rust SDK will read that file.
 
 The value becomes ciphertext:
 
 ```dotenv
 # .env
-DOTENV_PUBLIC_KEY="0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
+DOTENV_PUBLIC_KEY="DOTENV-PUBLIC-KEY-3-SECP256K1-0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
 
-HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTOT3Ci8IKrdIg2TMZFoq1mDR6yb06QCRvqHXtpkZkAHYCEHfeWqqC8tMFovcYq5JS2uZSrC/qUGDA=="
+HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0220d83035-BP8FZxI4vhmRmfTAmvZGnzBd6AoJG0ZSjKDLRbE4XpxaWBDD7PpxLMkB/2I0glwVkHXeIcpJwY13qtdhjySs+a9NT9myy5uzErUYb2Uc/1LDY886yF8SxslAxfiJzhZ5NV3qQDQ6Tg=="
 ```
 {: class="design-codeblock--nowrap"}
 
@@ -88,27 +88,9 @@ Read and decrypt the file in your app:
 
 ```rust
 // src/main.rs
-use dotenvx_primitives::{parse, ParseOptions};
-use std::{error::Error, fs, path::PathBuf};
-
-fn main() -> Result<(), Box<dyn Error>> {
-    let path = PathBuf::from(
-        std::env::args().nth(1).unwrap_or_else(|| ".env".into()),
-    );
-    let source = fs::read_to_string(&path)?;
-    let result = parse(
-        &source,
-        &ParseOptions {
-            key_files: vec![path.with_file_name(".env.keys")],
-            ..Default::default()
-        },
-    );
-
-    if let Some(error) = result.errors.into_iter().next() {
-        return Err(error.into());
-    }
-
-    let hello = result.parsed.get("HELLO").ok_or("HELLO is required")?;
+fn main() -> std::io::Result<()> {
+    let values = dotenvx_official::load()?;
+    let hello = values.get("HELLO").expect("HELLO is required");
     println!("Hello {hello}");
     Ok(())
 }
@@ -122,9 +104,9 @@ Hello Secret
 ```
 {: copy="cargo run"}
 
-The SDK returns decrypted values in a map; it does not modify the process environment. This example stops on decryption errors and passes values directly to your code. Existing process values take precedence by default.
+The SDK returns decrypted values in a map; it does not modify the process environment. Loading is strict: missing files and decryption errors stop this example before it uses the returned values. Existing process values take precedence by default.
 
-HELLO is a demonstration value. Use real secrets in your application without printing them; parse does not automatically redact output.
+HELLO is a demonstration value. Use real secrets in your application without printing them; load does not automatically redact output.
 
 [**Use the CLI** Alternative →](/docs/rust/cli/){: .side-path}
 
@@ -166,7 +148,7 @@ HELLO="Production"
 ```
 {: copy="HELLO=\"Production\""}
 
-Encrypt it. Choose **Local** and store the key in .env.keys:
+Encrypt it. Choose **Classic (.env.keys)** and store the key in .env.keys:
 
 ```console
 $ dotenvx encrypt -f .env.production
@@ -203,10 +185,10 @@ Deploy target/release/hello-rust and .env.production together. Use your package'
 From that directory, run:
 
 ```console
-$ ./hello-rust .env.production
+$ DOTENV_FILE=.env.production ./hello-rust
 Hello Production
 ```
-{: copy="./hello-rust .env.production"}
+{: copy="DOTENV_FILE=.env.production ./hello-rust"}
 
 The SDK reads the injected key and decrypts .env.production at runtime. No CLI or .env.keys file is needed on the server.
 

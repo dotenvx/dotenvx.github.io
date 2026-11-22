@@ -43,7 +43,6 @@ Encrypt it with a single command.
 
 ```console
 $ npx dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
 
@@ -51,9 +50,9 @@ The values become ciphertext and only your private key can unlock them.
 
 ```dotenv
 # .env
-DOTENV_PUBLIC_KEY="0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
+DOTENV_PUBLIC_KEY="DOTENV-PUBLIC-KEY-3-SECP256K1-0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
 
-HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTOT3Ci8IKrdIg2TMZFoq1mDR6yb06QCRvqHXtpkZkAHYCEHfeWqqC8tMFovcYq5JS2uZSrC/qUGDA=="
+HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0220d83035-BP8FZxI4vhmRmfTAmvZGnzBd6AoJG0ZSjKDLRbE4XpxaWBDD7PpxLMkB/2I0glwVkHXeIcpJwY13qtdhjySs+a9NT9myy5uzErUYb2Uc/1LDY886yF8SxslAxfiJzhZ5NV3qQDQ6Tg=="
 ```
 {: class="design-codeblock--nowrap"}
 
@@ -83,7 +82,6 @@ Run your app:
 
 ```console
 $ node index.js
-⟐ injected env (2) from .env (022 0D8) via .env.keys
 Hello Secret
 ```
 {: copy="node index.js"}
@@ -93,6 +91,13 @@ Dotenvx loads and decrypts .env before your code reads process.env.
 ## Share
 
 Have teammates? Share access with Dotenvx Armor ⛨
+
+Install the [Armor feature](/docs/cli/install-add/) before using Armor commands:
+
+```console
+$ npx dotenvx install --add armor
+```
+{: copy="npx dotenvx install --add armor"}
 
 Log in to Dotenvx.
 
@@ -106,7 +111,6 @@ Create the Armored Key ⛨
 
 ```console
 $ npx dotenvx armor up
-⛨ armored .env (022 0D8)
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
 
@@ -122,7 +126,6 @@ Your teammate accepts the invitation, pulls the repository, installs dependencie
 
 ```console
 $ node index.js
-⟐ injected env (2) from .env (022 0D8) via Armor ⛨
 Hello Secret
 ```
 {: copy="node index.js"}
@@ -143,11 +146,10 @@ Encrypt it with an Enclaved Key ◊
 
 ```console
 $ npx dotenvx encrypt -f .env.production
-◈ encrypted .env.production (022 0D8) via Armor Enclave ◊
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-When prompted, choose **Enclaved**, select your deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
+When prompted, choose **Armor**, then **Enclaved**, select your deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name.
 
 Commit .env.production.
 
@@ -171,7 +173,6 @@ Run your app:
 
 ```console
 $ node index.js
-⟐ injected env (2) from .env.production (022 0D8) via Armor Enclave ◊
 Hello Production
 ```
 {: copy="node index.js"}

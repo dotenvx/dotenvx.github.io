@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "armor down -f"
-description: "Path to your env file."
+title: armor down -f
+description: Path to your env file.
 permalink: "/docs/cli/armor-down-f/"
-command: "dotenvx armor down -f"
-eyebrow: "dotenvx armor down"
+command: dotenvx armor down -f
+eyebrow: dotenvx armor down
 eyebrow_href: "/docs/cli/armor/down/"
 ---
 

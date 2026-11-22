@@ -1,0 +1,18 @@
+[
+  {
+    "label": "--quiet",
+    "href": "/docs/cli/quiet/"
+  },
+  {
+    "label": "--verbose",
+    "href": "/docs/cli/verbose/"
+  },
+  {
+    "label": "--debug",
+    "href": "/docs/cli/debug/"
+  },
+  {
+    "label": "--log-level",
+    "href": "/docs/cli/log-level/"
+  }
+]

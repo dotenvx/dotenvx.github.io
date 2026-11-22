@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "get --format"
-description: "Format of the output (json, shell, colon, eval, eval-export)."
+title: get --format
+description: Format of the output (json, shell, colon, eval, eval-export).
 permalink: "/docs/cli/get-format/"
-command: "dotenvx get --format"
-eyebrow: "dotenvx get"
+command: dotenvx get --format
+eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"
 ---
 

@@ -16,7 +16,7 @@ Store the key locally and paste it into Vercel instead of using Armor Enclaves.
 
 ## Encrypt for production
 
-Encrypt it. When prompted, choose **Local**, then your preferred storage option.
+Encrypt it. When prompted, choose **Classic (.env.keys)**.
 
 ```console
 $ npx dotenvx encrypt -f .env.production
@@ -29,7 +29,7 @@ Use keypair to retrieve your production private key:
 
 ```console
 $ npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production
-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
+DOTENV-PRIVATE-KEY-3-SECP256K1-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
 ```
 {: copy="npx dotenvx keypair DOTENV_PRIVATE_KEY_PRODUCTION -f .env.production" package-manager="npm"}
 
@@ -37,4 +37,4 @@ c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015
 
 Open your Vercel project's [Settings → Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables). Add DOTENV_PRIVATE_KEY_PRODUCTION, paste the value printed by your command, and select **Production**. Save it.
 
-{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}
+{% include components/design-secrets-artifact.html key="DOTENV_PRIVATE_KEY_PRODUCTION" value="DOTENV-PRIVATE-KEY-3-SECP256K1-c09d6f8918835c82f0df3b7d100c501ac199af5a76405892d641def691b5f015" %}

@@ -1,26 +1,27 @@
 ---
 doc_type: cli
-title: "KEY -f"
-eyebrow: "dotenvx del"
-eyebrow_href: /docs/cli/del/
+title: KEY -f
+eyebrow: dotenvx del
+eyebrow_href: "/docs/cli/del/"
 description: Delete a key from another .env file.
-permalink: /docs/cli/del-key-f/
+permalink: "/docs/cli/del-key-f/"
 redirect_from:
-  - /docs/ref/cli/del-key-f/
-  - /docs/ref/cli/del-key-f
+- "/docs/ref/cli/del-key-f/"
+- "/docs/ref/cli/del-key-f"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Del
-    href: /docs/cli/del/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Del
+  href: "/docs/cli/del/"
 ---
 
 ```console
 $ echo "HELLO=production" > .env.production
 
-dotenvx del HELLO -f .env.production
+$ dotenvx del HELLO -f .env.production
 ◇ removed HELLO (.env.production)
 ```
-{: copy="echo \"HELLO=production\" > .env.production"}
+{: copy="echo \"HELLO=production\" > .env.production
+dotenvx del HELLO -f .env.production"}

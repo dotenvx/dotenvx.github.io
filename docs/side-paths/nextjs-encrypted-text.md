@@ -1,6 +1,6 @@
 ---
 doc_type: side-path
-title: Seeing encrypted:ciphertext only?
+title: Seeing ciphertext only?
 description: Check that Next.js is using the encrypted environment loader.
 permalink: /docs/nextjs/encrypted-text/
 markdown_url: /docs/nextjs/encrypted-text.md

@@ -1,22 +1,23 @@
 ---
 doc_type: cli
-title: "Shell Expansion"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
-description: "Prevent your shell from expanding inline `$VARIABLES` before dotenvx has a chance to inject them. Use a subshell."
-permalink: /docs/cli/run-shell-expansion/
+title: Shell Expansion
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
+description: Prevent your shell from expanding inline `$VARIABLES` before dotenvx
+  has a chance to inject them. Use a subshell.
+permalink: "/docs/cli/run-shell-expansion/"
 redirect_from:
-  - /docs/advanced/run-shell-expansion
-  - /docs/advanced/run-shell-expansion/
-  - /docs/ref/cli/run-shell-expansion
-  - /docs/ref/cli/run-shell-expansion/
+- "/docs/advanced/run-shell-expansion"
+- "/docs/advanced/run-shell-expansion/"
+- "/docs/ref/cli/run-shell-expansion"
+- "/docs/ref/cli/run-shell-expansion/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```console

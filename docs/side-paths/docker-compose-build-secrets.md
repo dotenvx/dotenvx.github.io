@@ -11,7 +11,7 @@ side_path_kind: Alternative
 
 If your build needs secrets, grant them through build.secrets. Runtime environment settings do not supply secrets to image builds.
 
-Follow the [Docker build-time secrets example](/docs/docker/build-secrets/) to create and encrypt .env.build, add build.js, and update the Dockerfile with its BuildKit secret mount. Choose **Local** for this demonstration and store the build key in .env.keys.
+Follow the [Docker build-time secrets example](/docs/docker/build-secrets/) to create and encrypt .env.build, add build.js, and update the Dockerfile with its BuildKit secret mount. Choose **Classic (.env.keys)** for this demonstration and store the build key in .env.keys.
 
 Use this compose.build.yaml:
 

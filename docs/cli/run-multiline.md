@@ -1,22 +1,22 @@
 ---
 doc_type: cli
-title: "Multiline"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+title: Multiline
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Dotenvx supports multiline values.
-permalink: /docs/cli/run-multiline/
+permalink: "/docs/cli/run-multiline/"
 redirect_from:
-  - /docs/advanced/run-multiline
-  - /docs/advanced/run-multiline/
-  - /docs/ref/cli/run-multiline
-  - /docs/ref/cli/run-multiline/
+- "/docs/advanced/run-multiline"
+- "/docs/advanced/run-multiline/"
+- "/docs/ref/cli/run-multiline"
+- "/docs/ref/cli/run-multiline/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 ---
 
 ```dotenv

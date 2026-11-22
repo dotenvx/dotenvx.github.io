@@ -12,6 +12,13 @@ Store the private key in 1Password. Your encrypted `.env` stays in your project.
 
 ## Store
 
+Install the [1password feature](/docs/cli/install-add/):
+
+```console
+$ dotenvx install --add 1password
+```
+{: copy="dotenvx install --add 1password"}
+
 Install the 1Password CLI (`op` version 2) and sign in. Start with an [encrypted .env and .env.keys](/docs/custody/env-keys/), then move the key:
 
 ```console

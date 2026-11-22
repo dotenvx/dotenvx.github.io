@@ -1,31 +1,32 @@
 ---
 doc_type: cli
-title: "KEY value"
-eyebrow: "dotenvx set"
-eyebrow_href: /docs/cli/set/
+title: KEY value
+eyebrow: dotenvx set
+eyebrow_href: "/docs/cli/set/"
 description: Set a single key/value.
-permalink: /docs/cli/set-key-value/
+permalink: "/docs/cli/set-key-value/"
 redirect_from:
-  - /docs/advanced/set-key-value
-  - /docs/advanced/set-key-value/
-  - /docs/ref/cli/set-key-value
-  - /docs/ref/cli/set-key-value/
+- "/docs/advanced/set-key-value"
+- "/docs/advanced/set-key-value/"
+- "/docs/ref/cli/set-key-value"
+- "/docs/ref/cli/set-key-value/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Set
-    href: /docs/cli/set/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Set
+  href: "/docs/cli/set/"
 video: cli-set-key-value
 ---
 
 ```console
 $ touch .env
 
-dotenvx set HELLO World
+$ dotenvx set HELLO World
 ◈ encrypted HELLO (.env)
 ```
-{: copy="touch .env"}
+{: copy="touch .env
+dotenvx set HELLO World"}
 
 * encryption defaults to on

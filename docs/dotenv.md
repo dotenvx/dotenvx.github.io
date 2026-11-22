@@ -28,9 +28,10 @@ og_image:
 
 <p>Install dotenv in your project.</p>
 
-```bash
-npm install dotenv --save
+```console
+$ npm install dotenv --save
 ```
+{: copy="npm install dotenv --save"}
 
 <p>Create a .env file in the root of your project.</p>
 
@@ -63,9 +64,10 @@ Hello Dotenv
 
 <p>Dotenv 18 includes a CLI. Load your .env before the command starts, with no dotenv import needed in your app.</p>
 
-```bash
-npx dotenv run -- node index.js
+```console
+$ npx dotenv run -- node index.js
 ```
+{: copy="npx dotenv run -- node index.js"}
 
 
 
@@ -140,17 +142,19 @@ console.log(target.HELLO) // Dotenv
 
 ### run
 
-```bash
-npx dotenv run [options] -- <command> [args...]
+```console
+$ npx dotenv run [options] -- <command> [args...]
 ```
 {: copy="false"}
 
 <p>Select another file with -f, or repeat it to load several files in order.</p>
 
-```bash
-npx dotenv run -f .env.local -- node index.js
-npx dotenv run -f .env.local -f .env -- npm test
+```console
+$ npx dotenv run -f .env.local -- node index.js
+$ npx dotenv run -f .env.local -f .env -- npm test
 ```
+{: copy="npx dotenv run -f .env.local -- node index.js
+npx dotenv run -f .env.local -f .env -- npm test"}
 
 <p>Put dotenv options before the command. The -- separator is optional; everything after the command is passed through as its arguments.</p>
 {% capture cli_options %}

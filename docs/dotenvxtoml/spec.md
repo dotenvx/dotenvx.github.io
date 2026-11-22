@@ -141,10 +141,13 @@ Duplicate declarations in a scope, duplicate options, duplicate normalized file 
 
 ## Use your rules
 
-```sh
-dotenvx encrypt
-dotenvx run -- node index.js
-dotenvx run -f .env.production -- node index.js
+```console
+$ dotenvx encrypt
+$ dotenvx run -- node index.js
+$ dotenvx run -f .env.production -- node index.js
 ```
+{: copy="dotenvx encrypt
+dotenvx run -- node index.js
+dotenvx run -f .env.production -- node index.js"}
 
 [See commands that use Dotenvx.toml](/docs/dotenvxtoml/commands/)

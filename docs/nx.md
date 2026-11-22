@@ -86,9 +86,10 @@ Without a private key, encrypted values remain ciphertext; this setup does not f
 
 To let dotenvx load and decrypt a specific application's environment before Nx starts, use:
 
-```shell
-dotenvx run -f apps/app -- npx nx serve app
+```console
+$ dotenvx run -f apps/app -- npx nx serve app
 ```
+{: copy="dotenvx run -f apps/app -- npx nx serve app"}
 
 This alternative does not require the dependency override. Its injected values become inherited environment variables and take precedence over values Nx loads afterward.
 

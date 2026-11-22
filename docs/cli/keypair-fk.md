@@ -1,30 +1,34 @@
 ---
 doc_type: cli
 title: "-fk"
-eyebrow: "dotenvx keypair"
-eyebrow_href: /docs/cli/keypair/
-description: Specify path to .env.keys. This is useful for printing public/private keys for monorepos.
-permalink: /docs/cli/keypair-fk/
+eyebrow: dotenvx keypair
+eyebrow_href: "/docs/cli/keypair/"
+description: Specify path to .env.keys. This is useful for printing public/private
+  keys for monorepos.
+permalink: "/docs/cli/keypair-fk/"
 redirect_from:
-  - /docs/advanced/keypair-fk
-  - /docs/advanced/keypair-fk/
-  - /docs/ref/cli/keypair-fk
-  - /docs/ref/cli/keypair-fk/
+- "/docs/advanced/keypair-fk"
+- "/docs/advanced/keypair-fk/"
+- "/docs/ref/cli/keypair-fk"
+- "/docs/ref/cli/keypair-fk/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Keypair
-    href: /docs/cli/keypair/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Keypair
+  href: "/docs/cli/keypair/"
 ---
 
 ```console
 $ mkdir -p apps/app1
-echo "HELLO=World" > apps/app1/.env
-dotenvx encrypt -fk .env.keys -f apps/app1/.env
+$ echo "HELLO=World" > apps/app1/.env
+$ dotenvx encrypt -fk .env.keys -f apps/app1/.env
 
-dotenvx keypair -fk .env.keys -f apps/app1/.env
+$ dotenvx keypair -fk .env.keys -f apps/app1/.env
 {"DOTENV_PUBLIC_KEY":"<publicKey>","DOTENV_PRIVATE_KEY":"<privateKey>"}
 ```
-{: copy="mkdir -p apps/app1"}
+{: copy="mkdir -p apps/app1
+echo \"HELLO=World\" > apps/app1/.env
+dotenvx encrypt -fk .env.keys -f apps/app1/.env
+dotenvx keypair -fk .env.keys -f apps/app1/.env"}

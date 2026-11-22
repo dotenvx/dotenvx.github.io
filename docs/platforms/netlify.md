@@ -9,9 +9,10 @@ Find [code examples for this guide](https://github.com/dotenvx/examples/tree/mai
 
 ## Initial setup
 
-```bash
-npx create-next-app@latest --example hello-world .
+```console
+$ npx create-next-app@latest --example hello-world .
 ```
+{: copy="npx create-next-app@latest --example hello-world ."}
 
 ```toml
 [[plugins]]
@@ -23,15 +24,17 @@ npx create-next-app@latest --example hello-world .
 ```
 {: copy="false"}
 
-```bash
-npx netlify-cli@latest deploy --build --prod
+```console
+$ npx netlify-cli@latest deploy --build --prod
 ```
+{: copy="npx netlify-cli@latest deploy --build --prod"}
 
 ## Run dotenvx
 
-```bash
-npm install @dotenvx/dotenvx --save
+```console
+$ npm install @dotenvx/dotenvx --save
 ```
+{: copy="npm install @dotenvx/dotenvx --save"}
 
 Preload scripts with dotenvx so environment variables inject ahead of build, start, or dev.
 
@@ -53,18 +56,19 @@ HELLO="production"
 ```
 {: copy="false"}
 
-```bash
-npm run dotenvx -- set HELLO production -f .env.production
+```console
+$ npm run dotenvx -- set HELLO production -f .env.production
 ```
+{: copy="npm run dotenvx -- set HELLO production -f .env.production"}
 
 Commit `.env.production`. Do not commit `.env.keys`.
 
 ## Set decryption key
 
-```bash
-npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY "your-private-key"
-npx netlify-cli@latest env:set DOTENV_FILE ".env.production"
-npx netlify-cli@latest deploy --build --prod
+```console
+$ npx netlify-cli@latest env:set DOTENV_PRIVATE_KEY_PRODUCTION "your-private-key"
+$ npx netlify-cli@latest env:set DOTENV_FILE ".env.production"
+$ npx netlify-cli@latest deploy --build --prod
 ```
 {: copy="false"}
 

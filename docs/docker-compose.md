@@ -52,7 +52,7 @@ $ dotenvx encrypt
 ```
 {: copy="dotenvx encrypt"}
 
-When prompted, choose **Local** and store the private key in .env.keys. Your .env contains encrypted values; .env.keys unlocks them.
+When prompted, choose **Classic (.env.keys)** and store the private key in .env.keys. Your .env contains encrypted values; .env.keys unlocks them.
 
 ## Commit
 
@@ -152,6 +152,13 @@ $ docker compose --env-file .env.keys down
 
 ## Share
 
+Install the [Armor feature](/docs/cli/install-add/) before using Armor commands:
+
+```console
+$ dotenvx install --add armor
+```
+{: copy="dotenvx install --add armor"}
+
 Share access with Dotenvx Armor ⛨
 
 Log in, armor your development key, and invite your teammate:
@@ -167,19 +174,23 @@ dotenvx armor invite"}
 
 Your teammate accepts the invitation, pulls the repository, installs Dotenvx, and logs in on their machine. They let Dotenvx retrieve the app’s key on the host before Compose starts:
 
-```shell
-DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
+```console
+$ DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
   docker compose up --build
 ```
+{: copy="DOTENV_PRIVATE_KEY=\"$(dotenvx keypair DOTENV_PRIVATE_KEY)\" \
+  docker compose up --build"}
 
 Armor authentication stays on the host. The compose.yaml environment mapping passes only the app’s private key into the container, where Dotenvx decrypts .env. The assignment lasts for this command; no export or cleanup is needed. This syntax uses Bash or Zsh.
 
 Use the same handoff when removing the stopped container and network:
 
-```shell
-DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
+```console
+$ DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
   docker compose down
 ```
+{: copy="DOTENV_PRIVATE_KEY=\"$(dotenvx keypair DOTENV_PRIVATE_KEY)\" \
+  docker compose down"}
 
 [**Share a private key** Alternative →](/docs/docker-compose/share-private-key/){: .side-path}
 
@@ -199,7 +210,7 @@ $ dotenvx encrypt -f .env.production
 ```
 {: copy="dotenvx encrypt -f .env.production"}
 
-When prompted, choose **Enclaved**, select your supported deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name. Choose the resource running your container. For a self-managed Compose host without a supported connection, use the private-key alternative below.
+When prompted, choose **Armor**, then **Enclaved**, select your supported deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name. Choose the resource running your container. For a self-managed Compose host without a supported connection, use the private-key alternative below.
 
 Update the Dockerfile's COPY instruction:
 

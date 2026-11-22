@@ -1,15 +1,16 @@
 ---
 doc_type: cli
-permalink: /docs/cli/armor/pull-f/
+permalink: "/docs/cli/armor/pull-f/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-title: "armor pull -f"
-command: "dotenvx armor pull -f"
-description: "Select a specific env file."
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+title: armor pull -f
+command: dotenvx armor pull -f
+description: Select a specific env file.
 ---
+
 Select a specific env file.
 
 ```console

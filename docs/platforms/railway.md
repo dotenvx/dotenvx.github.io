@@ -30,10 +30,10 @@ CMD ["node", "index.js"]
 ```
 {: copy="false"}
 
-```bash
-npx @railway/cli@latest init
-npx @railway/cli@latest up
-npx @railway/cli@latest domain
+```console
+$ npx @railway/cli@latest init
+$ npx @railway/cli@latest up
+$ npx @railway/cli@latest domain
 ```
 {: copy="false"}
 
@@ -48,7 +48,7 @@ Install dotenvx in your `Dockerfile` and prepend your app command with `dotenvx 
 FROM node:20
 WORKDIR /app
 
-RUN curl -sfS https://dotenvx.sh/install.sh | sh
+RUN curl -sfS https://dotenvx.sh | sh
 
 COPY package*.json ./
 RUN npm install
@@ -76,10 +76,11 @@ Commit `.env.production`. Do not commit `.env.keys`.
 
 ## Set decryption key
 
-Set `DOTENV_PRIVATE_KEY` to your production private key and `DOTENV_FILE` to `.env.production` in the Railway environment variable manager (apply the change), then redeploy.
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` to your production private key and `DOTENV_FILE` to `.env.production` in the Railway environment variable manager (apply the change), then redeploy.
 
-```bash
-npx @railway/cli@latest up
+```console
+$ npx @railway/cli@latest up
 ```
+{: copy="npx @railway/cli@latest up"}
 
 Your app reboots and env is injected from the encrypted production file.

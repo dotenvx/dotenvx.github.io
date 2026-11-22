@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "keypair --format"
-description: "Format of the output (json, shell, colon)."
+title: keypair --format
+description: Format of the output (json, shell, colon).
 permalink: "/docs/cli/keypair-format/"
-command: "dotenvx keypair --format"
-eyebrow: "dotenvx keypair"
+command: dotenvx keypair --format
+eyebrow: dotenvx keypair
 eyebrow_href: "/docs/cli/keypair/"
 ---
 

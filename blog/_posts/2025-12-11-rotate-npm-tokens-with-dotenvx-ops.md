@@ -16,23 +16,26 @@ So we built a solution. Introducing <a href="/docs/armor/rotate">Dotenvx Rotate<
 
 Install [dotenvx-armor](/armor).
 
-```sh
+```console
 $ curl -sfS https://dotenvx.com/armor | sh
 ```
+{: copy="curl -sfS https://dotenvx.com/armor | sh"}
 
 Run `rotate npm connect` to connect <a href="https://npmjs.com">npm</a>.
 
-```sh
+```console
 $ dotenvx-armor rotate npm connect
 ```
+{: copy="dotenvx-armor rotate npm connect"}
 
 When prompted enter your npm username and password.
 
-```sh
+```console
 $ dotenvx-armor rotate npm connect
 ✔ npm username: USERNAME
 ✔ npm password: PASSWORD
 ```
+{: copy="dotenvx-armor rotate npm connect"}
 
 This opens a local browser session, connecting your npm account.
 
@@ -46,12 +49,13 @@ Complete any 2FA steps manually.
 
 On success, return to your CLI, and you will see a passcard created.
 
-```sh
+```console
 $ dotenvx-armor rotate npm connect
 ✔ npm username: USERNAME
 ✔ npm password: PASSWORD
 ✔ connected [https://armor.dotenvx.com/go/pas_1234..]
 ```
+{: copy="dotenvx-armor rotate npm connect"}
 
 *Dotenvx Passcards* are special connectors allowing account access.
 
@@ -61,18 +65,20 @@ Next, use the passcard to rotate your npm token.
 
 Run `rotate` on the passcard.
 
-```sh
+```console
 $ dotenvx-armor rotate dotenvx://pas_1234..
 ⠏ rotating..
 ```
+{: copy="dotenvx-armor rotate dotenvx://pas_1234.."}
 
 It takes 10-30 seconds. On success, it returns a Dotenvx Rotation Token (ROT).
 
-```sh
+```console
 $ dotenvx-armor rotate dotenvx://pas_1234..
 ✔ rotated [https://armor.dotenvx.com/go/pas_1234..]
 ⮕ next run [dotenvx-armor get dotenvx://rot_a2c4..]
 ```
+{: copy="dotenvx-armor rotate dotenvx://pas_1234.."}
 
 *Dotenvx Rotation Tokens (ROTs)* are special tokens that can change value. You can think of them as proxy tokens.
 
@@ -82,10 +88,11 @@ Next, let's get the value for it.
 
 Run `get` on the rotation token.
 
-```sh
+```console
 $ dotenvx-armor get dotenvx://rot_a2c4..
 npm_d2cJ..
 ```
+{: copy="dotenvx-armor get dotenvx://rot_a2c4.."}
 
 It returns your npm token. Cool!
 
@@ -93,18 +100,20 @@ It returns your npm token. Cool!
 
 Run `rotate` on the passcard again.
 
-```sh
+```console
 $ dotenvx-armor rotate dotenvx://pas_1234..
 ✔ rotated [https://armor.dotenvx.com/go/pas_1234..]
 ⮕ next run [dotenvx-armor get dotenvx://rot_a2c4..]
 ```
+{: copy="dotenvx-armor rotate dotenvx://pas_1234.."}
 
 And `get` the ROT again.
 
-```sh
+```console
 $ dotenvx-armor get dotenvx://rot_a2c4..
 npm_cbGY..
 ```
+{: copy="dotenvx-armor get dotenvx://rot_a2c4.."}
 
 The value changed. Way cool!
 

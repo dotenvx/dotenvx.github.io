@@ -29,7 +29,7 @@ $ npm install @dotenvx/dotenvx --save
 
 ```javascript
 // index.js
-require('@dotenvx/dotenvx').config()
+require('@dotenvx/dotenvx').config({ strict: true })
 
 exports.handler = async (event) => {
   return {
@@ -49,23 +49,26 @@ HELLO="World"
 {: copy="false"}
 
 ```console
-$ dotenvx encrypt
+$ npx dotenvx encrypt
 ```
-{: copy="dotenvx encrypt"}
+{: copy="npx dotenvx encrypt"}
 
 ## Zip it up
 
-Zip everything—making sure to ignore `.env.keys`.
+Build the deployment package in a Linux x86_64 environment matching your Lambda runtime. Run npm install there with optional dependencies enabled; the 3.0 SDK requires its platform-specific native package. A node_modules directory installed on macOS or Windows cannot be used directly.
 
-```bash
-zip -r function.zip . -x ".env.keys"
+Include index.js, package.json, package-lock.json, node_modules, and encrypted .env. Keep .env.keys out of the archive:
+
+```console
+$ zip -r function.zip index.js package.json package-lock.json node_modules .env
 ```
+{: copy="zip -r function.zip index.js package.json package-lock.json node_modules .env"}
 
 ## Upload to AWS Lambda
 
 [Create a function](https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/create/function), select your runtime and `x86_64`, then upload `function.zip`.
 
-Click **Test** and you will see encrypted ciphertext in the body until the private key is set.
+Set the private key before invoking the function. With strict loading, a missing key stops initialization.
 
 ## Set DOTENV_PRIVATE_KEY
 

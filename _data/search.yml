@@ -80,11 +80,10 @@ entries:
       - secrets in codex
       - runtime leak protection
       - log redaction
-  /docs/cli/run-redact/:
+  /docs/dotenvxtoml/redacted/:
     boost: 80
     aliases:
       - redact
-      - --redact
       - runtime leak protection
       - log redaction
       - secret redaction

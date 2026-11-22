@@ -4,351 +4,119 @@
     "href": "/docs/cli/run/"
   },
   {
-    "label": "run --convention=flow",
-    "href": "/docs/cli/run-convention-flow/"
+    "label": "run --file",
+    "href": "/docs/cli/run-f/"
   },
   {
-    "label": "run --convention=nextjs",
-    "href": "/docs/cli/run-convention-nextjs/"
+    "label": "run --keys-file",
+    "href": "/docs/cli/run-fk/"
   },
   {
-    "label": "run --debug",
-    "href": "/docs/cli/run-debug/"
-  },
-  {
-    "label": "run --env HELLO=String",
+    "label": "run --env",
     "href": "/docs/cli/run-env/"
-  },
-  {
-    "label": "run --ignore",
-    "href": "/docs/cli/run-ignore/"
-  },
-  {
-    "label": "run --lock-password",
-    "href": "/docs/cli/run-lock-password/"
-  },
-  {
-    "label": "run --log-level",
-    "href": "/docs/cli/run-log-level/"
-  },
-  {
-    "label": "run --mask",
-    "href": "/docs/cli/run-mask/"
-  },
-  {
-    "label": "run --no-1password",
-    "href": "/docs/cli/run-no-1password/"
-  },
-  {
-    "label": "run --no-armor",
-    "href": "/docs/cli/run-no-armor/"
-  },
-  {
-    "label": "run --no-bitwarden",
-    "href": "/docs/cli/run-no-bitwarden/"
-  },
-  {
-    "label": "run --no-native",
-    "href": "/docs/cli/run-no-native/"
   },
   {
     "label": "run --overload",
     "href": "/docs/cli/run-overload/"
   },
   {
-    "label": "run --quiet",
-    "href": "/docs/cli/run-quiet/"
-  },
-  {
-    "label": "run --redact",
-    "href": "/docs/cli/run-redact/"
-  },
-  {
-    "label": "run --redact -- claude",
-    "href": "/docs/cli/run-redact-claude/"
-  },
-  {
-    "label": "run --redact -- claude -p",
-    "href": "/docs/cli/run-redact-claude-print/"
-  },
-  {
-    "label": "run --redact -- codex",
-    "href": "/docs/cli/run-redact-codex/"
-  },
-  {
-    "label": "run --redact -- codex exec",
-    "href": "/docs/cli/run-redact-codex-exec/"
-  },
-  {
     "label": "run --strict",
     "href": "/docs/cli/run-strict/"
+  },
+  {
+    "label": "run --ignore",
+    "href": "/docs/cli/run-ignore/"
+  },
+  {
+    "label": "run --convention",
+    "href": "/docs/cli/run-convention/"
   },
   {
     "label": "run --token",
     "href": "/docs/cli/run-token/"
   },
   {
-    "label": "run --verbose",
-    "href": "/docs/cli/run-verbose/"
-  },
-  {
-    "label": "run -f",
-    "href": "/docs/cli/run-f/"
-  },
-  {
-    "label": "run -f directory",
-    "href": "/docs/cli/run-f-directory/"
-  },
-  {
-    "label": "run -f directory + nextjs",
-    "href": "/docs/cli/run-f-directory-convention-nextjs/"
-  },
-  {
-    "label": "run -fk",
-    "href": "/docs/cli/run-fk/"
-  },
-  {
-    "label": "run Alternate Values",
-    "href": "/docs/cli/run-alternate-values/"
-  },
-  {
-    "label": "run Combine Multiple",
-    "href": "/docs/cli/run-dotenv-private-key-multiple/"
-  },
-  {
-    "label": "run Command Substitution",
-    "href": "/docs/cli/run-command-substitution/"
-  },
-  {
-    "label": "run Contextual Help",
-    "href": "/docs/cli/run-contextual-help/"
-  },
-  {
-    "label": "run Default Values",
-    "href": "/docs/cli/run-default-values/"
-  },
-  {
-    "label": "run DOTENV_ENV=production",
-    "href": "/docs/cli/run-convention-flow-dotenv-env/"
-  },
-  {
-    "label": "run DOTENV_PRIVATE_KEY",
-    "href": "/docs/cli/run-dotenv-private-key/"
-  },
-  {
-    "label": "run DOTENV_FILE=.env.ci",
-    "href": "/docs/cli/run-dotenv-private-key-ci/"
-  },
-  {
-    "label": "run DOTENV_FILE=.env.production",
-    "href": "/docs/cli/run-dotenv-private-key-production/"
-  },
-  {
-    "label": "run Environment Variable Precedence",
-    "href": "/docs/cli/run-environment-variable-precedence/"
-  },
-  {
-    "label": "run Interpolation Syntax Summary",
-    "href": "/docs/cli/run-interpolation-syntax-summary/"
-  },
-  {
-    "label": "run Multiline",
-    "href": "/docs/cli/run-multiline/"
-  },
-  {
-    "label": "run Shell Expansion",
-    "href": "/docs/cli/run-shell-expansion/"
-  },
-  {
-    "label": "run Variable Expansion",
-    "href": "/docs/cli/run-variable-expansion/"
-  },
-  {
-    "label": "run with a Dotenvx.toml",
-    "href": "/docs/cli/run-validate/"
-  },
-  {
     "label": "get",
     "href": "/docs/cli/get/"
   },
   {
-    "label": "get (json)",
-    "href": "/docs/cli/get-json/"
+    "label": "get --file",
+    "href": "/docs/cli/get-key-f/"
+  },
+  {
+    "label": "get --keys-file",
+    "href": "/docs/cli/get-key-fk/"
+  },
+  {
+    "label": "get --env",
+    "href": "/docs/cli/get-key-env/"
+  },
+  {
+    "label": "get --overload",
+    "href": "/docs/cli/get-key-overload/"
+  },
+  {
+    "label": "get --strict",
+    "href": "/docs/cli/get-key-strict/"
+  },
+  {
+    "label": "get --ignore",
+    "href": "/docs/cli/get-key-ignore/"
+  },
+  {
+    "label": "get --convention",
+    "href": "/docs/cli/get-convention/"
+  },
+  {
+    "label": "get --token",
+    "href": "/docs/cli/get-token/"
   },
   {
     "label": "get --all",
     "href": "/docs/cli/get-all/"
   },
   {
-    "label": "get --all --pretty-print",
-    "href": "/docs/cli/get-all-pretty-print/"
-  },
-  {
-    "label": "get --convention=flow",
-    "href": "/docs/cli/get-key-convention-flow/"
-  },
-  {
-    "label": "get --convention=nextjs",
-    "href": "/docs/cli/get-key-convention-nextjs/"
+    "label": "get --pretty-print",
+    "href": "/docs/cli/get-pretty-print/"
   },
   {
     "label": "get --format",
     "href": "/docs/cli/get-format/"
   },
   {
-    "label": "get --format colon",
-    "href": "/docs/cli/get-colon/"
-  },
-  {
-    "label": "get --format eval",
-    "href": "/docs/cli/get-eval/"
-  },
-  {
-    "label": "get --format eval-export",
-    "href": "/docs/cli/get-eval-export/"
-  },
-  {
-    "label": "get --format shell",
-    "href": "/docs/cli/get-shell/"
-  },
-  {
-    "label": "get --lock-password",
-    "href": "/docs/cli/get-lock-password/"
-  },
-  {
-    "label": "get --no-1password",
-    "href": "/docs/cli/get-no-1password/"
-  },
-  {
-    "label": "get --no-armor",
-    "href": "/docs/cli/get-no-armor/"
-  },
-  {
-    "label": "get --no-bitwarden",
-    "href": "/docs/cli/get-no-bitwarden/"
-  },
-  {
-    "label": "get --pretty-print",
-    "href": "/docs/cli/get-pretty-print/"
-  },
-  {
-    "label": "get -ek",
-    "href": "/docs/cli/get-exclude-key/"
-  },
-  {
-    "label": "get -f directory",
-    "href": "/docs/cli/get-key-f-directory/"
-  },
-  {
-    "label": "get -f directory + nextjs",
-    "href": "/docs/cli/get-key-f-directory-convention-nextjs/"
-  },
-  {
-    "label": "get -ik",
-    "href": "/docs/cli/get-include-key/"
-  },
-  {
-    "label": "get KEY",
-    "href": "/docs/cli/get-key/"
-  },
-  {
-    "label": "get KEY --env",
-    "href": "/docs/cli/get-key-env/"
-  },
-  {
-    "label": "get KEY --ignore",
-    "href": "/docs/cli/get-key-ignore/"
-  },
-  {
-    "label": "get KEY --mask",
-    "href": "/docs/cli/get-key-mask/"
-  },
-  {
-    "label": "get KEY --no-native",
-    "href": "/docs/cli/get-no-native/"
-  },
-  {
-    "label": "get KEY --overload",
-    "href": "/docs/cli/get-key-overload/"
-  },
-  {
-    "label": "get KEY --strict",
-    "href": "/docs/cli/get-key-strict/"
-  },
-  {
-    "label": "get KEY -f",
-    "href": "/docs/cli/get-key-f/"
-  },
-  {
-    "label": "get KEY -fk",
-    "href": "/docs/cli/get-key-fk/"
-  },
-  {
     "label": "set",
     "href": "/docs/cli/set/"
   },
   {
-    "label": "set --no-1password",
-    "href": "/docs/cli/set-no-1password/"
-  },
-  {
-    "label": "set --no-bitwarden",
-    "href": "/docs/cli/set-no-bitwarden/"
-  },
-  {
-    "label": "set KEY value",
-    "href": "/docs/cli/set-key-value/"
-  },
-  {
-    "label": "set KEY value --encrypt",
-    "href": "/docs/cli/set-key-value-encrypt/"
-  },
-  {
-    "label": "set KEY value --no-armor",
-    "href": "/docs/cli/set-key-value-no-armor/"
-  },
-  {
-    "label": "set KEY value --no-create",
-    "href": "/docs/cli/set-key-value-no-create/"
-  },
-  {
-    "label": "set KEY value --no-native",
-    "href": "/docs/cli/set-key-value-no-native/"
-  },
-  {
-    "label": "set KEY value --plain",
-    "href": "/docs/cli/set-key-value-plain/"
-  },
-  {
-    "label": "set KEY value -f",
+    "label": "set --file",
     "href": "/docs/cli/set-key-value-f/"
   },
   {
-    "label": "set KEY value -fk",
+    "label": "set --keys-file",
     "href": "/docs/cli/set-key-value-fk/"
   },
   {
-    "label": "set KEY_PLAIN value",
-    "href": "/docs/cli/set-key-plain-suffix/"
+    "label": "set --token",
+    "href": "/docs/cli/set-token/"
   },
   {
-    "label": "set Values with leading dash",
-    "href": "/docs/cli/set-key-value-with-leading-dash/"
+    "label": "set --encrypt",
+    "href": "/docs/cli/set-key-value-encrypt/"
   },
   {
-    "label": "set Values with spaces",
-    "href": "/docs/cli/set-key-value-with-spaces/"
+    "label": "set --plain",
+    "href": "/docs/cli/set-key-value-plain/"
+  },
+  {
+    "label": "set --no-create",
+    "href": "/docs/cli/set-key-value-no-create/"
   },
   {
     "label": "del",
     "href": "/docs/cli/del/"
   },
   {
-    "label": "del KEY",
-    "href": "/docs/cli/del-key/"
-  },
-  {
-    "label": "del KEY -f",
+    "label": "del --file",
     "href": "/docs/cli/del-key-f/"
   },
   {
@@ -356,216 +124,536 @@
     "href": "/docs/cli/encrypt/"
   },
   {
-    "label": "encrypt --no-1password",
-    "href": "/docs/cli/encrypt-no-1password/"
+    "label": "encrypt --file",
+    "href": "/docs/cli/encrypt-f/"
   },
   {
-    "label": "encrypt --no-armor",
-    "href": "/docs/cli/encrypt-no-armor/"
-  },
-  {
-    "label": "encrypt --no-bitwarden",
-    "href": "/docs/cli/encrypt-no-bitwarden/"
-  },
-  {
-    "label": "encrypt --no-create",
-    "href": "/docs/cli/encrypt-no-create/"
-  },
-  {
-    "label": "encrypt --no-native",
-    "href": "/docs/cli/encrypt-no-native/"
-  },
-  {
-    "label": "encrypt --stdout",
-    "href": "/docs/cli/encrypt-stdout/"
+    "label": "encrypt --keys-file",
+    "href": "/docs/cli/encrypt-fk/"
   },
   {
     "label": "encrypt --token",
     "href": "/docs/cli/encrypt-token/"
   },
   {
-    "label": "encrypt -ek",
-    "href": "/docs/cli/encrypt-ek/"
+    "label": "encrypt --with",
+    "href": "/docs/cli/encrypt-with/"
   },
   {
-    "label": "encrypt -f",
-    "href": "/docs/cli/encrypt-f/"
+    "label": "encrypt --stdout",
+    "href": "/docs/cli/encrypt-stdout/"
   },
   {
-    "label": "encrypt -fk",
-    "href": "/docs/cli/encrypt-fk/"
-  },
-  {
-    "label": "encrypt -k",
-    "href": "/docs/cli/encrypt-k/"
-  },
-  {
-    "label": "encrypt KEY_PLAIN",
-    "href": "/docs/cli/encrypt-plain-suffix/"
+    "label": "encrypt --no-create",
+    "href": "/docs/cli/encrypt-no-create/"
   },
   {
     "label": "decrypt",
     "href": "/docs/cli/decrypt/"
   },
   {
-    "label": "decrypt --no-armor",
-    "href": "/docs/cli/decrypt-no-armor/"
+    "label": "decrypt --file",
+    "href": "/docs/cli/decrypt-f/"
   },
   {
-    "label": "decrypt --no-native",
-    "href": "/docs/cli/decrypt-no-native/"
+    "label": "decrypt --keys-file",
+    "href": "/docs/cli/decrypt-fk/"
+  },
+  {
+    "label": "decrypt --token",
+    "href": "/docs/cli/decrypt-token/"
   },
   {
     "label": "decrypt --stdout",
     "href": "/docs/cli/decrypt-stdout/"
   },
   {
-    "label": "decrypt --stdout --mask",
-    "href": "/docs/cli/decrypt-stdout-mask/"
-  },
-  {
-    "label": "decrypt -ek",
-    "href": "/docs/cli/decrypt-ek/"
-  },
-  {
-    "label": "decrypt -f",
-    "href": "/docs/cli/decrypt-f/"
-  },
-  {
-    "label": "decrypt -fk",
-    "href": "/docs/cli/decrypt-fk/"
-  },
-  {
-    "label": "decrypt -k",
-    "href": "/docs/cli/decrypt-k/"
-  },
-  {
     "label": "keypair",
     "href": "/docs/cli/keypair/"
   },
   {
-    "label": "keypair --format",
-    "href": "/docs/cli/keypair-format/"
+    "label": "keypair --file",
+    "href": "/docs/cli/keypair-f/"
   },
   {
-    "label": "keypair --format colon",
-    "href": "/docs/cli/keypair-colon/"
+    "label": "keypair --keys-file",
+    "href": "/docs/cli/keypair-fk/"
   },
   {
-    "label": "keypair --format json",
-    "href": "/docs/cli/keypair-json/"
-  },
-  {
-    "label": "keypair --format shell",
-    "href": "/docs/cli/keypair-shell/"
-  },
-  {
-    "label": "keypair --no-1password",
-    "href": "/docs/cli/keypair-no-1password/"
-  },
-  {
-    "label": "keypair --no-armor",
-    "href": "/docs/cli/keypair-no-armor/"
-  },
-  {
-    "label": "keypair --no-bitwarden",
-    "href": "/docs/cli/keypair-no-bitwarden/"
-  },
-  {
-    "label": "keypair --no-native",
-    "href": "/docs/cli/keypair-no-native/"
+    "label": "keypair --token",
+    "href": "/docs/cli/keypair-token/"
   },
   {
     "label": "keypair --pretty-print",
     "href": "/docs/cli/keypair-pretty-print/"
   },
   {
-    "label": "keypair -f",
-    "href": "/docs/cli/keypair-f/"
+    "label": "keypair --format",
+    "href": "/docs/cli/keypair-format/"
   },
   {
-    "label": "keypair -fk",
-    "href": "/docs/cli/keypair-fk/"
+    "label": "install",
+    "href": "/docs/cli/install/"
   },
   {
-    "label": "keypair KEY",
-    "href": "/docs/cli/keypair-key/"
+    "label": "install --add",
+    "href": "/docs/cli/install-add/"
+  },
+  {
+    "label": "install --remove",
+    "href": "/docs/cli/install-remove/"
+  },
+  {
+    "label": "install --build",
+    "href": "/docs/cli/install-build/"
+  },
+  {
+    "label": "install --version",
+    "href": "/docs/cli/install-version/"
+  },
+  {
+    "label": "install --directory",
+    "href": "/docs/cli/install-directory/"
+  },
+  {
+    "label": "install --os",
+    "href": "/docs/cli/install-os/"
+  },
+  {
+    "label": "install --arch",
+    "href": "/docs/cli/install-arch/"
+  },
+  {
+    "label": "install --id",
+    "href": "/docs/cli/install-id/"
+  },
+  {
+    "label": "install --hostname",
+    "href": "/docs/cli/install-hostname/"
+  },
+  {
+    "label": "update",
+    "href": "/docs/cli/update/"
+  },
+  {
+    "label": "update --hostname",
+    "href": "/docs/cli/update-hostname/"
+  },
+  {
+    "label": "uninstall",
+    "href": "/docs/cli/uninstall/"
+  },
+  {
+    "label": "login",
+    "href": "/docs/cli/login/"
+  },
+  {
+    "label": "login --hostname",
+    "href": "/docs/cli/login-hostname/"
+  },
+  {
+    "label": "logout",
+    "href": "/docs/cli/logout/"
+  },
+  {
+    "label": "logout --hostname",
+    "href": "/docs/cli/logout-hostname/"
+  },
+  {
+    "label": "token",
+    "href": "/docs/cli/token/"
+  },
+  {
+    "label": "token --unmask",
+    "href": "/docs/cli/token-unmask/"
+  },
+  {
+    "label": "info",
+    "href": "/docs/cli/info/"
+  },
+  {
+    "label": "info --pretty-print",
+    "href": "/docs/cli/info-pretty-print/"
+  },
+  {
+    "label": "protect",
+    "href": "/docs/cli/protect/"
+  },
+  {
+    "label": "protect --docker",
+    "href": "/docs/cli/protect-docker-directory/"
+  },
+  {
+    "label": "ls",
+    "href": "/docs/cli/ls/"
+  },
+  {
+    "label": "ls --file",
+    "href": "/docs/cli/ls-f/"
+  },
+  {
+    "label": "ls --exclude-file",
+    "href": "/docs/cli/ls-ef/"
+  },
+  {
+    "label": "ls --json",
+    "href": "/docs/cli/ls-json/"
+  },
+  {
+    "label": "genexample",
+    "href": "/docs/cli/genexample/"
+  },
+  {
+    "label": "genexample --file",
+    "href": "/docs/cli/genexample-f/"
+  },
+  {
+    "label": "gitignore",
+    "href": "/docs/cli/gitignore/"
+  },
+  {
+    "label": "gitignore --pattern",
+    "href": "/docs/cli/gitignore-pattern/"
+  },
+  {
+    "label": "precommit",
+    "href": "/docs/cli/precommit/"
+  },
+  {
+    "label": "precommit --install",
+    "href": "/docs/cli/precommit-install/"
+  },
+  {
+    "label": "precommit --uninstall",
+    "href": "/docs/cli/precommit-uninstall/"
+  },
+  {
+    "label": "prebuild",
+    "href": "/docs/cli/prebuild/"
+  },
+  {
+    "label": "native",
+    "href": "/docs/cli/native/"
+  },
+  {
+    "label": "native up",
+    "href": "/docs/cli/native/up/"
+  },
+  {
+    "label": "native up --file",
+    "href": "/docs/cli/native/up-f/"
+  },
+  {
+    "label": "native up --keys-file",
+    "href": "/docs/cli/native/up-fk/"
+  },
+  {
+    "label": "native down",
+    "href": "/docs/cli/native/down/"
+  },
+  {
+    "label": "native down --file",
+    "href": "/docs/cli/native-down-f/"
+  },
+  {
+    "label": "native down --keys-file",
+    "href": "/docs/cli/native-down-fk/"
+  },
+  {
+    "label": "native push",
+    "href": "/docs/cli/native/push/"
+  },
+  {
+    "label": "native push --file",
+    "href": "/docs/cli/native-push-f/"
+  },
+  {
+    "label": "native push --keys-file",
+    "href": "/docs/cli/native-push-fk/"
+  },
+  {
+    "label": "native pull",
+    "href": "/docs/cli/native/pull/"
+  },
+  {
+    "label": "native pull --file",
+    "href": "/docs/cli/native-pull-f/"
+  },
+  {
+    "label": "native pull --keys-file",
+    "href": "/docs/cli/native-pull-fk/"
+  },
+  {
+    "label": "native list",
+    "href": "/docs/cli/native/list/"
+  },
+  {
+    "label": "native list --pretty-print",
+    "href": "/docs/cli/native/list-pretty-print/"
+  },
+  {
+    "label": "native show",
+    "href": "/docs/cli/native/show/"
+  },
+  {
+    "label": "native show --pretty-print",
+    "href": "/docs/cli/native/show-pretty-print/"
   },
   {
     "label": "1password",
     "href": "/docs/cli/1password/"
   },
   {
+    "label": "1password up",
+    "href": "/docs/cli/1password-up/"
+  },
+  {
+    "label": "1password up --file",
+    "href": "/docs/cli/1password-up-f/"
+  },
+  {
+    "label": "1password up --keys-file",
+    "href": "/docs/cli/1password-up-fk/"
+  },
+  {
     "label": "1password down",
     "href": "/docs/cli/1password-down/"
   },
   {
-    "label": "1password down -f",
+    "label": "1password down --file",
     "href": "/docs/cli/1password-down-f/"
   },
   {
-    "label": "1password down -fk",
+    "label": "1password down --keys-file",
     "href": "/docs/cli/1password-down-fk/"
-  },
-  {
-    "label": "1password pull",
-    "href": "/docs/cli/1password-pull/"
-  },
-  {
-    "label": "1password pull -f",
-    "href": "/docs/cli/1password-pull-f/"
-  },
-  {
-    "label": "1password pull -fk",
-    "href": "/docs/cli/1password-pull-fk/"
   },
   {
     "label": "1password push",
     "href": "/docs/cli/1password-push/"
   },
   {
-    "label": "1password push -f",
+    "label": "1password push --file",
     "href": "/docs/cli/1password-push-f/"
   },
   {
-    "label": "1password push -fk",
+    "label": "1password push --keys-file",
     "href": "/docs/cli/1password-push-fk/"
   },
   {
-    "label": "1password up",
-    "href": "/docs/cli/1password-up/"
+    "label": "1password pull",
+    "href": "/docs/cli/1password-pull/"
   },
   {
-    "label": "1password up -f",
-    "href": "/docs/cli/1password-up-f/"
+    "label": "1password pull --file",
+    "href": "/docs/cli/1password-pull-f/"
   },
   {
-    "label": "1password up -fk",
-    "href": "/docs/cli/1password-up-fk/"
+    "label": "1password pull --keys-file",
+    "href": "/docs/cli/1password-pull-fk/"
+  },
+  {
+    "label": "1password list",
+    "href": "/docs/cli/1password/list/"
+  },
+  {
+    "label": "1password list --pretty-print",
+    "href": "/docs/cli/1password/list-pretty-print/"
+  },
+  {
+    "label": "1password show",
+    "href": "/docs/cli/1password/show/"
+  },
+  {
+    "label": "1password show --pretty-print",
+    "href": "/docs/cli/1password/show-pretty-print/"
+  },
+  {
+    "label": "bitwarden",
+    "href": "/docs/cli/bitwarden/"
+  },
+  {
+    "label": "bitwarden up",
+    "href": "/docs/cli/bitwarden-up/"
+  },
+  {
+    "label": "bitwarden up --file",
+    "href": "/docs/cli/bitwarden-up-f/"
+  },
+  {
+    "label": "bitwarden up --keys-file",
+    "href": "/docs/cli/bitwarden-up-fk/"
+  },
+  {
+    "label": "bitwarden down",
+    "href": "/docs/cli/bitwarden-down/"
+  },
+  {
+    "label": "bitwarden down --file",
+    "href": "/docs/cli/bitwarden-down-f/"
+  },
+  {
+    "label": "bitwarden down --keys-file",
+    "href": "/docs/cli/bitwarden-down-fk/"
+  },
+  {
+    "label": "bitwarden push",
+    "href": "/docs/cli/bitwarden-push/"
+  },
+  {
+    "label": "bitwarden push --file",
+    "href": "/docs/cli/bitwarden-push-f/"
+  },
+  {
+    "label": "bitwarden push --keys-file",
+    "href": "/docs/cli/bitwarden-push-fk/"
+  },
+  {
+    "label": "bitwarden pull",
+    "href": "/docs/cli/bitwarden-pull/"
+  },
+  {
+    "label": "bitwarden pull --file",
+    "href": "/docs/cli/bitwarden-pull-f/"
+  },
+  {
+    "label": "bitwarden pull --keys-file",
+    "href": "/docs/cli/bitwarden-pull-fk/"
+  },
+  {
+    "label": "bitwarden list",
+    "href": "/docs/cli/bitwarden/list/"
+  },
+  {
+    "label": "bitwarden list --pretty-print",
+    "href": "/docs/cli/bitwarden/list-pretty-print/"
+  },
+  {
+    "label": "bitwarden show",
+    "href": "/docs/cli/bitwarden/show/"
+  },
+  {
+    "label": "bitwarden show --pretty-print",
+    "href": "/docs/cli/bitwarden/show-pretty-print/"
   },
   {
     "label": "armor",
-    "href": "/docs/cli/armor/"
+    "href": "/docs/cli/armor/introduction/"
+  },
+  {
+    "label": "armor up",
+    "href": "/docs/cli/armor/up/"
+  },
+  {
+    "label": "armor up --file",
+    "href": "/docs/cli/armor/up-f/"
+  },
+  {
+    "label": "armor up --token",
+    "href": "/docs/cli/armor/up-token/"
+  },
+  {
+    "label": "armor up --team",
+    "href": "/docs/cli/armor/up-team/"
   },
   {
     "label": "armor down",
     "href": "/docs/cli/armor/down/"
   },
   {
-    "label": "armor down --team",
-    "href": "/docs/cli/armor-down-team/"
+    "label": "armor down --file",
+    "href": "/docs/cli/armor-down-f/"
   },
   {
     "label": "armor down --token",
     "href": "/docs/cli/armor-down-token/"
   },
   {
-    "label": "armor down -f",
-    "href": "/docs/cli/armor-down-f/"
+    "label": "armor down --team",
+    "href": "/docs/cli/armor-down-team/"
   },
   {
-    "label": "armor introduction",
-    "href": "/docs/cli/armor/introduction/"
+    "label": "armor push",
+    "href": "/docs/cli/armor/push/"
+  },
+  {
+    "label": "armor push --file",
+    "href": "/docs/cli/armor-push-f/"
+  },
+  {
+    "label": "armor push --token",
+    "href": "/docs/cli/armor-push-token/"
+  },
+  {
+    "label": "armor push --team",
+    "href": "/docs/cli/armor-push-team/"
+  },
+  {
+    "label": "armor pull",
+    "href": "/docs/cli/armor/pull/"
+  },
+  {
+    "label": "armor pull --file",
+    "href": "/docs/cli/armor/pull-f/"
+  },
+  {
+    "label": "armor pull --token",
+    "href": "/docs/cli/armor/pull-token/"
+  },
+  {
+    "label": "armor pull --team",
+    "href": "/docs/cli/armor/pull-team/"
+  },
+  {
+    "label": "armor list",
+    "href": "/docs/cli/armor/list/"
+  },
+  {
+    "label": "armor list --pretty-print",
+    "href": "/docs/cli/armor/list-pretty-print/"
+  },
+  {
+    "label": "armor list --token",
+    "href": "/docs/cli/armor/list-token/"
+  },
+  {
+    "label": "armor show",
+    "href": "/docs/cli/armor/show/"
+  },
+  {
+    "label": "armor show --pretty-print",
+    "href": "/docs/cli/armor/show-pretty-print/"
+  },
+  {
+    "label": "armor show --token",
+    "href": "/docs/cli/armor/show-token/"
+  },
+  {
+    "label": "armor show --team",
+    "href": "/docs/cli/armor/show-team/"
+  },
+  {
+    "label": "armor open",
+    "href": "/docs/cli/armor/open/"
+  },
+  {
+    "label": "armor open --file",
+    "href": "/docs/cli/armor/open-f/"
+  },
+  {
+    "label": "armor invite",
+    "href": "/docs/cli/armor/invite/"
+  },
+  {
+    "label": "armor invite --team",
+    "href": "/docs/cli/armor/invite-team/"
+  },
+  {
+    "label": "armor invite --email",
+    "href": "/docs/cli/armor/invite-email/"
+  },
+  {
+    "label": "armor invite --token",
+    "href": "/docs/cli/armor/invite-token/"
   },
   {
     "label": "armor login",
@@ -584,387 +672,231 @@
     "href": "/docs/cli/armor-logout-hostname/"
   },
   {
-    "label": "armor move",
-    "href": "/docs/cli/armor/move/"
-  },
-  {
-    "label": "armor move --token",
-    "href": "/docs/cli/armor-move-token/"
-  },
-  {
-    "label": "armor move -f",
-    "href": "/docs/cli/armor-move-f/"
-  },
-  {
-    "label": "armor open",
-    "href": "/docs/cli/armor/open/"
-  },
-  {
-    "label": "armor open armor open -f",
-    "href": "/docs/cli/armor/open-f/"
-  },
-  {
-    "label": "armor pull",
-    "href": "/docs/cli/armor/pull/"
-  },
-  {
-    "label": "armor pull armor pull --team",
-    "href": "/docs/cli/armor/pull-team/"
-  },
-  {
-    "label": "armor pull armor pull --token",
-    "href": "/docs/cli/armor/pull-token/"
-  },
-  {
-    "label": "armor pull armor pull -f",
-    "href": "/docs/cli/armor/pull-f/"
-  },
-  {
-    "label": "armor push",
-    "href": "/docs/cli/armor/push/"
-  },
-  {
-    "label": "armor push --team",
-    "href": "/docs/cli/armor-push-team/"
-  },
-  {
-    "label": "armor push --token",
-    "href": "/docs/cli/armor-push-token/"
-  },
-  {
-    "label": "armor push -f",
-    "href": "/docs/cli/armor-push-f/"
+    "label": "armor status",
+    "href": "/docs/cli/armor/status/"
   },
   {
     "label": "armor settings",
     "href": "/docs/cli/armor/settings/"
   },
   {
-    "label": "armor settings armor settings device",
-    "href": "/docs/cli/armor/settings-device/"
-  },
-  {
-    "label": "armor settings armor settings device armor settings device --unmask",
-    "href": "/docs/cli/armor/settings-device-unmask/"
-  },
-  {
-    "label": "armor settings armor settings hostname",
-    "href": "/docs/cli/armor/settings-hostname/"
-  },
-  {
-    "label": "armor settings armor settings off",
-    "href": "/docs/cli/armor/settings-off/"
-  },
-  {
-    "label": "armor settings armor settings on",
-    "href": "/docs/cli/armor/settings-on/"
-  },
-  {
-    "label": "armor settings armor settings path",
-    "href": "/docs/cli/armor/settings-path/"
-  },
-  {
-    "label": "armor settings armor settings token",
-    "href": "/docs/cli/armor/settings-token/"
-  },
-  {
-    "label": "armor settings armor settings token armor settings token --unmask",
-    "href": "/docs/cli/armor/settings-token-unmask/"
-  },
-  {
-    "label": "armor settings armor settings username",
+    "label": "armor settings username",
     "href": "/docs/cli/armor/settings-username/"
   },
   {
-    "label": "armor status",
-    "href": "/docs/cli/armor/status/"
+    "label": "armor settings token",
+    "href": "/docs/cli/armor/settings-token/"
   },
   {
-    "label": "armor up",
-    "href": "/docs/cli/armor/up/"
+    "label": "armor settings token --unmask",
+    "href": "/docs/cli/armor/settings-token-unmask/"
   },
   {
-    "label": "armor up armor up --team",
-    "href": "/docs/cli/armor/up-team/"
+    "label": "armor settings device",
+    "href": "/docs/cli/armor/settings-device/"
   },
   {
-    "label": "armor up armor up --token",
-    "href": "/docs/cli/armor/up-token/"
+    "label": "armor settings device --unmask",
+    "href": "/docs/cli/armor/settings-device-unmask/"
   },
   {
-    "label": "armor up armor up -f",
-    "href": "/docs/cli/armor/up-f/"
+    "label": "armor settings hostname",
+    "href": "/docs/cli/armor/settings-hostname/"
   },
   {
-    "label": "bitwarden",
-    "href": "/docs/cli/bitwarden/"
+    "label": "armor settings path",
+    "href": "/docs/cli/armor/settings-path/"
   },
   {
-    "label": "bitwarden down",
-    "href": "/docs/cli/bitwarden-down/"
+    "label": "armor settings on",
+    "href": "/docs/cli/armor/settings-on/"
   },
   {
-    "label": "bitwarden down -f",
-    "href": "/docs/cli/bitwarden-down-f/"
+    "label": "armor settings off",
+    "href": "/docs/cli/armor/settings-off/"
   },
   {
-    "label": "bitwarden down -fk",
-    "href": "/docs/cli/bitwarden-down-fk/"
+    "label": "del KEY",
+    "href": "/docs/cli/del-key/"
   },
   {
-    "label": "bitwarden pull",
-    "href": "/docs/cli/bitwarden-pull/"
-  },
-  {
-    "label": "bitwarden pull -f",
-    "href": "/docs/cli/bitwarden-pull-f/"
-  },
-  {
-    "label": "bitwarden pull -fk",
-    "href": "/docs/cli/bitwarden-pull-fk/"
-  },
-  {
-    "label": "bitwarden push",
-    "href": "/docs/cli/bitwarden-push/"
-  },
-  {
-    "label": "bitwarden push -f",
-    "href": "/docs/cli/bitwarden-push-f/"
-  },
-  {
-    "label": "bitwarden push -fk",
-    "href": "/docs/cli/bitwarden-push-fk/"
-  },
-  {
-    "label": "bitwarden up",
-    "href": "/docs/cli/bitwarden-up/"
-  },
-  {
-    "label": "bitwarden up -f",
-    "href": "/docs/cli/bitwarden-up-f/"
-  },
-  {
-    "label": "bitwarden up -fk",
-    "href": "/docs/cli/bitwarden-up-fk/"
-  },
-  {
-    "label": "curl",
-    "href": "/docs/cli/curl/"
-  },
-  {
-    "label": "curl --data",
-    "href": "/docs/cli/curl-data/"
-  },
-  {
-    "label": "curl --token",
-    "href": "/docs/cli/curl-token/"
-  },
-  {
-    "label": "curl -X",
-    "href": "/docs/cli/curl-X/"
-  },
-  {
-    "label": "doctor",
-    "href": "/docs/cli/doctor/"
-  },
-  {
-    "label": "feedback",
-    "href": "/docs/cli/feedback/"
-  },
-  {
-    "label": "feedback --hostname",
-    "href": "/docs/cli/feedback-hostname/"
-  },
-  {
-    "label": "genexample",
-    "href": "/docs/cli/genexample/"
-  },
-  {
-    "label": "genexample -f",
-    "href": "/docs/cli/genexample-f/"
+    "label": "encrypt KEY_PLAIN",
+    "href": "/docs/cli/encrypt-plain-suffix/"
   },
   {
     "label": "genexample directory",
     "href": "/docs/cli/genexample-directory/"
   },
   {
-    "label": "gitignore",
-    "href": "/docs/cli/gitignore/"
+    "label": "get --all --pretty-print",
+    "href": "/docs/cli/get-all-pretty-print/"
   },
   {
-    "label": "gitignore --pattern",
-    "href": "/docs/cli/gitignore-pattern/"
+    "label": "get --format eval-export",
+    "href": "/docs/cli/get-eval-export/"
   },
   {
-    "label": "help",
-    "href": "/docs/cli/help/"
+    "label": "get --format eval",
+    "href": "/docs/cli/get-eval/"
   },
   {
-    "label": "hidden",
-    "href": "/docs/cli/hidden/"
+    "label": "get (json)",
+    "href": "/docs/cli/get-json/"
   },
   {
-    "label": "lock",
-    "href": "/docs/cli/lock/"
+    "label": "get --convention=nextjs",
+    "href": "/docs/cli/get-key-convention-nextjs/"
   },
   {
-    "label": "lock down",
-    "href": "/docs/cli/lock/down/"
+    "label": "get -f directory",
+    "href": "/docs/cli/get-key-f-directory/"
   },
   {
-    "label": "lock down -f",
-    "href": "/docs/cli/lock-down-f/"
+    "label": "get KEY -f",
+    "href": "/docs/cli/get-key-f/"
   },
   {
-    "label": "lock down -fk",
-    "href": "/docs/cli/lock-down-fk/"
+    "label": "get KEY",
+    "href": "/docs/cli/get-key/"
   },
   {
-    "label": "lock up",
-    "href": "/docs/cli/lock/up/"
+    "label": "get --format shell",
+    "href": "/docs/cli/get-shell/"
   },
   {
-    "label": "lock up -f",
-    "href": "/docs/cli/lock/up-f/"
+    "label": "keypair --format json",
+    "href": "/docs/cli/keypair-json/"
   },
   {
-    "label": "lock up -fk",
-    "href": "/docs/cli/lock/up-fk/"
+    "label": "keypair KEY",
+    "href": "/docs/cli/keypair-key/"
   },
   {
-    "label": "ls",
-    "href": "/docs/cli/ls/"
-  },
-  {
-    "label": "ls --json",
-    "href": "/docs/cli/ls-json/"
-  },
-  {
-    "label": "ls -ef",
-    "href": "/docs/cli/ls-ef/"
-  },
-  {
-    "label": "ls -f",
-    "href": "/docs/cli/ls-f/"
-  },
-  {
-    "label": "native",
-    "href": "/docs/cli/native/"
-  },
-  {
-    "label": "native down",
-    "href": "/docs/cli/native/down/"
-  },
-  {
-    "label": "native down -f",
-    "href": "/docs/cli/native-down-f/"
-  },
-  {
-    "label": "native down -fk",
-    "href": "/docs/cli/native-down-fk/"
-  },
-  {
-    "label": "native pull",
-    "href": "/docs/cli/native/pull/"
-  },
-  {
-    "label": "native pull -f",
-    "href": "/docs/cli/native-pull-f/"
-  },
-  {
-    "label": "native pull -fk",
-    "href": "/docs/cli/native-pull-fk/"
-  },
-  {
-    "label": "native push",
-    "href": "/docs/cli/native/push/"
-  },
-  {
-    "label": "native push -f",
-    "href": "/docs/cli/native-push-f/"
-  },
-  {
-    "label": "native push -fk",
-    "href": "/docs/cli/native-push-fk/"
-  },
-  {
-    "label": "native up",
-    "href": "/docs/cli/native/up/"
-  },
-  {
-    "label": "native up -f",
-    "href": "/docs/cli/native/up-f/"
-  },
-  {
-    "label": "native up -fk",
-    "href": "/docs/cli/native/up-fk/"
-  },
-  {
-    "label": "prebuild",
-    "href": "/docs/cli/prebuild/"
+    "label": "keypair --format shell",
+    "href": "/docs/cli/keypair-shell/"
   },
   {
     "label": "prebuild directory",
     "href": "/docs/cli/prebuild-directory/"
   },
   {
-    "label": "precommit",
-    "href": "/docs/cli/precommit/"
-  },
-  {
-    "label": "precommit --install",
-    "href": "/docs/cli/precommit-install/"
-  },
-  {
     "label": "precommit directory",
     "href": "/docs/cli/precommit-directory/"
-  },
-  {
-    "label": "primitives",
-    "href": "/docs/cli/primitives/"
-  },
-  {
-    "label": "primitives derive",
-    "href": "/docs/cli/primitives/derive/"
-  },
-  {
-    "label": "primitives derive --stdin",
-    "href": "/docs/cli/primitives/derive-stdin/"
-  },
-  {
-    "label": "primitives keypair",
-    "href": "/docs/cli/primitives/keypair/"
-  },
-  {
-    "label": "primitives keypair --stdin",
-    "href": "/docs/cli/primitives/keypair-stdin/"
-  },
-  {
-    "label": "primitives keypair <privateKey>",
-    "href": "/docs/cli/primitives/keypair-private-key/"
-  },
-  {
-    "label": "protect",
-    "href": "/docs/cli/protect/"
   },
   {
     "label": "protect --docker",
     "href": "/docs/cli/protect-docker/"
   },
   {
-    "label": "protect --docker directory",
-    "href": "/docs/cli/protect-docker-directory/"
+    "label": "run Alternate Values",
+    "href": "/docs/cli/run-alternate-values/"
   },
   {
-    "label": "scan",
-    "href": "/docs/cli/scan/"
+    "label": "run Command Substitution",
+    "href": "/docs/cli/run-command-substitution/"
   },
   {
-    "label": "update",
-    "href": "/docs/cli/update/"
+    "label": "run Contextual Help",
+    "href": "/docs/cli/run-contextual-help/"
   },
   {
-    "label": "version",
+    "label": "run DOTENV_ENV=production",
+    "href": "/docs/cli/run-convention-flow-dotenv-env/"
+  },
+  {
+    "label": "run --convention=nextjs",
+    "href": "/docs/cli/run-convention-nextjs/"
+  },
+  {
+    "label": "run Default Values",
+    "href": "/docs/cli/run-default-values/"
+  },
+  {
+    "label": "run DOTENV_FILE=.env.ci",
+    "href": "/docs/cli/run-dotenv-private-key-ci/"
+  },
+  {
+    "label": "run Combine Multiple",
+    "href": "/docs/cli/run-dotenv-private-key-multiple/"
+  },
+  {
+    "label": "run DOTENV_FILE=.env.production",
+    "href": "/docs/cli/run-dotenv-private-key-production/"
+  },
+  {
+    "label": "run DOTENV_PRIVATE_KEY",
+    "href": "/docs/cli/run-dotenv-private-key/"
+  },
+  {
+    "label": "run Environment Variable Precedence",
+    "href": "/docs/cli/run-environment-variable-precedence/"
+  },
+  {
+    "label": "run -f directory",
+    "href": "/docs/cli/run-f-directory/"
+  },
+  {
+    "label": "run -f",
+    "href": "/docs/cli/run-f/"
+  },
+  {
+    "label": "run Interpolation Syntax Summary",
+    "href": "/docs/cli/run-interpolation-syntax-summary/"
+  },
+  {
+    "label": "run Multiline",
+    "href": "/docs/cli/run-multiline/"
+  },
+  {
+    "label": "run Shell Expansion",
+    "href": "/docs/cli/run-shell-expansion/"
+  },
+  {
+    "label": "run -- node index.js",
+    "href": "/docs/cli/run-validate/"
+  },
+  {
+    "label": "run Variable Expansion",
+    "href": "/docs/cli/run-variable-expansion/"
+  },
+  {
+    "label": "set KEY_PLAIN value",
+    "href": "/docs/cli/set-key-plain-suffix/"
+  },
+  {
+    "label": "set Values with leading dash",
+    "href": "/docs/cli/set-key-value-with-leading-dash/"
+  },
+  {
+    "label": "set Values with spaces",
+    "href": "/docs/cli/set-key-value-with-spaces/"
+  },
+  {
+    "label": "set KEY value",
+    "href": "/docs/cli/set-key-value/"
+  },
+  {
+    "label": "--quiet",
+    "href": "/docs/cli/quiet/"
+  },
+  {
+    "label": "--verbose",
+    "href": "/docs/cli/verbose/"
+  },
+  {
+    "label": "--debug",
+    "href": "/docs/cli/debug/"
+  },
+  {
+    "label": "--log-level",
+    "href": "/docs/cli/log-level/"
+  },
+  {
+    "label": "--help",
+    "href": "/docs/cli/help/"
+  },
+  {
+    "label": "--version",
     "href": "/docs/cli/version/"
   }
 ]

@@ -1,15 +1,16 @@
 ---
 doc_type: cli
-permalink: /docs/cli/protect-docker-directory/
+permalink: "/docs/cli/protect-docker-directory/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-title: "protect --docker directory"
-command: "dotenvx protect --docker directory"
-description: "Check env files in a specific directory during a Docker build."
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+title: protect --docker directory
+command: dotenvx protect --docker directory
+description: Check env files in a specific directory during a Docker build.
 ---
+
 Check env files in a specific directory during a Docker build.
 
 ```docker

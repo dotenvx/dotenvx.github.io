@@ -70,9 +70,10 @@ Make sure your `.gitignore` covers all the pieces:
 
 Then encrypt the secrets file:
 
-```bash
-pnpm exec dotenvx encrypt -f .env.local.secrets
+```console
+$ pnpm exec dotenvx encrypt -f .env.local.secrets
 ```
+{: copy="pnpm exec dotenvx encrypt -f .env.local.secrets"}
 
 That gives you an encrypted `.env.local.secrets` and a decryption key in
 `.env.keys`.
@@ -104,12 +105,16 @@ than leaving everything plaintext on disk all the time.
 Copy the `DOTENV_PRIVATE_KEY_LOCAL_SECRETS` value from `.env.keys`, then store it
 in Keychain:
 
-```bash
-security add-generic-password -U \
+```console
+$ security add-generic-password -U \
   -a LOCAL_SECRETS_DOTENVX_KEY \
   -s LOCAL_SECRETS_DOTENVX_KEY \
   -w
 ```
+{: copy="security add-generic-password -U \
+  -a LOCAL_SECRETS_DOTENVX_KEY \
+  -s LOCAL_SECRETS_DOTENVX_KEY \
+  -w"}
 
 With `security`, keeping `-w` as the last argument makes it prompt you for the
 secret instead of putting it in your shell history.
@@ -295,11 +300,13 @@ pnpm exec dotenvx encrypt -f .env.local.secrets
 
 That gives you a simple workflow:
 
-```bash
-bash scripts/decrypt-local-secrets.sh
+```console
+$ bash scripts/decrypt-local-secrets.sh
 # edit .env.local.secrets
-bash scripts/encrypt-local-secrets.sh
+$ bash scripts/encrypt-local-secrets.sh
 ```
+{: copy="bash scripts/decrypt-local-secrets.sh
+bash scripts/encrypt-local-secrets.sh"}
 
 One risk here: if you decrypt the file, edit it, and forget to re-encrypt,
 your secrets are back to sitting in plaintext. A git pre-commit hook can catch

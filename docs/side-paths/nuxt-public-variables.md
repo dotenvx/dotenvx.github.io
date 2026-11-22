@@ -28,7 +28,7 @@ Add the matching NUXT_PUBLIC_SITE_NAME variable to your encrypted .env file:
 ```console
 $ npx dotenvx set NUXT_PUBLIC_SITE_NAME "My app"
 ```
-{: copy='npx dotenvx set NUXT_PUBLIC_SITE_NAME "My app"' package-manager="npm"}
+{: copy="npx dotenvx set NUXT_PUBLIC_SITE_NAME \"My app\"" package-manager="npm"}
 
 Read it in a component:
 

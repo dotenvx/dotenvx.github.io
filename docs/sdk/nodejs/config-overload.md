@@ -1,50 +1,24 @@
 ---
-doc_type: cli
-eyebrow: Node
-eyebrow_href: /docs/sdk/nodejs/
-title: "config(overload: true)"
-description: Use overload to overwrite the prior set value.
-permalink: /docs/sdk/nodejs/config-overload/
+title: 'config({ overload: ... })'
+description: Allow loaded values to replace existing environment values.
+permalink: "/docs/sdk/nodejs/config-overload/"
 redirect_from:
-  - /docs/sdk/config-overload
-  - /docs/sdk/config-overload/
-  - /docs/advanced/config-overload
-  - /docs/advanced/config-overload/
-  - /docs/ref/sdk/config-overload
-  - /docs/ref/sdk/config-overload/
-crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: SDKs
-    href: /docs/sdk
-  - label: Node
-    href: /docs/sdk/nodejs
-  - label: config
-    href: /docs/sdk/nodejs/config/
+- "/docs/sdk/config-overload"
+- "/docs/sdk/config-overload/"
+- "/docs/advanced/config-overload"
+- "/docs/advanced/config-overload/"
+- "/docs/ref/sdk/config-overload"
+- "/docs/ref/sdk/config-overload/"
+doc_type: sdk
+command: 'dotenvx.config({ overload: true })'
+command_language: javascript
+eyebrow: Node.js config
+eyebrow_href: "/docs/sdk/nodejs/config/"
 ---
 
-```dotenv
-# .env.local
-HELLO="Me"
-```
+Defaults to false. Applies to config, get, and parse. The override option is an alias; overload takes precedence when both are supplied.
 
-```dotenv
-# .env
-HELLO="World"
-```
-
-{% capture sdk_code_2 %}
-{% raw %}
-// index.js
-require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], overload: true})
-
-console.log(`Hello ${process.env.HELLO}`)
-{% endraw %}
-{% endcapture %}
-{% include components/design-codeblock.html value=sdk_code_2 language="javascript" %}
-
-```console
-$ node index.js
-⟐ injected env (1) from .env.local, .env
-Hello World
+```javascript
+const dotenvx = require('@dotenvx/dotenvx')
+dotenvx.config({ overload: true })
 ```

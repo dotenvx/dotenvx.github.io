@@ -22,7 +22,7 @@ DigitalOcean has multiple deploy paths—[droplets](https://docs.digitalocean.co
 FROM node:20
 WORKDIR /app
 
-RUN curl -sfS https://dotenvx.sh/install.sh | sh
+RUN curl -sfS https://dotenvx.sh | sh
 
 COPY package*.json ./
 RUN npm install
@@ -50,4 +50,4 @@ Commit `.env.production`. Do not commit `.env.keys`.
 
 ## Set decryption key
 
-Set `DOTENV_PRIVATE_KEY` to your production private key and `DOTENV_FILE` to `.env.production` in DigitalOcean's environment variable manager (or pass it into `docker run -e`), then redeploy. Your app injects env from the encrypted `.env.production` file.
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` to your production private key and `DOTENV_FILE` to `.env.production` in DigitalOcean's environment variable manager (or pass it into `docker run -e`), then redeploy. Your app injects env from the encrypted `.env.production` file.

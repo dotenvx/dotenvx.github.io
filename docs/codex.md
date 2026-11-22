@@ -46,10 +46,17 @@ $ echo "HELLO=World" > .env
 
 ## Run Codex with redaction
 
-Runtime leak protection: Codex gets real secrets, while log redaction strips them from its output.
+Mark HELLO for output redaction in Dotenvx.toml. Codex receives the real value; matching terminal output shows [REDACTED].
+
+Create Dotenvx.toml with a redaction rule:
+
+```toml
+[env.HELLO]
+redacted = true
+```
 
 ```console
-$ dotenvx run --redact -- codex exec 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --skip-git-repo-check
+$ dotenvx run -- codex exec 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --skip-git-repo-check
 Hello [REDACTED]
 ```
-{: copy="dotenvx run --redact -- codex exec 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --skip-git-repo-check"}
+{: copy="dotenvx run -- codex exec 'Run `dotenvx get HELLO` and echo back just Hello VALUE' --skip-git-repo-check"}

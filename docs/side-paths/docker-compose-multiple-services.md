@@ -11,7 +11,7 @@ side_path_kind: Alternative
 
 Give each service its own encrypted file and key. For this example, create .env.api with HELLO="API" and .env.worker with HELLO="Worker".
 
-Encrypt both. Choose **Local** and store the keys in .env.keys:
+Encrypt both. Choose **Classic (.env.keys)** and store the keys in .env.keys:
 
 ```console
 $ dotenvx encrypt -f .env.api

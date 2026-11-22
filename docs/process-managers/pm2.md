@@ -11,9 +11,10 @@ Find [code examples for this guide](https://github.com/dotenvx/examples/tree/mai
 
 Generate an `ecosystem.config.js` file.
 
-```bash
-pm2 init
+```console
+$ pm2 init
 ```
+{: copy="pm2 init"}
 
 Modify it to your needs. Something like this.
 
@@ -49,9 +50,9 @@ server.listen(PORT, () => {
 
 Add `@dotenvx/dotenvx` and `pm2` as dependencies.
 
-```bash
-npm install @dotenvx/dotenvx --save
-npm install pm2 --save
+```console
+$ npm install @dotenvx/dotenvx --save
+$ npm install pm2 --save
 ```
 {: copy="false"}
 
@@ -63,7 +64,7 @@ Then, in your `package.json`, modify your start script.
     "start": "dotenvx run -- pm2-runtime start ecosystem.config.js --env production"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.48.4",
+    "@dotenvx/dotenvx": "^3.0.0",
     "pm2": "^5.3.0"
   }
 }
@@ -80,9 +81,10 @@ HELLO="World"
 
 Inject your env using your start script — which is using dotenvx and pm2.
 
-```bash
-npm start
+```console
+$ npm start
 ```
+{: copy="npm start"}
 
 Your app will say `Hello World`. That covers local development. Let's solve for production next.
 

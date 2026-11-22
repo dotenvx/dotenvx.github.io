@@ -2,15 +2,16 @@
 doc_type: cli
 title: Version
 description: Print the installed dotenvx version.
-permalink: /docs/cli/version/
+permalink: "/docs/cli/version/"
 redirect_from:
-  - /docs/ref/cli/version/
-  - /docs/ref/cli/version
+- "/docs/ref/cli/version/"
+- "/docs/ref/cli/version"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+command: dotenvx --version
 ---
 
 ```console

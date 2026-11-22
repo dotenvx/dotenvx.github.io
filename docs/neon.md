@@ -115,26 +115,26 @@ $ dotenvx encrypt -f .env.production
 ```
 {: copy="dotenvx encrypt -f .env.production"}
 
-The connection strings and keys are now encrypted, and you have a `.env.keys` file. The branch name and service URLs stay readable, so pull requests show which branch a file points to.
+Choose **Classic (.env.keys)** when prompted. The connection strings and keys are now encrypted, and you have a `.env.keys` file. Ciphertext below is abbreviated. The branch name and service URLs stay readable, so pull requests show which branch a file points to.
 
 ```dotenv
 #/-------------------[DOTENV_PUBLIC_KEY]--------------------/
 #/            public-key encryption for .env files          /
 #/       [how it works](https://dotenvx.com/encryption)     /
 #/----------------------------------------------------------/
-DOTENV_PUBLIC_KEY_PRODUCTION="03a13c..."
+DOTENV_PUBLIC_KEY_PRODUCTION="DOTENV-PUBLIC-KEY-3-SECP256K1-03a13c..."
 
 # .env.production
-DATABASE_URL="encrypted:BJWTQRqLZbLh..."
-DATABASE_URL_UNPOOLED="encrypted:BKgN9Vn5IM1I..."
+DATABASE_URL="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-03a13c0000-..."
+DATABASE_URL_UNPOOLED="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-03a13c0000-..."
 NEON_BRANCH=main
 NEON_AUTH_BASE_URL=https://ep-floral-morning-b4ilaws5.neonauth.c-6.us-east-2.aws.neon.tech/neondb/auth
 NEON_AUTH_JWKS_URL=https://ep-floral-morning-b4ilaws5.neonauth.c-6.us-east-2.aws.neon.tech/neondb/auth/.well-known/jwks.json
-AWS_ACCESS_KEY_ID=encrypted:BNLOduQp2JJu...
-AWS_SECRET_ACCESS_KEY=encrypted:BH6o+QcR5u8c...
+AWS_ACCESS_KEY_ID=DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-03a13c0000-...
+AWS_SECRET_ACCESS_KEY=DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-03a13c0000-...
 AWS_ENDPOINT_URL_S3=https://br-bold-rain-b45zwi29.storage.c-6.us-east-2.aws.neon.tech
 AWS_REGION=us-east-2
-NEON_AI_GATEWAY_TOKEN=encrypted:BBmg6Ej5B7ud...
+NEON_AI_GATEWAY_TOKEN=DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-03a13c0000-...
 NEON_AI_GATEWAY_BASE_URL=https://br-bold-rain-b45zwi29-api.ai.c-6.us-east-2.aws.neon.tech
 ```
 {: .design-codeblock--nowrap copy="false"}
@@ -180,14 +180,13 @@ Run it against either branch.
 
 ```console
 $ dotenvx run -f .env.preview -- node index.js
-⟐ injected env (12) from .env.preview (028 28A) via .env.keys ⛉
 Hello preview at 2026-10-26T20:48:09.360Z
 
 $ dotenvx run -f .env.production -- node index.js
-⟐ injected env (12) from .env.production (03A 13C) via .env.keys ⛉
 Hello main at 2026-10-26T20:48:11.968Z
 ```
-{: copy="dotenvx run -f .env.preview -- node index.js"}
+{: copy="dotenvx run -f .env.preview -- node index.js
+dotenvx run -f .env.production -- node index.js"}
 
 ## Commit
 

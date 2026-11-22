@@ -49,7 +49,7 @@ $ dotenvx encrypt
 ```
 {: copy="dotenvx encrypt"}
 
-When prompted, choose **Local** and store the private key in .env.keys. Your .env now contains encrypted values; .env.keys unlocks them.
+When prompted, choose **Classic (.env.keys)** and store the private key in .env.keys. Your .env now contains encrypted values; .env.keys unlocks them.
 
 ## Commit
 
@@ -135,6 +135,13 @@ For an existing app, copy its code and install dependencies before the entrypoin
 
 ## Share
 
+Install the [Armor feature](/docs/cli/install-add/) before using Armor commands:
+
+```console
+$ dotenvx install --add armor
+```
+{: copy="dotenvx install --add armor"}
+
 Share access with Dotenvx Armor ⛨
 
 Log in, armor your development key, and invite your teammate:
@@ -150,10 +157,12 @@ dotenvx armor invite"}
 
 Your teammate accepts the invitation, pulls the repository, installs Dotenvx, and logs in on their machine. They build the image, then let Dotenvx retrieve the app’s key on the host before Docker starts:
 
-```shell
-DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
+```console
+$ DOTENV_PRIVATE_KEY="$(dotenvx keypair DOTENV_PRIVATE_KEY)" \
   docker run --rm --env DOTENV_PRIVATE_KEY hello-docker
 ```
+{: copy="DOTENV_PRIVATE_KEY=\"$(dotenvx keypair DOTENV_PRIVATE_KEY)\" \
+  docker run --rm --env DOTENV_PRIVATE_KEY hello-docker"}
 
 Armor authentication stays on the host. Only the app’s private key is passed to the container, where Dotenvx decrypts .env. The assignment lasts for this command; no export or cleanup is needed. This syntax uses Bash or Zsh.
 
@@ -175,7 +184,7 @@ $ dotenvx encrypt -f .env.production
 ```
 {: copy="dotenvx encrypt -f .env.production"}
 
-When prompted, choose **Enclaved**, select your supported deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name. Choose the resource that runs your container.
+When prompted, choose **Armor**, then **Enclaved**, select your supported deployment service, connection, and resource, and use DOTENV_PRIVATE_KEY_PRODUCTION as the private key name. Choose the resource that runs your container.
 
 Update the Dockerfile's COPY instruction to include the encrypted production file:
 

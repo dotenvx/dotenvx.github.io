@@ -2,7 +2,6 @@
 title: Deploy Armor on Heroku
 description: Deploy encrypted production configuration with Docker, authenticate a Heroku workload to Armor, and verify its key-access audit event.
 permalink: /docs/custody/armor/heroku/
-main_layout: single
 eyebrow: Armor custody
 eyebrow_href: /docs/custody/armor/
 ---
@@ -29,11 +28,14 @@ Automation tokens require [Business](/pricing/). An operator who verifies audit 
 
 On your workstation, install Dotenvx and add Armor:
 
-```shell
-curl -sfS https://dotenvx.sh | sh
-dotenvx install --add armor
-dotenvx armor login
+```console
+$ curl -sfS https://dotenvx.sh | sh
+$ dotenvx install --add armor
+$ dotenvx armor login
 ```
+{: copy="curl -sfS https://dotenvx.sh | sh
+dotenvx install --add armor
+dotenvx armor login"}
 
 Create a separate .env.production. This demonstration value is a startup check, not a real credential:
 
@@ -41,12 +43,14 @@ Create a separate .env.production. This demonstration value is a startup check, 
 DEPLOYMENT_CHECK="armor-production-ready"
 ```
 
-Encrypt the file, choosing **Local** and **File .env.keys** when prompted. Then move that production key into your dedicated Armor team. Replace YOUR_PRODUCTION_TEAM with its slug:
+Encrypt the file, choosing **Classic (.env.keys)** when prompted. Then move that production key into your dedicated Armor team. Replace YOUR_PRODUCTION_TEAM with its slug:
 
-```shell
-dotenvx encrypt -f .env.production
-dotenvx armor up -f .env.production --team YOUR_PRODUCTION_TEAM
+```console
+$ dotenvx encrypt -f .env.production
+$ dotenvx armor up -f .env.production --team YOUR_PRODUCTION_TEAM
 ```
+{: copy="dotenvx encrypt -f .env.production
+dotenvx armor up -f .env.production --team YOUR_PRODUCTION_TEAM"}
 
 Armor up removes the local key after the upload succeeds. Keep any remaining .env.keys files out of Git. Moving custody does not invalidate copies of the private key made earlier.
 
@@ -112,11 +116,14 @@ Create both .gitignore and .dockerignore with these exclusions:
 
 Also exclude .git and node_modules from .dockerignore. If an existing ignore rule excludes .env.production, add !.env.production after it. Keep plaintext configuration, tokens, and developer login files outside the build context. The explicit COPY instructions include only the files this app needs.
 
-```shell
-git add -f .env.production
-git add server.cjs start.sh Dockerfile .gitignore .dockerignore
-git commit -m "deploy encrypted production configuration"
+```console
+$ git add -f .env.production
+$ git add server.cjs start.sh Dockerfile .gitignore .dockerignore
+$ git commit -m "deploy encrypted production configuration"
 ```
+{: copy="git add -f .env.production
+git add server.cjs start.sh Dockerfile .gitignore .dockerignore
+git commit -m \"deploy encrypted production configuration\""}
 
 For repeatable production builds, pin the base image digest and use your approved Dotenvx installer artifact rather than a moving installer URL. Confirm that the Armor add-on installed in the image can be loaded by Heroku's non-root runtime user.
 
@@ -124,20 +131,25 @@ For repeatable production builds, pin the base image digest and use your approve
 
 Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), start Docker, and create a container-stack app:
 
-```shell
-heroku login
-heroku create YOUR_HEROKU_APP --stack container
+```console
+$ heroku login
+$ heroku create YOUR_HEROKU_APP --stack container
 ```
+{: copy="heroku login
+heroku create YOUR_HEROKU_APP --stack container"}
 
 In that app's **Settings → Config Vars**, set DOTENVX_TOKEN to the production team's automation token. Do not set DOTENV_PRIVATE_KEY_PRODUCTION or copy .env.keys into the app for this path. Leave DEPLOYMENT_CHECK out of config vars so the startup check proves the encrypted file was loaded.
 
 In your CI secret settings, provide HEROKU_API_KEY for a deployment account authorized for this app. Set HEROKU_APP to the app name. With the Heroku CLI and Docker available, run from the checked-out project:
 
-```shell
-heroku container:login
-heroku container:push web --app "$HEROKU_APP"
-heroku container:release web --app "$HEROKU_APP"
+```console
+$ heroku container:login
+$ heroku container:push web --app "$HEROKU_APP"
+$ heroku container:release web --app "$HEROKU_APP"
 ```
+{: copy="heroku container:login
+heroku container:push web --app \"$HEROKU_APP\"
+heroku container:release web --app \"$HEROKU_APP\""}
 
 CI builds the Dockerfile, pushes its image to Heroku's registry, then releases it. It does not need the Armor token or production private key. The image installer needs network access, but it does not fetch production secrets. Follow Heroku's [container deployment documentation](https://devcenter.heroku.com/articles/container-registry-and-runtime) for runner setup and registry authentication.
 
@@ -149,18 +161,21 @@ Deployment credentials can change the running code and app configuration. Keep t
 
 Open the app and inspect its logs:
 
-```shell
-heroku open --app YOUR_HEROKU_APP
-heroku logs --tail --app YOUR_HEROKU_APP
+```console
+$ heroku open --app YOUR_HEROKU_APP
+$ heroku logs --tail --app YOUR_HEROKU_APP
 ```
+{: copy="heroku open --app YOUR_HEROKU_APP
+heroku logs --tail --app YOUR_HEROKU_APP"}
 
 The response should be ok, and the startup log should say Production configuration loaded. Neither should contain a secret or private key.
 
-Record the deployment time in UTC and the production public key from .env.production. On your workstation, signed in as an operator with log-read access, replace the team slug and public key in this request:
+Record the deployment time in UTC and the production public key from .env.production. On your workstation, signed in as an operator with log-read access, set DOTENVX_ARMOR_TOKEN to the access token from dotenvx token --unmask, then replace the team slug and public key in this request:
 
-```shell
-dotenvx curl 'https://armor.dotenvx.com/api/logs?team=YOUR_PRODUCTION_TEAM&action=keypair%2Faccess&resource=keypair%2FYOUR_PRODUCTION_PUBLIC_KEY&result=success'
+```console
+$ curl -H "Authorization: Bearer $DOTENVX_ARMOR_TOKEN" 'https://armor.dotenvx.com/api/logs?team=YOUR_PRODUCTION_TEAM&action=keypair%2Faccess&resource=keypair%2FYOUR_PRODUCTION_PUBLIC_KEY&result=success'
 ```
+{: copy="curl -H \"Authorization: Bearer $DOTENVX_ARMOR_TOKEN\" 'https://armor.dotenvx.com/api/logs?team=YOUR_PRODUCTION_TEAM&action=keypair%2Faccess&resource=keypair%2FYOUR_PRODUCTION_PUBLIC_KEY&result=success'"}
 
 For the successful startup, find a log entry with:
 
@@ -176,9 +191,10 @@ Audit writes are asynchronous, so retry the read if the event has not appeared y
 
 Restart the dyno and verify a fresh access event:
 
-```shell
-heroku ps:restart web --app YOUR_HEROKU_APP
+```console
+$ heroku ps:restart web --app YOUR_HEROKU_APP
 ```
+{: copy="heroku ps:restart web --app YOUR_HEROKU_APP"}
 
 ## 5. Plan for cold starts and outages
 
@@ -188,7 +204,7 @@ An already-running app keeps the environment loaded at startup. An Armor outage 
 
 Test a blocked connection to Armor in a separate staging app: an existing instance should keep serving, while a newly started instance should fail to become ready. Restore connectivity and confirm a fresh instance starts and produces an access event. A request that never reaches Armor cannot produce an Armor-side access event.
 
-Do not use --no-armor as an outage workaround for an Armored-only deployment: it cannot supply the missing private key. If you intentionally add a local or platform key as a fallback, document that it changes both the availability dependency and which starts Armor can audit.
+Do not disable Armor as an outage workaround for an Armored-only deployment: it cannot supply the missing private key. If you intentionally add a local or platform key as a fallback, document that it changes both the availability dependency and which starts Armor can audit.
 
 ## Alternative: Enclaved Keys on Heroku
 
@@ -196,11 +212,12 @@ An Enclaved Key provisioned into Heroku config vars changes where the private ke
 
 Use a separate staging app to try it. In Armor, connect Heroku with permission to update that app's config vars. Create a fresh plaintext .env.production for that app and run:
 
-```shell
-dotenvx encrypt -f .env.production
+```console
+$ dotenvx encrypt -f .env.production
 ```
+{: copy="dotenvx encrypt -f .env.production"}
 
-Choose **Enclaved**, select the Heroku connection and the exact app, and use DOTENV_PRIVATE_KEY_PRODUCTION as the key name. The provisioner generates a new keypair, writes the private key into that app's config vars, and returns the public key used to encrypt the file. Do not reuse an Armored ciphertext file with a different new key. Commit the resulting encrypted file and rebuild the image.
+Choose **Armor**, then **Enclaved**, select the Heroku connection and the exact app, and use DOTENV_PRIVATE_KEY_PRODUCTION as the key name. The provisioner generates a new keypair, writes the private key into that app's config vars, and returns the public key used to encrypt the file. Do not reuse an Armored ciphertext file with a different new key. Commit the resulting encrypted file and rebuild the image.
 
 Replace start.sh with this entrypoint for the Enclaved app:
 
@@ -208,7 +225,8 @@ Replace start.sh with this entrypoint for the Enclaved app:
 #!/bin/sh
 set -eu
 : "${DOTENV_PRIVATE_KEY_PRODUCTION:?Provision the Heroku Enclaved Key}"
-exec dotenvx run --strict --no-armor -f .env.production -- node server.cjs
+export DOTENVX_NO_ARMOR=true
+exec dotenvx run --strict -f .env.production -- node server.cjs
 ```
 
 The startup explicitly uses the provisioned local key. It needs no Armor token or network request to Armor. With Heroku and its config vars available, a new dyno can start during an Armor outage. Provisioning or changing custody still needs Armor and the Heroku connection.

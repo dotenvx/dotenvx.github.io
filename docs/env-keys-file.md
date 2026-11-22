@@ -14,10 +14,10 @@ mark: ".env.keys"
 #/----------------------------------------------------------/
 
 # .env
-DOTENV_PRIVATE_KEY="ccc387ba193a315cbcd1ad7d8d007e6124763894554418e7c90b7dbcd7edca23"
+DOTENV_PRIVATE_KEY="DOTENV-PRIVATE-KEY-3-SECP256K1-ccc387ba193a315cbcd1ad7d8d007e6124763894554418e7c90b7dbcd7edca23"
 
 # .env.production
-DOTENV_PRIVATE_KEY_PRODUCTION="d4d2e22102c58f741cdddacaf69a1a64751fc014aafb90de0f1e7e6cb4d08330"
+DOTENV_PRIVATE_KEY_PRODUCTION="DOTENV-PRIVATE-KEY-3-SECP256K1-d4d2e22102c58f741cdddacaf69a1a64751fc014aafb90de0f1e7e6cb4d08330"
 ```
 {: copy="false"}
 

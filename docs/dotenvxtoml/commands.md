@@ -15,17 +15,21 @@ related:
 ---
 Create `Dotenvx.toml` in your project root, then encrypt and run your app.
 
-```sh
-dotenvx encrypt
-dotenvx run -- node index.js
+```console
+$ dotenvx encrypt
+$ dotenvx run -- node index.js
 ```
+{: copy="dotenvx encrypt
+dotenvx run -- node index.js"}
 
 Use `-f` to select a specific environment file and apply its [file overrides](/docs/dotenvxtoml/file/).
 
-```sh
-dotenvx encrypt -f .env.production
-dotenvx run -f .env.production -- node index.js
+```console
+$ dotenvx encrypt -f .env.production
+$ dotenvx run -f .env.production -- node index.js
 ```
+{: copy="dotenvx encrypt -f .env.production
+dotenvx run -f .env.production -- node index.js"}
 
 Dotenvx validates resolved values before starting the command. With `strict = true`, validation failures stop startup.
 

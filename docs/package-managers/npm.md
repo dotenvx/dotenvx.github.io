@@ -13,15 +13,17 @@ Use dotenvx (as an npm module) with [astro.js](https://github.com/withastro/astr
 
 Create an Astro application.
 
-```bash
-npm create astro@latest
+```console
+$ npm create astro@latest
 ```
+{: copy="npm create astro@latest"}
 
 Install `dotenvx` as an npm module.
 
-```bash
-npm install @dotenvx/dotenvx --save
+```console
+$ npm install @dotenvx/dotenvx --save
 ```
+{: copy="npm install @dotenvx/dotenvx --save"}
 
 Edit `src/pages/index.astro` to include `process.env.HELLO`.
 
@@ -66,7 +68,6 @@ $ npm run dev
 > dev
 > dotenvx run -- astro dev
 
-⟐ injected env (1) from .env
 ┃ Local    http://localhost:4321/
 ```
 {: copy="npm run dev"}
@@ -75,9 +76,10 @@ $ npm run dev
 
 Use dotenvx (as an npm module) with [express.js](https://github.com/expressjs/express).
 
-```bash
-npm install express @dotenvx/dotenvx --save
+```console
+$ npm install express @dotenvx/dotenvx --save
 ```
+{: copy="npm install express @dotenvx/dotenvx --save"}
 
 Create a simple Hello World application.
 
@@ -102,7 +104,7 @@ Add `dotenvx run --` to your start script.
 ```json
 {
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.48.4",
+    "@dotenvx/dotenvx": "^3.0.0",
     "express": "^4.18.2"
   },
   "scripts": {
@@ -120,7 +122,6 @@ $ npm start
 > start
 > dotenvx run -- node index.js
 
-⟐ injected env (1) from .env
 Server running on port:3000
 ```
 {: copy="npm start"}
@@ -133,13 +134,15 @@ Follow the [canonical Next.js guide](/docs/nextjs/) to use `@dotenvx/next-env` w
 
 Use dotenvx (as an npm module) with [remix.js](https://github.com/remix-run/remix).
 
-```bash
-npx create-remix@latest
+```console
+$ npx create-remix@latest
 ```
+{: copy="npx create-remix@latest"}
 
-```bash
-npm install @dotenvx/dotenvx --save
+```console
+$ npm install @dotenvx/dotenvx --save
 ```
+{: copy="npm install @dotenvx/dotenvx --save"}
 
 Edit `app/routes/_index.tsx` to include `process.env.HELLO` using a Remix loader.
 
@@ -197,7 +200,6 @@ $ npm run dev
 > dev
 > dotenvx run -- remix dev --manual
 
-⟐ injected env (1) from .env
 [remix-serve] http://localhost:3000
 ```
 {: copy="npm run dev"}

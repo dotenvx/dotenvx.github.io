@@ -35,19 +35,30 @@ app.listen(PORT, () => {
 
 ## Run dotenvx
 
-Install dotenvx via the [dotenvx buildpack](https://github.com/dotenvx/heroku-buildpack-dotenvx).
+Install Dotenvx as an application dependency so Heroku's Node.js build installs the native CLI for its platform:
 
-```bash
-heroku buildpacks:add https://github.com/dotenvx/heroku-buildpack-dotenvx
+```console
+$ npm install @dotenvx/dotenvx
 ```
+{: copy="npm install @dotenvx/dotenvx"}
 
-Update your `Procfile` to use `dotenvx`.
+Add the start script to package.json, keeping your other scripts:
 
-```yaml
-# Procfile
-web: dotenvx run -- node index.js
+```json
+{
+  "scripts": {
+    "start": "dotenvx run -f .env.production --strict -- node index.js"
+  }
+}
 ```
-{: copy="false"}
+{: label="package.json"}
+
+Update your Procfile:
+
+```text
+web: npm start
+```
+{: label="Procfile"}
 
 ## Add production environment
 
@@ -60,19 +71,19 @@ HELLO="production"
 ## Encrypt production
 
 ```console
-$ dotenvx encrypt -f .env.production
+$ npx dotenvx encrypt -f .env.production
 ```
-{: copy="dotenvx encrypt -f .env.production"}
+{: copy="npx dotenvx encrypt -f .env.production"}
 
 Commit `.env.production`. Do not commit `.env.keys`. Keep private keys somewhere safe like 1Password or [Armor ⛨](/armor).
 
 ## Set decryption key
 
-Set `DOTENV_PRIVATE_KEY` on Heroku to the production key from `.env.keys`, and set `DOTENV_FILE` to `.env.production`.
+Set `DOTENV_PRIVATE_KEY_PRODUCTION` on Heroku to the production key from `.env.keys`, and set `DOTENV_FILE` to `.env.production`.
 
-```bash
-heroku config:set DOTENV_PRIVATE_KEY='your-private-key' DOTENV_FILE='.env.production'
-git push heroku
+```console
+$ heroku config:set DOTENV_PRIVATE_KEY_PRODUCTION='your-private-key' DOTENV_FILE='.env.production'
+$ git push heroku
 ```
 {: copy="false"}
 

@@ -1,13 +1,18 @@
 [
   "update",
-  "feedback",
+  "uninstall",
+  "login",
+  "logout",
+  "token",
+  "info",
   "protect",
   "ls",
   "genexample",
-  "lock",
+  "gitignore",
+  "precommit",
+  "prebuild",
   "native",
   "1password",
   "bitwarden",
-  "armor",
-  "curl"
+  "armor"
 ]

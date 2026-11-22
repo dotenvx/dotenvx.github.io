@@ -41,7 +41,6 @@ Encrypt it with a single command.
 
 ```console
 $ npx dotenvx encrypt
-◈ encrypted .env (022 0D8) via .env.keys ⛉
 ```
 {: copy="npx dotenvx encrypt" package-manager="npm"}
 
@@ -49,9 +48,9 @@ The values become ciphertext and only your private key can unlock them.
 
 ```dotenv
 # .env
-DOTENV_PUBLIC_KEY="0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
+DOTENV_PUBLIC_KEY="DOTENV-PUBLIC-KEY-3-SECP256K1-0220d830351410598be484f43a7b07097e09851f50426832876e8b5815a1752990"
 
-EXPO_PUBLIC_HELLO="encrypted:BHLTACNJMr00nTG6yXpkCyWFKF/MY0ajN855tg3uVtKopTe2AGzSkQlcPd21pTOT3Ci8IKrdIg2TMZFoq1mDR6yb06QCRvqHXtpkZkAHYCEHfeWqqC8tMFovcYq5JS2uZSrC/qUGDA=="
+EXPO_PUBLIC_HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0220d83035-BP8FZxI4vhmRmfTAmvZGnzBd6AoJG0ZSjKDLRbE4XpxaWBDD7PpxLMkB/2I0glwVkHXeIcpJwY13qtdhjySs+a9NT9myy5uzErUYb2Uc/1LDY886yF8SxslAxfiJzhZ5NV3qQDQ6Tg=="
 ```
 {: class="design-codeblock--nowrap"}
 
@@ -108,7 +107,6 @@ Run your app:
 
 ```console
 $ npm start
-⟐ injected env (3) from .env (022 0D8) via .env.keys
 ```
 {: copy="npm start" package-manager="npm"}
 
@@ -119,6 +117,13 @@ Open the app in Expo Go or your development build to see Hello Secret. Restart t
 ## Share
 
 Have teammates? Share access with Dotenvx Armor ⛨
+
+Install the [Armor feature](/docs/cli/install-add/) before using Armor commands:
+
+```console
+$ npx dotenvx install --add armor
+```
+{: copy="npx dotenvx install --add armor"}
 
 Log in to Dotenvx.
 
@@ -132,7 +137,6 @@ Create the Armored Key ⛨
 
 ```console
 $ npx dotenvx armor up
-⛨ armored .env (022 0D8)
 ```
 {: copy="npx dotenvx armor up" class="design-codeblock--nowrap" package-manager="npm"}
 
@@ -148,7 +152,6 @@ Your teammate accepts the invitation, pulls the repository, installs dependencie
 
 ```console
 $ npm start
-⟐ injected env (3) from .env (022 0D8) via Armor ⛨
 ```
 {: copy="npm start" package-manager="npm"}
 
@@ -173,7 +176,7 @@ $ npx dotenvx encrypt -f .env.production
 ```
 {: copy="npx dotenvx encrypt -f .env.production" package-manager="npm"}
 
-For a local export, choose **Local** when prompted and store the key in .env.keys. Keep .env.keys out of git.
+For a local export, choose **Classic (.env.keys)** when prompted and store the key in .env.keys. Keep .env.keys out of git.
 
 Commit the encrypted file:
 

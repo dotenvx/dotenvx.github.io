@@ -1,22 +1,22 @@
 ---
 doc_type: cli
-title: "Command Substitution"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
+title: Command Substitution
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
 description: Add the output of a command to one of your variables in your .env file.
-permalink: /docs/cli/run-command-substitution/
+permalink: "/docs/cli/run-command-substitution/"
 redirect_from:
-  - /docs/advanced/run-command-substitution
-  - /docs/advanced/run-command-substitution/
-  - /docs/ref/cli/run-command-substitution
-  - /docs/ref/cli/run-command-substitution/
+- "/docs/advanced/run-command-substitution"
+- "/docs/advanced/run-command-substitution/"
+- "/docs/ref/cli/run-command-substitution"
+- "/docs/ref/cli/run-command-substitution/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 video: cli-command-substitution
 ---
 

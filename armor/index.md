@@ -39,12 +39,16 @@ $ dotenvx install --add armor
 $ dotenvx armor login
 $ dotenvx armor up
 ```
+{: copy="dotenvx install --add armor
+dotenvx armor login
+dotenvx armor up"}
 
 Run your app as usual:
 
 ```console
 $ dotenvx run -- npm start
 ```
+{: copy="dotenvx run -- npm start"}
 
 Dotenvx requests the key from Armor at runtime. Armor checks access and any required approval, and records the request.
 

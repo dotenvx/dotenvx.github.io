@@ -1,22 +1,22 @@
 ---
 doc_type: cli
 title: "--stdout"
-eyebrow: "dotenvx decrypt"
-eyebrow_href: /docs/cli/decrypt/
+eyebrow: dotenvx decrypt
+eyebrow_href: "/docs/cli/decrypt/"
 description: Decrypt the contents of an encrypted .env file and send to stdout.
-permalink: /docs/cli/decrypt-stdout/
+permalink: "/docs/cli/decrypt-stdout/"
 redirect_from:
-  - /docs/advanced/decrypt-stdout
-  - /docs/advanced/decrypt-stdout/
-  - /docs/ref/cli/decrypt-stdout
-  - /docs/ref/cli/decrypt-stdout/
+- "/docs/advanced/decrypt-stdout"
+- "/docs/advanced/decrypt-stdout/"
+- "/docs/ref/cli/decrypt-stdout"
+- "/docs/ref/cli/decrypt-stdout/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Decrypt
-    href: /docs/cli/decrypt/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Decrypt
+  href: "/docs/cli/decrypt/"
 ---
 
 ```console

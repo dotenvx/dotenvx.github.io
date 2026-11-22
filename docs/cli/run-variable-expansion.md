@@ -1,22 +1,23 @@
 ---
 doc_type: cli
-title: "Variable Expansion"
-eyebrow: "dotenvx run"
-eyebrow_href: /docs/cli/run/
-description: Reference and expand variables already on your machine for use in your .env file.
-permalink: /docs/cli/run-variable-expansion/
+title: Variable Expansion
+eyebrow: dotenvx run
+eyebrow_href: "/docs/cli/run/"
+description: Reference and expand variables already on your machine for use in your
+  .env file.
+permalink: "/docs/cli/run-variable-expansion/"
 redirect_from:
-  - /docs/advanced/run-variable-expansion
-  - /docs/advanced/run-variable-expansion/
-  - /docs/ref/cli/run-variable-expansion
-  - /docs/ref/cli/run-variable-expansion/
+- "/docs/advanced/run-variable-expansion"
+- "/docs/advanced/run-variable-expansion/"
+- "/docs/ref/cli/run-variable-expansion"
+- "/docs/ref/cli/run-variable-expansion/"
 crumbs:
-  - label: Docs
-    href: /docs/introduction
-  - label: CLI
-    href: /docs/cli
-  - label: Run
-    href: /docs/cli/run/
+- label: Docs
+  href: "/docs/introduction"
+- label: CLI
+  href: "/docs/cli"
+- label: Run
+  href: "/docs/cli/run/"
 video: cli-variable-expansion
 ---
 

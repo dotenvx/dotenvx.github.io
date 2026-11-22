@@ -1,10 +1,10 @@
 ---
 doc_type: cli
-title: "1password push -fk"
-description: "Path to your .env.keys file."
+title: 1password push -fk
+description: Path to your .env.keys file.
 permalink: "/docs/cli/1password-push-fk/"
-command: "dotenvx 1password push -fk"
-eyebrow: "dotenvx 1password push"
+command: dotenvx 1password push -fk
+eyebrow: dotenvx 1password push
 eyebrow_href: "/docs/cli/1password-push/"
 ---
 

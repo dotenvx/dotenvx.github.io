@@ -7,12 +7,12 @@
 {: #{{ method.id | default: method_id }}}
 {% endunless %}
 
-```bash
-{{ method.command }}
-{% if method.main_extra_command -%}
-{{ method.main_extra_command }}
-{% endif -%}
-```
+{% capture install_command %}{{ method.command }}{% if method.main_extra_command %}
+{{ method.main_extra_command }}{% endif %}{% endcapture %}
+{% assign install_commands = install_command | newline_to_br | split: '<br />' %}
+{% capture install_display %}{% for command in install_commands %}$ {{ command | strip }}
+{% endfor %}{% endcapture %}
+{% include components/design-codeblock.html value=install_display format='cli' copy_text=install_command %}
 
 {% if method.description %}{{ method.description }}{% endif %}
 

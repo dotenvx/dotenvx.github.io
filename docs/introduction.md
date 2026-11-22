@@ -9,7 +9,6 @@ redirect_from:
   - /docs/package-managers/
   - /docs/process-managers
   - /docs/process-managers/
-main_layout: columns
 ---
 
 <div class="main-section-columns" markdown="block">

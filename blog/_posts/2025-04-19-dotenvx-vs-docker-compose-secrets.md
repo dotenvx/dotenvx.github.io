@@ -54,17 +54,19 @@ Come runtime, you provide the key (often via an environment variable or a secret
 
 You run your app like this:
 
-```
+```console
 $ dotenvx run -- node app.js
 ```
+{: copy="dotenvx run -- node app.js"}
 
 Secrets are decrypted and loaded as environment variables *just for that process*. Nothing written to disk. No lingering files in containers.
 
 Want to commit secrets to your repo? Encrypt them first:
 
-```
+```console
 $ dotenvx encrypt
 ```
+{: copy="dotenvx encrypt"}
 
 Then you can safely version your encrypted `.env` file. It's useless without the decryption key.
 

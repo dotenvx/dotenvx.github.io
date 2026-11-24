@@ -30,12 +30,14 @@ Environment variable names follow the same rules as a [plain .env file](/docs/en
 ## Values
 {: #values}
 
-Each encrypted value starts with `DOTENV-CIPHERTEXT-3-`, and includes the algorithm, key identifier, and encrypted payload. Let dotenvx generate the value rather than adding the prefix yourself.
+Format 3 encrypted values start with `DOTENV-CIPHERTEXT-3-` and include the algorithm, key identifier, and encrypted payload. Let dotenvx generate the value rather than adding the prefix yourself.
 
 ```dotenv
 HELLO="DOTENV-CIPHERTEXT-3-SECP256K1-AES256GCM-0220d83035-BP8FZxI4vhmRmfTAmvZGnzBd6AoJG0ZSjKDLRbE4XpxaWBDD7PpxLMkB/2I0glwVkHXeIcpJwY13qtdhjySs+a9NT9myy5uzErUYb2Uc/1LDY886yF8SxslAxfiJzhZ5NV3qQDQ6Tg=="
 ```
 {: copy="false"}
+
+Dotenvx also supports Classic values beginning with `encrypted:`. See [Encryption Formats](/docs/encryption-formats/) for the complete [Classic](/docs/encryption-formats/#classic) and [3](/docs/encryption-formats/#3) specifications, including public keys, private keys, and ciphertext.
 
 A file can contain both encrypted and plaintext values. Any value left in plaintext remains readable.
 

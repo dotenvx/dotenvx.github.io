@@ -31,6 +31,8 @@ Some quick takeaways:
 
 ## Encryption
 
+See [Encryption Formats](/docs/encryption-formats/) for the complete [Classic](/docs/encryption-formats/#classic) and [3](/docs/encryption-formats/#3) private-key, public-key, and ciphertext specifications.
+
 [secp256k1](https://en.bitcoin.it/wiki/Secp256k1) is the public-key encryption algorithm used to generate the public/private key pair.
 
 ## Generating

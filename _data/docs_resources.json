@@ -16,6 +16,10 @@
     "href": "/docs/env-keys-file/"
   },
   {
+    "label": "Encryption Formats",
+    "href": "/docs/encryption-formats/"
+  },
+  {
     "label": "Dotenv.toml Spec",
     "href": "/docs/dotenv-toml/spec/"
   },

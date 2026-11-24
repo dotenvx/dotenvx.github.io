@@ -145,6 +145,11 @@
         "children": []
       },
       {
+        "label": "Encryption Formats",
+        "href": "/docs/encryption-formats/",
+        "children": []
+      },
+      {
         "label": "Dotenv.toml Spec",
         "href": "/docs/dotenv-toml/spec/",
         "children": []

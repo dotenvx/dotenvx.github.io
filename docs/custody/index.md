@@ -18,13 +18,20 @@ Your encrypted .env stays with your code. Custody is where you keep the private 
 
 Choose who holds the key and how your app gets access to it.
 
-## Local
+## <span id="local">Local development</span>
+{: #local-development}
 
-Keep the key in .env.keys or your operating system’s secret store. Dotenvx reads it locally when your app starts.
+Keep the private key in `.env.keys` on your development machine, or use your operating system’s secret store. Dotenvx reads it locally when your app starts.
 
-You manage access, backups, and distribution to other machines. Keep .env.keys out of git.
+You manage access, backups, and distribution to other machines. Keep `.env.keys` out of Git.
 
 [Local setup](/docs/custody/local/)
+
+## Production
+
+Commit the encrypted `.env.production` with your code. In your host’s environment settings, set `DOTENV_PRIVATE_KEY_PRODUCTION` to the matching value from your local `.env.keys`. Keep the key server-side.
+
+For example, on Vercel, open your project’s **Settings → Environment Variables**, add the key under that exact name, and select **Production**. If your build needs the encrypted values and the project has the Dotenvx CLI installed, set the Build Command to `npx dotenvx run -f .env.production -- npm run build` and redeploy. The `-f` flag selects the production file for that build.
 
 ## Armor
 

@@ -165,9 +165,7 @@ App listening on port 80
 
 </div>
 
-<div markdown="block">
-
-<span id="what-if-your-repo-is-breached"></span>
+<div markdown="block" id="what-if-your-repo-is-breached">
 
 ## Dual-Breach Required
 
@@ -182,7 +180,8 @@ In the whitepaper’s illustrative model, separating the encrypted .env file fro
 
 <p><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></p>
 
-## Why this design?
+## <span id="why-this-design">Design Principles</span>
+{: #design-principles}
 
 {{ home_design_content | strip }}
 
@@ -190,7 +189,8 @@ In the whitepaper’s illustrative model, separating the encrypted .env file fro
 
 <div markdown="block">
 
-## Who holds the key?
+## <span id="who-holds-the-key">Key Custody</span>
+{: #key-custody}
 
 By default, you do. Keep the private key on your machine for development and in your deployment environment for production.
 {: .design-paragraph}
@@ -200,7 +200,8 @@ When you need to manage access across a team, [Armor]({{ '/armor/' | relative_ur
 
 [Custody]({{ '/docs/custody/' | relative_url }})
 
-## Who’s using dotenvx?
+## <span id="whos-using-dotenvx">Dotenvx Adoption</span>
+{: #dotenvx-adoption}
 
 - [22 million](https://www.npmjs.com/package/@dotenvx/dotenvx) weekly npm installs
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code)

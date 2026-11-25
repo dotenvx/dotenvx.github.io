@@ -35,6 +35,7 @@ Create a .env file in your project root.
 # .env
 HELLO="Secret"
 ```
+{: copy='HELLO="Secret"'}
 
 ```console
 $ dotenvx encrypt
@@ -53,8 +54,9 @@ Add this line to your .gitignore:
 # .gitignore
 .env.keys
 ```
+{: copy=".env.keys"}
 
-Then commit the encrypted .env with your code. The -f flag includes it even if your project ignores .env files.
+Then commit the encrypted .env with your code.
 
 ```console
 $ git add -f .env

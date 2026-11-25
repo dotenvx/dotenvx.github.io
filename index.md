@@ -7,6 +7,9 @@ main_layout: columns
 ---
 
 {% capture home_design_content %}
+Anyone who gets access to your Git repository can see your encrypted .env values. To read those secrets, they still need the matching private key.
+{: .design-paragraph}
+
 Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
 {: .design-paragraph}
 
@@ -26,7 +29,7 @@ The result is a system built entirely from primitives, developers already unders
 {: .design-paragraph}
 
 
-Best of all, attackers hate this. They have to gain access to both the encrypted .env file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure as documented in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
+Read more about this separation in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
 {: .design-paragraph}
 
 <p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
@@ -173,7 +176,9 @@ App listening on port 80
 
 <div markdown="block">
 
-## Why this design?
+<span id="why-this-design"></span>
+
+## What if your repo is breached?
 
 {{ home_design_content | strip }}
 

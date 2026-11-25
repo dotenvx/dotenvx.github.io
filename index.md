@@ -169,7 +169,7 @@ App listening on port 80
 
 <span id="what-if-your-repo-is-breached"></span>
 
-## Dual Breach Required
+## Dual-Breach Required
 
 Decrypting .env values at rest requires both the encrypted file and its matching private key. Dotenvx lets you keep the file in Git and the key in a separate store. An attacker who gains access to either store alone gets only one of the two.
 {: .design-paragraph}

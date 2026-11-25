@@ -267,7 +267,7 @@ class MainSite < Jekyll::Generator
         element.options[:level] = element.options[:level].clamp(2, 3) if element.type == :header
       end
     else
-      strip_description_period(document)
+      strip_description_period(document) unless source.data['keep_description_period']
     end
     export_html, = MainMarkdownExport::Html.convert(document.root, document.options)
     html, = MainMarkdown.convert(document.root, document.options)

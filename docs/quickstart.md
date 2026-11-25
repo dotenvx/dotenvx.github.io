@@ -41,7 +41,9 @@ $ dotenvx encrypt
 ```
 {: copy="dotenvx encrypt"}
 
-When prompted, choose **Classic (.env.keys)**. Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
+When prompted, choose **Classic (.env.keys)**.
+
+Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
 
 Other places to keep your key: [Custody](/docs/custody/).
 

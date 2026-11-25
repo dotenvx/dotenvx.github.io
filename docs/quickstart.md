@@ -4,7 +4,7 @@ description: Encrypt your first .env file
 permalink: /docs/quickstart/
 markdown_url: /docs/quickstart.md
 agent_prompt: Set up Dotenvx in my project for me.
-main_layout: two-columns
+main_layout: single
 redirect_from:
   - /docs/quickstarts
   - /docs/quickstarts/
@@ -88,7 +88,9 @@ Hello Secret
 
 Dotenvx reads the key from .env.keys, decrypts your values, and injects them into your app at runtime. Replace node index.js with your own app’s command.
 
-## What about production?
+---
+
+## Production
 {: #production .quickstart-production}
 
 <span id="what-about-production"></span>
@@ -98,8 +100,10 @@ The same workflow works in production. Use a separate encrypted file and key for
 Create a separate .env.production:
 
 ```dotenv
+# .env.production
 HELLO="Production"
 ```
+{: copy='HELLO="Production"'}
 
 ```console
 $ dotenvx encrypt -f .env.production

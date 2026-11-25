@@ -1,5 +1,5 @@
 
-> Run Dotenvx
+> Install Dotenvx (default)
 
 {% assign cli = site.data.install_methods | where: 'name', 'CLI' | first %}
 ```console
@@ -7,7 +7,7 @@ $ {{ cli.command }}
 ```
 {: copy="{{ cli.command }}"}
 
-> Run Dotenvx Armor ⛨
+> Install Dotenvx Armor ⛨
 
 ```console
 $ curl -sfS 'https://dotenvx.sh?add=armor' | sh

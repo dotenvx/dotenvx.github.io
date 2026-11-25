@@ -7,6 +7,9 @@ main_layout: columns
 ---
 
 {% capture home_design_content %}
+If someone gains access to your Git repository, they get the encrypted .env file. If they compromise your running app, they may be able to read the secrets it uses.
+{: .design-paragraph}
+
 Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
 {: .design-paragraph}
 
@@ -22,11 +25,7 @@ Lastly, we needed to choose an encryption algorithm. Encryption of the values in
 It was important that we choose a proven, simple, asymmetric standard with small keys. We chose secp256k1, battle-tested by Bitcoin for more than seventeen years. We made cryptography an opinionated choice so developers wouldn't have to. Encryption just worked.
 {: .design-paragraph}
 
-The result is a system built entirely from primitives, developers already understand, and infrastructure they already use. Secrets can travel with code without becoming part of the code. Git distributes them, .env defines how apps consume them, and secp256k1 keeps their values unreadable. The kicker, all this works by setting a single private key on your infrastructure - no more risky async coordination of secrets, no more centralized downtime risk. Your secrets are always just there with your code, ready to be unlocked at runtime.
-{: .design-paragraph}
-
-
-Best of all, attackers hate this. They have to gain access to both the encrypted .env file in your repository and the private key in your deployment environment to decrypt your secrets. This separation sharply reduces your risk of exposure as documented in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
+Keeping the private key outside Git lets you distribute encrypted values with your code and decrypt them where the app runs. Our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"} explains this separation in more detail.
 {: .design-paragraph}
 
 <p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
@@ -173,7 +172,9 @@ App listening on port 80
 
 <div markdown="block">
 
-## Why this design?
+<span id="why-this-design"></span>
+
+## Threat Model
 
 {{ home_design_content | strip }}
 
@@ -181,9 +182,14 @@ App listening on port 80
 
 <div markdown="block">
 
-## Who holds the key?
+<span id="who-holds-the-key"></span>
 
-By default, you do. Keep the private key on your machine for development and in your deployment environment for production.
+## Key Custody
+
+By default, you hold the private key.
+{: .design-paragraph}
+
+Keep the private key on your machine for development and in your deployment environment for production.
 {: .design-paragraph}
 
 When you need to manage access across a team, [Armor]({{ '/armor/' | relative_url }}) adds managed key custody, approvals, and auditing.
@@ -191,7 +197,9 @@ When you need to manage access across a team, [Armor]({{ '/armor/' | relative_ur
 
 [Custody]({{ '/docs/custody/' | relative_url }})
 
-## Who’s using dotenvx?
+<span id="whos-using-dotenvx"></span>
+
+## Dotenvx Adoption
 
 - [22 million](https://www.npmjs.com/package/@dotenvx/dotenvx) weekly npm installs
 - [Google](https://github.com/search?q=dotenvx+org%3Agoogle&type=code), [NASA](https://github.com/search?q=repo%3Anasa%2Fearthdata-search+dotenvx&type=code), [AWS](https://docs.amplify.aws/nextjs/deploy-and-host/amplify-hosting/secrets-and-vars/#local-environment-2), and [CrowdStrike](https://github.com/search?q=org%3ACrowdStrike+dotenvx&type=code)

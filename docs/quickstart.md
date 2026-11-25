@@ -32,6 +32,7 @@ secrets_artifact: true
 Create a .env file in your project root.
 
 ```dotenv
+# .env
 HELLO="Secret"
 ```
 

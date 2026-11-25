@@ -67,15 +67,17 @@ $ git commit -m "encrypt .env"
 git add .gitignore
 git commit -m \"encrypt .env\""}
 
-Keep .env.keys private and backed up. It holds the key you need to decrypt your file.
+Keep .env.keys private and backed up. It holds the key you need to decrypt your secrets. Share the key manually with your team or use [another custody option like Armor](/docs/custody/).
 
 ## Ship
 
 Create index.js:
 
 ```javascript
+// index.js
 console.log(`Hello ${process.env.HELLO}`)
 ```
+{: copy='console.log(`Hello ${process.env.HELLO}`)'}
 
 Run your app with Dotenvx:
 

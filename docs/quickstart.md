@@ -45,8 +45,6 @@ When prompted, choose **Classic (.env.keys)**.
 
 Your .env values become ciphertext. The private key that unlocks them goes in .env.keys.
 
-Other places to keep your key: [Custody](/docs/custody/).
-
 ## Commit
 
 Add this line to your .gitignore:

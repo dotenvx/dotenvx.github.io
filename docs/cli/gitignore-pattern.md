@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx gitignore --pattern"
 title: "--pattern"
 eyebrow: dotenvx gitignore
 eyebrow_href: "/docs/cli/gitignore/"

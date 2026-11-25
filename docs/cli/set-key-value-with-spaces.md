@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx set KEY \"my value\""
 title: Values with spaces
 eyebrow: dotenvx set
 eyebrow_href: "/docs/cli/set/"

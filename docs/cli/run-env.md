@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx run --env HELLO=String"
 title: "--env HELLO=String"
 eyebrow: dotenvx run
 eyebrow_href: "/docs/cli/run/"

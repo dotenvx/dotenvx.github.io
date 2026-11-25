@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx encrypt --token"
 title: "--token"
 eyebrow: dotenvx encrypt
 eyebrow_href: "/docs/cli/encrypt/"

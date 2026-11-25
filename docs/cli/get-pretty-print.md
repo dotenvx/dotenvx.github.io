@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get --pretty-print"
 title: "--pretty-print"
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

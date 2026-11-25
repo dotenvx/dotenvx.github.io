@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get --format eval"
 title: "--format eval"
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

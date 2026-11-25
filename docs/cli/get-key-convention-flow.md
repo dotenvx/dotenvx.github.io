@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get KEY --convention=flow"
 title: "--convention=flow"
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

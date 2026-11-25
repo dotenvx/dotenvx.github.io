@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx run --token"
 title: "--token"
 eyebrow: dotenvx run
 eyebrow_href: "/docs/cli/run/"

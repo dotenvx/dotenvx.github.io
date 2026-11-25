@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx keypair --format shell"
 title: "--format shell"
 eyebrow: dotenvx keypair
 eyebrow_href: "/docs/cli/keypair/"

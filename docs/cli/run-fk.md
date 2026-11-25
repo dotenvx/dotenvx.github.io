@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx run -fk"
 title: "-fk"
 eyebrow: dotenvx run
 eyebrow_href: "/docs/cli/run/"

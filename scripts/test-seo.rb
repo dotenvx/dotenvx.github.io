@@ -103,5 +103,22 @@ feed.xpath("//*[local-name()='entry']/*[local-name()='content']").each do |entry
     errors << "Blog feed includes page layout markup"
   end
 end
+command_pages = 0
+Dir[File.expand_path("../docs/cli/**/*.md", __dir__)].each do |source|
+  metadata = YAML.safe_load(File.read(source).split(/^---\s*$/, 3).fetch(1))
+  next unless metadata["doc_type"] == "cli" && !metadata["redirect_to"]
+  command = metadata.fetch("command_heading", metadata["command"])
+  next unless command
+
+  path = metadata.fetch("permalink")
+  html = Nokogiri::HTML(File.read(File.join(root, path, "index.html")))
+  heading = html.at_css("h1")
+  heading&.css('[aria-hidden="true"]')&.remove
+  expected = "$ #{command}"
+  errors << "#{path}: expected H1 #{expected.inspect}" unless heading&.text == expected
+  errors << "#{path}: incorrect command title" unless html.at_css("head > title")&.text == "#{expected} · Dotenvx Docs"
+  command_pages += 1
+end
+puts "Checked rendered headings and titles on #{command_pages} CLI command pages."
 abort errors.join("\n") unless errors.empty?
 puts "SEO passed: #{indexable.size} indexable pages; unique titles and canonicals, descriptions, H1s, social metadata, structured data, sitemap, robots, and noindex rules."

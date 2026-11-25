@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get KEY --ignore"
 title: KEY --ignore
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

@@ -15,6 +15,13 @@ module Jekyll
         next unless page.url.start_with?("/docs/")
 
         title = page.data["title"].to_s
+        if page.url.start_with?("/docs/cli/") && page.data["doc_type"] == "cli"
+          command = page.data.fetch("command_heading", page.data["command"])
+          if command
+            page.data["cli_heading"] = "$ #{command}"
+            page.data["seo_title"] = "#{page.data['cli_heading']} · Dotenvx Docs"
+          end
+        end
         parents = parents_for(page, by_url)
         unless page.data["seo_title"]
           context = if page.data["doc_type"] == "side-path"

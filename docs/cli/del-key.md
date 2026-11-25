@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx del KEY"
 title: KEY
 eyebrow: dotenvx del
 eyebrow_href: "/docs/cli/del/"

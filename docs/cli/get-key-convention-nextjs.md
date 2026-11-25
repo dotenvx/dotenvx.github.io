@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get KEY --convention=nextjs"
 title: "--convention=nextjs"
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

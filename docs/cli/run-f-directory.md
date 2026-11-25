@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx run -f ../.."
 title: "-f directory"
 eyebrow: dotenvx run
 eyebrow_href: "/docs/cli/run/"

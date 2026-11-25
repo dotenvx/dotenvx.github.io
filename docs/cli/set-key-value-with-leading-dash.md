@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx set KEY -- \"-value\""
 title: Values with leading dash
 eyebrow: dotenvx set
 eyebrow_href: "/docs/cli/set/"

@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx keypair --format json"
 title: "--format json"
 eyebrow: dotenvx keypair
 eyebrow_href: "/docs/cli/keypair/"

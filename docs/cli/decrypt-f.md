@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx decrypt -f"
 title: "-f"
 eyebrow: dotenvx decrypt
 eyebrow_href: "/docs/cli/decrypt/"

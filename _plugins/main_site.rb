@@ -254,6 +254,11 @@ class MainSite < Jekyll::Generator
   def publish(site, source, markdown, links, metadata: {})
     permalink = source.url
     document = Kramdown::Document.new(markdown, site.config.fetch('kramdown'))
+    if source.data['cli_heading']
+      # Keep the original heading's anchor while changing its displayed text.
+      heading = document.root.children.first
+      heading.children.replace([Kramdown::Element.new(:text, source.data['cli_heading'])])
+    end
     if metadata['main_blog_post']
       document.root.children.drop(1).each do |element|
         element.options[:level] = element.options[:level].clamp(2, 3) if element.type == :header

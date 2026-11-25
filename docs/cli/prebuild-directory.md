@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx prebuild directory"
 title: directory
 eyebrow: dotenvx prebuild
 eyebrow_href: "/docs/cli/prebuild/"

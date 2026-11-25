@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx run -f ../.. --convention=nextjs"
 title: "-f directory + nextjs"
 eyebrow: dotenvx run
 eyebrow_href: "/docs/cli/run/"

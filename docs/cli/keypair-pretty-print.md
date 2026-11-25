@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx keypair --pretty-print"
 title: "--pretty-print"
 eyebrow: dotenvx keypair
 eyebrow_href: "/docs/cli/keypair/"

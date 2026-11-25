@@ -16,6 +16,7 @@ crumbs:
 - label: Encrypt
   href: "/docs/cli/encrypt/"
 command: dotenvx encrypt
+command_heading: false
 ---
 
 ```console

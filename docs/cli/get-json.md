@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get --format json"
 title: "(json)"
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

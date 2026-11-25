@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx precommit directory"
 title: directory
 eyebrow: dotenvx precommit
 eyebrow_href: "/docs/cli/precommit/"

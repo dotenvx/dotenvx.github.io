@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx keypair -f"
 title: "-f"
 eyebrow: dotenvx keypair
 eyebrow_href: "/docs/cli/keypair/"

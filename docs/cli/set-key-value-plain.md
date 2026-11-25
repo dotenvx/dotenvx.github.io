@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx set KEY value --plain"
 title: KEY value --plain
 eyebrow: dotenvx set
 eyebrow_href: "/docs/cli/set/"

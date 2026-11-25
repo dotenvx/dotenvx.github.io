@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx genexample -f"
 title: "-f"
 eyebrow: dotenvx genexample
 eyebrow_href: "/docs/cli/genexample/"

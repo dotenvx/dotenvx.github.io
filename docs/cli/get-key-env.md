@@ -1,5 +1,6 @@
 ---
 doc_type: cli
+command_heading: "dotenvx get KEY --env"
 title: KEY --env
 eyebrow: dotenvx get
 eyebrow_href: "/docs/cli/get/"

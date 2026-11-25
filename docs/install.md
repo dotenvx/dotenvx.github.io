@@ -1,6 +1,7 @@
 ---
 title: Install
 main_layout: single
+code_highlighting: true
 description: Use dotenvx from the command line or directly in your code.
 permalink: /docs/install/
 markdown_url: /docs/install.md

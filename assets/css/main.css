@@ -676,6 +676,12 @@ body.overflow-hidden { overflow: hidden; }
 
 .main pre > :is(.main-markdown-syntax, .main-markdown-detail) { display: none; }
 .main pre .gp { color: var(--syntax); }
+/* Use the design codeblock palette on pages that opt into syntax colors. */
+.main--code-highlighting .filename-comment code::first-line,
+.main--code-highlighting pre :is(.c, .c1, .cm, .cp, .cs, .ch, .gp) { color: light-dark(#70736c, #91958c); }
+.main--code-highlighting pre :is(.s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .sr, .ss, .sx) { color: light-dark(#35704c, #a2c49a); }
+.main--code-highlighting pre :is(.nv, .vc, .vg, .vi, .vm, .na, .nl, .nt, .si) { color: light-dark(#326d80, #8bbecb); }
+.main--code-highlighting pre :is(.nf, .fm, .nc, .nb, .nn) { color: light-dark(#3b6193, #9fb9dd); }
 .main pre .design-code-ok { color: var(--brand-ink); }
 
 .main .design-codeblock-wrap {

@@ -1,5 +1,6 @@
 ---
 title: Custody
+main_layout: single
 description: Choose where your private keys live.
 permalink: "/docs/custody/"
 eyebrow: Docs

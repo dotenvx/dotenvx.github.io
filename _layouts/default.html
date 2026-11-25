@@ -57,7 +57,7 @@
     </nav>
     {% endif %}
   </header>
-  <main class="main main--{{ main_layout }}{% if main_layout == 'two-columns' %} main--columns{% endif %}{% if page.main_blog_post %} main--post{% endif %}">
+  <main class="main main--{{ main_layout }}{% if page.code_highlighting %} main--code-highlighting{% endif %}{% if main_layout == 'two-columns' %} main--columns{% endif %}{% if page.main_blog_post %} main--post{% endif %}">
     <div class="main-page-heading">
       {{ page.main_heading }}
     </div>

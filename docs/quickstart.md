@@ -5,6 +5,7 @@ permalink: /docs/quickstart/
 markdown_url: /docs/quickstart.md
 agent_prompt: Set up Dotenvx in my project for me.
 main_layout: single
+code_highlighting: true
 redirect_from:
   - /docs/quickstarts
   - /docs/quickstarts/
@@ -54,7 +55,7 @@ Add this line to your .gitignore:
 # .gitignore
 .env.keys
 ```
-{: copy=".env.keys"}
+{: .filename-comment copy=".env.keys"}
 
 Then commit the encrypted .env with your code.
 

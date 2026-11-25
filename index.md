@@ -171,13 +171,13 @@ App listening on port 80
 
 ## Dual-Breach Required
 
-Decrypting .env values at rest requires both the encrypted file and its matching private key. Dotenvx lets you keep the file in Git and the key in a separate store. An attacker who gains access to either store alone gets only one of the two.
+Decrypting .env values at rest requires both the encrypted file and its matching private key.
 {: .design-paragraph}
 
-Read more about this separation in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=5){: target="_blank" rel="noopener"}.
+Dotenvx lets you keep the file in Git and the key in a separate store. An attacker who gains access to either store alone gets only one of the two.
 {: .design-paragraph}
 
-In the whitepaper’s illustrative model, separating the encrypted `.env` file from its private key lowers the annual chance of exposing stored secrets from 1% to 0.005%, a 99.5% reduction, assuming the two breaches are independent. [See the calculation on page 13]({{ '/whitepaper.pdf' | relative_url }}#page=13){: target="_blank" rel="noopener"}.
+In the whitepaper’s illustrative model, separating the encrypted .env file from its private key lowers the annual chance of exposing stored secrets from 1% to 0.005%, a 99.5% reduction, assuming the two breaches are independent. [See the calculation on page 13]({{ '/whitepaper.pdf' | relative_url }}#page=13){: target="_blank" rel="noopener"}.
 {: .design-paragraph}
 
 <p><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></p>

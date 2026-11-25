@@ -10,7 +10,7 @@ main_layout: columns
 Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
 {: .design-paragraph}
 
-We chose git because it is the best way to deliver digital goods. It is the container ship of the digital world. All code travels on its ships. Why not secrets? Why invent an inferior secrets delivery mechanism when the world class one is right there at your fingertips.
+We chose git because it is the best way to deliver digital goods. It is the container ship of the digital world. All code travels on its ships. Why not secrets? Why invent an inferior secrets delivery mechanism when the world-class one is right there at your fingertips.
 {: .design-paragraph}
 
 We chose .env because it is the open standard for loading secrets into code. It represents environment variables, the core primitive that all secrets end up injected into at runtime of code.

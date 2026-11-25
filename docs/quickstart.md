@@ -73,11 +73,10 @@ Keep .env.keys private and backed up. It holds the key you need to decrypt your 
 
 Create index.js:
 
-```javascript
-// index.js
-console.log(`Hello ${process.env.HELLO}`)
-```
-{: copy='console.log(`Hello ${process.env.HELLO}`)'}
+{% capture quickstart_js %}console.log(`Hello ${process.env.HELLO}`){% endcapture %}
+{% capture quickstart_file %}// index.js
+{{ quickstart_js }}{% endcapture %}
+{% include components/design-codeblock.html language="javascript" value=quickstart_file copy_text=quickstart_js %}
 
 Run your app with Dotenvx:
 

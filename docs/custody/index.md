@@ -19,11 +19,15 @@ options:
 ## <span id="local-development"><span id="local">Classic</span></span>
 {: #classic}
 
+Classic stores your private key in `.env.keys`. Keep `.env.keys` out of Git.
+
 ## Armor
+
+[Armor](/docs/custody/armor/) keeps your private keys off-device and manages access to them.
 
 ## <span id="production"><span id="change-custody">More</span></span>
 {: #more}
 
-- Native
-- <span id="password-managers">1Password</span>
-- Bitwarden
+- [Native](/docs/custody/native/)
+- <span id="password-managers"></span>[1Password](/docs/custody/1password/)
+- [Bitwarden](/docs/custody/bitwarden/)

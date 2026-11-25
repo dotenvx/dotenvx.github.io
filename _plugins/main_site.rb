@@ -112,7 +112,15 @@ class MainSite < Jekyll::Generator
 
   def titled_markdown(page, content)
     title = page.data['main_title'] || page.data.fetch('title')
-    "# #{CGI.escapeHTML(title)}\n\n#{content.strip}"
+    if page.data['cli_heading']
+      # Carry the previous GFM anchor into the renamed heading.
+      original = Kramdown::Document.new("# #{CGI.escapeHTML(title)}", { input: 'GFM' })
+      anchor = original.root.children.first.attr['id']
+      title = page.data['cli_heading']
+    end
+    heading = "# #{CGI.escapeHTML(title)}"
+    heading += "\n{: ##{anchor}}" if anchor && !anchor.empty?
+    "#{heading}\n\n#{content.strip}"
   end
 
   def guide_reference_pages(index, docs_pages)
@@ -254,11 +262,6 @@ class MainSite < Jekyll::Generator
   def publish(site, source, markdown, links, metadata: {})
     permalink = source.url
     document = Kramdown::Document.new(markdown, site.config.fetch('kramdown'))
-    if source.data['cli_heading']
-      # Keep the original heading's anchor while changing its displayed text.
-      heading = document.root.children.first
-      heading.children.replace([Kramdown::Element.new(:text, source.data['cli_heading'])])
-    end
     if metadata['main_blog_post']
       document.root.children.drop(1).each do |element|
         element.options[:level] = element.options[:level].clamp(2, 3) if element.type == :header

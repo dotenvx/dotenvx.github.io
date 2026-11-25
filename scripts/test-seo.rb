@@ -115,7 +115,8 @@ Dir[File.expand_path("../docs/cli/**/*.md", __dir__)].each do |source|
   heading = html.at_css("h1")
   heading&.css('[aria-hidden="true"]')&.remove
   expected = "$ #{command}"
-  errors << "#{path}: expected H1 #{expected.inspect}" unless heading&.text == expected
+  actual = heading&.text&.strip
+  errors << "#{path}: expected H1 #{expected.inspect}, got #{actual.inspect}" unless actual == expected
   errors << "#{path}: incorrect command title" unless html.at_css("head > title")&.text == "#{expected} · Dotenvx Docs"
   command_pages += 1
 end

@@ -50,6 +50,7 @@ Your .env values become ciphertext. The private key that unlocks them goes in .e
 Add this line to your .gitignore:
 
 ```gitignore
+# .gitignore
 .env.keys
 ```
 

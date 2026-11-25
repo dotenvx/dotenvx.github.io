@@ -17,8 +17,11 @@ $ curl -sfS 'https://dotenvx.sh?add=armor' | sh
 ## Language SDKs
 
 {% assign sdk_page = site.pages | where: 'url', '/docs/sdk/' | first %}
-- [Windows]({{ '/docs/install/windows/' | relative_url }})
 {% include main-sdk-list.md languages=sdk_page.sdk_languages %}
+
+## System Packages
+
+- [Windows]({{ '/docs/install/windows/' | relative_url }})
 
 ## Customize Dotenvx
 

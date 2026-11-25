@@ -2,6 +2,7 @@
 doc_type: cli
 title: install
 main_title: "$ dotenvx install"
+seo_title: "$ dotenvx install · Dotenvx Docs"
 description: Add or remove features from your Dotenvx installation.
 permalink: "/docs/cli/install/"
 command: dotenvx install

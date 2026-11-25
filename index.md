@@ -167,19 +167,21 @@ App listening on port 80
 
 <div markdown="block">
 
-## Why this design?
+<span id="what-if-your-repo-is-breached"></span>
 
-{{ home_design_content | strip }}
+## Dual Breach Required
 
-## What if your repo is breached?
-
-Anyone who gets access to your Git repository can see your encrypted .env values. To read those secrets, they still need the matching private key.
+Decrypting .env values at rest requires both the encrypted file and its matching private key. Dotenvx lets you keep the file in Git and the key in a separate store. An attacker who gains access to either store alone gets only one of the two.
 {: .design-paragraph}
 
-Read more about this separation in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
+Read more about this separation in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}#page=5){: target="_blank" rel="noopener"}.
 {: .design-paragraph}
 
 <p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
+
+## Why this design?
+
+{{ home_design_content | strip }}
 
 </div>
 

@@ -682,6 +682,7 @@ body.overflow-hidden { overflow: hidden; }
 .main--code-highlighting pre :is(.s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .sr, .ss, .sx) { color: light-dark(#35704c, #a2c49a); }
 .main--code-highlighting pre :is(.nv, .vc, .vg, .vi, .vm, .na, .nl, .nt, .si) { color: light-dark(#326d80, #8bbecb); }
 .main--code-highlighting pre :is(.nf, .fm, .nc, .nb, .nn) { color: light-dark(#3b6193, #9fb9dd); }
+.main .custody-prompt .design-code-selection { color: var(--link); font-weight: 600; }
 .main pre .design-code-ok { color: var(--brand-ink); }
 
 .main .design-codeblock-wrap {

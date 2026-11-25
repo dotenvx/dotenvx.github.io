@@ -87,6 +87,8 @@ module DesignSyntax
         end
         result << %(<span class="gp">#{CGI.escapeHTML(prompt[0])}</span>)
         result << highlight(command, "shell")
+      elsif line.start_with?("❯ ")
+        result << %(<span class="design-code-selection">#{CGI.escapeHTML(line)}</span>)
       elsif line.match?(/\A[ \t]*(?:[✔◈⟐▣]|◉ logged in\b|⛨ (?:armored|invited)\b|⛉ protection:)/)
         result << %(<span class="design-code-ok">#{CGI.escapeHTML(line)}</span>)
       else

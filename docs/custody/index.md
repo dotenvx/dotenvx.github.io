@@ -19,11 +19,29 @@ options:
 ## <span id="local-development"><span id="local">Classic</span></span>
 {: #classic}
 
-Classic stores your private key in `.env.keys`. Keep `.env.keys` out of Git.
+When you run `dotenvx encrypt` and choose Classic, Dotenvx stores your private key in `.env.keys`.
+
+```console
+$ dotenvx encrypt
+? Choose private key custody
+❯ ⛉ Classic (.env.keys)
+  ⛨ Armor (Off-device keys)
+  … more
+```
+{: .custody-prompt copy="dotenvx encrypt"}
+
+Keep `.env.keys` out of Git. Commit the encrypted `.env` with your code.
 
 ## Armor
 
-[Armor](/docs/custody/armor/) keeps your private keys off-device and manages access to them.
+Choose Armor to keep your private keys off-device. If you started with Classic, `dotenvx armor up` converts your Classic private keys to Armored keys.
+
+```console
+$ dotenvx armor up
+```
+{: copy="dotenvx armor up"}
+
+When you run your app with Dotenvx, it requests key access from Armor. See the [Armor setup guide](/docs/custody/armor/) to configure access.
 
 ## <span id="production"><span id="change-custody">More</span></span>
 {: #more}

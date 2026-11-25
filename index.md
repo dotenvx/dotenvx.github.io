@@ -7,9 +7,6 @@ main_layout: columns
 ---
 
 {% capture home_design_content %}
-Anyone who gets access to your Git repository can see your encrypted .env values. To read those secrets, they still need the matching private key.
-{: .design-paragraph}
-
 Three widely used and proven primitives make up Dotenvx's design. Git, .env, and secp256k1.
 {: .design-paragraph}
 
@@ -27,12 +24,6 @@ It was important that we choose a proven, simple, asymmetric standard with small
 
 The result is a system built entirely from primitives, developers already understand, and infrastructure they already use. Secrets can travel with code without becoming part of the code. Git distributes them, .env defines how apps consume them, and secp256k1 keeps their values unreadable. The kicker, all this works by setting a single private key on your infrastructure - no more risky async coordination of secrets, no more centralized downtime risk. Your secrets are always just there with your code, ready to be unlocked at runtime.
 {: .design-paragraph}
-
-
-Read more about this separation in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
-{: .design-paragraph}
-
-<p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
 
 {% endcapture %}
 
@@ -176,11 +167,19 @@ App listening on port 80
 
 <div markdown="block">
 
-<span id="why-this-design"></span>
+## Why this design?
+
+{{ home_design_content | strip }}
 
 ## What if your repo is breached?
 
-{{ home_design_content | strip }}
+Anyone who gets access to your Git repository can see your encrypted .env values. To read those secrets, they still need the matching private key.
+{: .design-paragraph}
+
+Read more about this separation in our [whitepaper]({{ '/whitepaper.pdf' | relative_url }}){: target="_blank" rel="noopener"}.
+{: .design-paragraph}
+
+<p><a href="{{ '/whitepaper.pdf' | relative_url }}#page=13" target="_blank" rel="noopener" aria-label="Read page 13 of the whitepaper (opens in a new tab)"><img class="main-image" src="{{ '/whitepaper.png' | relative_url }}" alt="Whitepaper page comparing hypothetical secret exposure risk over time for traditional secrets managers and Dotenvx" width="1188" height="1322"></a></p>
 
 </div>
 

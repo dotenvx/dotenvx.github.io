@@ -82,12 +82,9 @@ Run your app with Dotenvx:
 
 ```console
 $ dotenvx run -- node index.js
-```
-{: copy="dotenvx run -- node index.js"}
-
-```text
 Hello Secret
 ```
+{: copy="dotenvx run -- node index.js"}
 
 Dotenvx reads the key from .env.keys, decrypts your values, and injects them into your app at runtime. Replace node index.js with your own app’s command.
 

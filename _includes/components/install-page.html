@@ -18,17 +18,7 @@ After installing, add or remove features with [dotenvx install]({{ '/docs/cli/in
 
 ## Other ways to install
 
-### Windows
-
 {% assign windows = site.data.install_methods | where: 'name', 'Windows' | first %}
-```console
-$ {{ windows.command }}
-```
-{: copy="{{ windows.command }}"}
-
-### SDKs
-
-To load encrypted environment variables directly from your app, choose your language:
-
 {% assign sdk_page = site.pages | where: 'url', '/docs/sdk/' | first %}
-{% include main-sdk-list.md languages=sdk_page.sdk_languages %}
+- Windows (CLI) — `{{ windows.command }}`
+- Use Dotenvx in your app — {% for sdk in sdk_page.sdk_languages %}{% assign sdk_path = sdk.slug | prepend: '/docs/sdk/' | append: '/' %}[{{ sdk.label }}]({{ sdk_path | relative_url }}){% unless forloop.last %}, {% endunless %}{% endfor %}

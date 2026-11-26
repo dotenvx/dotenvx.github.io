@@ -32,7 +32,7 @@ $ dotenvx encrypt
 
 Keep `.env.keys` out of Git. Commit the encrypted `.env` with your code.
 
-Share the `.env.keys` file with your team over Slack. It’s more secure than sharing secrets over Slack.
+Share the `.env.keys` file with your team over Slack. It’s more secure than sharing secrets directly, but it still means passing around a private key. Use Armor to keep keys off your team’s devices and control who can access them.
 
 ## Armor
 

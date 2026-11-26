@@ -174,7 +174,7 @@ body:not(.main-has-subnav) > .main-header {
     justify-content: flex-start;
     column-gap: clamp(0.25rem, 1.5vw, 0.75rem);
   }
-  .main-footer { grid-template-columns: minmax(0, 1fr); }
+  .main-footer { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; }
   .main-footer-contact { order: 1; }
 }
 

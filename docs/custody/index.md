@@ -32,6 +32,8 @@ $ dotenvx encrypt
 
 Keep `.env.keys` out of Git. Commit the encrypted `.env` with your code.
 
+Share the `.env.keys` file with your team over Slack.
+
 ## Armor
 
 Choose Armor to keep your private keys off-device. If you started with Classic, `dotenvx armor up` converts your Classic private keys to Armored keys.

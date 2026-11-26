@@ -195,10 +195,8 @@ In the whitepaper’s illustrative model, separating the encrypted .env file fro
 By default, you do. Keep the private key on your machine for development and in your deployment environment for production.
 {: .design-paragraph}
 
-When you need to manage access across a team, [Armor]({{ '/armor/' | relative_url }}) adds managed key custody, approvals, and auditing.
+When you need to manage access across a team, [Armor]({{ '/armor/' | relative_url }}) adds managed key custody, approvals, and auditing. Or choose from [other custody options]({{ '/docs/custody/' | relative_url }}).
 {: .design-paragraph}
-
-[Custody]({{ '/docs/custody/' | relative_url }})
 
 ## <span id="whos-using-dotenvx">Dotenvx Adoption</span>
 {: #dotenvx-adoption}

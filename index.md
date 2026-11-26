@@ -16,7 +16,7 @@ We chose Git because it is the best way to deliver digital goods. It is the cont
 We chose .env because it is the open standard for loading secrets into code. It represents environment variables, the core primitive that all secrets end up injected into at runtime of code.
 {: .design-paragraph}
 
-Lastly, we needed to choose an encryption algorithm. Encryption of the values inside the .env file would allow us to place those values with code, leveraging Git's distribution advantages while still following the twelve-factor config – by separating the decryption key from the code (environment).
+Lastly, we needed to choose an encryption algorithm. Encryption of the values inside the .env file would allow us to place those values with code, leveraging Git's distribution advantages while still following the twelve-factor config - by separating the decryption key from the code (environment).
 {: .design-paragraph}
 
 It was important that we choose a proven, simple, asymmetric standard with small keys. We chose secp256k1, battle-tested by Bitcoin for more than seventeen years. We made cryptography an opinionated choice so developers wouldn't have to. Encryption just worked.

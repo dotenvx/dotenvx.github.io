@@ -48,6 +48,8 @@ When you run your app with Dotenvx, it requests key access from Armor. See the [
 ## <span id="production"><span id="change-custody">More</span></span>
 {: #more}
 
+Already use a keychain or password manager? Dotenvx can store your private keys there too.
+
 - [Native](/docs/custody/native/)
 - <span id="password-managers"></span>[1Password](/docs/custody/1password/)
 - [Bitwarden](/docs/custody/bitwarden/)

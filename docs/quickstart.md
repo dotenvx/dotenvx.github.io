@@ -68,7 +68,7 @@ $ git commit -m "encrypt .env"
 git add .gitignore
 git commit -m \"encrypt .env\""}
 
-Keep .env.keys private and backed up. It holds the key you need to decrypt your secrets. Share the key manually with your team or use Armor or [other custody options](/docs/custody/).
+Keep .env.keys private and backed up. It holds the key you need to decrypt your secrets. Share the key manually with your team or use [Armor](/armor/) or [other custody options](/docs/custody/).
 
 ## Ship
 

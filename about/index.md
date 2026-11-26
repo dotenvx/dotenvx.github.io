@@ -1,6 +1,6 @@
 ---
 title: About
-description: "A small file. Years of work."
+description: "From a simple .env file to secrets built for the age of agents."
 permalink: /about/
 main_layout: two-columns
 ---
@@ -9,7 +9,7 @@ main_layout: two-columns
 
 <p><img class="main-image" src="{{ '/about.png' | relative_url }}" alt="Scott Motte working on a laptop at an office desk" width="768" height="307"></p>
 
-We’re the team behind [dotenv](https://github.com/motdotla/dotenv) and [dotenvx](https://github.com/dotenvx/dotenvx), both started by [Scott Motte](https://github.com/motdotla).
+We’re the team behind [dotenv](https://github.com/motdotla/dotenv) and [dotenvx](https://github.com/dotenvx/dotenvx), both started by [Scott Motte](https://github.com/motdotla) (pictured above).
 
 We started with a problem every developer recognizes. An app needs credentials, but those credentials don’t belong in its source code. [Dotenv](https://github.com/motdotla/dotenv) gave them a home in a small, readable file. No dashboard to learn. Just a file and the code you were already writing.
 

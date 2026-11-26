@@ -13,7 +13,7 @@ We’re the team behind [dotenv](https://github.com/motdotla/dotenv) and [dotenv
 
 We started with a problem every developer recognizes. An app needs credentials, but those credentials don’t belong in its source code. [Dotenv](https://github.com/motdotla/dotenv) gave them a home in a small, readable file. No dashboard to learn. Just a file and the code you were already writing.
 
-That simplicity mattered. But the file still had to reach teammates, build servers, and production. Keeping it out of Git meant finding another way to move it around.
+That simplicity mattered. But the file still had to reach teammates, build servers, and production. Keeping it out of Git meant finding another way to share it.
 
 So we built [dotenvx](https://github.com/dotenvx/dotenvx). Encryption lets .env travel with your code while its private key stays separate. The same file becomes something you can version, review, and share through Git.
 

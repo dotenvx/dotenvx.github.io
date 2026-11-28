@@ -654,7 +654,10 @@ body.overflow-hidden { overflow: hidden; }
   font-family: var(--main-mono);
 }
 
-.main code { font-size: 14px; }
+.main pre code { font-size: 14px; }
+.main code:not(pre code) { font: inherit; color: inherit; }
+.main .main-markdown-syntax:has(+ code:not(pre code)),
+.main code:not(pre code) + .main-markdown-syntax { display: none; }
 
 .main pre {
   margin: 0 0 20px;

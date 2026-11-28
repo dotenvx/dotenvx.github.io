@@ -10,6 +10,8 @@ blockquote {
   border-left: 2px solid #aaa;
 }
 
+.main code:not(pre code) { font: inherit; color: inherit; }
+
 pre {
   overflow-x: auto;
 }

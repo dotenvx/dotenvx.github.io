@@ -60,6 +60,8 @@ When you run your app with Dotenvx, it requests key access from Armor. See the [
 ## <span id="production"><span id="change-custody"><span id="more">Custodians</span></span></span>
 {: #custodians}
 
+Choose a custodian that fits how you work. Each guide explains where your private keys are stored and how to set it up.
+
 - [Classic](/docs/custody/env-keys/)
 - [Armor](/docs/custody/armor/)
 - [Native](/docs/custody/native/)

@@ -84,7 +84,7 @@ $ dotenvx run -- node index.js
 Locally, the key is read from .env.keys. Dotenvx decrypts your secrets and injects them into your app at runtime.
 {: .design-paragraph}
 
-See the [quick start guide]({{ '/docs/quickstart/' | relative_url }}).
+See the [quick start guide]({{ '/docs/quickstart/' | relative_url }}) for more details on CI and production.
 {: .design-paragraph}
 
 

@@ -1,0 +1,7 @@
+---
+layout: null
+sitemap: false
+permalink: /v2/docs/custody/env-keys/index.md
+---
+{% assign guide = site.pages | where: "url", "/docs/custody/classic/" | first -%}
+﻿{{ guide.main_markdown -}}

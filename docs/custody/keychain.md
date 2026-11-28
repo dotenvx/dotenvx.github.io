@@ -19,7 +19,7 @@ $ dotenvx install --add native
 ```
 {: copy="dotenvx install --add native"}
 
-Start with an [encrypted .env and .env.keys](/docs/custody/env-keys/), then move the key:
+Start with an [encrypted .env and .env.keys](/docs/custody/classic/), then move the key:
 
 ```console
 $ dotenvx native up

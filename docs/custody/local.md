@@ -9,7 +9,7 @@ mark: Local
 options_style: cards
 options:
   - title: .env.keys
-    href: /docs/custody/env-keys/
+    href: /docs/custody/classic/
     glyph: "▤"
   - title: macOS
     href: /docs/custody/keychain/

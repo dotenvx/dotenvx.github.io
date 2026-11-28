@@ -1,8 +1,8 @@
 ---
 doc_type: custody
-title: ".env.keys"
+title: "Classic (.env.keys)"
 description: Keep your private keys in a local .env.keys file.
-permalink: "/docs/custody/env-keys/"
+permalink: "/docs/custody/classic/"
 eyebrow: Custody
 eyebrow_href: "/docs/custody/"
 mark: ".env.keys"

@@ -1,7 +1,8 @@
 ---
 title: Custody
 main_layout: single
-description: Choose how to safeguard your private keys.
+code_highlighting: true
+description: Choose how to safeguard your private keys
 keep_description_period: true
 permalink: "/docs/custody/"
 eyebrow: Docs
@@ -32,6 +33,14 @@ $ dotenvx encrypt
 
 Keep `.env.keys` out of Git. Commit the encrypted `.env` with your code.
 
+```gitignore
+# .gitignore
+.env.keys
+!.env
+```
+{: .filename-comment copy=".env.keys
+!.env"}
+
 Share the `.env.keys` file with your team over Slack. It’s more secure than sharing secrets directly, but it still means passing around a private key. Use Armor to keep keys off your team’s devices and control who can access them.
 
 ## Armor ⛨
@@ -48,7 +57,7 @@ $ dotenvx encrypt
 ```
 {: .custody-prompt copy="dotenvx encrypt"}
 
-Or if you started with Classic, run dotenvx armor up to convert your classic private key to armored keys.
+Or if you started with Classic, convert to an armored private key with the command dotenvx armor up.
 
 ```console
 $ dotenvx armor up
@@ -62,7 +71,7 @@ When you run your app with Dotenvx, it requests key access from Armor. See the [
 
 Choose a custodian that fits how you work. Each guide explains where your private keys are stored and how to set it up.
 
-- [Classic](/docs/custody/env-keys/)
+- [Classic](/docs/custody/classic/)
 - [Armor](/docs/custody/armor/)
 - [Native](/docs/custody/native/)
 - <span id="password-managers"></span>[1Password](/docs/custody/1password/)

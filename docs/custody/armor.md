@@ -16,7 +16,7 @@ Keep your encrypted `.env` in your project. Let Armor manage access to its priva
 
 ## Store
 
-Start with an [encrypted .env](/docs/custody/env-keys/). Sign in, then move its private key into Armor:
+Start with an [encrypted .env](/docs/custody/classic/). Sign in, then move its private key into Armor:
 
 ```console
 $ dotenvx install --add armor

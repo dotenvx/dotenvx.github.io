@@ -4,6 +4,8 @@
 "/docs/armor/production/": "/docs/quickstart/"
 "/docs/cli-quickstart/": "/docs/quickstart/"
 "/docs/cloudflare-workers/": "/docs/cloudflare/"
+"/docs/custody/env-keys/": "/docs/custody/classic/"
+"/v2/docs/custody/env-keys/": "/docs/custody/classic/"
 "/docs/languages/": "/docs/guides/"
 "/docs/learn/": "/docs/quickstart/"
 "/docs/learn/encrypting": "/docs/quickstart/"

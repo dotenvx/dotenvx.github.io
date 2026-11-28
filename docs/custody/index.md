@@ -1,7 +1,7 @@
 ---
 title: Custody
 main_layout: single
-description: Custody is where your private keys live.
+description: Choose how to safeguard your private keys.
 keep_description_period: true
 permalink: "/docs/custody/"
 eyebrow: Docs

@@ -57,11 +57,11 @@ $ dotenvx armor up
 
 When you run your app with Dotenvx, it requests key access from Armor. See the [Armor setup guide](/docs/custody/armor/) to configure access.
 
-## <span id="production"><span id="change-custody">More</span></span>
-{: #more}
+## <span id="production"><span id="change-custody"><span id="more">Custodians</span></span></span>
+{: #custodians}
 
-Already use a keychain or password manager? Dotenvx can store your private keys there too.
-
+- [Classic](/docs/custody/env-keys/)
+- [Armor](/docs/custody/armor/)
 - [Native](/docs/custody/native/)
 - <span id="password-managers"></span>[1Password](/docs/custody/1password/)
 - [Bitwarden](/docs/custody/bitwarden/)
